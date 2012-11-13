@@ -35,6 +35,27 @@
 
   <build>
     <finalName>eXoResources</finalName>
+	<plugins>
+		<plugin>
+			<groupId>org.lesscss</groupId>
+			<artifactId>lesscss-maven-plugin</artifactId>
+			<version>1.3.0</version>
+			<configuration>
+				<outputDirectory>${project.build.directory}/${project.build.finalName}/skin</outputDirectory>
+				<compress>false</compress>
+				<includes>
+					<include>Core.less</include>
+				</includes>
+			</configuration>
+			<executions>
+				<execution>
+					<goals>
+						<goal>compile</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
+	</plugins>
   </build>
  <reporting>  
     <plugins>  
