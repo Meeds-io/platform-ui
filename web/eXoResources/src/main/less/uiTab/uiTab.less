@@ -1,0 +1,55 @@
+
+
+.uiTab {	
+	.nav-tabs {
+		margin: 0px; 
+		border-bottom: 1px solid #c1c1c1;
+		
+		> li {
+			margin-right: -1px;
+		}
+		
+		> li > a {
+			padding: 5px 15px; 
+			margin: 0px; 
+			border: 1px solid #c1c1c1; 
+			color: #333333; 
+			border-radius: 0px; 
+			background-color: #f1f1f1;
+		}
+		
+		> li:first-child > a {
+			border-radius: 5px 0px 0px 0px;
+		}
+		
+		> li:last-child > a {
+			border-radius: 0px 5px 0px 0px;
+		}
+		
+		> .active > a,> .active > a:hover {
+			border: 1px solid #c1c1c1; border-bottom: 1px solid #fff; font-weight: bold; background-color: #FFFFFF;
+		}
+		
+		> li > a:hover {
+			border: 1px solid #c1c1c1; 
+			background-color: #f8f8f8;
+		}
+	}
+	
+	.nav-tabs .open .dropdown-toggle,.nav-pills .open .dropdown-toggle,.nav > li.dropdown.open.active > a:hover {
+		background-color: #c1c1c1; 
+		border: 1px solid #c1c1c1;
+	}
+
+	.tab-content {
+		border: 1px solid #c1c1c1; 
+		border-top: none; 
+		padding: 20px 15px; 
+		border-radius: 0px 0px 3px 3px;
+		background: #fff;
+	}
+
+	.dropdown-menu {
+		border-radius: 0px;
+	}
+}
