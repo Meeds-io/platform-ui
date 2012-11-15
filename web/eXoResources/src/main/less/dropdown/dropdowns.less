@@ -1,0 +1,75 @@
+
+// The dropdown menu (ul)
+// ----------------------
+
+.uiDropdown{
+	.dropdown-menu {
+		
+	  .border-radius(3px);
+	  .box-shadow(0 2px 6px rgba(0,0,0,.1));
+
+	  // Links within the dropdown menu
+	  li > a {
+		padding: 5px 20px;
+	  }
+	  
+	}
+
+}
+
+.uiDropdownWithIcon{
+	.dropdown-menu {
+		
+	  .border-radius(3px);
+	  .box-shadow(0 2px 6px rgba(0,0,0,.1));
+	  li > a {
+		padding: 5px 20px 5px 10px;
+		i{
+			padding-left: 10px;
+		}
+	  }
+	}
+
+}
+// Hover state
+// -----------
+.dropdown-menu li > a:hover,
+.dropdown-menu li > a:focus,
+.dropdown-submenu:hover > a {
+  #gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 15%));
+}
+
+// Active state
+// ------------
+.dropdown-menu .active > a,
+.dropdown-menu .active > a:hover {
+
+  #gradient > .vertical(@dropdownLinkBackgroundActive, darken(@dropdownLinkBackgroundActive, 15%));
+}
+
+
+// Other dropdown nqTrung
+
+.btn-group.uiDropdown.OtherIcon{
+	.btn.dropdown-toggle{
+		.border-radius(0);
+		.box-shadow(none);
+		border-top: none;
+		border-right: solid 1px #cbcbcb;
+		border-bottom: none;
+		border-left: solid 1px #cbcbcb;
+		background: transparent;
+	}
+	.caret{
+		border-top: 4px solid #878787;
+	}
+}
+
+.PersonDocIcon{
+	background: url("../img/otherIcon.png") no-repeat left center;
+	width: 20px;
+	height: 14px;
+	display: inline-block;
+	margin-right: 10px;
+	vertical-align: middle;
+}
