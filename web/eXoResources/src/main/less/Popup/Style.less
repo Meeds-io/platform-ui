@@ -1,9 +1,10 @@
 
 .uiPopup  {
 	border: 1px solid #cccccc;
+	background: white;
 	.box-shadow(0 2px 3px rgba(0,0,0,0.25));
 	.border-radius(4px);
-	.OverflowContainer {
+	.popupHeader {
 		background-color: #f0f0f0;
 		.box-shadow(inset 0 -1px 0 #cfcfcf);
 		border-bottom: 1px solid #f3f3f3;
@@ -15,10 +16,14 @@
 		}
 	}
 	
-	.UIWindowContent {
-		max-height: 300px;
-		border-bottom: 1px solid #ccc;
-		.border-radius( 0 0  4px 4px);
+	.UIAction {
+		border-top: 1px solid #ccc;
+		padding: 15px 0;
+	}
+	
+	.PopupContent {
+		overflow: auto;
+		padding: 10px;
 	}
 	
 }
