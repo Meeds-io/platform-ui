@@ -9,13 +9,12 @@
 // All icons receive the styles of the <i> tag with a base class
 // of .i and are then given a unique class to add width, height,
 // and background-position. Your resulting HTML will look like
-// <i class="IconGrinbox"></i>.
+// <i class="iconinbox"></i>.
 
-// For the white version of the icons, just add the .IconGrwhite class:
-// <i class="IconGrinbox IconGrwhite"></i>
+// For the white version of the icons, just add the .iconwhite class:
+// <i class="iconinbox iconwhite"></i>
 
-.uiDropdownWithIcon [class^="IconGr"],
-.uiDropdownWithIcon [class*=" IconGr"] {
+.uiDropdownWithIcon [class^="uiIcon"] {
   display: inline-block;
   width: 14px;
   height: 14px;
@@ -29,39 +28,29 @@
 
 /* White icons with optional class, or on hover/active states of certain elements */
 
-.uiDropdownWithIcon .nav-pills > .active > a > [class^="IconGr"],
-.uiDropdownWithIcon .nav-pills > .active > a > [class*=" IconGr"],
-.uiDropdownWithIcon .nav-list > .active > a > [class^="IconGr"],
-.uiDropdownWithIcon .nav-list > .active > a > [class*=" IconGr"],
-.uiDropdownWithIcon .navbar-inverse .nav > .active > a > [class^="IconGr"],
-.uiDropdownWithIcon .navbar-inverse .nav > .active > a > [class*=" IconGr"],
-.uiDropdownWithIcon .dropdown-menu > li > a:hover > [class^="IconGr"],
-.uiDropdownWithIcon.dropdown-menu > li > a:hover > [class*=" IconGr"],
-.uiDropdownWithIcon .dropdown-menu > .active > a > [class^="IconGr"],
-.uiDropdownWithIcon .dropdown-menu > .active > a > [class*=" IconGr"],
-.uiDropdownWithIcon .dropdown-submenu:hover > a > [class^="IconGr"],
-.uiDropdownWithIcon .dropdown-submenu:hover > a > [class*=" IconGr"] {
+.uiDropdownWithIcon .nav-pills > .active > a > [class^="uiIcon"],
+.uiDropdownWithIcon .nav-list > .active > a > [class^="uiIcon"],
+.uiDropdownWithIcon .navbar-inverse .nav > .active > a > [class^="uiIcon"],
+.uiDropdownWithIcon .dropdown-menu > li > a:hover > [class^="uiIcon"],
+.uiDropdownWithIcon .dropdown-menu > .active > a > [class^="uiIcon"],
+.uiDropdownWithIcon .dropdown-submenu:hover > a > [class^="uiIcon"],
+{
   background-image: url("@{iconWhiteSpritePath}");
 
 }
 
-
-.IconProfile{
+.uiIconProfile{
 	background-position: left top;
 }
 
-.IconGrProfile{
-	background-position: left top;
-}
-
-.IconGrActiviti{
+.uiIconActiviti{
 	background-position: left -15px;
 }
 
-.IconGrWiki{
+.uiIconWiki{
 	background-position: left -30px;
 }
 
-.IconGrSettings{
+.iconSettings{
 	background-position: left -46px;
 }
