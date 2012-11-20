@@ -1,0 +1,77 @@
+.UIAccordionMenu {
+	font-size: 12px;
+	.border-radius(3px 3px 3px 3px);
+	border: 1px solid #dedede;
+	border-bottom: none;
+	a {
+	  color: #333333;
+	  text-decoration: none;
+	}
+	.accordion-toggle {
+	  padding-right: 20px;
+	  font-size: 12px;
+	}
+	.Expaned {
+	  background: linear-gradient(to bottom, #f8f8f8, #e7e7e7);
+	  padding: 0px;
+	  .BGSelected {
+		  background: url("../images/ExpanIcon.png") no-repeat 96%;
+		  padding: 8px 15px;
+		  display: block;
+		}
+	}
+	.accordion-toggle:hover {
+	  background-color: #f8f8f8;
+	}
+	.accordion-group {
+	  border: none;
+	  margin-bottom: 0px;
+	  border-bottom: 1px solid #dedede;
+	  .border-radius(0px 0px 0px 0px);
+	}
+	.MenuHeader {
+	  margin: 0px;
+	  padding: 9px 4px 9px 18px;
+	  font-size: 14px;
+	  font-family: Helvetica Neue;
+	  background: #f0f0f0;
+	}
+	.accordion-body {
+		.ViewIcon {
+		  background: url("../images/ViewIcon.png") no-repeat 16px;
+		  padding-left: 40px;
+		  display: block;
+		}
+		.DriverIcon {
+		  background: url("../images/DriveIcon.png") no-repeat 16px;
+		  padding-left: 40px;
+		  display: block;
+		}
+		.TagIcon {
+		  background: url("../images/TagIcon.png") no-repeat 16px;
+		  padding-left: 40px;
+		  display: block;
+		}
+		.Selected {
+			  background-color: #e8e8e8;
+		}
+	}
+	.collapsed {
+	  background: none;
+	  .BGSelected {
+		  background: url("../images/ColapIcon.png") no-repeat 96%;
+		  padding: 8px 15px;
+		  display: block;
+		}
+	}
+	.accordion-inner:hover {
+	  background-color: #f8f8f8;
+	}
+	.accordion-normal {
+	  border-top: 1px solid #dedede;
+	  .accordion-toggle {
+		  padding: 8px 15px;
+		  display: block;
+		}
+	}
+}
