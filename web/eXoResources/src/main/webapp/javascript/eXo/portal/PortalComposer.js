@@ -30,7 +30,7 @@ var portalComposer = {
     });
   },
   
-  initComposerContent : function(id, selTabId, webui) 
+  initComposerContent : function(id, selTabId) 
   {
 	  _module.PortalComposer.showTab(selTabId);
 	  
