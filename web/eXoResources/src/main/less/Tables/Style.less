@@ -1,0 +1,42 @@
+
+.uiGrid.table { 
+	border: 1px solid @tableBorder;
+	td ,th {
+		font-size: 13px;
+		border-left: 1px solid @tableBorder;
+		padding: 8px 18px;
+		vertical-align: middle;
+	}
+	tr {
+		th {
+			background-color: #f0f0f0;
+			border-bottom: 1px solid @tableBorder;
+			.box-shadow(0 1px 2px -1px rgba(13,13,13,0.2)); 
+		}
+		td {		
+			border-top: none;
+		}	
+		&.EvenRow td {
+			background-color: @tableBackgroundAccent;
+		}
+	}
+	
+}
+
+.table-striped {
+	tbody {
+		tr:nth-child(odd) td,
+		tr:nth-child(odd) th {
+			background-color: @tableBackgroundAccent;
+		}
+	}
+}
+
+.table-hover {
+	tbody {
+		tr:hover td,
+		tr:hover th {
+			background-color: @tableBackgroundHover;
+		}
+	}
+}
