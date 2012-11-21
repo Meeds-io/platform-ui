@@ -23,28 +23,6 @@
 var uiPopupWindow = {
   superClass : base.UIPopup,  
 
-  showMask : function(popup, isShowPopup) {
-    var mask = popup.previousSibling;
-    // Make sure mask is not TextNode because of previousSibling property
-    if (mask && mask.className != "MaskLayer") {
-      mask = null;
-    }
-    if (isShowPopup) {
-      // Modal if popup is portal component
-      if (eXo.core.DOMUtil.findAncestorByClass(popup, "PORTLET-FRAGMENT") == null) {
-        if (!mask)
-          base.UIMaskLayer.createMask(popup.parentNode, popup, 1);
-      } else {
-        // If popup is portlet's component, modal with just its parent
-        if (!mask)
-          base.UIMaskLayer.createMaskForFrame(popup.parentNode, popup, 1);
-      }
-    } else {
-      if (mask)
-        base.UIMaskLayer.removeMask(mask);
-    }
-  },
-
   // TODO: manage zIndex properties
   /**
    * Shows the popup window passed in parameter gets the highest z-index
@@ -53,7 +31,7 @@ var uiPopupWindow = {
    * it's still at 0, set an arbitrary value of 2000 sets the position of the
    * popup on the page (top and left properties)
    */
-  show : function(popupId, isShowMask, middleBrowser) {
+  show : function(popupId, isShowMask, middleBrowser, height) {
     var popup = document.getElementById(popupId);
     if (popup == null) return;        
 
@@ -75,18 +53,21 @@ var uiPopupWindow = {
     this.superClass.show(popup);
     
     if ($(popup).find("iframe").length > 0) {
-    	setTimeout(function() {_module.UIPopupWindow.setupWindow(popup, middleBrowser);}, 500);
+    	setTimeout(function() {_module.UIPopupWindow.setupWindow(popup, middleBrowser, height);}, 500);
     } else {
-    	this.setupWindow(popup, middleBrowser);
+    	this.setupWindow(popup, middleBrowser, height);
     }
   },
   
-  setupWindow : function(popup, middleBrowser) {	    	
-    var contentBlock = $(popup).find("div.PopupContent")[0];
-    var browserHeight = $(window).height();
-    if (contentBlock && (browserHeight - 100 < contentBlock.offsetHeight)) {
-      contentBlock.style.height = (browserHeight - 100) + "px";
-    }
+  setupWindow : function(popup, middleBrowser, height) {	  
+	var jPopup = $(popup);
+	var vrez = uiPopupWindow.getResizeBlock(jPopup);
+	if (height) vrez.height(height);
+	
+	var browserHeight = $(window).height();	
+	if (browserHeight < jPopup[0].offsetHeight) {
+		vrez.height(browserHeight - jPopup[0].offsetHeight + vrez.height() - 20);
+	}
     
     var scrollY = 0, offsetParent = popup.offsetParent;
     if (window.pageYOffset != undefined)
@@ -175,8 +156,9 @@ var uiPopupWindow = {
 		document.onmousedown = function() {return false};		
 	}
 	
-	var targetPopup = $(this).parents(".UIPopupWindow")[0];
+	var targetPopup = $(this).parents(".uiPopup")[0];
 	_module.UIPopupWindow.resizedPopup = targetPopup;
+	_module.UIPopupWindow.vresized = uiPopupWindow.getResizeBlock($(targetPopup));
 	_module.UIPopupWindow.backupPointerY = base.Browser.findMouseRelativeY(targetPopup, evt) ;	
 
     document.onmousemove = _module.UIPopupWindow.resize;
@@ -190,14 +172,14 @@ var uiPopupWindow = {
    */
   resize : function(evt) {
 	var targetPopup = _module.UIPopupWindow.resizedPopup ;
-    var content = $(targetPopup).find("div.PopupContent")[0];
+    var content = _module.UIPopupWindow.vresized;    
     var isRTL = eXo.core.I18n.isRT();
     var pointerX = base.Browser.findMouseRelativeX(targetPopup, evt, isRTL);
     var pointerY = base.Browser.findMouseRelativeY(targetPopup, evt);
     var delta = pointerY - _module.UIPopupWindow.backupPointerY;  
-    if ((content.offsetHeight + delta) > 0) {
+    if ((content.height() + delta) > 0) {
     	_module.UIPopupWindow.backupPointerY = pointerY;              
-    	content.style.height = content.offsetHeight + delta +"px" ;     
+    	content.height(content.height() + delta);     
     }
     targetPopup.style.height = "auto";
 
@@ -205,7 +187,7 @@ var uiPopupWindow = {
       pointerX = (-1) * pointerX;
     }
 
-    if (pointerX > 200)
+    if (pointerX > 230)
       targetPopup.style.width = (pointerX + 10) + "px";
   },
 
@@ -216,6 +198,7 @@ var uiPopupWindow = {
    */
   endResizeEvt : function(evt) {
 	_module.UIPopupWindow.resizedPopup = null;
+	_module.UIPopupWindow.vresized = null;
     this.onmousemove = null;
     this.onmouseup = null;
     
@@ -275,7 +258,19 @@ var uiPopupWindow = {
     popup.onCancel = function(e)
     {
     };
+  },
+  
+  getResizeBlock : function(jPopup) {
+    var innerRez = jPopup.find(".resizable").first();
+	var contentBlock = jPopup.find("div.PopupContent");
+
+	var vrez;
+	if (innerRez.length) {
+		vrez = innerRez;
+	} else {
+		vrez = contentBlock;
+	}
+	return vrez;	
   }
 };
-
 _module.UIPopupWindow = uiPopupWindow;

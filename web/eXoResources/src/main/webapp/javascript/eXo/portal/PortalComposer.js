@@ -24,7 +24,7 @@ var portalComposer = {
 	eXo.portal.portalMode = portalMode;
 	eXo.portal.hasEditted = isEditted;
 		
-    $("div#" + id).attr("exo:minWidth", width).attr("exo:minHeight", height).find("div.OverflowContainer > span").eq(0).on("click", function()
+    $("div#" + id).attr("exo:minWidth", width).attr("exo:minHeight", height).find(".popupHeader > span").eq(0).on("click", function()
     {
       _module.PortalComposer.toggle($(this));
     });
@@ -50,15 +50,17 @@ var portalComposer = {
   toggle : function(icon)
   {
     var compWindow = icon.parent().closest(".UIPortalComposer");
-    var contWindow = compWindow.children("div.UIWindowContent").eq(0);
+    var contWindow = compWindow.children(".PopupContent").eq(0);
     if(contWindow.css("display") == "block")
     {
-      contWindow.css("display", "none");
+      contWindow.hide();
+      contWindow.next(".UIAction").hide();
       icon.attr("class", "CollapseIcon");
     }
     else
     {
-      contWindow.css("display", "block");
+      contWindow.show();
+      contWindow.next(".UIAction").show();
       icon.attr("class", "ExpandIcon");
     }
 
