@@ -34,11 +34,12 @@ var portalComposer = {
   {
 	  _module.PortalComposer.showTab(selTabId);
 	  
-	  var tabs = $("#" + id + " .MiddleTab");
+	  var tabs = $("#" + id + " .nav-tabs a");
 	  tabs.each(function(index) {
 		  $(this).on("click", function() {
-			  webui.UIHorizontalTabs.changeTabForUITabPane(this);
-			  var hiddenInput = $(this).children("input");		  
+			  var jTab = $(this);
+			  jTab.tab('show');
+			  var hiddenInput = $(this).next("input");		  
 			  _module.PortalComposer.showTab(hiddenInput.attr("name"));
 			  $.globalEval(hiddenInput.attr("value"));
 			  
