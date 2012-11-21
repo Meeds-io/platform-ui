@@ -1,5 +1,6 @@
-/*uiTab*/
-.uiTabNormal {	
+/*****uiTab*****/
+
+.uiTabNormal {
 	.nav-tabs {
 		margin: 0px; 
 		border-bottom: 1px solid #c1c1c1;
@@ -13,43 +14,61 @@
 			margin: 0px; 
 			border: 1px solid #c1c1c1; 
 			color: #333333; 
-			border-radius: 0px; 
+			.border-radius(0px); 
 			background-color: #f1f1f1;
 		}
 		
 		> li:first-child > a {
-			border-radius: 5px 0px 0px 0px;
+			.border-radius(5px 0px 0px 0px);
 		}
 		
-		> li:last-child > a {
-			border-radius: 0px 5px 0px 0px;
-		}
-		
-		> .active > a,> .active > a:hover {
-			border: 1px solid #c1c1c1; border-bottom: 1px solid #fff; font-weight: bold; background-color: #FFFFFF;
+		> li:last-child > a,> li.last > a {
+			.border-radius(0px 5px 0px 0px);
 		}
 		
 		> li > a:hover {
 			border: 1px solid #c1c1c1; 
 			background-color: #f8f8f8;
 		}
+		
+		> .active > a,> .active > a:hover {
+			border: 1px solid #c1c1c1; 
+			border-bottom: 1px solid #fff; 
+			font-weight: bold; 
+			background-color: #FFFFFF;
+		}
+		
+		> li.dropdown > a, li.dropdown > a:hover {
+			background: none;
+			border: none;
+			line-height: 22px;
+		}
+		
+		li.dropdown > .dropdown-toggle .caret, li.dropdown > .dropdown-toggle:hover .caret {
+			border-bottom-color: #777777;
+			border-top-color: #777777;
+			margin-top: 9px;
+		}
 	}
 	
-	.nav-tabs .open .dropdown-toggle,.nav-pills .open .dropdown-toggle,.nav > li.dropdown.open.active > a:hover {
-		background-color: #c1c1c1; 
-		border: 1px solid #c1c1c1;
+	.nav-tabs .open .dropdown-toggle, .nav-pills .open .dropdown-toggle, .nav > li.dropdown.open.active > a:hover {
+		background: none;
+		border: none;
+		color: #333;
 	}
 
 	.tab-content {
 		border: 1px solid #c1c1c1; 
 		border-top: none; 
-		padding: 20px 15px; 
-		border-radius: 0px 0px 3px 3px;
-		background: #fff;
+		padding: 20px; 
+		.border-radius(0px 0px 3px 3px);
 	}
 
 	.dropdown-menu {
-		border-radius: 0px;
+		.border-radius(3px);
+		.active > a,.active > a:hover {
+			color: #fff;
+		}
 	}
 }
 
@@ -59,6 +78,83 @@
 		background-color: #e3e3e3; 
 		border: 1px solid #c1c1c1; 
 		padding: 5px 5px 0px 5px; 
-		border-radius: 3px 3px 0px 0px;
+		.border-radius(3px 3px 0px 0px);
 	}
 }
+
+.uiTabGrayInPage {	
+	.nav-tabs {
+		margin: 0px; 
+		background-color: #e3e3e3; 
+		border: 1px solid #c1c1c1; 
+		padding: 5px 5px 0px 5px; 
+		.border-radius(3px 3px 0px 0px);
+		
+		> .active > a,> .active > a:hover {
+			background-image: linear-gradient(to bottom, #FFFFFF, #f0f0f0, #f0f0f0);
+			border-bottom: 1px solid #f0f0f0;
+		}
+	}
+	
+	.tab-content {
+		padding: 0px;
+		.nav-pills {
+			background-color: #f0f0f0;
+			padding: 0px 10px;
+			height: 35px;
+			border-bottom: 1px solid #c1c1c1;
+			margin: 0px;
+			
+			> li {
+			padding: 4px 0px 0px 0px;
+			margin-right: 2px;
+				> a {
+					line-height: 18px;
+					padding: 4px 6px;
+					color: #333;
+					border: 1px solid #f0f0f0;
+					margin: 0px;
+				}
+				
+				> a:hover, > a:active {
+					background-image: linear-gradient(to bottom, #FFFFFF, #E6E6E6);
+					line-height: 18px;
+					border: 1px solid #c7c7c7;
+					.border-radius(3px);
+					
+					[class^="icon-"], [class*=" icon-"] {
+						background-image: url("../img/glyphicons-halflings-white.png");
+					}
+				}
+			}
+			
+			.open > a, .open > a:hover,.active > a, .active > a:hover {
+				background: none;
+				box-shadow: 0px 2px 6px rgba(0,0,0,0.15) inset;
+				border: 1px solid #c7c7c7;
+			}
+			
+			li.dropdown > a:hover .caret,li.dropdown > a:active .caret,li.dropdown > a .caret, li.open > a .caret {
+				border-bottom-color: #777777;
+				border-top-color: #777777;
+				margin-top: 8px;
+			}
+			
+			.open > a {
+				background: none;
+				.border-radius(3px);
+				border: 1px solid #c7c7c7;
+			}
+			
+			.dropdown .dropdown-menu {
+				.border-radius(3px);
+			}
+		}
+		.contentTabGray{
+			min-height: 150px;
+			padding: 10px;
+		}
+	}
+}
+
+/*****End uiTab*****/
