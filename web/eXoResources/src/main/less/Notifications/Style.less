@@ -1,0 +1,56 @@
+.alert {
+	.border-radius(3px 3px 3px 3px);
+	.box-shadow(2px 1px 1px #E2E3E3);
+	background: @warningBackground;
+	border-color: @warningBorder;
+	color: @infoText;
+	.WarningIcon{
+		background: url("../images/warningIcon.png") no-repeat left;
+		padding-left: 30px;
+
+	}
+	a{
+		color: @linkColor;
+	}
+	& a:hover{
+		font-weight: bold;
+		text-decoration: none;
+	}
+	
+	
+}
+
+.alert-success {
+	background: @successBackground;
+	border-color: @successBorder;
+	
+	.SuccessIcon{
+		background: url("../images/SuccessIcon.png") no-repeat left;
+		padding-left: 30px;
+	}
+}
+
+.alert-info{
+	background: @infoBackground;
+	border-color: @infoBorder;
+	
+	.InfoIcon{
+		background: url("../images/infoIcon.png") no-repeat left;
+		padding-left: 30px;
+
+		
+	}
+}
+
+.alert-error{
+	background: @errorBackground;
+	border-color: @errorBorder;
+	.ErrorIcon{
+		background: url("../images/cancelIcon.png") no-repeat scroll left center transparent;
+		padding-left: 30px;
+
+	}
+}
+
+
+
