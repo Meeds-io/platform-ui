@@ -15,11 +15,27 @@
 		}
 		td {		
 			border-top: none;
+			.ActionContainer {
+				text-align: center;
+				.ActionIcon {
+					margin: 0 10px;
+					padding:1px  4px 4px;
+					display: inline-block;
+					 border: 1px solid transparent; 
+					&:hover {
+						#gradient > .vertical(#ffffff,#f1f1f1); 
+						border: 1px solid @tableBorder;
+						.border-radius(3px);
+						.box-shadow(0 1px 2px 0px rgba(35,44,48,.2)); 
+					}
+				}
+			}
 		}	
 		&.EvenRow td {
 			background-color: @tableBackgroundAccent;
 		}
 	}
+	
 	
 }
 
