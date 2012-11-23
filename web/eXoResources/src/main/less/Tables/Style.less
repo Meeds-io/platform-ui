@@ -6,6 +6,9 @@
 		border-left: 1px solid @tableBorder;
 		padding: 8px 18px;
 		vertical-align: middle;
+		&.center {
+				text-align: center;
+			}
 	}
 	tr {
 		th {
@@ -30,6 +33,7 @@
 					}
 				}
 			}
+			
 		}	
 		&.EvenRow td {
 			background-color: @tableBackgroundAccent;
@@ -49,7 +53,7 @@
 	}
 }
 
-.table-hover {
+.uiGrid.table-hover {
 	tbody {
 		tr:hover td,
 		tr:hover th {
