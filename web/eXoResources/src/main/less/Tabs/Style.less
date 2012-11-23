@@ -18,12 +18,16 @@
 			background-color: #f1f1f1;
 		}
 		
-		> li:first-child > a {
+		> li:first-child > a  {
 			.border-radius(5px 0px 0px 0px);
 		}
 		
 		> li:last-child > a,> li.last > a {
 			.border-radius(0px 5px 0px 0px);
+		}
+		
+		> li.only > a {
+			.border-radius(5px 5px 0px 0px);
 		}
 		
 		> li > a:hover {
@@ -58,6 +62,7 @@
 	}
 
 	.tab-content {
+		background: #fff;
 		border: 1px solid #c1c1c1; 
 		border-top: none; 
 		padding: 20px; 
