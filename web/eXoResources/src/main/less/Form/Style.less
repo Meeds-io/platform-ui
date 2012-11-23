@@ -36,3 +36,59 @@ input[type="color"],
 .form-horizontal .control-group {
 	margin-bottom: 12px;
 }
+
+.uiCheckbox {
+	position: relative;
+}
+
+.uiCheckbox input[type="checkbox"]:checked,
+.uiCheckbox  input[type="checkbox"]:not(:checked) {
+	margin: 0;
+	opacity: 0;
+	padding: 0;
+	outline: 0 none;
+	position: absolute;
+	top: 0;
+	z-index: 100;
+} 
+
+.uiCheckbox > span {
+	display: inline-block;
+	text-indent: 18px;
+}
+	
+.uiCheckbox input[type="checkbox"]:checked + span:after {
+	border-bottom: 2px solid #466799;
+	border-left: 2px solid #466799;
+	content: "";
+	.size(3px,6px);
+	.skew(45deg, -50deg);
+	left: 5px;
+	position: absolute;
+	top: 4px;
+	transform: skewX(30deg) skewY(-35deg)/IE9;
+	left: 2px/IE9;
+	width: 10px/IE9;
+	height: 4px/IE9;
+}
+
+.uiCheckbox input[type="checkbox"] + span:before {
+	background: #d2d2d2;
+	background: #d2d2d2/IE8;
+	.border-radius(@borderRadiusSmall); 
+	.box-shadow(inset 0 1px 2px rgba(0,0,0,.17);
+	.square(12px);
+	top: 4px;
+	left: 0px;
+	content: " ";
+	position: absolute;
+}
+
+input[type="radio"] + span {
+	cursor: pointer;
+}
+
+.uiCheckbox input[type="checkbox"]:disabled + span:after {
+	border-bottom: 2px solid #999999;
+	border-left: 2px solid #999999; 
+}
