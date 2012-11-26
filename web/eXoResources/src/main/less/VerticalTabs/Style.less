@@ -1,8 +1,10 @@
-.UIAccordionMenu {
+.accordion {
+	width: 239px;
 	font-size: 12px;
-	.border-radius(3px 3px 3px 3px);
+	.border-radius(4px 4px 4px 4px);
 	border: 1px solid #dedede;
 	border-bottom: none;
+	background: white;
 	a {
 	  color: #333333;
 	  text-decoration: none;
@@ -12,12 +14,15 @@
 	  font-size: 12px;
 	}
 	.Expaned {
-	  background: linear-gradient(to bottom, #f8f8f8, #e7e7e7);
+	  background: none;
 	  padding: 0px;
-	  .BGSelected {
-		  background: url("../images/ExpanIcon.png") no-repeat 96%;
+	  .bgSelected {
 		  padding: 8px 15px;
 		  display: block;
+		}
+		.iconSelected {
+		  background: url("/eXoResources/skin/images/Icons/uiIcons.png") no-repeat -61px -20px;
+		  padding: 3px;
 		}
 	}
 	.accordion-toggle:hover {
@@ -33,7 +38,6 @@
 	  margin: 0px;
 	  padding: 9px 4px 9px 18px;
 	  font-size: 14px;
-	  font-family: Helvetica Neue;
 	  background: #f0f0f0;
 	}
 	.accordion-body {
@@ -57,12 +61,19 @@
 		}
 	}
 	.collapsed {
-	  background: none;
-	  .BGSelected {
-		  background: url("../images/ColapIcon.png") no-repeat 96%;
+	  background: linear-gradient(to bottom, #f8f8f8, #e7e7e7);
+	  padding: 0px;
+	  .bgSelected {
 		  padding: 8px 15px;
 		  display: block;
 		}
+		.iconSelected {
+		  background: url("/eXoResources/skin/images/Icons/uiIcons.png") no-repeat -37px -20px;
+		  padding: 3px;
+		}
+	}
+	.accordion-inner{
+	  border: none;
 	}
 	.accordion-inner:hover {
 	  background-color: #f8f8f8;
@@ -73,5 +84,22 @@
 		  padding: 8px 15px;
 		  display: block;
 		}
+	}
+	.icon-chevron-right{
+		float: right;
+	}
+}
+
+.UIOrganizerManagement{
+	.accordion-inner{
+		cursor: -moz-grabbing;
+	}
+	.accordion-inner:hover{
+		background: none;
+	}
+	.accordion-inner .txtLeft{
+			margin: 19px 0px 0px 11px;
+			width: 140px;
+			word-wrap: break-word;
 	}
 }
