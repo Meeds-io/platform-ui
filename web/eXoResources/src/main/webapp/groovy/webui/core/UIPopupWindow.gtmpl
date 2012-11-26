@@ -38,17 +38,14 @@
 
 <div class="UIPopupWindow uiPopup UIDragObject NormalStyle" exo:minWidth="200" exo:minHeight="200" id="$popupId" style="$widthStyle display: $show;border: 1px solid red">
 	<div class="popupHeader ClearFix">
-		<span class="PopupTitleIcon"></span>
 		<%if (showCloseButton) {%>
-			<a class="CloseButton" title="<%=_ctx.appRes("UIPopupWindow.Close")%>" onclick="<%=uicomponent.event(uicomponent.getCloseEvent())%>"></a>
-		<% } else { %>
-			<div class="PopupTitleIconRight"><span></span></div>
+			<a class="uiIconClose pull-right" title="<%=_ctx.appRes("UIPopupWindow.Close")%>" onclick="<%=uicomponent.event(uicomponent.getCloseEvent())%>"></a>
 		<% } %>
 		<span class="PopupTitle"><%=_ctx.appRes(rsId + ".title."+ title)%></span>
 	</div>
 	<div class="PopupContent"><% uicomponent.renderChildren(); %></div>
 	
 	<%if (uicomponent.isResizable()) {%>
-		<span class="ResizeButton"></span>
+		<span class="uiIconResize pull-right"></span>
 	<%}%>
 </div>
