@@ -686,7 +686,7 @@
 }
 
 #StatusElements {
-	.StatusHover(@startColor : #fff, @endColor : #f1f1f1,@boxShadow: 0 1px 2px 0px rgba(35,44,48,.2)){
+	.StatusHover(@startColor : #fff, @endColor : #f1f1f1,@boxShadow: 0 1px 2px 0px rgba(255,255,255,1)){
 		#gradient > .vertical(@startColor,@endColor); 
 		border: 1px solid @tableBorder;
 		.border-radius(@borderRadiusSmall);
@@ -702,3 +702,14 @@
 		background-color: rgba(236,236,236,0.5);
 	}
 }
+
+.uiIconActionWithLabel{
+	border: 1px solid transparent;
+	cursor: pointer;
+	display: inline-block;
+	padding: 4px 8px;
+	&:hover {
+		#StatusElements .StatusHover();
+	}
+}
+
