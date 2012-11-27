@@ -24,22 +24,27 @@ var portalComposer = {
 	eXo.portal.portalMode = portalMode;
 	eXo.portal.hasEditted = isEditted;
 		
-    $("div#" + id).attr("exo:minWidth", width).attr("exo:minHeight", height).find(".popupHeader > span").eq(0).on("click", function()
+    $("div#" + id).attr("exo:minWidth", width).attr("exo:minHeight", height).find("div.OverflowContainer, .popupHeader").children("span").eq(0).on("click", function()
     {
       _module.PortalComposer.toggle($(this));
     });
   },
   
-  initComposerContent : function(id, selTabId) 
+  initComposerContent : function(id, selTabId, webui) 
   {
 	  _module.PortalComposer.showTab(selTabId);
-	  
-	  var tabs = $("#" + id + " .nav-tabs a");
+	  	 	  
+	  var tabs = $("#" + id).find(".MiddleTab, .nav-tabs a");
 	  tabs.each(function(index) {
 		  $(this).on("click", function() {
-			  var jTab = $(this);
-			  jTab.tab('show');
-			  var hiddenInput = $(this).next("input");		  
+			  var jTab = $(this), hiddenInput;
+			  if (jTab.closest(".nav-tabs").length) {
+				  jTab.tab('show');				  
+				  hiddenInput = $(this).next("input");		  
+			  } else {
+				  webui.UIHorizontalTabs.changeTabForUITabPane(this);				  
+				  hiddenInput = $(this).children("input");
+			  }
 			  _module.PortalComposer.showTab(hiddenInput.attr("name"));
 			  $.globalEval(hiddenInput.attr("value"));
 			  
@@ -51,17 +56,17 @@ var portalComposer = {
   toggle : function(icon)
   {
     var compWindow = icon.parent().closest(".UIPortalComposer");
-    var contWindow = compWindow.children(".PopupContent").eq(0);
+    var contWindow = compWindow.children("div.UIWindowContent, .PopupContent").eq(0);
     if(contWindow.css("display") == "block")
     {
       contWindow.hide();
-      contWindow.next(".uiAction").hide();
+      contWindow.next(".UIAction, .uiAction").hide();
       icon.attr("class", "CollapseIcon");
     }
     else
     {
       contWindow.show();
-      contWindow.next(".uiAction").show();
+      contWindow.next(".UIAction, .uiAction").show();
       icon.attr("class", "ExpandIcon");
     }
 

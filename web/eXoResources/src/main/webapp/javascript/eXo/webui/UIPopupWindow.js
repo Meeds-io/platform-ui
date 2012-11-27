@@ -41,7 +41,7 @@ var uiPopupWindow = {
     var popupBar = $(popup).find("span.PopupTitle")[0];
     this.initDND(popupBar, popup);
     
-    var resizeBtn = $(popup).find(".uiIconResize")[0];
+    var resizeBtn = $(popup).find(".ResizeButton, .uiIconResize")[0];
     if (resizeBtn) {
     	resizeBtn.style.display = 'block';
     	resizeBtn.onmousedown = this.startResizeEvt;
@@ -156,7 +156,7 @@ var uiPopupWindow = {
 		document.onmousedown = function() {return false};		
 	}
 	
-	var targetPopup = $(this).parents(".uiPopup")[0];
+	var targetPopup = $(this).parents(".UIPopupWindow, .uiPopup")[0];
 	_module.UIPopupWindow.resizedPopup = targetPopup;
 	_module.UIPopupWindow.vresized = uiPopupWindow.getResizeBlock($(targetPopup));
 	_module.UIPopupWindow.backupPointerY = base.Browser.findMouseRelativeY(targetPopup, evt) ;	

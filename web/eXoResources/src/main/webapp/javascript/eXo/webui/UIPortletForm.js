@@ -35,7 +35,7 @@ var uiPortletForm = {
 	},
 	
 	hideSaveButton : function(comp) {
-		$(comp).closest(".WorkingArea").find("div.HorizontalLayout > div.uiAction").children("a.ActionButton, .btn").each(function()
+		$(comp).closest(".WorkingArea").find("div.HorizontalLayout").children(".UIAction, .uiAction").children("a.ActionButton, .btn").each(function()
 		{
 			var button = $(this);
 			if(button.attr("id").indexOf("Save") >= 0)
@@ -50,7 +50,7 @@ var uiPortletForm = {
 	},
 
 	showSaveButton : function(comp) {
-		$(comp).closest(".WorkingArea").find("div.HorizontalLayout > div.uiAction").children("a.ActionButton, .btn").each(function()
+		$(comp).closest(".WorkingArea").find("div.HorizontalLayout").children(".UIAction, .uiAction").children("a.ActionButton, .btn").each(function()
 		{
 			var button = $(this);
 			if(button.attr("id").indexOf("Save") >= 0)
