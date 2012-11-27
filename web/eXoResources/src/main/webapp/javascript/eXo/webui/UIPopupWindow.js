@@ -41,7 +41,7 @@ var uiPopupWindow = {
     var popupBar = $(popup).find("span.PopupTitle")[0];
     this.initDND(popupBar, popup);
     
-    var resizeBtn = $(popup).find("span.ResizeButton")[0];
+    var resizeBtn = $(popup).find(".uiIconResize")[0];
     if (resizeBtn) {
     	resizeBtn.style.display = 'block';
     	resizeBtn.onmousedown = this.startResizeEvt;
