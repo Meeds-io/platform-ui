@@ -46,6 +46,8 @@
 				<compress>false</compress>
 				<includes>
 					<include>Core.less</include>
+					<include>bootstrap/bootstrap.less</include>
+					<include>bootstrap/responsive.less</include>
 				</includes>
 			</configuration>
 			<executions>
