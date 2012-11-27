@@ -15,25 +15,20 @@
 	String popupId = uicomponent.getId();
 
 	boolean printTab(List messages, String title, boolean isSelected) {
-		String cssClass = "NormalTab";
-		if(messages.size() == 0) cssClass = "DisabledTab";
+		String cssClass = "";
+		if(messages.size() == 0) cssClass = "";
 		else if(!isSelected) {
-			cssClass = "SelectedTab";
+			cssClass = "active";
 			isSelected = true;
 		}
 		println """
-						<div class="UITab MessageTabDialog">
-							<div class="$cssClass">
-								<div class="LeftTab">
-									<div class="RightTab">
+			<li class="$cssClass">
 		""";
-		if(messages.size() > 0) println "<div class=\"MiddleTab\"><div class=\"TabIcon ${title}Icon\">"+_ctx.appRes("UIPopupMessages.label."+"${title}") +"</div></div>";
-		else println "<div class=\"MiddleTab LockedTab\"><div class=\"TabIcon ${title}Icon\">" + _ctx.appRes("UIPopupMessages.label."+"${title}") + "</div></div>";
-		println """
-									</div>
-								</div>
-							</div>
-						</div>
+			if(messages.size() > 0) println "<a><i class=\"TabIcon ${title}Icon\"></i>"+_ctx.appRes("UIPopupMessages.label."+"${title}") +"</a>";
+			else println "<a class=\"TabIcon ${title}Icon\">" + _ctx.appRes("UIPopupMessages.label."+"${title}") + "</a>";
+			println """
+							
+			</li>
 		""";
 		return isSelected;
 	}
@@ -79,23 +74,23 @@
 	</div>
 	
 	<div class="PopupContent popupContent">
-		<div class="UIHorizontalTabs">
-			<div class="TabsContainer">
+		<div class="uiTabNormal">
+			<ul class="nav nav-tabs">
 			<%	
 				boolean flag = false;
 				flag = printTab(errors, "Error", flag);
 				flag = printTab(warnings, "Warning", flag);
 				flag = printTab(infos, "Info", flag);
 			%>
+			</ul>
+			<div class="tab-content">
+				<%
+					flag = false;
+					flag = printMessages(errors, "ErrorMessage", flag);
+					flag = printMessages(warnings, "WarningMessage", flag);
+					flag = printMessages(infos, "InfoMessage", flag);
+				%>
 			</div>
-		</div>
-		<div class="UITabContentContainer">
-			<%
-				flag = false;
-				flag = printMessages(errors, "ErrorMessage", flag);
-				flag = printMessages(warnings, "WarningMessage", flag);
-				flag = printMessages(infos, "InfoMessage", flag);
-			%>
 		</div>
 		<div class="uiAction">
 			<a href="javascript:void(0);" onclick="<%=uicomponent.event("Close")%>" class="btn"><%=_ctx.appRes("UIPopupMessages.button.ok")%></a>
