@@ -21,3 +21,27 @@
 @import "Notifications/Style.less";
 @import "Breadcrumbs/Style.less";
 
+
+// Dropdown menus
+// --------------
+
+// Menu position and menu carets
+.navbar .nav > li > .dropdown-menu {
+  &:before {
+    content: '';
+    display: inline-block;
+    border-left:   0px solid transparent;
+    border-right:  0px solid transparent;
+    border-bottom: 0px solid #ccc;
+
+  }
+  &:after {
+    content: '';
+    display: inline-block;
+    border-left:   0px solid transparent;
+    border-right:  0px solid transparent;
+    border-bottom: 0px solid @dropdownBackground;
+
+  }
+}
+
