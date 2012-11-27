@@ -55,13 +55,13 @@ var portalComposer = {
     if(contWindow.css("display") == "block")
     {
       contWindow.hide();
-      contWindow.next(".UIAction").hide();
+      contWindow.next(".uiAction").hide();
       icon.attr("class", "CollapseIcon");
     }
     else
     {
       contWindow.show();
-      contWindow.next(".UIAction").show();
+      contWindow.next(".uiAction").show();
       icon.attr("class", "ExpandIcon");
     }
 

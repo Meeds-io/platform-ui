@@ -20,7 +20,7 @@ var uiLanguageSelector = {
 	init : function(selected, selectOptions) {
 		var selector = _module.UILanguageSelector;
 		var langForm = $(".UIChangeLanguageForm");
-		var saveButton = langForm.find(".UIAction a").first(); 
+		var saveButton = langForm.find(".uiAction").find("a, .btn").first(); 
 		var href = saveButton.attr("href");
 		saveButton.on("click", function() {selector.changeLanguage(href);return false;});		
 		
