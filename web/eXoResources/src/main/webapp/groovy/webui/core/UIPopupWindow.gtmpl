@@ -41,9 +41,9 @@
 		<%if (showCloseButton) {%>
 			<a class="uiIconClose pull-right" title="<%=_ctx.appRes("UIPopupWindow.Close")%>" onclick="<%=uicomponent.event(uicomponent.getCloseEvent())%>"></a>
 		<% } %>
-		<span class="PopupTitle"><%=_ctx.appRes(rsId + ".title."+ title)%></span>
+		<span class="PopupTitle popupTitle"><%=_ctx.appRes(rsId + ".title."+ title)%></span>
 	</div>
-	<div class="PopupContent"><% uicomponent.renderChildren(); %></div>
+	<div class="PopupContent popupContent"><% uicomponent.renderChildren(); %></div>
 	
 	<%if (uicomponent.isResizable()) {%>
 		<span class="uiIconResize pull-right"></span>
