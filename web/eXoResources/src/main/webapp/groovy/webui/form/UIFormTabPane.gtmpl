@@ -28,11 +28,9 @@
 						<%
 							for(formInput in uicomponent.getChildren()) {
 								if(!formInput.isRendered()) continue;
-								String display = "none";
 								def active = "";
 								if(formInput.getId().equals(selTabId)) {
 									active = "in active";
-									display="block";
 								}
 						%>
 						<div id="$formInput.id-tab" class="tab-pane fade $active">
