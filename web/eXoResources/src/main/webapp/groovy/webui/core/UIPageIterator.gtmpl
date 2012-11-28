@@ -11,13 +11,9 @@
 	}
 %>
 
-<div class="pagination uiPageIterator">
+<div class="pagination uiPageIterator clearfix">
 <% if(totalPage > 1) {%> 	
-	<p>
-		<a class="TotalPages"><%=_ctx.appRes("UIPageIterator.label.totalPage")%>:</a>
-		<a class="PagesTotalNumber"><%=totalPage%></a>
-	</p>
-	<ul>
+	<ul class="pull-right">
 	<%if( currentPage > 1 ){%>				
 	<li><a href="<%=uicomponent.event("ShowPage","${currentPage - 1}")%>" title="<%=_ctx.appRes("UIPageIterator.label.previous")%>"><i class="uiIconPrevArrow"></i></a></li>
 	<% } else {%>
@@ -59,6 +55,10 @@
 	<% } else { %>
 	<li class="disabled"><a title="<%=_ctx.appRes("UIPageIterator.label.next")%>"><i class="uiIconNextArrow"></i></a></li>
 	<%}%>	
-	</ul>	
+	</ul>
+	<p class="pull-right">
+		<span><%=_ctx.appRes("UIPageIterator.label.totalPage")%>:</span>
+		<span class="pagesTotalNumber"><%=totalPage%></span>
+	</p>
 <%}%>		
 </div>
