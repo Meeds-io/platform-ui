@@ -29,15 +29,17 @@
 					&:active,&:focus {
 						#StatusElements > .StatusActive(0px 0px 10px 0 rgba(0, 0, 0, 0.15) inset);
 					}
+					.uiCheckbox {
+						width: 18px; 
+						margin: auto;
+					}
+					.uiRadio {
+						width: 12px;
+						margin: auto;
+					}
 			}
 			
 		}	
-		&.EvenRow td {
-			background-color: @tableBackgroundAccent;
-		}
-		&.OddRow td {
-			background-color: @white;
-		}
 	}
 }
 
@@ -47,6 +49,9 @@
 		tr:nth-child(odd) th {
 			background-color: @tableBackgroundAccent;
 		}
+		tr:nth-child(even) td {
+			background-color: @white;
+		}		
 	}
 }
 
