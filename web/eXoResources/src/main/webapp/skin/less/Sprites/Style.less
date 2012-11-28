@@ -1,0 +1,83 @@
+//
+// Sprites
+// --------------------------------------------------
+
+
+// ICONS
+// -----
+
+// All icons receive the styles of the <i> tag with a base class
+// of .i and are then given a unique class to add width, height,
+// and background-position. Your resulting HTML will look like
+// <i class="iconinbox"></i>.
+
+// For the white version of the icons, just add the .iconwhite class: 
+// <i class="iconinbox iconwhite"></i>
+
+[class^="uiIcon"]{
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  .ie7-restore-right-whitespace();
+  line-height: 16px;
+  vertical-align: text-top;
+  background-image: url("/eXoResources/skin/images/Icons/uiIcons.png");
+  background-position: 16px 16px;
+  background-repeat: no-repeat;
+  margin-top: 1px;
+}
+
+/* White icons with optional class, or on hover/active states of certain elements */
+.uiIconWhite,
+.uiDropdownWithIcon .nav-pills > .active > a > [class^="uiIcon"],
+.uiDropdownWithIcon .nav-list > .active > a > [class^="uiIcon"],
+.uiDropdownWithIcon .navbar-inverse .nav > .active > a > [class^="uiIcon"],
+.uiDropdownWithIcon .dropdown-menu > li > a:hover > [class^="uiIcon"],
+.uiDropdownWithIcon .dropdown-menu > .active > a > [class^="uiIcon"],
+.uiDropdownWithIcon .dropdown-submenu:hover > a > [class^="uiIcon"],
+[class^="uiIcon"]:hover
+{
+  background-image: url("/eXoResources/skin/images/Icons/uiIconsBlue.png");
+
+}
+
+.uiIconProfile{
+	background-position: left top;
+}
+
+.uiIconActiviti{
+	background-position: left -15px;
+}
+
+.uiIconWiki{
+	background-position: left -30px;
+}
+
+.iconSettings{
+	background-position: left -46px;
+}
+
+.uiIconDelete {
+	background-position: 0px 0px;
+}
+
+.uiIconEditInfo {
+	background-position: -24px 0px;
+}
+
+.uiIconPrevArrow {
+	background-position: -72px 0px;
+}
+
+.uiIconNextArrow {
+	background-position: -48px 0px;
+}
+
+.uiIconClose {
+	background-position: left -24px;
+}
+
+.uiIconResize {
+	background-position: -24px -24px;
+}
+

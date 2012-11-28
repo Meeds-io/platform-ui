@@ -1,0 +1,116 @@
+//
+// Button groups
+// --------------------------------------------------
+
+
+// Make the div behave like a button
+.btn-group {
+  position: relative;
+  display: inline-block;
+  .ie7-inline-block();
+  font-size: 0; // remove as part 1 of font-size inline-block hack
+  vertical-align: middle; // match .btn alignment given font-size hack above
+  white-space: nowrap; // prevent buttons from wrapping when in tight spaces (e.g., the table on the tests page)
+  .ie7-restore-left-whitespace();
+}
+
+
+// Reset fonts for other sizes
+.btn-group > .btn-primary{
+  font-size: 13px;
+}
+
+
+.btn-group > .btn-mini {
+  font-size: 11px;
+}
+.btn-group > .btn-small {
+  font-size: 12px;
+}
+
+.btn-group > .btn-large {
+  font-size: 14px;
+}
+
+// Set corners individual because sometimes a single button can be in a .btn-group and we need :first-child and :last-child to both match
+.btn-group > .btn:first-child {
+  margin-left: 0;
+     -webkit-border-top-left-radius: 3px;
+         -moz-border-radius-topleft: 3px;
+             border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+      -moz-border-radius-bottomleft: 3px;
+          border-bottom-left-radius: 3px;
+}
+// Need .dropdown-toggle since :last-child doesn't apply given a .dropdown-menu immediately after it
+.btn-group > .btn:last-child,
+.btn-group > .dropdown-toggle {
+     -webkit-border-top-right-radius: 3px;
+         -moz-border-radius-topright: 3px;
+             border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+      -moz-border-radius-bottomright: 3px;
+          border-bottom-right-radius: 3px;
+}
+// Reset corners for large buttons
+.btn-group > .btn.large:first-child {
+  margin-left: 0;
+     -webkit-border-top-left-radius: 3px;
+         -moz-border-radius-topleft: 3px;
+             border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+      -moz-border-radius-bottomleft: 3px;
+          border-bottom-left-radius: 3px;
+}
+.btn-group > .btn.large:last-child,
+.btn-group > .large.dropdown-toggle {
+     -webkit-border-top-right-radius: 3px;
+         -moz-border-radius-topright: 3px;
+             border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+      -moz-border-radius-bottomright: 3px;
+          border-bottom-right-radius: 3px;
+}
+
+
+// Split button dropdowns
+// ----------------------
+
+// Give the line between buttons some depth
+
+.btn-group.open {
+
+  // The clickable button for toggling the menu
+  // Remove the gradient and set the same inset shadow as the :active state
+  
+  .dropdown-toggle {
+    background-image: none;
+    .box-shadow(~"inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)");
+  }
+
+  // Keep the hover's background when dropdown is open
+
+  .btn-primary.dropdown-toggle {
+    background-color: @btnPrimaryBackgroundHighlight;
+  }
+}
+
+/******* Trung nq ****/
+
+
+.btn-group.uiDropdownWithIcon .btn{
+	.spiter{ 
+		background: url("/eXoResources/skin/images/Dropdown/ButtonGroups/background/split-white.png") no-repeat;
+		display: inline-block;
+		height: 27px;
+		margin-top: -12px;
+		position: relative;
+		top: 9px;
+		width: 2px;
+	}
+	&.btn-primary .spiter {
+		background: url("/eXoResources/skin/images/Dropdown/ButtonGroups/background/split.png") no-repeat;
+	}
+	
+}
+
