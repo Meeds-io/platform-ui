@@ -21,7 +21,7 @@
 		println """
 							<li class="active" onclick=\"eXo.webui.UIHorizontalTabs.displayTabContent(this)\">
 		""";
-		println "<a><i class=\"$uiIcon{title}\"></i>"+_ctx.appRes("UIPopupMessages.label."+"${title}") +"</a>";
+		println "<a><i class=\"uiIcon${title}\"></i>"+_ctx.appRes("UIPopupMessages.label."+"${title}") +"</a>";
 		println """
 							
 							</li>
