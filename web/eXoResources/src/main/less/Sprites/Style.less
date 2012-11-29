@@ -21,13 +21,14 @@
   .ie7-restore-right-whitespace();
   line-height: 16px;
   vertical-align: text-top;
-  background-image: url("/eXoResources/skin/images/Icons/uiIcons.png");
+  background-image: url("/eXoResources/skin/images/Icons/uiIconsDarkGrey.png");
   background-position: 16px 16px;
   background-repeat: no-repeat;
   margin-top: 1px;
 }
 
-/* White icons with optional class, or on hover/active states of certain elements */
+/* Blue icons with optional class, or on hover/active states of certain elements */
+
 .uiIconWhite,
 .nav-pills > .active > a > [class^="uiIcon"],
 .nav-list > .active > a > [class^="uiIcon"],
@@ -38,6 +39,17 @@
 [class^="uiIcon"]:hover
 {
   background-image: url("/eXoResources/skin/images/Icons/uiIconsBlue.png");
+
+}
+
+/* light grey icons with optional class, or on  */
+
+
+.dropdown-menu > li > a > [class^="uiIcon"],
+.dropdown-menu > .active > a > [class^="uiIcon"],
+.uiDropdownWithIcon .dropdown-submenu> a > [class^="uiIcon"]
+{
+  background-image: url("/eXoResources/skin/images/Icons/uiIconsLightGrey.png");
 
 }
 
@@ -55,9 +67,12 @@
 
 }
 
-
 .uiIconDelete {
 	background-position: 0px 0px;
+}
+
+.uiIconDeletePage{
+	.uiIconDelete;
 }
 
 .uiIconEditInfo {
@@ -85,16 +100,92 @@
 }
 
 .uiIconPagePermission{
-	background-position: -100px -7px;
+	background-position: -96px 0px;
+}
+
+.uiIconLock{
+	.uiIconPagePermission;
+}
+
+.uiIconUnLock{
+	background-position: -120px 0px;
 }
 
 .uiIconWatchPage{
-	background-position: -125px -25px;
+	background-position: -120px -24px;
 }
 
 .uiIconPageInfo{
-	background-position: -100px -27px;
+	background-position: -96px -24px;
 }
+
+.uiIconPermalink{
+	background-position: -144px 0px;
+}
+
+.uiIconLink{
+	.uiIconPermalink;
+}
+
+.uiIconPreview{
+	background-position: -216px 0px;
+}
+
+.uiIconFile{
+	background-position: -168px 0px;
+}
+
+.uiIconSearch{
+	background-position: -312px 0px;
+}
+
+.uiIconWiki{
+	background-position: -144px -24px;
+}
+
+.uiIconEdit{
+	background-position: -168px -24px;
+}
+
+.uiIconAttach{
+	background-position: -192px 0px;
+}
+
+.uiIconRickText{
+	background-position: -192px -24px;
+}
+
+.uiIconHelp{
+	background-position: -216px -24px;
+}
+
+.uiIconBook{
+	background-position: -240px 0px;
+}
+
+.uiIconUse{
+	background-position: -240px -24px;
+}
+
+.uiIconMembership{
+	background-position: -264px 0px;
+}
+
+.uiIconGroup{
+	background-position: -264px -24px;
+}
+
+.uiIconRestore{
+	background-position: -288px 0px;
+}
+
+.uiIconRevision{
+	background-position: -288px -24px;
+}
+
+
+
+
 
 .uiIconExportAsPDF{
 	background-position: -24px -24px;
@@ -106,8 +197,4 @@
 
 .uiIconAddPageFromTemplate{
 	background-position: -55px -40px;
-}
-
-.uiIconPermaLink{
-	background-position: -125px -7px;
 }
