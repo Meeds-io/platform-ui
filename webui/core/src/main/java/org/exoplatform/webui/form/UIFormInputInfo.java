@@ -52,14 +52,14 @@ public class UIFormInputInfo extends UIFormInputBase<String>
    public void processRender(WebuiRequestContext context) throws Exception
    {
       Writer w = context.getWriter();
-      w.append("<span id=\"").append(getId()).append("\" class=\"").append(getId()).append("\">");
+      w.append("<h3 id=\"").append(getId()).append("\" class=\"").append(getId()).append("\">");
       String value = getValue();
       if (value != null)
       {
          value = HTMLEntityEncoder.getInstance().encode(value);
          w.write(value);
       }
-      w.write("</span>");
+      w.write("</h3>");
    }
 
 }
