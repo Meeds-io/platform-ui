@@ -14,7 +14,7 @@
 							if(inputSet.getId().equals(selTabId)) className="active";
 							//String tabName = inputSet.getName(); 
 							tabName = _ctx.appRes(uicomponent.getName() + ".tab.label." + inputSet.name);
-							String actionLink = "" + uicomponent.event("active",inputSet.getId()) + "";
+							String actionLink = "" + uicomponent.event("SelectTab",inputSet.getId()) + "";
 							def tabId = inputSet.getId() + "-tab"
 					%>
 						<li class="$className" onclick="$actionLink">
