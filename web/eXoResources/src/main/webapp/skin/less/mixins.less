@@ -123,6 +123,9 @@
     .sans-serif() {
       font-family: @sansFontFamily;
     }
+	.sans-serif-bold() {
+      font-family: @sansBoldFontFamily;
+    }
     .monospace() {
       font-family: @monoFontFamily;
     }
@@ -140,6 +143,11 @@
     #font > #family > .sans-serif;
     #font > .shorthand(@size, @weight, @lineHeight);
   }
+  .sans-serif-bold(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
+    #font > #family > .sans-serif-bold;
+    #font > .shorthand(@size, @weight, @lineHeight);
+  }
+  
   .monospace(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
     #font > #family > .monospace;
     #font > .shorthand(@size, @weight, @lineHeight);
