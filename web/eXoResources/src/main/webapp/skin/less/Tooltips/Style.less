@@ -1,28 +1,29 @@
 .tooltip {
-  display: block;
-  top: 26px;
-  left: 143px;
-  .in{
-	.opacity(9);
+	font-size: 12px;
+	&.in{
+		.opacity(80);
 	}
 }
-.tooltip.top .tooltip-arrow{
-	border-top-color:#4a4a4a;
-	left: 33%;
-	margin-left: 0px;
-}
-.tooltip.left .tooltip-arrow{
-	border-left-color:#4a4a4a;
-}
-.tooltip.right .tooltip-arrow{
-	border-right-color:#4a4a4a;
-}
-.tooltip.bottom .tooltip-arrow{
-	border-bottom-color:#4a4a4a;
-	left: 66%;
-	margin-left: 0px;
-}
-.tooltip-inner{
-	background-color:#4a4a4a;
+
+.tooltip-inner {
+	background-color: @tooltipBackground;
 	.border-radius(2px 2px 2px 2px);
+}
+
+.tooltip {
+	&.top .tooltip-arrow {
+		border-top-color: @tooltipArrowColor;
+	}
+	
+	&.left .tooltip-arrow {
+		border-left-color: @tooltipArrowColor;
+	}
+	
+	&.right .tooltip-arrow {
+		border-right-color: @tooltipArrowColor;
+	}
+	
+	&.bottom .tooltip-arrow {
+		border-bottom-color: @tooltipArrowColor;
+	}
 }
