@@ -748,3 +748,10 @@
 .error,.noticeEmpty {
 	color: @red;
 }
+
+/* Title */
+.title(@color: @textColor,@shadowColor: #cdcdcd,@fonSize : 18px,@fontWeight: @headingsFontWeight,@lineHeight: @baseLineHeight) {
+	color: @color;
+	#font > .sans-serif-bold(@fonSize,@fontWeight,@lineHeight);
+	text-shadow: 0px 0px 1px @shadowColor ;
+} 
