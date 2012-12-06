@@ -1,32 +1,28 @@
 .accordion {
-	width: 239px;
 	font-size: 12px;
-	.border-radius(4px 4px 4px 4px);
+	.border-radius(@baseBorderRadius);
 	border: 1px solid #dedede;
 	border-bottom: none;
-	background: white;
+	background: @white;
 	a {
-	  color: #333333;
+	  color: @grayDark;
 	  text-decoration: none;
 	}
 	.accordion-toggle {
-	  padding-right: 20px;
-	  font-size: 12px;
+	  padding-right: 10px;
 	}
-	.Expaned {
+	.collapsed{
 	  background: none;
-	  padding: 0px;
 	  .bgSelected {
 		  padding: 8px 15px;
 		  display: block;
 		}
-		.iconSelected {
-		  background: url("/eXoResources/skin/images/Icons/uiIconsDarkGrey.png") no-repeat -61px -20px;
-		  padding: 3px;
+		.uiIconSelected {
+		  background-position: -44px 3px;
 		}
 	}
 	.accordion-toggle:hover {
-	  background-color: #f8f8f8;
+	  background-color: @tableBackgroundAccent;
 	}
 	.accordion-group {
 	  border: none;
@@ -34,34 +30,32 @@
 	  border-bottom: 1px solid #dedede;
 	  .border-radius(0px 0px 0px 0px);
 	}
-	.MenuHeader {
+	.menuHeader {
 	  margin: 0px;
 	  padding: 9px 4px 9px 18px;
 	  font-size: 14px;
-	  background: #f0f0f0;
+	  background: @grayWhiteSmoke;
 	}
 	.accordion-body {
-		.Selected {
-			  background-color: #e8e8e8;
+		.selected {
+			  background-color: @tableBackgroundHover;
 		}
 	}
-	.collapsed {
-	  background: linear-gradient(to bottom, #f8f8f8, #e7e7e7);
-	  padding: 0px;
+	.expaned {
+	  background: linear-gradient(to bottom, @tableBackgroundAccent, #e7e7e7);
 	  .bgSelected {
 		  padding: 8px 15px;
 		  display: block;
 		}
-		.iconSelected {
-		  background: url("/eXoResources/skin/images/Icons/uiIconsDarkGrey.png") no-repeat -37px -20px;
-		  padding: 3px;
+		.uiIconSelected {
+		  background-position: -46px -18px;
 		}
 	}
 	.accordion-inner{
 	  border: none;
 	}
 	.accordion-inner:hover {
-	  background-color: #f8f8f8;
+	  background-color: @tableBackgroundAccent;
 	}
 	.accordion-normal {
 	  border-top: 1px solid #dedede;
@@ -83,8 +77,8 @@
 		background: none;
 	}
 	.accordion-inner .txtLeft{
-			margin: 19px 0px 0px 11px;
-			width: 140px;
+			margin: 19px 0px 0px 83px;
+			width: 170px;
 			word-wrap: break-word;
 	}
 }
