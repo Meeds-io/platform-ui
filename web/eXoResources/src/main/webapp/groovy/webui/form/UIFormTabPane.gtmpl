@@ -17,7 +17,7 @@
 							String actionLink = "" + uicomponent.event("SelectTab",inputSet.getId()) + "";
 							def tabId = inputSet.getId() + "-tab"
 					%>
-						<li class="$className" onclick="$actionLink">
+						<li class="$className" onclick="eXo.webui.UIHorizontalTabs.changeTabForUIFormTabpane(this, '$uiform.id', '$inputSet.id');$actionLink">
 									<a data-toggle="tab" data-target="#$tabId">$tabName</a>		
 						</li>
 					<% }%>
