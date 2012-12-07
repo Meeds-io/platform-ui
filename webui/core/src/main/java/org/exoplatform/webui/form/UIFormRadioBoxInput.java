@@ -129,7 +129,7 @@ public class UIFormRadioBoxInput extends UIFormInputBase<String>
          //if(align_ == VERTICAL_ALIGN) w.write("<div style='clear:both;'><span></span></div>") ;
          if (align_ == VERTICAL_ALIGN)
             w.write("<div>");
-         w.write("<input class='radio' type='radio'");
+         w.write("<label class=\"uiRadio\"><input class='radio' type='radio'");
          if (readonly_)
             w.write(" readonly ");
          if (isDisabled())
@@ -152,7 +152,7 @@ public class UIFormRadioBoxInput extends UIFormInputBase<String>
             label = si.getLabel();
          }
          w.write(label);
-         w.write("</span>");
+         w.write("</span></label>");
          if (align_ == VERTICAL_ALIGN)
             w.write("</div>");
          //      if(align_ == VERTICAL_ALIGN) w.write("</div>");
