@@ -707,11 +707,11 @@
 			.StatusActive();
 		}
 	} 	
-	.StatusActive(@boxShadow: 0px 0px 20px 0 rgba(0, 0, 0, 0.15) inset) {
+	.StatusActive(@boxShadow: 0px 2px 6px 0 rgba(0, 0, 0, 0.15) inset) {
 		.box-shadow(@boxShadow);
-		border: 1px solid @tableBorder; 
+		border: 1px solid #c7c7c7; 
 		.border-radius(@borderRadiusSmall); 
-		background-color: rgba(236,236,236,0.5);
+		background-color: #ececec;
 	}
 }
 
@@ -764,6 +764,20 @@
 	#font > .sans-serif-bold(@fonSize,@fontWeight,@lineHeight);
 	text-shadow: 0px 0px 1px @shadowColor ;
 } 
+
+.titleWithBorder {
+	position: relative;
+	overflow: hidden;
+}
+
+.titleWithBorder:after {
+	border-bottom: 1px solid #dadada;
+	height: 11px;
+	content: "";
+	position: absolute;
+	width: 100%;
+	margin-left: 10px;
+}
 
 /******uibox*****/
 
