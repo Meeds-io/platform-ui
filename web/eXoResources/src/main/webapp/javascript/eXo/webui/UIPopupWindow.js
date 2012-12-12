@@ -261,7 +261,7 @@ var uiPopupWindow = {
   },
   
   getResizeBlock : function(jPopup) {
-    var innerRez = jPopup.find(".resizable").first();
+    var innerRez = jPopup.find(".resizable");
 	var contentBlock = jPopup.find("div.PopupContent");
 
 	var vrez;
