@@ -114,6 +114,7 @@ abstract public class UIFormTabPane extends UIForm
          if (renderTab == null)
             return;
          event.getSource().setSelectedTab(renderTab);
+         event.getRequestContext().setResponseComplete(true);
       }
    }
 
