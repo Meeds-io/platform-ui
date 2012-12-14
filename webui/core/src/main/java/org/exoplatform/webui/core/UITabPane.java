@@ -60,7 +60,15 @@ public class UITabPane extends UIContainer
          if (renderTab == null)
             return;
          event.getSource().setSelectedTab(renderTab);
-         context.setResponseComplete(true);
+         WebuiRequestContext parentContext = (WebuiRequestContext)context.getParentAppRequestContext();
+         if (parentContext != null)
+         {
+            parentContext.setResponseComplete(true);
+         }
+         else
+         {
+            context.setResponseComplete(true);
+         }
       }
    }
 }
