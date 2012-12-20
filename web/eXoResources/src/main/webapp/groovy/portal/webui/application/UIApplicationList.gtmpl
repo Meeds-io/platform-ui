@@ -1,0 +1,73 @@
+<%
+	import org.gatein.common.text.EntityEncoder;
+	import org.exoplatform.commons.utils.HTMLEntityEncoder;
+	import org.exoplatform.web.application.JavascriptManager;
+	
+	def categories = uicomponent.getCategories();
+	def selectedCategory = uicomponent.getSelectedCategory();
+	EntityEncoder encoder = HTMLEntityEncoder.getInstance();
+	
+	def rcontext = _ctx.getRequestContext();
+	JavascriptManager jsManager = rcontext.getJavascriptManager();
+	jsManager.require("SHARED/portal", "portal").addScripts("portal.PortalDragDrop.init(['DragObjectPortlet']);");
+%>
+<div class="UIOrganizerManagement" id="$uicomponent.id">
+	<div class="AppRegistryContainer ClearFix">
+		<div class="AppRegistryControl">
+			<div class="ControlArea">
+				<div class="CategoryContent">
+				
+		 			<div class="ListContent">
+						<div class="accordion">	
+						<% 
+						   def idx = 0;
+			 				String cTab, cName, displayName;
+			 				boolean isSelected = false;
+							for(category in categories) {
+							   def target = uicomponent.id + idx++;
+								cName = category.getName();
+								displayName = encoder.encode(category.getDisplayName(true));
+								if (selectedCategory != null && cName == selectedCategory.getName()) {
+									isSelected = true;
+									cTab = "expaned";
+								} else {
+									isSelected = false;
+									cTab = "collapsed";
+								}
+						%>			
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									<div class="accordion-toggle $cTab" onclick="<%= uicomponent.event("SelectCategory", cName) %>"
+											data-toggle="collapse" data-target="#$target">
+										<i class="uiIconSelected pull-right"></i><a class="" title="<%= displayName %>"><%= displayName %></a>
+									</div>
+								</div>
+								<div id="$target" class="accordion-body collapse <%=isSelected ? "in" : ""%>">
+									<% if (isSelected) { 
+									     for (application in uicomponent.getApplications()) {
+										    String applicationName = encoder.encode(application.getDisplayName());
+										    String applicationDescription = encoder.encode(application.getDescription());
+											 String srcBG = application.getIconURL();
+											 String srcBGError = "/eXoResources/skin/sharedImages/Icon80x80/DefaultPortlet.png";
+									%>
+									<div class="accordion-inner clearfix">
+										<img class="pull-left" src="<%=(srcBG!=null && srcBG.length()>0)?srcBG:srcBGError%>" onError="src='$srcBGError'"  alt=""/>
+										<div class="txtLeft">
+										$applicationName</br>
+										$applicationDescription
+										</div>
+									</div>
+									<% 
+											}
+										}
+									%>	
+								</div>
+							</div>	
+							<%} %>				
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>		
+</div>
