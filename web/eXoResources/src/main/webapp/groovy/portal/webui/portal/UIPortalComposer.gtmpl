@@ -24,7 +24,7 @@
 		<span class="PopupTitle"><%=_ctx.appRes(popupId + ".title."+ popupId)%></span>
 	</div>
 	
-	<div class="PopupContent Component" style="display: <%=uicomponent.isCollapsed ? "none": "block"%>" >
+	<div class="popupContent" style="display: <%=uicomponent.isCollapsed ? "none": "block"%>" >
 		<% uicomponent.renderChildren(); %>
 	</div>
 	
@@ -37,5 +37,5 @@
 					
 	</div>
 	
-	<span class="ResizeButton"></span>
+	<span class="uiIconResize pull-right"></span>
 </div>

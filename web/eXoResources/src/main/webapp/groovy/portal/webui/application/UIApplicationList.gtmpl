@@ -42,7 +42,7 @@
 										<i class="uiIconSelected pull-right"></i><a class="" title="<%= displayName %>"><%= displayName %></a>
 									</div>
 								</div>
-								<div id="$target" class="accordion-body collapse <%=isSelected ? "in" : ""%>">
+								<div id="$target" style="position: static" class="accordion-body collapse <%=isSelected ? "in" : ""%>">
 									<% if (isSelected) { 
 									     for (application in uicomponent.getApplications()) {
 										    String applicationName = encoder.encode(application.getDisplayName());
@@ -50,7 +50,7 @@
 											 String srcBG = application.getIconURL();
 											 String srcBGError = "/eXoResources/skin/sharedImages/Icon80x80/DefaultPortlet.png";
 									%>
-									<div class="accordion-inner clearfix">
+									<div class="accordion-inner clearfix DragObjectPortlet" id="$application.id">
 										<img class="pull-left" src="<%=(srcBG!=null && srcBG.length()>0)?srcBG:srcBGError%>" onError="src='$srcBGError'"  alt=""/>
 										<div class="txtLeft">
 										$applicationName</br>

@@ -56,7 +56,7 @@ var portalComposer = {
   toggle : function(icon)
   {
     var compWindow = icon.parent().closest(".UIPortalComposer");
-    var contWindow = compWindow.children("div.UIWindowContent, .PopupContent").eq(0);
+    var contWindow = compWindow.children("div.UIWindowContent, .popupContent").eq(0);
     if(contWindow.css("display") == "block")
     {
       contWindow.hide();
