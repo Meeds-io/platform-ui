@@ -998,3 +998,35 @@
 .avatarXLargeWithBorder {
 	.squareBorderAvatar(120px); 	
 }
+
+/*
+Round corner box with title
+	- border: 1px solid @tableBorder;
+	- Title: 
+		+ gray background (#f0f0f0)
+		+ round corner at left-top and right-top
+		+ text title is bold, class name is "titleBox", color is @grayDark
+	- content box: 
+		+ background: white
+		+ round corner at the bottom-left and bottom-right
+*/
+
+.roundCornerBoxWithTitle {
+	background: @white;
+	border: 1px solid @tableBorder;
+	.border-radius(4px);
+	.box-shadow(0px 1px 2px rgba(0, 0, 0, 0.08));
+	
+	.titleBox {
+		.border-radius(4px 4px 0px 0px );
+		.box-shadow(0px 1px 2px rgba(13, 13, 13, 0.08));
+		background: #f0f0f0;
+		border-bottom: 1px solid @tableBorder;
+		margin: 0px;
+		line-height: @baseLineHeight ;
+		font-weight: @headingsFontWeight;
+		color: @grayDark;
+		padding: 8px 10px;
+		word-wrap: break-word;
+	}
+}
