@@ -39,7 +39,7 @@
 								<div class="accordion-heading">
 									<div class="accordion-toggle $cTab" onclick="<%= uicomponent.event("SelectCategory", cName) %>"
 											data-toggle="collapse" data-target="#$target">
-										<i class="uiIconSelected pull-right"></i><a class="" title="<%= displayName %>"><%= displayName %></a>
+										<a class="" title="<%= displayName %>"><i class="uiIconSelected pull-right"></i><%= displayName %></a>
 									</div>
 								</div>
 								<div id="$target" style="position: static" class="accordion-body collapse <%=isSelected ? "in" : ""%>">

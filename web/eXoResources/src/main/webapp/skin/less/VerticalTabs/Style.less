@@ -8,7 +8,11 @@
 	  text-decoration: none;
 	}
 	.accordion-toggle {
-	  padding-right: 10px;
+	  padding: 0px;
+	}
+	.accordion-toggle a{
+	  display: block;
+	  padding: 8px 15px;
 	}
 	.accordion-toggle:hover {
 	  background-color: @tableBackgroundAccent;
@@ -33,9 +37,15 @@
 		.selected {
 			  background-color: @tableBackgroundHover;
 		}
+		.functionItem{
+			display: block;
+			padding: 6px 4px 6px 16px;
+			i {margin: -2px 7px 0 0;}
+		}
 	}
 	.expaned {
 	  background: linear-gradient(to bottom, @tableBackgroundAccent, #e7e7e7);
+	  border-bottom: 1px solid @tableBorder;
 	  .border-radius(3px 3px 0 0);
 	  .bgSelected {
 		  padding: 8px 15px;
@@ -44,6 +54,9 @@
 		.uiIconSelected {
 		  background-position: -95px -42px;
 		}
+	}
+	.expaned:hover {
+	  .border-radius(3px 3px 0 0);
 	}
 	.collapsed{
 	  background: none;
