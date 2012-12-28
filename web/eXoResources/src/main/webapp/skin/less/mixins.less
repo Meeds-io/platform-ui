@@ -792,14 +792,14 @@
 
 .uiBox {
 	.border-radius(@baseBorderRadius);
-	.box-shadow(0px 1px 2px rgba(0,0,0,.06));
+	.box-shadow(0px 2px 4px rgba(35,44,48,0.18));
 	border: 1px solid @tableBorder;
 	background: @white;
 	margin: 0 0 @baseLineHeight 0;
 	.title {		
 		background-color:  @grayWhiteSmoke;
 		border-bottom: 1px solid @tableBorder;
-		.box-shadow(0 1px 2px rgba(13, 13, 13, 0.08));
+		.box-shadow(0 1px 2px rgba(13, 13, 13, 0.2));
 		.border-radius(@baseBorderRadius @baseBorderRadius 0 0);
 		padding: 8px 10px;
 		line-height: @baseLineHeight;
@@ -870,7 +870,6 @@
 	padding: 5px;
 	
 	img {
-		.square(@size);
 		.border-radius(100px);
 	}
 }
@@ -878,13 +877,12 @@
 .roundedCornerAvatar(@size, @radius) {
 	.square(@size);
 	img {
-		.square(@size);
 		.border-radius(@radius);
 	}
 }
 
 .avatarCircle {
-	.circleBorderAvatar(45px);
+	.circleBorderAvatar(40px);
 }
 
 
@@ -908,78 +906,6 @@
 	.roundedCornerAvatar(20px, 1px);
 }
 
-//arrow
-
-
-.arrow,
-.arrow:after {
-  position: absolute;
-  display: inline-block;
-  .square(0);
-  border-color: transparent;
-  border-style: solid;
-}
-.arrow:after {
-  content: "";
-  z-index: -1;
-}
-
-
-.arrow {
-	&.bottom {
-		 bottom: -@popoverArrowWidth;
-		left: 50%;
-		margin-left: -@popoverArrowWidth;
-		border-width: @popoverArrowWidth @popoverArrowWidth 0;
-		border-top-color: @popoverArrowColor;
-		&:after {
-		  border-width: @popoverArrowOuterWidth @popoverArrowOuterWidth 0;
-		  border-top-color: @popoverArrowOuterColor;
-		  bottom: -1px;
-		  left: -@popoverArrowOuterWidth;
-		}
-	}
-	&.left{
-		top: 50%;
-		left: -@popoverArrowWidth;
-		margin-top: -@popoverArrowWidth;
-		border-width: @popoverArrowWidth @popoverArrowWidth @popoverArrowWidth 0;
-		border-right-color: @popoverArrowColor;
-		&:after {
-		  border-width: @popoverArrowOuterWidth @popoverArrowOuterWidth @popoverArrowOuterWidth 0;
-		  border-right-color: @popoverArrowOuterColor;
-		  bottom: -@popoverArrowOuterWidth;
-		  left: -1px;
-		}
-	}
-	&.top{
-		top: -@popoverArrowWidth;
-		left: 50%;
-		margin-left: -@popoverArrowWidth;
-		border-width: 0 @popoverArrowWidth @popoverArrowWidth;
-		border-bottom-color: @popoverArrowColor;
-		&:after {
-		  border-width: 0 @popoverArrowOuterWidth @popoverArrowOuterWidth;
-		  border-bottom-color: @popoverArrowOuterColor;
-		  top: -1px;
-		  left: -@popoverArrowOuterWidth;
-		}
-	}
-	&.right {
-		top: 50%;
-		right: -@popoverArrowWidth;
-		margin-top: -@popoverArrowWidth;
-		border-width: @popoverArrowWidth 0 @popoverArrowWidth @popoverArrowWidth;
-		border-left-color: @popoverArrowColor;
-		&:after {
-		  border-width: @popoverArrowOuterWidth 0 @popoverArrowOuterWidth @popoverArrowOuterWidth;
-		  border-left-color: @popoverArrowOuterColor;
-		  bottom: -@popoverArrowOuterWidth;
-		  right: -1px;
-		}
-	}
-}
-
 .squareBorderAvatar(@size) {
 	#gradient .vertical(@white, @btnBackgroundHighlight);
 	.square(@size);
@@ -990,7 +916,6 @@
 	display: block;
 	
 	img {
-		.square(@size);
 		.border-radius(4px);
 	}
 }
