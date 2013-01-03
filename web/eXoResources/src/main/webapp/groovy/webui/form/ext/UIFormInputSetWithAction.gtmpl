@@ -10,7 +10,7 @@
 <%
 	import org.exoplatform.webui.form.UIFormRadioBoxInput;
 %>
-<div class="$uicomponent.id">
+<div class="$uicomponent.id" style="border: 1px solid green">
 	<div class="UIFormInputSet">
 		<div class="UIFormInputSetWithAction">
 			<%

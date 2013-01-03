@@ -31,6 +31,7 @@ input[type="color"],
 	.box-shadow(inset 0 2px 1px rgba(0,0,0,.075));
 	font-size: @baseFontSize;
 	.box-sizing(border-box);
+	height: 28px;
 	 &:focus {
 		border-color: rgba(148,176,223,1);
 		.box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 5px rgba(29,75,159,.6)");
@@ -38,15 +39,23 @@ input[type="color"],
   }
 }
 
-.input-mini       { width: 60px-12; }
-.input-small      { width: 90px-12; }
-.input-medium     { width: 150px-12; }
-.input-large      { width: 210px-12; }
-.input-xlarge     { width: 270px-12; }
-.input-xxlarge    { width: 350px-12; }
-.input-xxxlarge   { width: 530px-12; }
+.input-mini       { width: 60px; }
+.input-small      { width: 90px; }
+.input-medium     { width: 150px; }
+.input-large      { width: 210px; }
+.input-xlarge     { width: 270px; }
+.input-xxlarge    { width: 350px; }
+.input-xxxlarge   { width: 530px; }
 .form-horizontal .control-group {
 	margin-bottom: 12px;
+}
+
+.form-horizontal {
+	padding: 10px 0;
+}
+
+input, textarea,select, .uneditable-input {
+	width: 270px;
 }
 
 .uiCheckbox {
