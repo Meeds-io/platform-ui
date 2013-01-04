@@ -1,0 +1,48 @@
+.progress {
+  height: 18px;
+}
+
+// Striped bars
+.progress-striped .bar {
+  #gradient > .striped(#3862a9);
+}
+
+// upload files 
+.progressBarFrame {	
+	margin: 0 0 25px 0;
+	& > div {
+		margin: 3px 0 0 0;
+	}
+	.fileName  {
+		min-width: 148px;
+		padding-right: 2px;
+		font-weight: bold;
+	}
+	.percent {
+		padding:0 7px 0 0;
+	}
+	.deleteFileLable {
+		margin: 0 0 0 5px;
+		padding: 0;
+		.actionIcon {
+			padding: 1px 5px;
+		}
+	}
+}
+.uploadButton {
+	text-align: center;
+	margin-top: 25px;
+	.moreFiles {
+		color: @grayLight;
+		margin: 0 0 0 12px;
+		cursor: pointer;
+	}
+}
+
+.selectFileFrame  {
+	margin: 0 0 10px 0;
+	.fileNameLabel  {
+		font-weight: bold;
+		padding: 3px 0 0 0;
+	}
+}
