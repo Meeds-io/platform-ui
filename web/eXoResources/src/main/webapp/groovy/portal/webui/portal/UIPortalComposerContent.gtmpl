@@ -6,7 +6,7 @@
 	def jsManager = rcontext.getJavascriptManager();
 	
 	String selTabId = uicomponent.getSelectedTabId(); 
-	jsManager.require("SHARED/webui").require("SHARED/portal", "portal")
+	jsManager.require("SHARED/webui").require("SHARED/portal", "portal").require("SHARED/bootstrap_tab")
 	.addScripts("portal.PortalComposer.initComposerContent('$uicomponent.id', '$selTabId', webui);");
 %>
 
@@ -19,11 +19,11 @@
 				String contLink = "ajaxAsyncGetRequest('" + uicomponent.url("SelectTab",contList.getId()) + "', true)";
 			%>
 		<li class="<%= appList.getId().equals(selTabId) ? "active" : "" %>">
-			<a href="#appList"><%=_ctx.appRes("UITabPane.title." + appList.getId());%></a>
+			<a data-toggle="tab" data-target="#appList"><%=_ctx.appRes("UITabPane.title." + appList.getId());%></a>
 			<input type="hidden" name="${appList.getId()}" value="$appLink"/>
 		</li>
 		<li class="<%= contList.getId().equals(selTabId) ? "active" : "" %>">
-			<a href="#contList"><%=_ctx.appRes("UITabPane.title." + contList.getId());%></a>
+			<a data-toggle="tab" data-target="#contList"><%=_ctx.appRes("UITabPane.title." + contList.getId());%></a>
 			<input type="hidden" name="${contList.getId()}" value="$contLink"/>
 		</li>
 	</ul>

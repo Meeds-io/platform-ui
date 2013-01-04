@@ -1,7 +1,6 @@
 <%
   def rcontext = _ctx.getRequestContext() ;
-	rcontext.getJavascriptManager().require("SHARED/webui");
-	
+	rcontext.getJavascriptManager().require("SHARED/webui").require("SHARED/bootstrap_tab");	
 %>
 
 <div class="uiTabPane uiTabNormal" id="$uicomponent.id">
