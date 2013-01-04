@@ -17,15 +17,16 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
 
-
+/*
 .UIWorkingWorkspace {
 	margin: 0px;
 	
-/*
+*
  * minh.js.exo
  * bug : right click with IE7 in ECM
- */
+ *
 }
+
 
 .UIWorkingWorkspace {
 	width: 980px;
@@ -44,6 +45,7 @@
 	border-radius:0px 0px 9px 9px;
 	padding: 0px 8px 8px;
 }
+*/
   
 .MaskLayer {
 	background: black;
