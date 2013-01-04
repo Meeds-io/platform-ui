@@ -195,7 +195,7 @@
 
    <!-- Twitter Bootstrap bootstrap-affix plugin -->
    <module>
-      <name>bootstrap_affix</name>
+      <name>bts_affix</name>
       <script>
         <name>twitter.bootstrap.affix</name>
         <path>/skin/bootstrap/js/bootstrap-affix.js</path>
@@ -207,7 +207,7 @@
 
    <!-- Twitter Bootstrap bootstrap-alert plugin -->
    <module>
-      <name>bootstrap_alert</name>
+      <name>bts_alert</name>
       <script>
         <name>twitter.bootstrap.alert</name>
         <path>/skin/bootstrap/js/bootstrap-alert.js</path>
@@ -219,7 +219,7 @@
 
    <!-- Twitter Boostrap bootstrap-button plugin -->
    <module>
-      <name>bootstrap_button</name>
+      <name>bts_button</name>
       <script>
         <name>twitter.bootstrap.button</name>
         <path>/skin/bootstrap/js/bootstrap-button.js</path>
@@ -231,7 +231,7 @@
 
    <!-- Twitter Bootstrap bootstrap-carousel plugin -->
    <module>
-      <name>bootstrap_carousel</name>
+      <name>bts_carousel</name>
       <script>
         <name>twitter.bootstrap.carousel</name>
         <path>/skin/bootstrap/js/bootstrap-carousel.js</path>
@@ -243,7 +243,7 @@
 
    <!-- Twitter Bootstrap bootstrap-collapse plugin -->
    <module>
-      <name>bootstrap_collapse</name>
+      <name>bts_collapse</name>
       <script>
         <name>twitter.bootstrap.collapse</name>
         <path>/skin/bootstrap/js/bootstrap-collapse.js</path>
@@ -255,7 +255,7 @@
 
    <!-- Twitter Bootstrap bootstrap-dropdown plugin -->
    <module>
-      <name>bootstrap_dropdown</name>
+      <name>bts_dropdown</name>
       <script>
         <name>twitter.bootstrap.dropdown</name>
         <path>/skin/bootstrap/js/bootstrap-dropdown.js</path>
@@ -267,7 +267,7 @@
 
    <!-- Twitter Bootstrap bootstrap-modal plugin -->
    <module>
-      <name>bootstrap_modal</name>
+      <name>bts_modal</name>
       <script>
         <name>twitter.bootstrap.modal</name>
         <path>/skin/bootstrap/js/bootstrap-modal.js</path>
@@ -279,7 +279,7 @@
 
    <!-- Twitter Bootstrap bootstrap-popover plugin -->
    <module>
-      <name>bootstrap_popover</name>
+      <name>bts_popover</name>
       <script>
         <name>twitter.bootstrap.popover</name>
         <path>/skin/bootstrap/js/bootstrap-popover.js</path>
@@ -291,7 +291,7 @@
 
    <!-- Twitter Bootstrap bootstrap-scrollspy plugin -->
    <module>
-      <name>bootstrap_scrollspy</name>
+      <name>bts_scrollspy</name>
       <script>
         <name>twitter.bootstrap.scrollspy</name>
         <path>/skin/bootstrap/js/bootstrap-scrollspy.js</path>
@@ -303,7 +303,7 @@
 
    <!-- Twitter Bootstrap bootstrap-tab plugin -->
    <module>
-      <name>bootstrap_tab</name>
+      <name>bts_tab</name>
       <script>
         <name>twitter.bootstrap.tab</name>
         <path>/skin/bootstrap/js/bootstrap-tab.js</path>
@@ -315,7 +315,7 @@
 
    <!-- Twitter Bootstrap bootstrap-tooltip plugin -->
    <module>
-      <name>bootstrap_tooltip</name>
+      <name>bts_tooltip</name>
       <script>
         <name>twitter.bootstrap.tooltip</name>
         <path>/skin/bootstrap/js/bootstrap-tooltip.js</path>
@@ -327,7 +327,7 @@
 
    <!-- Twitter Bootstrap bootstrap-transition plugin -->
    <module>
-      <name>bootstrap_transition</name>
+      <name>bts_transition</name>
       <script>
         <name>twitter.bootstrap.transition</name>
         <path>/skin/bootstrap/js/bootstrap-transition.js</path>
@@ -339,7 +339,7 @@
 
    <!-- Twitter Bootstrap bootstrap-typeahead plugin -->
    <module>
-      <name>bootstrap_typeahead</name>
+      <name>bts_typeahead</name>
       <script>
         <name>twitter.bootstrap.typeahead</name>
         <path>/skin/bootstrap/js/bootstrap-typeahead.js</path>
