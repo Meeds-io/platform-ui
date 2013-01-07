@@ -8,42 +8,33 @@
     .addScripts("webuiExt.UIUploadInput.initUploadEntry('" + id + "'," + b.toString()+ ", " + !isDynamicMode+ ");");
 %>
 <div id="$id" class="uiUploadInput">
-<%if(uicomponent.isDynamicMode()) {%>
 <div class="createUploadURL" style="display:none"><%=uicomponent.url('CreateUploadId')%></div>
-<%}%>
 <div class="removeInputUrl" style="display: none;"><%=uicomponent.url('RemoveUploadId');%></div>
-<!-- 
-<div class="removeInputLabel" style="display: none;"><%= _ctx.appRes("UIFormUploadInput.label.RemoveInput"); %></div>
--->
 <div class="limitMessage" style="display: none;"><%= _ctx.appRes("UIFormUploadInput.msg.limit"); %></div>
 <script type="text/template">
 <div class="uploadContainer" style="display:none">  
 	<div class="fileHidden">
 		<input class="file" name="file" type='file' style="display:none"/>
-	</div>
-	<div class="progressIframe" style="display: none;"></div>			
-	<div class="progressBarFrame" style="display: none;">
-	  <div class="fileName">
-      <div class="fileNameLabel"></div>
-    </div>
-    <div class="progress  progress-striped">
-      <div class="bar" style="width:0%">
-        <div class="percent">0%</div>
-      </div>
-    </div>
-    <div class="deleteFileFrame">
-      <div class="deleteFileLable">
-      	<i class="uiIconStop" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("UIFormUploadInput.label.Cancel")%>"></i>
-      </div>
-    </div>
+	</div>	
+	<div class="progressBarFrame clearfix" style="display:none">
+		<span class="deleteFileLabel pull-right">
+			<a href="#" class="actionIcon" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("UIFormUploadInput.label.Cancel")%>">
+				<i class="uiIconRemove"></i>
+			</a>
+		</span>
+		<div class="fileNameLabel pull-left"></div>
+		<div class="pull-left percent">0%</div>
+		<div class="progress  progress-striped">
+		  <div class="bar" style="width:0%"></div>
+		</div>			   
   </div>
-  <div class="selectFileFrame" style="display: none;">
-    <div class="fileName">
-      <div class="fileNameLabel"></div>
-    </div>
-    <div class="removeFile" rel="tooltip" data-placement="bottom" title="<%= _ctx.appRes("UIFormUploadInput.label.remove"); %>">
-    	<%=_ctx.appRes("UIFormUploadInput.label.remove"); %>
-    </div>
+  <div class="selectFileFrame clearfix" style="display: none;">
+		<div class="removeFile pull-right" >
+			<a href="#" class="actionIcon" rel="tooltip" data-placement="bottom" title="<%= _ctx.appRes("UIFormUploadInput.label.remove"); %>">
+				<i class="uiIconDelete uiIconLightGrey" ></i>
+			</a>
+		</div>
+		<div class="fileNameLabel"></div>
   </div>
 	<iframe height="0" width="0" style="display: none;">
 		<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
@@ -54,5 +45,9 @@
 	</iframe>
 </div>
 </script>
-<label class="btn btn-primary">Upload New File</label>
+<div class="uploadButton">
+	<label class="btn">Select File</label> 
+	<span class="noFile">No file selected</span>
+	<span class="moreFiles">Select  more files</span>
+</div>	
 </div>

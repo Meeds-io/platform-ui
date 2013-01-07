@@ -59,13 +59,14 @@ var uiUploadInput = {
       }
     }
     uiUploadInput.createEntryUpload(id);
+    uiUploadInput.fileSelectedStatus(id);
   },
 
   createEntryUpload : function(id, uploadId) {
   	var uiInput = $("#" + id);
   	var inputs = uiInput.data("inputs");
   	var limited = uiInput.data("limited");
-  	var label = uiInput.find("label");
+  	var uploadBtn = uiInput.find(".uploadButton");  	
   	
   	if (!uploadId) {
   		for (var i = 0; i < inputs.length; i++) {
@@ -78,7 +79,7 @@ var uiUploadInput = {
   		
   		if (!uploadId) {
   			if (inputs.length === limited) {
-  				label.hide();
+  				uploadBtn.hide();
   				return;
   			}
   			
@@ -91,15 +92,25 @@ var uiUploadInput = {
   			uiInput.data("inputs", inputs);
   		}  	  	  	  	  	
   	}
-  	
-  	var uploadCont = $(uiInput.children("script[type='text/template']").text());
+  	  	         
+  	var uploadCont = uiUploadInput.cloneContainer(id, uploadId);
+  	uploadBtn.off("click").click(function() {
+  		uploadCont.find("input").click();
+  	}).show();  	  	    
+  },
+  
+  cloneContainer : function(id, uploadId) {
+  	var uiInput = $("#" + id);
+  	var template = uiInput.children("script[type='text/template']");
+  	var uploadCont = $(template.text());
   	uploadCont.attr("id", "uploadContainer" + uploadId);  	  	  	          
-    uploadCont.on("click", ".deleteFileLable, .Abort, .removeFile", function() {
+    uploadCont.on("click", ".deleteFileLabel, .removeFile", function() {
   		  if ($(this).hasClass("removeFile")) {
   		  	uiUploadInput.deleteUpload(uploadId);    			      			      		 
   		  } else {
   		  	uiUploadInput.abortUpload(uploadId);
   		  }
+  		  return false;
     });        
     
     var file = uploadCont.find("input"); 
@@ -109,11 +120,9 @@ var uiUploadInput = {
   	});
   	
   	uploadCont.find("iframe").attr("name", "uploadIFrame" + uploadId);
-  	uploadCont.find("iframe").attr("id", "uploadIFrame" + uploadId);
-         
-    label.off("click").click(function() {file.click()}).show();  	  	
-    label.before(uploadCont);
+  	template.before(uploadCont);
     uploadCont.show();
+    return uploadCont;
   },
 
   showUploaded : function(id, fileName) {
@@ -123,19 +132,17 @@ var uiUploadInput = {
     	$(".uiUploadInput").each(function() {
     		var uiInput = $(this);
     		if ($.inArray(id, uiInput.data("inputs")) != -1) {
-    			uiUploadInput.createEntryUpload(uiInput.attr("id"), id);
-    			uiUploadInput.showUploaded(id, fileName);
-    			return;
+    			jCont = uiUploadInput.cloneContainer(uiInput.attr("id"), id);
+    			return false;
     		}
     	});
     }
-    jCont.find(".progressIframe").html("").hide();
     jCont.find(".progressBarFrame").hide();
 
     var selectFileFrame = jCont.find(".selectFileFrame");
     selectFileFrame.show();
 
-    selectFileFrame.find(".fileNameLabel").html(decodeURIComponent(fileName));
+    selectFileFrame.find(".fileNameLabel").html(decodeURIComponent(fileName));    
   },
 
   refreshProgress : function() {
@@ -158,31 +165,26 @@ var uiUploadInput = {
     for (id in response.upload) {
       var jCont = $("#uploadContainer" + id);
       if (response.upload[id].status == "failed") {
+      	var message = jCont.siblings(".limitMessage").html();
         uiUploadInput.abortUpload(id);
-        var message = jCont.children(".limitMessage").html();
         message = message.replace("{0}", response.upload[id].size);
         message = message.replace("{1}", response.upload[id].unit);
         alert(message);
         continue;
       }
-      var element = jCont.find('.progressIframe');
+
       var percent = response.upload[id].percent;
       var bar = jCont.find(".bar").first();
       bar.css("width", percent + "%");
-      var label = bar.children(".percent").first();
+      var label = jCont.find(".percent").first();
       label.html(percent + "%");
 
       var fileName = response.upload[id].fileName;
-      element.find(".fileNameLabel").html(decodeURIComponent(fileName));
+      jCont.find(".progressBarFrame .fileNameLabel").html(decodeURIComponent(fileName));
       
       if (percent == 100) {
-        this.showUploaded(id, fileName);
+        uiUploadInput.showUploaded(id, fileName);
       }
-    }
-
-    if (element) {
-      element.innerHTML = "Uploaded " + percent + "% "
-          + "<span class='Abort'>Abort</span>";
     }
     
     setTimeout( uiUploadInput.refreshProgress, uiUploadInput.refreshTime);
@@ -205,9 +207,10 @@ var uiUploadInput = {
     }
         
     jCont.remove();
-    if (uiInput.find("label").css("display") == "none") {
+    if (uiInput.find(".uploadButton").css("display") == "none") {
     	uiUploadInput.createEntryUpload(uiInput.attr("id"));    	
     }
+    uiUploadInput.fileSelectedStatus(uiInput.attr("id"));
   },
 
   abortUpload : function(id) {
@@ -218,9 +221,10 @@ var uiUploadInput = {
     var jCont = $('#uploadContainer' + id);
     var uiInput = jCont.closest(".uiUploadInput");
     jCont.remove();
-    if (uiInput.find("label").css("display") == "none") {
+    if (uiInput.find(".uploadButton").css("display") == "none") {
     	uiUploadInput.createEntryUpload(uiInput.attr("id"));    	
     }
+    uiUploadInput.fileSelectedStatus(uiInput.attr("id"));
   },
 
   /**
@@ -233,7 +237,8 @@ var uiUploadInput = {
    */
   upload : function(id) {
     var jCont = $('#uploadContainer' + id);
-    uiUploadInput.createEntryUpload(jCont.closest(".uiUploadInput").attr("id"));
+    var uiInput = jCont.closest(".uiUploadInput");
+    uiUploadInput.createEntryUpload(uiInput.attr("id"));    
 
     var file = document.getElementById('file' + id);
     if (file == null || file == undefined)
@@ -245,11 +250,13 @@ var uiUploadInput = {
     var progressBarFrame = jCont.find(".progressBarFrame").first();
     progressBarFrame.show();
     progressBarFrame.find(".fileNameLabel").html(decodeURIComponent(temp.split(/(\\|\/)/g).pop()));
-    
+        
     var bar = jCont.find(".bar").first();
     bar.css("width", "0%");
     var label = bar.children(".percent").first();
     label.html("0%");
+    
+    uiUploadInput.fileSelectedStatus(uiInput.attr("id"));
     
     var uploadAction = uiUploadInput.uploadURL + id;
     var formHTML = "<form id='form" + id
@@ -271,6 +278,28 @@ var uiUploadInput = {
     			uiUploadInput.refreshTime);
     }
     uiUploadInput.listUpload.push(id);
+  },
+  
+  fileSelectedStatus : function(id) {
+  	var uiUploadInput = $("#" + id);
+  	var frames = uiUploadInput.find(".uploadContainer").find(".selectFileFrame, .progressBarFrame");
+  	var hasFile = false;
+  	frames.each(function() {
+  		if ($(this).css("display") == "block") {
+  			hasFile = true;
+  			return false;
+  		}; 
+  	});
+  	var uploadButton = uiUploadInput.find(".uploadButton");
+  	var noFile = uploadButton.find(".noFile");
+  	var moreFiles = uploadButton.find(".moreFiles");
+  	if (hasFile) {
+  		noFile.hide();
+  		moreFiles.show();
+  	} else {
+  		noFile.show();
+  		moreFiles.hide();
+  	}
   },
   
   remove : function(id) {
