@@ -1,16 +1,13 @@
 <%
-	String[] uploadId = uicomponent.getUploadIds();
-	boolean isDynamicMode = uicomponent.isDynamicMode();
+	String uploadId = uicomponent.getUploadId();
 	def rcontext = _ctx.getRequestContext();
-	def b = new org.json.JSONArray(uploadId);
 	def id = uicomponent.getId();
 	rcontext.getJavascriptManager().require("SHARED/webui-ext", "webuiExt").require("SHARED/bts_tooltip")
-    .addScripts("webuiExt.UIUploadInput.initUploadEntry('" + id + "'," + b.toString()+ ", " + !isDynamicMode+ ");");
+    .addScripts("webuiExt.UIUpload.initUploadEntry('" + id + "','" + uploadId+ "');");
 %>
 <div id="$id" class="uiUploadInput">
-<div class="createUploadURL" style="display:none"><%=uicomponent.url('CreateUploadId')%></div>
-<div class="removeInputUrl" style="display: none;"><%=uicomponent.url('RemoveUploadId');%></div>
 <div class="limitMessage" style="display: none;"><%= _ctx.appRes("UIFormUploadInput.msg.limit"); %></div>
+<input type="hidden" name="<%=uicomponent.getName();%>" value="false"/>
 <script type="text/template">
 <div class="uploadContainer" style="display:none">  
 	<div class="fileHidden">
@@ -46,8 +43,6 @@
 </div>
 </script>
 <div class="uploadButton">
-	<label class="btn"><%=_ctx.appRes("UIFormUploadInput.label.SelectFile")%></label> 
-	<span class="noFile"><%=_ctx.appRes("UIFormUploadInput.label.NoFile")%></span>
-	<span class="moreFiles"><%=_ctx.appRes("UIFormUploadInput.label.MoreFile")%></span>
+	<label class="btn"><%=_ctx.appRes("UIFormUploadInput.label.SelectFile")%></label> <span class="noFile"><%=_ctx.appRes("UIFormUploadInput.label.NoFile")%></span>
 </div>	
 </div>
