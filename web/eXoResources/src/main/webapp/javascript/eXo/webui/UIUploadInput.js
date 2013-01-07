@@ -122,6 +122,7 @@ var uiUploadInput = {
   	uploadCont.find("iframe").attr("name", "uploadIFrame" + uploadId);
   	template.before(uploadCont);
     uploadCont.show();
+    uploadCont.find("*[rel='tooltip']").tooltip();
     return uploadCont;
   },
 
@@ -142,7 +143,15 @@ var uiUploadInput = {
     var selectFileFrame = jCont.find(".selectFileFrame");
     selectFileFrame.show();
 
-    selectFileFrame.find(".fileNameLabel").html(decodeURIComponent(fileName));    
+    selectFileFrame.find(".fileNameLabel").html(uiUploadInput.processFileInfo(fileName));    
+  },
+  
+  processFileInfo : function(fileName) {
+  	fileName = decodeURIComponent(fileName);
+  	if (fileName.length > 20) {
+  		fileName = fileName.substring(0, 21) + "...";
+  	}
+  	return fileName;
   },
 
   refreshProgress : function() {
@@ -180,7 +189,7 @@ var uiUploadInput = {
       label.html(percent + "%");
 
       var fileName = response.upload[id].fileName;
-      jCont.find(".progressBarFrame .fileNameLabel").html(decodeURIComponent(fileName));
+      jCont.find(".progressBarFrame .fileNameLabel").html(uiUploadInput.processFileInfo(fileName));
       
       if (percent == 100) {
         uiUploadInput.showUploaded(id, fileName);
@@ -249,7 +258,7 @@ var uiUploadInput = {
     
     var progressBarFrame = jCont.find(".progressBarFrame").first();
     progressBarFrame.show();
-    progressBarFrame.find(".fileNameLabel").html(decodeURIComponent(temp.split(/(\\|\/)/g).pop()));
+    progressBarFrame.find(".fileNameLabel").html(uiUploadInput.processFileInfo(temp.split(/(\\|\/)/g).pop()));
         
     var bar = jCont.find(".bar").first();
     bar.css("width", "0%");
