@@ -51,7 +51,7 @@ var uiUpload = {
         || response.upload[uploadId].percent == undefined) {
     	uiUpload.createEntryUpload(id);    	
     } else if (response.upload[uploadId] && response.upload[uploadId].percent == 100) {
-    	uiUpload.showUploaded(uploadId, response.upload[uploadId].fileName);
+    	uiUpload.showUploaded(uploadId);
     }
   },
 
@@ -95,7 +95,7 @@ var uiUpload = {
     return uploadCont;
   },
   
-  showUploaded : function(id, fileName) {
+  showUploaded : function(id) {
     uiUpload.remove(id);
     var jCont = $('#uploadContainer' + id);
     if (!jCont.length) {
@@ -112,16 +112,34 @@ var uiUpload = {
     var selectFileFrame = jCont.find(".selectFileFrame");
     selectFileFrame.show();
 
-    selectFileFrame.find(".fileNameLabel").html(uiUpload.processFileInfo(fileName));
+    selectFileFrame.find(".fileNameLabel").html(uiUpload.processFileInfo(id));
     jCont.siblings(".uploadButton").hide();
     
     jCont.siblings("input[type='hidden']").val(true);
   },
   
-  processFileInfo : function(fileName) {
+  processFileInfo : function(uploadId) {
+  	var jCont = $("#uploadContainer" + uploadId);
+  	var fileName = jCont.data("fileName") || "";
+  	var size = jCont.data("fileSize");
   	fileName = decodeURIComponent(fileName);
   	if (fileName.length > 20) {
   		fileName = fileName.substring(0, 21) + "...";
+  	}
+  	if (jCont.children(".selectFileFrame").css("display") == "block" && size) {
+  		size = Math.round(size);
+    	var megabyte = Math.floor(size/1048576);
+    	var kilobyte = Math.floor((size % 1048576) / 1024);
+    	var byteValue = size % 1024;
+    	if (megabyte > 0) {
+    		size = megabyte + '.' + kilobyte + " Mb";
+    	} else if(kilobyte > 0) {
+    		size = kilobyte + '.' + byteValue + " Kb";
+    	} else {
+    		size = byteValue + " b";
+    	}
+    	
+  		fileName += " (" + size + ")";
   	}
   	return fileName;
   },
@@ -159,11 +177,11 @@ var uiUpload = {
       var label = bar.children(".percent").first();
       label.html(percent + "%");
 
-      var fileName = response.upload[id].fileName;
-      jCont.find(".progressBarFrame .fileNameLabel").html(uiUpload.processFileInfo(fileName));
+      jCont.data("fileName", response.upload[id].fileName);
+      jCont.find(".progressBarFrame .fileNameLabel").html(uiUpload.processFileInfo(id));
       
       if (percent == 100) {
-        uiUpload.showUploaded(id, fileName);
+        uiUpload.showUploaded(id);
       }
     }
     
@@ -210,9 +228,16 @@ var uiUpload = {
     	return;
     var temp = file.value;
     
+    if (file.files && file.files.length) {
+    	jCont.data("fileName", file.files[0].name);
+    	jCont.data("fileSize", file.files[0].size);
+    } else {
+    	jCont.data("fileName", temp.split(/(\\|\/)/g).pop());
+    }
+    
     var progressBarFrame = jCont.find(".progressBarFrame").first();
     progressBarFrame.show();
-    progressBarFrame.find(".fileNameLabel").html(uiUpload.processFileInfo(temp.split(/(\\|\/)/g).pop()));
+    progressBarFrame.find(".fileNameLabel").html(uiUpload.processFileInfo(id));
     
     var bar = jCont.find(".bar").first();
     bar.css("width", "0%");
