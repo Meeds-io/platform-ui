@@ -65,6 +65,7 @@ var uiUpload = {
     uploadBtn.off("click").click(function() {
   		uploadCont.find("input").click();
   	}).show();
+    uiInput.children("input[type='hidden']").val(false);
   },
 
   cloneContainer : function(id, uploadId) {  	  	
@@ -113,6 +114,8 @@ var uiUpload = {
 
     selectFileFrame.find(".fileNameLabel").html(uiUpload.processFileInfo(fileName));
     jCont.siblings(".uploadButton").hide();
+    
+    jCont.siblings("input[type='hidden']").val(true);
   },
   
   processFileInfo : function(fileName) {
