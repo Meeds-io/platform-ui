@@ -225,7 +225,7 @@ public class UIFormSelectBox extends UIFormStringInput
          formId = uiForm.getId();
 
       Writer w = context.getWriter();
-      w.write("<select class=\"selectbox\" name=\"");
+      w.write("<span class=\"uiSelectbox\"><select class=\"selectbox\" name=\"");
       w.write(name);
       w.write("\"");
       if (onchange_ != null)
@@ -274,7 +274,7 @@ public class UIFormSelectBox extends UIFormStringInput
          w.write("</option>\n");
       }
 
-      w.write("</select>\n");
+      w.write("</select></span>\n");
       if (this.isMandatory())
          w.write(" *");
    }
