@@ -32,6 +32,7 @@ input[type="color"],
 	font-size: @baseFontSize;
 	.box-sizing(border-box);
 	height: 28px;
+	border: 1px solid #c7c7c7;
 	 &:focus {
 		border-color: rgba(148,176,223,1);
 		.box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 5px rgba(29,75,159,.6)");
@@ -186,3 +187,36 @@ input[disabled], select[disabled], textarea[disabled], input[readonly], select[r
 	background-color: @grayLight;
 }
 
+.uiSelectbox {
+	border: 1px solid #c7c7c7;
+	.border-radius(5px);
+	width: 270px;
+	overflow: hidden;
+	display: inline-block;
+	background-color: #F9F9F9;
+	background-image: url(/eXoResources/skin/images/Forms/arrow.png), -moz-linear-gradient(top, #FFF, #f1f1f1); // FF 3.6+
+	background-image: url(/eXoResources/skin/images/Forms/arrow.png),-webkit-gradient(linear, 0 0, 0 100%, from(#FFF), to(#f1f1f1)); // Safari 4+, Chrome 2+
+	background-image: url(/eXoResources/skin/images/Forms/arrow.png),-webkit-linear-gradient(top, #FFF, #f1f1f1); // Safari 5.1+, Chrome 10+
+	background-image: url(/eXoResources/skin/images/Forms/arrow.png),-o-linear-gradient(top, #FFF, #f1f1f1); // Opera 11.10
+	background-image: url(/eXoResources/skin/images/Forms/arrow.png),linear-gradient(to bottom, #FFF, #f1f1f1); // Standard, IE10
+	background-repeat: no-repeat, repeat-x;
+	background-position: right top,0 0;
+}
+
+.uiSelectbox:hover, .uiSelectbox:focus {
+	background-position: right bottom, 0 0;
+}
+
+.uiSelectbox select.selectbox {
+	background: transparent;
+	border: none;
+	.box-shadow(0 0 0 transparent inset);
+	.box-sizing(border-box);
+	.size(26px,295px);
+	-webkit-appearance: none; 
+	height: 26px;
+}
+
+.uiSelectbox select.selectbox option {
+	padding: 7px;
+}

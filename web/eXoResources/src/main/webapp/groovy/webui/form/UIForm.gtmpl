@@ -19,6 +19,21 @@
 									<div class="controls"><% uiform.renderField(field) %></div>
 								<%}%>
 							</div>
+							
+							<!--div class="control-group">												
+								<label for="email" class="control-label">
+									Email :
+								</label>
+								<div class="controls">
+									<span class="uiSelectbox">
+										<select name="type" class="selectbox">
+											<option value="portlet">Portlet</option>
+											<option value="gadget">Gadget</option>
+											<option value="wsrp">wsrp</option>
+										</select>
+									</span>
+								</div>
+							</div-->
 				<%
 						}
 					}

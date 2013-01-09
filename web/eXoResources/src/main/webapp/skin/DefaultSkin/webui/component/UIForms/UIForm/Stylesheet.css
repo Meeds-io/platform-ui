@@ -128,7 +128,6 @@
 
 .HorizontalLayout .UIForm input {
 	width: 235px;
-	font-size: 11px;
 }
 
 .HorizontalLayout .UIForm input.checkbox {
@@ -147,7 +146,6 @@
 
 .HorizontalLayout .UIForm select {
 	width: 239px;
-	font-size: 11px;
 }
 
 /*####################- VerticalLayout -#################*/
