@@ -230,7 +230,7 @@ public class UIFormMultiValueInputSet extends UIFormInputContainer<List>
             writer.append("<i onclick=\"");
             writer.append(uiForm.event("Remove", uiInput.getId())).append("\" title=\"" + removeItem + "\"");
             writer
-               .append(" class=\"multiFieldAction uiIconTrash\"></i>");
+               .append(" class=\"uiIconTrash multiFieldAction\"></i>");
          }
          if (i == size - 1)
          {
@@ -238,7 +238,7 @@ public class UIFormMultiValueInputSet extends UIFormInputContainer<List>
             writer.append("<i onclick=\"");
             writer.append(uiForm.event("Add", getId())).append("\" title=\"" + addItem + "\"");
             writer
-               .append(" class=\"multiFieldAction uiIconPlus\" ></i>");
+               .append(" class=\"uiIconPlus multiFieldAction\" ></i>");
          }
          writer.append("</div>");
       }

@@ -41,3 +41,54 @@
 	}
 	
 }
+
+/**********************Popup Messages*************************/
+
+.uiPopup {
+	.messageContent {
+		background: @tableBackgroundAccent;
+		border: 1px solid @borderColor;
+		padding: 10px;
+		height: 170px;
+		overflow: auto;
+
+		> li {
+			padding: 3px 0;
+		}
+		
+		> li > a > span {
+			background: url(/eXoResources/skin/images/PopupMessage/icons.png) no-repeat;
+			padding-left: 20px;
+			line-height: 16px;
+			height: 16px;
+			color: @textColor;
+			font-weight: bold;
+		}
+		
+		> li > a > span.errorIcon {
+			background-position: left 0px;
+		}
+		
+		> li > a > span.warningIcon {
+			background-position: left -16px;
+		}
+		
+		> li > a > span.informationIcon {
+			background-position: left -32px;
+		}
+		
+		> li.collapseItem > ul {
+			display: block;
+		}
+		
+		> li.expandItem > ul {
+			display: none;
+		}
+		
+		> li > ul > li {
+			line-height: 16px;	
+			padding: 0 0 0 40px;
+		}
+	}
+	
+}

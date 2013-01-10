@@ -74,6 +74,7 @@
 	</div>
 	
 	<div class="PopupContent popupContent">
+	
 		<div class="uiTabNormal">
 			<ul class="nav nav-tabs">
 			<%	
@@ -92,6 +93,43 @@
 				%>
 			</div>
 		</div>
+		
+		<!--ul class="messageContent">
+			<li class="collapseItem">
+				<a href="#">
+					<i class="uiIconArrowDown"></i>	
+					<span class="errorIcon">3 Errors</span>
+				</a>
+				<ul>
+					<li>- The Username can not be blank.</li>
+					<li>- Your email address has incorrect syntax.</li>
+					<li>- Please input validation number.</li>
+				</ul>
+			</li>
+			<li class="expandItem">
+				<a href="#">
+					<i class="uiIconArrowRight"></i>	
+					<span class="warningIcon">1 Warning</span>
+				</a>
+				<ul>
+					<li>- The Username can not be blank.</li>
+					<li>- Your email address has incorrect syntax.</li>
+					<li>- Please input validation number.</li>
+				</ul>
+			</li>
+			<li class="expandItem">
+				<a href="#">
+					<i class="uiIconArrowRight"></i>	
+					<span class="informationIcon">1 Information</span>
+				</a>
+				<ul>
+					<li>- The Username can not be blank.</li>
+					<li>- Your email address has incorrect syntax.</li>
+					<li>- Please input validation number.</li>
+				</ul>
+			</li>
+		</ul-->
+		
 		<div class="uiAction">
 			<a href="javascript:void(0);" onclick="<%=uicomponent.event("Close")%>" class="btn"><%=_ctx.appRes("UIPopupMessages.button.ok")%></a>
 		</div>
