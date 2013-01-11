@@ -6,6 +6,10 @@
    import org.gatein.common.text.EntityEncoder;
    import org.exoplatform.commons.utils.HTMLEntityEncoder;
 
+   def rcontext = _ctx.getRequestContext();
+   rcontext.getJavascriptManager().require("SHARED/bts_tooltip").require("SHARED/jquery", "\$")
+   				 .addScripts("\$('#${uicomponent.id}').find('*[rel=\"tooltip\"]').tooltip();");
+   
    String[] beanFields = uicomponent.getBeanFields();
    String[] beanActions = uicomponent.getBeanActions();
    int colnum = 0;
@@ -56,13 +60,8 @@
       <% }
       else
       {
-         def rowClass = null;
-         boolean even = true;
          for (bean in uicomponent.getBeans())
          {
-            if (even) rowClass = "EvenRow";
-            else rowClass = "OddRow portlet-table-alternate";
-            even = !even;
       %>
       <tr>
          <%
