@@ -35,7 +35,7 @@
 		</div>
 		
 		<div class="PopupContent popupContent">
-			<div class="confirmationContent">
+			<div class="confirmationContent resizable">
 				<span class="confirmationIcon">
 				<%=HTMLEntityEncoder.getInstance().encode(message);%>
 				</span>
