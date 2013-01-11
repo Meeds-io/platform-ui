@@ -64,7 +64,12 @@
 					%>
 				</div>
 			</div>
-			<div class="uiAction">
+			
+			<!--div class="confirmationContent">
+				<span class="confirmationIcon">Are you sure to want to delete this category and all forum topics, posts belong to it?</span>
+			</div-->
+			
+			<div class="uiAction uiActionBorder">
 				<%
 					printAction(actions);
 				%>

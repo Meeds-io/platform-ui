@@ -56,7 +56,7 @@
 			padding: 3px 0;
 		}
 		
-		> li > a > span {
+		> li > a > span[class*="Icon"] {
 			background: url(/eXoResources/skin/images/PopupMessage/icons.png) no-repeat;
 			padding-left: 20px;
 			line-height: 16px;
@@ -91,4 +91,13 @@
 		}
 	}
 	
+	.confirmationContent > span.confirmationIcon {
+		background: url(/eXoResources/skin/images/PopupMessage/icons.png) no-repeat left -48px;
+		padding-left: 20px;
+		line-height: 16px;
+		height: 16px;
+		color: @textColor;
+		display: block;
+		margin: 10px 10px 20px;
+	}
 }
