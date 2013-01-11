@@ -7,36 +7,14 @@
 	 */
 %>
 <%
-	import org.exoplatform.webui.core.UIConfirmation.ActionConfirm;
+  import org.exoplatform.commons.utils.HTMLEntityEncoder;
 	
 	String popupId = uicomponent.getId();
 	def rcontext = _ctx.getRequestContext();
-	rcontext.getJavascriptManager().require("SHARED/webui");
 	
 	def message = uicomponent.getMessage();
 	def actions = uicomponent.getActions();
-	
-	void printTab(String messages, String title)
-	{
-		println """
-							<li class="active" onclick=\"eXo.webui.UIHorizontalTabs.displayTabContent(this)\">
-		""";
-		println "<a><i class=\"uiIcon${title}\"></i>"+_ctx.appRes("UIPopupMessages.label."+"${title}") +"</a>";
-		println """
-							
-							</li>
-		""";
-	}
-	
-	void printMessage(String message, String messageType)
-	{
-		println "        <div class=\"messageContainer\">";
-		println "          <span class=\"popupIcon ${messageType}Icon\">";
-		println message;
-		println "          </span>";
-		println "        </div>";
-	}
-	
+
 	void printAction(List actions)
 	{
 		for(act in actions)
@@ -46,43 +24,31 @@
 	}
 %>
 	<div class="UIPopupWindow UIDragObject uiPopup" id="$popupId" style="width: 550px; display: none;">
+	<%
+    def module = rcontext.getJavascriptManager().require("SHARED/webui", "webui");
+	  if(uicomponent.hasMessage()){
+		  module.addScripts("webui.UIPopupWindow.show('$popupId', $uicomponent.showMask);");	  
+	%>
 		<div class="popupHeader ClearFix">
 			<a class="uiIconClose pull-right" title="<%=_ctx.appRes("UIConfirmation.Close")%>" onclick="<%=uicomponent.event("Close")%>"></a>
 			<span class="PopupTitle popupTitle"><%= _ctx.appRes("UIConfirmation.title.exoMessages") %></span>
 		</div>
 		
 		<div class="PopupContent popupContent">
-			<div class="uiTabNormal">
-				<ul class="nav nav-tabs">
-				<%
-					printTab(message, "Warning");
-				%>
-				</ul>
-				<div class="tab-content">
-					<%
-						printMessage(message, "WarningMessage");
-					%>
-				</div>
+			<div class="confirmationContent">
+				<span class="confirmationIcon">
+				<%=HTMLEntityEncoder.getInstance().encode(message);%>
+				</span>
 			</div>
-			
-			<!--div class="confirmationContent">
-				<span class="confirmationIcon">Are you sure to want to delete this category and all forum topics, posts belong to it?</span>
-			</div-->
-			
 			<div class="uiAction uiActionBorder">
 				<%
 					printAction(actions);
 				%>
 			</div>
-		</div>
-		
-	</div>
-	
+		</div>			
 	<%
-    def module = rcontext.getJavascriptManager().require("SHARED/webui", "webui");
-		if(uicomponent.hasMessage()){
-			module.addScripts("webui.UIPopupWindow.show('$popupId', $uicomponent.showMask);");
-		} else if (rcontext.useAjax()) {
+	  } else if (rcontext.useAjax()) {
       module.addScripts("webui.UIPopupWindow.hide('$popupId', $uicomponent.showMask);");
 		}
 	%>
+  </div>
