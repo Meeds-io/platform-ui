@@ -10,59 +10,51 @@
 <%
   import org.gatein.common.text.EntityEncoder;
   import org.exoplatform.commons.utils.HTMLEntityEncoder;
-  import org.gatein.portal.controller.resource.ResourceScope;
   
 	String popupId = uicomponent.getId();
 
-	boolean printTab(List messages, String title, boolean isSelected) {
-		String cssClass = "";
-		if(messages.size() == 0) cssClass = "";
-		else if(!isSelected) {
-			cssClass = "active";
-			isSelected = true;
-		}
-		println """
-			<li class="$cssClass">
-		""";
-			if(messages.size() > 0) println "<a><i class=\"TabIcon ${title}Icon\"></i>"+_ctx.appRes("UIPopupMessages.label."+"${title}") +"</a>";
-			else println "<a class=\"TabIcon ${title}Icon\">" + _ctx.appRes("UIPopupMessages.label."+"${title}") + "</a>";
-			println """
-							
-			</li>
-		""";
-		return isSelected;
-	}
-
 	boolean printMessages(List messages, String messType, boolean isSelected) {
-		String style = "style=\"display: none;\"";
-		if(messages.size() > 0 && !isSelected) {
-			style = "";
+	  if (messages.size() == 0) return false;
+		def style = "";
+		def icon = "uiIconArrowRight";
+		if(!isSelected) {
+			style = "in";
+			icon = "uiIconArrowDown";
 			isSelected = true;
 		}
-			println "      <ul class=\"UITabContent PopupMessageBox $messType\" $style>";
+		def ltype = messType.toLowerCase();
+		def id = uicomponent.getId();
+	
+		println "<li>";
+		println "  <a data-toggle=\"collapse\" href=\"#${id}-${messType}\">";
+		println "     <i class=\"$icon\"></i>";
+		println "     <span class=\"${ltype}Icon\">";
+		print messages.size() + " " + _ctx.appRes("UIPopupMessages.label."+"$messType");
+		if (messages.size() > 1) println "s";
+		println "     </span>";
+		println "  </a>";
+		println "  <ul id=\"${id}-${messType}\" class=\"collapse $style\">";
 		for(mess in messages) {
 			// if(mess.messageKey == null) continue;
-			println "						<li class=\"MessageContainer\">";
-			println "							<span class=\"PopupIcon ${messType}Icon\">";
+			println "		<li>";
 			String msgValue = mess.getMessage();
 			EntityEncoder entityEncoder = EntityEncoder.FULL;
 			println entityEncoder.encode(msgValue);
-			println "						 </span>";
-			println "					 </li>";
+			println "		</li>";
 		}
-		println "		</ul>";
+		println "	  </ul>";
+		println "</li>";
 		return isSelected;
 	}
 %>
 <div class="UIPopupWindow UIDragObject uiPopup" id="$popupId" style="width: 550px; display: none;">
-  <%
-  
+  <%  
     def rcontext = _ctx.getRequestContext();
+    def reqJS = rcontext.getJavascriptManager().require("SHARED/uiPopupMessages", "popupMsg");
+    reqJS.addScripts("popupMsg.init('$popupId');");
 
     if(uicomponent.hasMessage()){
-      rcontext.getJavascriptManager().require("SHARED/webui", "webui")
-      	                             .addScripts("webui.UIPopupWindow.show('$popupId', $uicomponent.showMask);")
-                                      .addScripts("webui.UIHorizontalTabs.init('$popupId');");
+      reqJS.addScripts("popupMsg.show('$popupId', $uicomponent.showMask);");
 
       def errors = uicomponent.getErrors();
       def warnings = uicomponent.getWarnings();
@@ -73,63 +65,16 @@
 		<span class="PopupTitle popupTitle"><%=_ctx.appRes("UIPopupMessages.title.exoMessages")%></span>
 	</div>
 	
-	<div class="PopupContent popupContent">
-	
-		<div class="uiTabNormal">
-			<ul class="nav nav-tabs">
-			<%	
-				boolean flag = false;
-				flag = printTab(errors, "Error", flag);
-				flag = printTab(warnings, "Warning", flag);
-				flag = printTab(infos, "Info", flag);
+	<div class="PopupContent popupContent">	
+		<ul class="messageContent">
+			<%
+			def flag = false;
+			flag = printMessages(errors, "Error", flag);
+			flag = printMessages(warnings, "Warning", flag);
+			flag = printMessages(infos, "Info", flag);
 			%>
-			</ul>
-			<div class="tab-content">
-				<%
-					flag = false;
-					flag = printMessages(errors, "ErrorMessage", flag);
-					flag = printMessages(warnings, "WarningMessage", flag);
-					flag = printMessages(infos, "InfoMessage", flag);
-				%>
-			</div>
-		</div>
-		
-		<!--ul class="messageContent">
-			<li class="collapseItem">
-				<a href="#">
-					<i class="uiIconArrowDown"></i>	
-					<span class="errorIcon">3 Errors</span>
-				</a>
-				<ul>
-					<li>- The Username can not be blank.</li>
-					<li>- Your email address has incorrect syntax.</li>
-					<li>- Please input validation number.</li>
-				</ul>
-			</li>
-			<li class="expandItem">
-				<a href="#">
-					<i class="uiIconArrowRight"></i>	
-					<span class="warningIcon">1 Warning</span>
-				</a>
-				<ul>
-					<li>- The Username can not be blank.</li>
-					<li>- Your email address has incorrect syntax.</li>
-					<li>- Please input validation number.</li>
-				</ul>
-			</li>
-			<li class="expandItem">
-				<a href="#">
-					<i class="uiIconArrowRight"></i>	
-					<span class="informationIcon">1 Information</span>
-				</a>
-				<ul>
-					<li>- The Username can not be blank.</li>
-					<li>- Your email address has incorrect syntax.</li>
-					<li>- Please input validation number.</li>
-				</ul>
-			</li>
-		</ul-->
-		
+		</ul>						
+				
 		<div class="uiAction">
 			<a href="javascript:void(0);" onclick="<%=uicomponent.event("Close")%>" class="btn"><%=_ctx.appRes("UIPopupMessages.button.ok")%></a>
 		</div>
@@ -137,8 +82,7 @@
 	
 	<%
     } else if (rcontext.useAjax()) {
-        rcontext.getJavascriptManager().require("SHARED/webui", "webui")
-                                       .addScripts("webui.UIPopupWindow.hide('$popupId', $uicomponent.showMask);");
+        reqJS.addScripts("popupMsg.hide('$popupId', $uicomponent.showMask);");
     }
 	%>
 </div>

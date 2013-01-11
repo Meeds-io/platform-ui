@@ -470,6 +470,23 @@
          <module>jquery</module>
       </depends>
    </module>
+   
+   <module>
+    <name>uiPopupMessages</name>
+    <script>
+      <name>eXo.webui.UIPopupMessages</name>
+      <path>/javascript/eXo/webui/UIPopupMessages.js</path>
+    </script>
+    <depends>
+      <module>jquery</module>
+    </depends>
+    <depends>
+      <module>webui</module>
+    </depends>
+    <depends>
+      <module>bts_collapse</module>
+    </depends>
+   </module>
 
    <module>
       <name>webui-ext</name>
