@@ -223,9 +223,15 @@ public class UIFormSelectBox extends UIFormStringInput
          formId = uiForm.<UIComponent> getParent().getId();
       else
          formId = uiForm.getId();
+      
+      isMultiple_ = isMultiple_ || Boolean.parseBoolean(getHTMLAttribute("multiple"));
 
       Writer w = context.getWriter();
-      w.write("<span class=\"uiSelectbox\"><select class=\"selectbox\" name=\"");
+      if (!isMultiple_) 
+      {
+         w.write("<span class=\"uiSelectbox\">");
+      }
+      w.write("<select class=\"selectbox\" name=\"");
       w.write(name);
       w.write("\"");
       if (onchange_ != null)
@@ -274,7 +280,11 @@ public class UIFormSelectBox extends UIFormStringInput
          w.write("</option>\n");
       }
 
-      w.write("</select></span>\n");
+      w.write("</select>\n");
+      if (!isMultiple_) 
+      {
+         w.write("</span>\n");
+      }
       if (this.isMandatory())
          w.write(" *");
    }
