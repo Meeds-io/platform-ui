@@ -18,13 +18,19 @@
 		&.right {
 				text-align: right;
 			}
+		&.empty {
+			color: #9a9a9a;
+		}
+		.text {
+			overflow: hidden;
+		}
 	}
 	tr {		
 		th {
 			background-color: #f0f0f0;
 			border-bottom: 1px solid @tableBorder;
-			
 		}
+	
 		td {		
 			border-top: none;
 			.actionIcon {
@@ -32,15 +38,6 @@
 					#StatusElements > .StatusActive(0px 0px 10px 0 rgba(0, 0, 0, 0.15) inset);
 				}					
 			}
-			.uiCheckbox {
-				width: 18px; 
-				margin: auto;
-			}
-			.uiRadio {
-				width: 12px;
-				margin: auto;
-			}
-			
 		}	
 	}
 }

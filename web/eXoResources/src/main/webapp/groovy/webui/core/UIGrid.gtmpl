@@ -18,38 +18,38 @@
    String name = uicomponent.getLabel();
    UIForm uiForm = uicomponent.getAncestorOfType(UIForm.class);
 %>
-<div id="$uicomponent.id">
-   <table class="UIGrid" cellspacing="0">
+<div id="$uicomponent.id" style="border: 2px solid yellow">
+   <table class="uiGrid table table-hover table-striped" cellspacing="0">
       <thead>
       <tr>
          <% if (name != null)
          		{ for (field in beanFields)
          			{ %>
-         				<th class="portlet-table-header"><%=_ctx.appRes(name + ".header." + field)%></th>
+         				<th><%=_ctx.appRes(name + ".header." + field)%></th>
          		<% }
          			if (beanActions != null)
          			{ %>
-         				<th class="portlet-table-header"><%=_ctx.appRes(name + ".header.action")%></th>
+         				<th><%=_ctx.appRes(name + ".header.action")%></th>
          		<% }
          		}
          		if (name == null)
          		{
          			for (field in beanFields)
          			{ %>
-         				<th class="portlet-table-header"><%=_ctx.appRes(uiParent.getName() + ".header." + field)%></th>
+         				<th><%=_ctx.appRes(uiParent.getName() + ".header." + field)%></th>
          	 <% }
          			if (beanActions != null && beanActions.length > 0)
          			{ %>
-         				<th class="portlet-table-header"><%=_ctx.appRes(uiParent.getName() + ".header.action")%></th>
+         				<th class="center"><%=_ctx.appRes(uiParent.getName() + ".header.action")%></th>
          	 <% }
          		} %>
       </tr>
       </thead>
-      <tbody class="portlet-table-body">
+      <tbody>
       <% if (uicomponent.getUIPageIterator().getAvailable() < 1)
       { %>
       <tr>
-      	 <td style="font-style:italic; color: #FF5604; text-align: center;" colspan="<%=colnum%>">
+      	 <td class="empty center" colspan="<%=colnum%>">
             <%=_ctx.appRes("UIGrid.msg.empty")%>
          </td>
       </tr>
@@ -64,7 +64,7 @@
             else rowClass = "OddRow portlet-table-alternate";
             even = !even;
       %>
-      <tr class="$rowClass">
+      <tr>
          <%
                EntityEncoder encoder = HTMLEntityEncoder.getInstance();
                for (field in beanFields)
@@ -76,10 +76,10 @@
                      if(fieldClass == Integer.class)	cssClass = "number";
                      else if(java.util.Date.class.isAssignableFrom(fieldClass)) {
                         def dateFormat = new SimpleDateFormat("HH:mm:ss yyyy-MM-dd");
-                        cssClass = "Datetime";
+                        cssClass = "datetime";
                         fieldValue = dateFormat.format(fieldValue);
                   }
-                  else cssClass = "Text";
+                  else cssClass = "text";
                   } else {
                      fieldValue = "";
                   }
@@ -89,28 +89,29 @@
                if (beanActions != null && beanActions.length > 0)
                {
          %>
-         <td>
-            <div class="ActionContainer">
-               <%
-                     def beanIdField = uicomponent.getBeanIdField();
-                     def beanId = uicomponent.getBeanIdFor(bean);
-                     for (action in beanActions)
-                     {
-                        if (action == null) continue;
-                        String title = _ctx.appRes(uiParent.getName() + ".action.title." + action);
-                        String actionLink = "";
-                        if (uiForm != null)
-                        {
-                           actionLink = uiForm.event(action, uiParent.getId(), beanId);
-                        }
-                        else
-                        {
-                           actionLink = uiParent.event(action, beanId);
-                        }
-               %>
-               <img onclick="$actionLink" alt="$action" title="$title" src="/eXoResources/skin/sharedImages/Blank.gif" class="${action}Icon"/>
-               <% } %>
-            </div>
+         <td class="center">
+           <%
+                 def beanIdField = uicomponent.getBeanIdField();
+                 def beanId = uicomponent.getBeanIdFor(bean);
+                 for (action in beanActions)
+                 {
+                    if (action == null) continue;
+                    String title = _ctx.appRes(uiParent.getName() + ".action.title." + action);
+                    String actionLink = "";
+                    if (uiForm != null)
+                    {
+                       actionLink = uiForm.event(action, uiParent.getId(), beanId);
+                    }
+                    else
+                    {
+                       actionLink = uiParent.event(action, beanId);
+                    }
+           %>
+              <a class="actionIcon" href="javascript:void(0)" onclick="$actionLink" rel="tooltip" data-placement="bottom" title="$title" >
+               	<i class="uiIcon${action}"></i>
+              </a>
+           <% } %>
+           
          </td>
          <%
                }

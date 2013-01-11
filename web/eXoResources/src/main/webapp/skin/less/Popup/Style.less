@@ -30,7 +30,7 @@
 		.border-radius(0 0 4px 4px);
 		.resizable {
 			padding: 10px;
-			margin: -10px -10px 0;
+			margin: -10px;
 			overflow: auto;
 		}
 	}
@@ -45,12 +45,10 @@
 /**********************Popup Messages*************************/
 
 .uiPopup {
-	.messageContent {
+	.popupContent .messageContent {
 		background: @tableBackgroundAccent;
 		border: 1px solid @borderColor;
-		padding: 10px;
-		height: 170px;
-		overflow: auto;
+		margin: 0;
 
 		> li {
 			padding: 3px 0;
