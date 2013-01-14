@@ -67,7 +67,7 @@ input, textarea,select, .uneditable-input {
 
 .uiCheckbox input[type="checkbox"]:checked,
 .uiCheckbox  input[type="checkbox"]:not(:checked) {
-	margin: 0;
+	margin: 4px 0 0; /* hack margin-top: 4px to fix problem on chrome in Mac only */
 	opacity: 0;
 	padding: 0;
 	outline: 0 none;
