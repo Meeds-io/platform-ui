@@ -36,7 +36,7 @@
 		println "  <ul id=\"${id}-${messType}\" class=\"collapse $style\">";
 		for(mess in messages) {
 			// if(mess.messageKey == null) continue;
-			println "		<li>";
+			print "		<li>- ";
 			String msgValue = mess.getMessage();
 			EntityEncoder entityEncoder = EntityEncoder.FULL;
 			println entityEncoder.encode(msgValue);
