@@ -36,7 +36,7 @@
 	}
 %>
 
-<div class="UIPopupWindow uiPopup UIDragObject NormalStyle" exo:minWidth="200" exo:minHeight="200" id="$popupId" style="$widthStyle display: $show;border: 1px solid red">
+<div class="UIPopupWindow uiPopup UIDragObject NormalStyle" exo:minWidth="200" exo:minHeight="200" id="$popupId" style="$widthStyle display: $show;">
 	<div class="popupHeader ClearFix">
 		<%if (showCloseButton) {%>
 			<a class="uiIconClose pull-right" title="<%=_ctx.appRes("UIPopupWindow.Close")%>" onclick="<%=uicomponent.event(uicomponent.getCloseEvent())%>"></a>
