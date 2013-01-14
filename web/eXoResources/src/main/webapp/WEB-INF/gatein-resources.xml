@@ -213,6 +213,9 @@
         <path>/skin/bootstrap/js/bootstrap-alert.js</path>
       </script>
       <depends>
+        <module>bts_transition</module>
+      </depends>
+      <depends>
         <module>jquery</module>
       </depends>
    </module>
@@ -237,6 +240,9 @@
         <path>/skin/bootstrap/js/bootstrap-carousel.js</path>
       </script>
       <depends>
+        <module>bts_transition</module>
+      </depends>
+      <depends>
         <module>jquery</module>
       </depends>
    </module>
@@ -248,6 +254,9 @@
         <name>twitter.bootstrap.collapse</name>
         <path>/skin/bootstrap/js/bootstrap-collapse.js</path>
       </script>
+      <depends>
+        <module>bts_transition</module>
+      </depends>
       <depends>
         <module>jquery</module>
       </depends>
@@ -273,6 +282,9 @@
         <path>/skin/bootstrap/js/bootstrap-modal.js</path>
       </script>
       <depends>
+        <module>bts_transition</module>
+      </depends>
+      <depends>
         <module>jquery</module>
       </depends>
    </module>
@@ -284,6 +296,9 @@
         <name>twitter.bootstrap.popover</name>
         <path>/skin/bootstrap/js/bootstrap-popover.js</path>
       </script>
+      <depends>
+        <module>bts_tooltip</module>
+      </depends>
       <depends>
         <module>jquery</module>
       </depends>
@@ -309,6 +324,9 @@
         <path>/skin/bootstrap/js/bootstrap-tab.js</path>
       </script>
       <depends>
+        <module>bts_transition</module>
+      </depends>
+      <depends>
         <module>jquery</module>
       </depends>
    </module>
@@ -320,6 +338,9 @@
         <name>twitter.bootstrap.tooltip</name>
         <path>/skin/bootstrap/js/bootstrap-tooltip.js</path>
       </script>
+      <depends>
+        <module>bts_transition</module>
+      </depends>
       <depends>
         <module>jquery</module>
       </depends>
