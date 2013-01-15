@@ -45,16 +45,13 @@
 /**********************Popup Messages*************************/
 
 .uiPopup {
-	.popupContent .messageContent {
-		background: @tableBackgroundAccent;
-		border: 1px solid @borderColor;
-		margin: 0;
-
+	.popupMessage {
+		
 		> li {
 			padding: 3px 0;
 		}
 		
-		> li > a > span[class*="Icon"] {
+		> li span[class*="Icon"] {
 			background: url(/eXoResources/skin/images/PopupMessage/icons.png) no-repeat;
 			padding-left: 20px;
 			line-height: 16px;
@@ -63,16 +60,20 @@
 			font-weight: bold;
 		}
 		
-		> li > a > span.errorIcon {
+		> li span.errorIcon {
 			background-position: left 0px;
 		}
 		
-		> li > a > span.warningIcon {
+		> li span.warningIcon {
 			background-position: left -16px;
 		}
 		
-		> li > a > span.infoIcon {
+		> li span.infoIcon {
 			background-position: left -32px;
+		}
+		
+		> li span.confirmationIcon {
+			background-position: left -48px;
 		}
 		
 		> li.collapseItem > ul {
@@ -89,12 +90,14 @@
 		}
 	}
 	
-	.confirmationContent > span.confirmationIcon {
-		background: url(/eXoResources/skin/images/PopupMessage/icons.png) no-repeat left -48px;
-		padding-left: 20px;
-		line-height: 16px;
-		height: 16px;
-		color: @textColor;
+	.popupContent .multipleMessage {
+		background: @tableBackgroundAccent;
+		border: 1px solid @borderColor;
+		margin: 0;
+	}
+	
+	.singleMessage > li span[class*="Icon"] {
+		font-weight: normal;
 		display: block;
 		margin: 10px 10px 20px;
 	}

@@ -35,11 +35,13 @@
 		</div>
 		
 		<div class="PopupContent popupContent">
-			<div class="confirmationContent resizable">
-				<span class="confirmationIcon">
-				<%=HTMLEntityEncoder.getInstance().encode(message);%>
-				</span>
-			</div>
+			<ul class="singleMessage popupMessage resizable">
+				<li>
+					<span class="confirmationIcon">
+					<%=HTMLEntityEncoder.getInstance().encode(message);%>
+					</span>
+				</li>
+			</ul>
 			<div class="uiAction uiActionBorder">
 				<%
 					printAction(actions);

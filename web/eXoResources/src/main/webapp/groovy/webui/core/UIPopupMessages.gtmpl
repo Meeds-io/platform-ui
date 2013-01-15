@@ -90,15 +90,17 @@
 	<div class="PopupContent popupContent">	
 	<%
 		  if(single) {
-		    println "<div class=\"resizable\">";
-			  println "<span class=\"${msgType}Icon\">";
-			  println HTMLEntityEncoder.getInstance().encode(msg.getMessage());
-				println "</span>"
-				println "</div>"
+		    println "<ul class=\"singleMessage popupMessage resizable\">";
+			  println "	 <li>";
+			  println "    <span class=\"${msgType}Icon\">";
+			  println        HTMLEntityEncoder.getInstance().encode(msg.getMessage());
+			 	println "    </span>";
+				println "  </li>"
+				println "</ul>"
 		  } else {
 		    //Multiple style popup message
 	%>
-		<ul class="messageContent resizable">
+		<ul class="multipleMessage popupMessage resizable">
 			<%
 			def flag = false;
 			flag = printMessages(errors, "Error", flag);
