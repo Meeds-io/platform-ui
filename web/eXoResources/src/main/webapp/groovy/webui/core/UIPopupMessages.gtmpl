@@ -29,8 +29,8 @@
 		println "  <a data-toggle=\"collapse\" href=\"#${id}-${messType}\">";
 		println "     <i class=\"$icon\"></i>";
 		println "     <span class=\"${ltype}Icon\">";
-		print messages.size() + " " + _ctx.appRes("UIPopupMessages.label."+"$messType");
-		if (messages.size() > 1) println "s";
+		def quantity = messages.size() > 1 ? "s" : "";
+		println messages.size() + " " + _ctx.appRes("UIPopupMessages.label."+"$messType" + quantity);
 		println "     </span>";
 		println "  </a>";
 		println "  <ul id=\"${id}-${messType}\" class=\"collapse $style\">";
@@ -79,7 +79,7 @@
 		<span class="PopupTitle popupTitle">
 			<%
 				if (single) {
-				   println _ctx.appRes("UIPopupMessages.title.${msgType}");
+				   println _ctx.appRes("UIPopupMessages.label.${msgType}");
 				} else {
 				   println _ctx.appRes("UIPopupMessages.title.exoMessages"); 
 				}
@@ -95,17 +95,17 @@
 			  println "    <span class=\"${msgType}Icon\">";
 			  println        HTMLEntityEncoder.getInstance().encode(msg.getMessage());
 			 	println "    </span>";
-				println "  </li>"
-				println "</ul>"
+				println "  </li>";
+				println "</ul>";
 		  } else {
 		    //Multiple style popup message
 	%>
 		<ul class="multipleMessage popupMessage resizable">
 			<%
 			def flag = false;
-			flag = printMessages(errors, "Error", flag);
-			flag = printMessages(warnings, "Warning", flag);
-			flag = printMessages(infos, "Info", flag);
+			flag = printMessages(errors, "error", flag);
+			flag = printMessages(warnings, "warning", flag);
+			flag = printMessages(infos, "info", flag);
 			%>
 		</ul>			
 	<%  } %>			
