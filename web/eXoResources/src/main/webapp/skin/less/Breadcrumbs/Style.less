@@ -1,18 +1,25 @@
-.breadcrumb{
+.breadcrumb {
 	background: none;
 	margin: 0px;
 	padding: 0px;
-	a{
+	
+	a {
 		color: @grayDark;
+		
+		&:hover {
+			color: #2f5e92;
+			text-decoration: none !important;
+		}
 	}
-	a:hover{
-		color: #2f5e92;
-		text-decoration: none !important;
-	}
-	li{
+
+	li {
 		vertical-align: top;
 	}
-	.active{
+	
+	.active {
 		font-weight: bold;
+		> a {
+			color: @grayLight;
+		}
 	}
 }
