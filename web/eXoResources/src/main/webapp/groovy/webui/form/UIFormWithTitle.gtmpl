@@ -25,7 +25,7 @@
 									<div class="controls NonEditableField portlet-input-field"><% uiform.renderField(field) %></div>
 								<% } %>	
 							<%} else {%>
-								<div class="controls"><% uiform.renderField(field) %></div>
+								<div class="controls-full"><% uiform.renderField(field) %></div>
 							<%}%>
 						</div>
 			<%
