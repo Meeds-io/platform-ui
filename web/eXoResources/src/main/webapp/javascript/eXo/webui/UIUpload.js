@@ -62,18 +62,24 @@ var uiUpload = {
   	var uploadId = uiInput.data("uploadId");
   	var uploadBtn = uiInput.find(".uploadButton");  		
          
-  	var uploadCont = uiUpload.cloneContainer(id, uploadId);
-    
-    uploadBtn.off("click").click(function() {
-  		uploadCont.find("input").click();
-  	}).show();
+  	var uploadCont = uiUpload.cloneContainer(id, uploadId);  	
+  	var input = uploadCont.find("input");
+  	if (base.Browser.isIE()) {
+  		uploadBtn.find(".btn").attr("for", input.attr("id"));
+  		input.css({"position":"absolute", "left": "-5000px"}).show();
+  	} else{
+  		uploadBtn.off("click").click(function() {
+  			input.click();
+  		});  	  	      		
+  	}
+  	uploadBtn.show();
     uiInput.children("input[type='hidden']").val(false);
   },
 
   cloneContainer : function(id, uploadId) {  	  	
   	var uiInput = $("#" + id);
   	var template = uiInput.children("script[type='text/template']");
-  	var uploadCont = $(template.text());
+  	var uploadCont = $(template.html());
   	uploadCont.attr("id", "uploadContainer" + uploadId);  	  	  	          
     uploadCont.on("click", ".deleteFileLabel, .removeFile", function() {
   		  if ($(this).hasClass("removeFile")) {
@@ -90,7 +96,14 @@ var uiUpload = {
   		uiUpload.upload(uploadId);    		  
   	});
   	
-  	uploadCont.find("iframe").attr("name", "uploadIFrame" + uploadId);
+  	var iframe = uploadCont.find("iframe"); 
+  	if (base.Browser.isIE7()) {
+  		var tmp = iframe[0].outerHTML;
+  		tmp = tmp.replace("name=uploadIFrame", "name=uploadIFrame" + uploadId);
+  		iframe.replaceWith($(tmp));
+  	} else {
+  		iframe.attr("name", "uploadIFrame" + uploadId);
+  	}
   	template.before(uploadCont);
     uploadCont.show();
     uploadCont.find("*[rel='tooltip']").tooltip();
@@ -162,11 +175,8 @@ var uiUpload = {
       var percent = response.upload[id].percent;
       var bar = jCont.find(".bar").first();
       bar.css("width", percent + "%");
-      var label = bar.children(".percent").first();
+      var label = jCont.find(".percent").first();
       label.html(percent + "%");
-
-      jCont.data("fileName", response.upload[id].fileName);
-      jCont.find(".progressBarFrame .fileNameLabel").html(uiUpload.processFileInfo(id));
       
       if (percent == 100) {
         uiUpload.showUploaded(id);
