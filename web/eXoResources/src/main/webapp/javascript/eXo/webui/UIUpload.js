@@ -51,6 +51,8 @@ var uiUpload = {
         || response.upload[uploadId].percent == undefined) {
     	uiUpload.createEntryUpload(id);    	
     } else if (response.upload[uploadId] && response.upload[uploadId].percent == 100) {
+    	var jCont = uiUpload.cloneContainer(id, uploadId);
+    	jCont.data("fileName", response.upload[uploadId].fileName);
     	uiUpload.showUploaded(uploadId);
     }
   },
@@ -98,15 +100,6 @@ var uiUpload = {
   showUploaded : function(id) {
     uiUpload.remove(id);
     var jCont = $('#uploadContainer' + id);
-    if (!jCont.length) {
-    	$(".uiUploadInput").each(function() {
-    		var uiInput = $(this);
-    		if (id === uiInput.data("uploadId")) {
-    			jCont = uiUpload.cloneContainer(uiInput.attr("id"), id);
-    			return false;
-    		}
-    	});
-    }
     jCont.find(".progressBarFrame").hide();
 
     var selectFileFrame = jCont.find(".selectFileFrame");
@@ -120,26 +113,21 @@ var uiUpload = {
   
   processFileInfo : function(uploadId) {
   	var jCont = $("#uploadContainer" + uploadId);
+  	var selectFileFrame = jCont.find(".selectFileFrame");
+  	var delIcon = selectFileFrame.find(".removeFile");
+  	
   	var fileName = jCont.data("fileName") || "";
-  	var size = jCont.data("fileSize");
   	fileName = decodeURIComponent(fileName);
-  	if (fileName.length > 20) {
+  	
+  	if (selectFileFrame.css("display") !== "none") {
+  		var tmp = $("<span>" + fileName + "</span>").css("visibility", "hidden");
+  		$(document.body).append(tmp);
+  		if (tmp.width() > selectFileFrame.width() - delIcon.width()) {
+  			fileName = fileName.substring(0, 51) + "...";
+  		}
+  		tmp.remove();
+  	} else if (fileName.length > 20) {
   		fileName = fileName.substring(0, 21) + "...";
-  	}
-  	if (jCont.children(".selectFileFrame").css("display") == "block" && size) {
-  		size = Math.round(size);
-    	var megabyte = Math.floor(size/1048576);
-    	var kilobyte = Math.floor((size % 1048576) / 1024);
-    	var byteValue = size % 1024;
-    	if (megabyte > 0) {
-    		size = megabyte + '.' + kilobyte + " Mb";
-    	} else if(kilobyte > 0) {
-    		size = kilobyte + '.' + byteValue + " Kb";
-    	} else {
-    		size = byteValue + " b";
-    	}
-    	
-  		fileName += " (" + size + ")";
   	}
   	return fileName;
   },
@@ -230,7 +218,6 @@ var uiUpload = {
     
     if (file.files && file.files.length) {
     	jCont.data("fileName", file.files[0].name);
-    	jCont.data("fileSize", file.files[0].size);
     } else {
     	jCont.data("fileName", temp.split(/(\\|\/)/g).pop());
     }

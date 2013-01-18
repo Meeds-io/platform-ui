@@ -55,6 +55,8 @@ var uiUploadInput = {
       }	     	      
       
       if (response.upload[uploadId[i]] && response.upload[uploadId[i]].percent == 100) {
+      	 var jCont = uiUploadInput.cloneContainer(id, uploadId[i]);
+      	 jCont.data("fileName", response.upload[uploadId[i]].fileName);
         uiUploadInput.showUploaded(uploadId[i]);
       }
     }
@@ -62,36 +64,35 @@ var uiUploadInput = {
     uiUploadInput.fileSelectedStatus(id);
   },
 
-  createEntryUpload : function(id, uploadId) {
+  createEntryUpload : function(id) {
   	var uiInput = $("#" + id);
   	var inputs = uiInput.data("inputs");
   	var limited = uiInput.data("limited");
   	var uploadBtn = uiInput.find(".uploadButton");  	
   	
+  	var uploadId = null;
+  	for (var i = 0; i < inputs.length; i++) {
+  		var jCont = $("#uploadContainer" + inputs[i]);
+  		if (!jCont.length) {
+  			uploadId = inputs[i];
+  			break;
+  		}
+  	}
+  	
   	if (!uploadId) {
-  		for (var i = 0; i < inputs.length; i++) {
-  			var jCont = $("#uploadContainer" + inputs[i]);
-  			if (!jCont.length) {
-  				uploadId = inputs[i];
-  				break;
-  			}
+  		if (inputs.length === limited) {
+  			uploadBtn.hide();
+  			return;
   		}
   		
-  		if (!uploadId) {
-  			if (inputs.length === limited) {
-  				uploadBtn.hide();
-  				return;
-  			}
-  			
-  			var createURL = uiInput.children(".createUploadURL").text();
-  			ajaxAsyncGetRequest(createURL, false);
-  			var uploadId = inputs[inputs.length - 1]; 
-  			var idx = uploadId.search(/-\d+$/) + 1;
-  			uploadId = uploadId.substring(0, idx) + (parseInt(uploadId.substring(idx)) + 1);
-  			inputs.push(uploadId);
-  			uiInput.data("inputs", inputs);
-  		}  	  	  	  	  	
-  	}
+  		var createURL = uiInput.children(".createUploadURL").text();
+  		ajaxAsyncGetRequest(createURL, false);
+  		var uploadId = inputs[inputs.length - 1]; 
+  		var idx = uploadId.search(/-\d+$/) + 1;
+  		uploadId = uploadId.substring(0, idx) + (parseInt(uploadId.substring(idx)) + 1);
+  		inputs.push(uploadId);
+  		uiInput.data("inputs", inputs);
+  	}  	  	  	  	  	
   	  	         
   	var uploadCont = uiUploadInput.cloneContainer(id, uploadId);
   	uploadBtn.off("click").click(function() {
@@ -129,15 +130,6 @@ var uiUploadInput = {
   showUploaded : function(id) {
     uiUploadInput.remove(id);
     var jCont = $('#uploadContainer' + id);
-    if (!jCont.length) {
-    	$(".uiUploadInput").each(function() {
-    		var uiInput = $(this);
-    		if ($.inArray(id, uiInput.data("inputs")) != -1) {
-    			jCont = uiUploadInput.cloneContainer(uiInput.attr("id"), id);
-    			return false;
-    		}
-    	});
-    }
     jCont.find(".progressBarFrame").hide();
 
     var selectFileFrame = jCont.find(".selectFileFrame");
@@ -148,26 +140,21 @@ var uiUploadInput = {
   
   processFileInfo : function(uploadId) {
   	var jCont = $("#uploadContainer" + uploadId);
+  	var selectFileFrame = jCont.find(".selectFileFrame");
+  	var delIcon = selectFileFrame.find(".removeFile");
+  	
   	var fileName = jCont.data("fileName") || "";
-  	var size = jCont.data("fileSize");
   	fileName = decodeURIComponent(fileName);
-  	if (fileName.length > 20) {
+  	
+  	if (selectFileFrame.css("display") !== "none") {
+  		var tmp = $("<span>" + fileName + "</span>").css("visibility", "hidden");
+  		$(document.body).append(tmp);
+  		if (tmp.width() > selectFileFrame.width() - delIcon.width()) {
+  			fileName = fileName.substring(0, 51) + "...";
+  		}
+  		tmp.remove();
+  	} else if (fileName.length > 20) {
   		fileName = fileName.substring(0, 21) + "...";
-  	}
-  	if (jCont.children(".selectFileFrame").css("display") == "block" && size) {
-  		size = Math.round(size);
-    	var megabyte = Math.floor(size/1048576);
-    	var kilobyte = Math.floor((size % 1048576) / 1024);
-    	var byteValue = size % 1024;
-    	if (megabyte > 0) {
-    		size = megabyte + '.' + kilobyte + " Mb";
-    	} else if(kilobyte > 0) {
-    		size = kilobyte + '.' + byteValue + " Kb";
-    	} else {
-    		size = byteValue + " b";
-    	}
-    	
-  		fileName += " (" + size + ")";
   	}
   	return fileName;
   },
@@ -276,7 +263,6 @@ var uiUploadInput = {
     
     if (file.files && file.files.length) {
     	jCont.data("fileName", file.files[0].name);
-    	jCont.data("fileSize", file.files[0].size);
     } else {
     	jCont.data("fileName", temp.split(/(\\|\/)/g).pop());
     }
