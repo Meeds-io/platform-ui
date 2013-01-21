@@ -8,7 +8,7 @@
 	String selTabId = uicomponent.getSelectedTabId(); 
 	jsManager.require("SHARED/portalRequest").require("SHARED/portalComposer", "portalComposer")
 		.require("SHARED/bts_tab")
-		.addScripts("portal.PortalComposer.initComposerContent('$uicomponent.id', '$selTabId', webui);");
+		.addScripts("portalComposer.initComposerContent('$uicomponent.id', '$selTabId');");
 %>
 
 <div class="uiTabNormal" id="$uicomponent.id">

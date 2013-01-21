@@ -30,19 +30,18 @@
 	    });
 	  },
 
-	  initComposerContent : function(id, selTabId, webui)
+	  initComposerContent : function(id, selTabId)
 	  {
 		  portalComposer.showTab(selTabId);
 
-          var tabs = $("#" + id).find(".MiddleTab, .nav-tabs a");
-		  tabs.each(function(index) {
+			var tabs = $("#" + id).find(".MiddleTab, .nav-tabs a");
+			tabs.each(function(index) {
 			  $(this).on("click", function() {
                   			  var jTab = $(this), hiddenInput;
                   			  if (jTab.closest(".nav-tabs").length) {
                   				  jTab.tab('show');
                   				  hiddenInput = $(this).next("input");
                   			  } else {
-                  				  webui.UIHorizontalTabs.changeTabForUITabPane(this);
                   				  hiddenInput = $(this).children("input");
                   			  }
 				  portalComposer.showTab(hiddenInput.attr("name"));
