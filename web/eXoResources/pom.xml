@@ -4,91 +4,121 @@
    Public License for more details. You should have received a copy of the GNU Lesser General Public License along with this software; if not, write to the Free Software 
    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA, or see the FSF site: http://www.fsf.org. -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-   <modelVersion>4.0.0</modelVersion>
-   <parent>
-      <groupId>org.exoplatform.portal</groupId>
-      <artifactId>exo.portal.web</artifactId>
-      <version>3.4.0.Final</version>
-   </parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.gatein.portal</groupId>
+    <artifactId>exo.portal.web</artifactId>
+    <version>3.5.0.Final</version>
+  </parent>
 
-   <groupId>org.exoplatform.platform-ui</groupId>
-   <artifactId>platform-ui-web-eXoResources</artifactId>
-   <version>1.0.0-SNAPSHOT</version>
-   <packaging>war</packaging>
-   <name>Platform UI Web Resources</name>
+  <groupId>org.exoplatform.platform-ui</groupId>
+  <artifactId>platform-ui-web-eXoResources</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>Platform UI Web Resources</name>
 
-   <build>
-      <finalName>eXoResources</finalName>
-      <plugins>
-         <plugin>
-            <groupId>org.lesscss</groupId>
-            <artifactId>lesscss-maven-plugin</artifactId>
-            <version>1.3.0</version>
-            <executions>
-               <execution>
-                  <id>bootstrap</id>
-                  <configuration>
-                     <sourceDirectory>${project.basedir}/src/main/webapp/skin/bootstrap/less</sourceDirectory>
-                     <outputDirectory>${project.build.directory}/${project.build.finalName}/skin/bootstrap/css</outputDirectory>
-                     <compress>false</compress>
-                     <includes>
-                        <include>bootstrap.less</include>
-                        <include>responsive.less</include>
-                     </includes>
-                  </configuration>
-                  <goals>
-                     <goal>compile</goal>
-                  </goals>
-               </execution>
-               <execution>
-                  <id>core</id>
-                  <configuration>
-                     <sourceDirectory>${project.basedir}/src/main/webapp/skin/less</sourceDirectory>
-                     <outputDirectory>${project.build.directory}/${project.build.finalName}/skin/css</outputDirectory>
-                     <compress>false</compress>
-                     <includes>
-                        <include>Core.less</include>
-                     </includes>
-                  </configuration>
-                  <goals>
-                     <goal>compile</goal>
-                  </goals>
-               </execution>
-            </executions>
-         </plugin>
-      </plugins>
-   </build>
-   <reporting>
-      <plugins>
-         <!-- ... -->
-         <plugin>
-            <groupId>gr.abiss.mvn.plugins</groupId>
-            <artifactId>maven-jstools-plugin</artifactId>
-            <inherited>false</inherited>
+  <build>
+    <finalName>exo.portal.web.eXoResources</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.lesscss</groupId>
+        <artifactId>lesscss-maven-plugin</artifactId>
+        <version>1.3.0</version>
+        <executions>
+          <execution>
+            <id>bootstrap</id>
             <configuration>
-               <!-- the default is src/main/js -->
-               <jsDir>src/main/webapp/javascript</jsDir>
-               <!-- this is actually the default -->
-               <includes>**/*.js</includes>
-               <!-- maybe you need to exclude compressed JS files -->
-               <excludes>**/*-compressed.js</excludes>
-               <!-- this is actually the default -->
-               <caseSensitive>true</caseSensitive>
-               <!-- for more configuration properties, see the goals documentation -->
+              <sourceDirectory>${project.basedir}/src/main/webapp/skin/bootstrap/less</sourceDirectory>
+              <outputDirectory>${project.build.directory}/${project.build.finalName}/skin/bootstrap/css</outputDirectory>
+              <compress>false</compress>
+              <includes>
+                <include>bootstrap.less</include>
+                <include>responsive.less</include>
+              </includes>
             </configuration>
-            <reportSets>
-               <reportSet>
-                  <reports>
-                     <!-- include the desired reports -->
-                     <report>jslint</report>
-                     <report>jsdoc</report>
-                  </reports>
-               </reportSet>
-            </reportSets>
-         </plugin>
-         <!-- ... -->
-      </plugins>
-   </reporting>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>core</id>
+            <configuration>
+              <sourceDirectory>${project.basedir}/src/main/webapp/skin/less</sourceDirectory>
+              <outputDirectory>${project.build.directory}/${project.build.finalName}/skin/css</outputDirectory>
+              <compress>false</compress>
+              <includes>
+                <include>Core.less</include>
+              </includes>
+            </configuration>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- Override checkstyle plugin config to avoid constraint on project version number -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>${version.checkstyle.plugin}</version>
+        <configuration>
+          <configLocation>gatein-portal-checkstyle/checkstyle.xml</configLocation>
+          <consoleOutput>true</consoleOutput>
+          <failsOnError>true</failsOnError>
+          <useFile/>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.gatein</groupId>
+            <artifactId>gatein-portal-build-config</artifactId>
+            <!--<version>${project.version}</version>-->
+            <version>3.5.0.Final</version>
+          </dependency>
+        </dependencies>
+        <executions>
+          <execution>
+            <id>check-style</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>checkstyle</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <reporting>
+    <plugins>
+      <!-- ... -->
+      <plugin>
+        <groupId>gr.abiss.mvn.plugins</groupId>
+        <artifactId>maven-jstools-plugin</artifactId>
+        <inherited>false</inherited>
+        <configuration>
+          <!-- the default is src/main/js -->
+          <jsDir>src/main/webapp/javascript</jsDir>
+          <!-- this is actually the default -->
+          <includes>**/*.js</includes>
+          <!-- maybe you need to exclude compressed JS files -->
+          <excludes>**/*-compressed.js</excludes>
+          <!-- this is actually the default -->
+          <caseSensitive>true</caseSensitive>
+          <!-- for more configuration properties, see the goals documentation -->
+        </configuration>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <!-- include the desired reports -->
+              <report>jslint</report>
+              <report>jsdoc</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+      <!-- ... -->
+    </plugins>
+  </reporting>
 
 </project>

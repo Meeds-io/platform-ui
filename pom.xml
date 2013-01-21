@@ -19,91 +19,92 @@
 
 -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-   <modelVersion>4.0.0</modelVersion>
+  <modelVersion>4.0.0</modelVersion>
 
-   <parent>
-     <groupId>org.exoplatform</groupId>
-     <artifactId>maven-parent-pom</artifactId>
-     <version>9-SNAPSHOT</version>
-     <relativePath />
-   </parent>
-   <groupId>org.exoplatform.platform-ui</groupId>
-   <artifactId>platform-ui</artifactId>
-   <version>1.0.0-SNAPSHOT</version>
-   <packaging>pom</packaging>
-   <name>Platform-UI</name>
+  <parent>
+    <groupId>org.exoplatform</groupId>
+    <artifactId>maven-parent-pom</artifactId>
+    <version>9-SNAPSHOT</version>
+    <relativePath/>
+  </parent>
+  <groupId>org.exoplatform.platform-ui</groupId>
+  <artifactId>platform-ui</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Platform-UI</name>
 
-   <scm>
-     <connection>scm:git:git://github.com/exoplatform/platform-ui.git</connection>
-     <developerConnection>scm:git:git@github.com:exoplatform/platform-ui.git</developerConnection>
-     <url>http://fisheye.exoplatform.org/browse/projects/platform-ui</url>
+  <scm>
+    <connection>scm:git:git://github.com/exoplatform/platform-ui.git</connection>
+    <developerConnection>scm:git:git@github.com:exoplatform/platform-ui.git</developerConnection>
+    <url>http://fisheye.exoplatform.org/browse/projects/platform-ui</url>
   </scm>
 
   <properties>
-    <org.exoplatform.portal.version>3.5.0.Beta02</org.exoplatform.portal.version>    
+    <org.exoplatform.portal.version>3.5.0.Final</org.exoplatform.portal.version>
   </properties>
 
-   <modules>
-      <module>webui/core</module>
-      <module>web/eXoResources</module>
-   </modules>
+  <modules>
+    <module>webui/core</module>
+    <module>web/eXoResources</module>
+  </modules>
 
-   <build>
-      <resources>
-         <resource>
-            <directory>src/main/java</directory>
-            <includes>
-               <include>**/*.properties</include>
-               <include>**/*.xml</include>
-               <include>**/*.xsd</include>
-            </includes>
-         </resource>
-         <resource>
-            <directory>src/main/resources</directory>
-            <includes>
-               <include>**/*.*</include>
-            </includes>
-         </resource>
-      </resources>
-      <testResources>
-         <testResource>
-            <directory>src/test/java</directory>
-            <includes>
-               <include>**/*.properties</include>
-               <include>**/*.xml</include>
-            </includes>
-         </testResource>
-         <testResource>
-            <directory>src/test/resources</directory>
-         </testResource>
-      </testResources>
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**/*.properties</include>
+          <include>**/*.xml</include>
+          <include>**/*.xsd</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>**/*.*</include>
+        </includes>
+      </resource>
+    </resources>
+    <testResources>
+      <testResource>
+        <directory>src/test/java</directory>
+        <includes>
+          <include>**/*.properties</include>
+          <include>**/*.xml</include>
+        </includes>
+      </testResource>
+      <testResource>
+        <directory>src/test/resources</directory>
+      </testResource>
+    </testResources>
 
-      <plugins>
-         <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-antrun-plugin</artifactId>
-            <executions>
-               <execution>
-                  <id>compile</id>
-                  <phase>compile</phase>
-                  <configuration>
-                     <tasks>
-                        <copy failonerror="false" todir="${project.build.directory}/${project.build.finalName}/WEB-INF/classes">
-                           <fileset dir="${basedir}/src/main/webapp/WEB-INF/classes">
-                              <include name="**/*_en.properties" />
-                           </fileset>
-                           <globmapper from="*_en.properties" to="*.properties" />
-                        </copy>
-                     </tasks>
-                  </configuration>
-                  <goals>
-                     <goal>run</goal>
-                  </goals>
-               </execution>
-            </executions>
-         </plugin>
-      </plugins>
-   </build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>compile</id>
+            <phase>compile</phase>
+            <configuration>
+              <tasks>
+                <copy failonerror="false" todir="${project.build.directory}/${project.build.finalName}/WEB-INF/classes">
+                  <fileset dir="${basedir}/src/main/webapp/WEB-INF/classes">
+                    <include name="**/*_en.properties"/>
+                  </fileset>
+                  <globmapper from="*_en.properties" to="*.properties"/>
+                </copy>
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>

@@ -1,5 +1,9 @@
-/**
- * Copyright (C) 2009 eXo Platform SAS.
+/*
+ * JBoss, a division of Red Hat
+ * Copyright 2012, Red Hat Middleware, LLC, and individual
+ * contributors as indicated by the @authors tag. See the
+ * copyright.txt in the distribution for a full listing of
+ * individual contributors.
  *
  * This is free software; you can redistribute it and/or modify it
  * under the terms of the GNU Lesser General Public License as
@@ -16,54 +20,35 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-
 package org.exoplatform.webui.form.validator;
 
 import org.exoplatform.commons.serialization.api.annotations.Serialized;
 import org.exoplatform.webui.form.UIFormInput;
 
 /**
- * Created by The eXo Platform SARL Author : Dang Van Minh minhdv81@yahoo.com Jun 7, 2006
- * <p/>
- * Validates whether this value has a length between min and max
+ * @author <a href="mailto:vrockai@redhat.com">Viliam Rockai</a>
+ * @datOct 11, 2011
+ *
+ *         Validates whether this value is a personal name. It's adding two more special characters beside letters and spaces.
+ *         Those are "-" (Jean-Claude) and "'" (O'Connor). See GTNPORTAL-2560.
  */
 @Serialized
-public class StringLengthValidator extends AbstractValidator {
-    /** The minimum number of characters in this String */
-    private Integer min_ = 0;
-
-    /** The maximum number of characters in this String */
-    private Integer max_ = 0;
-
-    public StringLengthValidator() {
-    }
-
-    public StringLengthValidator(Integer max) {
-        max_ = max;
-    }
-
-    public StringLengthValidator(Integer min, Integer max) {
-        min_ = min;
-        max_ = max;
-    }
+public class PersonalNameValidator extends AbstractValidator {
 
     @Override
     protected String getMessageLocalizationKey() {
-        return "StringLengthValidator.msg.length-invalid";
+        return "PersonalNameValidator.msg.Invalid-char";
     }
 
     @Override
     protected boolean isValid(String value, UIFormInput uiInput) {
-        int length = getValue(value).length();
-        return min_ <= length && max_ >= length;
-    }
-
-    protected String getValue(String value) {
-        return value.trim();
-    }
-
-    @Override
-    protected Object[] getMessageArgs(String value, UIFormInput uiInput) throws Exception {
-        return new Object[] { getLabelFor(uiInput), min_.toString(), max_.toString() };
+        for (int i = 0; i < value.length(); i++) {
+            char c = value.charAt(i);
+            if (Character.isLetter(c) || Character.isSpaceChar(c) || c == '\'' || c == '-') {
+                continue;
+            }
+            return false;
+        }
+        return true;
     }
 }
