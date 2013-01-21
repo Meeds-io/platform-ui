@@ -20,7 +20,7 @@
   <name>Platform UI Web Resources</name>
 
   <build>
-    <finalName>exo.portal.web.eXoResources</finalName>
+    <finalName>eXoResources</finalName>
     <plugins>
       <plugin>
         <groupId>org.lesscss</groupId>
