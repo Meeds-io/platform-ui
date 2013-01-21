@@ -2,8 +2,8 @@
 	String uploadId = uicomponent.getUploadId();
 	def rcontext = _ctx.getRequestContext();
 	def id = uicomponent.getId();
-	rcontext.getJavascriptManager().require("SHARED/webui-ext", "webuiExt").require("SHARED/bts_tooltip")
-    .addScripts("webuiExt.UIUpload.initUploadEntry('" + id + "','" + uploadId+ "');");
+	rcontext.getJavascriptManager().require("SHARED/upload", "upload")
+    .addScripts("upload.UIUpload.initUploadEntry('" + id + "','" + uploadId+ "');");
 %>
 <div id="$id" class="uiUploadInput">
 <div class="limitMessage" style="display: none;"><%= _ctx.appRes("UIFormUploadInput.msg.limit"); %></div>

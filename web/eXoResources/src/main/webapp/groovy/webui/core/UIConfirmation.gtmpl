@@ -25,9 +25,9 @@
 %>
 	<div class="UIPopupWindow UIDragObject uiPopup" id="$popupId" style="width: 550px; display: none;">
 	<%
-    def module = rcontext.getJavascriptManager().require("SHARED/webui", "webui");
+    def module = rcontext.getJavascriptManager().require("SHARED/uiPopupWindow", "uiPopupWindow");
 	  if(uicomponent.hasMessage()){
-		  module.addScripts("webui.UIPopupWindow.show('$popupId', $uicomponent.showMask);");	  
+		  module.addScripts("uiPopupWindow.show('$popupId', $uicomponent.showMask);");	  
 	%>
 		<div class="popupHeader ClearFix">
 			<a class="uiIconClose pull-right" title="<%=_ctx.appRes("UIConfirmation.Close")%>" onclick="<%=uicomponent.event("Close")%>"></a>
@@ -50,7 +50,7 @@
 		</div>			
 	<%
 	  } else if (rcontext.useAjax()) {
-      module.addScripts("webui.UIPopupWindow.hide('$popupId', $uicomponent.showMask);");
+      module.addScripts("uiPopupWindow.hide('$popupId', $uicomponent.showMask);");
 		}
 	%>
   </div>

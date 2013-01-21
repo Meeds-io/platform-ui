@@ -4,8 +4,8 @@
 	def rcontext = _ctx.getRequestContext();
 	def b = new org.json.JSONArray(uploadId);
 	def id = uicomponent.getId();
-	rcontext.getJavascriptManager().require("SHARED/webui-ext", "webuiExt").require("SHARED/bts_tooltip")
-    .addScripts("webuiExt.UIUploadInput.initUploadEntry('" + id + "'," + b.toString()+ ", " + !isDynamicMode+ ");");
+	rcontext.getJavascriptManager().require("SHARED/upload", "upload")
+    .addScripts("upload.UIUploadInput.initUploadEntry('" + id + "'," + b.toString()+ ", " + !isDynamicMode+ ");");
 %>
 <div id="$id" class="uiUploadInput">
 <div class="createUploadURL" style="display:none"><%=uicomponent.url('CreateUploadId')%></div>

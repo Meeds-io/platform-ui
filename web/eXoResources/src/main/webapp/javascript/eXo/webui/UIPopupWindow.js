@@ -32,7 +32,7 @@
 	   * it's still at 0, set an arbitrary value of 2000 sets the position of the
 	   * popup on the page (top and left properties)
 	   */
-	  show : function(popupId, isShowMask, middleBrowser) {
+	  show : function(popupId, isShowMask, middleBrowser, height) {
 	    var popup = document.getElementById(popupId);
 	    if (popup == null) return;        
 	
@@ -42,7 +42,7 @@
 	    var popupBar = $(popup).find("span.PopupTitle")[0];
 	    this.initDND(popupBar, popup);
 	    
-	    var resizeBtn = $(popup).find("span.ResizeButton")[0];
+	    var resizeBtn = $(popup).find(".ResizeButton, .uiIconResize")[0];
 	    if (resizeBtn) {
 	    	resizeBtn.style.display = 'block';
 	    	resizeBtn.onmousedown = this.startResizeEvt;
@@ -54,17 +54,20 @@
 	    this.superClass.show(popup);
 	    
 	    if ($(popup).find("iframe").length > 0) {
-	    	setTimeout(function() {popupWindow.setupWindow(popup, middleBrowser);}, 500);
+	    	setTimeout(function() {popupWindow.setupWindow(popup, middleBrowser, height);}, 500);
 	    } else {
-	    	this.setupWindow(popup, middleBrowser);
+	    	this.setupWindow(popup, middleBrowser, height);
 	    }
 	  },
 	  
-	  setupWindow : function(popup, middleBrowser) {	    	
-	    var contentBlock = $(popup).find("div.PopupContent")[0];
+	  setupWindow : function(popup, middleBrowser, height) {	    	
+	    var jPopup = $(popup);
+	    var vrez = popupWindow.getResizeBlock(jPopup);
+	    if (height) vrez.height(height);
 	    var browserHeight = $(window).height();
-	    if (contentBlock && (browserHeight - 100 < contentBlock.offsetHeight)) {
-	      contentBlock.style.height = (browserHeight - 100) + "px";
+	    
+	    if (browserHeight < jPopup[0].offsetHeight) {
+	    	vrez.height(browserHeight - jPopup[0].offsetHeight + vrez.height() - 20);
 	    }
 	    
 	    var scrollY = 0, offsetParent = popup.offsetParent;
@@ -154,8 +157,9 @@
 			document.onmousedown = function() {return false};		
 		}
 		
-		var targetPopup = $(this).parents(".UIPopupWindow")[0];
+		var targetPopup = $(this).parents(".UIPopupWindow, .uiPopup")[0];
 		popupWindow.resizedPopup = targetPopup;
+		popupWindow.vresized = popupWindow.getResizeBlock($(targetPopup));
 		popupWindow.backupPointerY = base.Browser.findMouseRelativeY(targetPopup, evt) ;	
 	
 	    document.onmousemove = popupWindow.resize;
@@ -168,15 +172,15 @@
 	   * position . sets these values to the window
 	   */
 	  resize : function(evt) {
-		var targetPopup = popupWindow.resizedPopup ;
-	    var content = $(targetPopup).find("div.PopupContent")[0];
+		  var targetPopup = popupWindow.resizedPopup ;
+	    var content = popupWindow.vresized;
 	    var isRTL = eXo.core.I18n.isRT();
 	    var pointerX = base.Browser.findMouseRelativeX(targetPopup, evt, isRTL);
 	    var pointerY = base.Browser.findMouseRelativeY(targetPopup, evt);
 	    var delta = pointerY - popupWindow.backupPointerY;  
-	    if ((content.offsetHeight + delta) > 0) {
-	    	popupWindow.backupPointerY = pointerY;              
-	    	content.style.height = content.offsetHeight + delta +"px" ;     
+	    if ((content.height() + delta) > 0) {
+	    	popupWindow.backupPointerY = pointerY;                   
+	    	content.height(content.height() + delta);
 	    }
 	    targetPopup.style.height = "auto";
 	
@@ -184,7 +188,7 @@
 	      pointerX = (-1) * pointerX;
 	    }
 	
-	    if (pointerX > 200)
+	    if (pointerX > 230)
 	      targetPopup.style.width = (pointerX + 10) + "px";
 	  },
 	
@@ -194,7 +198,8 @@
 	   * one in the popup)
 	   */
 	  endResizeEvt : function(evt) {
-		popupWindow.resizedPopup = null;
+		  popupWindow.resizedPopup = null;
+		  popupWindow.vresized = null;
 	    this.onmousemove = null;
 	    this.onmouseup = null;
 	    
@@ -254,6 +259,19 @@
 	    popup.onCancel = function(e)
 	    {
 	    };
+	  },
+	  
+	  getResizeBlock : function(jPopup) {
+	  	var innerRez = jPopup.find(".resizable");
+	  	var contentBlock = jPopup.find("div.PopupContent, .popupContent");
+	  	
+	  	var vrez;
+	  	if (innerRez.length) {
+	  		vrez = innerRez;
+	  	} else {
+	  		vrez = contentBlock;
+	  	}
+	  	return vrez;	
 	  }
 	};
 	

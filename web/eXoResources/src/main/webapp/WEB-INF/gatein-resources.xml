@@ -402,7 +402,13 @@
   <module>
     <name>bts_affix</name>
     <script>
-      <path>/skin/bootstrap/js/bootstrap-affix.js</path>
+      <adapter>
+        (function($) {
+          var _$ = window.jQuery; window.jQuery = $;
+          <include>/skin/bootstrap/js/bootstrap-affix.js</include>
+          window.jQuery = _$;
+        })($);
+      </adapter>
     </script>
     <depends>
       <module>jquery</module>
@@ -413,7 +419,13 @@
   <module>
     <name>bts_alert</name>
     <script>
-      <path>/skin/bootstrap/js/bootstrap-alert.js</path>
+      <adapter>
+        (function($) {
+          var _$ = window.jQuery; window.jQuery = $;
+          <include>/skin/bootstrap/js/bootstrap-alert.js</include>
+          window.jQuery = _$;
+        })($);
+      </adapter>
     </script>
     <depends>
       <module>jquery</module>
@@ -424,7 +436,13 @@
   <module>
     <name>bts_button</name>
     <script>
-      <path>/skin/bootstrap/js/bootstrap-button.js</path>
+      <adapter>
+        (function($) {
+          var _$ = window.jQuery; window.jQuery = $;
+          <include>/skin/bootstrap/js/bootstrap-button.js</include>
+          window.jQuery = _$;
+        })($);
+      </adapter>
     </script>
     <depends>
       <module>jquery</module>
@@ -435,7 +453,13 @@
   <module>
     <name>bts_carousel</name>
     <script>
-      <path>/skin/bootstrap/js/bootstrap-carousel.js</path>
+      <adapter>
+        (function($) {
+          var _$ = window.jQuery; window.jQuery = $;
+          <include>/skin/bootstrap/js/bootstrap-carousel.js</include>
+          window.jQuery = _$;
+        })($);
+      </adapter>
     </script>
     <depends>
       <module>jquery</module>
@@ -446,7 +470,13 @@
   <module>
     <name>bts_collapse</name>
     <script>
-      <path>/skin/bootstrap/js/bootstrap-collapse.js</path>
+      <adapter>
+        (function($) {
+          var _$ = window.jQuery; window.jQuery = $;
+          <include>/skin/bootstrap/js/bootstrap-collapse.js</include>
+          window.jQuery = _$;
+        })($);
+      </adapter>
     </script>
     <depends>
       <module>jquery</module>
@@ -457,7 +487,13 @@
   <module>
     <name>bts_dropdown</name>
     <script>
-      <path>/skin/bootstrap/js/bootstrap-dropdown.js</path>
+      <adapter>
+        (function($) {
+          var _$ = window.jQuery; window.jQuery = $;
+          <include>/skin/bootstrap/js/bootstrap-dropdown.js</include>
+          window.jQuery = _$;
+        })($);
+      </adapter>
     </script>
     <depends>
       <module>jquery</module>
@@ -468,7 +504,13 @@
   <module>
     <name>bts_modal</name>
     <script>
-      <path>/skin/bootstrap/js/bootstrap-modal.js</path>
+      <adapter>
+        (function($) {
+          var _$ = window.jQuery; window.jQuery = $;
+          <include>/skin/bootstrap/js/bootstrap-modal.js</include>
+          window.jQuery = _$;
+        })($);
+      </adapter>
     </script>
     <depends>
       <module>jquery</module>
@@ -479,7 +521,13 @@
   <module>
     <name>bts_popover</name>
     <script>
-      <path>/skin/bootstrap/js/bootstrap-popover.js</path>
+      <adapter>
+        (function($) {
+          var _$ = window.jQuery; window.jQuery = $;
+          <include>/skin/bootstrap/js/bootstrap-popover.js</include>
+          window.jQuery = _$;
+        })($);
+      </adapter>
     </script>
     <depends>
       <module>bts_tooltip</module>
@@ -493,7 +541,13 @@
   <module>
     <name>bts_scrollspy</name>
     <script>
-      <path>/skin/bootstrap/js/bootstrap-scrollspy.js</path>
+      <adapter>
+        (function($) {
+          var _$ = window.jQuery; window.jQuery = $;
+          <include>/skin/bootstrap/js/bootstrap-scrollspy.js</include>
+          window.jQuery = _$;
+        })($);
+      </adapter>
     </script>
     <depends>
       <module>jquery</module>
@@ -504,7 +558,13 @@
   <module>
     <name>bts_tab</name>
     <script>
-      <path>/skin/bootstrap/js/bootstrap-tab.js</path>
+      <adapter>
+        (function($) {
+          var _$ = window.jQuery; window.jQuery = $;
+          <include>/skin/bootstrap/js/bootstrap-tab.js</include>
+          window.jQuery = _$;
+        })($);
+      </adapter>
     </script>
     <depends>
       <module>jquery</module>
@@ -515,7 +575,13 @@
   <module>
     <name>bts_tooltip</name>
     <script>
-      <path>/skin/bootstrap/js/bootstrap-tooltip.js</path>
+      <adapter>
+        (function($) {
+          var _$ = window.jQuery; window.jQuery = $;
+          <include>/skin/bootstrap/js/bootstrap-tooltip.js</include>
+          window.jQuery = _$;
+        })($);
+      </adapter>
     </script>
     <depends>
       <module>jquery</module>
@@ -529,7 +595,13 @@
   <module>
     <name>bts_transition</name>
     <script>
-      <path>/skin/bootstrap/js/bootstrap-transition.js</path>
+      <adapter>
+        (function($) {
+          var _$ = window.jQuery; window.jQuery = $;
+          <include>/skin/bootstrap/js/bootstrap-transition.js</include>
+          window.jQuery = _$;
+        })($);
+      </adapter>
     </script>
     <depends>
       <module>jquery</module>
@@ -540,7 +612,13 @@
   <module>
     <name>bts_typeahead</name>
     <script>
-      <path>/skin/bootstrap/js/bootstrap-typeahead.js</path>
+      <adapter>
+        (function($) {
+          var _$ = window.jQuery; window.jQuery = $;
+          <include>/skin/bootstrap/js/bootstrap-typeahead.js</include>
+          window.jQuery = _$;
+        })($);
+      </adapter>
     </script>
     <depends>
       <module>jquery</module>
@@ -558,7 +636,7 @@
       <module>jquery</module>
     </depends>
     <depends>
-      <module>webui</module>
+      <module>uiPopupWindow</module>
     </depends>
     <depends>
       <module>bts_collapse</module>
@@ -600,6 +678,9 @@
     </depends>
     <depends>
       <module>portalRequest</module>
+    </depends>
+    <depends>
+      <module>bts_tooltip</module>
     </depends>
   </module>
 

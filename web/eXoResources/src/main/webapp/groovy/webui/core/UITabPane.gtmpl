@@ -1,6 +1,6 @@
 <%
   def rcontext = _ctx.getRequestContext() ;
-	rcontext.getJavascriptManager().require("SHARED/webui").require("SHARED/bts_tab");	
+	rcontext.getJavascriptManager().require("SHARED/bts_tab");	
 %>
 
 <div class="uiTabPane uiTabNormal" id="$uicomponent.id">
@@ -13,7 +13,7 @@
 			              String paneId = uicomponent.getId();
 			              if(uiChild.isRendered()) style = "active" ;
 			          %>
-			              <li class="$style" onclick="eXo.webui.UIHorizontalTabs.changeTabForUITabPane(this, '$paneId', '$tabId')">              
+			              <li class="$style">              
 												<a data-toggle="tab" data-target="#$tabId-tab"><%=_ctx.appRes("UITabPane.title." + uiChild.getId());%></a>
 			              </li>           
 			          <%}%>
