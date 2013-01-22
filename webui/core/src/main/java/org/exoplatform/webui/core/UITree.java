@@ -46,7 +46,7 @@ public class UITree extends UIComponent {
     /**
      * The css class name to show the expand icon
      */
-    private String expandIcon = "ExpandIcon";
+    private String expandIcon = "expandIcon";
 
     /**
      * The css class name to show the collapse icon
