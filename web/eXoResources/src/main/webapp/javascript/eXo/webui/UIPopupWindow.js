@@ -42,10 +42,10 @@
 	    var popupBar = $(popup).find("span.PopupTitle")[0];
 	    this.initDND(popupBar, popup);
 	    
-	    var resizeBtn = $(popup).find(".ResizeButton, .uiIconResize")[0];
-	    if (resizeBtn) {
-	    	resizeBtn.style.display = 'block';
-	    	resizeBtn.onmousedown = this.startResizeEvt;
+	    var resizeBtn = $(popup).find(".ResizeButton, .uiIconResize").last();
+	    if (resizeBtn.length) {
+	    	resizeBtn.show()
+	    	resizeBtn.off().on("mousedown", this.startResizeEvt);
 	    }    	
 	
 	    if (isShowMask)
@@ -262,6 +262,10 @@
 	  },
 	  
 	  getResizeBlock : function(jPopup) {
+	  	jPopup.find(".resizable .resizable").filter(function() {
+	  		return $(this).closest(".uiPopup").attr("id") === jPopup.attr("id");
+	  	}).removeClass("resizable");
+	  	
 	  	var innerRez = jPopup.find(".resizable");
 	  	var contentBlock = jPopup.find("div.PopupContent, .popupContent");
 	  	

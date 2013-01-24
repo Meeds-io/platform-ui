@@ -34,7 +34,7 @@
 								}
 						%>
 						<div id="$formInput.id-tab" class="tab-pane fade $active">
-							<div class="uiTabContent">
+							<div class="uiTabContent resizable">
 								<%
 									uicomponent.renderUIComponent(formInput);
 								%>
