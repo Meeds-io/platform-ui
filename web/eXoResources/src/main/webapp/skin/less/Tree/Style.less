@@ -40,7 +40,7 @@
 		margin: 0px;
 	}
 	
-	.uiIconCollapse, .uiIconExpand, .uiIconEmpty {
+	.collapseIcon, .expandIcon, .uiIconEmpty {
 		background: url("/eXoResources/skin/images/Tree/uiIconTreePlus.gif") no-repeat left 9px;
 		width: auto;
 		height: auto;
@@ -49,7 +49,7 @@
 		margin: 0px;
 	}
 	
-	.uiIconExpand {
+	.expandIcon {
 		background: url("/eXoResources/skin/images/Tree/uiIconTreeMinus.gif") no-repeat left 9px;
 	}
 	
@@ -57,7 +57,7 @@
 		background: url("/eXoResources/skin/images/Tree/uiIconTreeSquare.gif") no-repeat left 9px;
 	}
 	
-	.page {
+	.page, .uiIconFile {
 		background: url('/eXoResources/skin/images/Tree/uiIconPageNode.png') no-repeat left 6px;
 	}
 	
@@ -67,5 +67,49 @@
 }
 
 
-
+/*=============== uiTree =============*/
+.explorerTree{
+	.uiTrees{
+		background:#f7f7f7;
+		border: 1px solid @tableBorder;
+		a{
+			display: block;
+			color: @grayDark;
+		}
+		.treeContainer{
+			overflow-x: hidden;
+			overflow-y: auto;
+			padding-bottom: 12px;
+			.node{
+				line-height: 19px;
+				margin-left: 10px;
+				padding-top: 7px;
+				white-space: nowrap;
+				width: 100%;
+				.uiIconNode{
+					padding-left: 18px;
+					.uiIconNode{
+						padding-left: 0px;
+					}
+				}
+			}
+		}
+		.collapseIcon, .expandIcon, .uiIconEmpty {
+			background: url("/eXoResources/skin/images/Tree/uiIconTreePlus.gif") no-repeat left center;
+			width: auto;
+			height: auto;
+			padding-left: 15px;
+			display: block;
+			margin: 0px;
+		}
+		
+		.expandIcon {
+			background: url("/eXoResources/skin/images/Tree/uiIconTreeMinus.gif") no-repeat left center;
+		}
+		.uiIconFile {
+			background-position: 0px -60px;
+			margin-right: 8px;
+		}
+	}
+}
 
