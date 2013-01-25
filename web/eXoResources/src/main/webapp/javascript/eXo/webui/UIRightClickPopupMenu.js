@@ -38,7 +38,7 @@
 	     */
 	    this.disableContextMenu(menu.parent());
 	
-	    menu.find('.UIRightPopupMenuContainer').on('click', 'div.MenuItem a', eXo.webui.UIRightClickPopupMenu.prepareObjectIdEvt);
+	    menu.find('.UIRightPopupMenuContainer, .uiRightPopupMenuContainer').on('click', 'div.MenuItem a, .menuItem a', eXo.webui.UIRightClickPopupMenu.prepareObjectIdEvt);
 	  },
 	  /**
 	   * Hide and disable mouse down event of context menu object
@@ -85,7 +85,7 @@
 	  prepareObjectIdEvt : function(event) {
 	    event.stopPropagation();
 	
-	    var contextMenu = $(this).closest(".UIRightClickPopupMenu")[0];
+	    var contextMenu = $(this).closest(".UIRightClickPopupMenu, .uiRightClickPopupMenu")[0];
 	    contextMenu.style.display = "none";
 	    var href = this.getAttribute('href');
 	    if (!href) {
@@ -209,7 +209,7 @@
 	    eXo.core.Mouse.update(event);
 	    uiPopup.show(contextMenu);
 	
-	    var ctxMenuContainer = $(contextMenu).children("div.UIContextMenuContainer")[0];
+	    var ctxMenuContainer = $(contextMenu).children("div.UIContextMenuContainer, .uiContextMenuContainer")[0];
 	    var offset = $(contextMenu).offset();
 	    var intTop = eXo.core.Mouse.mouseyInPage
 	        - (offset.top - contextMenu.offsetTop);
