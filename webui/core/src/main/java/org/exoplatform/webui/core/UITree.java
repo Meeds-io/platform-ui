@@ -51,7 +51,7 @@ public class UITree extends UIComponent {
     /**
      * The css class name to show the collapse icon
      */
-    private String colapseIcon = "CollapseIcon";
+    private String colapseIcon = "collapseIcon";
 
     /**
      * The css class name to show the null icon (item has no child)
@@ -295,11 +295,11 @@ public class UITree extends UIComponent {
             builder.append(" <div class=\"").append(nodeIcon).append("\" onclick=\"").append(actionLink).append("\">");
         }
         if (uiPopupMenu_ == null) {
-            builder.append(" <a href=\"javascript:void(0);\" class=\"NodeIcon ").append(iconGroup).append(note).append("\"")
+            builder.append(" <a href=\"javascript:void(0);\" class=\"uiIconNode ").append(iconGroup).append(note).append("\"")
                     .append(" title=\"").append(getFieldValue(obj, beanLabelField_)).append("\"").append(">")
                     .append(fieldValue).append("</a>");
         } else {
-            builder.append("<a href=\"javascript:void(0);\" class=\"NodeIcon ").append(iconGroup).append(note).append("\" ")
+            builder.append("<a href=\"javascript:void(0);\" class=\"uiIconNode ").append(iconGroup).append(note).append("\" ")
                     .append(uiPopupMenu_.getJSOnclickShowPopup(objId, null)).append(" title=\"")
                     .append(getFieldValue(obj, beanLabelField_)).append("\"").append(">").append(fieldValue).append("</a>");
         }
