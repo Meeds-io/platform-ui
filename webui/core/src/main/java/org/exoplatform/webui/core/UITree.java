@@ -56,7 +56,7 @@ public class UITree extends UIComponent {
     /**
      * The css class name to show the null icon (item has no child)
      */
-    private String nullItemIcon = "NullItemIcon";
+    private String nullItemIcon = "uiIconEmpty";
 
     /**
      * The css class name to show the selected icon
@@ -252,14 +252,14 @@ public class UITree extends UIComponent {
     }
 
     public String renderNode(Object obj) throws Exception {
-        String nodeIcon = expandIcon;
+        String nodeIcon =colapseIcon;
         String iconGroup = icon;
 
         String note = "";
         if (isSelected(obj)) {
-            nodeIcon = colapseIcon;
+            nodeIcon = expandIcon;
             iconGroup = selectedIcon;
-            note = " NodeSelected";
+            note = " nodeSelected";
         }
 
         if (getBeanChildCountField() != null) {
@@ -286,24 +286,19 @@ public class UITree extends UIComponent {
         if (escapeHTML_) {
             fieldValue = fieldValue != null ? HTMLEntityEncoder.getInstance().encode(fieldValue) : fieldValue;
         }
-
         if (nodeIcon.equals(expandIcon)) {
-            builder.append(" <div class=\"").append(nodeIcon).append("\" onclick=\"").append(actionLink).append("\">");
-        } else if (nodeIcon.equals(colapseIcon)) {
-            builder.append(" <div class=\"").append(nodeIcon).append("\">");
-        } else {// Null item
-            builder.append(" <div class=\"").append(nodeIcon).append("\" onclick=\"").append(actionLink).append("\">");
+            builder.append(" <a href=\"javascript:void(0);\" class=\"uiIconNode ").append(nodeIcon).append(note).append("\"")
+            .append(" title=\"").append(getFieldValue(obj, beanLabelField_)).append("\"").append(">");
+        } else {
+            builder.append(" <a href=\"javascript:void(0);\" class=\"uiIconNode ").append(nodeIcon).append(note).append("\"")
+            .append(" title=\"").append(getFieldValue(obj, beanLabelField_)).append("\" onclick=\"").append(actionLink).append("\">");
         }
         if (uiPopupMenu_ == null) {
-            builder.append(" <a href=\"javascript:void(0);\" class=\"uiIconNode ").append(iconGroup).append(note).append("\"")
-                    .append(" title=\"").append(getFieldValue(obj, beanLabelField_)).append("\"").append(">")
-                    .append(fieldValue).append("</a>");
+            builder.append("<i class=\"uiIconFile uiIconGroup\"></i>").append(fieldValue);
         } else {
-            builder.append("<a href=\"javascript:void(0);\" class=\"uiIconNode ").append(iconGroup).append(note).append("\" ")
-                    .append(uiPopupMenu_.getJSOnclickShowPopup(objId, null)).append(" title=\"")
-                    .append(getFieldValue(obj, beanLabelField_)).append("\"").append(">").append(fieldValue).append("</a>");
+            builder.append("<i class=\"uiIconFile\"></i>").append(fieldValue);
         }
-        builder.append(" </div>");
+        builder.append(" </a>");
         return builder.toString();
     }
 
