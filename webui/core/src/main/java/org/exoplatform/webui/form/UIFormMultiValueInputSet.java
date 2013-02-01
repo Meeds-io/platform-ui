@@ -194,9 +194,10 @@ public class UIFormMultiValueInputSet extends UIFormInputContainer<List> {
         String addItem = res.getString("UIFormMultiValueInputSet.label.add");
         String removeItem = res.getString("UIFormMultiValueInputSet.label.remove");
 
+        writer.append("<ul class=\"multiValueContainer\">");
         for (int i = 0; i < size; i++) {
             UIFormInputBase uiInput = getChild(i);
-            writer.append("<div class=\"MultiValueContainer\">");
+            writer.append("<li>");
 
             uiInput.setReadOnly(readonly_);
             uiInput.setDisabled(!enable_);
@@ -216,8 +217,9 @@ public class UIFormMultiValueInputSet extends UIFormInputContainer<List> {
                 writer
                         .append(" class=\"uiIconPlus multiFieldAction\" ></i>");
             }
-            writer.append("</div>");
+            writer.append("</li>");
         }
+        writer.append("</ul>");
     }
 
     public UIFormInputBase createUIFormInput(int idx) throws Exception {
