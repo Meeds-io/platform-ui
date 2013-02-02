@@ -397,10 +397,28 @@
       <module>jquery</module>
     </depends>
   </module>
+  
+  <module>
+    <name>uiPopupMessages</name>
+    <load-group>webuiGRP</load-group>
+    <script>
+      <path>/javascript/eXo/webui/UIPopupMessages.js</path>
+    </script>
+    <depends>
+      <module>jquery</module>
+    </depends>
+    <depends>
+      <module>uiPopupWindow</module>
+    </depends>
+    <depends>
+      <module>bts_collapse</module>
+    </depends>
+  </module>
 
   <!-- Twitter Bootstrap bootstrap-affix plugin -->
   <module>
     <name>bts_affix</name>
+    <load-group>bts</load-group>
     <script>
       <adapter>
         (function($) {
@@ -418,6 +436,7 @@
   <!-- Twitter Bootstrap bootstrap-alert plugin -->
   <module>
     <name>bts_alert</name>
+    <load-group>bts</load-group>
     <script>
       <adapter>
         (function($) {
@@ -435,6 +454,7 @@
   <!-- Twitter Boostrap bootstrap-button plugin -->
   <module>
     <name>bts_button</name>
+    <load-group>bts</load-group>
     <script>
       <adapter>
         (function($) {
@@ -452,6 +472,7 @@
   <!-- Twitter Bootstrap bootstrap-carousel plugin -->
   <module>
     <name>bts_carousel</name>
+    <load-group>bts</load-group>
     <script>
       <adapter>
         (function($) {
@@ -469,6 +490,7 @@
   <!-- Twitter Bootstrap bootstrap-collapse plugin -->
   <module>
     <name>bts_collapse</name>
+    <load-group>bts</load-group>
     <script>
       <adapter>
         (function($) {
@@ -486,6 +508,7 @@
   <!-- Twitter Bootstrap bootstrap-dropdown plugin -->
   <module>
     <name>bts_dropdown</name>
+    <load-group>bts</load-group>
     <script>
       <adapter>
         (function($) {
@@ -503,6 +526,7 @@
   <!-- Twitter Bootstrap bootstrap-modal plugin -->
   <module>
     <name>bts_modal</name>
+    <load-group>bts</load-group>
     <script>
       <adapter>
         (function($) {
@@ -520,6 +544,7 @@
   <!-- Twitter Bootstrap bootstrap-popover plugin -->
   <module>
     <name>bts_popover</name>
+    <load-group>bts</load-group>
     <script>
       <adapter>
         (function($) {
@@ -540,6 +565,7 @@
   <!-- Twitter Bootstrap bootstrap-scrollspy plugin -->
   <module>
     <name>bts_scrollspy</name>
+    <load-group>bts</load-group>
     <script>
       <adapter>
         (function($) {
@@ -557,6 +583,7 @@
   <!-- Twitter Bootstrap bootstrap-tab plugin -->
   <module>
     <name>bts_tab</name>
+    <load-group>bts</load-group>
     <script>
       <adapter>
         (function($) {
@@ -574,6 +601,7 @@
   <!-- Twitter Bootstrap bootstrap-tooltip plugin -->
   <module>
     <name>bts_tooltip</name>
+    <load-group>bts</load-group>
     <script>
       <adapter>
         (function($) {
@@ -611,6 +639,7 @@
   <!-- Twitter Bootstrap bootstrap-typeahead plugin -->
   <module>
     <name>bts_typeahead</name>
+    <load-group>bts</load-group>
     <script>
       <adapter>
         (function($) {
@@ -625,24 +654,7 @@
     </depends>
   </module>
 
-  <!-- WebUI-EXT Javascripts -->
-
-  <module>
-    <name>uiPopupMessages</name>
-    <script>
-      <path>/javascript/eXo/webui/UIPopupMessages.js</path>
-    </script>
-    <depends>
-      <module>jquery</module>
-    </depends>
-    <depends>
-      <module>uiPopupWindow</module>
-    </depends>
-    <depends>
-      <module>bts_collapse</module>
-    </depends>
-  </module>
-
+  <!-- WebUI-EXT Javascripts -->  
   <module>
     <name>webui-ext</name>
     <as>webuiExt</as>
