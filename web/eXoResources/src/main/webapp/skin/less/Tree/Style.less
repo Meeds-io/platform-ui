@@ -6,11 +6,15 @@
 .uiTreeExplorer {
 	padding: 10px 0px;
 	overflow: auto;
-	
-	.node {
-		white-space: normal;
-		padding: 2px 0px;
-	
+	.Node{
+		line-height: 19px;
+		margin-left: 10px;
+		padding-top: 7px;
+		white-space: nowrap;
+		width: 100%;
+		.nodeSelected{
+			font-weight: bold;
+		}
 		a {
 			display: inline;
 			color: #555;
@@ -25,7 +29,7 @@
 		}
 	}
 	
-	.selected a {
+	.SelectedNode a {
 		font-weight: bold;
 		color: #0053a7;
 	}
@@ -40,8 +44,8 @@
 		margin: 0px;
 	}
 	
-	.collapseIcon, .expandIcon, .uiIconEmpty {
-		background: url("/eXoResources/skin/images/Tree/uiIconTreePlus.gif") no-repeat left 9px;
+	.ExpandIcon {
+		background: url("/eXoResources/skin/images/Tree/uiIconTreePlus.gif") no-repeat left center;
 		width: auto;
 		height: auto;
 		padding-left: 15px;
@@ -49,20 +53,17 @@
 		margin: 0px;
 	}
 	
-	.expandIcon {
-		background: url("/eXoResources/skin/images/Tree/uiIconTreeMinus.gif") no-repeat left 9px;
-	}
-	
-	.uiIconEmpty {
-		background: url("/eXoResources/skin/images/Tree/uiIconTreeSquare.gif") no-repeat left 9px;
+	.CollapseIcon, .emptyIcon  {
+		background: url("/eXoResources/skin/images/Tree/uiIconTreeMinus.gif") no-repeat left center;
+		padding-left: 18px;
 	}
 	
 	.page, .uiIconFile {
-		background: url('/eXoResources/skin/images/Tree/uiIconPageNode.png') no-repeat left 6px;
+		background: url('/eXoResources/skin/images/Tree/uiIconPageNode.png') no-repeat left center;
 	}
 	
 	.wikihome {
-		background: url('/eXoResources/skin/images/Tree/uiIconWikiHome.png') no-repeat left 8px;
+		background: url('/eXoResources/skin/images/Tree/uiIconWikiHome.png') no-repeat left center;
 	}
 }
 
