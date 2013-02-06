@@ -63,10 +63,12 @@
 	  setupWindow : function(popup, middleBrowser, height) {	    	
 	    var jPopup = $(popup);
 	    var vrez = popupWindow.getResizeBlock(jPopup);
-	    if (height) vrez.height(height);
-	    var browserHeight = $(window).height();
-	    
+	    if (height) {	     
+	      vrez.css("max-height", height);
+	    }
+	    var browserHeight = $(window).height();	    
 	    if (browserHeight < jPopup[0].offsetHeight) {
+	      vrez.css("max-height", "");
 	    	vrez.height(browserHeight - jPopup[0].offsetHeight + vrez.height() - 20);
 	    }
 	    
@@ -161,9 +163,10 @@
 		popupWindow.resizedPopup = targetPopup;
 		popupWindow.vresized = popupWindow.getResizeBlock($(targetPopup));
 		popupWindow.backupPointerY = base.Browser.findMouseRelativeY(targetPopup, evt) ;	
-	
-	    document.onmousemove = popupWindow.resize;
-	    document.onmouseup = popupWindow.endResizeEvt;
+
+		var jDoc = $(document);
+	  jDoc.on("mousemove.UIPopupWindow", popupWindow.resize);
+	  jDoc.on("mouseup.UIPopupWindow", popupWindow.endResizeEvt);
 	  },
 	
 	  /**
@@ -178,9 +181,18 @@
 	    var pointerX = base.Browser.findMouseRelativeX(targetPopup, evt, isRTL);
 	    var pointerY = base.Browser.findMouseRelativeY(targetPopup, evt);
 	    var delta = pointerY - popupWindow.backupPointerY;  
-	    if ((content.height() + delta) > 0) {
-	    	popupWindow.backupPointerY = pointerY;                   
-	    	content.height(content.height() + delta);
+	    
+	    var height = 0;
+	    content.each(function() {
+	      if ($(this).height()) {
+	        height = $(this).height();
+	        return;
+	      }
+	    });	      
+	    if (height + delta > 0) {
+	    	popupWindow.backupPointerY = pointerY;                
+	    	content.height(height + delta);
+	    	content.css("max-height", "");
 	    }
 	    targetPopup.style.height = "auto";
 	
@@ -199,9 +211,8 @@
 	   */
 	  endResizeEvt : function(evt) {
 		  popupWindow.resizedPopup = null;
-		  popupWindow.vresized = null;
-	    this.onmousemove = null;
-	    this.onmouseup = null;
+		  popupWindow.vresized = null;	     
+		  $(document).off("mousemove.UIPopupWindow").off("mouseup.UIPopupWindow");
 	    
 	    //enable select text
 		if (navigator.userAgent.indexOf("MSIE") >= 0) {
