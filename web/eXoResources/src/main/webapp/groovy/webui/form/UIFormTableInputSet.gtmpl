@@ -1,5 +1,5 @@
 <%import org.exoplatform.webui.core.UIComponent ;%>
-<div class="UIFormTableInputSet" style="border: 1px solid pink">
+<div class="UIFormTableInputSet">
 	<table class="UIGrid" cellspacing="0" borderspacing="0">
 		<thead>
 			<tr>
