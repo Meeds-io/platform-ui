@@ -359,7 +359,7 @@
 
 /************** IconLibrary-FileType-16x16 *************/
 
-[class^="uiIcon16x16File"],.uiIcon16x16exo_taxonomy,.uiIcon16x16exo_populateToMenu{
+[class^="uiIcon16x16File"],.uiIcon16x16exo_populateToMenu{
   background-image: url("/eXoResources/skin/images/Icons/FileTypeIcons/uiIconsFileType16x16.png");
   background-position: 16px 16px;
   background-repeat: no-repeat;
@@ -371,11 +371,11 @@
   vertical-align: text-top;
 }
 
-[class^="uiIcon16x16File"]:hover, .uiActionBar [class^="uiIcon16x16File"]:hover,.uiIcon16x16exo_taxonomy:hover,.uiIcon16x16exo_populateToMenu:hover {
+[class^="uiIcon16x16File"]:hover, .uiActionBar [class^="uiIcon16x16File"]:hover,.uiIcon16x16exo_populateToMenu:hover {
   background-image: url("/eXoResources/skin/images/Icons/FileTypeIcons/uiIconsFileType16x16.png");
 }
 
-.uiIcon16x16FileDefault,.uiIcon16x16exo_taxonomy,.uiIcon16x16exo_populateToMenu {
+.uiIcon16x16FileDefault,.uiIcon16x16exo_populateToMenu {
 	background-position: -140px -40px;
 }
 
@@ -1346,7 +1346,7 @@
 
 /************** IconLibrary-FileType-64x64 *************/
 
-[class^="uiIcon64x64File"],.uiIcon64x64exo_taxonomyDefault,.uiIcon64x64exo_populateToMenuDefault{
+[class^="uiIcon64x64File"],.uiIcon64x64exo_populateToMenuDefault{
   background-image: url("/eXoResources/skin/images/Icons/FileTypeIcons/uiIconsFileType64x64.png");
   background-position: 64px 64px;
   background-repeat: no-repeat;
@@ -1358,12 +1358,12 @@
   vertical-align: text-top;
 }
 
-.uiIcon64x64exo_taxonomyDefault:hover,.uiIcon64x64exo_populateToMenuDefault:hover,
+.uiIcon64x64exo_populateToMenuDefault:hover,
 [class^="uiIcon64x64File"]:hover, .uiActionBar [class^="uiIcon64x64File"]:hover {
   background-image: url("/eXoResources/skin/images/Icons/FileTypeIcons/uiIconsFileType64x64.png");
 }
 
-.uiIcon64x64FileDefault,.uiIcon64x64exo_taxonomy,.uiIcon64x64exo_populateToMenu {
+.uiIcon64x64FileDefault,.uiIcon64x64exo_populateToMenu {
 	background-position: -476px -136px;
 }
 
@@ -1990,7 +1990,7 @@
 
 /************** IconLibrary-FolderType-16x16 *************/
 
-[class^="uiIcon16x16Folder"]{
+[class^="uiIcon16x16Folder"],.uiIcon16x16exo_taxonomy {
   background-image: url("/eXoResources/skin/images/Icons/FolderTypeIcons/uiIconsFolderType16x16.png");
   background-repeat: no-repeat;
 	background-position: 0px 0px;
@@ -2002,11 +2002,7 @@
   vertical-align: text-top;
 }
 
-.dropdown-menu > li > a:hover > [class^="uiIcon16x16Folder"],
-.dropdown-menu > .active > a > [class^="uiIcon16x16Folder"],
-.uiDropdownWithIcon .dropdown-submenu:hover > a > [class^="uiIcon16x16Folder"],
-.btn:hover [class^="uiIcon16x16Folder"],
-[class^="uiIcon16x16Folder"]:hover, .uiActionBar [class^="uiIcon16x16Folder"]:hover {
+[class^="uiIcon16x16Folder"]:hover,.uiIcon16x16exo_taxonomy:hover {
   background-image: url("/eXoResources/skin/images/Icons/FolderTypeIcons/uiIconsFolderType16x16.png");
 }
 
@@ -2060,6 +2056,30 @@
 
 .uiIcon16x16FolderCss,.uiIcon16x16exo_cssFolder {
 	background-position: -40px -20px;
+}
+
+.uiIcon16x16FolderProduct,.uiIcon16x16acme_product {
+	background-position: -60px -20px;
+}
+
+.uiIcon16x16FolderTaxonomy,.uiIcon16x16exo_taxonomy {
+	background-position: -80px -20px;
+}
+
+.uiIcon16x16FolderExoContent,.uiIcon16x16exo_webContent {
+	background-position: -100px -20px;
+}
+
+.uiIcon16x16FolderTheme,.uiIcon16x16exo_themeFolder {
+	background-position: -120px -20px;
+}
+
+.uiIcon16x16FolderVideoMedia,.uiIcon16x16exo_multimediaFolder {
+	background-position: -140px -20px;
+}
+
+.uiIcon16x16FolderLink,.uiIcon16x16exo_linkFolder {
+	background-position: -160px -20px;
 }
 
 /************** IconLibrary-FolderType-24x24 *************/
@@ -2275,7 +2295,7 @@
 
 /************** IconLibrary-FolderType-64x64 *************/
 
-[class^="uiIcon64x64Folder"]{
+[class^="uiIcon64x64Folder"],.uiIcon64x64exo_taxonomy{
   background-image: url("/eXoResources/skin/images/Icons/FolderTypeIcons/uiIconsFolderType64x64.png");
   background-repeat: no-repeat;
 	background-position: 0px 0px;
@@ -2287,7 +2307,7 @@
   vertical-align: text-top;
 }
 
-[class^="uiIcon64x64Folder"]:hover {
+[class^="uiIcon64x64Folder"]:hover,.uiIcon64x64exo_taxonomy:hover {
   background-image: url("/eXoResources/skin/images/Icons/FolderTypeIcons/uiIconsFolderType64x64.png");
 }
 
@@ -2341,6 +2361,30 @@
 
 .uiIcon64x64FolderCss,.uiIcon64x64exo_cssFolder {
 	background-position: -136px -68px;
+}
+
+.uiIcon64x64FolderProduct,.uiIcon64x64acme_product {
+	background-position: -204px -68px;
+}
+
+.uiIcon64x64FolderTaxonomy,.uiIcon64x64exo_taxonomy {
+	background-position: -272px -68px;
+}
+
+.uiIcon64x64FolderExoContent,.uiIcon64x64exo_webContent {
+	background-position: -340px -68px;
+}
+
+.uiIcon64x64FolderTheme,.uiIcon64x64exo_themeFolder {
+	background-position: -408px -68px;
+}
+
+.uiIcon64x64FolderVideoMedia,.uiIcon64x64exo_multimediaFolder {
+	background-position: -476px -68px;
+}
+
+.uiIcon64x64FolderLink,.uiIcon64x64exo_linkFolder {
+	background-position: -544px -68px;
 }
 
 
