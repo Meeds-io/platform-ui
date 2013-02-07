@@ -4,17 +4,19 @@
 /************ uiTreeExplorer ****************/
 
 .uiTreeExplorer {
-	padding: 10px 0px;
 	overflow: auto;
-	.Node{
+	padding: 10px 0px;
+	
+	.Node {
 		line-height: 19px;
-		margin-left: 10px;
+		margin-left: 15px;
 		padding-top: 7px;
 		white-space: nowrap;
-		width: 100%;
+		
 		.nodeSelected{
 			font-weight: bold;
 		}
+		
 		a {
 			display: inline;
 			color: #555;
@@ -53,9 +55,14 @@
 		margin: 0px;
 	}
 	
-	.CollapseIcon, .emptyIcon  {
+	.CollapseIcon {
 		background: url("/eXoResources/skin/images/Tree/uiIconTreeMinus.gif") no-repeat left center;
-		padding-left: 18px;
+		padding-left: 15px;
+	}
+	
+	.emptyIcon {
+		background: url("/eXoResources/skin/images/Tree/uiIconTreeSquare.gif") no-repeat left center;
+		padding-left: 15px;
 	}
 	
 	.page, .uiIconFile {
