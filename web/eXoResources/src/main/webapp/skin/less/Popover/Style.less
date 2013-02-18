@@ -12,8 +12,15 @@
   .border-radius(@borderRadiusSmall @borderRadiusSmall 0 0);
 }
 
-
 .popover.top .arrow:after {
-	border-top-color: rgba(0,0,0,.05);
+	border-top-color: rgba(0,0,0,0.05);
     bottom: -3px;
 }
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.popover.top .arrow:after {
+		border-top-color: rgba(0,0,0,0.45);
+		 bottom: -1px;
+	}
+}
+
