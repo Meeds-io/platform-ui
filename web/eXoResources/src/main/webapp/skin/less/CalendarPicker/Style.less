@@ -1,0 +1,119 @@
+
+/*============== uiCalendarComponent ================*/
+
+.uiCalendarComponent{
+	width: 225px;	
+	.actionIcon{
+		line-height: 14px;
+		margin: 0;
+		padding: 1px;
+	}
+	.highLight{
+		font-weight: bold;
+	}
+	hr {
+		margin: 0;
+		border-top: 1px solid  @tableBorder;
+	}	
+	h5.title{
+		text-align: center;		
+		span {
+			font-size: @baseFontSize;
+			a {color: @textColor;}
+		}
+	}
+		
+	table {
+		border-collapse: separate;
+		tr td {
+			text-align: center;line-height: @baseLineHeight + 4;
+		}
+	}
+	
+	table.weekList{
+		padding: 0 9px;
+		margin: 2px 0;
+		font-size: @baseFontSize - 2;
+		
+	}
+	
+	table.weekDays{
+		padding: 0 9px 9px 6px;
+		font-size: @baseFontSize - 1;
+		
+		tr {			
+			td {
+				padding:1px;
+				a {
+					display: block;
+					color: @textColor;					
+					border: 1px solid transparent;
+					&:hover{							
+							background-color: @grayWhiteSmoke;
+							.border-radius(@borderRadiusSmall);
+						}			
+				}
+				.otherMonth{
+					color: @grayLight;
+				}
+				.today {
+					border: 1px solid @tableBorder;
+					.border-radius(@borderRadiusSmall);
+					font-weight: bold;
+				}
+				.selected {
+					background-color: @linkColor;
+					color: @white;
+					.border-radius(@borderRadiusSmall);					
+				}			
+				.activeToday {
+					background-color: @linkColor;
+					color: @white;
+					.border-radius(@borderRadiusSmall);
+				}
+			}
+			
+		}
+		
+		
+		tr.currentWeek {			
+			td {
+				background-color: @grayWhiteSmoke;	padding:0 1px;				
+				&:first-child {
+					.border-top-left-radius(@borderRadiusSmall);
+					.border-bottom-left-radius(@borderRadiusSmall);
+				}
+				a:hover {
+					border: 1px solid @tableBorder;
+				}
+				
+				&:last-child {
+					.border-top-right-radius(@borderRadiusSmall);
+					.border-bottom-right-radius(@borderRadiusSmall);
+				}
+			}
+			
+		}
+	}
+	.calendarTimeInput {
+		text-align: center;
+		padding: 4px 0;
+		line-height: 18px;
+		background-color: #f7f7f7;
+		.border-radius(0 0 @borderRadiusSmall @borderRadiusSmall);
+		input[type="text"] {
+			.size(20px,50px);
+			margin:0;
+			color: @textColor;
+			text-align: center;			
+		}
+	}
+	
+}
+
+.UICalendarPortlet .UICalendarContainer {
+	.title .actionIcon + .tooltip {
+		white-space: nowrap;
+	}
+}
+
