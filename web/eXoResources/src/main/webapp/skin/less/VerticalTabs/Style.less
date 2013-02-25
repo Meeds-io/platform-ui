@@ -1,5 +1,4 @@
 .accordion {
-	font-size: 12px;
 	.border-radius(@baseBorderRadius);
 	border: 1px solid #dedede;
 	background: @white;
@@ -7,6 +6,9 @@
 	a {
 	  color: @grayDark;
 	  text-decoration: none;
+	}
+	a:hover {
+	  color: @grayDark;
 	}
 	.accordion-toggle {
 	  padding: 0px;
@@ -23,6 +25,9 @@
 	  border: none;
 	  margin-bottom: 0px;
 	  .border-radius(0px 0px 0px 0px);
+	  .accordion-heading a{
+	  	font-size: 13px;
+	  }
 	}
 	.accordion-group  + .accordion-group {
 	  border-top: 1px solid #dedede;
@@ -41,7 +46,11 @@
 		.functionItem{
 			display: block;
 			padding: 6px 4px 6px 16px;
+			font-size: 12px;
 			i {margin: -2px 7px 0 0;}
+		}
+		.functionItem:hover{
+			background: #f8f8f8;
 		}
 	}
 	.expaned {
