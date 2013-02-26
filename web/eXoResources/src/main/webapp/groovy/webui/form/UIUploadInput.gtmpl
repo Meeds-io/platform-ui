@@ -28,13 +28,13 @@
 		  <div class="bar" style="width:0%"></div>
 		</div>			   
   </div>
-  <div class="selectFileFrame clearfix" style="display: none;">
+  <div class="selectFileFrame clearfix" style="display: none;">		
+		<div class="fileNameLabel"></div>
 		<div class="removeFile pull-right" >
 			<a href="#" class="actionIcon" rel="tooltip" data-placement="bottom" title="<%= _ctx.appRes("UIFormUploadInput.label.remove"); %>">
-				<i class="uiIconDelete uiIconLightGrey" ></i>
+				<i class="uiIconDelete uiIconLightGray" ></i>
 			</a>
 		</div>
-		<div class="fileNameLabel"></div>
   </div>
 	<iframe height="0" width="0" style="display: none;" name="uploadIFrame">
 		<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
