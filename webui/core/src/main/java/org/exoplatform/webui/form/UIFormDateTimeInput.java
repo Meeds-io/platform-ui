@@ -183,7 +183,7 @@ public class UIFormDateTimeInput extends UIFormInputBase<String> {
         }
 
         JavascriptManager jsManager = context.getJavascriptManager();
-        jsManager.require("SHARED/uiCalendar", "uiCalendar").addScripts(
+        jsManager.require("SHARED/bts_tooltip").require("SHARED/uiCalendar", "uiCalendar").addScripts(
                 "uiCalendar.setFirstDayOfWeek(" + Calendar.getInstance(context.getLocale()).getFirstDayOfWeek() + ");");
         Writer w = context.getWriter();
 
