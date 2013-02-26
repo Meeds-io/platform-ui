@@ -298,18 +298,21 @@
 	        checkboxes[index].onclick = userSelector.check;
 	      }
 	    });
-
-	    jCont.find("input[name='Quick Search']").on("keypress", function(event) {
-	    	if (userSelector.isEnterPress(event)) {
-	    		$.globalEval($(this).nextAll(".SearchIcon").attr("href"));
-	    		return false;
-	    	}
-	    });
-	    jCont.find("input[name='group']").on("keypress", function(event) {
-	    	if (userSelector.isEnterPress(event)) {
-	    		$.globalEval($(this).nextAll(".SearchIcon").attr("href"));
-	    		return false;
-	    	}
+	    
+	    jCont.find(".uiSearchInput input").each(function() {
+	    	$(this).attr("placeholder", "Search");
+	    	
+	    	$(this).on("click", function() {
+	    		$(this).attr("placeholder", "");
+	    	});
+	    	$(this).on("blur", function() {
+	    		$(this).attr("placeholder", "Search");
+	    	});
+	    	$(this).on("keypress", function(event) {
+	    		if (userSelector.isEnterPress(event)) {
+	    			$.globalEval($(this).nextAll("a").attr("href"));
+	    		}
+	    	})
 	    });
 	  },
 	  /**
