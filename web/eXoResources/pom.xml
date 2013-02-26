@@ -43,13 +43,14 @@
             </goals>
           </execution>
           <execution>
-            <id>core</id>
+            <id>platform-ui</id>
             <configuration>
               <sourceDirectory>${project.basedir}/src/main/webapp/skin/less</sourceDirectory>
               <outputDirectory>${project.build.directory}/${project.build.finalName}/skin/css</outputDirectory>
               <compress>false</compress>
               <includes>
                 <include>Core.less</include>
+                <include>Portlets/UIOrganizationPortlet/Style.less</include>
               </includes>
             </configuration>
             <goals>

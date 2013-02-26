@@ -29,6 +29,15 @@
     <css-priority>0</css-priority>
   </portal-skin>
 
+  <!-- OrganizationPortlet skins -->
+  <portlet-skin>
+    <application-name>exoadmin</application-name>
+    <portlet-name>OrganizationPortlet</portlet-name>
+    <skin-name>Default</skin-name>
+    <css-path>/skin/css/Portlets/UIOrganizationPortlet/Style.css</css-path>
+    <overwrite>true</overwrite>
+  </portlet-skin>
+  
   <!-- Simple window style -->
   <window-style>
     <style-name>Simple</style-name>
