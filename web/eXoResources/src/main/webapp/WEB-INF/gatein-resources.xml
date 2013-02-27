@@ -799,5 +799,15 @@
       <module>jquery</module>
     </depends>
   </module>
+  
+  <scripts>
+    <name>tabbedDashboard</name>
+    <script>
+      <path>/javascript/eXo/webui/UITabbedDashboard.js</path>
+    </script>
+    <depends>
+      <scripts>bootstrap</scripts>
+    </depends>
+  </scripts>
 
 </gatein-resources>
