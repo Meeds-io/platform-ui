@@ -8,26 +8,26 @@
                                 .addScripts("selectors.UIUserSelector.init('$uiform.id');");
  ((UIPopupWindow)uiform.getParent()).setResizable(true);
 %>
-<div class="UIUserSelector">
-	<div class="SelectUserContainer resizable" style="overflow: auto;">
+<div class="uiUserSelector" id="UIUserSelector">
+	<div class="selectUserContainer resizable" style="overflow: auto;">
 			<%if(uicomponent.isShowSearch()){%>
-      <div class="uiSearch">
+      <p class="uiSearch clearfix">
         <% if(uicomponent.isShowSearchGroup()) { %>
-        <div class="pull-left uiSearchInput">
+        <span class="uiSearchInput inputLarge">
         <%uiform.renderField(uiform.FIELD_GROUP)%>
         <a href="<%=uicomponent.event('FindGroup')%>" style="display: none;"><span></span></a>
-        </div>
-        <% } else if(uicomponent.isShowSearchUser()) {%>
-        <div class="pull-left uiSearchInput">
+        </span>
+        <% }  
+		if(uicomponent.isShowSearchUser()) {%>
+        <span class=" uiSearchInput inputLarge">
         <%uiform.renderField(uiform.FIELD_KEYWORD)%>
         <a href="<%=uicomponent.event('Search')%>" style="display: none;"><span></span></a>
-        </div>
-        <div class="pull-lef">
+        </span>
+        <span class="selectboxMedium">
         <%uiform.renderField(uiform.FIELD_FILTER)%>
-        </div>
+        </span>
         <% } %>
-      </div>
-      <div style="clear: both;"></div>
+      </p>
 			<%}%>
       
 			<table id="UIListUsers" class="uiGrid table table-hover table-striped">
@@ -35,8 +35,8 @@
 					<tr>
 						<% if(isMulti) {%>
 						<th>
-            <input type="checkbox" class="checkbox" name="selectall"/>
-            </th>
+							&nbsp;
+						</th>
 						<% } %>
 						<th>
 							<%=uiform.getLabel('userName')%>
@@ -51,7 +51,7 @@
 							<%=uiform.getLabel('email')%>
 						</th>
 						<% if(!isMulti) { %>
-						<th width="100px">Action</th>
+						<th class="center" width="100px">Action</th>
 						<% } %>
 					</tr>
 				</thead>
@@ -74,12 +74,10 @@
 					%>
 						<tr class="$rowClass">
 							<% if(isMulti) { %>
-							<td>
-								<div class="ActionContainer">
+							<td class="center">
 								<%
 									if (checkboxField != null) { uicomponent.renderField(checkboxField); }
 								%>
-								</div>
 							</td>
 							<% } %>
 							<% String userName = data.getUserName() != null ? data.getUserName() : "";
@@ -87,16 +85,16 @@
 								 String lastName = data.getLastName() != null ? data.getLastName() : "";
 								 String userEmail = data.getEmail() != null ? data.getEmail() : "";
 							%>
-							<td><div class="Text" title='$userName'><%= userName %></div></td>
-							<td><div class="Text" title="$firstName"><%= firstName %></div></td>
-							<td><div class="Text" title="$lastName"><%= lastName %></div></td>
-							<td><div class="Text" title="$userEmail"><%= userEmail %></div></td>
+							<td><div class="text" data-placement="bottom" rel="tooltip"   data-original-title='$userName'><%= userName %></div></td>
+							<td><div class="text" data-placement="bottom" rel="tooltip"   data-original-title="$firstName"><%= firstName %></div></td>
+							<td><div class="text" data-placement="bottom" rel="tooltip"   data-original-title="$lastName"><%= lastName %></div></td>
+							<td><a href="javascriptvoid(0);" class="text" data-placement="bottom" rel="tooltip"   data-original-title="$userEmail"><%= userEmail %></a></td>
 							<% if(!isMulti) {
 								 String addAction = uicomponent.event("AddUser", data.getUserName()) + "; return false;";
 							%>
 							<td>
-								<div class="ActionContainer">
-									<img onclick="$addAction" alt="" src="/eXoResources/skin/sharedImages/Blank.gif" class="SelectPageIcon" />
+								<div class="actionContainer">
+									<img onclick="$addAction" alt="" src="/eXoResources/skin/sharedImages/Blank.gif" class="selectPageIcon" />
 								</div>
 							</td>
 							<% } %>
@@ -104,12 +102,17 @@
 					<%}%>
 				</tbody>
 			</table>
-			<%_ctx.include("system:/groovy/webui/core/UIPageIterator.gtmpl");%>
+			<%
+			if (uicomponent.getAvailablePage() > 1) {%>
+				<div class="pageIteratorBorder">
+					<% _ctx.include("system:/groovy/webui/core/UIPageIterator.gtmpl");%>
+				</div>
+			<% } %>
 	</div>
 	<% if(isMulti) { %>
-	<div class="uiAction">
+	<div class="uiAction uiActionBorder">
 		<%for(String action : uicomponent.getActions()){%>
-				<a href="<%=uicomponent.event(action)%>" class="btn LightBlueStyle"><%=uiform.getLabel(action)%></a>
+				<a href="<%=uicomponent.event(action)%>" class="btn "><%=uiform.getLabel(action)%></a>
 		<%}%>
 	</div>
 	<% } %>
