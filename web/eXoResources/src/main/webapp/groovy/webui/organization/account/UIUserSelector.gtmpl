@@ -5,8 +5,9 @@
  def rcontext = _ctx.getRequestContext();
  boolean isMulti = uicomponent.getMulti();
  rcontext.getJavascriptManager().require("SHARED/selectors", "selectors")
-                                .addScripts("selectors.UIUserSelector.init('$uiform.id');");
- ((UIPopupWindow)uiform.getParent()).setResizable(true);
+                                .addScripts("selectors.UIUserSelector.init('$uiform.id');")
+                                .require("SHARED/bts_tooltip").require("SHARED/jquery", "\$")
+                                .addScripts("\$('.uiUserSelector *[rel=\"tooltip\"]').tooltip();");
 %>
 <div class="uiUserSelector" id="UIUserSelector">
 	<div class="selectUserContainer resizable" style="overflow: auto;">
@@ -17,6 +18,7 @@
         <%uiform.renderField(uiform.FIELD_GROUP)%>
         <a href="<%=uicomponent.event('FindGroup')%>" style="display: none;"><span></span></a>
         </span>
+        <a class="SearchIcon" href="<%=uicomponent.event('SearchGroup')%>" title="<%=uiform.getLabel(uiform.FIELD_GROUP)%>"><span></span></a>
         <% }  
 		if(uicomponent.isShowSearchUser()) {%>
         <span class=" uiSearchInput inputLarge">
@@ -88,7 +90,7 @@
 							<td><div class="text" data-placement="bottom" rel="tooltip"   data-original-title='$userName'><%= userName %></div></td>
 							<td><div class="text" data-placement="bottom" rel="tooltip"   data-original-title="$firstName"><%= firstName %></div></td>
 							<td><div class="text" data-placement="bottom" rel="tooltip"   data-original-title="$lastName"><%= lastName %></div></td>
-							<td><a href="javascriptvoid(0);" class="text" data-placement="bottom" rel="tooltip"   data-original-title="$userEmail"><%= userEmail %></a></td>
+							<td><a href="javascript:void(0);" class="text" data-placement="bottom" rel="tooltip"   data-original-title="$userEmail"><%= userEmail %></a></td>
 							<% if(!isMulti) {
 								 String addAction = uicomponent.event("AddUser", data.getUserName()) + "; return false;";
 							%>
