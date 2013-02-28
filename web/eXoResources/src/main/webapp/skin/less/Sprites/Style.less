@@ -35,7 +35,6 @@
 .dropdown-menu > .active > a > [class^="uiIcon"],
 .uiDropdownWithIcon .dropdown-submenu:hover > a > [class^="uiIcon"],
 .btn:hover [class^="uiIcon"],
-a:hover [class^="uiIcon"],
 [class^="uiIcon"]:hover, .uiActionBar [class^="uiIcon"]:hover, .uiIconBlue
 {
   background-image: url("/eXoResources/skin/images/Icons/uiIconsBlue.png");
@@ -2459,23 +2458,17 @@ a:hover [class^="uiIcon"],
 
 /***************Icon of all applications ******************/
 
-[class^="uiIconApp"],
-a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover, 
-.active [class^="uiIconApp"]:hover,
-.dropdown-menu > li > a > [class^="uiIconApp"]
- {
+[class^="uiIconApp"], [class^="uiIconApp"]:hover, .active [class^="uiIconApp"]:hover {
   display: inline-block;
   width: 35px;
   height: 35px;
   .ie7-restore-right-whitespace();
   line-height: 35px;
-  vertical-align: middle;
+  vertical-align: text-top;
   background-image: url("/eXoResources/skin/images/Icons/AppIcons/uiIconAppGray.png");
   background-repeat: no-repeat;
 }
 
-
-.dropdown-menu > li > a:hover > [class^="uiIconApp"],
 .active [class^="uiIconApp"] {
 	background-image: url("/eXoResources/skin/images/Icons/AppIcons/uiIconAppWhite.png");
 }
