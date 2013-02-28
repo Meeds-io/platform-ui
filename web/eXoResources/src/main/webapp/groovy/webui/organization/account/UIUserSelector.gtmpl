@@ -4,8 +4,10 @@
  uiform.begin()
  def rcontext = _ctx.getRequestContext();
  boolean isMulti = uicomponent.getMulti();
+ def groupLabel = uiform.getLabel(uiform.FIELD_GROUP);
+ def searchLabel = uiform.getLabel(uiform.getLabel('searchUser'));
  rcontext.getJavascriptManager().require("SHARED/selectors", "selectors")
-                                .addScripts("selectors.UIUserSelector.init('$uiform.id');")
+                                .addScripts("selectors.UIUserSelector.init('$uiform.id','$groupLabel','$searchLabel');")
                                 .require("SHARED/bts_tooltip").require("SHARED/jquery", "\$")
                                 .addScripts("\$('.uiUserSelector *[rel=\"tooltip\"]').tooltip();");
 %>
@@ -14,14 +16,14 @@
 			<%if(uicomponent.isShowSearch()){%>
       <p class="uiSearch clearfix">
         <% if(uicomponent.isShowSearchGroup()) { %>
-        <span class="uiSearchInput inputLarge">
+        <span class="uiSearchInput inputLarge searchGroup">
         <%uiform.renderField(uiform.FIELD_GROUP)%>
         <a href="<%=uicomponent.event('FindGroup')%>" style="display: none;"><span></span></a>
         </span>
         <a class="SearchIcon" href="<%=uicomponent.event('SearchGroup')%>" title="<%=uiform.getLabel(uiform.FIELD_GROUP)%>"><span></span></a>
         <% }  
 		if(uicomponent.isShowSearchUser()) {%>
-        <span class=" uiSearchInput inputLarge">
+        <span class=" uiSearchInput inputLarge searchUser">
         <%uiform.renderField(uiform.FIELD_KEYWORD)%>
         <a href="<%=uicomponent.event('Search')%>" style="display: none;"><span></span></a>
         </span>

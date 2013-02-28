@@ -282,7 +282,7 @@
 	   *          String} cont Object or identifier of Object that contains items
 	   *          table
 	   */
-	  init : function(cont) {
+	  init : function(cont, groupLabel, searchLabel) {
 	    if (typeof (cont) == "string")
 	      cont = document.getElementById(cont);
 	    var jCont = $(cont);
@@ -299,20 +299,15 @@
 	      }
 	    });
 	    
+	    jCont.find(".searchGroup input").attr("placeholder", groupLabel);
+	    jCont.find(".searchUser input").attr("placeholder", searchLabel);
 	    jCont.find(".uiSearchInput input").each(function() {
-	    	$(this).attr("placeholder", "Search");
-	    	
-	    	$(this).on("click", function() {
-	    		$(this).attr("placeholder", "");
-	    	});
-	    	$(this).on("blur", function() {
-	    		$(this).attr("placeholder", "Search");
-	    	});
 	    	$(this).on("keypress", function(event) {
 	    		if (userSelector.isEnterPress(event)) {
 	    			$.globalEval($(this).nextAll("a").attr("href"));
+	    			return false;
 	    		}
-	    	})
+	    	});
 	    });
 	  },
 	  /**
