@@ -4,13 +4,13 @@
 			  .addScripts("selectors.UIItemSelector.init('.uiPersonalInfo .itemList .actionIcon', null, true);"); 
 %>
 <div class="uiPersonalInfo">
-			<div class="row">
-				<div class="span6 ItemDetailList" style="display: block;">
+			<div class="row uiItemSelector">
+				<div class="span6 itemDetailList" style="display: block;">
 					<%
 						for(child in uicomponent.getChildren()) {
-							def String display = "none"; 
+							def display = "none"; 
 							if(child.isRendered()) display = "block"; 
-							println "<div class=\"ItemDetail\" style=\"display: $display;\">"; 
+							println "<div class=\"itemDetail\" style=\"display: $display;\">"; 
 							uicomponent.renderUIComponent(child); 
 							println "</div>"; 
 						}
@@ -23,7 +23,7 @@
 						<ul class="itemList uiContentBox">
 								<%for(child in uicomponent.getChildren()) {
 									def String type = "item"; 
-									if(child.isRendered()) type = "selectedItem Item";
+									if(child.isRendered()) type = "active item";
 								%>
 								<li>
 									<a class="actionIcon $type" href="#" ><i class="uiIcon${child.id} uiIconLightGray"></i><%= _ctx.appRes(uicomponent.getId() + ".label." + child.id)%></a>

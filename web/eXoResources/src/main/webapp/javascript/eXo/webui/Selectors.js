@@ -75,18 +75,24 @@
 	   *          clickedElement
 	   */
 	  onClick : function(clickedElement) {
-	    var itemListContainer = clickedElement.parentNode;
-	    var allItems = $(itemListContainer).find("div.Item").get();
+	    var itemListContainer = $(clickedElement).closest(".itemListContainer, .ItemListContainer")[0];
+	    var allItems = $(itemListContainer).find("div.Item, .item").get();
 	    itemSelector.beforeActionHappen(clickedElement);
 	    if (this.allItems.length <= 0)
 	      return;
 	    for ( var i = 0; i < allItems.length; i++) {
-	      if (allItems[i] != clickedElement) {
-	        allItems[i].className = "Item";
+	    	var $item = $(allItems[i]);
+	      if ($item[0] != clickedElement) {
+	        $item.removeClass("SelectedItem active");
 	        this.onChangeItemDetail(clickedElement, true);
-	      } else {
-	        allItems[i].className = "SelectedItem Item";
-	        this.backupClass = "SelectedItem Item";
+	      } else {	      	
+	      	var selected = "SelectedItem";
+	      	this.backupClass = "SelectedItem Item";
+	      	if ($item.hasClass("item")) {
+	      		selected = "active";
+	      		this.backupClass = "active item"
+	      	}
+	        $item.hasClass(selected) || $item.addClass(selected);
 	        this.onChangeItemDetail(clickedElement, false);
 	      }
 	    }
@@ -113,7 +119,7 @@
 	      }
 	    } else {
 	      for ( var i = 0; i < this.allItems.length; i++) {
-	        if (this.allItems[i].className == "SelectedItem Item") {
+	        if (this.allItems[i] == itemSelected) {
 	          this.itemDetails[i].style.display = "block";
 	        } else {
 	          this.itemDetails[i].style.display = "none";
@@ -149,14 +155,13 @@
 	  /* TODO: Review This Function (Ha's comment) */
 	  beforeActionHappen : function(selectedItem) {
 	    var jqObj = $(selectedItem);
-	    this.uiItemSelector = jqObj.closest(".UIItemSelector")[0];
-	    this.itemList = jqObj.closest(".ItemList")[0];
-	    var listCont = jqObj.closest(".ItemListContainer");
+	    this.uiItemSelector = jqObj.closest(".UIItemSelector, .uiItemSelector")[0];
+	    var listCont = jqObj.closest(".ItemListContainer, .itemListContainer");
 	    this.itemListContainer = listCont[0];
-	    this.itemListAray = listCont.parent().find("div.ItemList").get();
+	    this.itemListAray = listCont.parent().find("div.ItemList, .itemList").get();
 
 	    if (this.itemListAray.length > 1) {
-	      this.itemDetailLists = listCont.parent().find("div.ItemDetailList").get();
+	      this.itemDetailLists = $(this.uiItemSelector).find("div.ItemDetailList, .itemDetailList").get();
 	      this.itemDetailList = null;
 	      for ( var i = 0; i < this.itemListAray.length; i++) {
 	        if (this.itemListAray[i].style.display == "none") {
@@ -167,11 +172,12 @@
 	        }
 	      }
 	    } else {
-	      this.itemDetailList = listCont.parent().find("div.ItemDetailList")[0];
+	      this.itemDetailList = $(this.uiItemSelector).find("div.ItemDetailList, .itemDetailList")[0];
 	    }
 
-	    this.itemDetails = $(this.itemDetailList).find("div.ItemDetail").get();
-	    this.allItems = $(this.itemList).find("div.Item").eq(0).parent().children("div.Item").get();
+	    this.itemDetails = $(this.itemDetailList).find("div.ItemDetail, .itemDetail").get();
+	    this.itemList = jqObj.closest(".ItemList, .itemList")[0];
+	    this.allItems = $(this.itemList).find("div.Item, .item").get();
 	  },
 
 	  showPopupCategory : function(selectedNode) {
