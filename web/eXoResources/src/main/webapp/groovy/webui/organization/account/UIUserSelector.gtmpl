@@ -96,10 +96,10 @@
 							<% if(!isMulti) {
 								 String addAction = uicomponent.event("AddUser", data.getUserName()) + "; return false;";
 							%>
-							<td>
-								<div class="actionContainer">
-									<img onclick="$addAction" alt="" src="/eXoResources/skin/sharedImages/Blank.gif" class="selectPageIcon" />
-								</div>
+							<td class="actionContainer center">
+								<a class="actionIcon" onclick="$addAction" href="javascript:void(0);">
+									<i class="uiIconPlus uiIconLightGray"></i>
+								</a>
 							</td>
 							<% } %>
 						</tr>
