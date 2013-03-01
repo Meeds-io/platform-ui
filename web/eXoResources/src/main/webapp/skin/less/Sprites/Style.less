@@ -35,7 +35,6 @@
 .dropdown-menu > .active > a > [class^="uiIcon"],
 .uiDropdownWithIcon .dropdown-submenu:hover > a > [class^="uiIcon"],
 .btn:hover [class^="uiIcon"],
-a:hover [class^="uiIcon"],
 [class^="uiIcon"]:hover, .uiActionBar [class^="uiIcon"]:hover, .uiIconBlue
 {
   background-image: url("/eXoResources/skin/images/Icons/uiIconsBlue.png");
@@ -80,7 +79,7 @@ a:hover [class^="uiIcon"],
 	background-position: -20px 0px;
 }
 
-.uiIconEdit,.uiIconEditPage,.uiIconEditTag,.wikimodel-freestanding {
+.uiIconEdit,.uiIconEditPage,.uiIconEditTag {
 	background-position: -40px 0px;
 }
 
@@ -164,7 +163,7 @@ a:hover [class^="uiIcon"],
 	background-position: -40px -40px;
 }
 
-.uiIconFile, .DefaultPageIcon {
+.uiIconFile {
 	background-position: -60px -40px;
 }
 
@@ -368,13 +367,21 @@ a:hover [class^="uiIcon"],
 	background-position: -60px -140px;
 }
 
+.uiIconGoUp {
+	background-position: -80px -140px;
+}
+
 /*########################## IconLibrary-FileType #################################*
 
 /************** IconLibrary-FileType-16x16 *************/
 
-[class^="uiIcon16x16File"],.uiIcon16x16exo_populateToMenu{
+[class^="uiIcon16x16File"],.uiIcon16x16exo_populateToMenu,.uiIcon16x16xcmis_systemDefault,
+.uiIcon16x16exo_auditStorageDefault,.uiIcon16x16xcmis_policiesDefault,
+.uiIcon16x16xcmis_relationshipsDefault,.uiIcon16x16xcmis_workingCopiesDefault,
+.uiIcon16x16exo_taxonomyActionDefault,
+.uiIcon16x16exo_tabDefault {
   background-image: url("/eXoResources/skin/images/Icons/FileTypeIcons/uiIconsFileType16x16.png");
-  background-position: 16px 16px;
+  background-position: -140px -40px;
   background-repeat: no-repeat;
   display: inline-block;
   width: 16px;
@@ -384,11 +391,20 @@ a:hover [class^="uiIcon"],
   vertical-align: text-top;
 }
 
-[class^="uiIcon16x16File"]:hover, .uiActionBar [class^="uiIcon16x16File"]:hover,.uiIcon16x16exo_populateToMenu:hover {
+[class^="uiIcon16x16File"]:hover, .uiActionBar [class^="uiIcon16x16File"]:hover,
+.uiIcon16x16exo_populateToMenu:hover,.uiIcon16x16xcmis_systemDefault:hover,
+.uiIcon16x16exo_auditStorageDefault:hover,.uiIcon16x16xcmis_policiesDefault:hover,
+.uiIcon16x16xcmis_relationshipsDefault:hover,.uiIcon16x16xcmis_workingCopiesDefault:hover,
+.uiIcon16x16exo_taxonomyActionDefault:hover,
+.uiIcon16x16exo_tabDefault:hover {
   background-image: url("/eXoResources/skin/images/Icons/FileTypeIcons/uiIconsFileType16x16.png");
 }
 
-.uiIcon16x16FileDefault,.uiIcon16x16exo_populateToMenu {
+.uiIcon16x16FileDefault,.uiIcon16x16exo_populateToMenu,.uiIcon16x16xcmis_systemDefault,
+.uiIcon16x16exo_auditStorageDefault,.uiIcon16x16xcmis_policiesDefault,
+.uiIcon16x16xcmis_relationshipsDefault,.uiIcon16x16xcmis_workingCopiesDefault,
+.uiIcon16x16exo_taxonomyActionDefault,
+.uiIcon16x16exo_tabDefault {
 	background-position: -140px -40px;
 }
 
@@ -400,7 +416,7 @@ a:hover [class^="uiIcon"],
 	background-position: -20px 0px;
 }
 
-.uiIcon16x16FileArchiveZip {
+.uiIcon16x16FileArchiveZip,.uiIcon16x16FileZip  {
 	background-position: -40px 0px;
 }
 
@@ -648,7 +664,7 @@ a:hover [class^="uiIcon"],
 	background-position: -28px 0px;
 }
 
-.uiIcon24x24FileArchiveZip {
+.uiIcon24x24FileArchiveZip,.uiIcon24x24FileZip {
 	background-position: -56px 0px;
 }
 
@@ -1359,9 +1375,12 @@ a:hover [class^="uiIcon"],
 
 /************** IconLibrary-FileType-64x64 *************/
 
-[class^="uiIcon64x64File"],.uiIcon64x64exo_populateToMenuDefault{
+[class^="uiIcon64x64File"],.uiIcon64x64exo_populateToMenuDefault,.uiIcon64x64xcmis_systemDefault,
+.uiIcon64x64exo_auditStorageDefault,.uiIcon64x64xcmis_policiesDefault,.uiIcon64x64xcmis_relationshipsDefault,
+.uiIcon64x64xcmis_workingCopiesDefault,.uiIcon64x64exo_taxonomyActionDefault,
+.uiIcon64x64exo_tabDefault {
   background-image: url("/eXoResources/skin/images/Icons/FileTypeIcons/uiIconsFileType64x64.png");
-  background-position: 64px 64px;
+  background-position: -476px -136px;
   background-repeat: no-repeat;
   display: inline-block;
   width: 64px;
@@ -1371,12 +1390,20 @@ a:hover [class^="uiIcon"],
   vertical-align: text-top;
 }
 
-.uiIcon64x64exo_populateToMenuDefault:hover,
+.uiIcon64x64exo_populateToMenuDefault:hover,.uiIcon64x64xcmis_systemDefault:hover,
+.uiIcon64x64exo_auditStorageDefault:hover,.uiIcon64x64xcmis_policiesDefault:hover,
+.uiIcon64x64xcmis_relationshipsDefault:hover,.uiIcon64x64xcmis_workingCopiesDefault:hover,
+.uiIcon64x64exo_taxonomyActionDefault:hover,
+.uiIcon64x64exo_tabDefault:hover,
 [class^="uiIcon64x64File"]:hover, .uiActionBar [class^="uiIcon64x64File"]:hover {
   background-image: url("/eXoResources/skin/images/Icons/FileTypeIcons/uiIconsFileType64x64.png");
 }
 
-.uiIcon64x64FileDefault,.uiIcon64x64exo_populateToMenu {
+.uiIcon64x64FileDefault,.uiIcon64x64exo_populateToMenu,.uiIcon64x64xcmis_systemDefault,
+.uiIcon64x64exo_auditStorageDefault,.uiIcon64x64xcmis_policiesDefault,
+.uiIcon64x64xcmis_relationshipsDefault,.uiIcon64x64xcmis_workingCopiesDefault,
+.uiIcon64x64exo_taxonomyActionDefault,
+.uiIcon64x64exo_tabDefault {
 	background-position: -476px -136px;
 }
 
@@ -1626,15 +1653,15 @@ a:hover [class^="uiIcon"],
   background-image: url("/eXoResources/skin/images/Icons/TemplateTypeIcons/uiIconsTemplateType16x16.png");
 }
 
-.uiIcon16x16TemplateAnnounment {
+.uiIcon16x16TemplateAnnounment, .uiIcon16x16TemplateAnnouncement {
 	background-position: 0px 0px;
 }
 
-.uiIcon16x16TemplateContact {
+.uiIcon16x16TemplateContact, .uiIcon16x16TemplateContactUs {
 	background-position: -20px 0px;
 }
 
-.uiIcon16x16TemplateJs {
+.uiIcon16x16TemplateJs , .uiIcon16x16TemplateJavascriptFile{
 	background-position: -40px 0px;
 }
 
@@ -1642,11 +1669,11 @@ a:hover [class^="uiIcon"],
 	background-position: -60px 0px;
 }
 
-.uiIcon16x16TemplateSiteBreadcrumb {
+.uiIcon16x16TemplateSiteBreadcrumb, .uiIcon16x16TemplateAccessibleBreadcrumb {
 	background-position: -80px 0px;
 }
 
-.uiIcon16x16TemplateAccessibilityMedia {
+.uiIcon16x16TemplateAccessibilityMedia, .uiIcon16x16TemplateAccessibleMedia {
 	background-position: -100px 0px;
 }
 
@@ -1654,11 +1681,11 @@ a:hover [class^="uiIcon"],
 	background-position: -120px 0px;
 }
 
-.uiIcon16x16TemplateCss {
+.uiIcon16x16TemplateCss, .uiIcon16x16TemplateCSSFile {
 	background-position: -140px 0px;
 }
 
-.uiIcon16x16TemplateHtml {
+.uiIcon16x16TemplateHtml, .uiIcon16x16TemplateHTMLFile {
 	background-position: -160px 0px;
 }
 
@@ -1666,15 +1693,15 @@ a:hover [class^="uiIcon"],
 	background-position: -180px 0px;
 }
 
-.uiIcon16x16TemplateNavigation {
+.uiIcon16x16TemplateNavigation, .uiIcon16x16TemplateAccessibleNavigation {
 	background-position: 0px -20px;
 }
 
-.uiIcon16x16TemplateWebLink {
+.uiIcon16x16TemplateWebLink, .uiIcon16x16TemplateWeb {
 	background-position: -20px -20px;
 }
 
-.uiIcon16x16TemplateSearchBox {
+.uiIcon16x16TemplateSearchBox, .uiIcon16x16TemplateAccessibleSiteSearchBox {
 	background-position: -40px -20px;
 }
 
@@ -2003,7 +2030,8 @@ a:hover [class^="uiIcon"],
 
 /************** IconLibrary-FolderType-16x16 *************/
 
-[class^="uiIcon16x16Folder"],.uiIcon16x16exo_taxonomy {
+[class^="uiIcon16x16Folder"],.uiIcon16x16exo_taxonomy,.uiIcon16x16exo_viewDefault,
+.uiIcon16x16exo_driveDefault,.uiIcon16x16exo_tagStyleDefault {
   background-image: url("/eXoResources/skin/images/Icons/FolderTypeIcons/uiIconsFolderType16x16.png");
   background-repeat: no-repeat;
 	background-position: 0px 0px;
@@ -2015,7 +2043,8 @@ a:hover [class^="uiIcon"],
   vertical-align: text-top;
 }
 
-[class^="uiIcon16x16Folder"]:hover,.uiIcon16x16exo_taxonomy:hover {
+[class^="uiIcon16x16Folder"]:hover,.uiIcon16x16exo_taxonomy:hover,.uiIcon16x16exo_viewDefault:hover,
+.uiIcon16x16exo_driveDefault:hover,.uiIcon16x16exo_tagStyleDefault:hover {
   background-image: url("/eXoResources/skin/images/Icons/FolderTypeIcons/uiIconsFolderType16x16.png");
 }
 
@@ -2093,6 +2122,18 @@ a:hover [class^="uiIcon"],
 
 .uiIcon16x16FolderLink,.uiIcon16x16exo_linkFolder {
 	background-position: -160px -20px;
+}
+
+.uiIcon16x16exo_driveDefault {
+	background-position: -140px -40px;
+}
+
+.uiIcon16x16exo_tagStyleDefault {
+	background-position: -160px -40px;
+}
+
+.uiIcon16x16exo_viewDefault {
+	background-position: -180px -40px;
 }
 
 /************** IconLibrary-FolderType-24x24 *************/
@@ -2308,7 +2349,8 @@ a:hover [class^="uiIcon"],
 
 /************** IconLibrary-FolderType-64x64 *************/
 
-[class^="uiIcon64x64Folder"],.uiIcon64x64exo_taxonomy{
+[class^="uiIcon64x64Folder"],.uiIcon64x64exo_taxonomy,.uiIcon64x64exo_viewDefault,
+.uiIcon64x64exo_driveDefault,.uiIcon64x64exo_tagStyleDefault {
   background-image: url("/eXoResources/skin/images/Icons/FolderTypeIcons/uiIconsFolderType64x64.png");
   background-repeat: no-repeat;
 	background-position: 0px 0px;
@@ -2320,7 +2362,8 @@ a:hover [class^="uiIcon"],
   vertical-align: text-top;
 }
 
-[class^="uiIcon64x64Folder"]:hover,.uiIcon64x64exo_taxonomy:hover {
+[class^="uiIcon64x64Folder"]:hover,.uiIcon64x64exo_taxonomy:hover,.uiIcon64x64exo_viewDefault:hover,
+.uiIcon64x64exo_driveDefault:hover,.uiIcon64x64exo_tagStyleDefault:hover {
   background-image: url("/eXoResources/skin/images/Icons/FolderTypeIcons/uiIconsFolderType64x64.png");
 }
 
@@ -2400,26 +2443,32 @@ a:hover [class^="uiIcon"],
 	background-position: -544px -68px;
 }
 
+.uiIcon64x64exo_driveDefault {
+	background-position: -476px -136px;
+}
+
+.uiIcon64x64exo_tagStyleDefault {
+	background-position: -544px -136px;
+}
+
+.uiIcon64x64exo_viewDefault {
+	background-position: -612px -136px;
+}
+
 
 /***************Icon of all applications ******************/
 
-[class^="uiIconApp"],
-a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover, 
-.active [class^="uiIconApp"]:hover,
-.dropdown-menu > li > a > [class^="uiIconApp"]
- {
+[class^="uiIconApp"], [class^="uiIconApp"]:hover, .active [class^="uiIconApp"]:hover {
   display: inline-block;
   width: 35px;
   height: 35px;
   .ie7-restore-right-whitespace();
   line-height: 35px;
-  vertical-align: middle;
+  vertical-align: text-top;
   background-image: url("/eXoResources/skin/images/Icons/AppIcons/uiIconAppGray.png");
   background-repeat: no-repeat;
 }
 
-
-.dropdown-menu > li > a:hover > [class^="uiIconApp"],
 .active [class^="uiIconApp"] {
 	background-image: url("/eXoResources/skin/images/Icons/AppIcons/uiIconAppWhite.png");
 }
