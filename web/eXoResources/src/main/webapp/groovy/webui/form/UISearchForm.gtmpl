@@ -9,32 +9,20 @@
 				.addScripts("var executeScript = \$('#$uiform.id a.SimpleSearchIcon').attr('href');")
 				.addScripts("\$('#$uiform.id .QuickSet').on('keypress', function(event) {$keyPressAct});");
 %>
-<div class="UISearch">	
-	<div class="UIBarStyle">
-		<div class="BarStyle2">
-			<div class="LeftBar">
-				<div class="RightBar">
-					<div class="MiddleBar">
-						<div class="UISearchForm">
-							<%uiform.begin()%>
-						      <div class="QuickSet">
-								<div class="SearchTitle"><%=_ctx.appRes("UISearch.label.Search")%>:</div>
-								<% 
-									QuickSearchInputSet = uiform.getQuickSearchInputSet();
-									for(field in QuickSearchInputSet.getChildren()) {
-										uiform.renderField(field) 
-									}	 
-								%>
-								<a class="SimpleSearchIcon" href="$quickSearchlink" title="<%= _ctx.appRes("UISearch.label.QuickSearch") %>">
-									<span></span>
-								</a>
-							</div>	
-							<%uiform.end()%>	 
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>				
+<div class="uiSearch uiGrayLightBox">	
+	<div class="uiSearchFor  form-search">
+		<%uiform.begin()%>
+		  <div class="quickSet ">
+			<span class="searchTitle"><%=_ctx.appRes("UISearch.label.Search")%>:</span >
+			<% 
+				QuickSearchInputSet = uiform.getQuickSearchInputSet();
+				for(field in QuickSearchInputSet.getChildren()) {
+					uiform.renderField(field) 
+				}	 
+			%>
+			<a class="btn btn-primary" href="$quickSearchlink" title="<%= _ctx.appRes("UISearch.label.QuickSearch") %>"><%=_ctx.appRes("UISearch.label.Search")%></a>
+		</div>	
+		<%uiform.end()%>	 
+	</div>		
 </div>
 
