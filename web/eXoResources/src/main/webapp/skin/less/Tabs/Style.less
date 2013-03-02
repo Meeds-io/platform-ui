@@ -42,16 +42,41 @@
 			background-color: #FFFFFF;
 		}
 		
-		> li.dropdown > a, li.dropdown > a:hover {
+		> li.dropdown {
+			> a {
+				background: none;
+				border: 1px solid #E3E3E3;
+				line-height: 16px;
+				padding: 5px 10px;
+				margin-top: 1px;
+			}
+			
+			> a:hover, > a:active {
+				#gradient > .vertical(#ffffff, #e6e6e6);
+				border: 1px solid #c7c7c7;
+				.border-radius(@borderRadiusSmall);
+				padding: 5px 10px;
+			}
+		}
+		
+		li.dropdown.open > a, li.dropdown.open > a:hover,li.dropdown.active > a, li.dropdown.active > a:hover {
 			background: none;
-			border: none;
-			line-height: 22px;
+			box-shadow: 0px 2px 6px rgba(0,0,0,0.15) inset;
+			border: 1px solid #c7c7c7;
+			.border-radius(@borderRadiusSmall);
+				padding: 5px 10px;
+		}
+		
+		li.dropdown > a:hover .caret,li.dropdown > a:active .caret,li.dropdown > a .caret, li.open > a .caret {
+			border-bottom-color: #777777;
+			border-top-color: #777777;
+			margin-top: 7px;
 		}
 		
 		li.dropdown > .dropdown-toggle .caret, li.dropdown > .dropdown-toggle:hover .caret {
 			border-bottom-color: #777777;
 			border-top-color: #777777;
-			margin-top: 9px;
+			margin-top: 7px;
 		}
 	}
 	
@@ -71,6 +96,8 @@
 
 	.dropdown-menu {
 		.border-radius(@borderRadiusSmall);
+		min-width: 100px;
+		
 		.active > a,.active > a:hover {
 			color: #fff;
 		}
@@ -126,10 +153,6 @@
 					line-height: 18px;
 					border: 1px solid #c7c7c7;
 					.border-radius(@borderRadiusSmall);
-					
-					[class^="icon-"], [class*=" icon-"] {
-						background-image: url("../img/glyphicons-halflings-white.png");
-					}
 				}
 			}
 			
@@ -137,18 +160,13 @@
 				background: none;
 				box-shadow: 0px 2px 6px rgba(0,0,0,0.15) inset;
 				border: 1px solid #c7c7c7;
+				.border-radius(@borderRadiusSmall);
 			}
 			
 			li.dropdown > a:hover .caret,li.dropdown > a:active .caret,li.dropdown > a .caret, li.open > a .caret {
 				border-bottom-color: #777777;
 				border-top-color: #777777;
 				margin-top: 8px;
-			}
-			
-			.open > a {
-				background: none;
-				.border-radius(@borderRadiusSmall);
-				border: 1px solid #c7c7c7;
 			}
 			
 			.dropdown .dropdown-menu {
