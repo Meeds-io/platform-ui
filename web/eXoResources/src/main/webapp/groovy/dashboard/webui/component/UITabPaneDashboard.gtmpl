@@ -14,59 +14,60 @@
 	PortalURL nodeURL = nodeurl();
 	def selectedNode = Util.getUIPortal().getSelectedUserNode();
 %>
-<div id="$uicomponent.id" class="uiTabNormal uiTabGrayInPage">
-  <div class="pull-left">
-  <ul class="nav nav-tabs uiTabsContainer">
-  <%
-  int i = 0;
-  LinkedList<UserNode> display = new LinkedList<UserNode>()
-  LinkedList<UserNode> more = new LinkedList<UserNode>();
-  List<UserNode> holder = new ArrayList<UserNode>();
-  for(UserNode node : nodes) {
-    if(node.getURI().equals(selectedNode.getURI())){
-      selectedNode = node;
-    }
-    holder.add(node);
-  }
-  
-  int currentOffset = holder.indexOf(selectedNode);
-  if(holder.size() < 10) {
-    display.addAll(holder);
-  } else {
-    if(currentOffset < 10) {
-      display.addAll(holder.subList(0, 10));
-      more.addAll(holder.subList(10, holder.size()));  
-    } else {
-      display.addAll(holder.subList(currentOffset - 9, currentOffset + 1));
-      more.addAll(holder.subList(currentOffset + 1, holder.size()));
-      more.addAll(more.size(), holder.subList(0, currentOffset - 9));
-    }
-  }
-    
-  for(UserNode node : display){
-    def tabLabel = node.getEncodedResolvedLabel();
-    nodeURL.setNode(node);
-    if ("Tab_Default".equals(node.getName()))
-    {
-      tabLabel = _ctx.appRes("UIUserToolBarDashboard.page." + tabLabel);
-    }       
-    String param = node.getName();
-    if(node.getURI().equals(selectedNode.getURI())){
-  %>
-    <li class='active'>
-      <span id="$param">$tabLabel</span>
-      <i class='uiIconDelete' onclick="<%= uicomponent.url("DeleteTab",param); %>"></i>
-    </li>
-  <%  } else { %>
-    <li><a href='<%= nodeURL.toString() %>' data-toggle='tab' data-placement='bottom'>$tabLabel</a></li>  
-  <%  
-    }
-  }
-  %>
-    <li class="addDashboard"><a class="AddDashboard"><i class="uiIconPlus"></i></a>
-  </ul>
-  </div>
-  
+<div id="$uicomponent.id" class="uiTabNormal uiTabInPage uiTabPaneDashboard">
+  <div class="clearfix">
+		<ul class="nav nav-tabs uiTabsContainer ">
+	  <%
+	  int i = 0;
+	  LinkedList<UserNode> display = new LinkedList<UserNode>()
+	  LinkedList<UserNode> more = new LinkedList<UserNode>();
+	  List<UserNode> holder = new ArrayList<UserNode>();
+	  for(UserNode node : nodes) {
+		if(node.getURI().equals(selectedNode.getURI())){
+		  selectedNode = node;
+		}
+		holder.add(node);
+	  }
+	  
+	  int currentOffset = holder.indexOf(selectedNode);
+	  if(holder.size() < 10) {
+		display.addAll(holder);
+	  } else {
+		if(currentOffset < 10) {
+		  display.addAll(holder.subList(0, 10));
+		  more.addAll(holder.subList(10, holder.size()));  
+		} else {
+		  display.addAll(holder.subList(currentOffset - 9, currentOffset + 1));
+		  more.addAll(holder.subList(currentOffset + 1, holder.size()));
+		  more.addAll(more.size(), holder.subList(0, currentOffset - 9));
+		}
+	  }
+		
+	  for(UserNode node : display){
+		def tabLabel = node.getEncodedResolvedLabel();
+		nodeURL.setNode(node);
+		if ("Tab_Default".equals(node.getName()))
+		{
+		  tabLabel = _ctx.appRes("UIUserToolBarDashboard.page." + tabLabel);
+		}       
+		String param = node.getName();
+		if(node.getURI().equals(selectedNode.getURI())){
+	  %>
+		<li class='active'>
+		  <a href="#">
+			<span id="$param">$tabLabel</span>&nbsp;&nbsp;
+			<i class='uiIconClose uiIconLightGray' onclick="<%= uicomponent.url("DeleteTab",param); %>"></i>
+		 </a>
+		</li>
+	  <%  } else { %>
+		<li><a href='<%= nodeURL.toString() %>' data-toggle='tab' data-placement='bottom'>$tabLabel</a></li>  
+	  <%  
+		}
+	  }
+	  %>
+		<li class="addDashboard"><span><i class="uiIconPlus uiIconLightGray"></i></span></li>
+	  </ul>
+		
   <div class="pull-right">
     <div class="dropdown pull-left" style="display: <% if(more.size() > 0) print 'block'; else print 'none'; %>">
       <a class="dropdown-toggle displayMoreTab" data-toggle="dropdown">More</a>
@@ -84,6 +85,6 @@
       <%} %>
       </ul>
     </div>
+   </div>  
   </div>
 </div>
-<div style="clear: both;"></div>

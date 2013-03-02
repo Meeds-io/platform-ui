@@ -90,30 +90,31 @@
 		padding: 5px 5px 0px 5px; 
 		.border-radius(@borderRadiusSmall @borderRadiusSmall 0px 0px);
 	}
-	//UIVTabInputSet
-	.uiPersonalInfo {
-		.itemListContainer {
-			margin:0px 0 0 10px;			
-			width: 170px;
-		}
-		.itemList {
-			li  {
-				a {
-					color : @textColor;			
-					display: block;
-					padding:2px 10px;
-					[class^="uiIcon"] {
-						margin-right: 5px;
-					}
+	
+}
+//UIVTabInputSet
+.uiPersonalInfo {
+
+	.itemListContainer {
+		margin:0px 0 0 10px;			
+		width: 170px;
+	}
+	.itemList {
+		li  {
+			a {
+				color : @textColor;			
+				display: block;
+				padding:2px 10px;
+				[class^="uiIcon"] {
+					margin-right: 5px;
 				}
-				& + li a {
-					margin-top: 2px;
-				}
+			}
+			& + li a {
+				margin-top: 2px;
 			}
 		}
 	}
 }
-
 /*UISearchForm*/
 .uiSearch {
 	margin: 0 0 16px 0;

@@ -28,11 +28,11 @@ function initTabbedDashboardPortlet(id)
   require(['SHARED/jquery'], function($){
     
     var tab = $("#" + id);
-    tab.find(".AddDashboard").on("click", function() {
-      showAddTabInput(this); 
+    tab.find(".addDashboard").on("click", function() {
+      showAddTabInput(this);   
     });
 
-    tab.on("click", ".active > span", function() {
+    tab.on("click", ".active span", function() {
       var span = $(this);
       showEditLabelInput(this, span.attr("id"), span.text()); 
     });
@@ -62,14 +62,15 @@ function initTabbedDashboardPortlet(id)
     function showEditLabelInput(target, nodeName, currentLabel)
     {
       var jqObj = $(target);
+      jqObj.closest(".active").addClass("editing");
 
       var input = $("<input>").attr({type : "text", id : nodeName, name : currentLabel, value : currentLabel, maxLength : 50});
-      input.css("border", "1px solid #b7b7b7").css("width", (target.offsetWidth - 2) + "px");
+      //input.css("border", "1px solid #b7b7b7").css("width", (target.offsetWidth - 2) + "px");
 
       jqObj = jqObj.replaceWith(input);
       input.blur(function()
       {
-        $(this).replaceWith(jqObj);
+        $(this).replaceWith(jqObj).closest(".active").removeClass("editing");
       });
 
       input.keypress(function(e)
@@ -114,6 +115,7 @@ function initTabbedDashboardPortlet(id)
     function showAddTabInput(addButton)
     {
       var jqAddButton = $(addButton);
+      jqAddButton.hide();
       var parent = tab.find('ul.dropdown-menu');
       var tabs = parent.find('li');
       var tabIndex = tabs.length;
@@ -123,6 +125,7 @@ function initTabbedDashboardPortlet(id)
       tabIndex += tabs.length - 1;
       
       var newTab = parent.find("li.active").clone();
+      newTab.removeClass("active").addClass("editing");
       newTab.insertBefore(jqAddButton);
 
       var portletID = jqAddButton.closest("div.PORTLET-FRAGMENT").parent().attr("id");
@@ -135,6 +138,7 @@ function initTabbedDashboardPortlet(id)
       input.blur(function()
       {
         $(newTab).remove();
+        jqAddButton.show();
       });
 
       input.keypress(function(e)

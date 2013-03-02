@@ -38,6 +38,15 @@
     <overwrite>true</overwrite>
   </portlet-skin>
   
+  <!-- TabbedDashboardPortlet skins -->
+  <portlet-skin>
+    <application-name>dashboard</application-name>
+    <portlet-name>TabbedDashboardPortlet</portlet-name>
+    <skin-name>Default</skin-name>
+    <css-path>/skin/css/Portlets/UITabbedDashboardPortlet/Style.css</css-path>
+    <overwrite>true</overwrite>
+  </portlet-skin>
+  
   <!-- Simple window style -->
   <window-style>
     <style-name>Simple</style-name>
