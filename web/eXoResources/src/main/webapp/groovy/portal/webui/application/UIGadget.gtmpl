@@ -40,19 +40,19 @@
 	<a style="display:none" href="$standaloneURL"></a>
 	<h5 class="title clearfix" style="visibility: visible;">	
 		<div class="pull-right">
-			<a class="actionIcon" data-placement="bottom" rel="tooltip" data-original-title="<%=view.equals(uicomponent.HOME_VIEW) ? maxiTitle : unmaxiTitle%>">
+			<a class="actionIcon pull-left" data-placement="bottom" rel="tooltip" data-original-title="<%=view.equals(uicomponent.HOME_VIEW) ? maxiTitle : unmaxiTitle%>">
 				<i class="<%=view.equals(uicomponent.HOME_VIEW) ? "uiIconMaximize" : "uiIconArrowDown";%> maximizeAction uiIconLightGray" ></i>
 			</a>
-			<a class="actionIcon" style="display:none;"  data-placement="bottom" rel="tooltip" data-original-title="<%=isMini ? unminiTitle : miniTitle%>" miniTitle="$miniTitle" unminiTitle="$unminiTitle">
+			<a class="actionIcon pull-left" style="display:none;"  data-placement="bottom" rel="tooltip" data-original-title="<%=isMini ? unminiTitle : miniTitle%>" miniTitle="$miniTitle" unminiTitle="$unminiTitle">
 				<i class="<%=isMini ? "uiIconArrowDown": "uiIconMinimize";%> minimizeAction uiIconLightGray" ></i>
 			<% if(uicomponent.isSettingUserPref()) { %>
-			  <a class="actionIcon" data-placement="bottom" rel="tooltip" data-original-title="<%=_ctx.appRes("UIGadget.tooltip.editGadget")%>"> <i class="uiIconEdit uiIconLightGray" ></i></a>
+			  <a class="actionIcon pull-left" data-placement="bottom" rel="tooltip" data-original-title="<%=_ctx.appRes("UIGadget.tooltip.editGadget")%>"> <i class="uiIconEdit uiIconLightGray" ></i></a>
 			<% } %>
-			<a class="actionIcon " data-placement="bottom" rel="tooltip" data-original-title="<%=_ctx.appRes("UIGadget.tooltip.deleteGadget")%>" >
+			<a class="actionIcon pull-left" data-placement="bottom" rel="tooltip" data-original-title="<%=_ctx.appRes("UIGadget.tooltip.deleteGadget")%>" >
 				<i class="uiIconClose uiIconLightGray" ></i>
 			</a>
 		</div>		
-		<span class="GadgetDragHandleArea gadgetDragHandleArea" style="display: none;"></span>
+		<i class="uiIconDragDrop" style="display: none;"></i>
 		<span class="gadgetTitle" style="display: <%=isLossData ? "block" : "none"; %> ; "><%= uicomponent.getApplicationName() %></span>
 	</h5>
 	<div class="gadgetApplication uiBoxContent" id="content-$id" style="display:<%= Boolean.parseBoolean(uicomponent.getProperties().get("minimized")) ? "none": "block"; %>">
