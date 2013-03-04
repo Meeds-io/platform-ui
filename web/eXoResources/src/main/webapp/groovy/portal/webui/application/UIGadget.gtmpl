@@ -39,7 +39,7 @@
 <div class="UIGadget uiGadget uiBox" id="$id" style="left: $posX; top: $posY; z-Index: $zIndex; width: 100%" >
 	<a style="display:none" href="$standaloneURL"></a>
 	<h5 class="title clearfix" style="visibility: visible;">	
-		<div class="pull-right">
+		<span class="pull-right">
 			<a class="actionIcon pull-left" data-placement="bottom" rel="tooltip" data-original-title="<%=view.equals(uicomponent.HOME_VIEW) ? maxiTitle : unmaxiTitle%>">
 				<i class="<%=view.equals(uicomponent.HOME_VIEW) ? "uiIconMaximize" : "uiIconArrowDown";%> maximizeAction uiIconLightGray" ></i>
 			</a>
@@ -51,7 +51,7 @@
 			<a class="actionIcon pull-left" data-placement="bottom" rel="tooltip" data-original-title="<%=_ctx.appRes("UIGadget.tooltip.deleteGadget")%>" >
 				<i class="uiIconClose uiIconLightGray" ></i>
 			</a>
-		</div>		
+		</span>		
 		<i class="uiIconDragDrop" style="display: none;"></i>
 		<span class="gadgetTitle" style="display: <%=isLossData ? "block" : "none"; %> ; "><%= uicomponent.getApplicationName() %></span>
 	</h5>
