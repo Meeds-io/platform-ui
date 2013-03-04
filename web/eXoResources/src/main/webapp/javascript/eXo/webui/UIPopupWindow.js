@@ -69,7 +69,8 @@
 	    var browserHeight = $(window).height();	    
 	    if (browserHeight < jPopup[0].offsetHeight) {
 	      vrez.css("max-height", "");
-	    	vrez.height(browserHeight - jPopup[0].offsetHeight + vrez.height() - 20);
+	      var vrezHeight = browserHeight - jPopup[0].offsetHeight + vrez.height() - 20;
+	    	vrez.height(vrezHeight >= 10 ? vrezHeight : 10);
 	    }
 	    
 	    var scrollY = 0, offsetParent = popup.offsetParent;
