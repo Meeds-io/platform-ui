@@ -22,21 +22,36 @@
 @import "../../mixins.less";
 
 
- .uiTabPaneDashboard {
-	.editing {
-			input[type="text"] {
-				margin: 0px;
-				.size(24px,90px);
-			}
+.uiDashboardPortlet {
+	padding: 0px 20px 20px 20px;
+	.UIDashboardContainer {
+		border: 1px solid @borderColor;
+		border-top: 0;
 	}
-	 .nav-tabs > li.editing  > a {
-		padding: 3px 5px;
+}
+ .uiTabPaneDashboard {	
+	padding: 20px 20px 0 20px;
+	 .nav-tabs  > li {
+		&.editing  > a {		
+			padding: 3px 5px;
+		}
+		&.active > a {
+			cursor: pointer;
+		}
+		
 	}
 	 .addDashboard {
 		span {
 			display: inline-block;
 			margin: 6px 0 0 10px;
 		}
+	}
+	.editing {
+			input[type="text"] {
+				text-align: center;
+				margin: 0px;
+				.size(24px,90px);
+			}
 	}
 	
  }

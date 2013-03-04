@@ -65,12 +65,13 @@ function initTabbedDashboardPortlet(id)
       jqObj.closest(".active").addClass("editing");
 
       var input = $("<input>").attr({type : "text", id : nodeName, name : currentLabel, value : currentLabel, maxLength : 50});
-      //input.css("border", "1px solid #b7b7b7").css("width", (target.offsetWidth - 2) + "px");
+      input.css("width", (target.offsetWidth - 2) + "px");
 
       jqObj = jqObj.replaceWith(input);
       input.blur(function()
       {
-        $(this).replaceWith(jqObj).closest(".active").removeClass("editing");
+        $(this).replaceWith(jqObj);
+        jqObj.closest(".active").removeClass("editing");
       });
 
       input.keypress(function(e)
@@ -116,27 +117,25 @@ function initTabbedDashboardPortlet(id)
     {
       var jqAddButton = $(addButton);
       jqAddButton.hide();
-      var parent = tab.find('ul.dropdown-menu');
+      
+      var parent = $(addButton).closest('ul.nav');
       var tabs = parent.find('li');
       var tabIndex = tabs.length;
-      
-      parent = $(addButton).closest('ul.nav');
-      tabs = parent.find('li');
-      tabIndex += tabs.length - 1;
-      
+            
+      var lastTab = parent.find(".last").removeClass("last");
+
       var newTab = parent.find("li.active").clone();
-      newTab.removeClass("active").addClass("editing");
+      newTab.removeClass("active").addClass("last editing");
       newTab.insertBefore(jqAddButton);
 
       var portletID = jqAddButton.closest("div.PORTLET-FRAGMENT").parent().attr("id");
       var input = $("<input>").attr({type : "text", id : portletID , maxlength : 50, value : "Tab_" + tabIndex});
-      input.css({"border" : "1px solid #b7b7b7", "width" : "80px"});
-
       newTab.find("span").eq(0).replaceWith(input);
       input.next("i").hide();
 
       input.blur(function()
       {
+      	lastTab.addClass("last");
         $(newTab).remove();
         jqAddButton.show();
       });
