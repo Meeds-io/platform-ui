@@ -1,0 +1,36 @@
+<%
+	import	org.exoplatform.webui.core.UIBreadcumbs; 
+	import	org.exoplatform.webui.core.UITree;
+	List<String> groups = uicomponent.getListGroup(); 
+%>
+<div class="UIGroupMembershipSelector" id="$uicomponent.id">
+		<div class="uiGrayLightBox clearfix"><% uicomponent.renderChild(UIBreadcumbs.class); %></div>
+    <div class="row-fluid" style="padding-top: 20px;">
+      <div class="uiBox span6">
+        <h6 class="title"><%=_ctx.appRes("UIGroupSelector.title.selectGroupMember")%></h6>
+        <%uicomponent.renderChild(UITree.class);%>
+      </div>
+      <div class="uiBox span6">
+        <h6 class="title"><%=_ctx.appRes("UIGroupSelector.title.selectChildGroup")%></h6>
+        <div>
+          <ul>
+          <%
+            if(groups != null && groups.size() > 0) {
+            for(member in groups){
+          %>
+            <li>
+              <span class="uiIconMiniArrowRight"></span>
+              <a href="<%=uicomponent.event("SelectGroup", member)%>" title="$member">$member</a>
+            </li>
+            <%}%>
+          <% } else if( groups != null && groups.size() == 0 ) { %>
+            <li>
+              <span class="uiIconMiniArrowRight"></span>
+              <a href="<%= uicomponent.event("SelectGroup",uicomponent.getCurrentGroup().getId()) %>"><%=_ctx.appRes("UIGroupSelector.title.addGroupButton")%></a>
+            </li>
+          <% } %> 
+          </ul>
+        </div>
+      </div>
+    </div>
+</div> 		
