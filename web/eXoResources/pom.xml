@@ -52,6 +52,7 @@
                 <include>Core.less</include>
                 <include>Portlets/UIOrganizationPortlet/Style.less</include>
                 <include>Portlets/UITabbedDashboardPortlet/Style.less</include>
+                <include>Portlets/SiteNavigationPortlet/Style.less</include>
               </includes>
             </configuration>
             <goals>

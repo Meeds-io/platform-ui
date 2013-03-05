@@ -47,6 +47,24 @@
     <overwrite>true</overwrite>
   </portlet-skin>
   
+  <!-- PortalNavigationPortlet skins -->
+  <portlet-skin>
+    <application-name>exoadmin</application-name>
+    <portlet-name>PortalNavigationPortlet</portlet-name>
+    <skin-name>Default</skin-name>
+    <css-path>/skin/css/Portlets/SiteNavigationPortlet/Style.css</css-path>
+    <overwrite>true</overwrite>
+  </portlet-skin>
+
+  <!-- GroupNavigationPortlet skins -->
+  <portlet-skin>
+    <application-name>exoadmin</application-name>
+    <portlet-name>GroupNavigationPortlet</portlet-name>
+    <skin-name>Default</skin-name>
+    <css-path>/skin/css/Portlets/SiteNavigationPortlet/Style.css</css-path>
+    <overwrite>true</overwrite>
+  </portlet-skin>
+  
   <!-- Simple window style -->
   <window-style>
     <style-name>Simple</style-name>
