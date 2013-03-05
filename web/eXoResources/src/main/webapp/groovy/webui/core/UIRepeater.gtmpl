@@ -72,7 +72,7 @@
 	                      String actionLink = uiParent.event(action, beanId);
 	                    %>             
 
-	                        <a onclick="$actionLink"   rel="tooltip" data-placement="bottom"  title="$title" class="ActionIcon" ><i class="uiIcon${action} uiIconLightGray"></i></a>
+	                        <a onclick="$actionLink"   rel="tooltip" data-placement="bottom"  title="$title" class="actionIcon" ><i class="uiIcon${action} uiIconLightGray"></i></a>
 	                  <%}%>          
 	            </td>
 	      <%

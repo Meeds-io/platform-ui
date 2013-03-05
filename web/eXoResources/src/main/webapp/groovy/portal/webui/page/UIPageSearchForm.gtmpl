@@ -21,6 +21,6 @@
 				uiform.renderField(field)
 			}
 		%>
-		<a href="$quickSearchlink" rel="tooltip" data-placement="bottom" title="<%= _ctx.appRes("UIPageSearchForm.label.QuickSearch") %>"><i class="uiIconSearch uiIconLightGray"></i></a>
+		&nbsp;<a href="$quickSearchlink" rel="tooltip" data-placement="bottom" title="<%= _ctx.appRes("UIPageSearchForm.label.QuickSearch") %>"><i class="uiIconSearch uiIconLightGray"></i></a>
 	<%uiform.end()%>	 
 </div>
