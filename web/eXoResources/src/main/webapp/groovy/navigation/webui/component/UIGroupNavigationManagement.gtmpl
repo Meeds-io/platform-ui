@@ -1,0 +1,21 @@
+<div class="uiBox">
+	<div class="UIGroupNavigationManagement UIManagement uiContentBox" id="$uicomponent.id">
+		<%	
+			import org.exoplatform.webui.core.UIComponent ;
+			import org.exoplatform.webui.core.UIVirtualList;
+			import org.exoplatform.webui.core.UIPopupWindow;
+					
+			uicomponent.loadNavigations();		
+			uicomponent.renderChild(UIVirtualList.class); 
+			if(uicomponent.userHasRightToAddNavigation()){ %> 	  	
+	  
+		<div class="uiAction uiActionBorder"> 
+	    <a href="javascript:void(0);" onclick="<%=uicomponent.event("AddNavigation")%>" class="btn"><%=_ctx.appRes(uicomponent.getId() + ".Action.Add")%></a>
+		</div>
+		<%
+			}
+		%>
+		
+		<% uicomponent.renderChild(UIPopupWindow.class); %>			    
+	</div>
+</div>
