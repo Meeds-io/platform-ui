@@ -12,15 +12,17 @@
                                 .addScripts("\$('.uiUserSelector *[rel=\"tooltip\"]').tooltip();");
 %>
 <div class="uiUserSelector" id="UIUserSelector">
-	<div class="selectUserContainer resizable" style="overflow: auto;">
+	<div class="selectUserContainer resizable">
 			<%if(uicomponent.isShowSearch()){%>
       <p class="uiSearch clearfix">
         <% if(uicomponent.isShowSearchGroup()) { %>
-        <span class="uiSearchInput inputLarge searchGroup">
+        <span class="inputLarge searchGroup">
         <%uiform.renderField(uiform.FIELD_GROUP)%>
         <a href="<%=uicomponent.event('FindGroup')%>" style="display: none;"><span></span></a>
         </span>
-        <a class="SearchIcon" href="<%=uicomponent.event('SearchGroup')%>" title="<%=uiform.getLabel(uiform.FIELD_GROUP)%>"><span></span></a>
+        <a href="<%=uicomponent.event('SearchGroup')%>" rel="tooltip" data-placement="bottom" title="<%=uiform.getLabel(uiform.FIELD_GROUP)%>">
+        	<i class="uiIconSearch uiIconLightGray"></i>
+        </a>
         <% }  
 		if(uicomponent.isShowSearchUser()) {%>
         <span class=" uiSearchInput inputLarge searchUser">
@@ -39,7 +41,9 @@
 					<tr>
 						<% if(isMulti) {%>
 						<th>
-							&nbsp;
+						<span class="uiCheckbox">
+							<input type="checkbox" class="checkbox" name="selectall"/><span></span>
+						</span>							
 						</th>
 						<% } %>
 						<th>
@@ -89,10 +93,10 @@
 								 String lastName = data.getLastName() != null ? data.getLastName() : "";
 								 String userEmail = data.getEmail() != null ? data.getEmail() : "";
 							%>
-							<td><div class="text" data-placement="bottom" rel="tooltip"   data-original-title='$userName'><%= userName %></div></td>
-							<td><div class="text" data-placement="bottom" rel="tooltip"   data-original-title="$firstName"><%= firstName %></div></td>
-							<td><div class="text" data-placement="bottom" rel="tooltip"   data-original-title="$lastName"><%= lastName %></div></td>
-							<td><a href="javascript:void(0);" class="text" data-placement="bottom" rel="tooltip"   data-original-title="$userEmail"><%= userEmail %></a></td>
+							<td><div class="text" data-placement="bottom" rel="tooltip" title='$userName'><%= userName %></div></td>
+							<td><div class="text" data-placement="bottom" rel="tooltip" title="$firstName"><%= firstName %></div></td>
+							<td><div class="text" data-placement="bottom" rel="tooltip" title="$lastName"><%= lastName %></div></td>
+							<td><a href="javascript:void(0);" class="text" data-placement="bottom" rel="tooltip" title="$userEmail"><%= userEmail %></a></td>
 							<% if(!isMulti) {
 								 String addAction = uicomponent.event("AddUser", data.getUserName()) + "; return false;";
 							%>
