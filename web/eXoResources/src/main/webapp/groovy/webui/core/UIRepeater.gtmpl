@@ -31,20 +31,16 @@
                             <th><%=_ctx.appRes(uiParent.getName()+".header."+field)%></th>
                     <%}%>
                     <%if(beanActions != null && beanActions.length > 0) { %>
-                            <th><%=_ctx.appRes(uiParent.getName()+".header.action")%></th>
+                            <th class="center"><%=_ctx.appRes(uiParent.getName()+".header.action")%></th>
                     <%}%>
                 <%}%>
             </tr>
         </thead>
         <tbody class="FeedBox">
-			<% 
-			boolean even = true;
-			for (bean in uicomponent.getBeans())  { 
-				if(even) rowClass = "EvenRow";	
-				else rowClass =	"OddRow"; 
-				even = !even;
+			<% 			
+			for (bean in uicomponent.getBeans())  { 				
 			%>   
-	        <tr class="$rowClass">
+	        <tr >
 			      <%
 		        for(field in beanFields) { 
 		          def fieldValue = uicomponent.getFieldValue(bean, field) ;
@@ -54,20 +50,19 @@
 		            if(fieldClass == Integer.class)  cssClass = "number" ;
 		            else if(java.util.Date.class.isAssignableFrom(fieldClass)) {
 		              if(dateFormat == null) dateFormat = new SimpleDateFormat("HH:mm:ss yyyy-MM-dd");
-		              cssClass = "Datetime" ;
+		              cssClass = "dateTime" ;
 		              fieldValue = dateFormat.format(fieldValue);
 		            } 
-		            else cssClass = "Text" ;
+		            else cssClass = "text" ;
 		          } else {
 		            fieldValue = "";
 		          }
 		          String value = fieldValue.toString();
-		          println "<td><div class=\""+cssClass+"\" title='$fieldValue'>"+fieldValue+"</div></td>";
+		          println "<td><span class=\""+cssClass+"\" title='$fieldValue'>"+fieldValue+"</span></td>";
 		        }  
 			      if(beanActions != null && beanActions.length > 0) { 
 			      %>
-	           <td>
-	                <div class="ActionContainer">
+	           <td  class="center actionContainer"> 
 	                  <%
 	                    def beanIdField = uicomponent.getBeanIdField() ;           
 	                    for(action in beanActions) { 
@@ -77,9 +72,8 @@
 	                      String actionLink = uiParent.event(action, beanId);
 	                    %>             
 
-	                        <a onclick="$actionLink"  title="$title" class="ActionIcon" ><i class="uiIcon${action}"></i></a>
-	                  <%}%>                 
-	                </div>
+	                        <a onclick="$actionLink"   rel="tooltip" data-placement="bottom"  title="$title" class="ActionIcon" ><i class="uiIcon${action} uiIconLightGray"></i></a>
+	                  <%}%>          
 	            </td>
 	      <%
 	            }
