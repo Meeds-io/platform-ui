@@ -1,0 +1,26 @@
+<%
+	def rcontext = _ctx.getRequestContext();
+	def jsManager = rcontext.getJavascriptManager();	
+
+	String quickSearchlink = uicomponent.event("QuickSearch");							 	
+	def keyPressAct = "portalControl.UIPortalControl.onEnterPress(event, executeScript);";
+	
+	jsManager.require("SHARED/jquery", "\$").require("SHARED/portalControl", "portalControl")
+				.addScripts("var executeScript = \$('#$uiform.id a.SearchIcon').attr('href');")
+				.addScripts("\$('#$uiform.id .QuickSet').on('keypress', function(event) {$keyPressAct});")
+        .addScripts("\$('#$uiform.id').addClass('form-inline');");
+%>
+<div class="uiGrayLightBox" style="margin-bottom: 20px;">
+	<%uiform.begin()%>							 
+		<% 
+			QuickSearchInputSet = uiform.getQuickSearchInputSet();
+			for(field in QuickSearchInputSet.getChildren()) {
+		%>
+				<label><%=uiform.getLabel(field.getId())%> </label>
+		<%
+				uiform.renderField(field)
+			}
+		%>
+		<a href="$quickSearchlink" title="<%= _ctx.appRes("UIPageSearchForm.label.QuickSearch") %>"><i class="uiIconSearch"></i></a>
+	<%uiform.end()%>	 
+</div>
