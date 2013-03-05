@@ -160,17 +160,23 @@
 			width: 100%;
 			margin: auto;
 			.breadcrumb {
-				padding: 5px 10px;
+				padding: 10px;
+				.uiIconTree{
+					background-position: -180px -40px; 
+				}
 			}
-			.form-horizontal{
-				 margin:0 auto;
-				width: 90%;
+			.uiGroupMembershipForm ,.uiGroupForm{
+				.form-horizontal {
+					width: 630px;
+					margin: 0 auto;
+				}
 			}
 		}
 		.groupNavigation{
 			width: 240px;
 			&+ .groupDetail {
 				margin-left: 260px;
+				overflow: hidden;
 			}
 			.uiTrees {
 				background: @white;
@@ -180,7 +186,6 @@
 					.node {
 						margin-left: 0;
 						padding: 3px 10px;
-						width: auto;
 						&:hover {
 							background: #f8f8f8;
 						}
@@ -198,5 +203,15 @@
 
 /*#######################	UIMemberShipManagement #################################*/
 
+.UIGroupEditMembershipForm {
+	.form-horizontal {
+		.control-label {
+			width: 95px;
+		}
+		.controls {
+			margin-left: 105px;
+		}
+	}
+}
 
 

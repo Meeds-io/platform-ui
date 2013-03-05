@@ -4,7 +4,7 @@
 	import org.exoplatform.webui.core.UIPopupWindow;
 	uicomponent.renderChild(UIPopupWindow.class);
 %>
-<div class="uiFormWithTitle uiBox $uicomponent.id">
+<div  class="uiFormWithTitle uiGroupMembershipForm uiBox ">
 	<h5 class="title"><%=_ctx.appRes(uicomponent.getName() + ".title")%></h5>
 	<% uiform.begin() 
  
