@@ -743,22 +743,6 @@
 	padding:0px 2px;
 }
 
-/*============== Gray Light Box================*/
-
-.uiGrayLightBox{
-	padding: 8px 9px;
-	border: 1px solid @tableBorder;
-	background: @grayWhiteSmoke;
-	.border-radius(@baseBorderRadius);
-	.box-shadow(0px 1px 2px rgba(0,0,0,.06));
-	label {
-		display: inline-block;
-	}
-	input {
-		margin-bottom: 0px;
-	}
-}
-
 /*============== error, noticeEmpty ================*/
 
 .error,.noticeEmpty {
@@ -845,12 +829,31 @@
 	&.roundedTop {
 		.border-radius(@baseBorderRadius @baseBorderRadius 0 0);
 	}
+	&.uiGrayLightBox {
+		background: @grayWhiteSmoke;
+	}
 }
 
 .uiBox.noRounded {
 	.border-radius(0);
 	.title {
 		.border-radius(0);
+	}
+}
+
+/*============== Gray Light Box================*/
+
+.uiGrayLightBox{
+	padding: 8px 9px;
+	border: 1px solid @tableBorder;
+	background: @grayWhiteSmoke;
+	.border-radius(@baseBorderRadius);
+	.box-shadow(0px 1px 2px rgba(0,0,0,.06));
+	label {
+		display: inline-block;
+	}
+	input {
+		margin-bottom: 0px;
 	}
 }
 
