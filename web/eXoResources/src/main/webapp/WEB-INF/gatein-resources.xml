@@ -294,6 +294,9 @@
       <module>base</module>
     </depends>
     <depends>
+      <module>bts_tooltip</module>
+    </depends>    
+    <depends>
       <module>jquery</module>
     </depends>
   </module>

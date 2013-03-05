@@ -43,7 +43,8 @@
 		}
 	  }
 		
-	  def nodeItr = display.iterator();
+	  //def nodeItr = display.iterator();
+	  def nodeItr = nodes.iterator();
 	  while(nodeItr.hasNext()) {
 	      def node = nodeItr.next();	  
 	      def lastTab = !nodeItr.hasNext() ? "last" : "";
@@ -70,7 +71,8 @@
 	  %>
 		<li class="addDashboard"><span><i class="uiIconSimplePlusMini uiIconLightGray"></i></span></li>
 	  </ul>
-		
+	
+	<!-- 
   <div class="pull-right">
     <div class="dropdown pull-left" style="display: <% if(more.size() > 0) print 'block'; else print 'none'; %>">
       <a class="dropdown-toggle displayMoreTab" data-toggle="dropdown">More</a>
@@ -88,6 +90,7 @@
       <%} %>
       </ul>
     </div>
-   </div>  
+   </div>
+   -->
   </div>
 </div>

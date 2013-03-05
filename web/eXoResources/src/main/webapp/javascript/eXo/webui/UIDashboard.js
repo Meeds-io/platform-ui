@@ -185,13 +185,13 @@
 	      }
 	
 	      //increase speed of mouse when over iframe by create div layer above it
-	      gadgetContainer.find("div.UIGadget").each(function()
+	      gadgetContainer.find(".uiGadget").each(function()
 	      {
 	        var gadgetWindow = $(this);
-	        var mask = gadgetWindow.find("div.UIMask").eq(0);
+	        var mask = gadgetWindow.find(".uiMask").eq(0);
 	        if (mask)
 	        {
-	          var app = gadgetWindow.find("div.GadgetApplication")[0];
+	          var app = gadgetWindow.find(".gadgetApplication")[0];
 	          mask.css({"marginTop" : - app.offsetHeight + "px", "height" : app.offsetHeight + "px", "width" : app.offsetWidth + "px", "display" : "block", "backgroundColor" : "white"});
 	          mask.fadeTo(0, 0.03);
 	        }
@@ -233,7 +233,7 @@
 	        if (UTIL.isInColumn(column, ex, gadgetContainer.scrollLeft()))
 	        {
 	          var addToLast = true;
-	          column.find("div.UIGadget").not("#" + dragObj.id).each(function()
+	          column.find(".uiGadget").not("#" + dragObj.id).each(function()
 	          {
 	            if (ey <= $(this).offset().top + (this.offsetHeight / 3) - gadgetContainer.scrollTop())
 	            {
@@ -267,7 +267,7 @@
 	
 	    dragObj.onDragEnd = function(x, y, clientX, clientY)
 	    {
-	      gadgetContainer.find("div.UIMask").each(function()
+	      gadgetContainer.find(".uiMask").each(function()
 	      {
 	    	var jObj = $(this);
 	        jObj.fadeTo(0, 1);
@@ -368,7 +368,7 @@
 	    	});
 	    }
 	    var selectPopup = container.prev("div");
-	    selectPopup.find("a.CloseButton").eq(0).attr("onclick", null).click(function()
+	    selectPopup.find(".uiIconClose").eq(0).attr("onclick", null).click(function()
 	    {    	
 	      eXoDashBoard.hideSelectPopup(selectPopup);
 	    });
@@ -390,11 +390,11 @@
 	    var portletWindow = $("#" + windowId);
 	
 	    //TODO: Improve this by seperate gadget control appearing in select popup and ones appearing in the dashboard
-	    portletWindow.find("div.GadgetControl").each(function()
+	    portletWindow.find(".gadgetControl, .GadgetControl").each(function()
 	    {
 	      var gadgetControl = $(this);
-	      var gadget = gadgetControl.closest(".UIGadget");
-	      var minimizeButton = gadget.find("span.MinimizeAction").eq(0);//That might be undefined if actual gadget is the item in Select Gadget popup
+	      var gadget = gadgetControl.closest(".uiGadget, .UIGadget");
+	      var minimizeButton = gadget.find(".minimizeAction").eq(0);//That might be undefined if actual gadget is the item in Select Gadget popup
 	      if(canEdit)
 	      {
 	        eXoDashBoard.init(gadgetControl[0], gadget[0]);
@@ -408,7 +408,7 @@
 	        if(minimizeButton)
 	        {
 	          minimizeButton.css("display", "none");
-	          minimizeButton.siblings("div.CloseGadget,div.EditGadget").css("display", "none");
+	          minimizeButton.siblings(".uiIconClose, .uiIconEdit").css("display", "none");
 	        }
 	      }
 	    });
