@@ -3,7 +3,7 @@
 	import	org.exoplatform.webui.core.UITree;
 	List<String> groups = uicomponent.getListGroup(); 
 %>
-<div class="uiGroupMembershipSelector" id="$uicomponent.id">
+<div class="uiGroupSelector uiGroupMembershipSelector" id="$uicomponent.id">
 	<div class="uiGrayLightBox uiBox noRounded "><% uicomponent.renderChild(UIBreadcumbs.class); %></div>
     <div class="row-fluid" >
 	<div class="span6">
