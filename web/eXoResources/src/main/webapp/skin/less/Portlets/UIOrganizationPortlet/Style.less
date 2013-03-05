@@ -22,33 +22,6 @@
 @import "../../mixins.less";
 
 
-
-
-.uiOrganizationPortlet .UIGroupManagement .UITrees .NodeIcon {
-	white-space:nowrap;
-}
-
-
-.uiOrganizationPortlet .UIBreadcumbs .LeftBreadcumbsBar {
-	padding: 0px 0px 0px 5px;
-	background: url('DefaultSkin/background/BreadcumbsBar.gif') no-repeat left -26px;
-}
-
-.uiOrganizationPortlet .UIBreadcumbs .RightBreadcumbsBar {
-	padding: 0px 5px 0px 0px;
-	background: url('DefaultSkin/background/BreadcumbsBar.gif') no-repeat right -52px;
-}
-
-.uiOrganizationPortlet .UIBreadcumbs .BreadcumbsInfoBar {
-	height: 25px; line-height: 25px; vertical-align: middle;
-	background: url('DefaultSkin/background/BreadcumbsBar.gif') repeat-x;
-}
-
-
-
-//less here
-/*#######################- UIUserInfo - #####################*/
-
 .UIWindow .uiOrganizationPortlet {	
 	overflow: visible;
 }
@@ -62,6 +35,7 @@
 }
 
 
+/*#######################- UIUserManagement - #####################*/
 .UIUserManagement {
 	.tab-content {
 		border-bottom: 0;
@@ -92,7 +66,7 @@
 	}
 	
 }
-//UIVTabInputSet
+/*=========================UIVTabInputSet===================================*/
 .uiPersonalInfo {
 
 	.itemListContainer {
@@ -116,7 +90,7 @@
 	}
 }
 
-/*UISearchForm*/
+/*=========================UISearchForm===================================*/
 .uiSearch {
 	margin: 0 0 16px 0;
 	.quickSet  {
@@ -156,52 +130,49 @@
 /*#######################	UIGroupManagement #################################*/
 
 .uiOrganizationPortlet  {
-		.uiGroupManagement {
-			width: 100%;
-			margin: auto;
-			.breadcrumb {
-				padding: 10px;
-				.uiIconTree{
-					background-position: -180px -40px; 
-				}
+	.uiGroupManagement {
+		width: 100%;
+		margin: auto;
+		.breadcrumb {
+			padding: 10px;
+			.uiIconTree{
+				background-position: -180px -40px; 
 			}
-			.uiGroupMembershipForm ,.uiGroupForm{
-				.form-horizontal {
-					width: 630px;
-					margin: 0 auto;
+		}
+		
+	}
+	.uiFormWithTitle {
+		.form-horizontal {
+			width: 630px;
+			margin: 0 auto;
+		}
+	}
+	.groupNavigation{
+		width: 240px;
+		&+ .groupDetail {
+			margin-left: 260px;
+			overflow: hidden;
+		}
+		.uiTrees {
+			background: @white;
+			border: none;
+			.border-radius(0 0 @borderRadiusSmall @borderRadiusSmall);
+			.treeContainer > div {
+				.node {
+					margin-left: 0;
+					padding: 3px 10px;
+					&:hover {
+						background: #f8f8f8;
+					}
+				}
+				
+				.homeNode .actionIcon  {
+					margin: 5px 0 0 5px;
 				}
 			}
 		}
-		.groupNavigation{
-			width: 240px;
-			&+ .groupDetail {
-				margin-left: 260px;
-				overflow: hidden;
-			}
-			.uiTrees {
-				background: @white;
-				border: none;
-				.border-radius(0 0 @borderRadiusSmall @borderRadiusSmall);
-				.treeContainer > div {
-					.node {
-						margin-left: 0;
-						padding: 3px 10px;
-						&:hover {
-							background: #f8f8f8;
-						}
-					}
-					
-					.homeNode .actionIcon  {
-						margin: 5px 0 0 5px;
-					}
-				}
-			}
-		}
+	}
 }
-
-
-
-/*#######################	UIMemberShipManagement #################################*/
 
 .UIGroupEditMembershipForm {
 	.form-horizontal {
@@ -213,5 +184,9 @@
 		}
 	}
 }
+
+/*#######################	UIMemberShipManagement #################################*/
+
+
 
 
