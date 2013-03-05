@@ -638,7 +638,11 @@
 
 /************** IconLibrary-FileType-24x24 *************/
 
-[class^="uiIcon24x24File"]{
+[class^="uiIcon24x24File"],.uiIcon24x24exo_populateToMenu,.uiIcon24x24xcmis_systemDefault,
+.uiIcon24x24exo_auditStorageDefault,.uiIcon24x24xcmis_policiesDefault,
+.uiIcon24x24xcmis_relationshipsDefault,.uiIcon24x24xcmis_workingCopiesDefault,
+.uiIcon24x24exo_taxonomyActionDefault,
+.uiIcon24x24exo_tabDefault {
   background-image: url("/eXoResources/skin/images/Icons/FileTypeIcons/uiIconsFileType24x24.png");
   background-position: 24px 24px;
   background-repeat: no-repeat;
@@ -650,11 +654,20 @@
   vertical-align: text-top;
 }
 
-[class^="uiIcon24x24File"]:hover, .uiActionBar [class^="uiIcon24x24File"]:hover {
+[class^="uiIcon24x24File"]:hover, .uiActionBar [class^="uiIcon24x24File"]:hover,a:hover [class^="uiIcon24x24File"],
+.uiIcon24x24exo_populateToMenu:hover,.uiIcon24x24xcmis_systemDefault:hover,
+.uiIcon24x24exo_auditStorageDefault:hover,.uiIcon24x24xcmis_policiesDefault:hover,
+.uiIcon24x24xcmis_relationshipsDefault:hover,.uiIcon24x24xcmis_workingCopiesDefault:hover,
+.uiIcon24x24exo_taxonomyActionDefault:hover,
+.uiIcon24x24exo_tabDefault:hover {
   background-image: url("/eXoResources/skin/images/Icons/FileTypeIcons/uiIconsFileType24x24.png");
 }
 
-.uiIcon24x24FileDefault {
+.uiIcon24x24FileDefault,.uiIcon24x24exo_populateToMenu,.uiIcon24x24xcmis_systemDefault,
+.uiIcon24x24exo_auditStorageDefault,.uiIcon24x24xcmis_policiesDefault,
+.uiIcon24x24xcmis_relationshipsDefault,.uiIcon24x24xcmis_workingCopiesDefault,
+.uiIcon24x24exo_taxonomyActionDefault,
+.uiIcon24x24exo_tabDefault {
 	background-position: -196px -56px;
 }
 
@@ -662,7 +675,7 @@
 	background-position: 0px 0px;
 }
 
-.uiIcon24x24FileArchiveRar {
+.uiIcon24x24FileArchiveRar,.uiIcon24x24applicationrar  {
 	background-position: -28px 0px;
 }
 
@@ -682,11 +695,11 @@
 	background-position: -140px 0px;
 }
 
-.uiIcon24x24FileAudioDefault {
+.uiIcon24x24FileAudioDefault,.uiIcon24x24audiomidi,.uiIcon24x24audiox-aiff,.uiIcon24x24audiobasic {
 	background-position: -168px 0px;
 }
 
-.uiIcon24x24FileMp3 {
+.uiIcon24x24FileMp3,.uiIcon24x24audiomp3 {
 	background-position: -196px 0px;
 }
 
@@ -694,11 +707,13 @@
 	background-position: -224px 0px;
 }
 
-.uiIcon24x24FileVideo {
+.uiIcon24x24FileVideo,.uiIcon24x24videox-msvideo,.uiIcon24x24videoquicktime,
+.uiIcon24x24videox-m4a,.uiIcon24x24videox-sgi-movie,
+.uiIcon24x24videox-flv,.uiIcon24x24videompe,.uiIcon24x24videomp4 {
 	background-position: -252px 0px;
 }
 
-.uiIcon24x24FileFlash {
+.uiIcon24x24FileFlash,.uiIcon24x24applicationx-shockwave-flash  {
 	background-position: 0px -28px;
 }
 
@@ -706,11 +721,11 @@
 	background-position: -28px -28px;
 }
 
-.uiIcon24x24FileGdoc {
+.uiIcon24x24FileGdoc,.uiIcon24x24applicationmsword {
 	background-position: -56px -28px;
 }
 
-.uiIcon24x24FileWord {
+.uiIcon24x24FileWord,.uiIcon24x24applicationmsword,.uiIcon24x24applicationwordperfect {
 	background-position: -84px -28px;
 }
 
@@ -718,11 +733,11 @@
 	background-position: -112px -28px;
 }
 
-.uiIcon24x24FileMpeg {
+.uiIcon24x24FileMpeg,.uiIcon24x24videompeg,.uiIcon24x24videompg {
 	background-position: -140px -28px;
 }
 
-.uiIcon24x24FileM4v {
+.uiIcon24x24FileM4v,.uiIcon24x24videox-m4v {
 	background-position: -168px -28px;
 }
 
@@ -730,7 +745,7 @@
 	background-position: -196px -28px;
 }
 
-.uiIcon24x24FileTxt {
+.uiIcon24x24FileTxt,.uiIcon24x24textplain {
 	background-position: -224px -28px;
 }
 
@@ -750,11 +765,11 @@
 	background-position: -56px -56px;
 }
 
-.uiIcon24x24FileExe {
+.uiIcon24x24FileExe,.uiIcon24x24applicationoctet-stream {
 	background-position: -84px -56px;
 }
 
-.uiIcon24x24FilePdf {
+.uiIcon24x24FilePdf,.uiIcon24x24applicationpdf {
 	background-position: -112px -56px;
 }
 
@@ -762,7 +777,7 @@
 	background-position: -140px -56px;
 }
 
-.uiIcon24x24FileRtf {
+.uiIcon24x24FileRtf,.uiIcon24x24applicationrtf {
 	background-position: -168px -56px;
 }
 
@@ -778,7 +793,7 @@
 	background-position: 0px -84px;
 }
 
-.uiIcon24x24FilePpt {
+.uiIcon24x24FilePpt,.uiIcon24x24applicationppt {
 	background-position: -28px -84px;
 }
 
@@ -790,7 +805,7 @@
 	background-position: -84px -84px;
 }
 
-.uiIcon24x24FileExcel {
+.uiIcon24x24FileExcel,.uiIcon24x24applicationxls {
 	background-position: -112px -84px;
 }
 
@@ -798,15 +813,15 @@
 	background-position: -140px -84px;
 }
 
-.uiIcon24x24FileHtml {
+.uiIcon24x24FileHtml,.uiIcon24x24texthtml {
 	background-position: -168px -84px;
 }
 
-.uiIcon24x24FileXml {
+.uiIcon24x24FileXml,.uiIcon24x24textxml {
 	background-position: -196px -84px;
 }
 
-.uiIcon24x24FileJs {
+.uiIcon24x24FileJs,.uiIcon24x24applicationx-javascript {
 	background-position: -224px -84px;
 }
 
@@ -814,7 +829,7 @@
 	background-position: -252px -84px;
 }
 
-.uiIcon24x24FileCss {
+.uiIcon24x24FileCss,.uiIcon24x24textcss {
 	background-position: 0px -112px;
 }
 
@@ -830,7 +845,7 @@
 	background-position: -84px -112px;
 }
 
-.uiIcon24x24FileBmp {
+.uiIcon24x24FileBmp,.uiIcon24x24imagebmp {
 	background-position: -112px -112px;
 }
 
@@ -838,7 +853,7 @@
 	background-position: -140px -112px;
 }
 
-.uiIcon24x24FileGif {
+.uiIcon24x24FileGif,.uiIcon24x24imagegif {
 	background-position: -168px -112px;
 }
 
@@ -846,7 +861,7 @@
 	background-position: -196px -112px;
 }
 
-.uiIcon24x24FilePng {
+.uiIcon24x24FilePng,.uiIcon24x24imagepng {
 	background-position: -224px -112px;
 }
 
@@ -858,7 +873,7 @@
 	background-position: 0px -140px;
 }
 
-.uiIcon24x24FileTif {
+.uiIcon24x24FileTif,.uiIcon24x24imagetiff {
 	background-position: -28px -140px;
 }
 
@@ -870,15 +885,15 @@
 	background-position: -84px -140px;
 }
 
-.uiIcon24x24FileAi {
+.uiIcon24x24FileAi,.uiIcon24x24applicationpostscript {
 	background-position: -112px -140px;
 }
 
-.uiIcon24x24FileSvg  {
+.uiIcon24x24FileSvg,.uiIcon24x24imagesvg   {
 	background-position: -140px -140px;
 }
 
-.uiIcon24x24FileJpg {
+.uiIcon24x24FileJpg,.uiIcon24x24imagejpeg {
 	background-position: -168px -140px;
 }
 
@@ -2143,7 +2158,10 @@ a:hover .uiIcon16x16exo_driveDefault,a:hover .uiIcon16x16exo_tagStyleDefault  {
 
 /************** IconLibrary-FolderType-24x24 *************/
 
-[class^="uiIcon24x24Folder"]{
+/************** IconLibrary-FolderType-24x24 *************/
+
+[class^="uiIcon24x24Folder"],.uiIcon24x24exo_taxonomy,.uiIcon24x24exo_viewDefault,
+.uiIcon24x24exo_driveDefault,.uiIcon24x24exo_tagStyleDefault {
   background-image: url("/eXoResources/skin/images/Icons/FolderTypeIcons/uiIconsFolderType24x24.png");
   background-repeat: no-repeat;
 	background-position: 0px 0px;
@@ -2155,7 +2173,11 @@ a:hover .uiIcon16x16exo_driveDefault,a:hover .uiIcon16x16exo_tagStyleDefault  {
   vertical-align: text-top;
 }
 
-[class^="uiIcon24x24Folder"]:hover {
+[class^="uiIcon24x24Folder"]:hover,a:hover [class^="uiIcon24x24Folder"],
+.uiIcon24x24exo_taxonomy:hover,.uiIcon24x24exo_viewDefault:hover,
+.uiIcon24x24exo_driveDefault:hover,.uiIcon24x24exo_tagStyleDefault:hover,
+a:hover .uiIcon24x24exo_taxonomy,a:hover .uiIcon24x24exo_viewDefault,
+a:hover .uiIcon24x24exo_driveDefault,a:hover .uiIcon24x24exo_tagStyleDefault {
   background-image: url("/eXoResources/skin/images/Icons/FolderTypeIcons/uiIconsFolderType24x24.png");
 }
 
@@ -2163,7 +2185,7 @@ a:hover .uiIcon16x16exo_driveDefault,a:hover .uiIcon16x16exo_tagStyleDefault  {
 	background-position: 0px 0px;
 }
 
-.uiIcon24x24FolderWebcontentBlue {
+.uiIcon24x24FolderWebcontentBlue,.uiIcon24x24exo_webFolder {
 	background-position: -28px 0px;
 }
 
@@ -2175,7 +2197,7 @@ a:hover .uiIcon16x16exo_driveDefault,a:hover .uiIcon16x16exo_tagStyleDefault  {
 	background-position: -84px 0px;
 }
 
-.uiIcon24x24FolderDocument {
+.uiIcon24x24FolderDocument,.uiIcon24x24exo_documentFolder {
 	background-position: -112px 0px;
 }
 
@@ -2183,7 +2205,7 @@ a:hover .uiIcon16x16exo_driveDefault,a:hover .uiIcon16x16exo_tagStyleDefault  {
 	background-position: -140px 0px;
 }
 
-.uiIcon24x24FolderJs {
+.uiIcon24x24FolderJs,.uiIcon24x24exo_jsFolder {
 	background-position: -168px 0px;
 }
 
@@ -2191,7 +2213,7 @@ a:hover .uiIcon16x16exo_driveDefault,a:hover .uiIcon16x16exo_tagStyleDefault  {
 	background-position: -196px 0px;
 }
 
-.uiIcon24x24FolderSound {
+.uiIcon24x24FolderSound,.uiIcon24x24exo_audioFolder {
 	background-position: -224px 0px;
 }
 
@@ -2199,7 +2221,7 @@ a:hover .uiIcon16x16exo_driveDefault,a:hover .uiIcon16x16exo_tagStyleDefault  {
 	background-position: -252px 0px;
 }
 
-.uiIcon24x24FolderGraphic {
+.uiIcon24x24FolderGraphic,.uiIcon24x24exo_pictureFolder {
 	background-position: 0px -28px;
 }
 
@@ -2207,9 +2229,46 @@ a:hover .uiIcon16x16exo_driveDefault,a:hover .uiIcon16x16exo_tagStyleDefault  {
 	background-position: -28px -28px;
 }
 
-.uiIcon24x24FolderCss {
+.uiIcon24x24FolderCss,.uiIcon24x24exo_cssFolder {
 	background-position: -56px -28px;
 }
+
+.uiIcon24x24FolderProduct,.uiIcon24x24acme_product {
+	background-position: -84px -28px;
+}
+
+.uiIcon24x24FolderTaxonomy,.uiIcon24x24exo_taxonomy {
+	background-position: -112px -28px;
+}
+
+.uiIcon24x24FolderExoContent,.uiIcon24x24exo_webContent {
+	background-position: -140px -28px;
+}
+
+.uiIcon24x24FolderTheme,.uiIcon24x24exo_themeFolder {
+	background-position: -168px -28px;
+}
+
+.uiIcon24x24FolderVideoMedia,.uiIcon24x24exo_multimediaFolder {
+	background-position: -196px -28px;
+}
+
+.uiIcon24x24FolderLink,.uiIcon24x24exo_linkFolder {
+	background-position: -224px -28px;
+}
+
+.uiIcon24x24exo_driveDefault {
+	background-position: -0px -56px;
+}
+
+.uiIcon24x24exo_tagStyleDefault {
+	background-position: -28px -56px;
+}
+
+.uiIcon24x24exo_viewDefault {
+	background-position: -56px -56px;
+}
+
 
 /************** IconLibrary-FolderType-32x32 *************/
 
