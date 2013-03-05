@@ -93,9 +93,9 @@
 								 String lastName = data.getLastName() != null ? data.getLastName() : "";
 								 String userEmail = data.getEmail() != null ? data.getEmail() : "";
 							%>
-							<td><div class="text" data-placement="bottom" rel="tooltip" title='$userName'><%= userName %></div></td>
-							<td><div class="text" data-placement="bottom" rel="tooltip" title="$firstName"><%= firstName %></div></td>
-							<td><div class="text" data-placement="bottom" rel="tooltip" title="$lastName"><%= lastName %></div></td>
+							<td><span class="text" data-placement="bottom" rel="tooltip" title='$userName'><%= userName %></span></td>
+							<td><span class="text" data-placement="bottom" rel="tooltip" title="$firstName"><%= firstName %></span></td>
+							<td><span class="text" data-placement="bottom" rel="tooltip" title="$lastName"><%= lastName %></span></td>
 							<td><a href="javascript:void(0);" class="text" data-placement="bottom" rel="tooltip" title="$userEmail"><%= userEmail %></a></td>
 							<% if(!isMulti) {
 								 String addAction = uicomponent.event("AddUser", data.getUserName()) + "; return false;";
