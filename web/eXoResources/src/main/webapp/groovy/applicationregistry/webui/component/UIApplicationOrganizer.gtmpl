@@ -1,0 +1,110 @@
+<%
+import org.gatein.common.text.EntityEncoder;
+import org.exoplatform.commons.utils.HTMLEntityEncoder;
+def categories = uicomponent.getCategories();
+def selectedCategory = uicomponent.getSelectedCategory();
+def apps = uicomponent.getApplications();
+def selectedApp = uicomponent.getSelectedApplication();
+%>
+<style type="text/css">
+.tab {
+  background: none repeat scroll 0 0 #F5F5F5;
+}
+</style>
+<div class="UIOrganizerManagement" id="$uicomponent.id">
+  <div style="padding: 0px 20px 20px">
+      <div class="uiGrayLightBox clearfix">
+        <div class="pull-left">
+          <a class="actionIcon" onclick="<%= uicomponent.event("AddCategory") %>">
+          <i class='uiIconFolder'></i>
+          <%=_ctx.appRes("UIOrganizer.label.addCategory")%>
+          </a>        
+        </div>
+        <% if(uicomponent.isShowImport()) { %>
+        <div class='pull-right'>
+          <a class='actionIcon' onclick="<%= uicomponent.event("ImportAllApplications") %>">
+            <i class='uiIconFolder'></i>
+            <%=_ctx.appRes("UIOrganizer.label.autoImport")%>
+          </a>
+        </div>
+        <% } %> 
+      </div>
+  </div>
+  
+  <div class="row-fluid" style="padding: 0px 20px; width: auto;">
+    <div class='span3 uiBox accordion' id="ApplicationRegistryCategory">
+    <h6 class='title'><%=_ctx.appRes("UIOrganizer.label.categories")%></h6>
+      <% 
+        String cTab, cName, description, displayName;
+        boolean isSelected = false;
+        for(category in categories) {         
+          cName = category.getName();
+          displayName =category.getDisplayName(true);
+          EntityEncoder encoder = HTMLEntityEncoder.getInstance();
+          displayName = encoder.encode(displayName);
+          if(selectedCategory != null && cName == selectedCategory.getName()) {
+            isSelected = true;
+          } else {
+            isSelected = false;
+          }
+      %>    
+        <div class="accordion-group">
+          <div class="accordion-heading tab">
+            <div class="row-fluid">
+              <div class="span6">
+                <a href="#$cName" onclick="<%= isSelected ? "javascript:void(0);" : uicomponent.event("ShowCategory", cName) %>" title="<%= displayName %>"
+                 data-parent="#ApplicationRegistryCategory" 
+                 data-toggle="collapse">
+                <i class="<%= isSelected ? "uiIconArrowDown" : "uiIconArrowRight" %>"></i> 
+                $displayName
+                </a>              
+              </div>
+              <% if(isSelected) { %>
+              <div class="span6">
+                <a class="actionIcon pull-right" title="<%=_ctx.appRes("UIOrganizer.title.deleteCategory")%>" onclick="<%= uicomponent.event("RemoveCategory", "$cName") %>"><i class='uiIconDelete'></i></a>
+                <a class="actionIcon pull-right" title="<%=_ctx.appRes("UIOrganizer.title.addApplication")%>" onclick="<%= uicomponent.event("AddApplication") %>"><i class='uiIconPlus'></i></a>
+                <a class="actionIcon pull-right" title="<%=_ctx.appRes("UIOrganizer.title.editCategory")%>" onclick="<%= uicomponent.event("EditCategory", "$cName") %>"><i class='uiIconEdit'></i></a>
+              </div>
+              <% } %>
+            </div>
+          </div>
+          <div class="accordion-body <%= isSelected ? "in" : "" %> collapse" id="$cName" style="height: <%= isSelected ? "auto" : "0px" %>;">
+              <% if(isSelected) { %>
+              <ul>
+                <%
+                boolean isSelectedApp = false;
+                for(application in apps) {
+                  if(application.getApplicationName().equals(selectedApp.getApplicationName())) isSelectedApp = true;
+                  else isSelectedApp = false;
+                  String appName= application.getApplicationName();
+                  def applicationLabel = application.getDisplayName() 
+							    String displayApplicationName = (applicationLabel.length() <= 30) ? applicationLabel : applicationLabel.substring(0, 27)+"...";
+                  displayApplicationName = encoder.encode(displayApplicationName);
+                %>
+                <li class='clearfix'>
+                  <a onclick="<%= uicomponent.event("SelectApplication", "$appName") %>" title="<%= application.getDisplayName() %>" class="pull-left">
+                    <i class='<%= isSelectedApp ? "uiIconArrowDown" : "uiIconArrowRight"%>'></i>
+                    <% 
+                    if(isSelectedApp) {
+                      print "<strong>" + displayApplicationName + "</strong>";
+                    } else {
+                      print displayApplicationName;    
+                    }
+                    %>
+                  </a>
+                  <a class='actionIcon pull-right' title="<%=_ctx.appRes("UIOrganizer.title.deleteApplication")%>" onclick="<%= uicomponent.event("RemoveApplication", appName) %>">
+                    <i class='uiIconDelete'></i>
+                  </a>
+                </li>
+                <% } %>
+              </ul>
+              <% } %>
+          </div>
+        </div>
+        <% } %>
+    </div>
+    <div class="appWorkingArea uiBox span9" style="padding: 20px;">
+    <% uicomponent.renderChildren() %>
+    </div>
+  </div>
+</div>

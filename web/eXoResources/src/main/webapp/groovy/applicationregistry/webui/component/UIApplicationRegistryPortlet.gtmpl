@@ -1,0 +1,43 @@
+<%	
+	import org.exoplatform.applicationregistry.webui.component.UIApplicationRegistryEditMode;
+	import javax.portlet.PortletMode ;
+	
+	String cssClass; 
+%>
+<div class="UIApplicationRegistryPortlet" id="$uicomponent.id">
+	<%if( _ctx.getRequestContext().getApplicationMode() == PortletMode.VIEW) {%>
+    <div style="padding: 20px 20px 10px">
+      <div class="uiGrayLightBox clearfix">
+        <a onclick="<%=uicomponent.event("ViewChild", "UIApplicationOrganizer")%>" class="btn pull-left">
+          <i class='uiIconCategory'></i>
+          <%=_ctx.appRes("UIToolbar.label.organize")%>
+				</a>
+        <div class="pull-right">
+          <a onclick="<%=uicomponent.event("ViewChild", "UIGadgetManagement")%>" class="actionIcon">
+            <i class='uiIconFolder'></i>
+            <%=_ctx.appRes("UIToolbar.label.gadget")%>
+          </a>
+        </div>
+        <div class="pull-right">
+          <a onclick="<%=uicomponent.event("ViewChild", "UIPortletManagement")%>" class="actionIcon">
+            <i class='uiIconFolder'></i>
+            <%=_ctx.appRes("UIToolbar.label.portlet")%>
+          </a>
+        </div>
+      </div>
+    </div>
+		
+		<div class="PortletContainer">
+		<%			
+			uicomponent.renderChildren();
+		%>				
+		</div>
+	<%} else {
+		for(inputEntry in uicomponent.getChildren()) {
+				if (inputEntry instanceof UIApplicationRegistryEditMode) {
+					 uicomponent.renderUIComponent(inputEntry);	
+				}
+			}
+		}
+	%>
+</div>

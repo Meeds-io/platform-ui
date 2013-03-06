@@ -1,0 +1,33 @@
+<%	
+	import org.exoplatform.webui.form.UIFormPopupWindow;
+	import org.exoplatform.webui.form.UIFormGrid;
+	import org.exoplatform.webui.form.input.UICheckBoxInput;
+	
+	def rcontext = _ctx.getRequestContext();	
+ 	def uiPublicMode = uicomponent.getChildById("publicMode");
+ 	
+ 	def popupId = uicomponent.getChild(UIFormPopupWindow.class).getId();
+ 	def btn = "#$uicomponent.id .uiAction > a";
+	rcontext.getJavascriptManager().require("SHARED/jquery", "\$").require("SHARED/uiPopupWindow", "uiPopupWindow")
+			  .addScripts("\$('$btn').click(function() {uiPopupWindow.show('$popupId')});");
+%>
+<div id="<%=uicomponent.getId();%>" class="UIAccessGroup">
+	<div class="PublicCheck">
+		<table class="UIFormGrid">
+			<tr>
+				<td class="FieldLabel"><%=uicomponent.getLabel(uiPublicMode.getId())%></td>
+				<td class="FieldComponent"><%uicomponent.renderChild(UICheckBoxInput.class)%></td>
+			</tr>
+		</table>
+	</div>
+
+	<%
+	if(!uicomponent.isPublicMode()) {
+		uicomponent.renderChild(UIFormGrid.class);
+		uicomponent.renderChild(UIFormPopupWindow.class);
+	%>
+	<div class="uiAction"> 
+	 <a href="javascript:void(0);" class="btn"><%=_ctx.appRes("UIListPermissionSelector.action.addPermission")%></a>
+	</div>
+	<%}%>
+</div>
