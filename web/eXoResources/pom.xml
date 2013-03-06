@@ -53,6 +53,7 @@
                 <include>Portlets/UIOrganizationPortlet/Style.less</include>
                 <include>Portlets/UITabbedDashboardPortlet/Style.less</include>
                 <include>Portlets/SiteNavigationPortlet/Style.less</include>
+                <include>Portlets/UIAccountPortlet/Style.less</include>
               </includes>
             </configuration>
             <goals>
