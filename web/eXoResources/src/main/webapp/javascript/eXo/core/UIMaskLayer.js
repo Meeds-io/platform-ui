@@ -46,8 +46,6 @@
 	  showAjaxLoading : function(mask) {
 	    var ajaxLoading = document.getElementById("AjaxLoadingMask");
 	    ajaxLoading.style.display = "block";
-	    $(mask).fadeTo(0, 0.3);
-	    mask.style.backgroundColor = "black";
 	  },
 	
 	  /**

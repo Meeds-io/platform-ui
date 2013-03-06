@@ -120,3 +120,28 @@ table {
 		margin-bottom: 0px;
 	}
 }
+
+/*************** AjaxLoadingMask *********************/
+.ajaxLoadingMask{
+	background: #808080;
+	border: 1px solid #666;
+	border-radius: 0 0 3px 3px;
+	.box-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
+	padding: 10px 7px 6px 11px;
+	top: 41px !important;	
+	position: fixed !important;
+	.loadingProgressBar{
+		background: url(/eXoResources/skin/images/Loadding/loadingProgressBar.gif) no-repeat center;
+		width: 20px;
+		height: 20px;
+	}
+	.loadingText{
+		margin: 0 34px 0 40px;
+		color: white;
+		font-weight: bold;
+		text-shadow: 1px 1px 1px #444444;
+	}
+	.uiIconClose:hover{
+		background: url(/eXoResources/skin/images/Icons/uiIconsWhite.png) -160px -100px;
+	}
+}
