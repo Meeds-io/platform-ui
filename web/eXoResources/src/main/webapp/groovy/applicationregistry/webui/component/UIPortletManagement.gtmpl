@@ -4,24 +4,8 @@
 	String selectedType = uicomponent.getSelectedType();
 	def selectedPortlet = uicomponent.getSelectedPortlet();
 %>
-<style type="text/css">
-.tab {
-  background: none repeat scroll 0 0 #F5F5F5;
-}
-
-.li {
-  list-style-type: disc;
-  margin: 5px 40px;
-}
-.category {
-  background: none repeat scroll 0 0 #F5F5F5;
-  border-top: 1px solid #FFFFFF;
-  border-bottom: 0 none;
-  height: 30px;
-}
-</style>
 <div class="uiPortletManagement" id="$uicomponent.id">
-  <div class='row-fluid' style='padding: 0px 20px; width: auto;'>
+  <div class='uiPortletCategories row-fluid'>
     <div class='span3 uiBox accordion' id="ApplicationRegistryPortlet">
       <%
         boolean isSelectedType = false;
@@ -30,8 +14,8 @@
           else isSelectedType = false;
       %>
         <div class="accordion-group">
-          <div class="accordion-heading tab">
-            <a href="#$type" 
+          <div class="accordion-heading heading">
+            <a href="#$type"
               onclick="<%= isSelectedType ? "javascript:void(0);" : uicomponent.event("SelectPortletType", type) %>"
               data-parent="#ApplicationRegistryPortlet" 
               data-toggle="collapse">
@@ -45,13 +29,13 @@
               <%
                 boolean isSelected = false;
                 for(app in webApps) { %> 
-                <li class='category'><p style="padding: 5px 10px;"><%=app.getName(); %></p></li>  
+                <li class='category'><p><%=app.getName(); %></p></li>  
               <%
                   for(portlet in app.getPortlets()) {
 						        if(!isSelected && portlet.getId().equals(selectedPortlet.getId())) isSelected = true;
 						        else isSelected = false;
               %>
-              <li class='li'>
+              <li class='item'>
                 <% if(isSelected) { %>
                 <strong><%= portlet.getDisplayName() %></strong>
                 <% } else { %>
@@ -68,7 +52,7 @@
       <% } %>
     </div>
     
-    <div class="appWorkingArea uiBox span9" style="padding: 20px;">
+    <div class="appWorkingArea uiBox span9">
     <% uicomponent.renderChildren() %>
     </div>
   </div>

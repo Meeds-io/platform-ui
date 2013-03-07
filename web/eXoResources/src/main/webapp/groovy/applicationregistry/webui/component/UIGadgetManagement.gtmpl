@@ -3,28 +3,14 @@
 	boolean isSelected = false;
 	String cssItem;
 %>
-<style type="text/css">
-.tab {
-  background: none repeat scroll 0 0 #F5F5F5;
-  border-top: 1px solid #FFFFFF;
-  border-bottom: 0 none;
-}
-.ul {
-    margin-left: 20px;
-}
-.li {
-    list-style-type: disc;
-}
-</style>
-
 <div class="uiGadgetManagement" id="$uicomponent.id">
-  <div style="padding: 0px 20px 20px">
+  <div class='uiGadgetControl'>
     <div class="uiGrayLightBox clearfix">
       <a class='actionIcon' onclick="<%= uicomponent.event("AddRemoteGadget") %>"><i class='uiIconPlus'></i><%=_ctx.appRes("UIGadgetManagement.label.addRemote")%></a>
       <a class='actionIcon' onclick="<%= uicomponent.event("AddLocalGadget") %>"><i class='uiIconPlus'></i><%=_ctx.appRes("UIGadgetManagement.label.createNew")%></a>
     </div>
   </div>
-  <div class='row-fluid' style='padding: 0px 20px; width: auto;'>
+  <div class='uiGadgetList row-fluid'>
     <div class='span3 uiBox accordion'>
       <% 
       for(gadget in uicomponent.getGadgets()) {
@@ -35,11 +21,11 @@
         def gadgetLabel = gadget.getTitle()
       %>
        <div class="accordion-group">
-          <div class="accordion-heading tab">
+          <div class="accordion-heading heading">
             <div class="row-fluid">
               <div class="span10">
-                <ul class='ul'>
-                  <li class='li'>
+                <ul>
+                  <li class='item'>
                     <% if(isSelected) { %>
                       <strong><%= (gadgetLabel.length() <= 31) ? gadgetLabel : gadgetLabel.substring(0, 28)+"..." %></strong>
                     <% } else { %>
@@ -57,7 +43,7 @@
       <% } %>  
     </div>
     
-    <div class="appWorkingArea uiBox span9" style="padding: 20px;">
+    <div class="appWorkingArea uiBox span9">
     <% uicomponent.renderChildren() %>
     </div>
   </div>

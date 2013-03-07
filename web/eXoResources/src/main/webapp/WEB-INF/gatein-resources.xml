@@ -75,6 +75,15 @@
     <overwrite>true</overwrite>
   </portlet-skin>
   
+  <!-- ApplicationRegistryPortlet skins -->
+  <portlet-skin>
+    <application-name>exoadmin</application-name>
+    <portlet-name>ApplicationRegistryPortlet</portlet-name>
+    <skin-name>Default</skin-name>
+    <css-path>/skin/css/Portlets/UIApplicationRegistryPortlet/Style.css</css-path>
+    <overwrite>true</overwrite>
+  </portlet-skin>
+  
   <!-- Simple window style -->
   <window-style>
     <style-name>Simple</style-name>

@@ -40,10 +40,10 @@ String applicationDescription = encoder.encode(application.getDescription());
     </div>
   </div>
   
-  <div class='uiBox UIAcessPermissions UIFormWithTitle'>
+  <div class='uiBox row-fluid'>
     <h6 class='title'><%=_ctx.appRes("UIApplicationInfo.label.accessPermissions")%></h6>
     <% uicomponent.renderChildren() %>
-    <div class="HintMessage"><%= _ctx.appRes("UIApplicationInfo.label.accessPermissionsDescription") %></div>
+    <div class="hintMessage"><%= _ctx.appRes("UIApplicationInfo.label.accessPermissionsDescription") %></div>
   </div>
 </div>
 
