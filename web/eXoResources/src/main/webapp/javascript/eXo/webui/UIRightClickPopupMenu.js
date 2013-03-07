@@ -185,8 +185,8 @@
 	      });
 	    }
 	
-	    var customItem = $(elemt).find("div.RightClickCustomItem").eq(0);
-	    var tmpCustomItem = $(contextMenu).find("div.RightClickCustomItem").eq(0);
+	    var customItem = $(elemt).find(".RightClickCustomItem").eq(0);
+	    var tmpCustomItem = $(contextMenu).find(".RightClickCustomItem").eq(0);
 	    if(customItem && tmpCustomItem)
 	    {
 	      tmpCustomItem.html(customItem.html());
