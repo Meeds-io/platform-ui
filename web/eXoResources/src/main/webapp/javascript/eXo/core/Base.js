@@ -531,6 +531,13 @@
 		    height += elemt.offsetHeight;
 		    elemt.style.height = height + "px";
 		  }
+		  
+		  var jDoc = $(document), jElm = $(elemt);
+		  var docH = jDoc.height();
+		  while(jDoc.height() == docH) {
+		  	jElm.height(jElm.height() + 1);		  	
+		  }
+		  jElm.height(jElm.height() - 2);
 		}		
 	};
 	

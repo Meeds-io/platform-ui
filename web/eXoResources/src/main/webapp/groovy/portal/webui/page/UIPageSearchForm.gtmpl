@@ -3,11 +3,11 @@
 	def jsManager = rcontext.getJavascriptManager();	
 
 	String quickSearchlink = uicomponent.event("QuickSearch");							 	
-	def keyPressAct = "portalControl.UIPortalControl.onEnterPress(event, executeScript);";
+	def keyPressAct = "portalControl.UIPortalControl.onEnterPress(event, executeScript);event.cancelBubble = true;";
 	
 	jsManager.require("SHARED/jquery", "\$").require("SHARED/portalControl", "portalControl")
-				.addScripts("var executeScript = \$('#$uiform.id a.SearchIcon').attr('href');")
-				.addScripts("\$('#$uiform.id .QuickSet').on('keypress', function(event) {$keyPressAct});")
+				.addScripts("var executeScript = \$('#$uiform.id .quickSearch').attr('href');")
+				.addScripts("\$('#$uiform.id').on('keypress', function(event) {$keyPressAct});")
         .addScripts("\$('#$uiform.id').addClass('form-inline');");
 %>
 <div class="uiGrayLightBox uiSearch">
@@ -21,6 +21,6 @@
 				uiform.renderField(field)
 			}
 		%>
-		&nbsp;<a href="$quickSearchlink" rel="tooltip" data-placement="bottom" title="<%= _ctx.appRes("UIPageSearchForm.label.QuickSearch") %>"><i class="uiIconSearch uiIconLightGray"></i></a>
+		&nbsp;<a class="quickSearch" href="$quickSearchlink" rel="tooltip" data-placement="bottom" title="<%= _ctx.appRes("UIPageSearchForm.label.QuickSearch") %>"><i class="uiIconSearch uiIconLightGray"></i></a>
 	<%uiform.end()%>	 
 </div>
