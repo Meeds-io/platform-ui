@@ -3,23 +3,37 @@
 	import javax.portlet.PortletMode ;
 	
 	String cssClass; 
+  
+	def rcontext = _ctx.getRequestContext()
+	def jsManager = rcontext.getJavascriptManager();  
+	jsManager.require("SHARED/jquery", "\$")
+  .addScripts("\$('#$uicomponent.id .uiGrayLightBox:first .actionIcon').removeClass('btn active');")
+  .addScripts("var org = \$('#$uicomponent.id .PortletContainer .uiOrganizerManagement');"
+          + "var orgBtn = \$('#$uicomponent.id .uiGrayLightBox:first .organize');"
+          + "var portlet = \$('#$uicomponent.id .PortletContainer .uiPortletManagement');"
+      	  + "var portletBtn = \$('#$uicomponent.id .uiGrayLightBox:first .portlet');"
+      	  + "var gadget = \$('#$uicomponent.id .PortletContainer .uiGadgetManagement');"
+    	    + "var gadgetBtn = \$('#$uicomponent.id .uiGrayLightBox:first .gadget');"
+          + "if(org.length > 0) orgBtn.addClass('btn active');"
+	        + "if(portlet.length > 0) portletBtn.addClass('btn active');"
+	        + "if(gadget.length > 0) gadgetBtn.addClass('btn active');");
 %>
 <div class="UIApplicationRegistryPortlet" id="$uicomponent.id">
 	<%if( _ctx.getRequestContext().getApplicationMode() == PortletMode.VIEW) {%>
     <div style="padding: 20px 20px 10px">
       <div class="uiGrayLightBox clearfix">
-        <a onclick="<%=uicomponent.event("ViewChild", "UIApplicationOrganizer")%>" class="btn pull-left">
+        <a onclick="<%=uicomponent.event("ViewChild", "UIApplicationOrganizer")%>" class="organize actionIcon pull-left">
           <i class='uiIconCategory'></i>
           <%=_ctx.appRes("UIToolbar.label.organize")%>
 				</a>
         <div class="pull-right">
-          <a onclick="<%=uicomponent.event("ViewChild", "UIGadgetManagement")%>" class="actionIcon">
+          <a onclick="<%=uicomponent.event("ViewChild", "UIGadgetManagement")%>" class="gadget actionIcon">
             <i class='uiIconFolder'></i>
             <%=_ctx.appRes("UIToolbar.label.gadget")%>
           </a>
         </div>
         <div class="pull-right">
-          <a onclick="<%=uicomponent.event("ViewChild", "UIPortletManagement")%>" class="actionIcon">
+          <a onclick="<%=uicomponent.event("ViewChild", "UIPortletManagement")%>" class="portlet actionIcon">
             <i class='uiIconFolder'></i>
             <%=_ctx.appRes("UIToolbar.label.portlet")%>
           </a>

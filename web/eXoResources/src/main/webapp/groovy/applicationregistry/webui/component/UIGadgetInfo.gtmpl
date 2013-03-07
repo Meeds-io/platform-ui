@@ -1,0 +1,72 @@
+<%
+	import org.exoplatform.applicationregistry.webui.component.UICategorySelector;
+  import org.gatein.common.text.EntityEncoder;
+	import org.exoplatform.commons.utils.HTMLEntityEncoder;
+
+	EntityEncoder encoder = HTMLEntityEncoder.getInstance();
+	def gadget = uicomponent.getGadget();
+	boolean selectorRender = uicomponent.getChild(UICategorySelector.class).isRendered();
+	String srcBGError = "/eXoResources/skin/sharedImages/Icon80x80/DefaultPortlet.png";
+	String categoryNames = uicomponent.getCategorieNames();
+	String gadgetThumbnail = gadget.getThumbnail();
+	if(gadgetThumbnail == null || gadgetThumbnail.length() == 0){
+		gadgetThumbnail = srcBGError ;
+	}
+        def viewURL = uicomponent.getViewUrl();
+        def editURL = uicomponent.getEditUrl();
+        def refURL = gadget.getReferenceUrl();
+%>
+<div class="UIGadgetInfo" id="$uicomponent.id">
+  <div>
+    <strong><%=_ctx.appRes("UIGadgetInfo.label.gadgetDetails")%></strong>
+    <% if(gadget.isLocal()) {%>
+    <a class='actionIcon pull-right' title="<%=_ctx.appRes("UIGadgetInfo.title.editGadget")%>" onclick="<%= uicomponent.event("Edit") %>"><i class='uiIconEdit'></i></a>
+    <% } %>
+    <a class='actionIcon pull-right' title="<%=_ctx.appRes("UIGadgetInfo.title.refresh")%>" onclick="<%= uicomponent.event("Refresh") %>"><i class='uiIconRefresh'></i></a>
+  </div>
+  <hr/>
+
+  <div class='row-fluid'>
+    <div class='span2'>
+    <img src="$gadgetThumbnail" onError="src='$srcBGError'" alt=""/>
+    </div>
+    <div class='span10'>
+    <dl class='dl-horizontal'>
+      <dt><%=_ctx.appRes("UIGadgetInfo.label.name")%></dt>
+      <dd title="<%= gadget.getName() %>"><%= gadget.getName() %></dd>
+      
+      <dt><%=_ctx.appRes("UIGadgetInfo.label.description")%></dt>
+      <dd title="<%= gadget.getDescription() %>"><%= gadget.getDescription() %></dd>
+
+      <dt><%=_ctx.appRes("UIGadgetInfo.label.viewUrl")%></dt>
+      <dd title=" <%=viewURL %> "><a href="<%=viewURL %>" target="_blank">$viewURL</a></dd>
+      
+      <% if(gadget.isLocal()) {%>
+      <dt><%=_ctx.appRes("UIGadgetInfo.label.editUrl")%></dt>
+      <dd><a href="<%=editURL %>" target="_blank">$editURL</a></dd>
+      <% } %>
+      
+      <dt><%=_ctx.appRes("UIGadgetInfo.label.reference")%></dt>
+      <dd><a href="<%=refURL %>" target="_blank"><%= refURL == "" ? "&nbsp;" : refURL%></a></dd>
+      
+      <dt><%=_ctx.appRes("UIGadgetInfo.label.categories")%></dt>
+      <dd><%= encoder.encode(categoryNames) %>
+								<% if (categoryNames.equals("")) { %>
+										<%=_ctx.appRes("UIGadgetInfo.label.categories.guide")%><br/>
+										<% if (!selectorRender) { %>
+										<a href="#" onclick="<%= uicomponent.event("ShowCategories") %>" style="color:red;text-decoration:underline;">											
+												<%=_ctx.appRes("UIGadgetInfo.label.categories.clickHere")%>											
+										</a>
+										<% } %>
+								<%}%>
+								
+			</dd>
+    </dl>
+    </div>
+  </div>  
+	<div>		
+		<% if (categoryNames.equals("") && selectorRender) { 
+				uicomponent.renderChildren(); 
+		} %>
+	</div>
+</div>

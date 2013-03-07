@@ -1,0 +1,64 @@
+<%	
+	def selectedGadget = uicomponent.getSelectedGadget();
+	boolean isSelected = false;
+	String cssItem;
+%>
+<style type="text/css">
+.tab {
+  background: none repeat scroll 0 0 #F5F5F5;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 0 none;
+}
+.ul {
+    margin-left: 20px;
+}
+.li {
+    list-style-type: disc;
+}
+</style>
+
+<div class="uiGadgetManagement" id="$uicomponent.id">
+  <div style="padding: 0px 20px 20px">
+    <div class="uiGrayLightBox clearfix">
+      <a class='actionIcon' onclick="<%= uicomponent.event("AddRemoteGadget") %>"><i class='uiIconPlus'></i><%=_ctx.appRes("UIGadgetManagement.label.addRemote")%></a>
+      <a class='actionIcon' onclick="<%= uicomponent.event("AddLocalGadget") %>"><i class='uiIconPlus'></i><%=_ctx.appRes("UIGadgetManagement.label.createNew")%></a>
+    </div>
+  </div>
+  <div class='row-fluid' style='padding: 0px 20px; width: auto;'>
+    <div class='span3 uiBox accordion'>
+      <% 
+      for(gadget in uicomponent.getGadgets()) {
+        String gadgetType = (gadget.isLocal() ? "LocalGadget" : "RemoteGadget");
+        if(!isSelected && gadget.getName().equals(selectedGadget.getName()))
+          isSelected = true;
+        else isSelected = false;
+        def gadgetLabel = gadget.getTitle()
+      %>
+       <div class="accordion-group">
+          <div class="accordion-heading tab">
+            <div class="row-fluid">
+              <div class="span10">
+                <ul class='ul'>
+                  <li class='li'>
+                    <% if(isSelected) { %>
+                      <strong><%= (gadgetLabel.length() <= 31) ? gadgetLabel : gadgetLabel.substring(0, 28)+"..." %></strong>
+                    <% } else { %>
+                      <a onclick="<%= uicomponent.event("SelectGadget", gadget.getName()) %>" class="$gadgetType" title="<%= gadget.getTitle() %>"><%= (gadgetLabel.length() <= 31) ? gadgetLabel : gadgetLabel.substring(0, 28)+"..." %></a>
+                    <% } %>
+                  </li>
+                </ul>
+              </div>
+              <div class='span2'>
+                <a class='actionIcon' title="<%=_ctx.appRes("UIGadgetManagement.title.deleteGadget")%>" onclick="<%= uicomponent.event("RemoveGadget", gadget.getName()) %>"><i class='uiIconDelete'></i></a>
+              </div>
+            </div>
+          </div>
+        </div>    
+      <% } %>  
+    </div>
+    
+    <div class="appWorkingArea uiBox span9" style="padding: 20px;">
+    <% uicomponent.renderChildren() %>
+    </div>
+  </div>
+</div>

@@ -4,77 +4,72 @@
 	String selectedType = uicomponent.getSelectedType();
 	def selectedPortlet = uicomponent.getSelectedPortlet();
 %>
-<div class="UIPortletManagement" id="$uicomponent.id">
-	<div class="AppRegistryContainer ClearFix">
-		<div class="AppRegistryControl">
-			<div class="ControlArea">
-			
-				<div class="CategoryContent">
-				<% for(type in portletTypes) {%>
-					<div class="BoxContent">
-						<div class="TitleCategory" onclick="<%= uicomponent.event("SelectPortletType", type) %>"><%=_ctx.appRes("UIPortletManagement.title." + type)%></div>
-						<% if(type.equals(selectedType)) {%>
-			 			<div class="ListContent">	
-			 				
-			 				<div class="UIVerticalSlideTabs">
-			 					<div class="UIVTab VTabSimpleStyle">
-									<div class="UIVTabContent" style="display: block">
-									<%
-									 	boolean isSelected = false;
-									 	String cssClass;
-                                        int counter = 0;
-									%>
-									<% for(app in webApps) {
-                                        counter++;
-                                    %>
+<style type="text/css">
+.tab {
+  background: none repeat scroll 0 0 #F5F5F5;
+}
 
-                                        <div class="accordion-group">
-                                            <div class="accordion-heading">
-                                                <div class="accordion-toggle expaned" data-toggle="collapse"
-                                                     data-parent="#accordion" href="#$counter">
-                                                    <a href="#modals" data-toggle="tab"><i
-                                                            class="pull-left"></i><%= app.getName() %></a>
-                                                </div>
-                                            </div>
-                                            <div id="$counter" class="accordion-body collapse in">
-                                                <%for(portlet in app.getPortlets()){ %>
-                                                <a class="$cssClass" onclick="<%= uicomponent.event("SelectPortlet", portlet.getId()) %>"><%= portlet.getDisplayName() %></a>
-                                                <%}%>
-                                            </div>
-                                        </div>
-                                        <!--
-										<div class="ListCategory SelectedCategory">
-											<div class="CategoryLable"><%= app.getName() %></div>
-											
-											<div class="ListItem">
-											<% for(portlet in app.getPortlets()) {
-												if(!isSelected && portlet.getId().equals(selectedPortlet.getId())) {
-													cssClass = "Item";
-													isSelected = true;
-												} else cssClass = "Item";
-											%>
-												<a class="$cssClass" onclick="<%= uicomponent.event("SelectPortlet", portlet.getId()) %>"><%= portlet.getDisplayName() %></a>
-											<% } %>
-											</div>
-											
-										</div>
-										-->
-									<% } %>	
-									</div>
-								</div>
-			 				</div>	
-			 									
-						</div>
-						<% } %>
-					</div>
-				<% } %>							
-				</div>
-				
-			</div>
-		</div>
-		<div class="AppWorkingArea">
-		<% uicomponent.renderChildren() %>
-		</div>
-	</div>	
-	
+.li {
+  list-style-type: disc;
+  margin: 5px 40px;
+}
+.category {
+  background: none repeat scroll 0 0 #F5F5F5;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 0 none;
+  height: 30px;
+}
+</style>
+<div class="uiPortletManagement" id="$uicomponent.id">
+  <div class='row-fluid' style='padding: 0px 20px; width: auto;'>
+    <div class='span3 uiBox accordion' id="ApplicationRegistryPortlet">
+      <%
+        boolean isSelectedType = false;
+        for(type in portletTypes) {
+          if(type.equals(selectedType)) isSelectedType = true;
+          else isSelectedType = false;
+      %>
+        <div class="accordion-group">
+          <div class="accordion-heading tab">
+            <a href="#$type" 
+              onclick="<%= isSelectedType ? "javascript:void(0);" : uicomponent.event("SelectPortletType", type) %>"
+              data-parent="#ApplicationRegistryPortlet" 
+              data-toggle="collapse">
+              <i class="<%= isSelectedType ? "uiIconArrowDown" : "uiIconArrowRight" %>"></i> 
+              <strong><%=_ctx.appRes("UIPortletManagement.title." + type)%></strong>
+            </a>
+          </div>
+          <div class="accordion-body <%= isSelectedType ? "in" : "" %> collapse" id="$type" style="height: <%= isSelectedType ? "auto" : "0px" %>;">
+            <% if(isSelectedType) {%>
+            <ul>
+              <%
+                boolean isSelected = false;
+                for(app in webApps) { %> 
+                <li class='category'><p style="padding: 5px 10px;"><%=app.getName(); %></p></li>  
+              <%
+                  for(portlet in app.getPortlets()) {
+						        if(!isSelected && portlet.getId().equals(selectedPortlet.getId())) isSelected = true;
+						        else isSelected = false;
+              %>
+              <li class='li'>
+                <% if(isSelected) { %>
+                <strong><%= portlet.getDisplayName() %></strong>
+                <% } else { %>
+                <a onclick="<%= uicomponent.event("SelectPortlet", portlet.getId()) %>">
+                <%= portlet.getDisplayName() %>
+                </a>
+                <% } %>
+              </li>
+              <% } } %>
+            </ul>
+            <% } %>
+          </div>
+        </div>  
+      <% } %>
+    </div>
+    
+    <div class="appWorkingArea uiBox span9" style="padding: 20px;">
+    <% uicomponent.renderChildren() %>
+    </div>
+  </div>
 </div>
