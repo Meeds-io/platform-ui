@@ -972,3 +972,39 @@ Round corner box with title
 		word-wrap: break-word;
 	}
 }
+
+.calendarBox {
+	text-align: center;
+	font-family : @sansBoldFontFamily; 
+	font-weight: bold;
+	width: 50px;
+	.heading {
+		color : @white;
+		border: 1px solid #224886;
+		.border-radius(@baseBorderRadius @baseBorderRadius 0 0);
+		#gradient > .vertical(#638acd, #426393);
+		padding: 0;
+		margin: 0;
+	}
+	.content {
+		font-size: 24px;
+		color: #316399;
+		border: 1px solid #c3c3c3;
+		padding: 8px;
+		.border-radius( 0 0 @baseBorderRadius @baseBorderRadius); 
+	}
+	&.calendarBox-mini {	
+		.square(20px);
+		.heading {		
+			padding:  0;
+			font-size: 6px;
+			line-height: 5px; 
+		}
+		.content {
+			font-size: 7px;
+			line-height: 9px;
+			padding: 0;
+		}
+	}
+}
+
