@@ -9,26 +9,26 @@
    .require("SHARED/uiPopup", "uiPopup").addScripts("uiPopup.setAlign('$popupId', 2, 5, 5);")
    .require("SHARED/portalComposer", "portalComposer").addScripts("portalComposer.init('$uicomponent.id', 200, 200, $isEditted, $portalMode);");
 %>
-<div class="uiPopup UIDragObject UIPortalComposer" id="$uicomponent.id" style="width: 330px; display: block;">
-	<div class="popupHeader ClearFix">
-		<span class="<%=uicomponent.isCollapsed ? "CollapseIcon" : "ExpandIcon"%>"></span>
+<div class="uiPopup UIDragObject uiPortalComposer" id="$uicomponent.id" style="width: 330px; display: block;">
+	<div class="popupHeader clearfix">
+		<i class="<%=uicomponent.isCollapsed ? "uiIconArrowRightMini" : "uiIconArrowDownMini"%> pull-left"></i>
 			<% if(uicomponent.isShowControl) { %>
-			<a class="CloseButton" title="<%=_ctx.appRes("word.abort")%>" href="<%=uicomponent.event("CloseComposer")%>"><span></span></a>
+			<a class="uiIconClose pull-right" title="<%=_ctx.appRes("word.abort")%>" href="<%=uicomponent.event("CloseComposer")%>"></a>
 				<% if (uicomponent.isUsedInWizard()) { %>
-					<a class="<%= isEditted ? "EdittedSaveButton" : "SaveButton" %>" title="<%=_ctx.appRes("word.finish")%>" href="<%=uicomponent.url("Finish")%>"></a>
-					<a class="BackButton" title="<%=_ctx.appRes("word.back")%>" href="<%=uicomponent.event("Back")%>"></a>
+					<a class="<%= isEditted ? "uiIconSave uiIconDarkGray" : "uiIconSave uiIconLightGray" %> pull-right" title="<%=_ctx.appRes("word.finish")%>" href="<%=uicomponent.url("Finish")%>"></a>
+					<a class="uiIconBack pull-right" title="<%=_ctx.appRes("word.back")%>" href="<%=uicomponent.event("Back")%>"></a>
 				<% } else {%>
-					<a class="<%= isEditted ? "EdittedSaveButton" : "SaveButton" %>" title="<%=_ctx.appRes("word.finish")%>" href="<%=uicomponent.event("Finish")%>"></a>
+					<a class="<%= isEditted ? "uiIconSave uiIconDarkGray" : "uiIconSave uiIconLightGray" %> pull-right" title="<%=_ctx.appRes("word.finish")%>" href="<%=uicomponent.event("Finish")%>"></a>
 			<%	 }
 				 } %>
-		<span class="PopupTitle"><%=_ctx.appRes(popupId + ".title."+ popupId)%></span>
+		<span class="PopupTitle popupTitle pull-left"><%=_ctx.appRes(popupId + ".title."+ popupId)%></span>
 	</div>
 	
 	<div class="popupContent" style="display: <%=uicomponent.isCollapsed ? "none": "block"%>" >
 		<% uicomponent.renderChildren(); %>
 	</div>
 	
-	<div class="UIAction" style="display: <%=uicomponent.isCollapsed ? "none": "block"%>"> 
+	<div class="uiAction" style="display: <%=uicomponent.isCollapsed ? "none": "block"%>"> 
 			<a href="javascript:void(0);" onclick="<%= uicomponent.event("ViewProperties") %>" class="btn btn-primary PageProfileIcon"><%=_ctx.appRes(popupId + ".action.ViewProperties")%></a>
 	
 		<% String changeEditMode = uicomponent.event("SwitchMode", null, null); %>

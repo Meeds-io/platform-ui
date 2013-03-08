@@ -31,13 +31,13 @@
 			<div class="LAYOUT-BLOCK LAYOUT-PORTLET">
 				
 					<%/*Begin Middle Portlet Layout Decorator*/%>
-					
+					<div class="portletLayoutDecorator">
 					<%
 					if(hasPermission) {
 						print title;
-					} else print ""+_ctx.appRes("UIPortlet.label.protectedContent")+"";
+					} else print "<div class='ProtectedContent'>"+_ctx.appRes("UIPortlet.label.protectedContent")+"</div>";
 					%>
-							
+					</div>		
 				
 			</div>
 		<%} else { %>
