@@ -29,21 +29,16 @@
 		
 		<%if(portalMode == uiPortalApp.CONTAINER_BLOCK_EDIT_MODE || portalMode == uiPortalApp.APP_BLOCK_EDIT_MODE) { %>	
 			<div class="LAYOUT-BLOCK LAYOUT-PORTLET">
-				<div class="PortletLayoutDecorator">
+				
 					<%/*Begin Middle Portlet Layout Decorator*/%>
-					<div class="LPortletLayoutDecorator">
-						<div class="RPortletLayoutDecorator">
-							<div class="CPortletLayoutDecorator">
-									<%
-									if(hasPermission) {
-										print title;
-									} else print "<div class='ProtectedContent'>"+_ctx.appRes("UIPortlet.label.protectedContent")+"</div>";
-									%>
-							</div>
-						</div>
-					</div>
 					
-				</div>
+					<%
+					if(hasPermission) {
+						print title;
+					} else print ""+_ctx.appRes("UIPortlet.label.protectedContent")+"";
+					%>
+							
+				
 			</div>
 		<%} else { %>
 			<div class="VIEW-BLOCK VIEW-PORTLET" id="VIEW-${portletId}">
@@ -204,22 +199,23 @@
 			<div class="EDITION-BLOCK EDITION-PORTLET" style="display: none;position: relative; z-index: 999;">
 				<div style="position: absolute; top: -86px;">
 					<div class="NewLayer"><span></span></div>
-					<div class="CONTROL-PORTLET CONTROL-BLOCK UIInfoBar">
+					<div class="CONTROL-PORTLET CONTROL-BLOCK uiInfoBar">
 						<%/*Begin InfoBar*/%>
-						<div class="BlueRoundedStyle ClearFix">
-							<div class="DragControlArea" title="<%=_ctx.appRes("UIPortlet.tooltip.DragControl");%>"><span></span></div>
+						
+							<i class="uiIconDragDrop uiIconWhite" title="<%=_ctx.appRes("UIPortlet.tooltip.DragControl");%>"></i>
 							<% 
 								String portletIcon = uicomponent.getIcon();
 								if(portletIcon == null) portletIcon = "PortletIcon";
 								
 								if(title.length() > 30) title = title.substring(0,27) + "...";
 							%>
-							<div class="PortletIcon $portletIcon"><%=hasPermission ? title : _ctx.appRes("UIPortlet.label.protectedContent")%></div>
+							<i class="uiIconPortletConfig uiIconWhite"></i>
+							<span><%=hasPermission ? title : _ctx.appRes("UIPortlet.label.protectedContent")%></span>
 							<%if(hasPermission) {%>
-								<a href="<%=uicomponent.event("EditPortlet","$uicomponent.id")%>" class="EditIcon" title="<%=_ctx.appRes("UIPortlet.tooltip.editPortlet");%>"></a>
-								<a href="<%=uicomponent.event("DeleteComponent","$uicomponent.id")%>" class="DeleteIcon" title="<%=_ctx.appRes("UIPortlet.tooltip.deletePortlet");%>"></a>
+								<a href="<%=uicomponent.event("EditPortlet","$uicomponent.id")%>" title="<%=_ctx.appRes("UIPortlet.tooltip.editPortlet")%>"><i class="uiIconEdit uiIconWhite"></i></a>
+								<a href="<%=uicomponent.event("DeleteComponent","$uicomponent.id")%>" title="<%=_ctx.appRes("UIPortlet.tooltip.deletePortlet")%>"><i class="uiIconTrash uiIconWhite"></i></a>
 							<%}%>	
-						</div>
+					
 						<%/*End InfoBar*/ %>
 					</div>
 				</div>
