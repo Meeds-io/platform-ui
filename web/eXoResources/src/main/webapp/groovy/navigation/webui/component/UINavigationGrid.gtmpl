@@ -9,7 +9,7 @@
     def parent = uicomponent.getParent();
     def navigations = uicomponent.getBeans();
 %>
-<div id="$uicomponent.id" class="uiManagementSite">
+<div id="$uicomponent.id" class="FeedBox uiManagementSite">
     <% 
     boolean isEvenRow = true;
     SiteKey siteKey;
