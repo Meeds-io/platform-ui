@@ -39,22 +39,21 @@
 	}
 
 	.avgRatingImages {
-		float: left;
-		
+		float: left; 
+		.voted,.voted-haft,.unvoted  {
+			float: left;
+			.square(16px);
+			background: url('/eXoResources/skin/images/Vote/uiIconVote.png') no-repeat;
+			margin: 0px 1px;
+		}		
 		.voted {
-			float: left;
-			width: 16px;
-			height: 16px;
-			background: url('/eXoResources/skin/images/Vote/uiIconVote.png') no-repeat left -80px;
-			margin: 0px 1px;
+			background-position: left -80px;
 		}
-		
+		.votedHaft{
+			background-position: left -131px;
+		}
 		.unvoted {
-			float: left;
-			width: 16px;
-			height: 16px;
-			background: url('/eXoResources/skin/images/Vote/uiIconVote.png') no-repeat left -104px;
-			margin: 0px 1px;
+			background-position:  left -104px;
 		}
 	}
 }
