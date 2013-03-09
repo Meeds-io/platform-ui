@@ -11,49 +11,49 @@
 	UIForm form = uicomponent.getParent();
 	UIDropDownControl drop = form.getChild(UIDropDownControl.class);
 %>
-<div class="UIItemSelector" id="$uicomponent.id">
-	<div class="RightColumnStyle">
+<div class="uiItemSelector clearfix" id="$uicomponent.id">
+	
 		<input type="hidden" name="<%=uicomponent.getName();%>" value ="">
 		<%/*Begin ItemList*/%>
-		<div class="ItemListContainer ItemSelectorAncestor">
-			<%uicomponent.renderChild(UIDropDownControl.class);%>			
-			<% 
-				for(category in categories){
-					templates = category.getSelectItemOptions();
-					String display = "none";	
-					if(category.isSelected()) display = "block"; else 
-					{
-						boolean isSelected = false;
-						
-						for(template in templates) {
-							if(template.isSelected()) {
-								isSelected = true;
-								break;
-							}	
-						}
-						
-						if(!isSelected)
-							templates.get(0).setSelected(true);
-					}	 
-			%>
-					<div class="ItemList ItemListBackground"	style="display: $display;">
-						<%								
-							for(template in templates){
-								String itemSelected = "Item"; 
-								String setHiddenValue = "eXo.webui.UIForm.setHiddenValue('"+form.getName()+"', '"+uicomponent.getName()+"','"+template.getLabel()+"' )";
-								if(template.isSelected()) itemSelected = "SelectedItem Item"; 
-						%>
-								<div class="$itemSelected">
-									<div class="LeftItem">
-										<div class="RightItem">	
-											<div class="ItemTitle"><%=_ctx.appRes("UIWizardPageSelectLayoutForm.label."+template.getLabel())%></div>
-										</div>
-									</div>
-									<div id="SetValue" class="ExtraActions" style="display: none">$setHiddenValue;</div>
-								</div>
-						<%}%>
-					</div>
-			<%}%>
+		<div class="itemListContainer pull-left">
+			<div class="uiBox">
+				<h5 class="title"><%uicomponent.renderChild(UIDropDownControl.class);%></h5>
+				<% 
+					for(category in categories){
+						templates = category.getSelectItemOptions();
+						String display = "none";	
+						if(category.isSelected()) display = "block"; else 
+						{
+							boolean isSelected = false;
+							
+							for(template in templates) {
+								if(template.isSelected()) {
+									isSelected = true;
+									break;
+								}	
+							}
+							
+							if(!isSelected)
+								templates.get(0).setSelected(true);
+						}	 
+				%>
+						<ul class="itemList uiContentBox" style="display: $display;">
+							<%								
+								for(template in templates){
+									String itemSelected = "item"; 
+									String setHiddenValue = "eXo.webui.UIForm.setHiddenValue('"+form.getName()+"', '"+uicomponent.getName()+"','"+template.getLabel()+"' )";
+									if(template.isSelected()) itemSelected = "selectedItem item"; 
+							%>
+									<li class="$itemSelected">
+											
+										<a href="javascript:void(0);" class="itemTitle"><i class="uiIconArrowRight"></i><%=_ctx.appRes("UIWizardPageSelectLayoutForm.label."+template.getLabel())%></a>
+											
+										<div id="SetValue" class="extraActions" style="display: none">$setHiddenValue;</div>
+									</li>
+							<%}%>
+						</ul>
+				<%}%>
+			</div>	
 		</div>
 		<%/*End ItemList*/%>
 					
@@ -64,25 +64,26 @@
 				if(category.isSelected()) display = "block"; 
 				templates = category.getSelectItemOptions(); 
 		%>
-				<div class="ItemDetailList" style="display: $display">
-				<%							 
-					for(template in templates){				
-						String label = template.getLabel();
-						String description = template.getDescription();
-	 					if(template.isSelected()) displayImage = "block"; else displayImage = "none";
-				%>
-						<%/*--Begin Layout Style--*/%>
-						<div class="ItemDetail"	style="display: $displayImage;">
-							<div class="LayoutHolder">
-								<div class="LayoutLabel"><%=_ctx.appRes("UIWizardPageSelectLayoutForm.label."+template.getLabel())%></div>
-								<div class="<%=template.getIcon();%>" title="<%=template.getLabel();%>"><span></span></div>
-							</div> 
-						</div> 
-						<%/*--End Layout Style--*/%>
-				<%}%>
-				</div>	
+		<div class="itemDetailList" style="display: $display">
+		<%							 
+				for(template in templates){				
+					String label = template.getLabel();
+					String description = template.getDescription();
+ 					if(template.isSelected()) displayImage = "block"; else displayImage = "none";
+			%>
+				<%/*--Begin Layout Style--*/%>
+				<div class="itemDetail"	style="display: $displayImage;">
+					
+					<h5 class="title"><%=_ctx.appRes("UIWizardPageSelectLayoutForm.label."+template.getLabel())%></h5>
+					<div class="container">	
+						<div class="<%=template.getIcon();%>" title="<%=template.getLabel();%>"><span></span></div>
+					</div>
+				</div> 
+				<%/*--End Layout Style--*/%>
+		<%}%>
+		</div>	
 		<%}%>
 		<%/*End ItemDetailList*/%> 
 					
-	</div>
+	
 </div>

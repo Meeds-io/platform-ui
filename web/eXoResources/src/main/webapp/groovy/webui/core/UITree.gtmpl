@@ -18,16 +18,17 @@
 %>
 <div class="uiTrees scrollArea">
 	<div class="treeContainer jsContainer">
-		<div style="padding-bottom: 12px; width: 99%">
+		
 			<div class="homeNode clearfix">
 				<a class="actionIcon pull-left" href="<%=uicomponent.getActionLink();%>" rel="tooltip" title="<%=_ctx.appRes("UITree.tooltip.UpLevel")%>" style="display: block;"><i class="uiIconUpLevel"></i></a>
 			</div>
-			<%
-			int count=0;
-			for(object in sibling) {
-				if(count==sibling.size()-1) {
-			%>
-				<div class="lastNode node">
+			
+			<ul class="nodeGroup">
+				<%
+				int count=0;
+				for(object in sibling) {
+				%>
+				<li class="node">
 					<% 
 					String objId = String.valueOf(uicomponent.getId(object));
 					String actionLink = uicomponent.event("ChangeNode", objId);
@@ -35,53 +36,20 @@
 					<%=uicomponent.renderNode(object);%>											
 					<%	
 						if(uicomponent.isSelected(object)){%>
-							<div class = "childrenContainer" actionLink="$actionLink" display = "block">
+						<ul class = "childrenContainer" actionLink="$actionLink" display = "block">
 						<%	
 						int countChild=0;
-						for(child in children) {
-						if(countChild==children.size()-1) {
-						%>
-						 		<div class="lastNode node">
-									<%=uicomponent.renderNode(child);%>
-								</div>
-						 <% } else { %>													 
-								<div class="node">
-									<%=uicomponent.renderNode(child);%>
-								</div>
-							<% } %>	
-							<%countChild++;}	%>								
-							</div>						
-					<%}%>							 
-					</div>
-			<% } else { %>		
-					<div class="node">
-					<% 
-					String objId = String.valueOf(uicomponent.getId(object));
-					String actionLink = uicomponent.event("ChangeNode", objId);
-					%>
-					<%=uicomponent.renderNode(object);%>											
-					<%	
-						if(uicomponent.isSelected(object)){%>
-						<div class = "childrenContainer" actionLink="$actionLink" display = "block">
-						<%	
-						int countChild=0;
-						for(child in children) {
-									if(countChild==children.size()-1) {
+						for(child in children) {				
 						 %>
-						 		<div class="lastNode node">
+						 		<li class="node">
 									<%=uicomponent.renderNode(child);%>
-								</div>
-						 <% } else { %>													 
-								<div class="node">
-									<%=uicomponent.renderNode(child);%>
-								</div>
-							<% } %>	
+								</li>
 							<%countChild++;}	%>								
-							</div>					
+						</ul>					
 					<%}%>							 
-					</div>
-				<% } %>
-			<%count++;}%>
-		</div>
+					</li>
+				<%count++;}%>
+			</ul>
+			
 	</div>	
 </div>

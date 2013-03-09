@@ -7,57 +7,55 @@
 	String nodeName = "/"; 	
 	boolean isNoSelecter = !uicomponent.getChild(UIPageNodeSelector.class).isRendered();
 %>
-<div class="UIWizardPageSetInfo">
+<div class="uiWizardPageSetInfo">
 	<%uiform.begin()%>
-	<div class="<%=isNoSelecter ? "NoPageSelecter" : "ClearFix"%>">
+	<div class="<%=isNoSelecter ? "NoPageSelecter" : "clearfix"%>">
   <%if(!isNoSelecter) {
    	def pageNode = uicomponent.getSelectedPageNode();
    	if( pageNode != null && pageNode.getResolvedLabel() != null ) nodeName += pageNode.getResolvedLabel();
   %>
-		<div class="PageNodeContainer">
+		<div class="pageNodeContainer pull-left">
 			<% uicomponent.renderChild(UIPageNodeSelector.class); %>
 		</div>
 	<%}%>
-		<div class="SelectedPageInfo">
-			<div class="PageInfoContainer">
-				<div class="PageNodeInfo">
-					<div class="OverflowContainer">
-						<div class="Icon"><span></span></div>
-						<div class="Label"><%=_ctx.appRes(uicomponent.getId() + ".label.curentSelectedNodeInfo")%>:</div>
+		<div class="selectedPageInfo">
+			
+				<div class="pageNodeInfo">
+					
+						<span class="label"><%=_ctx.appRes(uicomponent.getId() + ".label.curentSelectedNodeInfo")%>:</span>
 						<% if(nodeName.length() > 40) {
 						      nodeName = nodeName.substring(0,39) + "...";
 						   }
 						   nodeName = HTMLEntityEncoder.getInstance().encode(nodeName);
 						%>   
-						<div class="Info">$nodeName</div>
-					</div>
+						<span class="info">$nodeName</span>
+					
 				</div>
 			
-				<div class="UIFormWithTitle">
-					<div class="TitleBar"><%=_ctx.appRes(uicomponent.getId() + ".title")%></div>				
-					<div class="HorizontalLayout">
-						<div class="FormContainer">
-							<table class="UIFormGrid">
+				<div class="uiFormWithTitle">
+					<h5 class="title"><%=_ctx.appRes(uicomponent.getId() + ".title")%></h5>				
+				
+						<div class="form-horizontal">
 								<%	
 									List children = uiform.getChildren();		
 									int bound = children.size() - 1;
 									for(i in 1..bound) { 
 										if(children.get(i).isRendered()) {								 
 								%>
-											<tr>
-												<td class="FieldLabel"><%=uicomponent.getLabel(children.get(i).getName())+": " %></td>
-												<td class="FieldComponent"><% uiform.renderField(children.get(i)) %></td>
-											</tr>
+											<div class="control-group">
+												<label class="control-label"><%=uicomponent.getLabel(children.get(i).getName())+": " %></label>
+												<div class="controls"> <% uiform.renderField(children.get(i)) %></div>
+											</div>
 								<%
 										}
 									}			
 								%>
-							</table>
-						</div>
-					</div> 
+							</div>
+						
+					</div>
 					
 				</div>
-			</div>
+			
 		</div>
 	</div>
 	<%uiform.end()%>

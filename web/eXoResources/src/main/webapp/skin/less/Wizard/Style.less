@@ -1,0 +1,189 @@
+
+.uiWizard {
+	padding: 20px;
+	.wizardStepTitleBar {
+		.stepTitle {
+			font-size:13px;
+			font-weight: normal;
+		}
+	}
+	
+	.uiWizardPageSetInfo {
+		border: 1px solid #cfcfcf;
+		.border-radius(1px);
+		.pageNodeContainer {
+			width: 240px;
+			.uiTrees {
+				max-height: 402px;
+				overflow: auto;
+				background: none;
+				border: none;
+				border-right: 1px solid #cfcfcf;
+				padding: 5px 10px;
+			}
+		}
+		.selectedPageInfo {
+			margin-left: 240px;
+			.pageNodeInfo {
+				background: #f0f0f0;
+				padding: 8px 15px;
+				border-bottom: 1px solid #cfcfcf;
+				.label {
+					background: none;
+					color: @textColor;
+					box-shadow: none;
+					text-shadow: none;
+					font-size: 14px;
+				}
+			}
+			
+			.uiFormWithTitle {
+				overflow: hidden;
+				.title {
+					background: #f8f8f8;
+					border: none;
+					box-shadow: none;
+					padding: 8px 20px;
+				}
+			}
+		}
+	}
+	
+	.wizardControlBar {
+		padding: 0 20px 20px;
+		.stepNavigationBar {
+			.btn {
+				padding: 1px 7px;
+			}
+			.btn.active {
+				color: #2f5e92;
+				font-weight: bold;
+			}
+		}
+	}
+	
+	.UIWizardPageSelectLayoutForm {
+		background: #F8F8F8;
+    margin-bottom: 20px;
+    border: 1px solid #cfcfcf;
+		.itemListContainer {
+			padding: 20px;
+			.uiBox {
+				margin: 0;
+				.uiDropdownWithIcon {
+					.dropdown-toggle span:first-child {
+						width: 154px;
+						text-align: left;
+						display: inline-block;
+					}
+					.dropdown-menu {
+						min-width: 196px;
+					}
+				}
+				
+				.itemList {
+					> li.item > a {
+						color: @textColor;
+					}
+					> li.selectedItem > a {
+						color: #2f5e92;
+					}
+				}
+			}
+			.itemList {
+				height: 162px;
+				padding: 10px;
+			}
+		}
+		.itemDetailList {
+			background: white;
+			border-left: 1px solid #cfcfcf;
+			.container {
+				padding: 30px 30px 0;
+			}
+		}
+		
+		.EmptyLayout {
+			width: 270px; height: 170px;
+			margin: auto;
+			background: url('/eXoResources/skin/images/Wizard/ItemSelector.gif') no-repeat top left;
+		}
+		
+		.DesktopLayout {
+			width: 270px; height: 170px;
+			margin: auto;
+			background: url('/eXoResources/skin/images/Wizard/TemplateContainer.jpg') no-repeat top left;
+		}
+		
+		.DashboardLayout {
+			width: 270px; height: 170px;
+			margin: auto;
+			background: url('/eXoResources/skin/images/Wizard/DashboardLayout.jpg') no-repeat center;
+		}
+		
+		.TwoColumnsLayout {
+			width: 270px; height: 170px;
+			margin: auto;
+			background: url('/eXoResources/skin/images/Wizard/ItemSelector.gif') no-repeat left -170px;
+		}
+		
+		.ThreeColumnsLayout {
+			width: 270px; height: 170px;
+			margin: auto;
+			background: url('/eXoResources/skin/images/Wizard/ItemSelector.gif') no-repeat left -340px;
+		}
+		
+		 .TwoColumnsOneRowLayout {
+			width: 270px; height: 170px;
+			margin: auto;
+			background: url('/eXoResources/skin/images/Wizard/ItemSelector.gif') no-repeat left -510px;
+		}
+		
+		.TwoColumnsTwoRowsLayout {
+			width: 270px; height: 170px;
+			margin: auto;
+			background: url('/eXoResources/skin/images/Wizard/ItemSelector.gif') no-repeat left -680px;
+		}
+		
+		.TwoRowsLayout {
+			width: 270px; height: 170px;
+			margin: auto;
+			background: url('/eXoResources/skin/images/Wizard/ItemSelector.gif') no-repeat left -850px;
+		}
+		
+		.ThreeRowsLayout {
+			width: 270px; height: 170px;
+			margin: auto;
+			background: url('/eXoResources/skin/images/Wizard/ItemSelector.gif') no-repeat left -1020px;
+		}
+		
+		.OneRowTwoColumnsLayout {
+			width: 270px; height: 170px;
+			margin: auto;
+			background: url('/eXoResources/skin/images/Wizard/ItemSelector.gif') no-repeat left -1190px;
+		}
+		
+		.TwoTabsLayout {
+			width: 270px; height: 170px;
+			margin: auto;
+			background: url('/eXoResources/skin/images/Wizard/ItemSelector.gif') no-repeat left -1360px;
+		}
+		
+		.ThreeTabsLayout {
+			width: 270px; height: 170px;
+			margin: auto;
+			background: url('/eXoResources/skin/images/Wizard/ItemSelector.gif') no-repeat left -1530px;
+		}
+		
+		.ThreeRowsTwoColumnsLayout {
+			width: 270px; height: 170px;
+			margin: auto;
+			background: url('/eXoResources/skin/images/Wizard/ItemSelector.gif') no-repeat left -1700px;
+		}
+	}
+	
+	.UIPagePreview {
+		margin-bottom: 20px;
+	}
+	
+}
