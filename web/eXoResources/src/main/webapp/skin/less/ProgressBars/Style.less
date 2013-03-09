@@ -1,12 +1,18 @@
 .progress {
   height: 18px;
 }
-
+ 
+.progress {
+	.border-radius(20px);
+	#gradient .vertical(#dbdbdb, #ebebeb);
+	.bar {
+		#gradient .vertical(#5d83c3, #456697);
+	}
+}
 // Striped bars
 .progress-striped .bar {
   #gradient > .striped(#3862a9);
 }
-
 // upload files 
 .progressBarFrame {	
 	 margin: 0 0 25px 0;
