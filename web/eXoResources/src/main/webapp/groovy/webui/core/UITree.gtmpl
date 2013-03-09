@@ -9,8 +9,8 @@
 	
 	def rcontext = _ctx.getRequestContext();
 	def jsMan = rcontext.getJavascriptManager(); 
-	jsMan.require("SHARED/webui-ext", "webuiExt").require("SHARED/portalControl", "portalControl")
-		  .addScripts("webuiExt.UITree.init('$id', '$uicomponent.colapseIcon',${uiPopupMenu != null},portalControl);");
+	jsMan.require("SHARED/webui-ext", "webuiExt")
+		  .addScripts("webuiExt.UITree.init('$id', '$uicomponent.expandIcon','$uicomponent.colapseIcon',${uiPopupMenu != null});");
 	
 	if(uiPopupMenu != null){
 		uicomponent.renderUIComponent(uiPopupMenu); 
@@ -36,7 +36,7 @@
 					<%=uicomponent.renderNode(object);%>											
 					<%	
 						if(uicomponent.isSelected(object)){%>
-						<ul class = "childrenContainer" actionLink="$actionLink" display = "block">
+						<ul class = "childrenContainer" actionLink="$actionLink">
 						<%	
 						int countChild=0;
 						for(child in children) {				

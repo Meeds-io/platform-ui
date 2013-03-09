@@ -301,18 +301,23 @@
     };
 
     var uiTree = {
-        init:function (id, colapseClass, disableContextMenu, portalControl) {
+        init:function (id, expandClass, collapseClass, disableContextMenu) {
             var parent = $('#' + id);
             if (!parent.data("collapseRegistered")) {
-                parent.on('click', '.' + colapseClass, function () {
-                    portalControl.UIPortalControl.collapseTree(this);
+                parent.on('click', '.' + expandClass, function () {
+                    var jNode = $(this);
+                    var childrenCont = jNode.next(".childrenContainer");
+                    
+                    jNode.toggleClass(expandClass + " " + collapseClass);
+                    jNode.on("click", new Function(childrenCont.attr("actionLink")));
+                    childrenCont.remove();
                 });
                 if (disableContextMenu) {
                     uiRightClickPopupMenu.disableContextMenu(id);
                 }
             }
             parent.data("collapseRegistered", true);
-            parent.find(".LevelUpArrowIcon").on("mousedown", function (event) {
+            parent.find(".LevelUpArrowIcon, .actionIcon:has(.uiIconUpLevel)").on("mousedown", function (event) {
                 event.stopPropagation();
             });
         }

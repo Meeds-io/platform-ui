@@ -286,11 +286,15 @@ public class UITree extends UIComponent {
         if (escapeHTML_) {
             fieldValue = fieldValue != null ? HTMLEntityEncoder.getInstance().encode(fieldValue) : fieldValue;
         }
+        CharSequence rightClick = "";
+        if (uiPopupMenu_ != null) {
+            rightClick = uiPopupMenu_.getJSOnclickShowPopup(objId, null);
+        }
         if (nodeIcon.equals(expandIcon)) {
-            builder.append(" <a href=\"javascript:void(0);\" class=\"uiIconNode ").append(nodeIcon).append(note).append("\"")
+            builder.append(" <a href=\"javascript:void(0);\" class=\"uiIconNode ").append(nodeIcon).append(note).append("\" ").append(rightClick)
             .append(" title=\"").append(getFieldValue(obj, beanLabelField_)).append("\"").append(">");
         } else {
-            builder.append(" <a href=\"javascript:void(0);\" class=\"uiIconNode ").append(nodeIcon).append(note).append("\"")
+            builder.append(" <a href=\"javascript:void(0);\" class=\"uiIconNode ").append(nodeIcon).append(note).append("\" ").append(rightClick)
             .append(" title=\"").append(getFieldValue(obj, beanLabelField_)).append("\" onclick=\"").append(actionLink).append("\">");
         }
         if (uiPopupMenu_ == null) {
