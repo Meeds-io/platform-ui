@@ -7,28 +7,26 @@ def apps = uicomponent.getApplications();
 def selectedApp = uicomponent.getSelectedApplication();
 %>
 <div class="uiOrganizerManagement" id="$uicomponent.id">
-  <div class='uiOrganizerControl'>
+  <div class="uiOrganizerControl">
       <div class="uiGrayLightBox clearfix">
-        <div class="pull-left">
-          <a class="actionIcon" onclick="<%= uicomponent.event("AddCategory") %>">
-          <i class='uiIconFolder'></i>
-          <%=_ctx.appRes("UIOrganizer.label.addCategory")%>
-          </a>        
-        </div>
+	      <a class="actionIcon pull-left" onclick="<%= uicomponent.event("AddCategory") %>">
+	          <i class="uiIconManageCategory uiIconLightGray"></i>
+	          <%=_ctx.appRes("UIOrganizer.label.addCategory")%>
+	      </a>   
         <% if(uicomponent.isShowImport()) { %>
-        <div class='pull-right'>
-          <a class='actionIcon' onclick="<%= uicomponent.event("ImportAllApplications") %>">
-            <i class='uiIconFolder'></i>
-            <%=_ctx.appRes("UIOrganizer.label.autoImport")%>
-          </a>
-        </div>
+     
+	      <a class="actionIcon pull-right" onclick="<%= uicomponent.event("ImportAllApplications") %>">
+	        <i class="uiIconReply uiIconLightGray"></i>
+	        <%=_ctx.appRes("UIOrganizer.label.autoImport")%>
+	      </a>
+        
         <% } %> 
       </div>
   </div>
   
   <div class="row-fluid uiOrganizerCategories">
-    <div class='span3 uiBox accordion' id="ApplicationRegistryCategory">
-    <h6 class='title'><%=_ctx.appRes("UIOrganizer.label.categories")%></h6>
+    <div class="span3 uiBox accordion" id="ApplicationRegistryCategory">
+    <h6 class="title"><%=_ctx.appRes("UIOrganizer.label.categories")%></h6>
       <% 
         String cTab, cName, description, displayName;
         boolean isSelected = false;
@@ -51,16 +49,16 @@ def selectedApp = uicomponent.getSelectedApplication();
                 <a href="#$cName" onclick="<%= isSelected ? "javascript:void(0);" : uicomponent.event("ShowCategory", cName) %>" title="<%= displayName %>"
                  data-parent="#ApplicationRegistryCategory" 
                  data-toggle="collapse">
-                <i class="<%= isSelected ? "uiIconArrowDown" : "uiIconArrowRight" %>"></i> 
+                <i class="<%= isSelected ? "uiIconArrowDown uiIconLightGray" : "uiIconArrowRight uiIconLightGray" %>"></i> 
                 $displayName
                 </a>
                 </p>              
               </div>
               <% if(isSelected) { %>
               <div class="span4">
-                <a class="actionIcon pull-right" title="<%=_ctx.appRes("UIOrganizer.title.deleteCategory")%>" onclick="<%= uicomponent.event("RemoveCategory", "$cName") %>"><i class='uiIconDelete'></i></a>
-                <a class="actionIcon pull-right" title="<%=_ctx.appRes("UIOrganizer.title.addApplication")%>" onclick="<%= uicomponent.event("AddApplication") %>"><i class='uiIconPlus'></i></a>
-                <a class="actionIcon pull-right" title="<%=_ctx.appRes("UIOrganizer.title.editCategory")%>" onclick="<%= uicomponent.event("EditCategory", "$cName") %>"><i class='uiIconEdit'></i></a>
+                <a class="actionIcon pull-right" title="<%=_ctx.appRes("UIOrganizer.title.deleteCategory")%>" onclick="<%= uicomponent.event("RemoveCategory", "$cName") %>"><i class="uiIconDelete uiIconLightGray"></i></a>
+                <a class="actionIcon pull-right" title="<%=_ctx.appRes("UIOrganizer.title.addApplication")%>" onclick="<%= uicomponent.event("AddApplication") %>"><i class="uiIconPlus uiIconLightGray"></i></a>
+                <a class="actionIcon pull-right" title="<%=_ctx.appRes("UIOrganizer.title.editCategory")%>" onclick="<%= uicomponent.event("EditCategory", "$cName") %>"><i class="uiIconEdit uiIconLightGray"></i></a>
               </div>
               <% } %>
             </div>
@@ -78,9 +76,9 @@ def selectedApp = uicomponent.getSelectedApplication();
 							    String displayApplicationName = (applicationLabel.length() <= 30) ? applicationLabel : applicationLabel.substring(0, 27)+"...";
                   displayApplicationName = encoder.encode(displayApplicationName);
                 %>
-                <li class='item clearfix'>
+                <li class="item clearfix">
                   <a onclick="<%= uicomponent.event("SelectApplication", "$appName") %>" title="<%= application.getDisplayName() %>" class="pull-left">
-                    <i class='<%= isSelectedApp ? "uiIconMiniArrowDown" : "uiIconMiniArrowRight"%>'></i>
+                    <i class="<%= isSelectedApp ? "uiIconMiniArrowDown uiIconLightGray" : "uiIconMiniArrowRight uiIconLightGray"%>"></i>
                     <% 
                     if(isSelectedApp) {
                       print "<strong>" + displayApplicationName + "</strong>";
@@ -89,8 +87,8 @@ def selectedApp = uicomponent.getSelectedApplication();
                     }
                     %>
                   </a>
-                  <a class='actionIcon pull-right' title="<%=_ctx.appRes("UIOrganizer.title.deleteApplication")%>" onclick="<%= uicomponent.event("RemoveApplication", appName) %>">
-                    <i class='uiIconDelete'></i>
+                  <a class="actionIcon pull-right" title="<%=_ctx.appRes("UIOrganizer.title.deleteApplication")%>" onclick="<%= uicomponent.event("RemoveApplication", appName) %>">
+                    <i class="uiIconTrashMini uiIconLightGray"></i>
                   </a>
                 </li>
                 <% } %>

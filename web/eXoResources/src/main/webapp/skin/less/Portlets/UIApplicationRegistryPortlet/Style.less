@@ -21,9 +21,55 @@
 @import "../../variables.less";
 @import "../../mixins.less";
 
-.uiOrganizerManagement .uiOrganizerControl {
-	padding: 0px 20px 20px;
+.uiApplicationRegistryPortlet {
+	.uiGrayLightBox {
+		margin: 20px;
+		a.actionIcon {
+			color: @textColor;
+			[class^="uiIcon"] {
+				margin-right: 5px;
+			}
+		}
+	}
+	
+	.uiOrganizerCategories {
+		.accordion {
+			.item {
+				padding-right: 5px;
+			}
+			a.actionIcon {
+				margin: 2px 0;
+			}
+			.accordion-body ul > li > a.pull-left {
+				margin-top: 5px;
+			}
+		}
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .uiOrganizerManagement .uiOrganizerCategories {
 	padding: 0px 20px; width: auto;
@@ -58,8 +104,11 @@
 .uiPortletManagement .uiPortletCategories {
 	padding: 0px 20px; width: auto;
 }
+
 .uiPortletManagement .uiPortletCategories .heading {
 	background: none repeat scroll 0 0 #F5F5F5;
+	line-height: 35px;
+    padding: 0 5px
 }
 
 .uiPortletManagement .uiPortletCategories .category {
@@ -86,10 +135,6 @@
 	padding: 20px;
 }
 
-.uiGadgetManagement .uiGadgetControl {
-	padding: 0px 20px 20px;
-}
-
 .uiGadgetManagement .uiGadgetList {
 	padding: 0px 20px; width: auto;
 }
@@ -97,6 +142,7 @@
 .uiGadgetManagement .uiGadgetList .item {
 	margin-left: 20px;
   list-style-type: disc;
+  margin-top: 3px;
 }
 
 .uiGadgetManagement .uiGadgetList .heading {

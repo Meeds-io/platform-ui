@@ -18,30 +18,26 @@
 	        + "if(portlet.length > 0) portletBtn.addClass('btn active');"
 	        + "if(gadget.length > 0) gadgetBtn.addClass('btn active');");
 %>
-<div class="UIApplicationRegistryPortlet" id="$uicomponent.id">
+<div class="uiApplicationRegistryPortlet" id="$uicomponent.id">
 	<%if( _ctx.getRequestContext().getApplicationMode() == PortletMode.VIEW) {%>
-    <div style="padding: 20px 20px 10px">
-      <div class="uiGrayLightBox clearfix">
-        <a onclick="<%=uicomponent.event("ViewChild", "UIApplicationOrganizer")%>" class="organize actionIcon pull-left">
-          <i class='uiIconCategory'></i>
-          <%=_ctx.appRes("UIToolbar.label.organize")%>
-				</a>
-        <div class="pull-right">
-          <a onclick="<%=uicomponent.event("ViewChild", "UIGadgetManagement")%>" class="gadget actionIcon">
-            <i class='uiIconFolder'></i>
-            <%=_ctx.appRes("UIToolbar.label.gadget")%>
-          </a>
-        </div>
-        <div class="pull-right">
-          <a onclick="<%=uicomponent.event("ViewChild", "UIPortletManagement")%>" class="portlet actionIcon">
-            <i class='uiIconFolder'></i>
-            <%=_ctx.appRes("UIToolbar.label.portlet")%>
-          </a>
-        </div>
-      </div>
-    </div>
+  
+	  <div class="uiGrayLightBox clearfix">
+	    <a onclick="<%=uicomponent.event("ViewChild", "UIApplicationOrganizer")%>" class="actionIcon pull-left">
+	      <i class="uiIconManageApplication uiIconLightGray"></i>
+	      <%=_ctx.appRes("UIToolbar.label.organize")%>
+			</a>
+      <a onclick="<%=uicomponent.event("ViewChild", "UIGadgetManagement")%>" class="actionIcon pull-right">
+        <i class="uiIconGadgets uiIconLightGray"></i>
+        <%=_ctx.appRes("UIToolbar.label.gadget")%>
+      </a>
+      <a onclick="<%=uicomponent.event("ViewChild", "UIPortletManagement")%>" class="actionIcon pull-right">
+        <i class="uiIconPortlet uiIconLightGray"></i>
+        <%=_ctx.appRes("UIToolbar.label.portlet")%>
+      </a>
+	  </div>
+
 		
-		<div class="PortletContainer">
+		<div class="portletContainer">
 		<%			
 			uicomponent.renderChildren();
 		%>				

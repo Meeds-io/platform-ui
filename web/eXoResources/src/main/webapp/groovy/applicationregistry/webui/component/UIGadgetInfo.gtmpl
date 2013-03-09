@@ -20,18 +20,18 @@
   <div>
     <strong><%=_ctx.appRes("UIGadgetInfo.label.gadgetDetails")%></strong>
     <% if(gadget.isLocal()) {%>
-    <a class='actionIcon pull-right' title="<%=_ctx.appRes("UIGadgetInfo.title.editGadget")%>" onclick="<%= uicomponent.event("Edit") %>"><i class='uiIconEdit'></i></a>
+    <a class="actionIcon pull-right" title="<%=_ctx.appRes("UIGadgetInfo.title.editGadget")%>" onclick="<%= uicomponent.event("Edit") %>"><i class="uiIconEdit uiIconLightGray"></i></a>
     <% } %>
-    <a class='actionIcon pull-right' title="<%=_ctx.appRes("UIGadgetInfo.title.refresh")%>" onclick="<%= uicomponent.event("Refresh") %>"><i class='uiIconRefresh'></i></a>
+    <a class="actionIcon pull-right" title="<%=_ctx.appRes("UIGadgetInfo.title.refresh")%>" onclick="<%= uicomponent.event("Refresh") %>"><i class="uiIconRefresh uiIconLightGray"></i></a>
   </div>
   <hr/>
 
-  <div class='row-fluid'>
-    <div class='span2'>
+  <div class="row-fluid">
+    <div class="span2">
     <img src="$gadgetThumbnail" onError="src='$srcBGError'" alt=""/>
     </div>
-    <div class='span10'>
-    <dl class='dl-horizontal'>
+    <div class="span10">
+    <dl class="dl-horizontal">
       <dt><%=_ctx.appRes("UIGadgetInfo.label.name")%></dt>
       <dd title="<%= gadget.getName() %>"><%= gadget.getName() %></dd>
       

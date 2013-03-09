@@ -1,0 +1,77 @@
+<%
+  import org.json.JSONObject;
+  import org.json.JSONArray;
+  
+  def rcontext = _ctx.getRequestContext(); 
+  
+  def selected = null, selectOptions = new JSONArray();  
+  
+  JSONObject makeJSON(String name, String value) {
+     JSONObject tmp = new JSONObject();
+     tmp.put("component", "$name");
+     tmp.put("option", "$value");
+     return tmp;
+  }
+%>
+<div class="uiChangeLanguageForm uiBox">
+
+    
+      
+     <h5 class="title"><%=_ctx.appRes("UIChangeLanguage.title.LanguageSetting")%></h5>
+             
+    
+      
+    <div class="uiContentBox">
+      <%
+        for(selector in uicomponent.getChildren()) { 
+          
+          categories = selector.getItemCategories();
+      %>               
+            <%/*Begin ItemDetailList:*/%>
+            
+              <% 
+                for(category in categories) {
+                  
+                  options = category.getSelectItemOptions();
+              %>
+                <table class="uiGrid no-border-cell table table-hover table-striped" cellspacing="0">
+                	<colgroup>
+                		<col width="5%">             
+                		<col width="75%"> 
+                		<col width="20%">                       
+                	</colgroup>
+                <% 
+                  for(opt in options) {
+                    String itemSelected = "normalItem";
+                    if (opt.isSelected()) {                  
+                      selected = makeJSON(selector.name, opt.value);                                                                                
+                      itemSelected = "selectedItem";
+                    } 
+                    selectOptions.put(makeJSON(selector.name, opt.value));
+                %>
+                  <tr class="$itemSelected">
+                    <td><div class="icon"><span></span></div></td>
+                    <td><a class="nodeLabel"><%=opt.getLabel()%></a></td>
+                    <td class="percentLabel"><%=opt.getDescription()%></td>
+                  </tr>
+                <%}%> 
+                </table>
+             <%}%>
+               
+            <%/*End ItemDetailList*/%>      
+          
+            
+     
+      <%
+      	 }
+      	 rcontext.getJavascriptManager().require("SHARED/selectors", "selectors")
+      	 			.addScripts("selectors.UILanguageSelector.init($selected, $selectOptions);");              
+      %>
+    
+	    <div class="uiAction uiActionBorder"> 
+	      <a href="<%=uicomponent.url("Save");%>" class="btn"><%=_ctx.appRes("UIChangeLanguage.action.save");%></a>
+	      <a href="javascript:void(0);" onclick="<%=uicomponent.event("Close");%>" class="btn"><%=_ctx.appRes("UIChangeLanguage.action.close");%></a>
+	    </div>
+  
+   	</div>    
+</div>
