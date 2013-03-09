@@ -5,7 +5,7 @@
 	def rcontext = _ctx.getRequestContext(); 
 	rcontext.getJavascriptManager().require("SHARED/selectors", "selectors")
 											.require("SHARED/uiForm").require("SHARED/portal")
-				.addScripts("selectors.UIItemSelector.init('#$uicomponent.id .ItemList > div');");
+				.addScripts("selectors.UIItemSelector.init('#$uicomponent.id .itemList > li', null, true);");
 
 	def categories = uicomponent.getItemCategories();
 	UIForm form = uicomponent.getParent();

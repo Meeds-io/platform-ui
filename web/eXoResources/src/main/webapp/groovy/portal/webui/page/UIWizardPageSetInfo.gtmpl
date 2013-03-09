@@ -55,8 +55,6 @@
 					</div>
 					
 				</div>
-			
-		</div>
 	</div>
 	<%uiform.end()%>
 </div>

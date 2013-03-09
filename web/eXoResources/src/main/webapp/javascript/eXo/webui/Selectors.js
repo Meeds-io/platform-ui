@@ -34,7 +34,7 @@
 			  var itm = $(this);
 			  itm.on("click", function() {
 				  itemSelector.onClick(this);
-				  itm.find(".ExtraActions").each(function() {
+				  itm.find(".ExtraActions, .extraActions").each(function() {
 					  var act = $(this).html();
 					  eval(act);
 				  });
@@ -83,14 +83,14 @@
 	    for ( var i = 0; i < allItems.length; i++) {
 	    	var $item = $(allItems[i]);
 	      if ($item[0] != clickedElement) {
-	        $item.removeClass("SelectedItem active");
+	        $item.removeClass("SelectedItem selectedItem");
 	        this.onChangeItemDetail(clickedElement, true);
 	      } else {	      	
 	      	var selected = "SelectedItem";
 	      	this.backupClass = "SelectedItem Item";
 	      	if ($item.hasClass("item")) {
-	      		selected = "active";
-	      		this.backupClass = "active item"
+	      		selected = "selectedItem";
+	      		this.backupClass = "selectedItem item"
 	      	}
 	        $item.hasClass(selected) || $item.addClass(selected);
 	        this.onChangeItemDetail(clickedElement, false);

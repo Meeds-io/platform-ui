@@ -66,11 +66,11 @@ eXo.webui.UIPageTemplateOptions = {
    */
   selectPageLayout : function(id, selectedIndex) {
     var dropDownControl = $("#" + id);
-    var itemSelectorAncest = dropDownControl.closest(".ItemSelectorAncestor");
-    var itemList = itemSelectorAncest.find("div.ItemList");
-    var itemSelectorLabel = itemSelectorAncest.find("a.OptionItem");
-    var itemSelector = dropDownControl.parent().parent().parent("div.UIItemSelector");
-    var itemDetailList = itemSelector.find("div.ItemDetailList");
+    var itemSelectorAncest = dropDownControl.closest(".itemListContainer");
+    var itemList = itemSelectorAncest.find(".itemList");
+    var itemSelectorLabel = itemSelectorAncest.find(".OptionItem");
+    var itemSelector = dropDownControl.closest(".uiItemSelector");
+    var itemDetailList = itemSelector.find(".itemDetailList");
     if (itemList.length == 0)
       return;
     for (i = 0; i < itemSelectorLabel.length; ++i) {
@@ -81,7 +81,7 @@ eXo.webui.UIPageTemplateOptions = {
         if (itemDetailList.length < 1)
           continue;
         itemDetailList[i].style.display = "block";
-        var selectedItem = $(itemList[i]).find("div.SelectedItem").eq(0);
+        var selectedItem = $(itemList[i]).find(".selectedItem").eq(0);
         if (!selectedItem || selectedItem == null)
           continue;
         var setValue = selectedItem.find("#SetValue")[0];
