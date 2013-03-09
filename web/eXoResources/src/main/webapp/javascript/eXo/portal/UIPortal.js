@@ -143,6 +143,11 @@ eXo.portal.UIPortal = {
     {
       return;
     }
+    
+    if (jqBlock.hasClass("UIPortlet")) {
+    	jqBlock.find(".portletLayoutDecorator, .portletLayoutDecoratorHover")
+    						.toggleClass("portletLayoutDecorator portletLayoutDecoratorHover");
+    }
 
     if (isOver)
     {
@@ -162,7 +167,7 @@ eXo.portal.UIPortal = {
       }
 
       if (jqBlock.hasClass("UIPortlet"))
-      {
+      {      	
         newLayer.css("width", width + "px");
         newLayer.css("height", height + "px");
       }
@@ -179,7 +184,7 @@ eXo.portal.UIPortal = {
       newLayer.parent().css("top", -height + "px");
       editBlock.css("display", "block");
 
-      var infBar = editBlock.find("div.UIInfoBar").eq(0);
+      var infBar = editBlock.find("div.UIInfoBar, .uiInfoBar").eq(0);
       if (infBar && (base.Browser.isIE6() || (base.Browser.isIE7() && eXo.core.I18n.isRT())))
       {
         // Avoid resizing width of portlet/container block multiple times
@@ -199,7 +204,7 @@ eXo.portal.UIPortal = {
             delIcon = infBar.find("a.DeleteContainerIcon");
           }
 
-          var infBarWidth = infBar.find("div.DragControlArea")[0].offsetWidth;
+          var infBarWidth = infBar.find(".DragControlArea, .uiIconDragDrop")[0].offsetWidth;
           infBarWidth += blockIcon[0].offsetWidth;
           if (editIcon.length > 0)
           {

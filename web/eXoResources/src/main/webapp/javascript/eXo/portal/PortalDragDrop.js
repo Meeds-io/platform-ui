@@ -35,7 +35,7 @@
 			return;
 		  }
 			
-	      $(".UIPageBody .DragControlArea").off("mouseover").on("mouseover", function() {
+	      $(".UIPageBody").find(".DragControlArea, .uiIconDragDrop").off("mouseover").on("mouseover", function() {
 	        if(eXo.portal.portalMode == 1 || eXo.portal.portalMode == 2) {
 	          this.style.cursor ='move';
 	        } else {
@@ -267,7 +267,7 @@
 		  dragClasses = dragClasses.join(",.");
 		  $("." + dragClasses).each(function() {
 			  var dragBlock = this;	  
-			  var clickObject = $(this).find(".DragControlArea").last();
+			  var clickObject = $(this).find(".DragControlArea, .uiIconDragDrop").last();
 	
 			  if(clickObject.length != 0) {
 				  //object existing in the current layout

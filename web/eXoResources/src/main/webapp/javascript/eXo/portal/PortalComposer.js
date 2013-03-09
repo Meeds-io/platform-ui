@@ -24,7 +24,7 @@
 	  {
 		eXo.portal.portalMode = portalMode;
 		eXo.portal.hasEditted = isEditted;
-        $("div#" + id).attr("exo:minWidth", width).attr("exo:minHeight", height).find("div.OverflowContainer, .popupHeader").children("span").eq(0).on("click", function()
+    $("div#" + id).attr("exo:minWidth", width).attr("exo:minHeight", height).find(".uiIconArrowRightMini, .uiIconArrowDownMini").on("click", function()
 	    {
 	      portalComposer.toggle($(this));
 	    });
@@ -54,19 +54,19 @@
 
 	  toggle : function(icon)
 	  {
-	    var compWindow = icon.parent().closest(".UIPortalComposer");
-        var contWindow = compWindow.children("div.UIWindowContent, .popupContent").eq(0);
+	    var compWindow = icon.closest(".uiPortalComposer");
+      var contWindow = compWindow.children(".popupContent").eq(0);
 	    if(contWindow.css("display") == "block")
 	    {
           contWindow.hide();
-          contWindow.next(".UIAction, .uiAction").hide();
-	      icon.attr("class", "CollapseIcon");
+          contWindow.next(".uiAction").hide();
+          icon.attr("class", "uiIconArrowRightMini pull-left");
 	    }
 	    else
 	    {
           contWindow.show();
-          contWindow.next(".UIAction, .uiAction").show();
-	      icon.attr("class", "ExpandIcon");
+          contWindow.next(".uiAction").show();
+          icon.attr("class", "uiIconArrowDownMini pull-left");
 	    }
 
 	    ajaxAsyncGetRequest(eXo.env.server.createPortalURL(compWindow.attr("id"), "Toggle", true));
@@ -83,7 +83,7 @@
 	    else if(id == "UIContainerList")
 	    {
 	      toolPanel.attr("class", "ContainerMode");
-	      $("#UIPageBody .DragControlArea").off("mousedown");
+	      $("#UIPageBody").find(".DragControlArea, .uiIconDragDrop").off("mousedown");
 	    }
 	  },
 
@@ -98,8 +98,8 @@
 	    if(!eXo.portal.hasEditted)
 	    {
 	      eXo.portal.hasEditted = true;
-	      var compWindow = $("#UIWorkingWorkspace").find("div.UIPortalComposer").eq(0);
-	      compWindow.find("a.SaveButton").attr("class", "EdittedSaveButton");
+	      var compWindow = $("#UIWorkingWorkspace").find(".uiPortalComposer").eq(0);
+	      compWindow.find(".uiIconSave.uiIconLightGray").removeClass("uiIconLightGray").addClass("uiIconDarkGray");
 
 	      ajaxAsyncGetRequest(eXo.env.server.createPortalURL(compWindow.attr("id"), "ChangeEdittedState", true));
 	    }

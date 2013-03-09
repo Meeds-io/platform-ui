@@ -537,7 +537,10 @@
 		  while(jDoc.height() == docH) {
 		  	jElm.height(jElm.height() + 1);		  	
 		  }
-		  jElm.height(jElm.height() - 2);
+		  height = jElm.height() - 2;
+		  //Need this to make browser scrollbar disapear		  
+		  jElm.height(height - 10)
+		  window.setTimeout(function() {jElm.height(height)}, 300);
 		}		
 	};
 	

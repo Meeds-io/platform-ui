@@ -34,7 +34,9 @@
 			<div class="accordion-heading">
 				<div class="accordion-toggle $cTab" onclick="<%= uicomponent.event("SelectCategory", cName) %>"
 						data-toggle="collapse" data-target="#$target">
-					<a class="" title="<%= displayName %>"><i class="uiIconArrowDown pull-right"></i><%= displayName %></a>
+					<a class="" title="<%= displayName %>"><i class="<%=isSelected ? "uiIconArrowDown" : "uiIconArrowRight" %> pull-right"></i>
+						<%= displayName %>
+					</a>
 				</div>
 			</div>
 			<div id="$target" style="position: static" class="accordion-body collapse <%=isSelected ? "in" : ""%>">
@@ -48,7 +50,7 @@
 				<div class="accordion-inner clearfix DragObjectPortlet" id="$application.id">
 					<img class="pull-left" src="<%=(srcBG!=null && srcBG.length()>0)?srcBG:srcBGError%>" onError="src='$srcBGError'"  alt=""/>
 					<div class="txtLeft">
-					$applicationName</br>
+					$applicationName<br/>
 					$applicationDescription
 					</div>
 				</div>
