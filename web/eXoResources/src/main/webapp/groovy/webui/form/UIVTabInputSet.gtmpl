@@ -1,11 +1,12 @@
 <%		
 	def rcontext = _ctx.getRequestContext(); 
 	rcontext.getJavascriptManager().require("SHARED/selectors", "selectors")
-			  .addScripts("selectors.UIItemSelector.init('.uiPersonalInfo .itemList .actionIcon', null, true);"); 
+			  .addScripts("selectors.UIItemSelector.init('.uiPersonalInfo .itemList .actionIcon', null, true);")
+	      .addScripts("var actions = \$('.uiPersonalInfo .itemList .actionIcon'); actions.on('click', function() { actions.removeClass('active'); \$(this).addClass('active'); });");
 %>
 <div class="uiPersonalInfo">
-			<div class="row uiItemSelector">
-				<div class="span6 itemDetailList" style="display: block;">
+			<div class="row-fluid uiItemSelector">
+				<div class="span9 itemDetailList" style="display: block;">
 					<%
 						for(child in uicomponent.getChildren()) {
 							def display = "none"; 
