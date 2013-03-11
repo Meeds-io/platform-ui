@@ -101,11 +101,32 @@
 		line-height: 18px;
 		background-color: #f7f7f7;
 		.border-radius(0 0 @borderRadiusSmall @borderRadiusSmall);
+		span {
+			background: white;
+			.border-radius(@borderRadiusSmall);
+			.box-shadow(inset 0 2px 1px rgba(0,0,0,.075));
+			display: inline-block;
+			border: 1px solid @tableBorder;
+			&:focus {
+				.box-shadow(~'0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 5px rgba(29, 75, 159, 0.6)');
+				border-color: #94B0DF;
+			}
+		}
 		input[type="text"] {
-			.size(20px,50px);
+			.size(18px,28px);
 			margin:0;
+			background: none;
+			.border-radius(0 );
+			border: none;
+			.box-shadow(0 0 0 transparent);
 			color: @textColor;
-			text-align: center;			
+			text-align: center;	
+				&:first-child {
+					text-align: right;padding:0;width: 25px;
+				}
+				&:last-child {
+					text-align: left;padding:0;width: 25px;
+				}
 		}
 	}
 	
