@@ -158,14 +158,14 @@ public class UIFormInputSet extends UIContainer {
                     }
                 }
                 w.write("<div class=\"control-group\">");
-                w.write("<div class=\"control-label\">");
-
-                // if missing resource and the label hasn't been set before, don't print out the label.
                 if (hasLabel) {
+                    w.write("<label class=\"control-label\" for=\"" + inputEntry.getId() + "\">");
                     w.write(label);
+                    w.write("</label>");
+                    w.write("<div class=\"controls\">");
+                } else {
+                    w.write("<div class=\"controls-full\">");
                 }
-                w.write("</div>");
-                w.write("<div class=\"controls\">");
                 renderUIComponent(inputEntry);
                 w.write("</div>");
                 w.write("</div>");
