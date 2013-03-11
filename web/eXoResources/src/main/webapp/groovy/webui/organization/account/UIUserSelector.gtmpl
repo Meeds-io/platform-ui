@@ -14,26 +14,30 @@
 <div class="uiUserSelector" id="UIUserSelector">
 	<div class="selectUserContainer resizable">
 			<%if(uicomponent.isShowSearch()){%>
-      <p class="uiSearch clearfix">
+      <div class="uiSearch clearfix">
         <% if(uicomponent.isShowSearchGroup()) { %>
-        <span class="inputLarge searchGroup">
-        <%uiform.renderField(uiform.FIELD_GROUP)%>
-        <a href="<%=uicomponent.event('FindGroup')%>" style="display: none;"><span></span></a>
-        </span>
-        <a href="<%=uicomponent.event('SearchGroup')%>" rel="tooltip" data-placement="bottom" title="<%=uiform.getLabel(uiform.FIELD_GROUP)%>">
-        	<i class="uiIconSearch uiIconLightGray"></i>
-        </a>
+			<span class="pull-left searchByGroup">
+				<span class="inputLarge ">
+				<%uiform.renderField(uiform.FIELD_GROUP)%>
+				<a href="<%=uicomponent.event('FindGroup')%>" style="display: none;"><span></span></a>
+				</span>
+				<a class="actionIcon" href="<%=uicomponent.event('SearchGroup')%>" rel="tooltip" data-placement="bottom" title="<%=uiform.getLabel(uiform.FIELD_GROUP)%>">
+					<i class="uiIconSearch uiIconLightGray"></i>
+				</a>
+			</span>
         <% }  
 		if(uicomponent.isShowSearchUser()) {%>
-        <span class=" uiSearchInput inputLarge searchUser">
-        <%uiform.renderField(uiform.FIELD_KEYWORD)%>
-        <a href="<%=uicomponent.event('Search')%>" style="display: none;"><span></span></a>
-        </span>
-        <span class="selectboxMedium">
-        <%uiform.renderField(uiform.FIELD_FILTER)%>
-        </span>
+			<span class="searchByUser">
+				<span class="inputLarge ">
+				<%uiform.renderField(uiform.FIELD_KEYWORD)%>
+				</span>
+				<span class="selectboxMedium">
+				<%uiform.renderField(uiform.FIELD_FILTER)%>
+				</span>
+				<a class="btnSearchUser actionIcon" href="<%=uicomponent.event('Search')%>" ><i class="uiIconSearch uiIconLightGray"></i></a>
+			</span>
         <% } %>
-      </p>
+      </div>
 			<%}%>
       
 			<table id="UIListUsers" class="uiGrid table table-hover table-striped">
