@@ -16,7 +16,7 @@ def selectedApp = uicomponent.getSelectedApplication();
         <% if(uicomponent.isShowImport()) { %>
      
 	      <a class="actionIcon pull-right" onclick="<%= uicomponent.event("ImportAllApplications") %>">
-	        <i class="uiIconReply uiIconLightGray"></i>
+	        <i class="uiIconImport uiIconLightGray"></i>
 	        <%=_ctx.appRes("UIOrganizer.label.autoImport")%>
 	      </a>
         
