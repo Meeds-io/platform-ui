@@ -305,12 +305,11 @@
 	      }
 	    });
 	    
-	    jCont.find(".searchGroup input").attr("placeholder", groupLabel);
-	    jCont.find(".searchUser input").attr("placeholder", searchLabel);
-	    jCont.find(".uiSearchInput input").each(function() {
+	    jCont.find(".searchByGroup input").attr("placeholder", groupLabel);
+	    jCont.find(".searchByUser input").attr("placeholder", searchLabel).each(function() {
 	    	$(this).on("keypress", function(event) {
 	    		if (userSelector.isEnterPress(event)) {
-	    			$.globalEval($(this).nextAll("a").attr("href"));
+	    			$.globalEval($(this).closest(".uiSearch").find(".btnSearchUser").attr("href"));
 	    			return false;
 	    		}
 	    	});
