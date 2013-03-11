@@ -314,12 +314,12 @@
 	      table += '   <span><input type="text" class="InputTime" maxlength="2" value="'
 	          + ((this.currentDate.getHours()) > 9 ? this.currentDate.getHours()
 	              : "0" + this.currentDate.getHours())
-	          + '" onkeyup="eXo.webui.UICalendar.setHour(this)" >'
+	          + '" onkeyup="eXo.webui.UICalendar.setHour(this)" onfocus="this.parentNode.className=\'focus\'" onblur="this.parentNode.className=\'\'">'
 			  + ':'
 			  + '<input type="text" class="InputTime" maxlength="2" value="'
 	          + ((this.currentDate.getMinutes()) > 9 ? this.currentDate
 	              .getMinutes() : "0" + this.currentDate.getMinutes())
-	          + '" onkeyup = "eXo.webui.UICalendar.setMinus(this)"></span>';
+	          + '" onkeyup = "eXo.webui.UICalendar.setMinus(this)" onfocus="this.parentNode.className=\'focus\'" onblur="this.parentNode.className=\'\'"></span>';
 	      table += ' </div>';
 	    }
 
