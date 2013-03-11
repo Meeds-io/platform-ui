@@ -5,7 +5,8 @@
 
 	def rcontext = _ctx.getRequestContext(); 
 	rcontext.getJavascriptManager().require("SHARED/portal").require("SHARED/uiForm")
-			  .require("SHARED/selectors", "selectors").addScripts("selectors.UIItemSelector.init('#$uicomponent.id .ItemList > div');"); 
+			  .require("SHARED/selectors", "selectors")
+        .addScripts("selectors.UIItemSelector.init('#$uicomponent.id .itemList > li', null, true);"); 
 
 	def categories = uicomponent.getItemCategories(); 
 	UIForm form = uicomponent.getParent(); 
@@ -14,16 +15,12 @@
 	String selectedValue = "";
 	if(selectedItem != null) selectedValue = selectedItem.getLabel();
 %>
-<div class="UIItemSelector" id="$uicomponent.id">
-	<div class="RightColumnStyle" style="width: 99.5%;">
+<div class="uiItemSelector UIItemSelector clearfix" id="$uicomponent.id">
 		<input type="hidden" name="<%=uicomponent.getName();%>" value="$selectedValue">
 		<%/*Begin ItemList*/ %>
-		<div class="ItemListContainer ItemSelectorAncestor">
-			<div class="PageConfigOptionList">
-			<% 
-				uicomponent.renderChild(UIDropDownControl.class)	;
-			%>
-		 </div>
+		<div class="itemListContainer pull-left">
+      <div class='uiBox'>
+        <h5 class='title'><% uicomponent.renderChild(UIDropDownControl.class) ;%></h5>
 			<% 
 				for(category in categories) {
 					templates = category.getSelectItemOptions();
@@ -35,26 +32,23 @@
 						templates.get(0).setSelected(true); 
 					}
 			%>
-					<div class="ItemList ItemListBackground"	style="display: $display; height: 240px">
+					<ul class="itemList uiContentBox"	style="display: $display;">
 						<%
 							for(template in templates){
 								String itemSelected = "Item"; 
 								String setHiddenValue = "eXo.webui.UIForm.setHiddenValue('$form.name', '$uicomponent.name','$template.label' )";
 								String submitEvent = "eXo.webui.UIForm.submitEvent('$form.id','SelectItemOption', '')";
-								if (template.isSelected()) itemSelected = "SelectedItem Item"; 
+								if (template.isSelected()) itemSelected = "selectedItem"; 
 						%>
-								<div class="$itemSelected">
-									<div class="LeftItem">
-										<div class="RightItem">	
-											<div class="ItemTitle"><%=_ctx.appRes("UIWizardPageSelectLayoutForm.label."+template.label)%></div>
-										</div>
-									</div>
-									<div id="SetValue" class="ExtraActions" style="display: none">$setHiddenValue;</div>
-								</div>
+								<li class="$itemSelected item">
+									<a class="itemTitle" href="javascript:void(0);"><i class="uiIconArrowRight"></i><%=_ctx.appRes("UIWizardPageSelectLayoutForm.label."+template.label)%></a>
+									<div id="SetValue" class="extraActions" style="display: none">$setHiddenValue;</div>
+								</li>
 						<%}%>
 						
-					</div>
+					</ul>
 			<%}%>
+      </div>
 		</div>
 		<%/*End ItemList*/%>
 					
@@ -65,11 +59,7 @@
 				if(category.isSelected()) display = "block";  //else display = "none";
 				templates = category.getSelectItemOptions();
 		%>
-				<div class="ItemDetailList" style="display: $display;">
-					<div class="ItemDetailTitle ClearFix">
-						<div class="TitleIcon ViewListIcon"><span></span></div>
-						<div class="Title"><%=_ctx.appRes("UIItemSelector.lable.ItemDetailTitle")%></div>
-					</div>
+				<div class="itemDetailList" style="display: $display;">
 					<%
 						//int i = 0;							 
 						for(template in templates) {
@@ -80,15 +70,14 @@
 		 					if(template.isSelected()) display = "block";
 		 					//if(i==2) display = "none"; else if(i==4) i=3;
 					%>
-							<div class="ItemDetail"	style="display: $display;">
-								<div class="LayoutHolder" >
-									<div class="LayoutLabel" style="text-align: center; margin: 10px 0px 5px 0px;"><%=_ctx.appRes("UIWizardPageSelectLayoutForm.label."+template.label)%></div>
-									<div class="$template.icon" title="$template.label" style="margin: auto" ><span></span></div>
-								</div> 
+							<div class="itemDetail uiBox"	style="display: $display;">
+									<h5 class="title"><%=_ctx.appRes("UIWizardPageSelectLayoutForm.label."+template.label)%></h5>
+                  <div class='container'>
+									<div class="$template.icon" title="$template.label"><span></span></div>
+                  </div>
 							</div> 
 					<%}%>
-				</div>	
+        </div>
 		<%}%>
 		<%/*End ItemDetailList*/%> 					
-	</div>
 </div>
