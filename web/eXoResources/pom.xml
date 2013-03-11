@@ -15,7 +15,7 @@
 
   <groupId>org.exoplatform.platform-ui</groupId>
   <artifactId>platform-ui-web-eXoResources</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>4.0.0-SNAPSHOT</version>
   <packaging>war</packaging>
   <name>Platform UI Web Resources</name>
 
