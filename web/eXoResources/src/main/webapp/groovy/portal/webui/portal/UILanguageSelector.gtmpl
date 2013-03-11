@@ -34,7 +34,7 @@
                   
                   options = category.getSelectItemOptions();
               %>
-                <table class="uiGrid no-border-cell table table-hover table-striped" cellspacing="0">
+                <table class="uiGrid no-border-cell table table-hover table-striped itemDetailList" cellspacing="0">
                 	<colgroup>
                 		<col width="5%">             
                 		<col width="75%"> 

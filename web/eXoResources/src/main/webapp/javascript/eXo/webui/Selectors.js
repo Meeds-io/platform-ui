@@ -140,11 +140,11 @@
 
 	  /* Pham Thanh Tung added */
 	  onClickOption : function(clickedElement, form, component, option) {
-	    var selectedItems = $(clickedElement).closest(".ItemDetailList").find("div.SelectedItem").get();
+	    var selectedItems = $(clickedElement).closest(".itemDetailList").find(".selectedItem").get();
 	    for ( var i = 0; i < selectedItems.length; i++) {
-	      selectedItems[i].className = "NormalItem";
+	      selectedItems[i].className = "normalItem";
 	    }
-	    clickedElement.className = "SelectedItem";
+	    clickedElement.className = "selectedItem";
 	    if (itemSelector.SelectedItem == null) {
 	      itemSelector.SelectedItem = new Object();
 	    }
@@ -233,13 +233,13 @@
 	var languageSelector = {
 		init : function(selected, selectOptions) {
 			var selector = languageSelector;
-			var langForm = $(".UIChangeLanguageForm");
-            var saveButton = langForm.find(".UIAction, .uiAction").find("a, .btn").first();
+			var langForm = $(".uiChangeLanguageForm");
+            var saveButton = langForm.find(".uiAction").find(".btn").first();
 			var href = saveButton.attr("href");
 			saveButton.on("click", function() {selector.changeLanguage(href);return false;});
 
 	        selector.SelectedItem = {"component": selected.component, "option" : selected.option};
-	        langForm.find(".NodeLabel").parent().each(function(index) {
+	        langForm.find(".nodeLabel").closest(".selectedItem, .normalItem").each(function(index) {
 	        	var opt = selectOptions[index];
 	        	$(this).on("click", function() {
 	            	itemSelector.onClickOption(this, null, opt.component, opt.option);
