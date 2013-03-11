@@ -10,17 +10,19 @@
 				.addScripts("\$('#$uiform.id').on('keypress', function(event) {$keyPressAct});")
         .addScripts("\$('#$uiform.id').addClass('form-inline');");
 %>
-<div class="uiGrayLightBox uiSearch">
+<div class="uiGrayLightBox uiPageSearch">
 	<%uiform.begin()%>							 
 		<% 
 			QuickSearchInputSet = uiform.getQuickSearchInputSet();
 			for(field in QuickSearchInputSet.getChildren()) {
 		%>
 				<label><%=uiform.getLabel(field.getId())%> </label>
+				<span class="inputLarge selectboxMedium">
 		<%
-				uiform.renderField(field)
-			}
+				uiform.renderField(field)%>
+				</span>
+		<%	}
 		%>
-		&nbsp;<a class="quickSearch" href="$quickSearchlink" rel="tooltip" data-placement="bottom" title="<%= _ctx.appRes("UIPageSearchForm.label.QuickSearch") %>"><i class="uiIconSearch uiIconLightGray"></i></a>
+		&nbsp;<a class="actionIcon quickSearch" href="$quickSearchlink" rel="tooltip" data-placement="bottom" title="<%= _ctx.appRes("UIPageSearchForm.label.QuickSearch") %>"><i class="uiIconSearch uiIconLightGray"></i></a>
 	<%uiform.end()%>	 
 </div>
