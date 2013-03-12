@@ -72,19 +72,22 @@
 	.itemListContainer {
 		margin:0px 0 0 10px;			
 		width: 170px;
+		.uiContentBox {
+			padding: 15px;
+		}
 	}
 	.itemList {
 		li  {
 			a {
 				color : @textColor;			
 				display: block;
-				padding:2px 10px;
+				padding:4px 10px;
 				[class^="uiIcon"] {
-					margin-right: 5px;
+					margin-right: 10px;
 				}
 			}
 			& + li a {
-				margin-top: 2px;
+				margin-top: 4px;
 			}
 		}
 	}
@@ -130,6 +133,12 @@
 /*#######################	UIGroupManagement #################################*/
 
 .uiOrganizationPortlet  {
+	.uiBox {
+		.box-shadow(0 1px 3px -2px rgba(0, 0, 0, 0.18));
+		.title {
+			.box-shadow(0 1px 2px -2px rgba(0, 0, 0, 0.20));
+		}
+	}
 	.uiGroupManagement {
 		width: 100%;
 		margin: auto;
@@ -151,25 +160,31 @@
 		width: 240px;
 		&+ .groupDetail {
 			margin-left: 260px;
-			overflow: hidden;
+			.form-horizontal {
+				overflow: hidden;
+			}
 		}
 		.uiTrees {
 			background: @white;
 			border: none;
+			margin: 4px 0 0 0;
 			.border-radius(0 0 @borderRadiusSmall @borderRadiusSmall);
-			.treeContainer > div {
+			.treeContainer > .nodeGroup {
 				.node {
-					margin-left: 0;
-					padding: 3px 10px;
+					margin: 3px 0;
+    				padding: 2px 10px;
 					&:hover {
 						background: #f8f8f8;
+						a {
+							color: @linkColor;
+						}
 					}
 				}
 				
-				.homeNode .actionIcon  {
-					margin: 5px 0 0 5px;
-				}
 			}
+			.homeNode .actionIcon  {
+					margin: 5px 0 0 4px;
+				}
 		}
 	}
 }
