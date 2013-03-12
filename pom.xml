@@ -27,7 +27,7 @@
   <parent>
     <groupId>org.exoplatform</groupId>
     <artifactId>maven-parent-pom</artifactId>
-    <version>9-SNAPSHOT</version>
+    <version>9-beta-1</version>
     <relativePath/>
   </parent>
   <groupId>org.exoplatform.platform-ui</groupId>
@@ -39,7 +39,7 @@
   <scm>
     <connection>scm:git:git://github.com/exoplatform/platform-ui.git</connection>
     <developerConnection>scm:git:git@github.com:exoplatform/platform-ui.git</developerConnection>
-    <url>http://fisheye.exoplatform.org/browse/projects/platform-ui</url>
+    <url>https://github.com/exoplatform/platform-ui</url>
   </scm>
 
   <properties>
@@ -50,6 +50,18 @@
     <module>webui/core</module>
     <module>web/eXoResources</module>
   </modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.gatein.portal</groupId>
+        <artifactId>exo.portal.parent</artifactId>
+        <version>${org.exoplatform.portal.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <build>
     <resources>
