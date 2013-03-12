@@ -6,7 +6,7 @@
       "tabs.toggleClass('active'); \$('#$uicomponent.id .uiTabContent').toggle(); });");
 %>
 <div class="uiTabSelector" id="$uicomponent.id">
-		<div class='uiTab'>
+		<div class="btn-group uiDropdown">
     <%
 			String selectedId = uicomponent.getSelectedComponentId();
 			for(uiChild in uicomponent.getChildren()) {
@@ -14,7 +14,7 @@
 				if(selectedId.equals(uiChild.id)) style = "active";
 				String actionLink = "ajaxAsyncGetRequest('" + uicomponent.url("SelectComponent",uiChild.id) + "', true);";
 		%>
-    <a class='btn $style' onclick="$actionLink"><%=_ctx.appRes("UITabPane.title." + uiChild.getId());%></a>
+    	<a class="btn $style" onclick="$actionLink"><%=_ctx.appRes("UITabPane.title." + uiChild.getId());%></a>
 		<%}%>
     </div>
 		<%

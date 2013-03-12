@@ -15,12 +15,12 @@
 	String selectedValue = "";
 	if(selectedItem != null) selectedValue = selectedItem.getLabel();
 %>
-<div class="uiItemSelector UIItemSelector clearfix" id="$uicomponent.id">
+<div class="uiItemSelector UIItemSelector clearfix uiPageTemplateOptions" id="$uicomponent.id">
 		<input type="hidden" name="<%=uicomponent.getName();%>" value="$selectedValue">
 		<%/*Begin ItemList*/ %>
 		<div class="itemListContainer pull-left">
-      <div class='uiBox'>
-        <h5 class='title'><% uicomponent.renderChild(UIDropDownControl.class) ;%></h5>
+      <div class="uiBox">
+        <h5 class="title"><% uicomponent.renderChild(UIDropDownControl.class) ;%></h5>
 			<% 
 				for(category in categories) {
 					templates = category.getSelectItemOptions();
@@ -72,8 +72,8 @@
 					%>
 							<div class="itemDetail uiBox"	style="display: $display;">
 									<h5 class="title"><%=_ctx.appRes("UIWizardPageSelectLayoutForm.label."+template.label)%></h5>
-                  <div class='container'>
-									<div class="$template.icon" title="$template.label"><span></span></div>
+                  <div class="containerLayout">
+										<div class="$template.icon" title="$template.label"><span></span></div>
                   </div>
 							</div> 
 					<%}%>

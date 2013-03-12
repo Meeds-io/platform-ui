@@ -11,7 +11,7 @@
 	rcontext.getJavascriptManager().require("SHARED/jquery", "\$").require("SHARED/uiPopupWindow", "uiPopupWindow")
 			  .addScripts("\$('$btn').click(function() {uiPopupWindow.show('$popupId')});");
 %>
-<div id="<%=uicomponent.getId();%>" class="UIAccessGroup">
+<div id="<%=uicomponent.getId();%>" class="uiAccessGroup">
 	<div class="PublicCheck">
 		<table class="UIFormGrid">
 			<tr>
@@ -26,7 +26,7 @@
 		uicomponent.renderChild(UIFormGrid.class);
 		uicomponent.renderChild(UIFormPopupWindow.class);
 	%>
-	<div class="uiAction"> 
+	<div class="uiAction uiActionBorder"> 
 		<a href="javascript:void(0);" class="btn btn-primary"><i class="uiIconAddUser uiIconWhite"></i><%=_ctx.appRes("UIListPermissionSelector.action.addPermission")%></a>
 	</div>
 	<%}%>
