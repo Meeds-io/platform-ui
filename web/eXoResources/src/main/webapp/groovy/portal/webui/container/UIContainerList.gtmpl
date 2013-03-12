@@ -8,7 +8,7 @@
 	JavascriptManager jsManager = rcontext.getJavascriptManager();
 	jsManager.require("SHARED/portalDragDrop", "portalDragDrop").addScripts("portalDragDrop.init(['DragObjectPortlet']);");
 %>	
-<div class="uiContainerList" id="$uicomponent.id" style="border: 1px solid red">
+<div class="uiContainerList" id="$uicomponent.id">
 	<div class="accordion verticalTabStyle1">
  		<% 
  			String cTab, cName, description, displayName;

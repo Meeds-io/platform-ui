@@ -5,7 +5,7 @@
 
 		<h5 class="wizardStepTitleBar title">
 			
-			<i class="uiIconAddPage"></i>
+			<i class="uiIconAddPage uiIconLightGray"></i>
 			<span class="wizardTitle">
 				<%=_ctx.appRes(uicomponent.getId() + ".label.pageCreateWizard")%>:
 			</span>
