@@ -1,41 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    Copyright (C) 2009 eXo Platform SAS.
-    
+    Copyright (C) 2003-2013 eXo Platform SAS.
+
     This is free software; you can redistribute it and/or modify it
     under the terms of the GNU Lesser General Public License as
-    published by the Free Software Foundation; either version 2.1 of
+    published by the Free Software Foundation; either version 3 of
     the License, or (at your option) any later version.
-    
+
     This software is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
     Lesser General Public License for more details.
-    
+
     You should have received a copy of the GNU Lesser General Public
     License along with this software; if not, write to the Free
     Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
     02110-1301 USA, or see the FSF site: http://www.fsf.org.
 
 -->
-
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.exoplatform.platform-ui</groupId>
     <artifactId>platform-ui</artifactId>
+    <groupId>org.exoplatform.platform-ui</groupId>
     <version>4.0.0-relooking-SNAPSHOT</version>
-    <relativePath>../../pom.xml</relativePath>
   </parent>
-
-  <groupId>org.exoplatform.platform-ui</groupId>
   <artifactId>platform-ui-webui-core</artifactId>
-  <version>4.0.0-relooking-SNAPSHOT</version>
   <packaging>jar</packaging>
-  <name>GateIn Portal WebUI Core</name>
-
+  <name>Platform-UI - WebUI Core</name>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.gatein.portal</groupId>
+        <artifactId>exo.portal.parent</artifactId>
+        <version>${org.gatein.portal.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   <dependencies>
+    <dependency>
+      <groupId>org.gatein.common</groupId>
+      <artifactId>common-common</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.gatein.portal</groupId>
+      <artifactId>exo.portal.component.portal</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.gatein.portal</groupId>
+      <artifactId>exo.portal.component.web.api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.gatein.portal</groupId>
+      <artifactId>exo.portal.component.web.server</artifactId>
+    </dependency>
     <dependency>
       <groupId>org.gatein.portal</groupId>
       <artifactId>exo.portal.webui.framework</artifactId>
@@ -46,48 +67,21 @@
     </dependency>
     <dependency>
       <groupId>org.gatein.portal</groupId>
-      <artifactId>exo.portal.component.portal</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.gatein.portal</groupId>
-      <artifactId>exo.portal.component.web.server</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.gatein.portal</groupId>
-      <artifactId>exo.portal.component.web.api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.gatein.common</groupId>
-      <artifactId>common-common</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.gatein.portal</groupId>
       <artifactId>exo.portal.component.test.core</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
-
   <build>
     <plugins>
       <!-- Override checkstyle plugin config to avoid constraint on project version number -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>${version.checkstyle.plugin}</version>
-        <configuration>
-          <configLocation>gatein-portal-checkstyle/checkstyle.xml</configLocation>
-          <consoleOutput>true</consoleOutput>
-          <failsOnError>true</failsOnError>
-          <useFile/>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.gatein</groupId>
-            <artifactId>gatein-portal-build-config</artifactId>
-            <!--<version>${project.version}</version>-->
-            <version>3.5.0.Final</version>
-          </dependency>
-        </dependencies>
         <executions>
           <execution>
             <id>check-style</id>
@@ -97,6 +91,19 @@
             </goals>
           </execution>
         </executions>
+        <dependencies>
+          <dependency>
+            <groupId>org.gatein.portal</groupId>
+            <artifactId>gatein-portal-build-config</artifactId>
+            <version>${org.gatein.portal.version}</version>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <configLocation>gatein-portal-checkstyle/checkstyle.xml</configLocation>
+          <consoleOutput>true</consoleOutput>
+          <failsOnError>true</failsOnError>
+          <useFile></useFile>
+        </configuration>
       </plugin>
     </plugins>
   </build>
