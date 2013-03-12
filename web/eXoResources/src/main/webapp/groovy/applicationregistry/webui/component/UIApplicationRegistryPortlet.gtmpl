@@ -21,11 +21,11 @@
 	      <i class="uiIconManageApplication uiIconLightGray"></i>
 	      <%=_ctx.appRes("UIToolbar.label.organize")%>
 			</a>
-      <a onclick="<%=uicomponent.event("ViewChild", "UIGadgetManagement")%>" class="actionIcon $portlet pull-right">
+      <a onclick="<%=uicomponent.event("ViewChild", "UIGadgetManagement")%>" class="actionIcon $gadget pull-right">
         <i class="uiIconGadgets uiIconLightGray"></i>
         <%=_ctx.appRes("UIToolbar.label.gadget")%>
       </a>
-      <a onclick="<%=uicomponent.event("ViewChild", "UIPortletManagement")%>" class="actionIcon $gadget pull-right">
+      <a onclick="<%=uicomponent.event("ViewChild", "UIPortletManagement")%>" class="actionIcon $portlet pull-right">
         <i class="uiIconPortlet uiIconLightGray"></i>
         <%=_ctx.appRes("UIToolbar.label.portlet")%>
       </a>
