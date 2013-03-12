@@ -4,12 +4,12 @@
 	String cssItem;
 %>
 <div class="uiGadgetManagement" id="$uicomponent.id">
-  <div class="uiGadgetControl">
-    <div class="uiGrayLightBox clearfix">
-      <a class="actionIcon" onclick="<%= uicomponent.event("AddRemoteGadget") %>"><i class="uiIconAddRemoteGadget uiIconLightGray"></i><%=_ctx.appRes("UIGadgetManagement.label.addRemote")%></a>
-      <a class="actionIcon" onclick="<%= uicomponent.event("AddLocalGadget") %>"><i class="uiIconCreateNewGadget uiIconLightGray"></i><%=_ctx.appRes("UIGadgetManagement.label.createNew")%></a>
-    </div>
-  </div>
+  
+	<div class="uiGrayLightBox clearfix">
+	  <a class="actionIcon" onclick="<%= uicomponent.event("AddRemoteGadget") %>"><i class="uiIconAddRemoteGadget uiIconLightGray"></i><%=_ctx.appRes("UIGadgetManagement.label.addRemote")%></a>
+	  <a class="actionIcon" onclick="<%= uicomponent.event("AddLocalGadget") %>"><i class="uiIconCreateNewGadget uiIconLightGray"></i><%=_ctx.appRes("UIGadgetManagement.label.createNew")%></a>
+	</div>
+ 
   <div class="uiGadgetList row">
     <div class="span3 uiBox accordion">
       <% 

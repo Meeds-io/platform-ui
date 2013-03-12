@@ -7,22 +7,22 @@ def apps = uicomponent.getApplications();
 def selectedApp = uicomponent.getSelectedApplication();
 %>
 <div class="uiOrganizerManagement" id="$uicomponent.id">
-  <div class="uiOrganizerControl">
-      <div class="uiGrayLightBox clearfix">
-	      <a class="actionIcon pull-left" onclick="<%= uicomponent.event("AddCategory") %>">
-	          <i class="uiIconManageCategory uiIconLightGray"></i>
-	          <%=_ctx.appRes("UIOrganizer.label.addCategory")%>
-	      </a>   
-        <% if(uicomponent.isShowImport()) { %>
-     
-	      <a class="actionIcon pull-right" onclick="<%= uicomponent.event("ImportAllApplications") %>">
-	        <i class="uiIconImport uiIconLightGray"></i>
-	        <%=_ctx.appRes("UIOrganizer.label.autoImport")%>
-	      </a>
-        
-        <% } %> 
-      </div>
+  
+  <div class="uiGrayLightBox clearfix">
+      <a class="actionIcon pull-left" onclick="<%= uicomponent.event("AddCategory") %>">
+          <i class="uiIconManageCategory uiIconLightGray"></i>
+          <%=_ctx.appRes("UIOrganizer.label.addCategory")%>
+      </a>   
+    <% if(uicomponent.isShowImport()) { %>
+ 
+      <a class="actionIcon pull-right" onclick="<%= uicomponent.event("ImportAllApplications") %>">
+        <i class="uiIconImport uiIconLightGray"></i>
+        <%=_ctx.appRes("UIOrganizer.label.autoImport")%>
+      </a>
+    
+    <% } %> 
   </div>
+  
   
   <div class="row uiOrganizerCategories">
     <div class="span3 uiBox accordion" id="ApplicationRegistryCategory">

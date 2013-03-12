@@ -32,11 +32,11 @@
 	  </div>
 
 		
-		<div class="portletContainer">
+		
 		<%			
 			uicomponent.renderChildren();
 		%>				
-		</div>
+		
 	<%} else {
 		for(inputEntry in uicomponent.getChildren()) {
 				if (inputEntry instanceof UIApplicationRegistryEditMode) {
