@@ -85,7 +85,7 @@
             <groupId>org.gatein</groupId>
             <artifactId>gatein-portal-build-config</artifactId>
             <!--<version>${project.version}</version>-->
-            <version>${org.exoplatform.portal.version}</version>
+            <version>3.5.0.Final</version>
           </dependency>
         </dependencies>
         <executions>

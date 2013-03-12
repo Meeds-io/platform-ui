@@ -43,7 +43,7 @@
   </scm>
 
   <properties>
-    <org.exoplatform.portal.version>3.5.0.Final</org.exoplatform.portal.version>
+    <org.exoplatform.portal.version>3.5.3.Final</org.exoplatform.portal.version>
   </properties>
 
   <modules>
