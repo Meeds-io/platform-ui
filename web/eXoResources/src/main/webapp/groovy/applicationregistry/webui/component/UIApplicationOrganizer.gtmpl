@@ -24,7 +24,7 @@ def selectedApp = uicomponent.getSelectedApplication();
       </div>
   </div>
   
-  <div class="row-fluid uiOrganizerCategories">
+  <div class="row uiOrganizerCategories">
     <div class="span3 uiBox accordion" id="ApplicationRegistryCategory">
     <h6 class="title"><%=_ctx.appRes("UIOrganizer.label.categories")%></h6>
       <% 
@@ -98,7 +98,7 @@ def selectedApp = uicomponent.getSelectedApplication();
         </div>
         <% } %>
     </div>
-    <div class="appWorkingArea uiBox span9">
+    <div class="appWorkingArea uiBox offset3">
     <% uicomponent.renderChildren() %>
     </div>
   </div>

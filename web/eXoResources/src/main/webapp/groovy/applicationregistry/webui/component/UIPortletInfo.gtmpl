@@ -18,14 +18,14 @@
     <div class="uiBreadcrumb">
       <ul class="breadcrumb">
         <li><%=_ctx.appRes("UIPortletManagement.title." + portlet.getType())%><span class="uiIconMiniArrowRight"></span></li>
-        <li><%=portlet.getPortletGroup()%><span class="uiIconMiniArrowRight"></span></li>
+        <li><%=portlet.getPortletGroup()%><span class="uiIconMiniArrowRight uiIconLightGray"></span></li>
         <li class='active'><%=portlet.getDisplayName() %></li>
       </ul>
     </div>
     <hr />
-    <div class='row-fluid'>
-      <img class='pull-left' src="$srcBG" onError="src='$srcBGError'" alt=""/>
-      <dl class="dl-horizontal pull-left">
+    <div class="row">
+      <div class="portletIcons span2"><img class='pull-left' src="$srcBG" onError="src='$srcBGError'" alt=""/></div>
+      <dl class="dl-horizontal offset2">
         <dt><%=_ctx.appRes("UIPortletInfo.label.display")%></dt><dd><%= portlet.getDisplayName() %></dd>
         <dt><%=_ctx.appRes("UIPortletInfo.label.name")%></dt><dd><%= portlet.getName() %></dd>
         <dt><%=_ctx.appRes("UIPortletInfo.label.description")%></dt><dd><%= portlet.getDescription() %></dd>

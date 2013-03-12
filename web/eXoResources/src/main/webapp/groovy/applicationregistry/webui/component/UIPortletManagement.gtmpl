@@ -5,8 +5,8 @@
 	def selectedPortlet = uicomponent.getSelectedPortlet();
 %>
 <div class="uiPortletManagement" id="$uicomponent.id">
-  <div class='uiPortletCategories row-fluid'>
-    <div class='span3 uiBox accordion' id="ApplicationRegistryPortlet">
+  <div class="uiPortletCategories row">
+    <div class="span3 uiBox accordion" id="ApplicationRegistryPortlet">
       <%
         boolean isSelectedType = false;
         for(type in portletTypes) {
@@ -29,13 +29,13 @@
               <%
                 boolean isSelected = false;
                 for(app in webApps) { %> 
-                <li class='category'><p><%=app.getName(); %></p></li>  
+                <li class="category"><p><%=app.getName(); %></p></li>  
               <%
                   for(portlet in app.getPortlets()) {
 						        if(!isSelected && portlet.getId().equals(selectedPortlet.getId())) isSelected = true;
 						        else isSelected = false;
               %>
-              <li class='item'>
+              <li class="item">
                 <% if(isSelected) { %>
                 <strong><%= portlet.getDisplayName() %></strong>
                 <% } else { %>
@@ -52,7 +52,7 @@
       <% } %>
     </div>
     
-    <div class="appWorkingArea uiBox span9">
+    <div class="appWorkingArea uiBox offset3">
     <% uicomponent.renderChildren() %>
     </div>
   </div>

@@ -10,7 +10,7 @@
       <a class="actionIcon" onclick="<%= uicomponent.event("AddLocalGadget") %>"><i class="uiIconCreateNewGadget uiIconLightGray"></i><%=_ctx.appRes("UIGadgetManagement.label.createNew")%></a>
     </div>
   </div>
-  <div class="uiGadgetList row-fluid">
+  <div class="uiGadgetList row">
     <div class="span3 uiBox accordion">
       <% 
       for(gadget in uicomponent.getGadgets()) {
@@ -43,7 +43,7 @@
       <% } %>  
     </div>
     
-    <div class="appWorkingArea uiBox span9">
+    <div class="appWorkingArea uiBox offset3">
     <% uicomponent.renderChildren() %>
     </div>
   </div>

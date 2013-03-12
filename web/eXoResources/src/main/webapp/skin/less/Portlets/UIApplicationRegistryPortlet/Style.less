@@ -33,9 +33,29 @@
 	}
 	
 	.uiOrganizerCategories {
+		padding: 0px 20px;
+		.category {
+			border-top: 1px solid #FFFFFF;
+		}
 		.accordion {
+			margin: 0 0 0 20px;
+			width: 250px;
+			.heading {
+				background: #F5F5F5;
+				padding-right: 5px;
+				p {
+					margin: 5px;
+				}
+			}
+			a {
+				cursor: pointer;
+			}
+			a:hover {
+				color: #2F5E92;
+			}
 			.item {
 				padding-right: 5px;
+				margin-left: 20px;
 			}
 			a.actionIcon {
 				margin: 2px 0;
@@ -44,109 +64,99 @@
 				margin-top: 5px;
 			}
 		}
-	}
+		.appWorkingArea {
+			margin-left: 290px;
+			overflow: hidden;
+			padding: 20px;
+			.hintMessage {
+				font-style: italic;
+				padding: 10px;
+				text-align: center;
+			}
+			.span2 {
+				width:80px;
+			}
+			.offset2 {
+				overflow: hidden;
+				margin-left: 80px;
+			}
+		}
+	}		
+}
+
+.uiPortletManagement {
+	 .uiPortletCategories {
+		padding: 0px 20px; 
+		width: auto;
+		.accordion {
+			margin: 0 0 0 20px;
+			width: 250px;
+		}
+		.heading {
+			background: #F5F5F5;
+			line-height: 35px;
+		  padding: 0 5px;
+		}
 	
+		.category {
+			background: #F5F5F5;
+		  border-top: 1px solid #FFFFFF;
+		  border-bottom: 0 none;
+		  height: 30px;
+			p {
+				padding: 5px 10px;
+			}
+		}
+
+		.item {
+		  list-style-type: disc;
+		  margin: 5px 40px;
+		}
+	}
+
+	.appWorkingArea {
+		margin-left: 290px;
+		overflow: hidden;
+		padding: 20px;
+		.span2 {
+			width:80px;
+		}
+		.offset2 {
+			overflow: hidden;
+			margin-left: 80px;
+		}
+	}
 }
 
+.uiGadgetManagement {
+	.appWorkingArea {
+		margin-left: 290px;
+		overflow: hidden;
+		padding: 20px;
+		.span2 {
+			width:80px;
+		}
+		.offset2 {
+			overflow: hidden;
+			margin-left: 80px;
+		}
+	}
+	.accordion {
+		margin: 0 0 0 20px;
+		width: 250px;
+	}
+	.uiGadgetList {
+		padding: 0px 20px; width: auto;
+		.item {
+			margin-left: 20px;
+		  list-style-type: disc;
+		  margin-top: 3px;
+		}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.uiOrganizerManagement .uiOrganizerCategories {
-	padding: 0px 20px; width: auto;
-}
-
-.uiOrganizerManagement .uiOrganizerCategories .heading {
-	background: none repeat scroll 0 0 #F5F5F5;
-}
-
-.uiOrganizerManagement .uiOrganizerCategories .heading p {
-	margin: 5px;	
-}
-
-.uiOrganizerManagement .uiOrganizerCategories .category {
-	border-top: 1px solid #FFFFFF;
-}
-
-.uiOrganizerManagement .uiOrganizerCategories .item {
-	margin-left: 20px;
-}
-
-.uiOrganizerManagement .appWorkingArea {
-	padding: 20px;
-}
-
-.uiOrganizerManagement .appWorkingArea .hintMessage {
-	font-style: italic;
-	padding: 10px;
-	text-align: center;
-}
-
-.uiPortletManagement .uiPortletCategories {
-	padding: 0px 20px; width: auto;
-}
-
-.uiPortletManagement .uiPortletCategories .heading {
-	background: none repeat scroll 0 0 #F5F5F5;
-	line-height: 35px;
-    padding: 0 5px
-}
-
-.uiPortletManagement .uiPortletCategories .category {
-	background: none repeat scroll 0 0 #F5F5F5;
-  border-top: 1px solid #FFFFFF;
-  border-bottom: 0 none;
-  height: 30px;
-}
-
-.uiPortletManagement .uiPortletCategories .category p {
-	padding: 5px 10px;
-}
-
-.uiPortletManagement .uiPortletCategories .item {
-  list-style-type: disc;
-  margin: 5px 40px;
-}
-
-.uiPortletManagement .appWorkingArea {
-	padding: 20px;
-}
-
-.uiGadgetManagement .appWorkingArea {
-	padding: 20px;
-}
-
-.uiGadgetManagement .uiGadgetList {
-	padding: 0px 20px; width: auto;
-}
-
-.uiGadgetManagement .uiGadgetList .item {
-	margin-left: 20px;
-  list-style-type: disc;
-  margin-top: 3px;
-}
-
-.uiGadgetManagement .uiGadgetList .heading {
-  background: none repeat scroll 0 0 #F5F5F5;
-  border-top: 1px solid #FFFFFF;
-  border-bottom: 0 none;
+		.heading {
+		  background: #F5F5F5;
+		  border-top: 1px solid #FFFFFF;
+		  border-bottom: 0 none;
+		}
+	}
 }
