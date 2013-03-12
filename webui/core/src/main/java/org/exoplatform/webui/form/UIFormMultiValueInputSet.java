@@ -205,17 +205,17 @@ public class UIFormMultiValueInputSet extends UIFormInputContainer<List> {
             uiInput.processRender(context);
 
             if ((size >= 2) || ((size == 1) && (uiInput.getValue() != null))) {
-                writer.append("<i onclick=\"");
+                writer.append("<a class=\"actionIcon\"><i onclick=\"");
                 writer.append(uiForm.event("Remove", uiInput.getId())).append("\" title=\"" + removeItem + "\"");
                 writer
-                        .append(" class=\"uiIconTrash multiFieldAction\"></i>");
+                        .append(" class=\"uiIconTrash multiFieldAction\"></i></a>");
             }
             if (i == size - 1) {
 
-                writer.append("<i onclick=\"");
+                writer.append("<a class=\"actionIcon\"><i onclick=\"");
                 writer.append(uiForm.event("Add", getId())).append("\" title=\"" + addItem + "\"");
                 writer
-                        .append(" class=\"uiIconPlus multiFieldAction\" ></i>");
+                        .append(" class=\"uiIconPlus multiFieldAction\" ></i></a>");
             }
             writer.append("</li>");
         }
