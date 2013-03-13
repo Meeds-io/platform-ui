@@ -1,7 +1,7 @@
 <%	
 	def rcontext = _ctx.getRequestContext();
 	rcontext.getJavascriptManager().require("SHARED/jquery", "\$")
-    .addScripts("var tabs = \$('#$uicomponent.id .uiTab a');" + 
+    .addScripts("var tabs = \$('#$uicomponent.id > .btn-group .btn');" + 
       "tabs.on('click', function() {" +  
       "tabs.toggleClass('active'); \$('#$uicomponent.id .uiTabContent').toggle(); });");
 %>
