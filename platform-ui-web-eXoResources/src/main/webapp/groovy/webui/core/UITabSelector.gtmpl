@@ -6,7 +6,7 @@
       "tabs.toggleClass('active'); \$('#$uicomponent.id .uiTabContent').toggle(); });");
 %>
 <div class="uiTabSelector" id="$uicomponent.id">
-		<div class="btn-group uiDropdownWidthIcon">
+		<div class="btn-group uiDropdownWithIcon">
     <%
 			String selectedId = uicomponent.getSelectedComponentId();
 			for(uiChild in uicomponent.getChildren()) {
