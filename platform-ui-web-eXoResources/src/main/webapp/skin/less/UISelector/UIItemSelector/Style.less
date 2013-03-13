@@ -1,6 +1,19 @@
 .uiItemSelector {
 	.itemListContainer {
 		width: 220px;
+		.item {
+			a {
+				color: @textColor;
+			}
+		}
+		.item.selectedItem {
+			a {
+				color: #2F5E92;
+			}
+			background: #f8f8f8;
+			margin: 0 -20px;
+			padding: 0 20px;
+		}
 	}
 	.itemDetailList {
 		margin-left: 260px; 
@@ -31,5 +44,37 @@
 	}
 	.itemDetailList {
 		margin-left: 230px;
+	}
+}
+
+/*************************** uiItemSelector uiFormInputItemSelector ************************************/
+.uiItemSelector.uiFormInputItemSelector {
+	.itemListContainer {
+		.uiContentBox {
+			min-height: 238px;
+		}
+	}
+	.itemDetailList {
+		margin-left: 234px;
+		.WAIPortalImage {
+	    background: url("/eXoWCMResources/skin/DefaultSkin/wcm-portal/background/WAIPortal.png") no-repeat center;
+	    margin: 3px auto;
+	    .size(230px,296px);
+	  }
+	  .emptyImage {
+	    background: url("/eXoPlatformResources/skin/platformSkin/platform-portal/empty.png") no-repeat center;
+	    margin: 3px auto;
+	    .size(235px,296px);
+		}
+		.acmeImage {
+	    background: url("/eXoPlatformResources/skin/platformSkin/platform-portal/acme.png") no-repeat center;
+	    margin: 3px auto;
+	    .size(230px,296px);
+		}
+		.intranetImage {
+	    background: url("/eXoPlatformResources/skin/platformSkin/platform-portal/intranet.png") no-repeat center;
+	    margin: 3px auto;
+	    .size(230px,296px);
+		}
 	}
 }

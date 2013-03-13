@@ -8,42 +8,33 @@
 	rcontext.getJavascriptManager().require("SHARED/selectors", "selectors").require("SHARED/uiForm")
 			  .addScripts("selectors.UIItemSelector.init('#$uicomponent.id .ItemList > div');");
 %>
-<div class="UIItemSelector" id="$uicomponent.id">	
-	<div class="RightColumnStyle" style="width: 99.5%;">
-		<input type="hidden" name="$uicomponent.name" value ="">
+<div class="uiItemSelector clearfix uiFormInputItemSelector" id="$uicomponent.id">	
+  <input type="hidden" name="$uicomponent.name" value ="">
 		<%/*Begin ItemList*/%>
-		<div class="ItemListContainer">
-			<div class="ItemListTitle ClearFix">
-				<div class="TitleIcon ItemListIcon"><span></span></div>
-				<div class="Title"><%=_ctx.appRes(uicomponent.getName() + ".title")%></div>
-			</div>
-			<div class="ItemList">
-				<%
-					for(opt in options) { 
-						String itemSelected = "Item" ;
-						String setHiddenValue = "eXo.webui.UIForm.setHiddenValue('$form.name', '$uicomponent.name','$opt.name')";
-						String submitEvent = "eXo.webui.UIForm.submitEvent('$form.id','SelectItemOption', '')";
-						if (opt.isSelected()) itemSelected = "SelectedItem Item" ;
-				 %>
-						<div class="$itemSelected">
-							<div class="LeftItem">
-								<div class="RightItem">	
-									<div class="ItemTitle"><%=_ctx.appRes(opt.getName() + ".label")%></div>
-								</div>
-							</div>
-							<div class="ExtraActions" style="display: none">$setHiddenValue;$submitEvent</div>
-						</div>
-				<%}%>
-			</div>
+		<div class="itemListContainer pull-left uiBox">
+		    <h5 class="title"><%=_ctx.appRes(uicomponent.getName() + ".title")%></h5>
+				<ul class="itemList uiContentBox">
+					<%
+						for(opt in options) { 
+							String itemSelected = "";
+							String setHiddenValue = "eXo.webui.UIForm.setHiddenValue('$form.name', '$uicomponent.name','$opt.name')";
+							String submitEvent = "eXo.webui.UIForm.submitEvent('$form.id','SelectItemOption', '')";
+							if (opt.isSelected()) itemSelected = "selectedItem" ;
+					 %>
+					    <li class="$itemSelected item">
+								<a href="javascript:void(0);" class="itemTitle">
+									<i class="uiIconArrowRight"></i><%=_ctx.appRes(opt.getName() + ".label")%>
+								</a>
+								<div class="extraActions" style="display: none">$setHiddenValue;$submitEvent</div>
+							</li>
+					<%}%>
+				</ul>
 		</div>
 		<%/*End ItemList*/%>
 					
 		<%/*Begin ItemDetailList*/%>
-		<div class="ItemDetailList">
-			<div class="ItemDetailTitle ClearFix">
-				<div class="TitleIcon ViewListIcon"><span></span></div>
-				<div class="Title"><%=_ctx.appRes(uicomponent.getName() + ".left.title")%></div>
-			</div>
+		<div class="itemDetailList uiBox">
+			  <h5 class="title"><%=_ctx.appRes(uicomponent.getName() + ".left.title")%></h5>
 			<%		 
 				for(opt in options) {
 					boolean Selected = true;
@@ -51,7 +42,7 @@
 					temps = opt.getSelectItemOptions();
 					if(opt.isSelected()) display = "block";
 			%>
-					<div class="ItemDetail" style="display: $display;">
+					<div class="itemDetail uiContentBox" style="display: $display;">
 					<%							 
 						for(temp in temps){							 
 						 String label = "";
@@ -59,15 +50,13 @@
 							 label = temp.getLabel();
 						 }
 					%>
-						<div class="TemplateContainer">
-							<div class="Template">
+						<div class="itemContainer">
 								<div title="$label" class="<%=temp.getIcon();%>Image"><span></span></div>
-							</div>
 						</div>
 					<%}%>
 					</div> 
 			<%}%>
+		
 		</div>	
 		<%/*End ItemDetailList*/%>			
-	</div>
 </div>
