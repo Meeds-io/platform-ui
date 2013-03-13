@@ -975,4 +975,10 @@ Round corner box with title
 	}
 }
 
-
+.truncateText(@width: 100%) {
+	display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	width: @width;
+}
