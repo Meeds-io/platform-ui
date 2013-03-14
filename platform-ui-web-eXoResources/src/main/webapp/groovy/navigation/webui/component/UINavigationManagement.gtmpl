@@ -2,23 +2,9 @@
   import org.exoplatform.portal.webui.page.UIPageBrowser;
   import org.exoplatform.navigation.webui.component.UINavigationNodeSelector;
 %>
-<div class="UINavigationManagement" id="$uicomponent.id">
-	<div class="TopTitleBar">
-	  <div class="DecoratorBox">
-	    <div class="BarDecorator">
-	      <div class="TopLeftBar">
-	          <div class="TopCenterBar"><span></span></div>
-	      </div>
-	      <div class="MiddleLeftBar">
-	          <div class="MiddleCenterBar" style="background-image: none;">
-	          	<%= uicomponent.getSiteKey().getName();%>
-	          </div>
-	      </div>
-	      <div class="BottomLeftBar">
-	          <div class="BottomCenterBar"><span></span></div>
-	      </div>
-	    </div>
-	  </div>
+<div class="uiNavigationManagement" id="$uicomponent.id">
+	<div class="uiGrayLightBox noRounded">
+	  <%= uicomponent.getSiteKey().getName();%>     
 	</div>	
   <%
   	uicomponent.renderChild(UINavigationNodeSelector.class);
