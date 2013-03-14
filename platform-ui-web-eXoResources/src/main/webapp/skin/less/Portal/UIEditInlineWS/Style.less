@@ -31,6 +31,29 @@
 	    > span {
 	    	margin: 0 8px 0 2px;
 	    }
+	    .dropdown-menu {
+			.border-radius(@baseBorderRadius);
+				&.dropdown-menu:after {
+			    border-bottom: 6px solid #FFFFFF;
+			    border-left: 6px solid transparent;
+			    border-right: 6px solid transparent;
+			    content: "";
+			    display: inline-block;
+			    left: 10px;
+			    position: absolute;
+			    top: -6px;
+				}
+				&:before {
+			    border-bottom: 7px solid rgba(0, 0, 0, 0.2);
+			    border-left: 7px solid transparent;
+			    border-right: 7px solid transparent;
+			    content: "";
+			    display: inline-block;
+			    left: 9px;
+			    position: absolute;
+			    top: -7px;
+				}
+			}
 		}
 		.NewLayer {
 			background: none;
@@ -58,6 +81,7 @@
 			.border-radius(3px);
 			min-height: 85px;
 			padding: 5px 10px;
+			text-align: center;
 		}
 		
 		.portletLayoutDecoratorHover {
@@ -67,10 +91,61 @@
 			border-top-left-radius: 0px;
 			min-height: 85px;
 			padding: 5px 10px;
-		}
-		
-		
+			text-align: center;			
+		}	
 		
 	}
+
+/**************************** uiContainerList *******************************/	
+	.uiContainerList {
+		[class*="ContainerLayout"] {
+			background: url("/eXoResources/skin/images/Container/Container.png") no-repeat center;
+			padding-left: 95px;
+			font-weight:bold;
+			margin-top: 3px;
+		}
+		.OneRowContainerLayout {
+			background-position: 5px top;
+			height: 41px;
+		}
+		.TwoRowContainerLayout {
+			background-position: 5px -41px;
+			height: 41px;
+		}
+		.ThreeRowContainerLayout {
+			background-position: 5px -82px;
+			height: 41px;
+		}
+		.TwoColumnContainerLayout {
+			background-position: 5px -154px;
+			height: 31px;
+		}
+		.ThreeColumnContainerLayout {
+			background-position: 5px -185px;
+			height: 31px;
+		}
+		.TwoTabContainerLayout {
+			background-position: 5px -216px;
+			height: 31px;
+		}
+		.ThreeTabContainerLayout {
+			background-position: 5px -247px;
+			height: 31px;
+		}
+		.TwoColumnOneRowContainerLayout {
+			background-position: 5px -278px;
+			height: 41px;
+		}
+		.OneRowTwoColumnContainerLayout {
+			background-position: 5px -319px;
+			height: 41px;
+		}
+		.OneRow2Column1RowContainerLayout {
+			background-position: 5px -360px;
+			height: 41px;
+		}
+	}
+
+	
 	
 }

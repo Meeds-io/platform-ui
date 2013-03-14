@@ -41,7 +41,7 @@
 					String title = _ctx.appRes("ContainerOptions.Item." + setLabel);
 			%>
 			  <div class="accordion-inner clearfix DragObjectPortlet" id="$setLabel">
-					<div class="$setIcon ontainerIcon">
+					<div class="$setIcon">
 						<div class="tabLabel" title="$title">$title</div>
 					</div>
 				</div>
