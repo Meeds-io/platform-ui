@@ -6,7 +6,7 @@
 	
 	def rcontext = _ctx.getRequestContext(); 
 	rcontext.getJavascriptManager().require("SHARED/selectors", "selectors").require("SHARED/uiForm")
-			  .addScripts("selectors.UIItemSelector.init('#$uicomponent.id .ItemList > div');");
+			  .addScripts("selectors.UIItemSelector.init('#$uicomponent.id .itemList > li');");
 %>
 <div class="uiItemSelector clearfix uiFormInputItemSelector" id="$uicomponent.id">	
   <input type="hidden" name="$uicomponent.name" value ="">
