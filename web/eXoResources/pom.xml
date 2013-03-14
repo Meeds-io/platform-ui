@@ -9,13 +9,13 @@
   <parent>
     <groupId>org.exoplatform.platform-ui</groupId>
     <artifactId>platform-ui</artifactId>
-    <version>4.0.0-Beta2</version>
+    <version>4.0.0-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
   <groupId>org.exoplatform.platform-ui</groupId>
   <artifactId>platform-ui-web-eXoResources</artifactId>
-  <version>4.0.0-Beta2</version>
+  <version>4.0.0-SNAPSHOT</version>
   <packaging>war</packaging>
   <name>Platform UI Web Resources</name>
 
