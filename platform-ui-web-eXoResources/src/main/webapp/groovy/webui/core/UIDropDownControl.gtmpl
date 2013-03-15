@@ -1,6 +1,6 @@
 <%
 	import org.exoplatform.web.application.JavascriptManager;
-	
+
 	def rcontext = _ctx.getRequestContext();
 	JavascriptManager jsmanager = rcontext.getJavascriptManager();
 	jsmanager.require("SHARED/webui-ext", "webuiExt").require("SHARED/bts_dropdown")
@@ -15,17 +15,17 @@
 			String label = _ctx.appRes(uicomponent.getId() + ".item." + uicomponent.getLabel());
 			if(label.length() > 25) {
 		%>
-			<i class="uiIconGeneralDrive"></i><span title="<%=label%>"><%=label.substring(0,22)%>...</span>
+			<span title="<%=label%>"><%=label.substring(0,22)%>...</span>
 		<% }else {%>
-			<i class="uiIconGeneralDrive"></i><span><%=label%></span>
+			<span><%=label%></span>
 		<% }}else {%>
-			<i class="uiIconGeneralDrive"></i><span><%=_ctx.appRes(uicomponent.getId() + ".title.Empty")%></span>
+			<span><%=_ctx.appRes(uicomponent.getId() + ".title.Empty")%></span>
 		<% } %>
-		 <span class="caret"></span>
+		 <span class="spiter"></span> <span class="caret"></span>
 	</div>
 
 	<ul class="dropdown-menu" role="menu">
-		
+
 		<%
 			int selectedIndex = 0;
 			for(option in options) {
@@ -41,6 +41,6 @@
 				<% } %>
 			</li>
 		<% selectedIndex++;}%>
-		
+
 	</ul>
 </div>
