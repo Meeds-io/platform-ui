@@ -1,3 +1,4 @@
+
 <%
    import org.exoplatform.webui.core.UIComponent;
    import org.exoplatform.webui.form.UIForm;
@@ -23,7 +24,7 @@
    UIForm uiForm = uicomponent.getAncestorOfType(UIForm.class);
 %>
 <div id="$uicomponent.id">
-   <table class="uiGrid table table-hover table-striped" cellspacing="0">
+   <table class="uiGrid table table-hover " cellspacing="0">
       <thead>
       <tr>
          <% if (name != null)
@@ -33,7 +34,7 @@
          		<% }
          			if (beanActions != null)
          			{ %>
-         				<th><%=_ctx.appRes(name + ".header.action")%></th>
+         				<th class="center"><%=_ctx.appRes(name + ".header.action")%></th>
          		<% }
          		}
          		if (name == null)

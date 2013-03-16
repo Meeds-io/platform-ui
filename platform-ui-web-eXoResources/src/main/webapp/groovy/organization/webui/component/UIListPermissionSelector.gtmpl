@@ -12,7 +12,7 @@
 			  .addScripts("\$('$btn').click(function() {uiPopupWindow.show('$popupId')});");
 %>
 <div id="<%=uicomponent.getId();%>" class="uiAccessGroup">
-	<div class="PublicCheck">
+	<div class="publicCheck">
 		<table class="UIFormGrid">
 			<tr>
 				<td class="FieldLabel"><%=uicomponent.getLabel(uiPublicMode.getId())%></td>
