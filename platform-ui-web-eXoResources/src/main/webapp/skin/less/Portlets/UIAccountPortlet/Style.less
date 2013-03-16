@@ -40,4 +40,26 @@
 	   margin: 0 auto;
        width: 750px;
 	}
+	.tab-content {
+		border-bottom: 0;
+		padding: 25px;
+		.border-radius(0);
+		& + .uiAction{
+			 .border-radius(0 0 @borderRadiusSmall @borderRadiusSmall);
+			 border: 1px solid @borderColor;
+			 background: @white;
+			 padding: 15px 0;
+		}
+		.form-horizontal {
+			padding: 0;
+		}
+	}
+	
+	.nav-tabs {
+		margin: 0px; 
+		background-color: #e3e3e3; 
+		border: 1px solid #c1c1c1; 
+		padding: 5px 5px 0px 5px; 
+		.border-radius(@borderRadiusSmall @borderRadiusSmall 0px 0px);
+	}
 }
