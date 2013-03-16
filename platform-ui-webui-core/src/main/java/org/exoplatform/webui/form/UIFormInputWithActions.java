@@ -63,7 +63,7 @@ public class UIFormInputWithActions extends UIFormInputSet {
         UIForm uiForm = getAncestorOfType(UIForm.class);
         Writer w = context.getWriter();
         w.write("<div id=\"" + getId() + "\" class=\"UIFormInputSet " + getId() + "\">");
-        w.write("<table class=\"UIFormGrid\">");
+        w.write("<div class=\"form-horizontal\">");
         ResourceBundle res = context.getApplicationResourceBundle();
 
         for (UIComponent inputEntry : getChildren()) {
@@ -77,11 +77,11 @@ public class UIFormInputWithActions extends UIFormInputSet {
                     label = inputEntry.getId();
                     log.error("\n " + uiForm.getId() + ".label." + inputEntry.getId() + " not found value");
                 }
-                w.write("<tr>");
-                w.write("<td class=\"FieldLabel\">");
+                w.write("<div class=\"control-group\">");
+                w.write("<label class=\"control-label\" for=\"" + inputEntry.getId() + "\">");
                 w.write(label);
-                w.write("</td>");
-                w.write("<td class=\"FieldComponent\">");
+                w.write("</label>");
+                w.write("<div class=\"controls\">");
                 renderUIComponent(inputEntry);
                 List<ActionData> actions = actionField.get(inputEntry.getName());
                 if (actions != null) {
@@ -101,9 +101,10 @@ public class UIFormInputWithActions extends UIFormInputSet {
                         }
 
                         if (action.getActionType() == ActionData.TYPE_ICON) {
-                            w.write("<img title=\"" + actionLabel + "\" onclick=\"" + actionLink + "\" "
-                                    + "src=\"/eXoResources/skin/DefaultSkin/background/Blank.gif\" class=\""
-                                    + action.getCssIconClass() + "\" alt=\"\"/>");
+                          w.write("<a rel=\"tooltip\" class=\"actionIcon\" data-placement=\"bottom\" title=\"" + actionLabel
+                              + "\" href=\"" + actionLink + "\"><i class=\"" + action.getCssIconClass()
+                              + "\"></i></a>");
+
                             if (action.isShowLabel)
                                 w.write(actionLabel);
                         } else if (action.getActionType() == ActionData.TYPE_LINK) {
@@ -114,11 +115,11 @@ public class UIFormInputWithActions extends UIFormInputSet {
                             w.write("<br/>");
                     }
                 }
-                w.write("</td>");
-                w.write("</tr>");
+                w.write("</div>");
+                w.write("</div>");
             }
         }
-        w.write("</table>");
+        w.write("</div>");
         w.write("</div>");
     }
 
