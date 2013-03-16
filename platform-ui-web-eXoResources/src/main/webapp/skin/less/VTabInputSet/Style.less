@@ -1,0 +1,29 @@
+
+/*=========================UIVTabInputSet===================================*/
+.uiVTabInputSet {
+	.itemListContainer {
+		margin:0px 0 0 10px;			
+		width: 170px;
+		.uiContentBox {
+			padding: 15px;
+		}
+		.itemList {
+			li  {
+				.item {
+					color : @textColor;			
+					display: block;
+					padding:4px 10px;
+					margin: 0;
+					[class^="uiIcon"] {
+						margin-right: 10px;
+					}
+					
+				}
+				& + li .item {
+					margin-top: 4px;
+				}
+			}
+		}
+	}
+
+}
