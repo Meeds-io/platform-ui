@@ -10,6 +10,28 @@
 	li > a {
 	padding: 5px 10px;
 	}
+	&.dropdownArrowTop {
+			&:before,&:after {				
+		    	position: absolute;
+			    content: '';
+			    display: inline-block;
+			}
+			&:before {
+		    border-left:   9px solid transparent;
+		    border-right:  9px solid transparent;
+		    border-bottom: 9px solid #ccc;
+		    border-bottom-color: @dropdownBorder;
+		    top: -9px;
+		    left: 29px;
+		  }
+		  &:after {
+		    border-left:   8px solid transparent;
+		    border-right:  8px solid transparent;
+		    border-bottom: 8px solid @dropdownBackground;
+		    top: -8px;
+		    left: 30px;
+		  }
+	}
 }
 
 .uiDropdownWithIcon{
