@@ -90,7 +90,15 @@
 		padding: 10px; 
 		.border-radius(0px 0px 3px 3px);
 	}
-
+	
+	.tab-content > form > .tab-pane, .pill-content > form > .pill-pane {
+		display: none;
+	}
+	
+	.tab-content > form > .active, .pill-content > form > .active {
+		display: block;
+	}
+	
 	.dropdown-menu {
 		.border-radius(@borderRadiusSmall);
 		min-width: 100px;

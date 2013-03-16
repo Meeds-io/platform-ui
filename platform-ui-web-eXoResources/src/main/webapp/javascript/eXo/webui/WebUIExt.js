@@ -259,16 +259,21 @@
 
     var portletForm = {
         init:function (id, portalControl) {
-            var tabs = $("#" + id + " .UIHorizontalTabs .MiddleTab");
+            var tabs = $("#" + id + " .nav-tabs a");
             tabs.each(function () {
                 var tab = $(this);
                 tab.on("click", function () {
-                    if (tab.attr("id") === "EditMode") {
+                	  var content = tab.attr("data-target");
+                    if (content === "#EditMode-tab") {
                         portletForm.hideSaveButton(this);
                     } else {
                         portletForm.showSaveButton(this);
-                    }
-                    portalControl.UIHorizontalTabs.changeTabForUIFormTabpane(this, id.replace("tab-", ""), tab.attr("id"));
+                    }                    
+                    var contentCont = tab.closest('.nav-tabs').next('.tab-content');
+                    contentCont.find(".active").removeClass("active");
+                    $(content).addClass("active");
+                    
+                    portalControl.UIHorizontalTabs.changeTabForUIFormTabpane(this, id.replace("tab-", ""), content.replace("-tab", "").replace("#", ""));
                     var actionLink = tab.find("~ .ExtraActions");
                     eval(actionLink.html());
                 });
@@ -276,7 +281,7 @@
         },
 
         hideSaveButton:function (comp) {
-            $(comp).closest(".WorkingArea").find("div.HorizontalLayout").children(".UIAction, .uiAction").children("a.ActionButton, .btn").each(function () {
+            $(comp).closest(".uiFormTabPane").find(".uiAction").last().find(".btn").each(function () {
                 var button = $(this);
                 if (button.attr("id").indexOf("Save") >= 0) {
                     button.css("display", "none");
@@ -288,7 +293,7 @@
         },
 
         showSaveButton:function (comp) {
-            $(comp).closest(".WorkingArea").find("div.HorizontalLayout").children(".UIAction, .uiAction").children("a.ActionButton, .btn").each(function () {
+            $(comp).closest(".uiFormTabPane").find(".uiAction").last().find(".btn").each(function () {
                 var button = $(this);
                 if (button.attr("id").indexOf("Save") >= 0) {
                     button.css("display", "inline-block");

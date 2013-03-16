@@ -1,0 +1,98 @@
+<%
+	def rcontext = _ctx.getRequestContext(); 
+	rcontext.getJavascriptManager().require("SHARED/portalControl", "portalControl")
+				.require("SHARED/bts_tab").require("SHARED/webui-ext", "webuiExt")
+				.addScripts("webuiExt.UIPortletForm.init('tab-$uicomponent.id', portalControl);");
+%>
+
+<div class="uiFormTabPane uiTabNormal" id="tab-$uicomponent.id">
+	<ul class="nav nav-tabs">											
+			<%
+				String selTabId = uicomponent.getSelectedTabId(); 			  
+				if(uicomponent.hasEditMode()) {
+					String className=""; 
+					if(selTabId.equals("") || selTabId.equals("EditMode")) className="active"; 
+					String actionLink = uicomponent.event("SelectTab","EditMode"); 
+			%>
+		    <li class="$className">
+							<a data-toggle="tab" data-target="#EditMode-tab"><%= _ctx.appRes("UIPortletForm.tab.label.EditMode") %></a>		
+							<div class="ExtraActions" style="display: none">$actionLink</div>
+				</li>
+			<%
+				}
+				for(inputSet in uicomponent.getChildren()) {
+					if(!inputSet.isRendered()) continue; 
+					String className=""; 
+					if(inputSet.getId().equals(selTabId)) className="active"; 
+					String tabName = inputSet.getName();	
+					tabName = _ctx.appRes(uicomponent.getId() + ".tab.label." + inputSet.getName());	
+					String actionLink = uicomponent.event("SelectTab",inputSet.getId()); 
+%>
+        <li class="$className">
+							<a data-toggle="tab" data-target="#$inputSet.id-tab">$tabName</a>		
+							<div class="ExtraActions" style="display: none">$actionLink</div>
+				</li>
+			<%}%>							
+	</ul>
+	<div class="tab-content">				
+			<%
+				if(uicomponent.hasEditMode()) {
+						String active = ""; 
+					  if(selTabId.equals("") || selTabId.equals("EditMode")) active="active"; 
+			%>
+			<div id="EditMode-tab" class="tab-pane $active">
+				<div class="uiTabContent resizable">
+					<div id="<%=uicomponent.getUIPortlet().getId()%>">
+						<div class="PORTLET-FRAGMENT">
+							<%= uicomponent.getEditModeContent() %>
+						</div>
+				  </div>
+				</div>
+			</div>
+			<%}%>
+				<%uiform.begin()%>
+					<input type="hidden" id="<%=uicomponent.RENDER_TAB%>" name="<%=uicomponent.RENDER_TAB%>" value="$uicomponent.selectedTabId">
+		<%
+			for(formInput in uicomponent.getChildren()) {
+				if(!formInput.isRendered()) continue; 
+				String active = ""; 
+				if(formInput.getId().equals(selTabId)) active="active"; 
+		%>
+		    <div id="$formInput.id-tab" class="tab-pane $active">
+					<div class="uiTabContent resizable">
+						<%
+							uicomponent.renderUIComponent(formInput);
+						%>
+					</div>
+				</div>
+		<%
+			}
+					uiform.end()
+		%>
+		<div class="uiAction">
+			
+						<%for(action in uicomponent.getActions()) { 
+							String actionLabel = _ctx.appRes(uicomponent.getName() + ".action." + action);
+							String link = uicomponent.event(action); 
+							if(uicomponent.hasEditMode() && (selTabId.equals("") || selTabId.equals("EditMode")) && action.contains("Save")) {
+						%>
+								<%if(action.contains("Close")) {
+										String closeLabel = _ctx.appRes("word.close");
+								%>
+										<a style="display: none;" class="btn" href="$link" id="$action" closeLabel="$closeLabel" cancelLabel="$actionLabel"><%=(uicomponent.hasEditMode() && (selTabId.equals("") || selTabId.equals("EditMode"))) ? closeLabel : actionLabel%></a>
+								<%} else {%>
+										<a style="display: none;" class="btn" href="$link" id="$action" >$actionLabel</a>
+								<%}%>
+						<%} else {%>
+								<%if(action.contains("Close")) {
+										String closeLabel = _ctx.appRes("word.close");
+								%>
+										<a class="btn" href="$link" id="$action" closeLabel="$closeLabel" cancelLabel="$actionLabel"><%=(uicomponent.hasEditMode() && (selTabId.equals("") || selTabId.equals("EditMode"))) ? closeLabel : actionLabel%></a>
+								<%} else {%>
+										<a class="btn" href="$link" id="$action" >$actionLabel</a>
+								<%}%>
+						<%}%>
+					<%}%>
+		</div>
+	</div>				
+</div>
