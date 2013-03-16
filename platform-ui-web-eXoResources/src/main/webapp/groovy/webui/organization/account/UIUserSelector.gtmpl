@@ -44,7 +44,7 @@
 				<thead>
 					<tr>
 						<% if(isMulti) {%>
-						<th>
+						<th class="center">
 						<span class="uiCheckbox">
 							<input type="checkbox" class="checkbox" name="selectall"/><span></span>
 						</span>							
@@ -76,15 +76,10 @@
 					</tr>
 					<% } %>
 					<%
-						def rowClass = null;
-						boolean even = true;
-						for (User data : uicomponent.getData()) {
-							if(even) rowClass = "EvenRow";
-							else rowClass = "OddRow";
-							even = !even;
+						for (User data : uicomponent.getData()) {							
 							checkboxField = uicomponent.getChildById(data.getUserName());
 					%>
-						<tr class="$rowClass">
+						<tr>
 							<% if(isMulti) { %>
 							<td class="center">
 								<%
