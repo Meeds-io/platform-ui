@@ -24,7 +24,7 @@
    UIForm uiForm = uicomponent.getAncestorOfType(UIForm.class);
 %>
 <div id="$uicomponent.id">
-   <table class="uiGrid table table-hover " cellspacing="0">
+   <table class="uiGrid table table-hover table-striped" cellspacing="0">
       <thead>
       <tr>
          <% if (name != null)
