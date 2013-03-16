@@ -15,15 +15,11 @@
 <div class="UIPageBody" id="${uicomponent.id}">		
 	<div class="UIComponent UIComponentBlock">
 	<%if(portalMode == UIPortalApplication.APP_BLOCK_EDIT_MODE || portalMode == UIPortalApplication.CONTAINER_BLOCK_EDIT_MODE) {%>
-		<div class="LAYOUT-BLOCK LAYOUT-PAGEBODY DragControlArea PageLayoutDecorator">
-				<%/*Begin Top Decorator*/%>
-				<div class="LeftPage">
-					<div class="RightPage">
-						<div class="CenterPage">
-							<%=_ctx.appRes("UIPage.label.pageContent")%>
-						</div>												
-					</div>
-				</div>	
+		<div class="LAYOUT-BLOCK LAYOUT-PAGEBODY DragControlArea pageLayoutDecorator">
+			<%/*Begin Top Decorator*/%>
+			<div class="title">Portal Page</div>
+			<%=_ctx.appRes("UIPage.label.pageContent")%>
+					
 		</div>
 	<%} else {%>
 		<div class="VIEW-PAGEBODY VIEW-BLOCK DragControlArea" id="PAGEBODY-VIEW-BLOCK">
