@@ -3,6 +3,10 @@
 	import org.exoplatform.webui.form.UIFormStringInput;
 	import org.exoplatform.webui.core.UIPopupWindow;
 	uicomponent.renderChild(UIPopupWindow.class);
+	
+	def rcontext = _ctx.getRequestContext();
+	rcontext.getJavascriptManager().require("SHARED/bts_tooltip").require("SHARED/jquery", "\$")
+	   				 .addScripts("\$('#${uicomponent.id}').find('*[rel=\"tooltip\"]').tooltip();");
 %>
 <div  class="uiFormWithTitle uiGroupMembershipForm uiBox ">
 	<h5 class="title"><%=_ctx.appRes(uicomponent.getName() + ".title")%></h5>
@@ -21,8 +25,8 @@
 						 <label class="control-label" ><%=_ctx.appRes(uicomponent.getName() + ".label.username")%>:</label>
 						<div class="controls">
 							<% uiform.renderField(name) %>
- 							<a href="<%=uicomponent.event("SearchUser")%>"  data-placement="bottom" rel="tooltip" data-original-title="<%=_ctx.appRes(uicomponent.getName() + ".label.SearchUser")%>">
-								<i class="uiIconSearch uiIconLightGray"></i>
+ 							<a href="<%=uicomponent.event("SearchUser")%>"  data-placement="bottom" rel="tooltip" title="<%=_ctx.appRes(uicomponent.getName() + ".label.SearchUser")%>">
+								<i class="uiIconSelectUser uiIconLightGray"></i>
 							</a>
  						</div>
 					</div>
@@ -30,7 +34,7 @@
 						<label class="control-label" ><%=_ctx.appRes(uicomponent.getName() + ".label.membership")%>:</label>
 						<div class="controls">
 							<% uiform.renderField(membership) %>
-							<a  href="<%=uicomponent.event("Refresh")%>"  data-placement="bottom" rel="tooltip" data-original-title="<%=_ctx.appRes(uicomponent.getName() + ".label.Refresh")%>">
+							<a  href="<%=uicomponent.event("Refresh")%>"  data-placement="bottom" rel="tooltip" title="<%=_ctx.appRes(uicomponent.getName() + ".label.Refresh")%>">
 								<i class="uiIconRefresh uiIconLightGray"></i>
 							</a>
 						</div>
