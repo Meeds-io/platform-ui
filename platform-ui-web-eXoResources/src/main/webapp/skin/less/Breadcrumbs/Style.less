@@ -5,19 +5,32 @@
 	
 	a {
 		color: @grayDark;
-		
+		display: block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		max-width: 140px;
+		float: left;
 		&:hover {
 			color: #2f5e92;
 			text-decoration: none !important;
 		}
 	}
+	.uiIconMiniArrowRight{
+		float: left;
+		margin-top: 3px;
+	}
 
 	li {
-		vertical-align: top;
+		vertical-align: middle;
 	}
 	
 	.active {
 		font-weight: bold;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		max-width: 140px;
 		> a {
 			color: @grayLight;
 		}
