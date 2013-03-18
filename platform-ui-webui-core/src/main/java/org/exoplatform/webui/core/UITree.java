@@ -269,6 +269,13 @@ public class UITree extends UIComponent {
             }
         }
 
+        //hard code this one because we can't change code on exoadmin webapp
+        if ("DefaultPageIcon".equals(iconGroup)) {
+            iconGroup = "uiIconFile uiIconLightGray";
+        } else if ("GroupAdminIcon".equals(iconGroup) || "PortalIcon".equals(iconGroup)) {
+            iconGroup = "uiIconGroup uiIconLightGray";
+        }
+
         if (beanIconField_ != null && beanIconField_.length() > 0) {
             if (getFieldValue(obj, beanIconField_) != null)
                 iconGroup = (String) getFieldValue(obj, beanIconField_);
@@ -297,11 +304,7 @@ public class UITree extends UIComponent {
             builder.append(" <a href=\"javascript:void(0);\" class=\"uiIconNode ").append(nodeIcon).append(note).append("\" ").append(rightClick)
             .append(" title=\"").append(getFieldValue(obj, beanLabelField_)).append("\" onclick=\"").append(actionLink).append("\">");
         }
-        if (uiPopupMenu_ == null) {
-            builder.append("<i class=\"uiIconFile uiIconGroup\"></i>").append(fieldValue);
-        } else {
-            builder.append("<i class=\"uiIconFile\"></i>").append(fieldValue);
-        }
+        builder.append("<i class=\"" + iconGroup + "\"></i>").append(fieldValue);
         builder.append(" </a>");
         return builder.toString();
     }
