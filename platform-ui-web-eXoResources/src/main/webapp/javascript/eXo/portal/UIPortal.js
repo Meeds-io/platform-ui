@@ -136,7 +136,7 @@ eXo.portal.UIPortal = {
       else if (child.hasClass("EDITION-BLOCK"))
       {
         editBlock = child;
-      }
+      }            
     });
 
     if (!editBlock)
@@ -181,8 +181,14 @@ eXo.portal.UIPortal = {
         }
       }
 
-      newLayer.parent().css("top", -height + "px");
       editBlock.css("display", "block");
+      var isTab =  $(layoutBlock, viewBlock).find('div > .UIRowContainer > .uiTabContainer').length != 0;
+      if (isTab) {
+      	newLayer.parent().css("top", -height-5 + "px");
+      	newLayer.next('.CONTROL-BLOCK').height(17);
+      } else {
+      	newLayer.parent().css("top", -height + "px");
+      }
 
       var infBar = editBlock.find("div.UIInfoBar, .uiInfoBar").eq(0);
       if (infBar && (base.Browser.isIE6() || (base.Browser.isIE7() && eXo.core.I18n.isRT())))
