@@ -32,6 +32,13 @@
 		}
 	}
 	
+	.uiBreadcrumb {
+		border-bottom: 1px solid #dadada;
+		padding-bottom: 8px;
+		margin-bottom: 5px;
+	}
+	
+	
 	.uiOrganizerCategories {
 		padding: 0px 20px;
 		.category {
@@ -43,8 +50,13 @@
 			.heading {
 				background: #F5F5F5;
 				padding-right: 5px;
-				p {
-					margin: 5px;
+				.span8 {
+					.text-overflow();
+					padding: 5px;
+				}
+				.span12 {
+					.text-overflow();
+					padding: 5px;
 				}
 			}
 			a {
@@ -84,8 +96,8 @@
 				margin-left: 80px;
 			}
 			.uiApplicationInfo  {
-				.uiAccessGroup {
-					padding : 10px;
+				.UIPermissionForm {
+					padding: 20px;
 				}
 			}
 		}

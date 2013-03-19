@@ -27,7 +27,6 @@
     <% } %>
     <a class="actionIcon pull-right" data-placement="bottom" rel="tooltip" title="<%=_ctx.appRes("UIGadgetInfo.title.refresh")%>" onclick="<%= uicomponent.event("Refresh") %>"><i class="uiIconRefresh uiIconLightGray"></i></a>
   </div>
-  <hr/>
 
   <div class="row">
     <div class="span2">
@@ -36,7 +35,7 @@
     <div class="offset2">
 	    <dl class="dl-horizontal">
 	      <dt><%=_ctx.appRes("UIGadgetInfo.label.name")%></dt>
-	      <dd title="<%= gadget.getName() %>"><%= gadget.getName() %></dd>
+	      <dd title="<%= gadget.getName() %>"><strong><%= gadget.getName() %></strong></dd>
 	      
 	      <dt><%=_ctx.appRes("UIGadgetInfo.label.description")%></dt>
 	      <dd title="<%= gadget.getDescription() %>"><%= gadget.getDescription() %></dd>

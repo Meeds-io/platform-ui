@@ -22,14 +22,13 @@ String applicationDescription = encoder.encode(application.getDescription());
       <li class="active"><%= applicationDisplayName %></li>
     </ul>
   </div>
-  <hr />
   
   <div class="application row">
     <div class="portletIcons span2"><img src="$srcBG" onError="src='$srcBGError'" alt=""/></div>
     <div class="offset2">
       <dl class="dl-horizontal">
         <dt><%=_ctx.appRes("UIApplicationInfo.label.displayName")%></dt>
-        <dd><span title="<%= application.getDisplayName() %>"><%= applicationDisplayName %></span></dd>
+        <dd><strong title="<%= application.getDisplayName() %>"><%= applicationDisplayName %></strong></dd>
         
         <dt><%=_ctx.appRes("UIApplicationInfo.label.name")%></dt>
         <dd><span title="<%= name %>"><%= name %></span></dd>
