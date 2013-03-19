@@ -69,7 +69,7 @@
 			}
 					uiform.end()
 		%>
-		<div class="uiAction">
+		<div class="uiAction uiActionBorder">
 			
 						<%for(action in uicomponent.getActions()) { 
 							String actionLabel = _ctx.appRes(uicomponent.getName() + ".action." + action);
