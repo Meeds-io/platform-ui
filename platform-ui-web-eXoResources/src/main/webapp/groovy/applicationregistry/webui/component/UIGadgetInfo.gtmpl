@@ -15,14 +15,17 @@
         def viewURL = uicomponent.getViewUrl();
         def editURL = uicomponent.getEditUrl();
         def refURL = gadget.getReferenceUrl();
+        def rcontext = _ctx.getRequestContext();
+  rcontext.getJavascriptManager().require("SHARED/bts_tooltip").require("SHARED/jquery", "\$")
+   				 .addScripts("\$('#${uicomponent.id}').find('*[rel=\"tooltip\"]').tooltip();");
 %>
 <div class="UIGadgetInfo" id="$uicomponent.id">
   <div>
     <strong><%=_ctx.appRes("UIGadgetInfo.label.gadgetDetails")%></strong>
     <% if(gadget.isLocal()) {%>
-    <a class="actionIcon pull-right" title="<%=_ctx.appRes("UIGadgetInfo.title.editGadget")%>" onclick="<%= uicomponent.event("Edit") %>"><i class="uiIconEdit uiIconLightGray"></i></a>
+    <a class="actionIcon pull-right" data-placement="bottom" rel="tooltip" title="<%=_ctx.appRes("UIGadgetInfo.title.editGadget")%>" onclick="<%= uicomponent.event("Edit") %>"><i class="uiIconEdit uiIconLightGray"></i></a>
     <% } %>
-    <a class="actionIcon pull-right" title="<%=_ctx.appRes("UIGadgetInfo.title.refresh")%>" onclick="<%= uicomponent.event("Refresh") %>"><i class="uiIconRefresh uiIconLightGray"></i></a>
+    <a class="actionIcon pull-right" data-placement="bottom" rel="tooltip" title="<%=_ctx.appRes("UIGadgetInfo.title.refresh")%>" onclick="<%= uicomponent.event("Refresh") %>"><i class="uiIconRefresh uiIconLightGray"></i></a>
   </div>
   <hr/>
 

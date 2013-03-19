@@ -46,3 +46,8 @@ String applicationDescription = encoder.encode(application.getDescription());
     <div class="hintMessage"><%= _ctx.appRes("UIApplicationInfo.label.accessPermissionsDescription") %></div>
   </div>
 </div>
+<%
+def rcontext = _ctx.getRequestContext()
+def jsManager = rcontext.getJavascriptManager();  
+jsManager.require("SHARED/jquery", "\$").addScripts("\$('#$uicomponent.id .uiActionBorder').removeClass('uiActionBorder');");
+%>
