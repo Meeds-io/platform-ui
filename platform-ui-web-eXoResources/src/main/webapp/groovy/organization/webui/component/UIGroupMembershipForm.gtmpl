@@ -5,7 +5,8 @@
 	uicomponent.renderChild(UIPopupWindow.class);
 	
 	def rcontext = _ctx.getRequestContext();
-	rcontext.getJavascriptManager().require("SHARED/bts_tooltip").require("SHARED/jquery", "\$")
+	rcontext.getJavascriptManager().require("SHARE/uiForm")
+						 .require("SHARED/bts_tooltip").require("SHARED/jquery", "\$")
 	   				 .addScripts("\$('#${uicomponent.id}').find('*[rel=\"tooltip\"]').tooltip();");
 %>
 <div  class="uiFormWithTitle uiGroupMembershipForm uiBox ">

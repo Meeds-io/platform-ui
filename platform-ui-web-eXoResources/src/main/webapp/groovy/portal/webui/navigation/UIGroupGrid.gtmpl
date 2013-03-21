@@ -1,0 +1,34 @@
+    <%
+    	import java.util.List;
+    
+    	boolean even = true ;
+    	String rowClass = "EvenRow" ;
+    	def listGroupNames = (List<String>)uicomponent.getBeans();    	
+    	def parent = uicomponent.getParent();
+    %>
+<div id="$uicomponent.id" class="FeedBox"> 
+	<% if (listGroupNames.size() == 0){ %>
+		<div class="WarningAddGroup">
+	 	<%=_ctx.appRes("UIAddGroupNavigation.Label.eachGroupHasAlreadyNavigation")%>
+	 	</div>
+	 <% } %>
+	<table class="uiGrid no-border-cell table table-hover table-striped itemDetailList" cellspacing="0">
+	  <colgroup>       
+   		<col width="80%"> 
+   		<col width="20%">                       
+   	</colgroup>
+	<%   	 
+	for(groupName in listGroupNames) { 
+			addLink = parent.event("AddNavigation", java.net.URLEncoder.encode(groupName));
+	%>
+    <tr>								      								        								        
+				<td class="nodeLabel" style="vertical-align: middle;">
+       		<%= groupName %>
+				</td>	
+        <td class="percentLabel">
+        	<a href="$addLink" class="AddGroupIcon"><%=_ctx.appRes("UIAddGroupNavigation.Action.Add")%></a>
+	   		</td>	
+    </tr>
+ 	<% } %>
+  </table>  
+</div>

@@ -1,6 +1,8 @@
 <% 
 	import org.exoplatform.webui.form.UIFormInputBase;
 	
+	def rcontext = _ctx.getRequestContext();
+	rcontext.getJavascriptManager().require("SHARED/uiForm");
 	String fieldName; %>
 <div class="uiFormWithTitle uiBox uiGroupForm" onkeypress="javascript:SubmitAction.call(this, event);">
 	<h5 class="title"><%=_ctx.appRes(uicomponent.getName() + ".title")%></h5>

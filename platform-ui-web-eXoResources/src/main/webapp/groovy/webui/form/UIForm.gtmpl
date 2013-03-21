@@ -1,4 +1,8 @@
-<% String fieldName; %>
+<% 
+	def rcontext = _ctx.getRequestContext();
+	rcontext.getJavascriptManager().require("SHARED/uiForm");
+	String fieldName; 
+%>
 <div class="uiForm $uicomponent.id">
 	<%
 	uiform.begin()
