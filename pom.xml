@@ -25,7 +25,7 @@
     <artifactId>maven-parent-pom</artifactId>
     <groupId>org.exoplatform</groupId>
     <version>9-SNAPSHOT</version>
-    <relativePath></relativePath>
+    <relativePath />
   </parent>
   <groupId>org.exoplatform.platform-ui</groupId>
   <artifactId>platform-ui</artifactId>
@@ -49,11 +49,11 @@
     <!-- **************************************** -->
     <!-- Jenkins Settings                         -->
     <!-- **************************************** -->
-    <jenkins.job.name>platform-ui-master-ci</jenkins.job.name>		
+    <jenkins.job.name>platform-ui-master-ci</jenkins.job.name>
     <!-- **************************************** -->
     <!-- Dependencies versions                    -->
     <!-- **************************************** -->
-    <org.exoplatform.depmgt.version>3</org.exoplatform.depmgt.version>		
+    <org.exoplatform.depmgt.version>3</org.exoplatform.depmgt.version>
     <org.gatein.portal.version>3.5.3.Final</org.gatein.portal.version>
   </properties>
   <dependencyManagement>

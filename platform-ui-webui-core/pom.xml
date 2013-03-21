@@ -102,7 +102,7 @@
           <configLocation>gatein-portal-checkstyle/checkstyle.xml</configLocation>
           <consoleOutput>true</consoleOutput>
           <failsOnError>true</failsOnError>
-          <useFile></useFile>
+          <useFile />
         </configuration>
       </plugin>
     </plugins>
