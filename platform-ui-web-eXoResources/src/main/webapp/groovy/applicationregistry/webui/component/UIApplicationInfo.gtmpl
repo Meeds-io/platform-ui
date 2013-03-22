@@ -18,7 +18,7 @@ String applicationDescription = encoder.encode(application.getDescription());
   <div class="uiBreadcrumb">
     <div class="pull-right"><a class="actionIcon" rel='tooltip' data-placement='bottom' title='<%=_ctx.appRes("UIApplicationInfo.title.editApplication")%>' onclick="<%= uicomponent.event("EditApplication") %>"><i class="uiIconEdit uiIconLightGray"></i></a></div>
     <ul class="breadcrumb">
-      <li><%= categoryDisplayName %><span class="uiIconMiniArrowRight uiIconLightGray"></span></li>
+      <li><%= categoryDisplayName %><i class="uiIconArrowRightMini uiIconLightGray"></i></li>
       <li class="active"><%= applicationDisplayName %></li>
     </ul>
   </div>
