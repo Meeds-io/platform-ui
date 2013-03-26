@@ -25,8 +25,15 @@
 
   <portal-skin>
     <skin-name>Default</skin-name>
-    <css-path>/skin/Stylesheet.css</css-path>
+    <skin-module>bootstrap</skin-module>
+    <css-path>/skin/bootstrap/css/bootstrap.css</css-path>
     <css-priority>0</css-priority>
+  </portal-skin>
+  
+  <portal-skin>
+    <skin-name>Default</skin-name>
+    <css-path>/skin/Stylesheet.css</css-path>
+    <css-priority>1</css-priority>
   </portal-skin>
 
   <!-- AccountPortlet skins -->

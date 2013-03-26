@@ -18,10 +18,8 @@
  */
 
 
+@import url(css/Core.css);
 @import url(DefaultSkin/portal/webui/component/UIPortalApplicationSkin.css);
 @import url(DefaultSkin/webui/component/Stylesheet.css);
 @import url(PortletThemes/Stylesheet.css);
 @import url(Portlet/Stylesheet.css);
-
-@import url(bootstrap/css/bootstrap.css);
-@import url(css/Core.css);
