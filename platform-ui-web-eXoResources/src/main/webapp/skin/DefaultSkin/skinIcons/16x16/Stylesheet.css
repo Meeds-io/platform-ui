@@ -16,7 +16,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-
+/*
 .Next16x16Icon {
 	width: 16px;	height: 16px;
 	background: url('icons/BlueNextArrow.gif');
@@ -37,8 +37,8 @@
 
 .RightBlackGridArrow16x16Icon {
 	width: 16px; height: 16px;
-	background: url('icons/BreadcumbsArrowIcon.gif'); /* orientation=lt */
-	background: url('icons/BreadcumbsArrowIcon-rt.gif'); /* orientation=rt */
+	background: url('icons/BreadcumbsArrowIcon.gif'); /* orientation=lt 
+	background: url('icons/BreadcumbsArrowIcon-rt.gif'); /* orientation=rt 
 }
 
 .DefaultContainer16x16Icon {
@@ -115,8 +115,8 @@
 	width: 16px;	
 	height: 16px; 
 	margin: auto;
-	background: url('icons/SearchIcon.png') no-repeat left; /* orientation=lt */
-	background: url('icons/SearchIcon-rt.png') no-repeat right; /* orientation=rt */
+	background: url('icons/SearchIcon.png') no-repeat left; /* orientation=lt 
+	background: url('icons/SearchIcon-rt.png') no-repeat right; /* orientation=rt 
 }
 
 .DeletePortalIcon {
@@ -243,6 +243,7 @@
 	width: 16px; height: 16px;
 	background: url('icons/OrangeNote.gif');
 }
+*/
 
 /********************* Icon PortletIcon************************************/
 

@@ -11,14 +11,12 @@
 	rcontext.getJavascriptManager().require("SHARED/jquery", "\$").require("SHARED/uiPopupWindow", "uiPopupWindow")
 			  .addScripts("\$('$btn').click(function() {uiPopupWindow.show('$popupId')});");
 %>
-<div id="<%=uicomponent.getId();%>" class="uiAccessGroup">
-	<div class="publicCheck">
-		<table class="UIFormGrid">
-			<tr>
-				<td class="FieldLabel"><%=uicomponent.getLabel(uiPublicMode.getId())%></td>
-				<td class="FieldComponent"><%uicomponent.renderChild(UICheckBoxInput.class)%></td>
-			</tr>
-		</table>
+<div id="<%=uicomponent.getId();%>" class="uiAccessGroup uiForm">
+	<div class="publicCheck form-horizontal">
+		<div class="control-group">
+				<label class="control-label"><%=uicomponent.getLabel(uiPublicMode.getId())%></label>
+				<div class="controls"><%uicomponent.renderChild(UICheckBoxInput.class)%></div>
+		</div>
 	</div>
 
 	<%
