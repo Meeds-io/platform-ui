@@ -1,0 +1,59 @@
+<%	
+	def webApps = uicomponent.getWebApps();
+	def portletTypes = uicomponent.getPortletTypes();
+	String selectedType = uicomponent.getSelectedType();
+	def selectedPortlet = uicomponent.getSelectedPortlet();
+%>
+<div class="uiPortletManagement" id="$uicomponent.id">
+  <div class="uiPortletCategories row">
+    <div class="span3 uiBox accordion" id="ApplicationRegistryPortlet">
+      <%
+        boolean isSelectedType = false;
+        for(type in portletTypes) {
+          if(type.equals(selectedType)) isSelectedType = true;
+          else isSelectedType = false;
+      %>
+        <div class="accordion-group">
+          <div class="accordion-heading heading">
+            <a href="#$type"
+              onclick="<%= isSelectedType ? "javascript:void(0);" : uicomponent.event("SelectPortletType", type) %>"
+              data-parent="#ApplicationRegistryPortlet" 
+              data-toggle="collapse">
+              <i class="<%= isSelectedType ? "uiIconArrowDown" : "uiIconArrowRight" %>"></i> 
+              <strong><%=_ctx.appRes("UIPortletManagement.title." + type)%></strong>
+            </a>
+          </div>
+          <div class="accordion-body <%= isSelectedType ? "in" : "" %> collapse" id="$type" style="height: <%= isSelectedType ? "auto" : "0px" %>;">
+            <% if(isSelectedType) {%>
+            <ul>
+              <%
+                boolean isSelected = false;
+                for(app in webApps) { %> 
+                <li class="category"><p><%=app.getName(); %></p></li>  
+              <%
+                  for(portlet in app.getPortlets()) {
+						        if(!isSelected && portlet.getId().equals(selectedPortlet.getId())) isSelected = true;
+						        else isSelected = false;
+              %>
+              <li class="item">
+                <% if(isSelected) { %>
+                <strong><%= portlet.getDisplayName() %></strong>
+                <% } else { %>
+                <a onclick="<%= uicomponent.event("SelectPortlet", portlet.getId()) %>">
+                <%= portlet.getDisplayName() %>
+                </a>
+                <% } %>
+              </li>
+              <% } } %>
+            </ul>
+            <% } %>
+          </div>
+        </div>  
+      <% } %>
+    </div>
+    
+    <div class="appWorkingArea uiBox offset3">
+    <% uicomponent.renderChildren() %>
+    </div>
+  </div>
+</div>

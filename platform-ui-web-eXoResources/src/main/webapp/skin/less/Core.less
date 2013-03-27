@@ -1,0 +1,159 @@
+// CSS Reset
+@import "reset.less";
+
+// Core variables and mixins
+@import "variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "mixins.less";
+
+
+
+@import "Tabs/Style.less";
+@import "Popup/Style.less";
+@import "Dropdown/Style.less";
+@import "Sprites/Style.less";
+@import "Buttons/Style.less";
+@import "ButtonGroups/Style.less";
+@import "Form/Style.less";
+@import "VerticalTabs/Style.less";
+@import "Tables/Style.less";
+@import "Tooltips/Style.less";
+@import "Pagination/Style.less";
+@import "Notifications/Style.less";
+@import "Breadcrumbs/Style.less";
+@import "SearchInput/Style.less";
+@import "Tree/Style.less";
+@import "LabelsBadges/Style.less";
+@import "ProgressBars/Style.less";
+@import "Popover/Style.less";
+@import "CalendarPicker/Style.less";
+@import "Gadget/Style.less";
+@import "UISelector/UIGroupMemberShipSelector/Style.less";
+@import "UISelector/UIItemSelector/Style.less";
+@import "UISelector/UIUserSelector/Style.less";
+@import "UIPage/Style.less";
+@import "Portal/UIPageBrowser/Style.less";
+@import "Portal/UIEditInlineWS/Style.less";
+@import "Vote/Style.less";
+@import "Wizard/Style.less";
+@import "CalendarBox/Style.less";
+@import "LanguageSelector/Style.less";
+@import "VTabInputSet/Style.less";
+// Body ---------------
+// --------------------
+
+body {
+  margin: 0;  
+  #font > .sans-serif(@baseFontSize,normal,@baseLineHeight);
+  background-color: @bodyBackground;
+}
+
+a,a:hover {
+  color: @linkColor;
+  text-decoration: none;
+}
+
+table {
+	width: 100%;
+}
+
+// Dropdown menus
+// --------------
+
+// Menu position and menu carets
+.navbar .nav > li > .dropdown-menu {
+  &:before {
+    content: '';
+    display: inline-block;
+    border-left:   0px solid transparent;
+    border-right:  0px solid transparent;
+    border-bottom: 0px solid #ccc;
+
+  }
+  &:after {
+    content: '';
+    display: inline-block;
+    border-left:   0px solid transparent;
+    border-right:  0px solid transparent;
+    border-bottom: 0px solid @dropdownBackground;
+
+  }
+}
+
+// Scroll
+
+.uiScrollTop {
+	background: url('/eXoResources/skin/images/ShareImages/Background/uiScrollTop.png') repeat-x top center;
+	position: absolute;
+	content: "";
+	z-index: 1;
+	width: 100%;
+	height: 15px;
+	top: 0px;
+}
+
+.uiScrollBottom {
+	background: url('/eXoResources/skin/images/ShareImages/Background/uiScrollBottom.png') repeat-x center;
+	position: absolute;
+	content: "";
+	z-index: 1;
+	width: 100%;
+	height: 15px;
+}
+
+/***************badge*********************/
+
+.badge {
+	background: #D0D0D0;
+	border-radius: 9px 9px 9px 9px;
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.37) inset, 1px 1px 0 rgba(255, 255, 255, 0.8);
+	color: #2F5E92;
+	font-size: 11px;
+	padding-left: 7px;
+	padding-right: 7px;
+	text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
+}
+
+/*************** multiValueContainer *********************/
+
+.multiValueContainer {
+	li {
+		margin-bottom: 12px;
+		
+		[class^="uiIcon"] {
+			cursor: pointer;
+		}
+		input{
+			margin-right: 5px;
+		}
+	}
+	
+	li:last-child {
+		margin-bottom: 0px;
+	}
+	
+}
+
+/*************** AjaxLoadingMask *********************/
+.ajaxLoadingMask{
+	background: #808080;
+	border: 1px solid #666;
+	border-radius: 0 0 3px 3px;
+	.box-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
+	padding: 10px 7px 6px 11px;
+	top: 0px !important;	
+	position: fixed !important;
+	.loadingProgressBar{
+		background: url(/eXoResources/skin/images/Loadding/loadingProgressBar.gif) no-repeat center;
+		width: 20px;
+		height: 20px;
+	}
+	.loadingText{
+		margin: 0 34px 0 40px;
+		color: white;
+		font-weight: bold;
+		text-shadow: 1px 1px 1px #444444;
+	}
+	.uiIconClose:hover{
+		background: url(/eXoResources/skin/images/Icons/uiIconsWhite.png) -160px -100px;
+	}
+}

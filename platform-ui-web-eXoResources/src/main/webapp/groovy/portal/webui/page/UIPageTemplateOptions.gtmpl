@@ -1,0 +1,83 @@
+<%		
+	import org.exoplatform.webui.form.UIForm; 
+	import org.exoplatform.webui.core.UIDropDownControl; 
+	import org.exoplatform.webui.core.model.SelectItemOption;
+
+	def rcontext = _ctx.getRequestContext(); 
+	rcontext.getJavascriptManager().require("SHARED/portal").require("SHARED/uiForm")
+			  .require("SHARED/selectors", "selectors")
+        .addScripts("selectors.UIItemSelector.init('#$uicomponent.id .itemList > li', null, true);"); 
+
+	def categories = uicomponent.getItemCategories(); 
+	UIForm form = uicomponent.getParent(); 
+	
+	SelectItemOption selectedItem = uicomponent.getSelectedItemOption(); 
+	String selectedValue = "";
+	if(selectedItem != null) selectedValue = selectedItem.getLabel();
+%>
+<div class="uiItemSelector UIItemSelector clearfix uiPageTemplateOptions" id="$uicomponent.id">
+		<input type="hidden" name="<%=uicomponent.getName();%>" value="$selectedValue">
+		<%/*Begin ItemList*/ %>
+		<div class="itemListContainer pull-left">
+      <div class="uiBox">
+        <h5 class="title"><% uicomponent.renderChild(UIDropDownControl.class) ;%></h5>
+			<% 
+				for(category in categories) {
+					templates = category.getSelectItemOptions();
+					String display = "none";	
+					if(category.isSelected()) display = "block";  
+					else {
+						for(template in templates)
+							template.setSelected(false); 
+						templates.get(0).setSelected(true); 
+					}
+			%>
+					<ul class="itemList uiContentBox"	style="display: $display;">
+						<%
+							for(template in templates){
+								String itemSelected = "Item"; 
+								String setHiddenValue = "eXo.webui.UIForm.setHiddenValue('$form.name', '$uicomponent.name','$template.label' )";
+								String submitEvent = "eXo.webui.UIForm.submitEvent('$form.id','SelectItemOption', '')";
+								if (template.isSelected()) itemSelected = "selectedItem"; 
+						%>
+								<li class="$itemSelected item">
+									<a class="itemTitle" href="javascript:void(0);"><i class="uiIconArrowRight"></i><%=_ctx.appRes("UIWizardPageSelectLayoutForm.label."+template.label)%></a>
+									<div id="SetValue" class="extraActions" style="display: none">$setHiddenValue;</div>
+								</li>
+						<%}%>
+						
+					</ul>
+			<%}%>
+      </div>
+		</div>
+		<%/*End ItemList*/%>
+					
+		<%/*Begin ItemDetailList*/%>			
+		<%				
+			for(category in categories) {
+				String display = "none";
+				if(category.isSelected()) display = "block";  //else display = "none";
+				templates = category.getSelectItemOptions();
+		%>
+				<div class="itemDetailList" style="display: $display;">
+					<%
+						//int i = 0;							 
+						for(template in templates) {
+							//i = i + 1;
+							String label = template.getLabel();
+							String description = template.getDescription();
+		 					display = "none";
+		 					if(template.isSelected()) display = "block";
+		 					//if(i==2) display = "none"; else if(i==4) i=3;
+					%>
+							<div class="itemDetail uiBox"	style="display: $display;">
+									<h5 class="title"><%=_ctx.appRes("UIWizardPageSelectLayoutForm.label."+template.label)%></h5>
+                  <div class="containerLayout">
+										<div class="$template.icon" title="$template.label"><span></span></div>
+                  </div>
+							</div> 
+					<%}%>
+        </div>
+		<%}%>
+		<%/*End ItemDetailList*/%> 					
+</div>

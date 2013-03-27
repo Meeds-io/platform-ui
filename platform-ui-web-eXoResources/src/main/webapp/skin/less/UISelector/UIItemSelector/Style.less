@@ -1,0 +1,80 @@
+.uiItemSelector {
+	.itemListContainer {
+		width: 220px;
+		.item {
+			a {
+				color: @textColor;
+			}
+			a:hover {
+				color: #2F5E92;
+			}
+		}
+		.item.selectedItem {
+			background: #f8f8f8;
+			margin: 0 -20px;
+			padding: 0 20px;
+		}
+	}
+	.itemDetailList {
+		margin-left: 260px; 
+	}
+}
+.uiPersonalInfo {
+	.itemDetailList {
+		margin-left: 0px; 
+	}
+}
+
+
+/***************** uiItemSelector uiPageTemplateOptions ******************/
+
+.uiItemSelector.uiPageTemplateOptions {
+	.containerLayout {
+		padding: 15px 0;
+	}
+	.itemListContainer {
+		.uiContentBox {
+			min-height: 151px;
+		}
+		.uiDropdownWithIcon .dropdown-toggle > span:first-child {
+			display: inline-block;
+	    text-align: left;
+	    width: 155px;
+		}	
+	}
+	.itemDetailList {
+		margin-left: 230px;
+	}
+}
+
+/*************************** uiItemSelector uiFormInputItemSelector ************************************/
+.uiItemSelector.uiFormInputItemSelector {
+	.itemListContainer {
+		.uiContentBox {
+			min-height: 238px;
+		}
+	}
+	.itemDetailList {
+		margin-left: 234px;
+		.WAIPortalImage {
+	    background: url("/eXoWCMResources/skin/DefaultSkin/wcm-portal/background/WAIPortal.png") no-repeat center;
+	    margin: 3px auto;
+	    .size(230px,296px);
+	  }
+	  .emptyImage {
+	    background: url("/eXoPlatformResources/skin/platformSkin/platform-portal/empty.png") no-repeat center;
+	    margin: 3px auto;
+	    .size(235px,296px);
+		}
+		.acmeImage {
+	    background: url("/eXoPlatformResources/skin/platformSkin/platform-portal/acme.png") no-repeat center;
+	    margin: 3px auto;
+	    .size(230px,296px);
+		}
+		.intranetImage {
+	    background: url("/eXoPlatformResources/skin/platformSkin/platform-portal/intranet.png") no-repeat center;
+	    margin: 3px auto;
+	    .size(230px,296px);
+		}
+	}
+}

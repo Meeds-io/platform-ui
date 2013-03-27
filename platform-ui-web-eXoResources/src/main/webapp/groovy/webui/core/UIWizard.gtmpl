@@ -1,0 +1,86 @@
+<% int step = uicomponent.getCurrentStep(); %>	
+<div class="uiWizard" id="$uicomponent.id">
+	<div class="uiBox">
+		<%/*WizardStepTitle*/%>	
+
+		<h5 class="wizardStepTitleBar title">
+			
+			<i class="uiIconAddPage uiIconLightGray"></i>
+			<span class="wizardTitle">
+				<%=_ctx.appRes(uicomponent.getId() + ".label.pageCreateWizard")%>:
+			</span>
+			<span class="stepTitle">
+				<%=_ctx.appRes(uicomponent.getId() + ".label.step"+String.valueOf(step)+".title")%>
+			</span>
+					
+		</h5>
+		
+		<div class="uiContentBox wizardStepContent">
+			<%/*Begin WizardStepContent*/%>		
+			<% uicomponent.renderChildren(); %>
+				
+			<div class="wizardControlBar clearfix">
+			
+			<div class="stepNavigationBar pull-left">				 
+				<span class="stepLabel">
+					<%=_ctx.appRes(uicomponent.getId() + ".label.wizardSteps")%>:
+				</span>
+				<%								
+							List children	= uicomponent.getChildren();
+							int numberSteps = uicomponent.getNumberSteps();		
+							String actionLink = "#";									 	
+							int i = 1;						 										 						 	
+							while(i <= numberSteps) {
+								int j = i;
+								if(uicomponent.isShowWelcomeComponent()) j--;
+								if(j < 1){
+									i++;
+									continue;
+								}
+								strStep = _ctx.appRes(uicomponent.getId() + ".label.step") + " " + String.valueOf(j);
+								if(i != step) {
+									actionLink = uicomponent.url("ViewStep" + String.valueOf(i));0
+									print "<a href=\"$actionLink\" class=\"btn\" title=\"$strStep\">";
+								} else print "<a href=\"#\" class=\"active btn\" title=\"$strStep\">";
+								
+								print String.valueOf(j);
+								println "</a>";
+								i++;
+							}
+						%>							
+			</div>
+			
+			<%/*Begin UIWizardActionBar*/%>		 
+			<div class="actionBar pull-right">
+			
+					<% if (uicomponent.isShowActions()) { 
+						String action = "next";
+						if(step == children.size()){
+							action = "done";						
+							actionLink = uicomponent.event("ViewStep" + String.valueOf(step+1), "");
+						} else {
+								actionLink = uicomponent.url("ViewStep" + String.valueOf(step+1));
+						}
+					%>	
+							<button type="button" onclick="$actionLink" class="btn btn-primary"><%=_ctx.appRes(uicomponent.getId() + ".label."+action)%></button>
+					<% 
+					int showBack = step;
+					if (uicomponent.getClass().getName().contains("Edit"))	showBack++; 
+					if(showBack > 2) {
+						actionLink = uicomponent.url("ViewStep" + String.valueOf(step-1));
+						
+					%>
+							<button type="button" onclick="$actionLink" class="btn btn-primary"><%=_ctx.appRes(uicomponent.getId() + ".label.back")%></button>
+					<% } %>
+					<button type="button" onclick="<%=uicomponent.event("Abort", "");%>" class="btn"><%=_ctx.appRes(uicomponent.getId() + ".label.abort")%></button>
+					<%} // End if (step != 3)%> 
+					
+			</div>		
+			<%/*End UIWizardActionBar*/%> 
+					
+		</div>
+		
+		</div>
+			
+	</div>
+</div>

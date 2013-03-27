@@ -1,0 +1,132 @@
+<%  
+  import org.exoplatform.web.application.JavascriptManager;
+  import org.exoplatform.commons.utils.ExpressionUtil;  
+  import org.exoplatform.portal.webui.util.Util;
+  import org.exoplatform.web.application.JavascriptManager;
+  import org.exoplatform.commons.utils.HTMLEntityEncoder;
+  
+  def rcontext = _ctx.getRequestContext(); 
+  ResourceBundle res = rcontext.getApplicationResourceBundle(); 
+  JavascriptManager jsmanager = rcontext.getJavascriptManager();
+  jsmanager.require("SHARED/bts_tab").require("SHARED/bts_dropdown","bts_dropdown");
+  
+  /** Trim the prefix UIContainer- if any, this hardcoded part is needed to update nested container via Ajax */
+  String componentId = uicomponent.getId();
+  if(componentId.startsWith("UIContainer-")){
+    uicomponent.setId(componentId.substring("UIContainer-".length()));
+  }
+  
+  def children = uicomponent.getChildren();
+  
+  if(children != null && children.size() > 0){
+    boolean hasRenderedChild = false; 
+    for(uiChild in children) {
+      if(uiChild.isRendered()) {
+        if(hasRenderedChild == true){
+          hasRenderedChild = false;
+          break;
+        }
+        hasRenderedChild = true;
+      }
+    }
+    if(hasRenderedChild == false) {
+      for(uiChild in children) {
+          uiChild.setRendered(false);
+      }
+      uicomponent.getChild(0).setRendered(true);
+    }
+  }
+  
+  String id = uicomponent.getId();  
+  def modeState = Util.getUIPortalApplication().getModeState();
+%>
+<% if(children != null && children.size() > 0) { %>
+<div class="uiTabContainer" id="$id">
+  <ul class="nav nav-tabs">
+            <%
+	           if(modeState > 0){
+	             jsmanager.require("SHARED/portalDragDrop", "portalDragDrop").addScripts("portalDragDrop.init(['UIContainer']);");
+	           }
+              int counter = 1;
+              for(uiChild in uicomponent.getChildren()) {
+                String status = "";  
+                if(uiChild.isRendered()) status = "active";
+                String title = uiChild.getTitle();
+                String tabId = uiChild.getId();
+                if(title == null || title.trim().length() < 1 ) {
+                   title = _ctx.appRes("UITabContainer.tab") + String.valueOf(counter);
+                                   uiChild.setTitle(title);
+                }
+                else title = ExpressionUtil.getExpressionValue(res, title);
+                String selectTab = uicomponent.event("SelectTab", tabId);
+                String tabState = uicomponent.getTabState(uiChild, uicomponent);
+                title = HTMLEntityEncoder.getInstance().encode(title);
+            %>
+                <li class="<%=status%>">                      
+                   <%
+                     if(modeState > 0){                                
+                       String actionLink = uicomponent.event("EditContainer", "$uiChild.id") - "javascript:";
+                       String moveLeftAction = uicomponent.event("MoveLeft", tabId);
+                       String moveRightAction = uicomponent.event("MoveRight", tabId);
+                   %>
+                  <a data-toggle="tab" data-target="#$tabId-tab" onclick="<%= selectTab %>"><%=title%></a>
+                  <div class="dropdown" style="display: inline-block">
+								    <a data-toggle="dropdown" class="dropdown-toggle">
+											<i class="uiIconArrowDown uiIconWhite"></i>
+										</a>
+										<% /*Begin Popup Menu*/ %>
+                    <ul class="dropdown-menu" role="menu">
+                    <% if (!tabState.equals(org.exoplatform.portal.webui.container.UITabContainer.FIRST_TAB)) {%>
+                        <li>
+                           <a class="OptionItem" href="$moveLeftAction"><%= _ctx.appRes("UITabContainer.label.moveLeft") %></a>
+                        </li>
+                    <% } %>
+									  <% if (!tabState.equals(org.exoplatform.portal.webui.container.UITabContainer.LAST_TAB)) { %>                                                    
+                       <li>
+                          <a class="OptionItem" href="$moveRightAction"><%= _ctx.appRes("UITabContainer.label.moveRight") %></a>
+                       </li>
+                    <% } %>																	
+                    </ul>		                   												
+								  <% /*End Popup Menu*/ %>
+								  </div>															                              
+                   <%} else {%>
+                       <a data-toggle="tab" data-target="#$tabId-tab" onclick="<%= selectTab %>"><%=title%></a>
+                   <%} %>           
+                </li>       
+            <%
+                counter++;
+              }
+            %>  
+            <% String addTabLink = uicomponent.event("AddTab"); 
+               if (modeState > 0) {
+            %>
+               <li class="AddTab" onclick="$addTabLink">
+                  <span></span>
+               </li>
+            <% } %>  
+  </ul>                 
+  <% 
+     String style = "";
+     String width = uicomponent.getWidth();
+     String height  = uicomponent.getHeight();
+     if(width != null || height != null) style="style=\"";
+     if(width != null) style += "width: "+width+"px;"
+     if(height != null) style += "height: "+height+"px;"
+     if(style.length() > 0) style += "\"";
+  %>            
+  <div class="tab-content" $style> 
+    <%
+      
+      for(uiChild in uicomponent.getChildren()) {
+        String active = "";
+        if(uiChild.isRendered()) active = "in active";
+    %>
+        <div id="$uiChild.id-tab" class="tab-pane fade $active">
+            <% uicomponent.renderUIComponent(uiChild);%>        
+        </div>
+    <%
+      }
+    %>
+  </div>
+</div>
+<% } %>

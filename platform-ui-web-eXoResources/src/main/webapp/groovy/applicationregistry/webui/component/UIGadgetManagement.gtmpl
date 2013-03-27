@@ -1,0 +1,50 @@
+<%	
+	def selectedGadget = uicomponent.getSelectedGadget();
+	boolean isSelected = false;
+	String cssItem;
+%>
+<div class="uiGadgetManagement" id="$uicomponent.id">
+  
+	<div class="uiGrayLightBox clearfix">
+	  <a class="actionIcon" onclick="<%= uicomponent.event("AddRemoteGadget") %>"><i class="uiIconAddRemoteGadget uiIconLightGray"></i><%=_ctx.appRes("UIGadgetManagement.label.addRemote")%></a>
+	  <a class="actionIcon" onclick="<%= uicomponent.event("AddLocalGadget") %>"><i class="uiIconCreateNewGadget uiIconLightGray"></i><%=_ctx.appRes("UIGadgetManagement.label.createNew")%></a>
+	</div>
+ 
+  <div class="uiGadgetList row">
+    <div class="span3 uiBox accordion">
+      <% 
+      for(gadget in uicomponent.getGadgets()) {
+        String gadgetType = (gadget.isLocal() ? "LocalGadget" : "RemoteGadget");
+        if(!isSelected && gadget.getName().equals(selectedGadget.getName()))
+          isSelected = true;
+        else isSelected = false;
+        def gadgetLabel = gadget.getTitle()
+      %>
+       <div class="accordion-group">
+          <div class="accordion-heading heading">
+            <div class="row-fluid">
+              <div class="span10">
+                <ul>
+                  <li class="item">
+                    <% if(isSelected) { %>
+                      <strong><%= (gadgetLabel.length() <= 31) ? gadgetLabel : gadgetLabel.substring(0, 28)+"..." %></strong>
+                    <% } else { %>
+                      <a onclick="<%= uicomponent.event("SelectGadget", gadget.getName()) %>" class="$gadgetType" title="<%= gadget.getTitle() %>"><%= (gadgetLabel.length() <= 31) ? gadgetLabel : gadgetLabel.substring(0, 28)+"..." %></a>
+                    <% } %>
+                  </li>
+                </ul>
+              </div>
+              <div class="span2">
+                <a class="actionIcon" title="<%=_ctx.appRes("UIGadgetManagement.title.deleteGadget")%>" onclick="<%= uicomponent.event("RemoveGadget", gadget.getName()) %>"><i class="uiIconDelete uiIconLightGray"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>    
+      <% } %>  
+    </div>
+    
+    <div class="appWorkingArea uiBox offset3">
+    <% uicomponent.renderChildren() %>
+    </div>
+  </div>
+</div>

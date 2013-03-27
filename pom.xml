@@ -1,32 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    Copyright (C) 2012 eXo Platform SAS.
+    Copyright (C) 2003-2013 eXo Platform SAS.
 
     This is free software; you can redistribute it and/or modify it
     under the terms of the GNU Lesser General Public License as
-    published by the Free Software Foundation; either version 2.1 of
+    published by the Free Software Foundation; either version 3 of
     the License, or (at your option) any later version.
 
     This software is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
-    Lesser General Public License for more detail
+    Lesser General Public License for more details.
 
-    You should have received a copy of the GNU Lesser General Public/
+    You should have received a copy of the GNU Lesser General Public
     License along with this software; if not, write to the Free
     Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
     02110-1301 USA, or see the FSF site: http://www.fsf.org.
 
 -->
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
   <modelVersion>4.0.0</modelVersion>
-
   <parent>
-    <groupId>org.exoplatform</groupId>
     <artifactId>maven-parent-pom</artifactId>
-    <version>9-beta-1</version>
+    <groupId>org.exoplatform</groupId>
+    <version>9</version>
     <relativePath />
   </parent>
   <groupId>org.exoplatform.platform-ui</groupId>
@@ -34,89 +32,77 @@
   <version>4.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Platform-UI</name>
-
+  <modules>
+    <module>platform-ui-web-eXoResources</module>
+    <module>platform-ui-webui-core</module>
+  </modules>
   <scm>
     <connection>scm:git:git://github.com/exoplatform/platform-ui.git</connection>
     <developerConnection>scm:git:git@github.com:exoplatform/platform-ui.git</developerConnection>
     <url>https://github.com/exoplatform/platform-ui</url>
-    <tag>HEAD</tag>
   </scm>
-
   <properties>
-    <org.exoplatform.portal.version>3.5.3.Final</org.exoplatform.portal.version>
+    <!-- **************************************** -->
+    <!-- Jira Settings                            -->
+    <!-- **************************************** -->
+    <jira.project.key>UI</jira.project.key>
+    <!-- **************************************** -->
+    <!-- Jenkins Settings                         -->
+    <!-- **************************************** -->
+    <jenkins.job.name>platform-ui-master-ci</jenkins.job.name>
+    <!-- **************************************** -->
+    <!-- Dependencies versions                    -->
+    <!-- **************************************** -->
+    <org.exoplatform.depmgt.version>4</org.exoplatform.depmgt.version>
+    <org.gatein.portal.version>3.5.3.Final</org.gatein.portal.version>
   </properties>
-
-  <modules>
-    <module>webui/core</module>
-    <module>web/eXoResources</module>
-  </modules>
-
   <dependencyManagement>
+    <!-- ### NEVER CHANGE THIS ORDER OF DEPMGT ### -->
+    <!-- * From top level to bottom projects -->
+    <!-- * maven-depmgt-pom must be the first -->
+    <!-- * Your own modules -->
+    <!-- * And projects below you -->
     <dependencies>
+      <!-- Import versions of external dependencies to use -->
       <dependency>
-        <groupId>org.gatein.portal</groupId>
-        <artifactId>exo.portal.parent</artifactId>
-        <version>${org.exoplatform.portal.version}</version>
+        <groupId>org.exoplatform</groupId>
+        <artifactId>maven-depmgt-pom</artifactId>
+        <version>${org.exoplatform.depmgt.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <!-- Declare our own modules -->
+      <dependency>
+        <groupId>org.exoplatform.platform-ui</groupId>
+        <artifactId>platform-ui-web-eXoResources</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform-ui</groupId>
+        <artifactId>platform-ui-web-eXoResources</artifactId>
+        <version>${project.version}</version>
+        <type>war</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform-ui</groupId>
+        <artifactId>platform-ui-webui-core</artifactId>
+        <version>${project.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
-
   <build>
-    <resources>
-      <resource>
-        <directory>src/main/java</directory>
-        <includes>
-          <include>**/*.properties</include>
-          <include>**/*.xml</include>
-          <include>**/*.xsd</include>
-        </includes>
-      </resource>
-      <resource>
-        <directory>src/main/resources</directory>
-        <includes>
-          <include>**/*.*</include>
-        </includes>
-      </resource>
-    </resources>
-    <testResources>
-      <testResource>
-        <directory>src/test/java</directory>
-        <includes>
-          <include>**/*.properties</include>
-          <include>**/*.xml</include>
-        </includes>
-      </testResource>
-      <testResource>
-        <directory>src/test/resources</directory>
-      </testResource>
-    </testResources>
-
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>compile</id>
-            <phase>compile</phase>
-            <configuration>
-              <tasks>
-                <copy failonerror="false" todir="${project.build.directory}/${project.build.finalName}/WEB-INF/classes">
-                  <fileset dir="${basedir}/src/main/webapp/WEB-INF/classes">
-                    <include name="**/*_en.properties" />
-                  </fileset>
-                  <globmapper from="*_en.properties" to="*.properties" />
-                </copy>
-              </tasks>
-            </configuration>
-            <goals>
-              <goal>run</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <configuration>
+            <!-- Don't include libraries into Web Archives -->
+            <packagingExcludes>WEB-INF/lib/*.jar</packagingExcludes>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
 </project>

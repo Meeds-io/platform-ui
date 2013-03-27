@@ -1,0 +1,61 @@
+<%  
+    import org.exoplatform.portal.mop.SiteKey;
+    import org.exoplatform.webui.organization.OrganizationUtils;
+    import org.gatein.common.text.EntityEncoder;
+    import org.exoplatform.commons.utils.HTMLEntityEncoder;
+    
+    import java.util.List;
+
+    def parent = uicomponent.getParent();
+    def navigations = uicomponent.getBeans();
+%>
+<div id="$uicomponent.id" class="FeedBox uiManagementSite">
+    <% 
+    boolean isEvenRow = true;
+    SiteKey siteKey;
+    EntityEncoder encoder = HTMLEntityEncoder.getInstance();
+    String descriptionLabel = _ctx.appRes("UIGroupNavigationManagement.Label.Description");
+    String editNavigationLabel = _ctx.appRes("UIGroupNavigationManagement.Label.EditNavigation");
+    String editPropertiesLabel = _ctx.appRes("UIGroupNavigationManagement.Label.EditProperties");
+    String deleteNavigationLabel = _ctx.appRes("UIGroupNavigationManagement.Label.DeleteNavigation");
+    %>
+    <table class="managementBlock">
+      <tbody>
+    <%
+    for(navigation in navigations) {
+       siteKey = navigation.getKey();
+       String groupDescription = OrganizationUtils.getGroupDescription(siteKey.getName());
+       if (groupDescription) {
+          groupDescription = encoder.encode(groupDescription);
+       }
+       
+       String groupLabel = OrganizationUtils.getGroupLabel(siteKey.getName())
+       if (groupLabel) {
+          groupLabel = encoder.encode(groupLabel);
+       }
+       
+       String deleteLink = parent.event("DeleteNavigation",String.valueOf(siteKey.getName()));
+       String editProperties = parent.event("EditProperties",String.valueOf(siteKey.getName()));
+       String editLink = parent.event("EditNavigation",String.valueOf(siteKey.getName()));%>
+      <tr>
+        <td class="content">
+            <div class="siteName" title="$siteKey.name">$groupLabel</div>
+            <div>$descriptionLabel: $groupDescription</div>
+        </td>   
+        <td>
+            <a class='actionIcon' href="<%=editLink%>" class="actionIcon">
+            	<i class="uiIconNavigation uiIconLightGray"></i>$editNavigationLabel</a> 
+        </td> 
+        <td>     
+            <a class='actionIcon' href="<%=editProperties%>" class="actionIcon">
+            	<i class="uiIconEditPortalConfig uiIconLightGray"></i>$editPropertiesLabel</a>
+        </td>      
+        <td>       
+            <a class='actionIcon' href="<%=deleteLink%>" class="actionIcon">
+            	<i class="uiIconTrash uiIconLightGray"></i>$deleteNavigationLabel</a>
+        </td>   
+      </tr>
+    <% } %>    
+    </tbody>                           
+  </table>  
+</div>

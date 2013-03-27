@@ -1,0 +1,128 @@
+<%
+ import org.exoplatform.services.organization.User;
+ import org.exoplatform.webui.core.UIPopupWindow;
+ uiform.begin()
+ def rcontext = _ctx.getRequestContext();
+ boolean isMulti = uicomponent.getMulti();
+ def groupLabel = uiform.getLabel(uiform.FIELD_GROUP);
+ def searchLabel = uiform.getLabel(uiform.getLabel('searchUser'));
+ rcontext.getJavascriptManager().require("SHARED/selectors", "selectors")
+                                .addScripts("selectors.UIUserSelector.init('$uiform.id','$groupLabel','$searchLabel');")
+                                .require("SHARED/bts_tooltip").require("SHARED/jquery", "\$")
+                                .addScripts("\$('.uiUserSelector *[rel=\"tooltip\"]').tooltip();");
+%>
+<div class="uiUserSelector" id="UIUserSelector">
+	<div class="selectUserContainer resizable">
+			<%if(uicomponent.isShowSearch()){%>
+      <div class="uiSearch clearfix">
+        <% if(uicomponent.isShowSearchGroup()) { %>
+			<span class="pull-left searchByGroup">
+				<span class="inputLarge ">
+				<%uiform.renderField(uiform.FIELD_GROUP)%>
+				<a href="<%=uicomponent.event('FindGroup')%>" style="display: none;"><span></span></a>
+				</span>
+				<a class="actionIcon" href="<%=uicomponent.event('SearchGroup')%>" rel="tooltip" data-placement="bottom" title="<%=uiform.getLabel(uiform.FIELD_GROUP)%>">
+					<i class="uiIconSearch uiIconLightGray"></i>
+				</a>
+			</span>
+        <% }  
+		if(uicomponent.isShowSearchUser()) {%>
+			<span class="searchByUser">
+				<span class="inputLarge ">
+				<%uiform.renderField(uiform.FIELD_KEYWORD)%>
+				</span>
+				<span class="selectboxMedium">
+				<%uiform.renderField(uiform.FIELD_FILTER)%>
+				</span>
+				<a class="btnSearchUser actionIcon" href="<%=uicomponent.event('Search')%>" ><i class="uiIconSearch uiIconLightGray"></i></a>
+			</span>
+        <% } %>
+      </div>
+			<%}%>
+      
+			<table id="UIListUsers" class="uiGrid table table-hover table-striped">
+				<thead>
+					<tr>
+						<% if(isMulti) {%>
+						<th class="center">
+						<span class="uiCheckbox">
+							<input type="checkbox" class="checkbox" name="selectall"/><span></span>
+						</span>							
+						</th>
+						<% } %>
+						<th>
+							<%=uiform.getLabel('userName')%>
+						</th>
+						<th>
+							<%=uiform.getLabel('firstName')%>
+						</th>
+						<th>
+							<%=uiform.getLabel('lastName')%>
+						</th>
+						<th>
+							<%=uiform.getLabel('email')%>
+						</th>
+						<% if(!isMulti) { %>
+						<th class="center" width="100px">Action</th>
+						<% } %>
+					</tr>
+				</thead>
+				<tbody>
+					<% if(uicomponent.getData().size() < 1)	{%>
+					<tr>
+						<td style="font-style:italic; color: #FF5604; text-align: center;" colspan="5">
+							<%=_ctx.appRes("UIUserSelector.msg.empty")%>
+						</td>
+					</tr>
+					<% } %>
+					<%
+						for (User data : uicomponent.getData()) {							
+							checkboxField = uicomponent.getChildById(data.getUserName());
+					%>
+						<tr>
+							<% if(isMulti) { %>
+							<td class="center">
+								<%
+									if (checkboxField != null) { uicomponent.renderField(checkboxField); }
+								%>
+							</td>
+							<% } %>
+							<% String userName = data.getUserName() != null ? data.getUserName() : "";
+								 String firstName = data.getFirstName() != null ? data.getFirstName() : "";
+								 String lastName = data.getLastName() != null ? data.getLastName() : "";
+								 String userEmail = data.getEmail() != null ? data.getEmail() : "";
+							%>
+							<td><span class="text" data-placement="bottom" rel="tooltip" title='$userName'><%= userName %></span></td>
+							<td><span class="text" data-placement="bottom" rel="tooltip" title="$firstName"><%= firstName %></span></td>
+							<td><span class="text" data-placement="bottom" rel="tooltip" title="$lastName"><%= lastName %></span></td>
+							<td><a href="javascript:void(0);" class="text" data-placement="bottom" rel="tooltip" title="$userEmail"><%= userEmail %></a></td>
+							<% if(!isMulti) {
+								 String addAction = uicomponent.event("AddUser", data.getUserName()) + "; return false;";
+							%>
+							<td class="actionContainer center">
+								<a class="actionIcon" onclick="$addAction" href="javascript:void(0);">
+									<i class="uiIconPlus uiIconLightGray"></i>
+								</a>
+							</td>
+							<% } %>
+						</tr>
+					<%}%>
+				</tbody>
+			</table>
+			<%
+			if (uicomponent.getAvailablePage() > 1) {%>
+				<div class="pageIteratorBorder">
+					<% _ctx.include("system:/groovy/webui/core/UIPageIterator.gtmpl");%>
+				</div>
+			<% } %>
+	</div>
+	<% if(isMulti) { %>
+	<div class="uiAction uiActionBorder">
+		<%for(String action : uicomponent.getActions()){%>
+				<a href="<%=uicomponent.event(action)%>" class="btn "><%=uiform.getLabel(action)%></a>
+		<%}%>
+	</div>
+	<% } %>
+	<%uicomponent.renderChild(UIPopupWindow.class);%>
+</div>
+<% uiform.end() %>

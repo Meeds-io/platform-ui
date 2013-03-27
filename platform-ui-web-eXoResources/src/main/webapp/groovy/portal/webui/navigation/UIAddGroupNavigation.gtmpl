@@ -1,0 +1,16 @@
+<div class="uiAddGroupNavigation uiManagement uiBox" id="$uicomponent.id">
+	<div class="uiContentBox">
+		<% 
+		import org.exoplatform.webui.core.UIComponent ;
+		import org.exoplatform.webui.core.UIVirtualList;
+		import org.exoplatform.webui.core.UIPopupWindow;
+		
+		listGroupNames = uicomponent.loadGroups();
+		uicomponent.renderChild(UIVirtualList.class); %>
+		 
+		<div class="uiAction uiActionBorder">
+			<a href="javascript:void(0);" onclick="<%=uicomponent.event("Close")%>" class="btn"><%=_ctx.appRes("word.cancel")%></a>
+		</div>	
+		<% uicomponent.renderChild(UIPopupWindow.class); %>   
+	</div>
+</div>

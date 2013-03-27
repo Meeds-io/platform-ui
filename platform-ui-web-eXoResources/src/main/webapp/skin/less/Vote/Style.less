@@ -1,0 +1,60 @@
+
+.uiVoteForm{
+	.voteFormContainer{
+		h6{
+			margin: 0px 0px 5px 10px;
+			font-weight: normal;
+		}
+		.uiRatingInfoContainer{
+			margin: 0px auto 13px;
+			width: 105px;
+		}
+		.uiIconNormalVote{
+			background: url('/eXoResources/skin/images/Vote/uiIconVote.png') no-repeat center -2px;
+			width: 17px;
+		}
+		.uiIconOverVote{
+			background: url('/eXoResources/skin/images/Vote/uiIconVote.png') no-repeat center -53px;
+			width: 17px;
+		}
+		.uiIconRatedVote{
+			background: url('/eXoResources/skin/images/Vote/uiIconVote.png') no-repeat center -26px;
+			width: 17px;
+		}
+	}
+}
+
+/******** Vote of View1 **************/
+
+.uiVote {
+	
+	.voteRatingInfo {
+		font: normal normal 11px verdana;
+		float: left;
+		line-height: 16px;
+		margin-right: 15px;
+		span {
+			color: #058ee6;
+		}
+	}
+
+	.avgRatingImages {
+		float: left; 
+		.voted,.votedHaft,.unvoted  {
+			float: left;
+			.square(16px);
+			background: url('/eXoResources/skin/images/Vote/uiIconVote.png') no-repeat;
+			margin: 0px 1px;
+			cursor: pointer;
+		}		
+		.voted {
+			background-position: left -80px;
+		}
+		.votedHaft{
+			background-position: left -131px;
+		}
+		.unvoted {
+			background-position:  left -104px;
+		}
+	}
+}
