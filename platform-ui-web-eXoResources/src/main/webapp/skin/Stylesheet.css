@@ -21,7 +21,7 @@
 @import url(DefaultSkin/portal/webui/component/UIPortalApplicationSkin.css);
 @import url(DefaultSkin/webui/component/Stylesheet.css);
 @import url(DefaultSkin/portal/webui/component/control/UIWorkspace/Stylesheet.css);
-
+@import url(DefaultSkin/portal/webui/component/view/UIDashboard/Stylesheet.css);
 
 @import url(PortletThemes/Stylesheet.css);
 @import url(Portlet/Stylesheet.css);

@@ -1,0 +1,79 @@
+<%	 
+	import org.exoplatform.portal.mop.page.PageContext; 
+	import org.exoplatform.webui.core.UIPopupWindow;
+	import org.exoplatform.webui.form.UIForm; 
+	import org.exoplatform.webui.form.UIFormInputSet;
+	import org.exoplatform.commons.utils.HTMLEntityEncoder;
+
+
+	PageContext page	= uicomponent.getPage();		
+	String name = "";
+	String title = "";
+	String pageId = ""; 
+	if(page != null) {
+		name = page.getKey().getName();
+		pageId = page.getKey().format();
+		title = page.getState().getDisplayName();
+		if (pageId == null) pageId = ""; 
+		if (name == null) name = ""; 
+		if (title == null) title = ""; 
+		if(title.length() > 30) title = title.substring(0,29) + "..."; 
+		title = HTMLEntityEncoder.getInstance().encode(title);
+	}
+	
+	 
+	UIPopupWindow uipopup = uicomponent.getChild(UIPopupWindow.class); 		
+	UIFormInputSet uiform = uicomponent.getChild(UIFormInputSet.class); 
+%>
+<div class="uiPageSelector" id="<%=uicomponent.getId();%>">
+	
+	<h5><i class="uiIconPageInfo"> </i> <%=_ctx.appRes(uicomponent.getId()+".label.currentSelectedPage")%></h5>
+	
+	<div class="form-horizontal">
+		<div class="control-group">
+			<label class="control-label"> <%=_ctx.appRes(uicomponent.getId()+".header.id")%>:</label>
+			<div class="controls">
+							<% if(page != null) { %>
+							$pageId
+							<% } %>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label"><%=_ctx.appRes(uicomponent.getId()+".label.name")%>:</label>
+			<div class="controls">
+				<% if(page == null) { %>
+				<% uiform.renderChild("pageName");%>
+				<% } else { %>
+				$name
+				<% } %>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label"><%=_ctx.appRes(uicomponent.getId()+".label.title")%>:</label>
+			<div class="controls">
+				<% if(page == null) { %>
+				<% uiform.renderChild("pageTitle");%>
+				<% } else { %>
+				$title
+				<% } %>
+			</div>
+		</div>
+	</div>
+	<div class="uiAction uiActionBorder">
+		 <%
+		String clearPageEvent = "javascript:void(0);"; 
+		String css = "btn-hidden btn"; 
+		def uiForm = uicomponent.getAncestorOfType(UIForm.class);
+		createPageEvent = uiForm.event("CreatePage"); 
+		if(page != null) {
+			clearPageEvent = uiForm.event("ClearPage"); 
+			css = "btn"; 
+		} 
+		%>
+			<button type="button" onclick="<%=clearPageEvent%>" class="<%=css%>"><i class="uiIconDelete"> </i> <%=_ctx.appRes(uicomponent.getId() + ".label.clearPage")%></button>
+		<% if(page == null) { %>
+			<button type="button" onclick="<%=createPageEvent%>" class="btn"><i class="uiIconAddPage"> </i> <%=_ctx.appRes(uicomponent.getId() + ".label.createPage")%></button>	
+		<% } %>
+			<button type="button" onclick="<%=uicomponent.event("OpenSelectPagePopUp")%>" class="btn"><i class="uiIconSelectPage"> </i> <%=_ctx.appRes(uicomponent.getId()+".label.searchandSelectPage")%></button>
+	</div>
+</div>
