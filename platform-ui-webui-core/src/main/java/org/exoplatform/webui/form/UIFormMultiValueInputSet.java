@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import org.exoplatform.web.application.JavascriptManager;
 import org.exoplatform.webui.application.WebuiRequestContext;
 import org.exoplatform.webui.config.annotation.ComponentConfig;
 import org.exoplatform.webui.config.annotation.EventConfig;
@@ -182,6 +183,10 @@ public class UIFormMultiValueInputSet extends UIFormInputContainer<List> {
     }
 
     public void processRender(WebuiRequestContext context) throws Exception {
+        JavascriptManager jsMan = context.getJavascriptManager();
+        jsMan.require("SHARED/jquery", "$").require("SHARED/bts_tooltip")
+                .addScripts("$('.multiValueContainer *[rel=\"tooltip\"]').tooltip();");
+
         if (getChildren() == null || getChildren().size() < 1)
             createUIFormInput(0);
 
@@ -206,14 +211,14 @@ public class UIFormMultiValueInputSet extends UIFormInputContainer<List> {
 
             if ((size >= 2) || ((size == 1) && (uiInput.getValue() != null))) {
                 writer.append("<a class=\"actionIcon\"><i onclick=\"");
-                writer.append(uiForm.event("Remove", uiInput.getId())).append("\" title=\"" + removeItem + "\"");
+                writer.append(uiForm.event("Remove", uiInput.getId())).append("\" data-placement=\"bottom\" rel=\"tooltip\" title=\"" + removeItem + "\"");
                 writer
                         .append(" class=\"uiIconTrash multiFieldAction\"></i></a>");
             }
             if (i == size - 1) {
 
                 writer.append("<a class=\"actionIcon\"><i onclick=\"");
-                writer.append(uiForm.event("Add", getId())).append("\" title=\"" + addItem + "\"");
+                writer.append(uiForm.event("Add", getId())).append("\" data-placement=\"bottom\" rel=\"tooltip\" title=\"" + addItem + "\"");
                 writer
                         .append(" class=\"uiIconPlus multiFieldAction\" ></i></a>");
             }
