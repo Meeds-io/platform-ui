@@ -1,3 +1,45 @@
 .UIDashboardContainer .GadgetContainer{
 	padding: 20px;
+	.ContainerControlBarL .AddIcon {
+		float: right; 
+		> a {
+		  display: inline-block;
+		  .ie7-inline-block();
+		  padding: 4px 12px;
+		  margin-bottom: 0; // For input.btn
+		  font-size: @baseFontSize;
+		  font-weight: bold;
+		  line-height: @baseLineHeight;
+		  *line-height: @baseLineHeight;
+		  text-align: center;
+		  vertical-align: middle;
+		  cursor: pointer;
+		  .buttonBackground(#4b71b3, #426394);
+		  border: 1px solid #224886;
+		  *border: 0; // Remove the border to prevent IE7's black border on input:focus
+		  .border-radius(@baseBorderRadius);
+		  .ie7-restore-left-whitespace(); // Give IE7 some love
+		  .box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
+		
+		  // Hover state
+		  &:hover {
+		    color: @grayDark;
+		    text-decoration: none;
+		   .buttonBackground(#4b71b3, #426394);
+		    background-position: 0 -15px;
+		
+		    // transition is only when going to hover, otherwise the background
+		    // behind the gradient (there for IE<=9 fallback) gets mismatched
+		    .transition(background-position .1s linear);
+		  }
+		
+		  // Focus state for keyboard and accessibility
+		  &:focus {
+		    .tab-focus();
+		  }
+		
+		}
+				
+	}
 }
+
