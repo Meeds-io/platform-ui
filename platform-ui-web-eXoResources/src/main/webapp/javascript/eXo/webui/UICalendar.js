@@ -69,8 +69,9 @@
 	
 	  create : function() {
 	    var clndr = document.createElement("div");
-	    clndr.id = this.calendarId;
-	    clndr.style.position = "absolute";
+	    clndr.id = this.calendarId;	   
+			clndr.style.position = "absolute";
+			clndr.style.zIndex = "99";
 	    if (base.Browser.isIE6()) {
 	      clndr.innerHTML = "<div class='UICalendarComponent'><iframe id='"
 	          + this.calendarId
