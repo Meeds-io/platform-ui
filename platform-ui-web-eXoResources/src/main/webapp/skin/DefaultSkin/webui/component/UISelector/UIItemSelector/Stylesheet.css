@@ -20,6 +20,7 @@
 .UIItemSelector {	
 	margin: 2px 0px 2px 2px; /* orientation=lt */
 	margin: 2px 2px 2px 0px; /* orientation=rt */
+	padding: 10px;
 }
 
 .UIItemSelector .ItemDetailList .TemplateContainer .PortalOfficeImage {
@@ -462,7 +463,7 @@
 }
 
 .UIItemSelector .LeftColumnStyle .ItemDetailList .ItemDetailTitle{
-	height: 22px;
+	height: 32px;
 
 }
 

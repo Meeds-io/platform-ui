@@ -68,51 +68,55 @@
 			String theme = uicomponent.getSuitedTheme(null);
 	%>
 				<div class="UIWindow $theme UIDragObject UIResizeObject" id="UIWindow-${portletId}"	${cssStyle} >
-					<div class="WindowBarLeft">
-						<div class="WindowBarRight">
-							<div class="WindowBarCenter ClearFix">
+					<div class="windowBar clearfix">
+						
 								<%
 									if(uicomponent.getShowWindowState())
 									{
 										String maximizedAction = uicomponent.event("ChangeWindowState", (windowState != WindowState.MAXIMIZED)? "maximized" : "normal");
 										String minimizedAction = uicomponent.event("ChangeWindowState", (windowState != WindowState.MINIMIZED)? "minimized" : "normal");
-										String maximizedMode = (windowState != WindowState.MAXIMIZED)? "Maximized" : "Normal";
-										String minimizedMode = (windowState != WindowState.MINIMIZED)? "Minimized" : "Normal";
+										String maximizedMode = (windowState != WindowState.MAXIMIZED)? "maximized" : "Normal";
+										String minimizedMode = (windowState != WindowState.MINIMIZED)? "minimized" : "Normal";
 										String renderMaxi = (windowState != WindowState.MAXIMIZED)? _ctx.appRes("UIPortlet.tooltip.Maximize") : _ctx.appRes("UIPortlet.tooltip.MaximizeRestore");
 										String renderMini = (windowState != WindowState.MINIMIZED)? _ctx.appRes("UIPortlet.tooltip.Minimize") : _ctx.appRes("UIPortlet.tooltip.MinimizeRestore");
 								%>
-										<div class="ControlIcon ${maximizedMode}Icon" title="$renderMaxi"	onclick="$maximizedAction" ></div>
-										<div class="ControlIcon ${minimizedMode}Icon" title="$renderMini"	onclick="$minimizedAction" ></div>
+										<a href="javascript:void(0)" class="pull-right" title="$renderMaxi"	onclick="$maximizedAction" ><i class="${maximizedMode}Icon"></i></a>
+										<a href="javascript:void(0)" class="pull-right" title="$renderMini"	onclick="$minimizedAction" ><i class="${minimizedMode}Icon"></i></a>
 								<%}
 								
 								List supportModes = uicomponent.getSupportModes();
 									if(uicomponent.getShowPortletMode() && supportModes.size() > 0) {
 									   jsmanager.require("SHARED/popupCategory", "popup").addScripts("popup.init('UIWindow-" + portletId + "');");
 								%>
-										<div class="ControlIcon ArrowDownIcon" title="<%=_ctx.appRes("UIPortlet.tooltip.PortletMode");%>" style="position: relative;">
+										<div href="javascript:void(0)" class="pull-right dropdown" title="<%=_ctx.appRes("UIPortlet.tooltip.PortletMode");%>">
+											<i class="uiIconArrowDown dropdown-toggle" data-toggle="dropdown"></i>
 											<% /*Begin Popup Menu*/ %>
-												<div class="UIPopupCategory" style="display: none;">
-													<div class="PopupCategoryDecorator">
+												<ul class="dropdown-menu" role="menu">
+													
 														<% 
 															for(String mode in supportModes) {
 																if(mode.equals("edit") && rcontext.getRemoteUser()==null) continue;
 																	String actionLink = uicomponent.event("ChangePortletMode", mode);
 																	String modeLabel = _ctx.appRes("PortletMode.label." + mode);
 															%>
+																	<li>
 																		<a class="CategoryItem" href="$actionLink" title="$modeLabel">
 																			$modeLabel
 																		</a>
+																	</li>
 															<%				
 															}
 															if(supportModes != null && supportModes.size() > 0 && !supportModes.contains("view")) {
 																String modeLabel = _ctx.appRes("PortletMode.label.view");
 														%> 
+																<li>
 																	<a class="CategoryItem" href="<%=uicomponent.event("ChangePortletMode", "view")%>" title="$modeLabel">
 																		$modeLabel
-																	</a>												
+																	</a>		
+																</li>										
 														 <%}%> 	
-													</div>
-												</div>
+												
+												</ul>
 											<% /*End Popup Menu*/ %>
 										</div>
 								<%}%>
@@ -122,38 +126,30 @@
 									String portletIcon = uicomponent.getIcon();
 									if(portletIcon == null) portletIcon = "PortletIcon";
 								%>
-								<div class="$portletIcon WindowPortletIcon NovaPortletIcon WindowPortletInfo PortletName"><%=hasPermission ? title : _ctx.appRes("UIPortlet.label.protectedContent")%></div>
+								<h5 class="portletName"><i class="$portletIcon"> </i> <%=hasPermission ? title : _ctx.appRes("UIPortlet.label.protectedContent")%></h5>
 							 
-							</div>
-						</div>
+							
 					</div>
 					<%/*End Window Portlet Bar*/ %>
 					
-					<div class="MiddleDecoratorLeft">
-						<div class="MiddleDecoratorRight">
-							<div class="MiddleDecoratorCenter">
-								<div id="<%=portalMode == UIPortalApplication.NORMAL_MODE ? portletId : "EditMode-"+ portletId%>" style="width: 100%">
-									<div class="PORTLET-FRAGMENT UIResizableBlock UIApplication" style="width: 100%; height: $windowHeight;">
-										<% 
-											if(windowState != WindowState.MINIMIZED) {
-												if(hasPermission) println portletContent;
-												else println "<div class='ProtectedContent'>"+_ctx.appRes("UIPortlet.label.protectedContent")+"</div>";
-											}
-										%>
-									</div>		
-								</div>
-							</div>
+					
+					<div class="middleDecorator">
+						<div id="<%=portalMode == UIPortalApplication.NORMAL_MODE ? portletId : "EditMode-"+ portletId%>" style="width: 100%">
+							<div class="PORTLET-FRAGMENT UIResizableBlock UIApplication" style="width: 100%; height: $windowHeight;">
+								<% 
+									if(windowState != WindowState.MINIMIZED) {
+										if(hasPermission) println portletContent;
+										else println "<div class='ProtectedContent'>"+_ctx.appRes("UIPortlet.label.protectedContent")+"</div>";
+									}
+								%>
+							</div>		
 						</div>
 					</div>
 					
 					<%//Begin Bottom Decorator %>
-					<div class="BottomDecoratorLeft">
-						<div class="BottomDecoratorRight">
-							<div class="BottomDecoratorCenter ClearFix">
-									<div class="ResizeArea" title="<%=_ctx.appRes("UIPortlet.tooltip.ResizeWindow");%>"><span></span></div>
-									<div class="Information"><%=_ctx.appRes("UIPortlet.lable.information");%></div>
-							</div>
-						</div>
+					<div class="bottomDecorator clearfix">
+						<div class="resizeArea" title="<%=_ctx.appRes("UIPortlet.tooltip.ResizeWindow");%>"><span></span></div>
+						<div class="information"><%=_ctx.appRes("UIPortlet.lable.information");%></div>							
 					</div>
 				</div>
 <%//End Bottom Decorator %>
