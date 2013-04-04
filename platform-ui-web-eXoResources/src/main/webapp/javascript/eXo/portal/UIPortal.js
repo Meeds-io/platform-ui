@@ -29,8 +29,8 @@ var uiFormInputThemeSelector = {
   },
   
   initSelector : function() {
-	  $(".UIFormInputThemeSelector").find(".UIThemeSelector").parent().on("click", function() {
-		  var theme = $(this).children("div").attr("class").replace("UIThemeSelector ", "");
+	  $(".UIFormInputThemeSelector").find(".uiThemeSelector").parent().on("click", function() {
+		  var theme = $(this).children("div").attr("class").replace("uiThemeSelector ", "");
 		  uiFormInputThemeSelector.showThemeSelected(this, theme); 
 	  });
   },
@@ -38,17 +38,17 @@ var uiFormInputThemeSelector = {
   showThemeSelected : function(obj, param) {
     var jqObj = $(obj);
     var itemListContainer = jqObj.parent().closest(".ItemListContainer");
-    var detailList = itemListContainer.next("div").find("div.UIThemeSelector").eq(0);
-    detailList.next("div").html(jqObj.find("div.NameStyle").eq(0).html());
-    detailList.attr("class", "UIThemeSelector " + param);
+    var detailList = itemListContainer.next("div").find(".uiThemeSelector").eq(0);
+    detailList.next("div").html(jqObj.find(".nameStyle").eq(0).html());
+    detailList.attr("class", "uiThemeSelector " + param);
     //jqObj.parent().prev("input")[0].value = param;//This does not work as 'prev' in jQuery does not return hidden input
     jqObj.parent().parent().children("input").eq(0).val(param);
   },
 
   setDefaultTheme : function(obj, param) {
     var itemDetailList = $(obj).parent().closest(".ItemDetailList");
-    var detailList = itemDetailList.find("div.UIThemeSelector").eq(0);
-    detailList.attr("class", "UIThemeSelector " + param);
+    var detailList = itemDetailList.find(".uiThemeSelector").eq(0);
+    detailList.attr("class", "uiThemeSelector " + param);
 
     detailList.next("div").html(msg.getMessage("DefaultTheme"));
     itemDetailList.prev("div").find("div.ItemList").eq(0).parent().children("input").eq(0).val(param);
