@@ -270,7 +270,8 @@
                         portletForm.showSaveButton(this);
                     }                    
                     var contentCont = tab.closest('.nav-tabs').next('.tab-content');
-                    contentCont.find(".active").removeClass("active");
+                    contentCont.children(".active").removeClass("active");
+                    contentCont.children("form").children(".active").removeClass("active");
                     $(content).addClass("active");
                     
                     portalControl.UIHorizontalTabs.changeTabForUIFormTabpane(this, id.replace("tab-", ""), content.replace("-tab", "").replace("#", ""));
