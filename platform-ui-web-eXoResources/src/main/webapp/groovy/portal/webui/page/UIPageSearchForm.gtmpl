@@ -16,7 +16,7 @@
 			QuickSearchInputSet = uiform.getQuickSearchInputSet();
 			for(field in QuickSearchInputSet.getChildren()) {
 		%>
-				<label><%=uiform.getLabel(field.getId())%> </label>
+				<label><%=uiform.getLabel(field.getId())%>:</label>
 				<span class="inputLarge selectboxMedium">
 		<%
 				uiform.renderField(field)%>
