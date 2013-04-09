@@ -46,11 +46,6 @@
 	background: url('icons/BlueContainer.gif');
 }
 
-.AddNewNodeIcon {
-	width: 16px;	height: 16px;
-	background: url('icons/BlueCirclePlus.gif');
-}
-
 .BlueCirclePlusIcon {
 	width: 16px;	height: 16px;
 	background: url('icons/BlueCirclePlus.gif');
@@ -244,6 +239,11 @@
 	background: url('icons/OrangeNote.gif');
 }
 */
+
+.AddNewNodeIcon {
+	width: 16px;	height: 16px;
+	background: url('icons/BlueCirclePlus.gif');
+}
 
 /********************* Icon PortletIcon************************************/
 
