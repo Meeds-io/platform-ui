@@ -86,6 +86,7 @@ function initTabbedDashboardPortlet(id)
         else if (keyNum == 27)
         {
           $(this).replaceWith(jqObj);
+          jqObj.closest(".active").removeClass("editing");
         }
       });
 
@@ -151,7 +152,9 @@ function initTabbedDashboardPortlet(id)
         }
         else if (keyNum == 27)
         {
+          lastTab.addClass("last");
           $(newTab).remove();
+          jqAddButton.show();
         }
       });
 
