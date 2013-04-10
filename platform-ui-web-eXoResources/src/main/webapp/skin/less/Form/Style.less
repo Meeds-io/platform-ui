@@ -65,11 +65,11 @@ input[type="color"],
 		.controls{
 			line-height: 28px;
 			.uiCheckbox{
-		      	margin: 3px 0 0;
-		      }
-			  .uiRadio{
-		      	margin: 3px 25px 0px 0;
-		      }
+		    margin: 3px 0 0;
+		  }
+		  .uiRadio{
+	      margin: 3px 25px 0px 0;
+	    }
 		}
 	}
 }
@@ -117,11 +117,15 @@ textarea {
 	border-left: 2px solid #466799;
 	content: "";
 	.size(3px,6px);
-	.skew(45deg, -49deg);
+	-webkit-transform: skew(45deg, -49deg);
+     -moz-transform: skew(45deg, -49deg);
+      -ms-transform: skewX(30deg) skewY(-35deg); // See https://github.com/twitter/bootstrap/issues/4885
+       -o-transform: skew(45deg, -49deg);
+          transform: skew(45deg, -49deg);
+  -webkit-backface-visibility: hidden; // See https://github.com/twitter/bootstrap/issues/5319
 	left: 4px;
 	position: absolute;
 	top: 4px;
-	-ms-transform:skewX(30deg) skewY(-35deg) e("\9");//hack only ie9
 	left: 2px e("\9");
 	width: 10px e("\9");
 	height: 4px e("\9");

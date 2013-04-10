@@ -62,7 +62,7 @@
 	<div class="uiAction uiActionBorder">
 		 <%
 		String clearPageEvent = "javascript:void(0);"; 
-		String css = "btn-hidden btn"; 
+		String css = "disabled btn"; 
 		def uiForm = uicomponent.getAncestorOfType(UIForm.class);
 		createPageEvent = uiForm.event("CreatePage"); 
 		if(page != null) {

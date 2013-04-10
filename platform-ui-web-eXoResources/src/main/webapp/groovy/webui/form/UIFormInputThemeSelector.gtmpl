@@ -1,0 +1,61 @@
+<%
+	import org.exoplatform.web.application.JavascriptManager;
+	import org.exoplatform.portal.webui.application.UIItemThemeSelector;
+  
+	def selectedCategory = uicomponent.getChild(UIItemThemeSelector.class).getSelectedCategory() ;
+	String selectedThemeName = uicomponent.getChild(UIItemThemeSelector.class).getSelectedTheme() ;
+	def uiParentComponent = uicomponent.getParent() ;
+	
+	def rcontext = _ctx.getRequestContext(); 
+	rcontext.getJavascriptManager().require("SHARED/portal", "portal").addScripts("portal.UIFormInputThemeSelector.initForm();");
+%>
+<div class="UIItemSelector UIFormInputThemeSelector" id="$uicomponent.id">
+	<div class="LeftColumnStyle ClearFix">
+		<div class="ItemListContainer"><%uicomponent.renderChild(UIItemThemeSelector.class);%></div> 
+		<div class="ItemDetailList">
+			<div class="ItemDetailTitle">
+      	<div class="TitleIcon ViewListIcon"><span></span></div>
+  	    <div class="Title"><%= _ctx.appRes(uiParentComponent.getId() + "." + uicomponent.getId() + ".title.Preview") %></div>
+  	    <div class="SetDefault">
+  	    	<a href="#"><%= _ctx.appRes(uiParentComponent.getId() + "." + uicomponent.getId() + ".title.SetDefault") %></a>
+  	    </div>
+    	</div>
+			<div class="DetailView">					
+					<%
+						if(selectedThemeName == null || selectedThemeName.trim().length() < 1) {
+							selectedThemeName = selectedCategory.getThemes().get(0) ;
+						}
+					%>
+					<div class="uiThemeSelector $selectedThemeName">
+					 <div class="windowBar clearfix">
+							<a href="#" class="pull-right">
+			          <i class="maximizedIcon"></i>
+			        </a>
+			        <a href="#" class="pull-right">
+			          <i class="restoreIcon"></i>
+			        </a>
+			        <a href="#" class="pull-right">
+			          <i class="minimizedIcon"></i>
+			        </a>
+		          <h5 class="portletName">
+		          	<i class="PortletIcon"></i>
+		          	Title
+		          </h5>
+					  </div>
+						
+					  
+					  <div class="middleDecorator">
+					    <div style="height: 88px;"><span></span></div>
+					  </div>
+					  
+					  <div class="bottomDecorator clearfix">
+							<div class="resizeArea" title="<%=_ctx.appRes("UIPortlet.tooltip.ResizeWindow");%>"><span></span></div>
+					    <div class="information">Done</div>
+					  </div> 
+					</div>
+					<div class="NameTheme"><%= _ctx.appRes(uicomponent.getId() + ".UIItemThemeSelector.item." + selectedThemeName ) %></div>
+			
+			</div>
+		</div>
+	</div>
+</div>

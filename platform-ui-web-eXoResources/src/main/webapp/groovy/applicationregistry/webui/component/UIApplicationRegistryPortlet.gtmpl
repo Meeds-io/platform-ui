@@ -25,7 +25,7 @@
 	  <div class="uiGrayLightBox clearfix">
 	    <a onclick="<%=uicomponent.event("ViewChild", "UIApplicationOrganizer")%>" class="actionIcon $categories pull-left">
 	      <i class="uiIconManageApplication uiIconLightGray"></i>
-	      <%=_ctx.appRes("UIToolbar.label.organize")%>
+	      <%=_ctx.appRes("UIToolbar.label.manageApp")%>
 			</a>
       <a onclick="<%=uicomponent.event("ViewChild", "UIGadgetManagement")%>" class="actionIcon $gadget pull-right">
         <i class="uiIconGadgets uiIconLightGray"></i>

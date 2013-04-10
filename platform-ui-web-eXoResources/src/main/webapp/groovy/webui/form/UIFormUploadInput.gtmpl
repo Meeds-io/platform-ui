@@ -43,6 +43,7 @@
 </div>
 </script>
 <div class="uploadButton">
-	<label class="btn"><%=_ctx.appRes("UIFormUploadInput.label.SelectFile")%></label> <span class="noFile"><%=_ctx.appRes("UIFormUploadInput.label.NoFile")%></span>
+	<label class="btn"><%=_ctx.appRes("UIFormUploadInput.label.SelectFile")%></label> 
+	<label class="noFile"><%=_ctx.appRes("UIFormUploadInput.label.NoFile")%></label>
 </div>	
 </div>

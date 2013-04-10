@@ -38,6 +38,7 @@
 @import "CalendarBox/Style.less";
 @import "LanguageSelector/Style.less";
 @import "VTabInputSet/Style.less";
+@import "PortletThemes/Style.less";
 // Body ---------------
 // --------------------
 
@@ -167,5 +168,57 @@ table {
 	}
 	.form-horizontal .control-group .controls {
 		margin-left: 405px;
+	}
+}
+
+.controls-nowrap{
+	white-space: nowrap;
+}
+
+.UICLVPortlet{
+	.checkListSetting{
+		padding: 15px 10px 10px 85px;
+		li{
+			margin-right: 50px;
+		}
+	}
+	@media screen and (-webkit-min-device-pixel-ratio:0) {
+		.uiCheckbox {
+			padding: 0px 8px;
+		}
+	}
+}
+
+.UISingleContentViewerPortlet{
+	@media screen and (-webkit-min-device-pixel-ratio:0) {
+		.uiCheckbox {
+			padding: 0px 8px;
+		}
+	}
+	.form-horizontal li{
+		margin-left: 50px;
+	}
+}
+
+/*================================*/
+
+.UIForm{
+	.UIPDFViewerContainer {
+		.PDFViewerBar {
+			.ControlButton {
+				.PageNumber input{
+					border: 1px solid @tableBorder;
+					text-align: center;
+					width: 30px; height: 20px;
+				}
+				.uiSelectbox, select.selectbox{
+					width: 75px;
+					height: 22px;
+				}
+				.uiSelectbox{
+					margin-top: -4px;
+				}
+			}
+		}
 	}
 }

@@ -18,8 +18,9 @@
   String editPortalPropLabel = _ctx.appRes("UISiteManagement.label.editPortalProp");
   String deletePortalLabel = _ctx.appRes("UISiteManagement.label.deletePortal");
 %>
-<div class="uiManagementSite ">
+<div class="uiManagementSite">
 	<div class="uiBox">
+		<h5 class="title">Manage sites</h5>
 		<div class=" uiContentBox" id="<%=uicomponent.getId();%>">
 		 <table class="managementBlock" >
 			

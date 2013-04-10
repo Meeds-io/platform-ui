@@ -274,12 +274,13 @@
 	  },
 	  
 	  getResizeBlock : function(jPopup) {
-	  	jPopup.find(".resizable .resizable").filter(function() {
+		var filterPopup = function() {
 	  		return $(this).closest(".uiPopup").attr("id") === jPopup.attr("id");
-	  	}).removeClass("resizable");
-	  	
-	  	var innerRez = jPopup.find(".resizable");
-	  	var contentBlock = jPopup.find("div.PopupContent, .popupContent");
+	  	};
+		
+	  	jPopup.find(".resizable .resizable").filter(filterPopup).removeClass("resizable");
+	  	var innerRez = jPopup.find(".resizable").filter(filterPopup);
+	  	var contentBlock = jPopup.find("div.PopupContent, .popupContent").filter(filterPopup);
 	  	
 	  	var vrez;
 	  	if (innerRez.length) {

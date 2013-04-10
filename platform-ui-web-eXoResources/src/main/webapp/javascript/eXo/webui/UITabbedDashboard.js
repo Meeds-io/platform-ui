@@ -62,12 +62,14 @@ function initTabbedDashboardPortlet(id)
     function showEditLabelInput(target, nodeName, currentLabel)
     {
       var jqObj = $(target);
-      jqObj.closest(".active").addClass("editing");
-
+      var tab = jqObj.closest(".active"), tabW = tab.width();
       var input = $("<input>").attr({type : "text", id : nodeName, name : currentLabel, value : currentLabel, maxLength : 50});
-      input.css("width", (target.offsetWidth - 2) + "px");
+      
+      tab.addClass("editing");      
+      jqObj = jqObj.replaceWith(input);      
+      var child = tab.children();
+      input.css("width", tabW - child.outerWidth(true) + child.width() + "px");
 
-      jqObj = jqObj.replaceWith(input);
       input.blur(function()
       {
         $(this).replaceWith(jqObj);
@@ -84,6 +86,7 @@ function initTabbedDashboardPortlet(id)
         else if (keyNum == 27)
         {
           $(this).replaceWith(jqObj);
+          jqObj.closest(".active").removeClass("editing");
         }
       });
 
@@ -149,7 +152,9 @@ function initTabbedDashboardPortlet(id)
         }
         else if (keyNum == 27)
         {
+          lastTab.addClass("last");
           $(newTab).remove();
+          jqAddButton.show();
         }
       });
 

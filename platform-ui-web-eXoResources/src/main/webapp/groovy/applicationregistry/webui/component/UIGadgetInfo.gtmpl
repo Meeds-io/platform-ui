@@ -25,7 +25,7 @@
     <% if(gadget.isLocal()) {%>
     <a class="actionIcon pull-right" data-placement="bottom" rel="tooltip" title="<%=_ctx.appRes("UIGadgetInfo.title.editGadget")%>" onclick="<%= uicomponent.event("Edit") %>"><i class="uiIconEdit uiIconLightGray"></i></a>
     <% } %>
-    <a class="actionIcon pull-right" data-placement="bottom" rel="tooltip" title="<%=_ctx.appRes("UIGadgetInfo.title.refresh")%>" onclick="<%= uicomponent.event("Refresh") %>"><i class="uiIconRefresh uiIconLightGray"></i></a>
+    <a class="actionIcon pull-right" data-placement="bottom" rel="tooltip" title="<%=_ctx.appRes("UIGadgetInfo.title.Refresh")%>" onclick="<%= uicomponent.event("Refresh") %>"><i class="uiIconRefresh uiIconLightGray"></i></a>
   </div>
 
   <div class="row">
@@ -34,7 +34,7 @@
     </div>
     <div class="offset2">
 	    <dl class="dl-horizontal">
-	      <dt><%=_ctx.appRes("UIGadgetInfo.label.name")%></dt>
+	      <dt><%=_ctx.appRes("UIGadgetInfo.label.Name")%>:</dt>
 	      <dd title="<%= gadget.getName() %>"><strong><%= gadget.getName() %></strong></dd>
 	      
 	      <dt><%=_ctx.appRes("UIGadgetInfo.label.description")%></dt>

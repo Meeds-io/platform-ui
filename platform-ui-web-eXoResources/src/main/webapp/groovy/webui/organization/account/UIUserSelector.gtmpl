@@ -29,12 +29,12 @@
 		if(uicomponent.isShowSearchUser()) {%>
 			<span class="searchByUser">
 				<span class="inputLarge ">
-				<%uiform.renderField(uiform.FIELD_KEYWORD)%>
+					<a id="" class="btnSearchUser" data-placement="bottom" rel="tooltip" href="<%=uicomponent.event('Search')%>" data-original-title="Quick Search"><i class="uiIconSearch uiIconLightGrey"></i></a>
+					<%uiform.renderField(uiform.FIELD_KEYWORD)%>
 				</span>
 				<span class="selectboxMedium">
 				<%uiform.renderField(uiform.FIELD_FILTER)%>
 				</span>
-				<a class="btnSearchUser actionIcon" href="<%=uicomponent.event('Search')%>" ><i class="uiIconSearch uiIconLightGray"></i></a>
 			</span>
         <% } %>
       </div>
@@ -70,7 +70,7 @@
 				<tbody>
 					<% if(uicomponent.getData().size() < 1)	{%>
 					<tr>
-						<td style="font-style:italic; color: #FF5604; text-align: center;" colspan="5">
+						<td class="empty center" colspan="5">
 							<%=_ctx.appRes("UIUserSelector.msg.empty")%>
 						</td>
 					</tr>

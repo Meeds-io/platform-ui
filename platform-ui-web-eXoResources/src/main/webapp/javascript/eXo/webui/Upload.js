@@ -101,12 +101,12 @@
 		  var uploadCont = uiUploadInput.cloneContainer(id, uploadId);
 		  var input = uploadCont.find("input");
 		  if (base.Browser.isIE()) {
-			  uploadBtn.find(".btn").attr("for", input.attr("id"));
+			  uploadBtn.find("label").attr("for", input.attr("id"));			  
 			  input.css({
 			    "position" : "absolute",
 			    "left" : "-5000px"
 			  }).show();
-		  } else {
+		  } else {			  
 			  uploadBtn.off("click").click(function() {
 				  input.click();
 			  })
@@ -403,7 +403,7 @@
 		  var uploadCont = uiUpload.cloneContainer(id, uploadId);
 		  var input = uploadCont.find("input");
 		  if (base.Browser.isIE()) {
-			  uploadBtn.find(".btn").attr("for", input.attr("id"));
+			  uploadBtn.find("label").attr("for", input.attr("id"));
 			  input.css({
 			    "position" : "absolute",
 			    "left" : "-5000px"

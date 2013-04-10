@@ -726,6 +726,9 @@
 	&:hover {
 		#StatusElements .StatusHover();
 	}
+	.uiIconMiniArrowDown{
+		margin-left: 5px;
+	}
 }
 
 /*============== actionIcon================*/
@@ -793,7 +796,6 @@
 		line-height: @baseLineHeight;
 		margin: 0;
 		word-wrap: break-word;
-		font-size: 13px;
 		+ .uiGrid tbody {
 			.box-shadow(0px 0px 0px transparent);
 		}
@@ -972,33 +974,5 @@ Round corner box with title
 		color: @grayDark;
 		padding: 8px 10px;
 		word-wrap: break-word;
-	}
-}
-
-
-.controls-nowrap{
-	white-space: nowrap;
-}
-
-.fieldsetPreferences{
-	li:nth-child(2n+2){
-		margin-right: 50px;
-	}
-	.uiRadio{
-		width: 195px;
-	}
-	.checkListSetting{
-		padding: 15px 10px 10px 85px;
-		li{
-			margin-right: 50px;
-		}
-	}
-}
-
-.UICLVPortlet{
-	.fieldsetPreferences{
-		.uiRadio{
-			width: auto;
-		}
 	}
 }
