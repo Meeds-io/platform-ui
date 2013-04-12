@@ -6,22 +6,26 @@
 	color: @infoText;
 	padding: 8px 13px;
 	margin: 10px 0;
-	i{
+	
+	i {
 		display: inline-block;
 		height: 16px;
-		vertical-align: middle;
+		vertical-align: text-top;
 		width: 16px;
-		margin-right: 12px;
+		margin-right: 6px;
 	}
-	.uiIconWarning{
-		background: url("/eXoResources/skin/images/Icons/warningIcon.png") no-repeat left top;
+	
+	.uiIconWarning {
+		background: url("/eXoResources/skin/images/Icons/uiIconColor.png") no-repeat -20px top;
 	}
-	a{
+	
+	a {
 		color: @linkColor;
-	}
-	& a:hover{
-		font-weight: bold;
-		text-decoration: none;
+	
+		&:hover {
+			font-weight: bold;
+			text-decoration: none;
+		}
 	}
 	
 	
@@ -31,25 +35,26 @@
 	background: @successBackground;
 	border-color: @successBorder;
 	
-	.uiIconSuccess{
-		background: url("/eXoResources/skin/images/Icons/successIcon.png") no-repeat left top;
+	.uiIconSuccess {
+		background: url("/eXoResources/skin/images/Icons/uiIconColor.png") no-repeat -60px top;
 
 	}
 }
 
-.alert-info{
+.alert-info {
 	background: @infoBackground;
 	border-color: @infoBorder;
 	
-	.uiIconInfo{
-		background: url("/eXoResources/skin/images/Icons/infoIcon.png") no-repeat left top;
+	.uiIconInfo {
+		background: url("/eXoResources/skin/images/Icons/uiIconColor.png") no-repeat -40px top;
 	}
 }
 
-.alert-error{
+.alert-error {
 	background: @errorBackground;
 	border-color: @errorBorder;
-	.uiIconError{
-		background: url("/eXoResources/skin/images/Icons/errorIcon.png") no-repeat left top;
+	
+	.uiIconError {
+		background: url("/eXoResources/skin/images/Icons/uiIconColor.png") no-repeat left top;
 	}
 }
