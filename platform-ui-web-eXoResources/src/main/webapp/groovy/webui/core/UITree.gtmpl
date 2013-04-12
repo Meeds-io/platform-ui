@@ -36,7 +36,7 @@
 					<%=uicomponent.renderNode(object);%>											
 					<%	
 						if(uicomponent.isSelected(object)){%>
-						<ul class = "childrenContainer" actionLink="$actionLink">
+						<ul class = "childrenContainer nodeGroup" actionLink="$actionLink">
 						<%	
 						int countChild=0;
 						for(child in children) {				
