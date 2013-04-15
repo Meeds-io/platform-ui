@@ -70,10 +70,10 @@
 			css = "btn"; 
 		} 
 		%>
-			<button type="button" onclick="<%=clearPageEvent%>" class="<%=css%>"><i class="uiIconDelete"> </i> <%=_ctx.appRes(uicomponent.getId() + ".label.clearPage")%></button>
 		<% if(page == null) { %>
 			<button type="button" onclick="<%=createPageEvent%>" class="btn"><i class="uiIconAddPage"> </i> <%=_ctx.appRes(uicomponent.getId() + ".label.createPage")%></button>	
 		<% } %>
 			<button type="button" onclick="<%=uicomponent.event("OpenSelectPagePopUp")%>" class="btn"><i class="uiIconSelectPage"> </i> <%=_ctx.appRes(uicomponent.getId()+".label.searchandSelectPage")%></button>
+			<button type="button" onclick="<%=clearPageEvent%>" class="<%=css%>"><i class="uiIconDelete"> </i> <%=_ctx.appRes(uicomponent.getId() + ".label.clearPage")%></button>
 	</div>
 </div>
