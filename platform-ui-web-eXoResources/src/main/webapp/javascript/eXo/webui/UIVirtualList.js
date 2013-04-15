@@ -61,6 +61,7 @@
 	        $(uiVirtualList).trigger("scroll");
 	      }
 	    }
+	    $(uiVirtualList).find('a[data-toggle="tooltip"]').tooltip();
 	  },
 	
 	  getFeedBox : function(componentId) {
@@ -74,6 +75,7 @@
 	  },
 	
 	  onScroll : function(uiVirtualList, url) {
+		$(uiVirtualList).find('a[data-toggle="tooltip"]').tooltip('hide');
 	    if (uiVirtualList.isFinished || uiVirtualList.inProgress)
 	      return;
 	    var componentHeight = uiVirtualList.offsetHeight;
