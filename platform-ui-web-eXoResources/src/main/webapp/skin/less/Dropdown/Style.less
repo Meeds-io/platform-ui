@@ -52,17 +52,20 @@
 // -----------
 .dropdown-menu li > a:hover,
 .dropdown-menu li > a:focus,
+.dropdown-menu .active > a,
+.dropdown-menu .active > a:hover,
 .dropdown-submenu:hover > a {
   #gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 15%));
 }
 
-// Active state
+/** Active state
 // ------------
 .dropdown-menu .active > a,
 .dropdown-menu .active > a:hover {
 
   #gradient > .vertical(@dropdownLinkBackgroundActive, darken(@dropdownLinkBackgroundActive, 15%));
 }
+**/
 
 #ThemeDropDown {
 	margin-bottom: 2px;
