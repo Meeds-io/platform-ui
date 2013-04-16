@@ -99,8 +99,8 @@
                         </ul>		                   												
 											  <% /*End Popup Menu*/ %>
 											</div>
-											<a href="<%=uicomponent.event("EditContainer")%>" title="<%=_ctx.appRes("UIColumnContainer.tooltip.editContainer")%>"><i class="uiIconEdit uiIconWhite"></i></a>
-											<a href="<%=uicomponent.event("DeleteComponent")%>" title="<%=_ctx.appRes("UIColumnContainer.tooltip.closeContainer")%>"><i class="uiIconTrash uiIconWhite"></i></a>
+											<a href="<%=uicomponent.event("EditContainer")%>" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("UIColumnContainer.tooltip.editContainer")%>"><i class="uiIconEdit uiIconWhite"></i></a>
+											<a href="<%=uicomponent.event("DeleteComponent")%>" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("UIColumnContainer.tooltip.closeContainer")%>"><i class="uiIconTrash uiIconWhite"></i></a>
 										<%}%>										
 									</div>
 								<%/*End InfoBar*/ %>

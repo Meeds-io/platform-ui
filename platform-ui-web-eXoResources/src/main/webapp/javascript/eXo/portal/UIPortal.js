@@ -224,6 +224,7 @@ eXo.portal.UIPortal = {
           infBar.css("width", infBarWidth + 35 + "px");
         }
       }
+      infBar.find('[rel="tooltip"]').tooltip();
     }
     else
     {
