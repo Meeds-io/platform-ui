@@ -1,7 +1,20 @@
 .uiItemSelector {
+	padding: 10px;
 	.itemListContainer {
 		width: 220px;
+		.uiDropdownWithIcon {
+			.btn {
+				> span:first-child {
+					display: inline-block;
+			    text-align: left;
+			    width: 147px;
+			  }
+			}
+		}
+		
 		.item {
+			margin: 4px 0;
+			cursor: pointer;
 			a {
 				color: @textColor;
 			}
@@ -11,12 +24,17 @@
 		}
 		.item.selectedItem {
 			background: #f8f8f8;
-			margin: 0 -20px;
-			padding: 0 20px;
+			margin: 4px -20px;
+			padding: 0px 20px;
 		}
 	}
 	.itemDetailList {
-		margin-left: 260px; 
+		margin-left: 234px; 
+		overflow: hidden;
+		> .title > h6 {
+			margin: 0; 
+			line-height: 28px;
+		}
 	}
 }
 .uiPersonalInfo {
@@ -42,9 +60,6 @@
 	    width: 144px;
 		}	
 	}
-	.itemDetailList {
-		margin-left: 230px;
-	}
 }
 
 /*************************** uiItemSelector uiFormInputItemSelector ************************************/
@@ -55,7 +70,6 @@
 		}
 	}
 	.itemDetailList {
-		margin-left: 234px;
 		.WAIPortalImage {
 	    background: url("/eXoWCMResources/skin/DefaultSkin/wcm-portal/background/WAIPortal.png") no-repeat center;
 	    margin: 3px auto;
@@ -78,3 +92,50 @@
 		}
 	}
 }
+
+/*************************** uiFormInputIconSelector *************************/
+
+.uiItemSelector.uiFormInputIconSelector {
+	.itemList.uiContentBox {
+	  height: 185px;
+	}
+	.itemDetailList {
+		.iconSelector {
+	    margin: -20px;
+	    height: 145px;
+	    overflow: auto;
+	    padding: 20px;
+			.icon {
+				.square(16px);
+				display: inline-block; 
+				padding: 2px; margin: 1px;
+				border: 1px solid transparent;
+				cursor: pointer;
+				> i {
+					.square(16px);
+					display: inline-block; 
+				}
+				&&:hover {
+					border: 1px solid #CFCFCF;
+				}
+				&&.selectedIcon {
+					border: 1px solid red;
+				}
+			}
+		}
+		
+		.selectedIconInfo {
+	    border-top: 1px solid #CFCFCF;
+	    margin: 20px -20px -10px;
+	    padding: 10px 20px 0;
+	    .itemValue {
+	    	color: @linkColor;
+	    }
+		}
+	}
+}
+
+
+
+
+

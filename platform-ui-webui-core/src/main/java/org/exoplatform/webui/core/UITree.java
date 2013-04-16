@@ -271,7 +271,7 @@ public class UITree extends UIComponent {
 
         //hard code this one because we can't change code on exoadmin webapp
         if ("DefaultPageIcon".equals(iconGroup)) {
-            iconGroup = "uiIconFile uiIconLightGray";
+            iconGroup = "uiIconFileMini uiIconLightGray";
         } else if ("GroupAdminIcon".equals(iconGroup) || "PortalIcon".equals(iconGroup)) {
             iconGroup = "uiIconGroup uiIconLightGray";
         }

@@ -7,7 +7,7 @@
 	UIContainer uicontainer = uicomponent.getAncestorOfType(UIContainer.class);	
 	def data = new JSONArray();
 %>
-<div class="UIItemSelector x" id="$uicomponent.id">	
+<div class="UIItemSelector" id="$uicomponent.id">	
 	<div class="RightColumnStyle" style="width: 99.5%;">
 		<%/*Begin ItemList*/%>
 		<div class="ItemListContainer">

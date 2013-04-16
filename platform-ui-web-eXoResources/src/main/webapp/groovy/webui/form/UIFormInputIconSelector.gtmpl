@@ -12,43 +12,41 @@
 	UIForm form = uicomponent.getParent();
 %>
 
-<div class="uiItemSelector clearfix">
+<div class="uiItemSelector uiFormInputIconSelector clearfix">
 	<input type="hidden" name="${uicomponent.name}" value ="$selectedIcon"/>
 	<%/*Begin Item List*/%>
-	<div class="itemListContainer pull-left">
-		<div class="uiBox">
-			<h5 class="title"><%uicomponent.renderChild(UIDropDownControl.class);%></h5>
+	<div class="itemListContainer pull-left uiBox">
+		<h5 class="title"><%uicomponent.renderChild(UIDropDownControl.class);%></h5>
+		<ul class="itemList uiContentBox">
 			<%
 				for(iconset in listIconSet) { 
-					String item = "Item";
+					String item = "";
 					String iconArrow = "uiIconArrowRight";
 					String setName = iconset.getName();
 	
 					if(setName == selectedIconSet.getName()) {
-						item = "SelectedItem";
+						item = "selectedItem";
 						iconArrow = "uiIconArrowDown";
 					}
 					String submitEvent = form.event('ChangeIconCategory', setName);							
 				%>	
-					<div class="$item" onclick="$submitEvent">
+					<li class="item $item" onclick="$submitEvent">
 						<i class="$iconArrow"></i>
 						<%=_ctx.appRes("UIFormInputIconSelector.label." + setName)%>
-					</div>
+					</li>
 				<%}%>
-		</div>
+		</ul>
 	</div>
 	<%/*End Item List*/%>
 		
 	<%/*Begin Item Detail List*/%>
-	<div class="itemDetailList uiBox clearfix">
-		<div class="itemDetail">
-			<div class="title">
-				<%=_ctx.appRes("UIFormInputIconSelector.label.iconPreview")%>
-				<div class="FR">
-					<a class="btn" href="<%=form.event('SelectIcon', "Default");%>"><%= _ctx.appRes(uicomponent.getParent().getId() + "." + uicomponent.getId() + ".title.SetDefault") %></a>
-				</div>
-			</div>
-			<%/*Template 1*/%>
+	<div class="itemDetailList uiBox">
+		<div class="title clearfix">
+			<h6 class="pull-left"><%=_ctx.appRes("UIFormInputIconSelector.label.iconPreview")%></h6>
+			<a class="btn pull-right" href="<%=form.event('SelectIcon', "Default");%>"><%= _ctx.appRes(uicomponent.getParent().getId() + "." + uicomponent.getId() + ".title.SetDefault") %></a>
+		</div>
+		<%/*Template 1*/%>
+		<div class="uiContentBox">
 			<%
 				for(iconset in listIconSet) {
 					String display = "none";
@@ -56,32 +54,30 @@
 					def icons = uicomponent.getListIcon(iconset);
 				%>
 					
-					<div class="iconSelector CategoryContainer" style="display:$display">
-						<div class="OverflowContainer">
+					<div class="iconSelector categoryContainer" style="display:$display">
+						
 						<%
 							for(icon in icons) {			 
 								String submitEvent = form.event('SelectIcon', icon);						 
 								String cssClass = "";											
 								if(icon.equalsIgnoreCase(selectedIcon)) {
-									cssClass = "SelectedBackground"
+									cssClass = "selectedIcon"
 								}
 							%>																								
-								<a class="$cssClass" onclick="$submitEvent">
-									<div	class="Icon <%=icon%>" title="Click to select this icon"><span></span></div>
+								<a class="icon $cssClass" onclick="$submitEvent">
+									<i class=" <%=icon%>" title="Click to select this icon"></i>
 								</a>
 							<%}%> 
-						</div>
+						
 					</div>
 					
 				<%}%>
 				<div class="selectedIconInfo">
-					<div class="fieldContainer">
-						<div class="itemLabel FL"><%=_ctx.appRes("UIFormInputIconSelector.label.iconName")%>:</div>
-						<div class="itemValue FL">$selectedIcon</div>
-					</div>
+						<%=_ctx.appRes("UIFormInputIconSelector.label.iconName")%>:
+						<span class="itemValue">$selectedIcon</span>
 				</div>
 			<%/*End Template 1*/%>
 		</div>
-			<%/*End Item Detail List*/%>
+		<%/*End Item Detail List*/%>
 	</div>
 </div>
