@@ -1,5 +1,5 @@
 <div class="uiBox">
-	<div class="UIGroupNavigationManagement UIManagement uiContentBox" id="$uicomponent.id">
+	<div class="UIGroupNavigationManagement uiManagement uiContentBox" id="$uicomponent.id">
 		<%	
 			import org.exoplatform.webui.core.UIComponent ;
 			import org.exoplatform.webui.core.UIVirtualList;
