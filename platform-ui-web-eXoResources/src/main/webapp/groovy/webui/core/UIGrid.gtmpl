@@ -84,7 +84,7 @@
                      fieldValue = "";
                   }
                   String value = encoder.encode(fieldValue.toString());
-                  println "<td><span  class=\""+cssClass+"\"  rel=\"tooltip\" data-placement=\"bottom\" title='$value'>"+value+"</span></td>";
+                  println "<td><span  class=\""+cssClass+"\"  title='$value'>"+value+"</span></td>";
                }
                if (beanActions != null && beanActions.length > 0)
                {
