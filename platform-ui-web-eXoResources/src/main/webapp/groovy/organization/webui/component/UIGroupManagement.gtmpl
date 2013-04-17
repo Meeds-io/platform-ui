@@ -20,14 +20,13 @@
 					 		groupId = group.getId();
 					 if (GroupManagement.isAdministrator(null) ||
 					 		((groupId != null) && GroupManagement.isSuperUserOfGroup(null, groupId))) {
-				%>		<span class="pull-right">
-							<% actionLink = uicomponent.event("AddGroup","add"); %>
-							<a class="uiIconPlus uiIconLightGray" href="$actionLink" data-placement="bottom" rel="tooltip" data-original-title="<%=_ctx.appRes("UIGroupManagement.label.AddGroup")%>"></a>&nbsp;
-							<% actionLink = uicomponent.event("EditGroup","Edit"); %>
-							<a class="uiIconEdit uiIconLightGray" href="$actionLink" data-placement="bottom" rel="tooltip" data-original-title="<%=_ctx.appRes("UIGroupManagement.label.EditGroup")%>"></a>&nbsp;						
-							<% actionLink = uicomponent.event("DeleteGroup","delete"); %>
-							<a class="uiIconTrash uiIconLightGray" href="$actionLink" data-placement="bottom" rel="tooltip" data-original-title="<%=_ctx.appRes("UIGroupManagement.label.DeleteGroup")%>"></a>							
-						</span>
+				%>
+						<% actionLink = uicomponent.event("DeleteGroup","delete"); %>
+							<a class="actionIcon pull-right" href="$actionLink" data-placement="bottom" rel="tooltip" data-original-title="<%=_ctx.appRes("UIGroupManagement.label.DeleteGroup")%>"><i class="uiIconTrash uiIconLightGray"></i></a>							
+						<% actionLink = uicomponent.event("EditGroup","Edit"); %>
+							<a class="actionIcon pull-right" href="$actionLink" data-placement="bottom" rel="tooltip" data-original-title="<%=_ctx.appRes("UIGroupManagement.label.EditGroup")%>"><i class="uiIconEdit uiIconLightGray"></i></a>					
+						<% actionLink = uicomponent.event("AddGroup","add"); %>
+							<a class="actionIcon pull-right" href="$actionLink" data-placement="bottom" rel="tooltip" data-original-title="<%=_ctx.appRes("UIGroupManagement.label.AddGroup")%>"><i class="uiIconPlus uiIconLightGray"></i></a>
 				<%}%>
 				<%=_ctx.appRes("UIGroupManagement.label.Groups")%>
 				</h5>
