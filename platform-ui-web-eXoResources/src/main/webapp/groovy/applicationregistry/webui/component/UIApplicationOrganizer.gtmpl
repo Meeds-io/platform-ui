@@ -47,7 +47,7 @@ def selectedApp = uicomponent.getSelectedApplication();
             <div class="row-fluid">
               <div class="<%=isSelected ? "span8" : "span12"%>">
                
-                <a href="#$cName" onclick="<%= isSelected ? "javascript:void(0);" : uicomponent.event("ShowCategory", cName) %>" rel="tooltip" data-placement="bottom" title="<%= displayName %>"
+                <a href="#$cName" onclick="<%= isSelected ? "javascript:void(0);" : uicomponent.event("ShowCategory", cName) %>" 
                  data-parent="#ApplicationRegistryCategory" 
                  data-toggle="collapse">
                 <i class="<%= isSelected ? "uiIconArrowDown uiIconLightGray" : "uiIconArrowRight uiIconLightGray" %>"></i> 
