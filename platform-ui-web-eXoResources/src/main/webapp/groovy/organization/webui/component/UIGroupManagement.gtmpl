@@ -6,6 +6,9 @@
 	import	org.exoplatform.organization.webui.component.GroupManagement;
 	import	org.exoplatform.services.organization.Group;
 	
+   def rContext = _ctx.getRequestContext();
+   rContext.getJavascriptManager().require("SHARED/bts_tooltip").require("SHARED/jquery", "\$")
+                           .addScripts("\$('#${uicomponent.parent.id}').find('*[rel=\"tooltip\"]').tooltip();");
 %>
 <div class="uiGroupManagement">
 	<div class="uiBox"><%uicomponent.renderChild(UIBreadcumbs.class); %></div>
