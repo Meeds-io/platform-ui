@@ -6,6 +6,9 @@ def selectedCategory = uicomponent.getSelectedCategory();
 def apps = uicomponent.getApplications();
 def selectedApp = uicomponent.getSelectedApplication();
 
+def rcontext = _ctx.getRequestContext();
+rcontext.getJavascriptManager().require("SHARED/bts_tooltip").require("SHARED/jquery", "\$")
+             .addScripts("\$('#${uicomponent.id}').find('*[rel=\"tooltip\"]').tooltip();");
 %>
 <div class="uiOrganizerManagement" id="$uicomponent.id">
   
