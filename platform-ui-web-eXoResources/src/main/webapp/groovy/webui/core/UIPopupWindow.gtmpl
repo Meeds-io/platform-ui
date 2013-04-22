@@ -30,7 +30,6 @@
   def module = rcontext.getJavascriptManager().require("SHARED/uiPopupWindow", "uiPopupWindow");
 	if(uicomponent.isShow()) {
 	   module.addScripts("uiPopupWindow.show('$popupId', $uicomponent.showMask, null, $height);");
-	   show = "block";
 	} else if (rcontext.useAjax()) {
 	   module.addScripts("uiPopupWindow.hide('$popupId', $uicomponent.showMask, null, $height);");
 	}
