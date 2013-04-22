@@ -103,8 +103,8 @@ eXo.portal.UIPortal = {
   initMouseHover : function(id) {
 	  var comp = $("#" + id);
 	  if (!comp.length) return;
-	  comp.mouseenter(function(){eXo.portal.UIPortal.blockOnMouseOver(event, this, true);});
-	  comp.mouseleave(function(){eXo.portal.UIPortal.blockOnMouseOver(event, this, false);});
+	  comp.mouseenter(function(event){eXo.portal.UIPortal.blockOnMouseOver(event, this, true);});
+	  comp.mouseleave(function(event){eXo.portal.UIPortal.blockOnMouseOver(event, this, false);});
   },
   
   blockOnMouseOver : function(event, block, isOver) {
