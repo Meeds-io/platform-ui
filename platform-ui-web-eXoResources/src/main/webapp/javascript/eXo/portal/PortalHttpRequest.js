@@ -458,8 +458,13 @@
 							};
 						})(script);
 					} else {
-						script.onload = script.onerror = function() {appendScript.apply(that);};
-					}				
+						script.onload = (function(sci) {
+							return function() {sci.onload = null; appendScript.apply(that);};
+						})(script);
+					}
+					script.onerror = (function(sci) {
+						return function() {sci.onerror = null; appendScript.apply(that);};
+					})(script);
 				}
 			}
 			appendScript.apply(that);
