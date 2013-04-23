@@ -75,8 +75,8 @@
 									{
 										String maximizedAction = uicomponent.event("ChangeWindowState", (windowState != WindowState.MAXIMIZED)? "maximized" : "normal");
 										String minimizedAction = uicomponent.event("ChangeWindowState", (windowState != WindowState.MINIMIZED)? "minimized" : "normal");
-										String maximizedMode = (windowState != WindowState.MAXIMIZED)? "maximized" : "Normal";
-										String minimizedMode = (windowState != WindowState.MINIMIZED)? "minimized" : "Normal";
+										String maximizedMode = (windowState != WindowState.MAXIMIZED)? "maximized" : "restore";
+										String minimizedMode = (windowState != WindowState.MINIMIZED)? "minimized" : "restore";
 										String renderMaxi = (windowState != WindowState.MAXIMIZED)? _ctx.appRes("UIPortlet.tooltip.Maximize") : _ctx.appRes("UIPortlet.tooltip.MaximizeRestore");
 										String renderMini = (windowState != WindowState.MINIMIZED)? _ctx.appRes("UIPortlet.tooltip.Minimize") : _ctx.appRes("UIPortlet.tooltip.MinimizeRestore");
 								%>
