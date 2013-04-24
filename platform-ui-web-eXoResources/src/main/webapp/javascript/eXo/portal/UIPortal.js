@@ -154,7 +154,14 @@ eXo.portal.UIPortal = {
       var newLayer = editBlock.find("div.NewLayer").eq(0);
       var height = 0;
       var width = 0;
-
+      
+      // hide info-bar of parent containers
+      var parentContainer = editBlock.parents('div.UIContainer:last');
+	  eXo.portal.UIPortal.blockOnMouseOver(event, parentContainer, false);
+	  parentContainer.find('div.UIContainer').each(function(){
+	    eXo.portal.UIPortal.blockOnMouseOver(event, this, false);
+	  });
+      
       if (layoutBlock && layoutBlock.css("display") != "none")
       {
         height = layoutBlock[0].offsetHeight;
@@ -235,6 +242,10 @@ eXo.portal.UIPortal = {
         if (normalBlock.length > 0)
         {
           normalBlock.eq(0).removeClass("OverContainerBlock").addClass("NormalContainerBlock");
+          if(!jqBlock.hasClass("UIPortlet"))
+          {
+        	eXo.portal.UIPortal.blockOnMouseOver(event,jqBlock.closest('div.UIComponentBlock').parent(), true);
+          }
         }
       }
     }
