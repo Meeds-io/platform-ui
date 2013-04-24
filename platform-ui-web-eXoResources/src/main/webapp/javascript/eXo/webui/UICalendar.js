@@ -33,6 +33,8 @@
 	                      // SUNDAY (1) in the U.S, MONDAY (2) in France, TUESDAY
 	                      // (3), etc
 	  weekdays : null,
+	  
+	  hideCalendarHandler : null,
 	
 	  init : function(field, isDisplayTime, datePattern, value, monthNames) {
 	    this.isDisplayTime = isDisplayTime;
@@ -83,7 +85,17 @@
 	  },
 	
 	  show : function() {
-	    document.onclick = function() {eXo.webui.UICalendar.hide()};
+	    //document.onclick = function() {eXo.webui.UICalendar.hide()};
+		if(!this.hideCalendarHandler) {
+		  this.hideCalendarHandler = function() {eXo.webui.UICalendar.hide();};
+		}
+		if(document.addEventListener) {
+		  document.addEventListener("click", this.hideCalendarHandler, false);
+		} else if(document.attachEvent) {
+		  document.attachEvent("click", this.hideCalendarHandler);
+		} else {
+		  document.onclick = function() {eXo.webui.UICalendar.hide()};
+		}
 	    var re = /^(\d{1,2}\/\d{1,2}\/\d{1,4})\s*(\s+\d{1,2}:\d{1,2}:\d{1,2})?$/i;
 	    this.selectedDate = new Date();
 	
@@ -206,7 +218,13 @@
 	      this.dateField.blur();
 	      this.dateField = null;
 	    }
-	    document.onclick = null;
+	    if(document.removeEventListener) {
+		  document.removeEventListener("click", this.hideCalendarHandler, false);
+		} else if(document.detachEvent) {
+		  document.detachEvent("click", this.hideCalendarHandler);
+		} else {
+		  document.onclick = null;
+		}
 	    // document.onmousedown = null;
 	  },
 	
