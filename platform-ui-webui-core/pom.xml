@@ -24,7 +24,7 @@
   <parent>
     <artifactId>platform-ui</artifactId>
     <groupId>org.exoplatform.platform-ui</groupId>
-    <version>4.0.0</version>
+    <version>4.0.x-SNAPSHOT</version>
   </parent>
   <artifactId>platform-ui-webui-core</artifactId>
   <packaging>jar</packaging>
