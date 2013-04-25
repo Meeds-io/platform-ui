@@ -201,11 +201,12 @@
 							<i class="uiIconDragDrop uiIconWhite" title="<%=_ctx.appRes("UIPortlet.tooltip.DragControl");%>"></i>
 							<% 
 								String portletIcon = uicomponent.getIcon();
-								if(portletIcon == null) portletIcon = "PortletIcon";
-								
+								if(portletIcon == null || portletIcon == "PortletIcon") portletIcon = "uiIconPortletConfig uiIconWhite";
+								else portletIcon = "PortletIconOnEdit " + portletIcon;
+                        
 								if(title.length() > 30) title = title.substring(0,27) + "...";
 							%>
-							<i class="uiIconPortletConfig uiIconWhite"></i>
+							<i class="$portletIcon"></i>
 							<span><%=hasPermission ? title : _ctx.appRes("UIPortlet.label.protectedContent")%></span>
 							<%if(hasPermission) {%>
 								<a href="<%=uicomponent.event("EditPortlet","$uicomponent.id")%>" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("UIPortlet.tooltip.editPortlet")%>"><i class="uiIconEdit uiIconWhite"></i></a>
