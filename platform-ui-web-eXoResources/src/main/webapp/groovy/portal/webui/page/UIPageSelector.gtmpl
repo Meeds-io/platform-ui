@@ -27,7 +27,7 @@
 %>
 <div class="uiPageSelector" id="<%=uicomponent.getId();%>">
 	
-	<h5><i class="uiIconPageInfo"> </i> <%=_ctx.appRes(uicomponent.getId()+".label.currentSelectedPage")%></h5>
+	<h6><i class="uiIconPageInfo"> </i> <%=_ctx.appRes(uicomponent.getId()+".label.currentSelectedPage")%></h6>
 	
 	<div class="form-horizontal">
 		<div class="control-group">
