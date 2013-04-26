@@ -67,7 +67,7 @@ rcontext.getJavascriptManager().require("SHARED/bts_tooltip").require("SHARED/jq
               <% } %>
             </div>
           </div>
-          <div class="accordion-body <%= isSelected ? "in" : "" %> collapse" id="$cName" style="height: <%= isSelected ? "auto" : "0px" %>;">
+          <div class="accordion-body <%= isSelected ? "in" : "" %> collapse clear-position" id="$cName" style="height: <%= isSelected ? "auto" : "0px" %>;">
               <% if(isSelected) { %>
               <ul>
                 <%
