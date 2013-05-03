@@ -92,7 +92,7 @@
 		if(document.addEventListener) {
 		  document.addEventListener("click", this.hideCalendarHandler, false);
 		} else if(document.attachEvent) {
-		  document.attachEvent("click", this.hideCalendarHandler);
+		  document.attachEvent("onclick", this.hideCalendarHandler);
 		} else {
 		  document.onclick = function() {eXo.webui.UICalendar.hide()};
 		}
@@ -221,7 +221,7 @@
 	    if(document.removeEventListener) {
 		  document.removeEventListener("click", this.hideCalendarHandler, false);
 		} else if(document.detachEvent) {
-		  document.detachEvent("click", this.hideCalendarHandler);
+		  document.detachEvent("onclick", this.hideCalendarHandler);
 		} else {
 		  document.onclick = null;
 		}
