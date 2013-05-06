@@ -210,17 +210,15 @@ public class UIFormMultiValueInputSet extends UIFormInputContainer<List> {
             uiInput.processRender(context);
 
             if ((size >= 2) || ((size == 1) && (uiInput.getValue() != null))) {
-                writer.append("<a class=\"actionIcon\"><i onclick=\"");
-                writer.append(uiForm.event("Remove", uiInput.getId())).append("\" data-placement=\"bottom\" rel=\"tooltip\" title=\"" + removeItem + "\"");
-                writer
-                        .append(" class=\"uiIconTrash multiFieldAction\"></i></a>");
+                writer.append("<a class=\"actionIcon\" onclick=\"");
+                writer.append(uiForm.event("Remove", uiInput.getId())).append("\" data-placement=\"bottom\" rel=\"tooltip\" title=\"" + removeItem + "\">");
+                writer.append("<i class=\"uiIconTrash uiIconLightGray\"></i></a>");
             }
             if (i == size - 1) {
 
-                writer.append("<a class=\"actionIcon\"><i onclick=\"");
-                writer.append(uiForm.event("Add", getId())).append("\" data-placement=\"bottom\" rel=\"tooltip\" title=\"" + addItem + "\"");
-                writer
-                        .append(" class=\"uiIconPlus multiFieldAction\" ></i></a>");
+                writer.append("<a class=\"actionIcon\" onclick=\"");
+                writer.append(uiForm.event("Add", getId())).append("\" data-placement=\"bottom\" rel=\"tooltip\" title=\"" + addItem + "\">");
+                writer.append("<i class=\"uiIconPlus uiIconLightGray\"></i></a>");
             }
             writer.append("</li>");
         }

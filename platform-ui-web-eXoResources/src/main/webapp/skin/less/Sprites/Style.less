@@ -70,6 +70,7 @@
 .btn-primary:hover [class^="uiIcon"],.btn-primary:hover [class^="uiIcon"]:hover,
 .uiAction .btn:first-child [class^="uiIcon"],
 .uiAction .btn:first-child:hover [class^="uiIcon"],.uiAction .btn:first-child:hover [class^="uiIcon"]:hover,
+.containerTopicDetail .attachmentContentImage .actionAttachImg a:hover i,
 .uiIconWhite
 {
   background-image: url("/eXoResources/skin/images/Icons/uiIconsWhite.png");
@@ -83,11 +84,17 @@
 	background-position: 0px 0px;
 }
 
-.uiIconTrash,.uiIconDelete,.uiIconDeleteNode,.uiIconDeleteDraft,.uiIconDeletePage,.uiIconDeleteCategory, .uiIconRemoveStyle, .uiIconRemovePermission,.uiIconRemoveTag, .uiIconRemoveNodeType,.uiIconDeleteMembership,.uiIconDeleteUser{
+.uiIconTrash,.uiIconDelete,.uiIconDeleteNode,.uiIconDeleteDraft,
+.uiIconDeletePage,.uiIconDeleteCategory,.uiIconRemoveStyle, 
+.uiIconRemovePermission,.uiIconRemoveTag,.uiIconRemoveNodeType,
+.uiIconDeleteMembership,.uiIconDeleteUser,
+.uiIconRemoveNavigationNode,.uiIconRemoveListTargetPage,.uiIconRemoveDetailTargetPage {
 	background-position: -20px 0px;
 }
 
-.uiIconEdit,.uiIconEditSelectedNode,.uiIconEditPage,.uiIconEditTag ,.uiIconViewUserInfo, .uiIconEditStyle, .uiIconEditInfo,.uiIconEditMembership ,.uiIconEditCategory{
+.uiIconEdit,.uiIconEditSelectedNode,.uiIconEditPage,.uiIconEditTag,
+.uiIconViewUserInfo,.uiIconEditStyle,.uiIconEditInfo,.uiIconEditMembership,
+.uiIconEditCategory {
 	background-position: -40px 0px;
 }
 
@@ -219,7 +226,9 @@
 	background-position: -80px -60px;
 }
 
-.uiIconPlus, .uiIconAddPermission, .uiIconAddIcon, .uiIconAddPath, .uiIconChooseNodeType, .uiIconAddNode {
+.uiIconPlus,.uiIconAddPermission,.uiIconAddIcon,.uiIconAddPath, 
+.uiIconChooseNodeType,.uiIconAddNode,
+.uiIconSelectNavigationNode,.uiIconSelectListTargetPage,.uiIconSelectDetailTargetPage {
 	background-position: -100px -60px;
 }
 .uiIconSimplePlusMini {
@@ -691,12 +700,13 @@
 	background-position: 0px -140px;
 }
 
-.uiIcon16x16FileXsl,.uiIcon16x16textxsl {
+.uiIcon16x16FileXsl,.uiIcon16x16textxsl,.uiIcon16x16textxslt {
 	background-position: -20px -140px;
 }
 
 .uiIcon16x16FileFont,.uiIcon16x16fonttff,.uiIcon16x16fontotf,
-.uiIcon16x16fontttc,.uiIcon16x16fonteot,.uiIcon16x16fontdfont {
+.uiIcon16x16fontttc,.uiIcon16x16fonteot,.uiIcon16x16fontdfont,
+.uiIcon16x16fontttf,.uiIcon16x16fontwoff {
 	background-position: -40px -140px;
 }
 
@@ -951,12 +961,13 @@
 	background-position: 0px -196px;
 }
 
-.uiIcon24x24FileXsl,.uiIcon24x24textxsl {
+.uiIcon24x24FileXsl,.uiIcon24x24textxsl,.uiIcon24x24textxslt {
 	background-position: -28px -196px;
 }
 
 .uiIcon24x24FileFont,.uiIcon24x24fonttff,.uiIcon24x24fontotf,
-.uiIcon24x24fontttc,.uiIcon24x24fonteot,.uiIcon24x24fontdfont {
+.uiIcon24x24fontttc,.uiIcon24x24fonteot,.uiIcon24x24fontdfont,
+.uiIcon24x24fontttf,.uiIcon24x24fontwoff {
 	background-position: -56px -196px;
 }
 
@@ -1704,12 +1715,13 @@
 	background-position: 0px -476px;
 }
 
-.uiIcon64x64FileXsl,.uiIcon64x64textxsl {
+.uiIcon64x64FileXsl,.uiIcon64x64textxsl,.uiIcon64x64textxslt {
 	background-position: -68px -476px;
 }
 
 .uiIcon64x64FileFont,.uiIcon64x64fonttff,.uiIcon64x64fontotf,
-.uiIcon64x64fontttc,.uiIcon64x64fonteot,.uiIcon64x64fontdfont {
+.uiIcon64x64fontttc,.uiIcon64x64fonteot,.uiIcon64x64fontdfont,
+.uiIcon64x64fontttf,.uiIcon64x64fontwoff {
 	background-position: -136px -476px;
 }
 
@@ -1781,11 +1793,11 @@
 	background-position: -20px -200px;
 }
 
-.uiIcon16x16FolderPrivate {
+.uiIcon16x16FolderPrivate,.uiIcon16x16exo_privateFolder {
 	background-position: -40px -200px;
 }
 
-.uiIcon16x16FolderFavorite {
+.uiIcon16x16FolderFavorite,.uiIcon16x16exo_favoriteFolder {
 	background-position: -60px -200px;
 }
 
@@ -1805,11 +1817,11 @@
 	background-position: -140px -200px;
 }
 
-.uiIcon16x16FolderSound,.uiIcon16x16exo_audioFolder {
+.uiIcon16x16FolderSound,.uiIcon16x16exo_audioFolder,.uiIcon16x16exo_musicFolder {
 	background-position: -160px -200px;
 }
 
-.uiIcon16x16FolderPublic {
+.uiIcon16x16FolderPublic,.uiIcon16x16exo_publicFolder {
 	background-position: -180px -200px;
 }
 
@@ -1817,7 +1829,7 @@
 	background-position: 0px -220px;
 }
 
-.uiIcon16x16FolderSearch {
+.uiIcon16x16FolderSearch,.uiIcon16x16exo_searchFolder  {
 	background-position: -20px -220px;
 }
 
@@ -1841,7 +1853,7 @@
 	background-position: -120px -220px;
 }
 
-.uiIcon16x16FolderVideoMedia,.uiIcon16x16exo_multimediaFolder {
+.uiIcon16x16FolderVideoMedia,.uiIcon16x16exo_multimediaFolder,.uiIcon16x16exo_videoFolder {
 	background-position: -140px -220px;
 }
 
@@ -1871,11 +1883,11 @@
 	background-position: -28px -280px;
 }
 
-.uiIcon24x24FolderPrivate {
+.uiIcon24x24FolderPrivate,.uiIcon24x24exo_privateFolder {
 	background-position: -56px -280px;
 }
 
-.uiIcon24x24FolderFavorite {
+.uiIcon24x24FolderFavorite,.uiIcon24x24exo_favoriteFolder {
 	background-position: -84px -280px;
 }
 
@@ -1895,11 +1907,11 @@
 	background-position: -196px -280px;
 }
 
-.uiIcon24x24FolderSound,.uiIcon24x24exo_audioFolder {
+.uiIcon24x24FolderSound,.uiIcon24x24exo_audioFolder,.uiIcon24x24exo_musicFolder {
 	background-position: -224px -280px;
 }
 
-.uiIcon24x24FolderPublic {
+.uiIcon24x24FolderPublic,.uiIcon24x24exo_publicFolder {
 	background-position: -252px -280px;
 }
 
@@ -1907,7 +1919,7 @@
 	background-position: 0px -308px;
 }
 
-.uiIcon24x24FolderSearch {
+.uiIcon24x24FolderSearch,.uiIcon24x24exo_searchFolder  {
 	background-position: -28px -308px;
 }
 
@@ -1931,7 +1943,7 @@
 	background-position: -168px -308px;
 }
 
-.uiIcon24x24FolderVideoMedia,.uiIcon24x24exo_multimediaFolder {
+.uiIcon24x24FolderVideoMedia,.uiIcon24x24exo_multimediaFolder,.uiIcon24x24exo_videoFolder {
 	background-position: -196px -308px;
 }
 
@@ -2071,11 +2083,11 @@
 	background-position: -68px -680px;
 }
 
-.uiIcon64x64FolderPrivate {
+.uiIcon64x64FolderPrivate,.uiIcon64x64exo_privateFolder {
 	background-position: -136px -680px;
 }
 
-.uiIcon64x64FolderFavorite {
+.uiIcon64x64FolderFavorite,.uiIcon64x64exo_favoriteFolder {
 	background-position: -204px -680px;
 }
 
@@ -2095,11 +2107,11 @@
 	background-position: -476px -680px;
 }
 
-.uiIcon64x64FolderSound,.uiIcon64x64exo_audioFolder {
+.uiIcon64x64FolderSound,.uiIcon64x64exo_audioFolder,.uiIcon64x64exo_musicFolder {
 	background-position: -544px -680px;
 }
 
-.uiIcon64x64FolderPublic {
+.uiIcon64x64FolderPublic,.uiIcon64x64exo_publicFolder {
 	background-position: -612px -680px;
 }
 
@@ -2107,7 +2119,7 @@
 	background-position: 0px -748px;
 }
 
-.uiIcon64x64FolderSearch {
+.uiIcon64x64FolderSearch,.uiIcon64x64exo_searchFolder {
 	background-position: -68px -748px;
 }
 
@@ -2131,7 +2143,7 @@
 	background-position: -408px -748px;
 }
 
-.uiIcon64x64FolderVideoMedia,.uiIcon64x64exo_multimediaFolder {
+.uiIcon64x64FolderVideoMedia,.uiIcon64x64exo_multimediaFolder,.uiIcon64x64exo_videoFolder {
 	background-position: -476px -748px;
 }
 

@@ -28,6 +28,7 @@
 	    {
 	      portalComposer.toggle($(this));
 	    });
+    	$("div#" + id).find('[rel="tooltip"]').tooltip();
 	  },
 
 	  initComposerContent : function(id, selTabId)
@@ -55,17 +56,19 @@
 	  toggle : function(icon)
 	  {
 	    var compWindow = icon.closest(".uiPortalComposer");
-      var contWindow = compWindow.children(".popupContent").eq(0);
+	    var contWindow = compWindow.children(".popupContent").eq(0);
 	    if(contWindow.css("display") == "block")
 	    {
           contWindow.hide();
           contWindow.next(".uiAction").hide();
+          compWindow.children("span:first").removeClass('uiIconResize');
           icon.attr("class", "uiIconArrowRightMini pull-left");
 	    }
 	    else
 	    {
           contWindow.show();
           contWindow.next(".uiAction").show();
+          compWindow.children("span:first").addClass('uiIconResize');
           icon.attr("class", "uiIconArrowDownMini pull-left");
 	    }
 

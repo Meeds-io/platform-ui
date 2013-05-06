@@ -187,6 +187,15 @@ table {
 			padding: 0px 8px;
 		}
 	}
+	#clvContentTab-tab .controls{
+		.uiSelectbox {
+			width: 131px;
+			.selectbox{ width: 131px;}
+		}
+	}
+	.form-horizontal .control-group .controls input{
+		width: 270px;
+	}
 }
 
 .UISingleContentViewerPortlet{
@@ -195,8 +204,25 @@ table {
 			padding: 0px 8px;
 		}
 	}
-	.form-horizontal li{
-		margin-left: 50px;
+  
+	.form-horizontal{
+		li{
+			margin-left: 50px;
+		}
+    
+		.uiRadio{
+			width: 190px;
+			margin-left: 15px;
+		}
+    
+		.control-group{
+			margin-bottom: 20px;
+		}
+    
+		.controls-full .scv-by {
+			line-height: 28px;
+      margin: 0px 5px 0px 15px;
+		}
 	}
 }
 
@@ -204,6 +230,7 @@ table {
 
 .UIForm{
 	.UIPDFViewerContainer {
+		min-width: 530px;
 		.PDFViewerBar {
 			.ControlButton {
 				.PageNumber input{

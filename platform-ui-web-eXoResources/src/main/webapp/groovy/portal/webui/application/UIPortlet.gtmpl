@@ -75,8 +75,8 @@
 									{
 										String maximizedAction = uicomponent.event("ChangeWindowState", (windowState != WindowState.MAXIMIZED)? "maximized" : "normal");
 										String minimizedAction = uicomponent.event("ChangeWindowState", (windowState != WindowState.MINIMIZED)? "minimized" : "normal");
-										String maximizedMode = (windowState != WindowState.MAXIMIZED)? "maximized" : "Normal";
-										String minimizedMode = (windowState != WindowState.MINIMIZED)? "minimized" : "Normal";
+										String maximizedMode = (windowState != WindowState.MAXIMIZED)? "maximized" : "restore";
+										String minimizedMode = (windowState != WindowState.MINIMIZED)? "minimized" : "restore";
 										String renderMaxi = (windowState != WindowState.MAXIMIZED)? _ctx.appRes("UIPortlet.tooltip.Maximize") : _ctx.appRes("UIPortlet.tooltip.MaximizeRestore");
 										String renderMini = (windowState != WindowState.MINIMIZED)? _ctx.appRes("UIPortlet.tooltip.Minimize") : _ctx.appRes("UIPortlet.tooltip.MinimizeRestore");
 								%>
@@ -201,15 +201,16 @@
 							<i class="uiIconDragDrop uiIconWhite" title="<%=_ctx.appRes("UIPortlet.tooltip.DragControl");%>"></i>
 							<% 
 								String portletIcon = uicomponent.getIcon();
-								if(portletIcon == null) portletIcon = "PortletIcon";
-								
+								if(portletIcon == null || portletIcon == "PortletIcon") portletIcon = "uiIconPortletConfig uiIconWhite";
+								else portletIcon = "PortletIconOnEdit " + portletIcon;
+                        
 								if(title.length() > 30) title = title.substring(0,27) + "...";
 							%>
-							<i class="uiIconPortletConfig uiIconWhite"></i>
+							<i class="$portletIcon"></i>
 							<span><%=hasPermission ? title : _ctx.appRes("UIPortlet.label.protectedContent")%></span>
 							<%if(hasPermission) {%>
-								<a href="<%=uicomponent.event("EditPortlet","$uicomponent.id")%>" title="<%=_ctx.appRes("UIPortlet.tooltip.editPortlet")%>"><i class="uiIconEdit uiIconWhite"></i></a>
-								<a href="<%=uicomponent.event("DeleteComponent","$uicomponent.id")%>" title="<%=_ctx.appRes("UIPortlet.tooltip.deletePortlet")%>"><i class="uiIconTrash uiIconWhite"></i></a>
+								<a href="<%=uicomponent.event("EditPortlet","$uicomponent.id")%>" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("UIPortlet.tooltip.editPortlet")%>"><i class="uiIconEdit uiIconWhite"></i></a>
+								<a href="<%=uicomponent.event("DeleteComponent","$uicomponent.id")%>" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("UIPortlet.tooltip.deletePortlet")%>"><i class="uiIconTrash uiIconWhite"></i></a>
 							<%}%>	
 					
 						<%/*End InfoBar*/ %>

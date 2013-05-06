@@ -46,7 +46,7 @@
 							%>
 									<li class="$itemSelected">
 											
-										<a href="javascript:void(0);" class="itemTitle"><i class="uiIconArrowRight"></i><%=_ctx.appRes("UIWizardPageSelectLayoutForm.label."+template.getLabel())%></a>
+										<a href="javascript:void(0);" class="itemTitle"><i class="<%=template.isSelected() ? "uiIconArrowDown" : "uiIconArrowRight";%>"></i><%=_ctx.appRes("UIWizardPageSelectLayoutForm.label."+template.getLabel())%></a>
 											
 										<div id="SetValue" class="extraActions" style="display: none">$setHiddenValue;</div>
 									</li>

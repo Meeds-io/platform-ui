@@ -246,6 +246,13 @@
 }
 
 /********************* Icon PortletIcon************************************/
+.PortletIconOnEdit {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	line-height: 16px;
+	vertical-align: text-top;
+}
 
 .PortletIcon {
 	background: url('icons/Earth.gif') no-repeat left center; /* orientation=lt */

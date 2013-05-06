@@ -2,6 +2,10 @@
 	def selectedGadget = uicomponent.getSelectedGadget();
 	boolean isSelected = false;
 	String cssItem;
+
+   def rContext = _ctx.getRequestContext();
+   rContext.getJavascriptManager().require("SHARED/bts_tooltip").require("SHARED/jquery", "\$")
+      .addScripts("\$('#${uicomponent.id}').find('*[rel=\"tooltip\"]').tooltip();");
 %>
 <div class="uiGadgetManagement" id="$uicomponent.id">
   
@@ -35,7 +39,7 @@
                 </ul>
               </div>
               <div class="span2">
-                <a class="actionIcon" title="<%=_ctx.appRes("UIGadgetManagement.title.deleteGadget")%>" onclick="<%= uicomponent.event("RemoveGadget", gadget.getName()) %>"><i class="uiIconDelete uiIconLightGray"></i></a>
+                <a class="actionIcon" title="<%=_ctx.appRes("UIGadgetManagement.title.deleteGadget")%>" rel="tooltip" data-placement="bottom" onclick="<%= uicomponent.event("RemoveGadget", gadget.getName()) %>"><i class="uiIconDelete uiIconLightGray"></i></a>
               </div>
             </div>
           </div>

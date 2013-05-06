@@ -28,6 +28,7 @@ import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 import org.exoplatform.commons.serialization.api.annotations.Serialized;
+import org.exoplatform.web.application.JavascriptManager;
 import org.exoplatform.webui.application.WebuiRequestContext;
 import org.exoplatform.webui.core.UIComponent;
 import org.gatein.common.logging.Logger;
@@ -60,6 +61,11 @@ public class UIFormInputWithActions extends UIFormInputSet {
             super.processRender(context);
             return;
         }
+
+        JavascriptManager jsMan = context.getJavascriptManager();
+        jsMan.require("SHARED/jquery", "$").require("SHARED/bts_tooltip")
+              .addScripts("$('." + getId() + " *[rel=\"tooltip\"]').tooltip();");
+
         UIForm uiForm = getAncestorOfType(UIForm.class);
         Writer w = context.getWriter();
         w.write("<div id=\"" + getId() + "\" class=\"UIFormInputSet " + getId() + "\">");

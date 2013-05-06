@@ -33,7 +33,7 @@
 				</div>
 			
 				<div class="uiFormWithTitle">
-					<h5 class="title"><%=_ctx.appRes(uicomponent.getId() + ".title")%></h5>				
+					<h6 class="title"><%=_ctx.appRes(uicomponent.getId() + ".title")%></h6>				
 				
 						<div class="form-horizontal">
 								<%	
