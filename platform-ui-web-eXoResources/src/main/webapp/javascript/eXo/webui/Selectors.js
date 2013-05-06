@@ -82,11 +82,8 @@
 	      return;
 	    for ( var i = 0; i < allItems.length; i++) {
 	    	var $item = $(allItems[i]);
-	    	var $iconArrow = $item.find('i:first'); 
 	      if ($item[0] != clickedElement) {
 	        $item.removeClass("SelectedItem selectedItem");
-	        $iconArrow.removeClass('uiIconArrowDown');
-	        $iconArrow.hasClass("uiIconArrowRight") || $item.find('i:first').addClass("uiIconArrowRight");
 	        this.onChangeItemDetail(clickedElement, true);
 	      } else {	      	
 	      	var selected = "SelectedItem";
@@ -95,8 +92,6 @@
 	      		selected = "selectedItem";
 	      		this.backupClass = "selectedItem item"
 	      	}
-	      	$iconArrow.removeClass('uiIconArrowRight');
-	      	$iconArrow.hasClass("uiIconArrowDown") || $item.find('i:first').addClass("uiIconArrowDown");
 	        $item.hasClass(selected) || $item.addClass(selected);
 	        this.onChangeItemDetail(clickedElement, false);
 	      }

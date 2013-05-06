@@ -31,8 +31,10 @@
 					String submitEvent = form.event('ChangeIconCategory', setName);							
 				%>	
 					<li class="item $item" onclick="$submitEvent">
-						<i class="$iconArrow"></i>
-						<%=_ctx.appRes("UIFormInputIconSelector.label." + setName)%>
+                  <a href="javascript:void(0);" class="itemTitle">
+						   <i class="$iconArrow"></i>
+						   <%=_ctx.appRes("UIFormInputIconSelector.label." + setName)%>
+                  </a>
 					</li>
 				<%}%>
 		</ul>
