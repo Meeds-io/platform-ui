@@ -50,7 +50,7 @@
                     selectOptions.put(makeJSON(selector.name, opt.value));
                 %>
                   <tr class="$itemSelected">
-                    <td><div class="icon"><span></span></div></td>
+                    <td><div class="uiIconTick uiIconBlue"><span></span></div></td>
                     <td><a class="nodeLabel"><%=opt.getLabel()%></a></td>
                     <td class="percentLabel"><%=opt.getDescription()%></td>
                   </tr>
