@@ -17,10 +17,11 @@
   String editNavigationLabel = _ctx.appRes("UISiteManagement.label.editNav");
   String editPortalPropLabel = _ctx.appRes("UISiteManagement.label.editPortalProp");
   String deletePortalLabel = _ctx.appRes("UISiteManagement.label.deletePortal");
+  String manageSitesTitle = _ctx.appRes("UISiteManagement.title");
 %>
 <div class="uiManagementSite">
 	<div class="uiBox">
-		<h5 class="title">Manage sites</h5>
+		<h5 class="title">$manageSitesTitle</h5>
 		<div class=" uiContentBox" id="<%=uicomponent.getId();%>">
 		 <table class="managementBlock" >
 			
@@ -64,7 +65,6 @@
 										<% } %>
 								
 								 </td>		
-								</td>
 							  </tr>
 						   
 				<%          
