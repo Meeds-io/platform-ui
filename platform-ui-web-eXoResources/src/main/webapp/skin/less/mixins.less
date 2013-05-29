@@ -9,7 +9,7 @@
 // Clearfix
 // --------
 // For clearing floats like a boss h5bp.com/q
-.clearfix {
+.clearfix() {
   *zoom: 1;
   &:before,
   &:after {
@@ -103,7 +103,7 @@
 // CSS image replacement
 // -------------------------
 // Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
-.hide-text {
+.hide-text() {
   font: 0/0 a;
   color: transparent;
   text-shadow: none;
@@ -123,7 +123,7 @@
     .sans-serif() {
       font-family: @sansFontFamily;
     }
-	.sans-serif-bold() {
+  .sans-serif-bold() {
       font-family: @sansBoldFontFamily;
     }
     .monospace() {
@@ -159,7 +159,7 @@
 // --------------------------------------------------
 
 // Block level inputs
-.input-block-level {
+.input-block-level() {
   display: block;
   width: 100%;
   min-height: @inputHeight; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
@@ -319,9 +319,9 @@
 // Default value is `visible`, but can be changed to `hidden
 // See git pull https://github.com/dannykeane/bootstrap.git backface-visibility for examples
 .backface-visibility(@visibility){
-	-webkit-backface-visibility: @visibility;
-	   -moz-backface-visibility: @visibility;
-	        backface-visibility: @visibility;
+  -webkit-backface-visibility: @visibility;
+     -moz-backface-visibility: @visibility;
+          backface-visibility: @visibility;
 }
 
 // Background clipping
@@ -625,7 +625,7 @@
 
     .offset (@columns) {
       margin-left: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1)) + (@fluidGridGutterWidth*2);
-  	  *margin-left: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1)) - (.5 / @gridRowWidth * 100 * 1%) + (@fluidGridGutterWidth*2) - (.5 / @gridRowWidth * 100 * 1%);
+      *margin-left: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1)) - (.5 / @gridRowWidth * 100 * 1%) + (@fluidGridGutterWidth*2) - (.5 / @gridRowWidth * 100 * 1%);
     }
 
     .offsetFirstChild (@columns) {
@@ -663,7 +663,7 @@
 
   }
   
-/*============== input ================*/
+//============== input ================
 
   .input(@gridColumnWidth, @gridGutterWidth) {
 
@@ -695,291 +695,294 @@
 
 }
 
-/*============== Status Elements================*/
+//============== Status Elements================
 
 #StatusElements {
-	.StatusHover(@startColor : #fff, @endColor : #f1f1f1,@boxShadow: 0 1px 2px 0px rgba(255,255,255,1)){
-		#gradient > .vertical(@startColor,@endColor); 
-		border: 1px solid @tableBorder;
-		.border-radius(@borderRadiusSmall);
-		.box-shadow(@boxShadow);
-		&:active,&:focus {
-			.StatusActive();
-		}
-	} 	
-	.StatusActive(@boxShadow: 0px 2px 6px 0 rgba(0, 0, 0, 0.15) inset) {
-		.box-shadow(@boxShadow);
-		border: 1px solid #c7c7c7; 
-		.border-radius(@borderRadiusSmall); 
-		background-color: #ececec;
-	}
+  .StatusHover(@startColor : #fff, @endColor : #f1f1f1,@boxShadow: 0 1px 2px 0px rgba(255,255,255,1)){
+    #gradient > .vertical(@startColor,@endColor); 
+    border: 1px solid @tableBorder;
+    .border-radius(@borderRadiusSmall);
+    .box-shadow(@boxShadow);
+    &:active,&:focus {
+      .StatusActive();
+    }
+  }   
+  .StatusActive(@boxShadow: 0px 2px 6px 0 rgba(0, 0, 0, 0.15) inset) {
+    .box-shadow(@boxShadow);
+    border: 1px solid #c7c7c7; 
+    .border-radius(@borderRadiusSmall); 
+    background-color: #ececec;
+  }
 }
 
-/*============== Action With Label================*/
+//============== Action With Label================
 
-.uiActionWithLabel{
-	border: 1px solid transparent;
-	cursor: pointer;
-	display: inline-block;
-	padding: 3px 8px;
-	line-height: @baseLineHeight;
-	&:hover {
-		#StatusElements .StatusHover();
-	}
-	.uiIconMiniArrowDown{
-		margin-left: 5px;
-	}
+.uiActionWithLabel(){
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: inline-block;
+  padding: 3px 8px;
+  line-height: @baseLineHeight;
+  &:hover {
+    #StatusElements .StatusHover();
+  }
+  .uiIconMiniArrowDown{
+    margin-left: 5px;
+  }
 }
 
-/*============== actionIcon================*/
-.actionContainer {
-	white-space: nowrap;
+//============== actionIcon================
+.actionContainer() {
+  white-space: nowrap; 
 }
-.actionIcon ,.actionIconSmall{
-	.uiActionWithLabel;
-	padding:2px 4px;
-	vertical-align: middle;
-	&:active,&:focus,&.active {
-		#StatusElements > .StatusActive(0px 0px 10px 0 rgba(0, 0, 0, 0.15) inset);
-	}					
-}
-
-.actionIconSmall {
-	padding:0px 2px;
+ 
+.actionIcon(){
+  .uiActionWithLabel;
+  padding:2px 4px;
+  vertical-align: middle;
+  &:active,&:focus,&.active {
+    #StatusElements > .StatusActive(0px 0px 10px 0 rgba(0, 0, 0, 0.15) inset);
+  }         
 }
 
-/*============== error, noticeEmpty ================*/
-
-.error,.noticeEmpty {
-	color: @red;
+.actionIconSmall(){
+  .uiActionWithLabel;
+  padding:2px 4px;
+  vertical-align: middle;
+  &:active,&:focus,&.active {
+    #StatusElements > .StatusActive(0px 0px 10px 0 rgba(0, 0, 0, 0.15) inset);
+  }
 }
 
-.noticeEmpty {
-	color: @grayLight;
+.actionIconSmall() {
+  padding:0px 2px;
 }
 
-/*======== Title================*/
+//============== error, noticeEmpty ================
+
+.error() {
+  color: @red; 
+}
+.noticeEmpty() {
+  color: @red;
+}
+
+.noticeEmpty() {
+  color: @grayLight;
+}
+
+//======== Title================
 .title(@color: @textColor,@shadowColor: #cdcdcd,@fonSize : 18px,@fontWeight: @headingsFontWeight,@lineHeight: @baseLineHeight) {
-	color: @color;
-	#font > .sans-serif-bold(@fonSize,@fontWeight,@lineHeight);
-	text-shadow: 0px 0px 1px @shadowColor ;
+  color: @color;
+  #font > .sans-serif-bold(@fonSize,@fontWeight,@lineHeight);
+  text-shadow: 0px 0px 1px @shadowColor ;
 } 
 
-.titleWithBorder {
-	position: relative;
-	overflow: hidden;
+.titleWithBorder() {
+  position: relative;
+  overflow: hidden;
+  &:after {
+    border-bottom: 1px solid #dadada;
+    height: 11px;
+    content: "";
+    position: absolute;
+    width: 100%;
+    margin-left: 10px;
+  }
 }
 
-.titleWithBorder:after {
-	border-bottom: 1px solid #dadada;
-	height: 11px;
-	content: "";
-	position: absolute;
-	width: 100%;
-	margin-left: 10px;
+//=======uibox=======
+
+.uiBox() {
+  .border-radius(@baseBorderRadius);
+  .box-shadow(0px 2px 4px -1px rgba(35,44,48,0.18));
+  border: 1px solid @tableBorder;
+  background: @white;
+  margin: 0 0 @baseLineHeight 0;
+  .title {    
+    background-color:  @grayWhiteSmoke;
+    border-bottom: 1px solid @tableBorder;
+    .box-shadow(0 1px 2px rgba(13, 13, 13, 0.2));
+    .border-radius(@baseBorderRadius @baseBorderRadius 0 0);
+    padding: 8px 10px;
+    line-height: @baseLineHeight;
+    margin: 0;
+    word-wrap: break-word;
+    .actionIcon {
+      margin: -3px 0;
+    }
+    + .uiGrid tbody {
+      .box-shadow(0px 0px 0px transparent);
+    }
+  }
+  .uiContentBox {
+    padding: 20px;
+    + .title {
+      padding: 4px 10px;
+      border-top: 1px solid @tableBorder;
+      .box-shadow(0px 0px 0px transparent);
+      .border-radius(0);
+      
+    }
+    + .uiContentBox {
+      border-top: 1px solid @tableBorder;
+    }
+  }
+  .title + .uiGrid.table {
+    margin: 0;
+    border: none;
+    border-top: 1px solid #ececec;
+    thead tr:first-child  {
+      .box-shadow(0px 0px 0px transparent);
+    }
+    th {
+      background-color: @tableBackgroundAccent;
+    }
+    tr td:first-child,
+    tr th:first-child{
+      border-left: none;
+    }
+  }
+  &.roundedBottom {
+    .border-radius(0 0 @baseBorderRadius @baseBorderRadius);
+    .title {
+      .border-radius(0);
+    }
+  }
+  &.roundedTop {
+    .border-radius(@baseBorderRadius @baseBorderRadius 0 0);
+  }
+  &.uiGrayLightBox {
+    background: @grayWhiteSmoke;
+  }
+  &.noRounded {
+    .border-radius(0);
+    .title {
+      .border-radius(0);
+    }
+  }
 }
 
-/******uibox*****/
 
-.uiBox {
-	.border-radius(@baseBorderRadius);
-	.box-shadow(0px 2px 4px -1px rgba(35,44,48,0.18));
-	border: 1px solid @tableBorder;
-	background: @white;
-	margin: 0 0 @baseLineHeight 0;
-	.title {		
-		background-color:  @grayWhiteSmoke;
-		border-bottom: 1px solid @tableBorder;
-		.box-shadow(0 1px 2px rgba(13, 13, 13, 0.2));
-		.border-radius(@baseBorderRadius @baseBorderRadius 0 0);
-		padding: 8px 10px;
-		line-height: @baseLineHeight;
-		margin: 0;
-		word-wrap: break-word;
-		.actionIcon { 
-			margin: -3px 0;
-		}
-		+ .uiGrid tbody {
-			.box-shadow(0px 0px 0px transparent);
-		}
-	}
-	.uiContentBox {
-		padding: 20px;
-		+ .title {
-			padding: 4px 10px;
-			border-top: 1px solid @tableBorder;
-			.box-shadow(0px 0px 0px transparent);
-			.border-radius(0);
-			
-		}
-		+ .uiContentBox {
-			border-top: 1px solid @tableBorder;
-		}
-	}
-	.title + .uiGrid.table {
-		margin: 0;
-		border: none;
-		border-top: 1px solid #ececec;
-		thead tr:first-child  {
-			.box-shadow(0px 0px 0px transparent);
-		}
-		th {
-			background-color: @tableBackgroundAccent;
-		}
-		tr td:first-child,
-		tr th:first-child{
-			border-left: none;
-		}
-	}
-	&.roundedBottom {
-		.border-radius(0 0 @baseBorderRadius @baseBorderRadius);
-		.title {
-			.border-radius(0);
-		}
-	}
-	&.roundedTop {
-		.border-radius(@baseBorderRadius @baseBorderRadius 0 0);
-	}
-	&.uiGrayLightBox {
-		background: @grayWhiteSmoke;
-	}
+
+//============== Gray Light Box ================
+
+.uiGrayLightBox(){
+  padding: 8px 9px;
+  border: 1px solid @tableBorder;
+  background: @grayWhiteSmoke;
+  .border-radius(@baseBorderRadius);
+  .box-shadow(0px 1px 2px rgba(0,0,0,.06));
+  label {
+    display: inline-block;
+  }
+  input {
+    margin-bottom: 0px;
+  }
 }
 
-.uiBox.noRounded {
-	.border-radius(0);
-	.title {
-		.border-radius(0);
-	}
+.center() {
+  text-align: center;
 }
 
-/*============== Gray Light Box================*/
-
-.uiGrayLightBox{
-	padding: 8px 9px;
-	border: 1px solid @tableBorder;
-	background: @grayWhiteSmoke;
-	.border-radius(@baseBorderRadius);
-	.box-shadow(0px 1px 2px rgba(0,0,0,.06));
-	label {
-		display: inline-block;
-	}
-	input {
-		margin-bottom: 0px;
-	}
-}
-
-.center {
-	text-align: center;
-}
-
-/******avatar*****/
+//==================== AVATAR ==================
 
 .circleBorderAvatar(@size) {
-	#gradient .vertical(@white, @btnBackgroundHighlight);
-	.square(@size);
-	.border-radius(100px);
-	.box-shadow(0px 2px 4px rgba(13px, 13px, 13px, 0.27));
-	border: 1px solid #b1b1b1;
-	padding: 5px;
-	
-	img {
-		.border-radius(100px);
-		.square(@size);
-	}
+  #gradient .vertical(@white, @btnBackgroundHighlight);
+  .square(@size);
+  .border-radius(100px);
+  .box-shadow(0px 2px 4px rgba(13px, 13px, 13px, 0.27));
+  border: 1px solid #b1b1b1;
+  padding: 5px;
+  
+  img {
+    .border-radius(100px);
+    .square(@size);
+  }
 }
 
 .roundedCornerAvatar(@size, @radius) {
-	.square(@size);
-	img {
-		.border-radius(@radius);
-		.square(@size);
-	}
+  .square(@size);
+  img {
+    .border-radius(@radius);
+    .square(@size);
+  }
 }
 
-.avatarCircle {
-	.circleBorderAvatar(40px);
+.avatarCircle() {
+  .circleBorderAvatar(40px);
 }
 
 
-.avatarXLarge {
-	.roundedCornerAvatar(120px, 4px);
+.avatarXLarge() {
+  .roundedCornerAvatar(120px, 4px);
 }
 
-.avatarLarge {
-	.roundedCornerAvatar(100px, 4px);
+.avatarLarge() {
+  .roundedCornerAvatar(100px, 4px);
 }
 
-.avatarXMedium {
-	.roundedCornerAvatar(75px, 4px);
+.avatarXMedium() {
+  .roundedCornerAvatar(75px, 4px);
 }
 
-.avatarMedium {
-	.roundedCornerAvatar(50px, 3px);
+.avatarMedium() {
+  .roundedCornerAvatar(50px, 3px);
 }
 
-.avatarXSmall {
-	.roundedCornerAvatar(36px, 2px);
+.avatarXSmall() {
+  .roundedCornerAvatar(36px, 2px);
 }
 
-.avatarSmall {
-	.roundedCornerAvatar(26px, 2px);
+.avatarSmall() {
+  .roundedCornerAvatar(26px, 2px);
 }
 
-.avatarMini {
-	.roundedCornerAvatar(20px, 2px);
+.avatarMini() {
+  .roundedCornerAvatar(20px, 2px);
 }
 
 .squareBorderAvatar(@size) {
-	#gradient .vertical(@white, @btnBackgroundHighlight);
-	.square(@size);
-	.border-radius(4px);
-	.box-shadow(0px 2px 4px rgba(13px, 13px, 13px, 0.27));
-	border: 1px solid @borderColor;
-	padding: 7px;
-	display: block;
-	
-	img {
-		.border-radius(4px);
-		.square(@size);
-	}
+  #gradient .vertical(@white, @btnBackgroundHighlight);
+  .square(@size);
+  .border-radius(4px);
+  .box-shadow(0px 2px 4px rgba(13px, 13px, 13px, 0.27));
+  border: 1px solid @borderColor;
+  padding: 7px;
+  display: block;
+  
+  img {
+    .border-radius(4px);
+    .square(@size);
+  }
 }
 
-.avatarLargeWithBorder {
-	.squareBorderAvatar(100px);
+.avatarLargeWithBorder() {
+  .squareBorderAvatar(100px);
 }
 
-.avatarXLargeWithBorder {
-	.squareBorderAvatar(120px); 	
+.avatarXLargeWithBorder() {
+  .squareBorderAvatar(120px);   
 }
 
-/*
-Round corner box with title
-	- border: 1px solid @tableBorder;
-	- Title: 
-		+ gray background (#f0f0f0)
-		+ round corner at left-top and right-top
-		+ text title is bold, class name is "titleBox", color is @grayDark
-	- content box: 
-		+ background: white
-		+ round corner at the bottom-left and bottom-right
-*/
 
-.roundCornerBoxWithTitle {
-	background: @white;
-	border: 1px solid @tableBorder;
-	.border-radius(4px);
-	.box-shadow(0px 1px 2px rgba(0, 0, 0, 0.08));
-	
-	.titleBox {
-		.border-radius(4px 4px 0px 0px );
-		.box-shadow(0px 1px 2px rgba(13, 13, 13, 0.08));
-		background: #f0f0f0;
-		border-bottom: 1px solid @tableBorder;
-		margin: 0px;
-		line-height: @baseLineHeight ;
-		font-weight: @headingsFontWeight;
-		color: @grayDark;
-		padding: 8px 10px;
-		word-wrap: break-word;
-	}
+// ====================Round Corner====================
+.roundCornerBoxWithTitle() {
+  background: @white;
+  border: 1px solid @tableBorder;
+  .border-radius(4px);
+  .box-shadow(0px 1px 2px rgba(0, 0, 0, 0.08));
+  
+  .titleBox {
+    .border-radius(4px 4px 0px 0px );
+    .box-shadow(0px 1px 2px rgba(13, 13, 13, 0.08));
+    background: #f0f0f0;
+    border-bottom: 1px solid @tableBorder;
+    margin: 0px;
+    line-height: @baseLineHeight ;
+    font-weight: @headingsFontWeight;
+    color: @grayDark;
+    padding: 8px 10px;
+    word-wrap: break-word;
+  }
 }
