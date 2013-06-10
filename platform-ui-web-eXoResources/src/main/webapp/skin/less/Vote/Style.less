@@ -24,6 +24,7 @@
 	}
 }
 
+
 /******** Vote of View1 **************/
 
 .uiVote {
@@ -54,6 +55,29 @@
 		}
 		.unvoted {
 			background-position:  left -104px;
+		}
+	}
+}
+
+//uiVoteMini use combine with uiVote 
+
+.uiVoteMini {
+	.avgRatingImages {
+		.voted,.votedHaft,.unvoted  {
+			background: url('/eXoResources/skin/images/Icons/uiIconColor.png') no-repeat;
+			.square(10px);
+			float: none;
+			display: inline-block;
+			margin: 0;
+		}		
+		.voted {
+			background-position: -43px -43px;
+		}
+		.votedHaft{
+			background-position: -63px -43px;
+		}
+		.unvoted {
+			background-position:  -3px -43px;
 		}
 	}
 }
