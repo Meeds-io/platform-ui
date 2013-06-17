@@ -8,13 +8,13 @@
     <div class="row-fluid" >
 	<div class="span6">
 		<div class="uiBox selectGroup noRounded">
-			<h5 class="title"><%=_ctx.appRes("UIGroupSelector.title.selectGroupMember")%></h5>
+			<h6 class="title"><%=_ctx.appRes("UIGroupSelector.title.selectGroupMember")%></h6>
 			<%uicomponent.renderChild(UITree.class);%>
 		</div>
 	</div>
 	<div class="span6">		
       <div class="uiBox noRounded childGoup">
-        <h5 class="title"><%=_ctx.appRes("UIGroupSelector.title.selectChildGroup")%></h5>
+        <h6 class="title"><%=_ctx.appRes("UIGroupSelector.title.selectChildGroup")%></h6>
         <div class="uiContentBox">
           <ul>
           <%
