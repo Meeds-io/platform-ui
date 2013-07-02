@@ -42,15 +42,15 @@
             <div class="siteName" title="$siteKey.name">$groupLabel</div>
             <div>$descriptionLabel: $groupDescription</div>
         </td>   
-        <td>
+        <td width="140">
             <a class='actionIcon' href="<%=editLink%>" class="actionIcon">
             	<i class="uiIconNavigation uiIconLightGray"></i>$editNavigationLabel</a> 
         </td> 
-        <td>     
+        <td width="140">     
             <a class='actionIcon' href="<%=editProperties%>" class="actionIcon">
             	<i class="uiIconEditPortalConfig uiIconLightGray"></i>$editPropertiesLabel</a>
         </td>      
-        <td>       
+        <td width="140">       
             <a class='actionIcon' href="<%=deleteLink%>" class="actionIcon">
             	<i class="uiIconTrash uiIconLightGray"></i>$deleteNavigationLabel</a>
         </td>   

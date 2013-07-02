@@ -45,19 +45,19 @@
 								   }
 								   %>
 								</td>
-								<td>
+								<td width="140">
 										<a href="<%=uicomponent.event("EditPortalLayout", portalConfig.getName());%>" class="actionIcon">
 											<i class="uiIconEditLayout uiIconLightGray"></i>$editLayoutLabel</a>
 								 </td>
-								  <td>
+								  <td width="140">
 										<a href="<%=uicomponent.event("EditNavigation", portalConfig.getName());%>" class="actionIcon">
 											<i class="uiIconNavigation uiIconLightGray"></i>$editNavigationLabel</a>
 								 </td>
-								  <td>
+								  <td width="160">
 										<a href="javascript:ajaxGet(eXo.env.server.createPortalURL('UIPortal', 'EditPortalProperties', true, [{name:'portalName',value:'<%=portalConfig.getName()%>'}]))" class="actionIcon">
 											<i class="uiIconEditPortalConfig uiIconLightGray"></i>$editPortalPropLabel</a>
 								 </td>  
-								<td>	
+								<td width="80">	
 										<% if(defaultPortalName != null && !defaultPortalName.equals(portalConfig.getName())) {%>
 								 
 											<a href="<%=uicomponent.url("DeletePortal", portalConfig.getName());%>" class="actionIcon">
