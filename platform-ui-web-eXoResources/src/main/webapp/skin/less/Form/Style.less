@@ -115,11 +115,6 @@ textarea {
 	
 } 
 
-.uiCheckbox input {
-	margin-left: -18px e("\0/");
-	min-height: 10px e("\0/");
-}
-
 .uiCheckbox > span {
 	display: inline-block;
 	text-indent: 18px;
@@ -139,11 +134,8 @@ textarea {
 	left: 4px;
 	position: absolute;
 	top: 4px;
-	left: 2px e("\9");
-	width: 10px e("\9");
-	height: 4px e("\9");
-	background: transparent e("\0/") ;//hack only ie8 
 }
+
 
 .uiCheckbox input[type="checkbox"] + span:before {
 	background: #d2d2d2;
@@ -154,8 +146,8 @@ textarea {
 	left: 0px;
 	content: " ";
 	position: absolute;
-	background: transparent e("\0/");
 }
+
 
 input[type="radio"] + span {
 	cursor: pointer;
@@ -176,6 +168,18 @@ input[disabled], select[disabled], textarea[disabled] {
 	background: #e6e6e6;
 }
 
+//hack ie8 and ie7
+
+.lt-ie9  .uiCheckbox input {
+	margin-left: -18px;
+	min-height: 10px;
+}
+
+
+.lt-ie9  .uiCheckbox input[type="checkbox"] + span:before {	
+	background: transparent;
+}
+
 .uiRadio {
 	position: relative;
 	display: inline-block;
@@ -193,10 +197,14 @@ input[disabled], select[disabled], textarea[disabled] {
 	top: 0;
 	z-index: 100;
 } 
-.uiRadio input {
-	margin-left: -8px e("\0/");
-	min-height: 10px e("\0/");
+
+//hack ie8 and ie7
+
+.lt-ie9 .uiRadio input {
+	margin-left: -8px ;
+	min-height: 10px;
 }
+
 .uiRadio > span {
 	display: inline-block;
 	text-indent: 18px;
@@ -210,9 +218,13 @@ input[disabled], select[disabled], textarea[disabled] {
 	.border-radius(50%); 
 	left: 2px;
 	position: absolute;
-	top: 6px;
-	left: 2px e("\9");
-	background: transparent e("\0/");
+	top: 6px;	
+}
+
+//hack ie9
+
+.ie9 .uiRadio input[type="radio"]:checked + span:after {	
+	left: 2px;
 }
 
 .uiRadio input[type="radio"] + span:before {
@@ -224,7 +236,16 @@ input[disabled], select[disabled], textarea[disabled] {
 	left: 0px;
 	content: " ";
 	position: absolute;
-	background: transparent e("\0/");
+}
+
+//hack ie8 and ie7
+
+.lt-ie9 .uiRadio input[type="radio"] + span:before {
+	background: transparent;
+} 
+
+.lt-ie9 .uiRadio input[type="radio"]:checked + span:after {	
+	background: transparent;
 }
 
 .uiRadio input[type="radio"] + span {
