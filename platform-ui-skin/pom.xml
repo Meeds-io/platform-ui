@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>platform-ui</artifactId>
+        <groupId>org.exoplatform.platform-ui</groupId>
+        <version>4.2.x-SNAPSHOT</version>
+    </parent>
+
+    <groupId>org.exoplatform.platform-ui</groupId>
+    <artifactId>platform-ui-skin</artifactId>
+    <packaging>war</packaging>
+    <name>Platform UI - Skin</name>
+
+    <build>
+        <finalName>eXoSkin</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.lesscss</groupId>
+                <artifactId>lesscss-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>bootstrap</id>
+                        <configuration>
+                            <!--Should be the final one because the less folder should be outside the webapp in /src/main/less   -->
+                            <!--<sourceDirectory>${basedir}/src/main/less/bootstrap/less</sourceDirectory>-->
+                            <sourceDirectory>${project.basedir}/src/main/webapp/skin/bootstrap/less</sourceDirectory>
+                            <outputDirectory>${project.build.directory}/${project.build.finalName}/skin/bootstrap/css</outputDirectory>
+                            <compress>false</compress>
+                            <includes>
+                                <include>bootstrap.less</include>
+                                <include>responsive.less</include>
+                            </includes>
+                        </configuration>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>core</id>
+                        <configuration>
+                           <!-- SourceDirectory shouldn't exist and we should have as default the lesss folder in /src/main/less     -->
+                            <sourceDirectory>${project.basedir}/src/main/webapp/skin/less</sourceDirectory>
+                            <outputDirectory>${project.build.directory}/${project.build.finalName}/skin/css</outputDirectory>
+                            <compress>false</compress>
+                            <includes>
+                                <include>Core.less</include>
+                                <include>Portlets/UIOrganizationPortlet/Style.less</include>
+                                <include>Portlets/UITabbedDashboardPortlet/Style.less</include>
+                                <include>Portlets/SiteNavigationPortlet/Style.less</include>
+                                <include>Portlets/UIAccountPortlet/Style.less</include>
+                                <include>Portlets/UIApplicationRegistryPortlet/Style.less</include>
+                            </includes>
+                        </configuration>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>
+
