@@ -139,8 +139,8 @@
             uiCombo.list.style.top = this.offsetHeight + "px";
             uiCombo.list.style.width = this.offsetWidth + "px";
             uiCombo.setSelectedItem(this);
-            $(uiCombo.list).one("mousedown", false);
-            $(document).one("mousedown", uiCombo.hide);
+            $(uiCombo.list).off('mousedown.combo').on("mousedown.combo", false);
+            $(document).one("mousedown.combo.hide", uiCombo.hide);
         },
 
         getSelectedItem:function (textbox) {
