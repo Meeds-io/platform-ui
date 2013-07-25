@@ -28,8 +28,8 @@
 				<li class="pull-left"><a class="actionIcon membershipButton $style" href="<%=uicomponent.event("ViewChild", "UIMembershipManagement")%>">
 					<i class="uiIconMembership uiIconLightGray"></i><%=_ctx.appRes("UIOrganizationPortlet.label.membershipManagement")%>
 				</a></li>
-			</div>
-		</ul>
+		  </ul>
+	   </div>
 		<%/*End UIToolbar*/%>
 			
 		<div class="managementTabContent">
