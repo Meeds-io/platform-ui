@@ -149,11 +149,11 @@
 		  gadget.find(".minimizeAction").on("click", function() {
 			  eXoGadget.minimizeGadget($(this).find("i"));
 		  });
-		  gadget.find(".uiIconEdit").on("click", function() {
+		  gadget.find(".uiIconEditMini").on("click", function() {
 			  eXoGadget.editGadget(gadget.attr("id"));
 		  });
 		  gadget
-		      .find(".uiIconClose, .maximizeAction, .minimizeAction, .uiIconEdit")
+		      .find(".uiIconClose, .maximizeAction, .minimizeAction, .uiIconEditMini")
 		      .on("mousedown", false);
 		  
 		  gadget.find('*[rel=\"tooltip\"]').tooltip();

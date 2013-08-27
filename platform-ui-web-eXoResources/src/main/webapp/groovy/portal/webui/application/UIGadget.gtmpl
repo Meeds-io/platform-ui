@@ -42,7 +42,7 @@
 		<span class="pull-right">
 			<% if(uicomponent.isSettingUserPref()) { %>
 			  <a class="actionIcon pull-left" data-placement="bottom" rel="tooltip" title="<%=_ctx.appRes("UIGadget.tooltip.editGadget")%>"> 
-			  	<i class="uiIconEdit uiIconLightGray" ></i>
+			  	<i class="uiIconEditMini uiIconLightGray" ></i>
 			  </a>
 			<% } %>
 			<a class="actionIcon minimizeAction pull-left" style="display:none;" data-placement="bottom" rel="tooltip" title="<%=isMini ? unminiTitle : miniTitle%>" miniTitle="$miniTitle" unminiTitle="$unminiTitle">

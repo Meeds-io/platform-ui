@@ -58,9 +58,12 @@
 		min-height: 200px;
     	overflow: auto;
 	    iframe {
-	    	padding: 8px 2% 2px;
-	    	width: 96%;
+	    	padding: 8px 2.5% 2px;
+	    	width: 95%;
 	    }
+	}
+	.actionIcon, .actionIconSmall {
+		line-height: 19px;
 	}
 	
 }
@@ -69,4 +72,17 @@
 	.box-shadow(0 2px 4px -1px rgba(35, 44, 48, 0.18));
 	margin-bottom: 12px;
 	.border-radius(3px);
+}
+.gadgets-gadget-user-prefs-dialog {
+	> form {
+		> div {
+			padding: 10px 10px 5px;
+			+ div {
+				padding: 5px 10px 5px;
+			}
+		}
+	}
+	> .gadgets-gadget-user-prefs-dialog-action-bar {
+		padding: 5px 10px 10px;
+	}
 }
