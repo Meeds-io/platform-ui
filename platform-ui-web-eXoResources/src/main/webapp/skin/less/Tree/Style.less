@@ -12,16 +12,9 @@
 		padding-top: 7px;
 		white-space: nowrap;
 		
-		.nodeSelected{
-			font-weight: bold;
-			&:hover {
-				color: @linkColor;
-			}
-		}
-		
 		a {
 			display: inline;
-			color: #555;
+			color: @textColor;
 			cursor: pointer;
 			line-height: 22px;
 			/*white-space: normal;*/
@@ -30,12 +23,13 @@
 	
 		a:hover {
 			text-decoration: none;
-			color: #2F5E96;
+			color: @linkColor;
 		}
 	}
 	
 	.SelectedNode a {
 		font-weight: bold;
+		color: @linkColor;
 	}
 	
 	.treeNodeType {
@@ -67,12 +61,12 @@
 /*=============== uiTree =============*/
 
 .uiTrees{
-	background:#f7f7f7;
-	border: 1px solid @tableBorder;
+	background:@grayLighter;
+	border: 1px solid @borderColor;
 	padding: 4px;
 	a {
 		display: inline-block;
-		color: @grayDark;
+		color: @textColor;
 		width: auto;
 	}
 	.treeContainer{

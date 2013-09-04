@@ -15,7 +15,7 @@
 	}
 	hr {
 		margin: 0;
-		border-top: 1px solid  @tableBorder;
+		border-top: 1px solid  @borderColor;
 	}	
 	h5.title{
 		text-align: center;	
@@ -61,17 +61,17 @@
 					color: @grayLight;
 				}
 				.today {
-					border: 1px solid @tableBorder;
+					border: 1px solid @borderColor;
 					.border-radius(@borderRadiusSmall);
 					font-weight: bold;
 				}
 				.selected {
-					background-color: @linkColor;
+					background-color: @blue;
 					color: @white;
 					.border-radius(@borderRadiusSmall);					
 				}			
 				.activeToday {
-					background-color: @linkColor;
+					background-color: @blue;
 					color: @white;
 					.border-radius(@borderRadiusSmall);
 				}
@@ -88,7 +88,7 @@
 					.border-bottom-left-radius(@borderRadiusSmall);
 				}
 				a:hover {
-					border: 1px solid @tableBorder;
+					border: 1px solid @borderColor;
 				}
 				
 				&:last-child {
@@ -100,20 +100,20 @@
 		}
 	}
 	.calendarTimeInput {
-		text-align: center;
+		.center();
 		padding: 4px 0;
 		line-height: 18px;
-		background-color: #F0F0F0;
+		background-color: @grayWhiteSmoke;
 		.border-radius(0 0 @borderRadiusSmall @borderRadiusSmall);
 		span {
 			background: white;
 			.border-radius(@borderRadiusSmall);
 			.box-shadow(inset 0 2px 1px rgba(0,0,0,.075));
 			display: inline-block;
-			border: 1px solid @tableBorder;
+			border: 1px solid @borderColor;
 			&.focus {
 				.box-shadow(~'0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 5px rgba(29, 75, 159, 0.6)');
-				border-color: #94B0DF;
+				border-color: @blueLighter;
 			}
 		}
 		input[type="text"] {
@@ -124,7 +124,7 @@
 			border: none;
 			.box-shadow(0 0 0 transparent);
 			color: @textColor;
-			text-align: center;	
+			.center();	
 				&:first-child {
 					text-align: right;padding:0;width: 25px;
 				}

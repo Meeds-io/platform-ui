@@ -1,8 +1,12 @@
+/* 
+@blue  			#2f5e92
+*/
+
 //
 // Button groups
 // --------------------------------------------------
 
-
+/*
 // Make the div behave like a button
 .btn-group {
   position: relative;
@@ -14,12 +18,10 @@
   .ie7-restore-left-whitespace();
 }
 
-
 // Reset fonts for other sizes
 .btn-group > .btn-primary{
   font-size: 13px;
 }
-
 
 .btn-group > .btn-mini {
   font-size: 11px;
@@ -31,7 +33,7 @@
 .btn-group > .btn-large {
   font-size: 14px;
 }
-
+*/
 // Set corners individual because sometimes a single button can be in a .btn-group and we need :first-child and :last-child to both match
 .btn-group > .btn:first-child {
   margin-left: 0;
@@ -52,6 +54,8 @@
       -moz-border-radius-bottomright: 3px;
           border-bottom-right-radius: 3px;
 }
+
+/*
 // Reset corners for large buttons
 .btn-group > .btn.large:first-child {
   margin-left: 0;
@@ -94,6 +98,7 @@
     background-color: @btnPrimaryBackgroundHighlight;
   }
 }
+*/
 
 /******* Trung nq ****/
 
@@ -101,11 +106,10 @@
 .btn-group.uiDropdownWithIcon .btn{
 	.spiter{ 
 		background: url("/eXoResources/skin/images/Dropdown/ButtonGroups/background/split-white.png") no-repeat;
-		  display: inline-block;
-		    height: 27px;
-		    margin: -6px 5px -4px;
-		    vertical-align: middle;
-		    width: 2px;
+		display: inline-block;
+	    margin: -6px 5px -4px;
+	    vertical-align: middle;
+	    .size(27px, 2px);
 	}
 	&.btn-primary .spiter {
 		background: url("/eXoResources/skin/images/Dropdown/ButtonGroups/background/split.png") no-repeat;
@@ -124,6 +128,6 @@
 
 .btn-group.btn-without-icon {
 	.btn:active, .btn.active, .btn:hover {
-		color: #2F5E92;
+		color: @blue;
 	}
 }

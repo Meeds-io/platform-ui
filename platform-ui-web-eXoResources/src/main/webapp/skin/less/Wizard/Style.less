@@ -9,7 +9,7 @@
 	}
 	
 	.uiWizardPageSetInfo {
-		border: 1px solid #cfcfcf;
+		border: 1px solid @borderColor;
 		.border-radius(1px);
 		.pageNodeContainer {
 			width: 240px;
@@ -23,11 +23,11 @@
 		}
 		.selectedPageInfo {
 			margin-left: 240px;
-			border-left: 1px solid #cfcfcf;
+			border-left: 1px solid @borderColor;
 			.pageNodeInfo {
-				background: #f0f0f0;
+				background: @grayWhiteSmoke;
 				padding: 8px 15px;
-				border-bottom: 1px solid #cfcfcf;
+				border-bottom: 1px solid @borderColor;
 				.label {
 					background: none;
 					color: @textColor;
@@ -40,7 +40,7 @@
 			.uiFormWithTitle {
 				overflow: hidden;
 				&> .title {
-					background: #f8f8f8;
+					background: @grayLighter;
 					border: none;
 					box-shadow: none;
 					padding: 8px 20px;
@@ -56,15 +56,15 @@
 				padding: 1px 7px;
 			}
 			.btn.active {
-				color: #2f5e92;
+				color: @blue;
 				font-weight: bold;
 			}
 		}
 	}
 	
 	.UIWizardPageSelectLayoutForm {
-		background: #F8F8F8;
-    border: 1px solid #cfcfcf;
+		background: @grayLighter;
+    border: 1px solid @borderColor;
     .uiItemSelector {padding: 0;}
 		.itemListContainer {
 			padding: 20px;
@@ -72,7 +72,7 @@
 				margin: 0;
 				.itemList {
 					> li.selectedItem > a {
-						color: #2f5e92;
+						color: @linkColor;
 					}
 				}
 			}
@@ -82,7 +82,7 @@
 		}
 		.itemDetailList {
 			background: white;
-			border-left: 1px solid #cfcfcf;
+			border-left: 1px solid @borderColor;
 			.container {
 				padding: 75px;
 				width: auto;

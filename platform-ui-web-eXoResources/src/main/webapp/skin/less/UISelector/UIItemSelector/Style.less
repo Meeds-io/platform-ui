@@ -20,18 +20,18 @@
 				color: @textColor;
 			}
 			a:hover {
-				color: #2F5E92;
+				color: @linkColor;
 			}
 		}
 		.item.selectedItem {
-			background: #f8f8f8;
+			background: @grayLighter;
 			margin: 4px -20px;
 			padding: 0px 20px;
-			color: #2F5E92;
+			color: @linkColor;
 		}
 		.itemList {
 			> li.selectedItem > a {
-				color: #2f5e92;
+				color: @linkColor;
 				> i {
 					background-image: url("/eXoResources/skin/images/Icons/uiIconsBlue.png");
 					background-position: 0 -120px;
@@ -127,16 +127,16 @@
 					display: inline-block; 
 				}
 				&&:hover {
-					border: 1px solid #CFCFCF;
+					border: 1px solid @borderColor;
 				}
 				&&.selectedIcon {
-					border: 1px solid red;
+					border: 1px solid @red;
 				}
 			}
 		}
 		
 		.selectedIconInfo {
-	    border-top: 1px solid #CFCFCF;
+	    border-top: 1px solid @borderColor;
 	    margin: 20px -20px -10px;
 	    padding: 10px 20px 0;
 	    .itemValue {

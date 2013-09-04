@@ -19,7 +19,7 @@
 			&:before {
 		    border-left:   9px solid transparent;
 		    border-right:  9px solid transparent;
-		    border-bottom: 9px solid #ccc;
+		    border-bottom: 9px solid @borderColor;
 		    border-bottom-color: @dropdownBorder;
 		    top: -9px;
 		    left: 29px;
@@ -57,15 +57,6 @@
 .dropdown-submenu:hover > a {
   #gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 15%));
 }
-
-/** Active state
-// ------------
-.dropdown-menu .active > a,
-.dropdown-menu .active > a:hover {
-
-  #gradient > .vertical(@dropdownLinkBackgroundActive, darken(@dropdownLinkBackgroundActive, 15%));
-}
-**/
 
 #ThemeDropDown {
 	margin-bottom: 2px;

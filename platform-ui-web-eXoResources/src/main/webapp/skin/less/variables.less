@@ -1,45 +1,80 @@
-//
-// Variables
-// --------------------------------------------------
-
-
-// Global values
-// --------------------------------------------------
-
+@black:                 #000;
+@white:                 #fff;
 
 // Grays
 // -------------------------
-@black:                 #000;
-@grayDarker:            #222;
-@grayDark:              #333;
-@gray:                  #808080;
-@grayLight:             #999;
-@grayLighter:           #eee;
-@grayWhiteSmoke: 		#f0f0f0;
-@white:                 #fff;
+@grayDark:				#333333;	/* Default color for all title, text, text input, label */
+@gray:					#808080;	/* Navigation text color, special purpose in use */
+@grayLight:				#999999;	/* Default gray color for small text, sub title, text field explanation */
+@grayDarkWhiteSmoke:	#cccccc; 	/* Pop up, tab... border, line... */
+@grayMediumWhiteSmoke:	#e6e6e6; 	/* Hover/press background in table, content background in special cases */
+@grayWhiteSmoke:		#f0f0f0; 	/* Pop up, table, main header background */
+@grayLighter:			#f8f8f8; 	/* Table row background, content background */
+
+// Blues
+// -------------------------
+@blueDark:				#224886;
+@blue:					#2f5e92; 	
+@blueLight:				#567AB6; 	
+@blueLighter:			#638acd;	
 
 // Accent colors
 // -------------------------
-@blue:                  #049cdb;
-@blueDark:              #0064cd;
-@green:                 #46a546;
-@red:                   #e0233e;
-@yellow:                #ffc40d;
-@orange:                #f89406;
-@pink:                  #c3325f;
-@purple:                #7a43b6;
+@green:                 #39C522;
+@greenLight:			#e6fade;
+@red:                   #C72222;
+@orange:                #EDAD00;
+@orangeLight:			#FCF4D4;
+@pink:                  #F7B5B5;
 
 
 // Scaffolding
 // -------------------------
 @bodyBackground:        @white;
-@textColor:             #333;
-@borderColor:           #ccc;
+@textColor:             @grayDark;
+@borderColor:           @grayDarkWhiteSmoke;
 
 // Links
 // -------------------------
-@linkColor:             #2f5e92;
-@linkColorHover:        #2f5e92;
+@linkColor:             @blue;	/* Special title, text, hover, press, hyper-link or selected link */
+@linkColorHover:        @blue;
+
+
+// Tables
+// -------------------------
+
+@tableBackground:                   transparent; // overall background-color
+@tableBackgroundAccent:             @grayLighter; // for striping
+@tableBackgroundHover:              @grayMediumWhiteSmoke; // for hover
+@tableBorder:                       @borderColor; // table and cell border
+
+
+// Buttons
+// ------------------------- 
+@btnBackground:                     @white;
+@btnBackgroundHighlight:            @grayWhiteSmoke;
+@btnBorder:                         @borderColor;
+
+@btnPrimaryBackground:              @blueLighter;
+@btnPrimaryBackgroundHighlight:     @blue;
+@btnPrimaryBorder: 					@blueDark;
+
+
+// Forms
+// -------------------------
+@inputBackground:               @white;
+@inputBorder:                   @borderColor;
+@inputBorderRadius:             @baseBorderRadius;
+@inputDisabledBackground:       @grayLighter;
+@formActionsBackground:         @grayWhiteSmoke;
+@inputHeight:                   @baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
+
+
+// Dropdowns
+// -------------------------
+@dropdownBackground:            @white;
+@dropdownBorder:                @borderColor;
+@dropdownLinkBackgroundHover:   @blueLighter;
 
 
 // Typography
@@ -54,11 +89,7 @@
 @baseLineHeight:        20px;
 @altFontFamily:         @serifFontFamily;
 
-@headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
 @headingsFontWeight:    bold;    // instead of browser default, bold
-@headingsColor:         inherit; // empty to use BS default, @textColor
-
-
 // Component sizing
 // -------------------------
 // Based on 14px font-size and 20px line-height
@@ -67,71 +98,9 @@
 @fontSizeSmall:         @baseFontSize * 0.85;
 @fontSizeMini:          @baseFontSize * 0.75; 
 
-@paddingLarge:          11px 19px;
-@paddingSmall:          2px 10px; 
-@paddingMini:           1px 6px;  
-
 @baseBorderRadius:      4px;
 @borderRadiusLarge:     6px;
 @borderRadiusSmall:     3px;
-
-
-// Tables
-// -------------------------
-@tableBackground:                   transparent; // overall background-color
-@tableBackgroundAccent:             #f9f9f9; // for striping
-@tableBackgroundHover:              #e8e8e8; // for hover
-@tableBorder:                       #cfcfcf; // table and cell border
-
-// Buttons
-// -------------------------
-@btnBackground:                     @white;
-@btnBackgroundHighlight:            #f1f1f1;
-@btnBorder:                         #bbb;
-
-@btnPrimaryBackground:              #638ACD;
-@btnPrimaryBackgroundHighlight:     #426393;
-
-@btnInfoBackground:                 #5bc0de;
-@btnInfoBackgroundHighlight:        #2f96b4;
-
-@btnSuccessBackground:              #62c462;
-@btnSuccessBackgroundHighlight:     #51a351;
-
-@btnWarningBackground:              lighten(@orange, 15%);
-@btnWarningBackgroundHighlight:     @orange;
-
-@btnDangerBackground:               #ee5f5b;
-@btnDangerBackgroundHighlight:      #bd362f;
-
-@btnInverseBackground:              #444;
-@btnInverseBackgroundHighlight:     @grayDarker;
-
-
-// Forms
-// -------------------------
-@inputBackground:               @white;
-@inputBorder:                   #ccc;
-@inputBorderRadius:             @baseBorderRadius;
-@inputDisabledBackground:       @grayLighter;
-@formActionsBackground:         #f5f5f5;
-@inputHeight:                   @baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
-
-
-// Dropdowns
-// -------------------------
-@dropdownBackground:            @white;
-@dropdownBorder:                #cccccc;
-@dropdownDividerTop:            #e5e5e5;
-@dropdownDividerBottom:         @white;
-
-@dropdownLinkColor:             #333;
-@dropdownLinkColorHover:        @white;
-@dropdownLinkColorActive:       @white;
-
-@dropdownLinkBackgroundActive:  @linkColor;
-@dropdownLinkBackgroundHover:   #628acc;
-
 
 
 // COMPONENT VARIABLES
@@ -231,28 +200,22 @@
 
 // Form states and alerts
 // -------------------------
-@warningText:             #333;
 @warningBackground:       #FCF4D4;
 @warningBorder:           #edad00;
 
-@errorText:               #333;
 @errorBackground:         #f7b5b5;
 @errorBorder:             #C72222;
 
-@successText:             #333;
 @successBackground:       #e6fade;
 @successBorder:           #39C522;
 
-@infoText:                #333;
 @infoBackground:          #dee3fa;
 @infoBorder:              #215ab2;
 
 
 // Tooltips and popovers
 // -------------------------
-@tooltipColor:            #fff;
 @tooltipBackground:       #4a4a4a;
-@tooltipArrowWidth:       5px;
 @tooltipArrowColor:       @tooltipBackground;
 
 @popoverBackground:       #fff;
