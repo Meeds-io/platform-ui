@@ -1,20 +1,20 @@
 .calendarBox {
-	text-align: center;
+	.center();
 	font-family : @sansBoldFontFamily; 
 	font-weight: bold;
 	width: 50px;
 	.heading {
 		color : @white;
-		border: 1px solid #224886;
+		border: 1px solid @blueDark;
 		.border-radius(@baseBorderRadius @baseBorderRadius 0 0);
-		#gradient > .vertical(#638acd, #426393);
+		#gradient > .vertical(@blueLighter, @blue);
 		padding: 0;
 		margin: 0;
 	}
 	.content {
 		font-size: 24px;
 		color: #316399;
-		border: 1px solid #c3c3c3;
+		border: 1px solid @borderColor;
 		padding: 8px;
 		.border-radius( 0 0 @baseBorderRadius @baseBorderRadius); 
 	}

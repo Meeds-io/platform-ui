@@ -4,14 +4,14 @@
  
 .progress {
 	.border-radius(20px);
-	#gradient .vertical(#dbdbdb, #ebebeb);
+	#gradient .vertical(@grayMediumWhiteSmoke, @grayWhiteSmoke);
 	.bar {
-		#gradient .vertical(#5d83c3, #456697);
+		#gradient .vertical(@blueLighter, @blue);
 	}
 }
 // Striped bars
 .progress-striped .bar {
-  #gradient > .striped(#3862a9);
+  #gradient > .striped(@blueLight);
 }
 // upload files 
 .progressBarFrame {	
@@ -43,6 +43,7 @@
 	}
 }
 .uploadButton {
+	.center();
 	.moreFiles {
 		display: inline-block;
 		color: @grayLight;
@@ -75,6 +76,6 @@
 	padding: 3px;
 	.bar{
 		.border-radius(20px);
-		#gradient .vertical(#638acd, #426393);
+		#gradient .vertical(@blueLighter, @blue);
 	}
 }

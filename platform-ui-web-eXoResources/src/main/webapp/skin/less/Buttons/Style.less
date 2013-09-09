@@ -4,16 +4,17 @@
 
 .btn {
 	font-size: @baseFontSize;
-  .buttonBackground(@btnBackground, @btnBackgroundHighlight, @grayDark, 0 1px 1px rgba(255,255,255,.75));
-  border: 1px solid @btnBorder;
-  line-height: @baseLineHeight - 2;
-  .border-radius(@baseBorderRadius);
-  .ie7-restore-left-whitespace(); // Give IE7 some love
-  .box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
+	.buttonBackground(@btnBackground, @btnBackgroundHighlight, @grayDark, 0 1px 1px rgba(255,255,255,.75));
+	border: 1px solid @btnBorder;
+	line-height: @baseLineHeight - 2;
+	.border-radius(@baseBorderRadius);
+	.ie7-restore-left-whitespace(); // Give IE7 some love
+	.box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
 
   // Hover state
   &:hover {
-    #gradient > .vertical(#ebebeb, #f1f1f1);
+	#gradient > .vertical(@grayMediumWhiteSmoke, @btnBackgroundHighlight);
+	/*.buttonBackground(@grayMediumWhiteSmoke, @btnBackgroundHighlight, @grayDark, 0 1px 1px rgba(255,255,255,.75));*/
   }
 
 
@@ -39,61 +40,16 @@
 
 }
 
-
-
-// Button Sizes
-// --------------------------------------------------
-
-// Large
-.btn-large {
-	padding: 5px 12px;
-	font-size: 14px;
-	.border-radius(@borderRadiusLarge);
-}
-.btn-large [class^="uiIcon"]{
-  margin-top: 2px;
-}
-
-// Small
-.btn-small {
-  padding: 3px 10px;
-  font-size: @fontSizeSmall;
-  .border-radius(@borderRadiusSmall);
-}
-.btn-small [class^="uiIcon"]{
-  margin-top: 0;
-}
-
-// Mini
-.btn-mini {
-  padding: 1px 6px;
-  font-size: @fontSizeMini;
-  .border-radius(@borderRadiusSmall);
-}
-
-
-
-// Set the backgrounds
-// -------------------------
-.btn {
-  // reset here as of 2.0.3 due to Recess property order
-  border-color: #c7c7c7;
-}
-
-.btn-hidden {
-	opacity: 0.3;
-}
-
 .uiAction .btn:first-child ,
 .btn-primary {
-  .buttonBackground(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
-	border-color: #224886;
-  &:hover {
-  .buttonBackground(#4b71b3, #426394);
-    
+	.buttonBackground(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
+		border-color: @btnPrimaryBorder;
+	
+	&:hover {
+		.buttonBackground(@blueLight, @btnPrimaryBackgroundHighlight);
   }
-  font-family: @sansBoldFontFamily;
-  font-weight: bold;
+	font-family: @sansBoldFontFamily;
+	font-weight: bold;
 }
 
 .uiAction {
@@ -104,16 +60,18 @@
 	}
 }
 
-
-
 .uiActionBorder{
-	border-top: 1px solid #ccc;
+	border-top: 1px solid @borderColor;
 	text-align: center;
 	padding: 25px 0 5px;
 }
 
 .uiBox .uiActionBorder{
-		margin: 0px -20px;
+	margin: 0px -20px;
+}
+
+.uiBox .uiPopup .uiActionBorder{
+	margin: 10px -20px;
 }
 
 .uiTabNormal{

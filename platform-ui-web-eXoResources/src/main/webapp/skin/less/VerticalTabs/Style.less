@@ -1,14 +1,14 @@
 .accordion {
 	.border-radius(@baseBorderRadius);
-	border: 1px solid #dedede;
+	border: 1px solid @borderColor;
 	background: @white;
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
 	a {
-	  color: @grayDark;
+	  color: @textColor;
 	  text-decoration: none;
 	}
 	a:hover {
-	  color: @grayDark;
+	  color: @textColor;
 	}
 	.accordion-toggle {
 	  padding: 0px;
@@ -21,7 +21,7 @@
 	  }
 	}
 	.accordion-toggle:hover {
-	  background-color: @tableBackgroundAccent;
+	  background-color: @grayLighter;
 	  .border-radius(@borderRadiusSmall);
 	}
 	.accordion-group {
@@ -33,18 +33,18 @@
 	  }
 	}
 	.accordion-group  + .accordion-group {
-	  border-top: 1px solid #dedede;
+	  border-top: 1px solid @grayMediumWhiteSmoke;
 	}
 	.menuHeader {
 	  margin: 0px;
 	  padding: 7px 4px 7px 18px;
 	  background: @grayWhiteSmoke;
-	  border-bottom: 1px solid @tableBorder;
+	  border-bottom: 1px solid @borderColor;
 	  .border-radius(4px 4px 0 0);
 	}
 	.accordion-body {
 		.selected {
-			  background-color: @tableBackgroundHover;
+			  background-color: @grayMediumWhiteSmoke;
 		}
 		.functionItem{
 			display: block;
@@ -53,12 +53,12 @@
 			i {margin: -2px 7px 0 0;}
 		}
 		.functionItem:hover{
-			background: #f8f8f8;
+			background: @grayLighter;
 		}
 	}
 	.expaned {
-	  #gradient > .vertical(@tableBackgroundAccent, #e7e7e7);
-	  border-bottom: 1px solid @tableBorder;
+	  #gradient > .vertical(@grayLighter, @grayMediumWhiteSmoke);
+	  border-bottom: 1px solid @borderColor;
 	  .border-radius(3px 3px 0 0);
 	  .bgSelected {
 		  padding: 8px 15px;
@@ -86,10 +86,10 @@
 	  border: none;
 	}
 	.accordion-inner:hover {
-	  background-color: @tableBackgroundAccent;
+	  background-color: @grayLighter;
 	}
 	.accordion-normal {
-	  border-top: 1px solid #dedede;
+	  border-top: 1px solid @borderColor;
 	  .accordion-toggle {
 		  padding: 8px 15px;
 		  display: block;
@@ -118,26 +118,26 @@
 
 .verticalTabStyle1 {
 	.collapsed{
-		background: #f4f4f4;
+		background: @grayWhiteSmoke;
 	}
 	.accordion-toggle a {
 		padding: 5px 15px;
 	}
 	
 	.expaned {
-		#gradient > .vertical(#ffffff, #f1f1f1);
+		#gradient > .vertical(@grayLighter, @grayWhiteSmoke);
 	}
 	
 	.accordion-inner {
-		border: 1px solid #e1e1e1;
+		border: 1px solid @grayMediumWhiteSmoke;
 		border-radius: 4px;
 		padding: 5px;
 		margin: 8px;
 	}
 	
 	.accordion-inner:hover {
-		background: #f8f8f8;
-		border: 1px solid #c7c7c7;
+		background: @grayLighter;
+		border: 1px solid @borderColor;
 	}
 }
 

@@ -53,7 +53,7 @@
 										<a href="<%=uicomponent.event("EditNavigation", portalConfig.getName());%>" class="actionIcon">
 											<i class="uiIconNavigation uiIconLightGray"></i>$editNavigationLabel</a>
 								 </td>
-								  <td width="160">
+								  <td width="180">
 										<a href="javascript:ajaxGet(eXo.env.server.createPortalURL('UIPortal', 'EditPortalProperties', true, [{name:'portalName',value:'<%=portalConfig.getName()%>'}]))" class="actionIcon">
 											<i class="uiIconEditPortalConfig uiIconLightGray"></i>$editPortalPropLabel</a>
 								 </td>  
