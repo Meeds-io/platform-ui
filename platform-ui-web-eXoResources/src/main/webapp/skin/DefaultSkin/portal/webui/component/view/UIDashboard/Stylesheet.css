@@ -250,10 +250,19 @@
 /*----------------------Maximized-------------------*/
 
 .Maximized .UIGadget {
-	padding: 5px;
 	margin: 0px;
 }
-
+.Maximized .UIGadgetContent {
+	padding: 8px;
+}
+.Maximized .gadgets-gadget-user-prefs-dialog > .gadgets-gadget-user-prefs-dialog-action-bar {
+	margin-bottom: 10px;
+}
+.Maximized .gadgets-gadget-user-prefs-dialog > form,
+.Maximized .gadgets-gadget-user-prefs-dialog > .gadgets-gadget-user-prefs-dialog-action-bar{
+	margin-left: 0;
+	margin-right: 0;
+}
 .Maximized .GadgetTitle {
 	color: #5b5b5b;
 	font-weight: bold;
