@@ -75,14 +75,94 @@
 }
 .gadgets-gadget-user-prefs-dialog {
 	> form {
+		border: 1px solid #CCCCCC;
+		border-bottom: none;
+	    .border-radius(3px 3px 0px 0px);
+	    margin: 10px 2% 0px 2%;
 		> div {
 			padding: 10px 10px 5px;
+			> span {
+				display: block;
+				margin-bottom: 5px;
+			}
 			+ div {
 				padding: 5px 10px 5px;
 			}
 		}
+		input {
+			padding: 3px 6px;
+			color: @grayDark;
+			.box-shadow(inset 0 2px 1px rgba(0,0,0,.075));
+			font-size: @baseFontSize;
+			.box-sizing(border-box);
+			height: 28px;
+			border: 1px solid @borderColor;
+			.border-radius(4px);
+			&:focus {
+				border-color: rgba(148,176,223,1);
+				.box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 5px rgba(29,75,159,.6)");
+				color: @grayDark;
+			}
+		}
+		input, select, textarea {
+			width: 100%;
+		}
 	}
 	> .gadgets-gadget-user-prefs-dialog-action-bar {
+		border: 1px solid #ccc;
+		border-top: none;
+		.border-radius(0 0 3px 3px);
 		padding: 5px 10px 10px;
+		margin: 0 2% 0;
+		input[type="button"] {
+			font-size: @baseFontSize;
+			.buttonBackground(@btnBackground, @btnBackgroundHighlight, @grayDark, 0 1px 1px rgba(255,255,255,.75));
+			border: 1px solid @btnBorder;
+			margin-bottom: 0;
+		    padding: 4px 12px;
+		    text-align: center;
+		    vertical-align: middle;
+		    display: inline-block;
+			line-height: @baseLineHeight - 2;
+			.border-radius(@baseBorderRadius);
+			.ie7-restore-left-whitespace(); // Give IE7 some love
+			.box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
+
+		  // Hover state
+		  &:hover {
+			#gradient > .vertical(@grayMediumWhiteSmoke, @btnBackgroundHighlight);
+			/*.buttonBackground(@grayMediumWhiteSmoke, @btnBackgroundHighlight, @grayDark, 0 1px 1px rgba(255,255,255,.75));*/
+		  }
+
+
+		  // Active state
+		  &.active,
+		  &:active {
+		    background-color: darken(@white, 10%);
+		    background-color: darken(@white, 15%) e("\9");
+		    background-image: none;
+		    outline: 0;
+		    .box-shadow(~"inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)");
+		  }
+
+		  // Disabled state
+		  &.disabled,
+		  &[disabled] {
+		    cursor: default;
+		    background-color: darken(@white, 10%);
+		    background-image: none;
+		    .opacity(65);
+		    .box-shadow(none);
+		  }
+		  &:first-child {
+				.buttonBackground(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
+				border-color: @btnPrimaryBorder;
+				&:hover {
+					.buttonBackground(@blueLight, @btnPrimaryBackgroundHighlight);
+				}
+				font-family: @sansBoldFontFamily;
+				font-weight: bold;
+		  }
+		}
 	}
 }
