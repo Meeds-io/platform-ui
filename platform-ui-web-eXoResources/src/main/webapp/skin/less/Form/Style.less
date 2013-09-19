@@ -168,16 +168,16 @@ input[disabled], select[disabled], textarea[disabled] {
 	background: @grayMediumWhiteSmoke;
 }
 
-//hack ie8 and ie7
 
-.lt-ie9  .uiCheckbox input {
-	margin-left: -18px;
+.uiCheckbox input,.uiRadio input {
 	min-height: 10px;
+	padding: 0;
 }
 
 
 .lt-ie9  .uiCheckbox input[type="checkbox"] + span:before {	
-	background: transparent;
+	background: none;
+	display: none;
 }
 
 .uiRadio {
@@ -198,12 +198,6 @@ input[disabled], select[disabled], textarea[disabled] {
 	z-index: 100;
 } 
 
-//hack ie8 and ie7
-
-.lt-ie9 .uiRadio input {
-	margin-left: -8px ;
-	min-height: 10px;
-}
 
 .uiRadio > span {
 	display: inline-block;
@@ -241,11 +235,13 @@ input[disabled], select[disabled], textarea[disabled] {
 //hack ie8 and ie7
 
 .lt-ie9 .uiRadio input[type="radio"] + span:before {
-	background: transparent;
+	background: none;
+	display: none;
 } 
 
 .lt-ie9 .uiRadio input[type="radio"]:checked + span:after {	
-	background: transparent;
+	background: none;
+	display: none;
 }
 
 .uiRadio input[type="radio"] + span {
