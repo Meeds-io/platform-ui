@@ -23,13 +23,13 @@
 var uiFormInputThemeSelector = {
 
   initForm : function() {
-	  $(".UIFormInputThemeSelector").find(".SetDefault").on("click", function() {
+	  $(".uiFormInputThemeSelector").find(".setDefault").on("click", function() {
 		  uiFormInputThemeSelector.setDefaultTheme(this,'DefaultTheme');
 	  });	  
   },
   
   initSelector : function() {
-	  $(".UIFormInputThemeSelector").find(".uiThemeSelector").parent().on("click", function() {
+	  $(".uiFormInputThemeSelector").find(".uiThemeSelector").parent().on("click", function() {
 		  var theme = $(this).children("div").attr("class").replace("uiThemeSelector ", "");
 		  uiFormInputThemeSelector.showThemeSelected(this, theme); 
 	  });
@@ -37,7 +37,7 @@ var uiFormInputThemeSelector = {
   
   showThemeSelected : function(obj, param) {
     var jqObj = $(obj);
-    var itemListContainer = jqObj.parent().closest(".ItemListContainer");
+    var itemListContainer = jqObj.parent().closest(".itemListContainer");
     var detailList = itemListContainer.next("div").find(".uiThemeSelector").eq(0);
     detailList.next("div").html(jqObj.find(".nameStyle").eq(0).html());
     detailList.attr("class", "uiThemeSelector " + param);
@@ -46,12 +46,12 @@ var uiFormInputThemeSelector = {
   },
 
   setDefaultTheme : function(obj, param) {
-    var itemDetailList = $(obj).parent().closest(".ItemDetailList");
+    var itemDetailList = $(obj).parent().closest(".itemDetailList");
     var detailList = itemDetailList.find(".uiThemeSelector").eq(0);
     detailList.attr("class", "uiThemeSelector " + param);
 
     detailList.next("div").html(msg.getMessage("DefaultTheme"));
-    itemDetailList.prev("div").find("div.ItemList").eq(0).parent().children("input").eq(0).val(param);
+    itemDetailList.prev("div").find("div.itemList").eq(0).parent().children("input").eq(0).val(param);
   }  
 };
 
