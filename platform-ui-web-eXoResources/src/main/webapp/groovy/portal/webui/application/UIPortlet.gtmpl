@@ -198,7 +198,7 @@
 					<div class="CONTROL-PORTLET CONTROL-BLOCK uiInfoBar">
 						<%/*Begin InfoBar*/%>
 						
-							<i class="uiIconDragDrop uiIconWhite" title="<%=_ctx.appRes("UIPortlet.tooltip.DragControl");%>"></i>
+							<i class="uiIconDragDrop uiIconWhite" rel="tooltip" data-placement="right"  title="<%=_ctx.appRes("UIPortlet.tooltip.DragControl");%>"></i>
 							<% 
 								String portletIcon = uicomponent.getIcon();
 								if(portletIcon == null || portletIcon == "PortletIcon") portletIcon = "uiIconPortletConfig uiIconWhite";
