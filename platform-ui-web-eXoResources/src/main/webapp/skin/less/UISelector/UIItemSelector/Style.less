@@ -1,4 +1,24 @@
+/**
+	* Copyright (C) 2009 eXo Platform SAS.
+ * 
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ * 
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+ */
+ 
 .uiItemSelector {
+	margin: 2px 0px 2px 2px; /* orientation=lt */
 	padding: 10px;
 	.itemListContainer {
 		width: 220px;
@@ -40,8 +60,7 @@
 		}
 	}
 	.itemDetailList {
-		margin-left: 234px; 
-		overflow: hidden;
+		margin-left: 234px;
 		> .title > h6 {
 			margin: 0; 
 			line-height: 28px;
@@ -59,7 +78,7 @@
 
 .uiItemSelector.uiPageTemplateOptions {
 	.containerLayout {
-		padding: 15px 0;
+		padding: 40px 0 35px;
 	}
 	.itemListContainer {
 		.uiContentBox {
@@ -77,7 +96,7 @@
 .uiItemSelector.uiFormInputItemSelector {
 	.itemListContainer {
 		.uiContentBox {
-			min-height: 238px;
+			min-height: 241px;
 		}
 	}
 	.itemDetailList {
@@ -146,6 +165,669 @@
 	}
 }
 
+.uiItemSelector .itemDetailList .TemplateContainer .PortalOfficeImage {
+	height: 222px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/TemplateContainer.jpg') no-repeat center -614px;
+}
+
+.uiItemSelector .itemDetailList .TemplateContainer .PortalDefaultImage {
+	height: 222px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/TemplateContainer.jpg') no-repeat center -392px;
+}
+
+.uiItemSelector .itemDetailList .TemplateContainer .PageDefaultImage {
+	height: 222px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/TemplateContainer.jpg') no-repeat center -392px;
+}
+
+.uiItemSelector .itemDetailList .TemplateContainer .PageDesktopImage {
+	height: 222px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/TemplateContainer.jpg') no-repeat center -836px;
+}
+
+.uiItemSelector .itemDetailList .TemplateContainer .classicImage {
+	height: 222px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/TemplateContainer.jpg') no-repeat center -392px;
+	margin-top: 9px;
+}
+
+.uiItemSelector .itemDetailList .TemplateContainer .WebOSPortalImage {
+	height: 222px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/TemplateContainer.jpg') no-repeat center -170px;
+	margin-top: 9px;
+}
+
+.uiItemSelector .itemDetailList .TemplateContainer .basicImage {
+	height: 222px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/TemplateContainer.jpg') no-repeat center -1052px;
+	margin-top: 9px;
+}
+
+.uiItemSelector .TemplateContainer .DefaultImage {
+	height: 222px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/TemplateContainer.jpg') no-repeat center -392px;
+}
+
+.uiItemSelector .itemDetailList .TemplateContainer .DesktopImage {
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/TemplateContainer.jpg') no-repeat center -836px;
+	height: 222px;
+}
+
+.uiItemSelector .itemDetailList .LayoutHolder .DesktopImage {
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/TemplateContainer.jpg') no-repeat top left;
+	height: 170px;
+	width: 270px;
+	margin: auto;
+}
+
+.uiItemSelector .itemDetailList .ItemDescription {
+	height: 100px; 
+	background: white;
+	border: solid 1px #b7b7b7;
+	padding: 2px;
+}
+
+.uiItemSelector .itemDetailList .itemDetail .ItemValueDescription {
+	width: 50%; height: 53px; 
+	padding-left: 15px; /* orientation=lt */
+	padding-right: 15px; /* orientation=rt */
+	margin-top: 12px; 
+	overflow: auto;
+	border: none;
+}
+
+/*=================Right Column Style======================*/
+
+.uiItemSelector .RightColumnStyle {
+	width: 99.5%;
+	overflow: hidden;
+}
+
+.uiItemSelector .RightColumnStyle .itemListContainer {
+	float: right; /* orientation=lt */
+	float: left; /* orientation=rt */
+	width: 220px;
+}
+
+.uiItemSelector .RightColumnStyle .itemListContainer .itemListBackground {
+	background: white url('/eXoResources/skin/images/UISelector/UIItemSelector/itemList.jpg') no-repeat right bottom;
+	height: 258px;
+}
+
+.uiItemSelector .RightColumnStyle .itemDetailList {
+	height: auto;
+	margin-right: 225px; /* orientation=lt */
+	margin-left: 225px; /* orientation=rt */
+	padding: 1px;
+}
+.uiItemSelector .uiBox {
+	margin-bottom: 0;
+}
+.uiItemSelector .RightColumnStyle .itemDetailList .itemDetail {
+	height: 240px;
+	background: white;
+	border: 1px #C7C7C7 solid;
+}
+
+.uiItemSelector .RightColumnStyle .itemDetailList .itemDetailTitle{
+	height: 23px;
+}
+
+.uiItemSelector .RightColumnStyle .itemDetailList .itemDetailContainer{
+ 	background: #ffffff;
+}
+
+.uiItemSelector .RightColumnStyle .itemListTitle {
+	height: 23px;
+}
+
+.uiItemSelector .RightColumnStyle .itemListTitle .ArrowS1Down16x16Icon {
+	margin: 3px 0px 0px 4px; /* orientation=lt */
+	margin: 3px 4px 0px 0px; /* orientation=rt */
+	background: url('/eXoResources/skin/DefaultSkin/skinIcons/16x16/icons/MacSkin/GrayAquaDownArrow.png') no-repeat;
+	width: 18px; height: 18px;
+}
+
+.uiItemSelector .RightColumnStyle .TitleIcon {
+	float: left; /* orientation=lt */
+	float: right; /* orientation=rt */
+	margin: 0px 5px 0px 5px;
+}
+
+.uiItemSelector .RightColumnStyle .itemDetailList .Title {
+	width: 300px; overflow: hidden;
+}	
+	
+.uiItemSelector .RightColumnStyle .itemListContainer .Title {
+	width: 143px; overflow: hidden;
+}
+
+.uiItemSelector .RightColumnStyle .Title {
+	line-height: 22px; white-space: nowrap; 
+	font-weight: bold; color: #5c5c5c; 
+	float: left; /* orientation=lt */
+	float: right; /* orientation=rt */
+}
+
+.uiItemSelector .RightColumnStyle .itemListIcon {
+	width: 16px; height: 16px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem.gif') no-repeat left -418px;
+
+}
+
+.uiItemSelector .RightColumnStyle .ViewListIcon {
+	width: 16px; height: 16px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem.gif') no-repeat left -434px;
+	margin-top: 3px;
+}
+
+/*##########################- Default Item	-#########################*/
+
+.uiItemSelector .RightColumnStyle .itemList .Item {
+	height: 26px; 
+	cursor: pointer;
+	border-bottom: 1px solid #dfdfdf;
+}
+
+.uiItemSelector .RightColumnStyle .itemList .Item .LeftItem {
+	height: 26px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem.gif') no-repeat left top; /* orientation=lt */
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem-rt.gif') no-repeat right top; /* orientation=rt */
+	padding-left: 15px; /* orientation=lt */
+	padding-right: 15px; /* orientation=rt */
+}
+
+.uiItemSelector .RightColumnStyle .itemList .Item .RightItem {
+	height: 26px; line-height: 26px;
+}
+
+.uiItemSelector .RightColumnStyle .itemList .Item .ItemTitle {
+	height: 26px; line-height: 26px;
+	padding-left: 3px; /* orientation=lt */
+	padding-right: 3px; /* orientation=rt */
+}
+
+/*###########################- Over Item (When mouse over on this item) -############################*/
+
+.uiItemSelector .RightColumnStyle .itemList .OverItem {
+	height: 26px;
+	cursor: pointer;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem.gif') repeat-x left -104px;
+}
+
+.uiItemSelector .RightColumnStyle .itemList .OverItem .LeftItem {
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem.gif') no-repeat left -52px; /* orientation=lt */
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem-rt.gif') no-repeat right -52px; /* orientation=rt */
+	padding-left: 15px; /* orientation=lt */
+	padding-right: 15px; /* orientation=rt */
+}
+
+
+.uiItemSelector .RightColumnStyle .itemList .OverItem .RightItem {
+	height: 26px; line-height: 26px; 
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem.gif') repeat-x left -104px;
+}
+
+.uiItemSelector .RightColumnStyle .itemList .OverItem .ItemTitle {
+	height: 26px; line-height: 26px; 
+	color: #f67a02;
+	padding-left: 3px; /* orientation=lt */
+	padding-right: 3px; /* orientation=rt */
+}
+
+/*##########################- Selected Item	(When Item is selected)-#########################*/
+
+.uiItemSelector .RightColumnStyle .itemList .SelectedItem {
+	height: 26px;
+	cursor: pointer;
+}
+
+.uiItemSelector .RightColumnStyle .itemList .SelectedItem .LeftItem {
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem.gif') no-repeat left -26px; /* orientation=lt */
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem-rt.gif') no-repeat right -26px; /* orientation=rt */
+	padding-left: 15px; /* orientation=lt */
+	padding-right: 15px; /* orientation=rt */
+}
+
+.uiItemSelector .RightColumnStyle .itemList .SelectedItem .RightItem {
+	height: 26px; line-height: 26px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem.gif') repeat-x left -78px;
+}
+
+.uiItemSelector .RightColumnStyle .itemList .SelectedItem .ItemTitle {
+	height: 26px; line-height: 26px; 
+	color: #0575CA;; 
+	padding-left: 3px; /* orientation=lt */
+	padding-right: 3px; /* orientation=rt */
+}
+
+/*#######################################-----RightColumnBigItemStyle-----####################################*/
+
+
+.uiItemSelector .RightColumnBigItemStyle {
+	overflow: hidden;
+	width: 99.5%;
+}
+
+.uiItemSelector .RightColumnBigItemStyle .itemListContainer {
+	float: right; /* orientation=lt */
+	float: left; /* orientation=rt */
+	width: 210px;
+}
+
+.uiItemSelector .RightColumnBigItemStyle .itemListContainer .itemList {
+	border: 1px #b7b7b7 solid;
+	background: white url('/eXoResources/skin/images/UISelector/UIItemSelector/itemList.jpg') no-repeat right bottom;
+	height: 290px;
+}
+
+.uiItemSelector .RightColumnBigItemStyle .itemDetailList {
+	border: 1px #b7b7b7 solid;
+	background: white;
+	padding: 1px; 
+	margin-right: 220px; /* orientation=lt */
+	margin-left: 220px; /* orientation=rt */
+	height: 290px;
+}
+
+.uiItemSelector .RightColumnBigItemStyle .itemListContainer .itemListTitle {
+	font-size: 12px; text-align: center;
+	height: 19px; line-height: 19px;
+	border: solid 1px #b7b7b7;
+	font-weight: bold; 
+	margin-bottom: 2px;
+	background: url('/eXoResources/skin/DefaultSkin/background/TitleBG1x20.gif') repeat-x;
+}
+
+.uiItemSelector .RightColumnBigItemStyle .ImageDecorator {
+	height: 230px;
+	padding: 5px;
+}
+
+/*###########################- Item Default -#############################*/
+.uiItemSelector .RightColumnBigItemStyle .itemList .Item {
+	margin: 13px 6px;
+	height: 32px;
+	cursor: pointer;
+}
+
+.uiItemSelector .RightColumnBigItemStyle .itemList .Item .UserAccountIcon { 
+	height: 32px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/BigStyleUserAccountItem.gif') no-repeat;
+}
+
+.uiItemSelector .RightColumnBigItemStyle .itemList .Item .MembershipIcon {	
+	height: 32px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/BigStyleMembershipItem.gif') no-repeat;
+}
+
+.uiItemSelector .RightColumnBigItemStyle .itemList .Item .UserProfileIcon {	
+	height: 32px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem.gif') no-repeat left -130px; /* orientation=lt */
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem-rt.gif') no-repeat right -130px; /* orientation=rt */
+	padding-left: 30px; /* orientation=lt */
+	padding-right: 30px; /* orientation=rt */
+}
+
+.uiItemSelector .RightColumnBigItemStyle .itemList .Item .UserHomeInfoIcon {		
+	height: 32px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem.gif') no-repeat left -162px; /* orientation=lt */
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem-rt.gif') no-repeat right -162px; /* orientation=rt */
+	padding-left: 30px; /* orientation=lt */
+	padding-right: 30px; /* orientation=rt */
+}
+
+.uiItemSelector .RightColumnBigItemStyle .itemList .Item .UserBusinessInfoIcon {
+	height: 32px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem.gif') no-repeat left -194px; /* orientation=lt */
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem-rt.gif') no-repeat right -194px; /* orientation=rt */
+	padding-left: 30px; /* orientation=lt */
+	padding-right: 30px; /* orientation=rt */
+}
+
+.uiItemSelector .RightColumnBigItemStyle .itemList .Item .ItemName {
+	height: 32px; line-height: 32px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem.gif') no-repeat right -322px; /* orientation=lt */
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem-rt.gif') no-repeat left -322px; /* orientation=rt */
+	padding-right: 15px; /* orientation=lt */
+	padding-left: 15px; /* orientation=rt */
+	color: #526791;
+}
+
+.uiItemSelector .RightColumnBigItemStyle .itemList .Item .ItemTitle {
+	height: 32px; line-height: 32px; 
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem.gif') repeat-x left -386px; /* orientation=lt */
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem-rt.gif') repeat-x right -386px; /* orientation=rt */
+	color: gray;
+	padding-left: 10px; /* orientation=lt */
+	padding-right: 10px; /* orientation=rt */
+}
+
+
+/*###########################- Item Selected -#############################*/
+.uiItemSelector .RightColumnBigItemStyle .itemList .SelectedItem {
+	margin: 13px 6px;
+	height: 32px;
+	cursor: pointer;
+}
+
+.uiItemSelector .RightColumnBigItemStyle .itemList .SelectedItem .UserAccountIcon {
+	height: 32px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/BigStyleUserAccountSelected.gif') no-repeat left; /* orientation=lt */
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/BigStyleUserAccountSelected-rt.gif') no-repeat right; /* orientation=rt */
+	padding-left: 30px; /* orientation=lt */
+	padding-right: 30px; /* orientation=rt */
+}
+
+.uiItemSelector .RightColumnBigItemStyle .itemList .SelectedItem .MembershipIcon {
+	height: 32px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/BigStyleMembershipSelected.gif') no-repeat left; /* orientation=lt */
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/BigStyleMembershipSelected-rt.gif') no-repeat right; /* orientation=rt */
+	padding-left: 30px; /* orientation=lt */
+	padding-right: 30px; /* orientation=rt */
+}
+
+.uiItemSelector .RightColumnBigItemStyle .itemList .SelectedItem .UserProfileIcon {
+	height: 32px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem.gif') no-repeat left -226px; /* orientation=lt */
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem-rt.gif') no-repeat right -226px; /* orientation=rt */
+	padding-left: 30px; /* orientation=lt */
+	padding-right: 30px; /* orientation=rt */
+}
+
+.uiItemSelector .RightColumnBigItemStyle .itemList .SelectedItem .UserHomeInfoIcon {
+	height: 32px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem.gif') no-repeat left -258px; /* orientation=lt */
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem-rt.gif') no-repeat right -258px; /* orientation=rt */
+	padding-left: 30px; /* orientation=lt */
+	padding-right: 30px; /* orientation=rt */
+}
+
+.uiItemSelector .RightColumnBigItemStyle .itemList .SelectedItem .UserBusinessInfoIcon {
+	height: 32px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem.gif') no-repeat left -290px; /* orientation=lt */
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem-rt.gif') no-repeat right -290px; /* orientation=rt */
+}
+
+.uiItemSelector .RightColumnBigItemStyle .itemList .SelectedItem .ItemName {
+	height: 32px; line-height: 32px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem.gif') no-repeat right -354px; /* orientation=lt */
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem-rt.gif') no-repeat left -354px; /* orientation=rt */
+	padding-right: 15px; /* orientation=lt */
+	padding-left: 15px; /* orientation=rt */
+	color: black;
+}
+
+.uiItemSelector .RightColumnBigItemStyle .itemList .SelectedItem .ItemTitle {
+	height: 32px; line-height: 32px; 
+	background: #d3d3eb;
+	font-weight: bold; color: black;
+	padding-left: 10px; /* orientation=lt */
+	padding-right: 10px; /* orientation=rt */
+}
+
+/*#####################- End Item Selected && END BIG STYLE -#########################*/
+
+/*###########################- LeftColumnStyle (The Item List is on the left side) -#########################*/
+
+.uiItemSelector .LeftColumnStyle {
+	width: 99.5%;
+	overflow: hidden;
+}
+
+.uiItemSelector .LeftColumnStyle .itemListContainer {
+	float: left; /* orientation=lt */
+	float: right; /* orientation=rt */
+	width: 175px;
+}
+
+.uiItemSelector .LeftColumnStyle .itemListContainer .itemList {
+	border: 1px #a4a4a4 solid;
+	background: white;
+}
+
+.uiItemSelector .LeftColumnStyle .itemDetailList {
+	height: auto;
+	margin-left: 180px; /* orientation=lt */
+	margin-right: 180px; /* orientation=rt */
+	padding: 1px;
+}
+
+.uiItemSelector .LeftColumnStyle .itemDetailList .itemDetail {
+	height: 240px;
+	background: white;
+	border: 1px #a4a4a4 solid;
+}
+
+.uiItemSelector .LeftColumnStyle .itemDetailList .itemDetailTitle{
+	height: 32px;
+
+}
+
+.uiItemSelector .LeftColumnStyle .itemListContainer .itemListTitle {
+	height: 23px;
+}
+
+.uiItemSelector .LeftColumnStyle .TitleIcon {
+	float: left; /* orientation=lt */
+	float: right; /* orientation=rt */
+	margin: 0px 5px 0px 5px;
+}
+
+.uiItemSelector .LeftColumnStyle .Title {
+	line-height: 22px;
+	font-weight: bold; color: #5c5c5c; 
+	float: left; /* orientation=lt */
+	float: right; /* orientation=rt */
+}
+
+.uiItemSelector .LeftColumnStyle .itemListIcon {
+	width: 16px; height: 16px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem.gif') no-repeat left -418px;
+}
+
+.uiItemSelector .LeftColumnStyle .ViewListIcon {
+	width: 16px; height: 16px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem.gif') no-repeat left -434px;
+	margin-top: 3px;
+}
+
+/*##########################- Default Item	-#########################*/
+
+.uiItemSelector .LeftColumnStyle .itemList .Item {
+	height: 26px;
+	cursor: pointer;
+	border-bottom: 1px solid #dfdfdf;
+}
+
+.uiItemSelector .LeftColumnStyle .itemList .Item .LeftItem {
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem.gif') no-repeat left top; /* orientation=lt */
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem-rt.gif') no-repeat right top; /* orientation=rt */
+	padding-left: 15px; /* orientation=lt */
+	padding-right: 15px; /* orientation=rt */
+	height: 26px;
+}
+
+.uiItemSelector .LeftColumnStyle .itemList .Item .RightItem {
+	height: 26px; line-height: 26px;
+}
+
+.uiItemSelector .LeftColumnStyle .itemList .Item .ItemTitle {
+	height: 26px; line-height: 24px; 
+	padding-left: 5px; /* orientation=lt */
+	padding-right: 5px; /* orientation=rt */
+	white-space: nowrap;
+	overflow: hidden;
+	width: 95%;
+}
+
+.uiItemSelector .LeftColumnStyle .itemList .Item .CenterItemTitle {
+	width: 96%;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+/*###########################- Over Item (When mouse over on this item) -############################*/
+
+.uiItemSelector .LeftColumnStyle .itemList .OverItem {
+	height: 26px;
+	cursor: pointer;
+	border-bottom: 1px solid #dfdfdf;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem.gif') repeat-x left -104px;
+}
+
+.uiItemSelector .LeftColumnStyle .itemList .OverItem .LeftItem {
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem.gif') no-repeat left -52px; /* orientation=lt */
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem-rt.gif') no-repeat right -52px; /* orientation=rt */
+	padding-left: 15px; /* orientation=lt */
+	padding-right: 15px; /* orientation=rt */
+}
+
+.uiItemSelector .LeftColumnStyle .itemList .OverItem .RightItem {
+	height: 26px; line-height: 26px; 
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem.gif') repeat-x left -104px;
+}
+
+.uiItemSelector .LeftColumnStyle .itemList .OverItem .ItemTitle {
+	height: 26px; line-height: 24px;
+	color: #f67a02;
+	padding-left: 5px; /* orientation=lt */
+	padding-right: 5px; /* orientation=rt */
+	white-space: nowrap;
+	overflow: hidden;
+	width: 95%;
+}
+
+.uiItemSelector .LeftColumnStyle .itemList .OverItem .CenterItemTitle {
+	width: 96%;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+/*##########################- Selected Item	(When Item is selected)-#########################*/
+
+.uiItemSelector .LeftColumnStyle .itemList .SelectedItem {
+	height: 26px;
+	cursor: pointer;
+	border-bottom: 1px solid #dfdfdf;
+}
+
+.uiItemSelector .LeftColumnStyle .itemList .SelectedItem .LeftItem {
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem.gif') no-repeat left -26px; /* orientation=lt */
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem-rt.gif') no-repeat right -26px; /* orientation=rt */
+	padding-left: 15px; /* orientation=lt */
+	padding-right: 15px; /* orientation=rt */
+	height: 26px;
+}
+
+.uiItemSelector .LeftColumnStyle .itemList .SelectedItem .RightItem {
+	height: 25px; line-height: 23px;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/SelectedItem.gif') repeat-x left -78px;
+}
+
+.uiItemSelector .LeftColumnStyle .itemList .SelectedItem .ItemTitle {
+	height: 26px; 
+	line-height: 24px;
+	color: #0575CA; 
+	padding-left: 5px; /* orientation=lt */
+	padding-right: 5px; /* orientation=rt */
+	white-space: nowrap;
+	overflow: hidden;
+	width: 95%;
+}
+
+.uiItemSelector .LeftColumnStyle .itemList .SelectedItem .CenterItemTitle {
+	width: 96%;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+/*###########################- End LeftColumnitemList -#########################*/
+/*###########################- Layout Template -#########################*/
+
+.uiItemSelector .EmptyLayout {
+	width: 185px; height: 125px;
+	margin: auto;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/ItemSelector.png') no-repeat top left transparent;
+}
+
+.uiItemSelector .DesktopLayout {
+	width: 185px; height: 125px;
+	margin: auto;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/TemplateContainer.jpg') no-repeat top left;
+}
+
+.uiItemSelector .DashboardLayout {
+	width: 185px; height: 125px;
+	margin: auto;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/ItemSelector.png') no-repeat 0 -1500px transparent;
+}
+
+.uiItemSelector .TwoColumnsLayout {
+	width: 185px; height: 125px;
+	margin: auto;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/ItemSelector.png') no-repeat 0 -1125px transparent;
+}
+
+.uiItemSelector .ThreeColumnsLayout {
+	width: 185px; height: 125px;
+	margin: auto;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/ItemSelector.png') no-repeat 0 -1250px transparent;
+}
+
+.uiItemSelector .TwoColumnsOneRowLayout {
+	width: 185px; height: 125px;
+	margin: auto;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/ItemSelector.png') no-repeat left -500px transparent;
+}
+
+.uiItemSelector .TwoColumnsTwoRowsLayout {
+	width: 185px; height: 125px;
+	margin: auto;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/ItemSelector.png') no-repeat left -625px transparent;
+}
+
+.uiItemSelector .OneRowsLayout {
+	width: 185px; height: 125px;
+	margin: auto;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/ItemSelector.png') no-repeat 0 -125px transparent;
+}
+
+.uiItemSelector .TwoRowsLayout {
+	width: 185px; height: 125px;
+	margin: auto;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/ItemSelector.png') no-repeat 0 -250px transparent;
+}
+
+.uiItemSelector .ThreeRowsLayout {
+	width: 185px; height: 125px;
+	margin: auto;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/ItemSelector.png') no-repeat 0 -375px transparent;
+}
+
+.uiItemSelector .OneRowTwoColumnsLayout {
+	width: 185px; height: 125px;
+	margin: auto;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/ItemSelector.png') no-repeat left -1375px transparent;
+}
+
+.uiItemSelector .TwoTabsLayout {
+	width: 185px; height: 125px;
+	margin: auto;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/ItemSelector.png') no-repeat 0 -1625px transparent;
+}
+
+.uiItemSelector .ThreeTabsLayout {
+	width: 185px; height: 125px;
+	margin: auto;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/ItemSelector.png') no-repeat 0 -1750px transparent;
+}
+
+.uiItemSelector .ThreeRowsTwoColumnsLayout {
+	width: 185px; height: 125px;
+	margin: auto;
+	background: url('/eXoResources/skin/images/UISelector/UIItemSelector/ItemSelector.png') no-repeat left -750px transparent;
+}
 
 
 

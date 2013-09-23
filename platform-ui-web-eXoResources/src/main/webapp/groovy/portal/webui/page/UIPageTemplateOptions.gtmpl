@@ -6,7 +6,9 @@
 	def rcontext = _ctx.getRequestContext(); 
 	rcontext.getJavascriptManager().require("SHARED/portal").require("SHARED/uiForm")
 			  .require("SHARED/selectors", "selectors")
-        .addScripts("selectors.UIItemSelector.init('#$uicomponent.id .itemList > li', null, true);"); 
+        .addScripts("selectors.UIItemSelector.init('#$uicomponent.id .itemList > li', null, true);")
+        .require("SHARED/bts_tooltip").require("SHARED/jquery", "\$")
+        .addScripts("\$('#${uicomponent.id}').find('*[rel=\"tooltip\"]').tooltip();"); 
 
 	def categories = uicomponent.getItemCategories(); 
 	UIForm form = uicomponent.getParent(); 
@@ -15,7 +17,7 @@
 	String selectedValue = "";
 	if(selectedItem != null) selectedValue = selectedItem.getLabel();
 %>
-<div class="uiItemSelector UIItemSelector clearfix uiPageTemplateOptions" id="$uicomponent.id">
+<div class="uiItemSelector clearfix uiPageTemplateOptions" id="$uicomponent.id">
 		<input type="hidden" name="<%=uicomponent.getName();%>" value="$selectedValue">
 		<%/*Begin ItemList*/ %>
 		<div class="itemListContainer pull-left">
@@ -73,7 +75,7 @@
 							<div class="itemDetail uiBox"	style="display: $display;">
 									<h5 class="title"><%=_ctx.appRes("UIWizardPageSelectLayoutForm.label."+template.label)%></h5>
                   <div class="containerLayout">
-										<div class="$template.icon" title="$template.label"><span></span></div>
+										<div class="$template.icon" data-toggle="tooltip" rel='tooltip' data-placement='top' title="$template.label"><span></span></div>
                   </div>
 							</div> 
 					<%}%>
