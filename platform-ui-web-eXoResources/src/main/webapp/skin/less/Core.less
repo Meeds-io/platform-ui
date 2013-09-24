@@ -264,7 +264,7 @@ table {
 //========================== Call From mixins.less ================================
 // Clearfix
 // --------
-.clearfix{
+.clearfix, .ClearFix{
 	.clearfix();
 }
 
@@ -407,18 +407,4 @@ Round corner box with title
 
 .FR {
 	float: right;
-}
-
-.ClearFix:after {
-  content: "";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
-
-.ClearFix {
-  !display: inline-block;
-  !zoom: 1;
-  !display: block; 
 }
