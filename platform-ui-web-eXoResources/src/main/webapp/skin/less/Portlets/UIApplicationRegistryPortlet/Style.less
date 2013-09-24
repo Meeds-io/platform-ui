@@ -40,9 +40,9 @@
 	
 	
 	.uiOrganizerCategories {
-		padding: 0px 20px;
-		.category {
-			border-top: 1px solid @white;
+		padding: 0px 20px;		
+		.accordion-group:last-child .accordion-heading{
+			.border-radius(0 0 4px 4px);
 		}
 		.accordion {
 			margin: 0 0 0 20px;
@@ -50,6 +50,7 @@
 			.heading {
 				background: @grayLighter;
 				padding-right: 5px;
+				border-top: 1px solid @white;
 				.span8 {
 					.text-overflow();
 					padding: 5px;
@@ -168,16 +169,30 @@
 			margin-left: 80px;
 		}
 	}
+	.accordion-group:first-child {
+		.accordion-heading  {
+			.border-radius(4px 4px 0px 0px);
+		}
+	}
+	.accordion-group:last-child{
+		.accordion-heading  {
+			.border-radius(0px 0px 4px 4px );
+		}
+	}
 	.accordion {
 		margin: 0 0 0 20px;
 		width: 250px;
+		.actionIcon{
+		  	margin-top: 2px;
+		  }
 	}
 	.uiGadgetList {
 		padding: 0px 20px; width: auto;
 		.item {
 			margin-left: 20px;
 		  list-style-type: disc;
-		  margin-top: 3px;
+		  margin-top: 5px;
+		  
 		}
 
 		.heading {
