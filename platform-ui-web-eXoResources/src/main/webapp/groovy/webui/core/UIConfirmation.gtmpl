@@ -29,7 +29,7 @@
 	  if(uicomponent.hasMessage()){
 		  module.addScripts("uiPopupWindow.show('$popupId', $uicomponent.showMask);");	  
 	%>
-		<div class="popupHeader ClearFix">
+		<div class="popupHeader clearfix">
 			<a class="uiIconClose pull-right" title="<%=_ctx.appRes("UIConfirmation.Close")%>" onclick="<%=uicomponent.event("Close")%>"></a>
 			<span class="PopupTitle popupTitle"><%= _ctx.appRes("UIConfirmation.title.exoMessages") %></span>
 		</div>

@@ -74,7 +74,7 @@
          }
       }
   %>
-	<div class="popupHeader ClearFix">
+	<div class="popupHeader clearfix">
 		<a class="uiIconClose pull-right" title="<%=_ctx.appRes("UIPopupMessages.Close")%>" onclick="<%=uicomponent.event("Close")%>"></a>
 		<span class="PopupTitle popupTitle">
 			<%
