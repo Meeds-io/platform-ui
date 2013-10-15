@@ -67,11 +67,9 @@
       	 rcontext.getJavascriptManager().require("SHARED/selectors", "selectors")
       	 			.addScripts("selectors.UILanguageSelector.init($selected, $selectOptions);");              
       %>
-    
-	    <div class="uiAction uiActionBorder"> 
-	      <a href="<%=uicomponent.url("Save");%>" class="btn"><%=_ctx.appRes("UIChangeLanguage.action.save");%></a>
-	      <a href="javascript:void(0);" onclick="<%=uicomponent.event("Close");%>" class="btn"><%=_ctx.appRes("UIChangeLanguage.action.close");%></a>
-	    </div>
-  
-   	</div>    
+   	</div>
+   	<div class="uiAction uiActionBorder"> 
+      <a href="<%=uicomponent.url("Save");%>" class="btn"><%=_ctx.appRes("UIChangeLanguage.action.save");%></a>
+      <a href="javascript:void(0);" onclick="<%=uicomponent.event("Close");%>" class="btn"><%=_ctx.appRes("UIChangeLanguage.action.close");%></a>
+    </div>    
 </div>
