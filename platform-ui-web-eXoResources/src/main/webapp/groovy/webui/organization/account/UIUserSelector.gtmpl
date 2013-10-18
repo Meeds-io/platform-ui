@@ -29,7 +29,7 @@
 		if(uicomponent.isShowSearchUser()) {%>
 			<span class="searchByUser">
 				<span class="inputLarge ">
-					<a id="" class="btnSearchUser" data-placement="bottom" rel="tooltip" href="<%=uicomponent.event('Search')%>" data-original-title="Quick Search"><i class="uiIconSearch uiIconLightGray"></i></a>
+					<a id="" class="btnSearchUser" data-placement="left" rel="tooltip" href="<%=uicomponent.event('Search')%>" data-original-title="Quick Search"><i class="uiIconSearch uiIconLightGray"></i></a>
 					<%uiform.renderField(uiform.FIELD_KEYWORD)%>
 				</span>
 				<span class="selectboxMedium">
