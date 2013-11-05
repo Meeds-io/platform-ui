@@ -700,7 +700,7 @@
 #StatusElements {
   .StatusHover(@startColor : #fff, @endColor : #f1f1f1,@boxShadow: 0 1px 2px 0px rgba(255,255,255,1)){
     #gradient > .vertical(@startColor,@endColor); 
-    border: 1px solid @tableBorder;
+    border: 1px solid @borderColor;
     .border-radius(@borderRadiusSmall);
     .box-shadow(@boxShadow);
     &:active,&:focus {
@@ -784,12 +784,12 @@
 .uiBox() {
   .border-radius(@baseBorderRadius);
   .box-shadow(0px 2px 4px -1px rgba(35,44,48,0.18));
-  border: 1px solid @tableBorder;
+  border: 1px solid @borderColor;
   background: @white;
   margin: 0 0 @baseLineHeight 0;
   .title {    
     background-color:  @grayWhiteSmoke;
-    border-bottom: 1px solid @tableBorder;
+    border-bottom: 1px solid @borderColor;
     .box-shadow(0 1px 2px rgba(13, 13, 13, 0.2));
     .border-radius(@baseBorderRadius @baseBorderRadius 0 0);
     padding: 8px 10px;
@@ -799,37 +799,9 @@
     .actionIcon {
       margin: -3px 0;
     }
-    + .uiGrid tbody {
-      .box-shadow(0px 0px 0px transparent);
-    }
   }
   .uiContentBox {
     padding: 20px;
-    + .title {
-      padding: 4px 10px;
-      border-top: 1px solid @tableBorder;
-      .box-shadow(0px 0px 0px transparent);
-      .border-radius(0);
-      
-    }
-    + .uiContentBox {
-      border-top: 1px solid @tableBorder;
-    }
-  }
-  .title + .uiGrid.table {
-    margin: 0;
-    border: none;
-    border-top: 1px solid #ececec;
-    thead tr:first-child  {
-      .box-shadow(0px 0px 0px transparent);
-    }
-    th {
-      background-color: @tableBackgroundAccent;
-    }
-    tr td:first-child,
-    tr th:first-child{
-      border-left: none;
-    }
   }
   &.roundedBottom {
     .border-radius(0 0 @baseBorderRadius @baseBorderRadius);
@@ -857,7 +829,7 @@
 
 .uiGrayLightBox(){
   padding: 8px 9px;
-  border: 1px solid @tableBorder;
+  border: 1px solid @borderColor;
   background: @grayWhiteSmoke;
   .border-radius(@baseBorderRadius);
   .box-shadow(0px 1px 2px rgba(0,0,0,.06));
@@ -961,7 +933,7 @@
 // ====================Round Corner====================
 .roundCornerBoxWithTitle() {
   background: @white;
-  border: 1px solid @tableBorder;
+  border: 1px solid @borderColor;
   .border-radius(4px);
   .box-shadow(0px 1px 2px rgba(0, 0, 0, 0.08));
   
@@ -969,7 +941,7 @@
     .border-radius(4px 4px 0px 0px );
     .box-shadow(0px 1px 2px rgba(13, 13, 13, 0.08));
     background: #f0f0f0;
-    border-bottom: 1px solid @tableBorder;
+    border-bottom: 1px solid @borderColor;
     margin: 0px;
     line-height: @baseLineHeight ;
     font-weight: @headingsFontWeight;
