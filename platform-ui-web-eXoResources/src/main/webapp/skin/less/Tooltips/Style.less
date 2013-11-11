@@ -1,16 +1,16 @@
 .tooltip {	
-	font-size: 12px!important;
+	font-size: @baseFontSize - 1 !important;
 	text-shadow: none!important;
 	font-weight: normal!important;
 	&.in{
-		.opacity(80);
+		.opacity(80); 
 	}
 }
 
 .tooltip-inner {
 	word-wrap: break-word;
 	background-color: @tooltipBackground;
-	.border-radius(2px 2px 2px 2px);
+	.border-radius(@borderRadiusSmall - 1);
 	line-height: @baseLineHeight - 4;
 }
 
