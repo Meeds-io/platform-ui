@@ -45,7 +45,7 @@ import org.exoplatform.webui.event.EventListener;
                 @EventConfig(listeners = UIFormInputIconSelector.ChangeOptionSetActionListener.class, phase = Phase.DECODE),
                 @EventConfig(listeners = UIFormInputIconSelector.ChangeIconCategoryActionListener.class, phase = Phase.DECODE),
                 @EventConfig(listeners = UIFormInputIconSelector.SelectIconActionListener.class, phase = Phase.DECODE) }, initParams = { @ParamConfig(name = "IconSet16x16", value = "app:/WEB-INF/conf/uiconf/webui/component/IconSet16x16.groovy") }),
-        @ComponentConfig(type = UIDropDownControl.class, id = "IconDropDown", template = "system:/groovy/webui/core/UIDropDownControl.gtmpl", events = { @EventConfig(listeners = UIFormInputIconSelector.SelectItemActionListener.class) }) })
+        @ComponentConfig(type = UIDropDownControl.class, id = "IconDropDown", template = "system:/groovy/webui/core/UIDropDownControlSelector.gtmpl", events = { @EventConfig(listeners = UIFormInputIconSelector.SelectItemActionListener.class) }) })
 public class UIFormInputIconSelector extends UIFormInputBase<String> {
 
     private List<String> optionSets = new ArrayList<String>();
