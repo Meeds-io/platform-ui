@@ -91,8 +91,7 @@ input, select, .uneditable-input {
 }
 
 textarea {
-	width: 270px;
-	height: 80px;
+  .size(80px, 270px);
 	padding: 3px 3px 3px 6px;
 }
 
@@ -112,7 +111,6 @@ textarea {
 	position: absolute;
 	top: 0;
 	z-index: 100;
-	
 } 
 
 .uiCheckbox > span {
@@ -125,17 +123,11 @@ textarea {
 	border-left: 2px solid @blue;
 	content: "";
 	.size(3px,6px);
-	-webkit-transform: skew(45deg, -49deg);
-     -moz-transform: skew(45deg, -49deg);
-      -ms-transform: skewX(30deg) skewY(-35deg); // See https://github.com/twitter/bootstrap/issues/4885
-       -o-transform: skew(45deg, -49deg);
-          transform: skew(45deg, -49deg);
-  -webkit-backface-visibility: hidden; // See https://github.com/twitter/bootstrap/issues/5319
+  .skew(45deg, -49deg);
 	left: 4px;
 	position: absolute;
 	top: 4px;
 }
-
 
 .uiCheckbox input[type="checkbox"] + span:before {
 	background: @grayDarkWhiteSmoke;
@@ -147,7 +139,6 @@ textarea {
 	content: " ";
 	position: absolute;
 }
-
 
 input[type="radio"] + span {
 	cursor: pointer;
@@ -168,12 +159,10 @@ input[disabled], select[disabled], textarea[disabled] {
 	background: @grayMediumWhiteSmoke;
 }
 
-
 .uiCheckbox input,.uiRadio input {
 	min-height: 10px;
 	padding: 0;
 }
-
 
 .lt-ie9  .uiCheckbox input[type="checkbox"] + span:before {	
 	background: none;
@@ -196,8 +185,7 @@ input[disabled], select[disabled], textarea[disabled] {
 	position: absolute;
 	top: 0;
 	z-index: 100;
-} 
-
+}
 
 .uiRadio > span {
 	display: inline-block;
@@ -233,16 +221,18 @@ input[disabled], select[disabled], textarea[disabled] {
 }
 
 //hack ie8 and ie7
+.lt-ie9 {
+  .uiRadio input[type="radio"] + span:before {
+    background: none;
+    display: none;
+  } 
 
-.lt-ie9 .uiRadio input[type="radio"] + span:before {
-	background: none;
-	display: none;
-} 
-
-.lt-ie9 .uiRadio input[type="radio"]:checked + span:after {	
-	background: none;
-	display: none;
+  .uiRadio input[type="radio"]:checked + span:after {	
+    background: none;
+    display: none;
+  }
 }
+
 
 .uiRadio input[type="radio"] + span {
 	cursor: pointer;
@@ -260,7 +250,6 @@ input[disabled], select[disabled], textarea[disabled] {
 	overflow: hidden;
 	display: inline-block;
 	vertical-align: middle;
-	/*margin-bottom: -6px;*/
 	background-color: @grayLighter;
 	background-image: url(/eXoResources/skin/images/Forms/arrow.png), -moz-linear-gradient(top, @white, @grayWhiteSmoke); // FF 3.6+
 	background-image: url(/eXoResources/skin/images/Forms/arrow.png),-webkit-gradient(linear, 0 0, 0 100%, from(@white), to(@grayWhiteSmoke)); // Safari 4+, Chrome 2+
@@ -354,7 +343,6 @@ input[disabled], select[disabled], textarea[disabled] {
 .vertical-align .uneditable-input + .uneditable-input {
 	margin-top: 10px;
 }
-
 
 .controls   {
 	.removeFile {
