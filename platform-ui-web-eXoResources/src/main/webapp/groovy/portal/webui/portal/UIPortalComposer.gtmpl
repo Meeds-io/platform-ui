@@ -13,12 +13,12 @@
 	<div class="popupHeader clearfix">
 		<i class="<%=uicomponent.isCollapsed ? "uiIconArrowRightMini" : "uiIconArrowDownMini"%> pull-left"></i>
 			<% if(uicomponent.isShowControl) { %>
-			<a class="uiIconClose pull-right" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("word.abort")%>" href="<%=uicomponent.event("CloseComposer")%>"></a>
+			<a class="uiIconClose pull-right" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("word.abort")%>" href="javascript:void(0);" onclick="<%=uicomponent.event("CloseComposer")%>"></a>
 				<% if (uicomponent.isUsedInWizard()) { %>
 					<a class="<%= isEditted ? "uiIconSave uiIconDarkGray" : "uiIconSave uiIconLightGray" %> pull-right" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("word.finish")%>" href="<%=uicomponent.url("Finish")%>"></a>
-					<a class="uiIconBack uiIconLightGray pull-right" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("word.back")%>" href="<%=uicomponent.event("Back")%>"></a>
+					<a class="uiIconBack uiIconLightGray pull-right" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("word.back")%>" href="javascript:void(0);" onclick="<%=uicomponent.event("Back")%>"></a>
 				<% } else {%>
-					<a class="<%= isEditted ? "uiIconSave uiIconDarkGray" : "uiIconSave uiIconLightGray" %> pull-right" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("word.finish")%>" href="<%=uicomponent.event("Finish")%>"></a>
+					<a class="<%= isEditted ? "uiIconSave uiIconDarkGray" : "uiIconSave uiIconLightGray" %> pull-right" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("word.finish")%>" href="javascript:void(0);" onclick="<%=uicomponent.event("Finish")%>"></a>
 			<%	 }
 				 } %>
 		<span class="PopupTitle popupTitle"><%=_ctx.appRes(popupId + ".title."+ popupId)%></span>

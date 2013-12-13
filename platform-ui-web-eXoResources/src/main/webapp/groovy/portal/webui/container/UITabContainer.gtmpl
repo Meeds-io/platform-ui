@@ -78,12 +78,12 @@
                     <ul class="dropdown-menu" role="menu">
                     <% if (!tabState.equals(org.exoplatform.portal.webui.container.UITabContainer.FIRST_TAB)) {%>
                         <li>
-                           <a class="OptionItem" href="$moveLeftAction"><%= _ctx.appRes("UITabContainer.label.moveLeft") %></a>
+                           <a class="OptionItem" href="javascript:void(0);" onclick="$moveLeftAction"><%= _ctx.appRes("UITabContainer.label.moveLeft") %></a>
                         </li>
                     <% } %>
 									  <% if (!tabState.equals(org.exoplatform.portal.webui.container.UITabContainer.LAST_TAB)) { %>                                                    
                        <li>
-                          <a class="OptionItem" href="$moveRightAction"><%= _ctx.appRes("UITabContainer.label.moveRight") %></a>
+                          <a class="OptionItem" href="javascript:void(0);" onclick="$moveRightAction"><%= _ctx.appRes("UITabContainer.label.moveRight") %></a>
                        </li>
                     <% } %>																	
                     </ul>		                   												

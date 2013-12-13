@@ -11,21 +11,21 @@
 				 style = ""; 
 				 if(uicomponent.getChild(0).isRendered()){ style = "active"; }
 			 %>
-				<li class="pull-left"><a class="actionIcon userButton $style" href="<%=uicomponent.event("ViewChild", "UIUserManagement")%>">
+				<li class="pull-left"><a class="actionIcon userButton $style" href="javascript:void(0);" onclick="<%=uicomponent.event("ViewChild", "UIUserManagement")%>">
 					<i class="uiIconUser uiIconLightGray"></i><%=_ctx.appRes("UIOrganizationPortlet.label.userManagement")%>
 				</a></li>
 				<%
 					style = ""; 
 					if(uicomponent.getChild(1).isRendered()){ style = "active"; }
 				%>
-				<li class="pull-left"><a class="actionIcon groupButton $style" href="<%=uicomponent.event("ViewChild", "UIGroupManagement")%>">
+				<li class="pull-left"><a class="actionIcon groupButton $style" href="javascript:void(0);" onclick="<%=uicomponent.event("ViewChild", "UIGroupManagement")%>">
 					<i class="uiIconGroup uiIconLightGray"></i><%=_ctx.appRes("UIOrganizationPortlet.label.groupManagement")%>
 				</a></li>
 				<%
 				 style = ""; 
 				 if(uicomponent.getChild(2).isRendered()){ style = "active"; }
 				%>
-				<li class="pull-left"><a class="actionIcon membershipButton $style" href="<%=uicomponent.event("ViewChild", "UIMembershipManagement")%>">
+				<li class="pull-left"><a class="actionIcon membershipButton $style" href="javascript:void(0);" onclick="<%=uicomponent.event("ViewChild", "UIMembershipManagement")%>">
 					<i class="uiIconMembership uiIconLightGray"></i><%=_ctx.appRes("UIOrganizationPortlet.label.membershipManagement")%>
 				</a></li>
 		  </ul>
