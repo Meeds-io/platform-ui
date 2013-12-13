@@ -33,7 +33,16 @@
 					if(i == list.size()-1) note = "active";
 		%>
 	<li	class="$note">
-		<a href="<%=(localPath.getId() == null) ? "#" : actionLink%>">$label</a> 																
+              <% if (localPath.getId() == null) { %>
+                <a href="#" class="$note">$label</a>
+              <% } else { %>
+                <% if (useAJAX) { %>
+                  <a href="javascript:void(0);" onclick="<%=actionLink%>"       class="$note">$label</a>
+                <% } else { %>
+                <a href="<%=actionLink%>" class="$note">$label</a>
+                <% } %>
+              <%} %>
+ 																
 		<%			
 					if(i != list.size()-1) {
 		%>

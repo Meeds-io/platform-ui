@@ -20,7 +20,7 @@
 	<div class="treeContainer jsContainer">
 		
 			<div class="homeNode clearfix">
-				<a class="actionIcon pull-left" href="<%=uicomponent.getActionLink();%>" rel="tooltip" title="<%=_ctx.appRes("UITree.tooltip.UpLevel")%>" style="display: block;"><i class="uiIconUpLevel uiIconLightGray"></i></a>
+				<a class="actionIcon pull-left" href="javascript:void(0);" onclick="<%=uicomponent.getActionLink();%>" rel="tooltip" title="<%=_ctx.appRes("UITree.tooltip.UpLevel")%>" style="display: block;"><i class="uiIconUpLevel uiIconLightGray"></i></a>
 			</div>
 			
 			<ul class="nodeGroup">

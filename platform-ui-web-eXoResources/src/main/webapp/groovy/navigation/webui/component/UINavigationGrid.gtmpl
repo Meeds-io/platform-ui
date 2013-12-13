@@ -43,15 +43,15 @@
             <div>$descriptionLabel: $groupDescription</div>
         </td>   
         <td width="140">
-            <a class='actionIcon' href="<%=editLink%>" class="actionIcon">
+            <a class='actionIcon' href="javascript:void(0);" onclick="<%=editLink%>" class="actionIcon">
             	<i class="uiIconNavigation uiIconLightGray"></i>$editNavigationLabel</a> 
         </td> 
         <td width="140">     
-            <a class='actionIcon' href="<%=editProperties%>" class="actionIcon">
+            <a class='actionIcon' href="javascript:void(0);" onclick="<%=editProperties%>" class="actionIcon">
             	<i class="uiIconEditPortalConfig uiIconLightGray"></i>$editPropertiesLabel</a>
         </td>      
         <td width="140">       
-            <a class='actionIcon' href="<%=deleteLink%>" class="actionIcon">
+            <a class='actionIcon' href="javascript:void(0);" onclick="<%=deleteLink%>" class="actionIcon">
             	<i class="uiIconTrash uiIconLightGray"></i>$deleteNavigationLabel</a>
         </td>   
       </tr>

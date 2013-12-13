@@ -100,7 +100,7 @@
 																	String modeLabel = _ctx.appRes("PortletMode.label." + mode);
 															%>
 																	<li>
-																		<a class="CategoryItem" href="$actionLink" title="$modeLabel">
+																		<a class="CategoryItem" href="javascript:void(0);" onclick="$actionLink" title="$modeLabel">
 																			$modeLabel
 																		</a>
 																	</li>
@@ -110,7 +110,7 @@
 																String modeLabel = _ctx.appRes("PortletMode.label.view");
 														%> 
 																<li>
-																	<a class="CategoryItem" href="<%=uicomponent.event("ChangePortletMode", "view")%>" title="$modeLabel">
+																	<a class="CategoryItem" href="javascript:void(0);" onclick="<%=uicomponent.event("ChangePortletMode", "view")%>" title="$modeLabel">
 																		$modeLabel
 																	</a>		
 																</li>										
@@ -209,8 +209,8 @@
 							<i class="$portletIcon"></i>
 							<span><%=hasPermission ? title : _ctx.appRes("UIPortlet.label.protectedContent")%></span>
 							<%if(hasPermission) {%>
-								<a href="<%=uicomponent.event("EditPortlet","$uicomponent.id")%>" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("UIPortlet.tooltip.editPortlet")%>"><i class="uiIconEdit uiIconWhite"></i></a>
-								<a href="<%=uicomponent.event("DeleteComponent","$uicomponent.id")%>" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("UIPortlet.tooltip.deletePortlet")%>"><i class="uiIconTrash uiIconWhite"></i></a>
+								<a href="javascript:void(0);" onclick="<%=uicomponent.event("EditPortlet","$uicomponent.id")%>" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("UIPortlet.tooltip.editPortlet")%>"><i class="uiIconEdit uiIconWhite"></i></a>
+								<a href="javascript:void(0);" onclick="<%=uicomponent.event("DeleteComponent","$uicomponent.id")%>" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("UIPortlet.tooltip.deletePortlet")%>"><i class="uiIconTrash uiIconWhite"></i></a>
 							<%}%>	
 					
 						<%/*End InfoBar*/ %>

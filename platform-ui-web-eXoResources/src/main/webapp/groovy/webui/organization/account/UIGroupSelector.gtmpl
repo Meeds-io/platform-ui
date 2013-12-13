@@ -23,13 +23,13 @@
           %>
             <li>
               <span class="uiIconMiniArrowRight"></span>
-              <a href="<%=uicomponent.event("SelectGroup", member)%>" title="$member">$member</a>
+              <a href="javascript:void(0);" onclick="<%=uicomponent.event("SelectGroup", member)%>" title="$member">$member</a>
             </li>
             <%}%>
           <% } else if( groups != null && groups.size() == 0 ) { %>
             <li>
               <span class="uiIconMiniArrowRight"></span>
-              <a href="<%= uicomponent.event("SelectGroup",uicomponent.getCurrentGroup().getId()) %>"><%=_ctx.appRes("UIGroupSelector.title.addGroupButton")%></a>
+              <a href="javascript:void(0);" onclick="<%= uicomponent.event("SelectGroup",uicomponent.getCurrentGroup().getId()) %>"><%=_ctx.appRes("UIGroupSelector.title.addGroupButton")%></a>
             </li>
           <% } %> 
           </ul>
