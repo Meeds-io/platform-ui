@@ -123,7 +123,12 @@ textarea {
 	border-left: 2px solid @blue;
 	content: "";
 	.size(3px,6px);
-  .skew(45deg, -49deg);
+  -webkit-transform: skew(45deg, -49deg);
+     -moz-transform: skew(45deg, -49deg);
+      -ms-transform: skewX(30deg) skewY(-35deg); // See https://github.com/twitter/bootstrap/issues/4885
+       -o-transform: skew(45deg, -49deg);
+          transform: skew(45deg, -49deg);
+  -webkit-backface-visibility: hidden; // See https://github.com/twitter/bootstrap/issues/5319
 	left: 4px;
 	position: absolute;
 	top: 4px;
