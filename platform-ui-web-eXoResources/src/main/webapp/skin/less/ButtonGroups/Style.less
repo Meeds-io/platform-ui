@@ -9,22 +9,14 @@
 // Set corners individual because sometimes a single button can be in a .btn-group and we need :first-child and :last-child to both match
 .btn-group > .btn:first-child {
   margin-left: 0;
-     -webkit-border-top-left-radius: 3px;
-         -moz-border-radius-topleft: 3px;
-             border-top-left-radius: 3px;
-  -webkit-border-bottom-left-radius: 3px;
-      -moz-border-radius-bottomleft: 3px;
-          border-bottom-left-radius: 3px;
+	.border-top-left-radius(@borderRadiusSmall);
+	.border-bottom-left-radius(@borderRadiusSmall);
 }
 // Need .dropdown-toggle since :last-child doesn't apply given a .dropdown-menu immediately after it
 .btn-group > .btn:last-child,
 .btn-group > .dropdown-toggle {
-     -webkit-border-top-right-radius: 3px;
-         -moz-border-radius-topright: 3px;
-             border-top-right-radius: 3px;
-  -webkit-border-bottom-right-radius: 3px;
-      -moz-border-radius-bottomright: 3px;
-          border-bottom-right-radius: 3px;
+          .border-top-right-radius(@borderRadiusSmall);
+          .border-bottom-right-radius(@borderRadiusSmall);
 }
 
 /******* Trung nq ****/
@@ -50,7 +42,7 @@
 }
 
 .btn-group > .btn, .btn-group > .dropdown-menu{
-	font-size: 13px ;
+	font-size: @baseFontSize ;
 }
 
 .btn.dropdown-toggle {
