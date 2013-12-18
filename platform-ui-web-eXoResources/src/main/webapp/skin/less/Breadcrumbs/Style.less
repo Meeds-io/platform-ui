@@ -12,9 +12,7 @@
 	a {
 		color: @grayDark;
 		display: block;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
+		.text-overflow;
 		max-width: 140px;
 		float: left;
 		&:hover {
@@ -33,9 +31,7 @@
 	
 	.active {
 		font-weight: bold;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
+		.text-overflow;
 		max-width: 140px;
 		> a {
 			color: @grayLight;
