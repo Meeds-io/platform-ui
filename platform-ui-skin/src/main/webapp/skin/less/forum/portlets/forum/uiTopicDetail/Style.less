@@ -1,0 +1,287 @@
+
+
+.uiForumModerator {
+	.forumList{
+		padding: 10px;
+	}
+}
+
+.uiTopicDetail {
+	.divTable{
+		table-layout: fixed;
+	}
+}
+
+.divTable{
+	display: table;
+	width: 100%;
+}
+
+.divRow{
+	display: table-row;
+}
+
+.divCell{
+	display: table-cell;
+}
+
+.contentTopicDetail{
+	.postViewContainer{
+		padding-left: 10px;
+		width: 100%;
+		.attachmentContainer{
+			background: @grayLighter;
+			padding: 18px;
+			margin-top: 10px;
+			
+			.otherAttachmentBox + .otherAttachmentBox{
+				margin-top: 5px;
+			}
+			
+			.attachmentTitle{
+				margin-bottom: 15px;
+			}
+			
+			.attachmentContentImage {
+				.imageAttachmentBox{
+					display: inline-block;
+					width: 128px;
+					height: 128px;
+					text-align: center;
+					margin-right: 15px;
+					margin-bottom: 5px;
+					position: relative;
+					&:hover{
+						.actionAttachImg{
+							display: block;
+						}
+					}
+					.imgAttach img{
+						max-width: 128px;
+						max-height: 128px;
+					}
+					.imgAttach{
+						line-height: 125px;
+					}
+					.actionAttachImg{
+						position: absolute;
+						display: none;
+						top: 0;
+						left: 0;
+						background-color: rgba(0,0,0,0.1);
+						.square(128px);
+						p{
+							a{
+								color: @white;
+								&:hover{
+									font-weight: bold;
+								}
+							}
+							
+							margin: 45px 0 0 0;
+							&+p{
+								margin-top: 0;
+							}
+						}
+					}
+				}
+				
+			}
+		}	
+		
+		.postContentContainer{
+			.signature{
+				font-style: italic;
+				span{
+					border-top: dotted 1px @borderColor;
+					width: 265px;
+					display: inline-block;
+				}
+			}
+		}
+		.footPost{
+			border-top: dotted 1px @borderColor;
+			margin-top: 20px;
+			padding-top: 5px;
+			color: @grayLight;
+			text-align: right;
+			.txtLastEdit{
+				font-size: @baseFontSize - 1;
+				.uiUserInfo{
+					display:inline-block; 
+					text-align: left;
+				}
+			}
+			.btnDetailTopic{
+				margin-top: 10px;
+			}
+		}
+		
+	}
+	
+	.postViewHeader{
+		background: @grayLighter;
+		padding: 10px 15px;
+		min-height:20px;
+		margin-bottom: 5px;
+		.border-radius(2px);
+		.postViewTitle{
+			font-family: @sansBoldFontFamily;
+			font-weight: bold;
+			font-size: 14px;
+			overflow: hidden;
+			word-wrap: break-word;
+		}
+		> .pull-right {
+			margin-left: 20px;
+		}
+		.uiCheckbox {
+			width: 13px;
+			margin-right: 0;
+		}
+		.postTime{
+			color: @grayLight;
+			margin-right: 10px;
+		}
+	}
+	
+}
+
+.postContent{
+	word-wrap: break-word;
+	min-height: 167px;
+	br {
+		display: block;
+		margin-top: 10px;
+	}
+	.uiWikiPortlet {
+		background: none;
+	}
+	.contentQuote{
+		font-style: italic;
+		padding: 15px 15px 15px 20px;
+		background: #e6f3ff;
+		margin: 10px 0 10px 15px;
+		word-wrap: break-word;
+		.border-radius(2px);
+		.textContent{
+			border-left: none;
+			padding-left: 0;
+			margin-top: 10px;
+			.contentQuote{
+				border-left: solid 5px #aacded;
+				padding: 0px 0px 0px 20px;
+				margin-top: 15px;
+				.titleQuote{
+					line-height: 8px;
+					height: 13px;
+				}
+			}
+			.singleQuote {
+				padding: 5px 0px 5px 20px;
+				margin: 5px 0px;
+			}
+		}
+		.titleQuote{
+			font-weight:bold;
+		}
+	}
+	
+	.textContent {
+		word-wrap: break-word;
+		.contentQuote{
+			font-style: italic;
+			padding-left: 0;
+			margin: 0;
+			.titleQuote{
+				font-weight:bold;
+			}
+		}
+	}
+	
+	ul, ol {
+		padding: 0;
+		margin: 0px 0px 10px 25px;
+	}
+	ul li {
+	    list-style: disc outside none;
+	}
+	ol li {
+	    list-style-type: decimal;
+	}
+}
+
+
+.uiTopicDetail{
+	.tagsContainer{
+		line-height: 28px;
+		
+		.tagItem{
+			background: #e0e8f5;
+			.border-radius(3px);
+			color: @blue;
+			border: 1px solid @blueLight;
+			padding: 1px 5px;
+			display: inline-block;
+		}
+		
+		.titleTag{
+			margin-left: 10px;
+		}
+		
+		.txtTags{
+			display: inline-block;
+			li{
+				display: inline-block;
+        margin: 0px 4px 0px 0px;
+			}
+      li.moreItem > div{
+        padding: 1px 5px;
+        margin-top: 2px;
+        line-height: 20px;
+      }
+      .menuMore{
+        min-width: 100px;
+      }
+      .menuMore li{
+        display: block;
+        padding: 2px 6px 2px 10px;
+      }
+		}
+	}
+	
+	.uiBox {
+		&.uiPostRules{
+			margin-top: 10px;
+		}
+	}
+	
+	.containerTopicDetail{
+		margin-top: 10px;
+	}
+	
+	.line{ 
+		margin: 10px -10px;
+		background: @grayDarkWhiteSmoke;
+		height: 1px;
+		display: block;
+	}
+	
+	.divRow:last-child .line{ 
+		margin: 0;
+		background: none;
+		height: 0;
+	}
+	
+	.forumQuickReply{
+		margin-top: 10px;
+		.textQuickReply{
+			textarea{
+				width: 100%;
+				min-height: 90px;
+				padding : 5px;
+			}
+		}
+	}
+	
+}

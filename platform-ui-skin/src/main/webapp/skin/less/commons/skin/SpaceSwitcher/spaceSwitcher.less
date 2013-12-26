@@ -1,0 +1,95 @@
+.spaceChooserPopup {
+  background: white;
+  border: 1px solid @borderColor;
+  left: 0px;
+  min-width: 250px;
+  position: absolute;
+  top: 28px;
+  border-radius: @baseBorderRadius;
+  box-shadow: 0px 2px 3px rgba(0,0,0,.1);
+  a { 
+  	max-width: 100%;
+  	float: none; 
+  	padding: 5px 10px;
+  	display: block;
+  	color: @textColor;
+  }
+    a:hover { 
+  	color: white;
+  }
+  .title {
+	  line-height: 30px; 
+	  border-bottom: 1px solid @borderColor; 
+	  background: @grayWhiteSmoke; 
+	  padding: 0px 5px 0px 10px; 
+	  font-weight: bold; 
+	  color: @textColor;
+	  border-radius: 4px 4px 0 0;
+	  height: 31px;
+	  .uiIconClose {
+		  margin: 7px 2px 0;
+		  cursor: pointer;
+		}
+	}
+	.spaceOption {
+	  line-height: 20px;  
+	  color: @textColor;
+	}
+	
+	.spaceTitle {
+	  color: @textColor;
+	  background: @grayLighter;
+	  border-top: 1px solid @borderColor;
+	  border-bottom: 1px solid @borderColor;
+	  font-weight: bold;
+	  box-shadow: 0 -15px 17px @grayWhiteSmoke inset;
+	  padding: 5px 0 5px 9px;
+	}
+	.noSpace {
+		padding: 5px 10px;
+		color: @grayLight;
+	}			
+	.spaceSearch {
+	  line-height: 20px; 
+	  padding: 10px 10px 5px 10px; 
+	  
+	  input {
+		  width: 100%; 
+		  height: 26px; 
+		  padding: 0px 5px; 
+		  border: 1px solid @borderColor;
+		  border-radius: @borderRadiusSmall;
+		  margin: 0px;
+		}
+	}
+	.focus {
+	  color: @textColor;
+	}
+	.lostFocus {
+	  color: @grayLight;
+	}
+
+	.spaceList {
+	  overflow-y: auto;
+	  max-height: 311px;
+		img {
+			.square(19px);
+			 .border-radius(2px);
+			margin-right: 6px;
+		}
+	}
+	.hover:hover{
+		background-color: @blue;
+	    background-image: linear-gradient(to bottom, @blueLighter, @blue);
+	    background-repeat: repeat-x;
+		color: @white;
+		text-shadow: none;
+	}
+
+}
+
+
+.spaceSwitcher {
+  line-height: 29px;
+  padding: 0 15px;
+}

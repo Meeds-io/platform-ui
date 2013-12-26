@@ -1,0 +1,57 @@
+.uiWikiPageContentArea{
+	.uiWikiContentDisplay{
+		padding: 10px 0;
+			span.EditSection {
+				visibility: hidden;
+				a{
+					position: absolute;
+					right: 10px;
+					background-position: -9999px;
+				}
+			}
+	}
+
+	 span.EditSection {
+		 display: none;
+		 float: right;
+		 margin-right: -15px;
+	}
+
+	 span.EditSection a {
+		 line-height: 24px;
+		 margin: 0 -40px 0 0;
+		 display: inline-block;
+		 visibility: visible;
+		 text-decoration: none;
+		 font-size: 12px;
+	}
+
+	 .EditSection{
+		 .wikiexternallink{
+			 .wikimodel-freestanding {
+				 margin: 0 6px 0 0;
+				 .square(18px);				
+			}
+		}
+	}
+
+	 span.EditSection a span {
+		visibility: hidden;
+	}
+
+	 .section-container {
+		padding: 2px 0px;
+		overflow: auto;
+	}
+
+	 .EditSectionHover {
+		background-color: @grayLighter;
+		span.EditSection {
+			visibility: visible;
+			a{					
+				background-position: -40px 0;
+			}
+		}
+		
+	}
+}

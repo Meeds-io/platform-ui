@@ -1,0 +1,222 @@
+.uiForumPortlet {
+	background: none;
+	padding: 20px;
+	.pagination{
+		margin: 0;
+	} 
+	.uiBox{
+		.box-shadow(none);
+		margin-bottom: 10px;
+	}
+	.uiCategories, .uiCategory{
+		.uiGrid.table .noticeEmpty {
+			color: @grayLight;
+		}
+	}
+	.uiCategories, .uiCategory, .forumContainer{
+		.uiGrid.table td, .uiGrid.table th{
+			padding: 10px 5px;
+			vertical-align: top;
+		}
+	}
+	blockquote {
+		background: none;
+		 border-left: 5px solid #999;
+	    margin: 0 0 20px;
+	    padding: 0 0 0 15px;
+	    width: auto;
+	}
+	blockquote:after {
+		display: none;
+	}
+}
+/******************************************** UIForumActionBar ****************************************/
+.uiForumActionBar {
+	background: @white;
+	padding: 4px 10px;
+	
+	.ToolbarActionsTag {
+		float: right;
+		margin: 2px 6px 0px 0px;
+		cursor: pointer;
+	}
+	.privateMessage{
+		position: relative;
+		.numberMessage{
+			font-size: @baseFontSize - 4;
+			background: @red;
+			color: @white;
+			.border-radius(10px);
+			position: absolute;
+			left: 11px;
+			top: 2px;
+			line-height: 12px;
+		}
+		.numberMessageLittle10{
+			padding: 0 4px;
+		}
+		.numberMessageMore10{
+			line-height: 10px;
+			padding: 2px;
+		}
+		.numberMessageMore100{
+			padding: 1px;
+			left: 9px;
+			line-height: 15px;
+			top:0;
+		}
+	}
+}
+
+
+/******************************************** UIForumDescription ****************************************/
+
+
+.uiForumDescription {
+	padding: 8px 10px;
+	
+	.forumLabel {
+		color: @textColor;
+	}
+	
+	.nameForum {
+		color: @textColor;
+		font-famaly: @sansBoldFontFamily;
+	}
+	
+	.description {
+		color: @grayLight;
+		margin-left:5px;
+	}
+}
+
+
+.uiForumPortlet {
+	.uiFormInputWithActions{
+		.mySubscriptions{
+			.control-label{
+				width: 190px;
+				text-align: left;
+			}
+		}
+	}
+
+	.defaultStyle{
+	   	cursor: pointer;
+	    float: left;
+	    padding: 0 8px;
+	    white-space: nowrap;
+	}
+	
+	.forumToolbar{
+		margin: 4px 0;
+	}
+	
+	.forumSeparatorLine + .forumSeparatorLine{
+		background: url("/eXoSkin/skin/less/forum/portlets/forum/images/background/SeparatorLine.png") no-repeat left -4px;
+	}
+	
+	.uiForumIconState{
+	
+	
+		.forumContains {
+			line-height: 42px;
+			padding: 0px 0px 0px 45px;
+			
+			i + i{
+				margin-left: 20px;
+			}
+			
+			span{
+				margin-right: 20px;
+			}
+		}
+		
+		@media screen and (-webkit-min-device-pixel-ratio:0) {
+			.forumContains {
+				padding: 0px 0px 0px 48px;
+			}
+		} 
+	}
+	
+	.searchAdvance{
+		padding: 10px;
+		input{
+			width: 120px;
+			vertical-align: top;
+			margin-right: 5px;
+			margin-bottom: 0;
+		}
+	}
+	
+	.dateTimeForum{
+		color: @grayLight;
+		padding-left: 20px;
+	}
+	
+	.uiCategoryInfo{
+		.uiGrid.table th{
+			padding: 0;
+		}
+		.textInfo{
+			padding: 0 32px;
+		}
+	}
+	
+	
+/******************************************** uiCategories ****************************************/
+
+	.textTitleCategories{
+		padding-left: 20px;
+		line-height: 36px;
+		font-family: @sansBoldFontFamily;
+		color: @linkColor;
+		font-weight: bold;
+	}
+	
+}
+
+.textHotTopic{
+	color: @red;
+}
+
+.actionExpandCollapse{
+	margin: 8px 8px 8px 0;
+}
+
+.emptyForum{
+	margin:15px 0px;
+	color: @grayLight;
+}
+
+/******************************************** Forum Edit Mode ****************************************/
+
+
+
+.uiSettingEditMode{
+	.node {
+		.nodeGroup {
+			.uiIconEmpty {
+				background-position: center center;
+			}
+		}
+	} 
+
+	.showHiddenConten{
+		 border:1px solid @borderColor;
+	
+		.form-horizontal 
+		{
+			.control-label{
+				width: 400px;
+			}
+			
+			.controls{
+				margin-left: 410px;
+			}
+		}
+	}
+
+}
+
+

@@ -1,0 +1,100 @@
+.uiForumListSearch{
+	.searchResult{
+		table > caption{
+			text-align: center;
+			padding: 5px 5px 5px 15px;
+			.txtTitleResult{
+				font-family:@sansBoldFontFamily;
+				font-size: 14px;
+				line-height: 28px;
+			}
+			.uiSelectbox, .selectbox{
+				width: 50px;
+			}
+		}
+	}
+}
+
+.uiAdvancedSearchForm{
+	.title {
+		&.titleAdvancedForm{
+			padding-left: 20px;
+		}
+	}
+	.dateTimeAnd {
+		padding: 0px 20px;
+	}
+	.status{
+		.uiCheckbox + .uiCheckbox{
+			margin-left: 15px;
+		}
+	}
+	.state{
+		.uiCheckbox + .uiCheckbox{
+			margin-left: 26px;
+		}
+	}
+}
+
+
+/********* 	Slide	********/
+.uiFormSliderInput {
+	.slideSearch {
+		padding-top: 14px;
+		.slide{
+			width: 300px;
+			.border-radius(5px);
+			position: relative;
+		}
+		
+		.slideContainer{
+			background: url("/eXoSkin/skin/less/forum/portlet/forum/images/background/slideContainer.png") repeat-x left top;
+			height: 5px;
+		}
+		
+		.slideRange{
+		    background-position: 0 0;
+		    display: block;
+		    position: absolute;
+		    top: -1px;
+		    z-index: 1;
+		}
+		
+		.sllideHeader{
+			background: url("/eXoSkin/skin/less/forum/portlet/forum/images/background/slideHeader.png") repeat-x left top;
+			height: 7px;
+			.border-radius(5px);
+		}
+		
+		.circleDefault{
+			background: url("/eXoSkin/skin/less/forum/portlet/forum/images/background/circle.png") no-repeat left top;
+		    position: absolute;
+		    width: 18px;
+		    height: 18px;
+		    top: -7px;
+		    z-index: 2;
+		    margin-left: -9px;
+		}
+	}
+
+	.boxNumber {
+		padding-left: 20px;
+		.uiSliderInput {
+			background: @white;
+			width: 40px;
+		}
+	}
+}
+
+/*********	DateInput	********/
+
+.dateTimeInputContainer {
+	> input {
+		width: 120px;
+	}
+}
+
+
+
+
+

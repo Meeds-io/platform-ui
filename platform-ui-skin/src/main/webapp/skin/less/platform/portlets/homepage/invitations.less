@@ -1,0 +1,72 @@
+@import "../../../variables.less"; 
+@import "../../../mixins.less";
+
+
+.uiInvitations{
+
+	ul li{
+	    margin-top: 15px;
+	    margin-bottom: 15px;
+		position: relative;
+		
+		&:nth-child(2n+2){
+		    border-bottom: 1px solid @borderColor;
+			padding-bottom: 15px;
+		}
+		
+		&:last-child{
+			border-bottom: none;
+		}
+	}
+
+	.name, .spaceInviteName {
+		font-weight: bold;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		width: 95%;
+		color: @linkColor;
+	}
+
+    .peopleInvitePosition, .spacevisibility {
+        width:95%;
+        white-space:nowrap;
+        overflow: hidden;
+        text-overflow:ellipsis;
+		color: @grayLight;
+    }
+
+	.peopleInvitePicture, .spaceInvitePicture{
+		margin-left: 15px;
+    	padding-top: 2px;
+	}
+
+	.peopleInviteAction, .spaceInviteAction {
+		white-space: nowrap;
+		font-size: 10px;
+		position: absolute;
+		right: 5px;
+		top: 18px;
+		width: 150px;
+		text-align: right;
+		height: 35px;
+		#gradient .horizontal(rgba(255,255,255,0),rgba(255,255,255,1));
+		background-color: transparent;
+	}
+
+    .actionInviteAppears, .actionSpaceAppears {
+        width:150px;
+    }
+	
+	.peopleInviteInfo, .spaceInviteInfo {
+	    margin-left: 65px;
+    	position: relative;
+	}
+	
+	.spacePrivacy {
+	    white-space: nowrap;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    color: @grayLight;
+	}
+}

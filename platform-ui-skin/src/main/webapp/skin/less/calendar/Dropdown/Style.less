@@ -1,0 +1,47 @@
+
+// The dropdown menu (ul)
+// ----------------------
+
+.uiDropdownWithIcon{
+	.uiDropDownCal{
+	  li > a {
+		padding: 6px 19px;
+		i{
+			margin-right: 5px;
+		}
+	  }
+	}
+
+}
+
+
+// Arrows
+.arrowLeft,
+.arrowLeft:after{
+  position: absolute;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.arrowLeft:after{
+  content: "";
+  z-index: -1;
+}
+
+  
+.arrowLeft{
+	top: 50%; 
+	left: -9px;
+	margin-top: -@popoverArrowWidth; 
+	border-width: 9px  9px 9px 0;
+	border-right-color: @popoverArrowColor; 
+	&:after {
+	  border-width: 10px 10px 10px 0;
+	  border-right-color: @popoverArrowOuterColor;
+	  bottom: -10px;
+	  left: -1px;
+	}
+}
+  

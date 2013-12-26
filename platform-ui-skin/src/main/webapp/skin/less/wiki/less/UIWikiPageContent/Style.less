@@ -1,0 +1,75 @@
+
+
+.uiWikiContentDisplay, .uiWikiPagePreview{
+	ul {
+		margin: 10px 18px;
+		padding: 0;
+	}
+	ul li {
+		list-style: disc outside none;
+	}
+	ul li a {
+		text-decoration: none;
+	}
+	ol {
+		margin: 10px 18px;
+		padding: 0;
+	}
+	ol li {
+		list-style: decimal outside none;
+	}
+
+	hr {
+		border-color: @borderColor;
+		border-style: solid;
+		border-width: 1px 0 0;
+		clear: both;
+		height: 0;
+	}
+	dt {
+		font-weight: bold;
+	}
+	dd {
+		background: url("/wiki/skin/DefaultSkin/webui/background/bullet-3.png") no-repeat scroll 0 0.3em transparent;
+		font-style: italic;
+		margin-left: 0;
+		padding-left: 1em;
+	}
+	blockquote {
+		background: none repeat scroll 0 0 @grayLighter;
+		border-left: 2px solid @borderColor;
+		display: block;
+		margin: 0.3ex 1em;
+		padding: 0.3ex 1em;
+		quotes: none;
+	}
+}
+	
+.UIWikiPageContentArea, .uiWikiPagePreview {
+	table {
+		-moz-border-bottom-colors: none;
+		-moz-border-left-colors: none;
+		-moz-border-right-colors: none;
+		-moz-border-top-colors: none;
+		border-color: @borderColor -moz-use-text-color @borderColor @borderColor;
+		border-image: none;
+		border-spacing: 0;
+		border-style: solid none solid solid;
+		border-width: 1px medium 1px 1px;
+		table-layout: fixed;
+		width: auto;
+	}
+	th {
+		background: none repeat scroll 0 0 @grayWhiteSmoke;
+		border-right: 1px solid @borderColor;
+		padding: 5px;
+		text-align: center;
+	}
+	td {
+		border-right: 1px solid @borderColor;
+		border-top: 1px solid @borderColor;
+		padding: 5px;
+	}
+}
+
+
