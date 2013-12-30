@@ -17,14 +17,13 @@
 			color: @textColor;
 			cursor: pointer;
 			line-height: 22px;
-			/*white-space: normal;*/
 			vertical-align: middle; 
+			&:hover {
+				text-decoration: none;
+				color: @linkColor;
+			}
 		}
 	
-		a:hover {
-			text-decoration: none;
-			color: @linkColor;
-		}
 	}
 	
 	.SelectedNode a, .nodeSelected a {
@@ -38,8 +37,7 @@
 	
 	.expandIcon {
 		background: url("/eXoResources/skin/images/Tree/uiIconTreePlus.gif") no-repeat left center;
-		width: auto;
-		height: auto;
+		.square(auto);
 		padding-left: 15px;
 		display: block;
 		margin: 0px;
@@ -89,16 +87,9 @@
 			.uiIconNode{
 				padding-left: 16px;
 				.uiIconNode{
-					padding-left: 0px;
-					i {
-					.size(16px,16px);	
-					display: inline-block;	
-					margin-right: 6px;	
+					padding-left: 0px;					
 				}
-				}
-				> i {
-					.size(16px,16px);	
-					display: inline-block;	
+				i {
 					margin-right: 6px;	
 				}
 			}
@@ -109,8 +100,7 @@
 	}
 	.collapseIcon {
 		background: url("/eXoResources/skin/images/Tree/uiIconTreePlus.gif") no-repeat left center;
-		width: auto;
-		height: auto;
+		.square(auto); 
 		padding-left: 15px;
 		margin: 0px;
 	}

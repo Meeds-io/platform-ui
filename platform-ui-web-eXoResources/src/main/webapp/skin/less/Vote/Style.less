@@ -8,19 +8,22 @@
 		.uiRatingInfoContainer{
 			margin: 0px auto 13px;
 			width: 105px;
+			[class^="uiIcon"] {
+				background: url('/eXoResources/skin/images/Vote/uiIconVote.png') no-repeat center center;
+				width: 17px;
+				cursor: pointer;
+			}
+			.uiIconNormalVote{
+				background-position: center -2px;
+			}
+			.uiIconOverVote{
+				background-position: center -53px;
+			}
+			.uiIconRatedVote{
+				background-position: center -27px;
+			}
 		}
-		.uiIconNormalVote{
-			background: url('/eXoResources/skin/images/Vote/uiIconVote.png') no-repeat center -2px;
-			width: 17px;
-		}
-		.uiIconOverVote{
-			background: url('/eXoResources/skin/images/Vote/uiIconVote.png') no-repeat center -53px;
-			width: 17px;
-		}
-		.uiIconRatedVote{
-			background: url('/eXoResources/skin/images/Vote/uiIconVote.png') no-repeat center -27px;
-			width: 17px;
-		}
+		
 	}
 }
 
