@@ -275,9 +275,21 @@
 /*==============================.uiConfirmForm=========================*/
 .uiConfirmForm {
 	.confirm {
-		padding: 10px 0 0 0;
+		padding: 10px 0 0 0;		
+	}
+	.uiRadio input[type="radio"] + span {
+		margin-left: 9px;
+	}
+	
+	.media .uiIconQuestion  {
+	    margin: 2px 15px 0  5px;
 	}
 }
+
+.ie8 .uiConfirmForm .uiRadio input[type="radio"] + span {
+	margin-left: 0px;
+}
+
 /*==============================.settingCalendarTab=========================*/
 .settingCalendarTab .form-horizontal {
 	padding-top: 10px;
@@ -296,4 +308,12 @@
 /*============================== uiShareForm =========================*/
 #PermissionOwnerInput {
   color: @grayLight;
+}
+
+/*============================== uiConfirmForm =========================*/
+.confirmRadio > div {
+    margin: 8px 0 8px 30px;
+}
+.confirmRadio .actionLinks {
+	display:none;
 }

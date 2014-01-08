@@ -90,12 +90,16 @@
 		}
 		
 		.eventSummary{
-		color: @white;
-		line-height: 16px;
-		font-size: 11px;
-		  overflow: hidden;
-    	text-overflow: ellipsis;
-    	white-space: nowrap;
+			color: @white;
+			line-height: 16px;
+			font-size: 11px;
+			  overflow: hidden;
+	    	text-overflow: ellipsis;
+	    	white-space: nowrap;
+	    	.uiIconCalClockMini ,.uiIconCalTaskMini {
+			 	margin-left: 2px;
+			 }
+	    	
 		}
 		
 	}
@@ -118,7 +122,11 @@
 		    .square(12px);
 		    left: -1px;
 			border: none;
-			transform: none;
+			-webkit-transform: none;
+    		-moz-transform: none;
+     		-ms-transform: none; 
+       		-o-transform: none;
+         	 transform: none;
 		    top: 1px;
 		}
 	}
