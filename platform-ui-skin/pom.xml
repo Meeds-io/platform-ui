@@ -70,8 +70,8 @@
                                 <include>Portlets/SiteNavigationPortlet/Style.less</include>
                                 <include>Portlets/UIAccountPortlet/Style.less</include>
                                 <include>Portlets/UIApplicationRegistryPortlet/Style.less</include>
-                                <include>wiki/less/wiki.less</include>
-                                <include>platform/skin/less/platform.less</include>
+                                <include>wiki/wiki.less</include>
+                                <include>platform/skin/platform.less</include>
                                 <include>platform/portlets/platformNavigation/UIBreadCrumbsNavigationPortlet/Style.less</include>
 								                <include>platform/portlets/platformNavigation/UICompanyNavigationPortlet/Style.less</include>
 								                <include>platform/portlets/platformNavigation/UIGroupsNavigationPortlet/Style.less</include>

@@ -1,5 +1,5 @@
-@import "../../variables.less";
-@import "../../mixins.less";
+@import "../variables.less";
+@import "../mixins.less";
 @import "wiki-variables.less"; 
 @import "wiki-mixins.less";
 @import "UIWikiPermalinkForm/Style.less";
@@ -14,7 +14,7 @@
 @import "Sprites/Style.less";
 @import "UIViewContentDisplay/Style.less";
 @import "UIWikiPageContent/Style.less";
-@import "../../../less/wiki/DefaultSkin/webui/Stylesheet.css";
+@import "/wiki/skin/DefaultSkin/webui/UIWikiRichTextEditor/Stylesheet.css";
 
 .UIWikiToolBar{
 	float: right;
@@ -195,11 +195,11 @@
 		}
 		
 		.resizeButton:hover .uiIconMiniArrowLeft{
-			background-image: url("/eXoResources/skin/images/Icons/uiIconsBlue.png");
+			background-image: url("/eXoSkin/skin/images/Icons/uiIconsBlue.png");
 		}
 		
 		.resizeButton:hover .uiIconMiniArrowRight{
-			background-image: url("/eXoResources/skin/images/Icons/uiIconsBlue.png");
+			background-image: url("/eXoSkin/skin/images/Icons/uiIconsBlue.png");
 		}
 		
 		.showLeftContent {
@@ -493,7 +493,7 @@
     padding-top: 25px;
     width: 614px;
 	.errorBlock {
-		background: url("/wiki/skin/css/../images/warningIcon.png") no-repeat scroll center top transparent;
+		//background: url("/wiki/skin/css/../images/warningIcon.png") no-repeat scroll center top transparent;
 		display: block;
 		height: 160px;
 		margin: 0 auto;

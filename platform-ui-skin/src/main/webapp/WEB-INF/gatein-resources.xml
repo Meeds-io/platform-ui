@@ -95,7 +95,7 @@
    <portal-skin>
     <skin-name>Default</skin-name>
     <skin-module>wiki</skin-module>
-    <css-path>/skin/css/wiki/less/wiki.css</css-path>
+    <css-path>/skin/css/wiki/wiki.css</css-path>
   </portal-skin>
 
   <portlet-skin>
@@ -407,7 +407,7 @@
   <portal-skin>
 		<skin-name>Default</skin-name>
 		<skin-module>Platform-css</skin-module>
-		<css-path>/skin/css/platform/skin/less/platform.css</css-path>
+		<css-path>/skin/css/platform/skin/platform.css</css-path>
 		<overwrite>true</overwrite>
 	</portal-skin>
 
