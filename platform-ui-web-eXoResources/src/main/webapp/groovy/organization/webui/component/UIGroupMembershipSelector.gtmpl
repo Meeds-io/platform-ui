@@ -21,7 +21,7 @@
 			  %>
 				<li>
 				  <span class="uiIconMiniArrowRight"></span>
-				  <a href="<%=uicomponent.event("SelectMembership", member)%>" title="$member">$member</a>
+				  <a href="javascript:void(0);" onclick="<%=uicomponent.event("SelectMembership", member)%>" title="$member">$member</a>
 				</li>  
 			  <%}%>
 			  </ul>

@@ -79,17 +79,17 @@
 								<%if(action.contains("Close")) {
 										String closeLabel = _ctx.appRes("word.close");
 								%>
-										<a style="display: none;" class="btn" href="$link" id="$action" closeLabel="$closeLabel" cancelLabel="$actionLabel"><%=(uicomponent.hasEditMode() && (selTabId.equals("") || selTabId.equals("EditMode"))) ? closeLabel : actionLabel%></a>
+										<a style="display: none;" class="btn" href="javascript:void(0);" onclick="$link" id="$action" closeLabel="$closeLabel" cancelLabel="$actionLabel"><%=(uicomponent.hasEditMode() && (selTabId.equals("") || selTabId.equals("EditMode"))) ? closeLabel : actionLabel%></a>
 								<%} else {%>
-										<a style="display: none;" class="btn" href="$link" id="$action" >$actionLabel</a>
+										<a style="display: none;" class="btn" href="javascript:void(0);" onclick="$link" id="$action" >$actionLabel</a>
 								<%}%>
 						<%} else {%>
 								<%if(action.contains("Close")) {
 										String closeLabel = _ctx.appRes("word.close");
 								%>
-										<a class="btn" href="$link" id="$action" closeLabel="$closeLabel" cancelLabel="$actionLabel"><%=(uicomponent.hasEditMode() && (selTabId.equals("") || selTabId.equals("EditMode"))) ? closeLabel : actionLabel%></a>
+										<a class="btn" href="javascript:void(0);" onclick="$link" id="$action" closeLabel="$closeLabel" cancelLabel="$actionLabel"><%=(uicomponent.hasEditMode() && (selTabId.equals("") || selTabId.equals("EditMode"))) ? closeLabel : actionLabel%></a>
 								<%} else {%>
-										<a class="btn" href="$link" id="$action" >$actionLabel</a>
+										<a class="btn" href="javascript:void(0);" onclick="$link" id="$action" >$actionLabel</a>
 								<%}%>
 						<%}%>
 					<%}%>
