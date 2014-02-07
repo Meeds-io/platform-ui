@@ -45,7 +45,7 @@
 	<div class="itemDetailList uiBox">
 		<div class="title clearfix">
 			<h6 class="pull-left"><%=_ctx.appRes("UIFormInputIconSelector.label.iconPreview")%></h6>
-			<a class="btn pull-right" href="<%=form.event('SelectIcon', "Default");%>"><%= _ctx.appRes(uicomponent.getParent().getId() + "." + uicomponent.getId() + ".title.SetDefault") %></a>
+			<a class="btn pull-right" href="javascript:void(0);" onclick="<%=form.event('SelectIcon', "Default");%>"><%= _ctx.appRes(uicomponent.getParent().getId() + "." + uicomponent.getId() + ".title.SetDefault") %></a>
 		</div>
 		<%/*Template 1*/%>
 		<div class="uiContentBox">

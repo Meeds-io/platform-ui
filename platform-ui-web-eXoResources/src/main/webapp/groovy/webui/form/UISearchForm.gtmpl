@@ -20,7 +20,7 @@
 					uiform.renderField(field) 
 				}	 
 			%>
-			<a class="btn btn-primary quickSearch" href="$quickSearchlink" title="<%= _ctx.appRes("UISearch.label.QuickSearch") %>"><%=_ctx.appRes("UISearch.label.Search")%></a>
+			<a class="btn btn-primary quickSearch" href="javascript:void(0);" onclick="$quickSearchlink" title="<%= _ctx.appRes("UISearch.label.QuickSearch") %>"><%=_ctx.appRes("UISearch.label.Search")%></a>
 		</div>	
 		<%uiform.end()%>	 
 	</div>		

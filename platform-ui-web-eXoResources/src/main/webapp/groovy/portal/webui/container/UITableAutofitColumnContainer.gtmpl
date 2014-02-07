@@ -79,8 +79,8 @@
 						<i class="uiIconContainerConfig uiIconWhite"></i>
 						<span><%=HTMLEntityEncoder.getInstance().encode(strTitle)%></span>
 						<%if(hasPermission) {%>
-							<a href="<%=uicomponent.event("EditContainer","$uicomponent.id")%>" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("UITableColumnContainer.tooltip.editContainer")%>"><i class="uiIconEdit uiIconWhite"></i></a>
-							<a href="<%=uicomponent.event("DeleteComponent","$uicomponent.id")%>" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("UITableColumnContainer.tooltip.closeContainer")%>"><i class="uiIconTrash uiIconWhite"></i></a>
+							<a href="javascript:void(0);" onclick="<%=uicomponent.event("EditContainer","$uicomponent.id")%>" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("UITableColumnContainer.tooltip.editContainer")%>"><i class="uiIconEdit uiIconWhite"></i></a>
+							<a href="javascript:void(0);" onclick="<%=uicomponent.event("DeleteComponent","$uicomponent.id")%>" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("UITableColumnContainer.tooltip.closeContainer")%>"><i class="uiIconTrash uiIconWhite"></i></a>
 						<%}%>
 					
 					<%/*End InfoBar*/ %>

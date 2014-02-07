@@ -120,7 +120,7 @@
         <inherited>false</inherited>
         <configuration>
           <!-- the default is src/main/js -->
-          <jsDir>src/main/webapp/javascript</jsDir>
+          <jsDir>${project.basedir}/src/main/webapp/javascript</jsDir>
           <!-- this is actually the default -->
           <includes>**/*.js</includes>
           <!-- maybe you need to exclude compressed JS files -->

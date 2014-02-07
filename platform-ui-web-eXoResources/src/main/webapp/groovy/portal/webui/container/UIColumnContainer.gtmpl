@@ -87,20 +87,20 @@
 												<% /*Begin Popup Menu*/ %>
                         <ul class="dropdown-menu" role="menu">
 													<li>														
-														<a class="OptionItem" href="<%= uicomponent.event("InsertColumn", org.exoplatform.portal.webui.container.UIColumnContainer.INSERT_BEFORE) %>">
+														<a class="OptionItem" href="javascript:void(0);" onclick="<%= uicomponent.event("InsertColumn", org.exoplatform.portal.webui.container.UIColumnContainer.INSERT_BEFORE) %>">
 															<%= _ctx.appRes("UIColumnContainer.label.insertLeft") %>
 														</a>
 													</li>
 													<li>														
-														<a class="OptionItem" href="<%= uicomponent.event("InsertColumn", org.exoplatform.portal.webui.container.UIColumnContainer.INSERT_AFTER) %>">
+														<a class="OptionItem" href="javascript:void(0);" onclick="<%= uicomponent.event("InsertColumn", org.exoplatform.portal.webui.container.UIColumnContainer.INSERT_AFTER) %>">
 															<%= _ctx.appRes("UIColumnContainer.label.insertRight") %>
 														</a>
 													</li>
                         </ul>		                   												
 											  <% /*End Popup Menu*/ %>
 											</div>
-											<a href="<%=uicomponent.event("EditContainer")%>" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("UIColumnContainer.tooltip.editContainer")%>"><i class="uiIconEdit uiIconWhite"></i></a>
-											<a href="<%=uicomponent.event("DeleteComponent")%>" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("UIColumnContainer.tooltip.closeContainer")%>"><i class="uiIconTrash uiIconWhite"></i></a>
+											<a href="javascript:void(0);" onclick="<%=uicomponent.event("EditContainer")%>" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("UIColumnContainer.tooltip.editContainer")%>"><i class="uiIconEdit uiIconWhite"></i></a>
+											<a href="javascript:void(0);" onclick="<%=uicomponent.event("DeleteComponent")%>" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("UIColumnContainer.tooltip.closeContainer")%>"><i class="uiIconTrash uiIconWhite"></i></a>
 										<%}%>										
 									</div>
 								<%/*End InfoBar*/ %>
