@@ -950,3 +950,66 @@
     word-wrap: break-word;
   }
 }
+
+//=====Create Margin And Padding Utilities Class=====
+.marginAndPadding(@index, @countDown: 5)
+{
+
+  // LOOP
+  .style_margin_padding (@index) when (@index >= 0) {
+
+    // Padding
+    (~".pd@{index}") {padding: ~"@{index}px";}
+    (~".pdT@{index}") {padding-top: ~"@{index}px";}
+    (~".pdR@{index}") {padding-right: ~"@{index}px";}
+    (~".pdB@{index}") {padding-bottom: ~"@{index}px";}
+    (~".pdL@{index}") {padding-left: ~"@{index}px";}
+
+    // Padding Important
+    (~".pd@{index}-ipt") {padding: ~"@{index}px!important";}
+    (~".pdT@{index}-ipt") {padding-top: ~"@{index}px!important";}
+    (~".pdR@{index}-ipt") {padding-right: ~"@{index}px!important";}
+    (~".pdB@{index}-ipt") {padding-bottom: ~"@{index}px!important";}
+    (~".pdL@{index}-ipt") {padding-left: ~"@{index}px!important";}
+
+    // Padding Horizatial
+    (~".pd-0-@{index}") {padding: 0 ~"@{index}px";}
+    (~".pd-0-@{index}-ipt") {padding: 0 ~"@{index}px!important";}
+
+
+    // Padding Vertical
+    (~".pd-@{index}-0") {padding: ~"@{index}px" 0;}
+    (~".pd-@{index}-0-ipt") {padding: ~"@{index}px" 0!important;}
+
+    //-----------------------------------------------------------------
+    // Margin
+    (~".mg@{index}") {margin: ~"@{index}px";}
+    (~".mgT@{index}") {margin-top: ~"@{index}px";}
+    (~".mgR@{index}") {margin-right: ~"@{index}px";}
+    (~".mgB@{index}") {margin-bottom: ~"@{index}px";}
+    (~".mgL@{index}") {margin-left: ~"@{index}px";}
+    // Margin Important
+    (~".mg@{index}-ipt") {margin: ~"@{index}px!important";}
+    (~".mgT@{index}-ipt") {margin-top: ~"@{index}px!important";}
+    (~".mgR@{index}-ipt") {margin-right: ~"@{index}px!important";}
+    (~".mgB@{index}-ipt") {margin-bottom: ~"@{index}px!important";}
+    (~".mgL@{index}-ipt") {margin-left: ~"@{index}px!important";}
+
+    // margin Horizatial
+    (~".mg-0-@{index}") {margin: 0 ~"@{index}px";}
+    (~".mg-0-@{index}-ipt") {margin: 0 ~"@{index}px!important";}
+
+    // margin Vertical
+
+    (~".mg-@{index}-0") {margin: ~"@{index}px" 0;}
+    (~".mg-@{index}-0-ipt") {margin: ~"@{index}px" 0!important;}
+
+    // next iteration
+    .style_margin_padding(@index - @countDown);
+
+  }
+  // end the loop when index is 0
+  .style_margin_padding (0) {}
+  // "call" the loopingClass the first time with highest value
+  .style_margin_padding (@index);
+}
