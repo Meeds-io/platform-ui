@@ -1,6 +1,9 @@
 //
 // Popovers
 // --------------------------------------------------
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	//@popoverArrowOuterColor:  rgba(0,0,0,0.35);
+}
 
 
 .popover {
@@ -17,53 +20,31 @@
 
 .popover {
   &.top .arrow {
-    border-top-color: @popoverArrowColor;
+    border-top-color:@popoverArrowOuterColor;
     &:after {
-     border-top-color: @popoverArrowOuterColor;
-     bottom: -2px;
+     border-top-color: @popoverArrowColor;
     }
   }
   &.right .arrow {
-    border-right-color: @popoverArrowColor;
+    border-right-color: @popoverArrowOuterColor;
     &:after {
-      border-right-color: @popoverArrowOuterColor;
-       left: -2px;
+      border-right-color: @popoverArrowColor;
     }
   }
   &.bottom .arrow {
-    border-bottom-color: @popoverArrowColor;
+    border-bottom-color: @popoverArrowOuterColor;
     &:after {
-      border-bottom-color: @popoverArrowOuterColor;    
-       top: -2px;
+      border-bottom-color: @popoverArrowColor;    
     }
   }
   &.left .arrow {    
-    border-left-color: @popoverArrowColor;
+    border-left-color: @popoverArrowOuterColor;
     &:after {     
-      border-left-color: @popoverArrowOuterColor;
-       right: -2px;
+      border-left-color: @popoverArrowColor;
     }
   }
 }
 
 // hack chrome and safari, arrow border was too light ,should be stronger
 
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-	.popover.top .arrow:after {
-		border-top-color: rgba(0,0,0,0.45);
-		 bottom: -1px;
-	}
-	.popover.bottom .arrow:after {
-		border-bottom-color: rgba(0,0,0,0.45);
-		 top: -1px;
-	}
-	.popover.left .arrow:after {
-		border-left-color: rgba(0,0,0,0.45);
-		 right: -1px;
-	}
-	.popover.right .arrow:after {
-		border-right-color: rgba(0,0,0,0.45);
-		 left: -1px;
-	}
-}
 
