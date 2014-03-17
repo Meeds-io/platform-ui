@@ -14,7 +14,7 @@
 				if(selectedId.equals(uiChild.id)) style = "active";
 				String actionLink = "ajaxAsyncGetRequest('" + uicomponent.url("SelectComponent",uiChild.id) + "', true);";
 		%>
-    	<a class="btn $style" onclick="$actionLink"><%=_ctx.appRes("UITabPane.title." + uiChild.getId());%></a>
+    	<a class="btn $style" onclick="$actionLink"><%=_ctx.appRes("UITabPane.title." + org.exoplatform.webui.application.WebuiRequestContext.stripUUIDSuffix(uiChild.getId()));%></a>
 		<%}%>
     </div>
 		<%

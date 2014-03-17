@@ -49,7 +49,7 @@ body {
   background-color: @bodyBackground;
 }
 
-a,a:hover {
+a,a:hover,a:focus {
   color: @linkColor;
   text-decoration: none;
 }
@@ -300,6 +300,9 @@ table {
 
 .actionIconSmall {
 	padding: 0 2px;
+	[class^="uiIcon"] {
+		vertical-align: middle;
+	}
 }
 
 /*============== error, noticeEmpty ================*/
