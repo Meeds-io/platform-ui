@@ -1,8 +1,8 @@
 /* ============================================================
- * bootstrap-button.js v2.2.1
- * http://twitter.github.com/bootstrap/javascript.html#buttons
+ * bootstrap-button.js v2.3.2
+ * http://getbootstrap.com/2.3.2/javascript.html#buttons
  * ============================================================
- * Copyright 2012 Twitter, Inc.
+ * Copyright 2013 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,6 +64,8 @@
  /* BUTTON PLUGIN DEFINITION
   * ======================== */
 
+  var old = $.fn.button
+
   $.fn.button = function (option) {
     return this.each(function () {
       var $this = $(this)
@@ -80,6 +82,15 @@
   }
 
   $.fn.button.Constructor = Button
+
+
+ /* BUTTON NO CONFLICT
+  * ================== */
+
+  $.fn.button.noConflict = function () {
+    $.fn.button = old
+    return this
+  }
 
 
  /* BUTTON DATA-API
