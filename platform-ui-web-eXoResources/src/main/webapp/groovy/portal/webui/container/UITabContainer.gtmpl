@@ -101,7 +101,7 @@
                if (modeState > 0) {
             %>
                <li class="AddTab" onclick="$addTabLink">
-                  <span></span>
+                  <span class="uiIconLightGray uiIconSimplePlusMini"></span>
                </li>
             <% } %>  
   </ul>                 
