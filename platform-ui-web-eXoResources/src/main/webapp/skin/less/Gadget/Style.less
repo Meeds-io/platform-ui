@@ -1,8 +1,12 @@
 .UIDashboardContainer .GadgetContainer{
 	padding: 20px;
 	.gadgetControl {
-		cursor: move;
-		span .actionIcon{position: relative;}
+		cursor: move;		
+		.pull-right .actionIcon{	
+			height: 18px; 
+			margin: -2px -3px -3px 0; 
+			position: relative; 
+		}
 	}
 	.ContainerControlBarL .AddIcon {
 		float: right; 
@@ -64,11 +68,15 @@
 	    }
 	}
 	.actionIcon, .actionIconSmall {
-		line-height: 19px;
+		line-height: 20px;
 	}
 	
 }
-
+.gadgetTitle{
+	a.uiIconClose  {
+		margin-top: 2px;
+	}
+}
 .UIGadgetPortlet .gadgets-gadget {
 	.box-shadow(0 2px 4px -1px rgba(35, 44, 48, 0.18));
 	margin-bottom: 12px;
