@@ -24,11 +24,20 @@
 
 .btn-group.uiDropdownWithIcon .btn{
 	.spiter{ 
-		background: url("/eXoResources/skin/images/Dropdown/ButtonGroups/background/split-white.png") no-repeat;
+		background: url("/eXoResources/skin/images/Dropdown/ButtonGroups/background/split-white.png") no-repeat center;
 		display: inline-block;
-	    margin: -6px 5px -4px;
+	    margin: 0px 5px;
 	    vertical-align: middle;
-	    .size(27px, 2px);
+	    .size(22px, 2px);
+	}
+	> span {
+	 vertical-align: middle;
+		 &:first-child {
+		 	  text-transform: capitalize;
+		 }
+	}
+	.caret {
+		margin-top: 0;
 	}
 	&.btn-primary .spiter {
 		background: url("/eXoResources/skin/images/Dropdown/ButtonGroups/background/split.png") no-repeat;
