@@ -68,7 +68,7 @@ public abstract class UIFormTabPane extends UIForm {
 
     public void processDecode(WebuiRequestContext context) throws Exception {
         String renderTab = context.getRequestParameter(RENDER_TAB);
-        if (renderTab != null)
+        if (renderTab != null && this.getChildById(renderTab) != null)
             selectedTabId = renderTab;
         super.processDecode(context);
     }
