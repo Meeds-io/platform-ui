@@ -55,9 +55,7 @@
 			String appDisplay = "block";
 			String appZIndex = "";
 			String windowWidth = uicomponent.getWidth();
-			if(windowWidth!= null && !windowWidth.contains("%") && !windowWidth.contains("px")) windowWidth += "px";
 			String windowHeight = uicomponent.getHeight();
-			if(windowHeight != null && !windowHeight.contains("%") && !windowHeight.contains("px")) windowHeight += "px";
 			String cssStyle = "style=\"";
 			cssStyle += "visibility: "+ visibility +";";
 			cssStyle += "display: "+ appDisplay +";";
@@ -158,14 +156,14 @@
 		if(windowState != WindowState.MINIMIZED) {
 			String cssStyle = "";
  			String windowWidth = uicomponent.getWidth();
-			if(windowWidth!= null && !windowWidth.contains("%") && !windowWidth.contains("px"))
+			if(windowWidth!= null)
       {
-			   cssStyle += "width: "+ windowWidth +"px;";
+			   cssStyle += "width: "+ windowWidth +";";
       }
  			String windowHeight = uicomponent.getHeight();
-			if(windowHeight != null && !windowHeight.contains("%") && !windowHeight.contains("px"))
+			if(windowHeight != null)
 			{
-         cssStyle += "height: "+ windowHeight +"px;";
+         cssStyle += "height: "+ windowHeight +";";
 			}
  %>
  				<div id="<%=portalMode == UIPortalApplication.NORMAL_MODE ? portletId : "EditMode-"+ portletId%>">
