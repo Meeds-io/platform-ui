@@ -29,7 +29,7 @@
   </parent>
   <groupId>org.exoplatform.platform-ui</groupId>
   <artifactId>platform-ui</artifactId>
-  <version>4.1.x-SNAPSHOT</version>
+  <version>4.1.x-plfui-addon-container-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Platform-UI</name>
   <modules>
@@ -55,7 +55,7 @@
     <!-- Dependencies versions                    -->
     <!-- **************************************** -->
     <org.exoplatform.depmgt.version>9-SNAPSHOT</org.exoplatform.depmgt.version>
-    <org.gatein.portal.version>3.5.x-PLF-SNAPSHOT</org.gatein.portal.version>
+    <org.gatein.portal.version>3.5.x-PLF-addon-container-SNAPSHOT</org.gatein.portal.version>
   </properties>
   <dependencyManagement>
     <!-- ### NEVER CHANGE THIS ORDER OF DEPMGT ### -->
