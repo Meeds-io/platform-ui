@@ -1,43 +1,39 @@
 .uiWikiPageContentArea{
-	.uiWikiContentDisplay{
-		padding: 10px 0;
-		span.EditSection {
-				   visibility: hidden;
-				   a{
-				           position: absolute;
-				           right: 10px;
-				           background-position: -9999px;
-				   }
+	.uiWikiContentDisplay {
+		.header-container {
+			position: relative;
 		}
-
-	}
-
-	 span.EditSection {
-		 float: right;
-		 margin-right: -15px;
-		 visibility: hidden;
-	}
-
-	 span.EditSection a {
-		 line-height: 24px;
-		 margin: 0 -40px 0 0;
-		 display: inline-block;
-		 visibility: visible;
-		 text-decoration: none;
-		 font-size: 12px;
-	}
-
-	 .EditSection{
-		 .wikiexternallink{
-			 .wikimodel-freestanding {
-				 margin: 0 6px 0 0;
+		padding: 10px 0;
+		.EditSectionHover {
+			span.EditSection {
+				visibility: visible;
+				background: url("/eXoSkin/skin/images/Icons/Gray.png") -40px 0;
+				&:hover {
+					background: url("/eXoSkin/skin/images/Icons/uiIconsBlue.png") -40px 0;
+				}
+			}
+		}
+		span.EditSection {
+			visibility: hidden;
+			.square(18px);
+			 float: right;
+			 margin: 5px 5px 0 0;
+			 display:block!important;
+			a{
+				position: absolute;
+				right: 0px;
+				z-index: 1031;
+				display: block;
+				background: none;
+				line-height: 24px;
+				 text-decoration: none;
+				 font-size: 12px;
+				 outline: none!important;
+				  margin: 0px 12px 0 0;
 				 .square(18px);
 			}
 		}
-	}
-
-	 span.EditSection a span {
-		visibility: hidden;
+		word-wrap: break-word;
 	}
 
 	 .section-container {
@@ -48,7 +44,7 @@
 	 .EditSectionHover {
 		background-color: @grayLighter;
 		span.EditSection {
-			visibility: visible;
+			
 			a{					
 				background-position: -40px 0;
 			}

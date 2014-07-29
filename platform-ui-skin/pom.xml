@@ -59,7 +59,7 @@
                     <execution>
                         <id>core</id>
                         <configuration>
-                           <!-- SourceDirectory shouldn't exist and we should have as default the lesss folder in /src/main/less     -->
+                            <!-- SourceDirectory shouldn't exist and we should have as default the lesss folder in /src/main/less     -->
                             <sourceDirectory>${project.basedir}/src/main/webapp/skin/less</sourceDirectory>
                             <outputDirectory>${project.build.directory}/${project.build.finalName}/skin/css</outputDirectory>
                             <compress>false</compress>
@@ -73,64 +73,71 @@
                                 <include>wiki/less/wiki.less</include>
                                 <include>platform/skin/less/platform.less</include>
                                 <include>platform/portlets/platformNavigation/UIBreadCrumbsNavigationPortlet/Style.less</include>
-								                <include>platform/portlets/platformNavigation/UICompanyNavigationPortlet/Style.less</include>
-								                <include>platform/portlets/platformNavigation/UIGroupsNavigationPortlet/Style.less</include>
-								                <include>platform/portlets/platformNavigation/UIHelpPlatformToolbarPortlet/Style.less</include>
-								                <include>platform/portlets/platformNavigation/UISearchPlatformToolbarPortlet/Style.less</include>
-								                <include>platform/portlets/platformNavigation/UISpaceNavigationPortlet/Style.less</include>
-								                <include>platform/portlets/platformNavigation/UIUserNavigationPortlet/Style.less</include>
-                            		<include>platform/portlets/homepage/calendar.less</include>
-								                <include>platform/portlets/homepage/gettingstarted.less</include>
-								                <include>platform/portlets/homepage/invitations.less</include>
-								                <include>platform/portlets/homepage/suggestions.less</include>
-								                <include>platform/portlets/homepage/whoisonline.less</include>
-								                <include>platform/portlets/branding/branding.less</include>
-                            		<include>ecms/skin/ecms-resources-wcmskin.less</include>
-                								<include>ecms/skin/ecms-resources-dmsskin.less</include>
-                								<include>ecms/portlets/administration/ecms-administration.less</include>
-								                <include>ecms/portlets/explorer/ecms-explorer.less</include>
-								                <include>calendar/calendar.less</include>
-								                <include>social/skin/social.less</include>
+                                <include>platform/portlets/platformNavigation/UICompanyNavigationPortlet/Style.less</include>
+                                <include>platform/portlets/platformNavigation/UIGroupsNavigationPortlet/Style.less</include>
+                                <include>platform/portlets/platformNavigation/UIHelpPlatformToolbarPortlet/Style.less</include>
+                                <include>platform/portlets/platformNavigation/UISearchPlatformToolbarPortlet/Style.less</include>
+                                <include>platform/portlets/platformNavigation/UISpaceNavigationPortlet/Style.less</include>
+                                <include>platform/portlets/platformNavigation/UIUserNavigationPortlet/Style.less</include>
+                                <include>platform/portlets/homepage/calendar.less</include>
+                                <include>platform/portlets/homepage/gettingstarted.less</include>
+                                <include>platform/portlets/homepage/invitations.less</include>
+                                <include>platform/portlets/homepage/suggestions.less</include>
+                                <include>platform/portlets/homepage/whoisonline.less</include>
+                                <include>platform/portlets/branding/branding.less</include>
+                                <include>ecms/skin/ecms-resources-wcmskin.less</include>
+                                <include>ecms/skin/ecms-resources-dmsskin.less</include>
+                                <include>ecms/portlets/administration/ecms-administration.less</include>
+                                <include>ecms/portlets/explorer/ecms-explorer.less</include>
+								<include>ecms/portlets/search/ecms-search.less</include>
+								<include>ecms/portlets/fastcontentcreator/fast-content-creator.less</include>
+                                <include>ecms/portlets/presentation/ecms-presentation-categorynavigationportlet.less</include>
+                                <include>ecms/portlets/presentation/ecms-presentation-contentlistviewerportlet.less</include>
+                                <include>ecms/portlets/presentation/ecms-presentation-singlecontentviewer.less</include>
+                                <include>calendar/calendar.less</include>
+                                <include>social/skin/social.less</include>
                                 <include>social/portlets/uiAllPeoplePortlet/Style.less</include>
-								                <include>social/portlets/uiAllSpacesPortlet/Style.less</include>
-								                <include>social/portlets/uiBannerPortlet/Style.less</include>
-								                <include>social/portlets/uiConnectionsNavigationPortlet/Style.less</include>
-								                <include>social/portlets/uiConnectionsPortlet/Style.less</include>
-								                <include>social/portlets/uiFooterPortlet/Style.less</include>
-								                <include>social/portlets/uiInvitationSpacesPortlet/Style.less</include>
-                            		<include>social/portlets/uiInvitationsPortlet/Style.less</include>
-								                <include>social/portlets/uiMembersPortlet/Style.less</include>
-								                <include>social/portlets/uiMyConnectionsNavigationPortlet/Style.less</include>
-								                <include>social/portlets/uiConnectionsNavigationPortlet/Style.less</include>
-								                <include>social/portlets/uiMySpacesPortlet/Style.less</include>
-								                <include>social/portlets/uiPendingSpacesPortlet/Style.less</include>
-								                <include>social/portlets/uiPeoplePortlet/Style.less</include>
-                            		<include>social/portlets/uiPeopleToolbarPortlet/Style.less</include>
-								                <include>social/portlets/uiProfileNavigatonPortlet/Style.less</include>
-								                <include>social/portlets/uiProfilePortlet/Style.less</include>
-								                <include>social/portlets/uiPublicSpacesPortlet/Style.less</include>
-								                <include>social/portlets/uiRequestsPortlet/Style.less</include>
-								                <include>social/portlets/uiSocialDemoHomePagePortlet/Style.less</include>
-								                <include>social/portlets/uiSocialDemoNavigationPortlet/Style.less</include>
-                           			<include>social/portlets/uiSocialExtensionHomePagePortlet/Style.less</include>
-								                <include>social/portlets/uiSocialExtensionLogoPortlet/Style.less</include>
-								                <include>social/portlets/uiSocialNavigationPortlet/Style.less</include>
-								                <include>social/portlets/uiSpaceAccessPortlet/Style.less</include>
-								                <include>social/portlets/uiSpaceActivityStreamPortlet/Style.less</include>
-                            		<include>social/portlets/uiSpaceMenuPortlet/Style.less</include>
-								                <include>social/portlets/uiSpaceNavigationPortlet/Style.less</include>
-								                <include>social/portlets/uiSpaceSettingPortlet/Style.less</include>
-								                <include>social/portlets/uiSpaceToolbarPortlet/Style.less</include>
-								                <include>social/portlets/uiUserActivityStreamPortlet/Style.less</include>
-								                <include>social/portlets/uiWarningPortlet/Style.less</include>
-								                <include>forum/portlets/forum/forum.less</include>
-								                <include>forum/portlets/answer/anwer.less</include>
-								                <include>forum/portlets/faq/faq.less</include>
-								                <include>commons/skin/commons.less</include>
-								                <include>integration/skin/quicksearchpage.less</include>
-								                <include>integration/skin/searchAdmin.less</include>
-								                <include>integration/skin/searchpage.less</include>
-								            </includes>
+                                <include>social/portlets/uiAllSpacesPortlet/Style.less</include>
+                                <include>social/portlets/uiBannerPortlet/Style.less</include>
+                                <include>social/portlets/uiConnectionsNavigationPortlet/Style.less</include>
+                                <include>social/portlets/uiConnectionsPortlet/Style.less</include>
+                                <include>social/portlets/uiFooterPortlet/Style.less</include>
+                                <include>social/portlets/uiInvitationSpacesPortlet/Style.less</include>
+                                <include>social/portlets/uiInvitationsPortlet/Style.less</include>
+                                <include>social/portlets/uiMembersPortlet/Style.less</include>
+                                <include>social/portlets/uiMyConnectionsNavigationPortlet/Style.less</include>
+                                <include>social/portlets/uiConnectionsNavigationPortlet/Style.less</include>
+                                <include>social/portlets/uiMySpacesPortlet/Style.less</include>
+                                <include>social/portlets/uiPendingSpacesPortlet/Style.less</include>
+                                <include>social/portlets/uiPeoplePortlet/Style.less</include>
+                                <include>social/portlets/uiPeopleToolbarPortlet/Style.less</include>
+                                <include>social/portlets/uiProfileNavigatonPortlet/Style.less</include>
+                                <include>social/portlets/uiProfilePortlet/Style.less</include>
+                                <include>social/portlets/uiPublicSpacesPortlet/Style.less</include>
+                                <include>social/portlets/uiRequestsPortlet/Style.less</include>
+                                <include>social/portlets/uiSocialDemoHomePagePortlet/Style.less</include>
+                                <include>social/portlets/uiSocialDemoNavigationPortlet/Style.less</include>
+                                <include>social/portlets/uiSocialExtensionHomePagePortlet/Style.less</include>
+                                <include>social/portlets/uiSocialExtensionLogoPortlet/Style.less</include>
+                                <include>social/portlets/uiSocialNavigationPortlet/Style.less</include>
+                                <include>social/portlets/uiSpaceAccessPortlet/Style.less</include>
+                                <include>social/portlets/uiSpaceActivityStreamPortlet/Style.less</include>
+                                <include>social/portlets/uiSpaceMenuPortlet/Style.less</include>
+                                <include>social/portlets/uiSpaceNavigationPortlet/Style.less</include>
+                                <include>social/portlets/uiSpaceSettingPortlet/Style.less</include>
+                                <include>social/portlets/uiSpaceToolbarPortlet/Style.less</include>
+                                <include>social/portlets/uiUserActivityStreamPortlet/Style.less</include>
+                                <include>social/portlets/uiWarningPortlet/Style.less</include>
+                                <include>forum/skin/forum-resources.less</include>
+                                <include>forum/portlets/forum/forum.less</include>
+                                <include>forum/portlets/answer/answers.less</include>
+                                <include>forum/portlets/answer/faq.less</include>
+                                <include>forum/portlets/poll/pollPortlet.less</include>
+                                <include>commons/skin/commons.less</include>
+                                <include>integration/skin/quicksearchpage.less</include>
+                                <include>integration/skin/searchAdmin.less</include>
+                                <include>integration/skin/searchpage.less</include>
+                            </includes>
                         </configuration>
                         <goals>
                             <goal>compile</goal>
@@ -138,7 +145,6 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
 

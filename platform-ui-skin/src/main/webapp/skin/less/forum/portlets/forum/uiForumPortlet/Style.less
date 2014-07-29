@@ -100,7 +100,30 @@
 			}
 		}
 	}
-
+	.menuMore {
+	.forumSeparatorLine + .forumSeparatorLine {
+		background: none;
+	}
+	.defaultStyle{
+		float: none;
+		.uiDropdownWithIcon  {
+			padding: 5px 12px;
+		}
+		.actionIcon {
+			&:hover {
+				border: 1px solid @dropdownLinkBackgroundHover;
+			}
+			&.uiDropdownWithIcon {
+				&:hover {
+					border: 1px solid @dropdownBorder;
+				}
+			}
+		}
+		a:hover {
+			color:@white;
+		}
+	 }
+	}
 	.defaultStyle{
 	   	cursor: pointer;
 	    float: left;
