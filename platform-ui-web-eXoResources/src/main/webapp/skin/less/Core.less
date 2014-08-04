@@ -44,7 +44,7 @@
 // --------------------
 
 body {
-  margin: 0;  
+  margin: 0;
   #font > .sans-serif(@baseFontSize,normal,@baseLineHeight);
   background-color: @bodyBackground;
 }
@@ -84,7 +84,7 @@ table {
 // Scroll
 
 .uiScrollTop {
-	background: url('/eXoResources/skin/images/ShareImages/Background/uiScrollTop.png') repeat-x top center;
+	background: url("@{images-path}/ShareImages/Background/uiScrollTop.png") repeat-x top center;
 	position: absolute;
 	content: "";
 	z-index: 1;
@@ -94,7 +94,7 @@ table {
 }
 
 .uiScrollBottom {
-	background: url('/eXoResources/skin/images/ShareImages/Background/uiScrollBottom.png') repeat-x center;
+	background: url("@{images-path}/ShareImages/Background/uiScrollBottom.png") repeat-x center;
 	position: absolute;
 	content: "";
 	z-index: 1;
@@ -121,7 +121,7 @@ table {
 	float: left;
 	li {
 		margin-bottom: 12px;
-		
+
 		[class^="uiIcon"] {
 			cursor: pointer;
 		}
@@ -129,11 +129,11 @@ table {
 			margin-right: 5px;
 		}
 	}
-	
+
 	li:last-child {
 		margin-bottom: 0px;
 	}
-	
+
 }
 
 /*************** AjaxLoadingMask *********************/
@@ -143,10 +143,10 @@ table {
 	border-radius: 0 0 3px 3px;
 	.box-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
 	padding: 10px 7px 6px 11px;
-	top: 0px !important;	
+	top: 0px !important;
 	position: fixed !important;
 	.loadingProgressBar{
-		background: url(/eXoResources/skin/images/Loadding/loadingProgressBar.gif) no-repeat center;
+		background: url("@{images-path}/Loadding/loadingProgressBar.gif") no-repeat center;
 		width: 20px;
 		height: 20px;
 	}
@@ -157,7 +157,7 @@ table {
 		text-shadow: 1px 1px 1px @grayDark;
 	}
 	.uiIconClose:hover{
-		background: url(/eXoResources/skin/images/Icons/uiIconsWhite.png) -160px -100px;
+		background: url("@{images-path}/Icons/uiIconsWhite.png") -160px -100px;
 	}
 }
 
@@ -226,21 +226,21 @@ table {
 			}
 		}
 	}
-  
+
 	.form-horizontal{
 		li{
 			margin-left: 50px;
 		}
-    
+
 		.uiRadio{
 			width: 190px;
 			margin-left: 15px;
 		}
-    
+
 		.control-group{
 			margin-bottom: 20px;
 		}
-    
+
 		.controls-full .scv-by {
 			line-height: 28px;
       margin: 0px 5px 0px 15px;
@@ -379,11 +379,11 @@ table {
 /*
 Round corner box with title
   - border: 1px solid @tableBorder;
-  - Title: 
+  - Title:
     + gray background (#f0f0f0)
     + round corner at left-top and right-top
     + text title is bold, class name is "titleBox", color is @grayDark
-  - content box: 
+  - content box:
     + background: white
     + round corner at the bottom-left and bottom-right
 */
