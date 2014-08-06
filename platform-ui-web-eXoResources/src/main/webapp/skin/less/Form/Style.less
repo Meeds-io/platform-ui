@@ -9,6 +9,25 @@ textarea {
   #font > .shorthand(@baseFontSize,normal,@baseLineHeight);
 }
 
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+	background-color: @inputBackground;
+}
+
 select,
 textarea,
 input[type="text"],
@@ -27,16 +46,16 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
 	padding: 3px 6px;
-	color: @grayDark;
+	color: @inputColor;
 	.box-shadow(inset 0 2px 1px rgba(0,0,0,.075));
 	font-size: @baseFontSize;
 	.box-sizing(border-box);
 	height: 28px;
-	border: 1px solid @borderColor;
+	border: 1px solid @inputBorder;
 	 &:focus {
-		border-color: rgba(148,176,223,1);
+		border-color: @inputFocusBorder;
 		.box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 5px rgba(29,75,159,.6)");
-		color: @grayDark;
+		color: @inputFocusColor;
   }
   +.actionIcon {
   	margin-left: 3px;
@@ -120,8 +139,8 @@ textarea {
 }
 
 .uiCheckbox input[type="checkbox"]:checked + span:after {
-	border-bottom: 2px solid @blue;
-	border-left: 2px solid @blue;
+	border-bottom: 2px solid @uiCheckboxCheckedBorder;
+	border-left: 2px solid @uiCheckboxCheckedBorder;
 	content: "";
 	.size(3px,6px);
   -webkit-transform: skew(45deg, -49deg);
@@ -136,7 +155,7 @@ textarea {
 }
 
 .uiCheckbox input[type="checkbox"] + span:before {
-	background: @grayDarkWhiteSmoke;
+	background: @uiCheckboxBackground;
 	.border-radius(@borderRadiusSmall);
 	.box-shadow(inset 0 1px 2px rgba(0,0,0,.17));
 	.square(12px);
@@ -151,18 +170,18 @@ input[type="radio"] + span {
 }
 
 .uiCheckbox input[type="checkbox"]:disabled + span:after {
-	border-bottom: 2px solid @grayLight;
-	border-left: 2px solid @grayLight;
+	border-bottom: 2px solid @uiCheckboxCheckedDisabledBorder;
+	border-left: 2px solid @uiCheckboxCheckedDisabledBorder;
 }
 
 input[readonly], select[readonly], textarea[readonly] {
-	background: @grayLighter;
+	background: @formReadOnyBackground;
 	.box-shadow(inset 0 0 0 rgba(0,0,0,0));
-	color: @grayLight;
+	color: @formReadOnyColor;
 }
 
 input[disabled], select[disabled], textarea[disabled] {
-	background: @grayMediumWhiteSmoke;
+	background: @inputDisabledBackground;
 }
 
 .uiCheckbox input,.uiRadio input {
@@ -200,7 +219,7 @@ input[disabled], select[disabled], textarea[disabled] {
 
 .uiRadio input[type="radio"]:checked + span:after {
 	#gradient > .vertical(rgba(0,0,0,0), rgba(0,0,0,0.27));
-	background-color: @blue;
+	background-color: @uiRadioCheckedColor;
 	content: "";
 	.square(8px);
 	.border-radius(50%);
@@ -216,7 +235,7 @@ input[disabled], select[disabled], textarea[disabled] {
 }
 
 .uiRadio input[type="radio"] + span:before {
-	background: @grayDarkWhiteSmoke;
+	background: @uiRadioCheckedBackground;
 	.border-radius(50%);
 	.box-shadow(inset 0 1px 2px rgba(0,0,0,.17));
 	.square(12px);
@@ -245,11 +264,11 @@ input[disabled], select[disabled], textarea[disabled] {
 }
 
 .uiRadio input[type="radio"]:disabled + span:after {
-	background-color: @grayLight;
+	background-color: @uiRadioCheckedDisabledBackground;
 }
 
 .uiSelectbox {
-	border: 1px solid @borderColor;
+	border: 1px solid @inputBorder;
 	.border-radius(5px);
 	width: 270px;
 	line-height: 20px;
