@@ -25,9 +25,9 @@
 			cursor: move;
 			font-size: 14px;
 			font-weight: bold;
-		}
+		}	
 	}
-
+	
 	.popupContent {
 		overflow: auto;
 		padding: 10px;
@@ -40,69 +40,69 @@
 			overflow: auto;
 		}
 	}
-
+	
 	.uiIconResize {
 		.square(16px);
 		margin: -18px 2px 2px;
 		cursor: nw-resize;
 	}
-
+	
 }
 
 /**********************Popup Messages*************************/
 
 .uiPopup {
 	.popupMessage {
-
+		
 		> li {
 			padding: 3px 0;
 		}
-
+		
 		> li span[class*="Icon"] {
-			background: url("@{images-path}/PopupMessage/icons.png") no-repeat;
+			background: url(/eXoResources/skin/images/PopupMessage/icons.png) no-repeat;
 			padding-left: 20px;
 			line-height: 16px;
 			height: 16px;
 			color: @textColor;
 			font-weight: bold;
 		}
-
+		
 		> li span.errorIcon {
 			background-position: left 0px;
 		}
-
+		
 		> li span.warningIcon {
 			background-position: left -17px;
 		}
-
+		
 		> li span.infoIcon {
 			background-position: left -34px;
 		}
-
+		
 		> li span.confirmationIcon {
 			background-position: left -50px;
 		}
-
+		
 		> li.collapseItem > ul {
 			display: block;
 		}
-
+		
 		> li.expandItem > ul {
 			display: none;
 		}
-
+		
 		> li > ul > li {
-			line-height: 16px;
+			line-height: 16px;	
 			padding: 0 0 0 40px;
 		}
 	}
-
+	
 	.popupContent .multipleMessage {
 		background: @grayLighter;
 		border: 1px solid @borderColor;
 		margin: 0;
 	}
-
+	
 	.singleMessage > li span[class*="Icon"] {
 		font-weight: normal;
 		display: block;

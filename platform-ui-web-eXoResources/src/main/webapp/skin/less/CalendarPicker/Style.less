@@ -5,7 +5,7 @@
 	position: absolute;
 }
 .uiCalendarComponent{
-	width: @calComponent-width;
+	width: 225px;	
 	.actionIcon{
 		line-height: 14px;
 		padding: 2px;
@@ -16,52 +16,49 @@
 	hr {
 		margin: 0;
 		border-top: 1px solid  @borderColor;
-	}
+	}	
 	h5.title{
-		text-align: center;
-		line-height: 14px;
+		text-align: center;	
+		line-height: 14px;	
 		padding: 10px;
 		span {
 			font-size: @baseFontSize;
+			a {color: @textColor;}
 		}
 	}
-	h5.title, h5.title span a {
-		color: @calComponent-width-title-color;
-	}
-
+		
 	table {
 		border-collapse: separate;
 		tr td {
-			text-align: center;
-			line-height: @baseLineHeight + 4;
+			text-align: center;line-height: @baseLineHeight + 4;
 		}
 	}
-
+	
 	table.weekList{
 		padding: 0 9px;
 		margin: 2px 0;
 		font-size: @baseFontSize - 2;
-
+		
 	}
-
+	
 	table.weekDays{
 		padding: 0 9px 9px 6px;
 		font-size: @baseFontSize - 1;
-
-		tr {
+		
+		tr {			
 			td {
 				padding:1px;
 				a {
 					display: block;
-					color: @calComponent-day-color;
+					color: @textColor;					
 					border: 1px solid transparent;
-					&:hover{
-							background-color: @calComponent-day-hover-bg;
+					&:hover{							
+							background-color: @grayWhiteSmoke;
 							.border-radius(@borderRadiusSmall);
-						}
+						}			
 				}
 				.otherMonth{
-					color: @calComponent-other-month-color;
+					color: @grayLight;
 				}
 				.today {
 					border: 1px solid @borderColor;
@@ -69,23 +66,23 @@
 					font-weight: bold;
 				}
 				.selected {
-					background-color: @calComponent-day-selected-bg;
-					color: @calComponent-day-selected-color;
-					.border-radius(@borderRadiusSmall);
-				}
+					background-color: @blue;
+					color: @white;
+					.border-radius(@borderRadiusSmall);					
+				}			
 				.activeToday {
-					background-color: @calComponent-day-today-bg;
-					color: @calComponent-day-today-color;
+					background-color: @blue;
+					color: @white;
 					.border-radius(@borderRadiusSmall);
 				}
 			}
+			
 		}
-
-
-		tr.currentWeek {
+		
+		
+		tr.currentWeek {			
 			td {
-				background-color: @calComponent-currentWeek-bg;
-				padding:0 1px;
+				background-color: @grayWhiteSmoke;	padding:0 1px;				
 				&:first-child {
 					.border-top-left-radius(@borderRadiusSmall);
 					.border-bottom-left-radius(@borderRadiusSmall);
@@ -93,30 +90,30 @@
 				a:hover {
 					border: 1px solid @borderColor;
 				}
-
+				
 				&:last-child {
 					.border-top-right-radius(@borderRadiusSmall);
 					.border-bottom-right-radius(@borderRadiusSmall);
 				}
 			}
-
+			
 		}
 	}
 	.calendarTimeInput {
 		.center();
 		padding: 4px 0;
 		line-height: 18px;
-		background-color: @calComponent-timeInput-box-bg;
+		background-color: @grayWhiteSmoke;
 		.border-radius(0 0 @borderRadiusSmall @borderRadiusSmall);
 		span {
-			background: @calComponent-timeInput-bg;
+			background: white;
 			.border-radius(@borderRadiusSmall);
 			.box-shadow(inset 0 2px 1px rgba(0,0,0,.075));
 			display: inline-block;
-			border: 1px solid @calComponent-timeInput-border;
+			border: 1px solid @borderColor;
 			&.focus {
 				.box-shadow(~'0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 5px rgba(29, 75, 159, 0.6)');
-				border-color: @calComponent-timeInput-forcus-border;
+				border-color: @blueLighter;
 			}
 		}
 		input[type="text"] {
@@ -126,10 +123,10 @@
 			.border-radius(0 );
 			border: none;
 			.box-shadow(0 0 0 transparent);
-			color: @calComponent-timeInput-color;
+			color: @textColor;
 			padding:0;
 			line-height: 18px;
-			.center();
+			.center();	
 				&:first-child {
 					text-align: right;
 					width: 28px;
@@ -140,7 +137,7 @@
 				}
 		}
 	}
-
+	
 }
 
 .UICalendarPortlet .UICalendarContainer {

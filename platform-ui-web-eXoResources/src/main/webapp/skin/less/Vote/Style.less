@@ -9,7 +9,7 @@
 			margin: 0px auto 13px;
 			width: 105px;
 			[class^="uiIcon"] {
-				background: url('@{images-path}/Vote/uiIconVote.png') no-repeat center center;
+				background: url('/eXoResources/skin/images/Vote/uiIconVote.png') no-repeat center center;
 				width: 17px;
 				cursor: pointer;
 			}
@@ -23,7 +23,7 @@
 				background-position: center -27px;
 			}
 		}
-
+		
 	}
 }
 
@@ -31,7 +31,7 @@
 /******** Vote of View1 **************/
 
 .uiVote {
-
+	
 	.voteRatingInfo {
 		float: left;
 		line-height: 16px;
@@ -42,14 +42,14 @@
 	}
 
 	.avgRatingImages {
-		float: left;
+		float: left; 
 		.voted,.votedHaft,.unvoted  {
 			float: left;
 			.square(16px);
-			background: url('@{images-path}/Vote/uiIconVote.png') no-repeat;
+			background: url('/eXoResources/skin/images/Vote/uiIconVote.png') no-repeat;
 			margin: 0px 1px;
 			cursor: pointer;
-		}
+		}		
 		.voted {
 			background-position: left -80px;
 		}
@@ -62,17 +62,17 @@
 	}
 }
 
-//uiVoteMini use combine with uiVote
+//uiVoteMini use combine with uiVote 
 
 .uiVoteMini {
 	.avgRatingImages {
 		.voted,.votedHaft,.unvoted  {
-			background: url('@{images-path}/Icons/uiIconColor.png') no-repeat;
+			background: url('/eXoResources/skin/images/Icons/uiIconColor.png') no-repeat;
 			.square(10px);
 			float: none;
 			display: inline-block;
 			margin: 0;
-		}
+		}		
 		.voted {
 			background-position: -43px -43px;
 		}

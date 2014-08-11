@@ -14,9 +14,9 @@
 // Blues
 // -------------------------
 @blueDark:				#224886;
-@blue:					#2f5e92;
-@blueLight:				#567AB6;
-@blueLighter:			#638acd;
+@blue:					#2f5e92; 	
+@blueLight:				#567AB6; 	
+@blueLighter:			#638acd;	
 
 // Accent colors
 // -------------------------
@@ -50,7 +50,7 @@
 
 
 // Buttons
-// -------------------------
+// ------------------------- 
 @btnBackground:                     @white;
 @btnBackgroundHighlight:            @grayWhiteSmoke;
 @btnBorder:                         @borderColor;
@@ -62,28 +62,12 @@
 
 // Forms
 // -------------------------
-@inputColor:                    @grayDark;
 @inputBackground:               @white;
 @inputBorder:                   @borderColor;
 @inputBorderRadius:             @baseBorderRadius;
-@inputDisabledBackground:       @grayMediumWhiteSmoke;
+@inputDisabledBackground:       @grayLighter;
 @formActionsBackground:         @grayWhiteSmoke;
-
-@inputFocusColor:               @inputColor;
-@inputFocusBorder:              rgba(148,176,223,1);
-
 @inputHeight:                   @baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
-
-@uiCheckboxCheckedBorder: 		@blue;
-@uiCheckboxBackground: 			@grayDarkWhiteSmoke;
-
-@uiRadioCheckedColor: 					@blue;
-@uiRadioCheckedBackground: 				@grayDarkWhiteSmoke;
-@uiRadioCheckedDisabledBackground: 		@grayLight;
-
-@uiCheckboxCheckedDisabledBorder:      	@grayLight;
-@formReadOnyBackground: 				@grayLighter;
-@formReadOnyColor: 						@grayLight;
 
 
 // Dropdowns
@@ -106,18 +90,13 @@
 @altFontFamily:         @serifFontFamily;
 
 @headingsFontWeight:    bold;    // instead of browser default, bold
-
-// Image Patch
-// -------------------------
-@images-path: 			"/eXoResources/skin/images";
-
 // Component sizing
 // -------------------------
 // Based on 14px font-size and 20px line-height
 
-@fontSizeLarge:         @baseFontSize * 1.25;
+@fontSizeLarge:         @baseFontSize * 1.25; 
 @fontSizeSmall:         @baseFontSize * 0.85;
-@fontSizeMini:          @baseFontSize * 0.75;
+@fontSizeMini:          @baseFontSize * 0.75; 
 
 @baseBorderRadius:      4px;
 @borderRadiusLarge:     6px;
@@ -277,36 +256,3 @@
 // 768px-979px
 @fluidGridColumnWidth768:      percentage(@gridColumnWidth768/@gridRowWidth768);
 @fluidGridGutterWidth768:      percentage(@gridGutterWidth768/@gridRowWidth768);
-
-
-// Breadcrumbs
-// -------------------------
-@breadcrumb-color: 				@grayDark;
-@breadcrumb-hover-color: 		@blue;
-@breadcrumb-active-color: 		@grayLight;
-
-// Calendar Component
-// -------------------------
-@calComponent-width: 					225px;
-@calComponent-width-title-color: 		@textColor;
-@calComponent-day-color: 				@textColor;
-@calComponent-other-month-color:   		@grayLight;
-@calComponent-day-hover-bg: 			@grayWhiteSmoke;
-
-@calComponent-day-selected-bg: 			@blue;
-@calComponent-day-selected-color: 		@white;
-
-@calComponent-day-today-bg: 			@blue;
-@calComponent-day-today-color: 			@white;
-
-
-@calComponent-currentWeek-bg: 			@grayWhiteSmoke;
-@calComponent-currentWeek-border: 		@borderColor;
-
-@calComponent-timeInput-box-bg: 		@grayWhiteSmoke;
-
-@calComponent-timeInput-color: 			@textColor;
-@calComponent-timeInput-bg: 			@white;
-@calComponent-timeInput-border: 		@borderColor;
-@calComponent-timeInput-forcus-border: 	@blueLighter;
-

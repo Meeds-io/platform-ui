@@ -6,28 +6,9 @@ input,
 button,
 select,
 textarea {
-  #font > .shorthand(@baseFontSize,normal,@baseLineHeight);
+  #font > .shorthand(@baseFontSize,normal,@baseLineHeight); 
 }
-
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-.uneditable-input {
-	background-color: @inputBackground;
-}
-
+	
 select,
 textarea,
 input[type="text"],
@@ -46,29 +27,29 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
 	padding: 3px 6px;
-	color: @inputColor;
+	color: @grayDark;
 	.box-shadow(inset 0 2px 1px rgba(0,0,0,.075));
 	font-size: @baseFontSize;
 	.box-sizing(border-box);
 	height: 28px;
-	border: 1px solid @inputBorder;
+	border: 1px solid @borderColor;
 	 &:focus {
-		border-color: @inputFocusBorder;
+		border-color: rgba(148,176,223,1);
 		.box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 5px rgba(29,75,159,.6)");
-		color: @inputFocusColor;
+		color: @grayDark;
   }
   +.actionIcon {
   	margin-left: 3px;
   }
 }
 
-.form-search input,.form-search textarea,
-.form-inline textarea, .form-horizontal textarea,
-.form-search select, .form-inline select, .form-horizontal select,
-.form-search .help-inline, .form-inline .help-inline,
-.form-horizontal .help-inline, .form-search .uneditable-input,
-.form-inline .uneditable-input, .form-horizontal .uneditable-input,
-.form-search .input-prepend, .form-inline .input-prepend, .form-horizontal .input-prepend,
+.form-search input,.form-search textarea, 
+.form-inline textarea, .form-horizontal textarea, 
+.form-search select, .form-inline select, .form-horizontal select, 
+.form-search .help-inline, .form-inline .help-inline, 
+.form-horizontal .help-inline, .form-search .uneditable-input, 
+.form-inline .uneditable-input, .form-horizontal .uneditable-input, 
+.form-search .input-prepend, .form-inline .input-prepend, .form-horizontal .input-prepend, 
 .form-search .input-append, .form-inline .input-append, .form-horizontal .input-append {
 	vertical-align: top;
 }
@@ -131,16 +112,16 @@ textarea {
 	position: absolute;
 	top: 0;
 	z-index: 100;
-}
+} 
 
 .uiCheckbox > span {
 	display: inline-block;
 	text-indent: 18px;
 }
-
+	
 .uiCheckbox input[type="checkbox"]:checked + span:after {
-	border-bottom: 2px solid @uiCheckboxCheckedBorder;
-	border-left: 2px solid @uiCheckboxCheckedBorder;
+	border-bottom: 2px solid @blue;
+	border-left: 2px solid @blue;
 	content: "";
 	.size(3px,6px);
   -webkit-transform: skew(45deg, -49deg);
@@ -155,8 +136,8 @@ textarea {
 }
 
 .uiCheckbox input[type="checkbox"] + span:before {
-	background: @uiCheckboxBackground;
-	.border-radius(@borderRadiusSmall);
+	background: @grayDarkWhiteSmoke;
+	.border-radius(@borderRadiusSmall); 
 	.box-shadow(inset 0 1px 2px rgba(0,0,0,.17));
 	.square(12px);
 	top: 4px;
@@ -170,18 +151,18 @@ input[type="radio"] + span {
 }
 
 .uiCheckbox input[type="checkbox"]:disabled + span:after {
-	border-bottom: 2px solid @uiCheckboxCheckedDisabledBorder;
-	border-left: 2px solid @uiCheckboxCheckedDisabledBorder;
+	border-bottom: 2px solid @grayLight;
+	border-left: 2px solid @grayLight; 
 }
 
 input[readonly], select[readonly], textarea[readonly] {
-	background: @formReadOnyBackground;
+	background: @grayLighter;
 	.box-shadow(inset 0 0 0 rgba(0,0,0,0));
-	color: @formReadOnyColor;
+	color: @grayLight;
 }
-
+ 
 input[disabled], select[disabled], textarea[disabled] {
-	background: @inputDisabledBackground;
+	background: @grayMediumWhiteSmoke;
 }
 
 .uiCheckbox input,.uiRadio input {
@@ -189,7 +170,7 @@ input[disabled], select[disabled], textarea[disabled] {
 	padding: 0;
 }
 
-.lt-ie9  .uiCheckbox input[type="checkbox"] + span:before {
+.lt-ie9  .uiCheckbox input[type="checkbox"] + span:before {	
 	background: none;
 	display: none;
 }
@@ -216,27 +197,27 @@ input[disabled], select[disabled], textarea[disabled] {
 	display: inline-block;
 	text-indent: 18px;
 }
-
+	
 .uiRadio input[type="radio"]:checked + span:after {
 	#gradient > .vertical(rgba(0,0,0,0), rgba(0,0,0,0.27));
-	background-color: @uiRadioCheckedColor;
+	background-color: @blue;
 	content: "";
 	.square(8px);
-	.border-radius(50%);
+	.border-radius(50%); 
 	left: 2px;
 	position: absolute;
-	top: 6px;
+	top: 6px;	
 }
 
 //hack ie9
 
-.ie9 .uiRadio input[type="radio"]:checked + span:after {
+.ie9 .uiRadio input[type="radio"]:checked + span:after {	
 	left: 2px;
 }
 
 .uiRadio input[type="radio"] + span:before {
-	background: @uiRadioCheckedBackground;
-	.border-radius(50%);
+	background: @grayDarkWhiteSmoke;
+	.border-radius(50%); 
 	.box-shadow(inset 0 1px 2px rgba(0,0,0,.17));
 	.square(12px);
 	top: 4px;
@@ -250,9 +231,9 @@ input[disabled], select[disabled], textarea[disabled] {
   .uiRadio input[type="radio"] + span:before {
     background: none;
     display: none;
-  }
+  } 
 
-  .uiRadio input[type="radio"]:checked + span:after {
+  .uiRadio input[type="radio"]:checked + span:after {	
     background: none;
     display: none;
   }
@@ -264,11 +245,11 @@ input[disabled], select[disabled], textarea[disabled] {
 }
 
 .uiRadio input[type="radio"]:disabled + span:after {
-	background-color: @uiRadioCheckedDisabledBackground;
+	background-color: @grayLight;
 }
 
 .uiSelectbox {
-	border: 1px solid @inputBorder;
+	border: 1px solid @borderColor;
 	.border-radius(5px);
 	width: 270px;
 	line-height: 20px;
@@ -276,13 +257,13 @@ input[disabled], select[disabled], textarea[disabled] {
 	display: inline-block;
 	vertical-align: middle;
 	background-color: @grayLighter;
-	background-image: url("@{images-path}/Forms/arrow.png"), -moz-linear-gradient(top, @white, @grayWhiteSmoke); // FF 3.6+
-	background-image: url("@{images-path}/Forms/arrow.png"),-webkit-gradient(linear, 0 0, 0 100%, from(@white), to(@grayWhiteSmoke)); // Safari 4+, Chrome 2+
-	background-image: url("@{images-path}/Forms/arrow.png"),-webkit-linear-gradient(top, @white, @grayWhiteSmoke); // Safari 5.1+, Chrome 10+
-	background-image: url("@{images-path}/Forms/arrow.png"),-o-linear-gradient(top, @white, @grayWhiteSmoke); // Opera 11.10
-	background-image: url("@{images-path}/Forms/arrow.png"),linear-gradient(to bottom, @white, @grayWhiteSmoke); // Standard, IE10
+	background-image: url(/eXoResources/skin/images/Forms/arrow.png), -moz-linear-gradient(top, @white, @grayWhiteSmoke); // FF 3.6+
+	background-image: url(/eXoResources/skin/images/Forms/arrow.png),-webkit-gradient(linear, 0 0, 0 100%, from(@white), to(@grayWhiteSmoke)); // Safari 4+, Chrome 2+
+	background-image: url(/eXoResources/skin/images/Forms/arrow.png),-webkit-linear-gradient(top, @white, @grayWhiteSmoke); // Safari 5.1+, Chrome 10+
+	background-image: url(/eXoResources/skin/images/Forms/arrow.png),-o-linear-gradient(top, @white, @grayWhiteSmoke); // Opera 11.10
+	background-image: url(/eXoResources/skin/images/Forms/arrow.png),linear-gradient(to bottom, @white, @grayWhiteSmoke); // Standard, IE10
 	background-repeat: no-repeat, repeat-x;
-	background-position: right top,0 0;
+	background-position: right top,0 0;  
 }
 
 .uiSelectbox:hover, .uiSelectbox:focus {
@@ -295,8 +276,8 @@ input[disabled], select[disabled], textarea[disabled] {
 	.box-shadow(0 0 0 transparent inset);
 	.box-sizing(border-box);
 	.size(26px,270px);
-	-webkit-appearance: none;
-	line-height: 18px;
+	-webkit-appearance: none; 
+	line-height: 18px;	
 	outline: none;
 	padding: 3px 6px;
 }
@@ -308,7 +289,7 @@ input[disabled], select[disabled], textarea[disabled] {
 		.selectbox {
 			width: 84px;
 		}
-	}
+	}	
 }
 
 .selectboxSmall  {
@@ -318,8 +299,8 @@ input[disabled], select[disabled], textarea[disabled] {
 		.selectbox {
 			width: 100px;
 		}
-	}
-}
+	}	
+}  
 .selectboxMedium  {
 	.uiSelectbox {
 		width: 178px;
@@ -327,8 +308,8 @@ input[disabled], select[disabled], textarea[disabled] {
 		.selectbox {
 			width: 178px;
 		}
-	}
-}
+	}	
+}  
 
 .uiSelectbox select.selectbox option {
 	padding: 7px;
@@ -376,7 +357,7 @@ input[disabled], select[disabled], textarea[disabled] {
 	.selectFileFrame,.progressBarFrame,.progressBarFrame{
 		margin: 0;
 	}
-	.selectFileFrame {
+	.selectFileFrame {		
 		line-height: 29px;
 	}
 }

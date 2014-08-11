@@ -6,17 +6,17 @@
 
 .breadcrumb {
 	background: none;
-	margin: 0;
-	padding: 0;
-
+	margin: 0px;
+	padding: 0px;
+	
 	a {
-		color: @breadcrumb-color;
+		color: @grayDark;
 		display: block;
 		.text-overflow;
 		max-width: 140px;
 		float: left;
 		&:hover {
-			color: @breadcrumb-hover-color;
+			color: @blue;
 			text-decoration: none !important;
 		}
 	}
@@ -28,13 +28,13 @@
 	li {
 		vertical-align: middle;
 	}
-
+	
 	.active {
 		font-weight: bold;
 		.text-overflow;
 		max-width: 140px;
 		> a {
-			color: @breadcrumb-active-color;
+			color: @grayLight;
 		}
 	}
 }
