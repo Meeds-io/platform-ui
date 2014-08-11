@@ -10,7 +10,7 @@
 		border: 1px dashed @borderColor;
 		padding: 2px;
 	}
-	
+
 	.OverContainerBlock {
 		border: 1px solid @blueLight;
 		background: @white;
@@ -19,13 +19,13 @@
 		.border-radius(5px);
 		border-top-left-radius: 2px;
 	}
-	
+
 	.EdittingContainer .UIRowContainer {
 		min-height: 100px;
 	}
 	.DragAndDropPreview {
 		width: auto; height: 80px;
-		background: url('/eXoResources/skin/images/Container/DragAndDropPreview4x4.gif');
+		background: url('@{images-path}/Container/DragAndDropPreview4x4.gif');
 		border: 1px solid @borderColor;
 		margin: 0px 12px 10px 12px;
 	}
@@ -37,7 +37,7 @@
 	}
 	.EDITION-BLOCK {
 		.CONTROL-BLOCK {
-	    background: @blueLight;	 
+	    background: @blueLight;
 	    border-bottom-left-radius: 5px;
 	    border-bottom-right-radius: 5px;
 	    color: @white;
@@ -81,21 +81,21 @@
 			background: none;
 		}
 	}
-	
+
 	.uiTabContainer {
 
 		.tab-pane {
 			padding: 2px;
 		}
 	}
-	
-/***************************** Portlet *************************************/		
+
+/***************************** Portlet *************************************/
 	.UIPortlet {
-	
+
 		.LAYOUT-PORTLET {
 			padding: 4px;
 		}
-		
+
 		.portletLayoutDecorator {
 			background: @white;
 			border: 1px solid @borderColor;
@@ -105,7 +105,7 @@
 			padding: 5px 10px;
 			text-align: center;
 		}
-		
+
 		.portletLayoutDecoratorHover {
 			background: @grayLighter;
 			border: 1px solid @blueLighter;
@@ -113,15 +113,15 @@
 			border-top-left-radius: 0px;
 			min-height: 85px;
 			padding: 5px 10px;
-			text-align: center;			
-		}	
-		
+			text-align: center;
+		}
+
 	}
 
-/**************************** uiContainerList *******************************/	
+/**************************** uiContainerList *******************************/
 	.uiContainerList {
 		[class*="ContainerLayout"] {
-			background: url("/eXoResources/skin/images/Container/Container.png") no-repeat center;
+			background: url("@{images-path}/Container/Container.png") no-repeat center;
 			padding-left: 95px;
 			font-weight:bold;
 			margin-top: 3px;
@@ -177,10 +177,10 @@
 	}
 
 /************************ UIPageBody ***************************/
-	
+
 	.UIPageBody {
 		.pageLayoutDecorator {
-			background: url(/eXoResources/skin/images/Container/PortalTexture.png) repeat center;
+			background: url("@{images-path}/Container/PortalTexture.png") repeat center;
 			min-height: 140px;
 			border: 1px solid @blueLighter;
 			.box-shadow(0 2px 1px rgab(35,44,48,0.3));
@@ -207,7 +207,7 @@
 			}
 		}
 	}
-	
+
 }
 
 /***************UIPortletForm******************/
