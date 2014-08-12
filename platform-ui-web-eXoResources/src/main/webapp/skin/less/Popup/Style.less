@@ -1,14 +1,16 @@
-
+//
+// Popup
+// --------------------------------------------------
 .uiPopup {
-	border: 1px solid @borderColor;
-	background: white;
+	border: 1px solid @uiPopup-border;
+	background: @uiPopup-background;
 	.box-shadow(0 2px 3px rgba(0,0,0,0.25));
 	.border-radius(4px);
 	position: absolute;
 	.popupHeader {
-		background-color: @grayWhiteSmoke;
+		background-color: @uiPopupHeader-background;
 		.box-shadow(inset 0 -1px 0 @grayDarkWhiteSmoke);
-		border-bottom: 1px solid @grayWhiteSmoke;
+		border-bottom: 1px solid @uiPopupHeader-border;
 		.border-radius(4px 4px 0 0 );
 		padding: 0px 9px 0 15px;
 		font-size: 14px;
@@ -20,7 +22,7 @@
 		.popupTitle {
 			margin: 0;
 			line-height:35px;
-			color: @textColor;
+			color: @uiPopupTitle-color;
 			display: block;
 			cursor: move;
 			font-size: 14px;
@@ -32,7 +34,7 @@
 		overflow: auto;
 		padding: 10px;
 		width: auto;
-		background: @white;
+		background: @uiPopupContent-background;
 		.border-radius(0 0 4px 4px);
 		.resizable {
 			padding: 10px;
@@ -63,7 +65,7 @@
 			padding-left: 20px;
 			line-height: 16px;
 			height: 16px;
-			color: @textColor;
+			color: @popupMessage-color;
 			font-weight: bold;
 		}
 
@@ -98,8 +100,8 @@
 	}
 
 	.popupContent .multipleMessage {
-		background: @grayLighter;
-		border: 1px solid @borderColor;
+		background: @multipleMessage-background;
+		border: 1px solid @multipleMessage-border;
 		margin: 0;
 	}
 
