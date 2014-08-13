@@ -1,12 +1,14 @@
+//
+// Porlet - Site Navigation Portlet
+// --------------------------------------------------
 .UIWindow .UIApplication {
 	overflow: auto;
 }
 
-/*-------------------------- DefaultTheme ---------------------------*/
-
+/*---------- DefaultTheme ----------*/
 .DefaultTheme {
 	.border-radius(3px);
-	background: white;
+	background: @white;
 	border: 1px solid @borderColor;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -51,7 +53,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: white;
+			background: @white;
 		}
 	}
 	.middleDecorator {
@@ -72,11 +74,11 @@
 	}
 }
 
-/*-------------------------- MacGray ---------------------------*/
+/*---------- MacGray -----------*/
 
 .MacGray {
 	.border-radius(3px);
-	background: white;
+	background: @white;
 	border: 1px solid #9b9b9b;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -154,11 +156,11 @@
 }
 
 
-/*-------------------------- MacTheme ---------------------------*/
+/*---------- MacTheme ----------*/
 
 .MacTheme {
 	.border-radius(3px);
-	background: white;
+	background: @white;
 	border: 1px solid #b5b5b5;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -235,11 +237,11 @@
 	}
 }
 
-/*-------------------------- MacBlueSteel ---------------------------*/
+/*---------- MacBlueSteel ----------*/
 
 .MacBlueSteel {
 	.border-radius(3px);
-	background: white;
+	background: @white;
 	border: 1px solid #617c99;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -316,11 +318,11 @@
 	}
 }
 
-/*-------------------------- SimplePink ---------------------------*/
+/*---------- SimplePink ----------*/
 
 .SimplePink {
 	.border-radius(3px);
-	background: white;
+	background: @white;
 	border: 1px solid #e3acdc;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -365,7 +367,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: white;
+			background: @white;
 		}
 	}
 	.middleDecorator {
@@ -387,11 +389,11 @@
 }
 
 
-/*-------------------------- SimpleGreen ---------------------------*/
+/*---------- SimpleGreen ----------*/
 
 .SimpleGreen {
 	.border-radius(3px);
-	background: white;
+	background: @white;
 	border: 1px solid #629535;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -436,7 +438,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: white;
+			background: @white;
 		}
 	}
 	.middleDecorator {
@@ -457,11 +459,11 @@
 	}
 }
 
-/*-------------------------- SimpleOrange ---------------------------*/
+/*---------- SimpleOrange ----------*/
 
 .SimpleOrange {
 	.border-radius(3px);
-	background: white;
+	background: @white;
 	border: 1px solid #dc9600;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -506,7 +508,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: white;
+			background: @white;
 		}
 	}
 	.middleDecorator {
@@ -528,11 +530,11 @@
 }
 
 
-/*-------------------------- SimpleViolet ---------------------------*/
+/*---------- SimpleViolet ----------*/
 
 .SimpleViolet {
 	.border-radius(3px);
-	background: white;
+	background: @white;
 	border: 1px solid #ba80ec;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -577,7 +579,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: white;
+			background: @white;
 		}
 	}
 	.middleDecorator {
@@ -598,11 +600,11 @@
 	}
 }
 
-/*-------------------------- SimpleBlue ---------------------------*/
+/*---------- SimpleBlue ----------*/
 
 .SimpleBlue {
 	.border-radius(3px);
-	background: white;
+	background: @white;
 	border: 1px solid #87c4f3;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -647,7 +649,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: white;
+			background: @white;
 		}
 	}
 	.middleDecorator {
@@ -668,14 +670,14 @@
 	}
 }
 
-/*-------------------------- RoundConerPink ---------------------------*/
+/*---------- RoundConerPink ----------*/
 
 .RoundConerPink {
 	border-top-left-radius: 6px;
 	border-top-right-radius: 6px;
 	border-bottom-left-radius: 3px;
 	border-bottom-right-radius: 3px;
-	background: white;
+	background: @white;
 	border: 1px solid #e3acdc;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -720,7 +722,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: white;
+			background: @white;
 		}
 	}
 	.middleDecorator {
@@ -742,14 +744,14 @@
 }
 
 
-/*-------------------------- SimpleGreen ---------------------------*/
+/*---------- SimpleGreen ----------*/
 
 .RoundConerGreen {
 	border-top-left-radius: 6px;
 	border-top-right-radius: 6px;
 	border-bottom-left-radius: 3px;
 	border-bottom-right-radius: 3px;
-	background: white;
+	background: @white;
 	border: 1px solid #629535;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -794,7 +796,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: white;
+			background: @white;
 		}
 	}
 	.middleDecorator {
@@ -815,14 +817,14 @@
 	}
 }
 
-/*-------------------------- SimpleOrange ---------------------------*/
+/*---------- SimpleOrange ----------*/
 
 .RoundConerOrange {
 	border-top-left-radius: 6px;
 	border-top-right-radius: 6px;
 	border-bottom-left-radius: 3px;
 	border-bottom-right-radius: 3px;
-	background: white;
+	background: @white;
 	border: 1px solid #dc9600;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -867,7 +869,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: white;
+			background: @white;
 		}
 	}
 	.middleDecorator {
@@ -889,14 +891,14 @@
 }
 
 
-/*-------------------------- SimpleViolet ---------------------------*/
+/*---------- SimpleViolet ----------*/
 
 .RoundConerViolet {
 	border-top-left-radius: 6px;
 	border-top-right-radius: 6px;
 	border-bottom-left-radius: 3px;
 	border-bottom-right-radius: 3px;
-	background: white;
+	background: @white;
 	border: 1px solid #ba80ec;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -941,7 +943,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: white;
+			background: @white;
 		}
 	}
 	.middleDecorator {
@@ -962,14 +964,14 @@
 	}
 }
 
-/*-------------------------- SimpleBlue ---------------------------*/
+/*---------- SimpleBlue ----------*/
 
 .RoundConerBlue {
 	border-top-left-radius: 6px;
 	border-top-right-radius: 6px;
 	border-bottom-left-radius: 3px;
 	border-bottom-right-radius: 3px;
-	background: white;
+	background: @white;
 	border: 1px solid #87c4f3;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -1014,7 +1016,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: white;
+			background: @white;
 		}
 	}
 	.middleDecorator {
@@ -1036,11 +1038,11 @@
 }
 
 
-/*-------------------------- ShadowPink ---------------------------*/
+/*---------- ShadowPink ----------*/
 
 .ShadowPink {
 	.border-radius(3px);
-	background: white;
+	background: @white;
 	border: 1px solid #e3acdc;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -1086,7 +1088,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: white;
+			background: @white;
 		}
 	}
 	.middleDecorator {
@@ -1108,11 +1110,11 @@
 }
 
 
-/*-------------------------- ShadowGreen ---------------------------*/
+/*---------- ShadowGreen ----------*/
 
 .ShadowGreen {
 	.border-radius(3px);
-	background: white;
+	background: @white;
 	border: 1px solid #629535;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -1158,7 +1160,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: white;
+			background: @white;
 		}
 	}
 	.middleDecorator {
@@ -1179,11 +1181,11 @@
 	}
 }
 
-/*-------------------------- ShadowOrange ---------------------------*/
+/*---------- ShadowOrange ----------*/
 
 .ShadowOrange {
 	.border-radius(3px);
-	background: white;
+	background: @white;
 	border: 1px solid #dc9600;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -1229,7 +1231,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: white;
+			background: @white;
 		}
 	}
 	.middleDecorator {
@@ -1251,11 +1253,11 @@
 }
 
 
-/*-------------------------- ShadowViolet ---------------------------*/
+/*---------- ShadowViolet ----------*/
 
 .ShadowViolet {
 	.border-radius(3px);
-	background: white;
+	background: @white;
 	border: 1px solid #ba80ec;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -1301,7 +1303,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: white;
+			background: @white;
 		}
 	}
 	.middleDecorator {
@@ -1322,11 +1324,11 @@
 	}
 }
 
-/*-------------------------- ShadowBlue ---------------------------*/
+/*---------- ShadowBlue ----------*/
 
 .ShadowBlue {
 	.border-radius(3px);
-	background: white;
+	background: @white;
 	border: 1px solid #87c4f3;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -1372,7 +1374,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: white;
+			background: @white;
 		}
 	}
 	.middleDecorator {
@@ -1393,11 +1395,11 @@
 	}
 }
 
-/*-------------------------- VistaTheme ---------------------------*/
+/*---------- VistaTheme ----------*/
 
 .VistaTheme {
 	.border-radius(3px);
-	background: white;
+	background: @white;
 	border: 1px solid #676767;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
