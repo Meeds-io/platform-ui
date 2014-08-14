@@ -1,9 +1,12 @@
-.tooltip {	
+//
+// Tooltip
+// --------------------------------------------------
+.tooltip {
 	font-size: @baseFontSize - 1 !important;
 	text-shadow: none!important;
 	font-weight: normal!important;
 	&.in{
-		.opacity(80); 
+		.opacity(80);
 	}
 }
 
@@ -18,15 +21,15 @@
 	&.top .tooltip-arrow {
 		border-top-color: @tooltipArrowColor;
 	}
-	
+
 	&.left .tooltip-arrow {
 		border-left-color: @tooltipArrowColor;
 	}
-	
+
 	&.right .tooltip-arrow {
 		border-right-color: @tooltipArrowColor;
 	}
-	
+
 	&.bottom .tooltip-arrow {
 		border-bottom-color: @tooltipArrowColor;
 	}
