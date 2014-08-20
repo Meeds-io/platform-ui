@@ -27,8 +27,8 @@
 		  text-align: center;
 		  vertical-align: middle;
 		  cursor: pointer;
-		  .buttonBackground(@blueLight, @blue);
-		  border: 1px solid @blueDark;
+		  .buttonBackground(@primaryLightColor, @primaryColor);
+		  border: 1px solid @primaryDarkColor;
 		  *border: 0; // Remove the border to prevent IE7's black border on input:focus
 		  .border-radius(@baseBorderRadius);
 		  .ie7-restore-left-whitespace(); // Give IE7 some love
@@ -36,9 +36,9 @@
 
 		  // Hover state
 		  &:hover {
-		    color: @grayDark;
+		    color: @primaryDarkColor;
 		    text-decoration: none;
-		   .buttonBackground(@blueLight, @blue);
+		   .buttonBackground(@primaryLightColor, @primaryColor);
 		    background-position: 0 -15px;
 
 		    // transition is only when going to hover, otherwise the background
@@ -171,7 +171,7 @@
 				.buttonBackground(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
 				border-color: @btnPrimaryBorder;
 				&:hover {
-					.buttonBackground(@blueLight, @btnPrimaryBackgroundHighlight);
+					.buttonBackground(@primaryLightColor, @btnPrimaryBackgroundHighlight);
 				}
 				font-family: @sansBoldFontFamily;
 				font-weight: bold;
