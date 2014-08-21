@@ -10,12 +10,6 @@
 @gray:					lighten(@black, 50%);	// #808080 Navigation text color, special purpose in use
 @grayLight:				lighten(@black, 60%);	// #999999 Default gray color for small text, sub title, text field explanation
 
-// Remove on Future
-@grayDarkWhiteSmoke:	lighten(@black, 80%); 	// #cccccc Pop up, tab... border, line...
-@grayMediumWhiteSmoke:	lighten(@black, 90%); 	// #e6e6e6 Hover/press background in table, content background in special cases
-@grayWhiteSmoke:		lighten(@black, 94%); 	// #f0f0f0 Pop up, table, main header background
-@grayLighter:			lighten(@black, 97%); 	// #f7f7f7 - Old Color: #f8f8f8 Table row background, content background
-
 // Primary Color
 // -------------------------
 @primaryColor:			#2f5e92;
@@ -23,30 +17,16 @@
 @primaryLightColor:		lighten(@primaryColor, 18.5%);	// #578dc9 - Old Color: #567AB6
 @primaryLighterColor:	lighten(@primaryColor, 22%); 	// #6496cd - Old Color: #638acd
 
-// Blues 	Remove Bule Colors after replace width new variables is @primary-color...
-// -------------------------
-@blue:					#2f5e92;				// Blue Primary
-@blueDark:				darken(@blue, 10.5%);	// #224469 - Old Color: #224886
-@blueLight:				lighten(@blue, 18.5%);	// #578dc9 - Old Color: #567AB6
-@blueLighter:			lighten(@blue, 22%); 	// #6496cd - Old Color: #638acd
-
 // Accent colors
 // -------------------------
 @green:                 #39C522;				// Green Primary
 @greenLight:			lighten(@green, 47%);	// #E1F9DD Old Color: #e6fade;
 
-// Maybe Remove on future because not use
-@red:                   #C72222;				// Red Primary
-@orange:                #EDAD00;				// Orange Primary
-@orangeLight:			#FCF4D4;
-@pink:                  #F7B5B5;				// Pink Primary
-
-
 // Scaffolding
 // -------------------------
 @bodyBackground:        @white;
 @textColor:             @grayDark;				// #333333
-@borderColor:           @grayDarkWhiteSmoke;	// #cccccc
+@borderColor:           #cccccc;
 
 // Links
 // -------------------------
@@ -98,10 +78,10 @@
 @inputHeight:                   	@baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
 
 @uiCheckboxCheckedBorder: 			@primaryColor;
-@uiCheckboxBackground: 				@grayDarkWhiteSmoke;
+@uiCheckboxBackground: 				@borderColor;
 
 @uiRadioCheckedColor: 				@primaryColor;
-@uiRadioCheckedBackground: 			@grayDarkWhiteSmoke;
+@uiRadioCheckedBackground: 			@borderColor;
 @uiRadioCheckedDisabledBackground: 	@grayLight;
 
 @uiCheckboxCheckedDisabledBorder:   @grayLight;
@@ -386,3 +366,23 @@
 @tabContainer-link-color:  				@white;
 @tabContainer-active-link-bg:  			@primaryLightColor;
 @tabContainer-active-link-color:  		@white;
+
+
+// Remove in future
+// -------------------------
+@red:                   #C72222;				// Red Primary
+@orange:                #EDAD00;				// Orange Primary
+@orangeLight:			#FCF4D4;
+@pink:                  #F7B5B5;				// Pink Primary
+
+@grayDarkWhiteSmoke:	lighten(@black, 80%); 	// #cccccc Pop up, tab... border, line...
+@grayMediumWhiteSmoke:	lighten(@black, 90%); 	// #e6e6e6 Hover/press background in table, content background in special cases
+@grayWhiteSmoke:		lighten(@black, 94%); 	// #f0f0f0 Pop up, table, mainheader background
+@grayLighter:			lighten(@black, 97%); 	// #f7f7f7 - Old Color: #f8f8f8  Table row background, content background
+
+// Blues 	Remove Bule Colors after replace width new variables is @primary-color...
+// -------------------------
+@blue:					#2f5e92;				// Blue Primary
+@blueDark:				darken(@blue, 10.5%);	// #224469 - Old Color: #224886
+@blueLight:				lighten(@blue, 18.5%);	// #578dc9 - Old Color: #567AB6
+@blueLighter:			lighten(@blue, 22%); 	// #6496cd - Old Color: #638acd
