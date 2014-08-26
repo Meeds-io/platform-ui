@@ -33,7 +33,7 @@
 
 		> li > a:hover {
 			border: 1px solid @borderColor;
-			background-color: @grayLighter;
+			background-color: @componentBackgroundLight;
 		}
 
 		> .active > a,> .active > a:hover {
@@ -53,7 +53,7 @@
 			}
 
 			> a:hover, > a:active {
-				#gradient > .vertical(@white, @grayWhiteSmoke);
+				#gradient > .vertical(@white, @componentBackground);
 				border: 1px solid @borderColor;
 				.border-radius(@borderRadiusSmall);
 				padding: 5px 10px;
@@ -113,7 +113,7 @@
 .uiTabInPage {
 	.nav-tabs {
 		margin: 0px;
-		background-color: @grayMediumWhiteSmoke;
+		background-color: @componentBackgroundHover;
 		border: 1px solid @borderColor;
 		padding: 5px 5px 0px 5px;
 		.border-radius(@borderRadiusSmall @borderRadiusSmall 0 0);
@@ -130,7 +130,7 @@
 
 		> .active > a,> .active > a:hover {
 			#gradient .vertical-three-colors(@tabGrayInPage-active-link-start-bg, @tabGrayInPage-active-link-middle-bg, 56%, @tabGrayInPage-active-link-end-bg);
-			border-bottom: 1px solid @grayWhiteSmoke;
+			border-bottom: 1px solid @componentBackground;
 		}
 	}
 

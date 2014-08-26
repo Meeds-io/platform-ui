@@ -23,7 +23,7 @@
 	  	margin-top: 2px;
 	  }
 	  &:hover {
-		  background-color: @grayLighter;
+		  background-color: @componentBackgroundLight;
 		  .border-radius(@borderRadiusSmall);
 		}
 	}
@@ -36,18 +36,18 @@
 	  }
 	}
 	.accordion-group  + .accordion-group {
-	  border-top: 1px solid @grayMediumWhiteSmoke;
+	  border-top: 1px solid @componentBackgroundHover;
 	}
 	.menuHeader {
 	  margin: 0px;
 	  padding: 7px 4px 7px 18px;
-	  background: @grayWhiteSmoke;
+	  background: @componentBackground;
 	  border-bottom: 1px solid @borderColor;
 	   .border-radius(@baseBorderRadius @baseBorderRadius 0 0);
 	}
 	.accordion-body {
 		.selected {
-			  background-color: @grayMediumWhiteSmoke;
+			  background-color: @componentBackgroundHover;
 		}
 		.functionItem{
 			display: block;
@@ -55,12 +55,12 @@
 			font-size: @baseFontSize - 1;
 			i {margin: -2px 7px 0 0;}
 			&:hover{
-				background: @grayLighter;
+				background: @componentBackgroundLight;
 			}
 		}
 	}
 	.expaned {
-	  #gradient > .vertical(@grayLighter, @grayMediumWhiteSmoke);
+	  #gradient > .vertical(@componentBackgroundLight, @componentBackgroundHover);
 	  border-bottom: 1px solid @borderColor;
 	  .border-radius(@borderRadiusSmall @borderRadiusSmall 0 0);
 	  .bgSelected {
@@ -88,7 +88,7 @@
 	.accordion-inner{
 	  border: none;
 	  &:hover {
-		  background-color: @grayLighter;
+		  background-color: @componentBackgroundLight;
 		}
 	}
 	.accordion-normal {
@@ -121,23 +121,23 @@
 
 .verticalTabStyle1 {
 	.collapsed{
-		background: @grayWhiteSmoke;
+		background: @componentBackground;
 	}
 	.accordion-toggle a {
 		padding: 5px 15px;
 	}
 
 	.expaned {
-		#gradient > .vertical(@grayLighter, @grayWhiteSmoke);
+		#gradient > .vertical(@componentBackgroundLight, @componentBackground);
 	}
 
 	.accordion-inner {
-		border: 1px solid @grayMediumWhiteSmoke;
+		border: 1px solid @componentBackgroundHover;
 		.border-radius(@baseBorderRadius);
 		padding: 5px;
 		margin: 8px;
 		&:hover {
-			background: @grayLighter;
+			background: @componentBackgroundLight;
 			border: 1px solid @borderColor;
 		}
 	}

@@ -26,7 +26,7 @@
 // -------------------------
 @bodyBackground:        @white;
 @textColor:             @grayDark;				// #333333
-@borderColor:           #cccccc;
+@borderColor:           lighten(@black, 80%);	// #cccccc
 
 // Links
 // -------------------------
@@ -43,19 +43,23 @@
 @gutterSizeLarge: 			15px;
 @gutterSizeSmall: 			5px;
 
+@componentBackgroundHover:	lighten(@black, 90%); 	// @grayMediumWhiteSmoke - #e6e6e6
+@componentBackground:		lighten(@black, 94%); 	// @grayWhiteSmoke - #f0f0f0
+@componentBackgroundLight:	lighten(@black, 97%); 	// @grayLighter - #f7f7f7
+
 // Tables
 // -------------------------
 
-@tableBackground:                   transparent; 			// overall background-color
-@tableBackgroundAccent:             @grayLighter; 			// for striping
-@tableBackgroundHover:              @grayMediumWhiteSmoke; 	// for hover
-@tableBorder:                       @borderColor; 			// table and cell border
+@tableBackground:                   transparent; 				// overall background-color
+@tableBackgroundAccent:             @componentBackgroundLight; 	// for striping
+@tableBackgroundHover:              @componentBackgroundHover; 	// for hover
+@tableBorder:                       @borderColor; 				// table and cell border
 
 
 // Buttons
 // -------------------------
 @btnBackground:                     @white;
-@btnBackgroundHighlight:            @grayWhiteSmoke;
+@btnBackgroundHighlight:            @componentBackground;
 @btnBorder:                         @borderColor;
 
 @btnPrimaryBackground:              @primaryLighterColor;
@@ -69,8 +73,8 @@
 @inputBackground:               	@white;
 @inputBorder:                   	@borderColor;
 @inputBorderRadius:             	@baseBorderRadius;
-@inputDisabledBackground:       	@grayMediumWhiteSmoke;
-@formActionsBackground:         	@grayWhiteSmoke;
+@inputDisabledBackground:       	@componentBackgroundHover;
+@formActionsBackground:         	@componentBackground;
 
 @inputFocusColor:               	@inputColor;
 @inputFocusBorder:              	rgba(148,176,223,1);
@@ -85,7 +89,7 @@
 @uiRadioCheckedDisabledBackground: 	@grayLight;
 
 @uiCheckboxCheckedDisabledBorder:   @grayLight;
-@formReadOnyBackground: 			@grayLighter;
+@formReadOnyBackground: 			@componentBackgroundLight;
 @formReadOnyColor: 					@grayLight;
 
 
@@ -118,9 +122,9 @@
 // -------------------------
 // Based on 14px font-size and 20px line-height
 
-@fontSizeLarge:         @baseFontSize * 1.25;
-@fontSizeSmall:         @baseFontSize * 0.85;
-@fontSizeMini:          @baseFontSize * 0.75;
+@fontSizeLarge:         @baseFontSize * 1.25;	// ~ 16px
+@fontSizeSmall:         @baseFontSize * 0.85;	// ~ 11px
+@fontSizeMini:          @baseFontSize * 0.75;	// ~ 9px
 
 @baseBorderRadius:      4px;
 @borderRadiusLarge:     6px;
@@ -149,7 +153,7 @@
 
 // Hr border color
 // -------------------------
-@hrBorder:                @grayLighter;
+@hrBorder:                @componentBackgroundLight;
 
 
 // Horizontal forms & lists
@@ -210,7 +214,7 @@
 
 // Hero unit
 // -------------------------
-@heroUnitBackground:      @grayLighter;
+@heroUnitBackground:      @componentBackgroundLight;
 @heroUnitHeadingColor:    inherit;
 @heroUnitLeadColor:       inherit;
 
@@ -294,7 +298,7 @@
 @calComponent-width-title-color: 		@textColor;
 @calComponent-day-color: 				@textColor;
 @calComponent-other-month-color:   		@grayLight;
-@calComponent-day-hover-bg: 			@grayWhiteSmoke;
+@calComponent-day-hover-bg: 			@componentBackground;
 
 @calComponent-day-selected-bg: 			@primaryColor;
 @calComponent-day-selected-color: 		@white;
@@ -302,10 +306,10 @@
 @calComponent-day-today-bg: 			@primaryColor;
 @calComponent-day-today-color: 			@white;
 
-@calComponent-currentWeek-bg: 			@grayWhiteSmoke;
+@calComponent-currentWeek-bg: 			@componentBackground;
 @calComponent-currentWeek-border: 		@borderColor;
 
-@calComponent-timeInput-box-bg: 		@grayWhiteSmoke;
+@calComponent-timeInput-box-bg: 		@componentBackground;
 
 @calComponent-timeInput-color: 			@textColor;
 @calComponent-timeInput-bg: 			@white;
@@ -322,21 +326,21 @@
 @uiPopup-background: 					@white;
 @uiPopup-border: 						@borderColor;
 
-@uiPopupHeader-background: 				@grayWhiteSmoke;
-@uiPopupHeader-border: 					@grayWhiteSmoke;
+@uiPopupHeader-background: 				@componentBackground;
+@uiPopupHeader-border: 					@componentBackground;
 @uiPopupTitle-color: 					@textColor;
 @uiPopupContent-background: 			@white;
 
 @popupMessage-color: 					@textColor;
 
-@multipleMessage-background: 			@grayLighter;
+@multipleMessage-background: 			@componentBackgroundLight;
 @multipleMessage-border: 				@borderColor;
 
 // Tabs Normal
 // -------------------------
 @tabNormal-link-color: 					@textColor;
 @tabNormal-link-border: 				@borderColor;
-@tabNormal-link-bg: 					@grayWhiteSmoke;
+@tabNormal-link-bg: 					@componentBackground;
 
 @tabNormal-active-link-border: 			@borderColor;
 @tabNormal-active-link-bg: 				@white;
@@ -346,16 +350,16 @@
 
 // Tabs GrayInPage
 // -------------------------
-@tabGrayInPage-nav-bg: 					@grayMediumWhiteSmoke;
+@tabGrayInPage-nav-bg: 					@componentBackgroundHover;
 @tabGrayInPage-nav-border: 				@borderColor;
 @tabGrayInPage-active-link-start-bg: 	@white;
-@tabGrayInPage-active-link-middle-bg: 	@grayWhiteSmoke;
+@tabGrayInPage-active-link-middle-bg: 	@componentBackground;
 @tabGrayInPage-active-link-end-bg: 		@tabGrayInPage-active-link-middle-bg;
-@tabGrayInPage-content-bg: 				@grayWhiteSmoke;
+@tabGrayInPage-content-bg: 				@componentBackground;
 
 @tabGrayInPage-link-color: 				@textColor;
-@tabGrayInPage-link-border: 			@grayWhiteSmoke;
-@tabGrayInPage-hover-link-color: 		@grayWhiteSmoke;
+@tabGrayInPage-link-border: 			@componentBackground;
+@tabGrayInPage-hover-link-color: 		@componentBackground;
 @tabGrayInPage-hover-link-border: 		@borderColor;
 @tabGrayInPage-caret-color: 			@gray;
 @tabGrayInPage-hover-caret-color: 		@primaryLightColor;
@@ -367,7 +371,6 @@
 @tabContainer-active-link-bg:  			@primaryLightColor;
 @tabContainer-active-link-color:  		@white;
 
-
 // Remove in future
 // -------------------------
 @red:                   #C72222;				// Red Primary
@@ -378,7 +381,7 @@
 @grayDarkWhiteSmoke:	lighten(@black, 80%); 	// #cccccc Pop up, tab... border, line...
 @grayMediumWhiteSmoke:	lighten(@black, 90%); 	// #e6e6e6 Hover/press background in table, content background in special cases
 @grayWhiteSmoke:		lighten(@black, 94%); 	// #f0f0f0 Pop up, table, mainheader background
-@grayLighter:			lighten(@black, 97%); 	// #f7f7f7 - Old Color: #f8f8f8  Table row background, content background
+@grayLighter :			lighten(@black, 97%); 	// #f7f7f7 - Old Color: #f8f8f8  Table row background, content background
 
 // Blues 	Remove Bule Colors after replace width new variables is @primary-color...
 // -------------------------

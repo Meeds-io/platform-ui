@@ -278,12 +278,12 @@ input[disabled], select[disabled], textarea[disabled] {
 	overflow: hidden;
 	display: inline-block;
 	vertical-align: middle;
-	background-color: @grayLighter;
-	background-image: url("@{images-path}/Forms/arrow.png"), -moz-linear-gradient(top, @white, @grayWhiteSmoke); // FF 3.6+
-	background-image: url("@{images-path}/Forms/arrow.png"),-webkit-gradient(linear, 0 0, 0 100%, from(@white), to(@grayWhiteSmoke)); // Safari 4+, Chrome 2+
-	background-image: url("@{images-path}/Forms/arrow.png"),-webkit-linear-gradient(top, @white, @grayWhiteSmoke); // Safari 5.1+, Chrome 10+
-	background-image: url("@{images-path}/Forms/arrow.png"),-o-linear-gradient(top, @white, @grayWhiteSmoke); // Opera 11.10
-	background-image: url("@{images-path}/Forms/arrow.png"),linear-gradient(to bottom, @white, @grayWhiteSmoke); // Standard, IE10
+	background-color: @componentBackgroundLight;
+	background-image: url("@{images-path}/Forms/arrow.png"), -moz-linear-gradient(top, @white, @componentBackground); // FF 3.6+
+	background-image: url("@{images-path}/Forms/arrow.png"),-webkit-gradient(linear, 0 0, 0 100%, from(@white), to(@componentBackground)); // Safari 4+, Chrome 2+
+	background-image: url("@{images-path}/Forms/arrow.png"),-webkit-linear-gradient(top, @white, @componentBackground); // Safari 5.1+, Chrome 10+
+	background-image: url("@{images-path}/Forms/arrow.png"),-o-linear-gradient(top, @white, @componentBackground); // Opera 11.10
+	background-image: url("@{images-path}/Forms/arrow.png"),linear-gradient(to bottom, @white, @componentBackground); // Standard, IE10
 	background-repeat: no-repeat, repeat-x;
 	background-position: right top,0 0;
 }

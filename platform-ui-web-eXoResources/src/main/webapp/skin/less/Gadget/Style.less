@@ -129,7 +129,7 @@
 		margin: 0 2% 0;
 		input[type="button"] {
 			font-size: @baseFontSize;
-			.buttonBackground(@btnBackground, @btnBackgroundHighlight, @grayDark, 0 1px 1px rgba(255,255,255,.75));
+			.buttonBackground(@btnBackground, @btnBackgroundHighlight, @textColor, 0 1px 1px rgba(255,255,255,.75));
 			border: 1px solid @btnBorder;
 			margin-bottom: 0;
 		    padding: 4px 12px;
@@ -143,8 +143,8 @@
 
 		  // Hover state
 		  &:hover {
-			#gradient > .vertical(@grayMediumWhiteSmoke, @btnBackgroundHighlight);
-			/*.buttonBackground(@grayMediumWhiteSmoke, @btnBackgroundHighlight, @grayDark, 0 1px 1px rgba(255,255,255,.75));*/
+			#gradient > .vertical(@componentBackgroundHover, @btnBackgroundHighlight);
+			/*.buttonBackground(@componentBackgroundHover, @btnBackgroundHighlight, @grayDark, 0 1px 1px rgba(255,255,255,.75));*/
 		  }
 
 
