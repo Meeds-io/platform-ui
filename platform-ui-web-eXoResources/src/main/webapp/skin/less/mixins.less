@@ -784,11 +784,11 @@
 .uiBox() {
   .border-radius(@baseBorderRadius);
   .box-shadow(0px 2px 4px -1px rgba(35,44,48,0.18));
-  border: 1px solid @borderColor;
-  background: @white;
+  border: 1px solid @uiBoxBorder;
+  background: @uiBoxBg;
   margin: 0 0 @baseLineHeight 0;
   .title {
-    background-color:  @componentBackground;
+    background-color:  @uiBoxHeadBg;
     border-bottom: 1px solid @borderColor;
     .box-shadow(0 1px 2px rgba(13, 13, 13, 0.2));
     .border-radius(@baseBorderRadius @baseBorderRadius 0 0);
@@ -813,7 +813,7 @@
     .border-radius(@baseBorderRadius @baseBorderRadius 0 0);
   }
   &.uiGrayLightBox {
-    background: @componentBackground;
+    background: @uiBoxGray;
   }
   &.noRounded {
     .border-radius(0);
@@ -830,7 +830,7 @@
 .uiGrayLightBox(){
   padding: @gutterSizeBase;
   border: 1px solid @borderColor;
-  background: @componentBackground;
+  background: @uiBoxGray;
   .border-radius(@baseBorderRadius);
   .box-shadow(0px 1px 2px rgba(0,0,0,.06));
   label {
