@@ -5,7 +5,7 @@
 	position: absolute;
 }
 .uiCalendarComponent{
-	width: @calComponent-width;
+	width: @calComponentWidth;
 	.actionIcon{
 		line-height: 14px;
 		padding: 2px;
@@ -26,7 +26,7 @@
 		}
 	}
 	h5.title, h5.title span a {
-		color: @calComponent-width-title-color;
+		color: @calComponentWidthTitleColor;
 	}
 
 	table {
@@ -53,15 +53,15 @@
 				padding:1px;
 				a {
 					display: block;
-					color: @calComponent-day-color;
+					color: @calComponentDayColor;
 					border: 1px solid transparent;
 					&:hover{
-							background-color: @calComponent-day-hover-bg;
+							background-color: @calComponentDayHoverBackground;
 							.border-radius(@borderRadiusSmall);
 						}
 				}
 				.otherMonth{
-					color: @calComponent-other-month-color;
+					color: @calComponentOtherMonthColor;
 				}
 				.today {
 					border: 1px solid @borderColor;
@@ -69,13 +69,13 @@
 					font-weight: bold;
 				}
 				.selected {
-					background-color: @calComponent-day-selected-bg;
-					color: @calComponent-day-selected-color;
+					background-color: @calComponentDaySelectedBackground;
+					color: @calComponentDaySelectedColor;
 					.border-radius(@borderRadiusSmall);
 				}
 				.activeToday {
-					background-color: @calComponent-day-today-bg;
-					color: @calComponent-day-today-color;
+					background-color: @calComponentDayTodayBackground;
+					color: @calComponentDayTodayColor;
 					.border-radius(@borderRadiusSmall);
 				}
 			}
@@ -84,7 +84,7 @@
 
 		tr.currentWeek {
 			td {
-				background-color: @calComponent-currentWeek-bg;
+				background-color: @calComponentCurrentWeekBackground;
 				padding:0 1px;
 				&:first-child {
 					.border-top-left-radius(@borderRadiusSmall);
@@ -106,17 +106,17 @@
 		.center();
 		padding: 4px 0;
 		line-height: 18px;
-		background-color: @calComponent-timeInput-box-bg;
+		background-color: @calComponentTimeInputBoxBackground;
 		.border-radius(0 0 @borderRadiusSmall @borderRadiusSmall);
 		span {
-			background: @calComponent-timeInput-bg;
+			background: @calComponentTimeInputBackground;
 			.border-radius(@borderRadiusSmall);
 			.box-shadow(inset 0 2px 1px rgba(0,0,0,.075));
 			display: inline-block;
-			border: 1px solid @calComponent-timeInput-border;
+			border: 1px solid @calComponentTimeInputBorder;
 			&.focus {
 				.box-shadow(~'0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 5px rgba(29, 75, 159, 0.6)');
-				border-color: @calComponent-timeInput-forcus-border;
+				border-color: @calComponentTimeInputTorcusBorder;
 			}
 		}
 		input[type="text"] {
@@ -126,7 +126,7 @@
 			.border-radius(0 );
 			border: none;
 			.box-shadow(0 0 0 transparent);
-			color: @calComponent-timeInput-color;
+			color: @calComponentTimeInputColor;
 			padding:0;
 			line-height: 18px;
 			.center();

@@ -7,7 +7,7 @@
 		height: auto;
 		padding: 0px;
 		overflow: visible;
-		border-bottom: 1px solid @tabNormal-link-border;
+		border-bottom: 1px solid @tabNormalLinkBorder;
 
 		> li {
 			margin-right: -1px;
@@ -17,10 +17,10 @@
 		> li > a {
 			padding: 5px 15px;
 			margin: 0px;
-			border: 1px solid @tabNormal-link-border;
-			color: @tabNormal-link-color;
+			border: 1px solid @tabNormalLinkBorder;
+			color: @tabNormalLinkColor;
 			.border-radius(0px);
-			background-color: @tabNormal-link-bg;
+			background-color: @tabNormalLinkBackground;
 		}
 
 		> li:first-child > a  {
@@ -37,10 +37,10 @@
 		}
 
 		> .active > a,> .active > a:hover {
-			border: 1px solid @tabNormal-active-link-border;
+			border: 1px solid @tabNormalActiveLinkBorder;
 			border-bottom: 1px solid transparent;
 			font-weight: bold;
-			background-color: @tabNormal-active-link-bg;
+			background-color: @tabNormalActiveLinkBackground;
 		}
 
 		> li.dropdown {
@@ -85,7 +85,7 @@
 	}
 
 	.tab-content {
-		background: @tabNormal-content-bg;
+		background: @tabNormalContentBorder;
 		border: 1px solid @borderColor;
 		border-top: none;
 		padding: 10px;
@@ -123,13 +123,13 @@
 .uiTabGrayInPage {
 	.nav-tabs {
 		margin: 0px;
-		background-color: @tabGrayInPage-nav-bg;
-		border: 1px solid @tabGrayInPage-nav-border;
+		background-color: @tabGrayInPageNavBackground;
+		border: 1px solid @tabGrayInPageNavBorder;
 		padding: 5px 5px 0px 5px;
 		.border-radius(@borderRadiusSmall @borderRadiusSmall 0 0);
 
 		> .active > a,> .active > a:hover {
-			#gradient .vertical-three-colors(@tabGrayInPage-active-link-start-bg, @tabGrayInPage-active-link-middle-bg, 56%, @tabGrayInPage-active-link-end-bg);
+			#gradient .vertical-three-colors(@tabGrayInPageActiveLinkStartBackground, @tabGrayInPageActiveLinkMiddleBackground, 56%, @tabGrayInPageActiveLinkEndBackground);
 			border-bottom: 1px solid @componentBackground;
 		}
 	}
@@ -138,7 +138,7 @@
 		padding: 0px;
 		overflow: visible;
 		.nav-pills {
-			background-color: @tabGrayInPage-content-bg;
+			background-color: @tabGrayInPageContentBackground;
 			padding: 0px 10px;
 			margin: 0px;
 
@@ -148,16 +148,16 @@
 				> a {
 					line-height: 18px;
 					padding: 4px 6px;
-					color: @tabGrayInPage-link-color;
-					border: 1px solid @tabGrayInPage-link-border;
+					color: @tabGrayInPageLinkColor;
+					border: 1px solid @tabGrayInPageLinkBorder;
 					margin: 0px;
 					cursor: pointer;
 				}
 
 				> a:hover, > a:active {
-					#gradient > .vertical(@tabGrayInPage-active-link-start-bg, @tabGrayInPage-active-link-end-bg);
+					#gradient > .vertical(@tabGrayInPageActiveLinkStartBackground, @tabGrayInPageActiveLinkEndBackground);
 					line-height: 18px;
-					border: 1px solid @tabGrayInPage-hover-link-border;
+					border: 1px solid @tabGrayInPageHoverLinkBorder;
 					.border-radius(@borderRadiusSmall);
 				}
 			}
@@ -165,17 +165,17 @@
 			.open > a, .open > a:hover,.active > a, .active > a:hover {
 				background: none;
 				.box-shadow(~'inset  0px 2px 6px rgba(0,0,0,0.15)');
-				border: 1px solid @tabGrayInPage-hover-link-border;
+				border: 1px solid @tabGrayInPageHoverLinkBorder;
 				.border-radius(@borderRadiusSmall);
 			}
 
 			li.dropdown > a .caret{
-				border-top-color: @tabGrayInPage-caret-color;
+				border-top-color: @tabGrayInPageCaretColor;
 				margin-top: 8px;
 			}
 
 			li.dropdown > a:hover .caret,li.dropdown > a:active .caret, li.dropdown.open > a .caret {
-				border-top-color: @tabGrayInPage-hover-caret-color;
+				border-top-color: @tabGrayInPageHoverCaretColor;
 			}
 
 			.dropdown .dropdown-menu {
@@ -195,7 +195,7 @@
 		margin-bottom: 0;
 		border: none;
 		> li {
-			background: @tabContainer-bg;
+			background: @tabContainerBackground;
 			margin: 4px 5px 0 0;
 			padding-right: 5px;
 			.border-top-left-radius(@baseBorderRadius);
@@ -205,7 +205,7 @@
 				.border-radius(0px);
 				border: none;
 				display: inline-block;
-				color: @tabContainer-link-color;
+				color: @tabContainerLinkColor;
 				line-height: 8px;
    		 		padding: 13px 8px 7px;
 			}
@@ -222,11 +222,11 @@
 		}
 
 		> li.active {
-			background: @tabContainer-active-link-bg;
+			background: @tabContainerActiveLinkBackground;
 			margin: 0 5px 0 0;
 			> a {
 				padding: 17px 8px 7px;
-				color: @tabContainer-active-link-color;
+				color: @tabContainerActiveLinkColor;
 			}
 		}
 

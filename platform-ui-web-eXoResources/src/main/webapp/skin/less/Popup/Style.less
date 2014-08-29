@@ -2,15 +2,15 @@
 // Popup
 // --------------------------------------------------
 .uiPopup {
-	border: 1px solid @uiPopup-border;
-	background: @uiPopup-background;
+	border: 1px solid @uiPopupBorder;
+	background: @uiPopupBackground;
 	.box-shadow(0 2px 3px rgba(0,0,0,0.25));
 	.border-radius(4px);
 	position: absolute;
 	.popupHeader {
-		background-color: @uiPopupHeader-background;
-		.box-shadow(inset 0 -1px 0 @grayDarkWhiteSmoke);
-		border-bottom: 1px solid @uiPopupHeader-border;
+		background-color: @uiPopupHeaderBackground;
+		.box-shadow(inset 0 -1px 0 @borderColor);
+		border-bottom: 1px solid @uiPopupHeaderBorder;
 		.border-radius(4px 4px 0 0 );
 		padding: 0px 9px 0 15px;
 		font-size: 14px;
@@ -22,7 +22,7 @@
 		.popupTitle {
 			margin: 0;
 			line-height:35px;
-			color: @uiPopupTitle-color;
+			color: @uiPopupTitleColor;
 			display: block;
 			cursor: move;
 			font-size: 14px;
@@ -34,7 +34,7 @@
 		overflow: auto;
 		padding: 10px;
 		width: auto;
-		background: @uiPopupContent-background;
+		background: @uiPopupContentBackground;
 		.border-radius(0 0 4px 4px);
 		.resizable {
 			padding: 10px;
@@ -65,7 +65,7 @@
 			padding-left: 20px;
 			line-height: 16px;
 			height: 16px;
-			color: @popupMessage-color;
+			color: @popupMessageColor;
 			font-weight: bold;
 		}
 
@@ -100,8 +100,8 @@
 	}
 
 	.popupContent .multipleMessage {
-		background: @multipleMessage-background;
-		border: 1px solid @multipleMessage-border;
+		background: @multipleMessageBackground;
+		border: 1px solid @multipleMessageBorder;
 		margin: 0;
 	}
 
