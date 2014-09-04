@@ -19,18 +19,23 @@
 
 // Accent colors
 // -------------------------
-@red:                   #C72222;				// Red Primary
-@orange:                #EDAD00;				// Orange Primary
-@orangeLight:			#FCF4D4;
-@pink:                  #F7B5B5;				// Pink Primary
+@red:                   #C72222;							// Red Primary
+@redLight:				lighten(spin(@red, 5%), 30%);		// #ed9c95
 
-@green:                 #39C522;				// Green Primary
-@greenLight:			lighten(@green, 47%);	// #E1F9DD Old Color: #e6fade;
+@orange:                #EDAD00;							// Orange Primary
+@orangeLight:			lighten(spin(@orange, 5%), 42%);	// #fff4c4
+
+@blue: 					#215ab2;							// Blue Primary
+@blueLight: 			lighten(spin(@blue, 5%), 48%);		// #dee3fa
+
+@green:                 #39C522;							// Green Primary
+@greenLight:			lighten(spin(@green, 5%), 45%);		// #d7f8d5
 
 // Scaffolding
 // -------------------------
 @bodyBackground:        @white;
 @textColor:             @grayDark;				// #333333
+@textLightColor: 		@grayLight;				// #999999
 @borderColor:           lighten(@black, 80%);	// #cccccc
 
 // Links
@@ -54,7 +59,6 @@
 
 // Tables
 // -------------------------
-
 @tableBackground:                   transparent; 				// overall background-color
 @tableBackgroundAccent:             @componentBackgroundLight; 	// for striping
 @tableBackgroundHover:              @componentBackgroundHover; 	// for hover
@@ -153,7 +157,7 @@
 
 // Input placeholder text color
 // -------------------------
-@placeholderText:         @grayLight;
+@placeholderText:         @textLightColor;
 
 
 // Hr border color
@@ -168,7 +172,7 @@
 
 // Wells
 // -------------------------
-@wellBackground:                  #f5f5f5;
+@wellBackground:                  @componentBackgroundLight;
 
 
 // Navbar
@@ -195,8 +199,8 @@
 @navbarInverseBackgroundHighlight:       #222222;
 @navbarInverseBorder:                    #252525;
 
-@navbarInverseText:                      @grayLight;
-@navbarInverseLinkColor:                 @grayLight;
+@navbarInverseText:                      @textLightColor;
+@navbarInverseLinkColor:                 @textLightColor;
 @navbarInverseLinkColorHover:            @white;
 @navbarInverseLinkColorActive:           @navbarInverseLinkColorHover;
 @navbarInverseLinkBackgroundHover:       transparent;
@@ -226,22 +230,26 @@
 
 // Form states and alerts
 // -------------------------
-@warningBackground:       #FCF4D4;
-@warningBorder:           #edad00;
+@warningText:             @textColor;
+@warningBackground:       @orangeLight;
+@warningBorder:           @orange;
 
-@errorBackground:         #f7b5b5;
-@errorBorder:             #C72222;
+@errorText:               @textColor;
+@errorBackground:         @redLight;
+@errorBorder:             @red;
 
-@successBackground:       #e6fade;
-@successBorder:           #39C522;
+@successText:             @textColor;
+@successBackground:       @greenLight;
+@successBorder:           @green;
 
-@infoBackground:          #dee3fa;
-@infoBorder:              #215ab2;
+@infoText:                @textColor;
+@infoBackground:          @blueLight;
+@infoBorder:              @blue;
 
 
 // Tooltips and popovers
 // -------------------------
-@tooltipBackground:       #4a4a4a;
+@tooltipBackground:       lighten(@black, 29%);				// #4a4a4a
 @tooltipArrowColor:       @tooltipBackground;
 
 @popoverBackground:       #fff;
@@ -294,14 +302,14 @@
 // -------------------------
 @breadcrumbColor: 				@grayDark;
 @breadcrumbHoverColor: 			@primaryColor;
-@breadcrumbActiveColor: 		@grayLight;
+@breadcrumbActiveColor: 		@textLightColor;
 
 // Calendar Component
 // -------------------------
 @calComponentWidth:						225px;
 @calComponentWidthTitleColor:			@textColor;
 @calComponentDayColor:					@textColor;
-@calComponentOtherMonthColor:			@grayLight;
+@calComponentOtherMonthColor:			@textLightColor;
 @calComponentDayHoverBackground:		@componentBackground;
 @calComponentDaySelectedBackground:		@primaryColor;
 @calComponentDaySelectedColor: 			@white;
