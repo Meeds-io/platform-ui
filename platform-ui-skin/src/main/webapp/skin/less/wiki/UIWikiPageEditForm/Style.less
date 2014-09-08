@@ -33,9 +33,7 @@
 	.uiEditUpper input{
 		height: 33px;
 		width: 100%;
-		box-sizing:border-box;
-		-moz-box-sizing:border-box; /* Firefox */
-		-webkit-box-sizing:border-box; /* Safari */
+		.box-sizing(border-box);
 		margin-bottom: 4px;
 		color: @textColor;
 		font-size: 18px;
@@ -82,14 +80,12 @@
 			margin-bottom:24px;
 		}
 		textarea{
-			font-size: 10pt;
+			font-size: 10px;
 			height: 357px;
 			overflow: auto;
 			padding: 6px;
 			width: 100% !important;
-			box-sizing:border-box;
-			-moz-box-sizing:border-box; /* Firefox */
-			-webkit-box-sizing:border-box; /* Safari */
+			.box-sizing(border-box);
 			box-shadow: 0 2px 1px rgba(0, 0, 0, 0.075) inset, 0px 1px 3px rgba(0,0,0,0.06);
 			min-height: 75px;
 		}
@@ -132,9 +128,7 @@
 		input{
 			margin: 0px;
 			width: 100%;
-			box-sizing:border-box;
-			-moz-box-sizing:border-box; /* Firefox */
-			-webkit-box-sizing:border-box; /* Safari */
+			.box-sizing(border-box);
 			height: 28px;
 		}
 	}

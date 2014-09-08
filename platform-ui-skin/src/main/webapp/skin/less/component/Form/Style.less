@@ -4,32 +4,6 @@
 form {
 	margin: 0;
 }
-label,
-input,
-button,
-select,
-textarea {
-  #font > .shorthand(@baseFontSize,normal,@baseLineHeight);
-}
-
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-.uneditable-input {
-	background-color: @inputBackground;
-}
 
 select,
 textarea,
@@ -76,13 +50,14 @@ input[type="color"],
 	vertical-align: top;
 }
 
-.input-mini ,.inputMini input[type="text"],.inputMini input[type="password"]      { width: 60px; }
-.input-small,.inputSmall input[type="text"],.inputSmall input[type="password"]    { width: 90px; }
-.input-medium ,.inputMedium input[type="text"],.inputMedium input[type="password"]     { width: 150px; }
-.input-large ,.inputLarge input[type="text"],.inputLarge input[type="password"]      { width: 210px; }
-.input-xlarge ,.inputXlarge input[type="text"],.inputXlarge input[type="password"]     { width: 270px; }
+.inputMini input[type="text"],.inputMini input[type="password"]      { width: 60px; }
+.inputSmall input[type="text"],.inputSmall input[type="password"]    { width: 90px; }
+.inputMedium input[type="text"],.inputMedium input[type="password"]     { width: 150px; }
+.inputLarge input[type="text"],.inputLarge input[type="password"]      { width: 210px; }
+.inputXlarge input[type="text"],.inputXlarge input[type="password"]     { width: 270px; }
 .input-xxlarge ,.inputXxlarge input[type="text"],.inputXxlarge input[type="password"]    { width: 350px; }
 .input-xxxlarge ,.inputXxxlarge input[type="text"],.inputXxxlarge input[type="password"]   { width: 530px; }
+
 .form-horizontal .control-group {
 	margin-bottom: 12px;
 }
@@ -271,40 +246,6 @@ input[disabled], select[disabled], textarea[disabled] {
 	background-color: @uiRadioCheckedDisabledBackground;
 }
 
-/*.uiSelectbox {
-	border: 1px solid @inputBorder;
-	.border-radius(5px);
-	width: 270px;
-	line-height: 20px;
-	overflow: hidden;
-	display: inline-block;
-	vertical-align: middle;
-	background-color: @componentBackgroundLight;
-	background-image: url("@{images-path}/Forms/arrow.png"), -moz-linear-gradient(top, @white, @componentBackground); // FF 3.6+
-	background-image: url("@{images-path}/Forms/arrow.png"),-webkit-gradient(linear, 0 0, 0 100%, from(@white), to(@componentBackground)); // Safari 4+, Chrome 2+
-	background-image: url("@{images-path}/Forms/arrow.png"),-webkit-linear-gradient(top, @white, @componentBackground); // Safari 5.1+, Chrome 10+
-	background-image: url("@{images-path}/Forms/arrow.png"),-o-linear-gradient(top, @white, @componentBackground); // Opera 11.10
-	background-image: url("@{images-path}/Forms/arrow.png"),linear-gradient(to bottom, @white, @componentBackground); // Standard, IE10
-	background-repeat: no-repeat, repeat-x;
-	background-position: right top,0 0;
-}
-
-.uiSelectbox:hover, .uiSelectbox:focus {
-	background-position: right bottom, 0 0;
-}
-
-.uiSelectbox select.selectbox {
-	background: transparent;
-	border: none;
-	.box-shadow(0 0 0 transparent inset);
-	.box-sizing(border-box);
-	.size(26px,270px);
-	-webkit-appearance: none;
-	line-height: 18px;
-	outline: none;
-	padding: 3px 6px;
-}
-*/
 .selectboxMini  {
 	.uiSelectbox {
 		width: 84px;

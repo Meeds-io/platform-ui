@@ -4,41 +4,13 @@
 .popover {
   .border-radius(@baseBorderRadius);
   .box-shadow(0 2px 6px -1px rgba(0,0,0,.15));
-  background-color: @popoverBackground;
 }
 
 .popover-title {
   .border-radius(@borderRadiusSmall @borderRadiusSmall 0 0);
-   background-color: @popoverTitleBackground;
-   border-bottom: 1px solid darken(@popoverTitleBackground, 5%);
 }
 
-.popover {
-  &.top .arrow {
-    border-top-color:@popoverArrowOuterColor;
-    &:after {
-     border-top-color: @popoverArrowColor;
-    }
-  }
-  &.right .arrow {
-    border-right-color: @popoverArrowOuterColor;
-    &:after {
-      border-right-color: @popoverArrowColor;
-    }
-  }
-  &.bottom .arrow {
-    border-bottom-color: @popoverArrowOuterColor;
-    &:after {
-      border-bottom-color: @popoverArrowColor;
-    }
-  }
-  &.left .arrow {
-    border-left-color: @popoverArrowOuterColor;
-    &:after {
-      border-left-color: @popoverArrowColor;
-    }
-  }
-}
+
 
 // popover for username
 

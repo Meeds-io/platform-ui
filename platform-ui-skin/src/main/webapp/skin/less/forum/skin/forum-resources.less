@@ -1,3 +1,5 @@
+@import "../../variables.less";
+@import "../../mixins.less";
 @import url('/forumResources/syntaxhighlighter/Styles/SyntaxHighlighter.css');
 
 .ParentMaskLayer {
@@ -9,7 +11,7 @@
 	    z-index: 50;
 	    position: absolute;
 	    visibility: visible;
-	    background: url('/eXoSkin/skin/less/forum/skin/images/Point1x1.png') no-repeat top center;
+	    background: url('@{images-path}/forum/skin/background/Point1x1.png') no-repeat top center;
 	    -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;

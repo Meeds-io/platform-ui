@@ -89,13 +89,14 @@
                                 <include>ecms/skin/ecms-resources-dmsskin.less</include>
                                 <include>ecms/portlets/administration/ecms-administration.less</include>
                                 <include>ecms/portlets/explorer/ecms-explorer.less</include>
-								<include>ecms/portlets/search/ecms-search.less</include>
-								<include>ecms/portlets/fastcontentcreator/fast-content-creator.less</include>
+																<include>ecms/portlets/search/ecms-search.less</include>
+																<include>ecms/portlets/fastcontentcreator/fast-content-creator.less</include>
                                 <include>ecms/portlets/presentation/ecms-presentation-categorynavigationportlet.less</include>
                                 <include>ecms/portlets/presentation/ecms-presentation-contentlistviewerportlet.less</include>
                                 <include>ecms/portlets/presentation/ecms-presentation-singlecontentviewer.less</include>
                                 <include>calendar/calendar.less</include>
                                 <include>social/skin/social.less</include>
+                                <include>social/juzu-portlet/notification.less</include>
                                 <include>social/portlets/uiAllPeoplePortlet/Style.less</include>
                                 <include>social/portlets/uiAllSpacesPortlet/Style.less</include>
                                 <include>social/portlets/uiBannerPortlet/Style.less</include>

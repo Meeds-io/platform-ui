@@ -23,12 +23,12 @@
                   xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_resources_1_3 http://www.gatein.org/xml/ns/gatein_resources_1_3"
                   xmlns="http://www.gatein.org/xml/ns/gatein_resources_1_3">
 
-  <portal-skin>
+  <!--portal-skin>
     <skin-name>Default</skin-name>
     <skin-module>bootstrap</skin-module>
     <css-path>/skin/bootstrap/css/bootstrap.css</css-path>
     <css-priority>0</css-priority>
-  </portal-skin>
+  </portal-skin -->
   
   <portal-skin>
     <skin-name>Default</skin-name>

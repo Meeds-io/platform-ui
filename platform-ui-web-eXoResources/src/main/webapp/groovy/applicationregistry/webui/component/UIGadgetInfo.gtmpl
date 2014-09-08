@@ -6,7 +6,7 @@
 	EntityEncoder encoder = HTMLEntityEncoder.getInstance();
 	def gadget = uicomponent.getGadget();
 	boolean selectorRender = uicomponent.getChild(UICategorySelector.class).isRendered();
-	String srcBGError = "/eXoResources/skin/images/Icons/Icon80x80/DefaultPortlet.png";
+	String srcBGError = "/eXoSkin/skin/images/Icons/Icon80x80/DefaultPortlet.png";
 	String categoryNames = uicomponent.getCategorieNames();
 	String gadgetThumbnail = gadget.getThumbnail();
 	if(gadgetThumbnail == null || gadgetThumbnail.length() == 0){
