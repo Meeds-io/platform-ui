@@ -35,6 +35,7 @@
 // -------------------------
 @bodyBackground:        @white;
 @textColor:             @grayDark;				// #333333
+@textMediumColor: 		@gray; 					// #808080
 @textLightColor: 		@grayLight;				// #999999
 @borderColor:           lighten(@black, 80%);	// #cccccc
 
@@ -53,9 +54,9 @@
 @gutterSizeLarge: 			15px;
 @gutterSizeSmall: 			5px;
 
-@componentBackgroundHover:	lighten(@black, 90%); 	// @grayMediumWhiteSmoke - #e6e6e6
-@componentBackground:		lighten(@black, 94%); 	// @grayWhiteSmoke - #f0f0f0
-@componentBackgroundLight:	lighten(@black, 97%); 	// @grayLighter - #f7f7f7
+@componentBackgroundHover:	lighten(@black, 90%); 	// #e6e6e6 - @grayMediumWhiteSmoke
+@componentBackground:		lighten(@black, 94%); 	// #f0f0f0 - @grayWhiteSmoke
+@componentBackgroundLight:	lighten(@black, 97%); 	// #f7f7f7 - @grayLighter
 
 // Tables
 // -------------------------
@@ -396,3 +397,10 @@
 @uiBoxBorder : @borderColor;
 @uiBoxHeadBg : @componentBackground;
 @uiBoxGray: @componentBackground;
+
+// Quote
+@quotePrimaryBorder: 					@componentBackgroundHover;
+@quotePrimaryBackgound: 				@componentBackground;
+
+@quoteSecondBorder: 					lighten(#2f5e92, 40%);				// #aac5e3
+@quoteSecondBackground: 				lighten(@quoteSecondBorder, 18%);	// #aac5e3
