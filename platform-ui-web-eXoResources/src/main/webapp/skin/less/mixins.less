@@ -801,12 +801,16 @@
     }
   }
   .uiContentBox {
-    padding: 20px;
-  }
+			padding: 20px;
+				& + .title {
+				.border-radius(0);
+				border-top: 1px solid @borderColor;
+			}
+		}
   &.roundedBottom {
     .border-radius(0 0 @baseBorderRadius @baseBorderRadius);
     .title {
-      .border-radius(0);
+      .border-radius(0); 
     }
   }
   &.roundedTop {
