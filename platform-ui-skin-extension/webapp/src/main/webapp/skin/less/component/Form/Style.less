@@ -1,0 +1,327 @@
+//
+// Form
+// --------------------------------------------------
+form {
+	margin: 0;
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+	padding: 3px 6px;
+	color: @inputColor;
+	.box-shadow(inset 0 2px 1px rgba(0,0,0,.075));
+	font-size: @baseFontSize;
+	.box-sizing(border-box);
+	height: 28px;
+	border: 1px solid @inputBorder;
+	 &:focus {
+		border-color: @inputFocusBorder;
+		.box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 5px rgba(29,75,159,.6)");
+		color: @inputFocusColor;
+  }
+  +.actionIcon {
+  	margin-left: 3px;
+  }
+}
+
+.form-search input,.form-search textarea,
+.form-inline textarea, .form-horizontal textarea,
+.form-search select, .form-inline select, .form-horizontal select,
+.form-search .help-inline, .form-inline .help-inline,
+.form-horizontal .help-inline, .form-search .uneditable-input,
+.form-inline .uneditable-input, .form-horizontal .uneditable-input,
+.form-search .input-prepend, .form-inline .input-prepend, .form-horizontal .input-prepend,
+.form-search .input-append, .form-inline .input-append, .form-horizontal .input-append {
+	vertical-align: top;
+}
+
+.inputMini input[type="text"],.inputMini input[type="password"]      { width: 60px; }
+.inputSmall input[type="text"],.inputSmall input[type="password"]    { width: 90px; }
+.inputMedium input[type="text"],.inputMedium input[type="password"]     { width: 150px; }
+.inputLarge input[type="text"],.inputLarge input[type="password"]      { width: 210px; }
+.inputXlarge input[type="text"],.inputXlarge input[type="password"]     { width: 270px; }
+.input-xxlarge ,.inputXxlarge input[type="text"],.inputXxlarge input[type="password"]    { width: 350px; }
+.input-xxxlarge ,.inputXxxlarge input[type="text"],.inputXxxlarge input[type="password"]   { width: 530px; }
+
+.form-horizontal .control-group {
+	margin-bottom: 12px;
+}
+
+.form-horizontal {
+	padding: 20px 0 5px;
+	.form-horizontal {
+		padding: 0;
+	}
+	.control-group{
+		margin-bottom: 8px;
+		.control-label {
+			margin: 0;
+		}
+		.controls{
+			line-height: 28px;
+			.uiCheckbox{
+		    margin: 5px 0 0;
+		  }
+		  .uiRadio{
+	      margin: 3px 25px 0px 0;
+	    }
+		}
+	}
+}
+
+input, select, .uneditable-input {
+	width: 270px;
+}
+
+textarea {
+  .size(80px, 270px);
+	padding: 3px 3px 3px 6px;
+}
+
+.uiCheckbox {
+	position: relative;
+	display: inline-block;
+	margin: 0 5px;
+	line-height: 20px;
+	min-width:18px;
+}
+
+.uiCheckbox input[type="checkbox"]:checked,
+.uiCheckbox  input[type="checkbox"]:not(:checked) {
+	margin: 4px 0 0; /* hack margin-top: 4px to fix problem on chrome in Mac only */
+	opacity: 0;
+	padding: 0;
+	outline: 0 none;
+	position: absolute;
+	top: 0;
+	z-index: 100;
+}
+
+.uiCheckbox > span {
+	display: inline-block;
+	text-indent: 18px;
+}
+
+.uiCheckbox input[type="checkbox"]:checked + span:after {
+	border-bottom: 2px solid @uiCheckboxCheckedBorder;
+	border-left: 2px solid @uiCheckboxCheckedBorder;
+	content: "";
+	.size(3px,6px);
+  -webkit-transform: skew(45deg, -49deg);
+     -moz-transform: skew(45deg, -49deg);
+      -ms-transform: skewX(30deg) skewY(-35deg); // See https://github.com/twitter/bootstrap/issues/4885
+       -o-transform: skew(45deg, -49deg);
+          transform: skew(45deg, -49deg);
+  -webkit-backface-visibility: hidden; // See https://github.com/twitter/bootstrap/issues/5319
+	left: 4px;
+	position: absolute;
+	top: 4px;
+}
+
+.uiCheckbox input[type="checkbox"] + span:before {
+	background: @uiCheckboxBackground;
+	.border-radius(@borderRadiusSmall);
+	.box-shadow(inset 0 1px 2px rgba(0,0,0,.17));
+	.square(12px);
+	top: 4px;
+	left: 0px;
+	content: " ";
+	position: absolute;
+}
+
+input[type="radio"] + span {
+	cursor: pointer;
+}
+
+.uiCheckbox input[type="checkbox"]:disabled + span:after {
+	border-bottom: 2px solid @uiCheckboxCheckedDisabledBorder;
+	border-left: 2px solid @uiCheckboxCheckedDisabledBorder;
+}
+
+input[readonly], select[readonly], textarea[readonly] {
+	background: @formReadOnyBackground;
+	.box-shadow(inset 0 0 0 rgba(0,0,0,0));
+	color: @formReadOnyColor;
+}
+
+input[disabled], select[disabled], textarea[disabled] {
+	background: @inputDisabledBackground;
+}
+
+.uiCheckbox input,.uiRadio input {
+	min-height: 10px;
+	padding: 0;
+}
+
+.lt-ie9  .uiCheckbox input[type="checkbox"] + span:before {
+	background: none;
+	display: none;
+}
+
+.uiRadio {
+	position: relative;
+	display: inline-block;
+	margin: 0 5px;
+	line-height: 20px;
+}
+
+.uiRadio input[type="radio"]:checked,
+.uiRadio input[type="radio"]:not(:checked) {
+	margin: 0;
+	opacity: 0;
+	padding: 0;
+	outline: 0 none;
+	position: absolute;
+	top: 0;
+	z-index: 100;
+}
+
+.uiRadio > span {
+	display: inline-block;
+	text-indent: 18px;
+}
+
+.uiRadio input[type="radio"]:checked + span:after {
+	#gradient > .vertical(rgba(0,0,0,0), rgba(0,0,0,0.27));
+	background-color: @uiRadioCheckedColor;
+	content: "";
+	.square(8px);
+	.border-radius(50%);
+	left: 2px;
+	position: absolute;
+	top: 6px;
+}
+
+//hack ie9
+
+.ie9 .uiRadio input[type="radio"]:checked + span:after {
+	left: 2px;
+}
+
+.uiRadio input[type="radio"] + span:before {
+	background: @uiRadioCheckedBackground;
+	.border-radius(50%);
+	.box-shadow(inset 0 1px 2px rgba(0,0,0,.17));
+	.square(12px);
+	top: 4px;
+	left: 0px;
+	content: " ";
+	position: absolute;
+}
+
+//hack ie8 and ie7
+.lt-ie9 {
+  .uiRadio input[type="radio"] + span:before {
+    background: none;
+    display: none;
+  }
+
+  .uiRadio input[type="radio"]:checked + span:after {
+    background: none;
+    display: none;
+  }
+}
+
+
+.uiRadio input[type="radio"] + span {
+	cursor: pointer;
+}
+
+.uiRadio input[type="radio"]:disabled + span:after {
+	background-color: @uiRadioCheckedDisabledBackground;
+}
+
+.selectboxMini  {
+	.uiSelectbox {
+		width: 84px;
+		vertical-align: middle;
+		.selectbox {
+			width: 84px;
+		}
+	}
+}
+
+.selectboxSmall  {
+	.uiSelectbox {
+		width: 100px;
+		vertical-align: middle;
+		.selectbox {
+			width: 100px;
+		}
+	}
+}
+.selectboxMedium  {
+	.uiSelectbox {
+		width: 178px;
+		vertical-align: middle;
+		.selectbox {
+			width: 178px;
+		}
+	}
+}
+
+.uiSelectbox select.selectbox option {
+	padding: 7px;
+}
+
+.vertical-align input[type="text"],
+.vertical-align input[type="password"],
+.vertical-align input[type="datetime"],
+.vertical-align input[type="datetime-local"],
+.vertical-align input[type="date"],
+.vertical-align input[type="month"],
+.vertical-align input[type="time"],
+.vertical-align input[type="week"],
+.vertical-align input[type="number"],
+.vertical-align input[type="email"],
+.vertical-align input[type="url"],
+.vertical-align input[type="search"],
+.vertical-align input[type="tel"],
+.vertical-align input[type="color"],
+.vertical-align .uneditable-input{
+	margin-bottom: 0px;
+}
+.vertical-align input[type="text"] + input[type="text"],
+.vertical-align input[type="password"] + input[type="password"] ,
+.vertical-align input[type="datetime"] + input[type="datetime"] ,
+.vertical-align input[type="datetime-local"]+ input[type="datetime-local"],
+.vertical-align input[type="date"] + input[type="date"],
+.vertical-align input[type="month"] + input[type="month"],
+.vertical-align input[type="time"] + input[type="time"],
+.vertical-align input[type="week"] + input[type="week"],
+.vertical-align input[type="number"] + input[type="number"],
+.vertical-align input[type="email"] + input[type="email"],
+.vertical-align input[type="url"] + input[type="url"],
+.vertical-align input[type="search"] + input[type="search"],
+.vertical-align input[type="tel"] + input[type="tel"],
+.vertical-align input[type="color"] + input[type="color"],
+.vertical-align .uneditable-input + .uneditable-input {
+	margin-top: 10px;
+}
+
+.controls   {
+	.removeFile {
+		float: none;
+	}
+	.selectFileFrame,.progressBarFrame,.progressBarFrame{
+		margin: 0;
+	}
+	.selectFileFrame {
+		line-height: 29px;
+	}
+}

@@ -1,0 +1,170 @@
+
+/*============== uiListView ================*/
+
+.uiListView,.uiTaskView{
+	padding: 11px;
+	.uiGrid.table{
+		border: solid 1px @borderColor;
+		th{
+			padding: 5px 10px;
+			.uiIconMiniArrowDown,.uiIconMiniArrowUp {
+				margin-top: 3px;
+			}
+		    a {
+		    	color: @textColor;
+		    	&:hover, &:active {
+		    		color: @linkColorHover;
+		    	}
+		    }
+		}
+		td{
+			padding: 10px;
+		}
+	}
+	.pagination {
+		overflow: hidden;
+	}	
+}
+.uiListContainer,.UIEventPreview  {
+	.thumbnail {
+		border-radius: 0;
+		padding: 0;
+		display: inline;
+		.box-shadow(0 0 0 transparent);border:none;
+	}
+	.thumbnailContainer {
+		float: left;
+		text-align: center;
+		margin: 0 10px 10px 0;
+		position: relative;
+		vertical-align: top;
+		.square(50px);
+		.viewIconContainer {
+			display: none;
+			overflow: hidden;
+			line-height: 16px;
+			& > div:hover .view{
+				font-weight: bold;
+			}
+		}		
+		&:hover .viewIconContainer {
+			background: rgba(0, 0, 0, 0.2);
+			display: inline-block;
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			text-align: center;
+			> div {
+				left: 50%;
+				margin-left: -10px;
+				position: absolute;
+				cursor: pointer;
+				top: 30%;
+				span {
+					display: block;
+					color: @white;
+					font-size: @baseFontSize - 1;
+					&.uiIconSearch {
+						margin-left: 2px;
+					}
+				}
+			}
+
+		}
+
+	}
+	.imagePreviewContainer {
+		position: relative;
+		display: inline-block;
+		margin: 7px 0;
+		.closeButton {
+			position: absolute; 
+			cursor:pointer;
+			right: 4px;
+			top: 4px;			
+			padding:0;
+			line-height: 10px;				
+			.box-shadow(0 0 0 transparent);	
+			&:hover {
+				border: 1px solid @gray;
+			}		
+		}
+		
+	}
+	.uiPreview {
+		.box-shadow(0 0 0 transparent);
+	}
+	.uiPreview,.viewContainer {
+		margin: 11px;
+	}	
+	
+	.viewContainer {
+		.columnRight ,.columnLeft {
+			padding: 15px 15px 0 15px;
+		}
+		.columnLeft {
+			.border-radius(@borderRadiusSmall);
+			background: @componentBackgroundLight;
+			width: 190px;
+			
+		}
+		.columnLeft {
+			.text {
+				margin: 0 0 4px 0; 
+				span {
+					color: @linkColor;
+				}
+				&.last {
+					margin: 0 0 7px 0;
+				}
+			}
+		}
+		.uiActionContainer {
+			border-top: 1px dotted @borderColor;
+			padding: 10px 0 0  0;
+			margin: 40px  0 0 0;
+		}
+		.titleList {
+			border-bottom: 1px dotted @borderColor;
+			padding: 0 0 10px 0;
+			margin: 0 0 20px 0;
+			strong{
+				line-height: 18px;
+    			vertical-align: text-bottom;
+			}
+		}
+	}	
+	.tableListEvent {
+		td {
+			padding: 5px;
+		}
+		.right {
+			text-align: right;
+			width: 110px;
+			& + td {
+				padding-left: 10px;
+			}
+		}
+	}
+}
+.uiCalendarViewContainer  .uiListContainer  {
+	.result  {
+		min-height: 28px;
+		padding: 5px 10px;
+		center {
+			padding: 5px 0 0;
+		}
+	}
+	.actionBottom {
+		overflow: hidden;
+		.btn {
+			margin: 20px 0;
+		}
+	}
+}
+
+.popupContent .uiPreview {
+	border: none;
+}

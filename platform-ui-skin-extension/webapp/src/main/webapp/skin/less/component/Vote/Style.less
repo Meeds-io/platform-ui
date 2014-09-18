@@ -1,0 +1,88 @@
+//
+// Vote
+// --------------------------------------------------
+.uiVoteForm{
+	.voteFormContainer{
+		h6{
+			margin: 0px 0px 5px 10px;
+			font-weight: normal;
+		}
+		.uiRatingInfoContainer{
+			margin: 0px auto 13px;
+			width: 105px;
+			[class^="uiIcon"] {
+				background: url('@{images-path}/Vote/uiIconVote.png') no-repeat center center;
+				width: 17px;
+				cursor: pointer;
+			}
+			.uiIconNormalVote{
+				background-position: center -2px;
+			}
+			.uiIconOverVote{
+				background-position: center -53px;
+			}
+			.uiIconRatedVote{
+				background-position: center -27px;
+			}
+		}
+
+	}
+}
+
+
+/*---------- Vote of View1 ----------*/
+
+.uiVote {
+
+	.voteRatingInfo {
+		float: left;
+		line-height: 16px;
+		margin-right: 15px;
+		span {
+			color: @primaryColor;
+		}
+	}
+
+	.avgRatingImages {
+		float: left;
+		.voted,.votedHaft,.unvoted  {
+			float: left;
+			.square(16px);
+			background: url('@{images-path}/Vote/uiIconVote.png') no-repeat;
+			margin: 0px 1px;
+			cursor: pointer;
+		}
+		.voted {
+			background-position: left -80px;
+		}
+		.votedHaft{
+			background-position: left -131px;
+		}
+		.unvoted {
+			background-position:  left -104px;
+		}
+	}
+}
+
+//uiVoteMini use combine with uiVote
+
+.uiVoteMini {
+	.avgRatingImages {
+		.voted,.votedHaft,.unvoted  {
+			background: url('@{images-path}/Icons/uiIconColor.png') no-repeat;
+			.square(10px);
+			float: none;
+			display: inline-block;
+			margin: 0;
+		}
+		.voted {
+			background-position: -43px -43px;
+		}
+		.votedHaft{
+			background-position: -63px -43px;
+		}
+		.unvoted {
+			background-position:  -3px -43px;
+		}
+	}
+}

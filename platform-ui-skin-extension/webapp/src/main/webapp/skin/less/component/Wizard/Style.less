@@ -1,0 +1,186 @@
+//
+// Wizard
+// --------------------------------------------------
+.uiWizard {
+	padding: 20px;
+	.wizardStepTitleBar {
+		.stepTitle {
+			font-size:13px;
+			font-weight: normal;
+		}
+	}
+
+	.uiWizardPageSetInfo {
+		border: 1px solid @borderColor;
+		.border-radius(1px);
+		.pageNodeContainer {
+			width: 240px;
+			.uiTrees {
+				max-height: 402px;
+				overflow: auto;
+				background: none;
+				border: none;
+				padding: 5px 10px;
+			}
+		}
+		.selectedPageInfo {
+			margin-left: 240px;
+			border-left: 1px solid @borderColor;
+			.pageNodeInfo {
+				background: @componentBackground;
+				padding: 8px 15px;
+				border-bottom: 1px solid @borderColor;
+				.label {
+					background: none;
+					color: @textColor;
+					box-shadow: none;
+					text-shadow: none;
+					font-size: 14px;
+				}
+			}
+
+			.uiFormWithTitle {
+				overflow: hidden;
+				&> .title {
+					background: @componentBackgroundLight;
+					border: none;
+					box-shadow: none;
+					padding: 8px 20px;
+				}
+			}
+		}
+		.NoPageSelecter .selectedPageInfo {
+			margin-left: 0;
+			border: none;
+		}
+	}
+
+	.wizardControlBar {
+		padding: 20px 0px 0;
+		.stepNavigationBar {
+			.btn {
+				padding: 1px 7px;
+			}
+			.btn.active {
+				color: @primaryColor;
+				font-weight: bold;
+			}
+		}
+	}
+
+	.UIWizardPageSelectLayoutForm {
+		background: @componentBackgroundLight;
+    	border: 1px solid @borderColor;
+    	.uiItemSelector {padding: 0;}
+		.itemListContainer {
+			padding: 20px;
+			.uiBox {
+				margin: 0;
+				.itemList {
+					> li.selectedItem > a {
+						color: @linkColor;
+					}
+				}
+			}
+			.itemList {
+				height: 182px;
+			}
+		}
+		.itemDetailList {
+			background: white;
+			border-left: 1px solid @borderColor;
+			.container {
+				padding: 75px;
+				width: auto;
+				.tooltip {
+					.tooltip-inner {
+						max-width: 330px;
+						white-space: nowrap;
+		      		}
+				}
+			}
+		}
+    // Function set size for layouts
+		.commonLayout(){
+      		.size(125px, 90%);
+			min-width: 185px;
+      		background: url('@{images-path}/Container/ItemSelector.png') no-repeat center top transparent;
+    	}
+		.EmptyLayout {
+      		.commonLayout;
+			margin: auto;
+		}
+
+		.DashboardLayout {
+			.commonLayout;
+			margin: auto;
+      		background-position: center -1500px;
+		}
+
+		.TwoColumnsLayout {
+			.commonLayout;
+			margin: auto;
+      		background-position: center -1125px;
+		}
+
+		.ThreeColumnsLayout {
+			.commonLayout;
+			margin: auto;
+      		background-position: center -1250px;
+		}
+
+		.TwoColumnsOneRowLayout {
+			.commonLayout;
+			margin: auto;
+      		background-position: center -500px;
+		}
+
+		.TwoColumnsTwoRowsLayout {
+			.commonLayout;
+			margin: auto;
+      		background-position: center -625px;
+		}
+
+		.OneRowsLayout {
+			.commonLayout;
+			margin: auto;
+      		background-position: center -125px;
+		}
+
+		.TwoRowsLayout {
+			.commonLayout;
+			margin: auto;
+      		background-position: center -250px;
+		}
+
+		.ThreeRowsLayout {
+			.commonLayout;
+			margin: auto;
+      		background-position: center -375px;
+		}
+
+		.OneRowTwoColumnsLayout {
+			.commonLayout;
+			margin: auto;
+      		background-position: center -1375px;
+		}
+
+		.TwoTabsLayout {
+			.commonLayout;
+			margin: auto;
+      		background-position: center -1625px;
+		}
+
+		.ThreeTabsLayout {
+			.commonLayout;
+			margin: auto;
+      		background-position: center -1750px;
+		}
+
+		.ThreeRowsTwoColumnsLayout {
+			.commonLayout;
+			margin: auto;
+      		background-position: center -750px;
+		}
+	}
+}

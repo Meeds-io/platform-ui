@@ -1,0 +1,77 @@
+//
+// pagination
+// --------------------------------------------------
+.uiPageIterator p {
+	display: inline-block;
+	margin: 3px 10px 0 0;
+	vertical-align: middle;
+	> span {
+		color: @textColor;
+	}
+	> .pagesTotalNumber {
+		font-weight: bold;
+	}
+}
+
+.uiPageIterator ul {
+	.box-shadow(0 0 0 rgba(0,0,0,.05));
+	vertical-align: middle;
+}
+
+.uiPageIterator label {
+	line-height: 26px;
+}
+
+.uiPageIterator ul > li > a,
+.uiPageIterator ul > li.disabled > a,
+.uiPageIterator ul > li.disabled > a:hover {
+ #gradient > .vertical(rgba(255,255,255,1), rgba(241,241,241,1));
+ .size(24px, 24px);
+ line-height: 24px;
+ text-align: center;
+ padding: 0;
+ color: @textColor;
+}
+
+.uiPageIterator ul > li > a:hover {
+ #gradient > .radial(rgba(241,241,241,1), rgba(235,235,235,1));
+}
+
+.uiPageIterator ul > .active > a {
+ #gradient > .radial(rgba(236,236,236,1), rgba(221,221,221,1));
+ color: @linkColor;
+ font-weight: bold;
+}
+
+/*** Just for Arrow icon - should be changed after writing a mixin for icon in core ***/
+
+.uiPageIterator ul > li.disabled > a > [class^="uiIcon"],
+.uiPageIterator ul > li.disabled > a:hover > [class^="uiIcon"],
+.uiPageIterator ul > li.disabled > a:active > [class^="uiIcon"] {
+	background-image: url("@{images-path}/Icons/uiIconsLightGray.png");
+}
+
+.table + .pageIteratorBorder {
+	border: 1px solid @borderColor;
+	border-top: 0;
+	margin: -20px 0 20px 0;
+	padding: 10px;
+	.uiPageIterator  {
+		margin: 0;
+	}
+}
+
+.uiPageIterator > .selectbox{
+    box-shadow: 0 0 0 transparent inset;
+    .size(26px, 60px);
+    line-height: 18px;
+    outline: medium none;
+    background: linear-gradient(to bottom, @white, @componentBackground);
+    background-position: right top, 0 0;
+    border: 1px solid @borderColor;
+    border-radius: 4px;
+    display: inline-block;
+    line-height: 20px;
+    overflow: hidden;
+    vertical-align: middle;
+}

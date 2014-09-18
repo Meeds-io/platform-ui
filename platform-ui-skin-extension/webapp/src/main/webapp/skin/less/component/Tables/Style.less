@@ -1,0 +1,133 @@
+//
+// Table
+// --------------------------------------------------
+.uiGrid.table {
+	border: 1px solid @tableBorder;
+	thead tr:first-child {
+		.box-shadow(0px 1px 2px -1px rgba(13,13,13,0.2));
+	}
+	td ,th {
+		font-size: 13px;
+		border-left: 1px solid @tableBorder;
+		padding: 8px 18px;
+		vertical-align: middle;
+		&.center {
+				text-align: center;
+			}
+		&.left {
+				text-align: left;
+			}
+		&.right {
+				text-align: right;
+			}
+		&.empty {
+			color: @grayLight;
+			background-color: @tableBackgroundAccent;
+			text-align: center;
+		}
+		.text {
+			overflow: hidden;
+		}
+	}
+	tr {
+		th {
+			background-color: @componentBackground;
+			border-bottom: 1px solid @tableBorder;
+		}
+
+		td {
+			border-top: none;
+			.actionIcon {
+					&:active,&:focus {
+					#StatusElements > .StatusActive(0px 0px 10px 0 rgba(0, 0, 0, 0.15) inset);
+				}
+			}
+		}
+	}
+}
+
+.table-striped {
+	tbody {
+		tr:nth-child(odd) td {
+			background-color: @tableBackgroundAccent;
+		}
+		tr:nth-child(even) td {
+			background-color: @white;
+		}
+	}
+	tr:nth-child(odd) td{
+		background-color: @tableBackgroundAccent;
+	}
+	tr:nth-child(even) td {
+		background-color: @white;
+	}
+}
+
+.uiGrid.rounded-corners {
+	border-collapse: separate;
+	.box-shadow(0 1px 2px rgba(13,13,13,0.1));
+	.border-radius(@baseBorderRadius);
+	thead:first-child tr:first-child th:first-child,
+	tbody:first-child tr:first-child td:first-child {
+	.border-top-left-radius(@baseBorderRadius);
+	}
+	tbody {
+		.box-shadow(0 -1px 1px 0px rgba(13, 13, 13, 0.1));
+	}
+	thead:first-child tr:first-child th:last-child,
+	tbody:first-child tr:first-child td:last-child {
+		.border-top-right-radius(@baseBorderRadius);
+	}
+	thead:last-child tr:last-child th:first-child,
+	tbody:last-child tr:last-child td:first-child,
+	tfoot:last-child tr:last-child td:first-child {
+		.border-bottom-left-radius(@baseBorderRadius);
+	}
+	thead:last-child tr:last-child th:last-child,
+	tbody:last-child tr:last-child td:last-child,
+	tfoot:last-child tr:last-child td:last-child {
+		.border-bottom-right-radius(@baseBorderRadius);
+	}
+	thead:first-child tr th:first-child,
+	 tr td:first-child {
+		border-left: 0;
+	}
+}
+
+/*table rounder corners bottom border */
+
+.uiGrid.rounded-corners-bottom {
+	.uiGrid.rounded-corners; /*call rounded corners table*/
+	.border-radius(0 0 @baseBorderRadius @baseBorderRadius);
+	thead:first-child tr:first-child th:first-child,
+	tbody:first-child tr:first-child td:first-child {
+		.border-top-left-radius(0);
+
+	}
+	thead:first-child tr:first-child th:last-child,
+	tbody:first-child tr:first-child td:last-child {
+		.border-top-right-radius(0);
+	}
+	thead:first-child tr th:first-child,
+	tr td:first-child {
+		border-left: 0;
+	}
+}
+
+/*table clear cell border */
+
+.uiGrid.no-border-cell {
+	tr td,
+	tr th {
+		border-left: 0;
+	}
+}
+
+.uiGrid.table-hover {
+	tbody {
+		tr:hover td,
+		tr:hover th {
+			background-color: @tableBackgroundHover;
+		}
+	}
+}

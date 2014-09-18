@@ -1,0 +1,163 @@
+@import "../../../variables.less"; 
+@import "../../../mixins.less";
+
+
+.loginHistoryContent {height:100px; overflow:auto;}
+.loginHistoryItem {color:#484848;}
+.loginHistoryItemDetail {font-size:9px; margin-left:3px; color:#757575;}
+.customLink:hover {text-decoration:underline; color:#226ab4; cursor:pointer;}
+
+#accordion .ui-icon { display: none; }
+#accordion .ui-accordion-header a { padding-left: 8px; }
+#accordion .ui-accordion-content { padding-left: 16px; }
+
+.sorting_asc i {
+    background-position: 0 -120px;
+}
+.sorting_desc i{
+    background-position: -20px -120px;
+}
+.sorting i{
+    background-position: -180px -200px;
+}
+
+.uiGadgetThemes{
+	.uiContentBox{
+		height: auto;
+		overflow: auto;
+	}
+	.gadContent{
+		margin: 0 -10px;
+		.searchUser{
+			width: 100%;
+			margin-bottom: 15px;
+		}
+		.statisticDiv{
+			.btn-group{
+				text-align: center;
+				margin: 1px 0px 1px 0px;
+				.btn{
+					padding: 4px;
+				}
+			}
+			.btn:nth-child(2n+2){		
+				min-width: 110px;
+    			padding: 3px 8px;
+				text-align: center;
+			}
+			.selectWeek{
+				margin:15px 9px 10px;
+			}
+
+		}
+		.userForm{
+			border-top: 1px solid #cfcfcf;
+			legend {
+			      display: block;
+				  width: auto;
+				  padding: 5px;
+				  margin-bottom: 0px;
+				  font-size: 13px;
+				  line-height: 20px;
+				  color: @grayDark;
+				  border: 0;
+				  border-bottom: none;
+
+			}
+			.userContent{
+				.leftContent{
+					width: 55px;
+					.iteamIcon{
+						width: 26px;
+						height: 26px;
+						padding: 8px 7px 5px;	
+						margin: 12px 0;
+					}
+					.caret{
+							border: none;
+						    content: "";
+						    display: inline-block;
+						    height: 0;
+						    vertical-align: top;
+						    width: 0;
+						    position: absolute;
+						    top: 13px;
+						    left: 40px;
+					}
+					.selectIteam{
+						background: #999;
+						border-radius: 3px;
+						position: relative;
+						.iconDetail{
+							background: url("@{images-path}/platform/gadget-pack/Statistics/StasticsIcon.png") no-repeat left 3px;
+						}
+						.iconStastics{
+							background: url("@{images-path}/platform/gadget-pack/Statistics/StasticsIcon.png") no-repeat left -24px;
+						}
+						.caret{
+							border-left: 7px solid #999;
+						    border-top: 7px solid transparent;
+						    border-right: 7px solid transparent;
+						    border-bottom: 7px solid transparent;
+						}
+					}
+					i{
+						width: 24px;
+						height: 24px;
+						display: block;
+					}
+					.iconStastics{
+						background: url("@{images-path}/platform/gadget-pack/Statistics/StasticsIcon.png") no-repeat left bottom;
+					}
+					.iconDetail{
+						background: url("@{images-path}/platform/gadget-pack/Statistics/StasticsIcon.png") no-repeat left -50px;
+					}
+				}
+				.rightContent{
+					margin-left: 55px;
+					overflow: auto;
+					border-left: 1px solid #CFCFCF;
+					padding-left: 8px;
+				}
+			}
+			
+		}
+		.accordion {
+			border-radius: 4px;
+			overflow: hidden;
+			.expaned {
+			    background: linear-gradient(to bottom, #fff, #f2f2f2) repeat scroll 0 0 transparent;
+			    border-bottom: 1px solid #CFCFCF;
+			    border-radius: 0;
+			}
+			.accordion-toggle a{
+				padding: 5px 5px 5px 15px;
+			}
+			/*.collapsed{
+				background: #f4f4f4;
+			}*/
+			.timePost{
+				color: #b5b5b5;
+			}
+			.accordion-body{
+			 	overflow-y: auto; 
+ 				max-height: 100px;
+				/*padding: 6px 12px;*/
+				a{
+					color: #226AB4;
+				}
+				td{
+					line-height: 28px;
+				}
+			}
+			
+		}
+	}
+}
+.historyDivPosition {
+	.accordion .accordion-inner {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
+

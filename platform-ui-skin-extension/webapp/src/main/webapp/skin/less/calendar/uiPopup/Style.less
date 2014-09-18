@@ -1,0 +1,327 @@
+/*=================UIEventAttenderTab========================*/
+.uiPopup {
+	.uiGrid.table {
+		tr td, tr th {
+			padding: 8px 18px;
+		}
+	}
+}
+
+.newEventAttendee {
+	.uiGrid {
+		table-layout: fixed;
+		tr td {
+			border: 1px solid @borderColor;
+			height: 26px;
+			padding: 2px 0;			
+			-moz-user-select: none;		
+		}
+		tr.titleBar td ,tr td.freeTime{
+			background: @componentBackground;
+		}
+		tr.titleBar td {
+			padding: 2px;
+			&.timeNumber {
+				font-size: @baseFontSize - 1;
+			}
+		}
+		tr td.busyDotTime{
+			background: #ff0000;
+		
+		}
+		tr td.busyTime{
+			background: #ff7f7f;	
+		}
+		
+		tr td.userSelection {
+			background: #a7b838;
+		}
+		tr td.busySelected{
+			background: #d35c1c;
+		
+		}
+		
+	}
+	
+	.dateTimeContainer  {
+		padding: 5px 0 0 0;
+		.applySelectedDate {
+			margin: 2px 0 0 0;
+		}
+		.fromTo {
+			.title {
+				margin: 2px 4px 0 0;
+			}
+			input[type=text] {
+				.border-radius(@borderRadiusSmall);
+				box-shadow: 0 0 0 transparent;
+				height: 24px;
+				color: @textColor;
+			}
+			.allDay {
+				margin: 2px 0 15px 0;
+				.uiCheckbox {
+					margin-right:-5px;
+					margin-right: 15px e("\9"); //hackIE9
+				}
+				@media screen and (-webkit-min-device-pixel-ratio:0) {
+				   .uiCheckbox {
+						margin-right:15px;
+					}
+				}//hack chrome
+			}
+			> .timeField {
+				margin: 0 15px 0 0;
+				> .pull-left + .pull-left {
+					margin: 0 0 0 15px;
+				}
+			}
+		}
+	}
+	
+	.thiefBox {
+		margin: 10px 2px 0 0;
+		text-align: right;
+		span span {
+			.square(12px);
+			.border-radius(@borderRadiusSmall);
+			display: inline-block;
+			margin: 0 5px 0 0;
+			.box-shadow(~"-1px 1px 2px rgba(0,0,0,0.17)inset");
+		}
+		.freeTime {
+			
+			span {
+				background: @componentBackground;
+			}
+		}
+		.busyTime {
+			margin: 0 0 0 15px;
+			span {
+				background: #ff0000;
+			}
+		}
+	}
+}
+
+/*=================Participants==================*/
+
+.eventShare {
+	.uiFormGrid {
+		margin: 10px 0 0 0;
+		tbody > tr  > td{
+			padding: 6px 0;
+		}
+		tbody > tr  > td + td {
+			padding-left: 20px;
+		}
+		.uiRadio {
+			min-width: 70px;
+		}
+		.right {
+			text-align: right;
+		}
+	}
+}
+
+
+/*===================UIEventRemindersTab===========================*/
+.reminderByPopup ,.reminderByEmail{
+	.selectboxSmall {
+		padding: 5px 0;
+		.uiSelectbox {
+			vertical-align: -8px;
+		}
+	}
+	.mailReminder + div ,.popupReminder + div {
+		margin: 0 0 0 30px;
+	}	
+	a {
+		color: @grayDark;
+	}
+	.checkBoxRepeat {
+		.uiCheckbox {
+			margin-left: 0;
+		}
+	}
+	.uiEmailInput span {
+		font-weight: bold;
+		margin: 0 5px 0 0;
+	}
+}
+.reminderByEmail {
+	border-bottom: 1px solid @borderColor;
+	padding: 10px;
+	margin: 0 -10px 10px;
+}
+
+/*====================UIEventDetailTab======================*/
+.eventDetail ,.taskDetailTab{
+	width: 78%;margin: 0 auto;
+}
+.eventDetail,.taskDetailTab,.uiQuickAddEvent{
+	.date {
+		margin: 0 10px 0 0
+	}
+}
+
+/*====================SettingTab======================*/
+.setting {
+	.workingTime {
+		margin-left: 7px;
+	}
+	
+}
+
+/*======================uiRepeatEventForm=======================*/
+
+.uiRepeatEventForm {	
+	.inputMini {
+		input[type="text"] {
+			width: 30px;
+		}
+	}
+	.selectboxMini {
+		.uiSelectbox {
+			width: 50px;
+			.selectbox {
+				width:53px;
+			}
+		}
+	}
+	.weeklyByDay .controls {
+		font-size: @baseFontSize - 1;
+		width: 190px;
+		.checkBoxArea > .pull-left + .pull-left {
+			margin-left: 8px;
+		}
+		.checkBoxArea > .pull-left.item3  + .pull-left {
+			margin-left: 0!important;
+		}
+	}
+}
+
+/*=============================UIEventCategoryManager===========================*/
+
+.uiEventCategoryManager {
+	.uiEventCategoryForm {
+		.controlLabelSmall {
+			width: 115px;
+			&+ .controls {
+				margin-left: 125px;
+			}
+		}
+	}
+}
+/*=============================UIImportForm===========================*/
+.uiImportForm {
+	textarea{
+		height: 78px;
+	}	
+}
+
+/*=============================UIExportForm===========================*/
+
+.uiExportForm  {
+	.uiCheckbox ,.uiInputInfo{
+		margin-top: 6px;
+	} 
+	.calendarName{
+	 	.text-overflow();
+	} 
+	
+}
+
+
+/*=============================UIGroupCalendarTab===========================*/
+
+.addGroup  {
+	input[type=text] {
+		margin-top: 8px;
+	}	
+}
+
+/*=============================UIFeed===========================*/
+
+.feedTab {
+	.table {
+		margin-bottom: 0;
+	}
+}
+.inputLarge  {
+	.uiSelectbox  { 
+		width: 210px; 
+		select.selectbox {
+			width: 213px;
+		}
+	}
+}
+
+/*=============================UIAttachFileForm===========================*/
+
+.UICalendarPortlet {
+	.uiImportForm .uploadButton {
+		text-align: left;
+	}
+}
+
+/*==============================.uiQuickAddEvent=========================*/
+
+.uiQuickAddEvent {
+	.quickAddEventContainer {
+		.form-horizontal {
+			padding: 15px;
+		}		
+	}
+}
+
+/*==============================.uiConfirmForm=========================*/
+.uiConfirmForm {
+	.confirm {
+		padding: 10px 0 0 0;		
+	}
+	.uiRadio input[type="radio"] + span {
+		margin-left: 9px;
+	}
+	
+	.media .uiIconQuestion  {
+	    margin: 2px 15px 0  5px;
+	}
+}
+
+.ie8 .uiConfirmForm .uiRadio input[type="radio"] + span {
+	margin-left: 0px;
+}
+
+/*==============================.settingCalendarTab=========================*/
+.settingCalendarTab .form-horizontal {
+	padding-top: 10px;
+	.control-group {
+		margin-bottom: 10px;
+	}
+	.workingTime  {
+		margin-left: 25px;
+	}
+}
+
+.workingTimeCheck   {
+	line-height: 10px;
+}
+
+/*============================== uiShareForm =========================*/
+#PermissionOwnerInput {
+  color: @grayLight;
+}
+
+/*============================== uiConfirmForm =========================*/
+.confirmRadio > div {
+    margin: 8px 0 8px 30px;
+}
+.confirmRadio .actionLinks {
+	display:none;
+}
+
+/*========================== Place Holder =============================*/
+input.placeholder {
+    color: @grayLight;
+}

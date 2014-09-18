@@ -1,0 +1,540 @@
+@import "../variables.less";
+@import "../mixins.less";
+@import "wiki-variables.less"; 
+@import "wiki-mixins.less";
+@import "UIWikiPermalinkForm/Style.less";
+@import "Notifications/Style.less";
+@import "UIWikiPageVersionsCompare/Style.less";
+@import "UIWikiPageEditForm/Style.less";
+@import "InlineEditing/Style.less";
+@import "PageInfo/Style.less";
+@import "PopupRelated/Style.less";
+@import "UIWikiAdvanceSearchResult/Style.less";
+@import "UIWikiMovePageForm/Style.less";
+@import "Sprites/Style.less";
+@import "UIViewContentDisplay/Style.less";
+@import "UIWikiPageContent/Style.less";
+@import "/wiki/skin/DefaultSkin/webui/UIWikiRichTextEditor/Stylesheet.css";
+
+.UIWikiToolBar{
+	float: right;
+	width: 100px;
+}
+
+.uiWikiSearchBox {
+	position: relative;
+	&.pull-right > .dropdown-menu
+	{
+		right: auto;
+	}
+}
+
+/***** wikiMainLayout *********/
+
+.uiWikiPortlet {
+	background: url('@{images-path}/wiki/texture.jpg') repeat 0 0;
+}
+
+/************ WikiBox ****************/
+
+.wikiBox {
+	background: @white;
+	border: 1px solid @borderColor;
+	.border-radius(5px);
+	.box-shadow(0px 1px 2px rgba(0, 0, 0, 0.08));
+	
+	.titleWikiBox {
+		.border-radius(5px 5px 0px 0px );
+		.box-shadow(0px 1px 2px rgba(13, 13, 13, 0.08));
+		background: @componentBackground;
+		border-bottom: 1px solid @borderColor;
+		margin: 0px;
+		line-height: @baseLineHeight ;
+		font-weight: @headingsFontWeight;
+		color: @textColor;
+		padding: 8px 10px;
+		word-wrap: break-word;
+	}
+}
+
+/***** WikiLayout *******/
+.wikiBox {
+	h6.titleWikiBox {
+		a {color: @textColor;}
+	}
+}
+
+.wikiLayout {
+	margin: 0;
+	position: relative;
+	padding: 0px 21px;
+}
+
+.uiLeftContainerArea {
+	width: 273px;
+	padding: 4px 0 4px 4px;
+	float:left;
+	overflow: auto;
+	.wikiBox {
+		h6.titleWikiBox {
+			a {
+				display: block;
+			    overflow: hidden;
+			    text-overflow: ellipsis;
+			    white-space: nowrap;
+			}
+		}
+	}
+}
+
+.uiRightContainerArea {
+	padding: 4px;
+	float:left;
+	overflow: auto;
+}
+
+.uiWikiMiddleArea .UIWikiNavigationContainer {
+	padding: 8px 2px 0 2px;
+	visibility: '';
+	overflow: visible;
+}
+
+
+.uiWikiMiddleArea{
+	.uiWikiPageEditForm .uiWikiPageContainer {
+		margin-top: 10px;
+	}
+	.uiWikiPageContainer{
+		 margin: 0;
+		overflow: visible;
+		
+		.UIWikiPageArea {
+			padding: 0px;
+		}
+		.form-horizontal .control-group{
+			margin-bottom: 0px;
+		}
+	}
+	#UISubmitToolBarBottom{
+		margin-top: 20px;
+	}
+}
+
+*+html .uiWikiMiddleArea .uiWikiPageContainer {
+	position: static;
+}
+
+/* uiWikiPageContentArea */
+
+.uiWikiPageContentArea {
+	padding: 0px 15px;
+}
+
+.UIAttachmentContainer  {
+	.wikiBox;
+	padding:15px;
+}
+
+.fileHidden {
+	.opacity(0);
+	position: relative;
+	z-index: 2;
+	outline: none;
+}
+.uploadInput {
+	position: relative;
+	.btn-primary {
+		position: absolute;
+		z-index: 1;
+		left: 0;
+	}
+}
+.uiWikiBottomArea {
+	padding-top: 15px;
+	.uiWikiPageVersionsList {
+		padding: 15px;
+	}
+	.historyLabel {
+		 font-size: @baseFontSize;
+	}
+}
+
+/* -- Begin Resize CSS function -- */
+
+.uiWikiMiddleArea {
+	.resizeBar {
+		float: left;
+		width: 26px;
+		margin-top: 5px;
+		
+		.resizeBarContent {
+			width: 15px;
+			cursor:col-resize;
+			position: relative;
+			
+			&:hover {
+				border-right: solid 1px @componentBackgroundHover;
+
+					.resizeButton {
+					display: block;
+				}
+			}
+		}
+
+		.resizeButton {
+			#gradient .vertical(@white, @componentBackground);
+			.border-radius(3px 0px 0px 3px);
+			.size(24px,10px);
+			float:right;
+			margin : auto;
+			cursor : pointer;
+			border: 1px solid @componentBackgroundHover;
+			border-right: none;
+			display: none;
+			margin-top: 7px;
+				
+				[class^="uiIcon"] {
+					margin: 2px 0px 0px -2px;
+					width: 10px;
+				}
+		}
+		
+		.resizeButton:hover .uiIconMiniArrowLeft{
+			background-image: url("@{images-path}/Icons/uiIconsBlue.png");
+		}
+		
+		.resizeButton:hover .uiIconMiniArrowRight{
+			background-image: url("@{images-path}/Icons/uiIconsBlue.png");
+		}
+		
+		.showLeftContent {
+			display: block;
+			border: 1px solid @componentBackgroundHover;
+			.border-radius(0px 3px 3px 0px);
+			float: left;
+		}
+	}
+
+	.resizeBarDisplay {
+		.resizeBarContent {
+			border-right: solid 1px @componentBackgroundHover;
+		}
+		.resizeButton {
+			display: block;
+		}
+	}
+	
+	.resizeNoneBorder {
+		width: 20px;
+		
+		&:hover {
+		cursor: default;
+		}
+		.resizeBarContent:hover {
+			border: none;
+			cursor: default;
+		}
+	}
+}
+
+.nonePaddingLeft {
+	padding-left: 0px;
+}
+
+.uiWikiPortletNoSelect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/* -- End Resize CSS function -- */
+
+/*****UIWikiPermissionOwner*********/
+
+.groupPermissionBox {
+	margin: 0 5px;
+	.actionIcon {
+		margin: 0;
+	}
+}
+
+/*******uiWikiPageControlArea************/
+.uiWikiPageControlArea {
+	border-bottom: 1px dotted @borderColor;
+    padding: 15px 0;	
+	.uiWikiPageInfoArea {
+		clear: both;
+		.txtFeed {
+			color: @grayLight;
+		}
+	} 
+	.uiWikiPageTitle {
+		padding-top: 3px;
+    	overflow: hidden;
+    	margin-bottom: 10px;
+	}
+	.uiPageToolBar {
+		margin-left: 20px;
+	}
+}
+
+/*******compareSelect************/
+
+.compareSelect {
+	margin: 10px 0;
+}
+
+/*******Breadcrumbs************/
+
+.uiWikiBreadCrumb{
+	padding-top: 3px;
+}
+
+/*uiWikiDraftGrid*/
+
+.uiWikiMyDraftsForm {
+	padding: 0 15px;
+	.introduce {
+		margin: 0 0 15px 0;
+	}
+	.uiWikiDraftGrid{
+		th .uiIconArrowDown, .uiIconArrowUp{
+			margin: 3px -6px 0 0;
+		}
+	}
+}
+/*uiPermissionGrid*/
+
+.uiWikiPermissionOwner {
+	.fieldInput input[type=text] {
+		margin-top: 8px;
+	}
+}
+
+/******* templateControl ************/
+.templateControl {
+	padding-bottom: 10px;
+}
+
+.uiWikiDeletePageConfirm{
+	.WikiDeleteContent{
+		padding: 0 0 20px 0;
+		ul{
+			margin: 0 0 0 75px;
+		}
+		li{
+			list-style-type: inherit;
+			margin-bottom: 7px;
+		}
+		.uiIconQuestion{
+			margin-right: 14px;
+		}
+		h6{
+			margin-left: 30px;
+		}
+		.node{
+			margin-left: 30px;
+			font-style: italic;
+		}
+		.uiWikiBreadCrumb{
+			display: inline-block;
+			vertical-align: top;
+			padding-top: 0px;
+			.breadcrumb{
+				margin-left: 12px;
+				.active a{
+					font-weight: normal;
+					color: @textColor;
+				}
+			}
+		}
+	}
+}
+
+.confirmMessage{
+	padding: 10px 0 60px 10px;
+	.uiIconQuestion{
+		margin-right: 10px;
+	}
+}
+
+.uiWikiHistorySpaceArea{
+	padding: 8px 15px 15px;
+}
+
+.uiIconEditTemplate{
+  background-position: -40px 0px;
+}
+
+.uiIconDeleteTemplate{
+  background-position: -20px 0px;
+}
+
+/******* wiki space-switcher ************/
+
+.uiWikiPortlet {
+	.uiSpaceSwitcher_BreadCrumb {
+		float: left;
+		margin-top: -3px;
+		position: relative;
+		z-index: 2;
+	}
+  
+	.uiSpaceSwitcher_BreadCrumb:hover {
+	  color: @black;
+	  cursor: pointer;
+	}
+
+	.uiSpaceSwitcher_UIWikiMovePageForm {
+	    cursor: pointer;
+		float: left;
+		margin-left: 10px;
+		position: relative;
+	}
+	
+	.uiSpaceSwitcher_UIWikiMovePageForm, .uiSpaceSwitcher_UIWikiSelectPageForm{
+		.spaceChooser{
+			.btn{
+				span:first-child{
+					display: block;
+					float: left;
+					text-align: left;
+					width: 341px;
+				}
+			}
+		}
+	}
+	
+	.uiWikiMovePageForm, .uiWikiSelectPageForm{
+		.labelForm{
+			font-weight: bold;
+			padding: 2px 0px;
+		}
+		.uiInputInfo{
+			font-weight: bold;
+			padding: 4px 0px 10px;
+		}
+	}
+
+	.UISelectPageForm .SpaceSwitcher {
+	  padding: 15px 15px 0px 15px;
+	}
+}
+.uiWikiSpaceSwitcher_CreateWiki{
+	position: relative;
+}
+
+
+.uiWikiPageVersionsCompare .comparedForm {
+	border-bottom: 1px solid @componentBackgroundHover;
+	padding-bottom: 12px;
+}
+
+.uiWikiPageVersionsCompare .comparedForm .changeVersionForm {
+	padding: 12px;
+	background: @componentBackground;
+	float: left;
+}
+
+.uiWikiPageVersionsCompare .comparedForm .changeVersionForm .changeVersionInfo {
+	font-weight: bold;
+}
+
+.uiWikiPageVersionsCompare .comparedForm .changeVersionForm .admin {
+	font-weight: bold;
+	color: @primaryColor;
+}
+
+.uiWikiPageVersionsCompare .comparedForm .changeVersionForm .changes {
+	border-top: 1px solid white;
+	color: @primaryColor;
+	cursor: pointer;
+	line-height: 17px;
+}
+
+.uiWikiPageVersionsCompare .comparedForm .changeVersionForm .dateChange {
+	line-height: 20px;
+}
+
+.uiWikiPageVersionsCompare .comparedWith {
+	float: left;
+	padding: 30px 12px 0px 12px;
+	font-weight: bold;
+}
+
+.diff {
+	margin-bottom: -5px;
+	overflow: auto;
+	padding: 3px 4px;
+	white-space: normal;
+}
+
+.diffaddword {
+	background: #b5ffbf;
+}
+
+.diffremoveword {
+	background: #ffd8da;
+	text-decoration: line-through;
+}
+
+.prediffaddword {
+	background: #b5ffbf;
+	margin: 0;
+}
+
+.prediffremoveword {
+	background: #ffd8da;
+	margin: 0;
+}
+
+/*====== page not found =========*/
+
+.uiWikiPageNotFound {
+    margin: auto;
+    padding-top: 25px;
+    width: 614px;
+	.errorBlock {
+		background: url("@{images-path}/wiki/warningIcon.png") no-repeat  center top ;
+		display: block;
+		height: 160px;
+		margin: 0 auto;
+		text-align: center;
+		width: 160px;
+	}
+	p {
+		margin: 0;
+	}
+	.uiIconFileMini{
+		margin-left: -3px;
+	}
+	 h3 {
+		color: @grayLight;
+		text-align: center;
+	}
+	.titleWarning {
+		color: @grayLight;
+		font-size: 18px;
+		margin: 3px 0 17px;
+		text-align: center;
+	}
+	.pageContent {
+		background: none repeat scroll 0 0 white;
+		border: 1px solid @borderColor;
+		border-radius: @baseBorderRadius;
+		padding: 20px 26px;
+	}
+}
+
+.macro-output, .uiWikiPagePreview, .uiWikiContentDisplay{
+	span.box{
+		display: block;
+	}
+	.readOnly {
+	    display: block;
+   }
+}
+

@@ -1,0 +1,60 @@
+
+.uiDocumentSelector {
+	.breadcrumb {
+		> a.uiIconTree {
+			margin-top: 4px;
+		}
+	}
+	.center {
+		margin: 10px 0;
+		.uiDropdownWithIcon {
+			text-align: left;
+			background: none;
+		}
+	}
+	.btn .caret {
+		margin-left: 8px;
+		display: inline-block;
+	}
+	.actionIcon [class^="uiIcon"] {
+	    margin-right: 0;
+	}
+	.progressBarFrame {
+		.fileNameLabel {
+			overflow: hidden;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		 }
+	}
+	iframe {
+		.size(30px,30px);
+	}
+	.listContainer {
+		background: @componentBackgroundLight;
+		border: 1px solid @borderColor;
+		list-style: none outside none;
+		margin: 5px 0 0;
+		padding: 5px 0;
+		.border-radius(2px);
+		max-height: 250px;
+   		overflow: auto;
+	}
+	.listContainer li {
+		display: block; 
+		padding: 3px 10px;
+	}
+	.listContainer a {
+		color: @textColor;
+	}
+	.listContainer a:hover {
+		color: @linkColor;
+	}
+	.TRNoContent{
+		color: @grayLight;
+		text-align: center;
+	}
+}
+
+.uiDocumentSelector [class^="uiIcon"] {
+	margin-right: 8px;	
+}
