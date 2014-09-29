@@ -399,9 +399,10 @@
 @uiBoxHeadBg : @componentBackground;
 @uiBoxGray: @componentBackground;
 
-// Quote
-@quotePrimaryBorder: 					@componentBackgroundHover;
-@quotePrimaryBackgound: 				@componentBackground;
 
-@quoteSecondBorder: 					lighten(#2f5e92, 40%);				// #aac5e3
-@quoteSecondBackground: 				lighten(@quoteSecondBorder, 18%);	// #aac5e3
+// Quote
+@quoteBorder: 					@componentBackgroundHover;
+@quoteBackgound: 				@componentBackground;
+ 
+@quotePrimaryBorder: 					lighten(@primaryColor, 40%);				
+@quotePrimaryBackgound: 				lighten(@quotePrimaryBorder, 18%);	
