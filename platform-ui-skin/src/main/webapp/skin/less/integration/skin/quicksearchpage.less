@@ -43,7 +43,7 @@
     }
 
     .message {
-      border-top: 1px solid #CFCFCF;
+      border-top: 1px solid @borderColor;
       text-align: center;
       > a {
         font-weight: bold;
@@ -72,8 +72,8 @@
   }
   
   .quickSearchResult:hover, .quickSearchResult.arrowResult {
-    #gradient > .vertical(@blueLighter, darken(@blueLighter, 15%));
-    border-color: @blueDark;
+    #gradient > .vertical(@primaryLightColor, darken(@primaryLightColor, 15%));
+    border-color: @primaryDarkColor;
     a {
 		color: white;
 	    > [class^="uiIconPLF"] {

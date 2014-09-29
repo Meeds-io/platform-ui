@@ -38,7 +38,7 @@
 			}
 			
 			.btn-group li > a.selected{
-			   #gradient > .vertical(@blueLighter, darken(@blueLighter, 15%));
+			   #gradient > .vertical(@primaryLightColor, darken(@primaryLightColor, 15%));
 			    color: @white;
 			}
 			.uiFormScrollMenu{
@@ -306,7 +306,7 @@
 		.dropdown-submenu:hover > .seoImgBlock,
 		.dropdown-menu .active > .seoImgBlock,
 		.dropdown-menu .active > .seoImgBlock:hover  {
-			#gradient > .vertical(@blueLighter, darken(@blueLighter, 15%));
+			#gradient > .vertical(@primaryLightColor, darken(@primaryLightColor, 15%));
 			color: @white;
 		}
 			
@@ -374,11 +374,11 @@
 		.uiDropdownWithIcon {
 			background: url(/eXoSkin/skin/less/platform/skin/images/ToolbarContainer/line.png) no-repeat bottom left;
 		 	> a {
-			color: #4c4c4c;
+				color: @toolbarLightLinkColor;
 			}
-			> a:hover,.uiDropdownWithIcon.open > a {
+			> a:hover, &.open > a {
 				background: rgba(128,128,128,0.3);
-				color: @textColor;
+				color: @toolbarLightLinkHoverColor;
 			}
 		}
 }

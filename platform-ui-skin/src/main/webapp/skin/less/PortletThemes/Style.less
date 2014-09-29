@@ -165,7 +165,7 @@
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
 	.windowBar {
-		#gradient > .vertical(#f2f2f2, #d6d6d6);
+		#gradient > .vertical(@componentBackground, #d6d6d6);
 		.box-shadow(inset 0 1px 0 @white);
 		height: 30px; line-height: 30px;
 		padding: 0 10px;
@@ -230,7 +230,7 @@
 	}
 	.bottomDecorator {
 		border-top: 1px solid #adadad;
-		#gradient > .vertical(#f2f2f2, #d6d6d6);
+		#gradient > .vertical(@componentBackground, #d6d6d6);
 		padding: 0 10px;
 		line-height: 22px;
 		height: 22px;

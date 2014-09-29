@@ -16,7 +16,6 @@
 @primaryColor:			#2f5e92;						// @blue
 @primaryDarkColor:		darken(@primaryColor, 10.5%);	// @blueDark - #224469 - Old Color: #224886
 @primaryLightColor:		lighten(@primaryColor, 18.5%);	// @blueLight - #578dc9 - Old Color: #567AB6
-@primaryLighterColor:	lighten(@primaryColor, 22%); 	// @blueLighter - #6496cd - Old Color: #638acd
 
 // Accent colors
 // -------------------------
@@ -73,7 +72,7 @@
 @btnBackgroundHighlight:            @componentBackground;
 @btnBorder:                         @borderColor;
 
-@btnPrimaryBackground:              @primaryLighterColor;
+@btnPrimaryBackground:              @primaryLightColor;
 @btnPrimaryBackgroundHighlight:     @primaryColor;
 @btnPrimaryBorder: 					@primaryDarkColor;
 
@@ -108,7 +107,7 @@
 // -------------------------
 @dropdownBackground:            	@white;
 @dropdownBorder:                	@borderColor;
-@dropdownLinkBackgroundHover:   	@primaryLighterColor;
+@dropdownLinkBackgroundHover:   	@primaryLightColor;
 
 
 // Typography
@@ -220,7 +219,7 @@
 // -------------------------
 @paginationBackground:                	#fff;
 @paginationBorder:                    	#ddd;
-@paginationActiveBackground:          	#f5f5f5;
+@paginationActiveBackground:          	@componentBackgroundLight;
 
 
 // Hero unit
@@ -323,7 +322,7 @@
 @calComponentTimeInputColor: 			@textColor;
 @calComponentTimeInputBackground: 		@white;
 @calComponentTimeInputBorder: 			@borderColor;
-@calComponentTimeInputTorcusBorder: 	@primaryLighterColor;
+@calComponentTimeInputTorcusBorder: 	@primaryLightColor;
 
 // Label Badges
 // -------------------------
@@ -389,8 +388,8 @@
 @toolbarLightStartBackground:			#f4f4f4;
 @toolbarLightEndBackground:				#d4d4d4;
 @toolbarLightBorder: 					@borderColor;
-@toolbarLightLinkColor: 				#4c4c4c;
-@toolbarLightLinkHoverColor: 			@textColor;
+@toolbarLightLinkColor: 				@textColor;
+@toolbarLightLinkHoverColor: 			@toolbarLightLinkColor;
 
 //UIBox
 
