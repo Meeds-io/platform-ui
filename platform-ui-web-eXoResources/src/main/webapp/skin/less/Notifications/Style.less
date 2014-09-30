@@ -1,42 +1,46 @@
+//
+// Notification
+// --------------------------------------------------
 .alert {
 	.border-radius(3px);
-	.box-shadow(0px 1px 1px @grayMediumWhiteSmoke);
+	.box-shadow(0px 1px 1px @componentBackgroundHover);
 	background: @warningBackground;
 	border-color: @warningBorder;
-	color: @textColor;
+	color: @warningText;
 	padding: 8px 13px;
 	margin: 10px 0;
 	z-index: 10;
-	
+
 	i {
 		display: inline-block;
 		vertical-align: text-top;
 		.square(16px);
 		margin-right: 6px;
 	}
-	
+
 	.uiIconWarning {
-		background: url("/eXoResources/skin/images/Icons/uiIconColor.png") no-repeat -20px top;
+		background: url("@{images-path}/Icons/uiIconColor.png") no-repeat -20px top;
 	}
-	
+
 	a {
 		color: @linkColor;
-	
+
 		&:hover {
 			font-weight: normal;
 			text-decoration: none;
 		}
 	}
-	
-	
+
+
 }
 
 .alert-success {
 	background: @successBackground;
 	border-color: @successBorder;
-	
+	color: @successText;
+
 	.uiIconSuccess {
-		background: url("/eXoResources/skin/images/Icons/uiIconColor.png") no-repeat -60px top;
+		background: url("@{images-path}/Icons/uiIconColor.png") no-repeat -60px top;
 
 	}
 }
@@ -44,17 +48,19 @@
 .alert-info {
 	background: @infoBackground;
 	border-color: @infoBorder;
-	
+	color: @infoText;
+
 	.uiIconInfo {
-		background: url("/eXoResources/skin/images/Icons/uiIconColor.png") no-repeat -40px top;
+		background: url("@{images-path}/Icons/uiIconColor.png") no-repeat -40px top;
 	}
 }
 
 .alert-error {
 	background: @errorBackground;
 	border-color: @errorBorder;
-	
+	color: @errorText;
+
 	.uiIconError {
-		background: url("/eXoResources/skin/images/Icons/uiIconColor.png") no-repeat left top;
+		background: url("@{images-path}/Icons/uiIconColor.png") no-repeat left top;
 	}
 }

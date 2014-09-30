@@ -1,7 +1,7 @@
-
-/************************ Container ***************************/
-
-.UIEditInlineWS {
+//
+// Portal - Edit Inline WS
+// --------------------------------------------------
+.UIEditInlineWS { // Nav Top: Edit > Page > Add Page
 	.EdittingContainer {
 		padding: 3px;
 	}
@@ -10,22 +10,22 @@
 		border: 1px dashed @borderColor;
 		padding: 2px;
 	}
-	
+
 	.OverContainerBlock {
-		border: 1px solid @blueLight;
+		border: 1px solid @primaryLightColor;
 		background: @white;
 		height: 100%;
 		padding: 2px;
 		.border-radius(5px);
 		border-top-left-radius: 2px;
 	}
-	
+
 	.EdittingContainer .UIRowContainer {
 		min-height: 100px;
 	}
 	.DragAndDropPreview {
 		width: auto; height: 80px;
-		background: url('/eXoResources/skin/images/Container/DragAndDropPreview4x4.gif');
+		background: url('@{images-path}/Container/DragAndDropPreview4x4.gif');
 		border: 1px solid @borderColor;
 		margin: 0px 12px 10px 12px;
 	}
@@ -37,7 +37,7 @@
 	}
 	.EDITION-BLOCK {
 		.CONTROL-BLOCK {
-	    background: @blueLight;	 
+	    background: @primaryLightColor;
 	    border-bottom-left-radius: 5px;
 	    border-bottom-right-radius: 5px;
 	    color: @white;
@@ -81,21 +81,20 @@
 			background: none;
 		}
 	}
-	
-	.uiTabContainer {
 
+	.uiTabContainer {
 		.tab-pane {
 			padding: 2px;
 		}
 	}
-	
-/***************************** Portlet *************************************/		
+
+	/*---------- Portlet ----------*/
 	.UIPortlet {
-	
+
 		.LAYOUT-PORTLET {
 			padding: 4px;
 		}
-		
+
 		.portletLayoutDecorator {
 			background: @white;
 			border: 1px solid @borderColor;
@@ -105,23 +104,23 @@
 			padding: 5px 10px;
 			text-align: center;
 		}
-		
+
 		.portletLayoutDecoratorHover {
-			background: @grayLighter;
-			border: 1px solid @blueLighter;
+			background: @componentBackgroundLight;
+			border: 1px solid @primaryLighterColor;
 			.border-radius(3px);
 			border-top-left-radius: 0px;
 			min-height: 85px;
 			padding: 5px 10px;
-			text-align: center;			
-		}	
-		
+			text-align: center;
+		}
+
 	}
 
-/**************************** uiContainerList *******************************/	
+	/*---------- uiContainerList ----------*/
 	.uiContainerList {
 		[class*="ContainerLayout"] {
-			background: url("/eXoResources/skin/images/Container/Container.png") no-repeat center;
+			background: url("@{images-path}/Container/Container.png") no-repeat center;
 			padding-left: 95px;
 			font-weight:bold;
 			margin-top: 3px;
@@ -145,7 +144,7 @@
     .PluginColumnContainerLayout {
       background-position: 5px -401px;
       height: 41px;
-    }   
+    }
 		.TwoColumnContainerLayout {
 			background-position: 5px -154px;
 			height: 31px;
@@ -176,13 +175,12 @@
 		}
 	}
 
-/************************ UIPageBody ***************************/
-	
+	/*---------- UIPageBody ----------*/
 	.UIPageBody {
 		.pageLayoutDecorator {
-			background: url(/eXoResources/skin/images/Container/PortalTexture.png) repeat center;
+			background: url("@{images-path}/Container/PortalTexture.png") repeat center;
 			min-height: 140px;
-			border: 1px solid @blueLighter;
+			border: 1px solid @primaryLighterColor;
 			.box-shadow(0 2px 1px rgab(35,44,48,0.3));
 			.border-radius(6px);
 			margin: 2px;
@@ -190,7 +188,7 @@
 			text-align: center;
 			overflow: hidden;
 			.title {
-				background: @blueLight;
+				background: @primaryLightColor;
 				line-height: 33px;
 				height: 33px;
 				color: @white;
@@ -198,17 +196,21 @@
 				font-weight: bold;
 				font-size: 15px;
 				letter-spacing: 1px;
-		    margin: -6px -85px;
-		    padding: 0 78px;
-		    word-spacing: 6px;
-		    text-shadow:1px 1px 1px rgba(0, 0, 0, 0.3);
+			    margin: -6px -85px;
+			    padding: 0 78px;
+			    word-spacing: 6px;
+			    text-shadow:1px 1px 1px rgba(0, 0, 0, 0.3);
 				.box-shadow(0px 1px 3px rgba(35,44,48,0.2));
 				.rotate(-29deg);
 			}
 		}
 	}
-	
+
 }
 
-/***************UIPortletForm******************/
-#tab-UIPortletForm .uiTabContent.resizable {overflow: auto; max-height: 300px; margin: -10px; }
+/*---------- UIPortletForm ----------*/
+#tab-UIPortletForm .uiTabContent.resizable {
+	overflow: auto;
+	max-height: 300px;
+	margin: -10px;
+}

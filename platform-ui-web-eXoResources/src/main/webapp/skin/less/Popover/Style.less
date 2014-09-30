@@ -1,11 +1,6 @@
 //
 // Popovers
 // --------------------------------------------------
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-	//@popoverArrowOuterColor:  rgba(0,0,0,0.35);
-}
-
-
 .popover {
   .border-radius(@baseBorderRadius);
   .box-shadow(0 2px 6px -1px rgba(0,0,0,.15));
@@ -34,12 +29,12 @@
   &.bottom .arrow {
     border-bottom-color: @popoverArrowOuterColor;
     &:after {
-      border-bottom-color: @popoverArrowColor;    
+      border-bottom-color: @popoverArrowColor;
     }
   }
-  &.left .arrow {    
+  &.left .arrow {
     border-left-color: @popoverArrowOuterColor;
-    &:after {     
+    &:after {
       border-left-color: @popoverArrowColor;
     }
   }

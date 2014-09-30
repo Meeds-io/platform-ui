@@ -1,8 +1,10 @@
-
-.uiGrid.table { 
+//
+// Table
+// --------------------------------------------------
+.uiGrid.table {
 	border: 1px solid @tableBorder;
 	thead tr:first-child {
-		.box-shadow(0px 1px 2px -1px rgba(13,13,13,0.2)); 
+		.box-shadow(0px 1px 2px -1px rgba(13,13,13,0.2));
 	}
 	td ,th {
 		font-size: 13px;
@@ -27,20 +29,20 @@
 			overflow: hidden;
 		}
 	}
-	tr {		
+	tr {
 		th {
-			background-color: @grayWhiteSmoke;
+			background-color: @componentBackground;
 			border-bottom: 1px solid @tableBorder;
 		}
-	
-		td {		
+
+		td {
 			border-top: none;
 			.actionIcon {
 					&:active,&:focus {
 					#StatusElements > .StatusActive(0px 0px 10px 0 rgba(0, 0, 0, 0.15) inset);
-				}					
+				}
 			}
-		}	
+		}
 	}
 }
 
@@ -51,14 +53,14 @@
 		}
 		tr:nth-child(even) td {
 			background-color: @white;
-		}		
+		}
 	}
 	tr:nth-child(odd) td{
 		background-color: @tableBackgroundAccent;
 	}
 	tr:nth-child(even) td {
 		background-color: @white;
-	}		
+	}
 }
 
 .uiGrid.rounded-corners {
@@ -85,14 +87,14 @@
 	tbody:last-child tr:last-child td:last-child,
 	tfoot:last-child tr:last-child td:last-child {
 		.border-bottom-right-radius(@baseBorderRadius);
-	}	
+	}
 	thead:first-child tr th:first-child,
 	 tr td:first-child {
 		border-left: 0;
-	}	
+	}
 }
 
-/*table rounder corners bottom border */ 
+/*table rounder corners bottom border */
 
 .uiGrid.rounded-corners-bottom {
 	.uiGrid.rounded-corners; /*call rounded corners table*/
@@ -100,7 +102,7 @@
 	thead:first-child tr:first-child th:first-child,
 	tbody:first-child tr:first-child td:first-child {
 		.border-top-left-radius(0);
-		
+
 	}
 	thead:first-child tr:first-child th:last-child,
 	tbody:first-child tr:first-child td:last-child {
@@ -115,10 +117,10 @@
 /*table clear cell border */
 
 .uiGrid.no-border-cell {
-	tr td, 
+	tr td,
 	tr th {
 		border-left: 0;
-	}	
+	}
 }
 
 .uiGrid.table-hover {

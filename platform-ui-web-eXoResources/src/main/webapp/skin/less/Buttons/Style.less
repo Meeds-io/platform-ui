@@ -4,7 +4,7 @@
 
 .btn {
 	font-size: @baseFontSize;
-	.buttonBackground(@btnBackground, @btnBackgroundHighlight, @grayDark, 0 1px 1px rgba(255,255,255,.75));
+	.buttonBackground(@btnBackground, @btnBackgroundHighlight, @textColor, 0 1px 1px rgba(255,255,255,.75));
 	border: 1px solid @btnBorder;
 	line-height: @baseLineHeight - 2;
 	.border-radius(@baseBorderRadius);
@@ -13,8 +13,8 @@
 
   // Hover state
   &:hover {
-	#gradient > .vertical(@grayMediumWhiteSmoke, @btnBackgroundHighlight);
-	/*.buttonBackground(@grayMediumWhiteSmoke, @btnBackgroundHighlight, @grayDark, 0 1px 1px rgba(255,255,255,.75));*/
+	#gradient > .vertical(@componentBackgroundHover, @btnBackgroundHighlight);
+	/*.buttonBackground(@btnBackgroundHover, @btnBackgroundHighlight, @grayDark, 0 1px 1px rgba(255,255,255,.75));*/
   }
 
 
@@ -46,7 +46,7 @@
 		border-color: @btnPrimaryBorder;
 
 	&:hover {
-		.buttonBackground(@blueLight, @btnPrimaryBackgroundHighlight);
+		.buttonBackground(@primaryLightColor, @btnPrimaryBackgroundHighlight);
   }
 	font-family: @sansBoldFontFamily;
 	font-weight: bold;

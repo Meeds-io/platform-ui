@@ -1,17 +1,16 @@
 //
-// Sprites
+// Prites
 // --------------------------------------------------
 
-
 // ICONS
-// -----
+// ----------
 
 // All icons receive the styles of the <i> tag with a base class
 // of .i and are then given a unique class to add width, height,
 // and background-position. Your resulting HTML will look like
 // <i class="iconinbox"></i>.
 
-// For the white version of the icons, just add the .iconwhite class: 
+// For the white version of the icons, just add the .iconwhite class:
 // <i class="iconinbox iconwhite"></i>
 
 [class^="uiIcon"]{
@@ -21,7 +20,7 @@
   .ie7-restore-right-whitespace();
   line-height: 16px;
   vertical-align: text-top;
-  background-image: url("/eXoResources/skin/images/Icons/uiIconsDarkGray.png");
+  background-image: url("@{images-path}/Icons/uiIconsDarkGray.png");
   background-repeat: no-repeat;
 }
 
@@ -35,21 +34,19 @@
 .actionIcon.active [class^="uiIcon"],.nodeSelected:hover [class^="uiIcon"],
 [class^="uiIcon"]:hover, .uiActionBar [class^="uiIcon"]:hover, .uiIconBlue
 {
-  background-image: url("/eXoResources/skin/images/Icons/uiIconsBlue.png");
+  background-image: url("@{images-path}/Icons/uiIconsBlue.png");
 
 }
 
 /* light grey icons with optional class, or on  */
 
-
 .dropdown-menu > li > a > [class^="uiIcon"],
 .dropdown-menu > .active > a > [class^="uiIcon"],
 .uiDropdownWithIcon .dropdown-submenu> a > [class^="uiIcon"],.uiActionBar [class^="uiIcon"], .uiIconClose, .uiIconLightGray
 {
-  background-image: url("/eXoResources/skin/images/Icons/uiIconsLightGray.png");
+  background-image: url("@{images-path}/Icons/uiIconsLightGray.png");
 
 }
-
 
 /* White icons with optional class, or on hover/active states of Drop down with Icons */
 
@@ -61,7 +58,7 @@
 .uiDropdownWithIcon .dropdown-submenu:hover > a > [class^="uiIcon"],
 .dropdown-menu > li > a:hover > [class^="uiIcon"],
 .dropdown-menu > .active > a > [class^="uiIcon"],
-.btn-primary [class^="uiIcon"], 
+.btn-primary [class^="uiIcon"],
 .btn-primary:hover [class^="uiIcon"],
 .uiDropDownCal a:hover [class^="uiIcon"],
 .uiDropDownCal .active a:hover [class^="uiIcon"],
@@ -74,23 +71,22 @@
 .uiQuestions .attachmentContentImage .actionAttachImg a:hover i,.viewIconContainer > div:hover [class^="uiIcon"],
 .uiIconWhite
 {
-  background-image: url("/eXoResources/skin/images/Icons/uiIconsWhite.png");
+  background-image: url("@{images-path}/Icons/uiIconsWhite.png");
 }
 
 .uiIconClose:hover, a:hover .uiIconClose {
-	background-image: url("/eXoResources/skin/images/Icons/uiIconsDarkGray.png") !important;
+	background-image: url("@{images-path}/Icons/uiIconsDarkGray.png") !important;
 }
 .actionIcon:hover .uiIconClose {
-	background-image: url("/eXoResources/skin/images/Icons/uiIconsBlue.png") !important;
+	background-image: url("@{images-path}/Icons/uiIconsBlue.png") !important;
 }
-
 
 .uiIconSearch {
 	background-position: 0px 0px;
 }
 
 .uiIconTrash,.uiIconDelete,.uiIconDeleteNode,.uiIconDeleteDraft,
-.uiIconDeletePage,.uiIconDeleteCategory,.uiIconRemoveStyle, 
+.uiIconDeletePage,.uiIconDeleteCategory,.uiIconRemoveStyle,
 .uiIconRemovePermission,.uiIconRemoveTag,.uiIconRemoveNodeType,
 .uiIconDeleteMembership,.uiIconDeleteUser,
 .uiIconRemoveNavigationNode,.uiIconRemoveListTargetPage,.uiIconRemoveDetailTargetPage {
@@ -106,7 +102,7 @@
 .uiIconLock, .uiIconPagePermission {
 	background-position: -60px 0px;
 }
- 
+
 .uiIconLink,.uiIconPermalink, .uiIconLinkr {
 	background-position: -80px 0px;
 }
@@ -339,7 +335,7 @@
 	background-position: 0px -120px;
 }
 
-.uiIconArrowUp { 
+.uiIconArrowUp {
 	background-position: -20px -120px;
 }
 
@@ -509,12 +505,12 @@
 }
 
 
-/*########################## IconLibrary-FileType #################################*
+/*---------- IconLibrary-FileType ----------*
 
-/************** IconLibrary-FileType-16x16 *************/
+/*----- IconLibrary-FileType-16x16 -----*/
 
 [class^="uiIcon16x16"] {
-  background-image: url("/eXoResources/skin/images/Icons/TypeIcons/uiIconsType16x16.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType16x16.png");
   background-position: 0px -60px;
   background-repeat: no-repeat;
   display: inline-block;
@@ -526,7 +522,7 @@
 }
 
 [class^="uiIcon16x16"]:hover,a:hover [class^="uiIcon16x16"] {
-  background-image: url("/eXoResources/skin/images/Icons/TypeIcons/uiIconsType16x16.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType16x16.png");
 }
 
 .uiIcon16x16FileDefault,.uiIcon16x16applicationoctet-stream {
@@ -772,10 +768,10 @@
 	background-position: -120px -160px;
 }
 
-/************** IconLibrary-FileType-24x24 *************/
+/*----- IconLibrary-FileType-24x24 -----*/
 
 [class^="uiIcon24x24"]{
-  background-image: url("/eXoResources/skin/images/Icons/TypeIcons/uiIconsType24x24.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType24x24.png");
 	background-position: 0px -84px;
   background-repeat: no-repeat;
   display: inline-block;
@@ -787,7 +783,7 @@
 }
 
 [class^="uiIcon24x24"]:hover, a:hover [class^="uiIcon24x24"] {
-  background-image: url("/eXoResources/skin/images/Icons/TypeIcons/uiIconsType24x24.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType24x24.png");
 }
 
 .uiIcon24x24FileDefault {
@@ -1033,10 +1029,10 @@
 	background-position: -168px -224px;
 }
 
-/************** IconLibrary-FileType-32x32 *************/
+/*----- IconLibrary-FileType-32x32 -----*/
 
 [class^="uiIcon32x32"]{
-  background-image: url("/eXoResources/skin/images/Icons/TypeIcons/uiIconsType32x32.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType32x32.png");
 	background-position: 0px -108px;
   background-repeat: no-repeat;
   display: inline-block;
@@ -1048,7 +1044,7 @@
 }
 
 [class^="uiIcon32x32"]:hover, a:hover [class^="uiIcon32x32"] {
-  background-image: url("/eXoResources/skin/images/Icons/TypeIcons/uiIconsType32x32.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType32x32.png");
 }
 
 .uiIcon32x32FileDefault {
@@ -1279,10 +1275,10 @@
 	background-position: -216px -288px;
 }
 
-/************** IconLibrary-FileType-48x48 *************/
+/*----- IconLibrary-FileType-48x48 -----*/
 
 [class^="uiIcon48x48"]{
-  background-image: url("/eXoResources/skin/images/Icons/TypeIcons/uiIconsType48x48.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType48x48.png");
 	background-position: 0px -156px;
   background-repeat: no-repeat;
   display: inline-block;
@@ -1294,7 +1290,7 @@
 }
 
 [class^="uiIcon48x48"]:hover, a:hover [class^="uiIcon48x48"] {
-  background-image: url("/eXoResources/skin/images/Icons/TypeIcons/uiIconsType48x48.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType48x48.png");
 }
 
 .uiIcon48x48FileDefault {
@@ -1526,10 +1522,10 @@
 }
 
 
-/************** IconLibrary-FileType-64x64 *************/
+/*----- IconLibrary-FileType-64x64 -----*/
 
 [class^="uiIcon64x64"] {
-  background-image: url("/eXoResources/skin/images/Icons/TypeIcons/uiIconsType64x64.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType64x64.png");
 	background-position: 0px -204px;
   background-repeat: no-repeat;
   display: inline-block;
@@ -1541,7 +1537,7 @@
 }
 
 [class^="uiIcon64x64"]:hover, a:hover [class^="uiIcon64x64"] {
-  background-image: url("/eXoResources/skin/images/Icons/TypeIcons/uiIconsType64x64.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType64x64.png");
 }
 
 .uiIcon64x64FileDefault {
@@ -1787,9 +1783,9 @@
 	background-position: -408px -544px;
 }
 
-/*########################## IconLibrary-FolderType #################################*
+/*---------- IconLibrary-FolderType -----*/
 
-/************** IconLibrary-FolderType-16x16 *************/
+/*----- IconLibrary-FolderType-16x16 -----*/
 
 .uiIcon16x16FolderDefault {
 	background-position: 0px -200px;
@@ -1879,7 +1875,7 @@
 	background-position: -180px -240px;
 }
 
-/************** IconLibrary-FolderType-24x24 *************/
+/*----- IconLibrary-FolderType-24x24 -----*/
 
 .uiIcon24x24FolderDefault {
 	background-position: 0px -280px;
@@ -1970,7 +1966,7 @@
 }
 
 
-/************** IconLibrary-FolderType-32x32 *************/
+/*----- IconLibrary-FolderType-32x32 -----*/
 
 .uiIcon32x32FolderDefault {
 	background-position: 0px -360px;
@@ -2150,7 +2146,7 @@
 	background-position: -468px -624px;
 }
 
-/************** IconLibrary-FolderType-64x64 *************/
+/*----- IconLibrary-FolderType-64x64 -----*/
 
 .uiIcon64x64FolderDefault {
 	background-position: 0px -680px;
@@ -2240,11 +2236,9 @@
 	background-position: -612px -816px;
 }
 
-/*########################## IconLibrary-TemplateType #################################*
+/*---------- IconLibrary-TemplateType -----*/
 
-/************** IconLibrary-TemplateType-16x16 *************/
-
-/************** IconLibrary-TemplateType-16x16 *************/
+/*----- IconLibrary-TemplateType-16x16 -----*/
 
 .uiIcon16x16TemplateDefault,.uiIcon16x16exo_default {
 	background-position: 0px 0px;
@@ -2368,7 +2362,7 @@
 	background-position: -112px -28px;
 }
 
-/************** IconLibrary-TemplateType-32x32 *************/
+/*----- IconLibrary-TemplateType-32x32 -----*/
 
 .uiIcon32x32TemplateDefault {
 	background-position: 0px 0px;
@@ -2430,7 +2424,7 @@
 	background-position: -144px -36px;
 }
 
-/************** IconLibrary-TemplateType-48x48 *************/
+/*----- IconLibrary-TemplateType-48x48 -----*/
 
 .uiIcon48x48TemplateDefault {
 	background-position: 0px 0px;
@@ -2492,7 +2486,7 @@
 	background-position: -208px -52px;
 }
 
-/************** IconLibrary-TemplateType-64x64 *************/
+/*----- IconLibrary-TemplateType-64x64 -----*/
 
 .uiIcon64x64TemplateDefault,.uiIcon64x64exo_default {
 	background-position: 0px 0px;
@@ -2554,10 +2548,10 @@
 	background-position: -272px -68px;
 }
 
-/***************Icon of all applications ******************/
+/*---------- Icon of all applications ----------*/
 
 [class^="uiIconApp"],
-a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover, 
+a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 .active [class^="uiIconApp"]:hover,
 .dropdown-menu > li > a > [class^="uiIconApp"]
  {
@@ -2567,14 +2561,14 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
   .ie7-restore-right-whitespace();
   line-height: 35px;
   vertical-align: middle;
-  background-image: url("/eXoResources/skin/images/Icons/AppIcons/uiIconAppGray.png");
+  background-image: url("@{images-path}/Icons/AppIcons/uiIconAppGray.png");
   background-repeat: no-repeat;
 }
 
 [class^="uiIconApp24x24"], [class^="uiIconApp24x24"]:hover,
 .dropdown-menu > li > a:hover > [class^="uiIconApp24x24"],
 .uiSpaceMenuPortlet .active [class^="uiIconApp24x24"], .uiUserNavigationPortlet .active [class^="uiIconApp24x24"]{
-  background-image: url("/eXoResources/skin/images/Icons/AppIcons/uiIconApp24x24Gray.png");
+  background-image: url("@{images-path}/Icons/AppIcons/uiIconApp24x24Gray.png");
   width: 24px;
   height: 24px;
 }
@@ -2609,7 +2603,7 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 [class^="uiIconApp64x64"], [class^="uiIconApp64x64"]:hover,
 .dropdown-menu > li > a:hover > [class^="uiIconApp64x64"],
 .uiSpaceMenuPortlet .active [class^="uiIconApp64x64"], .uiUserNavigationPortlet .active [class^="uiIconApp64x64"]{
-  background-image: url("/eXoResources/skin/images/Icons/AppIcons/uiIconApp64x64Gray.png");
+  background-image: url("@{images-path}/Icons/AppIcons/uiIconApp64x64Gray.png");
   width: 64px;
   height: 64px;
 }
@@ -2643,7 +2637,7 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 
 .dropdown-menu > li > a:hover > [class^="uiIconApp"],
 .uiSpaceMenuPortlet .active [class^="uiIconApp"], .uiUserNavigationPortlet .active [class^="uiIconApp"] {
- background-image: url("/eXoResources/skin/images/Icons/AppIcons/uiIconAppWhite.png");
+ background-image: url("@{images-path}/Icons/AppIcons/uiIconAppWhite.png");
 }
 
 .uiIconAppprofile {
@@ -2732,15 +2726,15 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 	background-position: -80px -160px;
 }
 
-[class^="uiIconStatus"] { 
+[class^="uiIconStatus"] {
 	.square(38px);
 	display: inline-block;
-	background: url("/eXoResources/skin/images/Icons/status-task.png");
-	margin-top: 1px;	
+	background: url("@{images-path}/Icons/status-task.png");
+	margin-top: 1px;
 	&:hover {
-		background: url("/eXoResources/skin/images/Icons/status-task.png");
-	}	
-}		
+		background: url("@{images-path}/Icons/status-task.png");
+	}
+}
 .uiIconStatus-needs-action,.uiIconStatus-needs-action:hover {
 	background-position: 0px 0px;
 }
@@ -2750,19 +2744,19 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 .uiIconStatus-completed ,.uiIconStatus-completed:hover{
 	background-position: -120px 0px;
 }
-.uiIconStatus-canceled,.uiIconStatus-canceled:hover { 
+.uiIconStatus-canceled,.uiIconStatus-canceled:hover {
 	background-position: -180px 0px;
 }
-	
+
 
 [class^="uiIconStatus-20"] {
 	.square(20px);
 	display: inline-block;
-	background: url("/eXoResources/skin/images/Icons/status-task-20.png");
+	background: url("@{images-path}/Icons/status-task-20.png");
 	margin-top: 1px;
 	&:hover {
-		background: url("/eXoResources/skin/images/Icons/status-task-20.png");
-	}	
+		background: url("@{images-path}/Icons/status-task-20.png");
+	}
 }
 .uiIconStatus-20-needs-action,.uiIconStatus-20-needs-action:hover {
 	background-position: 0px 0px;
@@ -2773,18 +2767,18 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 .uiIconStatus-20-completed ,.uiIconStatus-20-completed:hover{
 	background-position: -48px 0px;
 }
-.uiIconStatus-20-canceled,.uiIconStatus-20-canceled:hover { 
-	background-position: -72px 0px; 
+.uiIconStatus-20-canceled,.uiIconStatus-20-canceled:hover {
+	background-position: -72px 0px;
 }
-	
+
 [class^="uiIconStatus-64"] {
 	.square(64px);
 	display: inline-block;
-	background: url("/eXoResources/skin/images/Icons/status-task-64.png");
-	margin-top: 1px;	
+	background: url("@{images-path}/Icons/status-task-64.png");
+	margin-top: 1px;
 	&:hover {
-		background: url("/eXoResources/skin/images/Icons/status-task-64.png");
-	}		
+		background: url("@{images-path}/Icons/status-task-64.png");
+	}
 }
 .uiIconStatus-64-needs-action,.uiIconStatus-64-needs-action:hover {
 	background-position: 0px 0px;
@@ -2795,7 +2789,7 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 .uiIconStatus-64-completed ,.uiIconStatus-64-completed:hover{
 	background-position: -160px 0px;
 }
-.uiIconStatus-64-canceled,.uiIconStatus-64-canceled:hover { 
+.uiIconStatus-64-canceled,.uiIconStatus-64-canceled:hover {
 	background-position: -240px 0px;
 }
 
@@ -2831,10 +2825,10 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 	background-position: -40px -220px;
 }
 
-/*============================ Portlet Icons ===============================*/
+/*---------- Portlet Icons ----------*/
 
 [class^="uiIconPortlet64x64"], [class^="uiIconPortlet64x64"]:hover{
-  background-image: url("/eXoResources/skin/images/Icons/Portlet64x64Icons/uiIconsPortlet.png");
+  background-image: url("@{images-path}/Icons/Portlet64x64Icons/uiIconsPortlet.png");
   width: 64px;
   height: 52px;
 }
@@ -2997,4 +2991,30 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 
 .uiIconPopOut {
 	background-position: -120px -220px;
+}
+
+// Loading Icons
+[class^=uiLoadingIcon] {
+	display: inline-block;
+	vertical-align: text-top;
+}
+.uiLoadingIconMini {
+	.square(16px);
+	background: url("@{images-path}/Loading/loading16x16Light.gif") no-repeat 0 0 transparent;
+}
+.uiLoadingIconSmall {
+	.square(24px);
+	background: url("@{images-path}/Loading/loading24x24Light.gif") no-repeat 0 0 transparent;
+}
+.uiLoadingIconMedium {
+	.square(32px);
+	background: url("@{images-path}/Loading/loading32x32Light.gif") no-repeat 0 0 transparent;
+}
+.uiLoadingIconLarge {
+	.square(48px);
+	background: url("@{images-path}/Loading/loading48x48Light.gif") no-repeat 0 0 transparent;
+}
+.uiLoadingIconXLarge {
+	.square(64px);
+	background: url("@{images-path}/Loading/loading64x64Light.gif") no-repeat 0 0 transparent;
 }

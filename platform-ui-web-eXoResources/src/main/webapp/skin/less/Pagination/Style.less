@@ -1,3 +1,6 @@
+//
+// pagination
+// --------------------------------------------------
 .uiPageIterator p {
 	display: inline-block;
 	margin: 3px 10px 0 0;
@@ -6,7 +9,7 @@
 		color: @textColor;
 	}
 	> .pagesTotalNumber {
-		font-weight: bold; 
+		font-weight: bold;
 	}
 }
 
@@ -45,7 +48,7 @@
 .uiPageIterator ul > li.disabled > a > [class^="uiIcon"],
 .uiPageIterator ul > li.disabled > a:hover > [class^="uiIcon"],
 .uiPageIterator ul > li.disabled > a:active > [class^="uiIcon"] {
-	background-image: url("/eXoResources/skin/images/Icons/uiIconsLightGray.png");
+	background-image: url("@{images-path}/Icons/uiIconsLightGray.png");
 }
 
 .table + .pageIteratorBorder {
@@ -63,7 +66,7 @@
     .size(26px, 60px);
     line-height: 18px;
     outline: medium none;
-    background: linear-gradient(to bottom, @white, @grayWhiteSmoke);
+    background: linear-gradient(to bottom, @white, @componentBackground);
     background-position: right top, 0 0;
     border: 1px solid @borderColor;
     border-radius: 4px;

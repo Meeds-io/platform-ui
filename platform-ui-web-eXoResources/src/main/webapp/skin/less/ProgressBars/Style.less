@@ -1,26 +1,31 @@
+//
+// Porlet - Site Navigation Portlet
+// --------------------------------------------------
 .progress {
   height: 18px;
 }
- 
+
 .progress {
 	.border-radius(20px);
-	#gradient .vertical(@grayMediumWhiteSmoke, @grayWhiteSmoke);
+	#gradient .vertical(@componentBackgroundHover, @componentBackground);
 	.bar {
-		#gradient .vertical(@blueLighter, @blue);
+		#gradient .vertical(@primaryLighterColor, @primaryColor);
 	}
 }
+
 // Striped bars
 .progress-striped .bar {
-  #gradient > .striped(@blueLight);
+  #gradient > .striped(@primaryLightColor);
 }
-// upload files 
-.progressBarFrame {	
+
+// upload files
+.progressBarFrame {
 	 margin: 0 0 25px 0;
 	  line-height:20px;
 	& > div {
 		margin: 3px 0 0 0;
 	}
-	.fileNameLabel {		
+	.fileNameLabel {
 		font-weight: bold;
 		width: 170px;
 		float: left;
@@ -32,7 +37,7 @@
 	}
 	.percent {
 		padding:0 7px 0 7px;
-		width: 30px;		
+		width: 30px;
 	}
 	.deleteFileLabel {
 		margin: 0 0 0 5px;
@@ -53,22 +58,23 @@
 	   display: inline-block;
 		margin-left: 5px;
 		color: @grayLight;
+		margin-bottom: 0;
+		vertical-align: middle;
 	}
 }
-
 .uiPopup {
 	.controls-full{
 		.uploadButton {
 			.center();
 		}
 	}
-	
+
 	.uploadContainer {
 		padding: 0 0 0 8px;
 	}
 }
 
-.selectFileFrame  {	
+.selectFileFrame  {
 	  margin: 0 0 10px 0;
 	  line-height:24px;
 	.fileNameLabel  {
@@ -78,7 +84,6 @@
 }
 
 // progress Getting started
-
 .progress.progessStart{
 	height: 18px;
 	border: none;
@@ -87,6 +92,6 @@
 	padding: 3px;
 	.bar{
 		.border-radius(20px);
-		#gradient .vertical(@blueLighter, @blue);
+		#gradient .vertical(@primaryLighterColor, @primaryColor);
 	}
 }

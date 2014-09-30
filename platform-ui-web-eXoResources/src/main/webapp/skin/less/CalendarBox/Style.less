@@ -1,13 +1,16 @@
+//
+// Calendar Box
+// --------------------------------------------------
 .calendarBox {
 	.center();
-	font-family : @sansBoldFontFamily; 
+	font-family : @sansBoldFontFamily;
 	font-weight: bold;
 	width: 50px;
 	.heading {
 		color : @white;
-		border: 1px solid @blueDark;
+		border: 1px solid @primaryDarkColor;
 		.border-radius(@baseBorderRadius @baseBorderRadius 0 0);
-		#gradient > .vertical(@blueLighter, @blue);
+		#gradient > .vertical(@primaryLighterColor, @primaryColor);
 		padding: 0;
 		margin: 0;
 	}
@@ -16,14 +19,14 @@
 		color: #316399;
 		border: 1px solid @borderColor;
 		padding: 8px;
-		.border-radius( 0 0 @baseBorderRadius @baseBorderRadius); 
+		.border-radius( 0 0 @baseBorderRadius @baseBorderRadius);
 	}
-	&.calendarBox-mini {	
+	&.calendarBox-mini {
 		.square(20px);
-		.heading {		
+		.heading {
 			padding:  0;
 			font-size: 6px;
-			line-height: 5px; 
+			line-height: 5px;
 		}
 		.content {
 			font-size: 7px;

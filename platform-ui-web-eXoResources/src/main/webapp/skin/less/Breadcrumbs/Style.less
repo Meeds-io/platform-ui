@@ -1,22 +1,24 @@
+//
+// pagination
+// --------------------------------------------------
 /*
 	Default	 		Helvetica Neue  		13px 	 #333333 	~ @grayDark
 	Hover 	 		Helvetica Neue 			13px 	 #2F5E92	~ @blue
 	Select/Press 	Helvetica Neue Bold 	13px 	 #999999 	~ @grayLight
 */
-
 .breadcrumb {
 	background: none;
-	margin: 0px;
-	padding: 0px;
-	
+	margin: 0;
+	padding: 0;
+
 	a {
-		color: @grayDark;
+		color: @breadcrumbColor;
 		display: block;
 		.text-overflow;
 		max-width: 140px;
 		float: left;
 		&:hover {
-			color: @blue;
+			color: @breadcrumbHoverColor;
 			text-decoration: none !important;
 		}
 	}
@@ -28,13 +30,13 @@
 	li {
 		vertical-align: middle;
 	}
-	
+
 	.active {
 		font-weight: bold;
 		.text-overflow;
 		max-width: 140px;
 		> a {
-			color: @grayLight;
+			color: @breadcrumbActiveColor;
 		}
 	}
 }
