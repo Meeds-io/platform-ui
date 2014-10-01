@@ -197,7 +197,7 @@ public class UIFormColorPicker extends UIFormInputBase<String> {
                         + actionLink
                         + "\" class=\""
                         + color.getName()
-                        + " ColorCell \" onmousedown=\"event.cancelBubble=true\"><img src=\"/eXoResources/skin/sharedImages/Blank.gif\" /></a>");
+                        + " ColorCell \" onmousedown=\"event.cancelBubble=true\"></a>");
                 count++;
                 j++;
             }
