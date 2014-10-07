@@ -33,15 +33,15 @@
 			background: @componentBackgroundLight;
 			padding: 18px;
 			margin-top: 10px;
-			
+
 			.otherAttachmentBox + .otherAttachmentBox{
 				margin-top: 5px;
 			}
-			
+
 			.attachmentTitle{
 				margin-bottom: 15px;
 			}
-			
+
 			.attachmentContentImage {
 				.imageAttachmentBox{
 					display: inline-block;
@@ -77,7 +77,7 @@
 									font-weight: bold;
 								}
 							}
-							
+
 							margin: 45px 0 0 0;
 							&+p{
 								margin-top: 0;
@@ -85,10 +85,10 @@
 						}
 					}
 				}
-				
+
 			}
-		}	
-		
+		}
+
 		.postContentContainer{
 			.signature{
 				font-style: italic;
@@ -108,7 +108,7 @@
 			.txtLastEdit{
 				font-size: @baseFontSize - 1;
 				.uiUserInfo{
-					display:inline-block; 
+					display:inline-block;
 					text-align: left;
 				}
 			}
@@ -116,9 +116,9 @@
 				margin-top: 10px;
 			}
 		}
-		
+
 	}
-	
+
 	.postViewHeader{
 		background: @componentBackgroundLight;
 		padding: 10px 15px;
@@ -144,7 +144,7 @@
 			margin-right: 10px;
 		}
 	}
-	
+
 }
 
 .postContent{
@@ -160,7 +160,7 @@
 	.contentQuote{
 		font-style: italic;
 		padding: 15px 15px 15px 20px;
-		background: #e6f3ff;
+		background: @quotePrimaryBackground;
 		margin: 10px 0 10px 15px;
 		word-wrap: break-word;
 		.border-radius(2px);
@@ -169,7 +169,7 @@
 			padding-left: 0;
 			margin-top: 10px;
 			.contentQuote{
-				border-left: solid 5px #aacded;
+				border-left: solid 5px @quotePrimaryBorder;
 				padding: 0px 0px 0px 20px;
 				margin-top: 15px;
 				.titleQuote{
@@ -186,7 +186,7 @@
 			font-weight:bold;
 		}
 	}
-	
+
 	.textContent {
 		word-wrap: break-word;
 		.contentQuote{
@@ -198,7 +198,7 @@
 			}
 		}
 	}
-	
+
 	ul, ol {
 		padding: 0;
 		margin: 0px 0px 10px 25px;
@@ -215,25 +215,25 @@
 .uiTopicDetail{
 	.tagsContainer{
 		line-height: 28px;
-		
+
 		.tagItem{
-			background: #e0e8f5;
-			.border-radius(3px);
-			color: @primaryColor;
-			border: 1px solid @primaryLightColor;
-			padding: 1px 5px;
 			display: inline-block;
+			color: @linkColor;
+			background: @blueLight;
+			border: 1px solid @blue;
+			padding: 1px 5px;
+			.border-radius(3px);
 		}
-		
+
 		.titleTag{
 			margin-left: 10px;
 		}
-		
+
 		.txtTags{
 			display: inline-block;
 			li{
 				display: inline-block;
-        margin: 0px 4px 0px 0px;
+        		margin: 0px 5px 0px 0px;
 			}
       li.moreItem > div{
         padding: 1px 5px;
@@ -249,30 +249,30 @@
       }
 		}
 	}
-	
+
 	.uiBox {
 		&.uiPostRules{
 			margin-top: 10px;
 		}
 	}
-	
+
 	.containerTopicDetail{
 		margin-top: 10px;
 	}
-	
-	.line{ 
+
+	.line{
 		margin: 10px -10px;
 		background: @borderColor;
 		height: 1px;
 		display: block;
 	}
-	
-	.divRow:last-child .line{ 
+
+	.divRow:last-child .line{
 		margin: 0;
 		background: none;
 		height: 0;
 	}
-	
+
 	.forumQuickReply{
 		margin-top: 10px;
 		.textQuickReply{
@@ -283,5 +283,5 @@
 			}
 		}
 	}
-	
+
 }

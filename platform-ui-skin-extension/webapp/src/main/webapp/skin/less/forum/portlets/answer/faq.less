@@ -9,9 +9,9 @@
 	    border: 1px solid @borderColor;
 	    border-radius: 3px 3px 3px 3px;
 	    box-shadow: 0 1px 2px 0 @white;
-	    float: right; 
-	    position: fixed; 
-	    bottom: 45px; 
+	    float: right;
+	    position: fixed;
+	    bottom: 45px;
 	    right: 45px;
 	    padding: 2px 4px;
 	    &:hover [class^="uiIcon"] {
@@ -34,19 +34,19 @@
 	}
 }
 
-.questionBlock, .answersBlock { 
+.questionBlock, .answersBlock {
 	h4:first-child {
 		background-color: @borderColor;
 		border-radius: 2px;
 		line-height: 35px;
 		padding-left: 10px;
 	}
-	
+
 }
 
 .viewerQuestion, .viewerAnswer {
-	padding: 5px 25px;	
-	
+	padding: 5px 25px;
+
 	> p {
 		padding-left: 22px;
 	}
@@ -75,7 +75,7 @@
 
 .answerList {
 	padding: 0 15px 0px;
-	
+
 	> h5:first-child {
 		background-color: @componentBackground;
 		border-radius: 2px;
@@ -83,7 +83,7 @@
 		padding-left: 10px;
 		margin-top: 0;
 	}
-	
+
 	> div {
 		margin: 20px 10px;
 	}
@@ -96,14 +96,14 @@
 		padding-left: 22px;
 		font-style: italic;
 	}
-	
+
 	.answers {
 		word-wrap: break-word;
 		margin-left: 22px;
 		padding-bottom: 15px;
 		& + .answers {
 			padding: 15px 0 10px 0;
-			border-top: 1px solid #dadada;
+			border-top: 1px solid @borderColor;
 		}
 		.footerData {
 			.avatarMini img {
@@ -119,7 +119,7 @@
 	}
 }
 
-.uiFAQSettingForm {	
+.uiFAQSettingForm {
 	.actionButtonGroup {
 			margin-bottom: 20px;
 			.btn.active, .btn:active {
@@ -140,10 +140,10 @@
 .viewerAnswer {
 	 ul {
 	 	margin: 0 0 10px 25px;
-    	padding: 0;	
+    	padding: 0;
     	li {
 		    list-style: disc outside none;
 		}
 	 }
-	
+
 }

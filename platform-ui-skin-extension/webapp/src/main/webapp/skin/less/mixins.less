@@ -393,3 +393,45 @@
   // "call" the loopingClass the first time with highest value
   .style_margin_padding (@index);
 }
+
+// Quote 
+.quote{
+    background-color: @quoteBackgound;
+    .border-radius(2px);
+    font-style: italic;
+    margin: 10px 0 10px 0;
+    padding: 15px 15px 15px 20px;
+    word-wrap: break-word;a
+	.quote {
+		margin: 0;
+		padding:0;
+	}
+     .titleQuote {
+		    font-weight: bold;
+		    margin: 15px 0;
+			font-style: normal;
+		     line-height: 16px;
+		}
+		blockquote {
+	    background: none;
+	    border-left: 5px solid @quoteBorder;
+	    padding: 0 0 0 15px;
+		  margin: 15px 0;
+	    width: auto;
+		  color:@textColor;
+	    font-style: italic;
+	    .titleQuote {
+	    	color:@textColor;
+	    }
+	    p {
+	    	font-style: italic;
+    		font-size: @baseFontSize;
+    	}
+	}
+	&.quotePrimary {
+			background-color: @quotePrimaryBackground;
+				blockquote {
+					border-left: 5px solid @quotePrimaryBorder;
+				}
+	}
+ }

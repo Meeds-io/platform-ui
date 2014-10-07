@@ -65,7 +65,7 @@
 	.userContent {
 		padding: 10px 15px;
 		.border-radius(@borderRadiusSmall);
-		background: @grayWhiteSmoke;
+		background: @componentBackground;
 		min-height: 250px;
 	}
 	.profileContainer {
@@ -122,6 +122,16 @@
 		  vertical-align: middle;
 	}
 }
+
+.uiInsertAddress {
+	.searchContent {
+		.control-label {
+			margin-bottom: 0;
+			vertical-align: middle;
+		}
+	}
+}
+
 .multiValueContainer {
 	margin-bottom: 10px;
 }
@@ -130,7 +140,7 @@
 
 #UIPrintAllQuestions {
 	padding: 50px;
-	background: url("/eXoSkin/skin/images/ShareImages/Background/texture.jpg") repeat left top;
+	background: url("@{images-path}/ShareImages/Background/texture.jpg") repeat left top;
 	.uiAction {
 		padding-top: 20px;
 	}
@@ -236,4 +246,11 @@
 		}
 	}
 	
+}
+
+// Popup Import
+.UIImportForm {
+	.uploadButton {
+		text-align: center;
+	}
 }

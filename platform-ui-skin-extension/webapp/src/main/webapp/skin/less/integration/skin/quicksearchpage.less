@@ -43,7 +43,7 @@
     }
 
     .message {
-      border-top: 1px solid #CFCFCF;
+      border-top: 1px solid @borderColor;
       text-align: center;
       > a {
         font-weight: bold;
@@ -65,25 +65,25 @@
 
   .quickSearchResult {
     padding: 5px 10px 7px;
-    display: block;	
+    display: block;
     .avatarTiny > img {
     	margin-right: 5px;
     }
   }
-  
+
   .quickSearchResult:hover, .quickSearchResult.arrowResult {
-    #gradient > .vertical(@primaryLighterColor, darken(@primaryLighterColor, 15%));
+    #gradient > .vertical(@primaryLightColor, darken(@primaryLightColor, 15%));
     border-color: @primaryDarkColor;
     a {
 		color: white;
 	    > [class^="uiIconPLF"] {
 	    	background-image: url("@{images-path}/platform/skin/Icons/uiIconsPLFWhite.png");
 	    }
-	    
+
 	    > [class^="uiIconEcms"] {
 	    	background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsWhite.png");
 	    }
-	    
+
 	    > [class^="uiIconWiki"] {
 	    	background-image: url("@{images-path}/wiki/Icons/uiIconsWikiWhite.png");
 	    }

@@ -8,7 +8,7 @@
 .UIJCRExplorerPortlet {
 	padding: 25px;
 	background: none !important;
-	
+
 	.uiActionBarAlone {
 		height: 38px;
 		.tab-content {
@@ -22,7 +22,7 @@
 			}
 		}
 	}
-        .UIDocumentWorkspace .FileContent .Content .FlashViewer { 
+    .UIDocumentWorkspace .FileContent .Content .FlashViewer {
 		text-align: center;
 	}
 }
@@ -33,42 +33,42 @@
 		z-index: 3;
 		.border-radius(0px);
 	}
-	
+
 	.listHiddenActionsContainer {
-		
+
 		.actionIcon {
 			margin: 0px;
 			border: none;
-		
+
 			&:hover {
 				.border-radius(0px);
 				box-shadow: none;
-				
+
 				> [class^="uiIcon"] {
 				background-image: url("@{images-path}/Icons/uiIconsWhite.png");
 				}
-			
+
 				> [class^="uiIconEcms"] {
 					background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsWhite.png");
 				}
 			}
 		}
 	}
-	
+
 	.uiViewBarContainer {
 		position: absolute;
 		right: 10px;
 		top: 4px;
-		
+
 		.noneDrivesButton {
 			padding: 3px 6px;
 			color: @grayDark;
 		}
-		
+
 		.actionIcon {
 			margin-left: 2px;
 		}
-		
+
 		.showDrivesButton {
 			padding: 3px 6px;
 			color: @grayDark;
@@ -76,11 +76,11 @@
 			background-color: @componentBackgroundHover;
 			border: 1px solid @borderColor;
 			border-radius: 3px 3px 3px 3px;
-			
+
 			> [class^="uiIcon"] {
 				background-image: url("@{images-path}/Icons/uiIconsBlue.png");
 			}
-			
+
 			> [class^="uiIconEcms"] {
 				background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsBlue.png");
 			}
@@ -100,19 +100,19 @@
 	li {
 		padding: 2px 0px 2px 15px;
 		font-size: 12px;
-		
+
 		> a {
 			color: @linkColor;
-			
+
 			&:hover {
 				color: @linkColorHover;
 			}
 		}
-	
+
 		.selectedNode {
 			color: @linkColorHover;
 		}
-		
+
 		> [class^="uiIcon"] {
 			float: left;
 			margin: 2px 0px 0px -21px;
@@ -124,17 +124,17 @@
 /********Resize Content********/
 .uiWorkingArea {
 	width: 100%;
-	
+
 	.leftContainer {
 		float: left;
 		width: 240px;
 		overflow: hidden;
 	}
-	
+
 	.rightContainer {
 		float: left;
 	}
-	
+
 	.UIDocumentWorkspace {
     margin-left: 0px;
     overflow: auto;
@@ -153,7 +153,7 @@
 		    padding: 0;
 			margin: 0 0 10px 25px;
 		}
-		
+
 		.UITabContent ol {
 		    padding: 0;
 			margin: 0 0 10px 25px;
@@ -169,14 +169,14 @@
 		blockquote:after {
 			display: none;
 		}
-		
+
 	}
-	
+
 	.uiDocumentWorkspaceBox {
 		border: 1px solid @borderColor;
 		.border-radius(4px);
 		overflow: hidden;
-		
+
 		.uiDialogAction {
 			background-color: @componentBackground;
 			border-bottom: 1px solid @borderColor;
@@ -190,7 +190,7 @@
 }
 
 /*=============================== UIListView ===================================*/
-	
+
 .uiListView {
 	padding: 15px;
 	border-top: 0px;
@@ -201,14 +201,14 @@
 	-moz-user-select: none;
 	overflow-y: hidden;
 	overflow-x: auto;
-	
+
 	.titleTable {
 		font-weight: bold;
 		height: 34px;
 		background: @componentBackground;
 		border-bottom: 1px solid @borderColor;
 	}
-	
+
 	.lineLeft {
 		border-left: 1px solid @borderColor;
 		width: 2px;
@@ -216,28 +216,28 @@
 		float: left;
 		cursor: col-resize;
 	}
-	
+
 	.odd {
 		background: @componentBackgroundLight;
 	}
-	
+
 	.even {
 		background: @white;
 	}
-	
+
 	.OverHeader {
 		background: @componentBackground;
 		font-weight: bold;
 		line-height: 19px; height: 19px;
 	}
-	
+
 	.nodeLabel {
 		overflow: hidden;
-		cursor: pointer; 
-		-moz-outline: none; 
+		cursor: pointer;
+		-moz-outline: none;
 		-moz-user-select: none;
 	}
-	
+
 	.columnIcon,
 	.columnName,
 	.columnAuditing,
@@ -253,20 +253,20 @@
 		padding: 7px 0px 7px 12px;
 		color: @textColor;
 	}
-	
+
 	.titleTable [class^="uiIcon"] {
 		margin: 2px 0px 0px 0px;
 	}
-	
+
 	.columnIcon {
 		padding: 7px;
 		text-align: center;
 	}
-	
+
 	.FileDrag {
 		background: @componentBackground;
 	}
-	
+
 	.ResizeHandle {
 		cursor: col-resize;
 		width: 1px;
@@ -276,32 +276,32 @@
 		top: 0;
 		left: 0;
 	}
-	
+
 	.rowView {
 		line-height: 20px;
-		
+
 		&:hover {
 			background: @componentBackgroundHover;
 		}
-		
+
 		.columnIcon,.columnName,.columnAuditing,.columnVersion,
 		.columndateModified,.columnDatetime,.columndateCreated,
 		.columnOwner,.columnModified,.columnCreated {
 			padding: 7px 0px 7px 12px;
 		}
-		
+
 		.columnIcon {
 			padding: 7px;
 			text-align: center;
 		}
-		
-		.lineLeftItem {  
+
+		.lineLeftItem {
 			width: 2px;
 			height: 34px;
 			float: left;
 			border-left: 1px solid @borderColor;
 		}
-		
+
 		.ResizeColumn .NodeLabel {
 			width: 95%;
 			overflow: hidden;
@@ -309,12 +309,12 @@
 	}
 }
 
-.uiListGrid { 
-	
+.uiListGrid {
+
 	[class^="uiIcon24x24"] {
 		position: relative;
 	}
-	
+
 	.LinkSmall,.IconLocked  {
 		background: url("@{images-path}/ecms/portlets/explorer/Icons/IconMedLink.png") no-repeat right top;
 		width: 16px;
@@ -323,7 +323,7 @@
 		right: 0px;
 		position: absolute;
 	}
-	
+
 	.IconLocked {
 		background: url("@{images-path}/ecms/portlets/explorer/Icons/IconMedLock.png") no-repeat right top;
 		top: 0px;
@@ -335,9 +335,9 @@
 .uiThumbnailsView {
 	overflow-y: auto;
 	overflow-x: hidden;
-	
+
 	.actionIconsContainer {
-	
+
 		.actionIconBox {
 			.size(200px, 148px);
 			float: left;
@@ -345,19 +345,19 @@
 			padding: 0px !important;
 			overflow: hidden;
 			cursor: pointer;
-			
+
 			&:hover {
 				.nodeLabel {
 					background: @componentBackground;
 				}
 			}
 		}
-		
+
 		.selectedBox {
 			.nodeLabel {
 				background: @borderColor;
 			}
-			
+
 			.actionIconLabel {
 				background: @primaryColor;
 
@@ -366,20 +366,20 @@
 				}
 			}
 		}
-		
+
 		.bgThumbnailImage {
 			padding: 5px;
 			background: @white;
 			box-shadow: 1px 1px 3px 1px rgba(25,44,48,0.2);
 			display: inline-block;
 		}
-		
+
 		.loadingProgressIcon {
 			.size(64px,64px);
-			/*background: url('/ecmexplorer/skin/webui/component/explorer/UIJCRExplorer/DefaultSkin/background/LoadingProgress.gif') no-repeat center center;*/
+			background: url("@{images-path}/Loading/loading32x32Light.gif") no-repeat center center;
 			position: relative;
 			margin: auto;
-			
+
 			img {
 				display: none;
 				max-width: 116px;
@@ -388,7 +388,7 @@
 				border: 1px solid @borderColor;
 			}
 		}
-		
+
 		.nodeLabel {
 			.size(148px,148px);
 			.border-radius(3px);
@@ -419,18 +419,18 @@
 			text-align: center;
 			padding: 5px;
 			.border-radius(3px);
-			
+
 			> a {
 				color: @textColor;
 			}
 		}
 	}
-	
+
 	[class^="uiIcon64x64"] {
 		margin: auto;
 		position: relative;
 	}
-	
+
 	.Link,.IconLocked {
 		background: url("@{images-path}/ecms/portlets/explorer/Icons/IconBigLink.png") no-repeat right top;
 		position: absolute;
@@ -439,7 +439,7 @@
 		right: -5px;
 		bottom: 0;
 	}
-	
+
 	.IconLocked {
 		background: url("@{images-path}/ecms/portlets/explorer/Icons/IconBigLock.png") no-repeat right top;
 		top: 0;
@@ -456,16 +456,16 @@
 	border-top: none;
 	.border-bottom-radius(4px);
 	padding: 4px;
-	
+
 	.uiDriversAreaContainer {
 		padding: 15px;
 		color: @textColor;
 		overflow: hidden;
-		
+
 		.info {
 			margin-bottom: 12px;
 		}
-		
+
 		.uiIconBlueInformation {
 			background: url("@{images-path}/Icons/uiIconColor.png") no-repeat -40px 0px;
 		}
@@ -476,7 +476,7 @@
 		padding-bottom: 15px;
 		margin-bottom: 15px;
 	}
-	
+
 	.rowNormal{
 		padding-bottom: 15px;
 	}
@@ -499,7 +499,7 @@
 		padding-left: 33px;
 		word-wrap: break-word;
 		display: block;
-		
+
 		&:hover {
 			color: @linkColorHover;
 		}
@@ -512,7 +512,7 @@
 	.driveIcon {
 		float: left;
 	}
-	
+
 	[class^="uiIconEcms24x24"] {
 		margin: 0px 0px 0px -33px;
 		float: left;
@@ -524,15 +524,15 @@
 .uiWorkingArea .resizeBar {
 	float: left;
 	width: 40px;
-	
+
 	.resizeBarContent {
 		width: 22px;
 		cursor:col-resize;
 		position: relative;
-		
+
 		&:hover {
 			border-right: solid 1px @borderColor;
-				
+
 			.resizeButton {
 				display: block;
 			}
@@ -552,7 +552,7 @@
 		position: absolute;
 		top: 5px;
 		right: 0px;
-			
+
 			[class^="uiIcon"] {
 				width: 11px;
 				margin-top: 2px;
@@ -573,11 +573,11 @@
 
 .uiWorkingArea .resizeNoneBorder {
 	width: 0px;
-	
+
 	.resizeBarContent {
 		width: 0px;
 	}
-	
+
 	.resizeBarContent:hover {
 		border: none;
 		cursor: default;
@@ -593,7 +593,7 @@
 
 .UIBrowseContentPortlet .TagmapHolder .Icon {
 	float: left;
-	width: 19px; height: 16px; 
+	width: 19px; height: 16px;
 	margin: 2px 5px 0px 5px;
 	//background: url('DefaultSkin/background/TagMapIcon19x16.gif') no-repeat; 
 }
@@ -602,7 +602,7 @@
 .uiDocumentFormController {
 	min-width: 500px;
 	padding: 15px;
-	
+
 	.form-horizontal {
 
 		.control-label {
@@ -611,38 +611,38 @@
 		}
 		.controls {
 			margin-left: 135px;
-			
+
 			.textInfo {
 				line-height: 18px;
 				color: gray;
 			}
-			
+
 			.nameInfo {
 				line-height: 18px;
 				color: @textColor;
 				font-weight: bold;
 			}
-			
+
 			a [class^="uiIcon"] {
 				background-image: url("@{images-path}/Icons/uiIconsLightGray.png");
 			}
-			
+
 			a:hover [class^="uiIcon"] {
 				background-image: url("@{images-path}/Icons/uiIconsBlue.png");
 			}
-			
-			textarea { 
+
+			textarea {
 				font-size: 13px;
 				height: 175px;
 				width: 90%;
 				vertical-align: top;
 			}
-			
+
 			> div > span {
 				width: 90% !important;
 				margin-right: 5px;
 			}
-			
+
 			.uiUploadInput {
 				width: 90%;
 				float: left;
@@ -650,7 +650,7 @@
 			}
 		}
 	}
-	
+
 	.helpBlock {
 		display: inline-block;
 		background: @componentBackground;
@@ -660,7 +660,7 @@
 		.border-radius(5px);
 		width: 155px;
 		margin-left: 10px;
-		
+
 		.uiIconHelp {
 			background: url("@{images-path}/Icons/uiIconColor.png") no-repeat -40px 0px;
 			margin: 3px 0px 0px -25px;
@@ -682,14 +682,14 @@
 .fileContent,
 .mediaContent {
 	padding: 15px;
-	
+
 	.textContent {
 		overflow: auto;
-		
+
 		pre {
 			min-height: 150px;
 		}
-		
+
 		.ECMIframe {
 			width: 100%;
 		}
@@ -708,14 +708,14 @@
 	.uiDialogTitle {
 		font-size: 13px;
 	}
-	
+
 	.dialogAction {
 		margin: -4px 0px;
-		
+
 		.btn {
 			margin-left: 10px;
 		}
-		
+
 		.actionIcon {
 			margin: 0px 0px 0px 10px !important;
 			cursor: pointer;
@@ -739,6 +739,9 @@
 		margin: 5px 0px 0px 0px;
 		display: inline-block;
 	}
+	.uiMention {
+		margin: 3px 5px 2px 0;
+	}
 }
 
 
@@ -747,29 +750,29 @@
 
 .uiPreferencesForm {
 	width: auto !important;
-	
+
 	.UIPreferencesForm {
 		width: auto !important;
 	}
-	
+
 	.control-group {
 		margin-bottom: 15px;
 		padding-left: 10px;
 	}
-	
+
 	.sortByContent {
 		margin-top: 10px;
 		.uiSelectbox {
 			width: 160px;
 			margin-left: 15px;
 			vertical-align: middle;
-			
+
 			.selectbox {
 				width: 160px;
 			}
 		}
 	}
-	
+
 	.checkBoxContent {
 		width: 180px;
 
@@ -789,41 +792,41 @@
 
 	.control-label {
 		display: inline-block;
-		margin: 0px;
+	    margin: 0;
 	}
-	
+
 	.nodesContent {
 		margin-left: 10px;
-		
+
 		.uiSelectbox {
 			width: 60px;
 			margin-left: 10px;
 			vertical-align: middle;
-			
+
 			.selectbox {
 				width: 60px;
 			}
 		}
 	}
-	
+
 	.advancePreferences {
 		font-weight: bold;
 		color: @textColor;
 	}
-	
+
 	.advanceContent {
 		.row-fluid {
 			margin: 0px 0px 10px 10px;
-			
+
 			.span6 .control-label {
 				width: 200px;
 			}
-			
+
 			.span12 .uiSelectbox {
 				width: 80px;
 				margin-left: 10px;
 				vertical-align: middle;
-				
+
 				.selectbox {
 					width: 80px;
 				}
@@ -853,7 +856,7 @@
 		display: inline;
 		margin: 0px;
 	}
-	
+
 	.UIFormWithTitle {
 		width: 100%;
 	}
@@ -874,7 +877,7 @@
 	table th {
 		white-space: nowrap;
 	}
-	
+
 	.text {
 		word-break: break-all;
 	}
@@ -902,16 +905,16 @@
 	.header {
 		margin: 10px;
 	}
-	
+
 	ul li.contentBlock {
 		border-bottom: 1px dotted @grayDark;
 		padding: 5px 0px;
 		margin: 0px 10px;
-		
+
 		&:last-child {
 			border: none;
 		}
-		
+
 		.title {
 			font-weight: bold;
 		}
@@ -934,19 +937,19 @@
 	.controls-full input {
 		width: 100%;
 	}
-	
+
 	.actionLabel {
 		padding: 10px 0px;
-		
+
 		> .checkbox {
 			padding: 0px;
 			height: 33px;
 		}
-		
+
 		.uiSelectbox {
 			width: 140px;
 			float: right;
-			
+
 			.selectbox {
 				width: 143px;
 			}
@@ -956,9 +959,9 @@
 			width: 28px;
 		}
 		.control-label{
-			width: 200px; 
-			text-align: left; 
-			padding: 0px; 
+			width: 200px;
+			text-align: left;
+			padding: 0px;
 		}
 	}
 }
@@ -967,16 +970,16 @@
 .uiClipboard {
 	margin: -10px;
 	padding-bottom: 20px;
-	
+
 	.table {
 		border: none;
 		border-bottom: 1px solid @tableBorder;
-		
+
 		td:first-child,th:first-child {
 			border-left: none;
 		}
 	}
-	
+
 	.text {
 		word-break: break-all;
 	}
@@ -989,18 +992,18 @@
 		.form-inline .checkbox {
 			margin-right: 15px;
 		}
-		
+
 		.controls {
 			margin-bottom: 10px;
-			
+
 			input {
 				margin: 0px;
 			}
-			
+
 			.actionIcon {
 				margin-left: 5px;
 			}
-			
+
 			.btn {
 				margin-left: 10px;
 			}
@@ -1025,31 +1028,31 @@
 	margin: 0;
 	padding: 5px 20px;
 	word-wrap: break-word;
-	
+
 	.templateTitle {
 		margin: 4px 130px 0px 0px;
 	}
-	
+
 	.btn-group {
 		.btn {
 			padding: 5px 8px 4px 8px;
 		}
-		
+
 		.active [class^="uiIconEcms"] {
 			background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsBlue.png");
 		}
 	}
-	
+
 	.btn-group:nth-child(2n+2) .btn{
 		border-bottom-right-radius: 3px;
 		border-top-right-radius: 3px;
 	}
-	
+
 	.btn-group > .btn:first-child:hover{
 		border-radius: 3px 0 0 3px;
 		margin-right: -1px;
 	}
-	
+
 	.uiIconClose {
 		margin: 7px 0px 0px 10px;
 		cursor: pointer;
@@ -1062,16 +1065,16 @@
 	margin: -19px -19px 0px -19px;
 
 	.templateBox {
-		height: auto; 
-		width: 120px; 
+		height: auto;
+		width: 120px;
 		float: left;
 		overflow: hidden;
 		border-right: 1px solid @borderColor;
 		border-bottom: 1px solid @borderColor;
 		cursor: pointer;
-	
+
 		.templateIconContainer {
-			width: 64px; 
+			width: 64px;
 			height: 70px;
 			margin: 0px auto;
 			padding-top: 20px;
@@ -1085,28 +1088,28 @@
 			padding: 0px 10px;
 			display: table-cell;
 			vertical-align: middle;
-			
+
 			> a {
 				color: @textColor;
 			}
 		}
-		
+
 		&:hover {
 			background-color: @componentBackgroundHover;
 		}
 	}
-	
+
 	.itemDocumentListView {
 		border-bottom: 1px solid @borderColor;
 		padding: 5px 20px;
 		cursor: pointer;
-		
+
 		> a {
 			margin-left: 15px;
 			color: @textColor;
 			vertical-align: middle;
 		}
-		
+
 		&:hover {
 			background-color: @componentBackgroundHover;
 		}
@@ -1116,11 +1119,11 @@
 /******** uiRenameForm **************/
 .uiRenameForm .popupContent {
 	background: none;
-	
+
 	input {
 		margin-bottom: 0px;
 	}
-	
+
 	button {
 		margin-left: 5px;
 	}
@@ -1130,24 +1133,24 @@
 .UIRemoveLabelForm,.UILabelForm {
 	.form-horizontal {
 		padding: 0px;
-		
+
 		.control-group {
 			margin: 0px;
-		
+
 			.control-label {
 				width: auto;
 				margin-right: 10px;
 			}
-			
+
 			.controls {
 				margin: 0px;
 			}
 		}
-		
+
 		.uiSelectbox {
 			vertical-align: top;
 		}
-		
+
 		.btn {
 			margin-left: 5px;
 		}
@@ -1159,15 +1162,15 @@
 		text-align: center;
     color: @grayLight;
 	}
-	
+
 	.uiGrid .diffDelete {
 		background: #fce8d4;
 	}
-	
+
 	.uiGrid .diffModify {
 		background: #fffdd3;
 	}
-	
+
 	.uiGrid .diffAdd {
 		background: #e7f9c8;
 	}
@@ -1177,24 +1180,24 @@
 .uiUnEditable {
 	width: 380px;
 	margin: 0px auto;
-	
+
 	.iconContainer {
 		float: left;
 		width: 100px;
 		text-align: right;
 		padding-top: 5px;
 	}
-	
+
 	.detailContainer {
 		margin-left: 120px;
 		text-align: center;
-		
+
 		span {
 			display: block;
 			color: @grayLight;
 			margin-top: 10px;
 		}
-		
+
 		h4 {
 			color: @grayLight;
 			margin-top: 0px;
@@ -1218,22 +1221,22 @@
 	margin: -10px;
 	overflow: auto;
 	padding: 10px;
-	
+
 	.title {
 		font-weight: normal;
 		color: @grayDark;
 		margin: 0px 0px 5px 0px;
 	}
-	
+
 	.text {
 		color: @grayLight;
 		margin: 0px;
 	}
-	
+
 	.uiGrid th a {
 		color: @grayDark;
 	}
-	
+
 	.uiGrid td {
 		vertical-align: top;
 	}
@@ -1268,7 +1271,7 @@
 	.control-label {
 		width: 140px;
 	}
-	
+
 	.controls {
 		margin-left: 160px;
 		.input-append input {
@@ -1281,7 +1284,7 @@
 
 .uiTreeNodePageIterator {
 	margin: 0px;
-	
+
 	ul > li > a, ul > li.disabled > a, ul > li.disabled > a:hover {
 		.size(20px,20px);
 		line-height: 20px !important;
@@ -1304,22 +1307,22 @@
 		color: @grayDark;
 		font-weight: bold;
 		cursor: pointer;
-		
+
 		&:hover {
 			color: @linkColor;
 		}
-		
+
 		[class^="uiIcon"] {
 			margin-top: 2px;
 		}
 	}
 	.constraintsForm {
 		padding: 20px 0px 10px 0px;
-		
+
 		.constraintOption:first-child {
 			margin-left: 31px;
 		}
-		
+
 		.constraintOption {
 			margin-bottom: 15px;
 			input {
@@ -1336,17 +1339,17 @@
 					width: 123px;
 				}
 			}
-			
+
 			.label-inline {
 				width: 100px;
 				text-align: right;
 				padding-right: 10px;
 			}
-			
+
 			.uiCheckbox input {
 				width: auto;
 			}
-      
+
 			.help-inline {
         line-height: 26px;
         color: @grayDark;
@@ -1359,10 +1362,10 @@
 	.control-label {
 		width: 120px;
 	}
-	
+
 	.controls {
 		margin-left: 140px;
-		
+
 		input, select {
 			width: 200px;
 		}
@@ -1384,13 +1387,13 @@
 	margin: 0px -10px;
 	padding: 10px;
 	border-top: 1px solid @borderColor;
-	
+
 	.controls {
 		input, select, textarea {
 			vertical-align: top;
 		}
 	}
-	
+
 	.multiValueContainer {
 		display: inline-block;
 	}
@@ -1404,7 +1407,7 @@
 		margin: 0 0 14px;
 		padding: 8px;
 	}
-	
+
 	.allDocument {
 		text-align: right;
 		margin-bottom: 10px;
@@ -1416,14 +1419,14 @@
 .comments {
 	padding: 20px 0px;
 	color: @grayDark;
-	
+
 	.avatarBox .avatarMedium {
 		display: block;
 	}
-	
+
 	.uiBox {
 		padding: 10px;
-		
+
 		.arrowLeft {
 			background: url("@{images-path}/ecms/portlets/explorer/arrows.png") no-repeat scroll -21px 0;
 			display: block;
@@ -1434,27 +1437,27 @@
 			width: 8px;
 		}
 	}
-	
+
 	.commentBar {
 		.showComment {
 			margin-top: 10px;
 		}
-		
+
 		.viewLabel {
 			margin-right: 140px;
 			font-weight: bold;
 		}
-		
+
 		.LabelPostedComment {
 			margin-right: 140px;
 		}
 	}
-	
+
 	.commentBox {
 		margin-left: 85px;
 		padding: 10px 20px;
 		position: relative;
-		
+
 		.commentInfo {
 			margin-bottom: 5px;
 		}
@@ -1475,12 +1478,12 @@
 .uiRightClickPopupMenu {
 	display: none;
 	position: absolute;
-	
+
 	.uiRightPopupMenuContainer {
 		display: block;
 		position: static;
 		cursor: pointer;
-		
+
 		> li > a:hover > [class^="uiIconEcms"] {
 			background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsWhite.png");
 		}
@@ -1506,7 +1509,7 @@
 		.uiIconEcmsMoveNode {
 			background-position: -120px 0px;
 		}
-		
+
 		.uiIconEcmsRestoreFromTrash {
 			background-position: -160px 0px;
 		}
@@ -1515,7 +1518,7 @@
 			background-position: -140px -60px;
 		}
 	}
-	
+
 	.uiRightPopupMenuContainer > li > a:hover  {
 		.uiIconEcmsEditDocument,
 		.uiIconEcmsDelete,
@@ -1573,7 +1576,7 @@
 		#gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 15%));
 		color: @white;
 		.uiIconEcmsCopyUrlToClipboard {
-			background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsWhite.png");
+			background-image: url("/eXoWCMResources/skin/images/Icons/uiIconsEcmsWhite.png");
 		}
 	}
 
@@ -1585,13 +1588,13 @@
 		    border: 1px solid @borderColor;
 		    border-radius: 3px 3px 3px 3px;
 		    color: @textColor;
-		    padding: 4px 6px;	
+		    padding: 4px 6px;
 		    .uiIconEcmsCopyUrlToClipboard {
 				background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsBlue.png");
 			}
 		}
 	}
-	
+
 	.dropdown-menu {
 		#hiddenMoreButton li > .menuItemSelected{
 			#gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 15%));
@@ -1628,5 +1631,4 @@
 .UIJCRExplorer .UIDocumentWorkspace .UITabContent ul li {
     list-style-type: disc;
 }
-
 

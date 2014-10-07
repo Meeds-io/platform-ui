@@ -17,7 +17,7 @@
 				.border-radius(@borderRadiusSmall - 1);
 				float: left;
 				margin: 1px 4px 0 0;
-				color: @textColor; 
+				color: @textColor;
 			}
 		}
 
@@ -29,7 +29,7 @@
 		margin: 0px;
 		font-weight: normal;
 	}
-	
+
 	.myCalendarContainer{
 		li{
 			height: 14px;
@@ -37,11 +37,11 @@
 			border:solid 1px @white;
 			padding: 3px 3px 3px 6px;
 			margin: 3px 0;
-			
+
 			.uiIconCalSettingMini{
 					display: none;
 				}
-				
+
 			&:hover{
 				background-color: @componentBackgroundLight;
 				border:solid 1px @componentBackground;
@@ -50,30 +50,30 @@
 					display: inline-block;
 					cursor: pointer;
 				}
-					
+
 			}
-			
+
 		}
-		
+
 		.colorOpacity {
 			.border-radius(@borderRadiusSmall);
 			display: block;
 			.square(12px);
 		}
-		
+
 		.calendarName{
 			.text-overflow();
 			 .size(18px,130px);
 		}
-		
+
 		.uiVTabContent{
 			padding: 4px 0 4px 9px;
 		}
-	
-	
+
+
 	}
 }
-.defaultCalendarTab .myCalendarContainer  .calendarName{ 
+.defaultCalendarTab .myCalendarContainer  .calendarName{
 	width: 95%;
 }
 .uiCalendarSharedForm .calendarName {
@@ -102,7 +102,7 @@
 	}
 	i {
 		.square(16px);
-	}	
+	}
 	.uiIconBell {
 		background-image: url("@{images-path}/calendar/Icons/icon-bell.png");
 		background-position: 0px 0px;

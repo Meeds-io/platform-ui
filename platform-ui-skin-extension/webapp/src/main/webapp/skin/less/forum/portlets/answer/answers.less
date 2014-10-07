@@ -10,26 +10,26 @@
 	line-height:14px;
 	height:14px;
 	border: 1px solid @borderColor;
-	.opacity(50);	        
+	.opacity(50);
 }
 .uiAnswersPortlet {
 	padding: 20px 20px 0px 20px;
-	
+
 	.uiAnswersBreadcumbs {
 		padding-top: 3px;
 	}
 	.uiAnserContainer {
 		.answersContainer  {
 			padding: 20px 10px 10px;
-		
+
 		}
 		.leftColumn {
 			width: 220px;
-			 
+
 		}
 		.avatarMini  {
 			.square(16px);
-			img { 
+			img {
 				.square(16px);
 			}
 		}
@@ -37,37 +37,37 @@
 	.resize {
 		margin-top: 8px;
 		a {
-		#gradient > .vertical(@white,@componentBackground);
+			#gradient > .vertical(@white,@componentBackground);
 			border: 1px solid @borderColor;
-			border-right: 0;		
+			border-right: 0;
 			padding: 4px 0;
 			display: block;
 			float: left;
-			margin-left: 2px;	
-			outline: none;		
+			margin-left: 2px;
+			outline: none;
 			.border-radius(@borderRadiusSmall 0  0 @borderRadiusSmall);
 		}
 		&.resizeLt {
-			a {	
+			a {
 				.border-radius(0 @borderRadiusSmall @borderRadiusSmall 0);
-				border-right: 1px solid @borderColor;	
-				border-left: 0;	
-				margin-left: 0px;		
+				border-right: 1px solid @borderColor;
+				border-left: 0;
+				margin-left: 0px;
 			}
 		}
-		
+
 		.iconControll {
 			cursor: pointer;
 		}
 		.line {
-		    width:2px; 
-		    border-left: 1px solid @borderColor; 
-		    margin:auto; 
+		    width:2px;
+		    border-left: 1px solid @borderColor;
+		    margin:auto;
 		    min-height: 300px;
 		    cursor: col-resize;
 		  }
 	}
-	
+
 	.normalQuest  {
 		margin-bottom: 10px;
 		.leftContent {
@@ -82,7 +82,7 @@
 		}
 		.time {
 			color: @grayLight;
-		} 
+		}
 	}
 	.uiAnserContainer .resize {
 		width: 30px;
@@ -93,10 +93,10 @@
 				overflow: hidden;
 			}
 	}
-	
+
 	blockquote {
 		background: none;
-		 border-left: 5px solid #999;
+		border-left: 5px solid @grayLight;
 	    margin: 0 0 20px;
 	    padding: 0 0 0 15px;
 	    width: auto;
@@ -104,32 +104,32 @@
 	blockquote:after {
 		display: none;
 	}
-	
+
 	// drapdrop categories
 	.uiCategories {
 		.listCategories > li {
-			cursor: pointer;			
+			cursor: pointer;
      		 &.faqTmpCategory {
   				min-height:8px;
 			}
       		&.faqHighlightCategory {
 		        height:20px;
 		      }
-		} 
-		
-      		
+		}
+
+
 	}
 
 	.uiQuestions {
 		margin: 10px 0 0 0;
 		padding-bottom: 0;
 		.answerToolbar {
-			min-height: 28px;    
-			> ul > li{				
+			min-height: 28px;
+			> ul > li{
 				float: left;
 				margin: 0 10px 0 0;
 				a {
-					color: @textColor;					
+					color: @textColor;
 				}
 			}
 			> .menuRight > li {
@@ -139,7 +139,7 @@
 				color: @white;
 			}
 		}
-		
+
 	}
 	.questionSelect {
 		border: 1px solid @borderColor;
@@ -191,7 +191,7 @@
 			text-align: right;
 		}
 	}
-	
+
 	.responseItemContainer  {
 		.avatarXSmall  + .responseItemContainerRight {
 			margin-left: 50px;
@@ -206,7 +206,7 @@
 			min-height:30px;
 			padding:12px 16px;
 			.actionBar {
-				min-height: 25px;				
+				min-height: 25px;
 			}
 			& + .responseItemContainer {
 				border-top: 1px solid @borderColor;
@@ -253,12 +253,12 @@
 			margin: 0;
 			padding:12px 16px 0 16px;
 		}
-		
+
 		.responseComment .responseItemContainer:last-child {
 			.border-radius(0 0 @borderRadiusSmall @borderRadiusSmall);
 		}
 		.questionContent {
-			margin: 6px 0 0 0;			
+			margin: 6px 0 0 0;
 		}
 		.theContent {
 			word-wrap: break-word;
@@ -271,9 +271,9 @@
 			}
 			ol li {
 			    list-style-type: decimal;
-			}	
+			}
 
-		}	
+		}
 }
 
 .boxNum {
@@ -297,7 +297,7 @@
 		background: @componentBackground;
 	}
 	& + .boxNum {
-	border-left: 1px solid @componentBackgroundHover;
+		border-left: 1px solid @componentBackgroundHover;
 	}
 }
 //attachmentContainer
@@ -305,17 +305,17 @@
 .attachmentContainer{
 		background: @componentBackgroundLight;
 		padding: 18px;
-		
+
 		.otherAttachmentBox + .otherAttachmentBox{
 			margin-top: 5px;
 		}
-		
+
 		.attachmentTitle{
 			margin-bottom: 15px;
 		}
 		.attachmentContentImage {
 			margin-bottom: 10px;
-			
+
 		.imageAttachmentBox{
 			display: inline-block;
 			.square(128px);
@@ -328,7 +328,7 @@
 					display: block;
 				}
 			}
-			
+
 			.imgAttach{
 				line-height: 125px;
 				max-height: 128px;
@@ -352,7 +352,7 @@
 							font-weight: bold;
 						}
 					}
-					
+
 					margin: 45px 0 0 0;
 					&+p{
 						margin-top: 0;
@@ -375,7 +375,7 @@
 	.contentQuote{
 		font-style: italic;
 		padding: 15px 15px 15px 20px;
-		background: #e6f3ff;
+		background: @quotePrimaryBackground;
 		margin: 10px 0 0 15px;
 		word-wrap: break-word;
 		.border-radius(2px);
@@ -384,7 +384,7 @@
 			padding-left: 0;
 			margin-top: 10px;
 			.contentQuote{
-				border-left: solid 5px #aacded;
+				border-left: solid 5px @quotePrimaryBorder;
 				padding: 0px 0px 0px 20px;
 				margin-top: 15px;
 				.titleQuote{
@@ -401,7 +401,7 @@
 			font-weight:bold;
 		}
 	}
-	
+
 	.textContent {
 		word-wrap: break-word;
 		.contentQuote{
@@ -419,7 +419,7 @@
 .questionContainer {
 	.theContent {
 		.contentQuote {
-			background: #f8f8f8;
+			background: @componentBackgroundLight;
 		}
 	}
 }

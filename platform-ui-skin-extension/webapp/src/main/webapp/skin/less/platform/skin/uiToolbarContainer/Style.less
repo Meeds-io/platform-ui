@@ -11,9 +11,9 @@
 	.right-topNavigation-containerTDContainer {
 		float: right !important;
 	}
-	
+
 	.uiCreate{
-		min-width: 240px;		
+		min-width: 240px;
 		.uiAction{
 			padding: 10px 0 5px 0;
 			text-align: center;
@@ -21,27 +21,27 @@
 				margin: 0 3px;
 				min-width: 40px;
 			}
-			
+
 		}
 		.uiFormInput {
 			margin-bottom:15px;
 			padding: 0 10px;
-			
+
 			.createName{
 				margin-bottom: 10px;
 			}
-			
+
 			table label {
 				white-space: nowrap;
 				display: inline;
 			}
-			
+
 			.btn-group{
 				font-size: 13px;
 			}
-			
+
 			.btn-group li > a.selected{
-			   #gradient > .vertical(@primaryLighterColor, darken(@primaryLighterColor, 15%));
+			   #gradient > .vertical(@primaryLightColor, darken(@primaryLightColor, 15%));
 			    color: @white;
 			}
 			.uiFormScrollMenu{
@@ -66,7 +66,7 @@
 					}
 				}
 			}
-			
+
 			.uiForumFilter{
 				margin-left: 5px;
 				margin-top: 5px;
@@ -78,14 +78,14 @@
 				    vertical-align: middle;
 				    text-align: left;
 				}
-			
+
 				.filterMenu{
 					&> ul{
 					    overflow-y: auto;
 					    overflow-x: hidden;
 					    max-height: 440px; /* 13x23+3 */
 					}
-					
+
 					.dropdown-menu{
 						width: 250px;
 					}
@@ -93,7 +93,7 @@
 	    				margin: 10px;
 	    				width: 91%;
 					}
-					
+
 					.category{
 					    background: @componentBackgroundLight;
 					    border-bottom: 1px solid @borderColor;
@@ -114,13 +114,13 @@
 						color: white;
 					}
 				}
-			
+
 			}
-			
+
 		}
-		
+
 	}
-	
+
 
 	.NormalContainerBlock .ToolbarContainer {
 		background: none;
@@ -130,12 +130,12 @@
 			height: 41px;
 		}
 	}
-	
+
 	.uiDropdownWithIcon {
 		background: none;
 		padding-left: 2px;
 		.uiDropdownWithIcon {
-			background: none;	
+			background: none;
 		}
 	 	> a {
 		padding: 0 10px 0 11px;
@@ -155,7 +155,7 @@
 			margin-top: 8px;
 		}
 	}
-	
+
 	.uiDropdownWithIcon.pull-left {
 		> .dropdown-menu {
 			margin-top: 8px;
@@ -182,7 +182,7 @@
 		  }
 		}
 	}
-	
+
 	.uiDropdownWithIcon.pull-right {
 		> .dropdown-menu {
 			&:before {
@@ -208,7 +208,7 @@
 		  }
 		}
 	}
-	
+
 	.uiSearchPlatformToolBarPortlet {
 		> input[type=text] {
 		margin: -2px 0 0 12px;
@@ -218,8 +218,8 @@
 				background-repeat: no-repeat;
 			}
 		}
-	} 
-	
+	}
+
 	.uiCreateToolBarPortlet {
 		.uiCreateForm {
 			min-width: 200px;
@@ -229,6 +229,7 @@
 			}
 			.control-label {
 				width: 70px;
+				padding-top: 6px;
 			}
 			.controls {
 				margin-left: 90px;
@@ -237,7 +238,7 @@
 				margin: 0 -10px;
 			}
 		}
-		
+
 		.uiQuickAddEvent {
 			.quickAddEventContainer {
 				padding: 0 10px;
@@ -246,7 +247,7 @@
 				.control-label {
 					width: 105px;
 					text-align: left;
-					
+
 				}
 				.controls {
 					margin-left: 110px;
@@ -270,9 +271,9 @@
 			}
 			.uiSelectbox {
 				margin-bottom: 0;
-				
+
 			}
-			
+
 			.selectboxMini {
 				.uiSelectbox {
 					width: 87px;
@@ -281,7 +282,7 @@
 					}
 				}
 			}
-			
+
 			.selectboxMedium {
 				.uiSelectbox {
 					width: 181px;
@@ -297,9 +298,9 @@
 				}
 			}
 		}
-		
+
 	}
-	
+
 	.uiAdminToolbarPortlet {
 		.seoImgBlock{
 			padding: 5px;
@@ -307,16 +308,16 @@
 				padding: 0 5px;
 				margin-left: 2px;
 			}
-		}	
+		}
 		.seoImgBlock:hover,
 		.seoImgBlock:focus,
 		.dropdown-submenu:hover > .seoImgBlock,
 		.dropdown-menu .active > .seoImgBlock,
 		.dropdown-menu .active > .seoImgBlock:hover  {
-			#gradient > .vertical(@primaryLighterColor, darken(@primaryLighterColor, 15%));
+			#gradient > .vertical(@primaryLightColor, darken(@primaryLightColor, 15%));
 			color: @white;
 		}
-			
+
 		.quickEditUnchecked {
 			background-image: url("@{images-path}/platform/skin/ToolbarContainer/check.png");
 			background-repeat: no-repeat;
@@ -326,7 +327,7 @@
 			height: 14px;
 			vertical-align: text-bottom;
 		}
-		
+
 		.quickEditChecked {
 			background-image: url("@{images-path}/platform/skin/ToolbarContainer/check.png");
 			background-repeat: top-repeat;
@@ -334,22 +335,22 @@
 			display: inline-block;
 			width: 14px;
 			height: 14px;
-			vertical-align: text-top;			
+			vertical-align: text-top;
 		}
 	}
-	
+
 	.homeLink {
 		display: inline-block;
 		padding: 8px 10px;
 	}
-	
+
 	.uiUserToolBarPortlet > a > img {
 		width: 26px;
 		height: 26px;
 		max-width: none;
 		border-radius: 2px;
-	}	
-	
+	}
+
 	#HomeLink {
 		padding: 8px 10px 0;
 	}
@@ -360,7 +361,7 @@
 			#gradient > .vertical(@toolbarDarkStartBackground, @toolbarDarkEndBackground);
 			border-bottom: 1px solid @toolbarDarkBorder;
 		}
-		
+
 		.uiDropdownWithIcon {
 			background: url("@{images-path}/platform/skin/ToolbarContainer/line.png") no-repeat top left;
 		 	> a {
@@ -378,18 +379,18 @@
 			#gradient > .vertical(@toolbarLightStartBackground, @toolbarLightEndBackground);
 			border-bottom: 1px solid @toolbarLightBorder;
 		}
-		
+
 		.uiDropdownWithIcon {
 			background: url("@{images-path}/platform/skin/ToolbarContainer/line.png") no-repeat bottom left;
 		 	> a {
-			color: @toolbarDarkLinkColor;
+				color: @toolbarLightLinkColor;
 			}
-			> a:hover,.uiDropdownWithIcon.open > a {
+			> a:hover, &.open > a {
 				background: rgba(128,128,128,0.3);
-				color: @toolbarDarkLinkHoverColor;
+				color: @toolbarLightLinkHoverColor;
 			}
 		}
 }
-	
+
 
 

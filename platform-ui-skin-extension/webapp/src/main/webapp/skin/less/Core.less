@@ -27,6 +27,7 @@
 @import "component/CalendarPicker/Style.less";
 @import "component/UIDashboard/Style.less";
 @import "component/Gadget/Style.less";
+@import "component/HoverReveal/Style.less";
 @import "component/UISelector/UIGroupMemberShipSelector/Style.less";
 @import "component/UISelector/UIItemSelector/Style.less";
 @import "component/UISelector/UIUserSelector/Style.less";
@@ -38,6 +39,7 @@
 @import "component/CalendarBox/Style.less";
 @import "component/LanguageSelector/Style.less";
 @import "component/VTabInputSet/Style.less";
+@import "component/UIMention/Style.less";
 @import "PortletThemes/Style.less";
 // Body ---------------
 // --------------------
@@ -405,7 +407,7 @@ Round corner box with title
 }
 
 .UIMaskWorkspace .MaskContainer {
-	background: #f5f5f5;
+	background: @componentBackgroundLight;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
