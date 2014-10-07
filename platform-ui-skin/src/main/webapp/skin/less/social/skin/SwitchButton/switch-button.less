@@ -1,4 +1,4 @@
-.iPhoneCheckContainer {
+.uiSwitchBtn {
    -webkit-transform: translate3d(0, 0, 0);
    position: relative;
    height: 21px;
@@ -9,7 +9,7 @@
    padding-top: 1px;
 }
 
-.iPhoneCheckContainer input {
+.uiSwitchBtn input {
    position: absolute;
    top: 5px;
    left: 30px;
@@ -17,7 +17,7 @@
    opacity: 0;
 }
 
-.iPhoneCheckContainer label {
+.uiSwitchBtn label {
    white-space: nowrap;
    font-size: 11px;
    line-height: 16px;
@@ -32,18 +32,18 @@
    overflow: hidden;
 }
 
-.iPhoneCheckContainer, .iPhoneCheckContainer label {
+.uiSwitchBtn, .uiSwitchBtn label {
    user-select: none;
    -moz-user-select: none;
    -khtml-user-select: none;
 }
 
-.iPhoneCheckDisabled {
+.switchBtnDisabled {
    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 50);
    opacity: 0.5;
 }
 
-label.iPhoneCheckLabelOn {
+label.switchBtnLabelOn {
    color: white;
    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
    left: 1px;
@@ -55,12 +55,12 @@ label.iPhoneCheckLabelOn {
    .border-bottom-left-radius(9px);
 }
 
-label.iPhoneCheckLabelOn span {
+label.switchBtnLabelOn span {
    line-height: 19px;
     padding: 0 8px 0 4px;
 }
 
-label.iPhoneCheckLabelOff {
+label.switchBtnLabelOff {
    color: @grayLight;
    background-color: @grayMediumWhiteSmoke;
    #gradient > .vertical(rgba(0,0,0,0),rgba(0,0,0,0.09));
@@ -75,12 +75,12 @@ label.iPhoneCheckLabelOff {
    margin-right: 1px;
 }
 
-label.iPhoneCheckLabelOff span {
+label.switchBtnLabelOff span {
    line-height: 19px;
     padding-right: 17px;
 }
 
-.iPhoneCheckHandle {
+.switchBtnHandle {
    display: block;
    cursor: pointer;
    position: absolute;
