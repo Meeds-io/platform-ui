@@ -152,6 +152,9 @@
 				margin: 0 20px 0 0;
 			}
 		}
+		.attachmentContainer {
+			margin-top: 0;
+		}
 		.attachmentContainer ,.notResponse{
 			border-top: 1px solid @borderColor;
 			color: @grayLight;
@@ -300,69 +303,6 @@
 		border-left: 1px solid @grayMediumWhiteSmoke;
 	}
 }
-//attachmentContainer
-
-.attachmentContainer{
-		background: @grayLighter;
-		padding: 18px;
-		
-		.otherAttachmentBox + .otherAttachmentBox{
-			margin-top: 5px;
-		}
-		
-		.attachmentTitle{
-			margin-bottom: 15px;
-		}
-		.attachmentContentImage {
-			margin-bottom: 10px;
-			
-		.imageAttachmentBox{
-			display: inline-block;
-			.square(128px);
-			text-align: center;
-			margin-right: 15px;
-			margin-bottom: 15px;
-			position: relative;
-			&:hover{
-				.actionAttachImg{
-					display: block;
-				}
-			}
-			
-			.imgAttach{
-				line-height: 125px;
-				max-height: 128px;
-				max-width: 128px;
-				img {
-					max-height: 128px;
-					max-width: 128px;
-				}
-			}
-			.actionAttachImg{
-				position: absolute;
-				display: none;
-				top: 0;
-				left: 0;
-				background-color: rgba(0,0,0,0.1);
-				.square(128px);
-				p{
-					a{
-						color: @white;
-						&:hover {
-							font-weight: bold;
-						}
-					}
-					
-					margin: 45px 0 0 0;
-					&+p{
-						margin-top: 0;
-					}
-				}
-			}
-		}
-	}
-}
-
 /* Content Quote */
 .theContent{
 	.uiWikiPortlet {

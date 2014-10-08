@@ -19,7 +19,7 @@
 	<div class="progressBarFrame clearfix" style="display:none">
 		<span class="deleteFileLabel pull-right">
 			<a href="#" class="actionIcon" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("UIFormUploadInput.label.Cancel")%>">
-				<i class="uiIconRemove"></i>
+				<i class="uiIconRemove uiIconLightGray"></i>
 			</a>
 		</span>
 		<div class="fileNameLabel pull-left"></div>
