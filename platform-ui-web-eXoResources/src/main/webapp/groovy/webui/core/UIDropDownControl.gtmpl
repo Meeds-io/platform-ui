@@ -1,6 +1,6 @@
 <%
 	import org.exoplatform.web.application.JavascriptManager;
-	
+
 	def rcontext = _ctx.getRequestContext();
 	JavascriptManager jsmanager = rcontext.getJavascriptManager();
 	jsmanager.require("SHARED/webui-ext", "webuiExt").require("SHARED/bts_dropdown")
@@ -10,8 +10,8 @@
 <div class="btn-group uiDropdownWithIcon" id="$uicomponent.id">
 
 	<div class="btn dropdown-toggle" data-toggle="dropdown">
-		<% 
-			if (options.size() > 0) { 
+		<%
+			if (options.size() > 0) {
 			String label = _ctx.appRes(uicomponent.getId() + ".item." + uicomponent.getLabel());
 			if(label.length() > 25) {
 		%>
@@ -21,17 +21,17 @@
 		<% }}else {%>
 			<span><%=_ctx.appRes(uicomponent.getId() + ".title.Empty")%></span>
 		<% } %>
-		 <span class="spiter"></span> <span class="caret"></span>
+		 <span class="spiter"></span> <i class="uiIconArrowDown uiIconLightGray"></i>
 	</div>
 
 	<ul class="dropdown-menu" role="menu">
-		
+
 		<%
 			int selectedIndex = 0;
 			for(option in options) {
 		 %>
 			<li>
-				<% 
+				<%
 					String label = _ctx.appRes(uicomponent.getId() + ".item." + option.label);
 					if(label.length() > 30) {
 				%>
@@ -41,6 +41,6 @@
 				<% } %>
 			</li>
 		<% selectedIndex++;}%>
-		
+
 	</ul>
 </div>

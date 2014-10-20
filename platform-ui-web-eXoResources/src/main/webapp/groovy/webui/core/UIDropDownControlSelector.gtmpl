@@ -21,7 +21,7 @@
 		<% }}else {%>
 			<i class="uiIconGeneralDrive"></i><span><%=_ctx.appRes(uicomponent.getId() + ".title.Empty")%></span>
 		<% } %>
-		 <span class="caret"></span>
+		 <i class="uiIconArrowDown uiIconLightGray"></i>
 	</div>
 
 	<ul class="dropdown-menu" role="menu">
