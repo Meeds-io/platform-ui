@@ -59,7 +59,7 @@
                     <execution>
                         <id>core</id>
                         <configuration>
-                            <!-- SourceDirectory shouldn't exist and we should have as default the lesss folder in /src/main/less     -->
+                           <!-- SourceDirectory shouldn't exist and we should have as default the lesss folder in /src/main/less     -->
                             <sourceDirectory>${project.basedir}/src/main/webapp/skin/less</sourceDirectory>
                             <outputDirectory>${project.build.directory}/${project.build.finalName}/skin/css</outputDirectory>
                             <compress>false</compress>
@@ -70,8 +70,8 @@
                                 <include>Portlets/SiteNavigationPortlet/Style.less</include>
                                 <include>Portlets/UIAccountPortlet/Style.less</include>
                                 <include>Portlets/UIApplicationRegistryPortlet/Style.less</include>
-                                <include>wiki/less/wiki.less</include>
-                                <include>platform/skin/less/platform.less</include>
+                                <include>wiki/wiki.less</include>
+                                <include>platform/skin/platform.less</include>
                                 <include>platform/portlets/platformNavigation/UIBreadCrumbsNavigationPortlet/Style.less</include>
                                 <include>platform/portlets/platformNavigation/UICompanyNavigationPortlet/Style.less</include>
                                 <include>platform/portlets/platformNavigation/UIGroupsNavigationPortlet/Style.less</include>
@@ -79,12 +79,32 @@
                                 <include>platform/portlets/platformNavigation/UISearchPlatformToolbarPortlet/Style.less</include>
                                 <include>platform/portlets/platformNavigation/UISpaceNavigationPortlet/Style.less</include>
                                 <include>platform/portlets/platformNavigation/UIUserNavigationPortlet/Style.less</include>
+                                <include>platform/portlets/notification/notificationsAdmin.less</include>
                                 <include>platform/portlets/homepage/calendar.less</include>
                                 <include>platform/portlets/homepage/gettingstarted.less</include>
                                 <include>platform/portlets/homepage/invitations.less</include>
                                 <include>platform/portlets/homepage/suggestions.less</include>
                                 <include>platform/portlets/homepage/whoisonline.less</include>
                                 <include>platform/portlets/branding/branding.less</include>
+                                <include>platform/portlets/welcome-screens/termsandconditions.less</include>
+                                <include>platform/portlets/welcome-screens/unlockTrial.less</include>
+                                <include>platform/portlets/extensions/login.less</include>
+                                <include>platform/portlets/extensions/welcome-screens.less</include>
+                                <include>platform/portlets/acme-website/SpaceSummaryInfoPortlet.less</include>
+                                <include>platform/portlets/acme-intranet/Style.less</include>
+                                <include>platform/portlets/gadget-pack/canvas.less</include>
+                                <include>platform/portlets/gadget-pack/forumsStatistic.less</include>
+                                <include>platform/portlets/gadget-pack/home.less</include>
+                                <include>platform/portlets/gadget-pack/latestForumPosts.less</include>
+                                <include>platform/portlets/gadget-pack/loginHistory-jquery-ui-1.8.13.custom.less</include>
+                                <include>platform/portlets/gadget-pack/loginHistory.less</include>
+                                <include>platform/portlets/gadget-pack/monitoring.less</include>
+                                <include>platform/portlets/gadget-pack/pagination.less</include>
+                                <include>platform/portlets/gadget-pack/scriptConsoleColorpicker.less</include>
+                                <include>platform/portlets/gadget-pack/scriptConsoleStyle.less</include>
+                                <include>platform/portlets/gadget-pack/suggestion.less</include>
+                                <include>platform/portlets/gadget-pack/topVoteTopic.less</include>
+                                <include>platform/portlets/platformNavigation/UIGroupsNavigationPortlet/Style.less</include>
                                 <include>ecms/skin/ecms-resources-wcmskin.less</include>
                                 <include>ecms/skin/ecms-resources-dmsskin.less</include>
                                 <include>ecms/portlets/administration/ecms-administration.less</include>
@@ -150,4 +170,3 @@
     </build>
 
 </project>
-
