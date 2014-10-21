@@ -3,6 +3,19 @@
 //======================================================//
 // Re-Define mixins of Bootstrap to fix error missing mixins for porlets, gadgets
 
+// Clearfix
+.clearfix-exo() {
+ &:before,
+ &:after {
+   display: table;
+   content: "";
+   line-height: 0;
+ }
+ &:after {
+   clear: both;
+ }
+}
+
 // Webkit-style focus
 // ------------------
 .tab-focus() {

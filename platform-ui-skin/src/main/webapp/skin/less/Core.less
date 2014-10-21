@@ -2,9 +2,9 @@
 
 
 // Core variables and mixins
+@import "_boostrap.less";
 @import "variables.less"; // Modify this for custom colors, font-sizes, etc
 @import "mixins.less";
-@import "_boostrap.less";
 @import "reset.less";
 @import "component/Tabs/Style.less";
 @import "component/Popup/Style.less";
@@ -42,16 +42,9 @@
 @import "component/UIMention/Style.less";
 @import "component/UIAttachmentThumbnail/Style.less";
 @import "PortletThemes/Style.less";
-// Body ---------------
-// --------------------
 
-body {
-  margin: 0;
-  #font > .sans-serif(@baseFontSize,normal,@baseLineHeight);
-  color: @textColor;
-  background-color: @bodyBackground;
-}
-
+// COMMONS STYLESHEET
+//==================================================================
 a,a:hover,a:focus {
   color: @linkColor;
   text-decoration: none;
@@ -260,28 +253,6 @@ table {
 			}
 		}
 	}
-}
-
-//========================== Call From mixins.less ================================
-// Clearfix
-// --------
-.clearfix {
-	.clearfix();
-}
-
-// Block level inputs
-.input-block-level{
-	.input-block-level();
-}
-
-/*============== Action With Label================*/
-.uiActionWithLabel {
-	.uiActionWithLabel();
-}
-
-/*============== actionIcon================*/
-.actionContainer{
-	.actionContainer();
 }
 
 .actionIcon, .actionIconSmall{
