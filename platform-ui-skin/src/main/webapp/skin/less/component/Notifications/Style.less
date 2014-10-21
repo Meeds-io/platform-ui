@@ -2,12 +2,12 @@
 // Notification
 // --------------------------------------------------
 .alert {
-	.border-radius(3px);
+	.border-radius(@baseBorderRadius);
 	.box-shadow(0px 1px 1px @componentBackgroundHover);
 	background: @warningBackground;
 	border-color: @warningBorder;
 	color: @warningText;
-	padding: 8px 13px;
+	padding: 8px 12px;
 	margin: 10px 0;
 	z-index: 10;
 
@@ -15,7 +15,7 @@
 		display: inline-block;
 		vertical-align: text-top;
 		.square(16px);
-		margin-right: 6px;
+		margin-right: 7px;
 	}
 
 	.uiIconWarning {

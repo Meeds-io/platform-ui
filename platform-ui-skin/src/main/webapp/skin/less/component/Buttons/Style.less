@@ -1,7 +1,7 @@
-
 .btn-primary{
 	font-family: @sansBoldFontFamily;
 	font-weight: bold;
+	border-bottom-color: @btnPrimaryBorder;
 }
 
 .uiAction .btn:first-child {
@@ -63,10 +63,6 @@
 	}
 }
 
-.btn-mini {
-	font-size: @baseFontSize - 2px;
-}
-
 .btn:focus{
 	background-position: 0 0;
 }
@@ -75,4 +71,12 @@ h1,h2,h3,h4 {
 	.btn + .btn{
 	font-weight: normal;
 	}
+}
+// Size Button
+.btn-xlarge {
+	font-size: @fontsizeXlarge;
+	padding: @paddingXLarge;
+}
+.btn-mini {
+	.border-radius(@borderRadiusSmall - 1px);
 }
