@@ -2,10 +2,7 @@
 // Porlet - Site Navigation Portlet
 // --------------------------------------------------
 .progress {
-  height: 18px;
-}
-
-.progress {
+  	height: 18px;
 	.border-radius(20px);
 	#gradient .vertical(@componentBackgroundHover, @componentBackground);
 	.bar {
@@ -15,7 +12,7 @@
 
 // Striped bars
 .progress-striped .bar {
-  #gradient > .striped(@primaryLightColor);
+  #gradient > .striped(lighten(@primaryColor, 10%));
 }
 
 // upload files
