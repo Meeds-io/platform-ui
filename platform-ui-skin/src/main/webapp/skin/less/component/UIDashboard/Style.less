@@ -7,7 +7,7 @@
 
 .UIDashboardPortlet {
   background: @white;
-  border: 1px solid #b7b7b7;
+  border: 1px solid @borderColor;
   border-top: none;
   height: 100%;
 }
@@ -35,7 +35,8 @@
   height: 100%;
   .DashboardControlBar {
 	  height: 23px;
-	  border-bottom: 1px solid #b7b7b7;
+	  background: url('background/Dashboard.gif') repeat-x top;
+	  border-bottom: 1px solid @borderColor;
 	}
 	.TitleBar {
 	  color: @black;
@@ -48,10 +49,18 @@
 		.InputContainer {
 		 	 margin-bottom: 10px;
 		 	  input {
-				  width: 170px;
+				  width: 172px;
 				  margin-bottom: 0;
 				}
-				
+				.AddNewNodeIcon {
+				  background: url("@{images-path}/Icons/uiIconsLightGray.png") -100px -60px;
+				  display: inline-block;
+				  cursor: pointer;
+				  .square(16px);
+				  &:hover {
+					  background: url("@{images-path}/Icons/uiIconsPrimary.png") -100px -60px;
+					}
+				}
 		}
 		.MiddleItemContainer {
 		  overflow: hidden;
@@ -78,7 +87,7 @@
 				  font-weight: bold;
 				  cursor: pointer;
 				  &:hover {
-					  color: #2F5E92;
+					  color: @linkColorHover;
 					}
 				}
 			}

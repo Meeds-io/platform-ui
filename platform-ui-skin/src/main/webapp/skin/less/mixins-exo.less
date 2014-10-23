@@ -249,6 +249,14 @@
   border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);
 }
 
+// Gradient Bar Colors for buttons and alerts
+.gradientBarEXO(@primaryColor, @secondaryColor, @borderColor, @textColor: #fff, @textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
+  color: @textColor;
+  text-shadow: @textShadow;
+  #gradient > .vertical(@primaryColor, @secondaryColor);
+  border: 1px solid @borderColor;
+}
+
 // Gradients
 #gradient {
   .horizontal(@startColor: #555, @endColor: #333) {
@@ -330,6 +338,26 @@
 .buttonBackground(@startColor, @endColor, @textColor: #fff, @textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
   // gradientBar will set the background to a pleasing blend of these, to support IE<=9
   .gradientBar(@startColor, @endColor, @textColor, @textShadow);
+  *background-color: @endColor; // Darken IE7 buttons by default so they stand out more given they won't have borders
+  .reset-filter();
+
+  // in these cases the gradient won't cover the background, so we override
+  &:hover, &:focus, &:active, &.active, &.disabled, &[disabled] {
+    color: @textColor;
+    background-color: @endColor;
+    *background-color: darken(@endColor, 5%);
+  }
+
+  // IE 7 + 8 can't handle box-shadow to show active, so we darken a bit ourselves
+  &:active,
+  &.active {
+    background-color: darken(@endColor, 10%) e("\9");
+  }
+}
+
+.buttonBackgroundEXO(@startColor, @endColor, @borderColor, @textColor: #fff, @textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
+  // gradientBar will set the background to a pleasing blend of these, to support IE<=9
+  .gradientBarEXO(@startColor, @endColor, @borderColor, @textColor, @textShadow);
   *background-color: @endColor; // Darken IE7 buttons by default so they stand out more given they won't have borders
   .reset-filter();
 

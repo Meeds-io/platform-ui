@@ -54,6 +54,26 @@
     display: none;  
     padding: 15px 20px;
     margin-left: 240px;
+    .noResultInfo {
+  		display: none;
+	}
+	&.noResult{
+		.noResultInfo {
+  			display: block;
+  			text-align: center;
+  			> h3 {
+			  color: @textLightColor;
+			  margin-bottom: 5px;
+			}
+			> p {
+			  color: @textColor;
+			  line-height: 25px;
+			}  			
+		}
+		.showMore {
+		  display: none;
+		}
+	}
     .resultBox {
       margin: 20px 0;
       overflow:hidden;

@@ -29,6 +29,11 @@
 	}
 }
 
+/***** wikiMainLayout *********/
+
+.uiWikiPortlet {
+	background: url('@{images-path}/wiki/texture.jpg') repeat 0 0;
+}
 
 /************ WikiBox ****************/
 
@@ -41,7 +46,7 @@
 	.titleWikiBox {
 		.border-radius(5px 5px 0px 0px );
 		.box-shadow(0px 1px 2px rgba(13, 13, 13, 0.08));
-		background: @grayWhiteSmoke;
+		background: @componentBackground;
 		border-bottom: 1px solid @borderColor;
 		margin: 0px;
 		line-height: @baseLineHeight ;
@@ -168,8 +173,8 @@
 			position: relative;
 			
 			&:hover {
-				border-right: solid 1px @grayMediumWhiteSmoke;
-					
+				border-right: solid 1px @componentBackgroundHover;
+
 					.resizeButton {
 					display: block;
 				}
@@ -177,13 +182,13 @@
 		}
 
 		.resizeButton {
-			#gradient .vertical(@white, @grayWhiteSmoke);
+			#gradient .vertical(@white, @componentBackground);
 			.border-radius(3px 0px 0px 3px);
 			.size(24px,10px);
 			float:right;
 			margin : auto;
 			cursor : pointer;
-			border: 1px solid @grayMediumWhiteSmoke;
+			border: 1px solid @componentBackgroundHover;
 			border-right: none;
 			display: none;
 			margin-top: 7px;
@@ -195,16 +200,16 @@
 		}
 		
 		.resizeButton:hover .uiIconMiniArrowLeft{
-			background-image: url("/eXoSkin/skin/images/Icons/uiIconsBlue.png");
+			background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
 		}
 		
 		.resizeButton:hover .uiIconMiniArrowRight{
-			background-image: url("/eXoSkin/skin/images/Icons/uiIconsBlue.png");
+			background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
 		}
 		
 		.showLeftContent {
 			display: block;
-			border: 1px solid @grayMediumWhiteSmoke;
+			border: 1px solid @componentBackgroundHover;
 			.border-radius(0px 3px 3px 0px);
 			float: left;
 		}
@@ -212,7 +217,7 @@
 
 	.resizeBarDisplay {
 		.resizeBarContent {
-			border-right: solid 1px @grayMediumWhiteSmoke;
+			border-right: solid 1px @componentBackgroundHover;
 		}
 		.resizeButton {
 			display: block;
@@ -424,13 +429,13 @@
 
 
 .uiWikiPageVersionsCompare .comparedForm {
-	border-bottom: 1px solid @grayMediumWhiteSmoke;
+	border-bottom: 1px solid @componentBackgroundHover;
 	padding-bottom: 12px;
 }
 
 .uiWikiPageVersionsCompare .comparedForm .changeVersionForm {
 	padding: 12px;
-	background: @grayWhiteSmoke;
+	background: @componentBackground;
 	float: left;
 }
 
@@ -440,12 +445,12 @@
 
 .uiWikiPageVersionsCompare .comparedForm .changeVersionForm .admin {
 	font-weight: bold;
-	color: @blue;
+	color: @primaryColor;
 }
 
 .uiWikiPageVersionsCompare .comparedForm .changeVersionForm .changes {
 	border-top: 1px solid white;
-	color: @blue;
+	color: @primaryColor;
 	cursor: pointer;
 	line-height: 17px;
 }
@@ -493,7 +498,7 @@
     padding-top: 25px;
     width: 614px;
 	.errorBlock {
-		//background: url("/wiki/skin/css/../images/warningIcon.png") no-repeat scroll center top transparent;
+		background: url("@{images-path}/wiki/warningIcon.png") no-repeat  center top ;
 		display: block;
 		height: 160px;
 		margin: 0 auto;
