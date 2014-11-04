@@ -15,9 +15,9 @@
 
 // Primary Color
 // -------------------------
-@primaryColor:			#2f5e92;						// @blue
-@primaryDarkColor:		darken(@primaryColor, 10.5%);	// @blueDark - #224469 - Old Color: #224886
-@primaryLightColor:		lighten(@primaryColor, 18.5%);	// @blueLight - #578dc9 - Old Color: #567AB6
+@primaryColor:			#2f5e92;
+@primaryDarkColor:		darken(@primaryColor, 10.5%);		//#224469
+@primaryLightColor:		lighten(@primaryColor, 18.5%);		//#578dc9
 
 // Accent colors
 // -------------------------
@@ -36,6 +36,8 @@
 // Scaffolding
 // -------------------------
 @bodyBackground:        @white;
+@sidebarBackground: 	@componentBackground;
+@contentBackground: 	url("@{images-path}/ShareImages/Background/texture.jpg") repeat left top;
 @textColor:             @grayDark;				// #333333
 @textMediumColor: 		@gray; 					// #808080
 @textLightColor: 		@grayLight;				// #999999
@@ -74,6 +76,7 @@
 @btnBackgroundHighlight:            @componentBackground;
 @btnBorder:                         @borderColor;
 
+@btnPrimaryColor: 					@white;
 @btnPrimaryBackground:              @primaryLightColor;
 @btnPrimaryBackgroundHighlight:     @primaryColor;
 @btnPrimaryBorder: 					@primaryDarkColor;
@@ -220,8 +223,8 @@
 
 // Pagination
 // -------------------------
-@paginationBackground:                	#fff;
-@paginationBorder:                    	#ddd;
+@paginationBackground:                	@white;
+@paginationBorder:                    	@borderColor;
 @paginationActiveBackground:          	@componentBackgroundLight;
 
 
@@ -383,7 +386,7 @@
 // Toolbar
 // -------------------------
 @toolbarDarkStartBackground:			#5b5b5b;
-@toolbarDarkEndBackground:				#5b5b5b;
+@toolbarDarkEndBackground:				#474747;
 @toolbarDarkBorder: 					#2c3440;
 @toolbarDarkLinkColor: 					@white;
 @toolbarDarkLinkHoverColor: 			@white;
