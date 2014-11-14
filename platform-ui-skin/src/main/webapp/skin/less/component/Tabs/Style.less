@@ -281,3 +281,20 @@
 .uiFormTabPane {
     padding: 10px;
 }
+
+// Fix dot white for uiTabNormal
+.uiTabNormal {
+	.nav-tabs > li.active:first-child {
+		position: relative;
+	}
+	.nav-tabs > li.active:first-child:before {
+	    background-color: @borderColor;
+	    bottom: 0;
+	    content: "";
+	    display: block;
+	    height: 1px;
+	    left: 0;
+	    position: absolute;
+	    width: 1px;
+	}
+}

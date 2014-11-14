@@ -3,7 +3,6 @@
 // --------------------------------------------------
 .btn {
 	padding: @paddingDefault;
-	min-width: 50px;
 	border-bottom-color: @btnBorder;
 }
 .btn-primary{
@@ -21,6 +20,7 @@
 	text-align: center;
 	.btn {
 		margin: 0 5px;
+		min-width: 50px;
 	}
 }
 
@@ -104,7 +104,8 @@ h1,h2,h3,h4 {
 
 // Mini
 .btn-mini {
-  .border-radius(@borderRadiusSmall - 1px);
+	padding: @paddingMini;
+	.border-radius(@borderRadiusSmall - 1px);
 }
 
 // Extra (padding-left = padding-right = 15px)

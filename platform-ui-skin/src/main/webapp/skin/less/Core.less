@@ -50,6 +50,21 @@
 	.clearfix();	// Reuse Mixin .clearfix() from mixins.less of bootstrap
 }
 
+// Block level inputs
+.input-block-level{
+	.input-block-level();
+}
+
+/*============== Action With Label================*/
+.uiActionWithLabel {
+	.uiActionWithLabel();
+}
+
+/*============== actionIcon================*/
+.actionContainer{
+	.actionContainer();
+}
+
 a,a:hover,a:focus {
   color: @linkColor;
   text-decoration: none;
@@ -262,10 +277,11 @@ table {
 
 .actionIcon, .actionIconSmall{
 	.actionIcon();
-}
+} 
 
 .actionIconSmall {
-	padding: 0 2px;
+	padding: 0;
+  line-height: @baseLineHeight - 4;
 	[class^="uiIcon"] {
 		vertical-align: middle;
 	}
