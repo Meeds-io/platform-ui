@@ -1,3 +1,11 @@
+//
+// Buttons
+// --------------------------------------------------
+.btn {
+	padding: @paddingDefault;
+	min-width: 50px;
+	border-bottom-color: @btnBorder;
+}
 .btn-primary{
 	font-family: @sansBoldFontFamily;
 	font-weight: bold;
@@ -73,11 +81,34 @@ h1,h2,h3,h4 {
 	font-weight: normal;
 	}
 }
-// Size Button
+
+
+///// Size Button
+
+
+// X-large
 .btn-xlarge {
 	font-size: @fontsizeXlarge;
 	padding: @paddingXLarge;
 }
+
+// Large
+.btn-large {
+  padding: @paddingLarge;
+}
+
+// Small
+.btn-small {
+  padding: @paddingSmall;
+}
+
+// Mini
 .btn-mini {
-	.border-radius(@borderRadiusSmall - 1px);
+  .border-radius(@borderRadiusSmall - 1px);
+}
+
+// Extra (padding-left = padding-right = 15px)
+.extra-btn {
+	padding-left: 15px;
+	padding-right: 15px;
 }
