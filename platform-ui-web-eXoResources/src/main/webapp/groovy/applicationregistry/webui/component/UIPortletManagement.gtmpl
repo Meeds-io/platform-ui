@@ -19,7 +19,7 @@
               onclick="<%= isSelectedType ? "javascript:void(0);" : uicomponent.event("SelectPortletType", type) %>"
               data-parent="#ApplicationRegistryPortlet" 
               data-toggle="collapse">
-              <i class="<%= isSelectedType ? "uiIconArrowDown" : "uiIconArrowRight" %>"></i> 
+              <i class="<%= isSelectedType ? "uiIconArrowDown " : "uiIconArrowRight " %> uiIconLightGray"></i> 
               <strong><%=_ctx.appRes("UIPortletManagement.title." + type)%></strong>
             </a>
           </div>

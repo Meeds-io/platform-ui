@@ -87,7 +87,7 @@
 									   jsmanager.require("SHARED/popupCategory", "popup").addScripts("popup.init('UIWindow-" + portletId + "');");
 								%>
 										<div href="javascript:void(0)" class="pull-right dropdown" title="<%=_ctx.appRes("UIPortlet.tooltip.PortletMode");%>">
-											<i class="uiIconArrowDown dropdown-toggle" data-toggle="dropdown"></i>
+											<i class="uiIconArrowDown uiIconLightGray dropdown-toggle" data-toggle="dropdown"></i>
 											<% /*Begin Popup Menu*/ %>
 												<ul class="dropdown-menu" role="menu">
 													

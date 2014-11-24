@@ -1,4 +1,4 @@
-<%	
+<%
 	import org.exoplatform.webui.form.UIForm; 
 	import org.exoplatform.web.application.JavascriptManager;
 	import org.exoplatform.webui.core.UIDropDownControl;
@@ -21,12 +21,12 @@
 			<%
 				for(iconset in listIconSet) { 
 					String item = "";
-					String iconArrow = "uiIconArrowRight";
+					String iconArrow = "uiIconArrowRight uiIconLightGray";
 					String setName = iconset.getName();
 	
 					if(setName == selectedIconSet.getName()) {
 						item = "selectedItem";
-						iconArrow = "uiIconArrowDown";
+						iconArrow = "uiIconArrowDown uiIconLightGray";
 					}
 					String submitEvent = form.event('ChangeIconCategory', setName);							
 				%>	

@@ -16,10 +16,10 @@
 	boolean printMessages(List messages, String messType, boolean isSelected) {
 	  if (messages.size() == 0) return false;
 		def style = "";
-		def icon = "uiIconArrowRight";
+		def icon = "uiIconArrowRight uiIconLightGray";
 		if(!isSelected) {
 			style = "in";
-			icon = "uiIconArrowDown";
+			icon = "uiIconArrowDown uiIconLightGray";
 			isSelected = true;
 		}
 		def ltype = messType.toLowerCase();

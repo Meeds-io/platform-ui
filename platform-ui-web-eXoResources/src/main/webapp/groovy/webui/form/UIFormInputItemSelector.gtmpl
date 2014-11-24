@@ -23,7 +23,7 @@
 					 %>
 					    <li class="$itemSelected item">
 								<a href="javascript:void(0);" class="itemTitle">
-									<i class="<%=opt.isSelected() ? "uiIconArrowDown" : "uiIconArrowRight";%>"></i><%=_ctx.appRes(opt.getName() + ".label")%>
+									<i class="<%=opt.isSelected() ? "uiIconArrowDown" : "uiIconArrowRight";%> uiIconLightGray"></i><%=_ctx.appRes(opt.getName() + ".label")%>
 								</a>
 								<div class="extraActions" style="display: none">$setHiddenValue;$submitEvent</div>
 							</li>

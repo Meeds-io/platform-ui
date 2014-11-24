@@ -11,7 +11,7 @@
 %>
 <div class="UIPopupWindow uiPopup UIDragObject uiPortalComposer" id="$uicomponent.id" style="width: 330px; display: block;">
 	<div class="popupHeader clearfix">
-		<i class="<%=uicomponent.isCollapsed ? "uiIconArrowRightMini" : "uiIconArrowDownMini"%> pull-left"></i>
+		<i class="<%=uicomponent.isCollapsed ? "uiIconArrowRightMini" : "uiIconArrowDownMini"%> uiIconLightGray pull-left"></i>
 			<% if(uicomponent.isShowControl) { %>
 			<a class="uiIconClose pull-right" rel="tooltip" data-placement="bottom" title="<%=_ctx.appRes("word.abort")%>" href="javascript:void(0);" onclick="<%=uicomponent.event("CloseComposer")%>"></a>
 				<% if (uicomponent.isUsedInWizard()) { %>

@@ -53,7 +53,7 @@ rcontext.getJavascriptManager().require("SHARED/bts_tooltip").require("SHARED/jq
                 <a href="#$cName" onclick="<%= isSelected ? "javascript:void(0);" : uicomponent.event("ShowCategory", cName) %>" 
                  data-parent="#ApplicationRegistryCategory" 
                  data-toggle="collapse">
-                <i class="<%= isSelected ? "uiIconArrowDown uiIconLightGray" : "uiIconArrowRight uiIconLightGray" %>"></i> 
+                <i class="<%= isSelected ? "uiIconArrowDown " : "uiIconArrowRight" %> uiIconLightGray"></i> 
                 $displayName
                 </a>
                             

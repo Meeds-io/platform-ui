@@ -28,7 +28,7 @@
  		<div class="accordion-group">
  		  <div class="accordion-heading">
 				<div class="accordion-toggle $cTab" onclick="<%= uicomponent.event("SelectCategory", cName) %>">
-					<a title="<%= displayName %>"><i class="<%=isSelected ? "uiIconArrowDown" : "uiIconArrowRight" %> pull-right"></i>
+					<a title="<%= displayName %>"><i class="<%=isSelected ? "uiIconArrowDown" : "uiIconArrowRight" %> pull-right uiIconLightGray"></i>
 						<%= _ctx.appRes("ContainerOptions.Category." + displayName) %>
 					</a>
 				</div>
