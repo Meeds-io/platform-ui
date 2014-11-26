@@ -5,9 +5,9 @@
 	.spiter{
 		background: url("@{images-path}/Dropdown/ButtonGroups/split-white.png") no-repeat center;
 		display: inline-block;
-	    margin: 0 0 0 5px;
+	    margin: 0 0 0 7px;
 	    vertical-align: middle;
-	    .size(18px, 2px);
+	    .size(20px, 2px);
 	}
 	> span {
 	 vertical-align: middle;
@@ -20,6 +20,9 @@
 	}
 	&.btn-primary .spiter {
 		background: url("@{images-path}/Dropdown/ButtonGroups/split.png") no-repeat;
+	}
+	.uiIconMiniArrowDown {
+		margin: 0 -1px 0 1px;	
 	}
 }
 
@@ -44,5 +47,10 @@
 .btn-group {
 	.btn {
 		min-width: 0;
+	}
+	.btn-small {
+		&.dropdown-toggle .uiIconMiniArrowDown {
+			margin: -1px -2px 0 0;
+		}
 	}
 }
