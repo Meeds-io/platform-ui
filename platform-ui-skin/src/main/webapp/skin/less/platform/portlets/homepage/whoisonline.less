@@ -2,9 +2,9 @@
 @import "../../../mixins.less";
 
 .onlineHeader {
-    background:  @grayLighter;
-    border: 1px solid @grayMediumWhiteSmoke;
-    .border-radius(@borderRadiusSmall); 
+    background:  @componentBackgroundLight;
+    border: 1px solid @componentBackgroundHover;
+    .border-radius(@borderRadiusSmall);
     color: @textColor;
     line-height: 25px;
     padding: 0 5px 0 8px;
@@ -51,7 +51,7 @@
 
 .connectAction {
     text-align: center;
-    background: @grayWhiteSmoke;
+    background: @componentBackground;
     margin:-10px;
     padding: 10px;
 	.border-radius(0 0 @borderRadiusSmall @borderRadiusSmall);
@@ -107,7 +107,7 @@
   z-index: -1;
 }
 
-#tiptip_holder{ 
+#tiptip_holder{
 	&.tip_left_top  #tiptip_arrow,&.tip_left_bottom  #tiptip_arrow{
 		display: none;
 	}
@@ -126,18 +126,18 @@
 }
 
 blockquote {
-    background: url(/eXoSkin/skin/less/platform/portlets/homepage/images/whoIsOnline/right-quote.png) no-repeat right bottom;    
+    background: url("@{images-path}/platform/portlets/homepage/whoIsOnline/right-quote.png") no-repeat right bottom;    
     padding-right: 25px;
     padding-left: 25px;
     color: @grayLight;
     border-left: medium none;
     width:75%;
     word-wrap:break-word;
-	position: relative;	
+	position: relative;
 }
 
 blockquote:after {
-    background: url(/eXoSkin/skin/less/platform/portlets/homepage/images/whoIsOnline/left-quote.png) no-repeat left top;
+    background: url("@{images-path}/platform/portlets/homepage/whoIsOnline/left-quote.png") no-repeat left top;
 	.size(13px,15px);
 	position:absolute;
 	top:2px;
@@ -149,7 +149,7 @@ blockquote:after {
 }
 
 #connectMessge {
-    background: @grayWhiteSmoke;
+    background: @componentBackground;
     margin: -10px;
     padding: 10px 20px;
     color: @grayLight;

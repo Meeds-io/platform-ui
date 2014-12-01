@@ -1,3 +1,6 @@
+@import "../../../variables.less"; 
+@import "../../../mixins.less";
+// ---------------------------
 .ClearFix:after {
 	content: ".";
 	display: block;
@@ -39,31 +42,31 @@
 	padding: 8px;
 	font-style: italic;
 	 p {
-		background: url(/gadget-pack/skin/images/ServicesManagement/DesIcon.png) no-repeat left 2px;
+		background: url("@{images-path}/platform/gadget-pack/ServicesManagement/DesIcon.png") no-repeat left 2px;
 		padding-left: 20px;
 		margin: 0px;
 	}
 }
 
 .TitleGadget {
-	padding: 0px 5px;		
+	padding: 0px 5px;
 }
 
 .TitleGadget div {
-	background: #fff;
+	background: @white;
 	padding: 4px 10px 0px 10px;
 	line-height: 22px;
-	color: #555;
+	color: @textColor;
 	font-weight: bold;
 	margin: 0px;
 	font-size: 12px;
 	float: left;
-	cursor: pointer; 
+	cursor: pointer;
 }
 
 .TitleGadget .TabSelected {
 	background: @componentBackgroundLight;
-	color: #6086eb;
+	color: @textColor;
 }
 
 .GadgetGrid {
@@ -73,13 +76,13 @@
 	overflow-x:auto;
 }
 
-.GadgetGrid .table {	
+.GadgetGrid .table {
 	table-layout: auto;
 }
 
 
 .GadgetGrid .UIGrid .SkinID {
-	background: #efefef;
+	background: @componentBackgroundHover;
 	padding: 0px 5px;
 	-moz-border-radius: 2px 2px 2px 2px;
 }
@@ -105,19 +108,19 @@
 
 .ContentSelected {
 	display: block;
-}	
+}
 
 
 .mmlib_xlink {
-	background: url('images/IconClose_Gadget.gif') no-repeat left top;
+	background: url('@{images-path}/platform/gadget-pack/ServicesManagement/IconClose_Gadget.gif') no-repeat left top;
 	cursor:pointer;
 	width: 14px;
 	display: block;
-	height: 14px;	
+	height: 14px;
 }
 
 .mmlib_table {
-	background-color:#FFFFFF;
+	background-color: @white;
 	border-collapse:separate;
 	border-spacing:0;
 	font:bold 9px arial,sans-serif;

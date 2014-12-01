@@ -521,8 +521,14 @@
 		<css-path>/skin/css/platform/portlets/branding/branding.css</css-path>
 		<css-priority>1</css-priority>
 	</portlet-skin>
-  
-  
+  <portlet-skin>
+    <application-name>platform-notification</application-name>
+    <portlet-name>NotificationsAdminJuzuPortlet</portlet-name>
+    <skin-name>Default</skin-name>
+    <css-path>/skin/css/platform/portlets/notification/notificationsAdmin.css</css-path>
+    <css-priority>1</css-priority>
+  </portlet-skin>
+   
   <!-- ecms:  WCMSkin -->
   <portal-skin>
     <skin-name>Default</skin-name>

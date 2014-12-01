@@ -13,11 +13,11 @@
 		tr td {
 			border: 1px solid @borderColor;
 			height: 26px;
-			padding: 2px 0;			
-			-moz-user-select: none;		
+			padding: 2px 0;
+			-moz-user-select: none;
 		}
 		tr.titleBar td ,tr td.freeTime{
-			background: @grayWhiteSmoke;		
+			background: @componentBackground;
 		}
 		tr.titleBar td {
 			padding: 2px;
@@ -27,22 +27,22 @@
 		}
 		tr td.busyDotTime{
 			background: #ff0000;
-		
+
 		}
 		tr td.busyTime{
-			background: #ff7f7f;	
+			background: #ff7f7f;
 		}
-		
+
 		tr td.userSelection {
 			background: #a7b838;
 		}
 		tr td.busySelected{
 			background: #d35c1c;
-		
+
 		}
-		
+
 	}
-	
+
 	.dateTimeContainer  {
 		padding: 5px 0 0 0;
 		.applySelectedDate {
@@ -78,7 +78,7 @@
 			}
 		}
 	}
-	
+
 	.thiefBox {
 		margin: 10px 2px 0 0;
 		text-align: right;
@@ -90,9 +90,9 @@
 			.box-shadow(~"-1px 1px 2px rgba(0,0,0,0.17)inset");
 		}
 		.freeTime {
-			
+
 			span {
-				background: @grayWhiteSmoke;				
+				background: @componentBackground;
 			}
 		}
 		.busyTime {
@@ -126,7 +126,7 @@
 
 
 /*===================UIEventRemindersTab===========================*/
-.reminderByPopup ,.reminderByEmail{	
+.reminderByPopup ,.reminderByEmail{
 	.selectboxSmall {
 		padding: 5px 0;
 		.uiSelectbox {
@@ -135,7 +135,7 @@
 	}
 	.mailReminder + div ,.popupReminder + div {
 		margin: 0 0 0 30px;
-	}	
+	}
 	a {
 		color: @grayDark;
 	}
@@ -170,12 +170,12 @@
 	.workingTime {
 		margin-left: 7px;
 	}
-	
+
 }
 
 /*======================uiRepeatEventForm=======================*/
 
-.uiRepeatEventForm {	
+.uiRepeatEventForm {
 	.inputMini {
 		input[type="text"] {
 			width: 30px;
@@ -217,7 +217,7 @@
 .uiImportForm {
 	textarea{
 		height: 78px;
-	}	
+	}
 }
 
 /*=============================UIExportForm===========================*/
@@ -225,11 +225,11 @@
 .uiExportForm  {
 	.uiCheckbox ,.uiInputInfo{
 		margin-top: 6px;
-	} 
+	}
 	.calendarName{
 	 	.text-overflow();
-	} 
-	
+	}
+
 }
 
 
@@ -238,7 +238,7 @@
 .addGroup  {
 	input[type=text] {
 		margin-top: 8px;
-	}	
+	}
 }
 
 /*=============================UIFeed===========================*/
@@ -249,8 +249,8 @@
 	}
 }
 .inputLarge  {
-	.uiSelectbox  { 
-		width: 210px; 
+	.uiSelectbox  {
+		width: 210px;
 		select.selectbox {
 			width: 213px;
 		}
@@ -271,19 +271,19 @@
 	.quickAddEventContainer {
 		.form-horizontal {
 			padding: 15px;
-		}		
+		}
 	}
 }
 
 /*==============================.uiConfirmForm=========================*/
 .uiConfirmForm {
 	.confirm {
-		padding: 10px 0 0 0;		
+		padding: 10px 0 0 0;
 	}
 	.uiRadio input[type="radio"] + span {
 		margin-left: 9px;
 	}
-	
+
 	.media .uiIconQuestion  {
 	    margin: 2px 15px 0  5px;
 	}

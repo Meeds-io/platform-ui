@@ -2,7 +2,7 @@
 @import "../../../mixins.less";
 //========================================
 body {
-    background: url("/eXoSkin/skin/less/platform/portlets/extensions/images/login_texture.jpg") repeat;
+    background: url("@{images-path}/platform/portlets/extensions/login_texture.jpg") repeat;
     font-family: @baseFontFamily;
     font-size: @baseFontSize;
     color: @textColor;
@@ -38,7 +38,7 @@ a {
     margin: -380px auto 0;
     width: 512px;
     .header {
-		background: url("/eXoSkin/skin/less/platform/portlets/extensions/images/headerBG.png") repeat-x scroll 0 0 transparent;
+		background: url("@{images-path}/platform/portlets/extensions/headerBG.png") repeat-x scroll 0 0 transparent;
 		border: 1px solid #393939;
 		.border-radius(4px 4px 0 0);
 		width: 511px;
@@ -61,7 +61,7 @@ a {
 
 .uiWelcomeBox {
 	 input {
-		border: 1px solid #cdcdcd;
+		border: 1px solid @borderColor;
 		.border-radius(4px);
 		 .box-shadow(~'0 1px 1px rgba(0,0,0,0.1) inset');
 	   color: @textColor;
@@ -72,14 +72,14 @@ a {
 		&::-webkit-input-placeholder {
 		   color: @placeholderText;
 		}
-		&:-moz-placeholder { 
+		&:-moz-placeholder {
 		  color: @placeholderText;
 		}
-		&::-moz-placeholder { 
+		&::-moz-placeholder {
 		   color: @placeholderText;
 		}
-		&:-ms-input-placeholder {  
-		   color: @placeholderText; 
+		&:-ms-input-placeholder {
+		   color: @placeholderText;
 		}
 		&:focus {
 		  border-color: #94b0df;
@@ -87,7 +87,7 @@ a {
 		  color: @textColor;
 		}
 		&.disable {
-			background-color: #e6e6e6;
+			background-color: @componentBackgroundHover;
 		}
 	}
 }
@@ -95,7 +95,7 @@ a {
 
 .uiWelcomeBox {
 	 .bottom {
-		background: url("/eXoSkin/skin/less/platform/portlets/extensions/images/bottomBG.png") no-repeat center bottom;
+		background: url("@{images-path}/platform/portlets/extensions/bottomBG.png") no-repeat center bottom;
 		text-align: center;
 		padding: 25px 0;
 	}
@@ -111,15 +111,15 @@ a {
 		 cursor: pointer;
 		display: inline-block;
 		font-weight: bold;
-		text-align: center;    
+		text-align: center;
 		vertical-align: top;
 		text-decoration: none;
 		padding: 0;
 		margin: 0 5px;
 	  // Hover state
 	  &:hover {
-		#gradient > .vertical(@grayMediumWhiteSmoke, @btnBackgroundHighlight);
-		/*.buttonBackground(@grayMediumWhiteSmoke, @btnBackgroundHighlight, @grayDark, 0 1px 1px rgba(255,255,255,.75));*/
+		#gradient > .vertical(@componentBackgroundHover, @btnBackgroundHighlight);
+		/*.buttonBackground(@componentBackgroundHover, @btnBackgroundHighlight, @grayDark, 0 1px 1px rgba(255,255,255,.75));*/
 	  }
 	  // Active state
 		&.active,
@@ -129,7 +129,7 @@ a {
 			.box-shadow(~"inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)");
 		}
 	}
-	
+
    .btn-primary ,#Greetings button,.btn:first-child{
 	   .buttonBackgroundEXO(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder);
 		color: @white;
@@ -209,7 +209,7 @@ a {
 .uiWelcomeBox .screenShot a {
     background-color: @white;
     background-repeat: repeat-x;
-    border: 1px solid #f6f6f6;
+    border: 1px solid @componentBackgroundLight;
     .border-radius(4px);
     .box-shadow(0 2px 4px rgba(13, 13, 13, 0.27));
 	.size(174px,406px);
@@ -217,15 +217,15 @@ a {
     display: inline-block;
 }
 .uiWelcomeBox .screenShot a img {
-    border: 1px solid #dfdfdf;
+    border: 1px solid @borderColor;
    .border-radius(7px);
 }
  .uiIconError {
-    background: url("/eXoSkin/skin/images/Icons/uiIconColor.png") no-repeat scroll left top transparent;
+    background: url("@{images-path}/Icons/uiIconColor.png") no-repeat scroll left top transparent;
     padding-left: 20px;
 }
 .uiIconWarning {
-  	background: url("/eXoSkin/skin/images/Icons/uiIconColor.png") no-repeat -20px top transparent;
+  	background: url("@{images-path}/Icons/uiIconColor.png") no-repeat -20px top transparent;
 	padding-left: 20px;
  }
 

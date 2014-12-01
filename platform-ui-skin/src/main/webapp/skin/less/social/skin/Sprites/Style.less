@@ -15,7 +15,7 @@
 // <i class="iconinbox iconwhite"></i>
 
 [class^="uiIconSoc"]{
-  background-image: url("/eXoSkin/skin/less/social/skin/images/Icons/uiIconsSocDarkGray.png");
+  background-image: url("@{images-path}/social/skin/Icons/uiIconsSocDarkGray.png");
 }
 
 /* Blue icons with optional class, or on hover/active states of certain elements */
@@ -41,7 +41,7 @@
 .uiDropdownWithIcon .dropdown-submenu> a > [class^="uiIconSoc"],
 .uiDropDownCal li a [class^="uiIconSoc"], .uiActionBar [class^="uiIconSoc"], .uiIconSocLightGray
 {
-  background-image: url("/eXoSkin/skin/less/social/skin/images/Icons/uiIconsSocLightGray.png");
+  background-image: url("@{images-path}/social/skin/Icons/uiIconsSocLightGray.png");
 }
 
 
@@ -59,11 +59,11 @@
 .uiDropDownCal .active a:hover [class^="uiIconSoc"],
 .eventAllDay [class^="uiIconSoc"], .eventDayContainer [class^="uiIconSoc"], .uiIconSocWhite
 {
-  background-image: url("/eXoSkin/skin/less/social/skin/images/Icons/uiIconsSocWhite.png");
+  background-image: url("@{images-path}/social/skin/Icons/uiIconsSocWhite.png");
 }
 
 .activityTimeLine [class^="uiIcon"], .activityTimeLine [class^="uiIcon"]:hover {
-	background-image: url("/eXoSkin/skin/less/social/skin/images/Icons/uiIconsSocWhite.png");
+	background-image: url("@{images-path}/social/skin/Icons/uiIconsSocWhite.png");
 }
 
 .uiIconSocAddFile {
@@ -156,7 +156,7 @@
 
 /* Icons that we cant change their name */
 .uiIconSocUIDocActivityComposer {
-	background-image: url("/eXoSkin/skin/images/Icons/uiIconsLightGray.png");
+	background-image: url("@{images-path}/Icons/uiIconsLightGray.png");
 	background-position: -60px -40px;
 }
 
@@ -166,6 +166,7 @@
 
 .uiIconSocUILinkActivityComposer {
   background-image: url("@{images-path}/Icons/uiIconsLightGray.png");
+  background-position: -80px 0px;
 }
 
 .uiIconSocUILinkActivityComposer:hover, .actionIcon:hover .uiIconSocUILinkActivityComposer {
@@ -182,4 +183,8 @@
 
 .uiIconSocAcceptConnectUser {
 	background-position: -80px -40px;
+}
+
+.uiProfileUserSearch .uiGrayLightBox input {
+  width: 220px;
 }

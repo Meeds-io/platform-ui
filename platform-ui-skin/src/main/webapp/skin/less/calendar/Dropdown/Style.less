@@ -1,27 +1,29 @@
+
 // The dropdown menu (ul)
 // ----------------------
 .uiDropDownCal {
-	li > a {
-	display: block;
-	clear: both;
-	font-weight: normal;
-	line-height: @baseLineHeight;
-	color: @textColor;
-	white-space: nowrap;
-	padding: 6px 19px;
-	}	
+	 li > a {
+		display: block;
+		 clear: both;
+		 font-weight: normal;
+		 line-height: @baseLineHeight;
+		 color: @textColor;
+		 white-space: nowrap;
+		 padding: 6px 19px;
+	 }	 	
 }
 
-//uiDropDownCal state hover and active 
+//uiDropDownCal state hover and active
 .uiDropDownCal li > a:hover,
 .uiDropDownCal li > a:focus,
 .uiDropDownCal .active > a,
 .uiDropDownCal .active > a:hover,
 .dropdown-submenu:hover > a {
-	text-decoration: none;
-	color: @white;	
-	#gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 15%));	
+		text-decoration: none;
+  		color: @white;	
+  		#gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 15%));	 	
 }
+
 
 .uiDropdownWithIcon{
 	.uiDropDownCal{
@@ -34,7 +36,7 @@
 	}
 
 }
- 
+
 
 // Arrows
 .arrowLeft,

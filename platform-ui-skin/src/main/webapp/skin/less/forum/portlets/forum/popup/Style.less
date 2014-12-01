@@ -4,11 +4,15 @@
 	}
 	.uiGridFilter{
 		margin-bottom: 8px;
+		.td-label, .controls {
+			vertical-align: top;
+		}
 		.td-label {
 			width:38px;
 			.control-label {
 				white-space:nowrap;
 				text-align:left;
+				margin-top: 4px;
 			}
 		}
 		.controls {
@@ -109,6 +113,18 @@
 	}
 }
 
+/************ Popup Import **********/
+
+.uiImportForm {
+	.uploadButton {
+		text-align: center;
+		.noFile {
+			margin-bottom: 0;
+			vertical-align: middle;
+		}
+	}
+}
+
 /************ Auto Prune **********/
 
 .uiAutoPruneSettingForm{
@@ -124,19 +140,6 @@
 	}
 }
 
-/************ Edit BBCode **********/
 
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-	.uiAddBBCodeForm{
-		.form-horizontal{
-			.controls{
-				.uiCheckbox + .parentPosition{
-					margin-left: 15px;
-				}
-			}
-		}
-	}
-
-}
 
 

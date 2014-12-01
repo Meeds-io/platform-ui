@@ -3,7 +3,7 @@
 @import "../../../mixins.less";
 
 body {
-    background: url("/eXoSkin/skin/less/platform/portlets/welcome-screens/images/login_texture.jpg") repeat;
+    background: url("@{images-path}/platform/portlets/extensions/login_texture.jpg") repeat;
     font-family: @baseFontFamily;
     font-size: @baseFontSize;
     color: @textColor;
@@ -49,7 +49,7 @@ a {
 	margin: -380px auto 0;
 	width: 512px;
 	.header {
-		background: url("/eXoSkin/skin/less/platform/portlets/extensions/images/headerBG.png") repeat-x scroll 0 0 transparent;
+		background: url("@{images-path}/platform/portlets/extensions/headerBG.png") repeat-x scroll 0 0 transparent;
 		border: 1px solid #393939;
 		.border-radius(4px 4px 0 0);
 		width: 511px;
@@ -60,7 +60,7 @@ a {
 		color: #c1c1c1;
 	}
 	.logo {
-		background: url("/eXoSkin/skin/less/platform/portlets/extensions/images/Logo.png") no-repeat scroll 18px center;
+		background: url("@{images-path}/platform/portlets/extensions/Logo.png") no-repeat scroll 18px center;
 		text-align: center;
 	}
 	.content {
@@ -74,7 +74,7 @@ a {
 		}
 	}
 	.bottom {
-		background: url("/eXoSkin/skin/less/platform/portlets/extensions/images/bottomBG.png") no-repeat center bottom;
+		background: url("@{images-path}/platform/portlets/extensions/bottomBG.png") no-repeat center bottom;
 		text-align: center;
 		 padding: 30px 0;
 		  a {
@@ -94,13 +94,13 @@ a {
 		&::-webkit-input-placeholder {
 		   color: @textColor;
 		}
-		&:-moz-placeholder { 
+		&:-moz-placeholder {
 		   color: @textColor;
 		}
-		&::-moz-placeholder { 
+		&::-moz-placeholder {
 		    color: @textColor;
 		}
-		&:-ms-input-placeholder {  
+		&:-ms-input-placeholder {
 		    color: @textColor;
 		}
 		&:focus {
@@ -113,7 +113,7 @@ a {
 		}
 	}
 	 .btn {
-		.border-radius(4px);   
+		.border-radius(4px);
 		color: @white;
 		cursor: pointer;
 		display: inline-block;
@@ -126,12 +126,12 @@ a {
 		text-decoration: none;
 		font-family: HelveticaNeue, Arial, sans-serif;
 		font-size: @baseFontSize;
-		border: 1px solid #224886; 
-		.buttonBackground(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);		
+		border: 1px solid #224886;
+		.buttonBackground(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
 			.box-shadow(~'0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05)');
 			&:hover {
-				.buttonBackground(@blueLight, @btnPrimaryBackgroundHighlight);
-			}	
+				.buttonBackground(@primaryLightColor, @btnPrimaryBackgroundHighlight);
+			}
 		}
 
 
@@ -189,7 +189,7 @@ a {
 		float: left;
 	}
 	 .uiIconError {
-		background: url("/eXoSkin/skin/less/platform/portlets/extensions/images/errorIcon.png") no-repeat left center;
+		background: url("@{images-path}/platform/portlets/extensions/errorIcon.png") no-repeat left center;
 		display: inline-block;
 		padding-left: 20px;
 		margin-bottom: 30px;

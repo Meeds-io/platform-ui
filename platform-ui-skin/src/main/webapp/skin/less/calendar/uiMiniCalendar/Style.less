@@ -8,15 +8,15 @@
 	hr {
 		margin: 0;
 	}
-	
+
 	h5.title{
 		text-align: center;
 		span a{
 		color: @textColor;
 		}
 	}
-	
-	
+
+
 	table {
 		border-collapse: separate;
 		tr td {
@@ -24,25 +24,25 @@
 			text-align: center;
 		}
 	}
-	
+
 	table.weekList{
 		padding: 0 9px;
 		margin: 2px 0;
 		font-size: @baseFontSize - 2;
-		
+
 	}
-	
+
 	table.weekDays{
 		padding: 0 9px 9px 9px;
 		font-size: @baseFontSize - 1;
-		
+
 		tr {
 			line-height: @baseLineHeight + 2;
 			td:hover {
-				background-color: @grayWhiteSmoke;
+				background-color: @componentBackground;
 				.border-radius(@borderRadiusSmall);
 			}
-			
+
 			td.otherMonth{
 				color: @grayLight;
 			}
@@ -52,44 +52,44 @@
 				font-weight: bold;
 			}
 		}
-		
-		
+
+
 		tr.currentWeek {
-			
+
 			td {
-				background-color: @grayWhiteSmoke;
-				
+				background-color: @componentBackground;
+
 				&:hover{
 					border: 1px solid @borderColor;
 				}
-				
+
 				&.selected {
 					background-color: @linkColor;
 					color: @white;
 					.border-radius(@borderRadiusSmall);
 					border: none;
 				}
-				
+
 				&.activeToday {
 				background-color: @linkColor;
 				color: @white;
 				.border-radius(@borderRadiusSmall);
 				}
-				
+
 				&:first-child {
 				.border-top-left-radius(@borderRadiusSmall);
 				.border-bottom-left-radius(@borderRadiusSmall);
 				}
-				
+
 				&:last-child {
 				.border-top-right-radius(@borderRadiusSmall);
 				.border-bottom-right-radius(@borderRadiusSmall);
 				}
 			}
-			
+
 		}
 	}
-	
+
 }
 
 .UICalendarPortlet .UICalendarContainer {

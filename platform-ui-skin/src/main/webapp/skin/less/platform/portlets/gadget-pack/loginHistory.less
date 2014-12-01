@@ -1,11 +1,21 @@
 @import "../../../variables.less"; 
 @import "../../../mixins.less";
-
-
-.loginHistoryContent {height:100px; overflow:auto;}
-.loginHistoryItem {color:#484848;}
-.loginHistoryItemDetail {font-size:9px; margin-left:3px; color:#757575;}
-.customLink:hover {text-decoration:underline; color:#226ab4; cursor:pointer;}
+// ---------------------------
+.loginHistoryContent {
+	height:100px;
+	overflow:auto;
+}
+.loginHistoryItem {color: @textColor;}
+.loginHistoryItemDetail {
+	font-size:9px;
+	margin-left:3px;
+	color: @textMediumColor;
+	}
+.customLink:hover {
+	text-decoration:underline;
+	color: @linkColor;
+	cursor:pointer;
+}
 
 #accordion .ui-icon { display: none; }
 #accordion .ui-accordion-header a { padding-left: 8px; }
@@ -40,7 +50,7 @@
 					padding: 4px;
 				}
 			}
-			.btn:nth-child(2n+2){		
+			.btn:nth-child(2n+2){
 				min-width: 110px;
     			padding: 3px 8px;
 				text-align: center;
@@ -59,7 +69,7 @@
 				  margin-bottom: 0px;
 				  font-size: 13px;
 				  line-height: 20px;
-				  color: @grayDark;
+				  color: @textColor;
 				  border: 0;
 				  border-bottom: none;
 
@@ -70,7 +80,7 @@
 					.iteamIcon{
 						width: 26px;
 						height: 26px;
-						padding: 8px 7px 5px;	
+						padding: 8px 7px 5px;
 						margin: 12px 0;
 					}
 					.caret{
@@ -85,14 +95,14 @@
 						    left: 40px;
 					}
 					.selectIteam{
-						background: #999;
+						background: @grayLight;
 						border-radius: 3px;
 						position: relative;
 						.iconDetail{
-							background: url("../images/Statistics/StasticsIcon.png") no-repeat left 3px;
+							background: url("@{images-path}/platform/gadget-pack/Statistics/StasticsIcon.png") no-repeat left 3px;
 						}
 						.iconStastics{
-							background: url("../images/Statistics/StasticsIcon.png") no-repeat left -24px;
+							background: url("@{images-path}/platform/gadget-pack/Statistics/StasticsIcon.png") no-repeat left -24px;
 						}
 						.caret{
 							border-left: 7px solid #999;
@@ -107,10 +117,10 @@
 						display: block;
 					}
 					.iconStastics{
-						background: url("../images/Statistics/StasticsIcon.png") no-repeat left bottom;
+						background: url("@{images-path}/platform/gadget-pack/Statistics/StasticsIcon.png") no-repeat left bottom;
 					}
 					.iconDetail{
-						background: url("../images/Statistics/StasticsIcon.png") no-repeat left -50px;
+						background: url("@{images-path}/platform/gadget-pack/Statistics/StasticsIcon.png") no-repeat left -50px;
 					}
 				}
 				.rightContent{
@@ -120,7 +130,7 @@
 					padding-left: 8px;
 				}
 			}
-			
+
 		}
 		.accordion {
 			border-radius: 4px;
@@ -137,20 +147,20 @@
 				background: #f4f4f4;
 			}*/
 			.timePost{
-				color: #b5b5b5;
+				color: lighten(@textColor, 50%);
 			}
 			.accordion-body{
-			 	overflow-y: auto; 
+			 	overflow-y: auto;
  				max-height: 100px;
 				/*padding: 6px 12px;*/
 				a{
-					color: #226AB4;
+					color: @linkColor;
 				}
 				td{
 					line-height: 28px;
 				}
 			}
-			
+
 		}
 	}
 }

@@ -29,7 +29,7 @@
 	position :absolute;
 	padding : 0px;
 	margin : 0px;
-} 
+}
 
 .uiCalendarViewContainer {
 		 .uiBox .uiGrid.table tr td:first-child{
@@ -101,8 +101,8 @@
 			}
 		}
 	}
-	
-	
+
+
 	.eventContainerBar{
 	    -moz-user-select: none;
 	    cursor: move;
@@ -111,28 +111,43 @@
 	    white-space: nowrap;
 	    padding-right: 5px;
 	}
-	
+
 	.resizeEventContainer{
 	    background: none;
-	    border-bottom: 1px solid @white;
-	    border-top: 1px solid @white;
 	    cursor: n-resize;
-	    height: 1px;
+	    height: 7px;
 	    margin: -4px auto 1px;
-	    max-width: 13px;
-	    width: 20%;
 	    display: none;
+        position: relative;
+
+        span {
+            display: block;
+            border-bottom: 1px solid @white;
+            border-top: 1px solid @white;
+            cursor: n-resize;
+            height: 1px;
+            margin: auto;
+            max-width: 13px;
+            width: 20%;
+        }
 	}
 	.eventContainer + .resizeEventContainer {
 		margin-top: 0;
 	}
-	
+
 }
+
+.uiDayView, .uiWeekView {
+  .WorkOffTime {
+  		background-color: @componentBackground;
+  }
+}
+
 /*==============weekview================*/
 
 .uiWeekView {
 	.today {
-		background: @grayWhiteSmoke;
+		background: @componentBackground;
 		a{
 			line-height: 32px;
 			font-size: @baseFontSize - 1;
@@ -149,17 +164,17 @@
 
 .eventWeekBar{
 	> table {
-		background: @grayLighter;
-		tr td{ 
-			border-bottom: solid 1px @grayMediumWhiteSmoke;
+		background: @componentBackgroundLight;
+		tr td{
+			border-bottom: solid 1px @componentBackgroundHover;
 			&.today{
-			background: @grayWhiteSmoke;
+			background: @componentBackground;
 				}
 				a{
 					color: @textColor;
 				}
 		}
-			
+
 	}
 }
 
@@ -169,8 +184,8 @@
 
 
 
-.UICalendarViewContainer, .uiCalendarViewContainer{	
-	.uiGrid.table tr td {					
+.UICalendarViewContainer, .uiCalendarViewContainer{
+	.uiGrid.table tr td {
 		font-size: 12px;
 	}
 	.uiBox {

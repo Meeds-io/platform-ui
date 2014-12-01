@@ -28,7 +28,7 @@
 	.UIWelcomeScreen {
 		.LeftColumn {
 		  float: left;
-		  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/SingleContentViewer/background/LeftContent188x219.gif') no-repeat left top;
+		  background: url('@{images-path}/ecms/portlets/presentation/SingleContentViewer/background/LeftContent188x219.gif') no-repeat left top;
 		  .size(219px,188px);
 		}
 		.FormContainer {
@@ -40,7 +40,7 @@
 .UISingleContentViewerPortlet .UIWelcomeScreen   {
 	.FormContainer {
 		.CreateNewContent {
-		  background: transparent url(/ecmexplorer/skin/icons/24x24/DefaultSkin/AddDocument.gif) no-repeat scroll left center;
+		 // background: transparent url(/ecmexplorer/skin/icons/24x24/DefaultSkin/AddDocument.gif) no-repeat scroll left center;
 		  height: 22px;
 		  line-height: 22px;
 		  margin: 5px 0px 5px 250px;
@@ -48,7 +48,7 @@
 		  width: auto;
 		}
 		.SelectContent {
-		  background: transparent url(/eXoSkin/skin/less/ecms/portlets/presentation/images/SingleContentViewer/icons/16x16/BlueOpenFolder.gif) no-repeat scroll left center;
+		  background: transparent url("@{images-path}/ecms/portlets/presentation/SingleContentViewer/icons/16x16/BlueOpenFolder.gif") no-repeat scroll left center;
 		  height: 22px;
 		  line-height: 22px;
 		  margin: 5px 0px 5px 250px;
@@ -91,12 +91,12 @@
 	  background: @white;
 	}
 	.QuickEditToolBar {
-	  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/SingleContentViewer/background/QuickEditToolBar.gif') repeat-x left top;
+	  background: url('@{images-path}/ecms/portlets/presentation/SingleContentViewer/background/QuickEditToolBar.gif') repeat-x left top;
 	  height: 25px;
 	  line-height: 25px;
 	}
 	.AdvancedOptions {
-	  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/SingleContentViewer/background/AdvancedOptionIcon.gif') no-repeat left center;
+	  background: url('@{images-path}/ecms/portlets/presentation/SingleContentViewer/background/AdvancedOptionIcon.gif') no-repeat left center;
 	  color: @linkColor;
 	  font-weight: bold;
 	  padding-left: 20px;
@@ -108,7 +108,7 @@
 	  display: none;
 	}
 	.ShowHelp {
-	  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/SingleContentViewer/background/ShowHelp.gif') no-repeat left center;
+	  background: url('@{images-path}/ecms/portlets/presentation/SingleContentViewer/background/ShowHelp.gif') no-repeat left center;
 	  color: @linkColor;
 	  font-weight: bold;
 	  padding-left: 20px;
@@ -161,13 +161,13 @@
 
 .UIWebContentSelectorForm .BrowsePublicationIcon {
   .square(16px);
-  background: url('/eXoSkin/skin/images/Icons/skinIcons/16x16/BrowseContent.gif') no-repeat;
+  background: url('@{images-path}/Icons/skinIcons/16x16/BrowseContent.gif') no-repeat;
   cursor: pointer;
 }
 
 .UIWebContentSelectorForm .BrowseIcon {
  .square(16px);
-  background: url('/eXoSkin/skin/images/Icons/skinIcons/16x16/BrowseContent.gif') no-repeat;
+  background: url('@{images-path}/Icons/skinIcons/16x16/BrowseContent.gif') no-repeat;
   cursor: pointer;
 }
 
@@ -188,7 +188,7 @@
 	}
 	.BrowseIcon {
 	   .square(16px);
-	  background: url('/eXoSkin/skin/images/Icons/skinIcons/16x16/BrowseContent.gif') no-repeat;
+	  background: url('@{images-path}/Icons/skinIcons/16x16/BrowseContent.gif') no-repeat;
 	  cursor: pointer;
 	}
 
@@ -211,12 +211,12 @@
 
 .UIDMSSelectorForm .BrowsePublicationIcon {
  .square(16px);
-  background: url('/eXoSkin/skin/images/Icons/skinIcons/16x16/BrowseContent.gif') no-repeat;
+  background: url('@{images-path}/Icons/skinIcons/16x16/BrowseContent.gif') no-repeat;
   cursor: pointer;
 }
 
 .UIWCMPublicationGrid .SelectIcon {
-  background-image: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/SingleContentViewer/icons/16x16/SelectPage.gif');
+  background-image: url('@{images-path}/ecms/portlets/presentation/SingleContentViewer/icons/16x16/SelectPage.gif');
   cursor: pointer;
  .square(16px);
 }
@@ -252,7 +252,7 @@
   padding: 0px 10px;
   height: 36px;
   line-height: 36px;
-  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/SingleContentViewer/background/WizardStepBar.gif') repeat-x bottom;
+  background: url('@{images-path}/ecms/portlets/presentation/SingleContentViewer/background/WizardStepBar.gif') repeat-x bottom;
   border-bottom: 1px solid @borderColor;;
 }
 
@@ -323,7 +323,7 @@
     border: 1px solid #BFD5ED;
 } 
 .UIPresentationContainer .EditTitle .AcceptButton{
-  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/SingleContentViewer/background/accep_button.png') no-repeat scroll left center;
+  background: url('@{images-path}/ecms/portlets/presentation/SingleContentViewer/background/accep_button.png') no-repeat scroll left center;
   display: inline-block;
   .size(22px,16px);
   float: right; 
@@ -331,14 +331,14 @@
 }
 
 .UIPresentationContainer .EditTitle .CancelButton{
-  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/SingleContentViewer/background/cancel_button.png') no-repeat scroll left center;
+  background: url('@{images-path}/ecms/portlets/presentation/SingleContentViewer/background/cancel_button.png') no-repeat scroll left center;
   display: inline-block;
   width: 14px; height: 22px;
   float: right;
 }
 
 .UIPresentationContainer .BackButton {
-  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/SingleContentViewer/background/BackIcon.gif') no-repeat center;
+  background: url('@{images-path}/ecms/portlets/presentation/SingleContentViewer/background/BackIcon.gif') no-repeat center;
   width: 20px;
   height: 20px;
   cursor: pointer;
@@ -382,38 +382,38 @@
 
 .UISingleContentViewerPortlet .DraftIcon {
   padding-left: 20px;
-  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/SingleContentViewer/icons/16x16/DraftIcon.gif') no-repeat left center;
+  background: url('@{images-path}/ecms/portlets/presentation/SingleContentViewer/icons/16x16/DraftIcon.gif') no-repeat left center;
 }
 
 .UIContentViewerContainer .DraftIcon {
   padding-left: 20px;
-  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/SingleContentViewer/icons/16x16/DraftIcon.gif') no-repeat left center;
+  background: url('@{images-path}/ecms/portlets/presentation/SingleContentViewer/icons/16x16/DraftIcon.gif') no-repeat left center;
 }
 
 .UIOptionBar .PrintIcon {
-  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/SingleContentViewer/icons/16x16/ActionIcon.gif') no-repeat bottom left;
+  background: url('@{images-path}/ecms/portlets/presentation/SingleContentViewer/icons/16x16/ActionIcon.gif') no-repeat bottom left;
   padding-left: 20px;
   display: block;
   float: left;
 }
 
 .UIOptionBar .EmailIcon {
-  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/SingleContentViewer/icons/16x16/ActionIcon.gif') no-repeat top left;
+  background: url('@{images-path}/ecms/portlets/presentation/SingleContentViewer/icons/16x16/ActionIcon.gif') no-repeat top left;
   padding-left: 20px;
 }
 
 .UIOptionBar .VoteIcon {
-  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/SingleContentViewer/icons/16x16/ActionIcon.gif') no-repeat left -21px;
+  background: url('@{images-path}/ecms/portlets/presentation/SingleContentViewer/icons/16x16/ActionIcon.gif') no-repeat left -21px;
   padding-left: 20px;
 }
 
 .UIOptionBar .CommentIcon {
-  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/SingleContentViewer/icons/16x16/ActionIcon.gif') no-repeat left -42px;
+  background: url('@{images-path}/ecms/portlets/presentation/SingleContentViewer/icons/16x16/ActionIcon.gif') no-repeat left -42px;
   padding-left: 20px;
 }
 
 .UIOptionBar .InfoIcon {
-  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/SingleContentViewer/icons/16x16/ActionIcon.gif') no-repeat left -63px;
+  background: url('@{images-path}/ecms/portlets/presentation/SingleContentViewer/icons/16x16/ActionIcon.gif') no-repeat left -63px;
   padding-left: 20px;
 }
 
@@ -439,25 +439,25 @@
 }
 
 .UIPresentationContainer .ActionContainer .PrintIcon {
-  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/SingleContentViewer/icons/PrintFrameIcon.gif') no-repeat top left;
+  background: url('@{images-path}/ecms/portlets/presentation/SingleContentViewer/icons/PrintFrameIcon.gif') no-repeat top left;
 }
 
 .UIPresentationContainer .ActionContainer .CloseIcon {
-  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/SingleContentViewer/icons/PrintFrameIcon.gif') no-repeat left -19px;
+  background: url('@{images-path}/ecms/portlets/presentation/SingleContentViewer/icons/PrintFrameIcon.gif') no-repeat left -19px;
 }
 
 /*============================= UISCVPreferences ====================*/
 
 .UISingleContentViewerPortlet .UISCVPreferences {
 	 .SelectFolderPathIcon {
-	  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/SingleContentViewer/icons/16x16/AddPage.gif') no-repeat left center;
+	  background: url('@{images-path}/ecms/portlets/presentation/SingleContentViewer/icons/16x16/AddPage.gif') no-repeat left center;
 	  .square(16px);
 	  margin-left: 10px;
 	  cursor: pointer;
 	  vertical-align: -2px;
 	}
 	.SelectTargetPageIcon {
-	  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/SingleContentViewer/icons/SearchIcon.png') no-repeat;
+	  background: url('@{images-path}/ecms/portlets/presentation/SingleContentViewer/icons/SearchIcon.png') no-repeat;
 	  .square(16px);
 	  cursor: pointer;
 	}

@@ -1,4 +1,4 @@
-<%
+<%	
 	import org.exoplatform.webui.form.UIForm; 
 	import org.exoplatform.web.application.JavascriptManager;
 	import org.exoplatform.webui.core.UIDropDownControl;

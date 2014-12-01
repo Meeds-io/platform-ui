@@ -1,39 +1,39 @@
 .uiWikiPageVersionsCompare .comparedForm {
-	border-bottom: 1px solid @grayMediumWhiteSmoke;
+	border-bottom: 1px solid @componentBackgroundHover;
 	padding-bottom: 20px;
 }
 
 .uiWikiPageVersionsCompare .comparedForm pre {
-	background-color: @grayLighter;
-    border: 1px solid @grayMediumWhiteSmoke;
+	background-color: @componentBackgroundLight;
+    border: 1px solid @componentBackgroundHover;
     .border-radius(2px);
     display: block;
     white-space: normal;
     padding: 18px;
     line-height: 25px;
     #font > #family > .sans-serif;
-    
+
     > b {
     	&.admin {
     		color: @linkColor;
     	}
     }
-    
-    > span {	
+
+    > span {
     	&.dateChange {
     		display: block;
     	}
-    	
+
     	&.lineRemoved {
     		background-color: @wikiPinkLighter;
 		    text-decoration: line-through;
     	}
-    	
+
     	&.lineAdded {
     		background-color: @wikiGreenLighter;
     	}
     }
-    
+
     > a.changes {
 		color: @linkColor;
 	}
@@ -49,8 +49,8 @@
 	> button {
 		margin: 0 0 10px;
 	}
-	
-	> .diff > .diffmodifiedline { 
+
+	> .diff > .diffmodifiedline {
 		> span {
 			&.diffaddword {
 				background-color: @wikiGreenLighter;
@@ -68,7 +68,7 @@
 			&.diffaddword {
 				background-color: @wikiGreenLighter;
 			}
-			
+
 			&.diffremoveword {
 				background-color: @wikiPinkLighter;
 			}

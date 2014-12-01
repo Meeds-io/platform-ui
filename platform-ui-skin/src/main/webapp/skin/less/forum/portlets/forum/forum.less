@@ -17,7 +17,7 @@
 
 .rounded-corners-top{
 	.border-radius(@baseBorderRadius @baseBorderRadius 0 0);
-	background: @grayWhiteSmoke;
+	background: @componentBackground;
 	line-height: @baseLineHeight;
 	border: 1px solid @borderColor;
 	border-bottom: none;
@@ -27,8 +27,8 @@
 .uiForumPortlet{
 	.uiGrid.table caption + thead tr{
 		th {
-			background-color: @grayLighter;
-			border-bottom: solid 1px @grayMediumWhiteSmoke;
+			background-color: @componentBackgroundLight;
+			border-bottom: solid 1px @componentBackgroundHover;
 		}
 	}
 	a.actionIcon, a.actionIcon:hover {

@@ -69,7 +69,7 @@
 	.contentQuote{
 		font-style: italic;
 		padding: 15px 15px 15px 20px;
-		background: #e6f3ff;
+		background: @quotePrimaryBackground;
 		margin: 10px 0 10px 15px;
 		word-wrap: break-word;
 		.border-radius(2px);
@@ -78,7 +78,7 @@
 			padding-left: 0;
 			margin-top: 10px;
 			.contentQuote{
-				border-left: solid 5px #aacded;
+				border-left: solid 5px @quotePrimaryBorder;
 				padding: 0px 0px 0px 20px;
 				margin-top: 15px;
 				.titleQuote{
@@ -126,12 +126,12 @@
 		line-height: 28px;
 
 		.tagItem{
-			background: #e0e8f5;
-			.border-radius(3px);
-			color: @blue;
-			border: 1px solid @blueLight;
-			padding: 1px 5px;
 			display: inline-block;
+			color: @linkColor;
+			background: @blueLight;
+			border: 1px solid @blue;
+			padding: 1px 5px;
+			.border-radius(3px);
 		}
 
 		.titleTag{
@@ -171,7 +171,7 @@
 
 	.line{
 		margin: 10px -10px;
-		background: @grayDarkWhiteSmoke;
+		background: @borderColor;
 		height: 1px;
 		display: block;
 	}

@@ -1,3 +1,6 @@
+@import "../../../variables.less"; 
+@import "../../../mixins.less";
+// ---------------------------
 .ClearFix:after {
 	content: ".";
 	display: block;
@@ -5,8 +8,6 @@
 	clear: both;
 	visibility: hidden;
 }
-
-
 
 .FL {
 	float: left;
@@ -22,8 +23,8 @@
 }
 
 .Note {
-	background: #fff5f5;
-	color: #f43f3f;
+	background: @redLight;
+	color: @red;
 	padding: 7px 5px;
 	text-align: center;
 	font-weight: bold;
@@ -47,22 +48,22 @@
 	padding: 5px 10px;
 	line-height: 14px;
 	background: @componentBackgroundLight;
-	color: #777;
+	color: @textColor;
 }
 
 .TopGadget .Text {
 	font-weight: bold;
-	color: #636363;
+	color: @textColor;
 	float: left;
 	line-height: 20px;
 	font-size: 12px;
 }
 
 .TopGadget select {
-	background: #f9f9f9;
+	background: @componentBackgroundLight;
 	height: 18px;
-	border: 1px solid #cacaca;
-	color: #6086eb;
+	border: 1px solid @borderColor;
+	color: @textColor;
 	font-size: 12px;
 	-moz-border-radius: 2px;
 	width: 110px;
@@ -71,7 +72,7 @@
 }
 
 .TopGadget .DesIconHome {
-	background: url(images/DesIconHome.gif) no-repeat left top;
+	background: url("@{images-path}/platform/gadget-pack/DesIconHome.gif") no-repeat left top;
 	width: 22px;
 	height: 22px;
 	display: block;
@@ -91,7 +92,7 @@
 
 .TitleGrid h3 {
 	font-weight: bold;
-	color: #555;
+	color: @componentBackgroundLight;
 	float: left;
 	line-height: 20px;
 	padding-right: 10px;
@@ -100,10 +101,10 @@
 }
 
 .TitleGrid select {
-	background: #f9f9f9;
+	background: @componentBackgroundLight;
 	height: 18px;
-	border: 1px solid #cacaca;
-	color: #6086eb;
+	border: 1px solid @borderColor;
+	color: @textColor;
 	font-size: 12px;
 	-moz-border-radius: 2px;
 	width: 110px;
@@ -118,7 +119,7 @@
 
 
 .GadgetGrid .UIGrid .SkinID {
-	background: #efefef;
+	background: @componentBackgroundHover;
 	padding: 0px 5px;
 	-moz-border-radius: 2px 2px 2px 2px;
 }

@@ -34,6 +34,9 @@
 				.controls-full{
 					white-space: nowrap;
 					margin: 0 5px;
+					.control-label {
+						white-space: normal;
+					}
 					.textarea{
 						height: 150px;
 						vertical-align: top;
@@ -110,7 +113,7 @@
 }
 
 .uiIconEcmsFolksonomyManager{
-	background-image: url(/eXoSkin/skin/images/Icons/uiIconsDarkGray.png);
+	background-image: url("@{images-path}/Icons/uiIconsLightGray.png");
 	background-position: -60px -20px;
 }
 
@@ -119,7 +122,7 @@ a:hover .uiIconEcmsFolksonomyManager{
 }
 
 .uiIconEcmsTaxonomyManagerTrees{
-	background-image: url(/eXoSkin/skin/images/Icons/uiIconsDarkGray.png);
+	background-image: url("@{images-path}/Icons/uiIconsLightGray.png");
 	background-position: -20px -60px;
 }
 
@@ -128,7 +131,7 @@ a:hover .uiIconEcmsTaxonomyManagerTrees{
 }
 
 .uiIconEcmsActionManager{
-	background-image: url(/eXoSkin/skin/images/Icons/uiIconsDarkGray.png);
+	background-image: url("@{images-path}/Icons/uiIconsLightGray.png");
 	background-position: 0px -40px;
 }
 
@@ -137,7 +140,7 @@ a:hover .uiIconEcmsActionManager{
 }
 
 .uiIconEcmsUnLockManager{
-	background-image: url(/eXoSkin/skin/images/Icons/uiIconsDarkGray.png);
+	background-image: url("@{images-path}/Icons/uiIconsLightGray.png");
 	background-position: -60px 0px;
 }
 
@@ -259,4 +262,14 @@ a:hover .uiIconEcmsUnLockManager{
  	border-top: 1px solid @borderColor;
  	max-height: 350px ;
  }
+}
+
+
+.UITaxonomyTreeCreateChild {
+	.explorerTree {
+		margin-bottom: 15px;
+	}
+	.uiActionBorder {
+		clear:both;
+	}
 }

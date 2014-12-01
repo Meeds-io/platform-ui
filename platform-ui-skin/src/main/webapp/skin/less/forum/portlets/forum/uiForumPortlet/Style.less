@@ -40,32 +40,7 @@
 		margin: 2px 6px 0px 0px;
 		cursor: pointer;
 	}
-	.privateMessage{
-		position: relative;
-		.numberMessage{
-			font-size: @baseFontSize - 4;
-			background: @red;
-			color: @white;
-			.border-radius(10px);
-			position: absolute;
-			left: 11px;
-			top: 2px;
-			line-height: 12px;
-		}
-		.numberMessageLittle10{
-			padding: 0 4px;
-		}
-		.numberMessageMore10{
-			line-height: 10px;
-			padding: 2px;
-		}
-		.numberMessageMore100{
-			padding: 1px;
-			left: 9px;
-			line-height: 15px;
-			top:0;
-		}
-	}
+
 }
 
 
@@ -136,7 +111,7 @@
 	}
 	
 	.forumSeparatorLine + .forumSeparatorLine{
-		background: url("/eXoSkin/skin/less/forum/portlets/forum/images/background/SeparatorLine.png") no-repeat left -4px;
+		background: url("@{images-path}/forum/portlets/forum/background/SeparatorLine.png") no-repeat left -4px;
 	}
 	
 	.uiForumIconState{

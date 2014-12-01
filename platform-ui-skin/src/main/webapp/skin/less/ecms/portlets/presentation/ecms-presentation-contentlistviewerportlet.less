@@ -4,7 +4,7 @@
 
 .UICLVPortlet {
 	.TitleBox {
-	  background: @grayWhiteSmoke;
+	  background: @componentBackground;
 	  border: 1px solid @borderColor;
 	  font-weight: bold;
 	  padding: 0 4px;
@@ -26,18 +26,18 @@
 		  margin-left: 240px;
 		}
 		.Select16x16Icon {
-		  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/ContentListViewer/icons/SelectPage.gif') no-repeat;
+		  background: url('@{images-path}/ecms/portlets/presentation/ContentListViewer/icons/SelectPage.gif') no-repeat;
 		  cursor: pointer;
 		  .square(16px);
 		}
-		
+
 	}
 }
 
 /*---------------------------UIViewerManagementForm------------------------------------*/
 .UICLVPortlet .UICLVConfig {
 	.SelectFolderPathIcon {
-	  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/ContentListViewer/icons/AddPage.gif') no-repeat left center;
+	  background: url('@{images-path}/ecms/portlets/presentation/ContentListViewer/icons/AddPage.gif') no-repeat left center;
 	   .square(16px);
 	  margin-left: 10px;
 	  cursor: pointer;
@@ -59,11 +59,11 @@
 	  width: 125px;
 	}
 	.TitleBar {
-	  background: transparent url('/eXoSkin/skin/less/ecms/portlets/presentation/images/ContentListViewer/icons/BgCategoryTitle1x25.gif') repeat-x scroll 0 0;
+	  background: transparent url('@{images-path}/ecms/portlets/presentation/ContentListViewer/icons/BgCategoryTitle1x25.gif') repeat-x scroll 0 0;
 	  border-top: 1px solid @borderColor;
 	  border-left: 1px solid @borderColor;
 	  border-right: 1px solid @borderColor;
-	  color: #424242;
+	  color: @textColor;
 	  font-weight: bold;
 	  line-height: 25px;
 	  padding-left: 10px;
@@ -102,7 +102,7 @@
   select{
   	width: auto;
   }
-   
+
 }
 
 
@@ -111,7 +111,7 @@
   padding: 20px;
    a:hover {
 	  font-size: @baseFontSize - 1;
-	  color: @blue;
+	  color: @primaryColor;
 	}
 }
 
@@ -121,7 +121,7 @@
   margin: auto;
   padding-left: 1px;
   	.OddRow {
-	  background: @grayWhiteSmoke ;
+	  background: @componentBackground ;
 	}
 	.EvenRow {
 	  background: @componentBackgroundLight ;
@@ -135,7 +135,7 @@
 	  padding: 4px;
 	}
 	th {
-	   background: @grayWhiteSmoke;
+	   background: @componentBackground;
 		  border: 1px solid @borderColor;
 	  font-weight: normal;
 	  line-height: 19px;
@@ -143,23 +143,23 @@
 	  vertical-align: middle;
 	}
 	.DownRowIcon {
-	  background-image: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/ContentListViewer/icons/BlueDownArrow.gif');
+	  background-image: url('@{images-path}/ecms/portlets/presentation/ContentListViewer/icons/BlueDownArrow.gif');
 	  cursor: pointer;
 	  .square(16px);
 	}
 	.UpRowIcon {
-	  background-image: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/ContentListViewer/icons/BlueUpArrow.gif');
+	  background-image: url('@{images-path}/ecms/portlets/presentation/ContentListViewer/icons/BlueUpArrow.gif');
 	  cursor: pointer;
 	  .square(16px);
 	}
 	 .DeleteContentIcon {
-	  background-image: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/ContentListViewer/icons/Delete.gif');
+	  background-image: url('@{images-path}/ecms/portlets/presentation/ContentListViewer/icons/Delete.gif');
 	  cursor: pointer;
 	   .square(16px);
 	}
 	 .DeleteIcon {
 	   .square(16px);
-	  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/ContentListViewer/icons/DustBin.gif') no-repeat;
+	  background: url('@{images-path}/ecms/portlets/presentation/ContentListViewer/icons/DustBin.gif') no-repeat;
 	}
 
 }
@@ -197,7 +197,7 @@
 		  a {
 		  display: block;
 		  padding: 0 3px 3px 25px;
-		  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/ContentListViewer/icons/RefreshIcon.gif') no-repeat;
+		  background: url('@{images-path}/ecms/portlets/presentation/ContentListViewer/icons/RefreshIcon.gif') no-repeat;
 		  color: #ff4200;
 		  font-weight: bold;
 		 font-size: @baseFontSize;
@@ -208,12 +208,12 @@
 
 .UICLVPortlet {
 	.SelectTargetPageIcon {
-	  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/ContentListViewer/icons/SearchIcon.png') no-repeat;
+	  background: url('@{images-path}/ecms/portlets/presentation/ContentListViewer/icons/SearchIcon.png') no-repeat;
 	  .square(16px);
 	  cursor: pointer;
 	}
 	 .QuestionIcon {
-	  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/ContentListViewer/icons/QuestionIcon.png') no-repeat;
+	  background: url('@{images-path}/ecms/portlets/presentation/ContentListViewer/icons/QuestionIcon.png') no-repeat;
 	  .square(16px);
 	  cursor: pointer;
 	}
@@ -243,7 +243,7 @@
 	  padding-left:10px;
 	}
 	.RssIcon {
-	  background: url('/eXoSkin/skin/less/ecms/portlets/presentation/images/ContentListViewer/icons/RSS.gif') no-repeat left top;
+	  background: url('@{images-path}/ecms/portlets/presentation/ContentListViewer/icons/RSS.gif') no-repeat left top;
 	  padding-left: 22px;
 	  float: right;
 	  color: #fe9832;
@@ -252,7 +252,7 @@
 	  line-height: 16px;
 	  font-size: @baseFontSize - 2;
 	}
-	
+
 }
 
 
@@ -304,11 +304,11 @@
 			.heading {
 				font-weight: bold;
 				a {
-					color: #333;
+					color: @textColor;
 				}
 			}
 			.dateAndMail {
-				color: #999;
+				color: @grayLight;
 			}
 			.summary p {
 				margin-bottom: 0;
