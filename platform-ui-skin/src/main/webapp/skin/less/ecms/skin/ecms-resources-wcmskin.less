@@ -32,15 +32,15 @@
 			font-size: 13px;
 
 			a.normal {
-				color: @grayDark;
+				color: @baseColorDark;
 
 				&:hover {
-					color: @grayLight;
+					color: @baseColorLight;
 				}
 			}
 
 			a.active {
-				color: @grayLight;
+				color: @baseColorLight;
 				font-weight: bold;
 			}
 		}
@@ -73,7 +73,7 @@
 		width: 210px;
 		float: left;
 		border: 1px solid @borderColor;
-		background: @componentBackgroundLight;
+		background: @primaryBackgroundLight;
 		overflow: auto;
 		height: 461px;
 		.ChildrenContainer{
@@ -91,7 +91,7 @@
 		}
 
 		.noContent{
-			color: @grayLight;
+			color: @baseColorLight;
 		}
 	}
   height: 400px;
@@ -161,7 +161,7 @@
 	}
 
 	.noContent{
-		color: @grayLight;
+		color: @baseColorLight;
 	}
 }
 
@@ -227,7 +227,7 @@
 
 		.edittingCurrentState .publishText,
 		.edittingCurrentState .draftText {
-			color: @white;
+			color: @baseBackground;
 			margin: 3px 10px 0px 3px;
 			font-weight: bold;
 			display: block;
@@ -285,7 +285,7 @@
 
 			&:hover {
 				.nodeLabel {
-					background: @componentBackground;
+					background: @primaryBackground;
 				}
 			}
 		}
@@ -299,14 +299,14 @@
 				background: @primaryColor;
 
 				> a {
-					color: @white;
+					color: @baseBackground;
 				}
 			}
 		}
 
 		.bgThumbnailImage {
 			padding: 5px;
-			background: @white;
+			background: @baseBackground;
 			box-shadow: 1px 1px 3px 1px rgba(25,44,48,0.2);
 			display: inline-block;
 		}
@@ -388,7 +388,7 @@
 /******** UIRelationManager **************/
 .uiOneNodePathSelector {
 	.breadcrumb {
-		background: @componentBackgroundLight;
+		background: @primaryBackgroundLight;
 		border: 1px solid @borderColor;
 		padding: 5px 10px;
 		margin-bottom: 20px;
@@ -519,7 +519,7 @@
 		    		margin: 0px;
 		    	}
 		    	.detail{
-		    		color:@grayLight;
+		    		color: @baseColorLight;
 		    	}
 		    }
 		}
@@ -544,7 +544,7 @@
 		    padding: 5px 0 0 0;
 		}
 		.uiOptionBar{
-			background: none repeat scroll 0 0 @componentBackgroundLight;
+			background: none repeat scroll 0 0 @primaryBackgroundLight;
 		    border: 1px solid @borderColor;
 		    padding: 4px 8px 4px 4px;
 		    margin: 8px 0;

@@ -33,7 +33,7 @@
 
 		> li > a:hover {
 			border: 1px solid @borderColor;
-			background-color: @componentBackgroundLight;
+			background-color: @primaryBackgroundLight;
 		}
 
 		> .active > a,> .active > a:hover {
@@ -56,7 +56,7 @@
 			}
 
 			> a:hover, > a:active {
-				#gradient > .vertical(@white, @componentBackground);
+				#gradient > .vertical(@baseBackground, @primaryBackground);
 				border: 1px solid @borderColor;
 				.border-radius(@borderRadiusSmall);
 				padding: 5px 10px;
@@ -72,7 +72,7 @@
 		}
 
 		li.dropdown > a .caret{
-			border-top-color: @gray;
+			border-top-color: @baseColorMedium;
 			margin-top: 7px;
 		}
 
@@ -108,7 +108,7 @@
 		min-width: 100px;
 
 		.active > a,.active > a:hover {
-			color: @white;
+			color: @baseBackground;
 		}
 	}
 }
@@ -116,7 +116,7 @@
 .uiTabInPage {
 	.nav-tabs {
 		margin: 0px;
-		background-color: @componentBackgroundHover;
+		background-color: @primaryBackgroundHover;
 		border: 1px solid @borderColor;
 		padding: 5px 5px 0px 5px;
 		.border-radius(@borderRadiusSmall @borderRadiusSmall 0 0);
@@ -133,7 +133,7 @@
 
 		> .active > a,> .active > a:hover {
 			#gradient .vertical-three-colors(@tabGrayInPageActiveLinkStartBackground, @tabGrayInPageActiveLinkMiddleBackground, 56%, @tabGrayInPageActiveLinkEndBackground);
-			border-bottom: 1px solid @componentBackground;
+			border-bottom: 1px solid @primaryBackground;
 		}
 	}
 
@@ -246,7 +246,7 @@
 		.dropdown-menu {
 			.border-radius(@baseBorderRadius);
 			&.dropdown-menu:after {
-			    border-bottom: 6px solid @white;
+			    border-bottom: 6px solid @baseBackground;
 			    border-left: 6px solid transparent;
 			    border-right: 6px solid transparent;
 			    content: "";
@@ -282,7 +282,7 @@
     padding: 10px;
 }
 
-// Fix dot white for uiTabNormal
+// Fix dot @baseBackground for uiTabNormal
 .uiTabNormal {
 	.nav-tabs > li.active:first-child {
 		position: relative;

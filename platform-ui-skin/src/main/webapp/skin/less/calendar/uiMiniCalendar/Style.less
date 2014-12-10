@@ -39,12 +39,12 @@
 		tr {
 			line-height: @baseLineHeight + 2;
 			td:hover {
-				background-color: @componentBackground;
+				background-color: @primaryBackground;
 				.border-radius(@borderRadiusSmall);
 			}
 
 			td.otherMonth{
-				color: @grayLight;
+				color: @baseColorLight;
 			}
 			td.today {
 				border: 1px solid @borderColor;
@@ -57,7 +57,7 @@
 		tr.currentWeek {
 
 			td {
-				background-color: @componentBackground;
+				background-color: @primaryBackground;
 
 				&:hover{
 					border: 1px solid @borderColor;
@@ -65,14 +65,14 @@
 
 				&.selected {
 					background-color: @linkColor;
-					color: @white;
+					color: @baseBackground;
 					.border-radius(@borderRadiusSmall);
 					border: none;
 				}
 
 				&.activeToday {
 				background-color: @linkColor;
-				color: @white;
+				color: @baseBackground;
 				.border-radius(@borderRadiusSmall);
 				}
 

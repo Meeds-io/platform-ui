@@ -3,7 +3,7 @@
 /*============== uiMonthView ================*/
 .uiMonthView{
 	.dayTitleBar{
-		background: @componentBackgroundLight;
+		background: @primaryBackgroundLight;
 		.uiGrid.table tr td{
 			line-height: 32px;
 			text-align: center;
@@ -16,7 +16,7 @@
    			text-align: right;
 			margin-top: -8px;
    			a{
-   				color: @grayLight;
+   				color: @baseColorLight;
    				padding-right: 10px;
    			}
 		}
@@ -41,7 +41,7 @@
 			line-height: 12px;
 			.box-shadow(0px 2px 6px -1px rgba(0,0,0,0.15));
 			position: absolute;
-			background-color: @white;
+			background-color: @baseBackground;
 			border-bottom: 1px solid @borderColor;
 			z-index:1;
 			.uiIconArrowUp {
@@ -58,11 +58,11 @@
 		}
 		.rowContainerDay{
 			.calendarContentDisable{
-			    background: @componentBackground;
+			    background: @primaryBackground;
    				padding: 0;
 			}
 			.tdToday {
-                background: @componentBackgroundLight;
+                background: @primaryBackgroundLight;
             }
 			.dayBox{
 				a{
@@ -76,7 +76,7 @@
 		}
 
 		.table tr{
-			border-top: 1px solid @componentBackgroundHover;
+			border-top: 1px solid @primaryBackgroundHover;
 			td{
 				vertical-align: top;
 				height: 96px;
@@ -92,7 +92,7 @@
 		}
 
 		.eventSummary{
-			color: @white;
+			color: @baseBackground;
 			line-height: 16px;
 			font-size: 11px;
 			  overflow: hidden;

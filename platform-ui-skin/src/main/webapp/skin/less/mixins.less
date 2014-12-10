@@ -64,7 +64,7 @@
 // Status Elements
 // --------------------------------------------------
 #StatusElements {
-	.StatusHover(@startColor : #fff, @endColor : #f1f1f1,@boxShadow: 0 1px 2px 0px rgba(255,255,255,1)){
+	.StatusHover(@startColor : @baseBackground, @endColor : @primaryBackground,@boxShadow: 0 1px 2px 0px rgba(255,255,255,1)){
 		#gradient > .vertical(@startColor,@endColor);
 		border: 1px solid @borderColor;
 		.border-radius(@borderRadiusSmall);
@@ -121,7 +121,7 @@
 }
 
 .noticeEmpty() {
-	color: @grayLight;
+	color: @baseColorLight;
 }
 
 // Title
@@ -216,7 +216,7 @@
 // AVATAR
 // --------------------------------------------------
 .circleBorderAvatar(@size) {
-	#gradient .vertical(@white, @componentBackground);
+	#gradient .vertical(@baseBackground, @primaryBackground);
 	.square(@size);
 	.border-radius(100px);
 	.box-shadow(0px 2px 4px rgba(13px, 13px, 13px, 0.27));
@@ -286,7 +286,7 @@
 }
 
 .squareBorderAvatar(@size) {
-	#gradient .vertical(@white, @componentBackground);
+	#gradient .vertical(@baseBackground, @primaryBackground);
 	.square(@size);
 	.border-radius(4px);
 	.box-shadow(0px 2px 4px rgba(13px, 13px, 13px, 0.27));
@@ -312,7 +312,7 @@
 // Round Corner
 // --------------------------------------------------
 .roundCornerBoxWithTitle() {
-	background: @white;
+	background: @baseBackground;
 	border: 1px solid @borderColor;
 	.border-radius(4px);
 	.box-shadow(0px 1px 2px rgba(0, 0, 0, 0.08));
@@ -320,12 +320,12 @@
 	.titleBox {
 		.border-radius(4px 4px 0px 0px );
 		.box-shadow(0px 1px 2px rgba(13, 13, 13, 0.08));
-		background: @componentBackground;
+		background: @primaryBackground;
 		border-bottom: 1px solid @borderColor;
 		margin: 0px;
 		line-height: @baseLineHeight ;
 		font-weight: @headingsFontWeight;
-		color: @grayDark;
+		color: @baseColorDark;
 		padding: 8px 10px;
 		word-wrap: break-word;
 	}

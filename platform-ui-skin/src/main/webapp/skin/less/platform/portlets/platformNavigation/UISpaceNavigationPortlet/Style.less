@@ -6,14 +6,14 @@
 	.title {
 		text-transform: uppercase;
 		color: @linkColor;
-		#gradient > .vertical(@componentBackgroundLight, @componentBackgroundHover);
+		#gradient > .vertical(@primaryBackgroundLight, @primaryBackgroundHover);
 		height: 40px; line-height: 41px;
 		padding: 0 15px;
 		margin: 0;
-		 .box-shadow(~"inset 0 1px 0 @white,0 1px 0 @white");
+		 .box-shadow(~"inset 0 1px 0 @baseBackground,0 1px 0 @baseBackground");
 		 border-bottom: 1px solid @borderColor;
    		 border-top: 1px solid @borderColor;
-		text-shadow: 0 1px 1px @white;
+		text-shadow: 0 1px 1px @baseBackground;
 	}
 
 	.searchInput input {
@@ -25,9 +25,9 @@
 	    padding: 0 @gutterSizeBase;
 	    width: 200px;
 	    display: block;
-	     color: @grayLight;
+	     color: @baseColorLight;
     	&.Focus {
-		   color: @grayDark;
+		   color: @baseColorDark;
 		}
 	}
 
@@ -39,7 +39,7 @@
         max-height: 320px;
         overflow: auto;
 		.noSpace {
-		color: @gray;
+		color: @baseColorMedium;
 	    padding: 10px 0;
 	    text-align: center;
 		}
@@ -51,7 +51,7 @@
 		}
 
 		.spaceIcon {
-			    color: @gray;
+			    color: @baseColorMedium;
 			    display: block;
 			    overflow: hidden;
 			    text-overflow: ellipsis;
@@ -70,7 +70,7 @@
 		.spaceItemSelected {
 			padding: 7px 25px;
             position: relative;
-            background: @white;
+            background: @baseBackground;
             border-top: 1px solid @borderColor;
             border-bottom: 1px solid @borderColor;
             .box-shadow(0 0px 3px rgba(0, 0, 0, 0.11));
@@ -97,18 +97,18 @@
     	text-align: center;
     	 margin: 0 0 10px 0;
 		> a {
-			#gradient > .vertical(@white, @componentBackground);
+			#gradient > .vertical(@baseBackground, @primaryBackground);
 			height: 24px;
 			line-height: 24px;
 			border: 1px solid @borderColor;
-			color: @gray;
+			color: @baseColorMedium;
 			display: inline-block;
 			margin: auto;
 			padding: 0 10px;
 			.border-radius(3px);
 			font-size: 12px;
 			&:hover {
-				background-color: @componentBackgroundHover;
+				background-color: @primaryBackgroundHover;
 			}
 		}
 	}
@@ -116,11 +116,11 @@
 	.joinSpace {
 		border-bottom: 1px solid @borderColor;
         border-top: 1px solid @borderColor;
-        .box-shadow(~"inset 0 1px 0 @white,0 1px 0 @white");
+        .box-shadow(~"inset 0 1px 0 @baseBackground,0 1px 0 @baseBackground");
         line-height: 32px;
 
     > a {
-    	color: @gray;
+    	color: @baseColorMedium;
     	 display: block;
     	 padding-left: 25px;
     	&:hover {

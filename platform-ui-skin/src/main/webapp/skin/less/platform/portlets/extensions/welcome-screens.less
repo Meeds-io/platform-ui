@@ -23,7 +23,7 @@ a {
 
 .backLight {
     .border-radius(80px);
-    .box-shadow(0 0 200px @white);
+    .box-shadow(0 0 200px @baseBackground);
     .square(280px);
     margin: 140px auto 0;
 }
@@ -32,7 +32,7 @@ a {
 	padding-bottom: 10px;
 }
 .uiWelcomeBox {
-    background-color:  @white;
+    background-color: @baseBackground;
      .border-radius(10px);
     .box-shadow(0 1px 3px #3d3d3d);
     margin: -380px auto 0;
@@ -49,7 +49,7 @@ a {
 		color: #c1c1c1;
 	}
 	 .content {
-		background-color: @white;
+		background-color: @baseBackground;
 		margin: 0 auto;
 		padding: 10px 30px;
 		position: static;
@@ -87,7 +87,7 @@ a {
 		  color: @textColor;
 		}
 		&.disable {
-			background-color: @componentBackgroundHover;
+			background-color: @primaryBackgroundHover;
 		}
 	}
 }
@@ -101,7 +101,7 @@ a {
 	}
 	.btn  {
 		 font-size: 16px;
-		.buttonBackgroundEXO(@btnBackground, @btnBackgroundHighlight, @btnBorder, @grayDark, 0 1px 1px rgba(255,255,255,.75));
+		.buttonBackgroundEXO(@btnBackground, @btnBackgroundHighlight, @btnBorder, @baseColorDark, 0 1px 1px rgba(255,255,255,.75));
 		 line-height: 41px;
 		.border-radius(@baseBorderRadius);
 		.ie7-restore-left-whitespace(); // Give IE7 some love
@@ -118,8 +118,8 @@ a {
 		margin: 0 5px;
 	  // Hover state
 	  &:hover {
-		#gradient > .vertical(@componentBackgroundHover, @btnBackgroundHighlight);
-		/*.buttonBackground(@componentBackgroundHover, @btnBackgroundHighlight, @grayDark, 0 1px 1px rgba(255,255,255,.75));*/
+		#gradient > .vertical(@primaryBackgroundHover, @btnBackgroundHighlight);
+		/*.buttonBackground(@primaryBackgroundHover, @btnBackgroundHighlight, @@baseColorDark, 0 1px 1px rgba(255,255,255,.75));*/
 	  }
 	  // Active state
 		&.active,
@@ -132,7 +132,7 @@ a {
 
    .btn-primary ,#Greetings button,.btn:first-child{
 	   .buttonBackgroundEXO(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder);
-		color: @white;
+		color: @baseBackground;
 
 		// Hover/focus state
 		&:hover {
@@ -197,7 +197,7 @@ a {
 
 .uiWelcomeBox .desc {
     font-size: 12px;
-    color: @grayLight;
+    color: @baseColorLight;
     margin: 10px 0 15px;
 }
 
@@ -207,9 +207,9 @@ a {
 }
 
 .uiWelcomeBox .screenShot a {
-    background-color: @white;
+    background-color: @baseBackground;
     background-repeat: repeat-x;
-    border: 1px solid @componentBackgroundLight;
+    border: 1px solid @primaryBackgroundLight;
     .border-radius(4px);
     .box-shadow(0 2px 4px rgba(13, 13, 13, 0.27));
 	.size(174px,406px);

@@ -42,22 +42,22 @@
 
 		.nodeName {
 			font-weight: bold;
-			color: @grayDark;
+			color: @baseColorDark;
 		}
 
 		.nodeLabel {
-			color: @grayLight;
+			color: @baseColorLight;
 		}
 
 		.fileInfoBottom {
-			color: @grayLight;
+			color: @baseColorLight;
 			font-size: 12px;
 		}
 
 		.fileInfoVersion {
-			background-color: @grayDark;
+			background-color: @baseColorDark;
 			border-radius: 4px 4px 4px 4px;
-			color: @white;
+			color: @baseBackground;
 			display: inline;
 			font-size: 9px;
 			font-weight: bold;
@@ -74,7 +74,7 @@
 	.uiListGrid .titleTable {
 		font-weight: lighter;
 		padding: 5px 0px;
-		background: @componentBackgroundLight;
+		background: @primaryBackgroundLight;
 	    border-bottom: 1px solid @borderColor;
 	    font-weight: normal;
 		height: auto;
@@ -92,7 +92,7 @@
 			}
 
 			.nodeLabel {
-				color: @grayDark;
+				color: @baseColorDark;
 				&:hover {
 					color: @linkColor;
 				}
@@ -109,7 +109,7 @@
 
 		.btn-group .dropdown-menu .active a,
 		.btn-group .dropdown-menu .active a:hover	{
-			color: @white;
+			color: @baseBackground;
 
 			i {
 				background-image: url("@{images-path}/Icons/uiIconsWhite.png");
@@ -122,7 +122,7 @@
 		margin-left: 10px;
 
 		.nextPageIcon, .prevPageIcon {
-			color: @grayDark;
+			color: @baseColorDark;
 
 			&:hover {
 				color: @linkColor;
@@ -149,7 +149,7 @@
 	z-index: 8;
 
 	.uiFileViewActionBar {
-		background: @componentBackground;
+		background: @primaryBackground;
 		border: 1px solid @borderColor;
 		.border-radius(3px 3px 0px 0px);
 		height: 36px;
@@ -172,14 +172,14 @@
 					line-height: 18px;
 					cursor: pointer;
 					background: none;
-					color: @grayDark;
+					color: @baseColorDark;
 				}
 
 				> a:hover {
-					#gradient > .vertical(@white, @componentBackgroundHover);
+					#gradient > .vertical(@baseBackground, @primaryBackgroundHover);
 					border: 1px solid @borderColor;
 					.border-radius(@borderRadiusSmall);
-					color: @grayDark;
+					color: @baseColorDark;
 					padding: 4px 6px;
 					background-color: none;
 
@@ -203,7 +203,7 @@
 				box-shadow: 0px 2px 6px rgba(0,0,0,0.15) inset;
 				border: 1px solid @borderColor;
 				.border-radius(@borderRadiusSmall);
-				color: @grayDark;
+				color: @baseColorDark;
 			}
 
 			.RightClickCustomItem {
@@ -238,7 +238,7 @@
 
 					a:hover {
 						#gradient > .vertical(@primaryLightColor, darken(@primaryLightColor, 15%));
-						color: @white;
+						color: @baseBackground;
 
 						> i {
 							background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsWhite.png");

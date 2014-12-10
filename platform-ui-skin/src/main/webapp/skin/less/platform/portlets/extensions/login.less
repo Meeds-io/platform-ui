@@ -6,9 +6,9 @@ body {
 	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 .loginBGLight {
-	wbackground: none repeat scroll 0 0 @white;
+	background: @baseBackground;
 	border-radius: 80px 80px 80px 80px;
-	box-shadow: 0 0 550px @white;
+	box-shadow: 0 0 550px @baseBackground;
 	left: 50%;
 	margin: -100px;
 	position: fixed;
@@ -27,7 +27,7 @@ body {
 	width: 392px;
 	.loginContainer {
 		border-radius: 4px;
-		background: #fff url("@{images-path}/platform/portlets/extensions/loginBG.png") no-repeat bottom;
+		background: @baseBackground url("@{images-path}/platform/portlets/extensions/loginBG.png") no-repeat bottom;
 		padding: 0 40px;
 	}
 	.loginHeader {
@@ -72,7 +72,7 @@ body {
 			width: 260px;
 			height: 36px;
 			border: solid 1px @borderColor;
-			background: @white;
+			background: @baseBackground;
 			margin: 0 0 14px;
 			color: @textColor;
 			.box-shadow(1px 2px 1px rgba(0, 0, 0, 0.075) inset);
@@ -105,7 +105,7 @@ body {
 				border: 1px solid @primaryDarkColor;
 				border-radius: 4px;
 				text-align: center;
-				color: @white;
+				color: @baseBackground;
 				font-size: 16px;
 				width: 313px;
 				height: 43px;
@@ -164,7 +164,7 @@ body {
 			color: @textMediumColor;
 			right: 0;
 			text-align: right;
-			text-shadow: 1px 0 0 @white;
+			text-shadow: 1px 0 0 @baseBackground;
 			height: 17px;
 		}
 		label.switchBtnLabelOn {
@@ -173,7 +173,7 @@ body {
 			border-bottom-left-radius: 9px;
 			border-top-left-radius: 9px;
 			.box-shadow(0 3px 5px @primaryDarkColor inset);
-			color: @white;
+			color: @baseBackground;
 			left: 1px;
 			min-width: 9px;
 			top: 1px;
@@ -208,7 +208,7 @@ body {
 		}
 	}
 	.switchBtnHandle {
-		#gradient > .vertical(@white, #F1F1F1);
+		#gradient > .vertical(@baseBackground, #F1F1F1);
 		.border-radius(50%);
 		.box-shadow(0px 1px 2px rgba(0, 0, 0, 0.8));
 		cursor: pointer;
@@ -263,7 +263,7 @@ body {
 #platformInfoDiv {
 	font-size: 12px;
 	text-align:center;
-	color: @white;
+	color: @baseBackground;
 	opacity: 0.6;
 	margin-top: 15px;
 }

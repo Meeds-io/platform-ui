@@ -5,7 +5,7 @@
 	 			position: absolute;
 	 		}
 		  .UIComboboxContainer {
-			  background: @white ;
+			  background: @baseBackground;
 			  position:absolute;
 			  display:none;
 			  border: solid 1px @borderColor ;
@@ -19,7 +19,7 @@
 			}
 			.UIComboboxList .UIComboboxSelectedItem{
 			  	.buttonBackground(@primaryLightColor, @primaryColor);
-				color: @white;
+				color: @baseBackground;
 			}
 			.UIComboboxItem {
 			  display: block ;
@@ -28,10 +28,10 @@
 			  outline:none;
 			  &:hover{
 				  .buttonBackground(@primaryLightColor, @primaryColor);
-				  color: @white ;
+				  color: @baseBackground;
 				}
 				&:visit{
-				   background: @white;
+				   background: @baseBackground;
 					color: @textColor;
 				}
 			}

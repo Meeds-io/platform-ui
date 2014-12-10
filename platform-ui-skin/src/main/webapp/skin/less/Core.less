@@ -91,7 +91,7 @@ table {
     display: inline-block;
     border-left:   0px solid transparent;
     border-right:  0px solid transparent;
-    border-bottom: 0px solid @white;
+    border-bottom: 0px solid @baseBackground;
 
   }
 }
@@ -153,8 +153,8 @@ table {
 
 /*************** AjaxLoadingMask *********************/
 .ajaxLoadingMask{
-	background: @gray;
-	border: 1px solid @grayDark;
+	background: @baseColorMedium;
+	border: 1px solid @baseColorDark;
 	border-radius: 0 0 3px 3px;
 	.box-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
 	padding: 10px 7px 6px 11px;
@@ -169,7 +169,7 @@ table {
 		margin: 0 34px 0 40px;
 		color: white;
 		font-weight: bold;
-		text-shadow: 1px 1px 1px @grayDark;
+		text-shadow: 1px 1px 1px @baseColorDark;
 	}
 	.uiIconClose:hover{
 		background: url("@{images-path}/Icons/uiIconsWhite.png") -160px -100px;
@@ -376,9 +376,9 @@ Round corner box with title
   - Title:
     + gray background (#f0f0f0)
     + round corner at left-top and right-top
-    + text title is bold, class name is "titleBox", color is @grayDark
+    + text title is bold, class name is "titleBox", color is @@baseColorDark
   - content box:
-    + background: white
+    + background: @baseBackground
     + round corner at the bottom-left and bottom-right
 */
 .roundCornerBoxWithTitle{
@@ -399,7 +399,7 @@ Round corner box with title
 }
 
 .UIMaskWorkspace .MaskContainer {
-	background: @componentBackgroundLight;
+	background: @primaryBackgroundLight;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;

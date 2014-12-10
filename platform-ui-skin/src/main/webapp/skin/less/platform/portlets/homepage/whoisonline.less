@@ -2,8 +2,8 @@
 @import "../../../mixins.less";
 
 .onlineHeader {
-    background:  @componentBackgroundLight;
-    border: 1px solid @componentBackgroundHover;
+    background: @primaryBackgroundLight;
+    border: 1px solid @primaryBackgroundHover;
     .border-radius(@borderRadiusSmall);
     color: @textColor;
     line-height: 25px;
@@ -51,7 +51,7 @@
 
 .connectAction {
     text-align: center;
-    background: @componentBackground;
+    background: @primaryBackground;
     margin:-10px;
     padding: 10px;
 	.border-radius(0 0 @borderRadiusSmall @borderRadiusSmall);
@@ -85,8 +85,8 @@
 
 #tiptip_content {
     font-size: @baseFontSize - 1;
-	color: @grayLight;
-	background: @white;
+	color: @baseColorLight;
+	background: @baseBackground;
     padding: 10px;
     border: 1px solid @borderColor;
     .border-radius(@borderRadiusSmall);
@@ -129,7 +129,7 @@ blockquote {
     background: url("@{images-path}/platform/portlets/homepage/whoIsOnline/right-quote.png") no-repeat right bottom;    
     padding-right: 25px;
     padding-left: 25px;
-    color: @grayLight;
+    color: @baseColorLight;
     border-left: medium none;
     width:75%;
     word-wrap:break-word;
@@ -149,10 +149,10 @@ blockquote:after {
 }
 
 #connectMessge {
-    background: @componentBackground;
+    background: @primaryBackground;
     margin: -10px;
     padding: 10px 20px;
-    color: @grayLight;
+    color: @baseColorLight;
     font-weight: bold;
 }
 

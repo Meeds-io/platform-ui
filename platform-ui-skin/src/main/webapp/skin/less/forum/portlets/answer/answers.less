@@ -37,7 +37,7 @@
 	.resize {
 		margin-top: 8px;
 		a {
-			#gradient > .vertical(@white,@componentBackground);
+			#gradient > .vertical(@baseBackground, @primaryBackground);
 			border: 1px solid @borderColor;
 			border-right: 0;
 			padding: 4px 0;
@@ -81,7 +81,7 @@
 			margin: 0 0 10px 0;
 		}
 		.time {
-			color: @grayLight;
+			color: @baseColorLight;
 		}
 	}
 	.uiAnserContainer .resize {
@@ -96,7 +96,7 @@
 
 	blockquote {
 		background: none;
-		border-left: 5px solid @grayLight;
+		border-left: 5px solid @baseColorLight;
 	    margin: 0 0 20px;
 	    padding: 0 0 0 15px;
 	    width: auto;
@@ -136,7 +136,7 @@
 				margin: 0 0 0 10px;
 			}
 			.dropdown-menu li a:hover {
-				color: @white;
+				color: @baseBackground;
 			}
 		}
 
@@ -146,7 +146,7 @@
 		.border-radius(@borderRadiusSmall);
 		& >.responseItemContainer {
 			.border-radius(@borderRadiusSmall @borderRadiusSmall  0 0);
-			background: @componentBackground;
+			background: @primaryBackground;
 			min-height: 110px;
 			.languageContainer  {
 				margin: 0 20px 0 0;
@@ -157,7 +157,7 @@
 		}
 		.attachmentContainer ,.notResponse{
 			border-top: 1px solid @borderColor;
-			color: @grayLight;
+			color: @baseColorLight;
 		}
 		& + .questionContainer  {
 			margin-top: 20px;
@@ -218,7 +218,7 @@
 				//margin: 2px 0;
 			}
 			.date{
-				color: @grayLight;
+				color: @baseColorLight;
 				font-size: 12px;
 			}
 			.avatarXSmall {
@@ -241,7 +241,7 @@
 				}
 				img {
 					.square(70px);
-					 border: 1px solid @white;
+					 border: 1px solid @baseBackground;
 				}
 				& + .questionRight {
 					margin-left: 90px;
@@ -282,7 +282,7 @@
 .boxNum {
 	border: 1px solid @borderColor;
 	text-align:center;
-	background: @white;
+	background: @baseBackground;
     float: left;
     min-width: 64px;
     padding: 2px;
@@ -297,10 +297,10 @@
 		.border-radius(0  @borderRadiusSmall @borderRadiusSmall  0 );
 	}
 	&.boxNumGray {
-		background: @componentBackground;
+		background: @primaryBackground;
 	}
 	& + .boxNum {
-		border-left: 1px solid @componentBackgroundHover;
+		border-left: 1px solid @primaryBackgroundHover;
 	}
 }
 
@@ -360,7 +360,7 @@
 .questionContainer {
 	.theContent {
 		.contentQuote {
-			background: @componentBackgroundLight;
+			background: @primaryBackgroundLight;
 		}
 	}
 }

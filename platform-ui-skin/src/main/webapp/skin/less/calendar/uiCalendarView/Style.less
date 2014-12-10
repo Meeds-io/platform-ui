@@ -10,7 +10,7 @@
 	.popover-content {
 		.description {
 			padding: 0 0 0 20px;
-			color: @grayLight;
+			color: @baseColorLight;
 		}
 		.title {
 			font-weight: bold;
@@ -43,9 +43,9 @@
 
 .eventAllDay, .eventAlldayContainer {
 	.eventContainerBorder{
-		 border-top: solid 2px @white;
+		 border-top: solid 2px @baseBackground;
 		&:last-child{
-			border-bottom: solid 2px @white;
+			border-bottom: solid 2px @baseBackground;
 		}
 	 }
 }
@@ -72,11 +72,11 @@
 }
 
 .leftContinueEvent{
-	border-right: solid 1px @white;
+	border-right: solid 1px @baseBackground;
 }
 
 .rightContinueEvent{
-	border-left: solid 1px @white;
+	border-left: solid 1px @baseBackground;
 }
 
 .mainWorkingPanel{
@@ -85,7 +85,7 @@
 .eventContainer{
     overflow: hidden;
     padding-left: 5px;
-    color: @white;
+    color: @baseBackground;
 	line-height: 16px;
 }
 .eventAlldayBoard .eventContainer {
@@ -94,7 +94,7 @@
 .eventDayContent, .eventWeekContent{
 		.eventContainerBorder{
 			position: absolute;
-			color: @white;
+			color: @baseBackground;
 			&:hover{
 				.resizeEventContainer{
 					display: block;
@@ -122,8 +122,8 @@
 
         span {
             display: block;
-            border-bottom: 1px solid @white;
-            border-top: 1px solid @white;
+            border-bottom: 1px solid @baseBackground;
+            border-top: 1px solid @baseBackground;
             cursor: n-resize;
             height: 1px;
             margin: auto;
@@ -139,7 +139,7 @@
 
 .uiDayView, .uiWeekView {
   .WorkOffTime {
-  		background-color: @componentBackground;
+  		background-color: @primaryBackground;
   }
 }
 
@@ -147,7 +147,7 @@
 
 .uiWeekView {
 	.today {
-		background: @componentBackground;
+		background: @primaryBackground;
 		a{
 			line-height: 32px;
 			font-size: @baseFontSize - 1;
@@ -164,11 +164,11 @@
 
 .eventWeekBar{
 	> table {
-		background: @componentBackgroundLight;
+		background: @primaryBackgroundLight;
 		tr td{
-			border-bottom: solid 1px @componentBackgroundHover;
+			border-bottom: solid 1px @primaryBackgroundHover;
 			&.today{
-			background: @componentBackground;
+			background: @primaryBackground;
 				}
 				a{
 					color: @textColor;

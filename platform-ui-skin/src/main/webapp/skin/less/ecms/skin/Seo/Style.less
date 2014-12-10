@@ -1,6 +1,6 @@
 .uiSEOForm {
 	min-width: 600px;
-	background: @componentBackgroundLight;
+	background: @primaryBackgroundLight;
 	margin: -10px;
 
 	.formContainer .leftContainer {
@@ -9,15 +9,15 @@
 		padding: 20px 0px 0px 10px;
 
 		.itemTab {
-			border: 1px solid @componentBackgroundLight;
+			border: 1px solid @primaryBackgroundLight;
 			margin: 0px 0px 5px 0;
 			cursor: pointer;
 			line-height: 27px;
 			.border-left-radius(3px);
 
 			&:hover {
-				background: @componentBackgroundHover;
-				border: 1px solid @componentBackgroundHover;
+				background: @primaryBackgroundHover;
+				border: 1px solid @primaryBackgroundHover;
 			}
 
 			a {
@@ -30,16 +30,16 @@
 		}
 
 		.selected {
-			background: @white;
+			background: @baseBackground;
 			margin: 0px -1px 5px 0;
 			border: 1px solid @borderColor;
-			border-right: 1px solid @white;
+			border-right: 1px solid @baseBackground;
 			box-shadow: -2px 2px 2px rgba(0,0,0,0.15);
 
 			&:hover {
-				background: @white;
+				background: @baseBackground;
 				border: 1px solid @borderColor;
-				border-right: 1px solid @white;
+				border-right: 1px solid @baseBackground;
 			}
 
 			a {
@@ -74,7 +74,7 @@
 		overflow: auto;
 		padding: 10px;
 		margin-left: 175px;
-		background: @white;
+		background: @baseBackground;
 
 		.textarea {
 			height: 60px;

@@ -14,7 +14,7 @@
 		.tab-content {
 			.border-top-radius(3px);
 			border: 1px solid @borderColor;
-			background-color: @componentBackgroundHover;
+			background-color: @primaryBackgroundHover;
 			min-height: 36px;
 
 			.nav-pills {
@@ -62,7 +62,7 @@
 
 		.noneDrivesButton {
 			padding: 3px 6px;
-			color: @grayDark;
+			color: @baseColorDark;
 		}
 
 		.actionIcon {
@@ -71,9 +71,9 @@
 
 		.showDrivesButton {
 			padding: 3px 6px;
-			color: @grayDark;
+			color: @baseColorDark;
 			box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15) inset;
-			background-color: @componentBackgroundHover;
+			background-color: @primaryBackgroundHover;
 			border: 1px solid @borderColor;
 			border-radius: 3px 3px 3px 3px;
 
@@ -138,7 +138,7 @@
 	.UIDocumentWorkspace {
     margin-left: 0px;
     overflow: auto;
-		background: @white;
+		background: @baseBackground;
 		border: 1px solid @borderColor;
 		border-top: none;
 		.border-bottom-radius(4px);
@@ -178,7 +178,7 @@
 		overflow: hidden;
 
 		.uiDialogAction {
-			background-color: @componentBackground;
+			background-color: @primaryBackground;
 			border-bottom: 1px solid @borderColor;
 			border-radius: 4px 4px 0 0;
 			line-height: 20px;
@@ -205,7 +205,7 @@
 	.titleTable {
 		font-weight: bold;
 		height: 34px;
-		background: @componentBackground;
+		background: @primaryBackground;
 		border-bottom: 1px solid @borderColor;
 	}
 
@@ -218,15 +218,15 @@
 	}
 
 	.odd {
-		background: @componentBackgroundLight;
+		background: @primaryBackgroundLight;
 	}
 
 	.even {
-		background: @white;
+		background: @baseBackground;
 	}
 
 	.OverHeader {
-		background: @componentBackground;
+		background: @primaryBackground;
 		font-weight: bold;
 		line-height: 19px; height: 19px;
 	}
@@ -260,14 +260,14 @@
 	}
 
 	.FileDrag {
-		background: @componentBackground;
+		background: @primaryBackground;
 	}
 
 	.ResizeHandle {
 		cursor: col-resize;
 		width: 1px;
 		height: 190px; /* default height */
-		border-right: 1px dashed @black;
+		border-right: 1px dashed @baseColor;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -275,10 +275,13 @@
 
 	.rowView {
 		line-height: 20px;
-
-		&:hover {
-			background: @componentBackgroundHover;
-		}
+         background: @baseBackground !important;
+        &:hover {
+          background: @primaryBackgroundHover !important;
+        }
+        &.active{
+          background: @primaryBackground !important;
+        }
 
 		.columnIcon,.columnName,.columnAuditing,.columnVersion,
 		.columndateModified,.columnDatetime,.columndateCreated,
@@ -344,7 +347,7 @@
 
 			&:hover {
 				.nodeLabel {
-					background: @componentBackground;
+					background: @primaryBackground;
 				}
 			}
 		}
@@ -358,14 +361,14 @@
 				background: @primaryColor;
 
 				> a {
-					color: @white;
+					color: @baseBackground;
 				}
 			}
 		}
 
 		.bgThumbnailImage {
 			padding: 5px;
-			background: @white;
+			background: @baseBackground;
 			box-shadow: 1px 1px 3px 1px rgba(25,44,48,0.2);
 			display: inline-block;
 		}
@@ -447,7 +450,7 @@
 /*=============================== UIDrivesArea ===================================*/
 
 .uiDrivesArea {
-	background: @white;
+	background: @baseBackground;
 	border: 1px solid @borderColor;
 	border-top: none;
 	.border-bottom-radius(4px);
@@ -536,13 +539,13 @@
 	}
 
 	.resizeButton {
-		#gradient .vertical(@white, @componentBackground);
+		#gradient .vertical(@baseBackground, @primaryBackground);
 		.border-radius(5px 0px 0px 5px);
 		.size(24px,16px);
 		float:right;
 		margin : auto;
 		cursor : pointer;
-		border: 1px solid @componentBackgroundHover;
+		border: 1px solid @primaryBackgroundHover;
 		border-right: none;
 		display: none;
 		position: absolute;
@@ -559,7 +562,7 @@
 
 .uiWorkingArea .resizeBarDisplay {
 	.resizeBarContent {
-		border-right: solid 1px @componentBackgroundHover;
+		border-right: solid 1px @primaryBackgroundHover;
 		cursor:col-resize;
 	}
 	.resizeButton {
@@ -579,7 +582,7 @@
 		cursor: default;
 	}
 	.resizeButton {
-		border: 1px solid @componentBackgroundHover;
+		border: 1px solid @primaryBackgroundHover;
 		.border-radius(0px 5px 5px 0px);
 		display: block;
 		right: 8px;
@@ -649,9 +652,9 @@
 
 	.helpBlock {
 		display: inline-block;
-		background: @componentBackground;
+		background: @primaryBackground;
 		border: 1px solid @borderColor;
-		color: @grayDark;
+		color: @baseColorDark;
 		padding: 15px 15px 15px 40px;
 		.border-radius(5px);
 		width: 155px;
@@ -903,7 +906,7 @@
 	}
 
 	ul li.contentBlock {
-		border-bottom: 1px dotted @grayDark;
+		border-bottom: 1px dotted @baseColorDark;
 		padding: 5px 0px;
 		margin: 0px 10px;
 
@@ -920,7 +923,7 @@
 /******** UIOneTaxonomySelector **************/
 .uiOneTaxonomySelector {
 	.breadcrumb {
-		background: @componentBackgroundLight;
+		background: @primaryBackgroundLight;
 		padding: 5px 15px;
 		.border-radius(0px);
 		margin-bottom: 20px;
@@ -1017,7 +1020,7 @@
 /***** New Content *****/
 
 .selectTemplateTitle {
-	background-color: @componentBackground;
+	background-color: @primaryBackground;
 	border: 1px solid @borderColor;
 	border-radius: 4px 4px 0 0;
 	line-height: 20px;
@@ -1091,7 +1094,7 @@
 		}
 
 		&:hover {
-			background-color: @componentBackgroundHover;
+			background-color: @primaryBackgroundHover;
 		}
 	}
 
@@ -1107,7 +1110,7 @@
 		}
 
 		&:hover {
-			background-color: @componentBackgroundHover;
+			background-color: @primaryBackgroundHover;
 		}
 	}
 }
@@ -1156,7 +1159,7 @@
 .uiDiff {
 	.contentEmpty {
 		text-align: center;
-    color: @grayLight;
+    color: @baseColorLight;
 	}
 
 	.uiGrid .diffDelete {
@@ -1190,12 +1193,12 @@
 
 		span {
 			display: block;
-			color: @grayLight;
+			color: @baseColorLight;
 			margin-top: 10px;
 		}
 
 		h4 {
-			color: @grayLight;
+			color: @baseColorLight;
 			margin-top: 0px;
 			text-shadow: none;
 		}
@@ -1220,17 +1223,17 @@
 
 	.title {
 		font-weight: normal;
-		color: @grayDark;
+		color: @baseColorDark;
 		margin: 0px 0px 5px 0px;
 	}
 
 	.text {
-		color: @grayLight;
+		color: @baseColorLight;
 		margin: 0px;
 	}
 
 	.uiGrid th a {
-		color: @grayDark;
+		color: @baseColorDark;
 	}
 
 	.uiGrid td {
@@ -1300,7 +1303,7 @@
 		}
 	}
 	.constrainLink {
-		color: @grayDark;
+		color: @baseColorDark;
 		font-weight: bold;
 		cursor: pointer;
 
@@ -1348,7 +1351,7 @@
 
 			.help-inline {
         line-height: 26px;
-        color: @grayDark;
+        color: @baseColorDark;
       }
 		}
 	}
@@ -1414,7 +1417,7 @@
 
 .comments {
 	padding: 20px 0px;
-	color: @grayDark;
+	color: @baseColorDark;
 
 	.avatarBox .avatarMedium {
 		display: block;
@@ -1560,7 +1563,7 @@
 
 .UITaggingForm {
 	.dropdown-menu .active > a, .dropdown-menu .active > a:hover{
-		color: @white;
+		color: @baseBackground;
 		background: @primaryLightColor;
 	}
 }
@@ -1570,7 +1573,7 @@
 
 .dropdown-menu li > .menuItemSelected{
 		#gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 15%));
-		color: @white;
+		color: @baseBackground;
 		.uiIconEcmsCopyUrlToClipboard {
 			background-image: url("/eXoWCMResources/skin/images/Icons/uiIconsEcmsWhite.png");
 		}
@@ -1580,7 +1583,7 @@
 .UIJCRExplorerPortlet {
 	.uiFileViewActionBar {
 		.uiRightPopupMenuContainer li > .menuItemSelected{
-		    #gradient > .vertical(@white, @componentBackgroundHover);
+		    #gradient > .vertical(@baseBackground, @primaryBackgroundHover);
 		    border: 1px solid @borderColor;
 		    border-radius: 3px 3px 3px 3px;
 		    color: @textColor;
@@ -1594,7 +1597,7 @@
 	.dropdown-menu {
 		#hiddenMoreButton li > .menuItemSelected{
 			#gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 15%));
-			color: @white;
+			color: @baseBackground;
 			.uiIconEcmsCopyUrlToClipboard {
 				background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsWhite.png");
 			}

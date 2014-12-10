@@ -4,7 +4,7 @@
 
 .UICLVPortlet {
 	.TitleBox {
-	  background: @componentBackground;
+	  background: @primaryBackground;
 	  border: 1px solid @borderColor;
 	  font-weight: bold;
 	  padding: 0 4px;
@@ -121,21 +121,21 @@
   margin: auto;
   padding-left: 1px;
   	.OddRow {
-	  background: @componentBackground ;
+	  background: @primaryBackground;
 	}
 	.EvenRow {
-	  background: @componentBackgroundLight ;
+	  background: @primaryBackgroundLight;
 	}
 	 td {
 	  border-left: 1px solid @borderColor;
 	  border-right: 1px solid @borderColor;
-	  border-top: 1px solid @white;
+	  border-top: 1px solid @baseBackground;
 	  height: 20px;
 	  line-height: 20px;
 	  padding: 4px;
 	}
 	th {
-	   background: @componentBackground;
+	   background: @primaryBackground;
 		  border: 1px solid @borderColor;
 	  font-weight: normal;
 	  line-height: 19px;
@@ -274,7 +274,7 @@
   -moz-background-clip: border;
   -moz-background-inline-policy: continuous;
   -moz-background-origin: padding;
-  background: @componentBackground ;
+  background: @primaryBackground;
   width: 100%;
 }
 
@@ -308,7 +308,7 @@
 				}
 			}
 			.dateAndMail {
-				color: @grayLight;
+				color: @baseColorLight;
 			}
 			.summary p {
 				margin-bottom: 0;

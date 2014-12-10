@@ -4,44 +4,79 @@
 //                 VARIABLES EXO PLATFORM               //
 //======================================================//
 
-@black:                 #000;
-@white:                 #fff;
+// Base color
 
-// Grays
-// -------------------------
-@grayDark:				lighten(@black, 20%);	// #333333 Default color for all title, text, text input, label
-@gray:					lighten(@black, 50%);	// #808080 Navigation text color, special purpose in use
-@grayLight:				lighten(@black, 60%);	// #999999 Default gray color for small text, sub title, text field explanation
+@baseColor:                 #000000; // text color , border color, and other UI elements..
+
+// Background color
+@baseBackground:                 #ffffff; // default background , background for content display....
 
 // Primary Color
-// -------------------------
-@primaryColor:			#2f5e92;
-@primaryDarkColor:		darken(@primaryColor, 10.5%);		//#224469
-@primaryLightColor:		lighten(@primaryColor, 18.5%);		//#578dc9
+@primaryColor:			#2f5e92; // primary button and link color...
+
+// Background primary color
+@primaryBackground:		#f0f0f0; // main background such as , header popup background, tab items...
+
+
+// -------------------------Color  generation formula -------------------------//
+
+//Return true if base color is darker ( this is default skin)
+.setColor (@a) when (lightness(@a) < 50%) {
+  @baseColorDark:				lighten(@baseColor, 20%);	// #333333 Default color for all title, text, text input, label
+  @baseColorMedium:					lighten(@baseColor, 50%);	// #808080 Navigation text color, special purpose in use
+  @baseColorLight:				lighten(@baseColor, 60%);	// #999999 Default @baseColorMedium color for small text, sub title, text field explanation
+  @borderColor:             lighten(@baseColor, 80%);	// #cccccc
+  @primaryBackgroundHover:	darken(@primaryBackground, 4%);
+  @primaryBackgroundLight:	lighten(@primaryBackground, 3%);
+  @primaryDarkColor:		darken(@primaryColor, 10.5%);		//#224469
+  @primaryLightColor:		lighten(@primaryColor, 18.5%);		//#578dc9
+  // button primary
+  @btnBackground:            @baseBackground;
+  @btnBackgroundHighlight:  @primaryBackground;
+
+}
+
+//Return true if base color is lighter
+.setColor (@a) when (lightness(@a) >= 50%) {
+  @baseColorLight:				lighten(@baseColor, 20%);
+  @baseColorMedium:					lighten(@baseColor, 50%);
+  @baseColorDark:				lighten(@baseColor, 60%);
+  @borderColor:             darken(@baseColor, 20%);
+  @primaryBackgroundLight:	lighten(@primaryBackground, 4%);
+  @primaryBackgroundHover :	darken(@primaryBackground, 3%);
+  @primaryLightColor:		lighten(@primaryColor, 10.5%);		//#224469
+  @primaryDarkColor :		darken(@primaryColor, 18.5%);		//#578dc9
+  // button primary
+  @btnBackground:           @primaryBackground;
+  @btnBackgroundHighlight: @baseBackground;
+}
+.setColor(@baseColor);
+
+
 
 // Accent colors
 // -------------------------
 @red:                   #C72222;							// Red Primary
-@redLight:				lighten(spin(@red, 5%), 30%);		// #ed9c95
+@redLight:				darken(spin(@red, 5%), 30%);		// #ed9c95
 
 @yellow:                #EDAD00;							// Orange Primary
-@yellowLight:			lighten(spin(@yellow, 5%), 42%);	// #fff4c4
+@yellowLight:			darken(spin(@yellow, 5%), 42%);	// #fff4c4
 
 @blue: 					#215ab2;							// Blue Primary
-@blueLight: 			lighten(spin(@blue, 5%), 48%);		// #dee3fa
+@blueLight: 			darken(spin(@blue, 5%), 48%);		// #dee3fa
 
 @green:                 #39C522;							// Green Primary
-@greenLight:			lighten(spin(@green, 5%), 45%);		// #d7f8d5
+@greenLight:			darken(spin(@green, 5%), 45%);		// #d7f8d5
 
 // Scaffolding
 // -------------------------
-@bodyBackground:        @white;
-@sidebarBackground: 	@componentBackground;
+@bodyBackground: @baseBackground;
+@sidebarBackground: @primaryBackground;
 @contentBackground: 	url("@{images-path}/ShareImages/Background/texture.jpg") repeat left top;
-@textColor:             @grayDark;				// #333333
-@textMediumColor: 		@gray; 					// #808080
-@textLightColor: 		@grayLight;				// #999999
-@borderColor:           lighten(@black, 80%);	// #cccccc
+@textColor: @baseColorDark;				// #333333
+@textMediumColor: @baseColorMedium; 					// #808080
+@textLightColor: @baseColorLight;				// #999999
+
 
 // Links
 // -------------------------
@@ -58,28 +93,26 @@
 @gutterSizeLarge: 			15px;
 @gutterSizeSmall: 			5px;
 
-@componentBackgroundHover:	lighten(@black, 90%); 	// #e6e6e6 - @grayMediumWhiteSmoke
-@componentBackground:		lighten(@black, 94%); 	// #f0f0f0 - @grayWhiteSmoke
-@componentBackgroundLight:	lighten(@black, 97%); 	// #f7f7f7 - @grayLighter
 
 // Tables
 // -------------------------
 @tableBackground:                   transparent; 				// overall background-color
-@tableBackgroundAccent:             @componentBackgroundLight; 	// for striping
-@tableBackgroundHover:              @componentBackgroundHover; 	// for hover
+@tableBackgroundAccent: @primaryBackgroundLight; 	// for striping
+@tableBackgroundHover: @primaryBackgroundHover; 	// for hover
 @tableBorder:                       @borderColor; 				// table and cell border
 
 
 // Buttons
 // -------------------------
-@btnBackground:                     @white;
-@btnBackgroundHighlight:            @componentBackground;
-@btnBorder:                         @borderColor;
 
-@btnPrimaryColor: 					@white;
+@btnBorder:                         @borderColor;
+@btnTextshadow:                     '0 1px 1px blue';
+
+@btnPrimaryColor: @baseBackground;
 @btnPrimaryBackground:              @primaryLightColor;
 @btnPrimaryBackgroundHighlight:     @primaryColor;
 @btnPrimaryBorder: 					@primaryDarkColor;
+@btnPrimaryTextshadow:              '0 -1px 0 red';
 
 @paddingXLarge:         9px 15px;
 @paddingLarge:          4px 10px;
@@ -89,12 +122,12 @@
 
 // Forms
 // -------------------------
-@inputColor:                    	@grayDark;
-@inputBackground:               	@white;
+@inputColor: @baseColorDark;
+@inputBackground: @baseBackground;
 @inputBorder:                   	@borderColor;
 @inputBorderRadius:             	@baseBorderRadius;
-@inputDisabledBackground:       	@componentBackgroundHover;
-@formActionsBackground:         	@componentBackground;
+@inputDisabledBackground: @primaryBackgroundHover;
+@formActionsBackground: @primaryBackground;
 
 @inputFocusColor:               	@inputColor;
 @inputFocusBorder:              	lighten(@blue, 30%);
@@ -107,19 +140,18 @@
 
 @uiRadioCheckedColor: 				@primaryColor;
 @uiRadioCheckedBackground: 			@borderColor;
-@uiRadioCheckedDisabledBackground: 	@grayLight;
+@uiRadioCheckedDisabledBackground: @baseColorLight;
 
-@uiCheckboxCheckedDisabledBorder:   @grayLight;
-@formReadOnyBackground: 			@componentBackgroundLight;
-@formReadOnyColor: 					@grayLight;
+@uiCheckboxCheckedDisabledBorder: @baseColorLight;
+@formReadOnyBackground: @primaryBackgroundLight;
+@formReadOnyColor: @baseColorLight;
 
 
 // Dropdowns
 // -------------------------
-@dropdownBackground:            	@white;
 @dropdownBorder:                	@borderColor;
+@dropdownBackground: @baseBackground;
 @dropdownLinkBackgroundHover:   	@primaryLightColor;
-
 
 // Typography
 // -------------------------
@@ -174,7 +206,7 @@
 
 // Hr border color
 // -------------------------
-@hrBorder:                @componentBackgroundLight;
+@hrBorder: @primaryBackgroundLight;
 
 
 // Horizontal forms & lists
@@ -184,7 +216,7 @@
 
 // Wells
 // -------------------------
-@wellBackground:                  @componentBackgroundLight;
+@wellBackground: @primaryBackgroundLight;
 
 
 // Navbar
@@ -199,8 +231,8 @@
 
 @navbarText:                      #777;
 @navbarLinkColor:                 #777;
-@navbarLinkColorHover:            @grayDark;
-@navbarLinkColorActive:           @gray;
+@navbarLinkColorHover: @baseColorDark;
+@navbarLinkColorActive: @baseColorMedium;
 @navbarLinkBackgroundHover:       transparent;
 @navbarLinkBackgroundActive:      darken(@navbarBackground, 5%);
 
@@ -213,13 +245,13 @@
 
 @navbarInverseText:                      @textLightColor;
 @navbarInverseLinkColor:                 @textLightColor;
-@navbarInverseLinkColorHover:            @white;
+@navbarInverseLinkColorHover: @baseBackground;
 @navbarInverseLinkColorActive:           @navbarInverseLinkColorHover;
 @navbarInverseLinkBackgroundHover:       transparent;
 @navbarInverseLinkBackgroundActive:      @navbarInverseBackground;
 
-@navbarInverseSearchBackground:          lighten(@navbarInverseBackground, 25%);
-@navbarInverseSearchBackgroundFocus:     @white;
+@navbarInverseSearchBackground:          darken(@navbarInverseBackground, 25%);
+@navbarInverseSearchBackgroundFocus: @baseBackground;
 @navbarInverseSearchBorder:              @navbarInverseBackground;
 @navbarInverseSearchPlaceholderColor:    #ccc;
 
@@ -228,14 +260,14 @@
 
 // Pagination
 // -------------------------
-@paginationBackground:                	@white;
+@paginationBackground: @baseBackground;
 @paginationBorder:                    	@borderColor;
-@paginationActiveBackground:          	@componentBackgroundLight;
+@paginationActiveBackground: @primaryBackgroundLight;
 
 
 // Hero unit
 // -------------------------
-@heroUnitBackground:      @componentBackgroundLight;
+@heroUnitBackground: @primaryBackgroundLight;
 @heroUnitHeadingColor:    inherit;
 @heroUnitLeadColor:       inherit;
 
@@ -261,10 +293,10 @@
 
 // Tooltips and popovers
 // -------------------------
-@tooltipBackground:       lighten(@black, 29%);				// #4a4a4a
+@tooltipBackground:       darken(@baseColor, 29%);				// #4a4a4a
 @tooltipArrowColor:       @tooltipBackground;
 
-@popoverBackground:      @white;
+@popoverBackground: @baseBackground;
 @popoverArrowWidth:       10px;
 @popoverArrowColor:       @popoverBackground;
 @popoverTitleBackground:  darken(@popoverBackground, 3%);
@@ -312,7 +344,7 @@
 
 // Breadcrumbs
 // -------------------------
-@breadcrumbColor: 				@grayDark;
+@breadcrumbColor: @baseColorDark;
 @breadcrumbHoverColor: 			@primaryColor;
 @breadcrumbActiveColor: 		@textLightColor;
 
@@ -322,79 +354,79 @@
 @calComponentWidthTitleColor:			@textColor;
 @calComponentDayColor:					@textColor;
 @calComponentOtherMonthColor:			@textLightColor;
-@calComponentDayHoverBackground:		@componentBackground;
+@calComponentDayHoverBackground: @primaryBackground;
 @calComponentDaySelectedBackground:		@primaryColor;
-@calComponentDaySelectedColor: 			@white;
+@calComponentDaySelectedColor: @baseBackground;
 @calComponentDayTodayBackground: 		@primaryColor;
-@calComponentDayTodayColor: 			@white;
-@calComponentCurrentWeekBackground: 	@componentBackground;
+@calComponentDayTodayColor: @baseBackground;
+@calComponentCurrentWeekBackground: @primaryBackground;
 @calComponentCurrentWeekBorder: 		@borderColor;
-@calComponentTimeInputBoxBackground: 	@componentBackground;
+@calComponentTimeInputBoxBackground: @primaryBackground;
 @calComponentTimeInputColor: 			@textColor;
-@calComponentTimeInputBackground: 		@white;
+@calComponentTimeInputBackground: @baseBackground;
 @calComponentTimeInputBorder: 			@borderColor;
 @calComponentTimeInputTorcusBorder: 	@primaryLightColor;
 
 // Label Badges
 // -------------------------
-@labelColor: 							@white;
-@labelBackground: 						@grayLight;
+@labelColor: @baseBackground;
+@labelBackground: @baseColorLight;
 @labelHoverBackground: 					@primaryLightColor;
 
 // Popup
-@uiPopupBackground: 					@white;
+@uiPopupBackground: @baseBackground;
 @uiPopupBorder: 						@borderColor;
-@uiPopupHeaderBackground: 				@componentBackground;
-@uiPopupHeaderBorder: 					@componentBackground;
+@uiPopupHeaderBackground: @primaryBackground;
+@uiPopupHeaderBorder: @primaryBackground;
 @uiPopupTitleColor: 					@textColor;
-@uiPopupContentBackground: 				@white;
+@uiPopupContentBackground: @baseBackground;
 @popupMessageColor: 					@textColor;
 
-@multipleMessageBackground: 			@componentBackgroundLight;
+@multipleMessageBackground: @primaryBackgroundLight;
 @multipleMessageBorder: 				@borderColor;
 
 // Tabs Normal
 // -------------------------
 @tabNormalLinkColor: 					@textColor;
 @tabNormalLinkBorder: 					@borderColor;
-@tabNormalLinkBackground: 				@componentBackground;
+@tabNormalLinkBackground: @primaryBackground;
 
 @tabNormalActiveLinkBorder: 			@borderColor;
-@tabNormalActiveLinkBackground: 		@white;
+@tabNormalActiveLinkBackground: @baseBackground;
 
-@tabNormalContentBackground: 			@white;
+@tabNormalContentBackground: @baseBackground;
 @tabNormalContentBorder: 				@borderColor;
 
 // Tabs GrayInPage
 // -------------------------
-@tabGrayInPageNavBackground: 				@componentBackgroundHover;
+@tabGrayInPageNavBackground: @primaryBackgroundHover;
 @tabGrayInPageNavBorder: 					@borderColor;
-@tabGrayInPageActiveLinkStartBackground: 	@white;
-@tabGrayInPageActiveLinkMiddleBackground: 	@componentBackground;
+@tabGrayInPageActiveLinkStartBackground: @baseBackground;
+@tabGrayInPageActiveLinkMiddleBackground: @primaryBackground;
 @tabGrayInPageActiveLinkEndBackground: 		@tabGrayInPageActiveLinkMiddleBackground;
-@tabGrayInPageContentBackground: 			@componentBackground;
+@tabGrayInPageContentBackground: @primaryBackground;
 
 @tabGrayInPageLinkColor: 				@textColor;
-@tabGrayInPageLinkBorder: 				@componentBackground;
-@tabGrayInPageHoverLinkColor: 			@componentBackground;
+@tabGrayInPageLinkBorder: @primaryBackground;
+@tabGrayInPageHoverLinkColor: @primaryBackground;
 @tabGrayInPageHoverLinkBorder: 			@borderColor;
-@tabGrayInPageCaretColor: 				@gray;
+@tabGrayInPageCaretColor: @baseColorMedium;
 @tabGrayInPageHoverCaretColor: 			@primaryLightColor;
 
 // Tab Container
 // -------------------------
-@tabContainerBackground:  				@grayLight;
-@tabContainerLinkColor:  				@white;
+@tabContainerBackground: @baseColorLight;
+@tabContainerLinkColor: @baseBackground;
 @tabContainerActiveLinkBackground:  	@primaryLightColor;
-@tabContainerActiveLinkColor:  			@white;
+@tabContainerActiveLinkColor: @baseBackground;
 
 // Toolbar
 // -------------------------
 @toolbarDarkStartBackground:			#5b5b5b;
 @toolbarDarkEndBackground:				#474747;
 @toolbarDarkBorder: 					#2c3440;
-@toolbarDarkLinkColor: 					@white;
-@toolbarDarkLinkHoverColor: 			@white;
+@toolbarDarkLinkColor: @baseBackground;
+@toolbarDarkLinkHoverColor: @baseBackground;
 
 @toolbarLightStartBackground:			#f4f4f4;
 @toolbarLightEndBackground:				#d4d4d4;
@@ -404,22 +436,23 @@
 
 //UIBox
 
-@uiBoxBg : @white;
+@uiBoxBg : @baseBackground;
 @uiBoxBorder : @borderColor;
-@uiBoxHeadBg : @componentBackground;
-@uiBoxGray: @componentBackground;
+@uiBoxHeadBg : @primaryBackground;
+@uiBoxGray: @primaryBackground;
 
 // Quote
-@quoteBorder: 							@componentBackgroundHover;
-@quoteBackgound: 						@componentBackground;
+@quoteBorder: @primaryBackgroundHover;
+@quoteBackgound: @primaryBackground;
 
-@quotePrimaryBorder: 					lighten(#2f5e92, 40%);				// #aac5e3
-@quotePrimaryBackground: 				lighten(@quotePrimaryBorder, 18%);	// #aac5e3
+@quotePrimaryBorder: 					darken(#2f5e92, 40%);				// #aac5e3
+@quotePrimaryBackground: 				darken(@quotePrimaryBorder, 18%);	// #aac5e3
 
 // UIMention
 @uiMentionColor:						@primaryColor;
 @uiMentionBorder:						@blue;
-@uiMentionBackground:					lighten(@blueLight, 4%);
+@uiMentionBackground:					darken(@blueLight, 4%);
+
 
 /**
 @paddingXLarge:         10px 15px;

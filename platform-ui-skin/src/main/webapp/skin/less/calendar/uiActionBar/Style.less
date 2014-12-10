@@ -16,7 +16,7 @@
 	}
 	.separatorLine{
 		background: @borderColor;
-		.box-shadow(1px 0 0 @white);
+		.box-shadow(1px 0 0 @baseBackground);
 		width: 1px;
 		height: 26px;
 		display: inline-block;
@@ -56,18 +56,18 @@
 			a {
 				text-shadow: 0 0 0 transparent;
 				&:hover {
-					color: @white;
+					color: @baseBackground;
 
 				}
 			}
 			li.active a {
-				 background-color: darken(@white, 10%);
-    			background-color: darken(@white, 15%) e("\9");
+				 background-color: darken(@baseBackground, 10%);
+    			background-color: darken(@baseBackground, 15%) e("\9");
     			background-image: none;
 			    outline: 0;
 			    .box-shadow(~"0 0 6px rgba(0, 0, 0, 0.15) inset");
 			    &:hover {
-					color: @grayDark;
+					color: @baseColorDark;
 
 				}
 			}

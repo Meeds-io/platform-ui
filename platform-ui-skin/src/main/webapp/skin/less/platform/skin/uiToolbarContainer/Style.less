@@ -42,7 +42,7 @@
 
 			.btn-group li > a.selected{
 			   #gradient > .vertical(@primaryLightColor, darken(@primaryLightColor, 15%));
-			    color: @white;
+			    color: @baseBackground;
 			}
 			.uiFormScrollMenu{
 				margin-left: 5px;
@@ -95,10 +95,10 @@
 					}
 
 					.category{
-					    background: @componentBackgroundLight;
+					    background: @primaryBackgroundLight;
 					    border-bottom: 1px solid @borderColor;
 					    border-top: 1px solid @borderColor;
-					    .box-shadow(0 -15px 17px @componentBackground inset);
+					    .box-shadow(0 -15px 17px @primaryBackground inset);
 					    color: @textColor;
 					    font-weight: bold;
 				        padding: 5px 10px;
@@ -141,7 +141,7 @@
 		padding: 0 10px 0 11px;
 		line-height: 41px;
 		display: inline-block;
-		color: @white;
+		color: @baseBackground;
 		cursor: pointer;
 			> i.uiIconPLF24x24Edit,
 			> i.uiIconPLF24x24Setup {
@@ -175,7 +175,7 @@
 		    display: inline-block;
 		    border-left:   6px solid transparent;
 		    border-right:  6px solid transparent;
-		    border-bottom: 6px solid @white;
+		    border-bottom: 6px solid @baseBackground;
 		    position: absolute;
 		    top: -6px;
 		    left: 10px;
@@ -201,7 +201,7 @@
 		    display: inline-block;
 		    border-left:   6px solid transparent;
 		    border-right:  6px solid transparent;
-		    border-bottom: 6px solid @white;
+		    border-bottom: 6px solid @baseBackground;
 		    position: absolute;
 		    top: -6px;
 		    right: 10px;
@@ -315,7 +315,7 @@
 		.dropdown-menu .active > .seoImgBlock,
 		.dropdown-menu .active > .seoImgBlock:hover  {
 			#gradient > .vertical(@primaryLightColor, darken(@primaryLightColor, 15%));
-			color: @white;
+			color: @baseBackground;
 		}
 
 		.quickEditUnchecked {

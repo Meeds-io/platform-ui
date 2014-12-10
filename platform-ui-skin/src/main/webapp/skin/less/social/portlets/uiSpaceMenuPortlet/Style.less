@@ -3,7 +3,7 @@
 
 .uiSpaceMenu {
 	border-bottom: 1px solid @borderColor;
-	#gradient > .vertical(@componentBackgroundLight,@componentBackgroundHover);
+	#gradient > .vertical(@primaryBackgroundLight, @primaryBackgroundHover);
 	.box-shadow(inset);
 	height: 90px;
 
@@ -35,7 +35,7 @@
 		}
 
 		> .active > a {
-			#gradient > .vertical(@grayLight,@gray);
+			#gradient > .vertical(@baseColorLight, @baseColorMedium);
 			.box-shadow(1px 0 4px rgba(0,0,0,0.38) inset);
 		}
 

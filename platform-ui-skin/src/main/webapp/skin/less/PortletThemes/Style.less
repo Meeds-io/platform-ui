@@ -8,12 +8,12 @@
 /*---------- DefaultTheme ----------*/
 .DefaultTheme {
 	.border-radius(3px);
-	background: @white;
+	background: @baseBackground;
 	border: 1px solid @borderColor;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
 	.windowBar {
-		background: @componentBackground;
+		background: @primaryBackground;
 		.box-shadow(0 1px 0 rgba(13,13,13,0.05));
 		height: 30px; line-height: 30px;
 		padding: 0 10px;
@@ -28,7 +28,7 @@
 		}
 		> [class*="pull-right"] {
 			.square(16px);
-			#gradient > .vertical(@white, @componentBackground);
+			#gradient > .vertical(@baseBackground, @primaryBackground);
 			border: 1px solid @borderColor;
 			.border-radius(3px);
 			margin: 6px 0 0 4px;
@@ -53,7 +53,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: @white;
+			background: @baseBackground;
 		}
 	}
 	.middleDecorator {
@@ -78,7 +78,7 @@
 
 .MacGray {
 	.border-radius(3px);
-	background: @white;
+	background: @baseBackground;
 	border: 1px solid #9b9b9b;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -160,13 +160,13 @@
 
 .MacTheme {
 	.border-radius(3px);
-	background: @white;
+	background: @baseBackground;
 	border: 1px solid #b5b5b5;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
 	.windowBar {
-		#gradient > .vertical(@componentBackground, #d6d6d6);
-		.box-shadow(inset 0 1px 0 @white);
+		#gradient > .vertical(@primaryBackground, #d6d6d6);
+		.box-shadow(inset 0 1px 0 @baseBackground);
 		height: 30px; line-height: 30px;
 		padding: 0 10px;
 		border-bottom: 1px solid #adadad;
@@ -230,7 +230,7 @@
 	}
 	.bottomDecorator {
 		border-top: 1px solid #adadad;
-		#gradient > .vertical(@componentBackground, #d6d6d6);
+		#gradient > .vertical(@primaryBackground, #d6d6d6);
 		padding: 0 10px;
 		line-height: 22px;
 		height: 22px;
@@ -241,7 +241,7 @@
 
 .MacBlueSteel {
 	.border-radius(3px);
-	background: @white;
+	background: @baseBackground;
 	border: 1px solid #617c99;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -322,7 +322,7 @@
 
 .SimplePink {
 	.border-radius(3px);
-	background: @white;
+	background: @baseBackground;
 	border: 1px solid #e3acdc;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -342,7 +342,7 @@
 		}
 		> [class*="pull-right"] {
 			.square(16px);
-			#gradient > .vertical(@white, @componentBackground);
+			#gradient > .vertical(@baseBackground, @primaryBackground);
 			border: 1px solid #e3acdc;
 			.border-radius(3px);
 			margin: 6px 0 0 4px;
@@ -367,7 +367,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: @white;
+			background: @baseBackground;
 		}
 	}
 	.middleDecorator {
@@ -393,7 +393,7 @@
 
 .SimpleGreen {
 	.border-radius(3px);
-	background: @white;
+	background: @baseBackground;
 	border: 1px solid #629535;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -413,7 +413,7 @@
 		}
 		> [class*="pull-right"] {
 			.square(16px);
-			#gradient > .vertical(@white, @componentBackground);
+			#gradient > .vertical(@baseBackground, @primaryBackground);
 			border: 1px solid #629535;
 			.border-radius(3px);
 			margin: 6px 0 0 4px;
@@ -438,7 +438,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: @white;
+			background: @baseBackground;
 		}
 	}
 	.middleDecorator {
@@ -463,7 +463,7 @@
 
 .SimpleOrange {
 	.border-radius(3px);
-	background: @white;
+	background: @baseBackground;
 	border: 1px solid #dc9600;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -483,7 +483,7 @@
 		}
 		> [class*="pull-right"] {
 			.square(16px);
-			#gradient > .vertical(@white, @componentBackground);
+			#gradient > .vertical(@baseBackground, @primaryBackground);
 			border: 1px solid #dc9600;
 			.border-radius(3px);
 			margin: 6px 0 0 4px;
@@ -508,7 +508,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: @white;
+			background: @baseBackground;
 		}
 	}
 	.middleDecorator {
@@ -534,7 +534,7 @@
 
 .SimpleViolet {
 	.border-radius(3px);
-	background: @white;
+	background: @baseBackground;
 	border: 1px solid #ba80ec;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -554,7 +554,7 @@
 		}
 		> [class*="pull-right"] {
 			.square(16px);
-			#gradient > .vertical(@white, @componentBackground);
+			#gradient > .vertical(@baseBackground, @primaryBackground);
 			border: 1px solid #ba80ec;
 			.border-radius(3px);
 			margin: 6px 0 0 4px;
@@ -579,7 +579,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: @white;
+			background: @baseBackground;
 		}
 	}
 	.middleDecorator {
@@ -604,7 +604,7 @@
 
 .SimpleBlue {
 	.border-radius(3px);
-	background: @white;
+	background: @baseBackground;
 	border: 1px solid #87c4f3;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -624,7 +624,7 @@
 		}
 		> [class*="pull-right"] {
 			.square(16px);
-			#gradient > .vertical(@white, @componentBackground);
+			#gradient > .vertical(@baseBackground, @primaryBackground);
 			border: 1px solid #87c4f3;
 			.border-radius(3px);
 			margin: 6px 0 0 4px;
@@ -649,7 +649,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: @white;
+			background: @baseBackground;
 		}
 	}
 	.middleDecorator {
@@ -677,7 +677,7 @@
 	border-top-right-radius: 6px;
 	border-bottom-left-radius: 3px;
 	border-bottom-right-radius: 3px;
-	background: @white;
+	background: @baseBackground;
 	border: 1px solid #e3acdc;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -697,7 +697,7 @@
 		}
 		> [class*="pull-right"] {
 			.square(16px);
-			#gradient > .vertical(@white, @componentBackground);
+			#gradient > .vertical(@baseBackground, @primaryBackground);
 			border: 1px solid #e3acdc;
 			.border-radius(3px);
 			margin: 6px 0 0 4px;
@@ -722,7 +722,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: @white;
+			background: @baseBackground;
 		}
 	}
 	.middleDecorator {
@@ -751,7 +751,7 @@
 	border-top-right-radius: 6px;
 	border-bottom-left-radius: 3px;
 	border-bottom-right-radius: 3px;
-	background: @white;
+	background: @baseBackground;
 	border: 1px solid #629535;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -771,7 +771,7 @@
 		}
 		> [class*="pull-right"] {
 			.square(16px);
-			#gradient > .vertical(@white, @componentBackground);
+			#gradient > .vertical(@baseBackground, @primaryBackground);
 			border: 1px solid #629535;
 			.border-radius(3px);
 			margin: 6px 0 0 4px;
@@ -796,7 +796,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: @white;
+			background: @baseBackground;
 		}
 	}
 	.middleDecorator {
@@ -824,7 +824,7 @@
 	border-top-right-radius: 6px;
 	border-bottom-left-radius: 3px;
 	border-bottom-right-radius: 3px;
-	background: @white;
+	background: @baseBackground;
 	border: 1px solid #dc9600;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -844,7 +844,7 @@
 		}
 		> [class*="pull-right"] {
 			.square(16px);
-			#gradient > .vertical(@white, @componentBackground);
+			#gradient > .vertical(@baseBackground, @primaryBackground);
 			border: 1px solid #dc9600;
 			.border-radius(3px);
 			margin: 6px 0 0 4px;
@@ -869,7 +869,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: @white;
+			background: @baseBackground;
 		}
 	}
 	.middleDecorator {
@@ -898,7 +898,7 @@
 	border-top-right-radius: 6px;
 	border-bottom-left-radius: 3px;
 	border-bottom-right-radius: 3px;
-	background: @white;
+	background: @baseBackground;
 	border: 1px solid #ba80ec;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -918,7 +918,7 @@
 		}
 		> [class*="pull-right"] {
 			.square(16px);
-			#gradient > .vertical(@white, @componentBackground);
+			#gradient > .vertical(@baseBackground, @primaryBackground);
 			border: 1px solid #ba80ec;
 			.border-radius(3px);
 			margin: 6px 0 0 4px;
@@ -943,7 +943,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: @white;
+			background: @baseBackground;
 		}
 	}
 	.middleDecorator {
@@ -971,7 +971,7 @@
 	border-top-right-radius: 6px;
 	border-bottom-left-radius: 3px;
 	border-bottom-right-radius: 3px;
-	background: @white;
+	background: @baseBackground;
 	border: 1px solid #87c4f3;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -991,7 +991,7 @@
 		}
 		> [class*="pull-right"] {
 			.square(16px);
-			#gradient > .vertical(@white, @componentBackground);
+			#gradient > .vertical(@baseBackground, @primaryBackground);
 			border: 1px solid #87c4f3;
 			.border-radius(3px);
 			margin: 6px 0 0 4px;
@@ -1016,7 +1016,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: @white;
+			background: @baseBackground;
 		}
 	}
 	.middleDecorator {
@@ -1042,7 +1042,7 @@
 
 .ShadowPink {
 	.border-radius(3px);
-	background: @white;
+	background: @baseBackground;
 	border: 1px solid #e3acdc;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -1063,7 +1063,7 @@
 		}
 		> [class*="pull-right"] {
 			.square(16px);
-			#gradient > .vertical(@white, @componentBackground);
+			#gradient > .vertical(@baseBackground, @primaryBackground);
 			border: 1px solid #e3acdc;
 			.border-radius(3px);
 			margin: 6px 0 0 4px;
@@ -1088,7 +1088,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: @white;
+			background: @baseBackground;
 		}
 	}
 	.middleDecorator {
@@ -1114,7 +1114,7 @@
 
 .ShadowGreen {
 	.border-radius(3px);
-	background: @white;
+	background: @baseBackground;
 	border: 1px solid #629535;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -1135,7 +1135,7 @@
 		}
 		> [class*="pull-right"] {
 			.square(16px);
-			#gradient > .vertical(@white, @componentBackground);
+			#gradient > .vertical(@baseBackground, @primaryBackground);
 			border: 1px solid #629535;
 			.border-radius(3px);
 			margin: 6px 0 0 4px;
@@ -1160,7 +1160,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: @white;
+			background: @baseBackground;
 		}
 	}
 	.middleDecorator {
@@ -1185,7 +1185,7 @@
 
 .ShadowOrange {
 	.border-radius(3px);
-	background: @white;
+	background: @baseBackground;
 	border: 1px solid #dc9600;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -1206,7 +1206,7 @@
 		}
 		> [class*="pull-right"] {
 			.square(16px);
-			#gradient > .vertical(@white, @componentBackground);
+			#gradient > .vertical(@baseBackground, @primaryBackground);
 			border: 1px solid #dc9600;
 			.border-radius(3px);
 			margin: 6px 0 0 4px;
@@ -1231,7 +1231,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: @white;
+			background: @baseBackground;
 		}
 	}
 	.middleDecorator {
@@ -1257,7 +1257,7 @@
 
 .ShadowViolet {
 	.border-radius(3px);
-	background: @white;
+	background: @baseBackground;
 	border: 1px solid #ba80ec;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -1278,7 +1278,7 @@
 		}
 		> [class*="pull-right"] {
 			.square(16px);
-			#gradient > .vertical(@white, @componentBackground);
+			#gradient > .vertical(@baseBackground, @primaryBackground);
 			border: 1px solid #ba80ec;
 			.border-radius(3px);
 			margin: 6px 0 0 4px;
@@ -1303,7 +1303,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: @white;
+			background: @baseBackground;
 		}
 	}
 	.middleDecorator {
@@ -1328,7 +1328,7 @@
 
 .ShadowBlue {
 	.border-radius(3px);
-	background: @white;
+	background: @baseBackground;
 	border: 1px solid #87c4f3;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;
@@ -1349,7 +1349,7 @@
 		}
 		> [class*="pull-right"] {
 			.square(16px);
-			#gradient > .vertical(@white, @componentBackground);
+			#gradient > .vertical(@baseBackground, @primaryBackground);
 			border: 1px solid #87c4f3;
 			.border-radius(3px);
 			margin: 6px 0 0 4px;
@@ -1374,7 +1374,7 @@
 			}
 		}
 		> [class*="pull-right"]:hover {
-			background: @white;
+			background: @baseBackground;
 		}
 	}
 	.middleDecorator {
@@ -1399,7 +1399,7 @@
 
 .VistaTheme {
 	.border-radius(3px);
-	background: @white;
+	background: @baseBackground;
 	border: 1px solid #676767;
 	.box-shadow(1px 1px 4px rgba(0,0,0,0.25));
 	margin: 0 0 25px;

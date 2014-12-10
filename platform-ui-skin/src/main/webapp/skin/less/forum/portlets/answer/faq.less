@@ -3,12 +3,12 @@
 .uiFAQPortlet {
 	padding: 20px;
 	.goUp {
-		background-color: @componentBackgroundLight;
-	    background-image: linear-gradient(to bottom, @white, @componentBackground);
+		background-color: @primaryBackgroundLight;
+	    background-image: linear-gradient(to bottom, @baseBackground, @primaryBackground);
 	    background-repeat: repeat-x;
 	    border: 1px solid @borderColor;
 	    border-radius: 3px 3px 3px 3px;
-	    box-shadow: 0 1px 2px 0 @white;
+	    box-shadow: 0 1px 2px 0 @baseBackground;
 	    float: right;
 	    position: fixed;
 	    bottom: 45px;
@@ -25,7 +25,7 @@
 	.answersBlock {
 		margin-top: 15px;
 		.date{
-				color: @grayLight;
+				color: @baseColorLight;
 				font-size: 12px;
 			}
 	}
@@ -77,7 +77,7 @@
 	padding: 0 15px 0px;
 
 	> h5:first-child {
-		background-color: @componentBackground;
+		background-color: @primaryBackground;
 		border-radius: 2px;
 		line-height: 30px;
 		padding-left: 10px;
@@ -92,7 +92,7 @@
 .viewerAnswer, .answerList {
 	.description {
 		word-wrap: break-word;
-		color: @gray;
+		color: @baseColorMedium;
 		padding-left: 22px;
 		font-style: italic;
 	}

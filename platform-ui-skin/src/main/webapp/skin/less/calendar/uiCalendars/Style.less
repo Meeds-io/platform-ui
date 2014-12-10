@@ -22,7 +22,7 @@
 		}
 
 	.calendarTitle{
-		background-color: @componentBackground;
+		background-color: @primaryBackground;
 		.border-radius(@borderRadiusSmall - 1);
 		line-height: 26px;
 		padding: 0 14px;
@@ -33,8 +33,8 @@
 	.myCalendarContainer{
 		li{
 			height: 14px;
-			background-color: @white;
-			border:solid 1px @white;
+			background-color: @baseBackground;
+			border:solid 1px @baseBackground;
 			padding: 3px 3px 3px 6px;
 			margin: 3px 0;
 
@@ -43,8 +43,8 @@
 				}
 
 			&:hover{
-				background-color: @componentBackgroundLight;
-				border:solid 1px @componentBackground;
+				background-color: @primaryBackgroundLight;
+				border:solid 1px @primaryBackground;
 				.border-radius(@borderRadiusSmall);
 				.uiIconCalSettingMini{
 					display: inline-block;
@@ -112,7 +112,7 @@
 		}
 	}
 	.description {
-		color: @gray;
+		color: @baseColorMedium;
 	}
 }
 
