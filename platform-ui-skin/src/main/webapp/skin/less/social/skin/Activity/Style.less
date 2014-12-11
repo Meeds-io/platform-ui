@@ -309,7 +309,7 @@
 			font-size: @fontSizeSmall;
 		}
 	}
-	.arrowBottom,.arrowLeft {
+	.arrowBottom {
 		position: absolute;
 		.size(16px,8px);
 		display:block;
@@ -317,6 +317,28 @@
 		top: 17px;
 		left: -8px;
 	}
+    .arrowLeft {
+        border-bottom: 8px solid transparent;
+        border-right: 8px solid  @borderColor;
+        border-top: 8px solid transparent;
+        height: auto;
+        left: -9px;
+        position: absolute;
+        width: auto;
+        &:after {
+            border-bottom: 8px solid transparent;
+            border-right: 8px solid @baseBackground;
+            border-top: 8px solid transparent;
+            content: "";
+            display: block;
+            height: auto;
+            left: 1px;
+            position: absolute;
+            top: -8px;
+            width: auto;
+            z-index: 2;
+        }
+    }
 
 	.contentForum .text {
 		padding: 0 0 0 16px;
