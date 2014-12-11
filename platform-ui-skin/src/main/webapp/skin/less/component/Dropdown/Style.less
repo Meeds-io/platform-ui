@@ -43,7 +43,7 @@
 		}
 	  }
 	}
-	.dropdown-submenu > .dropdown-menu {
+	> .dropdown-menu {
 		.border-radius(@borderRadiusSmall);
 	}
 
@@ -73,4 +73,8 @@
 	width: 150px;
 	display: inline-block;
 	text-align: left;
+}
+
+.dropdown-submenu > a:after {
+  border-left-color: @dropdownArrowRight;
 }

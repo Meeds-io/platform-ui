@@ -33,7 +33,9 @@
   // button primary
   @btnBackground:            @baseBackground;
   @btnBackgroundHighlight:  @primaryBackground;
-
+	
+  @dropdownArrowRight:  darken(@baseBackground, 20%);
+	
 }
 
 //Return true if base color is lighter
@@ -49,6 +51,7 @@
   // button primary
   @btnBackground:           @primaryBackground;
   @btnBackgroundHighlight: @baseBackground;
+	@dropdownArrowRight:  lighten(@baseBackground, 90%);
 }
 .setColor(@baseColor);
 
@@ -57,16 +60,16 @@
 // Accent colors
 // -------------------------
 @red:                   #C72222;							// Red Primary
-@redLight:				darken(spin(@red, 5%), 30%);		// #ed9c95
+@redLight:				lighten(spin(@red, 5%), 30%);		// #ed9c95
 
 @yellow:                #EDAD00;							// Orange Primary
-@yellowLight:			darken(spin(@yellow, 5%), 42%);	// #fff4c4
+@yellowLight:			lighten(spin(@yellow, 5%), 42%);	// #fff4c4
 
 @blue: 					#215ab2;							// Blue Primary
-@blueLight: 			darken(spin(@blue, 5%), 48%);		// #dee3fa
+@blueLight: 			lighten(spin(@blue, 5%), 48%);		// #dee3fa
 
 @green:                 #39C522;							// Green Primary
-@greenLight:			darken(spin(@green, 5%), 45%);		// #d7f8d5
+@greenLight:			lighten(spin(@green, 5%), 45%);		// #d7f8d5
 
 // Scaffolding
 // -------------------------
@@ -249,7 +252,7 @@
 @navbarInverseLinkBackgroundHover:       transparent;
 @navbarInverseLinkBackgroundActive:      @navbarInverseBackground;
 
-@navbarInverseSearchBackground:          darken(@navbarInverseBackground, 25%);
+@navbarInverseSearchBackground:          lighten(@navbarInverseBackground, 25%);
 @navbarInverseSearchBackgroundFocus: @baseBackground;
 @navbarInverseSearchBorder:              @navbarInverseBackground;
 @navbarInverseSearchPlaceholderColor:    #ccc;
@@ -273,32 +276,36 @@
 
 // Form states and alerts
 // -------------------------
-@warningText:             @textColor;
+@warningText:             #333333;
 @warningBackground:       @yellowLight;
 @warningBorder:           @yellow;
 
-@errorText:               @textColor;
+@errorText:               #333333;
 @errorBackground:         @redLight;
 @errorBorder:             @red;
 
-@successText:             @textColor;
+@successText:             #333333;
 @successBackground:       @greenLight;
 @successBorder:           @green;
 
-@infoText:                @textColor;
+@infoText:                #333333;
 @infoBackground:          @blueLight;
 @infoBorder:              @blue;
 
 
 // Tooltips and popovers
 // -------------------------
-@tooltipBackground:       darken(@baseColor, 29%);				// #4a4a4a
+@tooltipColor:            #fff;
+@tooltipBackground:       #000;
 @tooltipArrowColor:       @tooltipBackground;
 
 @popoverBackground: @baseBackground;
 @popoverArrowWidth:       10px;
 @popoverArrowColor:       @popoverBackground;
 @popoverTitleBackground:  darken(@popoverBackground, 3%);
+
+
+
 
 // Special enhancement for popovers
 @popoverArrowOuterWidth:  @popoverArrowWidth + 1;
@@ -444,13 +451,13 @@
 @quoteBorder: @primaryBackgroundHover;
 @quoteBackgound: @primaryBackground;
 
-@quotePrimaryBorder: 					darken(#2f5e92, 40%);				// #aac5e3
-@quotePrimaryBackground: 				darken(@quotePrimaryBorder, 18%);	// #aac5e3
+@quotePrimaryBorder: 					lighten(@primaryColor, 40%);				// #aac5e3
+@quotePrimaryBackground: 				lighten(@quotePrimaryBorder, 18%);	// #aac5e3
 
 // UIMention
-@uiMentionColor:						@primaryColor;
+@uiMentionColor:						@blue;
 @uiMentionBorder:						@blue;
-@uiMentionBackground:					darken(@blueLight, 4%);
+@uiMentionBackground:					lighten(@blueLight, 4%);
 
 
 /**
