@@ -33,13 +33,19 @@
 .uiActionBorder{
 	border-top: 1px solid @borderColor;
 	text-align: center;
-	padding: 15px 0 0;
+	padding: 15px 0;
 	margin-top: 15px;
 }
 
-.uiBox {
-	.uiActionBorder{
-		margin: 0 -10px;
+.uiBox() {
+	 >.uiContentBox {
+		 >.uiActionBorder{
+			margin: 20px -20px 0;
+			padding-bottom: 0;
+		}
+		 .uiAction {
+			padding-top: 20px;
+		}
 	}
 	.uiPopup {
 		.uiActionBorder{
@@ -55,7 +61,7 @@
 
 .uiTabNormal{
 	.uiActionBorder{
-		margin: 0 -10px;
+		margin: 0 -15px;
 	}
 }
 
@@ -65,9 +71,11 @@
 	}
 }
 
-.uiFormWithTitle {
-	.uiActionBorder{
-		margin: 10px -20px;
+.uiBox.uiFormWithTitle {
+	.uiContentBox {
+		.uiActionBorder{
+			margin: 10px -15px 0;
+		}
 	}
 }
 

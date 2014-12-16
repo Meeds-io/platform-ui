@@ -38,11 +38,20 @@
 		.border-radius(0 0 4px 4px);
 		.resizable {
 			overflow: auto;
-			padding: 15px 15px 0;
-			margin: -15px -15px 0;
+			padding: 15px;
+			margin: -15px;
+			&.popupMessage {
+				margin-bottom: 0;
+			}
 		}
 	}
-
+	.form-horizontal {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.table {
+		margin-bottom: 15px;
+	}
 	.uiIconResize {
 		.square(16px);
 		margin: -18px 2px 2px;
@@ -51,11 +60,19 @@
 
 	.form-horizontal.resizable {
 		margin-top: 0;
-		margin-bottom: -5px;
+		margin-bottom: 0;
 		.controls-full {
 			> .center {
 				margin-bottom: 20px;
 			}
+		}
+	}
+	.uiActionBorder {
+		padding-bottom: 0;
+	}
+	.uiBox {
+		.uiContentBox {
+			padding: 15px;
 		}
 	}
 }

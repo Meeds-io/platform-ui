@@ -29,7 +29,7 @@
 	}
 }
 .uiBox .uiGroupNavigationManagement .uiPopup .uiActionBorder {
-	  margin: 10px -10px;
+	  margin: 0 -15px 0;
 }
 .uiPopup {
 		.uiPageBrowser .uiPageContainer {
@@ -44,8 +44,10 @@
 		}
 }
 .uiManagementSite  {
-	.uiPopup .uiActionBorder {
-		  margin: 10px -10px;
+	.uiPopup {
+		 .uiNavigationManagement.resizable {
+		 	margin-bottom: 0;
+		 }
 	}
 	padding: 20px;
 	.managementBlock  {
@@ -65,6 +67,11 @@
 				}
 			}
 		}
+	}
+}
+.uiPopup {
+	#UINavigationNodeSelector {
+		margin-bottom: 15px;
 	}
 }
 

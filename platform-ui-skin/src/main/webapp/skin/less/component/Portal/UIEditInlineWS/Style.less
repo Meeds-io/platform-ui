@@ -207,8 +207,13 @@
 }
 
 /*---------- UIPortletForm ----------*/
-#tab-UIPortletForm .uiTabContent.resizable {
-	overflow: auto;
-	max-height: 300px;
-	margin: -10px;
+#tab-UIPortletForm{
+	.tab-content {
+		+ .uiAction {
+			margin-bottom: 15px;
+		}
+		.uiItemSelector {
+			padding: 0;
+		}
+	}
 }

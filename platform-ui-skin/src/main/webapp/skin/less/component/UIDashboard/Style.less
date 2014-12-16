@@ -48,7 +48,7 @@
 	}
 	.DashboardItemContainer {
 		.InputContainer {
-		 	 margin-bottom: 10px;
+		 	 margin-bottom: 15px;
 		 	  input {
 				  width: 172px;
 				  margin-bottom: 0;
@@ -71,7 +71,7 @@
 		    border: 1px solid @borderColor;
 		    .border-radius(@baseBorderRadius);
 		    .box-shadow(0 2px 4px -1px rgba(35, 44, 48, 0.18));
-		    margin: 0 0 10px;
+		    margin: 0 0 15px;
 		    .GadgetTab {
 			  	background-color: @primaryBackground;
 			    border-bottom: 1px solid @borderColor;
@@ -184,7 +184,11 @@
 .UIDashboard .UIPopupWindow {
   width: 240px;
 }
-
+.UIPopupWindow {
+	.uiFormWithTitle.uiBox {
+		margin-bottom: 0;
+	}
+}
 /*-------- Maximized --------*/
 
 .Maximized .UIGadget {

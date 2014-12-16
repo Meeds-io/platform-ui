@@ -26,6 +26,19 @@
 	.itemListContainer {
 		width: 220px;
 		margin-right: 20px;
+		&.uiBox {
+			 .title {
+			 	.btn-group.uiDropdownWithIcon .btn {
+				 	> span {
+				 		vertical-align: top;
+				 		font-weight: normal;
+				 	}
+				 	> .uiIconGeneralDrive {
+				 		margin-right: 5px;
+				 	}
+			 	}
+			}
+		}
 		.uiDropdownWithIcon {
 			.btn {
 				> span:first-child {
@@ -49,8 +62,8 @@
 		}
 		.item.selectedItem {
 			//background: @primaryBackgroundLight;
-			margin: 4px -20px;
-			padding: 0px 20px;
+			margin: 4px -15px;
+			padding: 0px 15px;
 			color: @linkColor;
 		}
 		.itemList {
