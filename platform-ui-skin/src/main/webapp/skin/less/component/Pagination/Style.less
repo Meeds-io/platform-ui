@@ -25,7 +25,7 @@
 .uiPageIterator ul > li > a,
 .uiPageIterator ul > li.disabled > a,
 .uiPageIterator ul > li.disabled > a:hover {
-	#gradient > .vertical(rgba(255,255,255,1), rgba(241,241,241,1));
+	#gradient > .vertical(@btnBackground, @btnBackgroundHighlight);
 	.size(24px, 24px);
 	line-height: 24px;
 	text-align: center;
@@ -33,12 +33,14 @@
 	color: @textColor;
 }
 
-.uiPageIterator ul > li > a:hover {
-	#gradient > .radial(rgba(241,241,241,1), rgba(235,235,235,1));
+.uiPageIterator ul > li > a:hover,.uiPageIterator ul > li.disabled > a:hover,
+.uiPageIterator ul > .active > a{
+  background-color:  @btnBackgroundHighlight;
+  background-position: 0 -15px;
+  .box-shadow(~"inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)");
 }
 
 .uiPageIterator ul > .active > a {
- #gradient > .radial(rgba(236,236,236,1), rgba(221,221,221,1));
 	color: @linkColor;
 	font-weight: bold;
 }
@@ -66,8 +68,8 @@
     .size(26px, 60px);
     line-height: 18px;
     outline: medium none;
-    background: linear-gradient(to bottom, @baseBackground, @primaryBackground);
-    background-position: right top, 0 0;
+    //background: linear-gradient(to bottom, @baseBackground, @primaryBackground);
+   // background-position: right top, 0 0;
     border: 1px solid @borderColor;
     border-radius: 4px;
     display: inline-block;
