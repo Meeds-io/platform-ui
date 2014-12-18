@@ -152,8 +152,8 @@ table {
 
 /*************** AjaxLoadingMask *********************/
 .ajaxLoadingMask{
-	background: @baseColorMedium;
-	border: 1px solid @baseColorDark;
+	background: @globalLoadingBackground;
+	border: 1px solid @globalLoadingBorder;
 	border-radius: 0 0 3px 3px;
 	.box-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
 	padding: 10px 7px 6px 11px;
@@ -166,11 +166,12 @@ table {
 	}
 	.loadingText{
 		margin: 0 34px 0 40px;
-		color: @baseBackground;
+		color: @globalLoadingColor;
 		font-weight: bold;
 	}
 	.uiIconClose:hover{
-		background: url("@{images-path}/Icons/uiIconsWhite.png") -160px -100px;
+		background: url("@{images-path}/Icons/uiIconsWhite.png") -160px -100px!important;
+		cursor: pointer;
 	}
 }
 
