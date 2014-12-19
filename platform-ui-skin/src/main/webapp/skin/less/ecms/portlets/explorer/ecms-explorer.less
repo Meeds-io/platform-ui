@@ -1570,12 +1570,15 @@
 
 
 /*========== UIDocumentWorkspace =============*/
+.dropdown-menu li > a:hover {
+	color: @dropdownLinkColorHover;
+}
 
-.dropdown-menu li > .menuItemSelected{
+.dropdown-menu li > .menuItemSelected {
 		#gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 15%));
-		color: @baseBackground;
+		color: @dropdownLinkColorHover;
 		.uiIconEcmsCopyUrlToClipboard {
-			background-image: url("/eXoWCMResources/skin/images/Icons/uiIconsEcmsWhite.png");
+			background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsWhite.png");
 		}
 	}
 
