@@ -9,7 +9,7 @@
 				line-height: 28px;
 			}
 			.uiSelectbox, .selectbox{
-				width: 60px;
+				width: auto;
 			}
 		}
 	}
@@ -61,14 +61,15 @@
 		}
 		
 		.sllideHeader{
-			background: url("@{images-path}/forum/portlets/forum/background/slideHeader.png") repeat-x left top;
+		//	background: url("@{images-path}/forum/portlets/forum/background/slideHeader.png") repeat-x left top;
+          #gradient > .vertical(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
 			height: 7px;
 			.border-radius(5px);
 		}
 		
 		.circleDefault{
 			background: url("@{images-path}/forum/portlets/forum/background/circle.png") no-repeat left top;
-		    position: absolute;
+		      position: absolute;
 		    width: 18px;
 		    height: 18px;
 		    top: -7px;
@@ -82,7 +83,7 @@
 		.uiSliderInput {
 			background: @baseBackground;
           text-align: center;
-          width: 44px;
+          width: 50px;
 		}
 	}
 }
