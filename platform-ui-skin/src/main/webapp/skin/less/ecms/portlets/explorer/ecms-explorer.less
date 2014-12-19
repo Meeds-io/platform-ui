@@ -1634,3 +1634,64 @@
     list-style-type: disc;
 }
 
+/******************/
+.UIWCMDashboardPortlet {
+  padding: 0px 25px 25px 25px;
+
+	.uiAuthoringDashboard {
+		padding: 20px 0px;
+		.element a {
+			color: @textColor;
+			text-decoration:none;
+			display: block;
+			overflow: hidden;
+			.uiIconEcmsDottedArrow  {
+				margin-top:2px;
+			}
+		 	&:hover {
+		  		color: @linkColor;
+		  	}
+		}
+		
+		.alignLeft {
+			float: left;
+			width: 30%;
+			margin-left: 20px;
+			min-width: 225px;
+		}
+		
+		.elements {
+			text-align: left;
+			padding: 10px;
+			overflow: hidden;
+			font-size:12px;
+		}
+		.total {
+			background-color: @primaryBackground;
+			border-radius: 10px;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.37) inset;
+			color: @linkColor;
+			font-weight: bold;
+			line-height: 18px;
+			margin: 3px 0px 0px 5px;
+			min-width: 30px;
+			text-align: center;
+			display: inline-block;
+		}
+		
+		.noContent {
+			color: @baseColorLight;
+		}
+		
+		.uiPageIterator {
+			margin: 10px -10px 0px -10px;
+			padding: 10px 10px 0px 10px;
+			border-top: 1px solid @borderColor;
+		}
+		
+		.refresh {
+			margin-left: 20px;
+			 text-transform: capitalize;
+		}
+	}
+}
