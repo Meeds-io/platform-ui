@@ -40,15 +40,16 @@
 			overflow: auto;
 			padding: 15px;
 			margin: -15px;
-			&.popupMessage {
-				margin-bottom: 0;
-			}
 		}
         select {margin-bottom: 0;}
 	}
 	.form-horizontal {
-		padding-top: 10px;
-		padding-bottom: 10px;
+		padding: 5px 0;
+		.control-group{
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
 	}
 	.table {
 		margin-bottom: 15px;
@@ -58,7 +59,11 @@
 		margin: -18px 2px 2px;
 		cursor: nw-resize;
 	}
-
+	.uiAction.uiActionBorder {
+		margin-left: -15px;
+		margin-right: -15px;
+		padding-bottom: 0;
+	}
 	.form-horizontal.resizable {
 		margin-top: 0;
 		margin-bottom: 0;
@@ -68,12 +73,9 @@
 			}
 		}
 	}
-	.uiActionBorder {
-		padding-bottom: 0;
-	}
-	.uiBox {
-		.uiContentBox {
-			padding: 15px;
+	.resizable {
+		.form-horizontal {
+			margin-bottom: 5px;
 		}
 	}
 }
@@ -82,9 +84,8 @@
 
 .uiPopup {
 	.popupMessage {
-
 		> li {
-			padding: 3px 0;
+			padding: 5px 0;
 		}
 
 		> li span[class*="Icon"] {
