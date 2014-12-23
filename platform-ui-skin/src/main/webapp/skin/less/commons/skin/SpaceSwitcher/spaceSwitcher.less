@@ -23,7 +23,8 @@
   .title {
 	  line-height: 30px;
 	  border-bottom: 1px solid @borderColor;
-	  background: @primaryBackground;
+
+    #gradient > .vertical(@primaryBackgroundLight, @primaryBackgroundHover);
 	  padding: 0px 5px 0px 10px;
 	  font-weight: bold;
 	  color: @textColor;
@@ -41,11 +42,10 @@
 	
 	.spaceTitle {
 	 color: @textColor;
-	  background: @primaryBackgroundLight;
 	  border-top: 1px solid @tableBorder;
 	  border-bottom: 1px solid @tableBorder;
 	  font-weight: bold;
-	  box-shadow: 0 -15px 17px #F1F1F1 inset;
+      #gradient > .vertical(@primaryBackgroundLight, @primaryBackgroundHover);
 	  padding: 5px 0 5px 9px;
 	}
 	.noSpace {
