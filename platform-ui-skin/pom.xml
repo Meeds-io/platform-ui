@@ -103,6 +103,7 @@
                                 <include>platform/portlets/gadget-pack/suggestion.less</include>
                                 <include>platform/portlets/gadget-pack/topVoteTopic.less</include>
                                 <include>platform/portlets/gadget-pack/caches.less</include>
+                                <include>platform/portlets/gadget-pack/allTemplatesStatistics.less</include>
                                 <include>platform/portlets/samples/acme-website/Style.less</include>
                                 <include>platform/portlets/samples/acme-intranet/SpaceSummaryInfoPortlet.less</include>
                                 <include>platform/portlets/samples/gadgets-sample/exo-gadget-resources/gadget-common.less</include>
