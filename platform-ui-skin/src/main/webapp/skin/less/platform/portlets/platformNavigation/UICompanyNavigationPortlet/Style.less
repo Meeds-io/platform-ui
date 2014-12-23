@@ -13,15 +13,18 @@
 .uiCompanyNavigationPortlet {
 	.title {
 		text-transform: uppercase;
-		color: @primaryColor;
-		#gradient > .vertical-three-colors(@primaryBackgroundLight, @primaryBackgroundLight, 49%, @primaryBackgroundHover);
+		color: @plfNavigationTitleColor;
+      #gradient > .vertical(@primaryBackgroundLight, @primaryBackgroundHover);
 		height: 40px; line-height: 41px;
 		padding: 0 15px;
 		margin: 0;
-		 .box-shadow(~"inset 0 1px 0 @baseBackground,0 1px 0 @baseBackground");
+		.box-shadow(~"inset 0 1px 0 @baseBackground,0 1px 0 @baseBackground");
 		 border-bottom: 1px solid @borderColor;
-    border-top: 1px solid @borderColor;
+        border-top: 1px solid @borderColor;
 		text-shadow: none;
+      a {
+        color: @plfNavigationTitleColor;
+      }
 	}
 
 	.uiCompanyNavigations {
@@ -39,13 +42,13 @@
 		.navItemSelected {
 			padding: 7px 25px;
 			 position: relative;
-				background: @baseBackground;
-				border-top: 1px solid @borderColor;
-				border-bottom: 1px solid @borderColor;
+				background: @plfNavigationBgSelected;
+				border-top: 1px solid @plfNavigationBorderSelected;
+				border-bottom: 1px solid @plfNavigationBorderSelected;
 				.box-shadow(0 0px 3px rgba(0, 0, 0, 0.11));
 			&:after {
-				background: @primaryLightColor;
-				    border: 1px solid @primaryDarkColor;
+				    background: @plfNavigationBgBorderLeft;
+				    border: 1px solid @plfNavigationBorderLeft;
 				    border-left: 0;
 				    .box-shadow(~"inset -1px 0px 2px rgba(255, 255, 255, 0.14)");
 				    content: "";
@@ -63,7 +66,7 @@
 		> li > a {
 			display: block;
             width: auto;
-            color: @baseColorMedium;
+            color: @plfNavigationColor;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -71,8 +74,12 @@
 				margin-right: 8px;
 			}
 		}
+        > li.navItemSelected > a{
+          color: @plfNavigationColorSelected;
+        }
 		> li > a:hover {
-			color: @linkColorHover;
+			color: @plfNavigationColorHover;
 		}
+
 	}
 }

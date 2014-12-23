@@ -12,7 +12,7 @@
 
 	.title {
 		text-transform: uppercase;
-		color: @primaryColor;
+		color: @plfNavigationTitleColor;
 		#gradient > .vertical(@primaryBackgroundLight, @primaryBackgroundHover);
 		height: 40px; line-height: 41px;
 		padding: 0 15px;
@@ -24,6 +24,9 @@
 		text-overflow: ellipsis;
 		overflow: hidden;
 		white-space: nowrap;
+        a {
+          color: @plfNavigationTitleColor;
+        }
 	}
 
 	.groupNavigation {
@@ -59,13 +62,13 @@
 				 margin: 8px 0 0 ;
 			    padding: 7px 10px;
 			    position: relative;
-				background: @baseBackground;
-				border-top: 1px solid @borderColor;
-				border-bottom: 1px solid @borderColor;
+				background: @plfNavigationBgSelected;
+				border-top: 1px solid @plfNavigationBorderSelected;
+				border-bottom: 1px solid @plfNavigationBorderSelected;
 				.box-shadow(0 0px 3px rgba(0, 0, 0, 0.11));
 				&:after {
-					background: @primaryLightColor;
-				    border: 1px solid @primaryDarkColor;
+					background: @plfNavigationBgBorderLeft;
+				    border: 1px solid @plfNavigationBorderLeft;
 				    border-left: 0;
 				    .box-shadow(~"inset -1px 0px 2px rgba(255, 255, 255, 0.14)");
 				    content: "";
@@ -85,9 +88,9 @@
 
 		.groupIcon {
 			.user-select(none);
-			color: @baseColorMedium;
+			color: @plfNavigationColor;
 			&:hover {
-				color: @linkColorHover;
+				color: @plfNavigationColorHover;
 			}
 		}
 

@@ -5,7 +5,7 @@
 	padding-bottom: 20px;
 	.title {
 		text-transform: uppercase;
-		color: @linkColor;
+		color: @plfNavigationTitleColor;
 		#gradient > .vertical(@primaryBackgroundLight, @primaryBackgroundHover);
 		height: 40px; line-height: 41px;
 		padding: 0 15px;
@@ -14,6 +14,9 @@
 		 border-bottom: 1px solid @borderColor;
    		 border-top: 1px solid @borderColor;
 		text-shadow: none;
+        a {
+          color: @plfNavigationTitleColor;
+        }
 	}
 
 	.searchInput input {
@@ -51,7 +54,7 @@
 		}
 
 		.spaceIcon {
-			    color: @baseColorMedium;
+			    color: @plfNavigationColor;
 			    display: block;
 			    overflow: hidden;
 			    text-overflow: ellipsis;
@@ -63,20 +66,20 @@
 			}
 
 			&:hover {
-				color: @linkColorHover;
+				color: @plfNavigationColorHover;
 			}
 		}
 
 		.spaceItemSelected {
 			padding: 7px 25px;
             position: relative;
-            background: @baseBackground;
-            border-top: 1px solid @borderColor;
-            border-bottom: 1px solid @borderColor;
+            background: @plfNavigationBgSelected;
+            border-top: 1px solid @plfNavigationBorderSelected;
+            border-bottom: 1px solid @plfNavigationBorderSelected;
             .box-shadow(0 0px 3px rgba(0, 0, 0, 0.11));
 			&:after {
-				background: @primaryLightColor;
-				    border: 1px solid @primaryDarkColor;
+				background: @plfNavigationBgBorderLeft;
+				    border: 1px solid @plfNavigationBorderLeft;
 				    border-left: 0;
 				    .box-shadow(~"inset -1px 0px 2px rgba(255, 255, 255, 0.14)");
 				    content: "";
@@ -88,7 +91,9 @@
 		  }
 			> a {
 				font-weight: bold;
+              color: @plfNavigationColorSelected;
 			}
+
 		}
 	}
 
@@ -101,7 +106,7 @@
 			height: 24px;
 			line-height: 24px;
 			border: 1px solid @borderColor;
-			color: @baseColorMedium;
+			color: @plfNavigationColor;
 			display: inline-block;
 			margin: auto;
 			padding: 0 10px;
@@ -120,11 +125,11 @@
         line-height: 32px;
 
     > a {
-    	color: @baseColorMedium;
+    	color: @plfNavigationColor;
     	 display: block;
     	 padding-left: 25px;
     	&:hover {
-				color: @linkColorHover;
+				color: @plfNavigationColorHover;
 			}
     	> i {
     		margin-right: 5px;
