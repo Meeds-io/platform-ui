@@ -133,3 +133,32 @@
 	padding: 10px;
 	background: @baseBackground;
 }
+
+
+// Scroll
+
+
+.setColorbgTop (@a) when  (lightness(@a) >= 50%) {
+  display: none!important;
+}
+
+.uiScrollTop {
+  background: url("@{images-path}/ShareImages/Background/uiScrollTop.png") repeat-x top center;
+  position: absolute;
+  content: "";
+  z-index: 1;
+  width: 100%;
+  height: 15px;
+  top: 0px;
+  .setColorbgTop(@baseColor);
+}
+
+.uiScrollBottom {
+  background: url("@{images-path}/ShareImages/Background/uiScrollBottom.png") repeat-x center;
+  position: absolute;
+  content: "";
+  z-index: 1;
+  width: 100%;
+  height: 15px;
+  .setColorbgTop(@baseColor);
+}
