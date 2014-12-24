@@ -63,15 +63,19 @@
         .navItemSelected{
             padding: 5px 25px;
             font-weight: bold;
-            background: @baseBackground;
-            border-top: 1px solid @borderColor;
-            border-bottom: 1px solid @borderColor;
+            background: @plfNavigationBgSelected;
+            border-top: 1px solid @plfNavigationBorderSelected;
+            border-bottom: 1px solid @plfNavigationBorderSelected;
             box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.1);
             display: block;
+            color: @plfNavigationColorSelected;
+            &:hover{
+              color: @plfNavigationColorHover;
+            }
             .text-overflow;
             &:after {
-                background: @primaryLightColor;
-                border: 1px solid @primaryDarkColor;
+                background: @plfNavigationBgBorderLeft;
+                border: 1px solid @plfNavigationBorderLeft;
                 content: "";
                 left: 0;
                 top: 10px;
