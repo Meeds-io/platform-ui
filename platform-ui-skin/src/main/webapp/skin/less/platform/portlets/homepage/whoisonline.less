@@ -113,12 +113,11 @@
 	}
   #tiptip_arrow{
     right: -@popoverArrowWidth + 6;
-    margin-top: -@popoverArrowWidth;
-    border-width: @popoverArrowWidth 0 @popoverArrowWidth @popoverArrowWidth;
-    border-left-color: @popoverArrowColor;
+    border-width:  (@popoverArrowWidth - 1)  0  (@popoverArrowWidth - 1)  @popoverArrowWidth ;
+    border-left-color: @dropdownBackground;
      #tiptip_arrow_inner {
       border-width: @popoverArrowOuterWidth 0 @popoverArrowOuterWidth @popoverArrowOuterWidth;
-      border-left-color: @popoverArrowOuterColor;
+      border-left-color: @dropdownBorder;
       bottom: -@popoverArrowOuterWidth;
       right: -1px;
     }
