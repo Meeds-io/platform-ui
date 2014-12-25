@@ -118,7 +118,18 @@
     }
   }
   .resultLoading{
-  	background: @baseBackground url("@{images-path}/Loading/loading64x64Light.gif") no-repeat center 20px ;
+    &:after {
+      background:  url("@{images-path}/Loading/loading64x64Light.png") no-repeat center center ;
+      .square(64px);
+      content: "";
+      display: block;
+      position: absolute;
+      left: 50%;
+      margin-left: -32px;
+      top: 20px;
+      .loading-action;
+    }
+    background: @baseBackground;
   	border: 1px solid @borderColor;
   	border-radius: 3px 3px 3px 3px;
   	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
@@ -131,6 +142,6 @@
   	text-align: center;
   	top: 40%;
   	width: 150px;
-  	z-index: 9999;  
+  	z-index: 9999;
   }
 }
