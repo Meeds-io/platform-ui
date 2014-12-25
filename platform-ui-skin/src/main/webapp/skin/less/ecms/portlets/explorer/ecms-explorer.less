@@ -344,28 +344,36 @@
 			padding: 0px !important;
 			overflow: hidden;
 			cursor: pointer;
+			.thumbnailImage {
+				.border-radius(@baseBorderRadius);
+			}
+			.nodeLabel {
+				background: none!important;
+				.border-radius(@baseBorderRadius);
+			}
 
 			&:hover {
-              background: @baseBackground!important;
-				.nodeLabel {
-					background: @primaryBackground;
+
+				background: none!important;
+				.thumbnailImage {
+					background:  @primaryBackgroundLight!important;
+				}
+			}
+			&.selectedBox {
+				&:hover .thumbnailImage, .thumbnailImage {
+					background: darken(@primaryBackgroundLight, 10%)!important;
+				}
+
+				.actionIconLabel {
+					background: @primaryColor;
+
+					> a {
+						color: @baseBackground;
+					}
 				}
 			}
 		}
 
-		.selectedBox {
-			.nodeLabel {
-				background: @borderColor;
-			}
-
-			.actionIconLabel {
-				background: @primaryColor;
-
-				> a {
-					color: @baseBackground;
-				}
-			}
-		}
 
 		.bgThumbnailImage {
 			padding: 5px;
