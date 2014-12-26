@@ -40,7 +40,7 @@
 
 //Return true if base color is lighter
 .setColor (@a) when (lightness(@a) >= 50%) {
-  @baseColorLight:				lighten(@baseColor, 20%);
+  @baseColorLight:				darken(@baseColor, 20%);
   @baseColorMedium:					lighten(@baseColor, 50%);
   @baseColorDark:				lighten(@baseColor, 60%);
   @borderColor:             darken(@baseColor, 20%);
@@ -130,6 +130,9 @@
 @inputBorderRadius:             	@baseBorderRadius;
 @inputDisabledBackground: @primaryBackgroundHover;
 @formActionsBackground: @primaryBackground;
+// Input placeholder text color
+// -------------------------
+@placeholderText:         @textLightColor;
 
 @inputFocusColor:               	@inputColor;
 @inputFocusBorder:              	lighten(@blue, 30%);
@@ -204,9 +207,6 @@
 @zindexModalBackdrop:     1040;
 @zindexModal:             1050;
 
-// Input placeholder text color
-// -------------------------
-@placeholderText:         @textLightColor;
 
 
 // Hr border color
