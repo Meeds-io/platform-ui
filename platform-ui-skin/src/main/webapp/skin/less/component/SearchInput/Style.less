@@ -14,3 +14,21 @@
 		background: @baseBackground url("@{images-path}/SearchInput/Search.png") no-repeat right -28px;
 	}
 }
+
+
+.searchWithIcon.uiSearchInput {
+  display: inline-block;
+  position: relative;
+  .advancedSearch,.AdvancedSearch {
+    display: block;
+    position: absolute;
+    right: 4px;
+    top: 3px;
+  }
+  input[type="text"] {
+    background-image: none;
+  }
+  input[type="text"]:hover {
+    background-image: none;
+  }
+}
