@@ -38,10 +38,17 @@
 		font-size: 10px;
 		display: none;
 		float: right;
-		#gradient .horizontal(rgba(255,255,255,0),rgba(255,255,255,1));
+		background: none;
 		background-color: transparent;
 		&.active {
 			display: block;
+		}
+		.deny {
+			.uiIconClose {
+				position: relative;
+				right: 2px;
+				top: -1px;
+			}
 		}
 	}
 
