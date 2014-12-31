@@ -41,15 +41,15 @@
 		width: auto;
 		background: @uiPopupContentBackground;
 		.border-radius(0 0 4px 4px);
-		.resizable {
+		> .resizable {
 			overflow: auto;
-			padding: 15px;
+			padding: 0 15px;
 			margin: -15px;
 		}
         select {margin-bottom: 0;}
 	}
 	.form-horizontal {
-		padding: 5px 0;
+		padding: 0;
 		.control-group{
 			&:last-child {
 				margin-bottom: 0;
@@ -76,11 +76,6 @@
 			> .center {
 				margin-bottom: 20px;
 			}
-		}
-	}
-	.resizable {
-		.form-horizontal {
-			margin-bottom: 5px;
 		}
 	}
 }
