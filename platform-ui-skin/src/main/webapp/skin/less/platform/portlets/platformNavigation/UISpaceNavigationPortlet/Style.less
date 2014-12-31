@@ -20,18 +20,10 @@
 	}
 
 	.searchInput input {
-		border: 1px solid @borderColor;
-    	.border-radius(4px);
-    	 .box-shadow(~"inset 0 1px 1px rgba(0, 0, 0, 0.1)");
 	    height: 28px;
 	    margin: 18px auto 10px auto;
-	    padding: 0 @gutterSizeBase;
 	    width: 200px;
 	    display: block;
-	     color: @baseColorLight;
-    	&.Focus {
-		   color: @baseColorDark;
-		}
 	}
 
 
@@ -138,3 +130,6 @@
 	}
 
 }
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
