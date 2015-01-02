@@ -15,7 +15,7 @@
 // <i class="iconinbox iconwhite"></i>
 [class^="uiIconCal"]{
 	margin-top: 0;
-	background-image: url("@{images-path}/calendar/Icons/uiIconsCalLightGray.png");
+	background-image: url("@{images-path}/calendar/Icons/uiIconsCalDefault.png");
 }
 
 /* Blue icons with optional class, or on hover/active states of certain elements */
@@ -41,9 +41,10 @@
 .dropdown-menu .active a > [class^="uiIconCal"],
 .uiDropdownWithIcon .dropdown-submenu a [class^="uiIconCal"],
 .uiDropDownCal li a [class^="uiIconCal"],
-.uiDropDownCal .active a [class^="uiIconCal"]
+.uiDropDownCal .active a [class^="uiIconCal"],
+.uiIconCalLightGray
 {
-	background-image: url("@{images-path}/calendar/Icons/uiIconsCalLightGray.png");
+	background-image: url("@{images-path}/calendar/Icons/uiIconsCalDefault.png");
 
 }
 
@@ -64,12 +65,15 @@
 .btn-primary:hover [class^="uiIconCal"],.btn-primary:hover [class^="uiIconCal"]:hover,
 .uiIconCalWhite
 {
-	background-image: url("@{images-path}/calendar/Icons/uiIconsCalWhite.png");
+	background-image: url("@{images-path}/calendar/Icons/uiIconsCalSecondary.png");
+}
 
+.uiIconCalDarkGray {
+	background-image: url("@{images-path}/calendar/Icons/uiIconsCalExtra.png");
 }
 
 .uiEventCategoryManager [class^="uiIcon"]{
-	background-image: url("@{images-path}/Icons/uiIconsLightGray.png");
+	background-image: url("@{images-path}/Icons/uiIconsDefault.png");
 }
 .uiIconCalnullPriority,.uiIconCalnonePriority{
 	display: none;
