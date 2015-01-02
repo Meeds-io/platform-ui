@@ -41,10 +41,13 @@
 		width: auto;
 		background: @uiPopupContentBackground;
 		.border-radius(0 0 4px 4px);
-		> .resizable {
+		.resizable {
 			overflow: auto;
-			padding: 0 15px;
+			padding: 15px;
 			margin: -15px;
+		}
+		> .resizable {
+			padding: 0 15px;
 		}
         select {margin-bottom: 0;}
 	}
@@ -53,6 +56,9 @@
 		.control-group{
 			&:last-child {
 				margin-bottom: 0;
+				&:first-child {
+					margin-bottom: 12px;
+				}
 			}
 		}
 	}
@@ -70,8 +76,8 @@
 		padding-bottom: 0;
 	}
 	.form-horizontal.resizable {
-		margin-top: 0;
-		margin-bottom: 0;
+		//margin-top: 0;
+		//margin-bottom: 0;
 		.controls-full {
 			> .center {
 				margin-bottom: 20px;
@@ -84,6 +90,10 @@
 
 .uiPopup {
 	.popupMessage {
+		&.resizable {
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
 		> li {
 			padding: 5px 0;
 		}

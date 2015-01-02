@@ -407,8 +407,13 @@ Round corner box with title
 		margin-right: -15px;
 	}
 	.uiBox {
+		margin-bottom: 0;
 		.uiContentBox {
 			padding: 15px;
+			+ .uiAction.uiActionBorder {
+				margin-left: 0;
+				margin-right: 0;
+			}
 		}
 	}
 }
