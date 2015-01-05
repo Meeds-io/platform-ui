@@ -164,8 +164,8 @@
 		    display: inline-block;
 		    border-left:   7px solid transparent;
 		    border-right:  7px solid transparent;
-		    border-bottom: 7px solid @borderColor;
-		    border-bottom-color: @borderColor;
+		    border-bottom: 7px solid @dropdownBorder;
+		    border-bottom-color: @dropdownBorder;
 		    position: absolute;
 		    top: -7px;
 		    left: 9px;
@@ -175,7 +175,7 @@
 		    display: inline-block;
 		    border-left:   6px solid transparent;
 		    border-right:  6px solid transparent;
-		    border-bottom: 6px solid @baseBackground;
+		    border-bottom: 6px solid @dropdownBackground;
 		    position: absolute;
 		    top: -6px;
 		    left: 10px;
@@ -190,8 +190,8 @@
 		    display: inline-block;
 		    border-left:   7px solid transparent;
 		    border-right:  7px solid transparent;
-		    border-bottom: 7px solid @borderColor;
-		    border-bottom-color: @borderColor;
+		    border-bottom: 7px solid @dropdownBorder;
+		    border-bottom-color: @dropdownBorder;
 		    position: absolute;
 		    top: -7px;
 		    right: 10px;
@@ -201,7 +201,7 @@
 		    display: inline-block;
 		    border-left:   7px solid transparent;
 		    border-right:  7px solid transparent;
-		    border-bottom: 7px solid @baseBackground;
+		    border-bottom: 7px solid @dropdownBackground;
 		    position: absolute;
 		    top: -6px;
 		    right: 10px;
@@ -317,10 +317,10 @@
 
 	.uiAdminToolbarPortlet {
 		.seoImgBlock{
-			padding: 5px;
+			padding: 5px 20px 5px 10px;
 			.UISEOToolbarPorlet .SEOToolbar .Enable {
-				padding: 0 5px;
-				margin-left: 2px;
+			//	padding: 0 5px;
+			//	margin-left: 2px;
 			}
 		}
 		.seoImgBlock:hover,
@@ -406,5 +406,16 @@
 		}
 }
 
-
+.dropdown  .seoImgBlock {
+  cursor: pointer;
+    span {
+      color:@dropdownLinkColor ;
+      &:hover {
+        color:@dropdownLinkColorHover ;
+      }
+    }
+    &:hover span{
+      color:@dropdownLinkColorHover ;
+    }
+}
 
