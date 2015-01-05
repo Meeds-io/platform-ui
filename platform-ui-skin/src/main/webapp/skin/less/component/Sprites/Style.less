@@ -74,11 +74,21 @@
   background-image: url("@{images-path}/Icons/uiIconsSecondary.png");
 }
 
-.uiIconClose:hover, a:hover .uiIconClose {
-	background-image: url("@{images-path}/Icons/uiIconExtra.png") !important;
+.uiIconClose {
+  .opacity(50);
+  &:hover {
+    .opacity(100);
+    background-image: url("@{images-path}/Icons/uiIconsDefault.png")!important;
+  }
 }
-.actionIcon:hover .uiIconClose {
-	background-image: url("@{images-path}/Icons/uiIconsPrimary.png") !important;
+
+.actionIcon  {
+  &:hover {
+    .uiIconClose {
+      background-image: url("@{images-path}/Icons/uiIconsDefault.png") !important;
+    }
+  }
+
 }
 
 .uiIconSearch {
