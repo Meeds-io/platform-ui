@@ -59,17 +59,17 @@
 
 // Accent colors
 // -------------------------
-@red:                   #C72222;							// Red Primary
-@redLight:				lighten(spin(@red, 5%), 30%);		// #ed9c95
+@errorColor:                   #C72222;							// Red Primary
+@errorColorLight:				lighten(spin(@errorColor, 5%), 30%);		// #ed9c95
 
-@yellow:                #EDAD00;							// Orange Primary
-@yellowLight:			lighten(spin(@yellow, 5%), 42%);	// #fff4c4
+@warningColor:                #EDAD00;							// Orange Primary
+@warningColorLight:			lighten(spin(@warningColor, 5%), 42%);	// #fff4c4
 
-@blue: 					#215ab2;							// Blue Primary
-@blueLight: 			lighten(spin(@blue, 5%), 48%);		// #dee3fa
+@infoColor: 					#215ab2;							// Blue Primary
+@infoColorLight: 			lighten(spin(@infoColor, 5%), 48%);		// #dee3fa
 
-@green:                 #39C522;							// Green Primary
-@greenLight:			lighten(spin(@green, 5%), 45%);		// #d7f8d5
+@successColor:                 #39C522;							// Green Primary
+@successColorLight:			lighten(spin(@successColor, 5%), 45%);		// #d7f8d5
 
 // Scaffolding
 // -------------------------
@@ -135,8 +135,8 @@
 @placeholderText:         @textLightColor;
 
 @inputFocusColor:               	@inputColor;
-@inputFocusBorder:              	lighten(@blue, 30%);
-@inputFocusShadow:              	lighten(@blue, 40%);
+@inputFocusBorder:              	lighten(@infoColor, 30%);
+@inputFocusShadow:              	lighten(@infoColor, 40%);
 
 @inputHeight:                   	@baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
 
@@ -280,20 +280,20 @@
 // Form states and alerts
 // -------------------------
 @warningText:             #333333;
-@warningBackground:       @yellowLight;
-@warningBorder:           @yellow;
+@warningBackground: @warningColorLight;
+@warningBorder: @warningColor;
 
 @errorText:               #333333;
-@errorBackground:         @redLight;
-@errorBorder:             @red;
+@errorBackground: @errorColorLight;
+@errorBorder: @errorColor;
 
 @successText:             #333333;
-@successBackground:       @greenLight;
-@successBorder:           @green;
+@successBackground: @successColorLight;
+@successBorder: @successColor;
 
 @infoText:                #333333;
-@infoBackground:          @blueLight;
-@infoBorder:              @blue;
+@infoBackground: @infoColorLight;
+@infoBorder: @infoColor;
 
 
 // Tooltips and popovers
@@ -458,9 +458,9 @@
 @quotePrimaryBackground: 				lighten(@quotePrimaryBorder, 18%);	// #aac5e3
 
 // UIMention
-@uiMentionColor:						@blue;
-@uiMentionBorder:						@blue;
-@uiMentionBackground:					lighten(@blueLight, 4%);
+@uiMentionColor: @infoColor;
+@uiMentionBorder: @infoColor;
+@uiMentionBackground:					lighten(@infoColorLight, 4%);
 
 //@paddingXLarge:         10px 15px;
 //@paddingLarge:          4px 10px;
