@@ -46,7 +46,7 @@ a {
 		text-align: center;
 		font-size: 18px;
 		font-weight: bold;
-		color: #c1c1c1;
+      color: @textLightColor;
 	}
 	 .content {
 		background-color: @baseBackground;
@@ -61,11 +61,11 @@ a {
 
 .uiWelcomeBox {
 	 input {
-		border: 1px solid @borderColor;
-       background: @baseBackground;
+		border: 1px solid @inputBorder;
+       background: @inputBackground;
 		.border-radius(4px);
 		 .box-shadow(~'0 1px 1px rgba(0,0,0,0.1) inset');
-	   color: @textColor;
+	   color: @inputColor;
 		height: 28px;
 		padding: 0 6px;
 		outline: none;
@@ -83,12 +83,12 @@ a {
 		   color: @placeholderText;
 		}
 		&:focus {
-		  border-color: #94b0df;
+		  border-color: @inputFocusBorder;
 		  .box-shadow(~'inset 0 1px 1px rgba(0,0,0,.075), 0 0 5px rgba(29,75,159,.6)');
-		  color: @textColor;
+		  color: @inputFocusColor;
 		}
 		&.disable {
-			background-color: @primaryBackgroundHover;
+			background-color: @inputDisabledBackground;
 		}
 	}
 }
@@ -99,16 +99,13 @@ a {
 		background: url("@{images-path}/platform/portlets/extensions/bottomBG.png") no-repeat center bottom;
 		text-align: center;
 		padding: 25px 0;
+       border-radius: 8px;
 	}
 	.btn  {
 		 font-size: 16px;
-		.buttonBackgroundEXO(@btnBackground, @btnBackgroundHighlight, @btnBorder, @baseColorDark, none);
 		 line-height: 41px;
 		.border-radius(@baseBorderRadius);
-		.ie7-restore-left-whitespace(); // Give IE7 some love
-		.box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
 		 width: 100px;
-		color: @textColor;
 		 cursor: pointer;
 		display: inline-block;
 		font-weight: bold;
@@ -117,40 +114,24 @@ a {
 		text-decoration: none;
 		padding: 0;
 		margin: 0 5px;
-	  // Hover state
-	  &:hover {
-		#gradient > .vertical(@primaryBackgroundHover, @btnBackgroundHighlight);
-		/*.buttonBackground(@primaryBackgroundHover, @btnBackgroundHighlight, @@baseColorDark, 0 1px 1px rgba(255,255,255,.75));*/
-	  }
-	  // Active state
-		&.active,
-		&:active {
-			background-image: none;
-			outline: 0;
-			.box-shadow(~"inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)");
-		}
-	}
+       .buttonBackground(@btnBackground, @btnBackgroundHighlight, @btnColor,none);
+         border: 1px solid @btnBorder;
+        *border: 0; // Remove the border to prevent IE7's black border on input:focus
+        border-bottom-color: darken(@btnBorder, 10%);
+        .box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          background-position: 0 -15px;
+          .transition(background-position .1s linear);
+        }
+
+
+    }
 
    .btn-primary ,#Greetings button,.btn:first-child{
-	   .buttonBackgroundEXO(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder);
-		color: @baseBackground;
-
-		// Hover/focus state
-		&:hover {
-			text-decoration: none;
-			background-position: 0 -15px;
-			.transition(background-position .1s linear);
-		}
-		.buttonBackground(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
-         text-shadow: none;
-		.box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
-		// Active state
-		&.active,
-		&:active {
-			background-image: none;
-			outline: 0;
-			.box-shadow(~"inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)");
-		}
+     .buttonBackgroundEXO(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder,@btnPrimaryColor);
+     .box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
 
 	}
 }

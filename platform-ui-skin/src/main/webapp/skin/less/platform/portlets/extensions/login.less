@@ -3,7 +3,9 @@
 //========================================
 body {
 	background: url("@{images-path}/platform/portlets/extensions/login_texture.jpg") repeat;
-	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: @baseFontFamily;
+  font-size: @baseFontSize;
+  color: @textColor;
 }
 .loginBGLight {
 	background: @baseBackground;
@@ -26,7 +28,7 @@ body {
 	top: 50%;
 	width: 392px;
 	.loginContainer {
-		border-radius: 4px;
+		border-radius: 8px;
 		background: @baseBackground url("@{images-path}/platform/portlets/extensions/loginBG.png") no-repeat bottom;
 		padding: 0 40px;
 	}
@@ -41,7 +43,7 @@ body {
 		box-shadow: 1px 2px 3px -1px rgba(0, 0, 0, 0.43);
 		.userLoginIcon {
 			background: url("@{images-path}/platform/portlets/extensions/UserLoginIcon.png") no-repeat scroll 0 0 transparent;
-			color: @borderColor;
+			color: @textLightColor;
 			font-size: 20px;
 			font-weight: 500;
 			line-height: 41px;
@@ -71,10 +73,10 @@ body {
 		input {
 			width: 260px;
 			height: 36px;
-			border: solid 1px @borderColor;
-			background: @baseBackground;
+			border: solid 1px @inputBorder;
+			background: @inputBackground;
 			margin: 0 0 14px;
-			color: @textColor;
+			color: @inputColor;
 			.box-shadow(1px 2px 1px rgba(0, 0, 0, 0.075) inset);
 			.border-radius(4px);
 			padding-left: 50px;
@@ -94,41 +96,27 @@ body {
 			color: @placeholderText;
 		}
 		input:focus {
-			color: @textColor;
-			border-color: #94b0df;
+			color: @inputFocusColor;
+			border-color: @inputFocusBorder;
 			.box-shadow(0px 0px 5px rgba(19, 75, 159, 0.45));
 			background-position: 0 -41px;
 		}
 		.loginButton {
 			padding: 44px 0 30px;
 			.button {
-				border: 1px solid @primaryDarkColor;
-				border-radius: 4px;
+              .border-radius(4px);
 				text-align: center;
-				color: @baseBackground;
-				font-size: 16px;
 				width: 313px;
 				height: 43px;
 				cursor: pointer;
-				font-family: "Helvetica Neue Bold", Helvetica, Lucida, Arial, sans-serif;
+                font-family: @sansBoldFontFamily;
+                font-size: 16px;
 				font-weight: bold;
 				outline: none;
 				padding: 0;
-				// Hover/focus state
-				&:hover {
-					text-decoration: none;
-					background-position: 0 -15px;
-					.transition(background-position .1s linear);
-				}
-				.buttonBackgroundEXO(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder);
-				.box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
-				// Active state
-				&.active,
-				&:active {
-					background-image: none;
-					outline: 0;
-					.box-shadow(~"inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)");
-				}
+              .buttonBackgroundEXO(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder,@btnPrimaryColor);
+              .box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
+
 			}
 		}
 	}
@@ -173,7 +161,7 @@ body {
 			border-bottom-left-radius: 9px;
 			border-top-left-radius: 9px;
 			.box-shadow(0 3px 5px @primaryDarkColor inset);
-			color: @baseBackground;
+			color: @btnPrimaryColor;
 			left: 1px;
 			min-width: 9px;
 			top: 1px;
@@ -263,7 +251,7 @@ body {
 #platformInfoDiv {
 	font-size: 12px;
 	text-align:center;
-	color: @baseBackground;
+	color: @textColor;
 	opacity: 0.6;
 	margin-top: 15px;
 }

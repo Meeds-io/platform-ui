@@ -248,6 +248,7 @@ table {
 		min-width: 530px;
 		.PDFViewerBar {
 			.ControlButton {
+                color: #333; //fix code
 				.PageNumber input{
 					border: 1px solid @borderColor;
 					text-align: center;
@@ -490,41 +491,21 @@ Round corner box with title
     width: 100%;
     padding: 6px 0;
     .btn {
-        color: #333333;
         font-weight: bold;
         margin-left: 12px;
-        cursor: pointer;
-        //text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-        background-color: rgba(255, 255, 255, 0.3);
-        background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(180, 180, 180, 0.3));
-        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(255, 255, 255, 0.3)), to(rgba(180, 180, 180, 0.3)));
-        background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(180, 180, 180, 0.3));
-        background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(180, 180, 180, 0.3));
-        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(180, 180, 180, 0.3));
-        background-repeat: repeat-x;
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255, 255, 255, 0.3)', endColorstr='#ffe6e6e6', GradientType=0);
-        *background-color: rgba(255, 255, 255, 0.3);
-        filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-        border: none;
-        line-height: 16px;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        border-radius: 4px;
-        *margin-left: .3em;
-        -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
-        -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
-        box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+      line-height: 16px;
+      .buttonBackground(rgba(255, 255, 255, 0.3), rgba(180, 180, 180, 0.3), #333333, 0 0 0 transparent);
+      border: none;
+      .box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
     }
-    .btn:hover {
+    .btn:hover  {
         color: @linkColor;
-        background-position: center;
-        background-color: rgba(255, 255, 255, 0.5);
+      background-position: center;
+      background-color: rgba(255, 255, 255, 0.5);
     }
     .btn:active {
-        -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2) inset, 1px 1px 0 rgba(255, 255, 255, 0.4);
-        -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2) inset, 1px 1px 0 rgba(255, 255, 255, 0.4);
-        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2) inset, 1px 1px 0 rgba(255, 255, 255, 0.4);
-        color: @linkColor;
+      color: @linkColor;
+      .box-shadow(~"inset 0 3px 8px rgba(0, 0, 0, 0.2),1px 1px 0 rgba(255, 255, 255, 0.4)");
     }
     & > form {
         font-size: 14px;
@@ -534,12 +515,11 @@ Round corner box with title
         }
     }
 	&.backOutdated {
-	    background: rgba(212, 0, 0, 0.4);
-	    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr='#66d40000', endColorstr='#66d40000');
+      background: rgba(212, 0, 0, 0.4);
+
 	}
 	&.backNotOutdated {
-	    background: rgba(0, 0, 0, 0.4);
-	    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr='#66d40000', endColorstr='#66d40000');
+      background: rgba(0, 0, 0, 0.4);
 	}
 }
 

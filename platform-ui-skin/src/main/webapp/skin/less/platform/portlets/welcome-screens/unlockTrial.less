@@ -57,7 +57,7 @@ a {
 		text-align: center;
 		font-size: 18px;
 		font-weight: bold;
-		color: #c1c1c1;
+      color: @textLightColor;
 	}
 	.logo {
 		background: url("@{images-path}/platform/portlets/extensions/Logo.png") no-repeat scroll 18px center;
@@ -77,17 +77,18 @@ a {
 		background: url("@{images-path}/platform/portlets/extensions/bottomBG.png") no-repeat center bottom;
 		text-align: center;
 		 padding: 30px 0;
-        color:#333;
+         border-radius: 8px;
+        color:@textColor;
 		  a {
 			text-decoration: none;
 		}
 	}
 	 input {
-       background: @baseBackground;
-		border: 1px solid #cdcdcd;
+       background: @inputBackground;
+		border: 1px solid @inputBorder;
 		.border-radius(4px);
 		.box-shadow(~'0 1px 1px rgba(0,0,0,0.1) inset');
-		color: @baseColorLight;
+		color: @inputColor;
 		height: 28px;
 		margin: 0 5px 0 0;
 		padding: 0 6px;
@@ -106,17 +107,16 @@ a {
 		    color: @placeholderText;
 		}
 		&:focus {
-		  border-color: #94b0df;
+		  border-color: @inputFocusBorder;
 		  .box-shadow(~'inset 0 1px 1px rgba(0,0,0,.075), 0 0 5px rgba(29,75,159,.6)');
-		   color: @textColor;
+		   color: @inputFocusColor;
 		}
 		&.disable {
-			background-color: #e6e6e6;
+			background-color: @inputDisabledBackground;
 		}
 	}
 	 .btn {
 		.border-radius(4px);
-		color: @baseBackground;
 		cursor: pointer;
 		display: inline-block;
 		font-weight: bold;
@@ -126,17 +126,11 @@ a {
 		vertical-align: top;
 		width: 115px;
 		text-decoration: none;
-		font-family: HelveticaNeue, Arial, sans-serif;
+        font-family: @baseFontFamily;
 		font-size: @baseFontSize;
-		border: 1px solid #224886;
-		.buttonBackground(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
-       text-shadow: none;
-			.box-shadow(~'0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05)');
-			&:hover {
-				.buttonBackground(@primaryLightColor, @btnPrimaryBackgroundHighlight);
-              text-shadow: none;
-			}
-		}
+       .buttonBackgroundEXO(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder,@btnPrimaryColor);
+       .box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
+	}
 
 
 	.backOutdated {
