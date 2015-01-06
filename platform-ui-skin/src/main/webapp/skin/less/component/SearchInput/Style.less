@@ -7,12 +7,14 @@
 		margin: 0;
 	}
 	input[type="text"] {
-		background: @baseBackground url("@{images-path}/SearchInput/Search.png") no-repeat right -1px;
+		background-image:  url("@{images-path}/SearchInput/Search.png");
+        background-position:  right -1px;
+        background-repeat: no-repeat ;
 		margin: 0;
 		padding-right: 24px;
 	}
 	input[type="text"]:hover {
-		background: @baseBackground url("@{images-path}/SearchInput/Search.png") no-repeat right -28px;
+      background-position:   right -28px;
 	}
     .advancedSearch,.AdvancedSearch {
       display: block;

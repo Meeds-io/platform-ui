@@ -88,9 +88,9 @@
 }
 .gadgets-gadget-user-prefs-dialog {
 	> form {
-		border: 1px solid #CCCCCC;
+		border: 1px solid @borderColor;
 		border-bottom: none;
-	    .border-radius(3px 3px 0px 0px);
+	    .border-radius(@baseBorderRadius @baseBorderRadius 0px 0px);
 	    margin: 10px 2% 0px 2%;
 		> div {
 			padding: 10px 10px 5px;
@@ -104,18 +104,18 @@
 		}
 		input {
 			padding: 3px 6px;
-			color: @baseColorDark;
+			color: @inputColor;
 			.box-shadow(inset 0 2px 1px rgba(0,0,0,.075));
 			font-size: @baseFontSize;
 			.box-sizing(border-box);
 			height: 28px;
-			border: 1px solid @borderColor;
+			border: 1px solid @inputBorder;
 			.border-radius(4px);
 			background-color: @inputBackground;
 			&:focus {
 				border-color: rgba(148,176,223,1);
 				.box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 5px rgba(29,75,159,.6)");
-				color: @baseColorDark;
+				color: @inputFocusColor;
 			}
 		}
 		input, select, textarea {
@@ -123,9 +123,9 @@
 		}
 	}
 	> .gadgets-gadget-user-prefs-dialog-action-bar {
-		border: 1px solid #ccc;
+		border: 1px solid @borderColor;
 		border-top: none;
-		.border-radius(0 0 3px 3px);
+		.border-radius(0 0 @baseBorderRadius @baseBorderRadius);
 		padding: 5px 10px 10px;
 		margin: 0 2% 0;
 		input[type="button"] {

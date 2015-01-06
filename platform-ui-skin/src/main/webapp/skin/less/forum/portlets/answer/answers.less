@@ -100,7 +100,7 @@
 
 	blockquote {
 		background: none;
-		border-left: 5px solid @baseColorLight;
+		border-left: 5px solid @quotePrimaryBorder;
 	    margin: 0 0 20px;
 	    padding: 0 0 0 15px;
 	    width: auto;
@@ -338,6 +338,7 @@
 				.titleQuote{
 					line-height: 8px;
 					height: 13px;
+                  color: @quotecolor;
 				}
 			}
 			.singleQuote {
@@ -346,7 +347,7 @@
 			}
 		}
 		.titleQuote{
-			font-weight:bold;
+			font-weight:bold;color: @quotecolor;
 		}
 	}
 
@@ -357,7 +358,7 @@
 			padding-left: 0;
 			margin: 0;
 			.titleQuote{
-				font-weight:bold;
+				font-weight:bold;color: @quotecolor;
 			}
 		}
 	}

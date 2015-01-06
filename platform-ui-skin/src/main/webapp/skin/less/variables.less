@@ -18,43 +18,6 @@
 @primaryBackground:		#f0f0f0; // main background such as , header popup background, tab items...
 
 
-// -------------------------Color  generation formula -------------------------//
-
-//Return true if base color is darker ( this is default skin)
-.setColor (@a) when (lightness(@a) < 50%) {
-  @baseColorDark:				lighten(@baseColor, 20%);	// #333333 Default color for all title, text, text input, label
-  @baseColorMedium:					lighten(@baseColor, 50%);	// #808080 Navigation text color, special purpose in use
-  @baseColorLight:				lighten(@baseColor, 60%);	// #999999 Default @baseColorMedium color for small text, sub title, text field explanation
-  @borderColor:             lighten(@baseColor, 80%);	// #cccccc
-  @primaryBackgroundHover:	darken(@primaryBackground, 4%);
-  @primaryBackgroundLight:	lighten(@primaryBackground, 3%);
-  @primaryDarkColor:		darken(@primaryColor, 10.5%);		//#224469
-  @primaryLightColor:		lighten(@primaryColor, 18.5%);		//#578dc9
-  // button primary
-  @btnBackground:            @baseBackground;
-  @btnBackgroundHighlight:  @primaryBackground;
-	
-  @dropdownArrowRight:  darken(@baseBackground, 20%);
-	
-}
-
-//Return true if base color is lighter
-.setColor (@a) when (lightness(@a) >= 50%) {
-  @baseColorLight:				darken(@baseColor, 20%);
-  @baseColorMedium:					lighten(@baseColor, 50%);
-  @baseColorDark:				lighten(@baseColor, 60%);
-  @borderColor:             darken(@baseColor, 20%);
-  @primaryBackgroundLight:	lighten(@primaryBackground, 4%);
-  @primaryBackgroundHover :	darken(@primaryBackground, 3%);
-  @primaryLightColor:		lighten(@primaryColor, 10.5%);		//#224469
-  @primaryDarkColor :		darken(@primaryColor, 18.5%);		//#578dc9
-  // button primary
-  @btnBackground:           @primaryBackground;
-  @btnBackgroundHighlight: @baseBackground;
-	@dropdownArrowRight:  lighten(@baseBackground, 90%);
-}
-.setColor(@baseColor);
-
 
 
 // Accent colors
@@ -454,9 +417,9 @@
 @quoteBorder: @primaryBackgroundHover;
 @quoteBackgound: @primaryBackground;
 
-@quotePrimaryBorder: 					lighten(@primaryColor, 40%);				// #aac5e3
-@quotePrimaryBackground: 				lighten(@quotePrimaryBorder, 18%);	// #aac5e3
+@quotecolor: @textColor;
 
+@quotePrimaryBorder: 					lighten(@primaryColor, 40%);
 // UIMention
 @uiMentionColor: @infoColor;
 @uiMentionBorder: @infoColor;
@@ -482,3 +445,41 @@
 @plfNavigationColorSelected: @baseColorMedium;
 @plfNavigationColorHover:  @linkColorHover;
 
+
+// -------------------------Color  generation formula -------------------------//
+
+//Return true if base color is darker ( this is default skin)
+.setColor (@a) when (lightness(@a) < 50%) {
+  @baseColorDark:				lighten(@baseColor, 20%);	// #333333 Default color for all title, text, text input, label
+  @baseColorMedium:					lighten(@baseColor, 50%);	// #808080 Navigation text color, special purpose in use
+  @baseColorLight:				lighten(@baseColor, 60%);	// #999999 Default @baseColorMedium color for small text, sub title, text field explanation
+  @borderColor:             lighten(@baseColor, 80%);	// #cccccc
+  @primaryBackgroundHover:	darken(@primaryBackground, 4%);
+  @primaryBackgroundLight:	lighten(@primaryBackground, 3%);
+  @primaryDarkColor:		darken(@primaryColor, 10.5%);		//#224469
+  @primaryLightColor:		lighten(@primaryColor, 18.5%);		//#578dc9
+  // button primary
+  @btnBackground:            @baseBackground;
+  @btnBackgroundHighlight:  @primaryBackground;
+
+  @dropdownArrowRight:  darken(@baseBackground, 20%);		// #aac5e3
+  @quotePrimaryBackground: 				lighten(@quotePrimaryBorder, 18%);	// #aac5e3
+}
+
+//Return true if base color is lighter
+.setColor (@a) when (lightness(@a) >= 50%) {
+  @baseColorLight:				darken(@baseColor, 20%);
+  @baseColorMedium:					lighten(@baseColor, 50%);
+  @baseColorDark:				lighten(@baseColor, 60%);
+  @borderColor:             darken(@baseColor, 20%);
+  @primaryBackgroundLight:	lighten(@primaryBackground, 4%);
+  @primaryBackgroundHover :	darken(@primaryBackground, 3%);
+  @primaryLightColor:		lighten(@primaryColor, 10.5%);		//#224469
+  @primaryDarkColor :		darken(@primaryColor, 18.5%);		//#578dc9
+  // button primary
+  @btnBackground:           @primaryBackground;
+  @btnBackgroundHighlight: @baseBackground;
+  @dropdownArrowRight:  lighten(@baseBackground, 90%);
+  @quotePrimaryBackground: 				darken(@primaryColor, 10%);	// #aac5e3
+}
+.setColor(@baseColor);

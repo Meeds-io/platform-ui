@@ -451,7 +451,7 @@ Round corner box with title
      .titleQuote {
 		    font-weight: bold;
 		    margin: 15px 0;
-			font-style: normal;
+			font-style: normal;color: @quotecolor;
 		     line-height: 16px;
 		}
 		blockquote {
@@ -463,11 +463,12 @@ Round corner box with title
 		  color:@textColor;
 	    font-style: italic;
 	    .titleQuote {
-	    	color:@textColor;
+	    	color:@quotecolor;
 	    }
 	    p {
 	    	font-style: italic;
     		font-size: @baseFontSize;
+            color: @quotecolor;
     	}
 	}
 	&.quotePrimary {
