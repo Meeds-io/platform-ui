@@ -361,3 +361,23 @@ input[disabled], select[disabled], textarea[disabled] {
 	}
 }
 
+// Warning
+.control-group.warning {
+  .formFieldState(@warningText, @warningBorder, @warningBackground);
+
+}
+// Error
+.control-group.error {
+  .formFieldState(@errorText, @errorBorder, @errorBackground);
+}
+// Success
+.control-group.success {
+  .formFieldState(@successText, @successBorder, @successBackground);
+}
+// Success
+.control-group.info {
+  .formFieldState(@infoText, @infoBorder, @infoBackground);
+}
+.control-group.error > .control-label, .control-group.error .help-block, .control-group.error .help-inline {
+  color: @textColor; 
+}
