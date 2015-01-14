@@ -45,7 +45,7 @@
 					    String applicationName = encoder.encode(application.getDisplayName());
 					    String applicationDescription = encoder.encode(application.getDescription());
 						 String srcBG = application.getIconURL();
-						 String srcBGError = "/eXoSkin/skin/images/Icons/Icon80x80/DefaultPortlet.png";
+						 String srcBGError = "/eXoSkin/skin/images/Default/Icons/Icon80x80/DefaultPortlet.png";
 				%>
 				<div class="accordion-inner clearfix DragObjectPortlet" id="$application.id">
 					<img class="pull-left" src="<%=(srcBG!=null && srcBG.length()>0)?srcBG:srcBGError%>" onError="src='$srcBGError'"  alt=""/>
