@@ -33,8 +33,6 @@
   <packaging>pom</packaging>
   <name>Platform-UI</name>
   <modules>
-    <module>platform-ui-web-eXoResources</module>
-    <module>platform-ui-webui-core</module>
     <module>platform-ui-skin</module>
   </modules>
   <scm>
@@ -83,18 +81,6 @@
       </dependency>
       <dependency>
         <groupId>org.exoplatform.platform-ui</groupId>
-        <artifactId>platform-ui-web-eXoResources</artifactId>
-        <version>${project.version}</version>
-        <type>pom</type>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.platform-ui</groupId>
-        <artifactId>platform-ui-web-eXoResources</artifactId>
-        <version>${project.version}</version>
-        <type>war</type>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.platform-ui</groupId>
         <artifactId>platform-ui-skin</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
@@ -104,11 +90,6 @@
         <artifactId>platform-ui-skin</artifactId>
         <version>${project.version}</version>
         <type>war</type>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.platform-ui</groupId>
-        <artifactId>platform-ui-webui-core</artifactId>
-        <version>${project.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

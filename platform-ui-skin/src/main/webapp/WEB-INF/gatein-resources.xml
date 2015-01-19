@@ -34,7 +34,7 @@
     <skin-name>Default</skin-name>
     <css-path>/skin/css/Core.css</css-path>
     <css-priority>1</css-priority>
-  </portal-skin>forum
+  </portal-skin>
 
   <!-- AccountPortlet skins -->
 
