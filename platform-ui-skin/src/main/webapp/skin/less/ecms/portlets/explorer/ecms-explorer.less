@@ -377,17 +377,32 @@
 
 		.bgThumbnailImage {
 			padding: 5px;
-			background: @baseBackground;
-			box-shadow: 1px 1px 3px 1px rgba(25,44,48,0.2);
-			display: inline-block;
-		}
+			background: none;
+		    box-shadow: none;
+            visibility: hidden;
 
+            display: inline-block;
+		}
+        .hidden-loading  .bgThumbnailImage {
+          visibility: visible;
+        }
 		.loadingProgressIcon {
 			.size(64px,64px);
-			background: url("@{images-path}/Loading/loading32x32Light.png") no-repeat center center;
-			position: relative;
-			margin: auto;
-           .loading-action;
+             position: relative;
+             margin: auto;
+            &.hidden-loading {
+              &:after {display: none;background: none}
+            }
+			&:after{
+              background: url("@{images-path}/Loading/loading32x32Light.png") no-repeat center center;
+              .size(32px,32px);
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              margin: -16px 0 0 -16px;
+              content: "";
+              .loading-action;
+            }
 			img {
 				display: none;
 				max-width: 116px;
