@@ -165,14 +165,14 @@
 		float: left;
 		width: 26px;
 		margin-top: 5px;
-		
+
 		.resizeBarContent {
 			width: 15px;
 			cursor:col-resize;
 			position: relative;
-			
+			margin-left: 5px;
 			&:hover {
-				border-right: solid 1px @primaryBackgroundHover;
+				border-right: solid 1px @borderColor;
 
 					.resizeButton {
 					display: block;
@@ -182,12 +182,12 @@
 
 		.resizeButton {
 			#gradient .vertical(@baseBackground, @primaryBackground);
-			.border-radius(3px 0px 0px 3px);
-			.size(24px,10px);
+			.border-radius(@borderRadiusSmall 0px 0px @borderRadiusSmall);
+			.size(24px,14px);
 			float:right;
 			margin : auto;
 			cursor : pointer;
-			border: 1px solid @primaryBackgroundHover;
+			border: 1px solid @borderColor;
 			border-right: none;
 			display: none;
 			margin-top: 7px;
@@ -208,15 +208,16 @@
 		
 		.showLeftContent {
 			display: block;
-			border: 1px solid @primaryBackgroundHover;
-			.border-radius(0px 3px 3px 0px);
+			border: 1px solid @borderColor;
+            border-left: none;
+			.border-radius(0px @borderRadiusSmall @borderRadiusSmall 0px);
 			float: left;
 		}
 	}
 
 	.resizeBarDisplay {
 		.resizeBarContent {
-			border-right: solid 1px @primaryBackgroundHover;
+			border-right: solid 1px @borderColor;
 		}
 		.resizeButton {
 			display: block;
@@ -225,7 +226,9 @@
 	
 	.resizeNoneBorder {
 		width: 20px;
-		
+		.resizeBarContent {
+          margin-left: 0;
+        }
 		&:hover {
 		cursor: default;
 		}

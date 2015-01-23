@@ -564,16 +564,16 @@
 
 	.resizeButton {
 		#gradient .vertical(@baseBackground, @primaryBackground);
-		.border-radius(5px 0px 0px 5px);
+		.border-radius(@borderRadiusSmall 0px 0px @borderRadiusSmall);
 		.size(24px,16px);
 		float:right;
 		margin : auto;
 		cursor : pointer;
-		border: 1px solid @primaryBackgroundHover;
+		border: 1px solid @borderColor;
 		border-right: none;
 		display: none;
 		position: absolute;
-		top: 5px;
+		top: 7px;
 		right: 0px;
 
 			[class^="uiIcon"] {
@@ -586,7 +586,7 @@
 
 .uiWorkingArea .resizeBarDisplay {
 	.resizeBarContent {
-		border-right: solid 1px @primaryBackgroundHover;
+		border-right: solid 1px @borderColor;
 		cursor:col-resize;
 	}
 	.resizeButton {
@@ -606,8 +606,8 @@
 		cursor: default;
 	}
 	.resizeButton {
-		border: 1px solid @primaryBackgroundHover;
-		.border-radius(0px 5px 5px 0px);
+		border: 1px solid @borderColor;
+		.border-radius(0px @borderRadiusSmall @borderRadiusSmall 0px);
 		display: block;
 		right: 8px;
 		border-left: none;
