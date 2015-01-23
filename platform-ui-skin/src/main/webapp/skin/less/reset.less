@@ -22,3 +22,8 @@ h4 {
 h3 {
 	.title(@linkColor,rgba(35,44,48,0.15),24px,@headingsFontWeight,@baseLineHeight + 8);	/*call titleInfo mixin from wiki-mixins*/
 }
+
+// Utility classes
+.muted               { color: @textLightColor; }
+a.muted:hover,
+a.muted:focus        { color: darken(@textLightColor, 10%); }
