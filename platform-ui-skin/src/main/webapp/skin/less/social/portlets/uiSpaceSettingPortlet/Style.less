@@ -24,15 +24,25 @@
 
 	.uiAvatarUploadContent {
 		.avatarInfo {
+			padding: 5px;
 			a.avatarLargeWithBorder {
-				margin: 15px 0 15px 15px;
+				margin: 5px 10px 5px 0;
 			}
 
-			.form-horizontal .controls {
+			.form-horizontal {
+				float: none;
 				overflow: hidden;
-				text-overflow: ellipsis;
-				white-space: nowrap;
-				width: 161px;
+				.controls {
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					float: none;
+					margin-left: 0;
+				}
+				.control-label {
+					width: 80px;
+					margin-right: 10px;
+				}
 			}
 		}
 	}
