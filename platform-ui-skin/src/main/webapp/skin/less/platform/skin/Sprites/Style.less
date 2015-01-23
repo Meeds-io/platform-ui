@@ -21,7 +21,8 @@
   .ie7-restore-right-whitespace();
   line-height: 16px;
   vertical-align: text-top;
-  background-image: url("@{images-path}/platform/skin/Icons/uiIconsPLFExtra.png");
+  //background-image: url("@{images-path}/platform/skin/Icons/uiIconsPLFExtra.png");
+  background-image: url("@{images-path}/platform/skin/Icons/uiIconsPLFDefault.png");
   background-repeat: no-repeat;
 }
 
@@ -44,9 +45,12 @@ a:hover [class^="uiIconPLF"], [class^="uiIconPLF"]:hover, .uiIconPLFBlue
 
 /* light grey icons with optional class, or on  */
 
-.uiIconPLFLightGray
-{
+.uiIconPLFLightGray {
   background-image: url("@{images-path}/platform/skin/Icons/uiIconsPLFDefault.png");
+}
+
+.uiIconsPLFExtra,.LeftNavigationTDContainer [class^="uiIconPLF"] {
+  background-image: url("@{images-path}/platform/skin/Icons/uiIconsPLFExtra.png");
 }
 
 .uiIconPLFProfile {
@@ -123,17 +127,30 @@ a:hover [class^="uiIconPLF"], [class^="uiIconPLF"]:hover, .uiIconPLFBlue
   .ie7-restore-right-whitespace();
   line-height: 24px;
   vertical-align: middle;
-  background-image: url("@{images-path}/platform/skin/Icons/uiIconsPLF24x24Secondary.png");
+  background-image: url("@{images-path}/platform/skin/Icons/uiIconsPLF24x24Default.png");
   background-repeat: no-repeat;
 }	
 
 a:hover [class^="uiIconPLF24x24"],[class^="uiIconPLF24x24"]:hover {
-	background-image: url("@{images-path}/platform/skin/Icons/uiIconsPLF24x24Secondary.png");
+	background-image: url("@{images-path}/platform/skin/Icons/uiIconsPLF24x24Primary.png");
+}
+.UIToolbarContainer   {
+  [class^="uiIconPLF24x24"]{
+    background-image: url("@{images-path}/platform/skin/Icons/uiIconsPLF24x24Secondary.png");
+  }
+  a:hover [class^="uiIconPLF24x24"],[class^="uiIconPLF24x24"]:hover {
+    background-image: url("@{images-path}/platform/skin/Icons/uiIconsPLF24x24Secondary.png");
+  }
 }
 
-.UIToolbarContainerLight [class^="uiIconPLF24x24"],.UIToolbarContainerLight a:hover [class^="uiIconPLF24x24"], .UIToolbarContainerLight [class^="uiIconPLF24x24"]:hover {
-	background-image: url("@{images-path}/platform/skin/Icons/uiIconsPLF24x24Extra.png");
+.UIToolbarContainer   {
+  &.UIToolbarContainerLight [class^="uiIconPLF24x24"],
+  &.UIToolbarContainerLight a:hover [class^="uiIconPLF24x24"],
+  &.UIToolbarContainerLight [class^="uiIconPLF24x24"]:hover {
+    background-image: url("@{images-path}/platform/skin/Icons/uiIconsPLF24x24Extra.png");
+  }
 }
+
 
 .uiIconPLF24x24Edit {
 	background-position: 0 0;

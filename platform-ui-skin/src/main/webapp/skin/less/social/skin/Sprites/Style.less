@@ -15,7 +15,8 @@
 // <i class="iconinbox iconwhite"></i>
 
 [class^="uiIconSoc"]{
-  background-image: url("@{images-path}/social/skin/Icons/uiIconsSocExtra.png");
+ // background-image: url("@{images-path}/social/skin/Icons/uiIconsSocExtra.png");
+  background-image: url("@{images-path}/social/skin/Icons/uiIconsSocDefault.png");
 }
 
 /* Blue icons with optional class, or on hover/active states of certain elements */
@@ -39,9 +40,12 @@
 .dropdown-menu > li > a > [class^="uiIconSoc"],
 .dropdown-menu > .active > a > [class^="uiIconSoc"],
 .uiDropdownWithIcon .dropdown-submenu> a > [class^="uiIconSoc"],
-.uiDropDownCal li a [class^="uiIconSoc"], .uiActionBar [class^="uiIconSoc"], .uiIconSocLightGray
-{
+.uiDropDownCal li a [class^="uiIconSoc"], .uiActionBar [class^="uiIconSoc"], .uiIconSocLightGray {
   background-image: url("@{images-path}/social/skin/Icons/uiIconsSocDefault.png");
+}
+
+.uiIconSocExtra,.LeftNavigationTDContainer [class^="uiIconSoc"] {
+  background-image: url("@{images-path}/social/skin/Icons/uiIconsSocExtra.png");
 }
 
 

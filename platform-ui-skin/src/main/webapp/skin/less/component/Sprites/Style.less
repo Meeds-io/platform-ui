@@ -20,7 +20,8 @@
   .ie7-restore-right-whitespace();
   line-height: 16px;
   vertical-align: text-top;
-  background-image: url("@{images-path}/Icons/uiIconExtra.png");
+  background-image: url("@{images-path}/Icons/uiIconsDefault.png");
+  //background-image: url("@{images-path}/Icons/uiIconsExtra.png");
   background-repeat: no-repeat;
 }
 
@@ -44,10 +45,13 @@
 .dropdown-menu > .active > a > [class^="uiIcon"],
 .uiDropdownWithIcon .dropdown-submenu> a > [class^="uiIcon"],.uiActionBar [class^="uiIcon"], .uiIconClose, .uiIconLightGray
 {
-  background-image: url("@{images-path}/Icons/uiIconsDefault.png");
+  background-image: url("@{images-path}/Icons/uiIconsDefault.png"); //remove late
 
 }
 
+.uiIconExtra,.LeftNavigationTDContainer [class^="uiIcon"] {
+  background-image: url("@{images-path}/Icons/uiIconsExtra.png");
+}
 /* White icons with optional class, or on hover/active states of Drop down with Icons */
 
 .uiDropdownWithIcon .nav-pills > .active > a > [class^="uiIcon"],

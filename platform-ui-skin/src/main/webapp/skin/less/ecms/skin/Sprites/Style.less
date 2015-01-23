@@ -15,8 +15,8 @@
 // For the @baseBackground version of the icons, just add the .iconwhite class:
 // <i class="iconinbox iconwhite"></i>
 
-[class^="uiIconEcms"]{
-  background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsExtra.png");
+[class^="uiIconEcms"] {
+  background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsDefault.png");
 }
 
 /* Blue icons with optional class, or on hover/active states of certain elements */
@@ -45,6 +45,9 @@
   background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsDefault.png");
 }
 
+.uiIconEcmsExtra,.LeftNavigationTDContainer [class^="uiIconEcms"] {
+  background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsExtra.png");
+}
 
 /* White icons with optional class, or on hover/active states of Drop down with Icons */
 
@@ -477,7 +480,7 @@
 /************** icons Ecms 24x24 *************************/
 
 [class^="uiIconEcms24x24"]{
-  background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcms24x24Extra.png");
+  background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcms24x24Default.png");
 	width: 24px;
   height: 24px;
   line-height: 24px;
@@ -492,6 +495,10 @@
 /* LightGray icons */
 .uiIconEcms24x24LightGray {
   background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcms24x24Default.png");
+}
+
+.uiIconEcms24x24Extra,.LeftNavigationTDContainer [class^="uiIconEcms24x24"] {
+  background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcms24x24Extra.png");
 }
 
 .uiIconEcms24x24DriveGeneral {

@@ -15,7 +15,8 @@
 // <i class="iconinbox iconwhite"></i>
 
 [class^="uiIconWiki"]{
-  background-image: url("@{images-path}/wiki/Icons/uiIconsWikiExtra.png");
+  //background-image: url("@{images-path}/wiki/Icons/uiIconsWikiExtra.png");
+  background-image: url("@{images-path}/wiki/Icons/uiIconsWikiDefault.png");
 }
 
 /* Blue icons with optional class, or on hover/active states of certain elements */
@@ -47,7 +48,9 @@
 
 }
 
-
+.uiIconWikiExtra,.LeftNavigationTDContainer [class^="uiIconWiki"] {
+  background-image: url("@{images-path}/wiki/Icons/uiIconsWikiExtra.png");
+}
 /* White icons with optional class, or on hover/active states of Drop down with Icons */
 
 .uiDropdownWithIcon .nav-pills > .active > a > [class^="uiIconWiki"],
