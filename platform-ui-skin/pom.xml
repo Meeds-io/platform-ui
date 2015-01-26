@@ -179,6 +179,12 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                  <packagingExcludes>skin/images/PSD/,skin/images/themes/blue/,skin/images/themes/green/,skin/images/themes/orange/,skin/images/themes/pink/,skin/images/themes/red/</packagingExcludes>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
