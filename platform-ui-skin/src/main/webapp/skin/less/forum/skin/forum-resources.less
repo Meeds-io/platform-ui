@@ -1,0 +1,21 @@
+@import "../../variables.less";
+@import "../../mixins.less";
+@import url('/forumResources/syntaxhighlighter/Styles/SyntaxHighlighter.css');
+
+.ParentMaskLayer {
+    position: relative;
+    z-index: 3;
+    .KSMaskLayer {
+	    left: 0px;
+	    top: 0px;
+	    z-index: 50;
+	    position: absolute;
+	    visibility: visible;
+	    background: url('@{images-path}/forum/skin/background/Point1x1.png') no-repeat top center;
+	    -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+       -o-user-select: none;
+          user-select: none;
+	}
+}

@@ -1,0 +1,58 @@
+
+/*============== TableView ================*/
+.uiCalendarViewContainer {
+	.table {
+		margin-bottom: 0;
+
+	}
+  .uiGrid.table
+  {
+    .colsTime{
+      .displayBorderTop{
+        border-top: solid 1px @primaryBackgroundHover;
+      }
+      .noDisplayBorderTop{
+        border-top: solid 1px @baseBackground;
+      }
+    }
+
+    td{
+      padding: 0;
+      border-left: 1px solid @primaryBackgroundHover;
+      line-height: 19px;
+    }
+
+    .tdDotLine{
+      border-top: dotted 1px @primaryBackgroundHover;
+    }
+
+    .tdLine{
+      border-top: solid 1px @primaryBackgroundHover;
+    }
+
+    .tdTime{
+      border-top: solid 1px @primaryBackgroundHover;
+    }
+
+
+    tr{
+      line-height: 19px;
+    }
+
+    tr:first-child, tr th:first-child{
+      border-top: none;
+    }
+
+  }
+  .uiGrid {
+    .title{
+      padding: 0;
+    }
+  }
+
+}
+
+
+.uiCalendarViewContainer .uiGrid.table {
+	border: none;
+}

@@ -1,0 +1,438 @@
+@import "../bootstrap/less/mixins.less";
+
+//======================================================//
+//                  MIXINS EXO PLATFORM                 //
+//======================================================//
+
+// Gradient Bar Colors for buttons and alerts
+// --------------------------------------------------
+.gradientBarEXO(@primaryColor, @secondaryColor, @borderColor, @textColor: #fff, @textShadow: 0 0 0 transparent) {
+	color: @textColor;
+	text-shadow: @textShadow;
+	#gradient > .vertical(@primaryColor, @secondaryColor);
+	border: 1px solid @borderColor;
+}
+
+// Create Button background
+// --------------------------------------------------
+.buttonBackgroundEXO(@startColor, @endColor, @borderColor, @btnColor: #fff, @textShadow: none) {
+  // gradientBar will set the background to a pleasing blend of these, to support IE<=9
+  .gradientBarEXO(@startColor, @endColor, @borderColor, @btnColor, @textShadow);
+  *background-color: @endColor; // Darken IE7 buttons by default so they stand out more given they won't have borders
+  .reset-filter();
+  // in these cases the gradient won't cover the background, so we override
+  &:hover, &:focus, &:active, &.active, &.disabled, &[disabled] {
+  	color: @btnColor;
+  	background-color: @endColor;
+  	*background-color: darken(@endColor, 5%);
+  }
+  &.disabled, &[disabled] {
+    color: @btnDisableColor;
+  }
+  // Hover/focus state
+  &:hover {
+    text-decoration: none;
+    background-position: 0 -15px;
+    .transition(background-position .1s linear);
+  }
+
+}
+
+// FONTS
+// --------------------------------------------------
+#font {
+	#family {
+		.sans-serif-bold() {
+			font-family: @sansBoldFontFamily;
+		}
+	}
+
+	.sans-serif-bold(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
+		#font > #family > .sans-serif-bold;
+		#font > .shorthand(@size, @weight, @lineHeight);
+	}
+}
+
+
+
+// Status Elements
+// --------------------------------------------------
+#StatusElements {
+	.StatusHover(@startColor : @baseBackground, @endColor : @primaryBackground,@boxShadow: 0 1px 2px 0px rgba(255,255,255,0)){
+		#gradient > .vertical(@startColor,@endColor);
+		border: 1px solid @borderColor;
+		.border-radius(@borderRadiusSmall);
+		.box-shadow(@boxShadow);
+		&:active,&:focus {
+			.StatusActive();
+		}
+	}
+	.StatusActive(@boxShadow: 0px 2px 6px 0 rgba(0, 0, 0, 0.15) inset) {
+		.box-shadow(@boxShadow);
+		border: 1px solid #c7c7c7;
+		.border-radius(@borderRadiusSmall);
+		background-color: @primaryBackground;
+	}
+}
+
+// Action With Label
+// --------------------------------------------------
+.uiActionWithLabel(){
+	border: 1px solid transparent;
+	cursor: pointer;
+	display: inline-block;
+	padding: 3px 8px;
+	line-height: @baseLineHeight;
+	&:hover {
+		#StatusElements .StatusHover();
+	}
+	.uiIconMiniArrowDown{
+		margin-left: 5px;
+	}
+}
+
+// actionIcon
+// --------------------------------------------------
+.actionContainer() {
+	white-space: nowrap;
+}
+.actionIcon(){
+	.uiActionWithLabel;
+	padding:2px 4px;
+	vertical-align: middle;
+	&:active,&:focus,&.active {
+		#StatusElements > .StatusActive(0px 0px 10px 0 rgba(0, 0, 0, 0.15) inset);
+	}
+}
+
+// error, noticeEmpty
+// --------------------------------------------------
+.error() {
+	color: @errorColor;
+}
+.noticeEmpty() {
+	color: @errorColor;
+}
+
+.noticeEmpty() {
+	color: @baseColorLight;
+}
+
+// Title
+// --------------------------------------------------
+.title(@color: @textColor,@shadowColor: #cdcdcd,@fonSize : 18px,@fontWeight: @headingsFontWeight,@lineHeight: @baseLineHeight) {
+	color: @color;
+	#font > .sans-serif-bold(@fonSize,@fontWeight,@lineHeight);
+}
+
+.titleWithBorder() {
+	position: relative;
+	overflow: hidden;
+	&:after {
+		border-bottom: 1px solid #dadada;
+		height: 11px;
+		content: "";
+		position: absolute;
+		width: 100%;
+		margin-left: 10px;
+	}
+}
+
+// uiBox
+// --------------------------------------------------
+.uiBox() {
+	.border-radius(@baseBorderRadius);
+	.box-shadow(0px 2px 4px -1px rgba(35,44,48,0.18));
+	border: 1px solid @uiBoxBorder;
+	background: @uiBoxBg;
+	margin: 0 0 @baseLineHeight 0;
+	.title {
+		background-color:  @uiBoxHeadBg;
+		border-bottom: 1px solid @borderColor;
+		.box-shadow(0 1px 2px rgba(13, 13, 13, 0.2));
+		.border-radius(@baseBorderRadius @baseBorderRadius 0 0);
+		padding: 8px 10px;
+		line-height: @baseLineHeight;
+		margin: 0;
+		word-wrap: break-word;
+		.actionIcon {
+			margin: -3px 0;
+		}
+	}
+	.uiContentBox {
+		padding: 15px;
+		& + .title {
+			.border-radius(0);
+			border-top: 1px solid @borderColor;
+		}
+	}
+	&.roundedBottom {
+		.border-radius(0 0 @baseBorderRadius @baseBorderRadius);
+		.title {
+			.border-radius(0);
+		}
+	}
+	&.roundedTop {
+		.border-radius(@baseBorderRadius @baseBorderRadius 0 0);
+	}
+	&.uiGrayLightBox {
+		background: @uiBoxGray;
+	}
+	&.noRounded {
+		.border-radius(0);
+		.title {
+			.border-radius(0);
+		}
+	}
+}
+
+// Gray Light Box
+// --------------------------------------------------
+.uiGrayLightBox(){
+	padding: @gutterSizeBase;
+	border: 1px solid @borderColor;
+	background: @uiBoxGray;
+	.border-radius(@baseBorderRadius);
+	.box-shadow(0px 1px 2px rgba(0,0,0,.06));
+	label {
+		display: inline-block;
+	}
+	input {
+		margin-bottom: 0px;
+	}
+}
+
+.center() {
+	text-align: center;
+}
+
+// AVATAR
+// --------------------------------------------------
+.circleBorderAvatar(@size) {
+	#gradient .vertical(@baseBackground, @primaryBackground);
+	.square(@size);
+	.border-radius(100px);
+	.box-shadow(0px 2px 4px rgba(13px, 13px, 13px, 0.27));
+	border: 1px solid #b1b1b1;
+	padding: 5px;
+
+	img {
+		.border-radius(100px);
+		.square(@size);
+	}
+}
+
+.roundedCornerAvatar(@size, @radius) {
+	.square(@size);
+	img {
+		.border-radius(@radius);
+		.square(@size);
+	}
+}
+
+// avatarCircle for circle avatar 40px 40px
+// avatarSmallCircle for circle avatar 32px 32px
+// avatarMiniCircle for circle avatar 24px 24px
+
+.avatarCircle() {
+	.circleBorderAvatar(40px);
+}
+
+.avatarSmallCircle() {
+	.circleBorderAvatar(32px);
+}
+
+.avatarMiniCircle() {
+	.circleBorderAvatar(24px);
+}
+
+.avatarXLarge() {
+	.roundedCornerAvatar(120px, 4px);
+}
+
+.avatarLarge() {
+	.roundedCornerAvatar(100px, 4px);
+}
+
+.avatarXMedium() {
+	.roundedCornerAvatar(75px, 4px);
+}
+
+.avatarMedium() {
+	.roundedCornerAvatar(50px, 3px);
+}
+
+.avatarXSmall() {
+	.roundedCornerAvatar(36px, 2px);
+}
+
+.avatarSmall() {
+	.roundedCornerAvatar(26px, 2px);
+}
+
+.avatarMini() {
+	.roundedCornerAvatar(20px, 2px);
+}
+
+.avatarTiny() {
+	.roundedCornerAvatar(16px, 2px);
+}
+
+.squareBorderAvatar(@size) {
+	#gradient .vertical(@baseBackground, @primaryBackground);
+	.square(@size);
+	.border-radius(4px);
+	.box-shadow(0px 2px 4px rgba(13px, 13px, 13px, 0.27));
+	border: 1px solid @borderColor;
+	padding: 7px;
+	display: block;
+
+	img {
+		.border-radius(4px);
+		.square(@size);
+	}
+}
+
+.avatarLargeWithBorder() {
+	.squareBorderAvatar(100px);
+}
+
+.avatarXLargeWithBorder() {
+	.squareBorderAvatar(120px);
+}
+
+
+// Round Corner
+// --------------------------------------------------
+.roundCornerBoxWithTitle() {
+	background: @baseBackground;
+	border: 1px solid @borderColor;
+	.border-radius(4px);
+	.box-shadow(0px 1px 2px rgba(0, 0, 0, 0.08));
+
+	.titleBox {
+		.border-radius(4px 4px 0px 0px );
+		.box-shadow(0px 1px 2px rgba(13, 13, 13, 0.08));
+		background: @primaryBackground;
+		border-bottom: 1px solid @borderColor;
+		margin: 0px;
+		line-height: @baseLineHeight ;
+		font-weight: @headingsFontWeight;
+		color: @baseColorDark;
+		padding: 8px 10px;
+		word-wrap: break-word;
+	}
+}
+
+// Create Margin And Padding Utilities Class
+// --------------------------------------------------
+.marginAndPadding(@index, @countDown: 5)
+{
+
+  // LOOP
+  .style_margin_padding (@index) when (@index >= 0) {
+
+    // Padding
+    (~".pd@{index}") {padding: ~"@{index}px";}
+    (~".pdT@{index}") {padding-top: ~"@{index}px";}
+    (~".pdR@{index}") {padding-right: ~"@{index}px";}
+    (~".pdB@{index}") {padding-bottom: ~"@{index}px";}
+    (~".pdL@{index}") {padding-left: ~"@{index}px";}
+
+    // Padding Important
+    (~".pd@{index}-ipt") {padding: ~"@{index}px!important";}
+    (~".pdT@{index}-ipt") {padding-top: ~"@{index}px!important";}
+    (~".pdR@{index}-ipt") {padding-right: ~"@{index}px!important";}
+    (~".pdB@{index}-ipt") {padding-bottom: ~"@{index}px!important";}
+    (~".pdL@{index}-ipt") {padding-left: ~"@{index}px!important";}
+
+    // Padding Horizatial
+    (~".pd-0-@{index}") {padding: 0 ~"@{index}px";}
+    (~".pd-0-@{index}-ipt") {padding: 0 ~"@{index}px!important";}
+
+
+    // Padding Vertical
+    (~".pd-@{index}-0") {padding: ~"@{index}px" 0;}
+    (~".pd-@{index}-0-ipt") {padding: ~"@{index}px" 0!important;}
+
+    //-----------------------------------------------------------------
+    // Margin
+    (~".mg@{index}") {margin: ~"@{index}px";}
+    (~".mgT@{index}") {margin-top: ~"@{index}px";}
+    (~".mgR@{index}") {margin-right: ~"@{index}px";}
+    (~".mgB@{index}") {margin-bottom: ~"@{index}px";}
+    (~".mgL@{index}") {margin-left: ~"@{index}px";}
+    // Margin Important
+    (~".mg@{index}-ipt") {margin: ~"@{index}px!important";}
+    (~".mgT@{index}-ipt") {margin-top: ~"@{index}px!important";}
+    (~".mgR@{index}-ipt") {margin-right: ~"@{index}px!important";}
+    (~".mgB@{index}-ipt") {margin-bottom: ~"@{index}px!important";}
+    (~".mgL@{index}-ipt") {margin-left: ~"@{index}px!important";}
+
+    // margin Horizatial
+    (~".mg-0-@{index}") {margin: 0 ~"@{index}px";}
+    (~".mg-0-@{index}-ipt") {margin: 0 ~"@{index}px!important";}
+
+    // margin Vertical
+
+    (~".mg-@{index}-0") {margin: ~"@{index}px" 0;}
+    (~".mg-@{index}-0-ipt") {margin: ~"@{index}px" 0!important;}
+
+    // next iteration
+    .style_margin_padding(@index - @countDown);
+
+}
+  // end the loop when index is 0
+  .style_margin_padding (0) {}
+  // "call" the loopingClass the first time with highest value
+  .style_margin_padding (@index);
+}
+
+
+
+.loading-action {
+  -webkit-animation: fa-spin 1s infinite linear;
+  animation: loading 1s infinite linear;
+}
+@-webkit-keyframes loading{
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+// Placeholder text
+// -------------------------
+.placeholder(@color: @placeholderText) {
+  &::-webkit-input-placeholder {
+    color: @color;
+  }
+  &:-moz-placeholder {
+    color: @color;
+  }
+  &::-moz-placeholder {
+    color: @color;
+  }
+  &:-ms-input-placeholder {
+    color: @color;
+  }
+}
+.box-sizing(@value) {
+  -webkit-box-sizing: @value; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: @value; /* Firefox, other Gecko */
+  box-sizing: @value;
+}

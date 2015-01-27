@@ -1,0 +1,124 @@
+
+/*============== ContentContainer uiCalendars ================*/
+
+.uiCalendars{
+	.title{
+		padding-right: 7px;
+	}
+	.myCalendar {
+		margin: 0 0 5px 0;
+	}
+	margin-top: 24px;
+	.contentContainer{
+			padding: 7px;
+			margin: 0px;
+			a{
+				line-height: 12px;
+				.border-radius(@borderRadiusSmall - 1);
+				float: left;
+				margin: 1px 4px 0 0;
+				color: @textColor;
+			}
+		}
+
+	.calendarTitle{
+		background-color: @primaryBackground;
+		.border-radius(@borderRadiusSmall - 1);
+		line-height: 26px;
+		padding: 0 14px;
+		margin: 0px;
+		font-weight: normal;
+	}
+
+	.myCalendarContainer{
+		li{
+			height: 14px;
+			background-color: @baseBackground;
+			border:solid 1px @baseBackground;
+			padding: 3px 3px 3px 6px;
+			margin: 3px 0;
+
+			.uiIconCalSettingMini{
+					display: none;
+				}
+
+			&:hover{
+				background-color: @primaryBackgroundLight;
+				border:solid 1px @primaryBackground;
+				.border-radius(@borderRadiusSmall);
+				.uiIconCalSettingMini{
+					display: inline-block;
+					cursor: pointer;
+				}
+
+			}
+
+		}
+
+		.colorOpacity {
+			.border-radius(@borderRadiusSmall);
+			display: block;
+			.square(12px);
+		}
+
+		.calendarName{
+			.text-overflow();
+			 .size(18px,130px);
+		}
+
+		.uiVTabContent{
+			padding: 4px 0 4px 9px;
+		}
+
+
+	}
+}
+.defaultCalendarTab .myCalendarContainer  .calendarName{
+	width: 95%;
+}
+.uiCalendarSharedForm .calendarName {
+	word-wrap: break-word;
+	word-break: break-all;
+	padding: 10px 5px;
+}
+.calendarWorkingWorkspace {
+	padding: 20px 20px 0 20px;
+	.uiActionBar {
+		margin: 0 0 15px 0;
+	}
+}
+
+/**=========================calNotification===========================*/
+
+.uiCalNotification {
+	min-width:250px;
+	position: absolute;
+    right: 30px;
+    top: 124px;
+    z-index: 2;
+	.pull-left + .text ,.title{
+		margin-left: 32px;
+		line-height: 18px;
+	}
+	i {
+		.square(16px);
+	}
+	.uiIconBell {
+		background-image: url("@{images-path}/calendar/Icons/icon-bell.png");
+		background-position: 0px 0px;
+		&:hover {
+			background-image: url("@{images-path}/calendar/Icons/icon-bell.png");
+			background-position: 0px 0px;
+		}
+	}
+	.description {
+		color: @baseColorMedium;
+	}
+}
+
+.uiCalendars.defaultCalendarTab {
+	margin-top: 0;
+	.settingNotice {
+		margin: 0 0 10px 0;
+	}
+}

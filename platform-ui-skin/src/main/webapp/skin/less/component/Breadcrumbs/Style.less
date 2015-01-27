@@ -1,0 +1,47 @@
+//
+// pagination
+// --------------------------------------------------
+/*
+	Default	 		Helvetica Neue  		13px 	 #333333 	~ @@baseColorDark
+	Hover 	 		Helvetica Neue 			13px 	 #2F5E92	~ @blue
+	Select/Press 	Helvetica Neue Bold 	13px 	 #999999 	~ @@baseColorLight
+*/
+.breadcrumb {
+	background: none;
+	margin: 0;
+	padding: 0;
+
+	a {
+		color: @breadcrumbColor;
+		display: block;
+		.text-overflow;
+		max-width: 140px;
+		float: left;
+		&:hover {
+			color: @breadcrumbHoverColor;
+			text-decoration: none !important;
+		}
+	}
+	.uiIconMiniArrowRight{
+		float: left;
+		margin-top: 3px;
+	}
+
+	li {
+		vertical-align: middle;
+        text-shadow: none;
+	}
+
+	.active {
+		font-weight: bold;
+		max-width: 140px;
+		.text-overflow;
+		color: @breadcrumbActiveColor;
+		&:hover {
+			color: @breadcrumbActiveColor;
+		}
+		> a {
+			color: @breadcrumbActiveColor;
+		}
+	}
+}

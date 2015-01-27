@@ -1,0 +1,63 @@
+//
+// Label - Badges
+// --------------------------------------------------
+.label {
+	background-color: @labelBackground;
+	.box-shadow(1px 1px 2px rgba(0, 0, 0, 0.35) inset);
+	padding: 0 4px;
+	a {
+		color: @labelColor;
+		font-size: @baseFontSize - 3;
+		&:hover {
+			text-decoration:
+			none;color: @labelColor;
+		}
+	}
+	&:hover {
+		background-color: @labelHoverBackground;
+	}
+}
+
+.badgeDefault {
+	background-color: @primaryBackground;
+	.box-shadow(1px 2px 1px rgba(0, 0, 0, 0.1));
+	.border-radius(2px);
+    color:@textColor;
+    font-size: 11px;   
+    display: inline-block;
+    font-weight: bold;
+    height: 16px;
+    line-height: 15px;
+    padding: 0 6px;
+    vertical-align: middle;
+    &.badgePrimary {
+    		background-color: @primaryColor;
+    		color: @baseBackground;
+    }
+     &.badgeWhite {
+    		background-color: @baseBackground;
+    		color:@textColor;
+    }
+    &.top {
+    	vertical-align: top;
+    }
+    &.mini {
+    	font-size: 10px;   
+	    height: 13px;
+	    line-height: 12px;
+	    padding: 0 3px;
+    }
+}
+
+.badgeNotification {
+		position: relative;
+		.badgeDefault {
+			position: absolute;
+	    right: -10px;
+	    top: -10px;
+		 &.mini {
+		 	 right: -6px;
+    	top: -6px;
+		 }
+		}
+}

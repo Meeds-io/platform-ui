@@ -1,0 +1,107 @@
+
+.uiDocumentSelector {
+	.breadcrumb {
+		> a.uiIconTree {
+			margin-top: 4px;
+		}
+	}
+	.center {
+		margin-bottom: 10px;
+		.uiDropdownWithIcon {
+			text-align: left;
+			background: none;
+		}
+	}
+	.btn .caret {
+		margin-left: 8px;
+		display: inline-block;
+	}
+	.actionIcon [class^="uiIcon"] {
+	    margin-right: 0;
+	}
+	.progressBarFrame {
+		.fileNameLabel {
+			overflow: hidden;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		 }
+	}
+	iframe {
+		.size(30px,30px);
+	}
+	.listContainer {
+		background: @primaryBackgroundLight;
+		border: 1px solid @borderColor;
+		list-style: none outside none;
+		margin: 5px 0 0;
+		padding: 5px 0;
+		.border-radius(2px);
+		max-height: 250px;
+   		overflow: auto;
+	}
+	.listContainer li {
+		display: block; 
+		padding: 3px 10px;
+	}
+	.listContainer a {
+		color: @textColor;
+	}
+	.listContainer a:hover {
+		color: @linkColor;
+	}
+	.TRNoContent{
+		color: @baseColorLight;
+		text-align: center;
+	}
+}
+
+.uiDocumentSelector [class^="uiIcon"] {
+	margin-right: 8px;	
+}
+
+.uiDocumentSelector .btn.dropdown-toggle .uiIconArrowDown.uiIconLightGray {
+	margin-right: 0;
+}
+
+
+.BrowseDiv {
+  position: relative;
+}
+.FileHidden {
+  overflow: hidden;
+  position: absolute;
+  height: 26px;
+  bottom: 0px;
+  right: 0px;
+  .opacity(0);
+  cursor: pointer;
+}
+
+
+  body {padding:0;margin:0;}
+.BrowseLink  {
+  text-decoration: none;
+  border: 1px solid transparent;
+  text-align: center;
+  .uiIconUpload{
+    .square(16px);
+    background-image: url("@{images-path}/Icons/uiIconsDefault.png");
+    background-position: -20px -20px;
+    margin-top: 4px;
+    display: inline-block;
+    &:hover { background-image: url("@{images-path}/Icons/uiIconsPrimary.png");}
+  }
+  .square(24px);
+  display: block;
+
+  &:hover {
+    #StatusElements .StatusHover();
+    cursor: pointer;
+    .uiIconUpload{
+      background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+    }
+
+  }
+}
+
+

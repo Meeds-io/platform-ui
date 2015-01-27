@@ -32,46 +32,6 @@
   <build>
     <finalName>eXoResources</finalName>
     <plugins>
-      <plugin>
-        <groupId>org.lesscss</groupId>
-        <artifactId>lesscss-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>bootstrap</id>
-            <goals>
-              <goal>compile</goal>
-            </goals>
-            <configuration>
-              <sourceDirectory>${project.basedir}/src/main/webapp/skin/bootstrap/less</sourceDirectory>
-              <outputDirectory>${project.build.directory}/${project.build.finalName}/skin/bootstrap/css</outputDirectory>
-              <compress>false</compress>
-              <includes>
-                <include>bootstrap.less</include>
-                <include>responsive.less</include>
-              </includes>
-            </configuration>
-          </execution>
-          <execution>
-            <id>platform-ui</id>
-            <goals>
-              <goal>compile</goal>
-            </goals>
-            <configuration>
-              <sourceDirectory>${project.basedir}/src/main/webapp/skin/less</sourceDirectory>
-              <outputDirectory>${project.build.directory}/${project.build.finalName}/skin/css</outputDirectory>
-              <compress>false</compress>
-              <includes>
-                <include>Core.less</include>
-                <include>Portlets/UIOrganizationPortlet/Style.less</include>
-                <include>Portlets/UITabbedDashboardPortlet/Style.less</include>
-                <include>Portlets/SiteNavigationPortlet/Style.less</include>
-                <include>Portlets/UIAccountPortlet/Style.less</include>
-                <include>Portlets/UIApplicationRegistryPortlet/Style.less</include>
-              </includes>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
       <!-- Override checkstyle plugin config to avoid constraint on project version number -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2003-2013 eXo Platform SAS.
+
+    This is free software; you can redistribute it and/or modify it
+    under the terms of the GNU Lesser General Public License as
+    published by the Free Software Foundation; either version 3 of
+    the License, or (at your option) any later version.
+
+    This software is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this software; if not, write to the Free
+    Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+    02110-1301 USA, or see the FSF site: http://www.fsf.org.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>platform-ui</artifactId>
+        <groupId>org.exoplatform.platform-ui</groupId>
+        <version>4.2.x-SNAPSHOT</version>
+    </parent>
+
+    <groupId>org.exoplatform.platform-ui</groupId>
+    <artifactId>platform-ui-skin</artifactId>
+    <packaging>war</packaging>
+    <name>Platform UI - Skin</name>
+
+    <build>
+        <finalName>eXoSkin</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.lesscss</groupId>
+                <artifactId>lesscss-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>bootstrap</id>
+                        <configuration>
+                            <!--Should be the final one because the less folder should be outside the webapp in /src/main/less   -->
+                            <!--<sourceDirectory>${basedir}/src/main/less/bootstrap/less</sourceDirectory>-->
+                            <sourceDirectory>${project.basedir}/src/main/webapp/skin/bootstrap/less</sourceDirectory>
+                            <outputDirectory>${project.build.directory}/${project.build.finalName}/skin/bootstrap/css</outputDirectory>
+                            <compress>false</compress>
+                            <includes>
+                                <include>bootstrap.less</include>
+                                <include>responsive.less</include>
+                            </includes>
+                        </configuration>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>core</id>
+                        <configuration>
+                           <!-- SourceDirectory shouldn't exist and we should have as default the lesss folder in /src/main/less     -->
+                            <sourceDirectory>${project.basedir}/src/main/webapp/skin/less</sourceDirectory>
+                            <outputDirectory>${project.build.directory}/${project.build.finalName}/skin/css</outputDirectory>
+                            <compress>false</compress>
+                            <includes>
+                                <include>Core.less</include>
+                                <include>Portlets/UIOrganizationPortlet/Style.less</include>
+                                <include>Portlets/UITabbedDashboardPortlet/Style.less</include>
+                                <include>Portlets/SiteNavigationPortlet/Style.less</include>
+                                <include>Portlets/UIAccountPortlet/Style.less</include>
+                                <include>Portlets/UIApplicationRegistryPortlet/Style.less</include>
+                                <include>wiki/wiki.less</include>
+                                <include>platform/skin/platform.less</include>
+                                <include>platform/portlets/platformNavigation/UIBreadCrumbsNavigationPortlet/Style.less</include>
+                                <include>platform/portlets/platformNavigation/UICompanyNavigationPortlet/Style.less</include>
+                                <include>platform/portlets/platformNavigation/UIGroupsNavigationPortlet/Style.less</include>
+                                <include>platform/portlets/platformNavigation/UIHelpPlatformToolbarPortlet/Style.less</include>
+                                <include>platform/portlets/platformNavigation/UISearchPlatformToolbarPortlet/Style.less</include>
+                                <include>platform/portlets/platformNavigation/UISpaceNavigationPortlet/Style.less</include>
+                                <include>platform/portlets/platformNavigation/UIUserNavigationPortlet/Style.less</include>
+                                <include>platform/portlets/notification/notificationsAdmin.less</include>
+                                <include>platform/portlets/homepage/calendar.less</include>
+                                <include>platform/portlets/homepage/gettingstarted.less</include>
+                                <include>platform/portlets/homepage/invitations.less</include>
+                                <include>platform/portlets/homepage/suggestions.less</include>
+                                <include>platform/portlets/homepage/whoisonline.less</include>
+                                <include>platform/portlets/branding/branding.less</include>
+                                <include>platform/portlets/welcome-screens/termsandconditions.less</include>
+                                <include>platform/portlets/welcome-screens/unlockTrial.less</include>
+                                <include>platform/portlets/extensions/login.less</include>
+                                <include>platform/portlets/extensions/welcome-screens.less</include>
+                                <include>platform/portlets/gadget-pack/canvas.less</include>
+                                <include>platform/portlets/gadget-pack/forumsStatistic.less</include>
+                                <include>platform/portlets/gadget-pack/home.less</include>
+                                <include>platform/portlets/gadget-pack/latestForumPosts.less</include>
+                                <include>platform/portlets/gadget-pack/loginHistory-jquery-ui-1.8.13.custom.less</include>
+                                <include>platform/portlets/gadget-pack/loginHistory.less</include>
+                                <include>platform/portlets/gadget-pack/monitoring.less</include>
+                                <include>platform/portlets/gadget-pack/pagination.less</include>
+                                <include>platform/portlets/gadget-pack/scriptConsoleColorpicker.less</include>
+                                <include>platform/portlets/gadget-pack/scriptConsoleStyle.less</include>
+                                <include>platform/portlets/gadget-pack/suggestion.less</include>
+                                <include>platform/portlets/gadget-pack/topVoteTopic.less</include>
+                                <include>platform/portlets/gadget-pack/caches.less</include>
+                                <include>platform/portlets/gadget-pack/allTemplatesStatistics.less</include>
+                                <include>platform/portlets/gadget-pack/applicationsStatistics.less</include>
+                                <include>platform/portlets/samples/acme-website/Style.less</include>
+                                <include>platform/portlets/samples/acme-intranet/SpaceSummaryInfoPortlet.less</include>
+                                <include>platform/portlets/samples/gadgets-sample/exo-gadget-resources/gadget-common.less</include>
+                                <include>platform/portlets/samples/gadgets-sample/gadgets/Agenda.less</include>
+                                <include>platform/portlets/samples/gadgets-sample/gadgets/Bookmark.less</include>
+                                <include>platform/portlets/samples/gadgets-sample/gadgets/FavoriteDocument.less</include>
+                                <include>platform/portlets/samples/gadgets-sample/gadgets/Invitations.less</include>
+                                <include>platform/portlets/samples/gadgets-sample/gadgets/NewSpace.less</include>
+                                <include>platform/portlets/samples/gadgets-sample/gadgets/Poll.less</include>
+                                <include>platform/portlets/samples/gadgets-sample/gadgets/Profile.less</include>
+                                <include>platform/portlets/samples/gadgets-sample/gadgets/WhoIsOnline.less</include>
+                                <include>platform/portlets/platformNavigation/UIGroupsNavigationPortlet/Style.less</include>
+                                <include>ecms/skin/ecms-resources-wcmskin.less</include>
+                                <include>ecms/skin/ecms-resources-dmsskin.less</include>
+                                <include>ecms/portlets/administration/ecms-administration.less</include>
+                                <include>ecms/portlets/explorer/ecms-explorer.less</include>
+								<include>ecms/portlets/search/ecms-search.less</include>
+								<include>ecms/portlets/fastcontentcreator/fast-content-creator.less</include>
+                                <include>ecms/portlets/presentation/ecms-presentation-categorynavigationportlet.less</include>
+                                <include>ecms/portlets/presentation/ecms-presentation-contentlistviewerportlet.less</include>
+                                <include>ecms/portlets/presentation/ecms-presentation-singlecontentviewer.less</include>
+                                <include>calendar/calendar.less</include>
+                                <include>social/skin/social.less</include>
+                                <include>social/juzu-portlet/notification.less</include>
+                                <include>social/portlets/uiAllPeoplePortlet/Style.less</include>
+                                <include>social/portlets/uiAllSpacesPortlet/Style.less</include>
+                                <include>social/portlets/uiBannerPortlet/Style.less</include>
+                                <include>social/portlets/uiConnectionsNavigationPortlet/Style.less</include>
+                                <include>social/portlets/uiConnectionsPortlet/Style.less</include>
+                                <include>social/portlets/uiFooterPortlet/Style.less</include>
+                                <include>social/portlets/uiInvitationSpacesPortlet/Style.less</include>
+                                <include>social/portlets/uiInvitationsPortlet/Style.less</include>
+                                <include>social/portlets/uiMembersPortlet/Style.less</include>
+                                <include>social/portlets/uiMyConnectionsNavigationPortlet/Style.less</include>
+                                <include>social/portlets/uiConnectionsNavigationPortlet/Style.less</include>
+                                <include>social/portlets/uiMySpacesPortlet/Style.less</include>
+                                <include>social/portlets/uiPendingSpacesPortlet/Style.less</include>
+                                <include>social/portlets/uiPeoplePortlet/Style.less</include>
+                                <include>social/portlets/uiPeopleToolbarPortlet/Style.less</include>
+                                <include>social/portlets/uiProfileNavigatonPortlet/Style.less</include>
+                                <include>social/portlets/uiProfilePortlet/Style.less</include>
+                                <include>social/portlets/uiPublicSpacesPortlet/Style.less</include>
+                                <include>social/portlets/uiRequestsPortlet/Style.less</include>
+                                <include>social/portlets/uiSocialDemoHomePagePortlet/Style.less</include>
+                                <include>social/portlets/uiSocialDemoNavigationPortlet/Style.less</include>
+                                <include>social/portlets/uiSocialExtensionHomePagePortlet/Style.less</include>
+                                <include>social/portlets/uiSocialExtensionLogoPortlet/Style.less</include>
+                                <include>social/portlets/uiSocialNavigationPortlet/Style.less</include>
+                                <include>social/portlets/uiSpaceAccessPortlet/Style.less</include>
+                                <include>social/portlets/uiSpaceActivityStreamPortlet/Style.less</include>
+                                <include>social/portlets/uiSpaceMenuPortlet/Style.less</include>
+                                <include>social/portlets/uiSpaceNavigationPortlet/Style.less</include>
+                                <include>social/portlets/uiSpaceSettingPortlet/Style.less</include>
+                                <include>social/portlets/uiSpaceToolbarPortlet/Style.less</include>
+                                <include>social/portlets/uiUserActivityStreamPortlet/Style.less</include>
+                                <include>social/portlets/uiWarningPortlet/Style.less</include>
+                                <include>forum/skin/forum-resources.less</include>
+                                <include>forum/portlets/forum/forum.less</include>
+                                <include>forum/portlets/answer/answers.less</include>
+                                <include>forum/portlets/answer/faq.less</include>
+                                <include>forum/portlets/poll/pollPortlet.less</include>
+                                <include>commons/skin/commons.less</include>
+                                <include>integration/skin/quicksearchpage.less</include>
+                                <include>integration/skin/searchAdmin.less</include>
+                                <include>integration/skin/searchpage.less</include>
+
+                            </includes>
+                        </configuration>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                  <packagingExcludes>skin/images/PSD/,skin/images/themes/blue/,skin/images/themes/green/,skin/images/themes/orange/,skin/images/themes/pink/,skin/images/themes/red/</packagingExcludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

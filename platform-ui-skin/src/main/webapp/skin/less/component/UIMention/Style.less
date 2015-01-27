@@ -1,0 +1,21 @@
+//
+// UI Mention
+// --------------------------------------------------
+.uiMention {
+	background: none repeat scroll 0 0 @uiMentionBackground;
+	border: 1px solid @uiMentionBorder;
+	border-radius: @borderRadiusSmall;
+	font-size: @baseFontSize;
+	color: @uiMentionColor;
+	display: inline-block;
+	padding: 1px 5px;
+	line-height: 20px;
+    a {color: @uiMentionColor;}
+	> [class^="uiIcon"] {
+		margin-left: 5px;
+		text-indent: -9999px;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}

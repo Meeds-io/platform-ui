@@ -1,0 +1,31 @@
+//
+// Language Selector
+// --------------------------------------------------
+.uiChangeLanguageForm {
+	&.uiBox {
+		margin-bottom: 0;
+	}
+	.uiGrid.table {
+		border: none;
+	}
+	.normalItem .uiIconTick {
+    display: none;
+	}
+	.uiGrid.table td, .uiGrid.table th {
+		padding: 8px;
+		a {
+			color: @textColor;
+			cursor: pointer;
+		}
+	}
+	&.uiBox {
+		.uiContentBox {
+			padding: 0;
+			max-height: 300px;
+			overflow-y: auto;
+		}
+		.uiActionBorder {
+			margin: 0 0 15px;
+		}
+	}
+}

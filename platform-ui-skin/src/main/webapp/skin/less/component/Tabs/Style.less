@@ -1,0 +1,300 @@
+//
+// Tabs
+// --------------------------------------------------
+.uiTabNormal {
+	.nav-tabs {
+		margin: 0px;
+		height: auto;
+		padding: 0px;
+		overflow: visible;
+		border-bottom: 1px solid @tabNormalLinkBorder;
+
+		> li {
+			margin-right: -1px;
+			cursor: pointer;
+		}
+
+		> li > a {
+			padding: 5px 15px;
+			margin: 0px;
+			border: 1px solid @tabNormalLinkBorder;
+			color: @tabNormalLinkColor;
+			.border-radius(0px);
+			background-color: @tabNormalLinkBackground;
+		}
+
+		> li:first-child > a  {
+			.border-top-left-radius(5px)
+		}
+
+		> li:last-child > a,> li.last > a {
+			.border-top-right-radius(5px)
+		}
+
+		> li > a:hover {
+			border: 1px solid @borderColor;
+			background-color: @primaryBackgroundLight;
+		}
+
+		> .active > a,> .active > a:hover {
+			border: 1px solid @tabNormalActiveLinkBorder;
+			border-bottom: 1px solid transparent;
+			font-weight: bold;
+			background-color: @tabNormalActiveLinkBackground;
+		}
+		> .active > a {
+			color: @textColor;
+		}
+
+		> li.dropdown {
+			> a {
+				background: none;
+				border: 1px solid transparent;
+				line-height: 16px;
+				padding: 5px 10px;
+				margin-top: 1px;
+			}
+
+			> a:hover, > a:active {
+				#gradient > .vertical(@baseBackground, @primaryBackground);
+				border: 1px solid @borderColor;
+				.border-radius(@borderRadiusSmall);
+				padding: 5px 10px;
+			}
+		}
+
+		li.dropdown.open > a, li.dropdown.open > a:hover,li.dropdown.active > a, li.dropdown.active > a:hover {
+			background: none;
+			.box-shadow(~'inset 0px 2px 6px rgba(0,0,0,0.15)');
+			border: 1px solid @borderColor;
+			.border-radius(@borderRadiusSmall);
+				padding: 5px 10px;
+		}
+
+		li.dropdown > a .caret{
+			border-top-color: @baseColorMedium;
+			margin-top: 7px;
+		}
+
+		li.dropdown > a:hover .caret,li.dropdown > a:active .caret, li.dropdown.open > a .caret {
+			border-top-color: @primaryLightColor;
+		}
+	}
+
+	.nav-tabs .open .dropdown-toggle, .nav-pills .open .dropdown-toggle, .nav > li.dropdown.open.active > a:hover {
+		background: none;
+		border: none;
+		color: @textColor;
+	}
+
+	.tab-content {
+		background: @tabNormalContentBackground; 
+		border: 1px solid @tabNormalContentBorder;
+		border-top: none;
+		padding: 15px;
+		.border-radius(0px 0px @borderRadiusSmall @borderRadiusSmall);
+	}
+
+	.tab-content > form > .tab-pane, .pill-content > form > .pill-pane {
+		display: none;
+	}
+
+	.tab-content > form > .active, .pill-content > form > .active {
+		display: block;
+	}
+
+	.dropdown-menu {
+		.border-radius(@borderRadiusSmall);
+		min-width: 100px;
+
+		.active > a,.active > a:hover {
+			color: @baseBackground;
+		}
+	}
+}
+
+.uiTabInPage {
+	.nav-tabs {
+		margin: 0px;
+		background-color: @primaryBackgroundHover;
+		border: 1px solid @borderColor;
+		padding: 5px 5px 0px 5px;
+		.border-radius(@borderRadiusSmall @borderRadiusSmall 0 0);
+	}
+}
+
+.uiTabGrayInPage {
+	.nav-tabs {
+		margin: 0px;
+		background-color: @tabGrayInPageNavBackground;
+		border: 1px solid @tabGrayInPageNavBorder;
+		padding: 5px 5px 0px 5px;
+		.border-radius(@borderRadiusSmall @borderRadiusSmall 0 0);
+
+		> .active > a,> .active > a:hover {
+			#gradient .vertical-three-colors(@tabGrayInPageActiveLinkStartBackground, @tabGrayInPageActiveLinkMiddleBackground, 56%, @tabGrayInPageActiveLinkEndBackground);
+			border-bottom: 1px solid @primaryBackground;
+		}
+	}
+
+	.tab-content {
+		padding: 0px;
+		overflow: visible;
+		.nav-pills {
+			background-color: @tabGrayInPageContentBackground;
+			padding: 0px 10px;
+			margin: 0px;
+
+			> li {
+				padding: 4px 0px;
+
+				> a {
+					line-height: 18px;
+					padding: 4px 6px;
+					color: @tabGrayInPageLinkColor;
+					border: 1px solid @tabGrayInPageLinkBorder;
+					margin: 0px;
+					cursor: pointer;
+				}
+
+				> a:hover, > a:active {
+					#gradient > .vertical(@tabGrayInPageActiveLinkStartBackground, @tabGrayInPageActiveLinkEndBackground);
+					line-height: 18px;
+					border: 1px solid @tabGrayInPageHoverLinkBorder;
+					.border-radius(@borderRadiusSmall);
+				}
+			}
+
+			.open > a, .open > a:hover,.active > a, .active > a:hover {
+				background: none;
+				.box-shadow(~'inset  0px 2px 6px rgba(0,0,0,0.15)');
+				border: 1px solid @tabGrayInPageHoverLinkBorder;
+				.border-radius(@borderRadiusSmall);
+			}
+
+			li.dropdown > a .caret{
+				border-top-color: @tabGrayInPageCaretColor;
+				margin-top: 8px;
+			}
+
+			li.dropdown > a:hover .caret,li.dropdown > a:active .caret, li.dropdown.open > a .caret {
+				border-top-color: @tabGrayInPageHoverCaretColor;
+			}
+
+			.dropdown .dropdown-menu {
+				.border-radius(@borderRadiusSmall);
+			}
+		}
+		.contentTabGray{
+			min-height: 150px;
+			padding: 10px;
+		}
+	}
+}
+
+/*---------- uiTabContainer ----------*/
+.uiTabContainer {
+	> .nav-tabs {
+		margin-bottom: 0;
+		border: none;
+		> li {
+			background: @tabContainerBackground;
+			margin: 4px 5px 0 0;
+			padding-right: 5px;
+			.border-top-left-radius(@baseBorderRadius);
+			.border-top-right-radius(@baseBorderRadius);
+			> a {
+				background: none;
+				.border-radius(0px);
+				border: none;
+				display: inline-block;
+				color: @tabContainerLinkColor;
+				line-height: 8px;
+   		 		padding: 13px 8px 7px;
+			}
+
+			> a:hover, > a:active {
+				background: none;
+				border: none;
+				.border-radius(0);
+			}
+		}
+
+		.open .dropdown-toggle {
+			background: none;
+		}
+
+		> li.active {
+			background: @tabContainerActiveLinkBackground;
+			margin: 0 5px 0 0;
+			> a {
+				padding: 17px 8px 7px;
+				color: @tabContainerActiveLinkColor;
+			}
+		}
+
+		> li.AddTab {
+        		background: none repeat scroll 0 0 #F9F9F9;
+		        float: left;
+		        margin: 6px 5px 0 0;
+		        padding: 3px 6px;
+				border: 1px solid #c7c7c7;
+		        border-bottom: none;
+		        cursor: pointer;
+	        }
+
+		.dropdown-menu {
+			.border-radius(@baseBorderRadius);
+			&.dropdown-menu:after {
+			    border-bottom: 6px solid @baseBackground;
+			    border-left: 6px solid transparent;
+			    border-right: 6px solid transparent;
+			    content: "";
+			    display: inline-block;
+			    left: 10px;
+			    position: absolute;
+			    top: -6px;
+			}
+			&:before {
+			    border-bottom: 7px solid rgba(0, 0, 0, 0.2);
+			    border-left: 7px solid transparent;
+			    border-right: 7px solid transparent;
+			    content: "";
+			    display: inline-block;
+			    left: 9px;
+			    position: absolute;
+			    top: -7px;
+			}
+		}
+
+	}
+
+	.tab-content > .active {
+		border: 1px solid @primaryLightColor;
+		.border-radius(@baseBorderRadius);
+		.border-top-left-radius(0);
+	}
+}
+
+
+/*---------- uiFormTabPane ----------*/
+.uiFormTabPane {
+    padding: 0px;
+}
+
+// Fix dot @baseBackground for uiTabNormal
+.uiTabNormal {
+	.nav-tabs > li.active:first-child {
+		position: relative;
+	}
+	.nav-tabs > li.active:first-child:before {
+	    background-color: @borderColor;
+	    bottom: 0;
+	    content: "";
+	    display: block;
+	    height: 1px;
+	    left: 0;
+	    position: absolute;
+	    width: 1px;
+	}
+}

@@ -1,0 +1,151 @@
+//
+// Calendar Picker
+// --------------------------------------------------
+.calendarComponent {
+	position: absolute;
+}
+.uiCalendarComponent{
+	width: @calComponentWidth;
+	.actionIcon{
+		line-height: 14px;
+		padding: 2px;
+	}
+	.highLight{
+		font-weight: bold;
+	}
+	hr {
+		margin: 0;
+		border-top: 1px solid  @borderColor;
+	}
+	h5.title{
+		text-align: center;
+		line-height: 14px;
+		padding: 10px;
+		span {
+			font-size: @baseFontSize;
+		}
+	}
+	h5.title, h5.title span a {
+		color: @calComponentWidthTitleColor;
+	}
+
+	table {
+		border-collapse: separate;
+		tr td {
+			text-align: center;
+			line-height: @baseLineHeight + 4;
+		}
+	}
+
+	table.weekList{
+		padding: 0 9px;
+		margin: 2px 0;
+		font-size: @baseFontSize - 2;
+
+	}
+
+	table.weekDays{
+		padding: 0 9px 9px 6px;
+		font-size: @baseFontSize - 1;
+
+		tr {
+			td {
+				padding:1px;
+				a {
+					display: block;
+					color: @calComponentDayColor;
+					border: 1px solid transparent;
+					&:hover{
+							background-color: @calComponentDayHoverBackground;
+							.border-radius(@borderRadiusSmall);
+						}
+				}
+				.otherMonth{
+					color: @calComponentOtherMonthColor;
+				}
+				.today {
+					border: 1px solid @borderColor;
+					.border-radius(@borderRadiusSmall);
+					font-weight: bold;
+				}
+				.selected {
+					background-color: @calComponentDaySelectedBackground;
+					color: @calComponentDaySelectedColor;
+					.border-radius(@borderRadiusSmall);
+				}
+				.activeToday {
+					background-color: @calComponentDayTodayBackground;
+					color: @calComponentDayTodayColor;
+					.border-radius(@borderRadiusSmall);
+				}
+			}
+		}
+
+
+		tr.currentWeek {
+			td {
+				background-color: @calComponentCurrentWeekBackground;
+				padding:0 1px;
+				&:first-child {
+					.border-top-left-radius(@borderRadiusSmall);
+					.border-bottom-left-radius(@borderRadiusSmall);
+				}
+				a:hover {
+					border: 1px solid @borderColor;
+				}
+
+				&:last-child {
+					.border-top-right-radius(@borderRadiusSmall);
+					.border-bottom-right-radius(@borderRadiusSmall);
+				}
+			}
+
+		}
+	}
+	.calendarTimeInput {
+		.center();
+		padding: 4px 0;
+		line-height: 18px;
+		background-color: @calComponentTimeInputBoxBackground;
+		.border-radius(0 0 @borderRadiusSmall @borderRadiusSmall);
+		span {
+			background: @calComponentTimeInputBackground;
+			.border-radius(@borderRadiusSmall);
+			.box-shadow(inset 0 2px 1px rgba(0,0,0,.075));
+			display: inline-block;
+			border: 1px solid @calComponentTimeInputBorder;
+			&.focus {
+				.box-shadow(~'0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 5px rgba(29, 75, 159, 0.6)');
+				border-color: @calComponentTimeInputTorcusBorder;
+			}
+		}
+		input[type="text"] {
+			.size(18px,28px);
+			margin:0;
+			background: none;
+			.border-radius(0 );
+			border: none;
+			.box-shadow(0 0 0 transparent);
+			color: @calComponentTimeInputColor;
+			padding:0;
+			line-height: 18px;
+			.center();
+				&:first-child {
+					text-align: right;
+					width: 28px;
+				}
+				&:last-child {
+					text-align: left;
+					width: 28px;
+				}
+		}
+	}
+
+}
+
+.UICalendarPortlet .UICalendarContainer {
+	.title .actionIcon + .tooltip {
+		white-space: nowrap;
+	}
+}
+

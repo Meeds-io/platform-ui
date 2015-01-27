@@ -1,0 +1,196 @@
+
+
+.uiForumModerator {
+	.forumList{
+		padding: 10px;
+	}
+}
+
+.uiTopicDetail {
+	.divTable{
+		table-layout: fixed;
+	}
+}
+
+.divTable{
+	display: table;
+	width: 100%;
+}
+
+.divRow{
+	display: table-row;
+}
+
+.divCell{
+	display: table-cell;
+}
+
+.postViewContainer{
+	padding-left: 10px;
+	width: 100%;
+}
+
+.postViewHeader{
+	background: @primaryBackgroundLight;
+	padding: 10px 15px;
+	min-height:20px;
+	margin-bottom: 5px;
+	.border-radius(2px);
+	.postViewTitle{
+		font-family: @sansBoldFontFamily;
+		font-weight: bold;
+		font-size: 14px;
+		overflow: hidden;
+		word-wrap: break-word;
+	}
+	> .pull-right {
+		margin-left: 20px;
+	}
+	.uiCheckbox {
+		width: 13px;
+		margin-right: 0;
+	}
+	.postTime{
+		color: @baseColorLight;
+		margin-right: 10px;
+	}
+}
+
+.postContent{
+	word-wrap: break-word;
+	min-height: 167px;
+	br {
+		display: block;
+		margin-top: 10px;
+	}
+	.uiWikiPortlet {
+		background: none;
+	}
+	.contentQuote{
+		font-style: italic;
+		padding: 15px 15px 15px 20px;
+		background: @quotePrimaryBackground;
+		margin: 10px 0 10px 15px;
+		word-wrap: break-word;
+		.border-radius(2px);
+		.textContent{
+			border-left: none;
+			padding-left: 0;
+			margin-top: 10px;color: @quotecolor;
+			.contentQuote{
+				border-left: solid 5px @quotePrimaryBorder;
+				padding: 0px 0px 0px 20px;
+				margin-top: 15px;
+				.titleQuote{
+					line-height: 8px;
+					height: 13px;color: @quotecolor;
+				}
+			}
+			.singleQuote {
+				padding: 5px 0px 5px 20px;
+				margin: 5px 0px;
+			}
+		}
+		.titleQuote{
+			font-weight:bold;color: @quotecolor;
+		}
+	}
+
+	.textContent {
+		word-wrap: break-word;
+		.contentQuote{
+			font-style: italic;
+			padding-left: 0;
+			margin: 0;
+			.titleQuote{
+				font-weight:bold;
+			}
+		}
+	}
+
+	ul, ol {
+		padding: 0;
+		margin: 0px 0px 10px 25px;
+	}
+	ul li {
+	    list-style: disc outside none;
+	}
+	ol li {
+	    list-style-type: decimal;
+	}
+}
+
+
+.uiTopicDetail{
+	.tagsContainer{
+		line-height: 28px;
+
+		.tagItem{
+			display: inline-block;
+			color: @linkColor;
+			background: @infoColorLight;
+			border: 1px solid @infoColor;
+			padding: 1px 5px;
+			.border-radius(3px);
+		}
+
+		.titleTag{
+			margin-left: 10px;
+		}
+
+		.txtTags{
+			display: inline-block;
+			li{
+				display: inline-block;
+        		margin: 0px 5px 0px 0px;
+			}
+      li.moreItem > div{
+        padding: 1px 5px;
+        margin-top: 2px;
+        line-height: 20px;
+      }
+      .menuMore{
+        min-width: 100px;
+      }
+      .menuMore li{
+        display: block;
+        padding: 2px 6px 2px 10px;
+      }
+		}
+	}
+
+	.uiBox {
+		&.uiPostRules{
+			margin-top: 10px;
+		}
+	}
+
+	.containerTopicDetail{
+		margin-top: 10px;
+	}
+
+	.line{
+		margin: 10px -10px;
+		background: @borderColor;
+		height: 1px;
+		display: block;
+	}
+
+	.divRow:last-child .line{
+		margin: 0;
+		background: none;
+		height: 0;
+	}
+
+	.forumQuickReply{
+		margin-top: 10px;
+		.textQuickReply{
+			textarea{
+				width: 100%;
+				min-height: 90px;
+				padding : 5px;
+			}
+		}
+	}
+
+}

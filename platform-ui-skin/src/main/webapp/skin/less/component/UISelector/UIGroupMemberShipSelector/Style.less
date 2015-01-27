@@ -1,0 +1,49 @@
+//
+// Group Member Ship Selector
+// --------------------------------------------------
+.uiGroupMembershipSelector{
+	.childGoup,.selectGroup {
+		margin-bottom: 0px;
+	}
+	.uiGrayLightBox {
+		margin-bottom: 12px;
+	}
+	.childGoup   {
+		.uiContentBox {
+			padding: 12px;
+			height: 156px;
+			overflow: auto;
+			li {
+				padding: 2px 0;
+				a {
+					color: @textColor;
+				}
+				a:hover {
+					color: @linkColor;
+				}
+			}
+		}
+	}
+	.breadcrumb .uiIconTree {
+		background-position: -180px -40px;
+	}
+	.selectGroup {
+		.uiTrees {
+			padding: 8px;
+			height: 164px;
+			overflow: auto;
+			background: @baseBackground;
+		}
+	}
+	.uiBox  {
+		.box-shadow(0 1px 2px -1px rgba(13, 13, 13, 0.14));
+		.title {
+			.box-shadow(0 0px 0px transparent);
+		}
+	}
+	&.uiGroupSelector  {
+		.childGoup .uiContentBox,.selectGroup .uiTrees{
+			background: @primaryBackgroundLight;
+		}
+	}
+}

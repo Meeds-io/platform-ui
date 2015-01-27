@@ -1,0 +1,17 @@
+//
+// Tooltip
+// --------------------------------------------------
+.tooltip {
+	font-size: @baseFontSize - 1 !important;
+	text-shadow: none!important;
+	font-weight: normal!important;
+	&.in{
+		.opacity(80);
+	}
+}
+
+.tooltip-inner {
+	word-wrap: break-word;
+	.border-radius(@borderRadiusSmall - 1);
+	line-height: @baseLineHeight - 4;
+}

@@ -1,0 +1,77 @@
+.uiWikiAdvanceSearchResult {
+	> .resultInfo {
+		border-bottom: 1px dotted @borderColor;
+		padding: 17px 0;
+
+		> .resultNumber {
+			font-size: 30px;
+			font-weight: bold;
+			color: @linkColor;
+		}
+		> .split {
+			border-left: 1px solid @borderColor;
+		    display: inline-block;
+		    height: 27px;
+		    margin: 0 15px;
+		    vertical-align: middle;
+		}
+		> .btn-group {
+			> .btn {
+				padding: 4px 7px;
+			}
+			> .dropdown-menu {
+				min-width: 46px;
+				> li > a {
+					padding: 5px 15px;
+				}
+			}
+		}
+	}
+
+	> .noResult {
+		border-bottom: none;
+	}
+
+	h6 > a {
+		color: @linkColor;
+	}
+
+	a.txtMark, span.txtMark {
+		color: @baseColorLight;
+		font-size: 12px;
+		font-weight: normal;
+	}
+}
+
+.uiWikiAdvanceSearchForm {
+	background: @primaryBackground;
+	margin: -20px -20px 20px -20px;
+	padding: 20px;
+	border-radius: 4px 4px 0 0;
+	}
+
+.uiWikiAdvanceSearchForm form {
+	input {
+		width: 370px;
+	}
+	button {
+		vertical-align: top;
+		margin-left: 5px;
+	}
+	.wikis {
+	  position: relative;
+	}
+
+	.spaceChooserPopup {
+	  z-index: 10;
+	}
+}
+
+
+
+.UIWikiSearchSpaceArea {
+	padding: 20px;
+	border: 1px solid @borderColor;
+	border-radius: 4px;
+	background: @baseBackground;
+}

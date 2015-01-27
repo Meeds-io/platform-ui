@@ -1,0 +1,112 @@
+@import "../variables.less";
+@import "../mixins.less";
+@import "Sprites/Style.less";
+@import "Dropdown/Style.less";
+@import "uiCalendars/Style.less";
+@import "TableView/Style.less";
+@import "uiCalendarView/Style.less";
+@import "uiHeaderBar/Style.less";
+@import "uiActionBar/Style.less";
+@import "uiFormColorPicker/Style.less";
+@import "uiMiniCalendar/Style.less";
+@import "uiListView/Style.less";
+@import "uiMonthView/Style.less";
+@import "uiPopup/Style.less";
+@import "uiCombobox/Style.less";
+
+/*============== uiCalendars actionIcon ================*/
+
+.UICalendarContainer {
+	  float: left; 
+	  width: 225px;
+	  height: 100%;
+	  position: relative;
+ }
+ 
+.uiMiniCalendar,.uiCalendars,.uiHeaderBar {
+	.actionIcon{
+		
+	}
+}
+
+.uiArrowCalDropdown{
+	display: none;
+	position: absolute;
+	border-left:   7px solid transparent;
+    border-right:  7px solid @borderColor;
+    border-bottom: 7px solid transparent;
+    border-top: 7px solid transparent;
+    content: '';
+	&:after {
+	    border-left:   7px solid transparent;
+	    border-right:  7px solid @baseBackground;
+	    border-bottom: 7px solid transparent;
+	    border-top: 7px solid transparent;
+	    content: '';
+	    position: absolute;
+	    top: -7px;
+	    left: -7px;
+	  }
+}
+
+.lineSplit{
+	background: @borderColor;
+	height: 1px;
+	margin: 10px 0 0 0;
+}
+
+.selectboxMini  {
+	.uiSelectbox {
+		width: 84px;
+		vertical-align: middle;
+		.selectbox {
+			width: 87px;
+		}
+	}	
+}
+
+.selectboxSmall  {
+	.uiSelectbox {
+
+		.selectbox {
+			width: 103px;
+			margin-bottom: 0;
+		}
+	}	
+} 
+
+.eventCategory  {
+	.selectboxSmall;
+}
+
+.descriptionArea {
+	textarea {
+		height: 78px;
+	}
+}
+
+.UICalendarComponent {
+	z-index:1;
+}
+
+.UICalendarComponent {
+	z-index:1;
+}
+
+.UICalendarPortletEditMode {
+	//padding: 0px 10px 10px;
+}
+
+
+.checkBoxArea {
+		.checkboxContainer {
+			width: 18px;
+		}		
+		
+		 .textLabel {
+			margin-left: 18px;
+			span {
+				margin-right: 5px;
+			}
+		}
+}

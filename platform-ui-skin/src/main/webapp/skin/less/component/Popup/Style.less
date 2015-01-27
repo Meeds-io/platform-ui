@@ -1,0 +1,146 @@
+//
+// Popup
+// --------------------------------------------------
+.uiPopup {
+	border: 1px solid @uiPopupBorder;
+	background: @uiPopupBackground;
+	.box-shadow(0 2px 3px rgba(0,0,0,0.25));
+	.border-radius(4px);
+	position: absolute;
+	.popupHeader {
+		background-color: @uiPopupHeaderBackground;
+		.box-shadow(inset 0 -1px 0 @borderColor);
+		border-bottom: @uiPopupHeaderBorder;
+		.border-radius(4px 4px 0 0 );
+		padding: 0px 9px 0 15px;
+		font-size: 14px;
+		font-weight: bold;
+		[class^="uiIcon"] {
+			margin: 10px 4px 0 0;
+			cursor: pointer;
+		}
+		.popupTitle {
+			margin: 0;
+			line-height:35px;
+			color: @uiPopupTitleColor;
+			display: block;
+			cursor: move;
+			font-size: 14px;
+			font-weight: bold;
+		}
+	}
+
+	.popupContent {
+		overflow: auto;
+		padding: 15px;
+		width: auto;
+		background: @uiPopupContentBackground;
+		.border-radius(0 0 4px 4px);
+		.resizable {
+			overflow: auto;
+			padding: 15px;
+			margin: -15px;
+		}
+		> .resizable {
+			padding: 0 15px;
+		}
+        select {margin-bottom: 0;}
+	}
+	.form-horizontal {
+		padding: 0;
+		.control-group{
+			&:last-child {
+				margin-bottom: 0;
+				&:first-child {
+					margin-bottom: 12px;
+				}
+			}
+		}
+	}
+	.table {
+		margin-bottom: 15px;
+	}
+	.uiIconResize {
+		.square(16px);
+		margin: -18px 2px 2px;
+		cursor: nw-resize;
+	}
+	.uiAction.uiActionBorder {
+		margin-left: -15px;
+		margin-right: -15px;
+		padding-bottom: 0;
+	}
+	.form-horizontal.resizable {
+		//margin-top: 0;
+		//margin-bottom: 0;
+		.controls-full {
+			> .center {
+				margin-bottom: 20px;
+			}
+		}
+	}
+}
+
+/**********************Popup Messages*************************/
+
+.uiPopup {
+	.popupMessage {
+		&.resizable {
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+		> li {
+			padding: 5px 0;
+		}
+
+		> li span[class*="Icon"] {
+			background: url("@{images-path}/PopupMessage/icons.png") no-repeat;
+			padding-left: 20px;
+			line-height: 16px;
+			height: 16px;
+			color: @popupMessageColor;
+			font-weight: bold;
+		}
+
+		> li span.errorIcon {
+			background-position: left 0px;
+		}
+
+		> li span.warningIcon {
+			background-position: left -17px;
+		}
+
+		> li span.infoIcon {
+			background-position: left -34px;
+		}
+
+		> li span.confirmationIcon {
+			background-position: left -50px;
+		}
+
+		> li.collapseItem > ul {
+			display: block;
+		}
+
+		> li.expandItem > ul {
+			display: none;
+		}
+
+		> li > ul > li {
+			line-height: 16px;
+			padding: 0 0 0 40px;
+		}
+	}
+
+	.popupContent .multipleMessage {
+		background: @multipleMessageBackground;
+		border: 1px solid @multipleMessageBorder;
+		margin: 0;
+	}
+
+	.singleMessage > li span[class*="Icon"] {
+		font-weight: normal;
+		display: block;
+		margin: 5px 0 5px;
+	}
+}

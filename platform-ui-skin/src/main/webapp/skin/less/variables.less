@@ -1,0 +1,488 @@
+@import "../bootstrap/less/variables.less";
+
+//======================================================//
+//                 VARIABLES EXO PLATFORM               //
+//======================================================//
+
+// Base color
+
+@baseColor:                 #000000; // text color , border color, and other UI elements..
+
+// Background color
+@baseBackground:                 #ffffff; // default background , background for content display....
+
+// Primary Color
+@primaryColor:			#2f5e92; // primary button and link color...
+
+// Background primary color
+@primaryBackground:		#f0f0f0; // main background such as , header popup background, tab items...
+
+// Image Patch
+// -------------------------
+@images-path: 			"/eXoSkin/skin/images/themes/default";
+
+
+// Accent colors
+// -------------------------
+@errorColor:                   #C72222;							// Red Primary
+@errorColorLight:				lighten(spin(@errorColor, 5%), 30%);		// #ed9c95
+
+@warningColor:                #EDAD00;							// Orange Primary
+@warningColorLight:			lighten(spin(@warningColor, 5%), 42%);	// #fff4c4
+
+@infoColor: 					#215ab2;							// Blue Primary
+@infoColorLight: 			lighten(spin(@infoColor, 5%), 48%);		// #dee3fa
+
+@successColor:                 #39C522;							// Green Primary
+@successColorLight:			lighten(spin(@successColor, 5%), 45%);		// #d7f8d5
+
+// Scaffolding
+// -------------------------
+@bodyBackground: @baseBackground;
+@sidebarBackground: @primaryBackground;
+@contentBackground: 	url("@{images-path}/ShareImages/Background/texture.jpg") repeat left top;
+@textColor: @baseColorDark;				// #333333
+@textMediumColor: @baseColorMedium; 					// #808080
+@textLightColor: @baseColorLight;				// #999999
+
+
+// Links
+// -------------------------
+@linkColor:             @primaryColor;			// Special title, text, hover, press, hyper-link or selected link
+@linkColorHover:        @primaryColor;
+
+// Component Variables
+// -------------------------
+
+// Define common padding and margin size
+// Currenly only use for the box
+@gutterSizeBase: 			10px;
+@gutterSizeXLarge: 			20px;
+@gutterSizeLarge: 			15px;
+@gutterSizeSmall: 			5px;
+
+
+// Tables
+// -------------------------
+@tableBackground:                   transparent; 				// overall background-color
+@tableBackgroundAccent: @primaryBackgroundLight; 	// for striping
+@tableBackgroundHover: @primaryBackgroundHover; 	// for hover
+@tableBorder:                       @borderColor; 				// table and cell border
+
+
+// Buttons
+// -------------------------
+@btnColor:                            @baseColorDark;
+@btnBorder:                           @borderColor;
+@btnDisableColor :                    @textLightColor;
+
+@btnPrimaryColor: #ffffff;
+@btnPrimaryBackground:              @primaryLightColor;
+@btnPrimaryBackgroundHighlight:     @primaryColor;
+@btnPrimaryBorder: 					@primaryDarkColor;
+
+@paddingXLarge:         9px 15px;
+@paddingLarge:          4px 10px;
+@paddingDefault:		3px 10px;
+@paddingSmall:          2px 10px;
+@paddingMini:           0 10px;
+
+// Forms
+// -------------------------
+@inputColor: @baseColorDark;
+@inputDisableColor: @textLightColor;
+@inputBackground: @baseBackground;
+@inputBorder:                   	@borderColor;
+@inputBorderRadius:             	@baseBorderRadius;
+@inputDisabledBackground: @primaryBackgroundHover;
+@formActionsBackground: @primaryBackground;
+// Input placeholder text color
+// -------------------------
+@placeholderText:         @textLightColor;
+
+@inputFocusColor:               	@inputColor;
+@inputFocusBorder:              	lighten(@infoColor, 30%);
+@inputFocusShadow:              	lighten(@infoColor, 40%);
+
+@inputHeight:                   	@baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
+
+@uiCheckboxCheckedBorder: 			@primaryColor;
+@uiCheckboxBackground: 				@borderColor;
+
+@uiRadioCheckedColor: 				@primaryColor;
+@uiRadioCheckedBackground: 			@borderColor;
+@uiRadioCheckedDisabledBackground: @baseColorLight;
+
+@uiCheckboxCheckedDisabledBorder: @baseColorLight;
+@formReadOnyBackground: @primaryBackgroundHover;
+@formReadOnyColor: @baseColorDark;
+
+
+// Dropdowns
+// -------------------------
+@dropdownBorder:                	@borderColor;
+@dropdownBackground: @baseBackground;
+@dropdownLinkBackgroundHover:   	@primaryLightColor;
+@dropdownLinkColor: @textColor;
+@dropdownLinkColorHover: #fff;
+@dropdownLinkColorActive:       #fff;
+
+// Typography
+// -------------------------
+@sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+@sansBoldFontFamily :   "Helvetica Neue Bold" , Helvetica, Lucida, Arial, sans-serif;
+@serifFontFamily:       Georgia, "Times New Roman", Times, serif;
+@monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
+
+@baseFontSize:          13px;
+@baseFontFamily:        @sansFontFamily;
+@baseLineHeight:        20px;
+@altFontFamily:         @serifFontFamily;
+
+@headingsFontWeight:    bold;    // instead of browser default, bold
+
+
+
+// Component sizing
+// -------------------------
+// Based on 14px font-size and 20px line-height
+@fontsizeXlarge:		16px;
+@fontSizeLarge:         14px;
+@fontSizeSmall:         12px;
+@fontSizeMini:          11px;
+
+@baseBorderRadius:      3px;
+@borderRadiusLarge:     3px;
+@borderRadiusSmall:     3px;
+
+
+// COMPONENT VARIABLES
+// --------------------------------------------------
+
+
+// Z-index master list
+// -------------------------
+// Used for a bird's eye view of components dependent on the z-axis
+// Try to avoid customizing these :)
+@zindexDropdown:          1000;
+@zindexPopover:           1010;
+@zindexTooltip:           1030;
+@zindexFixedNavbar:       1030;
+@zindexModalBackdrop:     1040;
+@zindexModal:             1050;
+
+
+
+// Hr border color
+// -------------------------
+@hrBorder: @primaryBackgroundLight;
+
+
+// Horizontal forms & lists
+// -------------------------
+@horizontalComponentOffset:       180px;
+
+
+// Wells
+// -------------------------
+@wellBackground: @primaryBackgroundLight;
+
+
+// Navbar
+// -------------------------
+@navbarCollapseWidth:             979px;
+@navbarCollapseDesktopWidth:      @navbarCollapseWidth + 1;
+
+@navbarHeight:                    40px;
+@navbarBackgroundHighlight:       #ffffff;
+@navbarBackground:                darken(@navbarBackgroundHighlight, 5%);
+@navbarBorder:                    darken(@navbarBackground, 12%);
+
+@navbarText:                      #777;
+@navbarLinkColor:                 #777;
+@navbarLinkColorHover: @baseColorDark;
+@navbarLinkColorActive: @baseColorMedium;
+@navbarLinkBackgroundHover:       transparent;
+@navbarLinkBackgroundActive:      darken(@navbarBackground, 5%);
+
+@navbarBrandColor:                @navbarLinkColor;
+
+// Inverted navbar
+@navbarInverseBackground:                #111111;
+@navbarInverseBackgroundHighlight:       #222222;
+@navbarInverseBorder:                    #252525;
+
+@navbarInverseText:                      @textLightColor;
+@navbarInverseLinkColor:                 @textLightColor;
+@navbarInverseLinkColorHover: @baseBackground;
+@navbarInverseLinkColorActive:           @navbarInverseLinkColorHover;
+@navbarInverseLinkBackgroundHover:       transparent;
+@navbarInverseLinkBackgroundActive:      @navbarInverseBackground;
+
+@navbarInverseSearchBackground:          lighten(@navbarInverseBackground, 25%);
+@navbarInverseSearchBackgroundFocus: @baseBackground;
+@navbarInverseSearchBorder:              @navbarInverseBackground;
+@navbarInverseSearchPlaceholderColor:    #ccc;
+
+@navbarInverseBrandColor:                @navbarInverseLinkColor;
+
+
+// Pagination
+// -------------------------
+@paginationBackground: @baseBackground;
+@paginationBorder:                    	@borderColor;
+@paginationActiveBackground: @primaryBackgroundLight;
+
+
+// Hero unit
+// -------------------------
+@heroUnitBackground: @primaryBackgroundLight;
+@heroUnitHeadingColor:    inherit;
+@heroUnitLeadColor:       inherit;
+
+
+// Form states and alerts
+// -------------------------
+@warningText:             #333333;
+@warningBackground: @warningColorLight;
+@warningBorder: @warningColor;
+
+@errorText:               #333333;
+@errorBackground: @errorColorLight;
+@errorBorder: @errorColor;
+
+@successText:             #333333;
+@successBackground: @successColorLight;
+@successBorder: @successColor;
+
+@infoText:                #333333;
+@infoBackground: @infoColorLight;
+@infoBorder: @infoColor;
+
+
+// Tooltips and popovers
+// -------------------------
+@tooltipColor:            #fff;
+@tooltipBackground:       #000;
+@tooltipArrowColor:       @tooltipBackground;
+
+@popoverBackground: @baseBackground;
+@popoverArrowWidth:       10px;
+@popoverArrowColor:       @popoverBackground;
+@popoverTitleBackground:  darken(@popoverBackground, 3%);
+
+
+
+
+// Special enhancement for popovers
+@popoverArrowOuterWidth:  @popoverArrowWidth + 1;
+@popoverArrowOuterColor:  rgba(0,0,0,0.25);
+
+
+// GRID
+// --------------------------------------------------
+
+
+// Default 940px grid
+// -------------------------
+@gridColumns:             12;
+@gridColumnWidth:         60px;
+@gridGutterWidth:         20px;
+@gridRowWidth:            (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
+
+// 1200px min
+@gridColumnWidth1200:     70px;
+@gridGutterWidth1200:     30px;
+@gridRowWidth1200:        (@gridColumns * @gridColumnWidth1200) + (@gridGutterWidth1200 * (@gridColumns - 1));
+
+// 768px-979px
+@gridColumnWidth768:      42px;
+@gridGutterWidth768:      20px;
+@gridRowWidth768:         (@gridColumns * @gridColumnWidth768) + (@gridGutterWidth768 * (@gridColumns - 1));
+
+
+// Fluid grid
+// -------------------------
+@fluidGridColumnWidth:    percentage(@gridColumnWidth/@gridRowWidth);
+@fluidGridGutterWidth:    percentage(@gridGutterWidth/@gridRowWidth);
+
+// 1200px min
+@fluidGridColumnWidth1200:     percentage(@gridColumnWidth1200/@gridRowWidth1200);
+@fluidGridGutterWidth1200:     percentage(@gridGutterWidth1200/@gridRowWidth1200);
+
+// 768px-979px
+@fluidGridColumnWidth768:      percentage(@gridColumnWidth768/@gridRowWidth768);
+@fluidGridGutterWidth768:      percentage(@gridGutterWidth768/@gridRowWidth768);
+
+
+// Breadcrumbs
+// -------------------------
+@breadcrumbColor: @baseColorDark;
+@breadcrumbHoverColor: 			@primaryColor;
+@breadcrumbActiveColor: 		@textLightColor;
+
+// Calendar Component
+// -------------------------
+@calComponentWidth:						225px;
+@calComponentWidthTitleColor:			@textColor;
+@calComponentDayColor:					@textColor;
+@calComponentOtherMonthColor:			@textLightColor;
+@calComponentDayHoverBackground: @primaryBackground;
+@calComponentDaySelectedBackground:		@primaryColor;
+@calComponentDaySelectedColor: @baseBackground;
+@calComponentDayTodayBackground: 		@primaryColor;
+@calComponentDayTodayColor: @baseBackground;
+@calComponentCurrentWeekBackground: @primaryBackground;
+@calComponentCurrentWeekBorder: 		@borderColor;
+@calComponentTimeInputBoxBackground: @primaryBackground;
+@calComponentTimeInputColor: 			@textColor;
+@calComponentTimeInputBackground: @baseBackground;
+@calComponentTimeInputBorder: 			@borderColor;
+@calComponentTimeInputTorcusBorder: 	@primaryLightColor;
+
+// Label Badges
+// -------------------------
+@labelColor: @baseBackground;
+@labelBackground: @baseColorLight;
+@labelHoverBackground: 					@primaryLightColor;
+
+// Popup
+@uiPopupBackground: @baseBackground;
+@uiPopupBorder: 						@borderColor;
+@uiPopupHeaderBackground: @primaryBackground;
+@uiPopupHeaderBorder: 0px solid  @primaryBackground;
+@uiPopupTitleColor: 					@textColor;
+@uiPopupContentBackground: @baseBackground;
+@popupMessageColor: 					@textColor;
+
+@multipleMessageBackground: @primaryBackgroundLight;
+@multipleMessageBorder: 				@borderColor;
+
+// Tabs Normal
+// -------------------------
+@tabNormalLinkColor: 					@textColor;
+@tabNormalLinkBorder: 					@borderColor;
+@tabNormalLinkBackground: @primaryBackground;
+
+@tabNormalActiveLinkBorder: 			@borderColor;
+@tabNormalActiveLinkBackground: @baseBackground;
+
+@tabNormalContentBackground: @baseBackground;
+@tabNormalContentBorder: 				@borderColor;
+
+// Tabs GrayInPage
+// -------------------------
+@tabGrayInPageNavBackground: @primaryBackgroundHover;
+@tabGrayInPageNavBorder: 					@borderColor;
+@tabGrayInPageActiveLinkStartBackground: @baseBackground;
+@tabGrayInPageActiveLinkMiddleBackground: @primaryBackground;
+@tabGrayInPageActiveLinkEndBackground: 		@tabGrayInPageActiveLinkMiddleBackground;
+@tabGrayInPageContentBackground: @primaryBackground;
+
+@tabGrayInPageLinkColor: 				@textColor;
+@tabGrayInPageLinkBorder: @primaryBackground;
+@tabGrayInPageHoverLinkColor: @primaryBackground;
+@tabGrayInPageHoverLinkBorder: 			@borderColor;
+@tabGrayInPageCaretColor: @baseColorMedium;
+@tabGrayInPageHoverCaretColor: 			@primaryLightColor;
+
+// Tab Container
+// -------------------------
+@tabContainerBackground: @baseColorLight;
+@tabContainerLinkColor: @baseBackground;
+@tabContainerActiveLinkBackground:  	@primaryLightColor;
+@tabContainerActiveLinkColor: @baseBackground;
+
+// Toolbar
+// -------------------------
+@toolbarDarkStartBackground:			#5b5b5b;
+@toolbarDarkEndBackground:				#474747;
+@toolbarDarkBorder: 					#2c3440;
+@toolbarDarkLinkColor: #ffffff;
+@toolbarDarkLinkHoverColor: #ffffff;
+@toolbarDarkBackgroundHover: #3f3f3f;
+
+@toolbarLightStartBackground:			#f4f4f4;
+@toolbarLightEndBackground:				#d4d4d4;
+@toolbarLightBorder: 					#333333;
+@toolbarLightLinkColor: 				#333333;
+@toolbarLightLinkHoverColor: 			#333333;
+@toolbarLightBackgroundHover: rgba(128,128,128,0.3);
+
+//UIBox
+
+@uiBoxBg : @baseBackground;
+@uiBoxBorder : @borderColor;
+@uiBoxHeadBg : @primaryBackground;
+@uiBoxGray: @primaryBackground;
+
+// Quote
+@quoteBorder: @primaryBackgroundHover;
+@quoteBackgound: @primaryBackground;
+
+@quotecolor: @textColor;
+
+@quotePrimaryBorder: 					lighten(@primaryColor, 40%);
+// UIMention
+@uiMentionColor: @infoColor;
+@uiMentionBorder: @infoColor;
+@uiMentionBackground:					lighten(@infoColorLight, 4%);
+
+//@paddingXLarge:         10px 15px;
+//@paddingLarge:          4px 10px;
+//@paddingSmall:          2px 10px;
+//@paddingMini:           0 10px;
+
+// Global Loading
+@globalLoadingBackground: #808080;
+@globalLoadingBorder: #333;
+@globalLoadingColor: #fff;
+
+// navigation left
+@plfNavigationTitleColor: @primaryColor;
+@plfNavigationBgBorderLeft :@primaryLightColor;
+@plfNavigationBorderLeft: @primaryDarkColor;
+@plfNavigationColor: @baseColorMedium;
+@plfNavigationBgSelected : @baseBackground;
+@plfNavigationBorderSelected: @borderColor;
+@plfNavigationColorSelected: @baseColorMedium;
+@plfNavigationColorHover:  @linkColorHover;
+
+
+// -------------------------Color  generation formula -------------------------//
+
+//Return true if base color is darker ( this is default skin)
+.setColor (@a) when (lightness(@a) < 50%) {
+  @baseColorDark:				lighten(@baseColor, 20%);	// #333333 Default color for all title, text, text input, label
+  @baseColorMedium:					lighten(@baseColor, 50%);	// #808080 Navigation text color, special purpose in use
+  @baseColorLight:				lighten(@baseColor, 60%);	// #999999 Default @baseColorMedium color for small text, sub title, text field explanation
+  @borderColor:             lighten(@baseColor, 80%);	// #cccccc
+  @primaryBackgroundHover:	darken(@primaryBackground, 4%);
+  @primaryBackgroundLight:	lighten(@primaryBackground, 3%);
+  @primaryDarkColor:		darken(@primaryColor, 10.5%);		//#224469
+  @primaryLightColor:		lighten(@primaryColor, 18.5%);		//#578dc9
+  // button primary
+  @btnBackground:            @baseBackground;
+  @btnBackgroundHighlight:  @primaryBackground;
+
+  @dropdownArrowRight:  darken(@baseBackground, 20%);		// #aac5e3
+  @quotePrimaryBackground: 				lighten(@quotePrimaryBorder, 18%);	// #aac5e3
+}
+
+//Return true if base color is lighter
+.setColor (@a) when (lightness(@a) >= 50%) {
+  @baseColorLight:				darken(@baseColor, 20%);
+  @baseColorMedium:					lighten(@baseColor, 50%);
+  @baseColorDark:				lighten(@baseColor, 60%);
+  @borderColor:             darken(@baseColor, 20%);
+  @primaryBackgroundLight:	lighten(@primaryBackground, 4%);
+  @primaryBackgroundHover :	darken(@primaryBackground, 3%);
+  @primaryLightColor:		lighten(@primaryColor, 10.5%);		//#224469
+  @primaryDarkColor :		darken(@primaryColor, 18.5%);		//#578dc9
+  // button primary
+  @btnBackground:           @primaryBackground;
+  @btnBackgroundHighlight: @baseBackground;
+  @dropdownArrowRight:  lighten(@baseBackground, 90%);
+  @quotePrimaryBackground: 				darken(@primaryColor, 10%);	// #aac5e3
+}
+.setColor(@baseColor);

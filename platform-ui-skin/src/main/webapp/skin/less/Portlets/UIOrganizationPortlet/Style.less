@@ -1,0 +1,188 @@
+/**
+ * Copyright (C) 2009 eXo Platform SAS.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+ */
+
+//
+// Porlet - Organization Portlet
+// --------------------------------------------------
+@import "../../variables.less";
+@import "../../mixins.less";
+
+.UIWindow .uiOrganizationPortlet {
+	overflow: visible;
+}
+
+.uiOrganizationPortlet {
+	overflow: auto;
+	.organizationPortletContainer {
+		padding: 25px;
+		width: auto;
+	}
+}
+
+/*---------- UIUserManagement ----------*/
+.UIUserManagement {
+	.tab-content {
+		border-bottom: 0;
+		padding: 25px;
+		.border-radius(0);
+			& + .uiAction{
+				 .border-radius(0 0 @borderRadiusSmall @borderRadiusSmall);
+				 border: 1px solid @borderColor;
+				 background: @baseBackground;
+				 padding: 15px 0;
+			}
+		.table {
+			margin-bottom: 0;
+		}
+		.form-horizontal {
+			padding: 0;
+		}
+	}
+	.uiFormTabPane {
+		padding: 0;
+	}
+	.nav-tabs {
+		margin: 0px;
+		background-color: @primaryBackgroundHover;
+		border: 1px solid @borderColor;
+		padding: 5px 5px 0px 5px;
+		.border-radius(@borderRadiusSmall @borderRadiusSmall 0px 0px);
+	}
+
+}
+
+/*---------- UISearchForm ----------*/
+.uiSearch {
+	margin: 0 0 16px 0;
+	.quickSet  {
+		input[type="text"] {
+			margin: 0 8px 0 5px;
+			width: 200px;
+		}
+		.uiSelectbox {
+			width: 145px;
+			margin: 0 8px 0 5px;
+			vertical-align: middle;
+			.selectbox {
+				width: 145px;
+			}
+		}
+	}
+}
+/*---------- uiToolbar ----------*/
+.uiToolbar  {
+	margin: 0 0 16px 0;
+	ul li {
+		&+ li {
+			margin: 0 0 0 10px;
+		}
+		a {
+			color : @textColor;
+			padding:2px 10px;
+			[class^="uiIcon"] {
+				margin-right: 5px;
+			}
+		}
+	}
+}
+
+
+
+/*---------- UIGroupManagement ----------*/
+.uiOrganizationPortlet  {
+	.uiBox {
+		.box-shadow(0 1px 3px -2px rgba(0, 0, 0, 0.18));
+		.title {
+			.box-shadow(0 1px 2px -2px rgba(0, 0, 0, 0.20));
+		}
+	}
+	.uiGroupManagement {
+		width: 100%;
+		margin: auto;
+		.breadcrumb {
+			padding: 10px;
+			.uiIconTree{
+				background-position: -180px -40px;
+			}
+		}
+	}
+	.uiFormWithTitle {
+		.form-horizontal {
+			width: 630px;
+			margin: 0 auto;
+		}
+	}
+	.groupNavigation{
+		width: 240px;
+		.title {
+			line-height: 25px;
+	    	padding: 5px 10px;
+	    	.actionIcon{
+	    		padding: 3px 4px 1px;
+	    	}
+	   	.tooltip {
+	   		font-weight:normal;
+	   	}
+	  }
+		&+ .groupDetail {
+			margin-left: 260px;
+			.form-horizontal {
+				overflow: hidden;
+			}
+		}
+		.uiTrees {
+			background: @baseBackground;
+			border: none;
+			margin: 4px 0 0 0;
+			.border-radius(0 0 @borderRadiusSmall @borderRadiusSmall);
+			.treeContainer > .nodeGroup {
+				.node {
+					margin: 3px 0;
+    				padding: 2px 10px;
+					&:hover {
+						background: @primaryBackgroundLight;
+					}
+				}
+
+			}
+			.homeNode .actionIcon  {
+					margin: 5px 0 0 4px;
+				}
+		}
+	}
+}
+
+.UIGroupEditMembershipForm {
+	.form-horizontal {
+		.control-label {
+			width: 95px;
+		}
+		.controls {
+			margin-left: 105px;
+		}
+	}
+}
+
+/*---------- UIMemberShipManagement ----------*/
+.uiOrganizationPortlet .groupNavigation .title {
+  line-height: 17px;
+  padding: 8px;
+}
+
+

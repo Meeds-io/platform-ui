@@ -1,0 +1,47 @@
+@import "../../variables.less"; 
+@import "../../mixins.less";
+
+.UISpaceAccessPortlet {
+  padding: 8px 14px 14px;
+  background: @baseBackground;
+}
+
+.UISpaceAccessPortlet .SpaceAccessBlock a {
+	color: @linkColor;
+	text-decoration: underline;
+}
+
+.UISpaceAccessPortlet .SpaceAccessBlock {
+	border: solid 2px; 
+	border-radius: 15px; 
+	width: 450px;
+	margin: auto; 
+	padding: 15px; 
+	font-size: 14px; 
+	line-height: 20px;
+}
+
+.UISpaceAccessPortlet .SpaceAccessYellow {
+	border-color: @warningColor;
+	background: @warningColorLight;
+	color: @textColor;
+}
+
+.UISpaceAccessPortlet .SpaceAccessBlue {
+	border-color: @infoColor;
+	background: @infoColorLight;
+	color: @textColor;
+}
+
+.UISpaceAccessPortlet .SpaceAccessRed {
+	border-color: @errorColor;
+	background: @errorColorLight;
+	color: @textColor;
+	line-height: 20px;
+}
+
+.UISpaceAccessPortlet .PermanWikiLink {
+	border-color: @errorColor;
+	background: @errorColor;
+	line-height: 20px;
+}

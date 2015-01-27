@@ -1,0 +1,91 @@
+//
+// UIAttachmentThumbnail
+// --------------------------------------------------
+
+.attachmentContainer{
+	background: @primaryBackgroundLight;
+	padding: 18px;
+	margin-top: 10px;
+
+	.otherAttachmentBox + .otherAttachmentBox{
+		margin-top: 5px;
+	}
+
+	.attachmentTitle{
+		margin-bottom: 15px;
+	}
+
+	.attachmentContentImage {
+		.imageAttachmentBox{
+			display: inline-block;
+			width: 128px;
+			height: 128px;
+			text-align: center;
+			margin-right: 15px;
+			margin-bottom: 5px;
+			position: relative;
+			&:hover{
+				.actionAttachImg{
+					display: block;
+				}
+			}
+			.imgAttach img,img{
+				max-width: 128px;
+				max-height: 128px;
+			}
+			.imgAttach{
+				line-height: 125px;
+			}
+			.actionAttachImg{
+				position: absolute;
+				display: none;
+				top: 0;
+				left: 0;
+				background-color: rgba(0,0,0,0.1);
+				.square(128px);
+				p{
+					a{
+						color: #fff; // alway white no need a variable
+						&:hover{
+							font-weight: bold;
+						}
+					}
+
+					margin: 45px 0 0 0;
+					&+p{
+						margin-top: 0;
+					}
+				}
+			}
+		}
+
+	}
+}
+
+.postContentContainer{
+	.signature{
+		font-style: italic;
+		span{
+			border-top: dotted 1px @borderColor;
+			width: 265px;
+			display: inline-block;
+		}
+	}
+}
+.footPost{
+	border-top: dotted 1px @borderColor;
+	margin-top: 20px;
+	padding-top: 5px;
+	color: @baseColorLight;
+	text-align: right;
+	.txtLastEdit{
+		font-size: @baseFontSize - 1;
+		.uiUserInfo{
+			display:inline-block;
+			text-align: left;
+		}
+	}
+	.btnDetailTopic{
+		margin-top: 10px;
+	}
+}

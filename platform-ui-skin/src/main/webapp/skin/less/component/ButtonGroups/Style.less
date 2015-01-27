@@ -1,0 +1,56 @@
+//
+// Button groups
+// --------------------------------------------------
+.btn-group.uiDropdownWithIcon .btn{
+	.spiter{
+		background: url("@{images-path}/Dropdown/ButtonGroups/split-white.png") no-repeat center;
+		display: inline-block;
+	    margin: 0 0 0 7px;
+	    vertical-align: middle;
+	    .size(20px, 2px);
+	}
+	> span {
+	 vertical-align: middle;
+		 &:first-child {
+		 	  text-transform: capitalize;
+		 }
+	}
+	.caret {
+		margin-top: 0;
+	}
+	&.btn-primary .spiter {
+		background: url("@{images-path}/Dropdown/ButtonGroups/split.png") no-repeat;
+	}
+	.uiIconMiniArrowDown {
+		margin: 0 -1px 0 1px;	
+	}
+}
+
+.uiTabSelector .btn-group {
+	margin: 5px 0 5px -27%;
+	left: 50%;
+}
+
+.btn-group > .btn, .btn-group > .dropdown-menu{
+	font-size: @baseFontSize ;
+}
+
+.btn.dropdown-toggle {
+	padding-right: 5px;
+}
+.btn-group.btn-without-icon {
+	.btn.active {
+		color: @primaryColor;
+	}
+}
+
+.btn-group {
+	.btn {
+		min-width: 0;
+	}
+	.btn-small {
+		&.dropdown-toggle .uiIconMiniArrowDown {
+			margin: -1px -2px 0 0;
+		}
+	}
+}

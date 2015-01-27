@@ -1,0 +1,527 @@
+// CSS Reset
+
+
+// Core variables and mixins
+@import "_boostrap.less";
+@import "variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "mixins.less";
+@import "reset.less";
+@import "component/Tabs/Style.less";
+@import "component/Popup/Style.less";
+@import "component/Dropdown/Style.less";
+@import "component/Sprites/Style.less";
+@import "component/Buttons/Style.less";
+@import "component/ButtonGroups/Style.less";
+@import "component/Form/Style.less";
+@import "component/VerticalTabs/Style.less";
+@import "component/Tables/Style.less";
+@import "component/Tooltips/Style.less";
+@import "component/Pagination/Style.less";
+@import "component/Notifications/Style.less";
+@import "component/Breadcrumbs/Style.less";
+@import "component/SearchInput/Style.less";
+@import "component/Tree/Style.less";
+@import "component/LabelsBadges/Style.less";
+@import "component/ProgressBars/Style.less";
+@import "component/Popover/Style.less";
+@import "component/CalendarPicker/Style.less";
+@import "component/UIColorPicker/Style.less";
+@import "component/UIDashboard/Style.less";
+@import "component/Gadget/Style.less";
+@import "component/HoverReveal/Style.less";
+@import "component/UISelector/UIGroupMemberShipSelector/Style.less";
+@import "component/UISelector/UIItemSelector/Style.less";
+@import "component/UISelector/UIUserSelector/Style.less";
+@import "component/UIPage/Style.less";
+@import "component/Portal/UIPageBrowser/Style.less";
+@import "component/Portal/UIEditInlineWS/Style.less";
+@import "component/Vote/Style.less";
+@import "component/Wizard/Style.less";
+@import "component/CalendarBox/Style.less";
+@import "component/LanguageSelector/Style.less";
+@import "component/VTabInputSet/Style.less";
+@import "component/UIMention/Style.less";
+@import "component/UIAttachmentThumbnail/Style.less";
+@import "PortletThemes/Style.less";
+
+// COMMONS STYLESHEET
+//==================================================================
+.clearfix {
+	.clearfix();	// Reuse Mixin .clearfix() from mixins.less of bootstrap
+}
+
+// Block level inputs
+.input-block-level{
+	.input-block-level();
+}
+
+/*============== Action With Label================*/
+.uiActionWithLabel {
+	.uiActionWithLabel();
+}
+/*============== actionIcon================*/
+.actionContainer{
+	.actionContainer();
+}
+
+a,a:hover,a:focus {
+  color: @linkColor;
+  text-decoration: none;
+}
+
+table {
+	width: 100%;
+}
+
+// Dropdown menus
+// --------------
+
+// Menu position and menu carets
+.navbar .nav > li > .dropdown-menu {
+  &:before {
+    content: '';
+    display: inline-block;
+    border-left:   0px solid transparent;
+    border-right:  0px solid transparent;
+    border-bottom: 0px solid @borderColor;
+
+  }
+  &:after {
+    content: '';
+    display: inline-block;
+    border-left:   0px solid transparent;
+    border-right:  0px solid transparent;
+    border-bottom: 0px solid @baseBackground;
+
+  }
+}
+
+/***************badge*********************/
+
+.badge {
+	background: @borderColor;
+	border-radius: 9px 9px 9px 9px;
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.37) inset, 1px 1px 0 rgba(255, 255, 255, 0.8);
+	color: @primaryColor;
+	font-size: 11px;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+/*************** multiValueContainer *********************/
+
+.multiValueContainer {
+	float: left;
+	li {
+		margin-bottom: 12px;
+
+		[class^="uiIcon"] {
+			cursor: pointer;
+		}
+		input{
+			margin-right: 5px;
+		}
+	}
+
+	li:last-child {
+		margin-bottom: 0px;
+	}
+
+}
+
+/*************** AjaxLoadingMask *********************/
+.ajaxLoadingMask{
+	background: @globalLoadingBackground;
+	border: 1px solid @globalLoadingBorder;
+	border-radius: 0 0 3px 3px;
+	.box-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
+	padding: 10px 7px 6px 11px;
+	top: 0px !important;
+	position: fixed !important;
+	.loadingProgressBar{
+		background: url("@{images-path}/Loading/loadingProgressBar.gif") no-repeat center;
+		width: 20px;
+		height: 20px;
+	}
+	.loadingText{
+		margin: 0 34px 0 40px;
+		color: @globalLoadingColor;
+		font-weight: bold;
+	}
+	.uiIconClose:hover{
+		background: url("@{images-path}/Icons/uiIconsSecondary.png") -160px -100px!important;
+		cursor: pointer;
+	}
+}
+
+/***********************************/
+
+.uiAccessGroup {
+	padding: 10px;
+	.form-horizontal .control-group .control-label {
+		width: 400px;
+	}
+	.form-horizontal .control-group .controls {
+		margin-left: 405px;
+	}
+}
+
+.controls-nowrap{
+	white-space: nowrap;
+}
+
+.UICLVPortlet{
+	.checkListSetting{
+		padding: 15px 10px 10px 85px;
+		li{
+			margin-right: 50px;
+		}
+	}
+	@media screen and (-webkit-min-device-pixel-ratio:0) {
+		.uiCheckbox {
+			padding: 0px 8px;
+		}
+	}
+	#clvContentTab-tab .controls{
+		.uiSelectbox {
+			width: 131px;
+			.selectbox{ width: 131px;}
+		}
+	}
+	.form-horizontal {
+		.control-group {
+			.controls {
+				input{
+					width: 270px;
+				}
+				.uiCheckbox input{
+					width: auto;
+				}
+				.uiRadio input{
+					width: auto;
+				}
+			}
+		}
+	}
+
+}
+
+.UISingleContentViewerPortlet{
+	@media screen and (-webkit-min-device-pixel-ratio:0) {
+		.uiCheckbox {
+			padding: 0px 8px;
+		}
+	}
+	.uiContentSearchForm{
+		.form-horizontal{
+			.uiRadio{
+				width: 19px;
+			}
+		}
+	}
+
+	.form-horizontal{
+		li{
+			margin-left: 50px;
+		}
+
+		.uiRadio{
+			width: 190px;
+			margin-left: 15px;
+		}
+
+		.control-group{
+			margin-bottom: 20px;
+		}
+
+		.controls-full .scv-by {
+			line-height: 28px;
+      margin: 0px 5px 0px 15px;
+		}
+	}
+}
+
+/*================================*/
+
+.UIForm{
+	.UIPDFViewerContainer {
+		min-width: 530px;
+		.PDFViewerBar {
+			.ControlButton {
+                color: #333; //fix code
+				.PageNumber input{
+					border: 1px solid @borderColor;
+					text-align: center;
+					width: 30px; height: 20px;
+				}
+				.uiSelectbox, select.selectbox{
+					width: 75px;
+					height: 22px;
+				}
+				.uiSelectbox{
+					margin-top: -4px;
+				}
+			}
+		}
+	}
+}
+
+.actionIcon, .actionIconSmall{
+	.actionIcon();
+}
+
+.actionIconSmall {
+	padding: 0;
+  line-height: @baseLineHeight - 4;
+	[class^="uiIcon"] {
+		vertical-align: middle;
+	}
+}
+
+/*============== error, noticeEmpty ================*/
+.error,
+.noticeEmpty {
+  .error();
+}
+.noticeEmpty {
+  .noticeEmpty();
+}
+
+/*======== Title================*/
+.titleWithBorder {
+	.titleWithBorder();
+}
+
+/******uibox*****/
+.uiBox {
+	.uiBox();
+}
+
+/*============== Gray Light Box================*/
+.uiGrayLightBox{
+	.uiGrayLightBox();
+}
+.center {
+	.center();
+}
+
+/******avatar*****/
+.avatarCircle {
+  .avatarCircle();
+}
+
+.avatarXLarge {
+  .avatarXLarge();
+}
+
+.avatarLarge {
+  .avatarLarge();
+}
+
+.avatarXMedium {
+  .avatarXMedium();
+}
+
+.avatarMedium {
+  .avatarMedium();
+}
+
+.avatarXSmall {
+  .avatarXSmall();
+}
+
+.avatarSmall {
+  .avatarSmall();
+}
+
+.avatarMini {
+  .avatarMini();
+}
+
+.avatarTiny {
+  .avatarTiny()
+}
+
+.avatarLargeWithBorder {
+  .avatarLargeWithBorder();
+}
+
+.avatarXLargeWithBorder {
+  .avatarXLargeWithBorder();
+}
+/*
+Round corner box with title
+  - border: 1px solid @tableBorder;
+  - Title:
+    + gray background (#f0f0f0)
+    + round corner at left-top and right-top
+    + text title is bold, class name is "titleBox", color is @@baseColorDark
+  - content box:
+    + background: @baseBackground
+    + round corner at the bottom-left and bottom-right
+*/
+.roundCornerBoxWithTitle{
+	.roundCornerBoxWithTitle();
+}
+
+/************ mask layer **********/
+.UIMaskWorkspace {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: solid 8px #c5c5c5;
+	width: 650px;
+	-moz-box-shadow: 0px 0px 5px #909090;
+	-webkit-box-shadow: 0px 0px 5px #909090;
+	box-shadow: 0px 0px 5px #909090;
+	background: #c5c5c5;
+	.form-horizontal {
+		padding-top: 0;
+		padding-bottom: 5px;
+		.control-group {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.uiAccessGroup {
+		padding: 0;
+	}
+	.uiDashboardPortlet {
+		padding: 0 0 15px;
+	}
+	.resizable {
+		margin: -15px;
+		padding: 15px;
+	}
+}
+
+.UIMaskWorkspace .MaskContainer {
+	background: @primaryBackgroundLight;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	padding: 10px;
+	.uiAction.uiActionBorder {
+		padding-bottom: 0;
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+	.uiBox {
+		margin-bottom: 0;
+		.uiContentBox {
+			padding: 15px;
+			+ .uiAction.uiActionBorder {
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+.MaskLayer {
+	background: black;
+	text-align: center;
+	position: absolute;
+	overflow: auto; /* Fix for FF2 */
+}
+
+.uiHelpPLFToolbarPortlet .tooltip {
+	right: 0px !important;
+	left: auto !important;
+}
+
+.uiGrayLightBox label {
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+}
+
+// Quote
+.quote{
+    background-color: @quoteBackgound;
+    .border-radius(2px);
+    font-style: italic;
+    margin: 10px 0 10px 0;
+    padding: 15px 15px 15px 20px;
+    word-wrap: break-word;a
+	.quote {
+		margin: 0;
+		padding:0;
+	}
+     .titleQuote {
+		    font-weight: bold;
+		    margin: 15px 0;
+			font-style: normal;color: @quotecolor;
+		     line-height: 16px;
+		}
+		blockquote {
+	    background: none;
+	    border-left: 5px solid @quoteBorder;
+	    padding: 0 0 0 15px;
+		  margin: 15px 0;
+	    width: auto;
+		  color:@textColor;
+	    font-style: italic;
+	    .titleQuote {
+	    	color:@quotecolor;
+	    }
+	    p {
+	    	font-style: italic;
+    		font-size: @baseFontSize;
+            color: @quotecolor;
+    	}
+	}
+	&.quotePrimary {
+			background-color: @quotePrimaryBackground;
+				blockquote {
+					border-left: 5px solid @quotePrimaryBorder;
+				}
+	}
+ }
+
+// Footer WLC
+.footerWLC {
+    bottom: 0;
+    color: #FFFFFF;
+    font-weight: bold;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    padding: 6px 0;
+    .btn {
+        font-weight: bold;
+        margin-left: 12px;
+      line-height: 16px;
+      .buttonBackground(rgba(255, 255, 255, 0.3), rgba(180, 180, 180, 0.3), #333333, 0 0 0 transparent);
+      border: none;
+      .box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
+    }
+    .btn:hover  {
+        color: @linkColor;
+      background-position: center;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+    .btn:active {
+      color: @linkColor;
+      .box-shadow(~"inset 0 3px 8px rgba(0, 0, 0, 0.2),1px 1px 0 rgba(255, 255, 255, 0.4)");
+    }
+    & > form {
+        font-size: 14px;
+        font-weight: bold;
+        button {
+            font-size: 13px;
+        }
+    }
+	&.backOutdated {
+      background: rgba(212, 0, 0, 0.4);
+
+	}
+	&.backNotOutdated {
+      background: rgba(0, 0, 0, 0.4);
+	}
+}
+
+/* Create Margin and Padding Utilities Class */
+.marginAndPadding(20);

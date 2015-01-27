@@ -1,0 +1,99 @@
+/**
+ * Copyright (C) 2009 eXo Platform SAS.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+ */
+
+//
+// Porlet - Site Navigation Portlet
+// --------------------------------------------------
+@import "../../variables.less";
+@import "../../mixins.less";
+.UIPage .UIGroupNavigationPortlet {
+	padding: 20px;
+	.UIVirtualList {
+		height: 290px;
+	}
+}
+.uiBox .uiGroupNavigationManagement .uiPopup .uiActionBorder {
+	  margin: 0 -15px 0;
+}
+.uiPopup {
+		.uiPageBrowser .uiPageContainer {
+			padding: 0;
+		}
+		.uiPageSearch {
+			margin: 0 0 10px 0;
+			padding-left: 20px;
+			input[type="text"] {
+				width: 228px;
+			}
+		}
+}
+.uiManagementSite  {
+	.uiPopup {
+		 .uiNavigationManagement.resizable {
+		 	margin-bottom: 0;
+		 }
+	}
+	padding: 20px;
+	.managementBlock  {
+		margin-bottom: 10px;
+		a {
+			color: @textColor;
+			[class^="uiIcon"] {
+				margin-right: 5px;
+			}
+		}
+		td {
+			padding: 10px;
+			&.content {
+				width: 430px;
+				.siteName {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}
+.uiPopup {
+	#UINavigationNodeSelector {
+		margin-bottom: 15px;
+	}
+}
+
+.uiAddGroupNavigation {
+	.uiGrid.table {
+		border: none;
+	}
+	.uiGrid.table td, .uiGrid.table th {
+		padding: 8px;
+		a {
+			cursor: pointer;
+		}
+	}
+}
+.uiBox {
+	.uiGroupNavigationManagement {
+		.popupContent > .resizable {
+			padding-top: 15px;
+			margin-bottom: 0;
+		}
+		#UIPageNavigationForm .uiContentBox .form-horizontal {
+			margin-bottom: 15px;
+		}
+	}
+}

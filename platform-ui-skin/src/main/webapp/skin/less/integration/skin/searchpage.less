@@ -1,0 +1,147 @@
+@import "../../variables.less"; 
+@import "../../mixins.less";
+
+.uiSearchPortlet {
+  padding: 20px;
+  .calendarBox {
+  	width: 54px;
+  	display: inline-block;
+  }
+  .searchContainer {
+    display: none;
+    margin-bottom: 20px;
+    border-bottom: 1px solid @borderColor;
+    height: 40px;
+    .searchForm > input[type="text"] {
+      margin: 0;
+    }
+    #resultHeader {
+	  padding: 6px 6px 0;
+    }
+    .result {
+      padding: 15px 0 5px;      
+    }
+
+    .resultSort {
+      display: none;
+    }
+
+    .resultSort > span {
+      display: inline-block;
+      padding: 6px 6px 0;
+    }
+
+    .uiDropdownWithIcon {
+      .dropdown-menu {
+        min-width: 100px;
+      }
+    }
+  }
+
+  .filterContainer {
+    display: none;
+    width: 220px;
+    float: left;
+    margin: 0;
+    ul.listFilter {
+      padding-left: 20px;
+    }
+    .uiCheckbox {
+    	width: 16px;
+    }
+  }
+
+  .resultPage {
+    display: none;  
+    padding: 40px 20px;
+    margin-left: 240px;
+    .noResultInfo {
+  		display: none;
+	}
+	&.noResult{
+		.noResultInfo {
+  			display: block;
+  			text-align: center;
+  			> h3 {
+			  color: @textLightColor;
+			  margin-bottom: 5px;
+			}
+			> p {
+			  color: @textColor;
+			  line-height: 25px;
+			}  			
+		}
+		.showMore {
+		  display: none;
+		}
+	}
+    .resultBox {
+      margin: 20px 0;
+      overflow:hidden;
+      .avatar {
+        width: 64px;
+        overflow: hidden;
+        text-align: center;
+        > img {
+          max-width: 54px;
+          max-height: 54px;
+        }
+        &.userThumbnail > img {
+          .border-radius(4px);
+          height: 54px;
+          width: 54px;
+        }
+      }
+      .content {
+        margin-left: 85px;
+        > h6 {
+          margin-top: 0;
+          margin-bottom: 5px;
+          color: @primaryColor;
+        }
+        .excerpt {
+          line-height: 22px;
+        }
+        .detail {
+          color: @baseColorLight;
+        }
+      }
+    }
+  }
+
+  .showMore {
+    padding: 15px 0;
+    .btn {
+      width: 100%;
+      display: block;
+      margin: 0;
+    }
+  }
+  .resultLoading{
+    &:after {
+      background:  url("@{images-path}/Loading/loading64x64Light.png") no-repeat center center ;
+      .square(64px);
+      content: "";
+      display: block;
+      position: absolute;
+      left: 50%;
+      margin-left: -32px;
+      top: 20px;
+      .loading-action;
+    }
+    background: @baseBackground;
+  	border: 1px solid @borderColor;
+  	border-radius: 3px 3px 3px 3px;
+  	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  	color: @textColor;
+  	display: block;
+  	left: 60%;
+  	padding-bottom: 20px;
+  	padding-top: 105px;
+  	position: absolute;
+  	text-align: center;
+  	top: 40%;
+  	width: 150px;
+  	z-index: 9999;
+  }
+}

@@ -1,0 +1,149 @@
+//
+// VerticalTabs
+// --------------------------------------------------
+.accordion {
+	.border-radius(@baseBorderRadius);
+	border: 1px solid @borderColor;
+	background: @baseBackground;
+	.box-shadow(0 1px 2px rgba(0, 0, 0, 0.06));
+	a {
+	  color: @textColor;
+	  text-decoration: none;
+	  &:hover {
+		  color: @textColor;
+		}
+	}
+	.accordion-toggle {
+	  padding: 0px;
+	}
+	.accordion-toggle a{
+	  display: block;
+	  padding: 8px 8px 8px 15px;
+	  [class^="uiIcon"].pull-right {
+	  	margin-top: 2px;
+	  }
+	  &:hover {
+		  background-color: @primaryBackgroundLight;
+		  .border-radius(@borderRadiusSmall);
+		}
+	}
+	.accordion-group {
+	  border: none;
+	  margin-bottom: 0px;
+	  .border-radius(0px);
+	  .accordion-heading a{
+	  	font-size: @baseFontSize;
+	  }
+	}
+	.accordion-group  + .accordion-group {
+	  border-top: 1px solid @primaryBackgroundHover;
+	}
+	.menuHeader {
+	  margin: 0px;
+	  padding: 7px 4px 7px 18px;
+	  background: @primaryBackground;
+	  border-bottom: 1px solid @borderColor;
+	   .border-radius(@baseBorderRadius @baseBorderRadius 0 0);
+	}
+	.accordion-body {
+		.selected {
+			  background-color: @primaryBackgroundHover;
+		}
+		.functionItem{
+			display: block;
+			padding: 6px 4px 6px 16px;
+			font-size: @baseFontSize - 1;
+			i {margin: -2px 7px 0 0;}
+			&:hover{
+				background: @primaryBackgroundLight;
+			}
+		}
+	}
+	.expaned {
+	  #gradient > .vertical(@primaryBackgroundLight, @primaryBackgroundHover);
+	  border-bottom: 1px solid @borderColor;
+	  .border-radius(@borderRadiusSmall @borderRadiusSmall 0 0);
+	  .bgSelected {
+		  padding: 8px 15px;
+		  display: block;
+		}
+		.uiIconSelected {
+		  background-position: 0px -140px;
+			margin-top: 2px;
+		}
+	}
+	.expaned:hover {
+	  .border-radius(@borderRadiusSmall @borderRadiusSmall 0 0);
+	}
+	.collapsed{
+	  .bgSelected {
+		  padding: 8px 15px;
+		  display: block;
+		}
+		.uiIconSelected {
+		  background-position: -40px -140px;
+			margin-top: 2px;
+		}
+	}
+	.accordion-inner{
+	  border: none;
+	  &:hover {
+		  background-color: @primaryBackgroundLight;
+		}
+	}
+	.accordion-normal {
+	  border-top: 1px solid @borderColor;
+	  .accordion-toggle {
+		  padding: 8px 15px;
+		  display: block;
+		}
+	}
+	.icon-chevron-right{
+		float: right;
+	}
+}
+
+.UIOrganizerManagement{
+	.accordion-inner{
+		cursor: -moz-grabbing;
+		&:hover{
+			background: none;
+		}
+	}
+	.accordion-inner .txtLeft{
+			margin: 19px 0px 0px 83px;
+			width: 170px;
+			word-wrap: break-word;
+	}
+}
+
+/*---------- VerticalTabStyle1 ----------*/
+
+.verticalTabStyle1 {
+	.collapsed{
+		background: @primaryBackground;
+	}
+	.accordion-toggle a {
+		padding: 5px 15px;
+	}
+
+	.expaned {
+		#gradient > .vertical(@primaryBackgroundLight, @primaryBackground);
+	}
+
+	.accordion-inner {
+		border: 1px solid @primaryBackgroundHover;
+		.border-radius(@baseBorderRadius);
+		padding: 5px;
+		margin: 8px;
+		&:hover {
+			background: @primaryBackgroundLight;
+			border: 1px solid @borderColor;
+		}
+	}
+
+}
+
+
+
+
