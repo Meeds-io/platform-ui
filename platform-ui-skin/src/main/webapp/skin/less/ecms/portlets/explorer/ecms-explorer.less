@@ -710,7 +710,18 @@
 .fileContent,
 .mediaContent {
 	padding: 15px;
-
+    .title {
+      padding: 0 0 10px;
+      a.pull-right {
+        color: @textColor;
+        &:hover {
+          color: @linkColorHover;
+        }
+      }
+    }
+    .content {
+      text-align: center;
+    }
 	.textContent {
 		overflow: auto;
 
@@ -1206,32 +1217,33 @@
 
 /******** uiUnEditable **************/
 .uiUnEditable {
-	width: 380px;
 	margin: 0px auto;
 
 	.iconContainer {
-		float: left;
-		width: 100px;
-		text-align: right;
-		padding-top: 5px;
-	}
+      text-align: center;
 
-	.detailContainer {
-		margin-left: 120px;
-		text-align: center;
-
-		span {
-			display: block;
-			color: @baseColorLight;
-			margin-top: 10px;
-		}
-
-		h4 {
-			color: @baseColorLight;
-			margin-top: 0px;
-			text-shadow: none;
-		}
-	}
+      .nameDoc {
+        display: block;
+        color: @textLightColor;
+        margin: 15px 0;
+      }
+    }
+    .detailContainer {
+      text-align: center;
+      padding-bottom: 30px;
+      h4 {
+        color: @textLightColor;
+        margin-top: 0px;
+        margin-bottom: 20px;
+        text-shadow: none;
+      }
+      button, .btn {
+        margin: 0 7px 0 0;
+        [class^="uiIcon"] {
+          margin-right: 7px;
+        }
+      }
+    }
 }
 
 /******** uiExportNode **************/
