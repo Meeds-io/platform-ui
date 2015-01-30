@@ -162,8 +162,6 @@
                                 <include>social/portlets/uiWarningPortlet/Style.less</include>
                                 <include>forum/skin/forum-resources.less</include>
                                 <include>forum/portlets/forum/forum.less</include>
-                                <include>forum/portlets/answer/answers.less</include>
-                                <include>forum/portlets/answer/faq.less</include>
                                 <include>forum/portlets/poll/pollPortlet.less</include>
                                 <include>commons/skin/commons.less</include>
                                 <include>integration/skin/quicksearchpage.less</include>

@@ -129,21 +129,6 @@
     <css-priority>1</css-priority>
   </portlet-skin>
   
-  <portlet-skin>
-    <application-name>faq</application-name>
-    <portlet-name>AnswersPortlet</portlet-name>
-    <skin-name>Default</skin-name>
-    <css-path>/skin/css/forum/portlets/answer/answers.css</css-path>
-    <css-priority>1</css-priority>
-  </portlet-skin>
-  
-  <portlet-skin>
-    <application-name>faq</application-name>
-    <portlet-name>FAQPortlet</portlet-name>
-    <skin-name>Default</skin-name>
-    <css-path>/skin/css/forum/portlets/answer/faq.css</css-path>
-    <css-priority>1</css-priority>
-  </portlet-skin>
   
   <!-- commons -->
   
