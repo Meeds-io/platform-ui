@@ -15,21 +15,25 @@
 // For the @baseBackground version of the icons, just add the .iconwhite class:
 // <i class="iconinbox iconwhite"></i>
 
-[class^="uiIconEcms"],.LeftNavigationTDContainer .uiPopup [class^="uiIconEcms"] {
+[class^="uiIconEcms"],
+.LeftNavigationTDContainer .uiPopup [class^="uiIconEcms"] {
   background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsDefault.png");
 }
 
 /* Blue icons with optional class, or on hover/active states of certain elements */
 
-.uiActionWithLabel:hover > [class^="uiIconEcms"],.actionIcon:hover > [class^="uiIconEcms"],
+.uiActionWithLabel:hover > [class^="uiIconEcms"],
+.actionIcon:hover > [class^="uiIconEcms"],
 .nav-pills > .active > a > [class^="uiIconEcms"],
 .nav-list > .active > a > [class^="uiIconEcms"],
 .navbar-inverse .nav > .active > a > [class^="uiIconEcms"],
 .dropdown-menu > li > a:hover > [class^="uiIconEcms"],
 .dropdown-menu > .active > a > [class^="uiIconEcms"],
 .uiDropdownWithIcon .dropdown-submenu:hover > a > [class^="uiIconEcms"],
-.btn:hover [class^="uiIconEcms"],a:hover [class^="uiIconEcms"],
-[class^="uiIconEcms"]:hover, .uiActionBar [class^="uiIconEcms"]:hover, .uiIconEcmsBlue
+.btn:hover [class^="uiIconEcms"],
+a:hover [class^="uiIconEcms"],
+[class^="uiIconEcms"]:hover,
+.uiIconEcmsBlue
 {
   background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsPrimary.png");
 }
@@ -40,12 +44,14 @@
 .dropdown-menu > li > a > [class^="uiIconEcms"],
 .dropdown-menu > .active > a > [class^="uiIconEcms"],
 .uiDropdownWithIcon .dropdown-submenu> a > [class^="uiIconEcms"],
-.uiActionBar [class^="uiIconEcms"], .uiIconEcmsLightGray
+.uiIconEcmsLightGray
 {
   background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsDefault.png");
 }
 
-.uiIconEcmsExtra,.LeftNavigationTDContainer [class^="uiIconEcms"] {
+.uiIconEcmsDarkGray,
+.uiIconEcmsExtra,
+.LeftNavigationTDContainer [class^="uiIconEcms"] {
   background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsExtra.png");
 }
 
@@ -57,60 +63,74 @@
 .uiDropdownWithIcon .dropdown-menu > li > a:hover > [class^="uiIconEcms"],
 .uiDropdownWithIcon .dropdown-menu > .active > a > [class^="uiIconEcms"],
 .uiDropdownWithIcon .dropdown-submenu:hover > a > [class^="uiIconEcms"],
-.btn-primary [class^="uiIconEcms"], 
+.btn-primary [class^="uiIconEcms"],
 .btn-primary:hover [class^="uiIconEcms"],
 .uiDropDownCal a:hover [class^="uiIconEcms"],
 .uiDropDownCal .active a:hover [class^="uiIconEcms"],
-.eventAllDay [class^="uiIconEcms"], .eventDayContainer [class^="uiIconEcms"], .uiIconEcmsWhite
+.eventAllDay [class^="uiIconEcms"],
+.eventDayContainer [class^="uiIconEcms"],
+.uiIconEcmsWhite
 {
   background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsSecondary.png");
 }
 
-.uiIconEcmsGeneralDrive,.uiIconEcmsDriveManager {
+.uiIconEcmsGeneralDrive,
+.uiIconEcmsDriveManager {
 	background-position: 0px 0px;
 }
 
-.uiIconEcmsGroupDrive,.uiIconEcms16x16DriveGroup {
+.uiIconEcmsGroupDrive,
+.uiIconEcms16x16DriveGroup {
 	background-position: -20px 0px;
 }
 
-.uiIconEcmsPersonalDrive,.uiIconEcms16x16DrivePersonal {
+.uiIconEcmsPersonalDrive,
+.uiIconEcms16x16DrivePersonal {
 	background-position: -40px 0px;
 }
 
-.uiIconEcmsPrivateDrive,.uiIconEcms16x16DrivePrivate {
+.uiIconEcmsPrivateDrive,
+.uiIconEcms16x16DrivePrivate {
 	background-position: -60px 0px;
 }
 
-.uiIconEcmsPublicDrive,.uiIconEcms16x16DrivePublic {
+.uiIconEcmsPublicDrive,
+.uiIconEcms16x16DrivePublic {
 	background-position: -80px 0px;
 }
 
-.uiIconEcmsTemplateList, .uiIconEcmsCLVTemplatesManager {
+.uiIconEcmsTemplateList,
+.uiIconEcmsCLVTemplatesManager {
 	background-position: -100px 0px;
 }
 
-.uiIconEcmsTemplateDocument, .uiIconEcmsTemplatesManager {
+.uiIconEcmsTemplateDocument,
+.uiIconEcmsTemplatesManager {
 	background-position: -120px 0px;
 }
 
-.uiIconEcmsExplorerView, .uiIconEcmsViewManager {
+.uiIconEcmsExplorerView,
+.uiIconEcmsViewManager {
 	background-position: -140px 0px;
 }
 
-.uiIconEcmsNameSpace, .uiIconEcmsNamespaceManager {
+.uiIconEcmsNameSpace,
+.uiIconEcmsNamespaceManager {
 	background-position: -160px 0px;
 }
 
-.uiIconEcmsQuery, .uiIconEcmsQueriesManager {
+.uiIconEcmsQuery,
+.uiIconEcmsQueriesManager {
 	background-position: -180px 0px;
 }
 
-.uiIconEcmsScript, .uiIconEcmsScriptManager {
+.uiIconEcmsScript,
+.uiIconEcmsScriptManager {
 	background-position: 0px -20px;
 }
 
-.uiIconEcmsFavorite,.uiIconEcmsAddToFavourite {
+.uiIconEcmsFavorite,
+.uiIconEcmsAddToFavourite {
 	background-position: -20px -20px;
 }
 
@@ -130,7 +150,8 @@
 	background-position: -100px -20px;
 }
 
-.uiIconEcmsAddSymLink,.uiIconEcmsCreateLink {
+.uiIconEcmsAddSymLink,
+.uiIconEcmsCreateLink {
 	background-position: -120px -20px;
 }
 
@@ -138,7 +159,8 @@
 	background-position: -140px -20px;
 }
 
-.uiIconEcmsViewDocument,.uiIconEcmsPermlink {
+.uiIconEcmsViewDocument,
+.uiIconEcmsPermlink {
 	background-position: -160px -20px;
 }
 
@@ -150,23 +172,28 @@
 	background-position: 0px -40px;
 }
 
-.uiIconEcmsShowHideContent,.uiIconEcmsManageHidden {
+.uiIconEcmsShowHideContent,
+.uiIconEcmsManageHidden {
 	background-position: -20px -40px;
 }
 
-.uiIconEcmsPublication,.uiIconEcmsManagePublications {
+.uiIconEcmsPublication,
+.uiIconEcmsManagePublications {
 	background-position: -40px -40px;
 }
 
-.uiIconEcmsRelation,.uiIconEcmsManageRelations {
+.uiIconEcmsRelation,
+.uiIconEcmsManageRelations {
 	background-position: -60px -40px;
 }
 
-.uiIconEcmsVersion,.uiIconEcmsManageVersions {
+.uiIconEcmsVersion,
+.uiIconEcmsManageVersions {
 	background-position: -80px -40px;
 }
 
-.uiIconEcmsLocalisedContent,.uiIconEcmsAddLocalizationLink {
+.uiIconEcmsLocalisedContent,
+.uiIconEcmsAddLocalizationLink {
 	background-position: -100px -40px;
 }
 
@@ -174,35 +201,44 @@
 	background-position: -120px -40px;
 }
 
-.uiIconEcmsApprove,.uiIconEcmsPublicationRequestApproval {
+.uiIconEcmsApprove,
+.uiIconEcmsPublicationRequestApproval {
 	background-position: -140px -40px;
 }
 
-.uiIconEcmsPublish,.uiIconEcmsPublicationPublish {
+.uiIconEcmsPublish,
+.uiIconEcmsPublicationPublish {
 	background-position: -160px -40px;
 }
 
-.uiIconEcmsStructure,.uiIconEcmsShowJCRStructure {
+.uiIconEcmsStructure,
+.uiIconEcmsShowJCRStructure {
 	background-position: -180px -40px;
 }
 
-.uiIconEcmsMetadata, .uiIconEcmsMetadataManager,.uiIconEcmsViewMetadatas {
+.uiIconEcmsMetadata,
+.uiIconEcmsMetadataManager,
+.uiIconEcmsViewMetadatas {
 	background-position: 0px -60px;
 }
 
-.uiIconEcmsType, .uiIconEcmsNodeTypeManager {
+.uiIconEcmsType,
+.uiIconEcmsNodeTypeManager {
 	background-position: -20px -60px;
 }
 
-.uiIconEcmsProperties,.uiIconEcmsViewProperties {
+.uiIconEcmsProperties,
+.uiIconEcmsViewProperties {
 	background-position: -40px -60px;
 }
 
-.uiIconEcmsReference,.uiIconEcmsViewReferences {
+.uiIconEcmsReference,
+.uiIconEcmsViewReferences {
 	background-position: -60px -60px;
 }
 
-.uiIconEcmsShowHideRelation,.uiIconEcmsViewRelations {
+.uiIconEcmsShowHideRelation,
+.uiIconEcmsViewRelations {
 	background-position: -80px -60px;
 }
 
@@ -226,7 +262,8 @@
 	background-position: -180px -60px;
 }
 
-.uiIconEcmsClipboard, .uiIconEcmsPatse {
+.uiIconEcmsClipboard,
+.uiIconEcmsPatse {
 	background-position: 0px -80px;
 }
 
@@ -234,11 +271,13 @@
 	background-position: -40px -80px;
 }
 
-.uiIconEcmsViewList,.uiIconEcmsViewB_list {
+.uiIconEcmsViewList,
+.uiIconEcmsViewB_list {
 	background-position: -20px -80px;
 }
 
-.uiIconEcmsViewIcons,.uiIconEcmsViewC_icon {
+.uiIconEcmsViewIcons,
+.uiIconEcmsViewC_icon {
 	background-position: -60px -80px;
 }
 
@@ -246,11 +285,13 @@
 	background-position: -80px -80px;
 }
 
-.uiIconEcmsViewAuthor,.uiIconEcmsViewAuthoring {
+.uiIconEcmsViewAuthor,
+.uiIconEcmsViewAuthoring {
 	background-position: -100px -80px;
 }
 
-.uiIconEcmsViewAdmin,.uiIconEcmsViewE_admin {
+.uiIconEcmsViewAdmin,
+.uiIconEcmsViewE_admin {
 	background-position: -120px -80px;
 }
 
@@ -262,7 +303,8 @@
 	background-position: -160px -80px;
 }
 
-.uiIconEcmsViewWcm,.uiIconEcmsViewWeb {
+.uiIconEcmsViewWcm,
+.uiIconEcmsViewWeb {
 	background-position: -180px -80px;
 }
 
@@ -282,11 +324,13 @@
 	background-position: -60px -100px;
 }
 
-.uiIconEcmsAudit,.uiIconEcmsManageAuditing {
+.uiIconEcmsAudit,
+.uiIconEcmsManageAuditing {
 	background-position: -80px -100px;
 }
 
-.uiIconEcmsNavigation,.uiIconEcmsContentNavigation {
+.uiIconEcmsNavigation,
+.uiIconEcmsContentNavigation {
 	background-position: -100px -100px;
 }
 
@@ -298,7 +342,8 @@
 	background-position: -140px -100px;
 }
 
-.uiIconEcmsLock,.uiIconEcmsViewPermissions {
+.uiIconEcmsLock,
+.uiIconEcmsViewPermissions {
 	background-position: -160px -100px;
 }
 
@@ -310,7 +355,8 @@
 	background-position: 0px -120px;
 }
 
-.uiIconEcmsMinusStar,.uiIconEcmsRemoveFromFavourite {
+.uiIconEcmsMinusStar,
+.uiIconEcmsRemoveFromFavourite {
 	background-position: -20px -120px;
 }
 
@@ -322,23 +368,28 @@
 	background-position: -60px -120px;
 }
 
-.uiIconEcmsContract,.uiIconEcmsCollapse {
+.uiIconEcmsContract,
+.uiIconEcmsCollapse {
 	background-position: -80px -120px;
 }
 
-.uiIconEcmsContract,.uiIconEcmsReturn {
+.uiIconEcmsContract,
+.uiIconEcmsReturn {
 	background-position: -100px -120px;
 }
 
-.uiIconEcmsContract,.uiIconEcmsExecute {
+.uiIconEcmsContract,
+.uiIconEcmsExecute {
 	background-position: -120px -120px;
 }
 
-.uiIconEcmsDriveSiteManagement,.uiIconEcms16x16DriveManagedSites {
+.uiIconEcmsDriveSiteManagement,
+.uiIconEcms16x16DriveManagedSites {
 	background-position: -140px -120px;
 }
 
-.uiIconEcmsDriveTrash,.uiIconEcms16x16DriveTrash {
+.uiIconEcmsDriveTrash,
+.uiIconEcms16x16DriveTrash {
 	background-position: -160px -120px;
 }
 
@@ -350,15 +401,18 @@
 	background-position: 0px -140px;
 }
 
-.uiIconEcmsRelationListMini,.uiIconEcmsRelationMini {
+.uiIconEcmsRelationListMini,
+.uiIconEcmsRelationMini {
 	background-position: -20px -140px;
 }
 
-.uiIconEcmsSearchMini,.uiIconEcmsSavedSearchesMini {
+.uiIconEcmsSearchMini,
+.uiIconEcmsSavedSearchesMini {
 	background-position: -40px -140px;
 }
 
-.uiIconEcmsTreeMini,.uiIconEcmsExplorerMini {
+.uiIconEcmsTreeMini,
+.uiIconEcmsExplorerMini {
 	background-position: -60px -140px;
 }
 
@@ -393,12 +447,13 @@
 	background-position: -20px 0px;
 }
 
-.actionIcon:hover .uiIconEcmsDelete,.uiIconEcmsDelete:hover {
+.actionIcon:hover .uiIconEcmsDelete,
+.uiIconEcmsDelete:hover {
 	background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
 }
 
 
-.dropdown-menu > li > a >,
+.dropdown-menu > li > a,
 .uiActionBar  {
 	.uiIconEcmsEditDocument,
 	.uiIconEcmsManageActions,
@@ -449,30 +504,47 @@
 	background-position: -20px -80px;
 }
 
-.dropdown-menu > li > a >,
+.dropdown-menu > li > a,
 .uiActionBar  {
-	.actionIcon:hover .uiIconEcmsEditDocument,.uiIconEcmsEditDocument:hover,
-	.actionIcon:hover .uiIconEcmsManageActions,.uiIconEcmsManageActions:hover,
-	.actionIcon:hover .uiIconEcmsWatchDocument,.uiIconEcmsWatchDocument:hover,
-	.actionIcon:hover .uiIconEcmsManageCategories,.uiIconEcmsManageCategories:hover,
-	.actionIcon:hover .uiIconEcmsUpload,.uiIconEcmsUpload:hover,
-	.actionIcon:hover .uiIconEcmsComment,.uiIconEcmsComment:hover,
-	.actionIcon:hover .uiIconEcmsVote,.uiIconEcmsVote:hover,
-	.actionIcon:hover .uiIconEcmsAddCategory,.uiIconEcmsAddCategory:hover,
-	.actionIcon:hover .uiIconEcmsTaggingDocument,.uiIconEcmsTaggingDocument:hover {
+	.actionIcon:hover .uiIconEcmsEditDocument,
+	.uiIconEcmsEditDocument:hover,
+	.actionIcon:hover .uiIconEcmsManageActions,
+	.uiIconEcmsManageActions:hover,
+	.actionIcon:hover .uiIconEcmsWatchDocument,
+	.uiIconEcmsWatchDocument:hover,
+	.actionIcon:hover .uiIconEcmsManageCategories,
+	.uiIconEcmsManageCategories:hover,
+	.actionIcon:hover .uiIconEcmsUpload,
+	.uiIconEcmsUpload:hover,
+	.actionIcon:hover .uiIconEcmsComment,
+	.uiIconEcmsComment:hover,
+	.actionIcon:hover .uiIconEcmsVote,
+	.uiIconEcmsVote:hover,
+	.actionIcon:hover .uiIconEcmsAddCategory,
+	.uiIconEcmsAddCategory:hover,
+	.actionIcon:hover .uiIconEcmsTaggingDocument,
+	.uiIconEcmsTaggingDocument:hover {
 		background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
 	}
 }
 
 .uiActionBar .listHiddenActionsContainer .dropdown-menu {
-	.actionIcon:hover .uiIconEcmsEditDocument,.uiIconEcmsEditDocument:hover,
-	.actionIcon:hover .uiIconEcmsManageActions,.uiIconEcmsManageActions:hover,
-	.actionIcon:hover .uiIconEcmsWatchDocument,.uiIconEcmsWatchDocument:hover,
-	.actionIcon:hover .uiIconEcmsManageCategories,.uiIconEcmsManageCategories:hover,
-	.actionIcon:hover .uiIconEcmsUpload,.uiIconEcmsUpload:hover,
-	.actionIcon:hover .uiIconEcmsComment,.uiIconEcmsComment:hover,
-	.actionIcon:hover .uiIconEcmsVote,.uiIconEcmsVote:hover,
-	.actionIcon:hover .uiIconEcmsTaggingDocument,.uiIconEcmsTaggingDocument:hover {
+	.actionIcon:hover .uiIconEcmsEditDocument,
+	.uiIconEcmsEditDocument:hover,
+	.actionIcon:hover .uiIconEcmsManageActions,
+	.uiIconEcmsManageActions:hover,
+	.actionIcon:hover .uiIconEcmsWatchDocument,
+	.uiIconEcmsWatchDocument:hover,
+	.actionIcon:hover .uiIconEcmsManageCategories,
+	.uiIconEcmsManageCategories:hover,
+	.actionIcon:hover .uiIconEcmsUpload,
+	.uiIconEcmsUpload:hover,
+	.actionIcon:hover .uiIconEcmsComment,
+	.uiIconEcmsComment:hover,
+	.actionIcon:hover .uiIconEcmsVote,
+	.uiIconEcmsVote:hover,
+	.actionIcon:hover .uiIconEcmsTaggingDocument,
+	.uiIconEcmsTaggingDocument:hover {
 		background-image: url("@{images-path}/Icons/uiIconsSecondary.png");
 	}
 }
@@ -488,7 +560,9 @@
 
 /* Blue icons */
 
-[class^="uiIconEcms24x24"]:hover,.driveLabel:hover [class^="uiIconEcms24x24"],.uiIconEcms24x24Blue {
+[class^="uiIconEcms24x24"]:hover,
+.driveLabel:hover [class^="uiIconEcms24x24"],
+.uiIconEcms24x24Blue {
   background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcms24x24Primary.png");
 }
 
@@ -497,7 +571,9 @@
   background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcms24x24Default.png");
 }
 
-.uiIconEcms24x24Extra,.LeftNavigationTDContainer [class^="uiIconEcms24x24"] {
+.uiIconEcms24x24DarkGray,
+.uiIconEcms24x24Extra,
+.LeftNavigationTDContainer [class^="uiIconEcms24x24"] {
   background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcms24x24Extra.png");
 }
 

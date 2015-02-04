@@ -14,13 +14,15 @@
 // For the @baseBackground version of the icons, just add the .iconwhite class:
 // <i class="iconinbox iconwhite"></i>
 
-[class^="uiIconAns"],.LeftNavigationTDContainer .uiPopup [class^="uiIconAns"]{
+[class^="uiIconAns"],
+.LeftNavigationTDContainer .uiPopup [class^="uiIconAns"]{
   background-image: url("@{images-path}/forum/portlets/answers/Icons/uiIconsAnsDefault.png");
 }
 
 /* Blue icons with optional class, or on hover/active states of certain elements */
 
-.uiActionWithLabel:hover > [class^="uiIconAns"],.actionIcon:hover > [class^="uiIconAns"],
+.uiActionWithLabel:hover > [class^="uiIconAns"],
+.actionIcon:hover > [class^="uiIconAns"],
 .nav-pills > .active > a > [class^="uiIconAns"],
 .nav-list > .active > a > [class^="uiIconAns"],
 .navbar-inverse .nav > .active > a > [class^="uiIconAns"],
@@ -29,7 +31,8 @@
 .uiDropdownWithIcon .dropdown-submenu:hover > a > [class^="uiIconAns"],
 .actionIcon.active [class^="uiIconAns"],
 .btn:hover [class^="uiIconAns"],a:hover  > [class^="uiIconAns"],
-[class^="uiIconAns"]:hover, .uiActionBar [class^="uiIconAns"]:hover, .uiIconAnsBlue
+[class^="uiIconAns"]:hover,
+.uiIconAnsBlue
 {
   background-image: url("@{images-path}/forum/portlets/answers/Icons/uiIconsAnsPrimary.png");
 }
@@ -40,13 +43,14 @@
 .dropdown-menu > li > a > [class^="uiIconAns"],
 .dropdown-menu > .active > a > [class^="uiIconAns"],
 .uiDropdownWithIcon .dropdown-submenu> a > [class^="uiIconAns"],
-.uiDropDownCal li a [class^="uiIconAns"], .uiActionBar [class^="uiIconAns"],
-.answerToolbar [class^="uiIconAns"], .uiIconAnsLightGray
+.uiDropDownCal li a [class^="uiIconAns"],
+.answerToolbar [class^="uiIconAns"],
+.uiIconAnsLightGray
 {
   background-image: url("@{images-path}/forum/portlets/answers/Icons/uiIconsAnsDefault.png");
 }
 
-.uiIconAnsExtra ,.LeftNavigationTDContainer [class^="uiIconAns"]{
+.uiIconAnsDarkGray, .uiIconAnsExtra, .LeftNavigationTDContainer [class^="uiIconAns"]{
   background-image: url("@{images-path}/forum/portlets/answers/Icons/uiIconsAnsExtra.png");
 }
 
@@ -58,7 +62,7 @@
 .uiDropdownWithIcon .dropdown-menu > li > a:hover > [class^="uiIconAns"],
 .uiDropdownWithIcon .dropdown-menu > .active > a > [class^="uiIconAns"],
 .uiDropdownWithIcon .dropdown-submenu:hover > a > [class^="uiIconAns"],
-.btn-primary [class^="uiIconAns"], 
+.btn-primary [class^="uiIconAns"],
 .btn-primary:hover [class^="uiIconAns"], .uiIconAnsWhite
 {
   background-image: url("@{images-path}/forum/portlets/answers/Icons/uiIconsAnsSecondary.png");
@@ -68,12 +72,15 @@
 	background-image: url("@{images-path}/forum/portlets/answers/Icons/uiIconsAnswerColor.png");
 }
 
-.dropdown > a:hover > [class^="uiIconAnwserColor"], [class^="uiIconAnwserColor"]:hover,
-a:hover > [class^="uiIconAnwserColor"], i:hover [class^="uiIconAnwserColor"]{
+.dropdown > a:hover > [class^="uiIconAnwserColor"],
+[class^="uiIconAnwserColor"]:hover,
+a:hover > [class^="uiIconAnwserColor"],
+i:hover [class^="uiIconAnwserColor"]{
 	background-image: url("@{images-path}/forum/portlets/answers/Icons/uiIconsAnswerColor.png");
 }
 
-.uiIconAnsSubmitQuestion,.uiIconAnsAddNewQuestion {
+.uiIconAnsSubmitQuestion,
+.uiIconAnsAddNewQuestion {
 	background-position: -20px 0;
 }
 

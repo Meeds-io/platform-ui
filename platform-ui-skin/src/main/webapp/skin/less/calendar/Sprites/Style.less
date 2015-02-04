@@ -13,7 +13,8 @@
 
 // For the @baseBackground version of the icons, just add the .iconwhite class:
 // <i class="iconinbox iconwhite"></i>
-[class^="uiIconCal"],.LeftNavigationTDContainer .uiPopup [class^="uiIconCal"]{
+[class^="uiIconCal"],
+.LeftNavigationTDContainer .uiPopup [class^="uiIconCal"]{
 	margin-top: 0;
 	background-image: url("@{images-path}/calendar/Icons/uiIconsCalDefault.png");
 }
@@ -28,7 +29,8 @@
 .dropdown-menu > .active > a > [class^="uiIconCal"],
 .uiDropdownWithIcon .dropdown-submenu:hover > a > [class^="uiIconCal"],
 .btn:hover [class^="uiIconCal"],a:hover [class^="uiIconCal"],
-[class^="uiIconCal"]:hover,.UICalendarPortlet .actionIcon:hover [class^="uiIconCal"] ,.uiCalendarPortlet .actionIcon:hover [class^="uiIconCal"],
+.UICalendarPortlet .actionIcon:hover [class^="uiIconCal"] ,
+.uiCalendarPortlet .actionIcon:hover [class^="uiIconCal"],
 .uiIconCalBlue
 {
 	background-image: url("@{images-path}/calendar/Icons/uiIconsCalPrimary.png");
@@ -49,7 +51,7 @@
 
 }
 
-.uiIconCalExtra ,.LeftNavigationTDContainer [class^="uiIconCal"]{
+.LeftNavigationTDContainer [class^="uiIconCal"]{
   background-image: url("@{images-path}/calendar/Icons/uiIconsCalDefault.png");
 }
 /* White icons with optional class, or on hover/active states of Drop down with Icons */
@@ -64,13 +66,21 @@
 .btn-primary:hover [class^="uiIconCal"],
 .uiDropDownCal > li > a:hover > [class^="uiIconCal"],
 .uiDropDownCal > .active > a > [class^="uiIconCal"],[class^="uiIconCal"].uiIconWhite,
-.uiDayView [class^="uiIconCal"], .uiWeekView [class^="uiIconCal"], .uiMonthView [class^="uiIconCal"],
-.btn-primary:hover [class^="uiIconCal"],.btn-primary:hover [class^="uiIconCal"]:hover,
+.uiDayView [class^="uiIconCal"],
+.uiWeekView [class^="uiIconCal"],
+.uiMonthView [class^="uiIconCal"],
+.btn-primary:hover [class^="uiIconCal"],
+.btn-primary:hover [class^="uiIconCal"]:hover,
 .uiIconCalWhite
 {
 	background-image: url("@{images-path}/calendar/Icons/uiIconsCalSecondary.png");
 }
 
+.dropdown-menu > li > a > .uiIconCalDarkGray,
+.breadcrumb .uiIconCalDarkGray,
+.dropdown-menu > .active > a > .uiIconCalDarkGray,
+.uiDropdownWithIcon .dropdown-submenu> a > .uiIconCalDarkGray,
+.uiIconCalExtra,
 .uiIconCalDarkGray {
 	background-image: url("@{images-path}/calendar/Icons/uiIconsCalExtra.png");
 }
@@ -78,7 +88,8 @@
 .uiEventCategoryManager [class^="uiIcon"]{
 	background-image: url("@{images-path}/Icons/uiIconsDefault.png");
 }
-.uiIconCalnullPriority,.uiIconCalnonePriority{
+.uiIconCalnullPriority,
+.uiIconCalnonePriority{
 	display: none;
 }
 
@@ -126,7 +137,8 @@
 	background-position: -160px 0;
 }
 
-.uiIconCalPlus,.uiIconCalSimplePlus{
+.uiIconCalPlus,
+.uiIconCalSimplePlus{
 	background-position: 0 -20px;
 }
 
@@ -147,15 +159,18 @@
 	background-position: -60px -21px;
 }
 
-.uiIconCalFlagHigh,.uiIconCalhighPriority{
+.uiIconCalFlagHigh,
+.uiIconCalhighPriority{
 	background-position: -142px -21px;
 }
 
-.uiIconCalFlagNormal,.uiIconCalnormalPriority{
+.uiIconCalFlagNormal,
+.uiIconCalnormalPriority{
 	background-position: -122px -21px;
 }
 
-.uiIconCalFlagLow,.uiIconCallowPriority{
+.uiIconCalFlagLow,
+.uiIconCallowPriority{
 	background-position: -102px -21px;
 }
 
@@ -175,13 +190,15 @@
 }
 
 
-.eventContainerBar [class^="uiIconCal"] ,.eventSummary  [class^="uiIconCal"]{
+.eventContainerBar [class^="uiIconCal"] ,
+.eventSummary  [class^="uiIconCal"]{
 	width: 14px;
 }
 
 
 .eventContainerBar{
-	 .uiIconCalClockMini ,.uiIconCalTaskMini {
+	 .uiIconCalClockMini ,
+	 .uiIconCalTaskMini {
 	 	margin-left: 4px;
 	 }
 	

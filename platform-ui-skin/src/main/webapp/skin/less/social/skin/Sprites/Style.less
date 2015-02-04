@@ -14,22 +14,26 @@
 // For the white version of the icons, just add the .iconwhite class: 
 // <i class="iconinbox iconwhite"></i>
 
-[class^="uiIconSoc"],.LeftNavigationTDContainer .uiPopup [class^="uiIconSoc"]{
+[class^="uiIconSoc"],
+.LeftNavigationTDContainer .uiPopup [class^="uiIconSoc"]{
  // background-image: url("@{images-path}/social/skin/Icons/uiIconsSocExtra.png");
   background-image: url("@{images-path}/social/skin/Icons/uiIconsSocDefault.png");
 }
 
 /* Blue icons with optional class, or on hover/active states of certain elements */
 
-.uiActionWithLabel:hover > [class^="uiIconSoc"],.actionIcon:hover > [class^="uiIconSoc"],
+.uiActionWithLabel:hover > [class^="uiIconSoc"],
+.actionIcon:hover > [class^="uiIconSoc"],
 .nav-pills > .active > a > [class^="uiIconSoc"],
 .nav-list > .active > a > [class^="uiIconSoc"],
 .navbar-inverse .nav > .active > a > [class^="uiIconSoc"],
 .dropdown-menu > li > a:hover > [class^="uiIconSoc"],
 .dropdown-menu > .active > a > [class^="uiIconSoc"],
 .uiDropdownWithIcon .dropdown-submenu:hover > a > [class^="uiIconSoc"],
-.btn:hover [class^="uiIconSoc"],a:hover [class^="uiIconSoc"],
-[class^="uiIconSoc"]:hover, .uiActionBar [class^="uiIconSoc"]:hover, .uiIconSocBlue
+.btn:hover [class^="uiIconSoc"],
+a:hover [class^="uiIconSoc"],
+[class^="uiIconSoc"]:hover,
+.uiIconSocBlue
 {
   background-image: url("@{images-path}/social/skin/Icons/uiIconsSocPrimary.png");
 }
@@ -40,11 +44,12 @@
 .dropdown-menu > li > a > [class^="uiIconSoc"],
 .dropdown-menu > .active > a > [class^="uiIconSoc"],
 .uiDropdownWithIcon .dropdown-submenu> a > [class^="uiIconSoc"],
-.uiDropDownCal li a [class^="uiIconSoc"], .uiActionBar [class^="uiIconSoc"], .uiIconSocLightGray {
+.uiDropDownCal li a [class^="uiIconSoc"],
+.uiIconSocLightGray {
   background-image: url("@{images-path}/social/skin/Icons/uiIconsSocDefault.png");
 }
 
-.uiIconSocExtra,.LeftNavigationTDContainer [class^="uiIconSoc"] {
+.uiIconSocDarkGray, .uiIconSocExtra, .LeftNavigationTDContainer [class^="uiIconSoc"] {
   background-image: url("@{images-path}/social/skin/Icons/uiIconsSocExtra.png");
 }
 
@@ -61,7 +66,8 @@
 .btn-primary:hover [class^="uiIconSoc"],
 .uiDropDownCal a:hover [class^="uiIconSoc"],
 .uiDropDownCal .active a:hover [class^="uiIconSoc"],
-.eventAllDay [class^="uiIconSoc"], .eventDayContainer [class^="uiIconSoc"], .uiIconSocWhite
+.eventAllDay [class^="uiIconSoc"],
+.eventDayContainer [class^="uiIconSoc"], .uiIconSocWhite
 {
   background-image: url("@{images-path}/social/skin/Icons/uiIconsSocSecondary.png");
 }
@@ -164,7 +170,8 @@
 	background-position: -60px -40px;
 }
 
-.uiIconSocUIDocActivityComposer:hover,.actionIcon:hover .uiIconSocUIDocActivityComposer {
+.uiIconSocUIDocActivityComposer:hover,
+.actionIcon:hover .uiIconSocUIDocActivityComposer {
 	background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
 }
 
@@ -173,7 +180,8 @@
   background-position: -80px 0px;
 }
 
-.uiIconSocUILinkActivityComposer:hover, .actionIcon:hover .uiIconSocUILinkActivityComposer {
+.uiIconSocUILinkActivityComposer:hover,
+.actionIcon:hover .uiIconSocUILinkActivityComposer {
   background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
 }
 

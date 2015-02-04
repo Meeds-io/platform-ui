@@ -13,7 +13,8 @@
 // For the @baseBackground version of the icons, just add the .iconwhite class:
 // <i class="iconinbox iconwhite"></i>
 
-[class^="uiIcon"],.LeftNavigationTDContainer .uiPopup [class^="uiIcon"]{
+[class^="uiIcon"],
+.LeftNavigationTDContainer .uiPopup [class^="uiIcon"]{
   display: inline-block;
   width: 16px;
   height: 16px;
@@ -27,13 +28,16 @@
 
 /* Blue icons with optional class, or on hover/active states of certain elements */
 
-.uiActionWithLabel:hover i,.actionIcon:hover i,
+.uiActionWithLabel:hover i,
+.actionIcon:hover i,
 .nav-pills > .active > a > [class^="uiIcon"],
 .nav-list > .active > a > [class^="uiIcon"],
 .navbar-inverse .nav > .active > a > [class^="uiIcon"],
-.btn:hover [class^="uiIcon"], a:hover [class^="uiIcon"],
-.actionIcon.active [class^="uiIcon"],.nodeSelected:hover [class^="uiIcon"],
-[class^="uiIcon"]:hover, .uiActionBar [class^="uiIcon"]:hover, .uiIconBlue
+.btn:hover [class^="uiIcon"],
+a:hover [class^="uiIcon"],
+.actionIcon.active [class^="uiIcon"],
+.nodeSelected:hover [class^="uiIcon"],
+.uiIconBlue
 {
   background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
 
@@ -41,15 +45,25 @@
 
 /* light grey icons with optional class, or on  */
 
-.dropdown-menu > li > a > [class^="uiIcon"],.breadcrumb [class^="uiIcon"],
+.dropdown-menu > li > a > [class^="uiIcon"],
+.breadcrumb [class^="uiIcon"],
 .dropdown-menu > .active > a > [class^="uiIcon"],
-.uiDropdownWithIcon .dropdown-submenu> a > [class^="uiIcon"],.uiActionBar [class^="uiIcon"], .uiIconClose, .uiIconLightGray
+.uiDropdownWithIcon .dropdown-submenu> a > [class^="uiIcon"],
+.uiIconClose,
+.uiIconLightGray
 {
   background-image: url("@{images-path}/Icons/uiIconsDefault.png"); //remove late
 
 }
 
-.uiIconExtra,.LeftNavigationTDContainer [class^="uiIcon"] {
+.dropdown-menu > li > a > .uiIconDarkGray,
+.breadcrumb .uiIconDarkGray,
+.dropdown-menu > .active > a > .uiIconDarkGray,
+.uiDropdownWithIcon .dropdown-submenu> a > .uiIconDarkGray,
+.uiIconClose,
+.uiIconDarkGray,
+.uiIconExtra,
+.LeftNavigationTDContainer [class^="uiIcon"] {
   background-image: url("@{images-path}/Icons/uiIconsExtra.png");
 }
 /* White icons with optional class, or on hover/active states of Drop down with Icons */
@@ -68,11 +82,14 @@
 .uiDropDownCal .active a:hover [class^="uiIcon"],
 .EDITION-BLOCK .CONTROL-BLOCK .uiIconWhite:hover,
 .EDITION-BLOCK .CONTROL-BLOCK a:hover .uiIconWhite,
-.btn-primary:hover [class^="uiIcon"],.btn-primary:hover [class^="uiIcon"]:hover,
+.btn-primary:hover [class^="uiIcon"],
+.btn-primary:hover [class^="uiIcon"]:hover,
 .uiAction .btn:first-child [class^="uiIcon"],
-.uiAction .btn:first-child:hover [class^="uiIcon"],.uiAction .btn:first-child:hover [class^="uiIcon"]:hover,
+.uiAction .btn:first-child:hover [class^="uiIcon"],
+.uiAction .btn:first-child:hover [class^="uiIcon"]:hover,
 .containerTopicDetail .attachmentContentImage .actionAttachImg a:hover i,
-.uiQuestions .attachmentContentImage .actionAttachImg a:hover i,.viewIconContainer > div:hover [class^="uiIcon"],
+.uiQuestions .attachmentContentImage .actionAttachImg a:hover i,
+.viewIconContainer > div:hover [class^="uiIcon"],
 .uiIconWhite
 {
   background-image: url("@{images-path}/Icons/uiIconsSecondary.png");
@@ -99,37 +116,62 @@
 	background-position: 0px 0px;
 }
 
-.uiIconTrash,.uiIconDelete,.uiIconDeleteNode,.uiIconDeleteDraft,
-.uiIconDeletePage,.uiIconDeleteCategory,.uiIconRemoveStyle,
-.uiIconRemovePermission,.uiIconRemoveTag,.uiIconRemoveNodeType,
-.uiIconDeleteMembership,.uiIconDeleteUser,
-.uiIconRemoveNavigationNode,.uiIconRemoveListTargetPage,.uiIconRemoveDetailTargetPage {
+.uiIconTrash,
+.uiIconDelete,
+.uiIconDeleteNode,
+.uiIconDeleteDraft,
+.uiIconDeletePage,
+.uiIconDeleteCategory,
+.uiIconRemoveStyle,
+.uiIconRemovePermission,
+.uiIconRemoveTag,
+.uiIconRemoveNodeType,
+.uiIconDeleteMembership,
+.uiIconDeleteUser,
+.uiIconRemoveNavigationNode,
+.uiIconRemoveListTargetPage,
+.uiIconRemoveDetailTargetPage {
 	background-position: -20px 0px;
 }
 
-.uiIconEdit,.uiIconEditSelectedNode,.uiIconEditPage,.uiIconEditTag,
-.uiIconViewUserInfo,.uiIconEditStyle,.uiIconEditInfo,.uiIconEditMembership,
+.uiIconEdit,
+.uiIconEditSelectedNode,
+.uiIconEditPage,
+.uiIconEditTag,
+.uiIconViewUserInfo,
+.uiIconEditStyle,
+.uiIconEditInfo,
+.uiIconEditMembership,
 .uiIconEditCategory {
 	background-position: -40px 0px;
 }
 
-.uiIconLock, .uiIconPagePermission {
+.uiIconLock,
+.uiIconPagePermission {
 	background-position: -60px 0px;
 }
 
-.uiIconLink,.uiIconPermalink, .uiIconLinkr {
+.uiIconLink,
+.uiIconPermalink,
+.uiIconLinkr {
 	background-position: -80px 0px;
 }
 
-.uiIconWatch, .uiIconWatchPage,.uiIconUnWatchPage ,.uiIconUnWatch {
+.uiIconWatch,
+.uiIconWatchPage,
+.uiIconUnWatchPage,
+.uiIconUnWatch {
 	background-position: -100px 0px;
 }
 
-.uiIconMove, .uiIconMovePage ,.uiIconMoveCategory{
+.uiIconMove,
+.uiIconMovePage,
+.uiIconMoveCategory{
 	background-position: -120px 0px;
 }
 
-.uiIconPreview, .uiIconView {
+.uiIconPreview,
+.uiIconView {
 	background-position: -140px 0px;
 }
 
@@ -157,7 +199,8 @@
 	background-position: -60px -20px;
 }
 
-.uiIconSave,.uiIconPasteNode {
+.uiIconSave,
+.uiIconPasteNode {
 	background-position: -80px -20px;
 }
 
@@ -185,11 +228,14 @@
 	background-position: 0px -40px;
 }
 
-.uiIconSettings, .uiIconMoreAction {
+.uiIconSettings,
+.uiIconMoreAction {
 	background-position: -20px -40px;
 }
 
-.uiIconTemplate, .uiIconFromTemplate, .uiIconAddPageFromTemplate {
+.uiIconTemplate,
+.uiIconFromTemplate,
+.uiIconAddPageFromTemplate {
 	background-position: -40px -40px;
 }
 
@@ -197,11 +243,13 @@
 	background-position: -60px -40px;
 }
 
-.uiIconPublish,.uiIconBlankFile, .uiIconAddPage {
+.uiIconPublish,.uiIconBlankFile,
+.uiIconAddPage {
 	background-position: -80px -40px;
 }
 
-.uiIconViewChange, .uiIconViewDraftChange {
+.uiIconViewChange,
+.uiIconViewDraftChange {
 	background-position: -100px -40px;
 }
 
@@ -233,7 +281,8 @@
 	background-position: -40px -60px;
 }
 
-.uiIconValidate,.uiIconOpen,.uiIconAddRootNode,.uiIconSelectPage, .uiIconAddAnyPermission {
+.uiIconValidate,.uiIconOpen,.uiIconAddRootNode,.uiIconSelectPage,
+.uiIconAddAnyPermission {
 	background-position: -60px -60px;
 }
 
@@ -241,7 +290,8 @@
 	background-position: -80px -60px;
 }
 
-.uiIconPlus,.uiIconAddPermission,.uiIconAddIcon,.uiIconAddPath, .uiIconSelectPath,
+.uiIconPlus,.uiIconAddPermission,.uiIconAddIcon,.uiIconAddPath,
+.uiIconSelectPath,
 .uiIconChooseNodeType,.uiIconAddNode,
 .uiIconSelectNavigationNode,.uiIconSelectListTargetPage,.uiIconSelectDetailTargetPage {
 	background-position: -100px -60px;
@@ -253,7 +303,8 @@
 	background-position: -120px -60px;
 }
 
-.uiIconInformation, .uiIconPageInfo {
+.uiIconInformation,
+.uiIconPageInfo {
 	background-position: -140px -60px;
 }
 
@@ -297,7 +348,8 @@
 	background-position: -140px -80px;
 }
 
-.uiIconClock, .uiIconEvent {
+.uiIconClock,
+.uiIconEvent {
 	background-position: -160px -80px;
 }
 
@@ -309,7 +361,8 @@
 	background-position: 0px -100px;
 }
 
-.uiIconForum, .uiIconUIForms,.uiIconDiscuss  {
+.uiIconForum,
+.uiIconUIForms,.uiIconDiscuss  {
 	background-position: -20px -100px;
 }
 
@@ -369,7 +422,8 @@
 	background-position: -100px -120px;
 }
 
-.uiIconExpand, .uiIconResize {
+.uiIconExpand,
+.uiIconResize {
 	background-position: -120px -120px;
 }
 
@@ -385,7 +439,8 @@
 	background-position: -180px -120px;
 }
 
-.uiIconArrowDownMini, .uiIconMiniArrowDown {
+.uiIconArrowDownMini,
+.uiIconMiniArrowDown {
 	background-position: 0px -140px;
 }
 
@@ -750,7 +805,8 @@
 	background-position: -160px -140px;
 }
 
-.uiIcon16x16FilePsd,.uiIcon16x16imagepsd, .uiIcon16x16applicationx-photoshop {
+.uiIcon16x16FilePsd,.uiIcon16x16imagepsd,
+.uiIcon16x16applicationx-photoshop {
 	background-position: -180px -140px;
 }
 
@@ -2585,7 +2641,8 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 
 [class^="uiIconApp24x24"], [class^="uiIconApp24x24"]:hover,
 .dropdown-menu > li > a:hover > [class^="uiIconApp24x24"],
-.uiSpaceMenuPortlet .active [class^="uiIconApp24x24"], .uiUserNavigationPortlet .active [class^="uiIconApp24x24"]{
+.uiSpaceMenuPortlet .active [class^="uiIconApp24x24"],
+.uiUserNavigationPortlet .active [class^="uiIconApp24x24"]{
   background-image: url("@{images-path}/Icons/AppIcons/uiIconApp24x24Default.png");
   width: 24px;
   height: 24px;
@@ -2620,7 +2677,8 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 
 [class^="uiIconApp64x64"], [class^="uiIconApp64x64"]:hover,
 .dropdown-menu > li > a:hover > [class^="uiIconApp64x64"],
-.uiSpaceMenuPortlet .active [class^="uiIconApp64x64"], .uiUserNavigationPortlet .active [class^="uiIconApp64x64"]{
+.uiSpaceMenuPortlet .active [class^="uiIconApp64x64"],
+.uiUserNavigationPortlet .active [class^="uiIconApp64x64"]{
   background-image: url("@{images-path}/Icons/AppIcons/uiIconApp64x64Default.png");
   width: 64px;
   height: 64px;
@@ -2654,7 +2712,8 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 }
 
 .dropdown-menu > li > a:hover > [class^="uiIconApp"],
-.uiSpaceMenuPortlet .active [class^="uiIconApp"], .uiUserNavigationPortlet .active [class^="uiIconApp"] {
+.uiSpaceMenuPortlet .active [class^="uiIconApp"],
+.uiUserNavigationPortlet .active [class^="uiIconApp"] {
  background-image: url("@{images-path}/Icons/AppIcons/uiIconAppSecondary.png");
 }
 
@@ -2678,7 +2737,8 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 	background-position: -142px 0;
 }
 
-.uiIconAppNotications, .uiIconAppNotificationSettingsPortlet {
+.uiIconAppNotications,
+.uiIconAppNotificationSettingsPortlet {
 	background-position: -178px 0;
 }
 
