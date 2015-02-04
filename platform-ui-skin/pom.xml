@@ -27,13 +27,12 @@
         <version>4.2.x-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.exoplatform.platform-ui</groupId>
     <artifactId>platform-ui-skin</artifactId>
     <packaging>war</packaging>
     <name>Platform UI - Skin</name>
 
     <build>
-        <finalName>eXoSkin</finalName>
+        <finalName>${platform-ui-skin-final-name}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.lesscss</groupId>
