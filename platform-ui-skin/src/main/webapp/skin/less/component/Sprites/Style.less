@@ -593,7 +593,7 @@ a:hover [class^="uiIcon"],
 }
 
 [class^="uiIcon16x16"]:hover,a:hover [class^="uiIcon16x16"] {
-  background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType16x16.png")!important;
+  background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType16x16.png");
 }
 
 .uiIcon16x16FileDefault,.uiIcon16x16applicationoctet-stream {
@@ -3171,16 +3171,49 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 
 /* override css for icon 'Open document in office' - ecms - start  */
 .dropdown-menu > li > a > [class^="uiIcon16x16"],
-.dropdown-menu > .active > a > [class^="uiIcon16x16"] ,
-.nav-pills > li > a > [class^="uiIcon16x16FileDefault"] {
-	background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType16x16.png");
+.dropdown-menu > .active > a > [class^="uiIcon16x16"],
+.actionBar li > a > [class^="uiIcon16x16"],
+.nav-pills > li > a > [class^="uiIcon16x16"] {
+	background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType16x16Default.png");
 }
 
-.dropdown-menu > li > a > [class^="uiIcon16x16"]:hover,
-.nav-pills > li > a > [class^="uiIcon16x16FileDefault"]:hover,
-.dropdown-menu > li > a:hover [class^="uiIcon16x16"],
-.uiActionBar .dropdown-menu > li [class^="uiIcon"]:hover {
-  background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType16x16.png");
+.uiRightPopupMenuContainer.dropdown-menu > li > a > [class^="uiIcon16x16"]:hover,
+.uiRightPopupMenuContainer.dropdown-menu > li > a:hover > [class^="uiIcon16x16"],
+.uiRightPopupMenuContainer.dropdown-menu > .active > a > [class^="uiIcon16x16"]:hover,
+.uiRightPopupMenuContainer.dropdown-menu > .active > a:hover > [class^="uiIcon16x16"] {
+	background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType16x16DefaultSecondary.png");
 }
-
 /* override css for icon 'Open document in office' - ecms - end  */
+
+.ActionMenuPlaceHolder .uiFileViewActionBar .uiRightPopupMenuContainer.dropdown-menu > li > a > [class^="uiIcon16x16"]:hover,
+.ActionMenuPlaceHolder .uiFileViewActionBar .uiRightPopupMenuContainer.dropdown-menu > li > a:hover > [class^="uiIcon16x16"],
+.ActionMenuPlaceHolder .uiFileViewActionBar .uiRightPopupMenuContainer.dropdown-menu > .active > a > [class^="uiIcon16x16"]:hover,
+.ActionMenuPlaceHolder .uiFileViewActionBar .uiRightPopupMenuContainer.dropdown-menu > .active > a:hover > [class^="uiIcon16x16"],
+.actionBar li > a > [class^="uiIcon16x16"]:hover,
+.actionBar li > a:hover > [class^="uiIcon16x16"],
+.nav-pills > li > a > [class^="uiIcon16x16"]:hover,
+.nav-pills > li > a:hover > [class^="uiIcon16x16"] {
+	background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType16x16Primary.png");
+}
+
+.uiRightPopupMenuContainer.dropdown-menu > li > a .uiIconOpenOnDesktop {
+	background-image: url("@{images-path}/Icons/uiIconsDefault.png");
+	background-position: -100px -20px;
+}
+
+.uiRightPopupMenuContainer.dropdown-menu > li > a:hover .uiIconOpenOnDesktop,
+.uiRightPopupMenuContainer.dropdown-menu > li > a .uiIconOpenOnDesktop:hover {
+	background-image: url("@{images-path}/Icons/uiIconsSecondary.png");
+	background-position: -100px -20px;
+}
+
+.actionBar li > a > .uiIconOpenOnDesktop {
+	background-image: url("@{images-path}/Icons/uiIconsDefault.png");
+	background-position: -100px -20px;
+}
+
+.actionBar li > a > .uiIconOpenOnDesktop:hover,
+.actionBar li > a:hover > .uiIconOpenOnDesktop {
+	background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+	background-position: -100px -20px;
+}

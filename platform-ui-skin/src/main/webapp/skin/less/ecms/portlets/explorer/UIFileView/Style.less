@@ -173,6 +173,10 @@
 					cursor: pointer;
 					background: none;
 					color: @baseColorDark;
+					.uiIconOpenOnDesktop {
+						background-image: url("@{images-path}/Icons/uiIconsDefault.png");
+						background-position: -100px -20px;
+					}
 				}
 
 				> a:hover {
@@ -197,7 +201,10 @@
 					}
 				}
 			}
-
+			&.dropdown-menu li > a:hover .uiIconOpenOnDesktop {
+				background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+				background-position: -100px -20px;
+			}
 			.open > a, .open > a:hover,.open > a:focus,.active > a, .active > a:hover,.active > a:focus {
 				background: none;
 				box-shadow: 0px 2px 6px rgba(0,0,0,0.15) inset;
@@ -286,9 +293,4 @@
       background-image: url("@{images-path}/Icons/uiIconsSecondary.png")!important;
     }
   }
-}
-
-/* override css for icon 'Open document in office' - ecms - start  */
-.ActionMenuPlaceHolder .uiFileViewActionBar .dropdown-menu.uiRightPopupMenuContainer li > a:hover > [class^="uiIcon16x16"] {
-	background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType16x16.png");
 }
