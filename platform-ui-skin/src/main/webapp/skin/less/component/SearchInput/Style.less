@@ -23,12 +23,21 @@
       top: 3px; cursor: pointer;
     }
     &.searchWithIcon {
+      float: left;
       display: inline-block;
       input[type="text"] {
         background-image: none;
       }
       input[type="text"]:hover {
         background-image: none;
+      }
+      + .allDocument {
+        height: 24px;
+        padding: 4px 0 1px;
+        margin-top: 15px;
+        > label {
+          float: right;
+        }
       }
     }
 }
