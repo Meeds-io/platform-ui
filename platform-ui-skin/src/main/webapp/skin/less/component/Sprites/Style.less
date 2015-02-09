@@ -3254,13 +3254,16 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 	background-position: -100px -20px;
 }
 
-.actionBar li > a > .uiIconOpenOnDesktop {
+.actionBar li > a > .uiIconOpenOnDesktop,
+.uiActionBar li > a > .uiIconOpenOnDesktop {
 	background-image: url("@{images-path}/Icons/uiIconsDefault.png");
 	background-position: -100px -20px;
 }
 
 .actionBar li > a > .uiIconOpenOnDesktop:hover,
-.actionBar li > a:hover > .uiIconOpenOnDesktop {
+.actionBar li > a:hover > .uiIconOpenOnDesktop,
+.uiActionBar li > a > .uiIconOpenOnDesktop:hover,
+.uiActionBar li > a:hover > .uiIconOpenOnDesktop {
 	background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
 	background-position: -100px -20px;
 }
