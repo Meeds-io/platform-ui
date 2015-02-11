@@ -83,6 +83,7 @@
 	display: inline-block;
 	padding: 3px 8px;
 	line-height: @baseLineHeight;
+    color: @textColor;
 	&:hover {
 		#StatusElements .StatusHover();
 	}
@@ -165,6 +166,16 @@
 			.border-radius(0);
 			border-top: 1px solid @borderColor;
 		}
+         & + .uiContentBox {
+           border-top: 1px solid @borderColor;
+
+         }
+          & + .noBorder {
+            border: none!important;
+          }
+          hr {
+            margin: 10px -15px;
+          }
 	}
 	&.roundedBottom {
 		.border-radius(0 0 @baseBorderRadius @baseBorderRadius);
@@ -435,4 +446,45 @@
   -webkit-box-sizing: @value; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: @value; /* Firefox, other Gecko */
   box-sizing: @value;
+}
+
+//resize
+
+.resize() {
+  width: 30px;
+  .iconControll {
+    #gradient > .vertical(@baseBackground, @primaryBackground);
+    border: 1px solid @borderColor;
+    border-right: 0;
+    padding: 4px 0;
+    margin-top: 7px;
+    display: block;
+    float: left;
+    margin-left: 2px;
+    outline: none;
+    cursor: pointer;
+    .border-radius(@borderRadiusSmall 0  0 @borderRadiusSmall);
+  }
+  &.resizeLt {
+    a {
+      .border-radius(0 @borderRadiusSmall @borderRadiusSmall 0);
+      border-right: 1px solid @borderColor;
+      border-left: 0;
+      margin-left: 0px;
+    }
+    .line {
+      display: none;
+    }
+  }
+  .line {
+    width:2px;
+    border-left: 1px solid @borderColor;
+    margin:auto;
+    min-height: 300px;
+    cursor: col-resize;
+  }
+}
+
+.baseColorLight() {
+  color: @baseColorLight;
 }

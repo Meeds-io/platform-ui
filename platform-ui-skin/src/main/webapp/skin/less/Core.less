@@ -445,45 +445,28 @@ Round corner box with title
 }
 
 // Quote
-.quote{
-    background-color: @quoteBackgound;
+.postContent .contentQuote{
+    background-color: @quotePrimaryBackground;
     .border-radius(2px);
     font-style: italic;
-    margin: 10px 0 10px 0;
+    margin: 10px 0px 10px 10px;
     padding: 15px 15px 15px 20px;
-    word-wrap: break-word;a
-	.quote {
-		margin: 0;
-		padding:0;
-	}
-     .titleQuote {
+    word-wrap: break-word;
+	    .titleQuote {
 		    font-weight: bold;
 		    margin: 15px 0;
-			font-style: normal;color: @quotecolor;
-		     line-height: 16px;
-		}
-		blockquote {
-	    background: none;
-	    border-left: 5px solid @quoteBorder;
-	    padding: 0 0 0 15px;
-		  margin: 15px 0;
-	    width: auto;
-		  color:@textColor;
-	    font-style: italic;
-	    .titleQuote {
-	    	color:@quotecolor;
-	    }
-	    p {
-	    	font-style: italic;
-    		font-size: @baseFontSize;
+			font-style: normal;
             color: @quotecolor;
-    	}
-	}
-	&.quotePrimary {
-			background-color: @quotePrimaryBackground;
-				blockquote {
-					border-left: 5px solid @quotePrimaryBorder;
-				}
+		    line-height: 16px;
+		}
+		.contentQuote {
+          background: none;
+          border-left: 5px solid @quotePrimaryBorder;
+          padding: 0 0 0 15px;
+          margin: 15px 0;
+          width: auto;
+          color:@quotecolor;
+          font-style: italic;
 	}
  }
 
@@ -532,3 +515,14 @@ Round corner box with title
 
 /* Create Margin and Padding Utilities Class */
 .marginAndPadding(20);
+.baseColorLight,.empty,.time,.date{
+  .baseColorLight();
+}
+
+.resize-bar{
+  .resize();
+}
+
+hr {
+  border-color: @borderColor  transparent transparent;
+}
