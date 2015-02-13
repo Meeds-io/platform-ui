@@ -446,29 +446,37 @@ Round corner box with title
 
 // Quote
 .postContent .contentQuote{
-    background-color: @quotePrimaryBackground;
-    .border-radius(2px);
+  background-color: @quotePrimaryBackground;
+  .border-radius(2px);
+  font-style: italic;
+  margin: 10px 0px 10px 10px;
+  padding: 15px 15px 15px 20px;
+  word-wrap: break-word;
+  .titleQuote {
+    font-weight: bold;
+    margin: 15px 0;
+    font-style: normal;
+    color: @quotecolor;
+    line-height: 16px;
+  }
+  .contentQuote,quote {
+    background: none;
+    border-left: 5px solid @quotePrimaryBorder;
+    padding: 0 0 0 15px;
+    margin: 15px 0;
+    width: auto;
+    color:@quotecolor;
     font-style: italic;
-    margin: 10px 0px 10px 10px;
-    padding: 15px 15px 15px 20px;
-    word-wrap: break-word;
-	    .titleQuote {
-		    font-weight: bold;
-		    margin: 15px 0;
-			font-style: normal;
-            color: @quotecolor;
-		    line-height: 16px;
-		}
-		.contentQuote {
-          background: none;
-          border-left: 5px solid @quotePrimaryBorder;
-          padding: 0 0 0 15px;
-          margin: 15px 0;
-          width: auto;
-          color:@quotecolor;
-          font-style: italic;
-	}
- }
+    display: block;
+  }
+  &.quoteDefault {
+    background-color: @quoteBackgound;
+    .contentQuote,quote {
+      border-left: 5px solid @quoteBorder;
+    }
+
+  }
+}
 
 // Footer WLC
 .footerWLC {
@@ -512,7 +520,6 @@ Round corner box with title
       background: rgba(0, 0, 0, 0.4);
 	}
 }
-
 /* Create Margin and Padding Utilities Class */
 .marginAndPadding(20);
 .baseColorLight,.empty,.time,.date{
@@ -526,3 +533,75 @@ Round corner box with title
 hr {
   border-color: @borderColor  transparent transparent;
 }
+
+.uiAccordion {
+  background-color: @primaryBackground;
+  border: 1px solid @borderColor;
+  margin-bottom: 15px;
+  .border-radius(@baseBorderRadius);
+    .accordion-heading{
+      background-color: @primaryBackground;
+      border-bottom: 1px solid @borderColor;
+      border-top: 1px solid @borderColor;
+      &:first-child {
+        border-top: none;
+      }
+      .box-shadow(0 0 3px 0 rgba(0, 0, 0, 0.1));
+      &:hover,&.open,&.active {
+        background-color: @primaryBackgroundLight
+      }
+      > * {
+        padding: 6px 20px 6px 20px;
+      }
+    }
+    .accordion-body {
+      > * {
+        background:@baseBackground ;
+        padding: 6px 20px 6px 20px;
+      }
+      &:hover {
+        > td,> *  {
+          #gradient > .vertical(@primaryBackground, @primaryBackgroundLight);
+        }
+      }
+    }
+    .accordion-active {
+      > * {
+        #gradient > .vertical(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
+      }
+      &:hover {
+        > td,> *  {
+          #gradient > .vertical(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
+        }
+      }
+      color: @btnPrimaryColor;
+    }
+}
+
+//uiAutoComplete
+
+.uiAutoComplete {
+  left: 0;
+  top: 40px;
+  position: absolute;
+  min-width: 310px;
+  border: 1px solid @dropdownBorder;
+  background-color:  @dropdownBackground;
+  .box-shadow(0 2px 6px 0 rgba(0, 0, 0, .12));
+  .border-radius(3px);
+  padding: 5px 0px;
+  .item {
+    padding: 5px 10px 5px 10px;
+    color: @dropdownLinkColor;
+    * {
+      color: @dropdownLinkColor;
+    }
+    &:hover,&.selected {
+      #gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 15%));
+        * {
+          color: @dropdownLinkColorHover;
+        }
+    }
+  }
+}
+

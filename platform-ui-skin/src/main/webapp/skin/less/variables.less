@@ -17,6 +17,7 @@
 // Background primary color
 @primaryBackground:		#f0f0f0; // main background such as , header popup background, tab items...
 
+
 // Image Patch
 // -------------------------
 @images-path: 			"/eXoSkin/skin/images/themes/default";
@@ -126,6 +127,7 @@
 @dropdownLinkColor: @textColor;
 @dropdownLinkColorHover: #fff;
 @dropdownLinkColorActive:       #fff;
+@dropdownDividerTop:            @borderColor;
 
 // Typography
 // -------------------------
@@ -276,7 +278,7 @@
 
 // Special enhancement for popovers
 @popoverArrowOuterWidth:  @popoverArrowWidth + 1;
-@popoverArrowOuterColor:  rgba(0,0,0,0.25);
+@popoverArrowOuterColor:  @borderColor;
 
 
 // GRID
@@ -417,8 +419,13 @@
 @uiBoxGray: @primaryBackground;
 
 // Quote
+@quoteBorder: @primaryBackgroundHover;
+@quoteBackgound: @primaryBackground;
+
 @quotecolor: @textColor;
+
 @quotePrimaryBorder: 					lighten(@primaryColor, 40%);
+
 
 // UIMention
 @uiMentionColor: @infoColor;

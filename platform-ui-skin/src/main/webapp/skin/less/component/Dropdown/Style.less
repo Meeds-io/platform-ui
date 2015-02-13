@@ -59,6 +59,8 @@
 
 .dropdown-menu .divider {
 	margin: 5px 0 4px;
+    border: none;
+    background: @dropdownDividerTop;
 }
 
 #ThemeDropDown {
@@ -75,4 +77,27 @@
 
 .dropdown-submenu > a:after {
   border-left-color: @dropdownArrowRight;
+}
+
+.dropdown-menu{
+	> li {
+		.block-item {
+			cursor: pointer;
+			display: block;
+			padding: 5px 10px;
+			&.even {
+		    	background-color: @primaryBackground;
+		    }
+		    .text-link {
+		    	color: @linkColor;
+		    }
+		    &:hover {
+				#gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 15%));
+				color: @dropdownLinkColorHover;
+				* {
+					color: @dropdownLinkColorHover;
+				}
+			}
+		}
+	}
 }
