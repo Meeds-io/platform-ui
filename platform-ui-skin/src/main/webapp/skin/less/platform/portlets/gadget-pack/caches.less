@@ -54,17 +54,14 @@
 .cacheLevel .graph {
 	#gradient .vertical(lighten(@infoColor, 12%), @infoColor);
 	height: 18px;
+	overflow: hidden;
 }
 
 .cacheLevel .usedPercent {
 	#gradient .vertical(lighten(@errorColor, 12%), @errorColor);
 	border-radius: 2px;
 	height: 18px;
-	position: absolute;
-	left: 0;
 	display: block;
-	top: 0;
-	z-index: 10;
 	float: left;
 }
 
