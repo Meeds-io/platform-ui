@@ -468,7 +468,7 @@
 	    <skin-name>Default</skin-name>
 	    <css-path>/skin/css/platform/portlets/platformNavigation/UIUserNavigationPortlet/Style.css</css-path>
 	</portlet-skin>
-	
+
 	<!--- platform: homepage -->
 	<portlet-skin>
     <application-name>homepage-portlets</application-name>

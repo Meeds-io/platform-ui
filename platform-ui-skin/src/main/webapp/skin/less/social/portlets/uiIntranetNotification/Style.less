@@ -1,74 +1,133 @@
 // View All Notifications
 @import "../../../variables.less"; 
 @import "../../../mixins.less";
-// -------------------------
-.UIIntranetNotificationsPortlet {
-	padding: 20px;
-	.displayItems {
-		background-color: @baseBackground;
-		border: 1px solid @borderColor;
-		.border-radius(@borderRadiusSmall);
-		.text-bold {
-			font-weight: bold;
-		}
-		> li {
-			display: block;
-			padding: 11px 25px 15px 15px;
-			border-top: 1px solid @borderColor;
-			border-top: none;
-			position: relative;
-			&:first-child {
-				.border-top-radius(@borderRadiusSmall);
-			}
-			&:last-child {
-				.border-bottom-radius(@borderRadiusSmall);
-			}
-			> .remove-item {
-				right: 5px;
-				padding: 0px;
-				margin: 0px;
-				cursor: pointer;
-				> .uiIconClose {
-					margin: 0px;
-				}
-			}
-			.status {
-				display: block;
-				max-height: 40px;
-				overflow: hidden;
-			}
-			.content {
-				.confirm {
-					margin: 3px 0;
-				}
-			}
-			.avatarSmall {
-				margin-top: 4px;
-  				.roundedCornerAvatar(45px, 2px);
-			}
-			.lastUpdatedTime {
-				color: @textLightColor;
-				font-size: 12px;
-				font-style: italic;
-				display: inline-block;
-			}
-			+ li {
-				border-top: 1px solid @borderColor;
-			}
-			&.unread {
-				background-color: @notifcationUnreadBackground;
-			}
-			&:hover {
-				background-color: @primaryBackgroundLight;
-				> .remove-item {
-					> .uiIconClose, > .uiIconClose:hover {
-						background-image: url("@{images-path}/Icons/uiIconsSecondary.png")!important;
-					}
-				}
-			}
-			&:first-child {
-				.border-top-radius(@borderRadiusSmall);
-			}
-		}
-	}
+
+.uiIntranetNotificationsPortlet {
+  padding: 20px;
+  position: relative;
+  > .user-setting {
+    position: absolute;
+    right: 20px;
+    top: 37px;
+  }
+  .displayItems {
+    margin-bottom: 10px;
+    .text-bold {
+      font-weight: bold;
+    }
+    > li.no-items {
+      text-align: center;
+      background: @infoBackground  url("/eXoSkin/skin/images/system/background/iconBell.png")  no-repeat center;
+      padding: 30px;
+      border-top: solid 1px @infoBorder;
+      color: @infoText;
+    }
+    > li.no-items:hover {
+      cursor: default;
+      color: @infoText;
+      background: @infoBackground  url("/eXoSkin/skin/images/system/background/iconBell.png")  no-repeat center;
+    }
+    > li {
+      display: block;
+      padding: 11px 25px 15px 15px;
+      border-top: none;
+      position: relative;
+      cursor: pointer;
+      > .remove-item {
+        right: 5px;
+        padding: 0px;
+        margin: 0px;
+        cursor: pointer;
+        display: none;
+        > .uiIconClose {
+          margin: 0px;
+        }
+      }
+      .status {
+        display: block;
+        max-height: 40px;
+        overflow: hidden;
+      }
+      .content {
+        font-size: 12px;
+        font-weight: bold;
+        .btn {
+          font-weight: normal;
+          &.btn-primary {
+            font-weight: bold;
+          }
+        }
+        .confirm {
+          margin: 3px 0;
+        }
+      }
+      .avatarXSmall {
+        margin-top: 4px;
+        .roundedCornerAvatar(45px, 2px);
+      }
+      .lastUpdatedTime {
+        color: @textLightColor;
+        font-size: 12px;
+        display: inline-block;
+      }
+      + li {
+        border-top: 1px solid @borderColor;
+      }
+      [class^="uiIcon"] {
+        vertical-align: -3px;
+        margin-right: 7px;
+      }
+      &.unread {
+        background-color: @notifcationUnreadBackground;
+      }
+      &:hover {
+        #gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 15%));
+        color: @dropdownLinkColorHover;
+        cursor: pointer;
+        > .remove-item {
+          > .uiIconClose, > .uiIconClose:hover {
+            background-image:  url("@{images-path}/Icons/uiIconsSecondary.png") !important;
+          }
+        }
+        a {
+          color: @dropdownLinkColorHover !important;
+        }
+        .btn {
+          color: @btnColor !important;
+          &.btn-primary {
+            color: @btnPrimaryColor!important;
+          }
+        }
+        .lastUpdatedTime {
+          color: @dropdownLinkColorHover;
+        }
+        .uiIconLightGray {
+          background-image: url("@{images-path}/Icons/uiIconsSecondary.png");
+        }
+        .uiIconSocLightGray	{
+          background-image: url("@{images-path}/social/skin/Icons/uiIconsSocSecondary.png");
+        }
+      }
+    }
+  }
+  .loadingMoreNotification {
+    text-align: center;
+  }
+  .bottomContainer {
+    height: 60px;
+  }
+  .loadingIndicator {
+    position:relative;
+    margin-bottom: -60px;
+    height: 70px;
+    display: none;
+    text-align: center;
+    .loadingText {
+      position: absolute;
+      bottom: -2px;
+      left: 0px;
+      right: 0px;
+      text-align: center;
+    }
+  }
 }
