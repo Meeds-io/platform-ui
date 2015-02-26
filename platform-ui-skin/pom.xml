@@ -24,7 +24,7 @@
     <parent>
         <artifactId>platform-ui</artifactId>
         <groupId>org.exoplatform.platform-ui</groupId>
-        <version>4.2.x-plfui-notification-web-SNAPSHOT</version>
+        <version>4.2.x-plfui-user-profile-redesign-SNAPSHOT</version>
     </parent>
 
     <artifactId>platform-ui-skin</artifactId>
@@ -161,6 +161,7 @@
                                 <include>social/portlets/uiUserActivityStreamPortlet/Style.less</include>
                                 <include>social/portlets/uiWarningPortlet/Style.less</include>
                                 <include>social/portlets/uiIntranetNotification/Style.less</include>
+                                <include>social/portlets/uiUserPortlet/Style.less</include>
                                 <include>forum/skin/forum-resources.less</include>
                                 <include>forum/portlets/forum/forum.less</include>
                                 <include>forum/portlets/poll/pollPortlet.less</include>

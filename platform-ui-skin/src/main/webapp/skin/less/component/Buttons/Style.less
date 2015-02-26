@@ -121,3 +121,12 @@ h1,h2,h3,h4 {
 .btn.disabled, .btn[disabled] {
   color: @btnDisableColor;
 }
+
+.uiAction .btn-primary.disabled:first-child,
+.uiAction .btn-primary[disabled]:first-child ,
+.btn-primary[disabled]:first-child,
+.btn-primary[disabled],
+.uiAction .btn.disabled:first-child,
+.uiAction .btn[disabled]:first-child {
+	color: @btnPrimaryColor
+}
