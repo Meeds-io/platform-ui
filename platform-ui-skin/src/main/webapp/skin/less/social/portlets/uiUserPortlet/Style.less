@@ -44,6 +44,18 @@ td.right-column-containerTDContainer {
 	bottom: 0px;
 	border-left: solid 1px @borderColor;
 }
+#socialMainLayout,#socialTopLayout {
+  .uiSocApplication {
+    padding: 10px;
+    .uiSocApplication {
+      padding: 0px;
+    }
+
+  }
+  .UIGadgetPortlet {
+    padding: 10px;
+  }
+}
 .uiSocApplication {
 	&.uiEditUserProfilePortlet {
 		padding: 0;
@@ -72,7 +84,7 @@ td.right-column-containerTDContainer {
 		line-height: 16px;
 		vertical-align: text-top;
 		margin-top: 0;
-		background-image: url("@{images-path}/Icons/uiIconsColor.png");
+		background-image: url("@{images-path}/Icons/uiIconsColor.png")!important;
 		background-repeat: no-repeat;
 	}
 	.uiIconUserAvailable, .uiIconUserOnline {
@@ -267,8 +279,12 @@ td.right-column-containerTDContainer {
 }
 
 .uiEditUserProfileForm {
+    .form-horizontal {
+      padding-top: 5px;
+    }
 	h4 {
 		margin-top: 25px;
+        margin-bottom: 15px;
 	}
 	#AboutSection {
 		textarea {
