@@ -44,8 +44,6 @@
 .itemGraph {
 	position: relative;
 	#gradient .vertical(@primaryBackgroundHover, @primaryBackground);
-	.border-radius(20px);
-	overflow: hidden;
 }
 .cacheLevel .itemGraph {
 	margin-top: 5px;
@@ -59,10 +57,14 @@
 
 .cacheLevel .usedPercent {
 	#gradient .vertical(lighten(@errorColor, 12%), @errorColor);
-	border-radius: 2px;
 	height: 18px;
 	display: block;
 	float: left;
+}
+
+.cacheLevel .graph,
+.cacheLevel .usedPercent {
+	.border-radius(2px);
 }
 
 .cacheLevel .cache a b,
