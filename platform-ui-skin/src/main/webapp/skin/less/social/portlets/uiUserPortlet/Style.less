@@ -30,7 +30,13 @@ td.right-column-containerTDContainer {
 	.uiRelationshipAction {
 		margin-top: 7px;
 		.user-actions .btn {
-				margin-left: 10px;
+			margin-left: 10px;
+			&.show-default, &.hide-default {
+				padding: 4px 12px 4px 8px;
+				.uiIconStatusConnected {
+					background-position: -160px -41px;
+				}
+			}
 		}
 	}
 } 
@@ -63,9 +69,6 @@ td.right-column-containerTDContainer {
 			padding: 0 0 0 10px;
 		}
 	}
-	.ellipsis {
-		display:inline-block !important;overflow:hidden;text-overflow:ellipsis;white-space:normal !important; word-break: normal !important;
-	}
 	h4.head-container {
 		margin: 0 0 15px;
 	}
@@ -76,7 +79,7 @@ td.right-column-containerTDContainer {
 		padding: 5px 10px;
 	}
 	[class^="uiIconUser"], [class^="uiIconStatus"],
-	[class^="uiIconUser"]:hover, [class^="uiIconStatus"]:hover {
+	[class^="uiIconUser"]:hover, [class^="uiIconStatus"]:hover, .btn:hover .uiIconStatusDisconnect {
 		display: inline-block;
 		width: 16px;
 		height: 16px;
@@ -91,13 +94,13 @@ td.right-column-containerTDContainer {
 		background-position: 0 -60px;
 	}
 	.uiIconUserInvisible, .uiIconUserOffline {
-		background-position: -40px -60px;
+		background-position: -60px -60px;
 	}
 	.uiIconUserAway {
 		background-position: -40px -60px;
 	}
 	.uiIconUserDonotdisturb {
-		background-position: -60px -60px;
+		background-position: -20px -60px;
 	}
 	.uiIconStatusConnect {
 		display: none;
@@ -140,11 +143,10 @@ td.right-column-containerTDContainer {
 		.group-user-info {
 			margin: 0 0 15px;
 			.value-user-info {
-				display: table;
 				> div {
 					&.uiEmail, &.uiUrls {
- 						width: 190px;
  						display: block;
+ 						word-wrap: break-word;
  						.tooltip-inner {
  							white-space: normal;
  						}
@@ -154,18 +156,20 @@ td.right-column-containerTDContainer {
 					max-width: 190px;
 				}
 				.listContent {
-					display: table-row;
 					> div {
-						display: table-cell;
-						vertical-align: top;
 						margin: 5px 0;
 						word-break: break-word;
 						&:first-child {
 							width: 80px;
+							display: inline-block;
 						}
 					}
 					.ellipsis {
-						width: 110px;
+						display:inline-block;
+						overflow:hidden;
+						text-overflow:ellipsis;
+						white-space:normal; 
+						word-break: normal;
 					}
 				}
 			}
@@ -177,6 +181,27 @@ td.right-column-containerTDContainer {
 		}
 	}
 }
+
+.left-column-containerTDContainer .uiBasicProfilePortlet,
+.right-column-containerTDContainer .uiBasicProfilePortlet {
+	.uiBasicInfoSection {
+		.group-user-info {
+			.value-user-info {
+				> div {
+					&.uiEmail, &.uiUrls {
+ 						width: 190px;
+					}
+				}
+				.listContent {
+					.ellipsis {
+						width: 110px;
+					}
+				}
+			}
+		}
+	}
+}
+
 .uiRecentActivitiesPortlet {
 	.noActivity {
 		padding: 20px 20px 100px;
