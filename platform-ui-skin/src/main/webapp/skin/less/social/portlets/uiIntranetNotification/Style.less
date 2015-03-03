@@ -45,8 +45,7 @@
       }
       .status {
         display: block;
-        max-height: 40px;
-        overflow: hidden;
+        margin-bottom: 8px;
       }
       .content {
         font-size: 12px;
@@ -55,6 +54,9 @@
           font-weight: normal;
           &.btn-primary {
             font-weight: bold;
+          }
+          &+ .btn {
+            margin-left: 7px;
           }
         }
         .confirm {
