@@ -77,6 +77,9 @@ td.right-column-containerTDContainer {
 		border: 1px solid @borderColor;
 		border-radius: 5px;
 		padding: 5px 10px;
+        max-width: 100%;
+        #socialMainLayout .ellipsis ;// calll ellipsis
+        display: block;
 	}
 	[class^="uiIconUser"], [class^="uiIconStatus"],
 	[class^="uiIconUser"]:hover, [class^="uiIconStatus"]:hover, .btn:hover .uiIconStatusDisconnect {
@@ -165,13 +168,6 @@ td.right-column-containerTDContainer {
 							vertical-align: top;
 						}
 					}
-					.ellipsis {
-						display:inline-block;
-						overflow:hidden;
-						text-overflow:ellipsis;
-						white-space:normal; 
-						word-break: normal;
-					}
 				}
 			}
 			.label-user-info {
@@ -181,6 +177,24 @@ td.right-column-containerTDContainer {
 			}
 		}
 	}
+}
+
+#socialMainLayout {
+  .ellipsis {
+    display:inline-block;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:normal;
+    word-break: normal;
+  }
+  .uiUrls {
+    .ellipsis {
+      white-space: nowrap;
+      display: block;
+      max-width: 100%;
+    }
+
+  }
 }
 
 .left-column-containerTDContainer .uiBasicProfilePortlet,
