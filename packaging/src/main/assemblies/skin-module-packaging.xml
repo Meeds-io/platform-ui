@@ -35,6 +35,7 @@
             <includes>
                 <include>${project.groupId}:skin-addon-config:jar</include>
             </includes>
+            <outputFileNameMapping>${platform-ui-skin-final-name}-config.jar</outputFileNameMapping>
         </dependencySet>
         <!-- war -->
         <dependencySet>
