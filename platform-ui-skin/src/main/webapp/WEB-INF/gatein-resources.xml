@@ -607,7 +607,14 @@
     <skin-name>Default</skin-name>
     <css-path>/skin/css/ecms/portlets/presentation/ecms-presentation-contentlistviewerportlet.css</css-path>
   </portlet-skin>
-  
+
+  <!-- Login Page skins -->
+  <portlet-skin>
+    <application-name>portal</application-name>
+    <portlet-name>login</portlet-name>
+    <skin-name>Default</skin-name>
+    <css-path>/skin/css/platform/portlets/extensions/login.css</css-path>
+  </portlet-skin>
   
   <!-- Simple window style -->
   <window-style>
