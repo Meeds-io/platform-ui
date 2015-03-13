@@ -337,66 +337,66 @@
 
 // Create Margin And Padding Utilities Class
 // --------------------------------------------------
-.marginAndPadding(@index, @countDown: 5)
+.marginAndPadding(@maxValue, @counter: 5, @minValue: 0, @unit: px)
 {
 
-  // LOOP
-  .style_margin_padding (@index) when (@index >= 0) {
+  // The Loop
+  .loop_margin_padding (@index) when (@index >= @minValue) {
 
     // Padding
-    (~".pd@{index}") {padding: ~"@{index}px";}
-    (~".pdT@{index}") {padding-top: ~"@{index}px";}
-    (~".pdR@{index}") {padding-right: ~"@{index}px";}
-    (~".pdB@{index}") {padding-bottom: ~"@{index}px";}
-    (~".pdL@{index}") {padding-left: ~"@{index}px";}
+    .pd@{index} {padding: ~"@{index}@{unit}";}
+    .pdT@{index} {padding-top: ~"@{index}@{unit}";}
+    .pdR@{index} {padding-right: ~"@{index}@{unit}";}
+    .pdB@{index} {padding-bottom: ~"@{index}@{unit}";}
+    .pdL@{index} {padding-left: ~"@{index}@{unit}";}
 
     // Padding Important
-    (~".pd@{index}-ipt") {padding: ~"@{index}px!important";}
-    (~".pdT@{index}-ipt") {padding-top: ~"@{index}px!important";}
-    (~".pdR@{index}-ipt") {padding-right: ~"@{index}px!important";}
-    (~".pdB@{index}-ipt") {padding-bottom: ~"@{index}px!important";}
-    (~".pdL@{index}-ipt") {padding-left: ~"@{index}px!important";}
+    .pd@{index}-ipt {padding: ~"@{index}@{unit}!important";}
+    .pdT@{index}-ipt {padding-top: ~"@{index}@{unit}!important";}
+    .pdR@{index}-ipt {padding-right: ~"@{index}@{unit}!important";}
+    .pdB@{index}-ipt {padding-bottom: ~"@{index}@{unit}!important";}
+    .pdL@{index}-ipt {padding-left: ~"@{index}@{unit}!important";}
 
     // Padding Horizatial
-    (~".pd-0-@{index}") {padding: 0 ~"@{index}px";}
-    (~".pd-0-@{index}-ipt") {padding: 0 ~"@{index}px!important";}
+    .pd-0-@{index} {padding: 0 ~"@{index}@{unit}";}
+    .pd-0-@{index}-ipt {padding: 0 ~"@{index}@{unit}!important";}
 
 
     // Padding Vertical
-    (~".pd-@{index}-0") {padding: ~"@{index}px" 0;}
-    (~".pd-@{index}-0-ipt") {padding: ~"@{index}px" 0!important;}
+    .pd-@{index}-0 {padding: ~"@{index}@{unit}" 0;}
+    .pd-@{index}-0-ipt {padding: ~"@{index}@{unit}" 0!important;}
 
-    //-----------------------------------------------------------------
-    // Margin
-    (~".mg@{index}") {margin: ~"@{index}px";}
-    (~".mgT@{index}") {margin-top: ~"@{index}px";}
-    (~".mgR@{index}") {margin-right: ~"@{index}px";}
-    (~".mgB@{index}") {margin-bottom: ~"@{index}px";}
-    (~".mgL@{index}") {margin-left: ~"@{index}px";}
-    // Margin Important
-    (~".mg@{index}-ipt") {margin: ~"@{index}px!important";}
-    (~".mgT@{index}-ipt") {margin-top: ~"@{index}px!important";}
-    (~".mgR@{index}-ipt") {margin-right: ~"@{index}px!important";}
-    (~".mgB@{index}-ipt") {margin-bottom: ~"@{index}px!important";}
-    (~".mgL@{index}-ipt") {margin-left: ~"@{index}px!important";}
+      // Margin
+    .mg@{index} {margin: ~"@{index}@{unit}";}
+    .mgT@{index} {margin-top: ~"@{index}@{unit}";}
+    .mgR@{index} {margin-right: ~"@{index}@{unit}";}
+    .mgB@{index} {margin-bottom: ~"@{index}@{unit}";}
+    .mgL@{index} {margin-left: ~"@{index}@{unit}";}
 
-    // margin Horizatial
-    (~".mg-0-@{index}") {margin: 0 ~"@{index}px";}
-    (~".mg-0-@{index}-ipt") {margin: 0 ~"@{index}px!important";}
+      // Margin Important
+    .mg@{index}-ipt {margin: ~"@{index}@{unit}!important";}
+    .mgT@{index}-ipt {margin-top: ~"@{index}@{unit}!important";}
+    .mgR@{index}-ipt {margin-right: ~"@{index}@{unit}!important";}
+    .mgB@{index}-ipt {margin-bottom: ~"@{index}@{unit}!important";}
+    .mgL@{index}-ipt {margin-left: ~"@{index}@{unit}!important";}
 
-    // margin Vertical
+      // margin Horizatial
+    .mg-0-@{index} {margin: 0 ~"@{index}@{unit}";}
+    .mg-0-@{index}-ipt {margin: 0 ~"@{index}@{unit}!important";}
 
-    (~".mg-@{index}-0") {margin: ~"@{index}px" 0;}
-    (~".mg-@{index}-0-ipt") {margin: ~"@{index}px" 0!important;}
+      // margin Vertical
+    .mg-@{index}-0 {margin: ~"@{index}@{unit}" 0;}
+    .mg-@{index}-0-ipt {margin: ~"@{index}@{unit}" 0!important;}
 
-    // next iteration
-    .style_margin_padding(@index - @countDown);
+      // next iteration
+    .loop_margin_padding(@index - @counter);
+    }
 
-}
   // end the loop when index is 0
-  .style_margin_padding (0) {}
+  .loop_margin_padding (0) {}
+
   // "call" the loopingClass the first time with highest value
-  .style_margin_padding (@index);
+  .loop_margin_padding (@maxValue);
 }
 
 
