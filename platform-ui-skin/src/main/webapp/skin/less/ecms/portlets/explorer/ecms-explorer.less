@@ -714,8 +714,17 @@
       padding: 0 0 10px;
       a.pull-right {
         color: @textColor;
+        padding: 4px 6px;
+        line-height: 18px;
+		border: 1px solid transparent;
+		margin: 0px;
+		cursor: pointer;
         &:hover {
-          color: @linkColorHover;
+			color: @textColor;
+			#gradient > .vertical(@baseBackground, @primaryBackground);
+			line-height: 18px;
+			border: 1px solid @borderColor;
+			.border-radius(@borderRadiusSmall);
         }
       }
     }
