@@ -605,3 +605,35 @@ hr {
   }
 }
 
+
+.content-display  {
+  .dropdown-menu{
+    margin: 2px 0 0;
+    padding: 5px 0;
+  }
+  .nav {
+    margin: 0 10px 0 0;
+    padding: 0;
+  }
+  .nav-tabs ,.pagination ul,.breadcrumb{
+    margin: 0;
+    padding: 0;
+  }
+  ul,ol,dl {
+    padding: 0 0 0 40px;
+    margin: 15px 0;
+    ul,ol,dl {margin: 0;}
+    li {
+      list-style-type: disc;
+    }
+  }
+
+  ol li{
+    list-style-type: decimal;
+    ul li { list-style-type: disc;}
+  }
+}
+
+.nav-tabs  li,.nav li ,.pagination ul > li ,.breadcrumb li{
+  list-style: outside none none !important;
+}
