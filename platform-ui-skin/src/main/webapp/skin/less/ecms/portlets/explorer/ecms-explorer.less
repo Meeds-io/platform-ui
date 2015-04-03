@@ -711,23 +711,34 @@
 .mediaContent {
 	padding: 15px;
     .title {
-      padding: 0 0 10px;
-      a.pull-right {
-        color: @textColor;
-        padding: 4px 6px;
-        line-height: 18px;
-		border: 1px solid transparent;
-		margin: 0px;
-		cursor: pointer;
-        &:hover {
+		padding: 0 0 10px;
+		a.pull-right {
 			color: @textColor;
-			#gradient > .vertical(@baseBackground, @primaryBackground);
+			padding: 4px 6px;
 			line-height: 18px;
-			border: 1px solid @borderColor;
-			.border-radius(@borderRadiusSmall);
-        }
-      }
-    }
+			border: 1px solid transparent;
+			margin: 0px;
+			cursor: pointer;
+			&:hover {
+				color: @textColor;
+				#gradient > .vertical(@baseBackground, @primaryBackground);
+				line-height: 18px;
+				border: 1px solid @borderColor;
+				.border-radius(@borderRadiusSmall);
+			}
+			&:active,
+			&:focus,
+			&.active {
+				-webkit-box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.15) inset;
+				box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.15) inset;
+				border: 1px solid #c7c7c7;
+				-webkit-border-radius: 3px;
+				-moz-border-radius: 3px;
+				border-radius: 3px;
+				background-color: #f0f0f0;
+			}
+		}
+	}
     .content {
       text-align: center;
     }
