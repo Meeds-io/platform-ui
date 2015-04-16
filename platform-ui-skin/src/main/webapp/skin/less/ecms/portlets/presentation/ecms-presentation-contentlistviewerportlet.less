@@ -1,8 +1,35 @@
-@import "../../../variables.less"; 
+@import "../../../variables.less";
 @import "../../../mixins.less";
 /*---------------------------UIFolderPathSelectorForm------------------------------------*/
 
+.UICLVFolderMode{
+	border:1px solid transparent;
+}
+
+.Column2{
+	border:1px solid transparent;
+}
+
+.Column1{
+	border:1px solid transparent;
+	overflow:hidden;
+}
+
 .UICLVPortlet {
+	.uiBox {
+		.title {
+			.clearfix;
+			.rssIcon{
+				line-height: 0;
+			}
+		}
+		.media .heading {
+			a {
+				font-weight: bold;
+				color: @textColor;
+			}
+		}
+	}
 	.TitleBox {
 	  background: @primaryBackground;
 	  border: 1px solid @borderColor;
@@ -30,7 +57,6 @@
 		  cursor: pointer;
 		  .square(16px);
 		}
-
 	}
 }
 
@@ -294,9 +320,6 @@
 .twoColumnsCLVTemplate {
 	margin: 25px;
 	.uiBox {
-		.title {
-			min-height: 20px;
-		}
 		.media {
 			.image {
 				margin: 6px 15px 0 0;
@@ -315,19 +338,29 @@
 			}
 		}
 	}
+	.rowContent {
+		margin-left: -15px;
+		.Column2 {
+			margin-top: 0;
+			width: 47%;
+			margin-left: 15px;
+			float: left;
+		}
+	}
 }
 
-
-.UICLVFolderMode{
-	border:1px solid transparent;
+.documentsCLVTemplate {
+	.media {
+		.image.pull-left {
+			margin-top: 4px;
+			margin-right: 10px;
+		}
+	}
+	.media-body {
+		.heading {
+			p {
+				margin-bottom: 0;
+			}
+		}
+	}
 }
-
-.Column2{
-	border:1px solid transparent;
-}
-
-.Column1{
-	border:1px solid transparent;
-	overflow:hidden;
-}
-
