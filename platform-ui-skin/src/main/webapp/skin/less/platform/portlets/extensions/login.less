@@ -299,5 +299,41 @@ body {
 	margin-top: 15px;
 }
 .titleLogin {
-	padding: 15px 0 5px;
+	//padding: 15px 0 5px;
+	line-height: 12px;
+	padding: 6px 3px 0 0;
+	min-height: 31px;
+	font-size: 11px;
 }
+
+// remove clear button on IE
+input::-ms-clear,input[type=password]::-ms-reveal{
+  display: none;
+}
+/** Login form **/
+@media (max-width: 480px) {
+	.uiLogin {
+		width: 305px;
+		margin: 0;
+		.translate(-50%, -50%);	
+		.loginHeader {
+			width: 199px;
+			.userLoginIcon {
+				font-size: inherit;
+    			font-weight: 600;
+    			width: 145px;
+			}
+		} 
+		.loginContent {
+			input {
+				width: 172px;
+			}
+			.loginButton .button {
+				width: 224px;
+			}
+		}
+		.rememberTxt {
+			font-weight: normal;		
+		}
+	}
+} 
