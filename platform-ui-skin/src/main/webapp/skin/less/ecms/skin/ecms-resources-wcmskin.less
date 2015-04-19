@@ -6,7 +6,7 @@
 @import "UIPublication/Style.less";
 @import "content/Style.less";
 @import "InlineEditing/Style.less";
-
+@import "UIDocumentPreview/Style.less";
 
 /******** UIContentBrowserPanel **************/
 
@@ -566,4 +566,17 @@
 .quickEdit {
 	float: right;
     margin: 10px 10px 0 0;
+}
+
+.UIWorkingWorkspace {
+  .UISingleContentViewerPortlet {
+    .UIPresentationContainer {
+      .Title {
+        padding: 20px 20px 5px;
+        p{
+          margin: 0px;
+        }
+      }
+    }
+  }
 }

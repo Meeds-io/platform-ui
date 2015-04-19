@@ -173,6 +173,10 @@
 					cursor: pointer;
 					background: none;
 					color: @baseColorDark;
+					.uiIconOpenOnDesktop {
+						background-image: url("@{images-path}/Icons/uiIconsDefault.png");
+						background-position: -100px -20px;
+					}
 				}
 
 				> a:hover {
@@ -186,6 +190,9 @@
 					> i {
 						background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsPrimary.png");
 					}
+					> .uiIconMiniArrowDown {
+						background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+					}
 
 					.uiIconEcmsEditDocument,
 					.uiIconEcmsDelete,
@@ -197,13 +204,19 @@
 					}
 				}
 			}
-
+			&.dropdown-menu li > a:hover .uiIconOpenOnDesktop {
+				background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+				background-position: -100px -20px;
+			}
 			.open > a, .open > a:hover,.open > a:focus,.active > a, .active > a:hover,.active > a:focus {
 				background: none;
 				box-shadow: 0px 2px 6px rgba(0,0,0,0.15) inset;
 				border: 1px solid @borderColor;
 				.border-radius(@borderRadiusSmall);
 				color: @baseColorDark;
+				> .uiIconMiniArrowDown {
+					background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+				}
 			}
 
 			.RightClickCustomItem {
@@ -273,4 +286,17 @@
 
 .MoveItem {
     padding: 0px;
+}
+
+.uiRightClickPopupMenu .uiRightPopupMenuContainer > li > a {
+  .uiIconEcmsDownload {
+    background-image: url("@{images-path}/Icons/uiIconsDefault.png");
+    background-position: -40px -20px;
+
+  }
+  &:hover {
+    .uiIconEcmsDownload {
+      background-image: url("@{images-path}/Icons/uiIconsSecondary.png")!important;
+    }
+  }
 }
