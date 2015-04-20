@@ -1,0 +1,60 @@
+// RESPONSIVE EVERYTHING
+// ---------------------
+/* Large desktop */
+@media (min-width: 1200px) {
+
+}
+
+/* Small desktop */
+@media(max-width: 979px) {
+
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+		max-width: 100%;
+	}
+	.uiPopup, .UIMaskWorkspace {
+		left: 50%!important;
+		top: 50%!important;
+		position: fixed!important;
+		width: 90%!important;
+		max-width: 560px;
+		max-height: 90%;
+		.translate(-50%, -50%);
+	}
+	.uiPopup {
+		.popupHeader{
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+		}
+		overflow: hidden;
+		.PopupContent {
+			margin-top: 35px;
+			margin-bottom: 59px;
+			max-height: 300px;
+			overflow: auto;
+		}
+		.uiAction.uiActionBorder {
+			background: #fff;
+			position: absolute;
+			left: 15px;
+			right: 15px;
+			bottom: 0px;
+			padding-bottom: 15px;
+		}
+	}
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
+}
