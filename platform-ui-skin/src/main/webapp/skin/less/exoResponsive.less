@@ -1,6 +1,10 @@
 // RESPONSIVE EVERYTHING
 // ---------------------
 /* Large desktop */
+
+.mobile-visible {
+  display: none;
+}
 @media (min-width: 1200px) {
 
 }
@@ -52,6 +56,65 @@
 			padding-bottom: 15px;
 		}
 	}
+  .LeftNavigationTDContainer {
+    position: fixed;
+    left: -251px;
+    top:0;
+    bottom: 0;
+    overflow-y: auto;
+    display: block;
+    .transition(all 250ms ease);
+  }
+  #LeftBreadCrumbNavigationPortlet {
+    position: fixed;
+    top:0;
+    width: 250px;
+    left: 0;
+    & + #LeftNavigationPortlet{
+      .uiCompanyNavigationPortlet {
+        .title {
+         //   position: static;
+         //   width: auto;
+        }
+      }
+    }
+  }
+  #LeftNavigation {
+
+   // padding-top: 50px;
+  }
+
+  html, body {
+    overflow-x: hidden;
+  }
+  .RightBodyTDContainer  {
+    display: block;
+  }
+  body {
+    position: relative;
+    right: 0;
+    .transition(all 250ms ease);
+  }
+  .open-left-bar {
+    position: relative;
+    right: -250px;
+    .LeftNavigationTDContainer {
+      left: 0;
+    }
+    .uiCompanyNavigationPortlet {
+      .title{
+      //  position: fixed;
+      //  top:0;
+      //  width: 221px;
+      //  left: 0;
+      }
+
+    }
+
+  }
+  .mobile-visible {
+    display: block;
+  }
 }
 
 /* Landscape phones and down */
