@@ -1146,34 +1146,20 @@ blockquote:after {
 	color: @baseColorDark;
 }
 
-
 @media (max-width: 767px ) {
-	.LeftNavigationTDContainer {
-		display: none;
-	    visibility: hidden;
-	} 
-	.OfficeRightTDContainer.TDContainer {
-	    display: none;
-	    visibility: hidden;
-	}
-
 	.uiComposer.uiGrayLightBox {
 		display: none;
-	    visibility: hidden;
 	    margin: 0;
 	}
 	.activityTimeLine.pull-left {
 	    display: none;
-	    visibility: hidden;
 	}
 	
 	.activityStreamStatus .arrowBottom {
 	    display: none;
-	    visibility: hidden;
 	}
 	.activityStream .arrowLeft {
 		display: none;
-	    visibility: hidden;
 	}
 	.activityStream .boxContainer {
 		margin: 0;
@@ -1191,12 +1177,10 @@ blockquote:after {
 	    border: medium none;
 	    display: none;
 	    padding: 0;
-	    visibility: hidden;
 	}
 	.activityStream .contentBox .commentBox {
 	    border: medium none;
 	    display: none;
-	    visibility: hidden;
 	}
 	.activityStream .introBox .isPreviewable .mediaContent {
 		float: none;
@@ -1206,139 +1190,140 @@ blockquote:after {
 		float: right;
 	    margin-right: 10px;
 	    padding: 3px 5px;
-	}
-	
-	.uiUserActivityStreamPortlet .shareStt .dropdown-menu {
-		padding: 10px;
-		top: 33px;
-	}
-	
-	.uiUserActivityStreamPortlet .shareStt .dropdown-menu:before {
-	    border-bottom: 7px solid rgba(0, 0, 0, 0.2);
-	    border-left: 7px solid transparent;
-	    border-right: 7px solid transparent;
-	    content: "";
-	    display: inline-block;
-	    left: 9px;
-	    position: absolute;
-	    top: -7px;
-	}
-	.uiUserActivityStreamPortlet .shareStt .dropdown-menu:after {
-	    border-bottom: 6px solid #ffffff;
-	    border-left: 6px solid transparent;
-	    border-right: 6px solid transparent;
-	    content: "";
-	    display: inline-block;
-	    left: 10px;
-	    position: absolute;
-	    top: -6px;
-	}
-	.uiUserActivityStreamPortlet .shareStt .dropdown .dropdown-menu textarea {
-		border-radius: 0;
-		resize: none;
-		min-width: 258px;
-	}
-	
+	}	
+	.uiUserActivityStreamPortlet {
+		.shareStt .dropdown-menu {
+			padding: 10px;
+			top: 33px;
+			&:before {
+			    border-bottom: 7px solid rgba(0, 0, 0, 0.2);
+			    border-left: 7px solid transparent;
+			    border-right: 7px solid transparent;
+			    content: "";
+			    display: inline-block;
+			    left: 9px;
+			    position: absolute;
+			    top: -7px;
+			}
+			&:after {
+			    border-bottom: 6px solid #ffffff;
+			    border-left: 6px solid transparent;
+			    border-right: 6px solid transparent;
+			    content: "";
+			    display: inline-block;
+			    left: 10px;
+			    position: absolute;
+			    top: -6px;
+			}
+			textarea {
+				border-radius: 0;
+				resize: none;
+				min-width: 258px;
+			}
+		}
+	}	
 	
 	/* comment page*/
 	.uiCommentBox {
 	    background: none repeat scroll 0 0 #f8f8f8;
 	    border: 1px solid #ccc;
 	    padding: 0;
-	}
-	.uiCommentBox .highlightBox {
-	    background: none repeat scroll 0 0 #fff;
-	    padding: 10px 10px 20px;
-	}
-	.uiCommentBox .highlightBox .profile .rightBlock {
-	    margin-left: 60px;
-	}
-	.uiCommentBox .highlightBox .profile .rightBlock a {
-	    font-weight: bold;
-	}
-	.uiCommentBox .highlightBox .profile .rightBlock p.dateTime {
-	    color: #999;
-	    font-size: 11px;
-	}
-	.uiCommentBox .highlightBox .descript {
-	    margin-bottom: 0;
-	    overflow: hidden;
-	    padding: 10px 0;
+	    .highlightBox {
+		    background: none repeat scroll 0 0 #fff;
+		    padding: 10px 10px 20px;
+		    .profile .rightBlock {
+			    margin-left: 60px;
+			    a {
+				    font-weight: bold;
+				}
+				p.dateTime {
+				    color: #999;
+				    font-size: 11px;
+				}
+				.descript {
+				    margin-bottom: 0;
+				    overflow: hidden;
+				    padding: 10px 0;
+				}
+			}
+		}
 	}
 	.uiCommentBox .actionBar {
 	    border-top: 1px solid #ccc;
 	    padding: 5px 0;
-	}
-	.uiCommentBox .actionBar ul > li {
-	    display: inline-block;
-	    margin: 0 5px;
-	}
-	.uiCommentBox .actionBar ul > li a {
-	    color: #333;
-	}
-	.uiCommentBox .actionBar ul > li a:hover {
-	    color: #2f5e92;
+	    ul > li {
+		    display: inline-block;
+		    margin: 0 5px;
+		    a {
+			    color: #333;
+			    &:hover {
+				    color: #2f5e92;
+				}
+			}
+		}
 	}
 	.uiCommentBox .commentList {
 	    background: none repeat scroll 0 0 #fff;
 	    max-height: 485px;
 	    overflow: auto;
 	    padding: 8px 0;
-	}
-	.uiCommentBox .commentList li {
-	    padding: 8px 10px;
-	}
-	.uiCommentBox .commentList li .close {
-	    display: none;
-	    position: absolute;
-	    right: -19px;
-	    top: 3px;
-	}
-	.uiCommentBox .commentList li:hover .close {
-	    display: block;
-	}
-	.uiCommentBox .commentList .avatarXSmall {
-	    margin-top: 5px;
-	}
-	.uiCommentBox .commentList .rightBlock {
-	    margin-left: 45px;
-	    margin-right: 15px;
-	    position: relative;
-	}
-	.uiCommentBox .commentList .rightBlock .tit a {
-	    color: #2f5e92;
-	    font-weight: bold;
-	}
-	.uiCommentBox .commentList .rightBlock .tit .dateTime {
-	    color: #999;
-	    font-size: 11px;
-	}
-	.uiCommentBox .commentList .rightBlock .cont {
-	    margin: 0;
-	    word-wrap: break-word;
+	    li {
+		    padding: 8px 10px;
+		    .close {
+			    display: none;
+			    position: absolute;
+			    right: -19px;
+			    top: 3px;
+			}
+			&:hover .close {
+			    display: block;
+			}
+		}
+		.avatarXSmall {
+		    margin-top: 5px;
+		}
+		.rightBlock {
+		    margin-left: 45px;
+		    margin-right: 15px;
+		    position: relative;
+		    .tit {
+		    	 a {
+				    color: #2f5e92;
+				    font-weight: bold;
+				}
+				.dateTime {
+				    color: #999;
+				    font-size: 11px;
+				}
+			}
+			.cont {
+			    margin: 0;
+			    word-wrap: break-word;
+			}
+		}
 	}
 	.uiCommentBox .noComment {
 	    background: none repeat scroll 0 0 #fff;
 	    margin: 0 auto;
 	    padding: 0 0 20px;
 	    text-align: center;
-	}
-	.uiCommentBox .noComment .info {
-	    background: url("/eXoSkin/skin/images/system/no_comment.png") no-repeat scroll center center rgba(0, 0, 0, 0);
-	    color: #999;
-	    font-size: 14px;
-	    padding: 80px 0 0;
+		.info {
+		    background: url("/eXoSkin/skin/images/system/no_comment.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+		    color: #999;
+		    font-size: 14px;
+		    padding: 80px 0 0;
+		}
 	}
 	.uiCommentBox .commentInputBox {
 	    border-bottom: 1px solid #ccc;
 	    border-top: 1px solid #ccc;
 	    margin: 0;
 	    padding: 20px 10px;
-	}
-	.uiCommentBox .commentInputBox textarea {
-	    height: 28px;
-	    margin: 4px 0 4px 9px;
-	    resize: none;
-	    width: 210px;
+		textarea {
+		    height: 28px;
+		    margin: 4px 0 4px 9px;
+		    resize: none;
+		    width: 210px;
+		}
 	}
 }
