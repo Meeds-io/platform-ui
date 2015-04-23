@@ -1194,7 +1194,9 @@ blockquote:after {
 	.uiUserActivityStreamPortlet {
 		.shareStt .dropdown-menu {
 			padding: 10px;
-			top: 33px;
+			position: relative;
+			top: 0;
+			float: none;
 			&:before {
 			    border-bottom: 7px solid rgba(0, 0, 0, 0.2);
 			    border-left: 7px solid transparent;
@@ -1218,7 +1220,7 @@ blockquote:after {
 			textarea {
 				border-radius: 0;
 				resize: none;
-				min-width: 258px;
+				width: 100%;
 			}
 		}
 	}	
