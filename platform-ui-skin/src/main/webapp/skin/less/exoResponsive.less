@@ -21,6 +21,10 @@
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
+    .mobile-hidden {
+      display: none;
+    }
+
 	select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
 		max-width: 100%;
 	}
@@ -56,7 +60,7 @@
 			padding-bottom: 15px;
 		}
 	}
-  .LeftNavigationTDContainer {
+  .LeftNavigationTDContainer ,.OfficeRightTDContainer {
     position: fixed;
     left: -251px;
     top:0;
@@ -65,29 +69,22 @@
     display: block;
     .transition(all 250ms ease);
   }
-  #LeftBreadCrumbNavigationPortlet {
-    position: fixed;
-    top:0;
-    width: 250px;
-    left: 0;
-    & + #LeftNavigationPortlet{
-      .uiCompanyNavigationPortlet {
-        .title {
-         //   position: static;
-         //   width: auto;
-        }
-      }
-    }
-  }
-  #LeftNavigation {
 
-   // padding-top: 50px;
+  body .OfficeRightTDContainer  {
+    left: auto;
+    position: absolute;
+    right: -305px !important;
+    .toggle-right-bar {
+      position: fixed;
+      right: 312px;
+      top: 50%;
+    }
   }
 
   html, body {
     overflow-x: hidden;
   }
-  .RightBodyTDContainer  {
+  .RightBodyTDContainer ,.OfficeMiddleTDContainer {
     display: block;
   }
   body {
@@ -101,14 +98,24 @@
     .LeftNavigationTDContainer {
       left: 0;
     }
-    .uiCompanyNavigationPortlet {
-      .title{
-      //  position: fixed;
-      //  top:0;
-      //  width: 221px;
-      //  left: 0;
-      }
 
+  }
+  body:not('.open-left-bar') {
+    padding-top: 41px!important;
+    #NavigationPortlet {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: @zindexFixedNavbar;
+    }
+  }
+  
+  .open-right-bar {
+    position: relative;
+    left: -285px;
+    .OfficeRightTDContainer  {
+      right: 0;
     }
 
   }
@@ -117,15 +124,9 @@
   }
 
 	// NAVIGATION TOP
-	body {
-		padding-top: 41px!important;
-	}
+
 	#NavigationPortlet {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		z-index: @zindexFixedNavbar;
+
 	}
 	.UIToolbarContainer .uiDropdownWithIcon > a {
 		font-size: 0;
