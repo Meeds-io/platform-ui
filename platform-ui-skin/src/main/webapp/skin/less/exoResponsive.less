@@ -115,6 +115,25 @@
   .mobile-visible {
     display: block;
   }
+
+	// NAVIGATION TOP
+	body {
+		padding-top: 41px!important;
+	}
+	#NavigationPortlet {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: @zindexFixedNavbar;
+	}
+	.UIToolbarContainer .uiDropdownWithIcon > a {
+		font-size: 0;
+	}
+	#UIHelpPlatformToolbarPortletTDContainer,
+	#chat-status {
+		display: none;
+	}
 }
 
 /* Landscape phones and down */
