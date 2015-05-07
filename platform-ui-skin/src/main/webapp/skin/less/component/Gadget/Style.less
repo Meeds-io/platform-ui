@@ -129,10 +129,38 @@
 		padding: 5px 10px 10px;
 		margin: 0 2% 0;
 		input[type="button"] {
-			.btn;
-			&:first-child {
-				.btn-primary;
-			}
+          display: inline-block;
+          margin-bottom: 0; // For input.btn
+          font-size: @baseFontSize;
+          line-height: @baseLineHeight;
+          text-align: center;
+          vertical-align: middle;
+          cursor: pointer;
+          .buttonBackground(@btnBackground, @btnBackgroundHighlight, @grayDark, 0 1px 1px rgba(255,255,255,.75));
+          border: 1px solid @btnBorder;
+          border-bottom-color: @btnBorder;
+          .border-radius(@baseBorderRadius);
+          .box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
+          padding: @paddingDefault;
+          height: 28px;
+          text-shadow: none!important;
+          color: @btnColor;
+            &:hover,
+            &:focus {
+              text-decoration: none;
+              background-position: 0 -15px;
+              .transition(background-position .1s linear);
+              color: @btnColor;
+            }
+            &:first-child {
+              font-family: @sansBoldFontFamily;
+              font-weight: bold;
+              .buttonBackgroundEXO(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder, @btnPrimaryColor);
+
+            }
 		}
-	}
+        input[type="button"] +  input[type="button"] {
+          margin-right: 10px;
+        }
+    }
 }
