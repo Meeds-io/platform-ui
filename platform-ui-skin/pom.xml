@@ -105,24 +105,24 @@
                                 <include>platform/portlets/gadget-pack/caches.less</include>
                                 <include>platform/portlets/gadget-pack/allTemplatesStatistics.less</include>
                                 <include>platform/portlets/gadget-pack/applicationsStatistics.less</include>
-                                <include>platform/portlets/samples/acme-website/Style.less</include>
-                                <include>platform/portlets/samples/acme-intranet/SpaceSummaryInfoPortlet.less</include>
-                                <include>platform/portlets/samples/gadgets-sample/exo-gadget-resources/gadget-common.less</include>
-                                <include>platform/portlets/samples/gadgets-sample/gadgets/Agenda.less</include>
-                                <include>platform/portlets/samples/gadgets-sample/gadgets/Bookmark.less</include>
-                                <include>platform/portlets/samples/gadgets-sample/gadgets/FavoriteDocument.less</include>
-                                <include>platform/portlets/samples/gadgets-sample/gadgets/Invitations.less</include>
-                                <include>platform/portlets/samples/gadgets-sample/gadgets/NewSpace.less</include>
-                                <include>platform/portlets/samples/gadgets-sample/gadgets/Poll.less</include>
-                                <include>platform/portlets/samples/gadgets-sample/gadgets/Profile.less</include>
-                                <include>platform/portlets/samples/gadgets-sample/gadgets/WhoIsOnline.less</include>
+                                <include>platform/samples/acme-website/Style.less</include>
+                                <include>platform/samples/acme-intranet/SpaceSummaryInfoPortlet.less</include>
+                                <include>platform/samples/gadgets-sample/exo-gadget-resources/gadget-common.less</include>
+                                <include>platform/samples/gadgets-sample/gadgets/Agenda.less</include>
+                                <include>platform/samples/gadgets-sample/gadgets/Bookmark.less</include>
+                                <include>platform/samples/gadgets-sample/gadgets/FavoriteDocument.less</include>
+                                <include>platform/samples/gadgets-sample/gadgets/Invitations.less</include>
+                                <include>platform/samples/gadgets-sample/gadgets/NewSpace.less</include>
+                                <include>platform/samples/gadgets-sample/gadgets/Poll.less</include>
+                                <include>platform/samples/gadgets-sample/gadgets/Profile.less</include>
+                                <include>platform/samples/gadgets-sample/gadgets/WhoIsOnline.less</include>
                                 <include>platform/portlets/platformNavigation/UIGroupsNavigationPortlet/Style.less</include>
                                 <include>ecms/skin/ecms-resources-wcmskin.less</include>
                                 <include>ecms/skin/ecms-resources-dmsskin.less</include>
                                 <include>ecms/portlets/administration/ecms-administration.less</include>
                                 <include>ecms/portlets/explorer/ecms-explorer.less</include>
-								<include>ecms/portlets/search/ecms-search.less</include>
-								<include>ecms/portlets/fastcontentcreator/fast-content-creator.less</include>
+								                <include>ecms/portlets/search/ecms-search.less</include>
+								                <include>ecms/portlets/fastcontentcreator/fast-content-creator.less</include>
                                 <include>ecms/portlets/presentation/ecms-presentation-categorynavigationportlet.less</include>
                                 <include>ecms/portlets/presentation/ecms-presentation-contentlistviewerportlet.less</include>
                                 <include>ecms/portlets/presentation/ecms-presentation-singlecontentviewer.less</include>

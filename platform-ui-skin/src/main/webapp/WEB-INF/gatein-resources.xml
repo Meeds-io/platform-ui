@@ -636,22 +636,6 @@
 
   <!-- FastContentCreatorPortletStandard skins -->
 
-  <portlet-skin>
-    <application-name>fastcontentcreator</application-name>
-    <portlet-name>FastContentCreatorBasicPortletStandard</portlet-name>
-    <skin-name>Default</skin-name>
-    <css-path>/skin/css/ecms/portlets/fastcontentcreator/fast-content-creator.css</css-path>
-  </portlet-skin>
-    
-  <!-- FastContentCreatorBasicPortletStandard skins -->
-
-  <portlet-skin>
-    <application-name>fastcontentcreator</application-name>
-    <portlet-name>FastContentCreatorBasicPortletStandard</portlet-name>
-    <skin-name>Default</skin-name>
-    <css-path>/skin/css/ecms/portlets/fastcontentcreator/fast-content-creator.css</css-path>
-  </portlet-skin>
-  
   
   <portlet-skin>
     <application-name>presentation</application-name>
@@ -661,6 +645,13 @@
   </portlet-skin>
   
   <!-- ContentListViewerPortlet skins -->
+  <portal-skin>
+    <skin-name>Default</skin-name>
+    <skin-module>Acme</skin-module>
+    <css-path>/skin/css/platform/samples/acme-website/Style.css</css-path>
+    <css-priority>6</css-priority>
+    <overwrite>true</overwrite>
+  </portal-skin>
 
   <portlet-skin>
     <application-name>presentation</application-name>

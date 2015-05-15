@@ -316,9 +316,12 @@
 		padding: 0 0 10px;
 	}
 }
-
+.RightBodyTDContainer  {
+  .twoColumnsCLVTemplate {
+     margin: 25px;
+  }
+}
 .twoColumnsCLVTemplate {
-	margin: 25px;
 	.uiBox {
 		.media {
 			.image {
@@ -339,12 +342,14 @@
 		}
 	}
 	.rowContent {
-		margin-left: -15px;
 		.Column2 {
 			margin-top: 0;
-			width: 47%;
-			margin-left: 15px;
+			width: 48%;
 			float: left;
+          border-right: 0 none;
+          & + .Column2 {
+            margin-left: 15px;
+          }
 		}
 	}
 }
