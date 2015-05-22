@@ -354,6 +354,14 @@ Round corner box with title
 }
 
 /************ mask layer **********/
+#UIMaskWorkspace {
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: auto;
+	text-align: center;
+}
 .UIMaskWorkspace {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -363,7 +371,9 @@ Round corner box with title
 	-moz-box-shadow: 0px 0px 5px #909090;
 	-webkit-box-shadow: 0px 0px 5px #909090;
 	box-shadow: 0px 0px 5px #909090;
-	background: #c5c5c5;
+	background: #c5c5c5;	
+	display: inline-block;
+	text-align: left;
 	.form-horizontal {
 		padding-top: 0;
 		padding-bottom: 5px;
