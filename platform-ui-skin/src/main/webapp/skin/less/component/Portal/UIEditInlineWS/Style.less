@@ -80,6 +80,9 @@
 		}
 		.NewLayer {
 			background: none;
+            &.Disabled {
+                background: #ffffff;
+            }
 		}
 	}
 
@@ -204,6 +207,9 @@
 				.rotate(-29deg);
 			}
 		}
+      .SelfDisabledChildrenEnabled {
+        background: rgba(181, 182, 182, 0.4);
+      }
 	}
 }
 
@@ -214,4 +220,18 @@
 			padding: 0;
 		}
 	}
+}
+
+#tab-UIPortletForm .uiTabContent.resizable {overflow: auto; max-height: 300px; margin: -10px; }
+
+/****************** Toggle Container *********************/
+
+/*Note: we only want this to apply to the first SwitchingContianer and not nested ones.
+ *      Ideally the markup for contianers would be more simple than this...           */
+.UISwitchingContainer>.UIComponentBlock>div>div>.UISwitchingColumn>.TRContainer>.SwitchingContainer {
+  display: table-cell;
+}
+
+.UISwitchingContainer.ToggledRow>.UIComponentBlock>div>div>.UISwitchingColumn>.TRContainer>.SwitchingContainer {
+  display: block;
 }

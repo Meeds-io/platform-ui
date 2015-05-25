@@ -27,7 +27,11 @@
 		}
 		.text {
 			overflow: hidden;
+            display: block;
 		}
+        .Text {
+           overflow: hidden;
+        }
 	}
 	tr {
 		th {
@@ -43,7 +47,12 @@
 				}
 			}
 		}
-	}
+        &.disabled {
+          td {
+            color: @baseColorLight;
+          }
+        }
+    }
 }
 
 .table-striped {
