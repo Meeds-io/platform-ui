@@ -298,3 +298,21 @@
 	    width: 1px;
 	}
 }
+
+.nav-inline {
+	 a {
+		 border-left: 1px solid @borderColor;
+	    display: inline-block;
+	    line-height: 10px;
+	    margin: 10px 0 10px 5px;
+	    padding-left: 10px;
+	    text-transform: capitalize;
+	    vertical-align: middle;
+	    &.active,&:hover {
+	    	color: @textColor;
+	    }
+	    &:first-child {
+	    	border-left: none;
+	    }
+	}
+}

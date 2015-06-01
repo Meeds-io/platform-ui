@@ -22,16 +22,139 @@
 }
 
 .exo-mentions {
-  .autocomplete-menu {
-    background: none repeat scroll 0 0 #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-    display: none;
-    left: 0;
-    margin-top: -2px;
-    position: absolute;
-    right: 0;
-    z-index: 10000;
-  }
+  position: relative;
+  //background: @baseBackground;
+  //.border-radius(4px);
+  	textarea {
+	  display: none;
+	}
+	.autocomplete-menu {
+	  display: none;
+	  background: @baseBackground;
+	  border: 1px solid @borderColor;
+	  position: absolute;
+	  left: 0;
+	  right: 0;
+	  z-index: 10000;
+	  margin-top: -2px;
+	   .border-radius(4px);
+	   .box-shadow(0 2px 5px rgba(0, 0, 0, 0.148438));
+	}
+}
+
+
+.exo-mentions .autocomplete-menu {
+	 li {
+	  background-color: @baseBackground;
+	  padding: 5px 10px;
+	  overflow: hidden;
+	  cursor: pointer;
+	  white-space: nowrap;
+	  &:first-child {
+			.border-radius(4px 4px 0px 0px);
+		}
+		&:last-child {
+		  .border-radius(0px 0px 4px 4px);
+		}
+		> .avatarSmall {
+			display: inline-block;
+			margin-right: 10px;
+		}
+		&.active,&:hover {
+			background-color: @dropdownLinkBackgroundHover;
+			color: @baseBackground;
+		}
+		&.msg {
+		  background-color: @baseBackground;
+			cursor: inherit;
+		}
+		 strong {
+		  font-weight: bold;
+		}
+
+	 }
+
+}
+.exo-mentions {
+	.mentions {
+	  display: none;
+	}
+
+	.replaceTextArea {
+		margin:0;
+		width:auto;
+		cursor: text;
+		position:relative;
+		resize:none;
+		overflow-x:hidden;
+		overflow-y:auto;
+		word-wrap:break-word;
+		border-radius: 4px;
+		border: 1px solid @borderColor;
+		.box-shadow(~'0 2px 1px rgba(0, 0, 0, 0.075) inset');
+		color:@inputColor;
+		font-size: @baseFontSize;
+		height: 28px;
+		padding: 5px @gutterSizeBase;
+        background: @inputBackground;
+		&:focus ,&.focus{
+			border-color: @inputFocusBorder;
+            color:@inputColor;
+		   .box-shadow(~'0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 5px @{inputFocusShadow}');
+		}
+		 > span {
+           background: @uiMentionBackground;
+           border-radius: 3px;
+           color: @uiMentionColor;
+           border: 1px solid @uiMentionBorder;
+		  padding: 1px 5px;
+		  display: inline-block;
+		   i {
+			  margin-left: 6px;
+			  text-indent: -1000px;
+			}
+
+		}
+
+	}
+}
+
+
+.exo-mentions .replaceTextArea {
+	span.none {
+	  background: none transparent;
+	  border: none;
+	  border-radius: 0px;
+	  color: @baseBackground;
+	  padding: 0px;
+	  display: inline;
+	  width: 0px;
+	}
+	 .uiIconClose {
+	  color: transparent;
+	  text-indent: -9999px;
+	  cursor: pointer;
+	}
+	 .cursorText {
+		  display: inline;
+		  width: 0px;
+		}
+}
+
+
+.exo-mentions {
+	.placeholder {
+		  color: @placeholderText;
+		  position: absolute;
+		  top: 10px;
+		  left: 10px;
+		  .opacity(60);
+		}
+		.uiIconClose  {
+		  display:inline-block !important;
+		  position:static !important;
+		  cursor:pointer;
+		}
+
+
 }

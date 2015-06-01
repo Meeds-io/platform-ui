@@ -53,10 +53,13 @@
 .dropdown-menu li > a:focus,
 .dropdown-menu .active > a,
 .dropdown-menu .active > a:hover,
-.dropdown-submenu:hover > a {
+.dropdown-submenu:hover > a ,
+.uiDropdownMenu  li > a.active{
   #gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 15%));
 }
-
+.uiDropdownMenu  li > a.active {
+	color: @dropdownLinkColorHover;
+}
 .dropdown-menu .divider {
 	margin: 5px 0 4px;
     border: none;
@@ -102,3 +105,77 @@
 		}
 	}
 }
+
+
+
+// The dropdown menu (ul)
+// ----------------------
+.uiDropDownCal,.uiDropdownMenu {
+	 li > a {
+		display: block;
+		 clear: both;
+		 font-weight: normal;
+		 line-height: @baseLineHeight;
+		 color: @dropdownLinkColor;
+		 white-space: nowrap;
+		 padding: 6px 19px;
+	 }	 	
+}
+.dropdown-menu.uiDropdownWithIcon {
+	
+	// Arrows
+	.arrowLeft,
+	.arrowLeft:after{
+	  position: absolute;
+	  display: inline-block;
+	  width: 0;
+	  height: 0;
+	  border-color: transparent;
+	  border-style: solid;
+	}
+	.arrowLeft:after{
+	  content: "";
+	  z-index: -1;
+	}
+	.arrowLeft{
+		top: 50%; 
+		left: -9px;
+		margin-top: -@popoverArrowWidth; 
+		border-width: 9px  9px 9px 0;
+		border-right-color: @dropdownBackground;
+		&:after {
+		  border-width: 10px 10px 10px 0;
+		  border-right-color: @dropdownBorder;
+		  bottom: -10px;
+		  left: -1px;
+		}
+	}
+}
+//uiDropDownCal state hover and active
+.uiDropDownCal li > a:hover,
+.uiDropDownCal li > a:focus,
+.uiDropDownCal .active > a,
+.uiDropDownCal .active > a:hover,
+.dropdown-submenu:hover > a,
+.uiDropdownMenu li > a:hover,
+.uiDropdownMenu li > a:focus,
+.uiDropdownMenu .active > a,
+.uiDropdownMenu .active > a:hover {
+		text-decoration: none;
+  	    color: @dropdownLinkColorHover;
+  		#gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 15%));	 	
+}
+
+
+.uiDropdownWithIcon{
+	.uiDropDownCal, .uiDropdownMenu {
+	  li > a {
+		padding: 6px 19px;
+		i{
+			margin-right: 5px;
+		}
+	  }
+	}
+
+}
+

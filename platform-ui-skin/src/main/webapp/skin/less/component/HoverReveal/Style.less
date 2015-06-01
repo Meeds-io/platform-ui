@@ -4,36 +4,66 @@
 - Hover-reveal actions on buttons
 - Hover-reveal actions on mixed buttons and icons
 */
-.hover-action a {
-    display: none;
+.hover-action-reveal {
+	&.has-border {
+		border-bottom: 1px solid @primaryBackground;
+		&.selected {
+			border-bottom-color: @baseBackground;
+		}
+	}
+	&.has-background {
+		&:hover {
+			background-color: @revealBackgroundHover
+		}
+		&.selected {
+			background-color: @revealBackgroundSelected;
+		}
+	}
+	.block-show {
+		display: block;
+	}
+	.inline-show {
+		display: inline;
+	}
+	.inline-block-show {
+		display: inline-block;
+	}
+	.inline-hide,
+	.inline-block-hide,
+	.block-show,
+	.hide {
+		display: none;
+	}
+	&:hover, &.selected {
+		.block-show,
+		.inline-show,
+		.inline-block-show {
+			display: none;
+		}
+		.block-hide {
+			display: block;
+		}
+		.inline-hide {
+			display: inline;
+		}
+		.inline-block-hide {
+			display: inline-block;
+		}
+	}
 }
 
-.hover-action:hover {
-    background: @primaryBackgroundLight;
-}
+.hoverStatus {
+	padding: 5px 10px;
+    border-radius: 3px;
+	box-shadow: inset 0 0 0 1px transparent;
 
-.hover-action:hover .actionHover {
-    display: inline-block;
-    margin: 4px 4px 0 0;
-}
-
-
-/*** Hover-reveal actions displayed in a combo-box ***/
-.hover-action div.button {
-    display: none;
-}
-
-.hover-action:hover div.button {
-    display: block;
-}
-
-
-/*** Hover-reveal actions displayed in an icon ***/
-.hover-action a {
-    display: none;
-}
-
-.hover-action:hover .actionIcon {
-    display: inline-block;
-    margin: 6px 6px 0 0;
+    &.editableField:hover {
+        box-shadow: inset 0 0 0 1px  @borderColor;
+    }
+    &.unEditableField:hover {
+    	box-shadow: none;
+    }
+    &.small {
+    	padding: 5px;
+    }
 }

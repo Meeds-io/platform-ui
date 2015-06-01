@@ -24,6 +24,7 @@
 @import "component/LabelsBadges/Style.less";
 @import "component/ProgressBars/Style.less";
 @import "component/Popover/Style.less";
+@import "component/HoverReveal/Style.less";
 
 // COMMONS STYLESHEET
 //==================================================================
@@ -549,9 +550,6 @@ hr {
       &:hover,&.open,&.active {
         background-color: @primaryBackgroundLight
       }
-      > * {
-        padding: 6px 20px 6px 20px;
-      }
     }
     .accordion-body {
       > * {
@@ -576,6 +574,112 @@ hr {
       color: @btnPrimaryColor;
     }
 }
+
+.uiAccordion.leftPanel {
+	.accordion-heading {
+		border-bottom: none;
+		background-color: @primaryBackgroundLight;
+		box-shadow: none;
+		&:first-child {
+			border-radius: @baseBorderRadius @baseBorderRadius 0 0;
+		}
+		&:last-child {
+			border-radius: 0 0 @baseBorderRadius @baseBorderRadius;
+			border-bottom: none;
+		}
+		&:hover {
+			background-color: @primaryBackground;
+		}
+		&.open, &.active {
+			background-color: @primaryBackgroundHover;
+		}
+		a.project-name {
+			padding: 8px 20px;
+			display: block;
+			font-weight: bold;
+			color: @textColor;
+			outline-style: none;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            max-height: 32px;
+		}
+		.item {
+			border-bottom: 1px solid @borderColor;
+			a.dropdown-toggle {
+				margin: 7px 12px 0 0;
+			}
+		}
+		.list-projects {
+			background-color: @baseBackground;
+		}
+		.sub-item {
+			border-bottom: 1px solid @white;
+			margin-left: 1px;
+			position: relative;
+			&:hover {
+				background-color: @primaryBackgroundLight;
+				.iconGreater {
+					display: inline-block;
+					color: @white;
+				    background: @baseColorLight;
+				}
+				> a.dropdown-toggle {
+					display: block;
+				}
+			}
+			.project-name {
+				display: block;
+    			padding: 6px 20px;
+    			font-weight: normal;
+			}
+			> a {
+				color: @textColor;
+				outline-style: none;
+				&.dropdown-toggle {
+					display: none;
+					margin: 6px 12px 0 0;
+				}
+			}
+		}
+		.project-item {	
+			&.active, &.open {
+				> .sub-item {
+					#gradient > .vertical(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
+					.project-name {
+						color: @white;
+						[class^="uiIcon"] {
+							 background-image: url("@{images-path}/Icons/uiIconsSecondary.png");					
+						}
+					}
+					> a.dropdown-toggle {
+						display: block;
+						[class^="uiIcon"] {
+							background-image: url("@{images-path}/Icons/uiIconsSecondary.png");
+						}	
+					}
+				}
+			}
+			.colorPie {
+				width: 5px;
+				height: 32px;
+				display: inline-block;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		}
+		.item, .sub-item {
+			position: relative;
+			.project-menu {
+				left: calc(100% - 30px);
+    			top: 30px;
+			}
+		} 
+	}
+}
+
+
 
 //uiAutoComplete
 
@@ -635,4 +739,176 @@ hr {
 
 .nav-tabs  li,.nav li ,.pagination ul > li ,.breadcrumb li{
   list-style: outside none none !important;
+}
+
+.primaryBackground {
+	background-color: @primaryBackground!important;
+}
+
+.uiEditableInline {
+	&.active {
+	    .editable-element {
+	        display: none;
+	    }
+	    .editable-input {
+	    	input {
+		    	height: 31px;
+		    	&.blackLarge {
+		    		height: 36px;
+		    		padding: 0 9px;
+		    	}
+		    }
+		     textarea {
+			    padding: 4px 9px;
+			}
+	    }
+	    .hoverStatus.editableField  {
+	    	border:1px solid  @inputFocusBorder;
+			.box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 5px @{inputFocusShadow}");
+	    }
+	}
+	position: relative;
+	> [class^="uiIcon"] {
+		vertical-align: middle;
+		+ .hoverStatus:not(.editableField){
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+	.view-value {
+		display: inline-block;
+		height: @baseLineHeight;
+		padding: 3px 6px;
+		font-size: @baseFontSize;
+		line-height: @baseLineHeight;
+		color: @gray;
+		.border-radius(@inputBorderRadius);
+		vertical-align: middle;
+		border: 1px solid transparent;
+		&:hover {
+			border: 1px solid @inputBorder;
+		}
+		&:focus, &.active {
+			border-color: rgba(82,168,236,.8);
+			outline: 0;
+			outline: thin dotted \9; /* IE6-9 */
+		}
+	}
+	.input-value, .input-value:focus {
+		margin: 0;
+		padding-left: 5px;
+		padding-right: 5px;
+		box-shadow: none;
+		background: none;
+		border-color: transparent;
+		&:hover {
+			border: 1px solid @inputBorder;
+		}
+	}
+	.view-value, .input-value, .text-label {
+		float: left;
+	}
+	.text-label:empty {
+		display: none;
+	}
+	.popover {
+		line-height: 20px;
+		max-width: none;
+	//	min-width: 497px;
+		.row-fluid.center [class*="span"] {
+			min-height: 0;
+		}
+		.uiCalendarComponent {
+			margin-bottom: 10px;
+		}
+		.uiCalendarComponent:first-child {
+			margin-right: 15px;
+		}
+	}
+	.hoverStatus {
+		display: inline-block;
+		cursor: pointer;
+		&.hoverStatusBlock {
+			display: block;
+		}
+		vertical-align: middle;
+		> * {
+			vertical-align: middle;
+		}
+		&.editableField {
+			.view-value:hover, .input-value:hover {
+				border-color: transparent;
+				box-shadow: none;
+			}
+		}
+		&:not(.editableField) {
+			.view-value, .input-value {
+				&:hover, &:focus {
+					background-color: @inputBackground;
+				}
+			}
+		}
+	}
+	&.edit {
+		.hoverStatus {
+			cursor: default;
+		}
+		.hoverStatus.editableField{
+			&:hover {
+				border-color: transparent;
+				box-shadow: none;
+			}
+			.view-value, .input-value {
+				border-color: @inputFocusBorder;
+				outline: 0;
+				.box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 5px @{inputFocusShadow}");
+			}
+		}
+		/*.text-label {
+			margin-right: 3px;
+		}*/
+		.view-value, .input-value {
+			background-color: @inputBackground;
+			border-color: @inputFocusBorder;
+			outline: 0;
+			.box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 5px @{inputFocusShadow}");
+		}
+	}
+	.choose-time {
+		[class*="span"] {
+			min-height: 0;
+		}
+		.span5.center {
+			&:first-child {
+				.form-dropdown {
+					margin-left: 39px;
+				}
+			}
+			&:last-child {
+				.form-dropdown {
+					margin-right: 39px;
+				}
+			}
+		}
+		.uiCheckbox {
+			margin-top: 2px;
+		}
+		.form-dropdown {
+			.dropdown-menu {
+				text-align: left;
+				min-width: 75px;
+				max-height: 180px;
+				overflow: auto;
+			}
+		}
+	}
+}
+
+.form-dropdown {
+	position: relative;
+	display: inline-block;
+	input, select, textarea {
+		margin-bottom: 0;
+		text-align: center;
+	}
 }
