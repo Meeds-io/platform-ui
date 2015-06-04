@@ -1,6 +1,7 @@
-.UIOAuthInvitationForm.uiBox {
-	width: 430px;
-	margin: 0 auto;
+/* On page */
+.uiOauthInvitation.uiBox {
+	width: 400px;
+	margin: 50px auto;
 	border-radius: 8px;
 	.title {
 		border-radius: 8px 8px 0 0;
@@ -17,11 +18,72 @@
 		}
 	}
 }
-.uiGroupForm.uiBox {
+.uiOauthRegister.uiBox {
 	width: 515px;
-	margin: 0 auto;
+	margin: 50px auto;
 	border-radius: 8px;
 	.title {
 		border-radius: 8px 8px 0 0;
+	}
+}
+
+/* On mask layer*/
+.UIMaskWorkspace .MaskContainer .UIOAuthInvitationForm.uiBox {
+	margin: 0;
+	.content p {
+		margin: 0 0 15px;
+		label {
+			display: inline-block;
+			margin: 3px 10px 0 0;
+		}
+		span.pull-left {
+			display: inline-block;
+		}
+	}
+}
+.UIMaskWorkspace .MaskContainer .uiGroupForm.uiBox {
+	margin: 0;
+}
+
+/* Login form on mask layer */
+.UIMaskWorkspace .MaskContainer .uiBox.uiLogin {
+	margin-bottom: 0;
+}
+
+.uiLogin {
+	#social-pane {
+		text-align: center;
+		#signInDelimiter {
+			font-size: @baseFontSize;
+		}
+		#social-login {
+			a {
+				display: inline-block;
+				margin: 10px 8px 0;
+				text-decoration: none;
+				.uiIconOauth {
+					background-image: url("@{images-path}/platform/portlets/extensions/oauthIcon.png");
+					.size(35px, 37px);
+					display: block;
+				}
+				&:hover {
+					.uiIconOauth {
+						background-image: url("@{images-path}/platform/portlets/extensions/oauthIconHover.png");
+					}
+				}
+				.facebook {
+					background-position: 0 0;
+				}
+				.twitter {
+					background-position: -123px 0;
+				}
+				.linkedin {
+					background-position: -82px 0;
+				}
+				.google {
+					background-position: -41px 0;
+				}
+			}
+		}
 	}
 }
