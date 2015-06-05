@@ -290,6 +290,9 @@
 
 
 .activityStream{
+	.contentComment {
+		margin-bottom: 0;
+	}
 	.contentComment,.linkSource {
 		word-wrap: break-word;
 	}
@@ -359,15 +362,19 @@
 .activityStream{
 	.heading  {
 		position: relative;
-		.uiIconClose {
+		.uiIconClose,.uiIconLink {
 			position: absolute;
 			top: 5px;
 			right: 5px;
 			display: none;
 			cursor: pointer;
 		}
-		&:hover  .uiIconClose{
-			display: block;
+    .uiIconLink {
+      right: 25px;
+      top: 5px;
+    }
+		&:hover  .uiIconClose,&:hover  .uiIconLink{
+		   display: block;
 		}
 		.dataInfor {
 			span,a {
@@ -524,7 +531,16 @@
 		padding-top: 0;
 	}
 	.commentList {
-		padding:15px 15px 0 15px ;
+		padding:10px 10px 0 10px ;
+		> div {
+			padding: 5px;
+			+ div {
+				margin-top: 4px;
+			}
+			&.focus {
+				background-color: @primaryBackgroundLight;
+			}
+		}
 		.commentItem {
 			position: relative;
 			&+ .commentItem {
@@ -533,23 +549,28 @@
 			.ContentBlock {
 				 word-wrap: break-word;
 			}
-			.uiIconClose ,.viewComment{
+			.uiIconClose ,.viewComment,.uiIconLink{
 				position: absolute;
 				top: 0px;
 				right: 0px;
 				display:none;
-				cursor: pointer;
+				cursor: pointer;				
 				&:hover {
 					color: @linkColorHover;
 				}
 			}
+      .uiIconLink {
+        right : 25px;
+        top: 3px;
+      }
+        
 			.uiIconClose {
 				top: 3px;
 			}
 			.uiIconClose + .viewComment {
 				right: 25px;
 			}
-			&:hover  .uiIconClose,&:hover  .viewComment{
+			&:hover  .uiIconClose,&:hover  .viewComment,&:hover  .uiIconLink{
 				display: block;
 			}
 			.commmentLeft {
