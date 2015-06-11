@@ -2,22 +2,21 @@
 	padding: 20px;
 	.uiWorkingWorkspace{
 		padding: 20px;
+		height: auto;
 		.actionBar{
-			.selectbox{
-				margin: 0px;
-				width: 150px;
-				border: none;
-			}
-			.uiSelectbox{
-				width: 150px;
-			}
-			.finterTitle{
+			.filterTitle {
 				padding: 4px 8px 4px 4px;
+			}
+			.selectbox {
+				margin: 0;
 			}
 			.actionIcon{
 				margin-left: 8px;
 				color: @textColor;
 				text-decoration: none;
+				.uiIconUpload {
+				    margin-right: 5px;
+				}
 			}
 			.uiGrayLightBox{
 				border-radius: 2px;
@@ -38,40 +37,25 @@
 		.breadcumbsPortlet{
 			height: auto;
 			margin-top: 20px;
+			margin-bottom: 20px;
 			.breadcrumb{
 				border: 1px solid @borderColor;
 				border-radius: 2px;
+				padding: 8px 15px;
 			}
 		}
 		.listContainer{
 			.leftWorkspace{
 				background: @baseBackground;
 			}
+			.uiPageIterator {
+				li > a {
+					cursor: pointer;
+				}
+				.Page > i {
+					margin-top: 4px;
+				}
+			}
 		}
-	}
-}
-
-.uiHomeContentSelector {
-	.uiWorkingWorkspace .listContainer .leftWorkspace {
-		height: 460px;
-	}
-	
-	.breadcumbsPortlet  {
-		margin-bottom: 20px;
-		.breadcrumb {
-			padding: 8px 15px;
-		}
-	}
-	
-	.uiPageIterator {
-		li > a {
-			cursor: pointer;
-		}
-		.Page > i {
-			margin-top: 4px;
-		}
-	}
-	.uiWCMSearchContainer{
-		height: auto;
 	}
 }
