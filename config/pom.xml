@@ -24,7 +24,7 @@
     <parent>
         <artifactId>platform-ui</artifactId>
         <groupId>org.exoplatform.platform-ui</groupId>
-        <version>4.2.0</version>
+        <version>4.2.x-SNAPSHOT</version>
     </parent>
 
     <artifactId>skin-addon-config</artifactId>
