@@ -13,10 +13,17 @@
 	}
 	&.has-background {
 		&:hover {
-			background-color: @revealBackgroundHover
+			background-color: @revealBackgroundHover;
+			& > div {
+				background-color: @revealBackgroundHover
+			}
 		}
+
 		&.selected {
 			background-color: @revealBackgroundSelected;
+			& > div {
+				background-color: @revealBackgroundSelected
+			}
 		}
 	}
 	.block-show {
@@ -56,6 +63,7 @@
 	padding: 5px 10px;
     border-radius: 3px;
 	box-shadow: inset 0 0 0 1px transparent;
+	border: 1px solid  transparent;
 
     &.editableField:hover {
         box-shadow: inset 0 0 0 1px  @borderColor;
