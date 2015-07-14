@@ -1,10 +1,53 @@
 // RESPONSIVE EVERYTHING
 // ---------------------
 /* Large desktop */
+.shareStt  {
+  display: none;
+  & + .uiCommentBox {
+    display: none;
+  }
 
-.mobile-visible {
+}
+  .uiUserActivitiesDisplay  + .activityTop {
+    display: none;
+  }
+
+
+.mobile-visible, .mask-layer-right  {
   display: none;
 }
+.accordionBar  {
+  .uiIconArrowRight  {
+    display: none;
+  }
+}
+
+.back-item {
+  display: none!important;
+}
+.toggle-left-bar {   
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 28px;
+    outline: medium none !important;
+    > span {
+      background: @toolbarDarkLinkColor;
+      display: block;
+      font-size: 0;
+      margin-bottom: 4px;
+      width: 100%;
+      height: 5px;
+      & + span {
+        margin-top: 4px;
+      }
+  }
+}
+.UIToolbarContainerLight {
+  .toggle-left-bar > span {
+    color: @toolbarLightLinkColor;
+  }
+}
+
 @media (min-width: 1200px) {
 
 }
@@ -14,77 +57,140 @@
 
 }
 
-/* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) {
-
-}
 
 /* Landscape phone to portrait tablet */
-@media (max-width: 767px) {
-    .mobile-hidden {
-      display: none;
+@media (max-width: 1024px) {
+  .back-item {
+    display: block!important;
+  }
+  .dropdown-submenu {
+     > ul {
+      display: none!important;
+     }
+  }
+  .toggle-left-bar {   
+    display: inline-block;
+  }
+ body  .OfficeMiddleTDContainer {
+    position: relative;
+    padding-top: 60px!important;
+    .toggle-right-bar {
+      cursor: pointer;     
+      position: absolute;
+      top: 50%;
+      margin-top: -8px;
+      right: 0;z-index: 9;
+      .uiIconArrowRight {
+        display: none;
+      }
     }
-
-	select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
-		max-width: 100%;
-	}
-	.uiPopup, .UIMaskWorkspace {
-		left: 50%!important;
-		top: 50%!important;
-		position: fixed!important;
-		width: 90%!important;
-		max-width: 560px;
-		max-height: 90%;
-		.translate(-50%, -50%);
-	}
-	.uiPopup {
-		.popupHeader{
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-		}
-		overflow: hidden;
-		.PopupContent {
-			margin-top: 35px;
-			margin-bottom: 59px;
-			max-height: 300px;
-			overflow: auto;
-		}
-		.uiAction.uiActionBorder {
-			background: #fff;
-			position: absolute;
-			left: 15px;
-			right: 15px;
-			bottom: 0px;
-			padding-bottom: 15px;
-		}
-	}
-  .LeftNavigationTDContainer ,.OfficeRightTDContainer {
+  }
+  .open-left-bar .toggle-right-bar { 
+        display: none;
+  }
+  .mobile-hidden {
+    display: none;
+  }
+  #OfficeRight {
+    position: relative;
+  }
+  #UIToolbarContainer {
     position: fixed;
-    left: -251px;
+    left: auto;
+    right: auto;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+    transform: translate(0px);
+    transition: transform 400ms ease 0s;
+  }
+
+  select, textarea, input[type="text"],
+  input[type="password"], input[type="datetime"],
+  input[type="datetime-local"], 
+  input[type="date"], input[type="month"],
+  input[type="time"], input[type="week"],
+  input[type="number"], input[type="email"],
+  input[type="url"], input[type="search"],
+  input[type="tel"], input[type="color"],
+  .uneditable-input {
+  		max-width: 100%;
+  }
+  .uiPopup, .UIMaskWorkspace {
+  	left: 50%!important;
+  	top: 50%!important;
+  	position: fixed!important;
+  	width: 90%!important;
+  	max-width: 560px;
+  	max-height: 90%;
+  	.translate(-50%, -50%);
+  }
+  .uiPopup {
+  	.popupHeader{
+  		position: absolute;
+  		top: 0;
+  		left: 0;
+  		right: 0;
+  	}
+  	overflow: hidden;
+  	.PopupContent {
+  		margin-top: 35px;
+  		margin-bottom: 59px;
+  		max-height: 300px;
+  		overflow: auto;
+  	}
+  	.uiAction.uiActionBorder {
+  		background: #fff;
+  		position: absolute;
+  		left: 15px;
+  		right: 15px;
+  		bottom: 0px;
+  		padding-bottom: 15px;
+  	}
+  }
+
+
+.LeftNavigationTDContainer {
+    position: fixed;
+    left: 0;
     top:0;
     bottom: 0;
     overflow-y: auto;
+    display: none;
+    transform: translate(0px);
+    transition: transform 400ms ease 0s;
+  }
+  .open-left-bar .LeftNavigationTDContainer {
     display: block;
-    .transition(all 250ms ease);
   }
 
-  body .OfficeRightTDContainer  {
-    left: auto;
-    position: absolute;
-    right: -305px !important;
-    .toggle-right-bar {
-      position: fixed;
-      right: 312px;
-      top: 50%;
-    }
+   body .LeftNavigationTDContainer {
+    width: 40%;
+  }
+  .open-left-bar #UIToolbarContainer,.open-left-bar  .RightBodyTDContainer  {
+      -webkit-transform: translate(40%);
+      transform: translate(40%);
+    
+  }
+
+
+.RightBodyTDContainer,#UIToolbarContainer,.RightBodyTDContainer{
+   -webkit-transform: translate(0px);
+   transform: translate(0px);
+    -webkit-transition: transform 400ms ease 0s;
+    transition: transform 400ms ease 0s;
+}
+
+
+  .RightBodyTDContainer {
+   position: relative;
   }
 
   html, body {
     overflow-x: hidden;
   }
-  .RightBodyTDContainer ,.OfficeMiddleTDContainer {
+  .RightBodyTDContainer {
+  // ,.OfficeMiddleTDContainer {
     display: block;
   }
   body {
@@ -92,18 +198,11 @@
     right: 0;
     .transition(all 250ms ease);
   }
-  .open-left-bar {
-    position: relative;
-    right: -250px;
-    .LeftNavigationTDContainer {
-      left: 0;
-    }
 
-  }
   body:not('.open-left-bar') {
     padding-top: 41px!important;
     #NavigationPortlet {
-      position: fixed;
+    //  position: fixed;
       top: 0;
       left: 0;
       width: 100%;
@@ -111,14 +210,7 @@
     }
   }
   
-  .open-right-bar {
-    position: relative;
-    left: -285px;
-    .OfficeRightTDContainer  {
-      right: 0;
-    }
 
-  }
   .mobile-visible {
     display: block;
   }
@@ -135,9 +227,89 @@
 	#chat-status {
 		display: none;
 	}
+  .AdminToolBarPortletTDContainer  {
+    display: none;
+  }
+   .OfficeMiddleTDContainer + .OfficeRightTDContainer  {
+     padding-top: 60px;
+      -webkit-transition: all 400ms ease 0s; 
+      transition: all 400ms ease 0s; 
+    }
+     .hidden-right-bar   .OfficeMiddleTDContainer + .OfficeRightTDContainer  {
+      display: none;
+    
+    }
+    .accordionBar  {
+        .uiIconArrowRight  {
+          display: block;
+        }
+        &.active {
+          .uiIconArrowRight  {
+             background-position: 0 -119px;
+          }
+        }
+    }
+    
+    .accordionCont {
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+    .mask-layer-right {
+       height: 100%;
+       display: block;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 9;
+    }
+
+}//end 1025px
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {   
+   
+
+}
+
+@media (max-width: 768px) {
+/* .hidden-right-bar   .OfficeMiddleTDContainer + .OfficeRightTDContainer  {
+      display: none;
+    
+    } */
+}
+
+
+@media (max-width: 600px) {
+  .OfficeMiddleTDContainer + .OfficeRightTDContainer   ,body .OfficeMiddleTDContainer .toggle-right-bar{
+    display: none;
+  }
+
 }
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
+  body .LeftNavigationTDContainer {
+    width: 75%;
+  }
+  .open-left-bar #UIToolbarContainer,.open-left-bar  .RightBodyTDContainer  {
+      -webkit-transform: translate(75%);
+      transform: translate(75%);
+    
+  }
+  .UIToolbarContainer  .UISetupPlatformToolBarPortletIDTDContainer  {
+    .dropdown-toggle {display: none;}
+  } 
 
+   .UIHelpPlatformToolbarPortletTDContainer {
+    display: none;
+  }
+  .avatar-help-action {
+    .dropdown-toggle {
+      img {.square(26px);}
+      float: left;
+    }
+  }
 }
