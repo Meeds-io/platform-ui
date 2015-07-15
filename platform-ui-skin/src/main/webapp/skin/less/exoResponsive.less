@@ -8,9 +8,10 @@
   }
 
 }
-  .uiUserActivitiesDisplay  + .activityTop {
+ .uiUserActivitiesDisplay  + .activityTop {
     display: none;
-  }
+}
+
 
 
 .mobile-visible, .mask-layer-right  {
@@ -60,6 +61,9 @@
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 1024px) {
+  .visible-tablet.toggle-right-bar {
+    display: block!important;
+  }
   .back-item {
     display: block!important;
   }
@@ -211,9 +215,6 @@
   }
   
 
-  .mobile-visible {
-    display: block;
-  }
 
 	// NAVIGATION TOP
 
@@ -275,10 +276,7 @@
 }
 
 @media (max-width: 768px) {
-/* .hidden-right-bar   .OfficeMiddleTDContainer + .OfficeRightTDContainer  {
-      display: none;
-    
-    } */
+
 }
 
 
@@ -291,6 +289,13 @@
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
+    .visible-tablet.toggle-right-bar {
+    display: none!important;
+  }
+    .mobile-visible {
+      display: block;
+    }
+
   body .LeftNavigationTDContainer {
     width: 75%;
   }
