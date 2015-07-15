@@ -64,6 +64,12 @@
   .visible-tablet.toggle-right-bar {
     display: block!important;
   }
+  .UIToolbarContainer .uiDropdownWithIcon > a {
+    padding: 9px!important;
+    display: block;
+    overflow: hidden;
+    height: 24px;
+  }
   .back-item {
     display: block!important;
   }
@@ -302,11 +308,10 @@
   .open-left-bar #UIToolbarContainer,.open-left-bar  .RightBodyTDContainer  {
       -webkit-transform: translate(75%);
       transform: translate(75%);
-    
   }
   .UIToolbarContainer  .UISetupPlatformToolBarPortletIDTDContainer  {
     .dropdown-toggle {display: none;}
-  } 
+  }
 
    .UIHelpPlatformToolbarPortletTDContainer {
     display: none;
@@ -316,5 +321,86 @@
       img {.square(26px);}
       float: left;
     }
+  }
+  .UIHelpPlatformToolbarPortletTDContainer {
+    display: none;
+  }
+  .UIToolbarContainer .uiDropdownWithIcon > .dropdown-menu,
+  .UIToolbarContainer .uiNotificationPopoverToolbarPortlet .uiDropdownWithIcon > .dropdown-menu {
+    border: medium none!important;
+    border-radius: 0!important;
+    left: auto!important;
+    position: fixed!important;
+    right: 0!important;
+    top: 42px!important;
+    margin: 0!important;
+    padding: 0!important;
+    > li > a {
+      min-width: 180px;
+    }
+  }
+  .UIToolbarContainer .uiNotificationPopoverToolbarPortlet .uiDropdownWithIcon > .dropdown-menu {
+    left: 0!important;
+  }
+  #NavigationPortlet .UIToolbarContainer .uiDropdownWithIcon > .dropdown-menu:after,
+  #NavigationPortlet .UIToolbarContainer .uiDropdownWithIcon > .dropdown-menu:before {
+    display: none!important;
+  }
+  .UIToolbarContainer .uiDropdownWithIcon > .dropdown-menu {
+    .action_top {
+      background: @textMediumColor;
+      .action-addon {
+        float: right;
+        padding: 6px 8px;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+        > span {
+            display: inline-block;
+            cursor: pointer;
+        }
+      }
+    }
+    .avatar-help-action {
+      position: relative;
+      > a {
+        padding: 6px 20px 6px 10px;
+        &:hover {
+          background: @baseBackground;
+          color: @textColor;
+        }
+      }
+      .help-link-box {
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        .translate(0, -50%);
+      }
+      .uiIconPLF24x24Help {
+        background-image: url("@{images-path}/platform/skin/Icons/uiIconsPLF24x24Default.png");
+      }
+      .uiIconPLF24x24Help:hover, .uiIconPLF24x24Help:active {
+        background-image: url("@{images-path}/platform/skin/Icons/uiIconsPLF24x24Primary.png");
+      }
+      + .divider {
+        margin: 0;
+      }
+    }
+  }
+  .uiDropdownWithIcon .dropdown-menu li > a {
+    padding: 8px 20px 8px 10px;
+  }
+  .mark-layer-mobile {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    display: none;
+  }
+  .mark-layer-mobile.active {
+    display: block;
   }
 }
