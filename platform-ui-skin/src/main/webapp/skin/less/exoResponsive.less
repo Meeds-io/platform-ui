@@ -403,4 +403,39 @@
   .mark-layer-mobile.active {
     display: block;
   }
+  
+  .UIToolbarContainerDark {
+	.NormalContainerBlock .ToolbarContainer.active {
+		.TRContainer > div {
+			display: none;
+			&.SearchPortletTDContainer {
+				display: block;
+				a {
+					display: none;
+				}
+				input[name="adminkeyword"] {
+					display: inline-block;
+				}
+				/*.uiQuickSearchResult {
+					colgroup col:first-child {
+						width: 100%;
+					}
+					colgroup col:last-child {
+						width: 0;
+					}
+					th {
+						display: none;
+					}
+				}*/
+			}
+		}
+		.uiDropdownWithIcon {
+			background: transparent;
+			line-height: 41px;
+			span {
+				
+			}
+		}
+	}
+}
 }
