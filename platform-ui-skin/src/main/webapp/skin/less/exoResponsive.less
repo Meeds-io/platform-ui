@@ -64,12 +64,12 @@
   .visible-tablet.toggle-right-bar {
     display: block!important;
   }
-  .UIToolbarContainer .uiDropdownWithIcon > a {
-    padding: 9px!important;
-    display: block;
-    overflow: hidden;
-    height: 24px;
-  }
+ /*  .UIToolbarContainer .uiDropdownWithIcon > a {
+   padding: 9px!important;
+   display: block;
+   overflow: hidden;
+   height: 24px;
+ } */
   .back-item {
     display: block!important;
   }
@@ -295,6 +295,21 @@
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
+/*   .uiUserToolBarPortlet  > .dropdown-toggle {
+  img {
+    display: none;
+  }
+  position: relative;
+  &:after {
+    content: "...";
+    display: block;
+    font-size: 50px;
+    color: white;
+  }
+} */
+  .overflow-y {
+    overflow-y: auto;
+  }
     .visible-tablet.toggle-right-bar {
     display: none!important;
   }
@@ -325,12 +340,13 @@
   .UIHelpPlatformToolbarPortletTDContainer {
     display: none;
   }
-  .UIToolbarContainer .uiDropdownWithIcon > .dropdown-menu,
+  .UIToolbarContainer .uiUserToolBarPortlet.uiDropdownWithIcon > .dropdown-menu,
+  .UIToolbarContainer .uiSetupPlatformToolBarPortlet.uiDropdownWithIcon > .dropdown-menu,
   .UIToolbarContainer .uiNotificationPopoverToolbarPortlet .uiDropdownWithIcon > .dropdown-menu {
     border: medium none!important;
     border-radius: 0!important;
     left: auto!important;
-    position: fixed!important;
+   // position: fixed!important;
     right: 0!important;
     top: 42px!important;
     margin: 0!important;
@@ -338,6 +354,9 @@
     > li > a {
       min-width: 180px;
     }
+  }
+  .UIToolbarContainer .uiSetupPlatformToolBarPortlet.uiDropdownWithIcon > .dropdown-menu {
+       right: auto!important;
   }
   .UIToolbarContainer .uiNotificationPopoverToolbarPortlet .uiDropdownWithIcon > .dropdown-menu {
     left: 0!important;
