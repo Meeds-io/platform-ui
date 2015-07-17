@@ -526,13 +526,22 @@ body .UIToolbarContainer .uiDropdownWithIcon > a {
 			display: none;
 			&.SearchPortletTDContainer {
 				display: block;
-				a {
+				float: none !important;
+			    padding: 0 15px;
+			    text-align: center;
+				.uiSearchPlatformToolBarPortlet > a {
 					display: none;
 				}
 				input[name="adminkeyword"] {
-					display: inline-block;
+					display: block;
+					margin-left: 0;
+					width: 93%;
+					margin: 15px 0;
 				}
-				/*.uiQuickSearchResult {
+				.uiQuickSearchResult {
+					margin-left: 0;
+					margin-top: -10px;
+					border-radius: 3px;
 					colgroup col:first-child {
 						width: 100%;
 					}
@@ -542,14 +551,17 @@ body .UIToolbarContainer .uiDropdownWithIcon > a {
 					th {
 						display: none;
 					}
-				}*/
+					.uiGrid.table td, .uiGrid.table th {
+						border-left: none;
+					}
+				}
 			}
 		}
 		.uiDropdownWithIcon {
 			background: transparent;
 			line-height: 41px;
 			span {
-				
+				margin: 10px 0 0;
 			}
 		}
 	}
