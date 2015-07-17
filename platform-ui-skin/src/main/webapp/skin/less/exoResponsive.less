@@ -272,13 +272,105 @@
       width: 100%;
       z-index: 9;
     }
+    body {
+      font-size: 15.5px!important;
+    }
 
 }//end 1025px
 
 /* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) {   
-   
+@media (max-width: 1024px) {   
+   // increase all element 1.5
 
+   body {
+    font-size: 19.5px;
+    line-height: 30px;
+   }
+   h5 {
+    font-size: 21px;
+    }
+    h6 {
+        font-size: 19.5px;
+    }
+body {
+   .accordionBar  {
+      padding: 15px 22px!important;
+      line-height: 30px!important;
+      height: auto!important;
+      position: relative;
+    }
+    .accordionBar .uiIconArrowRight {
+      display: block;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+  }
+  
+.uiBox .title { 
+    padding: 10px 15px;
+}
+.uiGrayLightBox {
+  padding: 15px;
+}
+.uiGettingStarted .listBlock,.uiContentBox {
+  padding:22px!important;
+}
+ .OfficeMiddleTDContainer ,.OfficeMiddleTDContainer + .OfficeRightTDContainer{
+    padding-top: 90px !important;
+  }
+    .UIToolbarContainer .NormalContainerBlock .ToolbarContainer .TRContainer,
+    .UIToolbarContainer .NormalContainerBlock .ToolbarContainer {
+      height: 61px!important;
+    }
+    .UIToolbarContainer .uiDropdownWithIcon > a {
+      line-height: 60px;
+    }
+    .toggle-left-bar {
+      margin-right: 15px;
+    }
+
+  .UIToolbarContainer #HomeLink {
+      padding: 18px 17px 0;
+    }
+    .uiCompanyNavigationPortlet .uiCompanyNavigations .navItem,
+    .uiCompanyNavigationPortlet .uiCompanyNavigations .navItemSelected {
+            padding: 10px 37px;
+    }
+    .uiCompanyNavigationPortlet .uiCompanyNavigations .navItemSelected::after {
+      height: 39px;
+    }
+    .uiSpaceNavigationPortlet .searchInput input {
+      height: 42px;
+    }
+    .uiDropdownWithIcon .dropdown-menu li > a {
+        padding: 12px 30px 12px 15px;
+    }
+    .uiComposer.uiGrayLightBox .btn,.btn {   
+        padding: 4px 15px ;
+    }
+    .uiComposer.uiGrayLightBox .inputLink input[type="text"] ,
+    textarea, input[type="text"], input[type="password"],
+     input[type="datetime"], input[type="datetime-local"],
+      input[type="date"], input[type="month"], input[type="time"], 
+      input[type="week"], input[type="number"], input[type="email"], 
+      input[type="url"], input[type="search"], input[type="tel"], 
+      input[type="color"], .uneditable-input{
+      height: 30px;
+    }
+    .exo-mentions .replaceTextArea {   
+    font-size: 19px;   
+    padding: 10px 15px;
+  }
+    .uiSpaceNavigationPortlet .joinSpace {    
+        padding: 10px 0;
+    }
+    .HomeLink > img {
+        margin-top: -10px;
+    }
+}
+   
 }
 
 @media (max-width: 768px) {
@@ -307,6 +399,11 @@
     color: white;
   }
 } */
+
+body .UIToolbarContainer .uiDropdownWithIcon > a {
+  padding-left: 8px;
+  padding-right: 8px;
+}
   .overflow-y {
     overflow-y: auto;
   }
