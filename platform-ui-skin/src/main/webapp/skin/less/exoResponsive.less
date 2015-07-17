@@ -83,18 +83,25 @@
   }
  body  .OfficeMiddleTDContainer {
     position: relative;
-    padding-top: 60px!important;
+   // padding-top: 60px!important;
+    
+  }
+  .hidden-right-bar {
     .toggle-right-bar {
+          right: 0;
+
+    }
+  }
+  .toggle-right-bar {
       cursor: pointer;     
-      position: absolute;
+      position: fixed;
       top: 50%;
       margin-top: -8px;
-      right: 0;z-index: 9;
+      right: 316px ;z-index: 9;
       .uiIconArrowRight {
         display: none;
       }
     }
-  }
   .open-left-bar .toggle-right-bar { 
         display: none;
   }
@@ -238,7 +245,7 @@
     display: none;
   }
    .OfficeMiddleTDContainer + .OfficeRightTDContainer  {
-     padding-top: 60px;
+    // padding-top: 60px;
       -webkit-transition: all 400ms ease 0s; 
       transition: all 400ms ease 0s; 
     }
@@ -246,7 +253,11 @@
       display: none;
     
     }
+    .navItemSelected , .accordionBar ,.LeftNavigationTDContainer{
+       box-shadow: 0 0 1px rgba(0, 0, 0, 0.2) inset;
+    }
     .accordionBar  {
+        
         .uiIconArrowRight  {
           display: block;
         }
@@ -256,7 +267,9 @@
           }
         }
     }
-    
+    body .RightBodyTDContainer  {
+      padding-top: 60px;
+    }
     .accordionCont {
       display: none;
       &.active {
@@ -307,18 +320,18 @@ body {
       -webkit-transform: translateY(-50%);
       transform: translateY(-50%);
   }
-  
-.uiBox .title { 
-    padding: 10px 15px;
-}
-.uiGrayLightBox {
-  padding: 15px;
-}
-.uiGettingStarted .listBlock,.uiContentBox {
-  padding:22px!important;
-}
+
+  .uiBox .title { 
+      padding: 10px 15px;
+  }
+  .uiGrayLightBox {
+    padding: 15px;
+  }
+  .uiGettingStarted .listBlock,.uiContentBox {
+    padding:22px!important;
+  }
  .OfficeMiddleTDContainer ,.OfficeMiddleTDContainer + .OfficeRightTDContainer{
-    padding-top: 90px !important;
+    padding-top: 20px !important;
   }
     .UIToolbarContainer .NormalContainerBlock .ToolbarContainer .TRContainer,
     .UIToolbarContainer .NormalContainerBlock .ToolbarContainer {
@@ -382,7 +395,9 @@ body {
   .OfficeMiddleTDContainer + .OfficeRightTDContainer   ,body .OfficeMiddleTDContainer .toggle-right-bar{
     display: none;
   }
-
+  .visible-tablet.toggle-right-bar {
+    display: none !important;
+  }
 }
 
 /* Landscape phones and down */
@@ -445,7 +460,7 @@ body .UIToolbarContainer .uiDropdownWithIcon > a {
     left: auto!important;
    // position: fixed!important;
     right: 0!important;
-    top: 42px!important;
+    top: 62px!important;
     margin: 0!important;
     padding: 0!important;
     > li > a {
@@ -467,7 +482,7 @@ body .UIToolbarContainer .uiDropdownWithIcon > a {
       background: @textMediumColor;
       .action-addon {
         float: right;
-        padding: 6px 8px;
+        padding: 12px 15px 12px 15px;
         &:hover {
           background-color: rgba(0, 0, 0, 0.5);
         }
@@ -480,7 +495,7 @@ body .UIToolbarContainer .uiDropdownWithIcon > a {
     .avatar-help-action {
       position: relative;
       > a {
-        padding: 6px 20px 6px 10px;
+      //  padding: 6px 20px 6px 10px;
         &:hover {
           background: @baseBackground;
           color: @textColor;
@@ -489,7 +504,7 @@ body .UIToolbarContainer .uiDropdownWithIcon > a {
       .help-link-box {
         position: absolute;
         top: 50%;
-        right: 5px;
+        right: 15px;
         .translate(0, -50%);
       }
       .uiIconPLF24x24Help {
