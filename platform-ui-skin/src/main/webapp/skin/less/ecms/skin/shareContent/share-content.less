@@ -12,7 +12,6 @@
 			overflow: hidden;
 			display: block;
 			min-width: 130px;
-			max-width: 270px;
 			> select {
 				width: 100%;
 			}
@@ -60,3 +59,29 @@
 	}
 }
 
+.uiShareDocuments {
+	.spaceSwitcherContainer {
+		.SpaceSwitcher {
+			overflow: hidden;
+		}
+		.spaceChooser {
+			.dropdown-toggle {
+				text-align: right;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				-o-box-sizing: border-box;
+				-ms-box-sizing: border-box;
+				box-sizing: border-box;
+				> span {
+					float: left;
+				}
+				> span.spiter {
+					float: none;
+				}
+			}
+		}
+	}
+}
+.uiShareDocuments .spaceSwitcherContainer .spaceChooser,.uiShareDocuments .spaceSwitcherContainer .spaceChooser .dropdown-toggle {
+	width: 100%;
+}
