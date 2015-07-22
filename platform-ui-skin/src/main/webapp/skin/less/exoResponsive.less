@@ -59,8 +59,16 @@
 }
 
 
+@media (max-width: 1024px) and (min-width: 480px) {
+  .UIToolbarContainer .uiSearchPlatformToolBarPortlet > input[type="text"]{
+    margin-top: 10px!important;
+  }
+}
 /* Landscape phone to portrait tablet */
 @media (max-width: 1024px) {
+  .UIToolbarContainer .uiDropdownWithIcon > a {
+    padding: 18px!important;
+  }
   .visible-tablet.toggle-right-bar {
     display: block!important;
   }
@@ -575,10 +583,21 @@ body .UIToolbarContainer .uiDropdownWithIcon > a {
 		.uiDropdownWithIcon {
 			background: transparent;
 			line-height: 41px;
-			span {
-				margin: 10px 0 0;
-			}
-		}
-	}
+  			span {
+  				margin: 10px 0 0;
+  			}
+  		}
+  	}
+  }
 }
+
+@media(max-width: 520px) {
+  .UIToolbarContainer .uiDropdownWithIcon > a {
+    padding: 18px 10px!important;
+  }
+}
+@media(max-width: 330px) {
+  .UIToolbarContainer .uiDropdownWithIcon > a {
+    padding: 18px 8px!important;
+  }
 }
