@@ -1,5 +1,5 @@
 /* On page */
-.uiOauthInvitation.uiBox {
+.uiOauthInvitation {
 	width: 400px;
 	margin: 50px auto;
 	border-radius: 8px;
@@ -82,6 +82,35 @@
 				}
 				.google {
 					background-position: -41px 0;
+				}
+			}
+		}
+	}
+}
+
+.uiOauthInvitation, .uiOauthRegister {
+	.popupTitle {
+		cursor: default!important;
+	}
+}
+
+.uiOauthInvitation {
+	.error {
+		display: inline-block;
+	}
+}
+
+.uiOauthRegister {
+	.alert {
+		> ul {
+			> li {
+				> i {
+					float: left;
+					margin-top: 2px;
+				}
+				> span {
+					overflow: hidden;
+					display: block;
 				}
 			}
 		}

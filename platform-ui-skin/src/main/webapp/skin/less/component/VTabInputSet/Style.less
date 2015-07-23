@@ -4,7 +4,7 @@
 .uiVTabInputSet {
 	.itemListContainer {
 		margin:0px 0 0 10px;
-		width: 170px;
+		width: 100%;
 		.uiContentBox {
 			padding: 15px;
 		}
@@ -15,12 +15,16 @@
 					display: block;
 					padding:4px 10px;
 					margin: 0;
+					text-align: left;
 					[class^="uiIcon"] {
 						margin-right: 10px;
 					}
 				}
-				& + li .item {
-					margin-top: 4px;
+				+ li {
+					margin-top: 6px;
+					.item {
+						margin-top: 4px;
+					}
 				}
 			}
 		}
