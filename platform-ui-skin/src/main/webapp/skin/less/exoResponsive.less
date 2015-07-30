@@ -102,13 +102,20 @@
         .UIToolbarContainer #HomeLink {
             padding: 18px 17px 0;
         }
+
         .uiCompanyNavigationPortlet .uiCompanyNavigations .navItem,
-        .uiCompanyNavigationPortlet .uiCompanyNavigations .navItemSelected {
-            padding: 10px 37px;
+        .uiCompanyNavigationPortlet .uiCompanyNavigations .navItemSelected,
+        .uiSpaceNavigationPortlet .spaceNavigation .spaceItem, 
+        .uiSpaceNavigationPortlet .spaceNavigation .spaceItemSelected {
+          padding: 10px 37px;
         }
-        .uiCompanyNavigationPortlet .uiCompanyNavigations .navItemSelected::after {
-            height: 39px;
+        .uiCompanyNavigationPortlet .uiCompanyNavigations .navItemSelected:after {
+          height: 41px;
         }
+        .uiSpaceNavigationPortlet .spaceNavigation .spaceItemSelected:after {
+          height: 39px;
+        }
+           
         .uiSpaceNavigationPortlet .searchInput input {
             height: 42px;
         }
@@ -354,6 +361,15 @@
         position: relative;
         right: 0;
         .transition(all 250ms ease);
+        .uiCompanyNavigationPortlet .uiCompanyNavigations .navItemSelected, 
+        .accordionBar,
+        .LeftNavigationTDContainer, 
+        .uiBreadcumbsNavigationPortlet,
+        .uiSpaceNavigationPortlet .spaceNavigation .spaceItemSelected {
+        	box-shadow: -1px 0 #ccc inset;
+        	-moz-box-shadow: -1px 0 #ccc inset;
+        	-webkit-box-shadow: -1px 0 #ccc inset;
+        }         
     }
 
     body:not('.open-left-bar') {
@@ -365,8 +381,6 @@
           z-index: @zindexFixedNavbar;
         }
     }
-
-
 
 	// NAVIGATION TOP
 
