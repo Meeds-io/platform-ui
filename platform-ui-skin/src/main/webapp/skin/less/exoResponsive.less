@@ -51,7 +51,12 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+
+
+
+
+// reset font from 481 to 1024
+@media (min-width: 481px) and (max-width: 1024px) {
     body {
         font-size: 19.5px;
         line-height: 30px;
@@ -144,23 +149,22 @@
         .HomeLink > img {
             margin-top: -10px;
         }
-    }
+    }   
 }
 
-@media (min-width: 768px) and (max-width: 980px) {
-    .active.ToolbarContainer   {
-        .UISetupPlatformToolBarPortletIDTDContainer,
-        .UICreatePlatformToolBarPortletIDTDContainer {
-            display: none!important;
-        }
-    }
 
-    #ToolBarSearch.uiDropdownWithIcon {
-        background: none!important;
-    }
-}
+
+
+
 /* Landscape phone to portrait tablet */
 @media (max-width: 1024px) {
+    .open-left-bar .toggle-left-bar {
+        margin-left: -32px;
+    }
+
+    .UIToolbarContainer #HomeLink {
+        overflow: hidden;
+    }
 
     body {
         .OfficeMiddleTDContainer {
@@ -228,7 +232,7 @@
         position: fixed;
         top: 50%;
         margin-top: -8px;
-        right: 305px ;
+        right: 40% ;
         z-index: 9;
         width: 25px;
         height: 70px;
@@ -329,11 +333,11 @@
     }
 
     body .LeftNavigationTDContainer {
-        width: 40%;
+           width: 30%;
     }
     .open-left-bar #UIToolbarContainer,.open-left-bar  .RightBodyTDContainer  {
-        -webkit-transform: translate(40%);
-        transform: translate(40%);
+        -webkit-transform: translate(30%);
+        transform: translate(30%);
     }
 
 
@@ -419,12 +423,7 @@
     body .RightBodyTDContainer  {
       padding-top: 60px;
     }
-    .accordionCont {
-      display: none;
-      &.active {
-        display: block;
-      }
-    }
+    
     .mask-layer-right {
        height: 100%;
        display: block;
@@ -448,6 +447,62 @@
         margin: 16px 0;
         display: inline-block!important;
     }
+
+    .UIToolbarContainer .uiUserToolBarPortlet.uiDropdownWithIcon > a {
+        font-size: 19.5px!important;
+    }
+      body .OfficeRightTDContainer {
+        width: 40%!important;
+    }
+    .maskLayer .uiDocumentPreview .commentArea {
+        display: none!important;
+    }
+     body   {
+            .maskLayer .uiDocumentPreview .fileContent {
+                margin: 0!important
+            }
+            .maskLayer .uiDocumentPreview {
+                padding: 0
+            }
+
+            #UISocialPopupWindow {
+                 left: 0 !important;
+                max-height: none!important;
+                max-width: auto;
+                position: fixed !important;
+                top: 0px !important;
+                transform: none!important;
+                width: 100% !important;
+                max-width: none !important;    height: 100% !important;  
+                .maskLayer {
+                    top:60px;
+                }   
+            }
+            #outerContainer {
+                min-width: auto;
+            }
+                   
+        } 
+}
+
+
+@media (min-width: 768px) and (max-width: 980px) {
+    .active.ToolbarContainer   {
+        .UISetupPlatformToolBarPortletIDTDContainer,
+        .UICreatePlatformToolBarPortletIDTDContainer {
+            display: none!important;
+        }
+    }
+
+    #ToolBarSearch.uiDropdownWithIcon {
+        background: none!important;
+    }
+    body .OfficeRightTDContainer {
+        width: 36%!important;
+    }
+     .toggle-right-bar {
+        right: 36%;
+     }
 }
 
 
@@ -456,7 +511,11 @@
     .UIToolbarContainer .NormalContainerBlock .ToolbarContainer.active .uiDropdownWithIcon span {
       float: none!important;
     }
-    .masklayer {
+   
+    .UIToolbarContainer .uiUserToolBarPortlet.uiDropdownWithIcon > a {
+        font-size: 0px!important;
+    }
+    .uiMasklayer {
         background-color: rgba(0, 0, 0, 0.6);
         height: 100%;
         left: 0;
@@ -465,9 +524,7 @@
         width: 100%;
         z-index: 9;
     }
-    body .RightBodyTDContainer  {
-      //  padding-top: 40px;
-    }
+    
     .OfficeMiddleTDContainer + .OfficeRightTDContainer,
     body .OfficeMiddleTDContainer .toggle-right-bar{
         display: none;
@@ -476,12 +533,10 @@
         display: none !important;
     }
 
-    .uiSetupPlatformToolBarPortlet {
-        .back-item {
-            margin-top: 0;
-        }
-    }
-    .UIToolbarContainer .uiUserToolBarPortlet.uiDropdownWithIcon > .dropdown-menu > li > a, .UIToolbarContainer .uiSetupPlatformToolBarPortlet.uiDropdownWithIcon > .dropdown-menu > li > a, .UIToolbarContainer .uiNotificationPopoverToolbarPortlet .uiDropdownWithIcon > .dropdown-menu > li > a {
+   
+    .UIToolbarContainer .uiUserToolBarPortlet.uiDropdownWithIcon > .dropdown-menu > li > a,
+    .UIToolbarContainer .uiSetupPlatformToolBarPortlet.uiDropdownWithIcon > .dropdown-menu > li > a, 
+    .UIToolbarContainer .uiNotificationPopoverToolbarPortlet .uiDropdownWithIcon > .dropdown-menu > li > a {
         min-width: auto!important;
     }
 
@@ -489,13 +544,9 @@
         padding-left: 6px;
         padding-right: 6px;
     }
-    .overflow-y {
-        overflow-y: auto;
-    }
-    .visible-tablet.toggle-right-bar {
-        display: none!important;
-    }
-    .mobile-visible {
+
+
+    .mobile-visible { 
         display: block;
     }
 
@@ -508,64 +559,14 @@
         transform: translate(75%);
     }
 
-    .UIToolbarContainer  .UISetupPlatformToolBarPortletIDTDContainer  {
-        .dropdown-toggle {display: none;}
-    }
-
-    .UIHelpPlatformToolbarPortletTDContainer {
-        display: none;
-    }
     .avatar-help-action {
         .dropdown-toggle {
             img {.square(26px);}
             float: left;
         }
     }
-    .UIHelpPlatformToolbarPortletTDContainer {
-        display: none;
-    }
-    .UIToolbarContainer .uiUserToolBarPortlet.uiDropdownWithIcon > .dropdown-menu,
-    .UIToolbarContainer .uiSetupPlatformToolBarPortlet.uiDropdownWithIcon > .dropdown-menu,
-    .UIToolbarContainer .uiNotificationPopoverToolbarPortlet .uiDropdownWithIcon > .dropdown-menu {
-        border: medium none!important;
-        border-radius: 0!important;
-        left: auto!important;
-        right: 5px!important;
-        top: 42px!important;
-        margin: 0!important;
-        padding: 0!important;
-       & > li > a {
-            min-width: 180px;
-        }
-    }
-    .UIToolbarContainer .uiSetupPlatformToolBarPortlet.uiDropdownWithIcon > .dropdown-menu {
-        right: auto!important;
-    }
-    .UIToolbarContainer .uiNotificationPopoverToolbarPortlet .uiDropdownWithIcon > .dropdown-menu {
-        left: 0!important;
-    }
-    #NavigationPortlet .UIToolbarContainer .uiDropdownWithIcon > .dropdown-menu:after,
-    #NavigationPortlet .UIToolbarContainer .uiDropdownWithIcon > .dropdown-menu:before {
-        display: none!important;
-    }
-    .uiUserToolBarPortlet {
-        .dropdown-toggle  {
-            background: url("/eXoSkin/skin/images/system/more.png") no-repeat center;
-            min-width: 20px;
-            &:hover {
-              background: url("/eXoSkin/skin/images/system/more.png") no-repeat center !important;
-            }
-            img {
-              display: none;
-            }
-        }
-    }
-    .UIToolbarContainer .action-addon [class^="uiIconPLF24x24"] {
-        background-image: url("@{images-path}/platform/skin/Icons/uiIconsPLF24x24Default.png");
-        &:hover {
-          background-image: url("@{images-path}/platform/skin/Icons/uiIconsPLF24x24Primary.png");
-        }
-    }
+
+  
     .UIToolbarContainer .uiDropdownWithIcon > .dropdown-menu {
         .action_top {
             border-bottom: 1px solid @borderColor;
@@ -622,7 +623,10 @@
     .mark-layer-mobile.active {
         display: block;
     }
-
+  
+    .SearchPortletTDContainer.pull-left {
+        float: none!important;
+    }
     .UIToolbarContainer  {
         .NormalContainerBlock .ToolbarContainer.active {
             .TRContainer > div {
@@ -641,6 +645,14 @@
                         width: 93%;
                         margin: 6px 0;
                     }
+                    #ToolBarSearch {
+                        margin: 0 auto;
+                      /*  left: 10px;
+                        position: absolute;
+                        top: 0;
+                        width: 451px;*/
+                    }
+
                     .uiQuickSearchResult {
                         margin-left: 0;
                         margin-top: -10px;
@@ -669,4 +681,145 @@
             }
         }
     }
+    .open-left-bar .toggle-left-bar {
+        margin-left: -22px;
+    }
+    .UIToolbarContainer .NormalContainerBlock .ToolbarContainer.active .TRContainer > div.SearchPortletTDContainer {
+        padding:0!important;
+    }
+
+    body .uiSpaceMenu .spaceMenuTab > .active {background: none}
+}
+
+
+// For a tablet portrait and wide landscape phone
+
+@media (min-width: 481px) and (max-width: 768px) {
+    body .LeftNavigationTDContainer {
+        width: 40%;
+    }
+    .open-left-bar #UIToolbarContainer, .open-left-bar .RightBodyTDContainer {
+        -webkit-transform: translate(40%);
+        transform: translate(40%);
+    }
+
+}
+
+// for mobile only
+
+@media (max-width: 480px) {
+    .uiSpaceMenu .spaceMenuTab  span {
+        display: none!important;
+    }
+    .accordionCont {
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+    .uiSetupPlatformToolBarPortlet {
+        .back-item {
+            margin-top: 0;
+        }
+    }
+    .overflow-y {
+        overflow-y: auto;
+    }
+    .UIToolbarContainer .uiDropdownWithIcon.pull-right > .dropdown-menu:after,
+    .UIToolbarContainer .uiDropdownWithIcon.pull-right > .dropdown-menu:before  {
+        display: none!important;
+    }
+     .UIToolbarContainer .uiUserToolBarPortlet.uiDropdownWithIcon > .dropdown-menu {
+        border: medium none!important;
+        border-radius: 0!important;
+        left: auto!important;
+        right: 5px!important;
+        top: 42px!important;
+        margin: 0!important;
+        padding: 0!important;
+       & > li > a {
+            min-width: 180px;
+        }
+    }
+    .UIToolbarContainer .uiSetupPlatformToolBarPortlet.uiDropdownWithIcon > .dropdown-menu {
+        right: auto!important;
+    }
+
+
+    //For P1 display none, but for P2 display block
+   .action_top {
+     display: none;
+   }
+
+    .UIHelpPlatformToolbarPortletTDContainer {
+        display: none;
+    }
+    
+    .UIToolbarContainer  .UISetupPlatformToolBarPortletIDTDContainer  {
+        .dropdown-toggle {display: none;}
+    }
+     .uiUserToolBarPortlet {
+        .dropdown-toggle  {
+            background: url("/eXoSkin/skin/images/system/more.png") no-repeat center;
+            min-width: 20px;
+            &:hover {
+              background: url("/eXoSkin/skin/images/system/more.png") no-repeat center !important;
+            }
+            img {
+              display: none;
+            }
+
+        }
+        .avatar-help-action {
+                img {
+                    display: inline-block;
+                }
+            }
+    }
+
+    .UIToolbarContainer .action-addon [class^="uiIconPLF24x24"] {
+        background-image: url("@{images-path}/platform/skin/Icons/uiIconsPLF24x24Default.png");
+        &:hover {
+          background-image: url("@{images-path}/platform/skin/Icons/uiIconsPLF24x24Primary.png");
+        }
+    }
+
+    .UIToolbarContainer .uiNotificationPopoverToolbarPortlet .uiDropdownWithIcon > .dropdown-menu {
+       // left: 0!important;
+    }
+    #UICreateList.dropdown-menu{
+        padding:0!important;
+        left: auto !important;
+        position: absolute;
+        .border-radius(0);
+        right: -120px !important;
+        top: 34px;
+        li  {
+             float: left;
+            font-size: 0;
+            a {
+                font-size: 0;
+                line-height: 0;
+                padding: 10px !important;
+                &:hover {
+                    background: @primaryBackground!important;
+                    i {
+
+                    }
+                }
+                i {
+                    margin: 0!important;
+                }
+            }
+            &:nth-child(4) {
+                display: none;
+            }
+        }
+
+    }
+    .avatar-help-action a {
+        font-weight: bold!important;
+    }
+
+    
 }
