@@ -586,6 +586,9 @@ hr {
 			border-radius: 0 0 @baseBorderRadius @baseBorderRadius;
 			border-bottom: none;
 		}
+		&:nth-child(2) {
+            border-top: medium none;
+        }
 		&:hover {
 			background-color: @primaryBackground;
 		}
@@ -605,9 +608,9 @@ hr {
 		}
 		.item {
 			border-bottom: 1px solid @borderColor;
-			a.dropdown-toggle {
-				margin: 7px 12px 0 0;
-			}
+		}
+		a.dropdownIcon {
+			margin: 7px 12px 0 0;
 		}
 		.list-projects {
 			background-color: @baseBackground;
@@ -675,6 +678,11 @@ hr {
     			top: 30px;
 			}
 		} 
+		.noLabel {
+		  background: @baseBackground;
+          border-radius: 0 0 3px 3px;
+          padding: 10px 0;
+		}
 	}
 }
 
