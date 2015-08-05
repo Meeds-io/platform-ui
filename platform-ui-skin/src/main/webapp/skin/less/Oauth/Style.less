@@ -19,6 +19,40 @@
 	}
 }
 
+.uiOauthRegister {
+    background: #ffffff url("@{images-path}/platform/portlets/extensions/registerFormBG.png") no-repeat scroll center bottom;
+    border: 1px solid #333;
+    border-radius: 8px;
+    margin-bottom: 0;
+    padding-bottom: 8px;
+    width: 512px;
+    .popupHeader {
+        background: #484848;
+        border-radius: 6px 6px 0 0;
+        box-shadow: none;
+        line-height: 42px;
+        padding: 3px 10px 4px 20px;
+        margin: 0;
+        .popupTitle {
+          font-size: 18px;
+          font-weight: bold;
+          color: #c1c1c1;
+        }
+    }  
+    .popupContent {
+      background: none;
+      .content {
+        padding: 20px 0 5px;
+      }
+      .form-horizontal .controls span {
+        color: red;
+      }
+    }
+    #UIPortalLoginFormAction {
+      padding-top: 35px;
+    } 
+}
+
 /* On mask layer*/
 .UIMaskWorkspace .MaskContainer .UIOAuthInvitationForm {
 	margin: 0;
@@ -52,12 +86,15 @@
 	}
 	.uiContentBox {
       .form-horizontal {
+        .require {
+          display: none;
+        }
         .control-label {
           width: 115px;
         } 
         .controls {
           margin-left: 130px;
-          color: #C72222;
+          color: red;
         }
       }
 	}
