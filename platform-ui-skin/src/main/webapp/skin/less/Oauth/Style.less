@@ -1,64 +1,74 @@
-@import "variables.less";
 /* On page */
+.uiOauthInvitation, .uiOauthRegister {
+	.popupTitle {
+		cursor: default!important;
+	}
+}
+
 .uiOauthInvitation {
 	width: 400px;
 	margin: 50px auto;
 	border-radius: 8px;
-	.title {
-		border-radius: 8px 8px 0 0;
-	}
-	.content p {
-		margin: 0 0 15px;
-		label {
-			display: inline-block;
-			margin-top: 3px;
-		}
-		span.pull-right {
-			display: inline-block;
-			float: right;
-		}
-	}
-}
-.uiOauthRegister.uiBox {
-	width: 515px;
-	margin: 50px auto;
-	border-radius: 8px;
-	.title {
-		border-radius: 8px 8px 0 0;
+	.content {
+      p {
+  		margin: 0 0 15px;
+      }
+      .error {
+      	display: inline-block;
+      }
 	}
 }
 
 /* On mask layer*/
-.UIMaskWorkspace .MaskContainer .UIOAuthInvitationForm.uiBox {
+.UIMaskWorkspace .MaskContainer .UIOAuthInvitationForm {
 	margin: 0;
-	.content p {
-		margin: 0 0 15px;
-		label {
-			display: inline-block;
-			margin: 3px 10px 0 0;
-		}
-		span.pull-left {
-			display: inline-block;
-		}
+	width: 428px;
+	border-radius: 5px;
+	.title {
+	   padding-left: 20px;
 	}
+	.uiContentBox {
+	   div, table, tr, td, img, form {
+	     font-size: 13px;
+	   }
+      .content p {
+      	margin: 10px 0 20px;
+      	label {
+      		display: inline-block;
+      		margin: 3px 10px 0 0;
+      	}
+      	span.pull-left {
+      		display: inline-block;
+      	}
+      }
+    }
 }
-.UIMaskWorkspace .MaskContainer .uiGroupForm.uiBox {
+.UIMaskWorkspace .MaskContainer .uiRegisterOauthForm {
 	margin: 0;
+	width: 470px;
+	border-radius: 5px;
+	.title {
+	   padding-left: 20px;
+	}
+	.uiContentBox {
+      .form-horizontal {
+        .control-label {
+          width: 115px;
+        } 
+        .controls {
+          margin-left: 130px;
+          color: #C72222;
+        }
+      }
+	}
 }
 
 /* Login form on mask layer */
-.UIMaskWorkspace .MaskContainer .uiLogin {
-	background: #ffffff url("@{images-path}/platform/portlets/extensions/loginBG.png") no-repeat scroll center bottom;
-    border-radius: 8px;
-    padding: 0 40px 15px;
-    margin-bottom: 0;
-}
-
 .UIMaskWorkspace.TransparentMask {
     background: none;
     border: none;
     box-shadow: none;
-    width: 392px;
+    width: auto;
 }
 
 .UIMaskWorkspace.TransparentMask .MaskContainer {
@@ -68,6 +78,11 @@
 }
 
 .uiLogin {
+    background: #ffffff url("@{images-path}/platform/portlets/extensions/loginBG.png") no-repeat scroll center bottom;
+    border-radius: 8px;
+    padding: 0 40px 15px;
+    margin-bottom: 0;
+    width: 312px;
 	.title {
 		background: #484848;
 		border-radius: 8px 8px 0 0;
@@ -79,7 +94,7 @@
 	}
 	.centerLoginContent {
 	    padding-top: 15px;
-		form > input {
+		form > input, form > input[type="text"] {
 			background: #ffffff;
 			border: 1px solid #cccccc;
 			border-radius: 4px;
@@ -91,16 +106,14 @@
 			outline: medium none;
 			padding: 1px 0 1px 50px;
 			width: 260px;
-			box-sizing: initial;
-			&::-moz-placeholder {
-				color: #999999;
-			}
+			.box-sizing(initial);
+
 			&.username {
-				background: rgba(0, 0, 0, 0) url("@{images-path}/platform/portlets/extensions/username.png") no-repeat scroll left top;
+				background: url("@{images-path}/platform/portlets/extensions/username.png") no-repeat scroll left top;
 				margin-top: 15px; 
 			}
 			&.password {
-				background: rgba(0, 0, 0, 0) url("@{images-path}/platform/portlets/extensions/password.png") no-repeat scroll left top;
+				background: url("@{images-path}/platform/portlets/extensions/password.png") no-repeat scroll left top;
 			}
 			&:focus {
               background-position: 0 -41px;
@@ -112,70 +125,10 @@
 		.spaceRole {
 			clear: both;
 			padding: 2px 0 11px;
-			.uiSwitchBtn, .uiSwitchBtn label {
-				-moz-user-select: none;
-			}
 			.uiSwitchBtn {
-				cursor: pointer;
 				float: left;
-				height: 21px;
 				margin-right: 15px;
-				overflow: hidden;
-				padding-top: 1px;
-				position: relative;
-				input {
-					left: 30px;
-					opacity: 0;
-					position: absolute;
-					top: 1px;
-				}
-			}
-			.uiSwitchBtn, .uiSwitchBtn label {
-				-moz-user-select: none;
-			}
-			.uiSwitchBtn label {
-				cursor: pointer;
-				display: block;
-				font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-				font-size: 11px;
-				font-weight: bold;
-				height: 16px;
-				line-height: 16px;
-				overflow: hidden;
-				position: absolute;
-				white-space: nowrap;
-				width: auto;
-				span {
-				  line-height: 16px;
-				}
-			}
-			label.switchBtnLabelOff {
-				background-color: rgba(142, 142, 142, 0.035);
-				background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.09));
-				background-repeat: repeat-x;
-				border-bottom-right-radius: 9px;
-				border-top-right-radius: 9px;
-				box-shadow: 0 1px 1px rgba(0, 0, 0, 0.43) inset;
-				color: #808080;
-				height: 17px;
-				right: 0;
-				text-align: right;
-				text-shadow: none;
-			}
-			label.switchBtnLabelOn {
-                background-color: #477ab3;
-                background-image: linear-gradient(to bottom, #578dc9, #2f5e92);
-                background-repeat: repeat-x;
-                border: 1px solid #2f5e92;
-                border-bottom-left-radius: 9px;
-                border-top-left-radius: 9px;
-                box-shadow: 0 3px 5px #224469 inset;
-                color: #ffffff;
-                left: 1px;
-                min-width: 9px;
-                text-align: center;
-                text-shadow: none;
-                top: 1px;
+				text-align: center;
             }
             .rememberTxt {
                 color: #999999;
@@ -223,35 +176,6 @@
 				}
 				.google {
 					background-position: -41px 0;
-				}
-			}
-		}
-	}
-}
-
-.uiOauthInvitation, .uiOauthRegister {
-	.popupTitle {
-		cursor: default!important;
-	}
-}
-
-.uiOauthInvitation {
-	.error {
-		display: inline-block;
-	}
-}
-
-.uiOauthRegister {
-	.alert {
-		> ul {
-			> li {
-				> i {
-					float: left;
-					margin-top: 2px;
-				}
-				> span {
-					overflow: hidden;
-					display: block;
 				}
 			}
 		}
