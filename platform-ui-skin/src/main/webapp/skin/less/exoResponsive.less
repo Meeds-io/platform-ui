@@ -227,13 +227,16 @@
 
         }
     }
-    .toggle-right-bar {
+    #UIViewWS {
+        position: relative;
+      //  z-index: 1;
+    }
+    .toggle-right-bar  {
         cursor: pointer;
-        position: fixed;
-        top: 50%;
+        position: absolute;
+        top: 300px;
         margin-top: -8px;
-        right: 40% ;
-        z-index: 9;
+        right: 0 ;
         width: 25px;
         height: 70px;
         .border-radius(3px 0 0 3px);
@@ -458,24 +461,87 @@
         display: none!important;
     }
      body   {
+
+            .maskLayer .uiDocumentPreview .fileContent .navigationContainer img, 
+            .maskLayer .uiDocumentPreview .fileContent .navigationContainer object {
+                 top: 34px;
+                -webkit-transform: translate(-50%, 0px);
+                transform: translate(-50%, 0px);
+            }       
             .maskLayer .uiDocumentPreview .fileContent {
                 margin: 0!important
             }
             .maskLayer .uiDocumentPreview {
                 padding: 0
             }
-
+            
+            
             #UISocialPopupWindow {
                  left: 0 !important;
                 max-height: none!important;
                 max-width: auto;
                 position: fixed !important;
-                top: 0px !important;
+                 top: 55px !important;               
+                -webkit-transform: none!important;
                 transform: none!important;
                 width: 100% !important;
-                max-width: none !important;    height: 100% !important;  
+                max-width: none !important; 
+                border: none!important;
+               
+                background: #ffffff url("@{images-path}/ShareImages/Background/texture.png") repeat  left top;
+                z-index: 999;
+                height: 100% !important;  
+                box-shadow: none;
+                .PopupContent {
+                    height: 100% !important;
+                    left: 0; 
+                    margin-bottom: 0px!important;
+                    margin-top: 0px!important;
+                    max-height: none!important;
+                    padding: 0 !important;
+                    position: static;
+                    top: 0;
+                    width: 100%;
+                    padding-top: 50px!important;
+                    background: #ffffff url("@{images-path}/ShareImages/Background/texture.png") repeat  left top;
+
+                }
+                #outerContainer {
+                    background: white; margin-top: 40px;
+                }
+                #viewerContainer {
+                    background: white; top: 20px;
+                }
+                .toolbar ,.popupHeader ,.maskLayer .uiDocumentPreview .resizeButton{
+                    display: none;
+                }
                 .maskLayer {
-                    top:60px;
+                    top:98px;
+                    position: static;
+                    background: none;
+                    .fileContent .navigationContainer {
+                        background: none!important;
+                    }                   
+                    .uiDocumentPreview {
+                        .exitWindow .uiIconClose {
+                            top: 25px;
+                            z-index: 999;
+                            left: 20px;
+                            right: auto;
+                            display: block;
+                            background: none!important;
+                            -webkit-transform: rotate(-45deg);
+                            transform: rotate(-45deg);
+                            width: 30px;
+                            height: 30px;
+                            border-left: 5px solid @borderColor;
+                            border-top: 5px solid @borderColor;
+                        }
+                        .uiContentBox {
+                            background: none ;
+                            padding: 0  20px!important;
+                        }
+                    }
                 }   
             }
             #outerContainer {
@@ -484,7 +550,12 @@
                    
         } 
 }
+//hack safari document preview
 
+@media (max-width: 1024px)  and(-webkit-min-device-pixel-ratio:0) {                    
+
+    body  #UISocialPopupWindow { top: 0px !important;}
+}
 
 @media (min-width: 768px) and (max-width: 980px) {
     .active.ToolbarContainer   {
@@ -500,9 +571,7 @@
     body .OfficeRightTDContainer {
         width: 36%!important;
     }
-     .toggle-right-bar {
-        right: 36%;
-     }
+    
 }
 
 
@@ -794,10 +863,10 @@
         .border-radius(0);
         right: -120px !important;
         top: 34px;
-        li  {
+        & > li  {
              float: left;
             font-size: 0;
-            a {
+         & >  a {
                 font-size: 0;
                 line-height: 0;
                 padding: 10px !important;
