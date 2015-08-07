@@ -288,11 +288,20 @@
     .uiPopup, .UIMaskWorkspace {
         left: 50%!important;
         top: 50%!important;
+        right: auto!important;
+        bottom: auto!important;
         position: fixed!important;
         width: 90%!important;
         max-width: 560px;
         max-height: 90%;
+        z-index: 10000!important;
         .translate(-50%, -50%);
+    }
+    .uiPopup {
+        //margin-top: 25px;
+    }
+    .UIMaskWorkspace {
+        margin-top: 0!important
     }
     .uiPopup {
         overflow: hidden;
@@ -304,9 +313,6 @@
         }
         .PopupContent {
             margin-top: 35px;
-            margin-bottom: 59px;
-            max-height: 300px;
-            overflow: auto;
         }
         .uiAction.uiActionBorder {
             background: #fff;
@@ -325,11 +331,7 @@
         top:0;
         bottom: 0;
         overflow-y: auto;
-        display: none;
-        -webkit-transform: translate(0px);
-        transform: translate(0px);
-        -webkit-transition: transform 400ms ease 0s;
-        transition: transform 400ms ease 0s;
+        left: 0;
     }
     .open-left-bar .LeftNavigationTDContainer {
         display: block;
@@ -339,16 +341,13 @@
            width: 30%;
     }
     .open-left-bar #UIToolbarContainer,.open-left-bar  .RightBodyTDContainer  {
-        -webkit-transform: translate(30%);
-        transform: translate(30%);
+       left: 30%;
     }
 
 
     .RightBodyTDContainer,#UIToolbarContainer,.RightBodyTDContainer{
-        -webkit-transform: translate(0px);
-        transform: translate(0px);
-        -webkit-transition: transform 400ms ease 0s;
-        transition: transform 400ms ease 0s;
+        left: 0;
+        .transition(left 200ms ease 0s);
     }
 
 
@@ -373,9 +372,7 @@
         .LeftNavigationTDContainer, 
         .uiBreadcumbsNavigationPortlet,
         .uiSpaceNavigationPortlet .spaceNavigation .spaceItemSelected {
-        	box-shadow: -1px 0 #ccc inset;
-        	-moz-box-shadow: -1px 0 #ccc inset;
-        	-webkit-box-shadow: -1px 0 #ccc inset;
+            .box-shadow(-1px 0 #ccc inset);
         }         
     }
 
@@ -410,7 +407,7 @@
     }
 
     .navItemSelected , .accordionBar ,.LeftNavigationTDContainer{
-        box-shadow: 0 0 1px rgba(0, 0, 0, 0.2) inset;
+        .box-shadow(0 0 1px rgba(0, 0, 0, 0.2) inset);
     }
     .accordionBar  {
         .uiIconArrowRight  {
@@ -544,11 +541,10 @@
                     }
                 }   
             }
-            #outerContainer {
-                min-width: auto;
-            }
-                   
-        } 
+        }
+        #outerContainer {
+            min-width: auto!important;
+        }
 }
 //hack safari document preview
 
@@ -624,8 +620,7 @@
     }
 
     .open-left-bar #UIToolbarContainer,.open-left-bar  .RightBodyTDContainer  {
-        -webkit-transform: translate(75%);
-        transform: translate(75%);
+        left: 75%;
     }
 
     .avatar-help-action {
@@ -758,6 +753,9 @@
     }
 
     body .uiSpaceMenu .spaceMenuTab > .active {background: none}
+    .uiPopup .uiIconResize {
+        display: none;
+    }
 }
 
 
@@ -768,14 +766,40 @@
         width: 40%;
     }
     .open-left-bar #UIToolbarContainer, .open-left-bar .RightBodyTDContainer {
-        -webkit-transform: translate(40%);
-        transform: translate(40%);
+        left: 40%;
     }
 
 }
 
 // for mobile only
 
+@media (min-width: 481px) and (max-width: 589px) {
+    .form-horizontal .control-group .control-label {
+        width: 140px;
+    }
+    .form-horizontal .control-group .controls {
+        margin-left: 160px;
+    }
+    select,
+    textarea,
+    input[type="text"],
+    input[type="password"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="week"],
+    input[type="number"],
+    input[type="email"],
+    input[type="url"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"],
+    .uneditable-input {
+        max-width: 94%;
+    }
+}
 @media (max-width: 480px) {
     .uiSpaceMenu .spaceMenuTab  span {
         display: none!important;
@@ -889,6 +913,4 @@
     .avatar-help-action a {
         font-weight: bold!important;
     }
-
-    
 }
