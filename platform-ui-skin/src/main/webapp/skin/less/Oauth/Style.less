@@ -32,7 +32,11 @@
         box-shadow: none;
         line-height: 42px;
         padding: 3px 10px 4px 20px;
-        margin: 0;
+        margin: -1px;
+        border: 1px solid #333;
+        [class^="uiIcon"]:hover {
+          background-image: url("@{images-path}/Icons/uiIconsSecondary.png") !important;
+        }
         .popupTitle {
           font-size: 18px;
           font-weight: bold;
@@ -41,6 +45,12 @@
     }  
     .popupContent {
       background: none;
+      .alert.alert-error {
+        background: none;
+        border: none;
+        box-shadow: none;
+        margin-bottom: 0;
+      }
       .content {
         padding: 20px 0 5px;
       }
