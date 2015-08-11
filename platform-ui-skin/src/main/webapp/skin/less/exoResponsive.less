@@ -156,7 +156,28 @@
 
 
 
+
 /* Landscape phone to portrait tablet */
+@media (max-width: 1024px) and (min-width: 768px) {
+    
+    // Hide Column Timeline when show Right Sidebar
+    .open-right-bar {
+        .uiActivityStream, .uiActivitiesLoader,
+        .activityStream {
+            background: none;
+        }
+        .activityStream .boxContainer {
+            margin-left: 0;
+        }
+        .activityBottom,
+        .activityTimeLine {
+            display: none;
+        }
+    }
+    .hidden-right-bar {
+
+    }
+}
 @media (max-width: 1024px) {
     .open-left-bar .toggle-left-bar {
         margin-left: -32px;
