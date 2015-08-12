@@ -5,14 +5,12 @@
 	padding: 10px;
 	.uiProfile {
 		padding: 10px 10px 0;
-		.uiIconGreenTick {
-			background-image: url("@{images-path}/Icons/uiIconsColor.png");
-			background-position: -80px -40px;
+		.uiIconGreenTick:before {
+            content: "\e76f";color: @successColor;
 		}
 
-		.uiIconGrayCircleTick {
-			background-image: url("@{images-path}/Icons/uiIconsColor.png");
-			background-position: -100px -40px;
+		.uiIconGrayCircleTick:before {
+            content: "\e770";
 		}
 
 		.uiIconEdit {

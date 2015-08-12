@@ -18,14 +18,7 @@
 
 [class^="uiIconForum"],
 .LeftNavigationTDContainer .uiPopup [class^="uiIconForum"]{
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  .ie7-restore-right-whitespace();
-  line-height: 16px;
-  vertical-align: text-top;
-  background-image: url("@{images-path}/forum/portlets/forum/Icons/uiIconsForumDefault.png");
-  background-repeat: no-repeat;
+  color: @colorIconDefault;
 }
 
 /* Blue icons with optional class, or on hover/active states of certain elements */
@@ -44,7 +37,7 @@
 .uiIconForumBlue, a:hover > [class^="uiIconForum"],
 a:hover [class^="uiIconForum"]
 {
-  background-image: url("@{images-path}/forum/portlets/forum/Icons/uiIconsForumPrimary.png");
+  color: @colorIconPrimary;
 
 }
 
@@ -56,12 +49,12 @@ a:hover [class^="uiIconForum"]
 .uiDropdownWithIcon .dropdown-submenu > a > [class^="uiIconForum"],
 .uiIconForumLightGray
 {
-  background-image: url("@{images-path}/forum/portlets/forum/Icons/uiIconsForumDefault.png");
+  color: @colorIconDefault;
 
 }
 
 .uiIconForumDarkGray, .uiIconForumExtra,.LeftNavigationTDContainer [class^="uiIconForum"] {
-  background-image: url("@{images-path}/forum/portlets/forum/Icons/uiIconsForumExtra.png");
+ color: @colorIconExtra;
 }
 
 /* White icons with optional class, or on hover/active states of Drop down with Icons */
@@ -81,163 +74,97 @@ a:hover [class^="uiIconForum"]
 .btn-primary [class^="uiIconForum"],
 .btn-primary:hover [class^="uiIconForum"], .uiIconForumWhite
 {
-  background-image: url("@{images-path}/forum/portlets/forum/Icons/uiIconsForumSecondary.png");
+ color: @colorIconSecondary
 }
 
 
 [class^="uiIconForumColor"]{
-  display: inline-block;
+  /*display: inline-block;
   width: 16px;
   height: 16px;
   .ie7-restore-right-whitespace();
   line-height: 16px;
   vertical-align: text-bottom;
   background-image: url("@{images-path}/forum/portlets/forum/Icons/uiIconsForumColor.png");
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;*/
 }
 
 .dropdown > a:hover > [class^="uiIconForumColor"],
 [class^="uiIconForumColor"]:hover,
 a:hover > [class^="uiIconForumColor"],
 i:hover [class^="uiIconForumColor"]{
-	background-image: url("@{images-path}/forum/portlets/forum/Icons/uiIconsForumColor.png");
-}
-
-.uiIconForumPending{
-	background-position: 0 0;
-}
-
-.uiIconForumTopic{
-	background-position: -20px 0;
-}
-
-.uiIconForumCreateTopic{
-	background-position: -40px 0;
-}
-
-.uiIconForumCreateForum{
-	background-position: -60px 0;
-}
-
-.uiIconForumStick{
-	background-position: -80px 0;
-}
-
-.uiIconForumUnStick{
-	background-position: -100px 0;
-}
-
-.uiIconForumAddCategory{
-	background-position: -120px 0;
-}
-
-.uiIconForumManageCategory{
-	background-position: -140px 0;
-}
-
-.uiIconForumModerator{
-	background-position: -160px 0;
-}
-
-.uiIconForumAdmin{
-	background-position: -180px 0;
-}
-
-.uiIconForumMerge{
-	background-position: 0 -20px;
-}
-
-.uiIconForumSplit{
-	background-position: -20px -20px;
-}
-
-.uiIconForumBan{
-	background-position: -40px -20px;
-}
-
-.uiIconForumShow{
-	background-position: -60px -20px;
-}
-
-.uiIconForumHide{
-	background-position: -80px -20px;
-}
-
-.uiIconForumSort{
-	background-position: -100px -20px;
-}
-
-.uiIconForumCensor{
-	background-position: -120px -20px;
-}
-
-.uiIconForumBBCode{
-	background-position: -140px -20px;
-}
-
-.uiIconForumPrune{
-	background-position: -160px -20px;
-}
-
-.uiIconForumBanIp{
-	background-position: -180px -20px;
-}
-
-.uiIconForumForward{
-	background-position: 0 -40px;
-}
-
-.uiIconForumViewStatistic{
-	background-position: -20px -40px;
-}
-
-.uiIconForumApprove{
-	background-position: -40px -40px;
-}
-
-.uiIconForumStar{
-	background-position: -60px -40px;
-}
-
-.uiIconForumPlay{
-	background-position: -80px -40px;
-}
-
-.uiIconForumPruneSettings{
-	background-position: -100px -40px;
-}
-
-/* icons for Color */
-
-.uiIconForumColorCloseTiny{
-	background-position: 0 0;
-}
-
-.uiIconForumColorLockTiny{
-	background-position: -20px 0;
-}
-
-.uiIconForumColorOffline{
-	background-position: -40px 0;
-}
-
-.uiIconForumColorUnread{
-	background-position: -60px 0;
-}
-
-.uiIconForumColorOnline{
-	background-position: -80px 0;
-}
-
-.uiIconForumColorAway{
-	background-position: -100px 0;
-}
-
-.uiIconForumColorBusy{
-	background-position: -120px 0;
+	//background-image: url("@{images-path}/forum/portlets/forum/Icons/uiIconsForumColor.png");
 }
 
 
 
+.uiIconForumPlay:before {
+	content: "\e775";
+}
+.uiIconForumColorCloseTiny:before {
+	content: "\e768";
+	font-size: 10px;
+}
 
+.uiIconForumViewStatistic:before {
+	content: "\e73f";
+}
+.uiIconForumBan:before {
+	content: "\e6e5";
+}
+
+.uiIconForumSort:before {
+	content: "\e759";
+}
+.uiIconForumAddCategory:before {
+	content: "\e6a7";
+}
+.uiIconForumManageCategory:before {
+	content: "\e6aa";
+}
+
+.uiIconForumForward:before {
+	content: "\e774";
+}
+
+.uiIconForumPending:before {
+	content: "\e749";
+}
+.uiIconForumHide:before {
+	content: "\e792";
+}
+.uiIconForumStar:before {
+	content: "\e779";
+} 
+.uiIconForumColorLockTiny:before {
+	content: "\e794";
+	font-size: 10px;
+}
+
+
+.uiIconForumStatus:before,
+.uiIconForumColorOffline:before,
+.uiIconForumColorUnread:before,
+.uiIconForumColorOnline:before,
+.uiIconForumColorAway:before,
+.uiIconForumColorBusy:before {
+	content: "\e76e";
+	 font-size: 10px;
+}
+
+.uiIconForumColorOffline {
+	color:#999;
+}
+.uiIconForumColorUnread {
+	color:@infoColor;
+}
+.uiIconForumColorOnline {
+	color:@successColor;
+}
+.uiIconForumColorAway {
+	color: @warningColor;
+}
+.uiIconForumColorBusy {
+	color:@errorColor;
+}
 

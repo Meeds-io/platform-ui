@@ -692,10 +692,10 @@
                 .translate(0, -50%);
             }
             .uiIconPLF24x24Help {
-                background-image: url("@{images-path}/platform/skin/Icons/uiIconsPLF24x24Default.png");
+                color: @colorIconDefault;
             }
             .uiIconPLF24x24Help:hover, .uiIconPLF24x24Help:active {
-                background-image: url("@{images-path}/platform/skin/Icons/uiIconsPLF24x24Primary.png");
+                color : @colorIconPrimary;
             }
             & + .divider {
                 margin: 0;
@@ -902,9 +902,9 @@
     }
 
     .UIToolbarContainer .action-addon [class^="uiIconPLF24x24"] {
-        background-image: url("@{images-path}/platform/skin/Icons/uiIconsPLF24x24Default.png");
+        color: @colorIconDefault;
         &:hover {
-          background-image: url("@{images-path}/platform/skin/Icons/uiIconsPLF24x24Primary.png");
+            color : @colorIconPrimary;
         }
     }
 

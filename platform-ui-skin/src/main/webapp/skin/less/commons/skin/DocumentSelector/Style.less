@@ -84,12 +84,7 @@
   border: 1px solid transparent;
   text-align: center;
   .uiIconUpload{
-    .square(16px);
-    background-image: url("@{images-path}/Icons/uiIconsDefault.png");
-    background-position: -20px -20px;
     margin-top: 4px;
-    display: inline-block;
-    &:hover { background-image: url("@{images-path}/Icons/uiIconsPrimary.png");}
   }
   .square(24px);
   display: block;
@@ -98,7 +93,7 @@
     #StatusElements .StatusHover();
     cursor: pointer;
     .uiIconUpload{
-      background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+        color: @colorIconPrimary;
     }
 
   }

@@ -79,20 +79,22 @@
 				  cursor: pointer;
 				  position: relative;
 				  &:before {
-				  	content: "";
 				  	position: absolute;
-					top: 50%;
-					margin-top: -8px;
-					left: -3px;
-					display: inline-block;
-					width: 16px;
-					height: 16px;
-					.ie7-restore-right-whitespace();
-					line-height: 16px;
-					vertical-align: text-top;
-					background-image: url("@{images-path}/Icons/uiIconsDefault.png");
-					background-repeat: no-repeat;
-					background-position: 0 -140px;
+					top: 6px;
+                    content: "\e75a";
+                  font-family: "PLF-FONT-ICONS";
+                  font-style: normal;
+                  font-variant: normal;
+                  font-weight: normal;
+                  line-height: 1;
+                  left:0;
+                  font-size: @sizeIcon12x12;
+                  text-transform: none;
+                  color: @colorIconDefault;
+
+                  /* Better Font Rendering =========== */
+                  -webkit-font-smoothing: antialiased;
+                  -moz-osx-font-smoothing: grayscale;
 				  }
 				  &:hover {
 					  color: @linkColorHover;
@@ -102,12 +104,12 @@
 					border-bottom: none;
 					.border-bottom-radius(@baseBorderRadius);
 					.ArrowIcon:before {
-						background-position: -40px -140px;
+                        content: "\e75c";
 					}
 				}
 				&:hover {
 					.ArrowIcon:before {
-						background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+						color: @colorIconPrimary;
 					}
 				}
 			}

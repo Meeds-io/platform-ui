@@ -24,16 +24,19 @@
 @import "../../mixins.less";
 
 .UIAccountPortlet {
-	.SearchIcon {
-	background-image: url("@{images-path}/Icons/uiIconsDefault.png");
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    display: inline-block;
-    height: 17px;
-    margin-left: 2px;
-    line-height: 20px;
-    vertical-align: text-top;
-    width: 16px;
+	.SearchIcon:before {
+        font-family: "PLF-FONT-ICONS";
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        line-height: 1;
+        text-transform: none;
+        color: @colorIconDefault;
+        font-size: @sizeIconDefault;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
 	}
 	.form-horizontal {
 		padding: 0;

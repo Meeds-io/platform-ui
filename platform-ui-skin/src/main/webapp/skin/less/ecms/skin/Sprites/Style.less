@@ -17,7 +17,7 @@
 
 [class^="uiIconEcms"],
 .LeftNavigationTDContainer .uiPopup [class^="uiIconEcms"] {
-  background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsDefault.png");
+   color: @colorIconDefault;
 }
 
 /* Blue icons with optional class, or on hover/active states of certain elements */
@@ -35,7 +35,7 @@ a:hover [class^="uiIconEcms"],
 [class^="uiIconEcms"]:hover,
 .uiIconEcmsBlue
 {
-  background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsPrimary.png");
+  color: @colorIconPrimary;
 }
 
 /* light grey icons with optional class, or on  */
@@ -46,13 +46,13 @@ a:hover [class^="uiIconEcms"],
 .uiDropdownWithIcon .dropdown-submenu> a > [class^="uiIconEcms"],
 .uiIconEcmsLightGray
 {
-  background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsDefault.png");
+  color: @colorIconDefault;
 }
 
 .uiIconEcmsDarkGray,
 .uiIconEcmsExtra,
 .LeftNavigationTDContainer [class^="uiIconEcms"] {
-  background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsExtra.png");
+  color: @colorIconExtra;
 }
 
 /* White icons with optional class, or on hover/active states of Drop down with Icons */
@@ -71,366 +71,223 @@ a:hover [class^="uiIconEcms"],
 .eventDayContainer [class^="uiIconEcms"],
 .uiIconEcmsWhite
 {
-  background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsSecondary.png");
+   color: @colorIconSecondary
 }
 
-.uiIconEcmsGeneralDrive,
-.uiIconEcmsDriveManager {
-	background-position: 0px 0px;
+.uiIconEcmsDriveManager:before {
+	content: "\e68a";
 }
 
-.uiIconEcmsGroupDrive,
-.uiIconEcms16x16DriveGroup {
-	background-position: -20px 0px;
-}
-
-.uiIconEcmsPersonalDrive,
-.uiIconEcms16x16DrivePersonal {
-	background-position: -40px 0px;
-}
-
-.uiIconEcmsPrivateDrive,
-.uiIconEcms16x16DrivePrivate {
-	background-position: -60px 0px;
-}
-
-.uiIconEcmsPublicDrive,
-.uiIconEcms16x16DrivePublic {
-	background-position: -80px 0px;
-}
-
-.uiIconEcmsTemplateList,
-.uiIconEcmsCLVTemplatesManager {
-	background-position: -100px 0px;
-}
-
-.uiIconEcmsTemplateDocument,
-.uiIconEcmsTemplatesManager {
-	background-position: -120px 0px;
-}
-
-.uiIconEcmsExplorerView,
-.uiIconEcmsViewManager {
-	background-position: -140px 0px;
-}
-
-.uiIconEcmsNameSpace,
-.uiIconEcmsNamespaceManager {
-	background-position: -160px 0px;
-}
-
-.uiIconEcmsQuery,
-.uiIconEcmsQueriesManager {
-	background-position: -180px 0px;
-}
-
-.uiIconEcmsScript,
-.uiIconEcmsScriptManager {
-	background-position: 0px -20px;
-}
-
-.uiIconEcmsFavorite,
-.uiIconEcmsAddToFavourite {
-	background-position: -20px -20px;
-}
-
-.uiIconEcmsCopy {
-	background-position: -40px -20px;
-}
-
-.uiIconEcmsCut {
-	background-position: -60px -20px;
-}
-
-.uiIconEcmsRemove {
-	background-position: -80px -20px;
-}
 
-.uiIconEcmsRename {
-	background-position: -100px -20px;
+.uiIconEcms16x16DriveGroup:before {
+	content: "\e651";
 }
 
-.uiIconEcmsAddSymLink,
-.uiIconEcmsCreateLink {
-	background-position: -120px -20px;
+.uiIconEcms16x16DrivePersonal:before {
+	content: "\e652";
 }
 
-.uiIconEcmsPaste {
-	background-position: -140px -20px;
+.uiIconEcms16x16DrivePrivate:before {
+	content: "\e653";
 }
 
-.uiIconEcmsViewDocument,
-.uiIconEcmsPermlink {
-	background-position: -160px -20px;
-}
-
-.uiIconEcmsCopyUrlToClipboard {
-	background-position: -180px -20px;
-}
 
-.uiIconEcmsCheckout {
-	background-position: 0px -40px;
+.uiIconEcms16x16DrivePublic:before {
+	content: "\e654";
 }
 
-.uiIconEcmsShowHideContent,
-.uiIconEcmsManageHidden {
-	background-position: -20px -40px;
+.uiIconEcmsCLVTemplatesManager:before {
+	content: "\e64f";
 }
 
-.uiIconEcmsPublication,
-.uiIconEcmsManagePublications {
-	background-position: -40px -40px;
-}
-
-.uiIconEcmsRelation,
-.uiIconEcmsManageRelations {
-	background-position: -60px -40px;
-}
 
-.uiIconEcmsVersion,
-.uiIconEcmsManageVersions {
-	background-position: -80px -40px;
+.uiIconEcmsTemplatesManager:before {
+	content: "\e64e";
 }
 
-.uiIconEcmsLocalisedContent,
-.uiIconEcmsAddLocalizationLink {
-	background-position: -100px -40px;
-}
 
-.uiIconEcmsOverloadThumbnail {
-	background-position: -120px -40px;
+.uiIconEcmsViewManager:before {
+	content: "\e649";
 }
 
-.uiIconEcmsApprove,
-.uiIconEcmsPublicationRequestApproval {
-	background-position: -140px -40px;
-}
 
-.uiIconEcmsPublish,
-.uiIconEcmsPublicationPublish {
-	background-position: -160px -40px;
+.uiIconEcmsNamespaceManager:before {
+	content: "\e64a";
 }
 
-.uiIconEcmsStructure,
-.uiIconEcmsShowJCRStructure {
-	background-position: -180px -40px;
-}
 
-.uiIconEcmsMetadata,
-.uiIconEcmsMetadataManager,
-.uiIconEcmsViewMetadatas {
-	background-position: 0px -60px;
+.uiIconEcmsQueriesManager:before {
+	content: "\e64b";
 }
 
-.uiIconEcmsType,
-.uiIconEcmsNodeTypeManager {
-	background-position: -20px -60px;
+.uiIconEcmsScriptManager:before {
+	content: "\e64d";
 }
 
-.uiIconEcmsProperties,
-.uiIconEcmsViewProperties {
-	background-position: -40px -60px;
+.uiIconEcmsFavorite:before,
+.uiIconEcmsAddToFavourite:before {
+	content: "\e779";
 }
 
-.uiIconEcmsReference,
-.uiIconEcmsViewReferences {
-	background-position: -60px -60px;
+.uiIconEcmsCopy:before {
+	content: "\e78f";
 }
 
-.uiIconEcmsShowHideRelation,
-.uiIconEcmsViewRelations {
-	background-position: -80px -60px;
+.uiIconEcmsCut:before {
+	content: "\e790";
 }
 
-.uiIconEcmsAddFolder {
-	background-position: -100px -60px;
+.uiIconEcmsRemove:before {
+	content: "\e76d";
 }
 
-.uiIconEcmsAddDocument {
-	background-position: -120px -60px;
+.uiIconEcmsCreateLink:before {
+	content: "\e643";
 }
 
-.uiIconEcmsExportNode {
-	background-position: -140px -60px;
+.uiIconEcmsPaste:before {
+	content: "\e796";
 }
 
-.uiIconEcmsImportNode {
-	background-position: -160px -60px;
+.uiIconEcmsPermlink:before {
+	content: "\e648";
 }
 
-.uiIconEcmsViewNodeType {
-	background-position: -180px -60px;
+.uiIconEcmsManageHidden:before {
+	content: "\e647";
 }
 
-.uiIconEcmsClipboard,
-.uiIconEcmsPatse {
-	background-position: 0px -80px;
+.uiIconEcmsManagePublications:before {
+	content: "\e646";
 }
 
-.uiIconEcmsViewDefault {
-	background-position: -40px -80px;
+.uiIconEcmsManageRelations:before {
+	content: "\e641";
 }
 
-.uiIconEcmsViewList,
-.uiIconEcmsViewB_list {
-	background-position: -20px -80px;
-}
 
-.uiIconEcmsViewIcons,
-.uiIconEcmsViewC_icon {
-	background-position: -60px -80px;
+.uiIconEcmsManageVersions:before {
+	content: "\e642";
 }
 
-.uiIconEcmsViewTimeline {
-	background-position: -80px -80px;
-}
 
-.uiIconEcmsViewAuthor,
-.uiIconEcmsViewAuthoring {
-	background-position: -100px -80px;
+.uiIconEcmsAddLocalizationLink:before {
+	content: "\e63e";
 }
 
-.uiIconEcmsViewAdmin,
-.uiIconEcmsViewE_admin {
-	background-position: -120px -80px;
+.uiIconEcmsPublicationRequestApproval:before {
+	content: "\e63d";
 }
 
-.uiIconEcmsViewCoverflow {
-	background-position: -140px -80px;
+.uiIconEcmsPublicationPublish:before {
+	content: "\e640";
 }
 
-.uiIconEcmsViewSimple {
-	background-position: -160px -80px;
+.uiIconEcmsStructure:before,
+.uiIconEcmsShowJCRStructure:before {
+	content: "\e698";
 }
 
-.uiIconEcmsViewWcm,
-.uiIconEcmsViewWeb {
-	background-position: -180px -80px;
+.uiIconEcmsMetadataManager:before,
+.uiIconEcmsViewMetadatas:before {
+	content: "\e638";
 }
 
-.uiIconEcmsExpand {
-	background-position: 0px -100px;
+.uiIconEcmsNodeTypeManager:before {
+	content: "\e63c";
 }
 
-.uiIconEcmsGoBack {
-	background-position: -20px -100px;
-}
 
-.uiIconEcmsGotoFolder {
-	background-position: -40px -100px;
+.uiIconEcmsViewProperties:before {
+	content: "\e639";
 }
 
-.uiIconEcmsArticle {
-	background-position: -60px -100px;
+.uiIconEcmsViewReferences:before {
+	content: "\e63a";
 }
 
-.uiIconEcmsAudit,
-.uiIconEcmsManageAuditing {
-	background-position: -80px -100px;
+.uiIconEcmsViewRelations:before {
+	content: "\e63b";
 }
 
-.uiIconEcmsNavigation,
-.uiIconEcmsContentNavigation {
-	background-position: -100px -100px;
+.uiIconEcmsAddFolder:before {
+	content: "\e6ac";
 }
 
-.uiIconEcmsCheckIn {
-	background-position: -120px -100px;
+.uiIconEcmsClipboard:before,
+.uiIconEcmsPatse:before {
+	content: "\e631";
 }
 
-.uiIconEcmsCheckOut {
-	background-position: -140px -100px;
-}
 
-.uiIconEcmsLock,
-.uiIconEcmsViewPermissions {
-	background-position: -160px -100px;
+.uiIconEcmsViewList:before,
+.uiIconEcmsViewB_list:before {
+	content: "\e69b";
 }
 
-.uiIconEcmsUnlock {
-	background-position: -180px -100px;
-}
 
-.uiIconEcmsEmptyTrash {
-	background-position: 0px -120px;
+.uiIconEcmsViewC_icon:before {
+	content: "\e635";
 }
 
-.uiIconEcmsMinusStar,
-.uiIconEcmsRemoveFromFavourite {
-	background-position: -20px -120px;
-}
 
-.uiIconEcmsPlayMedia {
-	background-position: -40px -120px;
+.uiIconEcmsViewAuthoring:before {
+	content: "\e62c";
 }
 
-.uiIconEcmsCustom {
-	background-position: -60px -120px;
+.uiIconEcmsViewE_admin:before {
+	content: "\e62b";
 }
 
-.uiIconEcmsContract,
-.uiIconEcmsCollapse {
-	background-position: -80px -120px;
+.uiIconEcmsViewWeb:before {
+	content: "\e62e";
 }
 
-.uiIconEcmsContract,
-.uiIconEcmsReturn {
-	background-position: -100px -120px;
+.uiIconEcmsNavigation:before,
+.uiIconEcmsContentNavigation:before {
+	content: "\e699";
 }
 
-.uiIconEcmsContract,
-.uiIconEcmsExecute {
-	background-position: -120px -120px;
+.uiIconEcmsCheckIn:before {
+	content: "\e624";
 }
 
-.uiIconEcmsDriveSiteManagement,
-.uiIconEcms16x16DriveManagedSites {
-	background-position: -140px -120px;
+.uiIconEcmsUnlock:before {
+	content: "\e79a";
 }
 
-.uiIconEcmsDriveTrash,
-.uiIconEcms16x16DriveTrash {
-	background-position: -160px -120px;
+.uiIconEcmsPlayMedia:before {
+	content: "\e775";
 }
 
-.uiIconEcmsManageContent {
-	background-position: -180px -120px;
+.uiIconEcmsReturn:before {
+	content: "\e756";
 }
 
-.uiIconEcmsClipboardMini {
-	background-position: 0px -140px;
+.uiIconEcmsContract:before,
+.uiIconEcmsExecute:before {
+	content: "\e628";
 }
 
-.uiIconEcmsRelationListMini,
-.uiIconEcmsRelationMini {
-	background-position: -20px -140px;
+.uiIconEcmsDriveSiteManagement:before,
+.uiIconEcms16x16DriveManagedSites:before {
+	content: "\e6aa";
 }
 
-.uiIconEcmsSearchMini,
-.uiIconEcmsSavedSearchesMini {
-	background-position: -40px -140px;
+.uiIconEcms16x16DriveTrash:before {
+	content: "\e650";
 }
 
-.uiIconEcmsTreeMini,
-.uiIconEcmsExplorerMini {
-	background-position: -60px -140px;
-}
 
-.uiIconEcmsHome {
-	background-position: -80px -140px;
+.uiIconEcmsClipboardMini:before {
+	content: "\e631";
 }
 
-.uiIconEcmsFileMini {
-	background-position: -100px -140px;
+.uiIconEcmsRelationListMini:before,.uiIconEcmsRelationMini:before{
+	content: "\e623";
 }
 
-.uiIconEcmsDottedArrow {
-	background-position: -120px -140px;
-}
 
-.uiIconEcmsTickMini {
-	background-position: -140px -140px;
-}
 
 /* Icons For WCM Template  */
 
@@ -571,22 +428,23 @@ a:hover [class^="uiIconEcms"],
 
 /* Icon Override */
 
-.uiIconEcmsTagExplorerMini {
-	background-image: url("@{images-path}/Icons/uiIconsDefault.png");
-	background-position: -60px -20px;
+.uiIconEcmsTagExplorerMini {	
+	&:before {
+		content: "\e77c";
+	}
+	color: @colorIconDefault;
 	&:hover {
-		background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+		color:@colorIconPrimary;
 	}
 }
 
-.uiIconEcmsDelete {
-	background-image: url("@{images-path}/Icons/uiIconsDefault.png");
-	background-position: -20px 0px;
+.uiIconEcmsDelete:before {
+	content: "\e76d";
 }
 
 .actionIcon:hover .uiIconEcmsDelete,
 .uiIconEcmsDelete:hover {
-	background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+	color:@colorIconPrimary;	
 }
 
 
@@ -601,44 +459,44 @@ a:hover [class^="uiIconEcms"],
 	.uiIconEcmsVote,
 	.uiIconEcmsAddCategory,
 	.uiIconEcmsTaggingDocument {
-		background-image: url("@{images-path}/Icons/uiIconsDefault.png");
+		color:@colorIconDefault;
 	}
 }
 
-.uiIconEcmsEditDocument {
-	background-position: -40px 0px;
+.uiIconEcmsEditDocument:before {
+	content: "\e791";
 }
 
-.uiIconEcmsManageActions {
-	background-position: 0px -40px;
+.uiIconEcmsManageActions:before {
+	content: "\e629";
 }
 
-.uiIconEcmsTaggingDocument {
-	background-position: -60px -20px;
+.uiIconEcmsTaggingDocument:before {
+	content: "\e77c";
 }
 
-.uiIconEcmsWatchDocument {
-	background-position: -100px 0px;
+.uiIconEcmsWatchDocument:before {
+	content: "\e79b";
 }
 
-.uiIconEcmsManageCategories {
-	background-position: -20px -60px;
+.uiIconEcmsManageCategories:before {
+	content: "\e63c";
 }
 
-.uiIconEcmsUpload {
-	background-position: -20px -20px;
+.uiIconEcmsUpload:before {
+	content: "\e78d";
 }
 
-.uiIconEcmsComment {
-	background-position: -140px -20px;
+.uiIconEcmsComment:before {
+	content: "\e783";
 }
 
-.uiIconEcmsAddCategory {
-	background-position: -180px -120px;
+.uiIconEcmsAddCategory:before {
+	content: "\e6a7";
 }
 
-.uiIconEcmsVote {
-	background-position: -20px -80px;
+.uiIconEcmsVote:before {
+	content: "\e77e";
 }
 
 .dropdown-menu > li > a,
@@ -661,7 +519,7 @@ a:hover [class^="uiIconEcms"],
 	.uiIconEcmsAddCategory:hover,
 	.actionIcon:hover .uiIconEcmsTaggingDocument,
 	.uiIconEcmsTaggingDocument:hover {
-		background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+		color:@colorIconPrimary;	
 	}
 }
 
@@ -681,18 +539,16 @@ a:hover [class^="uiIconEcms"],
 	.actionIcon:hover .uiIconEcmsVote,
 	.uiIconEcmsVote:hover,
 	.actionIcon:hover .uiIconEcmsTaggingDocument,
-	.uiIconEcmsTaggingDocument:hover {
-		background-image: url("@{images-path}/Icons/uiIconsSecondary.png");
+	.uiIconEcmsTaggingDocument:hover { 
+		color: @colorIconSecondary
 	}
 }
 
 /************** icons Ecms 24x24 *************************/
 
 [class^="uiIconEcms24x24"]{
-  background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcms24x24Default.png");
-	width: 24px;
-  height: 24px;
-  line-height: 24px;
+  color: @colorIconDefault;
+  font-size:@sizeIcon24x24;
 }
 
 /* Blue icons */
@@ -700,56 +556,74 @@ a:hover [class^="uiIconEcms"],
 [class^="uiIconEcms24x24"]:hover,
 .driveLabel:hover [class^="uiIconEcms24x24"],
 .uiIconEcms24x24Blue {
-  background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcms24x24Primary.png");
+  color:@colorIconPrimary;	
 }
 
 /* LightGray icons */
 .uiIconEcms24x24LightGray {
-  background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcms24x24Default.png");
+  color: @colorIconDefault;
 }
 
 .uiIconEcms24x24DarkGray,
 .uiIconEcms24x24Extra,
 .LeftNavigationTDContainer [class^="uiIconEcms24x24"] {
-  background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcms24x24Extra.png");
+   color: @colorIconExtra;
 }
 
-.uiIconEcms24x24DriveGeneral {
-	background-position: 0px 0px;
+.uiIconEcms24x24DriveGeneral:before {
+	content: "\e68a";
 }
 
-.uiIconEcms24x24DriveGroup {
-	background-position: -28px 0px;
+.uiIconEcms24x24DriveGroup:before {
+	content: "\e651";
 }
 
-.uiIconEcms24x24DrivePersonal {
-	background-position: -56px 0px;
+.uiIconEcms24x24DrivePersonal:before {
+	content: "\e652";
 }
 
-.uiIconEcms24x24DrivePrivate {
-	background-position: -84px 0px;
+
+.uiIconEcms24x24White {
+   color: @colorIconSecondary;
 }
 
-.uiIconEcms24x24DrivePublic {
-	background-position: -112px 0px;
+
+ [class^="uiIconEcms24x24"]{
+	font-size: 22px;
+ }
+
+ [class^="uiIconEcms16x16"]{
+	font-size: 14px;
+ }
+
+.uiIconEcmsLock:before,.uiIconEcmsViewPermissions:before {
+	content: "\e794";
+}
+.uiIconEcmsPlayMedia:before {
+	content: "\e775";
+}
+.uiIconEcmsSearchMini:before,.uiIconEcmsSavedSearchesMini:before {
+	content: "\e74a";
 }
 
-.uiIconEcms24x24DriveManagedSites {
-	background-position: -140px 0px;
+.uiIconEcmsHome:before {
+	content: "\e6bf";
 }
 
-.uiIconEcms24x24DriveTrash {
-	background-position: -168px 0px;
+.uiIconEcmsTickMini:before {
+	content: "\e76f";
 }
 
 .uiIconEcms24x24White {
-  background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcms24x24Secondary.png");
+   color: @colorIconSecondary;
 }
 
 // Define icons for Share Content
 //=============================================
 [class^="uiIconShareDocument"], .uiIconEcmsShareDocuments {
-	background-image: url("@{images-path}/ecms/skin/Icons/uiIconShareDocumentLightGray.png")!important;
+    &:before {
+        content: "\e777";
+    }
 }
 
 
@@ -761,7 +635,7 @@ a:hover [class^="uiIconEcms"],
 [class^="uiIconShareDocument"]:hover, .uiActionBar [class^="uiIconShareDocument"]:hover, [class^="uiIconShareDocument"].uiIconBlue,
 .ActionMenuPlaceHolder .uiFileViewActionBar .uiRightPopupMenuContainer li > a:hover > [class^="uiIconShareDocument"]
 {
-  background-image: url("@{images-path}/ecms/skin/Icons/uiIconShareDocumentPrimary.png")!important;
+    color: @colorIconPrimary!important;
 }
 
 /* light grey icons with optional class, or on  */
@@ -771,7 +645,7 @@ a:hover [class^="uiIconEcms"],
 .uiDropdownWithIcon .dropdown-submenu> a > [class^="uiIconShareDocument"],
 .uiActionBar [class^="uiIconShareDocument"], [class^="uiIconShareDocument"].uiIconLightGray
 {
-  background-image: url("@{images-path}/ecms/skin/Icons/uiIconShareDocumentLightGray.png")!important;
+    color:@colorIconDefault!important;
 
 }
 
@@ -798,7 +672,7 @@ a:hover [class^="uiIconEcms"],
 .uiQuestions .attachmentContentImage .actionAttachImg a:hover i,.viewIconContainer > div:hover [class^="uiIconShareDocument"],
 [class^="uiIconShareDocument"].uiIconWhite
 {
-  background-image: url("@{images-path}/ecms/skin/Icons/uiIconShareDocumentWhite.png")!important;
+    color:@colorIconSecondary!important;
 }
 
 // Fix only icon class .uiIconEcmsShareDocuments
@@ -811,7 +685,7 @@ a:hover [class^="uiIconEcms"],
 .uiIconEcmsShareDocuments:hover, .uiActionBar .uiIconEcmsShareDocuments:hover, .uiIconEcmsShareDocuments.uiIconBlue,
 .ActionMenuPlaceHolder .uiFileViewActionBar .uiRightPopupMenuContainer li > a:hover > .uiIconEcmsShareDocuments
 {
-  background-image: url("@{images-path}/ecms/skin/Icons/uiIconShareDocumentPrimary.png")!important;
+    color:@colorIconPrimary!important;
 }
 
 /* light grey icons with optional class, or on  */
@@ -821,7 +695,7 @@ a:hover [class^="uiIconEcms"],
 .uiDropdownWithIcon .dropdown-submenu> a > .uiIconEcmsShareDocuments,
 .uiActionBar .uiIconEcmsShareDocuments, .uiIconEcmsShareDocuments.uiIconLightGray
 {
-  background-image: url("@{images-path}/ecms/skin/Icons/uiIconShareDocumentLightGray.png")!important;
+    color:@colorIconDefault!important;
 
 }
 
@@ -847,5 +721,134 @@ a:hover [class^="uiIconEcms"],
 .viewIconContainer > div:hover .uiIconEcmsShareDocuments,
 .uiIconEcmsShareDocuments.uiIconWhite
 {
-  background-image: url("@{images-path}/ecms/skin/Icons/uiIconShareDocumentWhite.png")!important;
+    color:@colorIconSecondary!important;
+}
+.uiIconEcmsUnlock:before {
+	content: "\e79a";
+}
+
+.uiIconEcmsFileMini:before {
+	content: "\e6ba";
+}
+.uiIconEcmsRemove:before {
+	content: "\e76d";
+}
+
+.uiIconEcmsPaste:before {
+	content: "\e796";
+}
+
+.uiIconEcmsGoBack:before {
+	content: "\e760";
+}
+
+.uiIconEcmsGotoFolder:before {
+	content: "\e6ae";
+}
+
+.uiIconEcmsViewList:before ,.uiIconEcmsViewB_list:before {
+	content: "\e69b";
+}
+.uiIconEcmsDottedArrow:before {
+	content: "\e750";
+}
+
+.uiIconEcmsNavigation:before {
+	content: "\e699";
+}
+.uiIconEcmsAudit:before ,.uiIconEcmsManageAuditing:before {
+	content: "\e78c";
+}
+.uiIconEcmsTreeMini:before,.uiIconEcmsExplorerMini:before,.uiIconEcmsTree:before  {
+	content: "\e698";
+}
+.uiIconEcmsCut:before{
+	content: "\e790";
+}
+.uiIconEcmsCopy:before {
+	content: "\e78f";
+}
+.uiIconEcmsMinusStar:before ,.uiIconEcmsRemoveFromFavourite:before{
+	content: "\e77b";
+}
+
+.uiIconEcmsReturn:before  {
+	content: "\e756";
+}
+
+.uiIconEcmsGeneralDrive:before,
+.uiIconEcmsDriveManager:before {
+	content: "\e68a";
+}
+
+.uiIconEcmsCollapse:before {
+	content: "\e6a2";
+}
+
+
+.uiIconEcmsExpand:before {
+	content: "\e6a5";
+}
+.uiIconEcmsAddFolder:before {
+	content: "\e6ac";
+}
+.uiIconEcmsCheckout:before {
+	content: "\e644";
+}
+
+.uiIconEcms24x24DriveGeneral:before {
+	content: "\e68a";
+} 
+
+.uiIconEcms24x24DriveGroup:before {
+	content: "\e651";
+}
+
+.uiIconEcms24x24DrivePrivate:before {
+	content: "\e653";
+}
+
+.uiIconEcms24x24DrivePublic:before {
+	content: "\e654";
+}
+
+.uiIconEcms24x24DriveTrash:before ,
+.uiIconEcmsDriveTrash:before,
+.uiIconEcms16x16DriveTrash:before {
+	content: "\e650";
+}
+
+.uiIconEcmsDottedArrow {
+	font-size: 6px;
+}
+
+.uiItemList li > [class^="uiIcon"] {
+    margin: 7px 0 0 -15px!important;
+}
+.uiIconEcmsViewAdmin:before {
+	content: "\e62b";
+}
+
+.uiSelectContent  {
+	.normalItem ,.selectedItem{
+		 [class^="uiIcon"] {font-size: 12px;}
+	}
+}
+
+.uiIconEcms24x24DriveManagedSites:before {
+	content: "\e6aa";
+}
+
+.uiIconEcmsViewInfo:before {
+content: "\e767";
+}
+
+.uiIconEcmsDownload:before {
+	content: "\e784";
+}
+.uiIconEcmsRestoreFromTrash:before {
+            content: "\e798";
+}
+.uiIconEcmsMoveNode:before {
+	content: "\e6a5";
 }

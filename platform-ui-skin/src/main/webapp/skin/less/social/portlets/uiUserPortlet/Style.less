@@ -87,27 +87,34 @@ td.right-column-containerTDContainer {
 	}
 	[class^="uiIconUser"], [class^="uiIconStatus"],
 	[class^="uiIconUser"]:hover, [class^="uiIconStatus"]:hover, .btn:hover .uiIconStatusDisconnect {
-		display: inline-block;
-		width: 16px;
-		height: 16px;
-		.ie7-restore-right-whitespace();
-		line-height: 16px;
-		vertical-align: text-top;
-		margin-top: 0;
-		background-image: url("@{images-path}/Icons/uiIconsColor.png")!important;
-		background-repeat: no-repeat;
+        font-family: "PLF-FONT-ICONS";
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        line-height: 1;
+        text-transform: none;
+        color: @colorIconDefault;
+        font-size: @sizeIconDefault;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
 	}
+    .uiIconUserAvailable:before, .uiIconUserOnline:before ,
+    .uiIconUserInvisible:before, .uiIconUserOffline:before ,.uiIconUserAway:before,.uiIconUserDonotdisturb:before{
+        content: "\e76e"
+    }
 	.uiIconUserAvailable, .uiIconUserOnline {
-		background-position: 0 -60px;
+        color: #2ec24d;
 	}
 	.uiIconUserInvisible, .uiIconUserOffline {
-		background-position: -60px -60px;
+       color:#e3e3e3;
 	}
 	.uiIconUserAway {
-		background-position: -40px -60px;
+        color:#fd8c40;
 	}
 	.uiIconUserDonotdisturb {
-		background-position: -20px -60px;
+        color:#c72222;
 	}
 	.uiIconStatusConnect {
 		display: none;
@@ -116,10 +123,10 @@ td.right-column-containerTDContainer {
 		display: none;
 	}
 	.uiIconStatusCancel {
-		background-position:-80px -0px;
+		//background-position:-80px -0px;
 	}
 	.uiIconStatusReceived {
-		background-position:-80px -0px;
+		//background-position:-80px -0px;
 	}
 	.uiIconStatusDeny {
 		display: none;
@@ -128,10 +135,17 @@ td.right-column-containerTDContainer {
 		display: none;
 	}
 	.uiIconStatusConnected {
-		background-position: -160px -40px;
+        color: @successColor;
+        &:before {
+            content: "\e76f";
+        }
+
 	}
 	.uiIconStatusDisconnect {
-		background-position: -180px -40px;
+        color: @errorColor;
+        &:before {
+            content: "\e75e";
+        }
 	}
 	.hide-default, .user-actions:hover .show-default {
 		display: none;

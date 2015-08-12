@@ -16,8 +16,7 @@
 
 [class^="uiIconSoc"],
 .LeftNavigationTDContainer .uiPopup [class^="uiIconSoc"]{
- // background-image: url("@{images-path}/social/skin/Icons/uiIconsSocExtra.png");
-  background-image: url("@{images-path}/social/skin/Icons/uiIconsSocDefault.png");
+  color: @colorIconDefault;
 }
 
 /* Blue icons with optional class, or on hover/active states of certain elements */
@@ -35,7 +34,7 @@ a:hover [class^="uiIconSoc"],
 [class^="uiIconSoc"]:hover,
 .uiIconSocBlue
 {
-  background-image: url("@{images-path}/social/skin/Icons/uiIconsSocPrimary.png");
+  color: @colorIconPrimary;
 }
 
 /* light grey icons with optional class, or on  */
@@ -46,11 +45,11 @@ a:hover [class^="uiIconSoc"],
 .uiDropdownWithIcon .dropdown-submenu> a > [class^="uiIconSoc"],
 .uiDropDownCal li a [class^="uiIconSoc"],
 .uiIconSocLightGray {
-  background-image: url("@{images-path}/social/skin/Icons/uiIconsSocDefault.png");
+ color: @colorIconDefault;
 }
 
 .uiIconSocDarkGray, .uiIconSocExtra, .LeftNavigationTDContainer [class^="uiIconSoc"] {
-  background-image: url("@{images-path}/social/skin/Icons/uiIconsSocExtra.png");
+  color: @colorIconExtra;
 }
 
 
@@ -70,152 +69,115 @@ a:hover [class^="uiIconSoc"],
 .eventAllDay [class^="uiIconSoc"],
 .eventDayContainer [class^="uiIconSoc"], .uiIconSocWhite
 {
-  background-image: url("@{images-path}/social/skin/Icons/uiIconsSocSecondary.png");
+  color: @colorIconSecondary
 }
 
 .activityTimeLine [class^="uiIcon"], .activityTimeLine [class^="uiIcon"]:hover {
-	background-image: url("@{images-path}/social/skin/Icons/uiIconsSocSecondary.png");
+	color: @colorIconSecondary
 }
 
-.uiIconSocAddFile {
-	background-position: 0px 0px;
+.uiIconSocAddFile:before {
+	content: "\e6b7";
 }
 
-.uiIconSocLastestReply {
-	background-position: -20px 0px;
+.uiIconSocLastestReply:before {
+	content: "\e774";
 }
 
-.uiIconSocTotateToRight {
-	background-position: -40px 0px;
+.uiIconSocRotateToRight:before,.uiIconSocTotateToRight:before  {
+	content: "\e757";
 }
 
-.uiIconSocTotateToLeft {
-	background-position: -60px 0px;
+.uiIconSocTotateToLeft:before {
+	content: "\e758";
 }
 
-.uiIconSocZoomIn {
-	background-position: -80px 0px;
+.uiIconSocZoomIn:before {
+	content: "\e74c";
 }
 
-.uiIconSocZoomOut {
-	background-position: -100px 0px;
+.uiIconSocZoomOut:before {
+	content: "\e74d";
 }
 
-.uiIconSocGroup {
-	background-position: -120px 0px;
+.uiIconSocSimplePlus:before {
+	content: "\e74b";
 }
 
-.uiIconSocSimplePlus {
-	background-position: -160px 0px;
+.btn {
+	.uiIconSocSimplePlus {
+		font-size: 11px;
+   		 margin-right: 5px;
+	}
 }
 
-.uiIconSocPhone {
-	background-position: -180px 0px;
+.uiIconSocCalendarMini:before {
+	content: "\e68c";
 }
 
-.uiIconSocCalendarMini {
-	background-position: 0px -20px;
+.uiIconSocAnswersMini:before {
+	content: "\e68b";
 }
 
-.uiIconSocAnswersMini {
-	background-position: -20px -20px;
+
+.uiIconSocFileSharing:before {
+	content: "\e6b3";
 }
 
-.uiIconSocContentMini {
-	background-position: -40px -20px;
+.uiIconSocForumMini:before{
+	content: "\e668";
 }
 
-.uiIconSocFileSharing {
-	background-position: -60px -20px;
+.uiIconSocLinkMini:before {
+	content: "\e793";
 }
 
-.uiIconSocForumMini {
-	background-position: -80px -20px;
+.uiIconSocPoll:before {
+	content: "\e73e";
 }
 
-.uiIconSocLinkMini {
-	background-position: -100px -20px;
+.uiIconSocSpaceMini:before {
+	content: "\e6e1";
 }
 
-.uiIconSocPoll {
-	background-position: -120px -20px;
+.uiIconSocWikiMini:before {
+	content: "\e695";
 }
 
-.uiIconSocSpaceMini {
-	background-position: -140px -20px;
+.uiIconSocVote:before {
+	content: "\e77e";
 }
 
-.uiIconSocTaskSharing {
-	background-position: -160px -20px;
-}
-
-.uiIconSocUserProfile {
-	background-position: -180px -20px;
-}
-
-.uiIconSocWikiMini {
-	background-position: 0px -40px;
-}
-
-.uiIconSocVote {
-	background-position: -20px -40px;
-}
-
-.uiIconSocMention {
-  background-position: -140px 0px;
-}
 
 /* Icons that we cant change their name */
-.uiIconSocUIDocActivityComposer {
-	background-image: url("@{images-path}/Icons/uiIconsDefault.png");
-	background-position: -60px -40px;
+.uiIconSocUIDocActivityComposer:before {
+	content: "\e6ba";
 }
 
 .uiIconSocUIDocActivityComposer:hover,
 .actionIcon:hover .uiIconSocUIDocActivityComposer {
-	background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+	color: @colorIconPrimary;
 }
 
-.uiIconSocUILinkActivityComposer {
-  background-image: url("@{images-path}/Icons/uiIconsDefault.png");
-  background-position: -80px 0px;
+.uiIconSocUILinkActivityComposer:before {
+  content: "\e793";
 }
 
 .uiIconSocUILinkActivityComposer:hover,
 .actionIcon:hover .uiIconSocUILinkActivityComposer {
-  background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+  color: @colorIconPrimary;
 }
 
-.uiIconSocConnectUser {
-	background-position: -40px -40px;
+.uiIconSocConnectUser:before {
+	content: "\e6c9";
 }
 
-.uiIconSocCancelConnectUser {
-	background-position: -60px -40px;
+.uiIconSocCancelConnectUser:before {
+	content: "\e6c3";
 }
 
-.uiIconSocAcceptConnectUser {
-	background-position: -80px -40px;
-}
-
-.uiIconSocGtalk {
-  background-position: -100px -40px;
-}
-
-.uiIconSocMSN {
-  background-position: -120px -40px;
-}
-
-.uiIconSocSkype {
-  background-position: -140px -40px;
-}
-
-.uiIconSocYahoo {
-  background-position: -160px -40px;
-}
-
-.uiIconSocOther {
-  background-position: -180px -40px;
+.uiIconSocAcceptConnectUser:before {
+	content: "\e6c2";
 }
 
 .uiProfileUserSearch .uiGrayLightBox input {

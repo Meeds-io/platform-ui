@@ -15,8 +15,7 @@
 // <i class="iconinbox iconwhite"></i>
 
 [class^="uiIconWiki"],.LeftNavigationTDContainer .uiPopup [class^="uiIconWiki"]{
-  //background-image: url("@{images-path}/wiki/Icons/uiIconsWikiExtra.png");
-  background-image: url("@{images-path}/wiki/Icons/uiIconsWikiDefault.png");
+ color: @colorIconDefault;
 }
 
 /* Blue icons with optional class, or on hover/active states of certain elements */
@@ -34,7 +33,7 @@ a:hover [class^="uiIconWiki"],
 [class^="uiIconWiki"]:hover,
 .uiIconWikiBlue
 {
-  background-image: url("@{images-path}/wiki/Icons/uiIconsWikiPrimary.png");
+ color: @colorIconPrimary;
 
 }
 
@@ -47,14 +46,14 @@ a:hover [class^="uiIconWiki"],
 .uiDropdownWithIcon .dropdown-submenu> a > [class^="uiIconWiki"],
 .uiDropDownCal li a [class^="uiIconWiki"]
 {
-  background-image: url("@{images-path}/wiki/Icons/uiIconsWikiDefault.png");
+ color: @colorIconDefault;
 
 }
 
 .uiIconWikiDarkGray,
 .uiIconWikiExtra,
 .LeftNavigationTDContainer [class^="uiIconWiki"] {
-  background-image: url("@{images-path}/wiki/Icons/uiIconsWikiExtra.png");
+ color: @colorIconExtra;
 }
 /* White icons with optional class, or on hover/active states of Drop down with Icons */
 
@@ -72,31 +71,12 @@ a:hover [class^="uiIconWiki"],
 .eventDayContainer [class^="uiIconWiki"],
 .uiIconWikiWhite
 {
-  background-image: url("@{images-path}/wiki/Icons/uiIconsWikiSecondary.png");
+  color: @colorIconSecondary
 
 }
 
 
-.uiIconWikiWiki {
-	background-position: 0px 0px;
-}
 
-.uiIconWikiRickText {
-	background-position: -20px 0px;
-}
-
-.uiIconWikiHelp {
-	background-position: -40px 0px;
-}
-
-.uiIconWikiMyWiki {
-	background-position: -60px 0px;
-}
-
-.uiIconWikiRevision {
-	background-position: -80px 0px;
-}
-
-.uiIconWikiRestrictedFile {
-	background-position: -100px 0px;
-}
+.uiIconWikiRestrictedFile:before {content: "\e6b2";} 
+.uiIconWikiWiki:before {content: "\e695";}
+.uiIconWikiMyWiki:before {content: "\e67a";} 

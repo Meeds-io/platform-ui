@@ -1,13 +1,25 @@
 // CSS Reset
 
+@font-face {
+	font-family: 'PLF-FONT-ICONS';
+	src:url('../fonts/PLF-FONT-ICONS.eot?-m9uidt');
+	src:url('../fonts/PLF-FONT-ICONS.eot?#iefix-m9uidt') format('embedded-opentype'),
+		url('../fonts/PLF-FONT-ICONS.ttf?-m9uidt') format('truetype'),
+		url('../fonts/PLF-FONT-ICONS.woff?-m9uidt') format('woff'),
+		url('../fonts/PLF-FONT-ICONS.svg?-m9uidt#PLF-FONT-ICONS') format('svg');
+	font-weight: normal;
+	font-style: normal;
+} 
+
 
 // Core variables and mixins
 @import "_boostrap.less";
 @import "variables.less"; // Modify this for custom colors, font-sizes, etc
 @import "mixins.less";
 @import "reset.less";
+@import "font-icon.less";
 @import "component/Tabs/Style.less";
-@import "component/Popup/Style.less";
+@import "component/Popup/Style.less"; 
 @import "component/Dropdown/Style.less";
 @import "component/Sprites/Style.less";
 @import "component/Buttons/Style.less";
@@ -983,3 +995,5 @@ hr {
 .width-full {
     width: 100%;
 }
+
+@import "exoResponsive.less";

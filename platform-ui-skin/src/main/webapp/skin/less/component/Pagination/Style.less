@@ -11,6 +11,7 @@
 	> .pagesTotalNumber {
 		font-weight: bold;
 	}
+
 }
 
 .uiPageIterator ul {
@@ -53,7 +54,7 @@
 .uiPageIterator ul > li.disabled > a > [class^="uiIcon"],
 .uiPageIterator ul > li.disabled > a:hover > [class^="uiIcon"],
 .uiPageIterator ul > li.disabled > a:active > [class^="uiIcon"] {
-	background-image: url("@{images-path}/Icons/uiIconsDefault.png");
+	
 }
 
 .table + .pageIteratorBorder {
@@ -71,12 +72,16 @@
     .size(26px, auto);
     line-height: 18px;
     outline: medium none;
-    //background: linear-gradient(to bottom, @baseBackground, @primaryBackground);
-   // background-position: right top, 0 0;
     border: 1px solid @borderColor;
     border-radius: 4px;
     display: inline-block;
     line-height: 20px;
     overflow: hidden;
     vertical-align: middle;
+}
+
+.uiPageIterator {
+	[class^="uiIcon"]{
+		font-size: @sizeIcon12x12;
+	}
 }
