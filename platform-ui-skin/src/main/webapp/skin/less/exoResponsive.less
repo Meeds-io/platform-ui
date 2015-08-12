@@ -8,7 +8,6 @@
     }
 }
 
-
 .uiUserActivitiesDisplay  + .activityTop {
     display: none;
 }
@@ -171,14 +170,25 @@
         }
         .activityBottom,
         .activityTimeLine {
-            display: none;
+            display: none!important;
         }
     }
     .hidden-right-bar {
 
     }
 }
+@media (min-width: 1025px) {
+    html {
+        overflow-y: auto!important;
+    }
+    .website-hompage .uiNavigation .toggle-left-bar {
+        display: none;
+    }
+}
 @media (max-width: 1024px) {
+    #Officebody > div > div > div > .UITableColumn {
+        background: @contentBackground;
+    }
     .open-left-bar .toggle-left-bar {
         margin-left: -32px;
     }
