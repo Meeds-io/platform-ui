@@ -34,6 +34,16 @@
 		float: right;
 	}
 }
+body.phoneDisplay .uiComposer.uiGrayLightBox {
+	position: relative;
+	margin-top: 45px;
+	.button-group {
+		position: absolute;
+		bottom: 100%;
+		margin-bottom: 15px;
+		right: 0;
+	}
+}
 .uiLinkShareDisplay {
 	position: relative;
 	.border-radius(@baseBorderRadius);
@@ -1145,14 +1155,44 @@ blockquote:after {
     padding: 5px 8px;
 	color: @baseColorDark;
 }
-
+.uiUserActivityStreamPortlet {
+	.uiPopup {
+		z-index: 100;
+	}
+}
 @media (max-width: 767px ) {
+	body {
+		overflow-y: hidden;
+		height: 100%;
+	}
 	.activityTimeLine.pull-left {
 	    display: none;
 	}
-	
+	.footComment {
+		position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    box-shadow: 0px 0px 5px 0px #999;
+    border-top: solid 1px @borderColor;
+    background-color: #f9f9f9;
+    .commmentLeft {
+    	display:none;
+    }
+    .commentRight {
+    	button {
+    	  margin: 0px 5px;
+    	}
+	    .commentInput {
+	      margin: 11px 100px 10px 10px;
+	    }
+    }
+	}
 	.activityStreamStatus .arrowBottom {
-	    display: none;
+	  display: none;
+	}
+	.activityStream.block-activity .inputContainer {
+    	display: none !important;
 	}
 	.activityStream .arrowLeft {
 		display: none;
@@ -1169,14 +1209,34 @@ blockquote:after {
 	.activityBottom {
 		background: none;
 	}
+	.activityStream .contentBox {
+		padding-bottom: 0px;
+	}
+	.activityStream .contentBox .actionBar {
+		border-bottom: none;
+	}
 	.activityStream .contentBox .listLikedBox {
-	    border: medium none;
-	    display: none;
-	    padding: 0;
+    border: medium none;
+    display: none;
+    padding: 0;
 	}
 	.activityStream .contentBox .commentBox {
-	    border: medium none;
-	    display: none;
+    border: medium none;
+    display: none;
+	}
+	.activityStream.block-activity .contentBox .actionBar {
+		border-bottom: 1px solid @borderColor;
+	}
+	.activityStream.block-activity .contentBox {
+		padding-bottom: 15px;
+	}
+	.activityStream.block-activity .contentBox .listLikedBox {
+    display: block;
+    padding: 16px 0px 16px 16px;
+	}
+	.activityStream.block-activity .contentBox .commentBox {
+    border-top: 1px solid @borderColor;
+    display: block;
 	}
 	.activityStream .introBox .isPreviewable .mediaContent {
 		float: none;
