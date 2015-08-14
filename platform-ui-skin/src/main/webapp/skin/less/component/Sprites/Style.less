@@ -23,10 +23,12 @@
     text-transform: none;
     color: @colorIconDefault;
     font-size: @sizeIconDefault;
-		
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+    * {
+        font-family: @sansFontFamily;
+    }
 }
 
 /* Blue icons with optional class, or on hover/active states of certain elements */
@@ -3331,25 +3333,21 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 	content: "\e6bf";
 }
 
-
-
-
-
-
 [class^="uiIconStatus"] {
 	font-size: 32px;
 }
-.uiIconStatus-needs-action,.uiIconStatus-needs-action:hover {
-	background-position: 0px 0px;
+.uiIconStatus-needs-action:before {
+    content: "\e76f";
 }
-.uiIconStatus-in-process,.uiIconStatus-in-process:hover {
-	background-position: -60px 0px;
+.uiIconStatus-in-process:before {
+    content: "\e6d4";
 }
-.uiIconStatus-completed ,.uiIconStatus-completed:hover{
-	background-position: -120px 0px;
+.uiIconStatus-completed:before{
+    content: "\e76f";
+    color: @colorIconPrimary;
 }
-.uiIconStatus-canceled,.uiIconStatus-canceled:hover {
-	background-position: -180px 0px;
+.uiIconStatus-canceled:before {
+    content: "\e6d3";
 }
 
 

@@ -63,3 +63,28 @@
 	left: auto;
 	right: 0;
 }
+
+.forumContains [class^="uiIcon"] {
+    margin: 0 5px 0 0;
+}
+
+@media(max-width: 768px) {
+    .divCell {
+        display: block;
+    }
+    .memberContainer,.postViewContainer {
+        width: 100%;
+        padding: 10px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        float: none;
+        margin: 10px 0;
+    }
+    #UITopicContent {
+        .table {
+            td:nth-child(6),th:nth-child(6),td:nth-child(5),th:nth-child(5) {
+                display: none;
+            }
+        }
+    }
+}

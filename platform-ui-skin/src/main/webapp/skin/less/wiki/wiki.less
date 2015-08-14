@@ -552,3 +552,47 @@
       background-image: none;
     }
   }
+
+
+//responsive wiki
+
+@media(max-width: 768px){
+    #UIWikiMiddleArea {
+        height: auto !important;
+        overflow: visible !important;
+        #UITreeExplorer {
+            height: auto !important;
+            max-height: 300px!important;
+            min-height: 200px
+        }
+    }
+    body .uiWikiMiddleArea .resizeBar {
+        display: none!important;
+    }
+    .uiLeftContainerArea ,.uiRightContainerArea{
+        float: none !important;
+        height: auto !important;
+        margin: 10px 0;
+        width: 100% !important;;min-height: 200px
+    }
+    .uiWikiPageControlArea {
+        .uiPageToolBar {
+            float: none; margin: 0;
+        }
+        .uiWikiPageTitle {
+            clear: both;
+        }
+
+    }
+    .UIWikiToolBar {
+        float: none;
+        width: auto;
+    }
+    .uiWikiBreadCrumb {
+        clear: both;
+        margin-top: 20px;
+    }
+    .uiWikiSearchBox.uiSearchInput input[type="text"] {
+        max-width: 100%;
+    }
+}

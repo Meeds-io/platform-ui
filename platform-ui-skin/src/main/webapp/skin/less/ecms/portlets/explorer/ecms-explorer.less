@@ -129,6 +129,7 @@
 		float: left;
 		width: 240px;
 		overflow: hidden;
+        min-width: 240px;
 	}
 
 	.rightContainer {
@@ -1797,4 +1798,33 @@
 }
 .UIJCRExplorer #UIDocumentWorkspace {
   background: @baseBackground!important;
+}
+
+@media(max-width: 768px){
+    .uiWorkingArea .resizeBar {display: none}
+    .uiWorkingArea .leftContainer ,.uiWorkingArea .rightContainer{
+        float: none;
+        margin: 10px 0;
+        width: 100%!important;
+        height: auto!important;
+    }
+}
+
+@media(max-width: 480px){
+   body  .tblAddressBar {
+        table,tr,td {
+            display: block;
+            margin: 5px 0 !important;
+            width: 100%!important;
+            min-height: 22px;
+
+        }
+       .right .advance,.uiAddressBar .right{
+            width: 100%!important;
+
+        }
+    }
+    .uiAddressBar .uiAddressBarAction .inputContainer {
+        margin:0;
+    }
 }

@@ -1160,13 +1160,144 @@ blockquote:after {
 		z-index: 100;
 	}
 }
+.noActivity {
+    margin: 15px 0;
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 1024px) {
+
+    .activityStream .heading .uiIconClose {
+        right: 10px;
+        top: 10px;
+    }
+    .activityStream .arrowLeft {
+        display: none;
+    }
+    #DisplayModesDropDown .dropdown-menu {
+        left: auto;
+        right: 0;
+        min-width: 164px;
+    }
+    // Hide Column Timeline when show Right Sidebar
+
+    .open-right-bar {
+        .uiActivityStream, .uiActivitiesLoader,
+        .activityStream {
+            background: none;
+        }
+        .activityStream .boxContainer {
+            margin-left: 0;
+        }
+        .activityBottom,
+        .activityTimeLine {
+            display: none!important;
+        }
+    }
+
+}
+
+//end 1024
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    .activityStream .author span {
+        font-size: 16px;
+    }
+    .btn-group.uiDropdownWithIcon .btn .uiIconMiniArrowDown {
+        margin: 0 0px 0 1px;
+    }
+
+    .activityStreamStatus {
+        float: right;
+        margin-right: 10px;
+        padding: 2px 9px;
+    }
+    .hidden-right-bar {
+        .activityStreamStatus {
+            float: left;
+            padding: 2px 18px;
+        }
+    }
+    .open-right-bar {
+        .activityStreamStatus {
+            float: left;
+        }
+        .activityStream .introBox:before, .activityStream .introBox:after {
+            display: none;
+        }
+        .activityStream .introBox {
+            margin: 0;
+            background: 0;
+            border-left: medium none;
+            .border-radius(0);
+            border-right: medium none;
+            .box-shadow(none);
+            margin: 0;
+        }
+    }
+    .hidden-right-bar {
+        .activityStream .introBox {
+            margin:0 -7px;
+            .box-shadow(0px 2px 4px  -1px rgba(13,13,13,0.27));
+            #gradient > .vertical-three-colors(@baseBackground, @baseBackground,94%, @primaryBackgroundLight);
+        }
+    }
+    .activityStreamStatus {
+        .arrowBottom {
+            display: none;
+        }
+    }
+    .hidden-right-bar .activityStreamStatus {
+        //margin: 0 0 0 6px;
+       // float: left;
+        .arrowBottom {
+            display: block;
+            left: 16px;
+        }
+
+    }
+    .activityType [class^="uiIcon"] {
+        font-size: 14px;
+    }
+    .activityStream .exo-mentions .replaceTextArea {
+        min-height: 26px;
+    }
+    .activityStream .introBox .isPreviewable .mediaContent {
+        max-width: 50%;
+    }
+    .activityTop .uiDropdownWithIcon a.OptionItem {
+        padding: 12px 15px 12px 15px;
+    }
+    .uiMyConnections .uiTabNormal .nav-tabs > li > a {
+        padding: 10px 15px;
+    }
+}
+
+// end 481 1024
+
+@media (max-width: 768px) {
+    .uiProfileUserSearch {
+        input {
+            display: block;
+            margin: 5px 0;
+            width: 100% !important;
+        }
+    }
+
+}
+
 @media (max-width: 767px ) {
 	body {
-		overflow-y: hidden;
 		height: 100%;
 	}
 	.activityTimeLine.pull-left {
 	    display: none;
+	}
+	.UISocialConfirmation {
+		min-height: 180px;
+		.contentMessage {
+			white-space: nowrap;
+		}
 	}
 	.footComment {
 		position: fixed;
@@ -1238,10 +1369,7 @@ blockquote:after {
     border-top: 1px solid @borderColor;
     display: block;
 	}
-	.activityStream .introBox .isPreviewable .mediaContent {
-		float: none;
-		margin-right: 0;
-	}
+
 	.activityStreamStatus {
 		float: right;
 	    margin-right: 10px;
@@ -1384,4 +1512,66 @@ blockquote:after {
 		    width: 210px;
 		}
 	}
+    .activityStream .introBox {
+        margin: 0;
+        background: 0;
+        border-left: medium none;
+        .border-radius(0);
+        border-right: medium none;
+        .box-shadow(none);
+        margin: 0;
+    }
+    .open-right-bar .activityStreamStatus {
+        float: right;
+    }
+    .activityStream .introBox:before, .activityStream .introBox:after {
+        display: none;
+    }
+    .uiActivityStream {
+        padding-top: 10px;
+    }
+    .uiUserActivitiesDisplay {
+        .iconReturn {
+            font-size: 20px;
+            color: @colorIconDefault;
+            &:before {content: "\e74f";}
+        }
+    }
+    .exo-mentions .replaceTextArea {
+        min-height: 20px;
+    }
+    .uiUserActivitiesDisplay .composerHintCont {
+        margin: 20px 0;
+        .arrowLeft {
+            display: none;
+        }
+    }
+    .activityStream .introBox .isPreviewable .mediaContent {
+        max-width: 30%;
+        float: left;
+        margin-right: 10px;
+        max-width: 30%;
+    }
+}
+// end 767
+
+
+
+@media (max-width: 480px) {
+    .activityStreamStatus {
+        .uiIconRefresh.uiIconLightGray {
+            display: block;line-height: 19px;
+        }
+    }
+    .exo-mentions .replaceTextArea {
+        max-height: 18px;
+        min-height: 18px;
+    }
+    .fileActivity .introBox .isPreviewable .fileTypeContent + .text {
+        overflow: visible;
+    }
+    .uiCalendarActivity .introBox .clearfix .calendarBox + .text,
+    .uiCalendarActivity .introBox .clearfix .statusTask + .text {
+        margin-left: 0; overflow: visible;
+    }
 }

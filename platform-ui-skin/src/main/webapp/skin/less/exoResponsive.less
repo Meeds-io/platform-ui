@@ -8,6 +8,7 @@
     }
 }
 
+
 .uiUserActivitiesDisplay  + .activityTop {
     display: none;
 }
@@ -54,152 +55,20 @@
 
 
 
-// reset font from 481 to 1024
-@media (min-width: 481px) and (max-width: 1024px) {
-    body {
-        font-size: 19.5px;
-        line-height: 30px;
-    }
-    h5 {
-        font-size: 21px;
-    }
-    h6 {
-        font-size: 19.5px;
-    }
-
-    body {
-        .btn-group > .btn, .btn-group > .dropdown-menu {
-            font-size:19.5px;
-        }
-        .activityStream .heading .dataInfor span, .activityStream .heading .dataInfor a {
-            font-size: 16.5px;
-        }
-        .accordionBar  {
-            padding: 15px 22px!important;
-            line-height: 30px!important;
-            height: auto!important;
-        }
-
-        .uiBox .title {
-            padding: 10px 15px;
-        }
-        .uiGrayLightBox {
-            padding: 15px;
-        }
-        .uiGettingStarted .listBlock,.uiContentBox {
-            padding:22px!important;
-        }
-        .OfficeMiddleTDContainer ,.OfficeMiddleTDContainer + .OfficeRightTDContainer{
-            padding-top: 20px !important;
-        }
-        .UIToolbarContainer .NormalContainerBlock .ToolbarContainer .TRContainer,
-        .UIToolbarContainer .NormalContainerBlock .ToolbarContainer {
-            height: 61px!important;
-        }
-        .UIToolbarContainer .uiDropdownWithIcon > a {
-            line-height: 60px;
-        }
-        .toggle-left-bar {
-            margin-right: 15px;
-        }
-
-        .UIToolbarContainer #HomeLink {
-            padding: 18px 17px 0;
-        }
-
-        .uiCompanyNavigationPortlet .uiCompanyNavigations .navItem,
-        .uiCompanyNavigationPortlet .uiCompanyNavigations .navItemSelected,
-        .uiSpaceNavigationPortlet .spaceNavigation .spaceItem, 
-        .uiSpaceNavigationPortlet .spaceNavigation .spaceItemSelected {
-          padding: 10px 37px;
-        }
-        .uiCompanyNavigationPortlet .uiCompanyNavigations .navItemSelected:after {
-          height: 41px;
-        }
-        .uiSpaceNavigationPortlet .spaceNavigation .spaceItemSelected:after {
-          height: 39px;
-        }
-           
-        .uiSpaceNavigationPortlet .searchInput input {
-            height: 42px;
-        }
-        .uiDropdownWithIcon .dropdown-menu li > a {
-            padding: 12px 30px 12px 15px;
-        }
-        .btn {
-            padding: 6px 15px ;
-        }
-        .uiComposer.uiGrayLightBox .inputLink input[type="text"] ,
-        textarea, input[type="text"], input[type="password"],
-        input[type="datetime"], input[type="datetime-local"],
-        input[type="date"], input[type="month"], input[type="time"],
-        input[type="week"], input[type="number"], input[type="email"],
-        input[type="url"], input[type="search"], input[type="tel"],
-        input[type="color"], .uneditable-input{
-            height: 30px;
-        }
-        .exo-mentions .replaceTextArea {
-            font-size: 19px;
-            padding: 10px;
-        }
-        .footComment .exo-mentions {
-        	.replaceTextArea {
-        		padding: 6px 10px;
-            height: auto !important;
-            max-height: 60px;
-	        	font-size: 15px;
-	        	line-height: 1.2;
-	        }
-	        .placeholder {
-	        	line-height: 1.2;
-	        	font-size: 15px;
-	        }
-        } 
-        
-        .uiSpaceNavigationPortlet .joinSpace {
-            padding: 10px 0;
-        }
-        .HomeLink > img {
-            margin-top: -10px;
-        }
-    }   
-}
-
-
-
-
-
-
-/* Landscape phone to portrait tablet */
-@media (max-width: 1024px) and (min-width: 768px) {
-    
-    // Hide Column Timeline when show Right Sidebar
-    .open-right-bar {
-        .uiActivityStream, .uiActivitiesLoader,
-        .activityStream {
-            background: none;
-        }
-        .activityStream .boxContainer {
-            margin-left: 0;
-        }
-        .activityBottom,
-        .activityTimeLine {
-            display: none!important;
-        }
-    }
-    .hidden-right-bar {
-
-    }
-}
-@media (min-width: 1025px) {
+@media (max-width: 1024px) {
     html {
-        overflow-y: auto!important;
+       // overflow-y: auto!important;
+        overflow-x: hidden;
+        height: 100%;
+       // -webkit-overflow-scrolling: touch;
+        body {
+         //  -webkit-overflow-scrolling: touch;
+        }
     }
     .website-hompage .uiNavigation .toggle-left-bar {
         display: none;
     }
-}
-@media (max-width: 1024px) {
+
     #Officebody > div > div > div > .UITableColumn {
         background: @contentBackground;
     }
@@ -330,46 +199,48 @@
     .uneditable-input {
         max-width: 100%;
     }
+    // uipopup
+    .modal-open .uiPopup  {
+        -webkit-transform: translate(0px, 0px);
+        transform: translate(0px, 0px);
+    }
+
+    .uiPopupWrapper {
+        position:fixed;
+        top:0;
+        left: 0;
+        width:100%;
+        height: 100%;
+        overflow-y: auto;
+        background: rgba(0,0,0,0.2);
+        z-index: 99999!important;
+    }
+
+
+    body.modal-open {
+        overflow-y: hidden!important;
+    }
     .uiPopup, .UIMaskWorkspace {
-        left: 50%!important;
-        top: 50%!important;
+        left: auto!important;
+        top: auto!important;
         right: auto!important;
         bottom: auto!important;
-        position: fixed!important;
-        width: 90%!important;
-        max-width: 560px;
-        max-height: 90%;
         z-index: 10000!important;
-        .translate(-50%, -50%);
-    }
-    .uiPopup {
-        //margin-top: 25px;
-    }
-    .UIMaskWorkspace {
-        margin-top: 0!important
-    }
-    .uiPopup {
-        overflow: hidden;
-        .popupHeader{
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-        }
+        position: relative!important;
+        margin: 30px auto;
+        width: 600px!important;
+        -webkit-transform: translate(0px, -25%);
+        transform: translate(0px, -25%);
+        -webkit-transition: transform 0.3s ease-out 0s;
+        transition: transform 0.3s ease-out 0s;
         .PopupContent {
-            margin-top: 35px;
-        }
-        .uiAction.uiActionBorder {
-            background: #fff;
-            position: absolute;
-            left: 15px;
-            right: 15px;
-            bottom: 0px;
-            padding-bottom: 15px;
+            height: auto!important;
+            .resizable {
+                height: auto!important;
+                max-height: none!important;
+            }
         }
     }
-
-
     .LeftNavigationTDContainer {
         position: fixed;
         left: 0;
@@ -377,6 +248,7 @@
         bottom: 0;
         overflow-y: auto;
         left: 0;
+        display: none;
     }
     .open-left-bar .LeftNavigationTDContainer {
         display: block;
@@ -400,8 +272,8 @@
         position: relative;
     }
 
-    html, body {
-        overflow-x: hidden;
+     body.open-left-bar {
+       overflow-x: hidden;
     }
 
     .RightBodyTDContainer {
@@ -465,8 +337,16 @@
         }
     }
 
-    body .RightBodyTDContainer  {
-      padding-top: 60px;
+    body{
+        .OfficeRightTDContainer {
+            padding-top: 20px;//1.1
+            padding-top: 24px;//1.2
+        }
+        .RightBodyTDContainer  {
+           // padding-top: 40px;//1.1
+            padding-top: 48px;//1.2
+            //  padding-top: 60px;1.5
+        }
     }
     
     .mask-layer-right {
@@ -493,110 +373,236 @@
         display: inline-block!important;
     }
 
-    .UIToolbarContainer .uiUserToolBarPortlet.uiDropdownWithIcon > a {
-        font-size: 19.5px!important;
-    }
+
       body .OfficeRightTDContainer {
         width: 40%!important;
     }
     .maskLayer .uiDocumentPreview .commentArea {
         display: none!important;
     }
-     body   {
 
-            .maskLayer .uiDocumentPreview .fileContent .navigationContainer img, 
-            .maskLayer .uiDocumentPreview .fileContent .navigationContainer object {
-                 top: 34px;
-                -webkit-transform: translate(-50%, 0px);
-                transform: translate(-50%, 0px);
-            }       
-            .maskLayer .uiDocumentPreview .fileContent {
-                margin: 0!important
+    body   {
+
+        .maskLayer .uiDocumentPreview .fileContent .navigationContainer img,
+        .maskLayer .uiDocumentPreview .fileContent .navigationContainer object {
+             top: 34px;
+            -webkit-transform: translate(-50%, 0px);
+            transform: translate(-50%, 0px);
+        }
+        .maskLayer .uiDocumentPreview .fileContent {
+            margin: 0!important
+        }
+        .maskLayer .uiDocumentPreview {
+            padding: 0
+        }
+
+
+        // document preview
+
+        #UISocialPopupWindow {
+             left: 0 !important;
+            max-height: none!important;
+            max-width: auto;
+            position: fixed !important;
+            top: 0px !important;
+            -webkit-transform: none!important;
+            transform: none!important;
+            width: 100% !important;
+            max-width: none !important;
+            border: none!important;
+            border-radius: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 99999;
+            height: 100% !important;
+            box-shadow: none;
+            overflow: visible;
+            margin-top: 0 !important;
+            .uiIconResize {
+                display: none!important;
             }
-            .maskLayer .uiDocumentPreview {
-                padding: 0
+            .secondaryToolbar .dropdown-menu li > a:focus > [class^="uiIcon"] {
+                background: none;
             }
-            
-            
-            #UISocialPopupWindow {
-                 left: 0 !important;
+            .PopupContent {
+                height: 100% !important;
+                margin-bottom: 0px!important;
+                margin-top: 0px!important;
                 max-height: none!important;
-                max-width: auto;
-                position: fixed !important;
-                 top: 55px !important;               
-                -webkit-transform: none!important;
-                transform: none!important;
-                width: 100% !important;
-                max-width: none !important; 
-                border: none!important;
-               
-                background: #ffffff url("@{images-path}/ShareImages/Background/texture.png") repeat  left top;
-                z-index: 999;
-                height: 100% !important;  
-                box-shadow: none;
-                .PopupContent {
-                    height: 100% !important;
-                    left: 0; 
-                    margin-bottom: 0px!important;
-                    margin-top: 0px!important;
-                    max-height: none!important;
-                    padding: 0 !important;
-                    position: static;
-                    top: 0;
-                    width: 100%;
-                    padding-top: 50px!important;
-                    background: #ffffff url("@{images-path}/ShareImages/Background/texture.png") repeat  left top;
-
-                }
-                #outerContainer {
-                    background: white; margin-top: 40px;
-                }
-                #viewerContainer {
-                    background: white; top: 20px;
-                }
-                .toolbar ,.popupHeader ,.maskLayer .uiDocumentPreview .resizeButton{
+                padding: 0 0 0 0 !important;
+                width: 100%;
+                overflow: visible;
+                position: absolute !important;
+                top: 60px !important;//1.5
+                top: 50px !important;//1.2
+                 background: none;
+            }
+            #toolbarContainer {
+                .outerCenter{
                     display: none;
                 }
-                .maskLayer {
-                    top:98px;
-                    position: static;
-                    background: none;
-                    .fileContent .navigationContainer {
-                        background: none!important;
-                    }                   
-                    .uiDocumentPreview {
-                        .exitWindow .uiIconClose {
-                            top: 25px;
-                            z-index: 999;
-                            left: 20px;
-                            right: auto;
-                            display: block;
-                            background: none!important;
-                            -webkit-transform: rotate(-45deg);
-                            transform: rotate(-45deg);
-                            width: 30px;
-                            height: 30px;
-                            border-left: 5px solid @borderColor;
-                            border-top: 5px solid @borderColor;
+            }
+
+           .secondaryToolbar {
+                top: 42px;//1.2
+               //top: 57px;1.5
+            }
+            #sidebarContainer {
+                //top:36px;1.1
+                top:38px;//1.2
+                //top: 54px;1.5
+            }
+            #sidebarContent {
+                background: rgba(240, 240, 240, 0.8);
+                border:  none;
+                //top: 38px;
+                width: 132px;
+            }
+            #toolbarSidebar {
+                background: rgba(240, 240, 240, 0.8);
+                border:  none;
+                height: auto;width: 132px;
+                #viewThumbnail {
+                    margin-left: 7px;
+                }
+            }
+            #toolbarViewer {
+              // height: 53px; 1.5
+                height: 38px;//1.2
+                #toolbarViewerLeft {
+                    -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+                   // padding: 12px 10px;1.5
+                    text-align: center;
+                    width: 60%;
+
+                }
+                #toolbarViewerRight{
+                    -webkit-box-sizing: border-box;box-sizing: border-box;
+                    width: 40%;
+                   // padding: 12px 10px;1.5
+                    text-align: right;
+                    & > a {
+                        float: none;
+                    }
+                }
+            }
+
+            #outerContainer {
+                background: white;
+            }
+            #viewerContainer {
+                background: white;
+                //top: 52px;1.5
+            }
+            .popupHeader ,.maskLayer .uiDocumentPreview .resizeButton{
+                display: none;
+            }
+
+            .maskLayer {
+                top:98px;
+                position: static;
+                background: none;
+                .fileContent .navigationContainer {
+                    background: none!important;
+                }
+                .uiDocumentPreview {
+                    .exitWindow .uiIconClose {
+                        //left: 15px;
+                        right: 18px;
+                        color: @colorIconDefault;
+                        cursor: pointer;
+                        z-index: 10009!important;
+                        top: 20px!important;
+                        position: fixed!important;
+                        .opacity(100);
+                        &:before {
+                            //content: "\e74f";
+                            font-size: 20px;
                         }
-                        .uiContentBox {
-                            background: none ;
-                            padding: 0  20px!important;
+                        &:hover {
+                            color: @colorIconPrimary;
+                            &:before { color: @colorIconPrimary;}
                         }
                     }
-                }   
+                    .uiContentBox {
+                        background: none ;
+                        padding: 0  20px!important;
+                    }
+                }
             }
         }
-        #outerContainer {
-            min-width: auto!important;
+    }
+    #outerContainer {
+        min-width: auto!important;
+    }
+
+    body .uiGettingStarted #progress-shell {
+        width: 72%;
+    }
+    .RightBodyTDContainer {
+        overflow-x: auto;
+    }
+    .open-right-bar {
+        .fileActivity .introBox .isPreviewable .PlayerContianer {
+            width: 100%;
+            float: none;
+            &  > * {
+                height: auto !important;
+                width: 100% !important;
+            }
         }
+        .fileActivity .introBox .isPreviewable .PlayerContianer + .text {
+            overflow: visible;
+        }
+    }
+    body .boxLoadMore {
+        padding: 0;
+        background: none;
+    }
+
+    // document preview
+    .uiDocumentPreview{
+        #outerContainer.sidebarOpen > #mainContainer {
+            left: 0;
+        }
+        #outerContainer.sidebarOpen > #sidebarContainer {
+            left: 0;
+        }
+        #sidebarContainer {
+            z-index: 100;
+        }
+        .doorHanger:after, .doorHanger:before {
+            margin-left: 5px;
+        }
+        .doorHanger:after {
+            left: 14px;
+        }
+    }
 }
+
+//end 1024px
 //hack safari document preview
 
-@media (max-width: 1024px)  and(-webkit-min-device-pixel-ratio:0) {                    
-
+@media (max-width: 1024px)  and (-webkit-min-device-pixel-ratio:0) {
     body  #UISocialPopupWindow { top: 0px !important;}
 }
+
+
+/* Landscape phone to portrait tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .uiDocumentPreview .findbar {
+        top: 49px;//1.5
+        top: 34px;//1.2
+    }
+    body .OfficeMiddleTDContainer + .OfficeRightTDContainer {
+        background: @primaryBackground;
+        #OfficeRight {
+            margin-left: 20px;
+        }
+    }
+}
+// end 768 1024
+
 
 @media (min-width: 768px) and (max-width: 980px) {
     .active.ToolbarContainer   {
@@ -612,12 +618,251 @@
     body .OfficeRightTDContainer {
         width: 36%!important;
     }
-    
+
 }
 
+// end 768 980
+
+/*
+reset 1.5
+@media (min-width: 481px) and (max-width: 1024px) {
+
+
+    body {
+
+        .accordionBar  {
+            padding: 15px 22px!important;
+            line-height: 30px!important;
+            height: auto!important;
+        }
+
+        .uiBox .title {
+            padding: 10px 15px;
+        }
+        .uiGrayLightBox {
+            padding: 15px;
+        }
+        .uiGettingStarted .listBlock,.uiContentBox {
+            padding:22px!important;
+        }
+        .OfficeMiddleTDContainer ,.OfficeMiddleTDContainer + .OfficeRightTDContainer{
+            padding-top: 20px !important;
+        }
+        .UIToolbarContainer .NormalContainerBlock .ToolbarContainer .TRContainer,
+        .UIToolbarContainer .NormalContainerBlock .ToolbarContainer {
+            height: 61px!important;
+        }
+        .UIToolbarContainer .uiDropdownWithIcon > a {
+            line-height: 60px;
+        }
+        .toggle-left-bar {
+            margin-right: 15px;
+        }
+
+        .UIToolbarContainer #HomeLink {
+            padding: 18px 17px 0;
+        }
+
+        .uiCompanyNavigationPortlet .uiCompanyNavigations .navItem,
+        .uiCompanyNavigationPortlet .uiCompanyNavigations .navItemSelected,
+        .uiSpaceNavigationPortlet .spaceNavigation .spaceItem,
+        .uiSpaceNavigationPortlet .spaceNavigation .spaceItemSelected {
+            padding: 10px 37px;
+        }
+        .uiCompanyNavigationPortlet .uiCompanyNavigations .navItemSelected:after {
+            height: 41px;
+        }
+        .uiSpaceNavigationPortlet .spaceNavigation .spaceItemSelected:after {
+            height: 39px;
+        }
+
+        .uiSpaceNavigationPortlet .searchInput input {
+            height: 42px;
+        }
+        .uiDropdownWithIcon .dropdown-menu li > a {
+            padding: 12px 30px 12px 15px;
+        }
+        .btn {
+            padding: 6px 15px ;
+        }
+        .uiComposer.uiGrayLightBox .inputLink input[type="text"] ,
+        textarea, input[type="text"], input[type="password"],
+        input[type="datetime"], input[type="datetime-local"],
+        input[type="date"], input[type="month"], input[type="time"],
+        input[type="week"], input[type="number"], input[type="email"],
+        input[type="url"], input[type="search"], input[type="tel"],
+        input[type="color"], .uneditable-input{
+            height: 30px;
+        }
+        .exo-mentions .replaceTextArea {
+            font-size: 19px;
+            padding: 10px;
+        }
+        .footComment .exo-mentions {
+            .replaceTextArea {
+                padding: 6px 10px;
+                height: auto !important;
+                max-height: 60px;
+                font-size: 15px;
+                line-height: 1.2;
+            }
+            .placeholder {
+                line-height: 1.2;
+                font-size: 15px;
+            }
+        }
+
+        .uiSpaceNavigationPortlet .joinSpace {
+            padding: 10px 0;
+        }
+        .HomeLink > img {
+            margin-top: -10px;
+        }
+    }
+    body .UIToolbarContainer .uiUserToolBarPortlet > a > img {
+        .square(38px);
+    }
+    .action_close {
+        margin-top: -2px!important;
+    }
+    .ajaxLoadingMask {
+        padding: 12px 7px 12px 11px;
+        .uiIconClose {
+            margin-top: 4px;
+        }
+        .loadingText {
+            line-height: 18px;
+        }
+    }
+}
+
+*/
+// end from 481 to 1024px
+
+
+
+//reset 1.2
+@media (min-width: 481px) and (max-width: 1024px) {
+
+
+    body {
+
+        .accordionBar  {
+            padding: 10px 18px !important;
+            line-height: 30px!important;
+            height: auto!important;
+        }
+
+        .uiBox .title {
+            padding: 10px 15px;
+        }
+        .uiGrayLightBox {
+            padding: 10px;
+        }
+        .uiGettingStarted .listBlock,.uiContentBox {
+            padding:18px!important;
+        }
+        .OfficeMiddleTDContainer ,.OfficeMiddleTDContainer + .OfficeRightTDContainer{
+            padding-top: 20px !important;
+        }
+        .UIToolbarContainer .NormalContainerBlock .ToolbarContainer .TRContainer,
+        .UIToolbarContainer .NormalContainerBlock .ToolbarContainer {
+            height:50px!important;//1.2
+        }
+        .UIToolbarContainer .uiDropdownWithIcon > a {
+            line-height: 50px;//1.2
+        }
+        .toggle-left-bar {
+            margin-right: 15px;
+        }
+
+        .UIToolbarContainer #HomeLink {
+            padding: 14px 14px 0;//1.2
+        }
+
+        .uiCompanyNavigationPortlet .uiCompanyNavigations .navItem,
+        .uiCompanyNavigationPortlet .uiCompanyNavigations .navItemSelected,
+        .uiSpaceNavigationPortlet .spaceNavigation .spaceItem,
+        .uiSpaceNavigationPortlet .spaceNavigation .spaceItemSelected {
+            padding: 8px 27px;
+        }
+        .uiCompanyNavigationPortlet .uiCompanyNavigations .navItemSelected:after {
+            height: 35px;
+        }
+        .uiSpaceNavigationPortlet .spaceNavigation .spaceItemSelected:after {
+            height: 39px;
+        }
+
+        .uiSpaceNavigationPortlet .searchInput input {
+            height:32px ;//1.2
+        }
+        .uiDropdownWithIcon .dropdown-menu li > a {
+            padding: 8px 22px 8px 12px;//1.2
+        }
+        .btn {
+            padding: 4px 14px ;//1.2
+        }
+        .uiComposer.uiGrayLightBox .inputLink input[type="text"] ,
+        textarea, input[type="text"], input[type="password"],
+        input[type="datetime"], input[type="datetime-local"],
+        input[type="date"], input[type="month"], input[type="time"],
+        input[type="week"], input[type="number"], input[type="email"],
+        input[type="url"], input[type="search"], input[type="tel"],
+        input[type="color"], .uneditable-input{
+            height: 32px;
+        }
+        .exo-mentions .replaceTextArea {
+            font-size: 15.5px;
+            padding: 5px 10px;
+
+        }
+        .footComment .exo-mentions {
+            .replaceTextArea {
+                padding: 6px 10px;
+                height: auto !important;
+                max-height: 60px;
+                font-size: 15px;
+                line-height: 1.2;
+            }
+            .placeholder {
+                line-height: 1.2;
+                font-size: 15px;
+            }
+        }
+
+        .uiSpaceNavigationPortlet .joinSpace {
+            padding: 10px 0;
+        }
+        .HomeLink > img {
+            margin-top: -10px;
+        }
+    }
+    body .UIToolbarContainer .uiUserToolBarPortlet > a > img {
+        .square(38px);
+    }
+    .action_close {
+        margin-top: -2px!important;
+    }
+    .ajaxLoadingMask {
+        padding: 12px 7px 12px 11px;
+        .uiIconClose {
+            margin-top: 4px;
+        }
+        .loadingText {
+            line-height: 18px;
+        }
+    }
+}
+
+// end from 481 to 1024px
 
 /* Landscape phones and down */
 @media (max-width: 767px) {
+
+    .uiPopup, .UIMaskWorkspace {
+        margin: 20px 30px;
+        width: auto!important;
+    }
     .UIToolbarContainer .NormalContainerBlock .ToolbarContainer.active .uiDropdownWithIcon span {
       float: none!important;
     }
@@ -801,6 +1046,26 @@
     .uiPopup .uiIconResize {
         display: none;
     }
+    .fileActivity .introBox .isPreviewable .PlayerContianer {
+        width: 100%;
+        float: none;
+        &  > * {
+            max-width: 100% !important;
+            height: auto !important;
+            width: 100% !important;
+        }
+    }
+    .fileActivity .introBox .isPreviewable .PlayerContianer + .text {
+        overflow: visible;
+    }
+    #toolbarViewer {
+        #viewFind,#secondaryDownload,#presentationMode {
+            display: none;
+        }
+    }
+    body #UISocialPopupWindow #sidebarContent {
+        top: 32px;
+    }
 }
 
 
@@ -813,12 +1078,17 @@
     .open-left-bar #UIToolbarContainer, .open-left-bar .RightBodyTDContainer {
         left: 40%;
     }
-
+    .footComment {
+        display: none!important;
+    }
 }
+
+
 
 // for mobile only
 
 @media (min-width: 481px) and (max-width: 589px) {
+
     .form-horizontal .control-group .control-label {
         width: 140px;
     }
@@ -842,10 +1112,12 @@
     input[type="tel"],
     input[type="color"],
     .uneditable-input {
-        max-width: 94%;
+        -webkit-box-sizing: border-box;box-sizing: border-box;
     }
 }
+
 @media (max-width: 480px) {
+
     .uiSpaceMenu .spaceMenuTab  span {
         display: none!important;
     }
@@ -932,6 +1204,7 @@
         .border-radius(0);
         right: -120px !important;
         top: 34px;
+        min-width: 180px;
         & > li  {
              float: left;
             font-size: 0;
@@ -958,4 +1231,49 @@
     .avatar-help-action a {
         font-weight: bold!important;
     }
+    body .RightBodyTDContainer  {
+        padding-top: 51px;
+    }
+    #UICreateList {
+        [class^="uiIcon"] {
+            font-size: 22px;
+        }
+    }
+
+    .ajaxLoadingMask {
+        .uiIconClose {
+            margin-top: 7px;
+        }
+    }
+    select,
+    textarea,
+    input[type="text"],
+    input[type="password"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="week"],
+    input[type="number"],
+    input[type="email"],
+    input[type="url"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"],
+    .uneditable-input,.exo-mentions .replaceTextArea{
+        font-size: initial!important;
+        &:focus {
+            font-size: initial!important;
+        }
+    }
+    .open-left-bar .footComment {
+        display: none!important;
+    }
+  body  #mainContainer {
+        min-width: auto;
+    }
 }
+
+
+@import "font-responsive.less";
