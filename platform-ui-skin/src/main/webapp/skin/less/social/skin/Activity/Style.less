@@ -362,18 +362,13 @@
 .activityStream{
 	.heading  {
 		position: relative;
-		.uiIconClose,.uiIconLink {
+		.actLink {
 			position: absolute;
-			top: 5px;
 			right: 5px;
+			top: 3px;
 			display: none;
-			cursor: pointer;
 		}
-    .uiIconLink {
-      right: 25px;
-      top: 5px;
-    }
-		&:hover  .uiIconClose,&:hover  .uiIconLink{
+		&:hover .actLink{
 		   display: block;
 		}
 		.dataInfor {
@@ -549,12 +544,19 @@
 			.ContentBlock {
 				 word-wrap: break-word;
 			}
-			.uiIconClose ,.viewComment,.uiIconLink{
+			.actLink {
 				position: absolute;
-				top: 0px;
-				right: 0px;
+				right: -10px;
+				top: 3px;
 				display:none;
-				cursor: pointer;				
+				.tooltip {
+					-moz-pointer-events: none;
+					-webkit-pointer-events: none;
+					-ms-pointer-events: none;
+					pointer-events: none;
+				}
+			}
+			.uiIconClose ,.viewComment,.uiIconLink{
 				&:hover {
 					color: @linkColorHover;
 				}
@@ -570,7 +572,7 @@
 			.uiIconClose + .viewComment {
 				right: 25px;
 			}
-			&:hover  .uiIconClose,&:hover  .viewComment,&:hover  .uiIconLink{
+			&:hover  .actLink{
 				display: block;
 			}
 			.commmentLeft {
