@@ -160,17 +160,18 @@
 		}
 	}
 
+  	//Changing to a font-icon
 	.uiIconWarning {
-			background: url("@{images-path}/Icons/uiIconsColor.png") no-repeat -20px 0px;
-		}
-
-	.uiIconMultiUploadClose {
-		background: url("@{images-path}/Icons/uiIconsColor.png") no-repeat 0px 0px;
-		cursor: pointer;
+	  	color: @warningColor;
 	}
 
-	.uiIconNoneClose {
-		background: url("@{images-path}/Icons/uiIconsColor.png") no-repeat -180px 0px;
+	.uiIconMultiUploadClose:before {
+        content: "\e76d";
+        color: @errorColor;
+	}
+
+	.uiIconNoneClose:before {
+        content: "\e76d";
 	}
 }
 

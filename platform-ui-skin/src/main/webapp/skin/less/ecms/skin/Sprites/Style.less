@@ -825,8 +825,12 @@ a:hover [class^="uiIconEcms"],
 .uiItemList li > [class^="uiIcon"] {
     margin: 7px 0 0 -15px!important;
 }
-.uiIconEcmsViewAdmin:before {
-	content: "\e62b";
+.uiIconEcmsViewAdmin {
+  	position: relative; // Adding a position relative to correct the feeling of icons not being aligned
+  	top: 1px;
+	&:before {
+	  content: "\e62b";
+	}
 }
 
 .uiSelectContent  {
@@ -851,4 +855,42 @@ content: "\e767";
 }
 .uiIconEcmsMoveNode:before {
 	content: "\e6a5";
+}
+
+// Adding icons for ecms-administration
+.uiIconEcmsFolksonomyManager:before { // Added the ":before", otherwise it doesn't work and removed the color blue
+  content: "\e77c";
+}
+
+.uiIconEcmsTaxonomyManagerTrees:before {
+  //color: @colorIconDefault;
+  content: "\e6a8";
+}
+
+.uiIconEcmsActionManager:before {
+  //color: @colorIconDefault;
+  content: "\e78b";
+}
+
+.uiIconEcmsUnLockManager:before {
+  content: "\e794";
+}
+
+// Icon for ecms-explorer
+.LinkSmall:before,.IconLocked:before {
+  content: '\e793';
+}
+
+.uiIconEcmsDelete:before {
+  content: '\e799';
+}
+
+// Icon for upload
+.uiIconWarning:before {
+  content: "\e771";
+}
+
+// Changing delete action icon
+.actionIcon .uiIconRemove:before {
+  content: "\e799";
 }

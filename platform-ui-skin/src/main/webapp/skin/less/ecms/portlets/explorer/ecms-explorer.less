@@ -315,11 +315,12 @@
 		position: relative;
 	}
 
-	.LinkSmall,.IconLocked  {
-		background: url("@{images-path}/ecms/portlets/explorer/Icons/IconMedLink.png") no-repeat right top;
-		width: 16px;
-		height: 16px;
-		bottom: 0px;
+	.LinkSmall,.IconLocked  { // removed background to use font-icons + changed color and position
+	  	font-size: 16px;
+	  	color: darken(@yellow, 5%);
+		/*width: 16px;
+		height: 16px;*/
+		bottom: -8px;
 		right: 0px;
 		position: absolute;
 	}
@@ -576,10 +577,12 @@
 		position: absolute;
 		top: 7px;
 		right: 0px;
+	  	padding-top: 3px;
 
 			[class^="uiIcon"] {
 				width: 11px;
 				margin-top: 2px;
+			  	margin-left: 2px;
 			}
 	}
 
@@ -1562,15 +1565,6 @@
 		.uiIconEcmsViewInfo {
 			 color: @colorIconDefault;
 		}
-
-
-
-		.uiIconEcmsDelete {
-			&:before {
-                content: "\e799";
-            }
-		}
-
 	}
 
 	.uiRightPopupMenuContainer > li > a:hover  {

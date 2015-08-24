@@ -169,7 +169,7 @@ body.phoneDisplay .uiComposer.uiGrayLightBox {
 	    box-shadow: 0 1px 2px 0 @baseBackground;
 	    cursor: pointer;
 	    display: block;
-	    padding: 2px 4px;
+	    padding: 0px 5px; // padding changed to get the close button to be square
 	    line-height: 20px;
 	    position: absolute;
 	    right: 7px;
@@ -1272,7 +1272,9 @@ blockquote:after {
         padding: 10px 15px;
     }
 }
-
+.activityTimeLine [class^="uiIcon"] {
+    font-size: 12px;
+}
 // end 481 1024
 
 @media (max-width: 768px) {

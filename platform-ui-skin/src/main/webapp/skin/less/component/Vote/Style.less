@@ -1,3 +1,30 @@
+// Add font for rating stars
+@font-face {
+  font-family: 'PLF-FONT-ICONS';
+  src:url('../../../fonts/PLF-FONT-ICONS.eot?-m9uidt');
+  src:url('../../../fonts/PLF-FONT-ICONS.eot?#iefix-m9uidt') format('embedded-opentype'),
+  url('../../../fonts/PLF-FONT-ICONS.ttf?-m9uidt') format('truetype'),
+  url('../../../fonts/PLF-FONT-ICONS.woff?-m9uidt') format('woff'),
+  url('../../../fonts/PLF-FONT-ICONS.svg?-m9uidt#PLF-FONT-ICONS') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+// IMPORTANT to set the font
+[class^="voted"], [class^="unvoted"] {
+  font-family: "PLF-FONT-ICONS";
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-transform: none;
+  color: @colorIconDefault;
+  font-size: @sizeIconDefault;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
 //
 // Vote
 // --------------------------------------------------
@@ -11,18 +38,17 @@
 			margin: 0px auto 13px;
 			width: 105px;
 			[class^="uiIcon"] {
-				background: url('@{images-path}/Vote/uiIconVote.png') no-repeat center center;
 				width: 17px;
+			  	font-size: @fontsizeXlarge;
 				cursor: pointer;
+
+			  	// Adding star icon
+			  	&:before {
+				  	content: "\e779";
+				}
 			}
-			.uiIconNormalVote{
-				background-position: center -2px;
-			}
-			.uiIconOverVote{
-				background-position: center -53px;
-			}
-			.uiIconRatedVote{
-				background-position: center -27px;
+		  	.uiIconOverVote, .uiIconRatedVote {
+			  	color: @yellow;
 			}
 		}
 
@@ -48,19 +74,21 @@
 		.voted,.votedHaft,.unvoted  {
 			float: left;
 			.square(16px);
-			background: url('@{images-path}/Vote/uiIconVote.png') no-repeat;
+		  	font-size: @fontsizeXlarge;
 			margin: 0px 1px;
 			cursor: pointer;
 		}
-		.voted {
-			background-position: left -80px;
-		}
-		.votedHaft{
-			background-position: left -131px;
-		}
-		.unvoted {
-			background-position:  left -104px;
-		}
+
+	  // Changing definitions to make it font-icons, not images
+	  .voted:before, .unvoted:before {
+		content: "\e779";
+	  }
+	  .votedHaft:before {
+		content: "\e77a";
+	  }
+	  .voted, .votedHaft {
+		color: @yellow;
+	  }
 	}
 }
 
@@ -69,20 +97,22 @@
 .uiVoteMini {
 	.avgRatingImages {
 		.voted,.votedHaft,.unvoted  {
-			background: url('@{images-path}/Icons/uiIconsColor.png') no-repeat;
 			.square(10px);
+		  	font-size: @fontSizeMini;
 			float: none;
 			display: inline-block;
 			margin: 0;
 		}
-		.voted {
-			background-position: -43px -43px;
+
+	  	// Changing definitions to make it font-icons, not images
+	  	.voted:before, .unvoted:before {
+		  	content: "\e779";
 		}
-		.votedHaft{
-			background-position: -63px -43px;
+	  	.votedHaft:before {
+		  	content: "\e77a";
 		}
-		.unvoted {
-			background-position:  -3px -43px;
+	  	.voted, .votedHaft {
+		  	color: @yellow;
 		}
 	}
 }

@@ -125,7 +125,7 @@ a:hover [class^="uiIconSoc"],
 }
 
 .uiIconSocForumMini:before{
-	content: "\e668";
+  	content: "\e68d"; // Changing icon to be like uiIconDiscuss
 }
 
 .uiIconSocLinkMini:before {
@@ -134,6 +134,7 @@ a:hover [class^="uiIconSoc"],
 
 .uiIconSocPoll:before {
 	content: "\e73e";
+  	//font-size: 11px; // !important otherwise it's too big for activity stream, the class doesn't include "Mini"
 }
 
 .uiIconSocSpaceMini:before {
@@ -142,6 +143,8 @@ a:hover [class^="uiIconSoc"],
 
 .uiIconSocWikiMini:before {
 	content: "\e695";
+  	position: relative; // !important to center the icon
+  	top: -1px;
 }
 
 .uiIconSocVote:before {
