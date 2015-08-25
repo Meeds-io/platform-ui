@@ -1010,10 +1010,16 @@ hr {
 	padding-right: 14px;
 }
 #auto-versioning-actions {
+	margin-top: 0;
 	margin-bottom: 15px;
 	.fileNameBox {
+		border-bottom: 1px dotted rgba(0, 0, 0, 0.4);
+		display: block;
+		margin-bottom: 5px;
 		padding-bottom: 5px;
 		.fileName {
+			display: block;
+			font-weight: bold;
 			margin-top: 3px;
 		}
 	}
@@ -1022,6 +1028,7 @@ hr {
 	.ActionContainer {
 		margin: 15px auto 0;
 		td:last-child {
+			width: 1%;
 			white-space: nowrap;
 		}
 		td {
@@ -1030,33 +1037,18 @@ hr {
 		.Delete {
 			background: none;
 		}
-		input {
-			width: 100%;
-			select {
-				width: 100%;
-				textarea {
-					width: 100%;
-				}
-			}
-		}
-		.UploadInfo {
-			.Abort {
-				display: inline-block;
-				.uiPopupContentSelector {
-					.ActionContainer {
-						.UploadInfo {
-							.Delete {
-								display: inline-block;
-							}
-						}
-					}
-				}
-			}
-		}
 	}
 	.UploadInfo {
 		.progress {
+			margin-bottom: 10px!important;
 			margin-top: 2px;
 		}
 	}
 }
+.uiPopupContentSelector .ActionContainer input,select,textarea {
+	width: 100%;
+}
+.uiPopupContentSelector .ActionContainer .UploadInfo .Abort,.uiPopupContentSelector .ActionContainer .UploadInfo .Delete {
+	display: inline-block;
+}
+
