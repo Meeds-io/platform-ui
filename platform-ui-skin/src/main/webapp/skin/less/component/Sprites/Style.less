@@ -3772,16 +3772,16 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
   	color:@colorIconPrimary;
  }
 
-.font10,[class^="uiIcon"][class*="Mini"],[class^="uiIconArrow"]  {
+.font10,[class^="uiIcon"][class*="Mini"]  {
  	font-size: @sizeIcon12x12;
  }
 
 .font12,[class^="uiIcon"][class*="Medium"] {
- 	font-size: 12px;
+ 	font-size: @sizeIconDefault - 2;
  }
 
- [class^="uiIconArrow"][class*="Mini"],[class^="uiIconMini"]{
-	font-size: 7px;
+ [class^="uiIconMini"][class*="Arrow"],[class^="uiIconMini"],[class^="uiIconArrow"]{
+	font-size:  @sizeIcon12x12 - 1;
  }
  [class*="24x24"] {
 	font-size: @sizeIcon24x24;

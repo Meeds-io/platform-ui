@@ -100,7 +100,12 @@
 .actionIcon(){
 	.uiActionWithLabel;
 	padding:2px 4px;
+    text-align: center;
+    min-width: 15px;
 	vertical-align: middle;
+    & > * {
+        text-align: left;
+    }
 	&:active,&:focus,&.active {
 		#StatusElements > .StatusActive(0px 0px 10px 0 rgba(0, 0, 0, 0.15) inset);
 	}
@@ -156,8 +161,13 @@
 		line-height: @baseLineHeight;
 		margin: 0;
 		word-wrap: break-word;
-		.actionIcon {
-			margin: -3px 0;
+        .pull-right {
+            line-height: 16px;
+        }
+		.actionIcon ,.actionIconSmall {
+            [class^="uiIcon"] {
+                top: -1px;
+            }
 		}
 	}
 	.uiContentBox {

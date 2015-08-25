@@ -17,7 +17,7 @@
 @import "variables.less"; // Modify this for custom colors, font-sizes, etc
 @import "mixins.less";
 @import "reset.less";
-@import "font-icon.less";
+@import "_font-icon.less";
 @import "component/Tabs/Style.less";
 @import "component/Popup/Style.less"; 
 @import "component/Dropdown/Style.less";
@@ -285,9 +285,9 @@ table {
 
 .actionIconSmall {
 	padding: 0;
-  line-height: @baseLineHeight - 4;
+    line-height: @baseLineHeight - 4;
 	[class^="uiIcon"] {
-		vertical-align: middle;
+        top: -1px;
 	}
 }
 

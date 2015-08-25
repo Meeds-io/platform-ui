@@ -7,7 +7,10 @@
     display: none;
     }
 }
-
+.uiQuickSearchResult .uiGrid .message > a {
+    padding: 5px 0;
+    display: block;
+}
 
 .uiUserActivitiesDisplay  + .activityTop {
     display: none;
@@ -40,7 +43,6 @@
         width: 100%;
         height: 5px;
       & + span {
-        margin-top: 4px;
       }
   }
 }
@@ -57,13 +59,8 @@
 
 @media (max-width: 1024px) {
     html {
-       // overflow-y: auto!important;
         overflow-x: hidden;
         height: 100%;
-       // -webkit-overflow-scrolling: touch;
-        body {
-         //  -webkit-overflow-scrolling: touch;
-        }
     }
     .website-hompage .uiNavigation .toggle-left-bar {
         display: none;
@@ -199,6 +196,7 @@
     .uneditable-input {
         max-width: 100%;
     }
+
     // uipopup
     .modal-open .uiPopup  {
         -webkit-transform: translate(0px, 0px);
@@ -216,10 +214,10 @@
         z-index: 99999!important;
     }
 
-
     body.modal-open {
         overflow-y: hidden!important;
     }
+
     .uiPopup, .UIMaskWorkspace {
         left: auto!important;
         top: auto!important;
@@ -241,6 +239,10 @@
             }
         }
     }
+
+    // end popup
+
+    // left navigation
     .LeftNavigationTDContainer {
         position: fixed;
         left: 0;
@@ -249,6 +251,8 @@
         overflow-y: auto;
         left: 0;
         display: none;
+        height: 100%!important;
+        max-height: 100%!important;
     }
     .open-left-bar .LeftNavigationTDContainer {
         display: block;
@@ -332,7 +336,9 @@
         }
         &.active {
           .uiIconArrowRight  {
-             background-position: 0 -119px;
+             &:before {
+                 content: "\e75a";
+             }
           }
         }
     }
@@ -344,41 +350,48 @@
         .RightBodyTDContainer  {
             padding-top: 48px;//1.2
         }
+        .OfficeRightTDContainer {
+            width: 40%!important;
+        }
     }
     
     .mask-layer-right {
-       height: 100%;
-       display: block;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      z-index: 9;
+        height: 100%;
+        display: block;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 9;
     }
+
     //search bar
-    .UIToolbarContainer .NormalContainerBlock .ToolbarContainer.active .TRContainer > div.SearchPortletTDContainer .uiSearchPlatformToolBarPortlet > a {
-        display: none;
+    .UIToolbarContainer .NormalContainerBlock .ToolbarContainer.active {
+        .TRContainer {
+            & > div.SearchPortletTDContainer .uiSearchPlatformToolBarPortlet > a {
+                padding:0;
+                .uiIconPLF24x24Search:before{
+                    font-size: 0;
+                }
 
+            }
+            & > div.SearchPortletTDContainer input[name="adminkeyword"] {
+                margin: 10px 0;
+                display: inline-block!important;
+            }
+        }
+        .uiDropdownWithIcon span {
+            vertical-align: middle;
+            display: inline-block;
+        }
     }
-    .UIToolbarContainer .NormalContainerBlock .ToolbarContainer.active .uiDropdownWithIcon span {
-        margin: 8px 5px 0 5px;
-        vertical-align: middle;
-        display: inline-block;
-    }
-    .UIToolbarContainer .NormalContainerBlock .ToolbarContainer.active .TRContainer > div.SearchPortletTDContainer input[name="adminkeyword"] {
-        margin: 16px 0;
-        display: inline-block!important;
-    }
-
-
-      body .OfficeRightTDContainer {
-        width: 40%!important;
-    }
-    .maskLayer .uiDocumentPreview .commentArea {
-        display: none!important;
-    }
+    // end search
 
     body   {
+
+        .maskLayer .uiDocumentPreview .commentArea {
+            display: none!important;
+        }
 
         .maskLayer .uiDocumentPreview .fileContent .navigationContainer img,
         .maskLayer .uiDocumentPreview .fileContent .navigationContainer object {
@@ -397,9 +410,7 @@
             line-height: 16px;
         }
         // document preview
-        body .maskLayer .uiDocumentPreview .fileContent .navigationContainer img, body .maskLayer .uiDocumentPreview .fileContent .navigationContainer object {
-           // top:0!important;
-        }
+
         #UISocialPopupWindow {
             left: 0 !important;
             max-height: none!important;
@@ -442,12 +453,6 @@
                     display: none;
                 }
             }
-            .canvasWrapper {
-               // overflow: visible;
-            }
-
-
-
            .secondaryToolbar {
                 top: 42px;//1.2
             }
@@ -578,6 +583,31 @@
             left: 14px;
         }
     }
+    body  .UIToolbarContainer {
+       .uiDropdownWithIcon > a > i {
+           top: 0;
+       }
+       .uiUserToolBarPortlet > a > img {
+           position: relative;
+           top: -3px;
+       }
+    }
+
+    .action_close .uiIconClose:before {
+        font-size: 16px!important;
+    }
+    .uiQuickSearchResult {
+        position: fixed!important;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        width: 700px !important;
+        z-index: 99999!important;
+        .message {
+            background:@baseBackground !important ;
+        }
+    }
+
 }
 
 //end 1024px
@@ -611,7 +641,7 @@
         }
     }
 
-    #ToolBarSearch.uiDropdownWithIcon {
+    .ToolbarContainer.active #ToolBarSearch.uiDropdownWithIcon {
         background: none!important;
     }
     body .OfficeRightTDContainer {
@@ -731,6 +761,12 @@
             line-height: 18px;
         }
     }
+    .UIToolbarContainer .uiDropdownWithIcon > .dropdown-menu{
+        .avatar-help-action, .action_top,.top.mobile-visible{
+            display: none;
+        }
+    }
+
 }
 
 // end from 481 to 1024px
@@ -870,7 +906,8 @@
                     padding: 0 15px;
                     text-align: center;
                     .uiSearchPlatformToolBarPortlet > a {
-                        display: none;
+                       // display: none;
+
                     }
                     input[name="adminkeyword"] {
                         display:  inline-block!important;
@@ -951,10 +988,48 @@
     #toolbarViewerRight > a {
         margin-top: 4px;
     }
+    .nav-tabs > li {
+        margin-bottom: 0;
+    }
+
+    .dropdown-menu.overflow-y {
+        overflow-y: auto;
+    }
+    select,
+    textarea,
+    input[type="text"],
+    input[type="password"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="week"],
+    input[type="number"],
+    input[type="email"],
+    input[type="url"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"],
+    .uneditable-input,.exo-mentions .replaceTextArea{
+        font-size: initial!important;// disable zoom when focus input field
+        &:focus {
+            font-size: initial!important; // disable zoom when focus input field
+        }
+    }
+
 
 }
 
+// end 767
 
+
+@media (min-width: 600px) and (max-width: 768px) {
+    .uiQuickSearchResult {
+        width: 500px !important;
+    }
+
+}
 // For a tablet portrait and wide landscape phone
 
 @media (min-width: 481px) and (max-width: 768px) {
@@ -963,6 +1038,13 @@
     }
     .open-left-bar #UIToolbarContainer, .open-left-bar .RightBodyTDContainer {
         left: 40%;
+    }
+    .nav-tabs > li {
+        margin-bottom: 0;
+    }
+
+    .uiQuickSearchResult {
+        width: 380px !important;
     }
 
 }
@@ -1014,9 +1096,6 @@
         .back-item {
             margin-top: 0;
         }
-    }
-    .overflow-y {
-        overflow-y: auto;
     }
     .UIToolbarContainer .uiDropdownWithIcon.pull-right > .dropdown-menu:after,
     .UIToolbarContainer .uiDropdownWithIcon.pull-right > .dropdown-menu:before  {
@@ -1128,34 +1207,18 @@
             margin-top: 7px;
         }
     }
-    select,
-    textarea,
-    input[type="text"],
-    input[type="password"],
-    input[type="datetime"],
-    input[type="datetime-local"],
-    input[type="date"],
-    input[type="month"],
-    input[type="time"],
-    input[type="week"],
-    input[type="number"],
-    input[type="email"],
-    input[type="url"],
-    input[type="search"],
-    input[type="tel"],
-    input[type="color"],
-    .uneditable-input,.exo-mentions .replaceTextArea{
-        font-size: initial!important;
-        &:focus {
-            font-size: initial!important;
-        }
-    }
+
 
     body  #mainContainer {
         min-width: 100px;
     }
-
+    .UIToolbarContainer .uiSearchPlatformToolBarPortlet > input[type="text"] {
+        margin: -4px 0 0 12px !important;
+    }
+    .uiQuickSearchResult {
+        width: 300px !important;
+    }
 }
 
 
-@import "font-responsive.less";
+@import "_size-responsive.less";

@@ -12,16 +12,18 @@
 		.box-shadow(inset 0 -1px 0 @borderColor);
 		border-bottom: @uiPopupHeaderBorder;
 		.border-radius(4px 4px 0 0 );
-		padding: 0px 9px 0 15px;
+		padding: 8px 10px 8px 15px;
 		font-size: 14px;
 		font-weight: bold;
 		[class^="uiIcon"] {
 			margin: 10px 4px 0 0;
 			cursor: pointer;
 		}
+        [class^="uiIconArrow"] {
+            margin: 13px 4px 0 0;
+        }
 		.popupTitle {
 			margin: 0;
-			line-height:35px;
 			color: @uiPopupTitleColor;
 			display: block;
 			cursor: move;
@@ -150,7 +152,15 @@
 .uiPopup .popupHeader .uiIconClose {
     height: 16px;
     line-height: 12px;
-    margin: 8px 4px 0 0;
     text-align: center;
     width: 16px;
+    position: absolute;
+    right: 9px;
+    top: 9px;
+    z-index: 9;
+    margin: 0;
+   & + .PopupTitle {
+        margin-right: 25px
+    }
+
 }

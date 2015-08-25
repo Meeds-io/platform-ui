@@ -162,11 +162,8 @@ body.phoneDisplay .uiComposer.uiGrayLightBox {
 
 	.composerHintCont .iconBorder {
 		background-color: @primaryBackgroundLight;
-	    background-image: linear-gradient(to bottom, @baseBackground, @primaryBackground);
-	    background-repeat: repeat-x;
 	    border: 1px solid @borderColor;
-	    border-radius: 3px 3px 3px 3px;
-	    box-shadow: 0 1px 2px 0 @baseBackground;
+	    .border-radius(3px);
 	    cursor: pointer;
 	    display: block;
 	    padding: 0px 5px; // padding changed to get the close button to be square
@@ -174,6 +171,9 @@ body.phoneDisplay .uiComposer.uiGrayLightBox {
 	    position: absolute;
 	    right: 7px;
 	    top: 9px;
+        .uiIconClose {
+            top: -1px;
+        }
 	}
 
 	.composerHintCont .hint {
@@ -374,8 +374,8 @@ body.phoneDisplay .uiComposer.uiGrayLightBox {
 		position: relative;
 		.actLink {
 			position: absolute;
-			right: 5px;
-			top: 3px;
+			top: 5px;
+			right: 10px;
 			display: none;
 		}
 		&:hover .actLink{
@@ -1164,6 +1164,10 @@ blockquote:after {
     margin: 15px 0;
 }
 
+.activityTimeLine [class^="uiIcon"] {
+    font-size: 12px;
+}
+
 /* Landscape phone to portrait tablet */
 @media (max-width: 1024px) {
 
@@ -1195,7 +1199,9 @@ blockquote:after {
         }
     }
 
+
 }
+
 
 //end 1024
 
@@ -1271,10 +1277,12 @@ blockquote:after {
     .uiMyConnections .uiTabNormal .nav-tabs > li > a {
         padding: 10px 15px;
     }
+    .uiUserActivitiesDisplay .composerHintCont .iconBorder .uiIconClose {
+        top: -3px;
+    }
+
 }
-.activityTimeLine [class^="uiIcon"] {
-    font-size: 12px;
-}
+
 // end 481 1024
 
 @media (max-width: 768px) {
@@ -1303,12 +1311,12 @@ blockquote:after {
 	}
 	.footComment {
 		position: fixed;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    box-shadow: 0px 0px 5px 0px #999;
-    border-top: solid 1px @borderColor;
-    background-color: #f9f9f9;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+        border-top: solid 1px @borderColor;
+        background-color: @primaryBackground;
     .commmentLeft {
     	display:none;
     }
@@ -1349,13 +1357,13 @@ blockquote:after {
 		border-bottom: none;
 	}
 	.activityStream .contentBox .listLikedBox {
-    border: medium none;
-    display: none;
-    padding: 0;
+        border: medium none;
+        display: none;
+        padding: 0;
 	}
 	.activityStream .contentBox .commentBox {
-    border: medium none;
-    display: none;
+        border: medium none;
+        display: none;
 	}
 	.activityStream.block-activity .contentBox .actionBar {
 		border-bottom: 1px solid @borderColor;
@@ -1364,12 +1372,12 @@ blockquote:after {
 		padding-bottom: 15px;
 	}
 	.activityStream.block-activity .contentBox .listLikedBox {
-    display: block;
-    padding: 16px 0px 16px 16px;
+        display: block;
+        padding: 16px 0px 16px 16px;
 	}
 	.activityStream.block-activity .contentBox .commentBox {
-    border-top: 1px solid @borderColor;
-    display: block;
+        border-top: 1px solid @borderColor;
+        display: block;
 	}
 
 	.activityStreamStatus {
@@ -1554,17 +1562,19 @@ blockquote:after {
         margin-right: 10px;
         max-width: 30%;
     }
+    //| S_AS_05 | P1 |
+    .activityStream .pull-left.statusAction {
+        a {
+            font-size: 0;
+        }
+    }
+
 }
 // end 767
 
 
 
 @media (max-width: 480px) {
-    .activityStreamStatus {
-        .uiIconRefresh.uiIconLightGray {
-            display: block;line-height: 19px;
-        }
-    }
     .exo-mentions .replaceTextArea {
         max-height: 18px;
         min-height: 18px;
