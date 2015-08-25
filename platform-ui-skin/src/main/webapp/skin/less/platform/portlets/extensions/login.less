@@ -30,7 +30,7 @@ body {
 	.loginContainer {
 		border-radius: 8px;
 		background: @baseBackground url("@{images-path}/platform/portlets/extensions/loginBG.png") no-repeat bottom;
-		padding: 0 40px;
+		padding: 0 40px 15px;
 	}
 	.loginHeader {
 		background: url("@{images-path}/platform/portlets/extensions/LoginHeader.png") repeat-x scroll 0 0 transparent;
@@ -102,7 +102,7 @@ body {
 			background-position: 0 -41px;
 		}
 		.loginButton {
-			padding: 44px 0 30px;
+			padding: 10px 0 30px;
 			.button {
               .border-radius(4px);
 				text-align: center;
@@ -117,6 +117,41 @@ body {
               .buttonBackgroundEXO(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder,@btnPrimaryColor);
               .box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
 
+			}
+		}
+		#social-pane {
+			text-align: center;
+			#SignInDelimiter {
+				font-size: @baseFontSize;
+			}
+			#social-login {
+				a {
+					display: inline-block;
+					margin: 10px 8px 0;
+					text-decoration: none;
+					.uiIconOauth {
+						background-image: url("@{images-path}/platform/portlets/extensions/oauthIcon.png");
+						.size(35px, 37px);
+						display: block;
+					}
+					&:hover {
+						.uiIconOauth {
+							background-image: url("@{images-path}/platform/portlets/extensions/oauthIconHover.png");
+						}
+					}
+					.facebook {
+						background-position: 0 0;
+					}
+					.twitter {
+						background-position: -123px 0;
+					}
+					.linkedin {
+						background-position: -82px 0;
+					}
+					.google {
+						background-position: -41px 0;
+					}
+				}
 			}
 		}
 	}
