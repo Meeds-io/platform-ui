@@ -70,7 +70,7 @@
         background: @contentBackground;
     }
     .open-left-bar .toggle-left-bar {
-        margin-left: -32px;
+        margin-left: -25px;
     }
 
     .UIToolbarContainer #HomeLink {
@@ -181,8 +181,16 @@
         top: 0;
         z-index: 99;
         width: 100%;
-        transform: translate(0px);
-        transition: transform 400ms ease 0s;
+       //.translate(0,0);
+        .transition(all 400ms ease 0s);
+       /* .active_search {
+            -webkit-transform: none;
+            -moz-transform: none;
+            -ms-transform: none;
+            -o-transform: none;
+            transform: none;
+        }
+        */
     }
 
     select, textarea, input[type="text"],
@@ -199,8 +207,7 @@
 
     // uipopup
     .modal-open .uiPopup  {
-        -webkit-transform: translate(0px, 0px);
-        transform: translate(0px, 0px);
+        .translate(0px, 0px);
     }
 
     .uiPopupWrapper {
@@ -227,10 +234,8 @@
         position: relative!important;
         margin: 50px auto 20px;
         width: 600px!important;
-        -webkit-transform: translate(0px, -25%);
-        transform: translate(0px, -25%);
-        -webkit-transition: transform 0.3s ease-out 0s;
-        transition: transform 0.3s ease-out 0s;
+        .translate(0px, -25%);
+        .transition(transform 0.3s ease-out 0s);
         .PopupContent {
             height: auto!important;
             .resizable {
@@ -320,8 +325,7 @@
         display: none;
     }
     .OfficeMiddleTDContainer + .OfficeRightTDContainer  {
-        -webkit-transition: all 400ms ease 0s;
-        transition: all 400ms ease 0s;
+        .transition(all 400ms ease 0s);
     }
      .hidden-right-bar   .OfficeMiddleTDContainer + .OfficeRightTDContainer  {
         display: none;
@@ -396,8 +400,7 @@
         .maskLayer .uiDocumentPreview .fileContent .navigationContainer img,
         .maskLayer .uiDocumentPreview .fileContent .navigationContainer object {
              top: 34px;
-            -webkit-transform: translate(-50%, 0px);
-            transform: translate(-50%, 0px);
+            .translate(-50%, 0px);
         }
         .maskLayer .uiDocumentPreview .fileContent {
             margin: 0!important
@@ -598,9 +601,8 @@
     }
     .uiQuickSearchResult {
         position: fixed!important;
-        left: 50%;
-        -webkit-transform: translateX(-50%);
-        transform: translateX(-50%);
+        left: 50%!important;
+        .translate(-50%,0%);
         width: 90% !important;
         z-index: 99999!important;
         .message {
@@ -630,7 +632,7 @@
         }
     }
     .uiQuickSearchResult {
-        width: 700px !important;
+        width: 700px!important;
     }
 }
 // end 768 1024
@@ -866,8 +868,11 @@
             .help-link-box {
                 position: absolute;
                 top: 50%;
-                right: 15px;
+                right: 5px;
                 .translate(0, -50%);
+                .uiIconPLF24x24Help {
+                    font-size: @sizeIcon24x24 - 2 ;
+                }
             }
             .uiIconPLF24x24Help {
                 color: @colorIconDefault;
@@ -1087,9 +1092,7 @@
 }
 
 @media (max-width: 480px) {
-    .uiSpaceMenu .spaceMenuTab  span {
-        display: none!important;
-    }
+    
     .accordionCont {
       display: none;
       &.active {

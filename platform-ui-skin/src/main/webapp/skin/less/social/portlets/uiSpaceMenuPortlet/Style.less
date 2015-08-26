@@ -85,3 +85,69 @@
 	  background-position:center;
 	}
 }
+
+@media(max-width: 1024px) {
+   .uiSpaceMenu .spaceMenuTab > .active {
+        background: none;
+    }
+    .uiSpaceMenu .dropdown span {
+        margin-top: 6px;
+
+    }
+    .uiSpaceMenu .spaceMenuTab li.dropdown.open ul.dropdown-menu li.item a span {
+        bottom: 12px;
+    }
+    .uiSpaceMenu .spaceMenuTab > li > a,
+    .uiSpaceMenu .spaceMenuTab > li > a:hover,
+    .uiSpaceMenu .spaceMenuTab > .active > a,
+    .uiSpaceMenu .spaceMenuTab > .active > a:hover {
+        .box-sizing(border-box);
+        height: 90px;
+        padding: 12px ;
+        margin: 0 20px;
+        .border-radius(0);
+    }
+    .uiSpaceMenu [class^="uiIcon"] {
+        font-size: 42px;
+    }
+    .uiSpaceMenu .spaceMenuTab > li > a > .tabName {
+        margin: 6px 0 0 ;
+    }
+    .uiSpaceMenu {
+        .dropdown-menu {
+            margin-top: -4px;
+            .border-radius(0);
+        }
+    }
+}
+
+@media(max-width: 767px){
+    .uiSpaceMenu {
+        height: 60px;
+    }
+    .uiSpaceMenu .spaceMenuTab > li > a,
+    .uiSpaceMenu .spaceMenuTab > li > a:hover,
+    .uiSpaceMenu .spaceMenuTab > .active > a,
+    .uiSpaceMenu .spaceMenuTab > .active > a:hover {
+        height: 60px;
+        padding: 12px ;
+    }
+    .uiSpaceMenu .spaceMenuTab > li > a > .tabName,.uiSpaceMenu .spaceMenuTab > li > a > span {
+        display: none;
+    }
+    .uiSpaceMenu .spaceMenuTab > li > a.dropdown-toggle{
+        float: right ;
+        padding: 12px 20px;
+        margin-right: 0;
+        display: inline-block;
+    }
+    .uiSpaceMenu [class^="uiIcon"] {
+        font-size: 35px;
+    }
+}
+
+@media(max-width: 480px){
+    .uiSpaceMenu {
+        margin-top: -9px;
+    }
+}

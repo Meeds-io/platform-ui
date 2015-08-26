@@ -92,12 +92,6 @@ a:hover [class^="uiIconForum"]
   top: 0;
 }
 
-.dropdown > a:hover > [class^="uiIconForumColor"],
-[class^="uiIconForumColor"]:hover,
-a:hover > [class^="uiIconForumColor"],
-i:hover [class^="uiIconForumColor"]{
-	//background-image: url("@{images-path}/forum/portlets/forum/Icons/uiIconsForumColor.png");
-}
 
 
 
@@ -159,7 +153,7 @@ i:hover [class^="uiIconForumColor"]{
 }
 
 .uiIconForumColorOffline ,.uiIconForumColorOffline:hover{
-	color:#999;
+	color:@colorIconDefault;
 }
 .uiIconForumColorUnread ,.uiIconForumColorUnread:hover{
 	color:@infoColor;
@@ -177,7 +171,7 @@ i:hover [class^="uiIconForumColor"]{
 // To keep the color from changing when hover on the link
 a:hover {
   .uiIconForumColorOffline {
-	color:#999;
+	color:@colorIconDefault;
   }
   .uiIconForumColorUnread {
 	color:@infoColor;
