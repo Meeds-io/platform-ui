@@ -601,7 +601,7 @@
         left: 50%;
         -webkit-transform: translateX(-50%);
         transform: translateX(-50%);
-        width: 700px !important;
+        width: 90% !important;
         z-index: 99999!important;
         .message {
             background:@baseBackground !important ;
@@ -628,6 +628,9 @@
         #OfficeRight {
             margin-left: 20px;
         }
+    }
+    .uiQuickSearchResult {
+        width: 700px !important;
     }
 }
 // end 768 1024
@@ -751,6 +754,7 @@
     }
     .action_close {
         margin-top: -2px!important;
+        margin-right: 5px;
     }
     .ajaxLoadingMask {
         padding: 12px 7px 12px 11px;
@@ -1026,7 +1030,7 @@
 
 @media (min-width: 600px) and (max-width: 768px) {
     .uiQuickSearchResult {
-        width: 500px !important;
+        //width: 500px !important;
     }
 
 }
@@ -1044,7 +1048,7 @@
     }
 
     .uiQuickSearchResult {
-        width: 380px !important;
+        //width: 380px !important;
     }
 
 }
@@ -1216,7 +1220,11 @@
         margin: -4px 0 0 12px !important;
     }
     .uiQuickSearchResult {
-        width: 300px !important;
+        //width: 300px !important;
+    }
+    // loadding for search top navigation
+    body  .UIToolbarContainer .uiSearchPlatformToolBarPortlet > input.loadding[type="text"] + a:after {
+        top: 4px;
     }
 }
 

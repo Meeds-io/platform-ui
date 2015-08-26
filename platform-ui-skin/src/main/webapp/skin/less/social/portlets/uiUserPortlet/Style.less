@@ -141,12 +141,14 @@ td.right-column-containerTDContainer {
         }
 
 	}
-	.uiIconStatusDisconnect {
-        color: @errorColor;
-	  	font-size: inherit;
-        &:before {
-            content: "\e75e";
-        }
+  	.btn, .btn:hover { // so the icon stays red, even when hover on the button
+		.uiIconStatusDisconnect {
+			color: @errorColor;
+			font-size: inherit;
+			&:before {
+			  	content: "\e75e";
+			}
+		}
 	}
 	.hide-default, .user-actions:hover .show-default {
 		display: none;
@@ -389,6 +391,16 @@ td.right-column-containerTDContainer {
 					}
 					.uiAction {
 						margin: left: 7px;				
+					}
+				  	.actionIcon { // Align "x" and "add" icons
+					  	.uiIconClose {
+						  	width: 14px;
+							text-align: center;
+							top: -1px;
+						}
+					  	&:hover .uiIconClose {
+						  	opacity: 1;
+						}
 					}
 				}
 			}

@@ -87,6 +87,9 @@ a:hover [class^="uiIconForum"]
   vertical-align: text-bottom;
   background-image: url("@{images-path}/forum/portlets/forum/Icons/uiIconsForumColor.png");
   background-repeat: no-repeat;*/
+  margin-right: 3px; // give space between the icon and the user name
+  position: relative; // position centered
+  top: 0;
 }
 
 .dropdown > a:hover > [class^="uiIconForumColor"],
@@ -155,19 +158,37 @@ i:hover [class^="uiIconForumColor"]{
 	 font-size: 10px;
 }
 
-.uiIconForumColorOffline {
+.uiIconForumColorOffline ,.uiIconForumColorOffline:hover{
 	color:#999;
 }
-.uiIconForumColorUnread {
+.uiIconForumColorUnread ,.uiIconForumColorUnread:hover{
 	color:@infoColor;
 }
-.uiIconForumColorOnline {
+.uiIconForumColorOnline ,.uiIconForumColorOnline:hover{
 	color:@successColor;
 }
-.uiIconForumColorAway {
+.uiIconForumColorAway,.uiIconForumColorAway:hover {
 	color: @warningColor;
 }
-.uiIconForumColorBusy {
+.uiIconForumColorBusy,.uiIconForumColorBusy:hover {
 	color:@errorColor;
 }
 
+// To keep the color from changing when hover on the link
+a:hover {
+  .uiIconForumColorOffline {
+	color:#999;
+  }
+  .uiIconForumColorUnread {
+	color:@infoColor;
+  }
+  .uiIconForumColorOnline {
+	color:@successColor;
+  }
+  .uiIconForumColorAway {
+	color: @warningColor;
+  }
+  .uiIconForumColorBusy {
+	color:@errorColor;
+  }
+}

@@ -13,6 +13,13 @@
 // For the @baseBackground version of the icons, just add the .iconwhite class:
 // <i class="iconinbox iconwhite"></i>
 
+
+// VARIABLES
+// ----------------
+
+
+
+
 [class^="uiIcon"],
 .LeftNavigationTDContainer .uiPopup [class^="uiIcon"]{
    font-family: "PLF-FONT-ICONS";
@@ -30,7 +37,15 @@
     position: relative;
     top: 1px;
 
-} 
+}
+
+
+//Adding a default icon to Space Apps
+.uiIconDefaultApp:before {
+  content: "\e6d6";
+}
+
+
 
 /* Blue icons with optional class, or on hover/active states of certain elements */
 
@@ -298,17 +313,18 @@ a:hover [class^="uiIcon"],
 .uiIcon16x16FileArchiveDefault:before,.uiIcon16x16applicationx-tar:before,
 .uiIcon16x16applicationx-gzip:before,.uiIcon16x16applicationx-bzip2:before,.uiIcon16x16applicationother-zip:before {
 	content: "\e718";
-	color: #8acf3f;
+	//color: #8acf3f;
+  	color: @compressedFilesIconColor;
 }
 
 .uiIcon16x16FileArchiveRar:before,.uiIcon16x16applicationrar:before  {
 	content: "\e719";
-	color: #717272;
+	color: @compressedFilesIconColor;
 }
 
 .uiIcon16x16FileArchiveZip:before,.uiIcon16x16FileZip:before,.uiIcon16x16applicationzip:before {
 	content: "\e71a";
-	color: #717272;
+	color: @compressedFilesIconColor;
 }
 
 .uiIcon16x16FileJar:before,.uiIcon16x16applicationjava-archive:before {
@@ -323,7 +339,8 @@ a:hover [class^="uiIcon"],
 
 .uiIcon16x16FileWar:before,.uiIcon16x16applicationx-zip:before {
 	content: "\e71f";
-	color: #A34D46;
+  	color: @compressedFilesIconColor;
+	//color: #A34D46;
 }
 
 .uiIcon16x16FileAudioDefault:before,.uiIcon16x16audiomidi:before,.uiIcon16x16audiox-aiff:before,.uiIcon16x16audiobasic:before,
@@ -375,10 +392,14 @@ a:hover [class^="uiIcon"],
 
 .uiIcon16x16FileOpenOffice1:before,.uiIcon16x16FileOpenOffice1:before,
 .uiIcon16x16applicationvndoasisopendocumenttext:before,
-.uiIcon16x16applicationvndoasisopendocumentspreadsheet:before,
 .uiIcon16x16applicationvndoasisopendocumentdatabase:before {
 	content: "\e710";
 	color: #1c9bd7;
+}
+
+.uiIcon16x16applicationvndoasisopendocumentspreadsheet:before {
+  content: "\e710";
+  color: #1a744b;
 }
 
 .uiIcon16x16FileMpeg:before,.uiIcon16x16videompeg:before,.uiIcon16x16videompg:before,
@@ -535,7 +556,7 @@ a:hover [class^="uiIcon"],
 .uiIcon16x16fontttc:before,.uiIcon16x16fonteot:before,.uiIcon16x16fontdfont:before,
 .uiIcon16x16fontttf:before,.uiIcon16x16fontwoff:before {
 	content: "\e6f5";
-	color: #A6346e;
+	color: @fontIconColor;
 }
 
 .uiIcon16x16FileGdraw:before,.uiIcon16x16applicationvndgoogle-appsdrawing:before {
@@ -629,17 +650,18 @@ a:hover [class^="uiIcon"],
 .uiIcon24x24FileArchiveDefault:before,.uiIcon24x24applicationx-tar:before,
 .uiIcon24x24applicationx-gzip:before,.uiIcon24x24applicationx-bzip2:before,.uiIcon24x24applicationother-zip:before {
 	content: "\e718";
-	color: #8acf3f;
+  	color: @compressedFilesIconColor;
+	//color: #8acf3f;
 }
 
 .uiIcon24x24FileArchiveRar:before,.uiIcon24x24applicationrar:before  {
 	content: "\e719";
-	color: #717272;
+	color: @compressedFilesIconColor;
 }
 
 .uiIcon24x24FileArchiveZip:before,.uiIcon24x24FileZip:before,.uiIcon24x24applicationzip:before {
 	content: "\e71a";
-	color: #717272;
+	color: @compressedFilesIconColor;
 }
 
 .uiIcon24x24FileJar:before,.uiIcon24x24applicationjava-archive:before {
@@ -654,7 +676,8 @@ a:hover [class^="uiIcon"],
 
 .uiIcon24x24FileWar:before,.uiIcon24x24applicationx-zip:before {
 	content: "\e71f";
-	color: #A34D46;
+  	color: @compressedFilesIconColor;
+	//color: #A34D46;
 }
 
 .uiIcon24x24FileAudioDefault:before,.uiIcon24x24audiomidi:before,.uiIcon24x24audiox-aiff:before,.uiIcon24x24audiobasic:before,
@@ -866,7 +889,7 @@ a:hover [class^="uiIcon"],
 .uiIcon24x24fontttc:before,.uiIcon24x24fonteot:before,.uiIcon24x24fontdfont:before,
 .uiIcon24x24fontttf:before,.uiIcon24x24fontwoff:before {
 	content: "\e6f5";
-	color: #A6346e;
+	color: @fontIconColor;
 }
 
 .uiIcon24x24FileGdraw:before,.uiIcon24x24applicationvndgoogle-appsdrawing:before {
@@ -958,17 +981,18 @@ a:hover [class^="uiIcon"],
 .uiIcon32x32FileArchiveDefault:before,.uiIcon32x32applicationx-tar:before,
 .uiIcon32x32applicationx-gzip:before,.uiIcon32x32applicationx-bzip2:before,.uiIcon32x32applicationother-zip:before {
 	content: "\e718";
-	color: #8acf3f;
+  	color: @compressedFilesIconColor;
+	//color: #8acf3f;
 }
 
 .uiIcon32x32FileArchiveRar:before,.uiIcon32x32applicationrar:before  {
 	content: "\e719";
-	color: #717272;
+	color: @compressedFilesIconColor;
 }
 
 .uiIcon32x32FileArchiveZip:before,.uiIcon32x32FileZip:before,.uiIcon32x32applicationzip:before {
 	content: "\e71a";
-	color: #717272;
+	color: @compressedFilesIconColor;
 }
 
 .uiIcon32x32FileJar:before,.uiIcon32x32applicationjava-archive:before {
@@ -983,7 +1007,8 @@ a:hover [class^="uiIcon"],
 
 .uiIcon32x32FileWar:before,.uiIcon32x32applicationx-zip:before {
 	content: "\e71f";
-	color: #A34D46;
+  	color: @compressedFilesIconColor;
+	//color: #A34D46;
 }
 
 .uiIcon32x32FileAudioDefault:before,.uiIcon32x32audiomidi:before,.uiIcon32x32audiox-aiff:before,.uiIcon32x32audiobasic:before,
@@ -1195,7 +1220,7 @@ a:hover [class^="uiIcon"],
 .uiIcon32x32fontttc:before,.uiIcon32x32fonteot:before,.uiIcon32x32fontdfont:before,
 .uiIcon32x32fontttf:before,.uiIcon32x32fontwoff:before {
 	content: "\e6f5";
-	color: #A6346e;
+	color: @fontIconColor;
 }
 
 .uiIcon32x32FileGdraw:before,.uiIcon32x32applicationvndgoogle-appsdrawing:before {
@@ -1288,17 +1313,18 @@ a:hover [class^="uiIcon"],
 .uiIcon48x48FileArchiveDefault:before,.uiIcon48x48applicationx-tar:before,
 .uiIcon48x48applicationx-gzip:before,.uiIcon48x48applicationx-bzip2:before,.uiIcon48x48applicationother-zip:before {
 	content: "\e718";
-	color: #8acf3f;
+  	color: @compressedFilesIconColor;
+	//color: #8acf3f;
 }
 
 .uiIcon48x48FileArchiveRar:before,.uiIcon48x48applicationrar:before  {
 	content: "\e719";
-	color: #717272;
+	color: @compressedFilesIconColor;
 }
 
 .uiIcon48x48FileArchiveZip:before,.uiIcon48x48FileZip:before,.uiIcon48x48applicationzip:before {
 	content: "\e71a";
-	color: #717272;
+	color: @compressedFilesIconColor;
 }
 
 .uiIcon48x48FileJar:before,.uiIcon48x48applicationjava-archive:before {
@@ -1313,7 +1339,8 @@ a:hover [class^="uiIcon"],
 
 .uiIcon48x48FileWar:before,.uiIcon48x48applicationx-zip:before {
 	content: "\e71f";
-	color: #A34D46;
+  	color: @compressedFilesIconColor;
+	//color: #A34D46;
 }
 
 .uiIcon48x48FileAudioDefault:before,.uiIcon48x48audiomidi:before,.uiIcon48x48audiox-aiff:before,.uiIcon48x48audiobasic:before,
@@ -1525,7 +1552,7 @@ a:hover [class^="uiIcon"],
 .uiIcon48x48fontttc:before,.uiIcon48x48fonteot:before,.uiIcon48x48fontdfont:before,
 .uiIcon48x48fontttf:before,.uiIcon48x48fontwoff:before {
 	content: "\e6f5";
-	color: #A6346e;
+	color: @fontIconColor;
 }
 
 .uiIcon48x48FileGdraw:before,.uiIcon48x48applicationvndgoogle-appsdrawing:before {
@@ -1617,17 +1644,18 @@ a:hover [class^="uiIcon"],
 .uiIcon64x64FileArchiveDefault:before,.uiIcon64x64applicationx-tar:before,
 .uiIcon64x64applicationx-gzip:before,.uiIcon64x64applicationx-bzip2:before,.uiIcon64x64applicationother-zip:before {
 	content: "\e718";
-	color: #8acf3f;
+  	color: @compressedFilesIconColor;
+	//color: #8acf3f;
 }
 
 .uiIcon64x64FileArchiveRar:before,.uiIcon64x64applicationrar:before  {
 	content: "\e719";
-	color: #717272;
+	color: @compressedFilesIconColor;
 }
 
 .uiIcon64x64FileArchiveZip:before,.uiIcon64x64FileZip:before,.uiIcon64x64applicationzip:before {
 	content: "\e71a";
-	color: #717272;
+	color: @compressedFilesIconColor;
 }
 
 .uiIcon64x64FileJar:before,.uiIcon64x64applicationjava-archive:before {
@@ -1642,7 +1670,8 @@ a:hover [class^="uiIcon"],
 
 .uiIcon64x64FileWar:before,.uiIcon64x64applicationx-zip:before {
 	content: "\e71f";
-	color: #A34D46;
+  	color: @compressedFilesIconColor;
+	//color: #A34D46;
 }
 
 .uiIcon64x64FileAudioDefault:before,.uiIcon64x64audiomidi:before,.uiIcon64x64audiox-aiff:before,.uiIcon64x64audiobasic:before,
@@ -1854,7 +1883,7 @@ a:hover [class^="uiIcon"],
 .uiIcon64x64fontttc:before,.uiIcon64x64fonteot:before,.uiIcon64x64fontdfont:before,
 .uiIcon64x64fontttf:before,.uiIcon64x64fontwoff:before {
 	content: "\e6f5";
-	color: #A6346e;
+	color: @fontIconColor;
 }
 
 .uiIcon64x64FileGdraw:before,.uiIcon64x64applicationvndgoogle-appsdrawing:before {
@@ -4012,4 +4041,10 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 
 .uiIconSimplePlusMini:before {
     content: "\e74b";
+}
+
+// Chat Icon for navigation bar : font setup and size cause the class name doesn't begin with "uiIconPLF24x24"
+.uiNotifChatIcon {
+  	font-family: "PLF-FONT-ICONS";
+  	font-size: @sizeIcon24x24;
 }

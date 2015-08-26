@@ -319,9 +319,24 @@
 	.uiAdminToolbarPortlet {
 		.seoImgBlock{
 			padding: 5px 20px 5px 10px;
-			.UISEOToolbarPorlet .SEOToolbar .Enable {
-			//	padding: 0 5px;
-			//	margin-left: 2px;
+			.UISEOToolbarPorlet .SEOToolbar {
+			  .Enable, .Disable {
+				//	padding: 0 5px;
+				//	margin-left: 2px;
+
+			  	//Removing the image, replacing it with font-icon, and positioning it
+				img {
+				  	display: none;
+				}
+				span:after {
+				  	font-family: "PLF-FONT-ICONS";
+				  	font-size: 17px;
+				  	color: #d80303;
+				  	content: "\e694";
+				  	position: relative;
+				  	top: 2px;
+				}
+			  }
 			}
 		}
 		.seoImgBlock:hover,
@@ -423,11 +438,11 @@
 //------------------------- uiNotificationPopoverToolbarPortlet -------------------------
 .uiNotificationPopoverToolbarPortlet {
 	.badgeNotification {
-		font-style: normal;
+		font-family: @sansFontFamily;
 	}
 	.badgeNotification {
 		position: absolute;
-		top: 3px; right: 3px; 
+		top: -4px; right: -8px;
 		display:none;
 	}
 	.dropdown-menu {
@@ -652,4 +667,10 @@
 }
 .UIToolbarContainer .uiDropdownWithIcon > a > i {
     top: -2px;
+}
+
+.uiNotificationPopoverToolbarPortlet  {
+    .dropdown-toggle .uiIconPLF24x24Bell {
+        position: relative;
+    }
 }
