@@ -1183,6 +1183,15 @@ blockquote:after {
         right: 0;
         min-width: 164px;
     }
+
+
+
+}
+//end 1024
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
     // Hide Column Timeline when show Right Sidebar
 
     .open-right-bar {
@@ -1198,21 +1207,6 @@ blockquote:after {
             display: none!important;
         }
     }
-
-
-}
-
-
-//end 1024
-
-@media (min-width: 481px) and (max-width: 1024px) {
-    .activityStream .author span {
-        font-size: 16px;
-    }
-    .btn-group.uiDropdownWithIcon .btn .uiIconMiniArrowDown {
-        margin: 0 0px 0 1px;
-    }
-
     .activityStreamStatus {
         float: right;
         margin-right: 10px;
@@ -1255,13 +1249,26 @@ blockquote:after {
     }
     .hidden-right-bar .activityStreamStatus {
         //margin: 0 0 0 6px;
-       // float: left;
+        // float: left;
         .arrowBottom {
             display: block;
             left: 16px;
         }
 
     }
+}
+//end 768 and 1024
+
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    .activityStream .author span {
+        font-size: 16px;
+    }
+    .btn-group.uiDropdownWithIcon .btn .uiIconMiniArrowDown {
+        margin: 0 0px 0 1px;
+    }
+
+  
     .activityType [class^="uiIcon"] {
         font-size: 14px;
     }
