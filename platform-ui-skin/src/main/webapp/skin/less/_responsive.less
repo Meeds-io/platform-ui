@@ -143,12 +143,13 @@
     }
     .toggle-right-bar  {
         cursor: pointer;
-        position: absolute;
-        top: 300px;
+        position: fixed;
+        top: 50%;
         margin-top: -8px;
-        right: 0 ;
+        right: 40% ;
         width: 25px;
         height: 70px;
+        display: none;
         .border-radius(3px 0 0 3px);
         background: rgba(0,0,0,0.6);
         border: 1px solid rgba(0,0,0,0.8);
@@ -384,6 +385,7 @@
             }
             & > div.SearchPortletTDContainer input[name="adminkeyword"] {
                 margin: 10px 0;
+                width: 210px;
                 display: inline-block!important;
             }
         }
@@ -615,6 +617,7 @@
         }
     }
 
+
 }
 
 //end 1024px
@@ -639,6 +642,10 @@
     .uiQuickSearchResult {
         width: 700px!important;
     }
+
+    body .uiQuickSearchResult {
+        margin-top: 0;
+    }
 }
 // end 768 1024
 
@@ -657,9 +664,10 @@
     body .OfficeRightTDContainer {
         width: 36%!important;
     }
-
+    body .toggle-right-bar  {
+        right: 36%
+    }
 }
-
 
 //reset 1.2
 @media (min-width: 481px) and (max-width: 1024px) {
@@ -784,7 +792,6 @@
 }
 
 // end from 481 to 1024px
-
 /* Landscape phones and down */
 @media (max-width: 767px) {
 
@@ -1233,6 +1240,11 @@
         }
 
     }
+      #UICreateList.dropdown-menu .spaceChooserPopup{
+        & > li {
+            font-size: 13px;
+        }
+    }
     .avatar-help-action a {
         font-weight: bold!important;
     }
@@ -1264,6 +1276,11 @@
     // loadding for search top navigation
     body  .UIToolbarContainer .uiSearchPlatformToolBarPortlet > input.loadding[type="text"] + a:after {
         top: 4px;
+    }
+   body  .spaceChooserPopup {
+        left: auto;
+        right: 0;
+        top: 28px;
     }
 }
 

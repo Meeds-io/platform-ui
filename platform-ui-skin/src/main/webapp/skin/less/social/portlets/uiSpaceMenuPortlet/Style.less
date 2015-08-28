@@ -130,14 +130,21 @@
     .uiSpaceMenu .spaceMenuTab > .active > a,
     .uiSpaceMenu .spaceMenuTab > .active > a:hover {
         height: 60px;
-        padding: 12px ;
+        padding: 15px ;
     }
     .uiSpaceMenu .spaceMenuTab > li > a > .tabName,.uiSpaceMenu .spaceMenuTab > li > a > span {
         display: none;
     }
-    .uiSpaceMenu .spaceMenuTab > li > a.dropdown-toggle{
+    .uiSpaceMenu .spaceMenuTab > li > a, .uiSpaceMenu .spaceMenuTab > li > a:hover {
+    	margin: 0 10px;
+    }
+    .uiSpaceMenu .spaceMenuTab > li.item:last > a {
+        margin-right: 0;
+    }
+    .uiSpaceMenu .spaceMenuTab > li > a.dropdown-toggle {
         float: right ;
         padding: 12px 20px;
+        margin-left: 0;
         margin-right: 0;
         display: inline-block;
     }

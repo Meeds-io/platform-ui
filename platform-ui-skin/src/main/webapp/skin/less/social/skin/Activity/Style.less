@@ -1183,7 +1183,9 @@ blockquote:after {
         right: 0;
         min-width: 164px;
     }
-
+    .attachMents  .uidocactivitycomposer {
+        display: none;//for P1
+    }
 
 
 }
@@ -1306,6 +1308,11 @@ blockquote:after {
 @media (max-width: 767px ) {
 	body {
 		height: 100%;
+	}
+	.activityDisplay {
+		.showMore {
+			display: none;
+		}
 	}
 	.activityTimeLine.pull-left {
 	    display: none;
@@ -1582,6 +1589,9 @@ blockquote:after {
 
 
 @media (max-width: 480px) {
+    .fileActivity .introBox .isPreviewable .PlayerContent {
+        width: auto;
+    }
     .exo-mentions .replaceTextArea {
         min-height: 18px;
     }
