@@ -674,3 +674,25 @@
         position: relative;
     }
 }
+
+@media(max-width: 480px){
+    .UIToolbarContainer .uiCreateToolBarPortlet .uiQuickAddEvent .form-horizontal  {
+        .controls , .title .controls{
+            margin-left: 0;
+        }
+        .control-label,.title .control-label {
+            width: auto;
+        }
+    }
+    .uiCreateToolBarPortlet .startTime ,.endTime {
+        input { margin-right: 5px;}
+
+    }
+    #UICreateList.dropdown-menu {
+        //min-width: 300px;
+        & > li {
+           // float: none;
+        }
+    }
+
+}

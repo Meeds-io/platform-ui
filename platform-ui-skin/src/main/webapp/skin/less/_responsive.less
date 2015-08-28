@@ -205,7 +205,7 @@
     input[type="url"], input[type="search"],
     input[type="tel"], input[type="color"],
     .uneditable-input {
-        max-width: 100%;
+        max-width: 100%;width: 100%;
     }
 
     // uipopup
@@ -606,6 +606,8 @@
         position: fixed!important;
         left: 50%!important;
         .translate(-50%,0%);
+        max-height: 100%;
+        overflow-y: auto;
         width: 90% !important;
         z-index: 99999!important;
         .message {
@@ -1033,15 +1035,27 @@
         }
     }
 
+    .uiForumActionBar  .pull-right > .dropdown-menu {
+     left: 0;//fix for forum mobile
+    }
 
 }
 
 // end 767
 
 
-@media (min-width: 600px) and (max-width: 768px) {
-    .uiQuickSearchResult {
-        //width: 500px !important;
+@media (max-width: 600px) {
+    body {
+        .form-horizontal .control-group .control-label {
+            width: auto;
+            float: none;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .form-horizontal .control-group .controls {
+            margin-left: 0;
+        }
     }
 
 }
@@ -1194,9 +1208,9 @@
     #UICreateList.dropdown-menu{
         padding:0!important;
         left: auto !important;
-        position: absolute;
+        position: fixed;
         .border-radius(0);
-        right: -120px !important;
+        right: 0px !important;
         top: 34px;
         min-width: 180px;
         & > li  {
@@ -1208,9 +1222,6 @@
                 padding: 10px !important;
                 &:hover {
                     background: @primaryBackground!important;
-                    i {
-
-                    }
                 }
                 i {
                     margin: 0!important;
@@ -1229,7 +1240,7 @@
         padding-top: 51px;
     }
     #UICreateList {
-        [class^="uiIcon"] {
+        & > li > a > [class^="uiIcon"] {
             font-size: 22px;
         }
     }
