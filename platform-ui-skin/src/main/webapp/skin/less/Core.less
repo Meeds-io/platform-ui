@@ -975,11 +975,6 @@ hr {
 			border-top: 1px solid @white;
 		}
 	}
-}//clear margin-left of row in cke_editable
-.cke_editable {
-    .row {
-        margin: 0;
-    }
 }
 
 // Reset line-height for ECME Product Template
@@ -1017,7 +1012,6 @@ hr {
 .width-full {
     width: 100%;
 }
-
 
 #auto-versioning-actions.alert {
     padding-right: 14px;
@@ -1071,5 +1065,10 @@ hr {
 }
 
 
+.sharePrjDialog {
+	.uiAction .btn:first-child {
+		.btn;
+	}
+}
 @import "_responsive.less";
 
