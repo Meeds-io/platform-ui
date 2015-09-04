@@ -960,7 +960,22 @@ hr {
 		text-align: center;
 	}
 }
-//clear margin-left of row in cke_editable
+
+// Reset some component for Task
+#taskManagement {
+	.uiAccordion.leftPanel .accordion-heading .item {
+		border-bottom: none;
+	}
+	.uiAccordion.leftPanel .accordion-heading .item + .list-projects {
+		border-top: 1px solid @borderColor;
+	}
+	.uiAccordion.leftPanel .accordion-heading .sub-item {
+		border-bottom: none;
+		+ .sub-menu {
+			border-top: 1px solid @white;
+		}
+	}
+}//clear margin-left of row in cke_editable
 .cke_editable {
     .row {
         margin: 0;
