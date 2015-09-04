@@ -991,6 +991,21 @@ hr {
 	}
 }
 
+// Reset some component for Task
+#taskManagement {
+	.uiAccordion.leftPanel .accordion-heading .item {
+		border-bottom: none;
+	}
+	.uiAccordion.leftPanel .accordion-heading .item + .list-projects {
+		border-top: 1px solid @borderColor;
+	}
+	.uiAccordion.leftPanel .accordion-heading .sub-item {
+		border-bottom: none;
+		+ .sub-menu {
+			border-top: 1px solid @white;
+		}
+	}
+}
 
 // Reset line-height for ECME Product Template
 .ProDetailPage [style*="font-size: 24"],
