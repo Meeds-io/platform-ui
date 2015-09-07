@@ -796,6 +796,9 @@ hr {
 }
 
 .uiEditableInline {
+	.uiIconClose {
+		display: none;
+	}
 	&.active {
 	    .editable-element {
 	        display: none;
@@ -896,6 +899,11 @@ hr {
 				}
 			}
 		}
+		&:hover {
+			.uiIconClose {
+				display: inline-block;
+			}
+		}
 	}
 	&.edit {
 		.hoverStatus {
@@ -951,7 +959,9 @@ hr {
 		}
 	}
 }
-
+.hoverStatus *:last-child {
+	margin-bottom: 0;
+}
 .form-dropdown {
 	position: relative;
 	display: inline-block;
