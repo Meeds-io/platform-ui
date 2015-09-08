@@ -662,6 +662,7 @@ hr {
 			border-bottom: 1px solid @white;
 			margin-left: 1px;
 			position: relative;
+			white-space: nowrap;
 			&:hover {
 				background-color: @primaryBackgroundLight;
 				.iconGreater {
@@ -675,8 +676,11 @@ hr {
 			}
 			.project-name, .label-name {
 				display: block;
-    			padding: 6px 20px;
+    			padding: 6px 30px;
     			font-weight: normal;
+    			max-width: 100%;
+    			.text-overflow;
+    			.box-sizing(border-box);
 			}
 			> a {
 				color: @textColor;
@@ -684,6 +688,7 @@ hr {
 				&.dropdown-toggle {
 					display: none;
 					margin: 6px 12px 0 0;
+					position: relative;
 				}
 			}
 		}
