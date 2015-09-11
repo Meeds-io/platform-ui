@@ -16,13 +16,19 @@
 		font-size: 14px;
 		font-weight: bold;
 		[class^="uiIcon"] {
-			margin: 10px 4px 0 0;
+			margin: 0 0 0 4px;
 			cursor: pointer;
 		}
         [class^="uiIconArrow"] {
             margin: 13px 4px 0 0;
         }
-		.popupTitle {
+        .uiIconArrowDownMini {
+            margin: 6px 4px 0 ;
+            &.pull-left {
+                margin-left: 0;
+            }
+        }
+        .popupTitle {
 			margin: 0;
 			color: @uiPopupTitleColor;
 			display: block;
@@ -94,33 +100,45 @@
 			padding-top: 15px;
 			padding-bottom: 15px;
 		}
-		> li {
+		& > li {
 			padding: 5px 0;
+            .contentMessage {
+                white-space: normal;
+            }
 		}
 
-		> li span[class*="Icon"] {
-			background: url("@{images-path}/PopupMessage/icons.png") no-repeat;
+        &  > li span[class*="Icon"] {
 			padding-left: 20px;
 			line-height: 16px;
-			height: 16px;
+			//height: 16px;
 			color: @popupMessageColor;
 			font-weight: bold;
+            position: relative;
+            &:before {
+                content: "";
+                display: block;
+                .square(16px);
+                position: absolute;
+                left: 0;
+                top: 0px;
+                background-image: url("@{images-path}/PopupMessage/icons.png");
+            }
 		}
 
 		> li span.errorIcon {
-			background-position: left 0px;
+            &:before {background-position: left 0px;}
 		}
 
 		> li span.warningIcon {
-			background-position: left -17px;
+            &:before {background-position: left -17px;}
 		}
 
 		> li span.infoIcon {
-			background-position: left -34px;
+            &:before {background-position: left -34px;}
 		}
 
 		> li span.confirmationIcon {
-			background-position: left -50px;
+            &:before {background-position: left -50px;}
 		}
 
 		> li.collapseItem > ul {
@@ -149,18 +167,24 @@
 		margin: 5px 0 5px;
 	}
 }
-.uiPopup .popupHeader .uiIconClose {
-    height: 16px;
-    line-height: 12px;
-    text-align: center;
-    width: 16px;
-    position: absolute;
-    right: 9px;
-    top: 9px;
-    z-index: 9;
-    margin: 0;
-   & + .PopupTitle {
-        margin-right: 25px
+.uiPopup .popupHeader {
+    .uiIconClose {
+        height: 16px;
+        line-height: 12px;
+        text-align: center;
+        width: 16px;
+        position: absolute;
+        right: 9px;
+        top: 9px;
+        z-index: 9;
+        margin: 0;
+        & + .PopupTitle {
+            margin-right: 25px
+        }
     }
-
+    [class^="uiIcon"] + .uiIconClose {
+        position: static;
+        margin-left: 4px;
+        &:before {font-size: @sizeIcon12x12;}
+    }
 }

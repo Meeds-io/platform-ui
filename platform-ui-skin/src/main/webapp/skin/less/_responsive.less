@@ -52,7 +52,9 @@
     }
 }
 
-
+.visible-tabletL{
+    display: none;
+}
 
 
 
@@ -183,7 +185,7 @@
         left: auto;
         right: auto;
         top: 0;
-        z-index: 99;
+        z-index: 1001;
         width: 100%;
        //.translate(0,0);
         .transition(all 400ms ease 0s);
@@ -621,6 +623,15 @@
 }
 
 //end 1024px
+
+@media (max-width: 981px) and (max-width: 1024px) {
+    .visible-tabletL{
+        display: block;;
+    }
+
+}
+
+
 //hack safari document preview
 
 @media (max-width: 1024px)  and (-webkit-min-device-pixel-ratio:0) {
@@ -1114,7 +1125,7 @@
     input[type="tel"],
     input[type="color"],
     .uneditable-input {
-        -webkit-box-sizing: border-box;box-sizing: border-box;
+        .box-sizing(border-box);
     }
 }
 
@@ -1166,25 +1177,12 @@
     }
      .uiUserToolBarPortlet {
        & >  .dropdown-toggle  {
-            //background: url("/eXoSkin/skin/images/system/more.png") no-repeat center;
             min-width: 20px;
-            font-family: "PLF-FONT-ICONS";
-            font-style: normal;
-            font-variant: normal;
-            font-weight: normal;
-            line-height: 1;
-            text-transform: none;
-            color: @colorIconDefault;
-            font-size: @sizeIconDefault;
-            /* Better Font Rendering =========== */
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            display: inline-block;
-            position: relative;
+           .font-icon();
             top: 0px;
             line-height: 30px !important;
             &:before {
-                content: "\e79d";
+                content: "\e79d"; // icon 3 dots
                 color: @toolbarDarkLinkColor;
                 font-size: 23px;
                 position: relative;
@@ -1209,9 +1207,12 @@
         }
     }
 
-    .UIToolbarContainer .uiNotificationPopoverToolbarPortlet .uiDropdownWithIcon > .dropdown-menu {
-       // left: 0!important;
+   body  .UIToolbarContainer .uiCreateToolBarPortlet .uiCreateForm .controls {
+        margin-left: 0;
     }
+   body .UIToolbarContainer .uiCreateToolBarPortlet .uiCreateForm .control-label {
+       float: left;
+   }
     #UICreateList.dropdown-menu{
         padding:0!important;
         left: auto !important;
@@ -1222,7 +1223,7 @@
         min-width: 180px;
         & > li  {
              float: left;
-            font-size: 0;
+           // font-size: 0;
          & >  a {
                 font-size: 0;
                 line-height: 0;

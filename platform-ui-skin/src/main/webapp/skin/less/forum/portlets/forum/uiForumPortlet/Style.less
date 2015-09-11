@@ -216,5 +216,28 @@
 	}
 
 }
-
+@media(max-width: 1024px) {
+    #uiRightActionBar {
+        width: auto!important;
+    }
+}
+@media(max-width: 480px){
+    .forumToolbar {
+        float: none;
+        .forumSeparatorLine + .forumSeparatorLine{
+            background: none;
+        }
+       & >  .defaultStyle {
+            float: none;
+           & >   a {
+                display: block;
+                float: none;
+                text-align: left;
+            }
+           .uiDropdownWithIcon.actionIcon{
+               float: none;
+           }
+        }
+    }
+}
 
