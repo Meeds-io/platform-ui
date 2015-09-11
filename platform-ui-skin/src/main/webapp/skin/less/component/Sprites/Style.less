@@ -3597,6 +3597,14 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 	content: "\e6e1";
 }
 
+.uiIconAppTaskManagementApplication {
+	&:before {
+		content: "\e690";
+		font-size: 35px;
+	}
+}
+
+
 .uiIconAppFeaturedPoll {
 	content: "\e73e";
 }
@@ -3670,9 +3678,7 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 }
 
 
-.uiIconShare {
-	background-position: -140px -220px;
-}
+
 /*---------- Portlet Icons ----------*/
 /*
 [class^="uiIconPortlet64x64"], [class^="uiIconPortlet64x64"]:hover{
@@ -4344,7 +4350,9 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 }
 
 .uiIconExt-tasks {
-	background-position: -180px -280px;
+	&:before {
+		content: "\e690";
+	}
 }
 
 .uiIcon40x40TickGray {
