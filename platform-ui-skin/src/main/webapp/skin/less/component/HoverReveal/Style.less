@@ -29,24 +29,36 @@
 	.block-show {
 		display: block;
 	}
-	.inline-show {
-		display: inline;
-	}
-	.inline-block-show {
-		display: inline-block;
-	}
+    .visibility-show,
+    .visibility-visible {
+        visibility: visible;
+    }
+    .inline-show {
+        display: inline;
+    }
+    .inline-block-show {
+        display: inline-block;
+    }
+
 	.inline-hide,
 	.inline-block-hide,
 	.block-show,
 	.hide {
 		display: none;
 	}
+    .visibility-hidden {
+        visibility: hidden;
+    }
 	&:hover, &.selected {
 		.block-show,
 		.inline-show,
 		.inline-block-show {
 			display: none;
 		}
+        .visibility-show,
+        .visibility-visible {
+            visibility: hidden;
+        }
 		.block-hide {
 			display: block;
 		}
@@ -56,6 +68,9 @@
 		.inline-block-hide {
 			display: inline-block;
 		}
+        .visibility-hidden {
+            visibility: visible;
+        }
 	}
 }
 .hoverStatus {
@@ -107,6 +122,10 @@
         .text-time {
             height: 26px;
             line-height: 26px;
+            vertical-align: top;
+            &:empty {
+                display: none;
+            }
         }
         &:hover,&.selected {
             &.group {
