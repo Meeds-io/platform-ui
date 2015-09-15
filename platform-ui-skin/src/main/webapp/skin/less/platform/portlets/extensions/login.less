@@ -313,27 +313,54 @@ input::-ms-clear,input[type=password]::-ms-reveal{
 /** Login form **/
 @media (max-width: 480px) {
 	.uiLogin {
-		width: 305px;
+		width: 290px;
 		margin: 0;
 		.translate(-50%, -50%);	
 		.loginHeader {
 			width: 199px;
+			padding: 2px 12px;
 			.userLoginIcon {
 				font-size: inherit;
     			font-weight: 600;
     			width: 145px;
+    			font-size: 10px;
 			}
 		} 
-		.loginContent {
-			input {
-				width: 172px;
+		.loginContainer{
+			padding: 0 32px 15px;
+			.loginContent {
+				input {
+					width: 172px;
+					background-position: left -5px;
+					font-size: 14px;
+					height: 26px;
+					margin: 5px 0;
+				}
+				.loginButton {
+					padding: 0 0 17px; 
+					.button {
+						width: 100%;
+						font-size: 12px;
+						height: 30px;
+					}
+				}
 			}
-			.loginButton .button {
-				width: 224px;
-			}
+			input:not(*:root) { width: 166px; }
+		}
+		.titleLogin {
+		    font-size: 10px;
+		    line-height: 10px;
+		    min-height: 16px;
+		    padding: 3px 3px 0 0;
 		}
 		.rememberTxt {
 			font-weight: normal;		
 		}
+		.spaceRole{
+			padding: 1px 0 8px;
+		}
 	}
+	@supports (-webkit-appearance:none) { .uiLogin .loginContainer .loginContent input {
+	    width: 172px;
+	} }
 } 
