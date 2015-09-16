@@ -52,11 +52,13 @@
     }
 }
 
-.visible-tabletL{
+.visible-tabletL {
     display: none;
 }
 
-
+.visible-small-phone {
+    display: none;
+}
 
 @media (max-width: 1024px) {
     html {
@@ -623,15 +625,32 @@
     #UICreateList.dropdown-menu > li:nth-child(4) {
         display: none;
     }
-
+    .visible-tabletL{
+        display: block;
+    }
+	.uiUserToolBarPortlet {
+		& > {
+			.dropdown-toggle {
+				    max-width: 140px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+			}
+		}
+	}
+	.UserInfoPortletTDContainer  .dropdown-menu{
+		li > a {
+			max-width: 250px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	}	
 }
 
 //end 1024px
 
 @media (max-width: 981px) and (max-width: 1024px) {
-    .visible-tabletL{
-        display: block;;
-    }
+
 
 }
 
@@ -1144,6 +1163,9 @@
     }
     .UIToolbarContainer .uiCreate .uiFormInput .uiForumFilter .filterMenu{
         position: static!important;
+	}
+    .visible-small-phone {
+        display: block!important;
     }
     .accordionCont {
       display: none;
