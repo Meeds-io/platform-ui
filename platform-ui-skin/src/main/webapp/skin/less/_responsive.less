@@ -1,6 +1,9 @@
 // RESPONSIVE EVERYTHING
 // ---------------------
 /* Large desktop */
+.uiBrandingPortlet #PlatformAdminToolbarContainer #UIToolbarContainer {
+    position: static!important;
+}
 .shareStt  {
     display: none;
     & + .uiCommentBox {
@@ -158,6 +161,7 @@
         background: rgba(0,0,0,0.6);
         border: 1px solid rgba(0,0,0,0.8);
         text-align: center;
+        .transition(all 150ms ease 0s);
         .uiIconVerticalLines {
             color: white;
             font-size: 26px;
@@ -333,10 +337,13 @@
         display: none;
     }
     .OfficeMiddleTDContainer + .OfficeRightTDContainer  {
-        .transition(all 400ms ease 0s);
+        .transition(width 150ms ease 0s);
+
     }
-     .hidden-right-bar   .OfficeMiddleTDContainer + .OfficeRightTDContainer  {
-        display: none;
+     .hidden-right-bar .OfficeMiddleTDContainer + .OfficeRightTDContainer  {
+        //display: none;
+        width: 0%!important;
+        overflow: hidden;
     }
 
     .navItemSelected , .accordionBar ,.LeftNavigationTDContainer{
