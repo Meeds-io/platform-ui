@@ -103,7 +103,7 @@ body {
 			background-position: 0 -41px;
 		}
 		.loginButton {
-			padding: 30px 0 13px;
+			padding: 30px 0 12px;
 			.button {
               .border-radius(4px);
 				text-align: center;
@@ -122,7 +122,7 @@ body {
 		}
 		#social-pane {
 			text-align: center;
-			margin-top: 15px;
+			margin-top: 20px;
 			#SignInDelimiter {
 				font-size: @baseFontSize;
 			}
@@ -135,6 +135,7 @@ body {
 						background-image: url("@{images-path}/platform/portlets/extensions/oauthIcon.png");
 						.size(35px, 37px);
 						display: block;
+						background-repeat: no-repeat;
 					}
 					&:hover {
 						.uiIconOauth {
@@ -303,7 +304,7 @@ body {
 	line-height: 12px;
 	padding: 6px 3px 0 0;
 	min-height: 31px;
-	font-size: 11px;
+	font-size: 11px; 
 }
 
 // remove clear button on IE
@@ -328,6 +329,7 @@ input::-ms-clear,input[type=password]::-ms-reveal{
 		} 
 		.loginContainer{
 			padding: 0 32px 15px;
+			background: @baseBackground url("@{images-path}/platform/portlets/extensions/loginBGXs.png") no-repeat bottom;
 			.loginContent {
 				input {
 					width: 172px;
@@ -337,11 +339,40 @@ input::-ms-clear,input[type=password]::-ms-reveal{
 					margin: 5px 0;
 				}
 				.loginButton {
-					padding: 0 0 17px; 
+					padding: 18px 0 8px;
 					.button {
 						width: 100%;
 						font-size: 12px;
 						height: 30px;
+					}
+				}
+				#social-pane {
+					margin-top: 4px;
+					#social-login {
+						a {
+							margin: 5px 8px 0;
+							.uiIconOauth {
+								background-image: url("@{images-path}/platform/portlets/extensions/oauthIconXs.png");
+								.size(25px, 27px);
+							}
+							&:hover {
+								.uiIconOauth {
+									background-image: url("@{images-path}/platform/portlets/extensions/oauthIconHoverXs.png");
+								}
+							}
+							.facebook {
+								background-position: 0 0;
+							}
+							.twitter {
+								background-position: -88px 0;
+							}
+							.linkedin {
+								background-position: -59px 0;
+							}
+							.google {
+								background-position: -29px 0;
+							}
+						}
 					}
 				}
 			}
