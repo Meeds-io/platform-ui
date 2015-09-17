@@ -423,7 +423,6 @@ td.right-column-containerTDContainer {
 	
 }
 
-
 #socialMainLayout{
 	table.UITableColumn{
 		width: auto;
@@ -455,4 +454,27 @@ td.right-column-containerTDContainer {
     #socialMainLayout .uiBasicProfilePortlet {
         min-width: 270px!important;
     }
+}
+@media(max-width: 1024px){
+	.uiExperienceProfilePortlet {
+		.experience-container{
+			.labelName, .ellipsis{
+				width: 100%;
+			}
+		}
+	}
+}
+
+@media(max-width: 768px){
+	.uiBasicProfilePortlet {
+		.uiBasicInfoSection {
+			.group-user-info {
+				.value-user-info {
+					.uiPosition {
+						max-width: 100%; 
+					}
+				}
+			}
+		}
+	}
 }
