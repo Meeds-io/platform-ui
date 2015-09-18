@@ -1341,10 +1341,13 @@
     body  .UIToolbarContainer .uiSearchPlatformToolBarPortlet > input.loadding[type="text"] + a:after {
         top: 4px;
     }
-   body  .spaceChooserPopup {
+    body  .spaceChooserPopup {
         left: auto;
-        right: 0;
+        right: 41px;
         top: 28px;
+        overflow-y: auto;
+        overflow-x: visible;
+        max-height: 225px;
     }
     body #UISocialPopupWindow .maskLayer .uiDocumentPreview .uiContentBox{
         padding: 0 10px !important;
@@ -1360,9 +1363,12 @@
     }
 }
 
-@media (max-width: 480px) and (orientation: landscape) {
+@media (max-width: 640px) and (orientation: landscape) {
     .UIToolbarContainer .uiCreate .uiFormInput .uiForumFilter .filterMenu > ul {
         max-height: 147px!important;
+    }
+    body  .spaceChooserPopup {
+        max-height: 147px;
     }
 }
 
