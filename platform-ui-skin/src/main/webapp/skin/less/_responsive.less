@@ -61,7 +61,7 @@
     display: none;
 }
 
-.visible-small-phone {
+.visible-phone-small {
     display: none;
 }
 
@@ -1108,6 +1108,14 @@
 // end 767
 
 
+@media (max-width: 640px) {
+    #UICreateList.dropdown-menu.openingAddEvent {
+        overflow-y: auto;
+    }
+    #UICreateList.dropdown-menu {
+        max-height: 330px;
+    }
+}
 @media (max-width: 600px) {
     body {
         .form-horizontal .control-group .control-label {
@@ -1184,6 +1192,9 @@
 }
 
 @media (max-width: 480px) {
+    .visible-phone-small {
+        display: block;
+    }
     .UIToolbarContainer .uiCreate .uiFormInput .uiForumFilter .filterMenu .dropdown-menu {
         left: auto;
         right: 0;
@@ -1369,6 +1380,9 @@
     }
     body  .spaceChooserPopup {
         max-height: 147px;
+    }
+    #UICreateList.dropdown-menu {
+        max-height: 200px!important;
     }
 }
 
