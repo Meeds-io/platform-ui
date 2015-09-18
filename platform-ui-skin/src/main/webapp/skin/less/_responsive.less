@@ -841,7 +841,7 @@
 // end from 481 to 1024px
 /* Landscape phones and down */
 @media (max-width: 767px) {
-
+    
     .uiPopup, .UIMaskWorkspace {
         margin: 50px 30px;
         width: auto!important;
@@ -1065,6 +1065,7 @@
 
     .dropdown-menu.overflow-y {
         overflow-y: auto;
+        overflow-x: visible;
     }
     select,
     textarea,
@@ -1092,7 +1093,16 @@
     .uiForumActionBar  .pull-right > .dropdown-menu {
      left: 0;//fix for forum mobile
     }
-
+    
+    .UIToolbarContainer .uiCreate .uiFormInput .uiForumFilter .filterMenu > ul {
+        max-height: 251px!important;
+    }
+    #UICreateList.dropdown-menu {
+        &.openingAddPoll, &.openingCreatePoll, &.openingWiki {
+            max-height: none!important;
+            overflow: visible!important;
+        }
+    }
 }
 
 // end 767
@@ -1115,6 +1125,14 @@
 }
 // For a tablet portrait and wide landscape phone
 
+@media (min-width: 481px) and (max-width: 767px) {
+    .UIToolbarContainer .uiCreate .uiFormInput .uiForumFilter .filterMenu > ul {
+        left: auto;
+        position: fixed;
+        right: 266px !important;
+        top: 167px;
+    }
+}
 @media (min-width: 481px) and (max-width: 768px) {
     body .LeftNavigationTDContainer {
         width: 40%;
@@ -1331,7 +1349,18 @@
     body #UISocialPopupWindow .maskLayer .uiDocumentPreview .uiContentBox{
         padding: 0 10px !important;
     }
-    
+    .UIToolbarContainer .uiCreate .uiFormInput .uiForumFilter .filterMenu > ul {
+        position: fixed!important;
+        left: auto;
+        right: 17px!important;
+        top: 142px;
+    }
+}
+
+@media (max-width: 480px) and (orientation: landscape) {
+    .UIToolbarContainer .uiCreate .uiFormInput .uiForumFilter .filterMenu > ul {
+        max-height: 147px!important;
+    }
 }
 
 
