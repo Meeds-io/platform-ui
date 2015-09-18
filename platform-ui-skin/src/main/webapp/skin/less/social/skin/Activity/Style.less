@@ -1192,15 +1192,11 @@ blockquote:after {
 //end 1024
 
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 899px) {
 
     // Hide Column Timeline when show Right Sidebar
 
-    .open-right-bar {
-        .uiActivityStream, .uiActivitiesLoader,
-        .activityStream {
-            background: none;
-        }
+    .tabletLDisplay {
         .activityStream .boxContainer {
             margin-left: 0;
         }
@@ -1208,9 +1204,14 @@ blockquote:after {
         .activityTimeLine {
             display: none!important;
         }
+        &:not(.hidden-right-bar){
+            .uiActivityStream, .uiActivitiesLoader,
+            .activityStream {
+                background: none;
+            }
+        }
     }
     .activityStreamStatus {
-        float: right;
         margin-right: 10px;
         padding: 2px 9px;
     }
@@ -1218,6 +1219,13 @@ blockquote:after {
         .activityStreamStatus {
             float: left;
             padding: 2px 18px;
+        }
+        .activityBottom,
+        .activityTimeLine {
+            display: block!important;;
+        }
+        .activityStream .boxContainer {
+            margin-left: 65px;
         }
     }
     .open-right-bar {
