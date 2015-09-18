@@ -71,14 +71,28 @@
 }
 @media(max-width: 1024px) {
 	.uiUserNavigationPortlet{
+		height: 86px; 
+		overflow: hidden;
 		.userNavigation{
+			height: 90px;
 			[class^="uiIconApp"]{
-				font-size: 35px;
+				font-size: 42px;
+			}
+			.tabName{
+				margin: 6px 0 0;
+			}
+			> .active{
+				background: none;
+			}
+			> li > a, > li > a:hover, > .active > a, > .active > a:hover{
+				margin: 0 20px;
+    			padding: 12px;
+    			height: 90px;
 			}
 		}
 	}
 }
-@media(max-width: 768px) {
+@media(max-width: 767px) {
 	.uiUserNavigationPortlet{
 		height: 60px;
 		overflow: hidden;
@@ -98,7 +112,7 @@
 			}
 			> li > a, > li > a:hover, > .active > a, > .active > a:hover{
 				margin: 0 10px; 
-				padding-top: 13px;
+				padding: 13px 0 0;
 			}
 		}
 	}
