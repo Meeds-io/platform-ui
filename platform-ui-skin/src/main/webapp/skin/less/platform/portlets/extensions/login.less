@@ -1,5 +1,6 @@
 @import "../../../variables.less";
 @import "../../../mixins.less";
+@import "forgot-password.less";
 //========================================
 body {
 	background: url("@{images-path}/platform/portlets/extensions/login_texture.jpg") repeat;
@@ -154,6 +155,12 @@ body {
 				}
 			}
 		}
+		.centerLoginContent a{
+			color: @linkColor;  
+			text-decoration: none;
+			display: block;
+			margin: 3px 0;
+		}
 	}
 	.spaceRole {
 		clear: both;
@@ -291,12 +298,8 @@ body {
 	margin-top: 15px;
 }
 .titleLogin {
-	line-height: 12px;
-	padding: 6px 3px 0 0;
-	min-height: 31px;
-	font-size: 11px;
+	padding: 15px 0 5px;
 }
-
 // remove clear button on IE
 input::-ms-clear,input[type=password]::-ms-reveal{
   display: none;
