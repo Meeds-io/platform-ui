@@ -99,9 +99,15 @@
     display: table;
     width: 100%;
     table-layout: fixed;
+    .dropdown-group {
+        position: relative;
+    }
     .row-item {
         display: table-row;
         cursor: pointer;
+        .dropdown-group {
+            display: inline-block;
+        }
         &.heading {
             font-weight: bold;
             .column-item {
