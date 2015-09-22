@@ -24,8 +24,11 @@
 @import "../../mixins.less";
 
 .UIAccountPortlet {
-	.SearchIcon:before {
+	.SearchIcon {
         .font-icon();
+        &:before {
+            content: "\e74a";
+        }
 	}
 	.form-horizontal {
 		padding: 0;
