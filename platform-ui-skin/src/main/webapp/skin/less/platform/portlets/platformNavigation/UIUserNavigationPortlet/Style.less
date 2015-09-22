@@ -14,6 +14,9 @@
 
 		> li {
 			padding-bottom: 3px;
+			.uiIconDefaultApp{
+				vertical-align: middle;
+			}
 		}
 
 		> .active {
@@ -71,8 +74,6 @@
 }
 @media(max-width: 1024px) {
 	.uiUserNavigationPortlet{
-		height: 86px; 
-		overflow: hidden;
 		.userNavigation{
 			height: 90px;
 			[class^="uiIconApp"]{
@@ -84,10 +85,17 @@
 			> .active{
 				background: none;
 			}
+			>li{
+				padding-bottom: 0;
+			}
 			> li > a, > li > a:hover, > .active > a, > .active > a:hover{
 				margin: 0 20px;
     			padding: 12px;
     			height: 90px;
+    			.border-radius(0);
+			}
+			.uiIconAppMoreButton{
+				margin-bottom: 8px;
 			}
 		}
 	}
@@ -95,14 +103,16 @@
 @media(max-width: 767px) {
 	.uiUserNavigationPortlet{
 		height: 60px;
-		overflow: hidden;
 		.userNavigation{
-			height: 60px;
+			
 			[class^="uiIconApp"]{
 				font-size: 35px;
 			}
 			.tabName, li a span{
 				display: none;
+			}
+			.dropdown-menu a span{
+				display: inline-block;
 			}
 			> .active{
 				background: none;
@@ -110,9 +120,13 @@
 					margin: 0 20px; 
 				}
 			}
+			>li{
+				padding-bottom: 0;
+			}
 			> li > a, > li > a:hover, > .active > a, > .active > a:hover{
 				margin: 0 10px; 
 				padding: 13px 0 0;
+				height: 60px;
 			}
 		}
 	}
