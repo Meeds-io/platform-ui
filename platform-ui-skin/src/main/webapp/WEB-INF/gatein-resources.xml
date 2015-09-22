@@ -35,12 +35,6 @@
     <css-path>/skin/css/Core.css</css-path>
     <css-priority>1</css-priority>
   </portal-skin>
-  <portal-skin>
-    <skin-name>Default</skin-name>
-    <skin-module>CoreSkin1</skin-module>
-    <css-path>/skin/css/sub-core.css</css-path>
-    <css-priority>1</css-priority>
-  </portal-skin>
   <!-- AccountPortlet skins -->
 
   <portlet-skin>
