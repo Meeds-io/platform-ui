@@ -36,14 +36,16 @@
 			.border-radius(5px);
 			.box-sizing(border-box);
 		}
-
+		
 		> .active > a {
 			#gradient > .vertical(@baseColorLight, @baseColorMedium);
 			.box-shadow(1px 0 4px rgba(0,0,0,0.38) inset);
 		}
 
 		> li > a:hover,
-		> .active > a:hover {
+		> .active > a:hover,
+		> li.dropdown.open > a:hover,
+		> li.dropdown.open > a:focus {
 			#gradient > .vertical(rgba(153,153,153,0.2),rgba(130,130,130,0.2));
 			.box-shadow(0 0 4px rgba(0,0,0,0.36) inset);
 		}

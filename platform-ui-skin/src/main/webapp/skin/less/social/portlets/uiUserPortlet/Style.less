@@ -71,6 +71,12 @@ td.right-column-containerTDContainer {
 		padding: 0;
 		.uiEditUserProfileForm {
 			padding: 0 0 0 10px;
+			.form-horizontal .control-group .controls{
+				white-space: nowrap;
+			}
+			.uiStatusProfilePortlet{
+
+			}
 		}
 	}
 	h4.head-container {
@@ -464,7 +470,13 @@ td.right-column-containerTDContainer {
 		}
 	}
 }
-
+@media(max-width: 480px){
+	#socialTopLayout {
+		.TRContainer{
+			display: block;
+		}
+	}
+}
 @media(max-width: 768px){
 	.uiBasicProfilePortlet {
 		.uiBasicInfoSection {
