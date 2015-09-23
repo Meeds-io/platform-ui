@@ -73,7 +73,9 @@
     .website-hompage .uiNavigation .toggle-left-bar {
         display: none;
     }
-
+    #LeftNavigation .UIRowContainer > div + div {
+        margin-top: -1px;
+    }
     #Officebody > div > div > div > .UITableColumn {
         background: @contentBackground;
     }
@@ -1085,6 +1087,9 @@
             max-height: none!important;
             overflow: visible!important;
         }
+    }
+    .uiSpaceNavigationPortlet .searchInput input {
+        font-size: @baseFontSize!important;
     }
 }
 
