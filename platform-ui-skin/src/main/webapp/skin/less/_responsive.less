@@ -275,6 +275,7 @@
     }
     .open-left-bar #UIToolbarContainer,.open-left-bar  .RightBodyTDContainer  {
        left: 30%;
+       margin-left: 1px;
     }
 
 
@@ -299,14 +300,7 @@
     body {
         position: relative;
         right: 0;
-        .transition(all 250ms ease);
-        .uiCompanyNavigationPortlet .uiCompanyNavigations .navItemSelected, 
-        .accordionBar,
-        .LeftNavigationTDContainer, 
-        .uiBreadcumbsNavigationPortlet,
-        .uiSpaceNavigationPortlet .spaceNavigation .spaceItemSelected {
-            .box-shadow(-1px 0 #ccc inset);
-        }         
+        .transition(all 250ms ease);       
     }
 
     body:not('.open-left-bar') {
@@ -339,10 +333,6 @@
         //display: none;
         width: 0%!important;
         overflow: hidden;
-    }
-
-    .navItemSelected , .accordionBar ,.LeftNavigationTDContainer{
-        .box-shadow(0 0 1px rgba(0, 0, 0, 0.2) inset);
     }
     .accordionBar  {
         .uiIconArrowRight  {
@@ -711,9 +701,13 @@
     body {
 
         .accordionBar  {
-            padding: 10px 18px !important;
+            padding: 10px 30px 10px 18px!important;
             line-height: 30px!important;
             height: auto!important;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-top: -1px!important;
         }
 
         .uiBox .title {
@@ -1359,6 +1353,16 @@
     }
     .UIToolbarContainer .uiCreate .uiAction {
         padding-bottom: 10px!important;
+    }
+    body {
+        .accordionBar  {
+            margin-top: -1px!important;
+            padding: 10px 30px 10px 18px!important;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-top: -1px!important;
+        }
     }
 }
 
