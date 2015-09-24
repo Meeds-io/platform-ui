@@ -50,7 +50,18 @@
     }
 
 }
-
+.UIToolbarContainer.UIToolbarContainerLight{
+    .toggle-left-bar .uiIconMenu{
+        color: @colorIconExtra;
+    }
+    .uiUserToolBarPortlet {
+        & >  .dropdown-toggle  {
+            &:before {
+                color: @colorIconExtra;
+            }
+        }
+    }
+}
 .UIToolbarContainerLight {
     .toggle-left-bar > span {
         color: @toolbarLightLinkColor;
@@ -1233,7 +1244,7 @@
     .UIToolbarContainer  .UISetupPlatformToolBarPortletIDTDContainer  {
         .dropdown-toggle {display: none;}
     }
-     .uiUserToolBarPortlet {
+    .uiUserToolBarPortlet {
        & >  .dropdown-toggle  {
             min-width: 20px;
            .font-icon();
@@ -1257,7 +1268,6 @@
                 }
             }
     }
-
     .UIToolbarContainer .action-addon [class^="uiIconPLF24x24"] {
         color: @colorIconDefault;
         &:hover {
