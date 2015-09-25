@@ -81,6 +81,30 @@
         overflow-x: hidden;
         height: 100%;
     }
+    .form-horizontal {
+        .controls {
+            white-space: nowrap;
+            select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+                max-width: 94%;
+            }
+        }
+    }
+    .uiDocumentFormController {
+        min-width: 0!important;
+        .clearfix + span {
+            width: 100%;
+        }
+    }
+    .uiDocumentFormController .form-horizontal .controls > div.clearfix {
+        width: 100%!important;
+        margin-right: 0!important;
+        float: none!important;
+    }
+    .uiPopup {
+        .form-horizontal .controls {
+            white-space: nowrap;
+        }   
+    }
     .website-hompage .uiNavigation .toggle-left-bar {
         display: none;
     }
@@ -687,6 +711,11 @@
 // end 768 1024
 
 
+@media (max-width: 980px) {
+    .newEventAttendee {
+        min-width: 980px;
+    }
+}
 @media (min-width: 768px) and (max-width: 980px) {
     .active.ToolbarContainer   {
         .UISetupPlatformToolBarPortletIDTDContainer,
@@ -836,7 +865,10 @@
 // end from 481 to 1024px
 /* Landscape phones and down */
 @media (max-width: 767px) {
-    
+    .uiVTabInputSet .itemListContainer {
+        margin-left: 0;
+        margin-top: 15px;
+    }
     .uiPopup, .UIMaskWorkspace {
         margin: 50px 30px;
         width: auto!important;
@@ -1188,6 +1220,29 @@
 }
 
 @media (max-width: 480px) {
+    .uiEditUserProfileForm {
+        .form-horizontal {
+            .controls {
+                white-space: nowrap;
+            }
+        }
+    }
+    .uiDialogAction .dialogAction {
+        float: none;
+        margin-bottom: 0;
+        margin-bottom: 10px!important;
+    }
+    .uiEditUserProfileForm #BaseSection .control-group .controls .uiSelectbox  {
+        float: none!important;
+        display: block;
+        margin-bottom: 5px;
+        + * {
+            margin-left: 0!important;
+        }
+    }
+    .uiEditUserProfileForm #BaseSection .control-group .controls input {
+        width: 240px!important;
+    }
     .visible-phone-small {
         display: block;
     }
