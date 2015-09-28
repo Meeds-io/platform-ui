@@ -272,6 +272,7 @@
 				.title {
 					input[type="text"] {
 						width: 184px;
+						max-width: 100%;
 					}
 				}
 				input[type="text"] {
@@ -301,6 +302,7 @@
 					width: 181px;
 					.selectbox {
 						width: 184px;
+						max-width: 100%;
 					}
 				}
 			}
@@ -612,21 +614,18 @@
 		}
   }
 }
-@media (max-width: 600px) {
-	.UIToolbarContainer .uiCreateToolBarPortlet .uiQuickAddEvent .form-horizontal  {
-        .controls , .title .controls{
-            margin-left: 0;
-        }
-        .control-label,.title .control-label {
-            width: auto;
-        }
-        .selectboxMini .uiSelectbox .selectbox {
-		    width: 86px;
+
+@media (max-width: 640px) {
+	.UIToolbarContainer .uiCreateToolBarPortlet .uiQuickAddEvent {
+		.form-horizontal  {
+	        .control-label,.title .control-label {
+	            float: left;
+	        }
+	    }
+	    .uiAction {
+			text-align: center;
 		}
     }
-    #UICreateList.dropdown-menu {
-	    max-height: 300px !important;
-	}
 }
 /* Fix Responsive*/
 @media (max-width: 480px) {
@@ -660,6 +659,7 @@
         }
         .control-label,.title .control-label {
             width: auto;
+            float: none;
         }
     }
     .uiCreateToolBarPortlet .startTime ,.endTime {

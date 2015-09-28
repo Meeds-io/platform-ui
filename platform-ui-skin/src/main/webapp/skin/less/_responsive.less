@@ -889,7 +889,9 @@
         width: 100%;
         z-index: 9;
     }
-    
+    .UIToolbarContainer .dropdown-menu.overflow-y{
+        overflow-y: auto;
+    }
     .OfficeMiddleTDContainer + .OfficeRightTDContainer,
     body .OfficeMiddleTDContainer .toggle-right-bar{
         display: none;
@@ -1087,11 +1089,6 @@
     .nav-tabs > li {
         margin-bottom: 0;
     }
-
-    .dropdown-menu.overflow-y {
-        overflow-y: auto;
-        overflow-x: visible;
-    }
     select,
     textarea,
     input[type="text"],
@@ -1119,15 +1116,6 @@
      left: 0;//fix for forum mobile
     }
     
-    .UIToolbarContainer .uiCreate .uiFormInput .uiForumFilter .filterMenu > ul {
-        max-height: 214px!important;
-    }
-    #UICreateList.dropdown-menu {
-        &.openingAddPoll, &.openingCreatePoll, &.openingWiki {
-            max-height: none!important;
-            overflow: visible!important;
-        }
-    }
     .uiSpaceNavigationPortlet .searchInput input {
         font-size: @baseFontSize!important;
     }
@@ -1137,11 +1125,24 @@
 
 
 @media (max-width: 640px) {
-    #UICreateList.dropdown-menu.openingAddEvent {
+    .UIToolbarContainer .uiCreateToolBarPortlet .create-form-dropdown{
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        border: none;
         overflow-y: auto;
-    }
-    #UICreateList.dropdown-menu {
-        max-height: 330px;
+        top: 0;
+        .dropdown-menu-sub{
+            width: 80%;
+            margin: 0 auto;
+            background: white;
+            border: 1px solid #ccc;
+            float: none;
+        }
+        .filterMenu > ul{
+            position:  absolute !important;
+        }
     }
 }
 @media (max-width: 600px) {
@@ -1346,8 +1347,8 @@
         right: 0px !important;
         top: 34px;
         min-width: 180px;
-        & > li  {
-             float: left;
+        .dropdown-menu-sub  {
+             float: right;
            // font-size: 0;
          & >  a {
                 font-size: 0;
@@ -1396,20 +1397,15 @@
     .UIToolbarContainer .uiSearchPlatformToolBarPortlet > input[type="text"] {
         margin: -4px 0 0 12px !important;
     }
-    .uiQuickSearchResult {
-        //width: 300px !important;
-    }
     // loadding for search top navigation
     body  .UIToolbarContainer .uiSearchPlatformToolBarPortlet > input.loadding[type="text"] + a:after {
         top: 4px;
     }
     body  .spaceChooserPopup {
-        left: auto;
-        right: 41px;
+        left: 0;
         top: 28px;
         overflow-y: auto;
         overflow-x: visible;
-        max-height: 225px;
     }
     body #UISocialPopupWindow .maskLayer .uiDocumentPreview .uiContentBox{
         padding: 0 10px !important;
@@ -1436,15 +1432,7 @@
 }
 
 @media (max-width: 640px) and (orientation: landscape) {
-    .UIToolbarContainer .uiCreate .uiFormInput .uiForumFilter .filterMenu > ul {
-        max-height: 147px!important;
-    }
-    body  .spaceChooserPopup {
-        max-height: 147px;
-    }
-   .UIToolbarContainer #UICreateList.dropdown-menu {
-        max-height: 180px!important;
-    }
+    
 }
 
 
