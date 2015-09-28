@@ -676,10 +676,6 @@
 
 //end 1024px
 
-@media (max-width: 981px) and (max-width: 1024px) {
-
-
-}
 
 
 //hack safari document preview
@@ -1119,32 +1115,42 @@
     .uiSpaceNavigationPortlet .searchInput input {
         font-size: @baseFontSize!important;
     }
-}
-
-// end 767
-
-
-@media (max-width: 640px) {
     .UIToolbarContainer .uiCreateToolBarPortlet .create-form-dropdown{
         position: fixed;
-        height: 100%;
+        height: 100%!important;
         width: 100%;
         background: rgba(0, 0, 0, 0.4);
         border: none;
         overflow-y: auto;
-        top: 0;
+        top: 0px;
+        margin: 0!important;
+        overflow-y: auto;
+        max-height: none!important;
         .dropdown-menu-sub{
             width: 80%;
-            margin: 0 auto;
-            background: white;
-            border: 1px solid #ccc;
-            float: none;
+            position: static!important;
+            margin: 34px auto 0;
+            background: @dropdownBackground;
+            border: 1px solid @dropdownBorder;
+            float: none!important;
         }
         .filterMenu > ul{
             position:  absolute !important;
         }
     }
+    .UIToolbarContainer .uiCreate .uiFormInput .uiForumFilter .filterMenu > ul {
+        max-height: none!important;
+    }
+    body .UIToolbarContainer .uiCreate .uiFormInput .uiFormScrollMenu .scroll-menu .dropdown-menu {
+        max-height: none;
+        width: auto;
+        overflow: visible;
+    }
 }
+
+// end 767
+
+
 @media (max-width: 600px) {
     body {
         .form-horizontal .control-group .control-label {
@@ -1162,14 +1168,7 @@
 }
 // For a tablet portrait and wide landscape phone
 
-@media (min-width: 481px) and (max-width: 767px) {
-    .UIToolbarContainer .uiCreate .uiFormInput .uiForumFilter .filterMenu > ul {
-        left: auto;
-        position: fixed;
-        right: 266px !important;
-        top: 167px;
-    }
-}
+
 @media (min-width: 481px) and (max-width: 768px) {
    
     body .LeftNavigationTDContainer {
@@ -1238,7 +1237,7 @@
         float: none!important;
         display: block;
         margin-bottom: 5px;
-        + * {
+        & + * {
             margin-left: 0!important;
         }
     }
@@ -1340,16 +1339,7 @@
        float: left;
    }
     #UICreateList.dropdown-menu{
-        padding:0!important;
-        left: auto !important;
-        position: fixed;
-        .border-radius(0);
-        right: 0px !important;
-        top: 34px;
-        min-width: 180px;
         .dropdown-menu-sub  {
-             float: right;
-           // font-size: 0;
          & >  a {
                 font-size: 0;
                 line-height: 0;
@@ -1410,12 +1400,7 @@
     body #UISocialPopupWindow .maskLayer .uiDocumentPreview .uiContentBox{
         padding: 0 10px !important;
     }
-    .UIToolbarContainer .uiCreate .uiFormInput .uiForumFilter .filterMenu > ul {
-        position: fixed!important;
-        left: auto;
-        right: 17px!important;
-        top: 142px;
-    }
+
     .UIToolbarContainer .uiCreate .uiAction {
         padding-bottom: 10px!important;
     }
@@ -1431,12 +1416,9 @@
     }
 }
 
-@media (max-width: 640px) and (orientation: landscape) {
-    
-}
-
 
 @import "_size-responsive.less";
+
 #PlatformAdminToolbarContainer-preview #UIToolbarContainer{
     position: static;
 }
