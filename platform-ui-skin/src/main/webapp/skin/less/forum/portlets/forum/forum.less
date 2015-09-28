@@ -67,7 +67,26 @@
 .forumContains [class^="uiIcon"] {
     margin: 0 5px 0 0;
 }
+@media(max-width: 955px) {
 
+    .rounded-corners-top .actionExpandCollapse {
+        display: none;
+    }
+   #UIForumActionBar .forumSeparatorLine {
+        .dropdown-menu {
+            border: medium none;
+            box-shadow: none;
+            display: block;
+            min-width: auto;
+            position: static;
+            margin: 6px 0 0 6px;
+        }
+    }
+    .uiForumPortlet .menuMore .defaultStyle .uiDropdownWithIcon {
+        padding: 5px 12px;
+        display: block;
+    }
+}
 @media(max-width: 768px) {
     .divCell {
         display: block;
@@ -88,7 +107,6 @@
         }
     }
 }
-
 
 @media(max-width: 380px) {
     .uiForumActionBar {
