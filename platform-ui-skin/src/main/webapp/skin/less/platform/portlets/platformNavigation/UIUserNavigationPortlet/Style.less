@@ -104,6 +104,20 @@
 }
 @media(max-width: 767px) {
 	.uiUserNavigationPortlet{
+		.userNavigation{
+			[class^="uiIconApp"]{
+				font-size: 35px;
+			}
+			.tabName, li a span{
+				font-size: 13px;
+			}
+		}
+	}
+
+}
+@media(max-width: 480px) {
+	.uiUserNavigationPortlet{
+		margin-top: -4px;
 		height: 60px;
 		.userNavigation{
 			height: 60px;
@@ -126,21 +140,11 @@
 				padding-bottom: 0;
 			}
 			> li > a, > li > a:hover, > .active > a, > .active > a:hover{
-				margin: 0 10px; 
+				margin: 0 5px; 
 				padding: 13px 0 0;
 				height: 60px;
 			}
 		}
-	}
-
-}
-@media(max-width: 480px) {
-	.uiUserNavigationPortlet{
-		margin-top: -4px;
-		.userNavigation{
-			> li > a, > li > a:hover, > .active > a, > .active > a:hover{
-				margin: 0 5px; 
-			}
-		}
+		
 	}
 }

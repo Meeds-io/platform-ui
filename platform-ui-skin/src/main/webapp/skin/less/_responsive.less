@@ -348,7 +348,7 @@
         }
     }
 
-	// NAVIGATION TOP
+    // NAVIGATION TOP
 
     .UIToolbarContainer .uiDropdownWithIcon > a {
         font-size: 0;
@@ -655,23 +655,23 @@
     .visible-tabletL{
         display: block;
     }
-	.uiUserToolBarPortlet {
-		& > {
-			.dropdown-toggle {
-				    max-width: 140px;
-					overflow: hidden;
-					text-overflow: ellipsis;
-					white-space: nowrap;
-			}
-		}
-	}
-	.UserInfoPortletTDContainer  .dropdown-menu{
-		li > a {
-			max-width: 250px;
-			overflow: hidden;
-			text-overflow: ellipsis;
-		}
-	}	
+    .uiUserToolBarPortlet {
+        & > {
+            .dropdown-toggle {
+                    max-width: 140px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+            }
+        }
+    }
+    .UserInfoPortletTDContainer  .dropdown-menu{
+        li > a {
+            max-width: 250px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }   
 }
 
 //end 1024px
@@ -1127,7 +1127,7 @@
         overflow-y: auto;
         max-height: none!important;
         .dropdown-menu-sub{
-            width: 80%;
+            width: 90%;
             position: static!important;
             margin: 34px auto 0;
             background: @dropdownBackground;
@@ -1257,7 +1257,7 @@
     }
     .UIToolbarContainer .uiCreate .uiFormInput .uiForumFilter .filterMenu{
         position: static!important;
-	}
+    }
     .visible-small-phone {
         display: block!important;
     }
@@ -1416,6 +1416,17 @@
             overflow: hidden;
             text-overflow: ellipsis;
             margin-top: -1px!important;
+        }
+    }
+    body  .spaceChooserPopup {
+        left: 50%;
+        .translate(-50%, 0);
+    }
+    .uiFormScrollMenu {
+        .optionMenu{
+            .translate(-63%, 0);
+            position: unset !important;
+            z-index: 10;
         }
     }
 }
