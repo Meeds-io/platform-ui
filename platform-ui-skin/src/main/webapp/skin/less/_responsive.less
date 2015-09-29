@@ -76,6 +76,25 @@
     display: none;
 }
 
+
+@media(max-width: 1228px) {
+    // answer portlet
+    body  .uiAnswersPortlet {
+        .uiQuestions .answerToolbar > ul > li {
+            float: none;
+        }
+        .answerToolbar > ul {
+            display: block;
+            float: none !important;
+        }
+        .uiQuestions .answerToolbar > .menuRight > li {
+            margin: 0;
+        }
+       
+    }
+
+}
+
 @media (max-width: 1024px) {
     html {
         overflow-x: hidden;
@@ -1150,7 +1169,24 @@
        display: block;
         padding: 20px ;
     }
+
+    // answer portlet
+    body  .uiAnswersPortlet {
+        .uiAnserContainer .leftColumn {
+            width: 100%;
+            float: none;
+        }
+        #resizeLineBar {
+            display: none;
+        }
+        .uiAnserContainer .rightColumn {
+            margin: 10px 0!important;
+        }
+    }
+
+
 }
+
 
 // end 767
 
