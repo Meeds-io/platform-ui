@@ -372,8 +372,7 @@
     .UIToolbarContainer .uiDropdownWithIcon > a {
         font-size: 0;
     }
-    #UIHelpPlatformToolbarPortletTDContainer,
-    #chat-status {
+    #UIHelpPlatformToolbarPortletTDContainer {
         display: none;
     }
     .AdminToolBarPortletTDContainer  {
@@ -734,7 +733,8 @@
 @media (min-width: 768px) and (max-width: 980px) {
     .active.ToolbarContainer   {
         .UISetupPlatformToolBarPortletIDTDContainer,
-        .UICreatePlatformToolBarPortletIDTDContainer {
+        .UICreatePlatformToolBarPortletIDTDContainer,
+        #chat-status {
             display: none!important;
         }
     }
@@ -1191,6 +1191,11 @@
 // end 767
 
 
+@media (max-width: 599px) {
+    #chat-status {
+        display: none!important;
+    }
+}
 @media (max-width: 600px) {
     body {
         .form-horizontal .control-group .control-label {
