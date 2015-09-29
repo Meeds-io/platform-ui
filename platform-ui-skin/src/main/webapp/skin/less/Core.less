@@ -692,7 +692,7 @@ hr {
 				}
 			}
 		}
-		.project-item {	
+		.project-item, .label-item {	
 			&.active, &.open {
 				> .sub-item {
 					#gradient > .vertical(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
@@ -729,7 +729,12 @@ hr {
 		.noLabel {
 		  background: @baseBackground;
           border-radius: 0 0 3px 3px;
-          padding: 10px 0;
+          padding: 10px;
+          input {
+          	max-width: 100%;
+          	.box-sizing(border-box);
+          	margin-bottom: 0;
+          }
 		}
 	}
 }
@@ -981,7 +986,8 @@ hr {
 	.uiAccordion.leftPanel .accordion-heading .item {
 		border-bottom: none;
 	}
-	.uiAccordion.leftPanel .accordion-heading .item + .list-projects {
+	.uiAccordion.leftPanel .accordion-heading .item + .list-projects,
+	.uiAccordion.leftPanel .accordion-heading .item + .list-labels {
 		border-top: 1px solid @borderColor;
 	}
 	.uiAccordion.leftPanel .accordion-heading .sub-item {
