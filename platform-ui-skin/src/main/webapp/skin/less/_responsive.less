@@ -75,7 +75,25 @@
 .visible-phone-small {
     display: none;
 }
+.UIToolbarContainer .NormalContainerBlock .ToolbarContainer {
+    .TRContainer {
+        .SearchPortletTDContainer .uiSearchPlatformToolBarPortlet{
+            > a {
+                .uiIconCloseSearchBox:before{
+                    content: "\e75e";
+                    font-size: 16px;
+                }
+            } 
+            input[type="text"]{
+                display: none !important;
+            }
+            input[type="text"].showInputSearch{
+                display: inline !important;
+            }
 
+        }
+    }
+}
 
 @media(max-width: 1228px) {
     // answer portlet
@@ -92,7 +110,6 @@
         }
        
     }
-
 }
 
 @media (max-width: 1024px) {
@@ -423,24 +440,17 @@
     }
 
     //search bar
-    .UIToolbarContainer .NormalContainerBlock .ToolbarContainer.active {
+    .UIToolbarContainer .NormalContainerBlock .ToolbarContainer {
         .TRContainer {
-            & > div.SearchPortletTDContainer .uiSearchPlatformToolBarPortlet > a {
-                padding:0;
-                .uiIconPLF24x24Search:before{
-                    font-size: 0;
+            .SearchPortletTDContainer{
+                input[name="adminkeyword"] {
+                    width: auto;
+                    margin-top: 10px;
                 }
-
-            }
-            & > div.SearchPortletTDContainer input[name="adminkeyword"] {
-                margin: 10px 0;
-                width: 210px;
-                display: inline-block!important;
-            }
-        }
-        .uiDropdownWithIcon span.action_close {
-            vertical-align: middle;
-            display: inline-block;
+                .uiIconCloseSearchBox{
+                    top: -5px;
+                }
+            } 
         }
     }
     // end search
@@ -1170,6 +1180,7 @@
         padding: 20px ;
     }
 
+
     // answer portlet
     body  .uiAnswersPortlet {
         .uiAnserContainer .leftColumn {
@@ -1184,7 +1195,48 @@
         }
     }
 
-
+    .activeInputSearch .SearchPortletTDContainer{
+        position: absolute;
+        background: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        height: 3000px;
+        padding-top: 5px;
+        z-index: 10;
+        .uiSearchPlatformToolBarPortlet{
+            position: absolute;
+            width: 80%;
+            left: 50%;
+            .translate(-50%, 0);
+            background: none;
+            input[type="text"]{
+                width: 100% !important;
+                margin: 0 !important;
+            }
+            > a {
+                height: auto;
+                position: absolute;
+                top: -6px;
+                &:hover{
+                    background: none;
+                }
+            }
+            .uiQuickSearchResult{
+                width: 100% !important;
+                .border-radius(4px);
+                margin: 4px 0 0;
+                table{
+                    th{display: none;}
+                    td{
+                        width: 100%;
+                        border-left: none;
+                        .avatarTiny{
+                            white-space: nowrap;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 
@@ -1471,7 +1523,13 @@
         }
     }
 }
-
+@media (min-width: 768px) and (max-width: 900px) {
+    .activeInputSearch{
+        .UISetupPlatformToolBarPortletIDTDContainer, .UICreatePlatformToolBarPortletIDTDContainer{
+            display: none;
+        }
+    }
+}
 
 @import "_size-responsive.less";
 
