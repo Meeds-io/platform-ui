@@ -173,6 +173,12 @@
             -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
         }
+        .accordionCont{
+            display: block;
+        }
+        .showAccordionBar .accordionCont{
+            display: block;
+        }
     }
     .visible-tablet.toggle-right-bar {
         display: block!important;
@@ -408,14 +414,10 @@
         .uiIconArrowRight  {
           display: block;
         }
-        &.active {
-          .uiIconArrowRight  {
-             &:before {
-                 content: "\e75a";
-             }
-          }
-        }
     }
+    
+
+
 
     body{
         .OfficeRightTDContainer {
@@ -774,7 +776,21 @@
             text-overflow: ellipsis;
             margin-top: -1px!important;
         }
-
+        .hidePadAccordionBar .accordionCont{
+            display: none;
+        }
+        .accordionBar .uiIconArrowRight  {
+            &:before {
+                content: "\e75a";
+            }
+        }
+        .hidePadAccordionBar {
+            .accordionBar .uiIconArrowRight  {
+                &:before {
+                    content: "\e75c";
+                }
+            }
+        }
         .uiBox .title {
             padding: 10px 15px;
         }
@@ -1194,28 +1210,35 @@
             margin: 10px 0!important;
         }
     }
-
+    .quickSearchDisplay .footComment{
+        display: none!important;
+    }
     .activeInputSearch .SearchPortletTDContainer{
-        position: absolute;
+        position: fixed;
         background: rgba(0, 0, 0, 0.8);
         width: 100%;
-        height: 3000px;
+        height: 100%;
         padding-top: 5px;
-        z-index: 10;
+        z-index: 1000;
         .uiSearchPlatformToolBarPortlet{
             position: absolute;
             width: 80%;
             left: 50%;
             .translate(-50%, 0);
             background: none;
+
             input[type="text"]{
                 width: 100% !important;
                 margin: 0 !important;
+                &.loadding {
+                    + a {position: absolute;}
+                }
             }
             > a {
                 height: auto;
                 position: absolute;
                 top: -6px;
+                right: -30px;
                 &:hover{
                     background: none;
                 }
@@ -1328,6 +1351,19 @@
             }
         }
     }
+    body .accordionCont{
+        display: none;
+    }
+    .ShowMobileAccordionBar, .showAccordionBar {
+        .accordionBar .uiIconArrowRight  {
+            &:before {
+                content: "\e75a";
+            }
+        }
+        .accordionCont{
+            display: block;
+        }
+    }
     .uiDialogAction .dialogAction {
         float: none;
         margin-bottom: 0;
@@ -1357,12 +1393,7 @@
     .visible-small-phone {
         display: block!important;
     }
-    .accordionCont {
-      display: none;
-      &.active {
-        display: block;
-      }
-    }
+    
     .uiSetupPlatformToolBarPortlet {
         .back-item {
             margin-top: 0;
@@ -1523,6 +1554,19 @@
             .translate(-63%, 0);
             position: unset !important;
             z-index: 10;
+        }
+    }
+    body .uiSpaceNavigationPortlet{
+        .accordionCont{
+            position: relative;
+            .spaceNavigation {
+                margin-top: 54px;
+            }
+            .joinSpace{
+                position: absolute;
+                top: 44px;
+                width: 100%;
+            }
         }
     }
 }
