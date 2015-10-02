@@ -14,12 +14,19 @@
 
 .uiForumInfos{
 	margin-top: 10px;
-	.rightStartsList{
-		width: 300px;
+	.rightStartsList  {
+		float: none;
 	}
-	.leftStartsList{
-		margin: 0 310px 0 0;
+	@media(min-width: 640px){
+		.rightStartsList{
+			width: 300px;
+			float: right;
+		}
+		.leftStartsList{
+			margin: 0 310px 0 0;
+		}
 	}
+	
 }
 
 .titleBold{

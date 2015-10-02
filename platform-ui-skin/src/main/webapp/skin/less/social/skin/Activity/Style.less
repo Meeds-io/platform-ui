@@ -1407,12 +1407,16 @@ blockquote:after {
         border-top: 1px solid @borderColor;
         display: block;
 	}
-
+    .uiActivitiesDisplay .pull-right  #DisplayModesDropDown{
+        margin-left: 10px;
+    }
 	.activityStreamStatus {
 		float: right;
-	    margin-right: 10px;
 	    padding: 3px 5px;
-	}	
+	}
+    .activityStream.block-activity .contentBox .actionBar {
+        border-bottom: none;
+    }
 	.uiUserActivityStreamPortlet {
 		.shareStt .dropdown-menu {
 			padding: 10px;
@@ -1568,7 +1572,10 @@ blockquote:after {
     .uiActivityStream {
         padding-top: 10px; 
     }
-    .uiUserActivitiesDisplay {
+    .uiActivityStream.clearBG, .uiActivitiesLoader.clearBG {
+        padding-top:10px;
+    }
+    .uiActivitiesDisplay {
         .iconReturn {
             font-size: 20px;
             color: @colorIconDefault;

@@ -317,7 +317,7 @@
         z-index: 10000!important;
         position: relative!important;
         margin: 50px auto 20px;
-        width: 600px!important;
+        width: 560px!important;
         .translate(0px, -25%);
         .transition(transform 0.3s ease-out 0s);
         .PopupContent {
@@ -911,8 +911,9 @@
         margin-top: 15px;
     }
     .uiPopup, .UIMaskWorkspace {
-        margin: 50px 30px;
-        width: auto!important;
+        margin: auto;
+        max-width: 560px!important;
+        width: 100%;
     }
     .UIToolbarContainer .NormalContainerBlock .ToolbarContainer.active .uiDropdownWithIcon span {
       float: none!important;
@@ -1286,6 +1287,10 @@
         .form-horizontal .control-group .controls {
             margin-left: 0;
         }
+    }
+    .uiPopup, .UIMaskWorkspace {
+        margin: 0 15px;
+        width: auto !important;
     }
 
 }
