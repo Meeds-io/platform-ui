@@ -296,3 +296,8 @@ body {
 	min-height: 31px;
 	font-size: 11px;
 }
+
+// remove clear button on IE
+input::-ms-clear,input[type=password]::-ms-reveal{
+  display: none;
+}
