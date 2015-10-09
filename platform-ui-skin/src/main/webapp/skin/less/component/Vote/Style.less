@@ -62,11 +62,8 @@
 	.avgRatingImages {
 		float: left;
 		.voted,.votedHaft,.unvoted  {
-			float: left;
-			.square(16px);
-		  	font-size: @fontsizeXlarge;
-			margin: 0px 1px;
 			cursor: pointer;
+            font-size: @sizeIconDefault - 2;
 		}
 
 	  // Changing definitions to make it font-icons, not images
@@ -87,11 +84,7 @@
 .uiVoteMini {
 	.avgRatingImages {
 		.voted,.votedHaft,.unvoted  {
-			.square(10px);
-		  	font-size: @fontSizeMini;
-			float: none;
-			display: inline-block;
-			margin: 0;
+		  	font-size: @sizeIcon12x12;
 		}
 
 	  	// Changing definitions to make it font-icons, not images
