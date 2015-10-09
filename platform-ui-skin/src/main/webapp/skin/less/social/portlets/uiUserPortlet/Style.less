@@ -74,9 +74,7 @@ td.right-column-containerTDContainer {
 			.form-horizontal .control-group .controls{
 				white-space: nowrap;
 			}
-			.uiStatusProfilePortlet{
-
-			}
+			
 		}
 	}
 	h4.head-container {
@@ -102,7 +100,7 @@ td.right-column-containerTDContainer {
 	.uiIconUserAvailable, .uiIconUserOnline {
         color: #2ec24d;
 	}
-	.uiIconUserInvisible, .uiIconUserOffline {
+	.uiIconUserInvisible, .uiIconUserOffline { 
        color:#e3e3e3;
 	}
 	.uiIconUserAway {
@@ -139,7 +137,8 @@ td.right-column-containerTDContainer {
   	.btn, .btn:hover { // so the icon stays red, even when hover on the button
 		.uiIconStatusDisconnect {
 			color: @errorColor;
-			font-size: inherit;
+			font-size: 9px;
+			top: -1px;
 			&:before {
 			  	content: "\e75e";
 			}
@@ -155,6 +154,11 @@ td.right-column-containerTDContainer {
 	.avatarXSmall {
 		display: inline-block;
 		padding: 0px 5px 
+	}
+}
+.uiStatusProfilePortlet{
+	.user-status .uiIconUserOnline:hover, .user-status .uiIconUserAvailable:hover {
+        color: #2ec24d;
 	}
 }
 .uiBasicProfilePortlet {
@@ -385,9 +389,7 @@ td.right-column-containerTDContainer {
 					}
 				  	.actionIcon { // Align "x" and "add" icons
 					  	.uiIconClose {
-						  	width: 14px;
-							text-align: center;
-							top: -1px;
+							top: 0;
 						}
 					  	&:hover .uiIconClose {
 						  	opacity: 1;
