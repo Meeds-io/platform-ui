@@ -22,6 +22,7 @@
 	border: 1px solid @borderColor;
 	border-bottom: none;
 	text-align: left;
+    min-height: 38px;
 }
 
 .uiForumPortlet{
@@ -31,10 +32,16 @@
 			border-bottom: solid 1px @primaryBackgroundHover;
 		}
 	}
-	a.actionIcon, a.actionIcon:hover {
-		color: @textColor;
-	}
+
 }
+.uiForumInfos ,.forumQuickReply {
+    .title {
+        [class^="uiIconMini"][class*="Arrow"], [class^="uiIconMini"], [class^="uiIconArrow"] {
+            top: 2px;
+        }
+    }
+}
+
 .rounded-corners-top .actionIcon .uiIconMiniArrowDown,
 .rounded-corners-top .actionIconSmall .uiIconMiniArrowDown,
 .rounded-corners-top .uiActionWithLabel .uiIconMiniArrowDown,
@@ -43,9 +50,7 @@
 .uiForumActionBar .uiActionWithLabel .uiIconMiniArrowDown  {
 	margin-left: 0;
 }
-.rounded-corners-top .actionExpandCollapse {
-	margin-top: 10px;
-}
+
 .rounded-corners-top .actionExpandCollapse + .forumToolbar {
 	> li:last-child {
 		padding: 0 8px 0 0;
