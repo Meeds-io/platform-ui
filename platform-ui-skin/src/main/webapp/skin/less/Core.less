@@ -582,6 +582,11 @@ hr {
       &:first-child {
         border-top: none;
       }
+    &.collapsed {
+      & > * {
+          border-bottom: none;
+      }
+    }
       .box-shadow(0 0 3px 0 rgba(0, 0, 0, 0.1));
       &:hover,&.open,&.active {
         background-color: @primaryBackgroundLight
@@ -620,6 +625,11 @@ hr {
 		border-bottom: none;
 		background-color: @primaryBackgroundLight;
 		box-shadow: none;
+        &.collapsed {
+            & > div{
+                border-bottom: none;
+            }
+        }
 		&:first-child {
 			border-radius: @baseBorderRadius @baseBorderRadius 0 0;
 		}
@@ -649,7 +659,7 @@ hr {
 			border-bottom: 1px solid @borderColor;
 		}
 		a.dropdownIcon {
-			margin: 7px 12px 0 0;
+			margin: 8px 10px 0 0;
 		}
 		.list-projects, .list-labels {
 			background-color: @baseBackground;
@@ -981,27 +991,6 @@ hr {
 	}
 }
 
-// Reset some component for Task
-#taskManagement {
-	.uiAccordion.leftPanel .accordion-heading .item {
-		border-bottom: none;
-	}
-	.uiAccordion.leftPanel .accordion-heading .item + .list-projects,
-	.uiAccordion.leftPanel .accordion-heading .item + .list-labels {
-		border-top: 1px solid @borderColor;
-	}
-	.uiAccordion.leftPanel .accordion-heading .sub-item {
-		border-bottom: none;
-		+ .sub-menu {
-			border-top: 1px solid @white;
-		}
-	}
-	.badgeDefault.badgePrimary {
-		background-color: @primaryBackground;
-		color: @textColor;
-		margin-top: 3px;line-height: 13px;
-	}
-}
 
 // Reset line-height for ECME Product Template
 .ProDetailPage [style*="font-size: 24"],
