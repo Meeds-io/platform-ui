@@ -74,15 +74,16 @@
 			    .ArrowIcon {
 				  line-height: 23px;
 				  overflow: hidden;
-				  padding-left: 18px;
 				  font-weight: bold;
 				  cursor: pointer;
 				  position: relative;
 				  &:before {
 				  	position: absolute;
-					top: 6px;
                     content: "\e75a";
                     .font-icon();
+                    font-size: @sizeIcon12x12;
+                    margin-right: 6px;
+                    top: -1px;
 				  }
 				  &:hover {
 					  color: @linkColorHover;

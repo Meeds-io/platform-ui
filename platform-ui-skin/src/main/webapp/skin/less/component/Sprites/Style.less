@@ -4062,8 +4062,12 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
  	font-size: @sizeIconDefault - 2;
  }
 
- [class^="uiIconMini"][class*="Arrow"],[class^="uiIconMini"],[class^="uiIconArrow"]{
+ [class^="uiIconMini"][class*="Arrow"],[class^="uiIconMini"],[class^="uiIconArrow"], .uiItemSelector .selectedItem [class^="uiIconArrow"]{
 	font-size:  @sizeIcon12x12 - 1;
+	top: -1px;
+ }
+ .uiItemSelector .selectedItem [class^="uiIconArrow"]{
+	font-size:  @sizeIcon12x12 - 1 !important;
  }
  [class*="24x24"] {
 	font-size: @sizeIcon24x24;
