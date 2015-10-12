@@ -309,14 +309,14 @@
         overflow-y: hidden!important;
     }
 
-    .uiPopup, .UIMaskWorkspace {
+.uiPopup{
         left: auto!important;
         top: auto!important;
         right: auto!important;
         bottom: auto!important;
         z-index: 10000!important;
         position: relative!important;
-        margin: 50px auto 20px;
+        margin: 50px auto 20px!important;
         width: 560px!important;
         .translate(0px, -25%);
         .transition(transform 0.3s ease-out 0s);
@@ -717,6 +717,9 @@
 
 /* Landscape phone to portrait tablet */
 @media (min-width: 768px) and (max-width: 1024px) {
+    #UIMaskWorkspace .UIMaskWorkspace{
+        margin-top: 50px!important;
+    }
     .uiDocumentPreview .findbar {
         left: 40px;//1.2
     }
@@ -913,10 +916,13 @@
         margin-left: 0;
         margin-top: 15px;
     }
-    .uiPopup, .UIMaskWorkspace {
-        margin: auto;
+    .uiPopup, #UIMaskWorkspace .UIMaskWorkspace {
+        margin: auto!important;
         max-width: 560px!important;
         width: 100%;
+    }
+    #UIMaskWorkspace .UIMaskWorkspace{
+        margin-top: 0px!important;
     }
     .UIToolbarContainer .NormalContainerBlock .ToolbarContainer.active .uiDropdownWithIcon span {
       float: none!important;
@@ -1291,8 +1297,8 @@
             margin-left: 0;
         }
     }
-    .uiPopup, .UIMaskWorkspace {
-        margin: 0 15px;
+    .uiPopup, #UIMaskWorkspace  .UIMaskWorkspace {
+        margin: 0 15px!important;
         width: auto !important;
     }
 

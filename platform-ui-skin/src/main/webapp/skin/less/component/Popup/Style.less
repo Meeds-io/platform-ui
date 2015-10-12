@@ -117,28 +117,27 @@
             &:before {
                 content: "";
                 display: block;
-                .square(16px);
-                position: absolute;
                 left: 0;
                 top: 0px;
-                background-image: url("@{images-path}/PopupMessage/icons.png");
+                .font-icon();
+                position: absolute;
             }
 		}
 
 		> li span.errorIcon {
-            &:before {background-position: left 0px;}
+            &:before { content: "\e76d";color: @errorColor} //uiIconRemove
 		}
 
 		> li span.warningIcon {
-            &:before {background-position: left -17px;}
+            &:before {content: "\e771";color: @warningColor;}//.uiIconWarning
 		}
 
 		> li span.infoIcon {
-            &:before {background-position: left -34px;}
+            &:before { content: "\e767";color: @infoColor; }//.uiIconInformation
 		}
 
 		> li span.confirmationIcon {
-            &:before {background-position: left -50px;}
+            &:before {  content: "\e76b";color: @infoColor;}// uiIconQuestion
 		}
 
 		> li.collapseItem > ul {

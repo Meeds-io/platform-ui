@@ -106,20 +106,33 @@
 	}
 
 	[class^="uiIconSeo"] {
-		background: url("@{images-path}/Icons/uiIconsColor.png");
+		//background: url("@{images-path}/Icons/uiIconsColor.png");
 		margin: 0px 0px 0px 5px;
+        font-size: 12px;
+        &:before {
+            color: @errorColor;
+        }
 	}
 
 	.uiIconSeoEmpty {
-		background-position: -180px -20px;
+        &:before {
+            content: "\e76e";// uiIconStatus
+            color: @errorColor;
+        }
 	}
 
 	.uiIconSeoPartial {
-		background-position: -160px -20px;
+        &:before {
+            content: "\e76e";// uiIconStatus
+            color: @colorIconOrange;
+        }
 	}
 
 	.uiIconSeoFull {
-		background-position: -140px -20px;
+        &:before {
+            content: "\e76e";// uiIconStatus
+            color: @successColor;
+        }
 	}
 }
 /************** For edit UISEOForm ***********************/

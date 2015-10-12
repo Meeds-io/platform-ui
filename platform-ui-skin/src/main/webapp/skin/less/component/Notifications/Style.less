@@ -24,7 +24,9 @@
 	}
 
 	.uiIconWarning {
-		background: url("@{images-path}/Icons/uiIconsColor.png") no-repeat -20px top;
+		&:before {
+            color: @warningColor;
+        }
 	}
 
 	a:not(.btn) {
@@ -43,7 +45,10 @@
 	color: @successText;
 
 	.uiIconSuccess {
-		background: url("@{images-path}/Icons/uiIconsColor.png") no-repeat -60px top;
+        &:before {
+            content: "\e770";//uiIconValidate
+            color: @successColor;
+        }
 
 	}
 }
@@ -54,7 +59,11 @@
 	color: @infoText;
 
 	.uiIconInfo {
-		background: url("@{images-path}/Icons/uiIconsColor.png") no-repeat -40px top;
+        &:before {
+            color: @infoColor;
+            content: "\e767";
+        }
+
 	}
 }
 
@@ -64,6 +73,10 @@
 	color: @errorText;
 
 	.uiIconError {
-		background: url("@{images-path}/Icons/uiIconsColor.png") no-repeat left top;
+        &:before {
+            content: "\e76d";//uiIconClose
+            color: @errorColor;
+        }
+
 	}
 }

@@ -9,25 +9,66 @@
 }
 
 .warningmessage, .notemessage{
-	background: @warningBackground url("@{images-path}/wiki/Icons/warningIcon.png") no-repeat 15px 6px;
+	background: @warningBackground ;
 	border: 1px solid @warningBorder;
   color: #333;//alway #333
+    position: relative;
+    &:before {
+        .font-icon();
+        display: block;
+        left: 22px;
+        top: 9px;
+        position: absolute;
+        color: @warningColor;
+        content: "\e771";// uiIconWarning
+    }
 }
 
 .tipmessage{
-	background: @successBackground url("@{images-path}/wiki/Icons/successIcon.png") no-repeat 15px 6px;
+	background: @successBackground ;
 	border: 1px solid @successBorder;
   color: #333;//alway #333
+    position: relative;
+    &:before {
+        .font-icon();
+        display: block;
+        left: 22px;
+        top: 9px;
+        position: absolute;
+        content: "\e770";// uiIconValidate
+        color: @successColor;
+    }
 }
 
 .infomessage{
-	background: @infoBackground url("@{images-path}/wiki/Icons/infoIcon.png") no-repeat 15px 6px;
+	background: @infoBackground ;
 	border: 1px solid @infoBorder;
   color: #333;//alway #333
+    position: relative;
+    &:before {
+        .font-icon();
+        display: block;
+        left: 22px;
+        top: 9px;
+        position: absolute;
+        content: "\e767";// uiIconInformation
+        color: @infoColor;
+    }
 }
 
 .errormessage{
-	background: @errorBackground url("@{images-path}/wiki/Icons/errorIcon.png") no-repeat 15px 6px;
+	background: @errorBackground ;
 	border: 1px solid @errorBorder;
-  color: #333;//alway #333
+    color: #333;//alway #333
+    position: relative;
+    &:before {
+
+        .font-icon();
+        display: block;
+        left: 22px;
+        top: 9px;
+        position: absolute;
+        content: "\e76d";
+        color: @errorColor
+    }
 }

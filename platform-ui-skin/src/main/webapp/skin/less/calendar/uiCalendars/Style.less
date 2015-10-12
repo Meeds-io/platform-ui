@@ -103,14 +103,6 @@
 	i {
 		.square(16px);
 	}
-	.uiIconBell {
-		background-image: url("@{images-path}/calendar/Icons/icon-bell.png");
-		background-position: 0px 0px;
-		&:hover {
-			background-image: url("@{images-path}/calendar/Icons/icon-bell.png");
-			background-position: 0px 0px;
-		}
-	}
 	.description {
 		color: @baseColorMedium;
 	}
@@ -121,4 +113,12 @@
 	.settingNotice {
 		margin: 0 0 10px 0;
 	}
+}
+
+.calendarCheckboxBlock  {
+    .checkbox {
+        left: 1px;
+        padding: 0;
+        top: -2px;
+    }
 }

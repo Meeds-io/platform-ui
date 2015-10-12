@@ -119,18 +119,22 @@
     		background: rgba(0,0,0,0.18);
 			.box-shadow(~"0 1px 2px rgba(0, 0, 0, 0.17) inset, 0px 1px 0px rgba(255, 255, 255, 0.73)");
 		}
-
+        .uiCheckbox input[type="checkbox"] + span{
+            text-indent: 0;
+        }
 		.uiCheckbox input[type="checkbox"]:checked + span:after{
-		   background: url("@{images-path}/calendar/background/iconCheckBox.png") no-repeat left top;	
-		    .square(12px);
-		    left: -1px;
+            .font-icon();
+            content: "\e76f";
+            color:white;
+            font-size: 9px;
+		    left: 0px;
+            top: -2px;
 			border: none;
 			-webkit-transform: none;
     		-moz-transform: none;
      		-ms-transform: none;
        		-o-transform: none;
          	 transform: none;
-		    top: 1px;
 		}
 	}
 
