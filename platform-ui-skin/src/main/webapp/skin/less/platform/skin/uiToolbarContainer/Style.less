@@ -672,10 +672,30 @@
 
     }
     #UICreateList.dropdown-menu {
-        //min-width: 300px;
-        & > li {
-           // float: none;
-        }
+        border-radius: 0;
+	    left: auto !important;
+	    min-width: 180px;
+	    padding: 0 !important;
+	    position: fixed;
+	    right: 0 !important;
+	    top: 34px;
+	    > li {
+		    float: left;
+		    > a {
+			    font-size: 0;
+			    line-height: 0;
+			    padding: 10px !important;
+			    > i{
+			    	margin-right: 0;
+			    }
+			    &:hover{
+			    	background: @primaryBackground;
+			    	> i{
+			    		color: @colorIconDefault;
+			    	}
+			    }
+			}
+		}
     }
 }
 .uiNotificationPopoverToolbarPortlet.mobile-mode {
