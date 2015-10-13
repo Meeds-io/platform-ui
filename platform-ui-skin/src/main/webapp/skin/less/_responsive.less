@@ -670,8 +670,9 @@
         left: 50%!important;
         .translate(-50%,0%);
         max-height: 100%;
-        overflow-y: auto;
+        max-height: none!important;
         width: 90% !important;
+        margin-left: 0;
         z-index: 99999!important;
         .message {
             background:@baseBackground !important ;
@@ -903,6 +904,11 @@
     .toggle-left-bar .uiIconMenu {
         font-size: 30px;
         top: -4px;
+    }
+
+    .MonitoringLeftTDContainer, .MonitoringMiddleTDContainer, .MonitoringRightTDContainer {
+        display: block;
+        padding: 20px !important;
     }
 }
 
@@ -1201,10 +1207,6 @@
         width: auto;
         overflow: visible;
     }
-    .MonitoringLeftTDContainer, .MonitoringMiddleTDContainer, .MonitoringRightTDContainer {
-       display: block;
-        padding: 20px ;
-    }
 
 
     // answer portlet
@@ -1230,6 +1232,7 @@
         height: 100%;
         padding-top: 5px;
         z-index: 1000;
+        overflow-y: auto;
         .uiSearchPlatformToolBarPortlet{
             position: absolute;
             width: 80%;
@@ -1273,6 +1276,11 @@
             }
         }
     }
+    .uiQuickSearchResult {
+        position: absolute!important;
+    }
+
+
 }
 
 
@@ -1301,7 +1309,6 @@
         margin: 0 15px!important;
         width: auto !important;
     }
-
 }
 // For a tablet portrait and wide landscape phone
 
@@ -1534,7 +1541,7 @@
     }
     // loadding for search top navigation
     body  .UIToolbarContainer .uiSearchPlatformToolBarPortlet > input.loadding[type="text"] + a:after {
-        top: 4px;
+        top: 6px;
     }
     body  .spaceChooserPopup {
         left: 0;

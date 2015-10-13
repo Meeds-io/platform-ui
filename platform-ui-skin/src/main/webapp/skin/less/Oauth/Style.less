@@ -5,6 +5,12 @@
 	}
 }
 
+.uiOauthRegister {
+    .alert i {
+        top: 0;
+    }
+}
+
 .uiOauthInvitation {
 	width: 400px;
 	margin: 50px auto;
@@ -38,8 +44,21 @@
         padding: 3px 10px 4px 20px;
         margin: -1px;
         border: 1px solid #333;
+        position: relative;
+        .uiIconClose {
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            margin: 0;
+            &:before {
+                margin: 0;
+                position: absolute;
+                right: 4px;
+                top: 2px;
+            }
+        }
         [class^="uiIcon"]:hover {
-         // background-image: url("@{images-path}/Icons/uiIconsSecondary.png") !important;
           color: @colorIconSecondary!important;
         }
         .popupTitle {
@@ -65,9 +84,16 @@
     }
     #UIPortalLoginFormAction {
       padding-top: 35px;
+
     } 
 }
-
+@media (max-width: 600px) {
+    .uiOauthRegister.uiPopup #UIPortalLoginFormAction {
+        border-top: 1px solid #ddd;
+        margin: 20px -15px 0;
+        padding-top: 25px;
+    }
+}
 /* On mask layer*/
 .UIMaskWorkspace .MaskContainer .UIOAuthInvitationForm {
 	margin: 0;
@@ -249,4 +275,17 @@
     .uiOauthInvitation  .password-field input {
         width: 90%!important;
     }
+}
+
+@media(max-width: 480px) {
+    .uiOauthRegister ,.uiOauthInvitation {
+        select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input, .exo-mentions .replaceTextArea {
+            font-size: 13px !important;
+        }
+        .password-field.pull-right {
+            float: none;
+        }
+    }
+
+
 }

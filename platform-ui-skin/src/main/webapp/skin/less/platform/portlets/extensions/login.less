@@ -23,8 +23,8 @@ body {
 	color: @textColor;
 	display: block;
 	left: 50%;
-	margin: -180px -195px 0;
-	position: fixed;
+    .translate(-50%, -50%);
+    position: absolute;
 	top: 50%;
 	width: 392px;
 	.loginContainer {
@@ -315,11 +315,17 @@ input::-ms-clear,input[type=password]::-ms-reveal{
   display: none;
 }
 /** Login form **/
+@media (min-width: 639px) and (max-width: 767px) {
+    .uiLogin {
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        top: auto;
+    }
+}
 @media (max-width: 480px) {
 	.uiLogin {
 		width: 290px;
-		margin: 0;
-		.translate(-50%, -50%);	
+		//margin: 0;
 		.loginHeader {
 			width: 199px;
 			padding: 2px 12px;
@@ -411,4 +417,10 @@ input::-ms-clear,input[type=password]::-ms-reveal{
 } 
 input[type=text]::-ms-clear,input[type=password]::-ms-reveal{
   display: none;
+}
+
+@media (max-width: 767px) {
+    .loginBGLight {
+        display: none;
+    }
 }

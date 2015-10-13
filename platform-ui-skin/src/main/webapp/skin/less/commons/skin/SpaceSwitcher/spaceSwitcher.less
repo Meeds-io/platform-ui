@@ -60,7 +60,7 @@
 	}
 	.spaceList {
 	  overflow-y: auto;
-	  height: 300px;
+	  ///height: 300px;
 	  min-height: 30px;
 		img {
 			.square(19px);
@@ -98,4 +98,12 @@
 			}
 		}
 	}
+}
+
+@media (max-width: 767px) {
+    .spaceChooserPopup .spaceList {
+        height: auto !important;
+        min-height: 30px;
+        overflow-y: auto;
+    }
 }

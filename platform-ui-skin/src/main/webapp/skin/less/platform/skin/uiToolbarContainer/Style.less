@@ -230,7 +230,7 @@
                     position: absolute;
                     .square(24px);
                     left: -30px;
-                    top:10px;
+                    top:14px;
                     content: "";
                   }
                  position: relative;
@@ -619,6 +619,25 @@
 		}
   }
 }
+@media (max-width: 767px) {
+    .UIToolbarContainer .uiCreateToolBarPortlet .create-form-dropdown .dropdown-menu-sub {
+        width: 360px;
+    }
+    //add event and task
+     .UIToolbarContainer .uiCreateToolBarPortlet .uiQuickAddEvent {
+        .form-horizontal .title input[type="text"] ,.selectboxMedium .uiSelectbox,.selectboxMedium .uiSelectbox .selectbox{
+            width: 100%!important;
+        }
+
+    }
+
+    .uiCreateToolBarPortlet  .uiQuickAddEvent{
+        .inputSmall input[type="text"],
+        .inputSmall input[type="password"],select {
+            width: 114px!important;
+        }
+    }
+}
 
 @media (max-width: 640px) {
 	.UIToolbarContainer .uiCreateToolBarPortlet .uiQuickAddEvent {
@@ -634,6 +653,15 @@
 }
 /* Fix Responsive*/
 @media (max-width: 480px) {
+    .UIToolbarContainer .uiCreateToolBarPortlet .create-form-dropdown .dropdown-menu-sub {
+        width: 300px;
+    }
+    .uiCreateToolBarPortlet .uiQuickAddEvent {
+        .inputSmall input[type="text"],
+        .inputSmall input[type="password"],select {
+            width: 135px!important;
+        }
+    }
 	.uiNotificationPopoverToolbarPortlet {
 		.displayItems {
 			max-width: none;
@@ -732,3 +760,14 @@
     }
 }
 
+@media(max-width: 767px) {
+
+    .UIToolbarContainer {
+        .uiCreateToolBarPortlet .create-form-dropdown .dropdown-menu-sub {
+            margin-top: 42px;
+        }
+        #UICreateList.create-form-dropdown {
+            top:0;
+        }
+    }
+}
