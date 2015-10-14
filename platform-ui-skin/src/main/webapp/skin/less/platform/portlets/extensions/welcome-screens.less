@@ -33,21 +33,21 @@ a {
 }
 .uiWelcomeBox {
     background-color: @baseBackground;
-     .border-radius(10px);
+    .border-radius(10px);
     .box-shadow(0 1px 3px #3d3d3d);
     margin: -380px auto 0;
     width: 512px;
     .header {
-		background: url("@{images-path}/platform/portlets/extensions/headerBG.png") repeat-x scroll 0 0 transparent;
-		border: 1px solid #393939;
-		.border-radius(4px 4px 0 0);
-		width: 511px;
-		line-height: 44px;
-		text-align: center;
-		font-size: 18px;
-		font-weight: bold;
+  		.gradientBar(@toolbarDarkEndBackground, @toolbarDarkStartBackground);
+  		border: 1px solid #393939;
+  		.border-radius(4px 4px 0 0);
+  		width: 511px;
+  		line-height: 44px;
+  		text-align: center;
+  		font-size: 18px;
+  		font-weight: bold;
       color: @textLightColor;
-	}
+	 }
 	 .content {
 		background-color: @baseBackground;
 		margin: 0 auto;
@@ -215,4 +215,51 @@ a {
 // remove clear button on IE
 input::-ms-clear,input[type=password]::-ms-reveal{
   display: none;
+}
+
+@media (max-width: 640px){
+  .backLight{
+    display: none;
+  }
+  .uiWelcomeBox {
+    margin: 0 15px;
+    width: auto;
+    .header {
+      width: auto;
+    }
+    .content {
+      padding: 10px 20px;
+    }
+    .form-horizontal{
+      .control-label{
+        width: 100%;
+        text-align: left;
+      }
+      .confirmLabel{
+        display: block;
+        margin-top: 12px;
+        padding: 0;
+      }
+      .controls{
+        margin: 0;
+        input{
+          width: 100%;
+          box-sizing: border-box;
+        }
+        .inputFieldMedium:first-child{
+          margin: 0 0 5px 0;
+        }
+      }
+    } 
+    .bottom{
+      background: none;
+      text-align: left;
+      padding: 20px;
+      .btn{
+        width: 100%;
+        text-align: center;
+        margin: 10px 0 0;
+      }
+    }
+  }
 }
