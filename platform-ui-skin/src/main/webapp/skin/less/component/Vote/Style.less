@@ -32,11 +32,14 @@
 
 			  	// Adding star icon
 			  	&:before {
-				  	content: "\e779";
+                    content: "\e7a1";//uiIconStarBlank
 				}
 			}
 		  	.uiIconOverVote, .uiIconRatedVote {
 			  	color: @yellow;
+                &:before {
+                    content: "\e779";
+                }
 			}
 		}
 
@@ -58,18 +61,20 @@
 	}
 
 	.avgRatingImages {
-		float: left;
+		//float: left;
 		.voted,.votedHaft,.unvoted  {
 			cursor: pointer;
-            font-size: @sizeIconDefault - 2;
 		}
 
 	  // Changing definitions to make it font-icons, not images
-	  .voted:before, .unvoted:before {
-		content: "\e779";
+	  .voted:before {
+		content: "\e779"; //uiIconStar
 	  }
+        .unvoted:before {
+            content: "\e7a1";//uiIconStarBlank
+        }
 	  .votedHaft:before {
-		content: "\e77a";
+          content: "\e7a0";//uiIconStarBlankAHalf
 	  }
 	  .voted, .votedHaft {
 		color: @yellow;
@@ -86,11 +91,14 @@
 		}
 
 	  	// Changing definitions to make it font-icons, not images
-	  	.voted:before, .unvoted:before {
+	  	.voted:before {
 		  	content: "\e779";
 		}
+        .unvoted:before {
+            content: "\e7a1";//uiIconStarBlank
+        }
 	  	.votedHaft:before {
-		  	content: "\e77a";
+            content: "\e7a0";//uiIconStarBlankAHalf
 		}
 	  	.voted, .votedHaft {
 		  	color: @yellow;
