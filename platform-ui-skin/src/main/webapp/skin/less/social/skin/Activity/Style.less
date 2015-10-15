@@ -378,6 +378,10 @@ body.phoneDisplay .uiComposer.uiGrayLightBox {
 			display: none;
             [class^="uiIcon"]:before {
                 vertical-align: middle;
+
+            }
+            [class^="uiIcon"] {
+                margin-left: 5px;
             }
 		}
 		&:hover .actLink{
@@ -573,15 +577,15 @@ body.phoneDisplay .uiComposer.uiGrayLightBox {
 					color: @linkColorHover;
 				}
 			}
-      .uiIconLink {
-        right : 2px;
-        top: 5px;
-      }
+
         
 			.uiIconClose {
-				top: 3px;
+				top: -1px;
 			}
-			.uiIconClose + .viewComment {
+            [class^="uiIcon"] {
+                margin-left: 5px;
+            }
+            .uiIconClose + .viewComment {
 				right: 25px;
 			}
 			&:hover  .actLink{
