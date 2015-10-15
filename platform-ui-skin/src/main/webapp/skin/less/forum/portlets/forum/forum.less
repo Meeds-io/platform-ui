@@ -34,7 +34,7 @@
 	}
 
 }
-.uiForumInfos ,.forumQuickReply {
+.uiForumInfos ,.forumQuickReply, .uiPostRules {
     .title {
         [class^="uiIconMini"][class*="Arrow"], [class^="uiIconMini"], [class^="uiIconArrow"] {
             top: 2px;
@@ -71,6 +71,15 @@
 
 .forumContains [class^="uiIcon"] {
     margin: 0 5px 0 0;
+}
+.uiPostForm{
+    .ThreadContent{
+        .controls{
+            span i[class^="uiIcon"]{
+                margin-right: 4px;
+            }
+        }
+    }
 }
 @media(max-width: 955px) {
 

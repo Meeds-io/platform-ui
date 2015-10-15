@@ -10,6 +10,23 @@
 	padding: 20px;
 	.uiProfileUserSearch {
 		margin-bottom: 10px;
+		.uiGrayLightBox{
+			.LabelProfileUserSearch{
+				margin-top: 4px;
+			}
+			.contentProfileUserSearch{
+				overflow: hidden;
+				padding-right: 5px;
+				.inputProfileUserSearch{
+					width: 33.33%;
+					box-sizing: border-box;
+					padding:0 5px;
+					input{
+						width: 100%;
+					}
+				}
+			}
+		}
 	}
 	.uiSpaceSearch {
 		margin-bottom: 10px;
@@ -168,6 +185,28 @@
     	margin-top: -8px;
 		
 	} 
+	.uiSocApplication {
+		.uiProfileUserSearch {
+			.uiGrayLightBox{
+				position: relative;
+				padding-bottom: 50px;
+				.contentProfileUserSearch{
+					width: 100%;
+					.inputProfileUserSearch{
+						padding: 0;
+					}
+				}
+				.LabelProfileUserSearch{
+					width: 100%;
+				}
+				.btn{
+					position: absolute;
+					bottom: 15px;
+					left: 10px;
+				}
+			}
+		}
+	}
 }
 
 @media (max-width: 480px) {
@@ -175,4 +214,15 @@
         right: -10px!important;
          top: -10px;
     }
+    .uiSocApplication {
+		.uiProfileUserSearch {
+			.uiGrayLightBox{
+				.contentProfileUserSearch{
+					.inputProfileUserSearch{
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
 }

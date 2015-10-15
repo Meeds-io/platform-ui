@@ -239,7 +239,11 @@
 		float: left;
 		cursor: col-resize;
 	}
-
+	.columnName{
+		.uiIconArrowDown{
+			margin-top: 7px;
+		} 
+	}
 	.odd {
 		background: @primaryBackgroundLight;
 	}
@@ -616,7 +620,7 @@
 			[class^="uiIcon"] {
 				width: 11px;
 				margin-top: 2px;
-			  	margin-left: 2px;
+			  	margin-left: 3px;
 			}
 	}
 
@@ -1501,6 +1505,13 @@
 
 	.multiValueContainer {
 		display: inline-block;
+	}
+}
+#UIActionManager{
+	.uiAddActionForm{
+		.actionIcon{
+			vertical-align: top;
+		}
 	}
 }
 
