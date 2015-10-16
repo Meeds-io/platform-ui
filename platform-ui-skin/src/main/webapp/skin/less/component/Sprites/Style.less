@@ -51,7 +51,7 @@
 a:hover [class^="uiIcon"],
 .actionIcon.active [class^="uiIcon"],
 .nodeSelected:hover [class^="uiIcon"],
-.uiIconQuestion:hover,
+.uiIconQuestion:hover, .actionIconSmall:hover [class^="uiIcon"],
 .uiIconBlue {
 	 color: @colorIconPrimary;
 }
@@ -4041,7 +4041,6 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 	color:@colorIconPrimary;	
  }
 
-.actionBar li > a:hover > .uiIconOpenOnDesktop:before,
 .uiActionBar li > a:hover > .uiIconOpenOnDesktop:before,
 .uiRightPopupMenuContainer.dropdown-menu > li > a:hover .uiIconOpenOnDesktop:before,
 .uiRightPopupMenuContainer.dropdown-menu > li > a .uiIconOpenOnDesktop:before,
@@ -4049,12 +4048,32 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 .actionBar li > a > .uiIconOpenOnDesktop:before{	 
 	 content: "\e785";
 }
-
-
- .detailContainer .btn:hover > .uiIconOpenOnDesktop {
-  	color:@colorIconPrimary;
- }
-
+.uiActionBar .actionIcon, .detailContainer .btn, .contentBox .ContentActivityIcon a{
+	.uiIcon16x16applicationmsword:before, .uiIcon16x16applicationxls:before, .uiIconOpenOnDesktop:before, 
+	.uiIcon16x16FilePpt::before, .uiIcon16x16applicationppt::before, .uiIcon16x16applicationvndms-powerpoint::before, 
+	.uiIcon16x16applicationvndopenxmlformats-officedocumentpresentationmlpresentation::before, 
+	.uiIcon16x16applicationvndopenxmlformats-officedocumentpresentationmltemplate::before, 
+	.uiIcon16x16applicationvndopenxmlformats-officedocumentpresentationmlslideshow::before, 
+	.uiIcon16x16applicationvndms-powerpointaddinmacroenabled12::before, 
+	.uiIcon16x16applicationvndms-powerpointpresentationmacroenabled12::before, 
+	.uiIcon16x16applicationvndms-powerpointtemplatemacroenabled12::before, 
+	.uiIcon16x16applicationvndms-powerpointslideshowmacroenabled12::before{
+		color:@colorIconDefault;
+	}
+}
+.uiActionBar .actionIcon:hover, .detailContainer .btn:hover, .contentBox .ContentActivityIcon a:hover {
+	.uiIcon16x16applicationmsword:before, .uiIcon16x16applicationxls:before, .uiIconOpenOnDesktop:before, 
+	.uiIcon16x16FilePpt::before, .uiIcon16x16applicationppt::before, .uiIcon16x16applicationvndms-powerpoint::before, 
+	.uiIcon16x16applicationvndopenxmlformats-officedocumentpresentationmlpresentation::before, 
+	.uiIcon16x16applicationvndopenxmlformats-officedocumentpresentationmltemplate::before, 
+	.uiIcon16x16applicationvndopenxmlformats-officedocumentpresentationmlslideshow::before, 
+	.uiIcon16x16applicationvndms-powerpointaddinmacroenabled12::before, 
+	.uiIcon16x16applicationvndms-powerpointpresentationmacroenabled12::before, 
+	.uiIcon16x16applicationvndms-powerpointtemplatemacroenabled12::before, 
+	.uiIcon16x16applicationvndms-powerpointslideshowmacroenabled12::before{
+		color:@colorIconPrimary;
+	}
+}
 .font10,[class^="uiIcon"][class*="Mini"]  {
  	font-size: @sizeIcon12x12;
  }
@@ -4111,12 +4130,12 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 }
 
 
-.detailContainer .btn > .uiIconOpenOnDesktop {
-    color: @colorIconDefault;
-    &:before {
-        content: "\e777";
-    }
- }
+// .detailContainer .btn > .uiIconOpenOnDesktop {
+//     color: @colorIconDefault;
+//     &:before {
+//         content: "\e777";
+//     }
+//  }
  .detailContainer .btn:hover > .uiIconOpenOnDesktop {
   color:@colorIconPrimary;
  }
