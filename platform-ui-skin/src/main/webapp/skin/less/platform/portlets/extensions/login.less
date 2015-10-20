@@ -94,6 +94,7 @@ body {
 		}
 		input:-ms-input-placeholder {
 			color: @placeholderText;
+			opacity: 0.5;
 		}
 		input:focus {
 			color: @inputFocusColor;
@@ -299,8 +300,4 @@ body {
 }
 .titleLogin {
 	padding: 15px 0 5px;
-}
-// remove clear button on IE
-input::-ms-clear,input[type=password]::-ms-reveal{
-  display: none;
 }
