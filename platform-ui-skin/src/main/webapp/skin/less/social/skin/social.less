@@ -90,6 +90,38 @@
 		margin: 0;
 		vertical-align: middle;
 	}
+	.uiTableProfileUserSearch {
+		display: table;
+		.column {
+			display: table-cell;
+			vertical-align: top;
+			width: 1%;
+			label {
+				white-space: nowrap;
+				padding-top: 5px;
+			}
+			input {
+				width: 100%!important;
+				.box-sizing(border-box);
+			}
+			&.input-wrap{
+				padding: 0 5px;
+				width: 20%;
+			}
+			&:first-child {
+				//padding-right: 5px;
+			}
+			&:last-child {
+				padding-left: 5px;
+			}
+		}
+		.has-suggestions {
+			position: relative;
+			.suggestions {
+				min-width: 100%;
+			}
+		}
+	}
 }
 
 
