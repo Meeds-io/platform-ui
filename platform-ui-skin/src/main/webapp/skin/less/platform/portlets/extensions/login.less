@@ -1,11 +1,12 @@
 @import "../../../variables.less";
 @import "../../../mixins.less";
+@import "forgot-password.less";
 //========================================
 body {
 	background: url("@{images-path}/platform/portlets/extensions/login_texture.jpg") repeat;
   font-family: @baseFontFamily;
   font-size: @baseFontSize;
-  color: @textColor;
+  color: @textColor; 
 }
 .loginBGLight {
 	background: @baseBackground;
@@ -21,7 +22,6 @@ body {
 .uiLogin {
 	color: @textColor;
 	display: block;
-	font-size: 12px;
 	left: 50%;
 	margin: -180px -195px 0;
 	position: fixed;
@@ -94,6 +94,7 @@ body {
 		}
 		input:-ms-input-placeholder {
 			color: @placeholderText;
+			opacity: 0.5;
 		}
 		input:focus {
 			color: @inputFocusColor;
@@ -102,7 +103,7 @@ body {
 			background-position: 0 -41px;
 		}
 		.loginButton {
-			padding: 10px 0 30px;
+			padding: 30px 0 13px;
 			.button {
               .border-radius(4px);
 				text-align: center;
@@ -121,6 +122,7 @@ body {
 		}
 		#social-pane {
 			text-align: center;
+			margin-top: 15px;
 			#SignInDelimiter {
 				font-size: @baseFontSize;
 			}
@@ -153,6 +155,12 @@ body {
 					}
 				}
 			}
+		}
+		.centerLoginContent a{
+			color: @linkColor;  
+			text-decoration: none;
+			display: block;
+			margin: 3px 0;
 		}
 	}
 	.spaceRole {
@@ -291,13 +299,5 @@ body {
 	margin-top: 15px;
 }
 .titleLogin {
-	line-height: 12px;
-	padding: 6px 3px 0 0;
-	min-height: 31px;
-	font-size: 11px;
-}
-
-// remove clear button on IE
-input::-ms-clear,input[type=password]::-ms-reveal{
-  display: none;
+	padding: 15px 0 5px;
 }
