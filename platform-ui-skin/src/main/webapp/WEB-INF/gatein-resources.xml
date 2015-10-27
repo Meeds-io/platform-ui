@@ -91,11 +91,6 @@
   </portlet-skin>
  
  <!--- Wiki portlet -->
-   <portal-skin>
-    <skin-name>Default</skin-name>
-    <skin-module>wiki</skin-module>
-    <css-path>/skin/css/wiki/wiki.css</css-path>
-  </portal-skin>
 
   <portlet-skin>
     <application-name>wiki</application-name>
@@ -639,13 +634,6 @@
   </portlet-skin>
   
   <!-- ContentListViewerPortlet skins -->
-  <portal-skin>
-    <skin-name>Default</skin-name>
-    <skin-module>Acme</skin-module>
-    <css-path>/skin/css/platform/samples/acme-website/Style.css</css-path>
-    <css-priority>6</css-priority>
-    <overwrite>true</overwrite>
-  </portal-skin>
 
   <portlet-skin>
     <application-name>presentation</application-name>
