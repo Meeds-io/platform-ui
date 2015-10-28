@@ -29,8 +29,11 @@ body {
 	width: 392px;
 	.loginContainer {
 		border-radius: 8px;
-		background: @baseBackground url("@{images-path}/platform/portlets/extensions/loginBG.png") no-repeat bottom;
+		background: url("@{images-path}/platform/portlets/extensions/loginLeftBG.png") no-repeat left bottom, 
+    			url("@{images-path}/platform/portlets/extensions/loginRightBG.png") no-repeat right bottom,
+    			url("@{images-path}/platform/portlets/extensions/loginCenterBG.png") repeat-x bottom;
 		padding: 0 40px 15px;
+		background-color: @baseBackground;
 	}
 	.loginHeader {
 		background: url("@{images-path}/platform/portlets/extensions/LoginHeader.png") repeat-x scroll 0 0 transparent;
@@ -338,7 +341,10 @@ input::-ms-clear,input[type=password]::-ms-reveal{
 		} 
 		.loginContainer{
 			padding: 0 32px 15px;
-			background: @baseBackground url("@{images-path}/platform/portlets/extensions/loginBGXs.png") no-repeat bottom;
+			background: url("@{images-path}/platform/portlets/extensions/loginLeftBGXs.png") no-repeat left bottom, 
+    			url("@{images-path}/platform/portlets/extensions/loginRightBGXs.png") no-repeat right bottom,
+    			url("@{images-path}/platform/portlets/extensions/loginCenterBGXs.png") repeat-x bottom;
+			background-color: @baseBackground;
 			.loginContent {
 				input {
 					width: 172px;
