@@ -24,24 +24,28 @@ a {
 
 .uiWelcomeBox {
 	background-color: @baseBackground;
-	.border-radius(10px);
 	.box-shadow(0 1px 3px #3d3d3d);
 	margin: -380px auto 0;
 	width: 512px;
+	.border-radius(8px); 
+    border: 1px solid @baseColorDark;
 	.header {
-		background: url("@{images-path}/platform/portlets/extensions/headerBG.png") repeat-x scroll 0 0 transparent;
-		border: 1px solid #393939;
-		.border-radius(4px 4px 0 0);
-		width: 511px;
-		line-height: 44px;
-		text-align: center;
-		font-size: 18px;
-		font-weight: bold;
-      color: @textLightColor;
-	}
-	.logo {
-		background: url("@{images-path}/platform/portlets/extensions/Logo.png") no-repeat scroll 18px center;
-		text-align: center;
+		.gradientBar(@toolbarDarkEndBackground, @toolbarDarkStartBackground);
+		padding: 0 10px;
+		border: 1px solid @baseColorDark;
+		margin: -1px;
+		.border-radius(6px 6px 0 0);
+		height: 42px;
+		.box-shadow(none);
+		.logo{
+			background: url("@{images-path}/platform/portlets/extensions/Logo.png") no-repeat scroll 18px center;
+			color: @header-popup-title;
+			font-size: 18px;
+			font-weight: bold;
+			text-shadow: 1px 0 1px rgba(0, 0, 0, 0.2);
+			line-height: 42px;
+			text-align: center;
+		}
 	}
 	.content {
 		background-color: @baseBackground;
@@ -69,15 +73,62 @@ a {
 				font-size: large;
 				letter-spacing: 1px;
 				width: 64%;
+				margin: 0px;
 			}
 		}
-		.unlock-label {
-			font-size: medium;
-			font-weight: bold;
+
+		.steps {
+			margin: 0 0 35px;
 		}
+		.rightCol {
+			strong{
+				padding: 10px 0;
+				display: block;
+			}
+			.form-input{
+				overflow: hidden;
+				padding: 0 10px;
+			}
+			.btn-unlock{
+				float: right;
+			}
+			.unlock-label {
+				font-size: medium;
+				font-weight: bold;
+				float: left;
+			}
+			.Text {
+				width: 100%;
+				margin: 0 5px 0 0;
+			}
+		}
+		.stepsNumber {
+			background: #B5B5B5;
+			.border-radius(19px);
+			color: @baseBackground;
+			display: block;
+			font-size: 24px;
+			font-weight: bold;
+			height: 38px;
+			line-height: 40px;
+			text-align: center;
+			width: 38px;
+			float: left;
+			margin-right: 15px;
+		}
+		
+		.alert.alert-error {
+			margin: 0 43px 15px 0;
+			.uiIconError {
+				background: url("@{images-path}/platform/portlets/extensions/errorIcon.png") no-repeat left center;
+				white-space: nowrap;
+			}
+	 	}
 	}
 	.bottom {
-		background: url("@{images-path}/platform/portlets/extensions/bottomBG.png") no-repeat center bottom;
+		background: url("@{images-path}/platform/portlets/extensions/loginLeftBG.png") no-repeat left bottom, 
+    			url("@{images-path}/platform/portlets/extensions/loginRightBG.png") no-repeat right bottom,
+    			url("@{images-path}/platform/portlets/extensions/loginCenterBG.png") repeat-x bottom;
 		text-align: center;
 		 padding: 30px 0;
          border-radius: 8px;
@@ -106,47 +157,52 @@ a {
 
 }
 
-
-.uiWelcomeBox  {
-	.rightCol {
-		width: 420px;
-		.center {
-			padding-right: 43px;		
- 		}
-	}
-	.steps {
-		margin: 0 0 35px;
-	}
-	.firstItem {
-		line-height: 35px;
-	}
-	.stepsNumber {
-		background: #B5B5B5;
-		.border-radius(19px);
-		color: @baseBackground;
-		display: block;
-		font-size: 24px;
-		font-weight: bold;
-		height: 38px;
-		line-height: 40px;
-		text-align: center;
-		width: 38px;
-		float: left;
-	}
-	input.Text {
-		width: 207px;
-		margin: 0 5px 0 0;
-	}
-	.alert.alert-error {
-		margin: 0 43px 15px 0;
-		.uiIconError {
-			background: url("@{images-path}/platform/portlets/extensions/errorIcon.png") no-repeat left center;
-			white-space: nowrap;
-		}
- 	}
-
-}
 // remove clear button on IE
 input::-ms-clear,input[type=password]::-ms-reveal{
   display: none;
+}
+
+@media (max-width: 600px) {
+	.uiWelcomeBox {
+		width: auto;
+		margin: -380px 15px 0;
+		.header {
+			.logo{ background: none;}
+		}
+		.content {
+			.product-label {
+				input {
+					width: 90%;
+				}
+			}
+		}
+		.rightCol {
+			width: auto;
+			.center {
+				padding-right: 0px;		
+	 		}
+		}
+		.bottom {
+			padding: 22px 0;
+		}
+	}
+}
+@media (max-width: 480px) {
+	.uiWelcomeBox {
+		.content{
+			.rightCol {
+				.form-input{
+					padding: 0 10px 0 0;
+				}
+				.btn-unlock{
+					float: right;
+					margin-top: 20px;
+				}
+				.unlock-label {
+					float: none;
+					width: 100%;
+				}
+			}
+		}
+	}
 }
