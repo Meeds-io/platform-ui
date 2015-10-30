@@ -57,7 +57,7 @@
     <!-- Dependencies versions                    -->
     <!-- **************************************** -->
     <org.exoplatform.depmgt.version>11-SNAPSHOT</org.exoplatform.depmgt.version>
-    <org.gatein.portal.version>4.3.x-PLF-responsive-design-SNAPSHOT</org.gatein.portal.version>
+    <org.gatein.portal.version>4.3.x-PLF-SNAPSHOT</org.gatein.portal.version>
   </properties>
   <dependencyManagement>
     <!-- ### NEVER CHANGE THIS ORDER OF DEPMGT ### -->
