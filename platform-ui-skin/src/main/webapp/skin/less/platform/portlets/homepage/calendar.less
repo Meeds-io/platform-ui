@@ -238,12 +238,16 @@
 				.text-overflow;
 			}
 		}
-		.uiIconDel {
-			.square(14px);
-			background: url("@{images-path}/platform/portlets/homepage/calendar/del.png") no-repeat 2px center;
+		.uiIconDel { // Changing background-image to font-icon
+			//.square(14px);
+			//background: url("@{images-path}/platform/portlets/homepage/calendar/del.png") no-repeat 2px center;
 			cursor:pointer;
-			&:hover {
-			 background-position: -13px center;
+		  	color: white;
+		  	font-size: 10px;
+		  	height: 14px;
+		  	vertical-align: middle;
+		  	&:before {
+			  	content: "\e76d";
 			}
 		}
 	}

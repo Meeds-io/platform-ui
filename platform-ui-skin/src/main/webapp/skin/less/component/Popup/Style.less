@@ -12,16 +12,24 @@
 		.box-shadow(inset 0 -1px 0 @borderColor);
 		border-bottom: @uiPopupHeaderBorder;
 		.border-radius(4px 4px 0 0 );
-		padding: 0px 9px 0 15px;
+		padding: 8px 10px 8px 15px;
 		font-size: 14px;
 		font-weight: bold;
 		[class^="uiIcon"] {
-			margin: 10px 4px 0 0;
+			margin: 0 0 0 4px;
 			cursor: pointer;
 		}
-		.popupTitle {
+        [class^="uiIconArrow"] {
+            margin: 13px 4px 0 0;
+        }
+        .uiIconArrowDownMini {
+            margin: 6px 4px 0 ;
+            &.pull-left {
+                margin-left: 0;
+            }
+        }
+        .popupTitle {
 			margin: 0;
-			line-height:35px;
 			color: @uiPopupTitleColor;
 			display: block;
 			cursor: move;
@@ -92,33 +100,44 @@
 			padding-top: 15px;
 			padding-bottom: 15px;
 		}
-		> li {
+		& > li {
 			padding: 5px 0;
+            .contentMessage {
+                white-space: normal;
+            }
 		}
 
-		> li span[class*="Icon"] {
-			background: url("@{images-path}/PopupMessage/icons.png") no-repeat;
+        &  > li span[class*="Icon"] {
 			padding-left: 20px;
 			line-height: 16px;
-			height: 16px;
+			//height: 16px;
 			color: @popupMessageColor;
 			font-weight: bold;
+            position: relative;
+            &:before {
+                content: "";
+                display: block;
+                left: 0;
+                top: 0px;
+                .font-icon();
+                position: absolute;
+            }
 		}
 
 		> li span.errorIcon {
-			background-position: left 0px;
+            &:before { content: "\e76d";color: @errorColor} //uiIconRemove
 		}
 
 		> li span.warningIcon {
-			background-position: left -17px;
+            &:before {content: "\e771";color: @warningColor;}//.uiIconWarning
 		}
 
 		> li span.infoIcon {
-			background-position: left -34px;
+            &:before { content: "\e767";color: @infoColor; }//.uiIconInformation
 		}
 
 		> li span.confirmationIcon {
-			background-position: left -50px;
+            &:before {  content: "\e76b";color: @infoColor;}// uiIconQuestion
 		}
 
 		> li.collapseItem > ul {
@@ -145,5 +164,34 @@
 		font-weight: normal;
 		display: block;
 		margin: 5px 0 5px;
+	}
+}
+.uiPopup .popupHeader {
+    .uiIconClose {
+        height: 16px;
+        line-height: 12px;
+        text-align: center;
+        width: 16px;
+        position: absolute;
+        right: 9px;
+        top: 10px; 
+        z-index: 9;
+        margin: 0;
+        & + .PopupTitle {
+            margin-right: 25px
+        }
+    }
+    [class^="uiIcon"] + .uiIconClose {
+        position: static;
+        margin-left: 4px;
+        &:before {font-size: @sizeIcon12x12;}
+    }
+}
+@media (max-width: 1024px) {
+	.uiPopup .popupHeader {
+	    .uiIconClose::before, .uiIconClose {
+	    	margin: 3px 2px 0 0;
+	    }
+
 	}
 }

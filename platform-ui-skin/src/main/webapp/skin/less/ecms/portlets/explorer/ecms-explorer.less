@@ -45,11 +45,11 @@
 				box-shadow: none;
 
 				> [class^="uiIcon"] {
-				background-image: url("@{images-path}/Icons/uiIconsSecondary.png");
+					color: @colorIconSecondary
 				}
 
 				> [class^="uiIconEcms"] {
-					background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsSecondary.png");
+					color: @colorIconSecondary
 				}
 			}
 		}
@@ -78,11 +78,11 @@
 			border-radius: 3px 3px 3px 3px;
 
 			> [class^="uiIcon"] {
-				background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+				color: @colorIconPrimary;
 			}
 
 			> [class^="uiIconEcms"] {
-				background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsPrimary.png");
+				color: @colorIconPrimary;
 			}
 		}
 	}
@@ -129,11 +129,34 @@
 		float: left;
 		width: 240px;
 		overflow: hidden;
+        min-width: 240px;
 	}
 
 	.rightContainer {
 		float: left;
 	}
+
+  	/*// changing icons for Sites Management
+  	.leftContainer, .rightContainer {
+	  [class^="uiIcon"][class*="FileDefault"]:before {
+		content: "\e722";
+	  }
+	  [class^="uiIcon"][class*="textcss"]:before {
+		content: "\e730";
+	  }
+	  [class^="uiIcon"][class*="applicationoctet-stream"]:before {
+		content: "\e731";
+	  }
+	  [class^="uiIcon"][class*="applicationx-javascript"]:before {
+		content: "\e738";
+	  }
+	  [class^="uiIcon"][class*="textplain"]:before {
+		content: "\e731";
+	  }
+	  [class^="uiIcon"][class*="texthtml"]:before {
+		content: "\e732";
+	  }
+	}*/
 
 	.UIDocumentWorkspace {
     margin-left: 0px;
@@ -216,7 +239,11 @@
 		float: left;
 		cursor: col-resize;
 	}
-
+	.columnName{
+		.uiIconArrowDown{
+			margin-top: 7px;
+		} 
+	}
 	.odd {
 		background: @primaryBackgroundLight;
 	}
@@ -315,17 +342,21 @@
 	}
 
 	.LinkSmall,.IconLocked  {
-		background: url("@{images-path}/ecms/portlets/explorer/Icons/IconMedLink.png") no-repeat right top;
-		width: 16px;
-		height: 16px;
-		bottom: 0px;
+	  	font-size: @sizeIconDefault - 2;
+	  	color: @warningColor;
+		bottom: -4px;
 		right: 0px;
 		position: absolute;
 	}
-
+    .LinkSmall:before {
+        content: "\e793";
+    }
 	.IconLocked {
-		background: url("@{images-path}/ecms/portlets/explorer/Icons/IconMedLock.png") no-repeat right top;
+        &:before {
+            content: "\e794";
+        }
 		top: 0px;
+        bottom: auto;
 	}
 }
 
@@ -452,20 +483,26 @@
 	[class^="uiIcon64x64"] {
 		margin: auto;
 		position: relative;
+        .Link {
+            right: 34px;
+            font-size: @sizeIcon24x24;
+        }
+
 	}
 
 	.Link,.IconLocked {
-		background: url("@{images-path}/ecms/portlets/explorer/Icons/IconBigLink.png") no-repeat right top;
 		position: absolute;
-		width: 32px;
-		height: 32px;
-		right: -5px;
+		right: 25px;
 		bottom: 0;
 	}
 
 	.IconLocked {
-		background: url("@{images-path}/ecms/portlets/explorer/Icons/IconBigLock.png") no-repeat right top;
-		top: 0;
+		&:before {
+            content: "\e794";
+        }
+		top: 10px;
+        bottom: auto;
+        font-size: @sizeIcon24x24;
 	}
 }
 
@@ -490,7 +527,10 @@
 		}
 
 		.uiIconBlueInformation {
-			background: url("@{images-path}/Icons/uiIconsColor.png") no-repeat -40px 0px;
+			&:before  {
+                content: "\e767";
+                color: @infoColor;
+            }
 		}
 	}
 
@@ -575,10 +615,12 @@
 		position: absolute;
 		top: 7px;
 		right: 0px;
+	  	padding-top: 3px;
 
 			[class^="uiIcon"] {
 				width: 11px;
 				margin-top: 2px;
+			  	margin-left: 3px;
 			}
 	}
 
@@ -647,11 +689,11 @@
 			}
 
 			a [class^="uiIcon"] {
-				background-image: url("@{images-path}/Icons/uiIconsDefault.png");
+				 color: @colorIconDefault;
 			}
 
 			a:hover [class^="uiIcon"] {
-				background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+				 color: @colorIconPrimary;
 			}
 
 			textarea {
@@ -690,7 +732,10 @@
 		margin-left: 10px;
 
 		.uiIconHelp {
-			background: url("@{images-path}/Icons/uiIconsColor.png") no-repeat -40px 0px;
+            &:before {
+                content: "\e767";
+                color: @infoColor;
+            }
 			margin: 3px 0px 0px -25px;
 			float: left;
 		}
@@ -805,6 +850,9 @@
 	}
 	.uiMention {
 		margin: 3px 5px 2px 0;
+		.uiIconClose{
+			top: -1px;
+		}
 	}
 }
 
@@ -827,12 +875,12 @@
 	.sortByContent {
 		margin-top: 5px;
 		.uiSelectbox {
-			width: 160px;
+			width: 146px;
 			margin-left: 15px;
 			vertical-align: middle;
 
 			.selectbox {
-				width: 160px;
+				width: 146px;
 			}
 		}
 	}
@@ -1102,7 +1150,7 @@
 		}
 
 		.active [class^="uiIconEcms"] {
-			background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsPrimary.png");
+			 color: @colorIconPrimary;
 		}
 	}
 
@@ -1462,6 +1510,13 @@
 		display: inline-block;
 	}
 }
+#UIActionManager{
+	.uiAddActionForm{
+		.actionIcon{
+			vertical-align: top;
+		}
+	}
+}
 
 /******** UINodeTypeSelector **************/
 .uiNodeTypeList {
@@ -1549,7 +1604,7 @@
 		cursor: pointer;
 
 		> li > a:hover > [class^="uiIconEcms"] {
-			background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsSecondary.png");
+			color: @colorIconSecondary;
 		}
 	}
 
@@ -1559,27 +1614,7 @@
 		.uiIconEcmsMoveNode,
 		.uiIconEcmsRestoreFromTrash,
 		.uiIconEcmsViewInfo {
-			background-image: url("@{images-path}/Icons/uiIconsDefault.png");
-		}
-
-		.uiIconEcmsEditDocument {
-			background-position: -40px 0px;
-		}
-
-		.uiIconEcmsDelete {
-			background-position: -20px 0px;
-		}
-
-		.uiIconEcmsMoveNode {
-			background-position: -120px 0px;
-		}
-
-		.uiIconEcmsRestoreFromTrash {
-			background-position: -160px 0px;
-		}
-
-		.uiIconEcmsViewInfo {
-			background-position: -140px -60px;
+			 color: @colorIconDefault;
 		}
 	}
 
@@ -1590,17 +1625,17 @@
 		.uiIconEcmsRestoreFromTrash,
 		.uiIconEcmsUpload,
 		.uiIconEcmsViewInfo {
-			background-image: url("@{images-path}/Icons/uiIconsSecondary.png");
+			color: @colorIconSecondary;
 		}
 	}
 }
 
 .RightClickCustomItem {
 	.menuItem a:hover [class^="uiIcon"] {
-		background-image: url("@{images-path}/Icons/uiIconsSecondary.png");
+		color: @colorIconSecondary;
 	}
 	.menuItem a:hover [class^="uiIconEcms"] {
-		background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsSecondary.png");
+		color: @colorIconSecondary;
 	}
 }
 
@@ -1610,19 +1645,27 @@
 }
 
 /*==========Icon Small=============*/
+.iconLinkSmall,.iconLockedsmall {
+    color: @warningColor;
+    font-style: normal;
+    font-size: @sizeIcon12x12;
+    position: absolute;
+    left: 6px;
+    top: -2px;
+}
 
+.iconLinkSmall {
+    bottom: -2px;
+    left: auto;
+    right: -2px;
+    top: auto;
+}
 .iconLinkSmall{
-	background: url("@{images-path}/ecms/portlets/explorer/Icons/IconSmallLink.png") no-repeat scroll right bottom transparent;
-    height: 16px;
-    width: 20px;
-	display: block;
+	&:before {content: "\e793";}
 }
 
 .iconLockedsmall{
-	background: url("@{images-path}/ecms/portlets/explorer/Icons/IconSmallLock.png") no-repeat scroll right top transparent;
-    float: left;
-    height: 16px;
-    width: 20px;
+    &:before {content: "\e794";}
 }
 
 
@@ -1643,7 +1686,7 @@
 		#gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 15%));
 		color: @dropdownLinkColorHover;
 		.uiIconEcmsCopyUrlToClipboard {
-			background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsSecondary.png");
+			color: @colorIconSecondary;
 		}
 	}
 
@@ -1657,7 +1700,7 @@
 		    color: @textColor;
 		    padding: 4px 6px;
 		    .uiIconEcmsCopyUrlToClipboard {
-				background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsPrimary.png");
+				 color: @colorIconPrimary;
 			}
 		}
 	}
@@ -1667,7 +1710,7 @@
 			#gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 15%));
 			color: @baseBackground;
 			.uiIconEcmsCopyUrlToClipboard {
-				background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsSecondary.png");
+				color: @colorIconSecondary;
 			}
 		}
 	}
@@ -1748,7 +1791,11 @@
 /******************/
 .UIWCMDashboardPortlet {
   padding: 0px 25px 25px 25px;
-
+  	.UIDashboardDraft{
+		.uiIconEcmsDottedArrow  {
+			margin:8px 8px 0 0;
+		} 
+  	}
 	.uiAuthoringDashboard {
 		padding: 20px 0px;
 		.element a {
@@ -1808,4 +1855,68 @@
 }
 .UIJCRExplorer #UIDocumentWorkspace {
   background: @baseBackground!important;
+}
+
+@media(max-width: 768px){
+    .uiWorkingArea .resizeBar {display: none}
+    .uiWorkingArea .leftContainer ,.uiWorkingArea .rightContainer{
+        float: none;
+        margin: 10px 0;
+        width: 100%!important;
+        height: auto!important;
+    }
+}
+
+@media(max-width: 480px){
+   body  .tblAddressBar {
+        table,tr,td {
+            display: block;
+            margin: 5px 0 !important;
+            width: 100%!important;
+            min-height: 22px;
+
+        }
+       .right .advance,.uiAddressBar .right{
+            width: 100%!important;
+
+        }
+    }
+    .uiAddressBar .uiAddressBarAction .inputContainer {
+        margin:0;
+    }
+
+    .pull-right > #ListHideContainer.dropdown-menu {
+        right: auto;
+    }
+    .uiTabGrayInPage .tab-content .nav-pills > li.dropdown {
+        margin-right: 172px!important;float: none;
+        a {
+            display: inline-block;
+        }
+    }
+    .UIJCRExplorerPortlet {
+        padding: 15px;
+    }
+    .uiPreferencesForm {
+		.sortByContent {
+			padding: 0;
+			.uiSelectbox {
+				width: 100%;
+				margin-left: 0;
+				.selectbox {
+					width: 100%;  
+					margin-top: 10px;
+				}
+			}
+		}
+		.checkBoxContent{
+			text-align: right;
+			float: none;
+			width: 175px;
+
+		}
+		.nodesContent {
+				margin: 0;
+			}
+	}
 }

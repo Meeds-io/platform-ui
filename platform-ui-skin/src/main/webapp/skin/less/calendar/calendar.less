@@ -110,3 +110,30 @@
 			}
 		}
 }
+.uiBox .title .actionIcon [class^="uiIcon"], .uiBox .title .actionIconSmall [class^="uiIcon"] {
+    top: -1px;
+}
+@media(max-width: 480px){
+    .uiCalendars .contentContainer {
+        height: auto!important;
+    }
+    .uiRightClickPopupMenu.CalendarMainPopupMenu {
+        right: 0; left: 14px !important;
+        max-width: 206px;
+        .arrowLeft {
+            display: none;
+        }
+    }
+    .uiEventCategoryManager .uiEventCategoryForm .controlLabelSmall + .controls {
+        margin-left: 0;
+        input[type="text"] {
+           max-width: 164px;
+        }
+    }
+    .UISubscribeForm {
+        .form-horizontal .control-group{
+            .control-label{width: 100%!important;}
+            .controls {margin-left:0!important;}
+        }
+    }
+}

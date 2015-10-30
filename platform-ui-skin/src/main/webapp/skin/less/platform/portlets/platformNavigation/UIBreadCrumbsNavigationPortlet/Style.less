@@ -19,25 +19,32 @@
     }
 
     .breadcumbEntry {
-      margin-left: 85px;
-      vertical-align: middle;
-      height: 66px;
-      overflow: hidden;
-      display: table-cell;
+      margin-left: 69px;
       padding-left: 10px;
     }
 
     .name {
-      text-transform: uppercase;
+      height: 64px;
+      line-height: 64px;
       overflow: hidden;
       text-overflow: ellipsis;
+      text-transform: uppercase;
       white-space: nowrap;
-      width: 150px;
+      width: 100%;
+        & + .chat-button {
+            margin-top: -40px;
+        }
     }
 
     .changeAvatar {
       color: @primaryColor;
       font-size: 12px;
+      display: block;
+      margin-top: -13px;
+      white-space: nowrap;
+      width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
   }
   .uiBreadcumbsNavigations {

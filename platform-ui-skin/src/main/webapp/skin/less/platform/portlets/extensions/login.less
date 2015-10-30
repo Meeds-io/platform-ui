@@ -23,14 +23,17 @@ body {
 	color: @textColor;
 	display: block;
 	left: 50%;
-	margin: -180px -195px 0;
-	position: fixed;
+    .translate(-50%, -50%);
+    position: absolute;
 	top: 50%;
 	width: 392px;
 	.loginContainer {
 		border-radius: 8px;
-		background: @baseBackground url("@{images-path}/platform/portlets/extensions/loginBG.png") no-repeat bottom;
+		background: url("@{images-path}/platform/portlets/extensions/loginLeftBG.png") no-repeat left bottom, 
+    			url("@{images-path}/platform/portlets/extensions/loginRightBG.png") no-repeat right bottom,
+    			url("@{images-path}/platform/portlets/extensions/loginCenterBG.png") repeat-x bottom;
 		padding: 0 40px 15px;
+		background-color: @baseBackground;
 	}
 	.loginHeader {
 		background: url("@{images-path}/platform/portlets/extensions/LoginHeader.png") repeat-x scroll 0 0 transparent;
@@ -83,6 +86,9 @@ body {
 			font-size: 18px;
 			outline: none;
 		}
+		input:not(*:root) { 
+			height: 33px;
+		}
 		input::-webkit-input-placeholder {
 			color: @placeholderText;
 		}
@@ -103,7 +109,7 @@ body {
 			background-position: 0 -41px;
 		}
 		.loginButton {
-			padding: 30px 0 13px;
+			padding: 30px 0 12px;
 			.button {
               .border-radius(4px);
 				text-align: center;
@@ -122,7 +128,7 @@ body {
 		}
 		#social-pane {
 			text-align: center;
-			margin-top: 15px;
+			margin-top: 20px;
 			#SignInDelimiter {
 				font-size: @baseFontSize;
 			}
@@ -135,6 +141,7 @@ body {
 						background-image: url("@{images-path}/platform/portlets/extensions/oauthIcon.png");
 						.size(35px, 37px);
 						display: block;
+						background-repeat: no-repeat;
 					}
 					&:hover {
 						.uiIconOauth {
@@ -299,5 +306,130 @@ body {
 	margin-top: 15px;
 }
 .titleLogin {
-	padding: 15px 0 5px;
+	//padding: 15px 0 5px;
+	line-height: 12px;
+	padding: 6px 3px 0 0;
+	min-height: 31px;
+	font-size: 11px; 
+}
+
+// remove clear button on IE
+input::-ms-clear,input[type=password]::-ms-reveal{
+  display: none;
+}
+/** Login form **/
+@media (min-width: 639px) and (max-width: 767px) {
+    .uiLogin {
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        top: auto;
+    }
+}
+@media (max-width: 480px) {
+	.uiLogin {
+		width: 290px;
+		//margin: 0;
+		.loginHeader {
+			width: 199px;
+			padding: 2px 12px;
+			.userLoginIcon {
+				font-size: inherit;
+    			font-weight: 600;
+    			width: 145px;
+    			font-size: 10px;
+			}
+		} 
+		.loginContainer{
+			padding: 0 32px 15px;
+			background: url("@{images-path}/platform/portlets/extensions/loginLeftBGXs.png") no-repeat left bottom, 
+    			url("@{images-path}/platform/portlets/extensions/loginRightBGXs.png") no-repeat right bottom,
+    			url("@{images-path}/platform/portlets/extensions/loginCenterBGXs.png") repeat-x bottom;
+			background-color: @baseBackground;
+			.loginContent {
+				input {
+					width: 172px;
+					background-position: left -5px;
+					font-size: 16px;
+					height: 26px;
+					margin: 5px 0;
+					&:focus{
+						background-position: left -46px;
+					}
+				}
+				.loginButton {
+					padding: 18px 0 8px;
+					.button {
+						width: 100%;
+						font-size: 12px;
+						height: 30px;
+					}
+				}
+				#social-pane {
+					margin-top: 4px;
+					#social-login {
+						a {
+							margin: 5px 8px 0;
+							.uiIconOauth {
+								background-image: url("@{images-path}/platform/portlets/extensions/oauthIconXs.png");
+								.size(25px, 27px);
+							}
+							&:hover {
+								.uiIconOauth {
+									background-image: url("@{images-path}/platform/portlets/extensions/oauthIconHoverXs.png");
+								}
+							}
+							.facebook {
+								background-position: 0 0;
+							}
+							.twitter {
+								background-position: -88px 0;
+							}
+							.linkedin {
+								background-position: -59px 0;
+							}
+							.google {
+								background-position: -29px 0;
+							}
+						}
+					}
+				}
+			}
+			input:not(*:root) { width: 166px; }
+		}
+		.titleLogin {
+		    font-size: 10px;
+		    line-height: 10px;
+		    min-height: 16px;
+		    padding: 3px 3px 0 0;
+		    .signinFail{
+		        font-size: 10px;
+		        margin: 0;
+		        width: 225px;  
+		        .uiIconError{
+		        	padding: 2px 10px;
+		        }
+		    }
+		}
+		.rememberTxt {
+			font-weight: normal;		
+		}
+		.spaceRole{
+			padding: 1px 0 8px;
+		}
+	}
+	.loginBGLight {
+		height: 150px;
+	}
+	@supports (-webkit-appearance:none) { .uiLogin .loginContainer .loginContent input {
+	    width: 172px;
+	} }
+} 
+input[type=text]::-ms-clear,input[type=password]::-ms-reveal{
+  display: none;
+}
+
+@media (max-width: 767px) {
+    .loginBGLight {
+        display: none;
+    }
 }

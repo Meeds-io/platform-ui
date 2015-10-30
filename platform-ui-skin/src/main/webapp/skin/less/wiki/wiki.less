@@ -24,7 +24,7 @@
 .uiWikiSearchBox {
 
     .uiSearchInput input[type="text"] {
-      background: none;
+      //background: none;
     }
 	&.pull-right > .dropdown-menu
 	{
@@ -191,19 +191,20 @@
 			border-right: none;
 			display: none;
 			margin-top: 7px;
+		  	padding-top: 2px; // to center the arrow
 				
 				[class^="uiIcon"] {
-					margin: 2px 0px 0px -2px;
+					margin: 2px 0px 0px 2px;
 					width: 10px;
 				}
 		}
 		
 		.resizeButton:hover .uiIconMiniArrowLeft{
-			background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+            color: @colorIconPrimary;
 		}
 		
 		.resizeButton:hover .uiIconMiniArrowRight{
-			background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+            color: @colorIconPrimary;
 		}
 		
 		.showLeftContent {
@@ -367,13 +368,7 @@
 	padding: 8px 15px 15px;
 }
 
-.uiIconEditTemplate{
-  background-position: -40px 0px;
-}
 
-.uiIconDeleteTemplate{
-  background-position: -20px 0px;
-}
 
 /******* wiki space-switcher ************/
 
@@ -546,9 +541,60 @@
 
 .uiWikiSearchBox.uiSearchInput {
     input[type="text"] {
-      background-image: none;
+    //  background-image: none;
     }
     input[type="text"]:hover {
-      background-image: none;
+    //  background-image: none;
     }
   }
+
+
+//responsive wiki
+
+@media(max-width: 768px){
+    #UIWikiMiddleArea {
+        height: auto !important;
+        overflow: visible !important;
+        #UITreeExplorer {
+            height: auto !important;
+            max-height: 300px!important;
+            min-height: 200px
+        }
+    }
+    body .uiWikiMiddleArea .resizeBar {
+        display: none!important;
+    }
+    .uiLeftContainerArea ,.uiRightContainerArea{
+        float: none !important;
+        height: auto !important;
+        margin: 10px 0;
+        width: 100% !important;;min-height: 200px
+    }
+    .uiWikiPageControlArea {
+        .uiPageToolBar {
+            float: none; margin: 0;
+        }
+        .uiWikiPageTitle {
+            clear: both;
+        }
+
+    }
+    .UIWikiToolBar {
+        float: none;
+        width: auto;
+    }
+    .uiWikiBreadCrumb {
+        clear: both;
+        margin-top: 20px;
+    }
+    .uiWikiSearchBox.uiSearchInput input[type="text"] {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    #UIWikiUpperArea > .uiGrayLightBox  > .uiSearchInput {
+        width: 65%;
+        z-index: 2;
+    }
+}

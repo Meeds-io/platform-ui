@@ -71,8 +71,7 @@
 			> li.selectedItem > a {
 				color: @linkColor;
 				> i {
-					background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
-					background-position: 0 -120px;
+                    .font-icon();
 				}
 			}
 		}
@@ -108,6 +107,10 @@
 	.itemListContainer {
 		.uiContentBox {
 			min-height: 151px;
+		  .itemTitle [class^="uiIconArrow"] {
+			display: inline-block;
+			margin-right: 3px;
+		  }
 		}
 		.uiDropdownWithIcon .dropdown-toggle > span:first-child {
 			display: inline-block;
@@ -118,10 +121,17 @@
 }
 
 /*************************** uiItemSelector uiFormInputItemSelector ************************************/
+.UIGadgetThemes .uiIconMiniArrowRight{
+	margin-right: 6px;
+}
 .uiItemSelector.uiFormInputItemSelector {
 	.itemListContainer {
 		.uiContentBox {
 			min-height: 241px;
+		  .itemTitle [class^="uiIconArrow"] {
+			display: inline-block;
+			margin-right: 6px;
+		  }
 		}
 	}
 	.itemDetailList {

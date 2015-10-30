@@ -1,0 +1,128 @@
+
+/* Landscape phone to portrait tablet */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .UIToolbarContainer .uiUserToolBarPortlet.uiDropdownWithIcon > a {
+        font-size: 15.5px!important;
+    }
+    body {
+        font-size: 15.5px;
+        line-height: 24px;
+    }
+    h5 {
+        font-size: 18px;
+    }
+    h6 {
+        font-size: 15.5px;
+    }
+
+    // reset font x1.5
+    [class^="uiIcon"], .LeftNavigationTDContainer .uiPopup [class^="uiIcon"] {
+        font-size: 17px;
+    }
+
+    .uiIconClose:before, .uiIconClose {
+        font-size: 12px;
+    }
+
+
+    .font10,[class^="uiIcon"][class*="Mini"],[class^="uiIconArrow"],body [class*="Tiny"]:before, .dropdown-submenu > a:after {
+        font-size: 12px;
+    }
+    body {
+        .uiIconForumStatus::before,
+        .uiIconForumColorOffline::before,
+        .uiIconForumColorUnread::before,
+        .uiIconForumColorOnline::before,
+        .uiIconForumColorAway::before,
+        .uiIconForumColorBusy::before{
+            font-size: 12px;
+        }
+    }
+    .font12,[class^="uiIcon"][class*="Medium"] {
+        font-size: 15px;
+    }
+
+    [class^="uiIconArrow"][class*="Mini"],[class^="uiIconMini"]{
+        font-size: 7px;
+    }
+    [class*="24x24"] {
+        font-size:29px; // x 1.2
+    }
+    [class*="32x32"] {
+        font-size: 38px;
+    }
+
+    [class*="64x64"] {
+        font-size:76px;
+    }
+
+    // set font size for icon top navigation
+    .UIToolbarContainer .UserInfoPortletTDContainer,
+    .UIToolbarContainer .UIHelpPlatformToolbarPortletTDContainer,
+    .UIToolbarContainer .SearchPortletTDContainer,
+    .UIToolbarContainer .UICreatePlatformToolBarPortletIDTDContainer,
+    .UIToolbarContainer .UISetupPlatformToolBarPortletIDTDContainer,
+    .UIToolbarContainer .NotificationPopoverPortletTDContainer,
+    .UIToolbarContainer .AdminToolBarPortletTDContainer,
+    .UIToolbarContainer .middle-topNavigation-containerTDContainer,
+    .UIToolbarContainer .right-topNavigation-containerTDContainer {
+        [class^="uiIconPLF24x24"] {
+            font-size: 29px;
+        }
+        .uiDropdownWithIcon .dropdown-menu li.back-item .uiIconArrowLeft {
+            font-size: 13px;
+            margin-right: 5px !important;
+        }
+        .dropdown-submenu > a:after {
+            border-width: 6px 0 6px 6px;
+            margin-top: 2px;
+        }
+    }
+
+    body {
+        .btn-group > .btn, .btn-group > .dropdown-menu, .btn {
+            font-size: 15.5px;
+        }
+        .activityStream .heading .dataInfor span, .activityStream .heading .dataInfor a {
+            font-size: 13.5px;
+        }
+        .uiUserActivitiesDisplay .composerHintCont .hint {
+            font-size: 15.5px;
+        }
+    }
+
+}
+
+@media (max-width: 480px) {
+    // reset font x1.5
+    [class^="uiIcon"], .LeftNavigationTDContainer .uiPopup [class^="uiIcon"] {
+       // font-size: 16px;
+    }
+
+    .uiIconClose:before, .uiIconClose {
+        font-size: 10px;
+    }
+
+    .font10, [class^="uiIcon"][class*="Mini"], [class^="uiIconArrow"] {
+        font-size: 10px;
+    }
+
+    // set font size for icon top navigation
+    .UIToolbarContainer .UserInfoPortletTDContainer,
+    .UIToolbarContainer .UIHelpPlatformToolbarPortletTDContainer,
+    .UIToolbarContainer .SearchPortletTDContainer,
+    .UIToolbarContainer .UICreatePlatformToolBarPortletIDTDContainer,
+    .UIToolbarContainer .UISetupPlatformToolBarPortletIDTDContainer,
+    .UIToolbarContainer .NotificationPopoverPortletTDContainer,
+    .UIToolbarContainer .AdminToolBarPortletTDContainer,
+    .UIToolbarContainer .middle-topNavigation-containerTDContainer,
+    .UIToolbarContainer .right-topNavigation-containerTDContainer {
+        [class^="uiIconPLF24x24"] {
+            font-size: 26px;
+        }
+        .uiDropdownWithIcon .dropdown-menu li.back-item .uiIconArrowLeft {
+            font-size: 12px;
+            margin-right: 5px !important;
+        }
+    }
+}

@@ -145,3 +145,42 @@
   	z-index: 9999;
   }
 }
+
+@media(max-width: 768px) {
+  .uiSearchPortlet {
+    .searchContainer {
+      height: 90px;
+      .searchForm {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      .resultSort, .resultHeader{
+        float: left;
+      }
+    }
+    .filterContainer {
+      width: 100%;
+      float: none;
+    }
+    .resultPage{
+      margin: 0;
+    }
+  }
+  
+}
+@media(max-width: 480px) {
+  .uiSearchPortlet {
+    .searchContainer {
+      height: 107px;
+      .resultHeader{
+        width: 100%;
+        text-align: left;
+      }
+      .searchForm{
+        input{
+          width: 195px!important;
+        }
+      }
+    }
+  }
+}

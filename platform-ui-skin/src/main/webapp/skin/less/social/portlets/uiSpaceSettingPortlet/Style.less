@@ -78,7 +78,7 @@
 				overflow: auto;
 				a {
 					color: @textColor;
-				    display: block;
+				    display: block; 
 				    font-weight: normal;
 				    line-height: 20px;
 				    padding: 5px 20px 5px 9px;
@@ -87,6 +87,12 @@
 				    &:hover, &:active, &:focus {
 				    	color: @linkColorHover;
 					}
+				}
+
+			  	// Creates a space between the arrow and the text
+			  	.uiIconArrowRight {
+				  	margin-right: 6px;
+				  	top: -1px;
 				}
 
 			  .selectedItem a {
@@ -157,6 +163,7 @@
 			z-index: 1000;
 			border-radius: 3px 3px 3px 3px;
     		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    		.box-sizing(border-box);
 			.resultItem {
 				margin: 0px;
 				padding: 5px 20px 5px 9px;

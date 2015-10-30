@@ -7,9 +7,7 @@
 		margin: 0;
 	}
 	input[type="text"] {
-		background-image:  url("@{images-path}/SearchInput/Search.png");
-        background-position:  right -1px;
-        background-repeat: no-repeat ;
+		//background:@inputBackground  url("@{images-path}/SearchInput/Search.png") no-repeat right -1px;
 		margin: 0;
 		padding-right: 24px;
 	}
@@ -19,8 +17,9 @@
     .advancedSearch,.AdvancedSearch {
       display: block;
       position: absolute;
-      right: 4px;
-      top: 3px; cursor: pointer;
+      right: 5px; // right and top modified to align the search icon
+      top: 4px;
+      cursor: pointer;
     }
     &.searchWithIcon {
       display: inline-block;
@@ -28,10 +27,10 @@
         float: right;
       }
       input[type="text"] {
-        background-image: none;
+        //background-image: none;
       }
       input[type="text"]:hover {
-        background-image: none;
+        //background-image: none;
       }
     }
 }

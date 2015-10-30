@@ -179,7 +179,7 @@
 }
 
 .actionExpandCollapse{
-	margin: 8px 8px 8px 0;
+	margin: 8px 10px 8px 0;
 }
 
 .emptyForum{
@@ -216,5 +216,32 @@
 	}
 
 }
-
-
+@media(max-width: 1024px) {
+    #uiRightActionBar {
+        width: auto!important;
+    }
+}
+@media(max-width: 480px){
+    .forumToolbar {
+        float: none;
+        .forumSeparatorLine + .forumSeparatorLine{
+            background: none;
+        }
+       & >  .defaultStyle {
+            float: none;
+           & >   a {
+                display: block;
+                float: none;
+                text-align: left;
+            }
+           .dropdown {
+               float: none;
+               display: block;
+               .dropdown-menu {
+                   left: auto;
+                   right: auto;
+               }
+           }
+        }
+    }
+}

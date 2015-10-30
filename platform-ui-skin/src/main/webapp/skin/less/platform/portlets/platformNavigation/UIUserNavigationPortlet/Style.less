@@ -14,6 +14,9 @@
 
 		> li {
 			padding-bottom: 3px;
+			.uiIconDefaultApp{
+				vertical-align: middle;
+			}
 		}
 
 		> .active {
@@ -33,14 +36,16 @@
 			.border-radius(5px);
 			.box-sizing(border-box);
 		}
-
+		
 		> .active > a {
 			#gradient > .vertical(@baseColorLight, @baseColorMedium);
 			.box-shadow(1px 0 4px rgba(0,0,0,0.38) inset);
 		}
 
 		> li > a:hover,
-		> .active > a:hover {
+		> .active > a:hover,
+		> li.dropdown.open > a:hover,
+		> li.dropdown.open > a:focus {
 			#gradient > .vertical(rgba(153,153,153,0.2),rgba(130,130,130,0.2));
 			.box-shadow(0 0 4px rgba(0,0,0,0.36) inset);
 		}
@@ -67,5 +72,79 @@
 			font-weight: 100;
 			padding: 3px 8px;
 		}
+	}
+}
+@media(max-width: 1024px) {
+	.uiUserNavigationPortlet{
+		.userNavigation{
+			height: 90px;
+			[class^="uiIconApp"]{
+				font-size: 42px;
+			}
+			.tabName{
+				margin: 6px 0 0;
+			}
+			> .active{
+				background: none;
+			}
+			>li{
+				padding-bottom: 0;
+			}
+			> li > a, > li > a:hover, > .active > a, > .active > a:hover{
+				margin: 0 20px;
+    			padding: 12px;
+    			height: 90px;
+    			.border-radius(0);
+			}
+			.uiIconAppMoreButton{
+				margin-bottom: 8px;
+			}
+		}
+	}
+}
+@media(max-width: 767px) {
+	.uiUserNavigationPortlet{
+		.userNavigation{
+			[class^="uiIconApp"]{
+				font-size: 35px;
+			}
+			.tabName, li a span{
+				font-size: 13px;
+			}
+		}
+	}
+
+}
+@media(max-width: 480px) {
+	.uiUserNavigationPortlet{
+		margin-top: -4px;
+		height: 60px;
+		.userNavigation{
+			height: 60px;
+			[class^="uiIconApp"]{
+				font-size: 35px;
+			}
+			.tabName, li a span{
+				display: none;
+			}
+			.dropdown-menu a span{
+				display: inline-block;
+			}
+			> .active{
+				background: none;
+				a{
+					margin: 0 20px; 
+				}
+			}
+			>li{
+				padding-bottom: 0;
+			}
+			> li > a, > li > a:hover, > .active > a, > .active > a:hover{
+				margin: 0 5px; 
+				padding: 13px 0 0;
+				height: 60px;
+			}
+		}
+		
 	}
 }

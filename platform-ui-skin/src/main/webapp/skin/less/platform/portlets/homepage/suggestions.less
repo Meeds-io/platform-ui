@@ -31,9 +31,7 @@
 		}
 		.ignore {
 			> i {
-				position: relative;
 				right: 2px;
-				vertical-align: middle;
 			}
 		}
 		.peopleInfo {
@@ -79,6 +77,7 @@
 			float: right;
 			background-color: @baseBackground;
 			display: none;
+            margin-right: 2px;
 			&.active {
 				display: block;
 			}
@@ -110,4 +109,9 @@
 
     }
 
+}
+
+.uiSuggestions .ignore {
+    margin-left: 4px;
+    margin-right: 4px;
 }

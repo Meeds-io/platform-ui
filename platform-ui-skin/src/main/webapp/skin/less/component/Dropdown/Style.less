@@ -7,8 +7,8 @@
 
 	// Links within the dropdown menu
 	li > a {
-	padding: 5px 10px;
-	color: @dropdownLinkColor;
+		padding: 5px 10px;
+		color: @dropdownLinkColor;
 	}
 	&.dropdownArrowTop {
 			&:before,&:after {
@@ -78,10 +78,6 @@
 	text-align: left;
 }
 
-.dropdown-submenu > a:after {
-  border-left-color: @dropdownArrowRight;
-}
-
 .dropdown-menu{
 	> li {
         list-style-type: none!important;
@@ -103,9 +99,18 @@
 				}
 			}
 		}
+        .actionIcon {
+            text-align: left;
+        }
+        &.back-item {
+        	a:hover {
+        		.uiIconArrowLeft {
+
+        		}
+        	}
+        }
 	}
 }
-
 
 
 // The dropdown menu (ul)
@@ -179,3 +184,18 @@
 
 }
 
+.dropdown-submenu {
+	> a:after {
+		content: "\e75c";
+		border: none;
+		.font-icon;
+		font-size:  @sizeIcon12x12 - 1;
+		margin-right: -5px;
+		color: @colorIconDefault;
+	}
+	&:hover {
+		> a:after {
+			color: @colorIconSecondary;
+		}	
+	} 
+}

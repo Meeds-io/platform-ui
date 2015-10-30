@@ -112,7 +112,7 @@
 			color: @dropdownLinkColorHover;
 
 			i {
-				background-image: url("@{images-path}/Icons/uiIconsSecondary.png");
+                color: @colorIconSecondary;
 				margin: 0px 0px 0px 7px;
 			}
 		}
@@ -174,8 +174,9 @@
 					background: none;
 					color: @baseColorDark;
 					.uiIconOpenOnDesktop {
-						background-image: url("@{images-path}/Icons/uiIconsDefault.png");
-						background-position: -100px -20px;
+						&:before {
+                            content: "\e785";
+                        }
 					}
 				}
 
@@ -188,25 +189,25 @@
 					background-color: none;
 
 					> i {
-						background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsPrimary.png");
+                        color: @colorIconPrimary;
 					}
 					> .uiIconMiniArrowDown {
-						background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+                        color: @colorIconPrimary;
 					}
-                  .uiIconEcmsEditDocument,
-                  .uiIconEcmsDelete,
-                  .uiIconEcmsMoveNode,
-                  .uiIconEcmsRestoreFromTrash,
-                  .uiIconEcmsUpload,
-                  .uiIconEcmsViewInfo,
-                  .uiIconEcmsShareDocuments{
-						background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+
+					.uiIconEcmsEditDocument,
+					.uiIconEcmsDelete,
+					.uiIconEcmsMoveNode,
+					.uiIconEcmsRestoreFromTrash,
+					.uiIconEcmsUpload,
+					.uiIconEcmsViewInfo,
+                    .uiIconEcmsShareDocuments{
+                        color: @colorIconPrimary;
 					}
 				}
 			}
 			&.dropdown-menu li > a:hover .uiIconOpenOnDesktop {
-				background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
-				background-position: -100px -20px;
+                color: @colorIconPrimary;
 			}
 			.open > a, .open > a:hover,.open > a:focus,.active > a, .active > a:hover,.active > a:focus {
 				background: none;
@@ -215,14 +216,14 @@
 				.border-radius(@borderRadiusSmall);
 				color: @baseColorDark;
 				> .uiIconMiniArrowDown {
-					background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+                    color: @colorIconPrimary;
 				}
 			}
 
 			.RightClickCustomItem {
 				padding: 0px;
 				a:hover .uiIconDownload {
-					background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+                    color: @colorIconPrimary;
 				}
 			}
 
@@ -239,13 +240,13 @@
 						padding: 5px 10px;
 
 						.uiIconEcmsViewInfo,.uiIconEcmsDelete {
-							background-image: url("@{images-path}/Icons/uiIconsDefault.png");
+                            color: @colorIconDefault;
 						}
 						.uiIconEcmsViewInfo {
-							background-position: -140px -60px;
+							&:before {content: "\e767";}
 						}
 						.uiIconEcmsDelete {
-							background-position: -20px 0px;
+							&:before {content: "\e799";}
 						}
 					}
 
@@ -254,13 +255,13 @@
 						color: @baseBackground;
 
 						> i {
-							background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsSecondary.png");
+                            color: @colorIconSecondary
 						}
 
 						.uiIconEcmsDelete,
 						.uiIconDownload,
 						.uiIconEcmsViewInfo {
-							background-image: url("@{images-path}/Icons/uiIconsSecondary.png");
+                            color: @colorIconSecondary
 						}
 					}
 				}
@@ -290,13 +291,12 @@
 
 .uiRightClickPopupMenu .uiRightPopupMenuContainer > li > a {
   .uiIconEcmsDownload {
-    background-image: url("@{images-path}/Icons/uiIconsDefault.png");
-    background-position: -40px -20px;
+    :before {content: "\e784";}
 
   }
   &:hover {
     .uiIconEcmsDownload {
-      background-image: url("@{images-path}/Icons/uiIconsSecondary.png")!important;
+        color: @colorIconSecondary
     }
   }
 }

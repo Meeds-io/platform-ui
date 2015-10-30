@@ -87,9 +87,13 @@
 					    max-height: 440px; /* 13x23+3 */
 					}
 
-					.dropdown-menu{
-						width: 250px;
-					}
+                    .dropdown-menu{
+                        width: 250px;
+                        position: absolute;
+                        top: auto;
+                        left: auto;
+                    }
+
 					.filterInput{
 	    				margin: 10px;
 	    				width: 91%;
@@ -141,6 +145,7 @@
 	 	> a {
 		padding: 0 10px 0 11px;
 		line-height: 41px;
+		height: 41px;
 		display: inline-block;
 		color: @baseBackground;
 		cursor: pointer;
@@ -225,7 +230,7 @@
                     position: absolute;
                     .square(24px);
                     left: -30px;
-                    top:10px;
+                    top:14px;
                     content: "";
                   }
                  position: relative;
@@ -245,6 +250,7 @@
 			.control-label {
 				width: 70px;
 				padding-top: 6px;
+				float: left;
 			}
 			.controls {
 				margin-left: 90px;
@@ -265,18 +271,16 @@
 
 				}
 				.controls {
-					margin-left: 110px;
+					margin-left: 108px;
 				}
 				.title {
-					 .control-label {
-						width: 65px;
-					}
-					 .controls {
-						margin-left: 71px;
-					}
 					input[type="text"] {
-						width: 222px;
+						width: 184px;
+						max-width: 100%;
 					}
+				}
+				input[type="text"] {
+					margin-bottom: 3px;
 				}
 			}
 			.choiceOption {
@@ -284,7 +288,7 @@
 					font-weight: bold;
 				}
 			}
-			.uiSelectbox {
+			.uiSelectbox { 
 				margin-bottom: 0;
 
 			}
@@ -293,16 +297,16 @@
 				.uiSelectbox {
 					width: 87px;
 					.selectbox {
-						width: 90px;
+						width: 89px;
 					}
 				}
 			}
-
 			.selectboxMedium {
 				.uiSelectbox {
 					width: 181px;
 					.selectbox {
 						width: 184px;
+						max-width: 100%;
 					}
 				}
 			}
@@ -319,9 +323,24 @@
 	.uiAdminToolbarPortlet {
 		.seoImgBlock{
 			padding: 5px 20px 5px 10px;
-			.UISEOToolbarPorlet .SEOToolbar .Enable {
-			//	padding: 0 5px;
-			//	margin-left: 2px;
+			.UISEOToolbarPorlet .SEOToolbar {
+			  .Enable, .Disable {
+				//	padding: 0 5px;
+				//	margin-left: 2px;
+
+			  	//Removing the image, replacing it with font-icon, and positioning it
+				img {
+				  	display: none;
+				}
+				span:after {
+				  	font-family: "PLF-FONT-ICONS";
+				  	font-size: 17px;
+				  	color: #d80303;
+				  	content: "\e694";
+				  	position: relative;
+				  	top: 2px;
+				}
+			  }
 			}
 		}
 		.seoImgBlock:hover,
@@ -338,8 +357,8 @@
 			background-repeat: no-repeat;
 			background-position: bottom center;
 			display: inline-block;
-			width: 14px;
-			height: 14px;
+			width: 14px; 
+			height: 14px; 
 			vertical-align: text-bottom;
 		}
 
@@ -387,6 +406,7 @@
 				color: @toolbarDarkLinkHoverColor;
 			}
 		}
+        .itemListContainer .uiDropdownWithIcon {background: none}
 }
 
 .UIToolbarContainerLight {
@@ -423,11 +443,11 @@
 //------------------------- uiNotificationPopoverToolbarPortlet -------------------------
 .uiNotificationPopoverToolbarPortlet {
 	.badgeNotification {
-		font-style: normal;
+		font-family: @sansFontFamily;
 	}
 	.badgeNotification {
 		position: absolute;
-		top: 3px; right: 3px; 
+		top: -4px; right: -8px;
 		display:none;
 	}
 	.dropdown-menu {
@@ -476,7 +496,17 @@
 					border-top: none;
 				}
 			}
-		}
+            .uiIconAddMembership  {
+                &:before {
+                    content: "\e6c9"; // uiIconConnectUser
+                }
+            }
+            .uiIconAddUser {
+                &:before {
+                    content: "\e6c4"; // uiIconInviteUser
+                }
+            }
+        }
 	}
 	.displayItems {
 		min-width: 300px;
@@ -499,8 +529,8 @@
 			position: relative;
 			> .remove-item {
 				position: absolute;
-				top: 7px;
-				right: 5px;
+				top: 4px;
+				right: 10px;
 				padding: 0px;
 				margin: 0px;
 				cursor: pointer;
@@ -542,7 +572,6 @@
 				font-size: 12px;
 			}
 			[class^="uiIcon"] {
-				vertical-align: -3px;
 				margin-right: 7px;
 			}
 			&.unread {
@@ -554,7 +583,7 @@
 				cursor: pointer;
 				> .remove-item {
 					> .uiIconClose, > .uiIconClose:hover {
-						background-image: url("@{images-path}/Icons/uiIconsSecondary.png")!important;
+						color: @colorIconSecondary!important;
 					}
 				}
 				a {
@@ -570,10 +599,10 @@
 					color: @dropdownLinkColorHover;
 				}
 				.uiIconLightGray {
-					background-image: url("@{images-path}/Icons/uiIconsSecondary.png");
+                    color: @colorIconSecondary;
 				}
 				.uiIconSocLightGray	{
-					background-image: url("@{images-path}/social/skin/Icons/uiIconsSocSecondary.png");
+                    color: @colorIconSecondary;
 				}
 				.user-name{
 					color: @dropdownLinkColorHover;
@@ -599,8 +628,49 @@
 		}
   }
 }
+@media (max-width: 767px) {
+    .UIToolbarContainer .uiCreateToolBarPortlet .create-form-dropdown .dropdown-menu-sub {
+        width: 360px;
+    }
+    //add event and task
+     .UIToolbarContainer .uiCreateToolBarPortlet .uiQuickAddEvent {
+        .form-horizontal .title input[type="text"] ,.selectboxMedium .uiSelectbox,.selectboxMedium .uiSelectbox .selectbox{
+            width: 100%!important;
+        }
+
+    }
+
+    .uiCreateToolBarPortlet  .uiQuickAddEvent{
+        .inputSmall input[type="text"],
+        .inputSmall input[type="password"],select {
+            width: 114px!important;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+	.UIToolbarContainer .uiCreateToolBarPortlet .uiQuickAddEvent {
+		.form-horizontal  {
+	        .control-label,.title .control-label {
+	            float: left;
+	        }
+	    }
+	    .uiAction {
+			text-align: center;
+		}
+    }
+}
 /* Fix Responsive*/
 @media (max-width: 480px) {
+    .UIToolbarContainer .uiCreateToolBarPortlet .create-form-dropdown .dropdown-menu-sub {
+        width: 300px;
+    }
+    .uiCreateToolBarPortlet .uiQuickAddEvent {
+        .inputSmall input[type="text"],
+        .inputSmall input[type="password"],select {
+            width: 135px!important;
+        }
+    }
 	.uiNotificationPopoverToolbarPortlet {
 		.displayItems {
 			max-width: none;
@@ -625,6 +695,45 @@
 			}
 		}
 	}
+	.UIToolbarContainer .uiCreateToolBarPortlet .uiQuickAddEvent .form-horizontal  {
+        .controls , .title .controls{
+            margin-left: 0;
+        }
+        .control-label,.title .control-label {
+            width: auto;
+            float: none;
+        }
+    }
+    .uiCreateToolBarPortlet .startTime ,.endTime {
+        input { margin-right: 5px;} 
+
+    }
+    #UICreateList.dropdown-menu {
+        border-radius: 0;
+	    left: auto !important;
+	    min-width: 180px;
+	    padding: 0 !important;
+	    position: fixed;
+	    right: 0 !important;
+	    top: 34px;
+	    > li {
+		    float: left;
+		    > a {
+			    font-size: 0;
+			    line-height: 0;
+			    padding: 10px !important;
+			    > i{
+			    	margin-right: 0;
+			    }
+			    &:hover{
+			    	background: @primaryBackground;
+			    	> i{
+			    		color: @colorIconDefault;
+			    	}
+			    }
+			}
+		}
+    }
 }
 .uiNotificationPopoverToolbarPortlet.mobile-mode {
 	.displayItems {
@@ -649,4 +758,25 @@
 			}
 		}
 	}
+}
+.UIToolbarContainer .uiDropdownWithIcon > a > i {
+    top: -2px;
+}
+
+.uiNotificationPopoverToolbarPortlet  {
+    .dropdown-toggle .uiIconPLF24x24Bell {
+        position: relative;
+    }
+}
+
+@media(max-width: 767px) {
+
+    .UIToolbarContainer {
+        .uiCreateToolBarPortlet .create-form-dropdown .dropdown-menu-sub {
+            margin-top: 42px;
+        }
+        #UICreateList.create-form-dropdown {
+            top:0;
+        }
+    }
 }

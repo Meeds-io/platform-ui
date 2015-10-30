@@ -1,16 +1,12 @@
 .EditSection [class^="wikimodel-freestanding"]{
-  display: inline-block;
-  width: 16px;
-  height: 16px;
   background-position: -40px 0px;
-  .ie7-restore-right-whitespace();
-  line-height: 16px;
-  vertical-align: text-top;
-  background-image: url("@{images-path}/Icons/uiIconsExtra.png");
-  background-repeat: no-repeat;
-  margin-top: 12px;
+    &:before {
+        content: "\e791";
+    }
+    margin-top: 12px;
+    .font-icon();
   &:hover {
-  	background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+      color: @colorIconPrimary;
   }
 }
 

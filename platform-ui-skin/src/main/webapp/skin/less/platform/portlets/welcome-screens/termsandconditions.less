@@ -50,11 +50,12 @@ a {
 	margin: -380px auto 0;
 	width: 512px;
     .header {
-		background: url("@{images-path}/platform/portlets/extensions/headerBG.png") repeat-x scroll 0 0 transparent;
+		.gradientBar(@toolbarDarkEndBackground, @toolbarDarkStartBackground);
 		border: 1px solid #393939;
 		.border-radius(4px 4px 0 0);
 		width: 511px;
-		line-height: 44px;
+		line-height: 22px;
+		padding: 10px 0;
 		text-align: center;
 		font-size: 18px;
 		font-weight: bold;
@@ -203,3 +204,29 @@ a {
 .c36{margin-left:54pt}
 .c26{border-collapse:collapse}
 .c17{text-align:center}
+@media (max-width: 640px){
+  .backLight{
+    display: none;
+  }
+  .uiWelcomeBox {
+    margin: 0 15px;
+    width: auto;
+    .header {
+	    width: auto;
+	}
+    .content {
+	    padding: 10px 20px;
+	}
+    .bottom{
+      background: none;
+      text-align: left;
+      .pull-left, .pull-right{
+        float: none;
+      }
+      .btn{
+	    width: 100%;
+	    text-align: center;
+	  }
+    }
+  }
+}

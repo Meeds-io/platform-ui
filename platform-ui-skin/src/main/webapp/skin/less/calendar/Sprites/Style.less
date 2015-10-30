@@ -15,8 +15,8 @@
 // <i class="iconinbox iconwhite"></i>
 [class^="uiIconCal"],
 .LeftNavigationTDContainer .uiPopup [class^="uiIconCal"]{
-	margin-top: 0;
-	background-image: url("@{images-path}/calendar/Icons/uiIconsCalDefault.png");
+	//margin-top: 0;
+	 color: @colorIconDefault;
 }
 
 /* Blue icons with optional class, or on hover/active states of certain elements */
@@ -33,7 +33,7 @@
 .uiCalendarPortlet .actionIcon:hover [class^="uiIconCal"],
 .uiIconCalBlue
 {
-	background-image: url("@{images-path}/calendar/Icons/uiIconsCalPrimary.png");
+	color: @colorIconPrimary;
 
 }
 
@@ -47,12 +47,12 @@
 .uiDropDownCal .active a [class^="uiIconCal"],
 .uiIconCalLightGray
 {
-	background-image: url("@{images-path}/calendar/Icons/uiIconsCalDefault.png");
+	 color: @colorIconDefault;
 
 }
 
 .LeftNavigationTDContainer [class^="uiIconCal"]{
-  background-image: url("@{images-path}/calendar/Icons/uiIconsCalDefault.png");
+   color: @colorIconExtra;
 }
 /* White icons with optional class, or on hover/active states of Drop down with Icons */
 
@@ -73,7 +73,7 @@
 .btn-primary:hover [class^="uiIconCal"]:hover,
 .uiIconCalWhite
 {
-	background-image: url("@{images-path}/calendar/Icons/uiIconsCalSecondary.png");
+	 color: @colorIconSecondary
 }
 
 .dropdown-menu > li > a > .uiIconCalDarkGray,
@@ -82,119 +82,77 @@
 .uiDropdownWithIcon .dropdown-submenu> a > .uiIconCalDarkGray,
 .uiIconCalExtra,
 .uiIconCalDarkGray {
-	background-image: url("@{images-path}/calendar/Icons/uiIconsCalExtra.png");
+	color: @colorIconExtra;
 }
 
 .uiEventCategoryManager [class^="uiIcon"]{
-	background-image: url("@{images-path}/Icons/uiIconsDefault.png");
+	//background-image: url("@{images-path}/Icons/uiIconsDefault.png");
 }
+
 .uiIconCalnullPriority,
 .uiIconCalnonePriority{
 	display: none;
 }
 
-.uiIconCalWatchMini{
-	background-position: 0 0;
+.uiIconCalWatchMini:before{
+	content: "\e79b";
 }
 
-.uiIconCalSettingMini{
-	background-position: -80px -20px;
-}
-
-.uiIconCalExportCalendar{
-	background-position: 0 0;
-}
-
-.uiIconCalImportCalendar{
-	background-position: -20px 0;
-}
-
-.uiIconCalCreateEvent{
-	background-position: -40px 0;
-}
-
-.uiIconCalCreateTask{
-	background-position: -60px 0;
-}
-
-.uiIconCalAddCalendar{
-	background-position: -80px 0;
-}
-
-.uiIconCalRemoteCalendar{
-	background-position: -100px 0;
-}
-
-.uiIconCalEventCategory{
-	background-position: -192px 0;
-}
-
-.uiIconCalInviteUser{
-	background-position: -140px 0;
-}
-
-.uiIconCalRejectUser{
-	background-position: -160px 0;
-}
-
-.uiIconCalPlus,
-.uiIconCalSimplePlus{
-	background-position: 0 -20px;
-}
-
-.uiIconCalRefresh{
-	background-position: -288px 0;
+.uiIconCalSettingMini:before{
+	content: "\e78b";
 }
 
 
-.uiIconCalTaskMini{
-	background-position: -20px -21px;
+.uiIconCalInviteUser:before{
+	content: "\e6c4";
 }
 
-.uiIconCalClockMini{
-	background-position: -40px -21px;
+.uiIconCalRejectUser:before {
+	content: "\e6c5";
 }
 
-.uiIconCalCheckinMini{
-	background-position: -60px -21px;
+.uiIconCalPlus:before,
+.uiIconCalSimplePlus:before{
+	content: "\e74b";
 }
 
-.uiIconCalFlagHigh,
-.uiIconCalhighPriority{
-	background-position: -142px -21px;
+.uiIconCalRefresh:before{
+	content: "\e797";
 }
 
-.uiIconCalFlagNormal,
-.uiIconCalnormalPriority{
-	background-position: -122px -21px;
+
+.uiIconCalTaskMini:before{
+	content: "\e611";
 }
 
-.uiIconCalFlagLow,
-.uiIconCallowPriority{
-	background-position: -102px -21px;
+.uiIconCalClockMini:before{
+	content: "\e742";
 }
 
-.uiIconCalShare {
-	background-position: -180px 0px;
+.uiIconCalCheckinMini:before{
+	content: "\e782";
 }
 
-.uiIconCalICal {
-	background-position: -180px -21px;
+.uiIconCalFlagHigh:before,
+.uiIconCalhighPriority:before,
+.uiIconCalFlagNormal:before,
+.uiIconCalnormalPriority:before,
+.uiIconCalFlagLow:before,
+.uiIconCallowPriority:before{
+	content: "\e746";
 }
+.uiIconCalFlagHigh,.uiIconCalhighPriority {color: @errorColor}
+.uiIconCalFlagNormal ,.uiIconCalnormalPriority {color: @colorIconOrange}
+.uiIconCalFlagLow,.uiIconCallowPriority {color: @successColor}
 
-.uiIconCalRecurring {
-	background-position: -1px -41px;
-}
-.uiIconCalEditRecurring {
-	background-position: -21px -41px;
-}
+
 
 
 .eventContainerBar [class^="uiIconCal"] ,
 .eventSummary  [class^="uiIconCal"]{
 	width: 14px;
+  	font-size: 10px;
 }
-
 
 .eventContainerBar{
 	 .uiIconCalClockMini ,
@@ -203,3 +161,8 @@
 	 }
 	
 }
+
+.uiIconCalSimplePlus {
+	font-size: 9px;
+}
+

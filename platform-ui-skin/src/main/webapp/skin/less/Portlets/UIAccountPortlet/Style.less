@@ -25,20 +25,17 @@
 
 .UIAccountPortlet {
 	.SearchIcon {
-	background-image: url("@{images-path}/Icons/uiIconsDefault.png");
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    display: inline-block;
-    height: 17px;
-    margin-left: 2px;
-    line-height: 20px;
-    vertical-align: text-top;
-    width: 16px;
+        .font-icon();
+        &:before {
+            content: "\e74a";
+        }
 	}
 	.form-horizontal {
 		padding: 0;
 	}
-	
+	.uiPersonalInfo {
+	   margin: 0 auto;
+	}
 	.tab-content {
 		border-bottom: 0;
 		padding: 25px;
@@ -51,6 +48,12 @@
 		}
 		.form-horizontal {
 			padding: 0;
+		} 
+		.uiPersonalInfo{
+			.span3{ 
+				min-width: 200px;
+    			width: auto;
+			}
 		}
 	}
 
@@ -61,4 +64,8 @@
 		padding: 5px 5px 0px 5px;
 		.border-radius(@borderRadiusSmall @borderRadiusSmall 0px 0px);
 	}
+}
+
+#RightBody .UIAccountPortlet {
+    margin: 10px;
 }

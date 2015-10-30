@@ -10,21 +10,13 @@
 		margin-top: -10px;
 	}
 	[class^="uiIconPLF"] {
-		display: inline-block;
-		width: 16px;
-		height: 16px;
-		*margin-right: .3em;
-		line-height: 16px;
-		vertical-align: text-top;
-		background-image: url("@{images-path}/platform/skin/Icons/uiIconsPLFDefault.png");
-		background-repeat: no-repeat;
+        .font-icon();
 	}
-	.uiIconPLFWeb {
-		background-position: -100px -20px;
+	.uiIconPLFWeb:before {
+        content: "\e73a";
 	}
-	.uiIconPLFMail {
-		background-position: -160px -60px;
-		background-image: url("@{images-path}/Icons/uiIconsDefault.png") !important;
+	.uiIconPLFMail:before {
+        content: "\e6b8";
 	}
 	.status-false {
 		color: @baseColorLight;

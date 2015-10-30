@@ -1,3 +1,19 @@
+// Add font for icons in iframes
+@font-face {
+  font-family: 'PLF-FONT-ICONS';
+  src:url('../../../fonts/PLF-FONT-ICONS.eot?-m9uidt');
+  src:url('../../../fonts/PLF-FONT-ICONS.eot?#iefix-m9uidt') format('embedded-opentype'),
+  url('../../../fonts/PLF-FONT-ICONS.ttf?-m9uidt') format('truetype'),
+  url('../../../fonts/PLF-FONT-ICONS.woff?-m9uidt') format('woff'),
+  url('../../../fonts/PLF-FONT-ICONS.svg?-m9uidt#PLF-FONT-ICONS') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+// IMPORTANT to set the font
+.BrowseLink [class^="uiIcon"] {
+    .font-icon();
+}
+
 
 .uiDocumentSelector {
 	.breadcrumb {
@@ -63,6 +79,10 @@
 	margin-right: 0;
 }
 
+.uiDocumentSelector .btn.dropdown-toggle span { // align Select Drive button & the breadcrumb on Select File popup
+  	vertical-align: top;
+}
+
 
 .BrowseDiv {
   position: relative;
@@ -84,24 +104,22 @@
   border: 1px solid transparent;
   text-align: center;
   .uiIconUpload{
-    .square(16px);
-    background-image: url("@{images-path}/Icons/uiIconsDefault.png");
-    background-position: -20px -20px;
     margin-top: 4px;
-    display: inline-block;
-    &:hover { background-image: url("@{images-path}/Icons/uiIconsPrimary.png");}
+      display: block;
+	// setting icon for upload button
+	&:before {
+	  content: "\e78d";
+	}
   }
-  .square(24px);
+  .square(22px);
   display: block;
 
   &:hover {
     #StatusElements .StatusHover();
     cursor: pointer;
     .uiIconUpload{
-      background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+        color: @colorIconPrimary;
     }
 
   }
 }
-
-

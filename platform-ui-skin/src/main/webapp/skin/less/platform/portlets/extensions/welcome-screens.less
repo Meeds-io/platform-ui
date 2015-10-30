@@ -33,186 +33,217 @@ a {
 }
 .uiWelcomeBox {
     background-color: @baseBackground;
-     .border-radius(10px);
-    .box-shadow(0 1px 3px #3d3d3d);
+    .border-radius(10px);
+    .box-shadow(0 1px 3px @baseColorDark);
     margin: -380px auto 0;
     width: 512px;
     .header {
-		background: url("@{images-path}/platform/portlets/extensions/headerBG.png") repeat-x scroll 0 0 transparent;
-		border: 1px solid #393939;
-		.border-radius(4px 4px 0 0);
-		width: 511px;
-		line-height: 44px;
-		text-align: center;
-		font-size: 18px;
-		font-weight: bold;
+  		.gradientBar(@toolbarDarkEndBackground, @toolbarDarkStartBackground);
+  		border: 1px solid @baseColorDark;
+  		.border-radius(4px 4px 0 0);
+  		width: 511px;
+  		line-height: 22px;
+      padding: 10px 0;
+  		text-align: center;
+  		font-size: 18px;
+  		font-weight: bold;
       color: @textLightColor;
-	}
-	 .content {
-		background-color: @baseBackground;
-		margin: 0 auto;
-		padding: 10px 30px;
-		position: static;
-		width: auto;
-	}
-}
+	  }
+  	.content {
+  		background-color: @baseBackground;
+  		margin: 0 auto;
+  		padding: 10px 30px;
+  		position: static;
+  		width: auto;
+  	}
+    input {
+      border: 1px solid @inputBorder;
+         background: @inputBackground;
+      .border-radius(4px);
+       .box-shadow(~'0 1px 1px rgba(0,0,0,0.1) inset');
+       color: @inputColor;
+      height: 28px;
+      padding: 0 6px;
+      outline: none;
+       font-size: @baseFontSize;
+      &::-webkit-input-placeholder {
+         color: @placeholderText;
+      }
+      &:-moz-placeholder {
+        color: @placeholderText;
+      }
+      &::-moz-placeholder {
+         color: @placeholderText;
+      }
+      &:-ms-input-placeholder {
+         color: @placeholderText;
+      }
+      &:focus {
+        border-color: @inputFocusBorder;
+        .box-shadow(~'inset 0 1px 1px rgba(0,0,0,.075), 0 0 5px rgba(29,75,159,.6)');
+        color: @inputFocusColor;
+      }
+      &.disable {
+        background-color: @inputDisabledBackground;
+      }
+    }
+    .bottom {
+      background: url("@{images-path}/platform/portlets/extensions/bottomBG.png") no-repeat center bottom;
+      text-align: center;
+      padding: 25px 0;
+         border-radius: 8px;
+    }
+    .btn  {
+       font-size: 16px;
+       line-height: 41px;
+      .border-radius(@baseBorderRadius);
+       width: 100px;
+       cursor: pointer;
+      display: inline-block;
+      font-weight: bold;
+      text-align: center;
+      vertical-align: top;
+      text-decoration: none;
+      padding: 0;
+      margin: 0 5px;
+         .buttonBackground(@btnBackground, @btnBackgroundHighlight, @btnColor,none);
+           border: 1px solid @btnBorder;
+          *border: 0; // Remove the border to prevent IE7's black border on input:focus
+          border-bottom-color: darken(@btnBorder, 10%);
+          .box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
+          &:hover,
+          &:focus {
+            text-decoration: none;
+            background-position: 0 -15px;
+            .transition(background-position .1s linear);
+          }
 
 
+      }
 
-.uiWelcomeBox {
-	 input {
-		border: 1px solid @inputBorder;
-       background: @inputBackground;
-		.border-radius(4px);
-		 .box-shadow(~'0 1px 1px rgba(0,0,0,0.1) inset');
-	   color: @inputColor;
-		height: 28px;
-		padding: 0 6px;
-		outline: none;
-		 font-size: @baseFontSize;
-		&::-webkit-input-placeholder {
-		   color: @placeholderText;
-		}
-		&:-moz-placeholder {
-		  color: @placeholderText;
-		}
-		&::-moz-placeholder {
-		   color: @placeholderText;
-		}
-		&:-ms-input-placeholder {
-		   color: @placeholderText;
-		}
-		&:focus {
-		  border-color: @inputFocusBorder;
-		  .box-shadow(~'inset 0 1px 1px rgba(0,0,0,.075), 0 0 5px rgba(29,75,159,.6)');
-		  color: @inputFocusColor;
-		}
-		&.disable {
-			background-color: @inputDisabledBackground;
-		}
-	}
-}
-
-
-.uiWelcomeBox {
-	 .bottom {
-		background: url("@{images-path}/platform/portlets/extensions/bottomBG.png") no-repeat center bottom;
-		text-align: center;
-		padding: 25px 0;
-       border-radius: 8px;
-	}
-	.btn  {
-		 font-size: 16px;
-		 line-height: 41px;
-		.border-radius(@baseBorderRadius);
-		 width: 100px;
-		 cursor: pointer;
-		display: inline-block;
-		font-weight: bold;
-		text-align: center;
-		vertical-align: top;
-		text-decoration: none;
-		padding: 0;
-		margin: 0 5px;
-       .buttonBackground(@btnBackground, @btnBackgroundHighlight, @btnColor,none);
-         border: 1px solid @btnBorder;
-        *border: 0; // Remove the border to prevent IE7's black border on input:focus
-        border-bottom-color: darken(@btnBorder, 10%);
-        .box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
-        &:hover,
-        &:focus {
-          text-decoration: none;
-          background-position: 0 -15px;
-          .transition(background-position .1s linear);
-        }
-
+     .btn-primary ,#Greetings button,.btn:first-child{
+       .buttonBackgroundEXO(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder,@btnPrimaryColor);
+       .box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
 
     }
-
-   .btn-primary ,#Greetings button,.btn:first-child{
-     .buttonBackgroundEXO(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder,@btnPrimaryColor);
-     .box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
-
-	}
+    .form-horizontal {
+      .control-group:before, .control-group:after {
+        content: "";
+        display: table;
+        line-height: 0;
+      }
+      .control-group {
+        margin-bottom: 12px;
+      }
+      .control-label {
+        float: left;
+        padding-top: 7px;
+        text-align: right;
+        width: 75px;
+      }
+      .controls {
+        margin-left: 85px;
+        .inputFieldMedium:first-child, .inputFieldMini:first-child{
+           margin-right: 10px;
+        }
+      }
+    }
+    .inputFieldMini {
+        width: 123px;
+    }
+    .inputFieldMedium {
+        width: 155px;
+    }
+    .inputFieldLarge {
+        width: 334px;
+    }
+    .confirmLabel {
+        padding: 0 10px 0 5px;
+    }
+    .desc {
+        font-size: 12px;
+        color: @baseColorLight;
+        margin: 10px 0 15px;
+    }
+    .screenShot {
+        padding: 20px 0 30px;
+        text-align: center;
+        a {
+            background-color: @baseBackground;
+            background-repeat: repeat-x;
+            border: 1px solid @primaryBackgroundLight;
+            .border-radius(4px);
+            .box-shadow(0 2px 4px rgba(13, 13, 13, 0.27));
+            padding: 7px;
+            display: inline-block;
+            img {
+                border: 1px solid @borderColor;
+               .border-radius(7px);
+               width: 100%;
+               max-width: 100%;
+               height: 100%;
+            }
+        }
+    }
+    .uiIconError {
+        background: url("@{images-path}/Icons/uiIconsColor.png") no-repeat scroll left top transparent;
+        padding-left: 20px;
+    }
+    .uiIconWarning {
+      background: url("@{images-path}/Icons/uiIconsColor.png") no-repeat -20px top transparent;
+      padding-left: 20px;
+    }
 }
 
-.uiWelcomeBox .form-horizontal .control-group:before, .uiWelcomeBox .form-horizontal .control-group:after {
-    content: "";
-    display: table;
-    line-height: 0;
-}
-
-.uiWelcomeBox .form-horizontal .control-group {
-    margin-bottom: 12px;
-}
-
-.uiWelcomeBox .form-horizontal .control-label {
-    float: left;
-    padding-top: 7px;
-    text-align: right;
-    width: 75px;
-}
-
-.uiWelcomeBox .form-horizontal .controls {
-    margin-left: 85px;
-}
-
-.uiWelcomeBox .form-horizontal .controls .inputFieldMedium:first-child,
-.uiWelcomeBox .form-horizontal .controls .inputFieldMini:first-child {
-    margin-right: 10px;
-}
-
-.uiWelcomeBox .inputFieldMini {
-    width: 123px;
-}
-
-.uiWelcomeBox .inputFieldMedium {
-    width: 155px;
-}
-
-.uiWelcomeBox .inputFieldLarge {
-    width: 334px;
-}
-
-.uiWelcomeBox .confirmLabel {
-    padding: 0 10px 0 5px;
-}
-
-.uiWelcomeBox .desc {
-    font-size: 12px;
-    color: @baseColorLight;
-    margin: 10px 0 15px;
-}
-
-.uiWelcomeBox .screenShot {
-    padding: 20px 0 30px;
-    text-align: center;
-}
-
-.uiWelcomeBox .screenShot a {
-    background-color: @baseBackground;
-    background-repeat: repeat-x;
-    border: 1px solid @primaryBackgroundLight;
-    .border-radius(4px);
-    .box-shadow(0 2px 4px rgba(13, 13, 13, 0.27));
-	.size(174px,406px);
-    padding: 7px;
-    display: inline-block;
-}
-.uiWelcomeBox .screenShot a img {
-    border: 1px solid @borderColor;
-   .border-radius(7px);
-}
- .uiIconError {
-    background: url("@{images-path}/Icons/uiIconsColor.png") no-repeat scroll left top transparent;
-    padding-left: 20px;
-}
-.uiIconWarning {
-  	background: url("@{images-path}/Icons/uiIconsColor.png") no-repeat -20px top transparent;
-	padding-left: 20px;
- }
 
 // remove clear button on IE
 input::-ms-clear,input[type=password]::-ms-reveal{
   display: none;
+}
+
+@media (max-width: 640px){
+  .backLight{
+    display: none;
+  }
+  .uiWelcomeBox {
+    margin: 0 15px;
+    width: auto;
+    .header {
+      width: auto;
+    }
+    .content {
+      padding: 10px 20px;
+    }
+    .form-horizontal{
+      .control-label{
+        width: 100%;
+        text-align: left;
+      }
+      .confirmLabel{
+        display: block;
+        margin-top: 12px;
+        padding: 0;
+      }
+      .controls{
+        margin: 0;
+        input{
+          width: 100%;
+          box-sizing: border-box;
+        }
+        .inputFieldMedium:first-child{
+          margin: 0 0 5px 0;
+        }
+      }
+    } 
+    .bottom{
+      background: none;
+      text-align: left;
+      padding: 20px;
+      .btn{
+        width: 100%;
+        text-align: center;
+        margin: 10px 0 0;
+      }
+    }
+  }
 }

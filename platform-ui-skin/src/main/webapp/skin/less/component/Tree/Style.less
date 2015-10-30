@@ -18,6 +18,9 @@
 			cursor: pointer;
 			line-height: 22px;
 			vertical-align: middle;
+            [class*="Mini"] {
+                top: -1px
+            }
 			&:hover {
 				text-decoration: none;
 				color: @linkColor;
@@ -34,23 +37,36 @@
 	.treeNodeType {
 		padding-left: 22px;
 	}
-
+    .expandIcon,.collapseIcon,.emptyIcon{
+        padding-left: 15px;
+        position: relative;
+        &:before {
+            .font-icon();
+            position: absolute;
+            top: 6px;
+            left:0;
+            font-size: 9px;
+        }
+    }
 	.expandIcon {
-		background: url("@{images-path}/Tree/uiIconTreePlus.gif") no-repeat left center;
 		.square(auto);
-		padding-left: 15px;
 		display: block;
 		margin: 0px;
+        &:before {
+            content: "\e745";//uiIconColorMiniSquarePlus
+        }
 	}
 
 	.collapseIcon {
-		background: url("@{images-path}/Tree/uiIconTreeMinus.gif") no-repeat left center;
-		padding-left: 15px;
+        &:before {
+            content: "\e744";//uiIconColorMiniSquareMinus
+        }
 	}
 
 	.emptyIcon {
-		background: url("@{images-path}/Tree/uiIconTreeSquare.gif") no-repeat left center;
-		padding-left: 15px;
+        &:before {
+            content: "\e743";// uiIconColorMiniSquareBlank
+        }
 	}
 	.loadingTree {
 		text-align: center;
@@ -87,6 +103,8 @@
 			}
 			.uiIconNode{
 				padding-left: 16px;
+			  	font-family: @sansFontFamily;
+                font-size: @baseFontSize;
 				.uiIconNode{
 					padding-left: 0px;
 				}
@@ -102,19 +120,34 @@
 			}
 		}
 	}
+    .collapseIcon,.expandIcon,.uiIconEmpty {
+        position: relative;
+        padding-left: 15px;
+        &:before {
+            .font-icon();
+            position: absolute;
+            top: 3px;
+            left:0;
+            font-size: 9px;
+        }
+    }
 	.collapseIcon {
-		background: url("@{images-path}/Tree/uiIconTreePlus.gif") no-repeat left center;
 		.square(auto);
-		padding-left: 15px;
 		margin: 0px;
+        &:before {
+            content: "\e745";//uiIconColorMiniSquarePlus
+        }
+
 	}
 	.expandIcon{
-		background: url("@{images-path}/Tree/uiIconTreeMinus.gif") no-repeat left center;
-		padding-left: 15px;
+        &:before {
+            content: "\e744";//uiIconColorMiniSquareMinus
+        }
 	}
 	.uiIconEmpty  {
-		background: url("@{images-path}/Tree/uiIconTreeSquare.gif") no-repeat left center;
-		padding-left: 15px;
+        &:before {
+            content: "\e743";// uiIconColorMiniSquareBlank
+        }
 	}
 }
 

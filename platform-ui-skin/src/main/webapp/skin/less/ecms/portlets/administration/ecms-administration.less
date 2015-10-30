@@ -108,40 +108,26 @@
 	
 }
 
-.uiIconEcmsFolksonomyManager{
-	background-image: url("@{images-path}/Icons/uiIconsDefault.png");
-	background-position: -60px -20px;
-}
 
 a:hover .uiIconEcmsFolksonomyManager{
-	background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
-}
-
-.uiIconEcmsTaxonomyManagerTrees{
-	background-image: url("@{images-path}/Icons/uiIconsDefault.png");
-	background-position: -20px -60px;
+    color: @colorIconPrimary;
 }
 
 a:hover .uiIconEcmsTaxonomyManagerTrees{
-	background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
-}
-
-.uiIconEcmsActionManager{
-	background-image: url("@{images-path}/Icons/uiIconsDefault.png");
-	background-position: 0px -40px;
+    color: @colorIconPrimary;
 }
 
 a:hover .uiIconEcmsActionManager{
-	background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+    color: @colorIconPrimary;
 }
 
 .uiIconEcmsUnLockManager{
-	background-image: url("@{images-path}/Icons/uiIconsDefault.png");
+    color: @colorIconDefault;
 	background-position: -60px 0px;
 }
 
 a:hover .uiIconEcmsUnLockManager{
-	background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+    color: @colorIconPrimary;
 }
 
 .uiSearchBox {
@@ -275,4 +261,22 @@ a:hover .uiIconEcmsUnLockManager{
 	.uiActionBorder {
 		clear:both;
 	}
+}
+
+@media(max-width: 768px) {
+    .uiECMAdminPortlet .uiResizableBlock .ShowSideBar ,
+    .uiECMAdminPortlet .ecmAdminPanel{
+        float: none;
+        margin:10px 0;
+        width: 100%;
+        padding: 15px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .uiECMAdminPortlet .uiECMAdminWorkingArea {
+       margin:0
+    }
+   .ShowSideBar > div {
+        width: 100%!important;
+    }
 }

@@ -8,9 +8,31 @@
 			height: 18px;
 			margin: -2px -3px -3px 0;
 			position: relative;
+			.uiIconEditMini{
+				font-size: @sizeIconDefault;
+			}
+			.uiIconMaximize{
+				top: 1px;
+			}
+			.uiIconClose{
+				top: -1px;
+			}
 		}
 	}
+	
 }
+.UIGadgetThemes {
+	.title{
+		.actionIcon{
+			padding: 4px;
+			margin-top: -2px;
+			.uiIconSetting{
+				top: 0!important;
+			}
+		}
+	} 
+}
+
 .UIDashboardContainer .GadgetContainer{
 	padding: 20px;
 	.ContainerControlBarL .AddIcon {
@@ -78,7 +100,7 @@
 }
 .gadgetTitle{
 	a.uiIconClose  {
-		margin-top: 2px;
+        top:0px;
 	}
 }
 .UIGadgetPortlet .gadgets-gadget {

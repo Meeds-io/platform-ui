@@ -10,6 +10,23 @@
 	padding: 20px;
 	.uiProfileUserSearch {
 		margin-bottom: 10px;
+		.uiGrayLightBox{
+			.LabelProfileUserSearch{
+				margin-top: 4px;
+			}
+			.contentProfileUserSearch{
+				overflow: hidden;
+				padding-right: 5px;
+				.inputProfileUserSearch{
+					width: 33.33%;
+					box-sizing: border-box;
+					padding:0 5px;
+					input{
+						width: 100%;
+					}
+				}
+			}
+		}
 	}
 	.uiSpaceSearch {
 		margin-bottom: 10px;
@@ -136,4 +153,89 @@
       margin-left: 120px;
     }
   }
+}
+
+#socialMainLayout{
+	table.UITableColumn{
+		width: auto;
+		.CenterColumnContainerTDContainer{
+			width: 100%;
+		}
+		.uiMiniConnectionsPortlet,
+		.uiBasicProfilePortlet {
+			max-width: 280px;
+			min-width: 200px;
+		}
+	}
+}
+
+//responsive for social
+
+@media(max-width: 768px) {
+    body #socialMainLayout {
+        padding: 0  15px;
+        table {
+            tr,td {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+
+    .uiSearchInput.searchWithIcon.pull-right {
+        float: none;
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .uiTabNormal .nav-tabs > li > a {
+        .border-radius(0)!important;
+    }
+    #SpaceSearch {
+        width: 100%;
+    }
+    .uiUserActivitiesContainer{
+    	margin-top: -8px;
+		
+	} 
+	.uiSocApplication {
+		.uiProfileUserSearch {
+			.uiGrayLightBox{
+				position: relative;
+				padding-bottom: 50px;
+				.contentProfileUserSearch{
+					width: 100%;
+					.inputProfileUserSearch{
+						padding: 0;
+					}
+				}
+				.LabelProfileUserSearch{
+					width: 100%;
+				}
+				.btn{
+					position: absolute;
+					bottom: 15px;
+					left: 10px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 480px) {
+     .activityStream .commentList .commentItem .actLink {
+        right: -10px!important;
+         top: -10px;
+    }
+    .uiSocApplication {
+		.uiProfileUserSearch {
+			.uiGrayLightBox{
+				.contentProfileUserSearch{
+					.inputProfileUserSearch{
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
 }

@@ -228,10 +228,10 @@
 		}
 
 		[class^="uiIcon"] {
-			background-image: url("@{images-path}/Icons/uiIconsSecondary.png");
+			color: @colorIconSecondary;
 		}
 		[class^="uiIconEcms"] {
-			background-image: url("@{images-path}/ecms/skin/Icons/uiIconsEcmsSecondary.png");
+            color: @colorIconSecondary;
 		}
 
 		.edittingCurrentState .publishedText,
@@ -379,16 +379,14 @@
 	}
 
 	.Link,.IconLocked {
-		background: url("@{images-path}/ecms/portlets/explorer/Icons/IconBigLink.png") no-repeat right top;
-		position: absolute;
-		width: 32px;
-		height: 32px;
+		font-size: @sizeIconDefault;
 		right: -5px;
+        background: none;
 		bottom: 0;
+        color: @warningColor;
 	}
-
+    .Link:before { content: "\e793";}
 	.IconLocked {
-		background: url("@{images-path}/ecms/portlets/explorer/Icons/IconBigLock.png") no-repeat right top;
 		top: 0;
 	}
 }
@@ -590,3 +588,10 @@
     }
   }
 }
+
+
+/*=========== color blue on help button hover ============*/
+.parentPosition:hover .uiIconQuestion {
+  color: @linkColor;
+}
+

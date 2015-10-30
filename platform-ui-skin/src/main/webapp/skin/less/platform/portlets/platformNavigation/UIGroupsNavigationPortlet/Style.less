@@ -28,7 +28,6 @@
           color: @plfNavigationTitleColor;
         }
 	}
-
 	.groupNavigation {
 		list-style: none;
 		margin: 0;
@@ -38,6 +37,9 @@
 			> div {
 				padding: 8px 10px 0;
 				display: block;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
 				.groupIcon {
 					margin-left: 20px;
 					overflow: hidden;

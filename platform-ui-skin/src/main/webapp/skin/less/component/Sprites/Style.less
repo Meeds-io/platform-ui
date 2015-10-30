@@ -13,18 +13,32 @@
 // For the @baseBackground version of the icons, just add the .iconwhite class:
 // <i class="iconinbox iconwhite"></i>
 
+
+// VARIABLES
+// ----------------
+
+
+
+
 [class^="uiIcon"],
 .LeftNavigationTDContainer .uiPopup [class^="uiIcon"]{
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  .ie7-restore-right-whitespace();
-  line-height: 16px;
-  vertical-align: text-top;
-  background-image: url("@{images-path}/Icons/uiIconsDefault.png");
-  //background-image: url("@{images-path}/Icons/uiIconsExtra.png");
-  background-repeat: no-repeat;
+    .font-icon();
+
 }
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .actionIcon [class^="uiIcon"],
+    .actionIcon .LeftNavigationTDContainer .uiPopup [class^="uiIcon"]{
+        top: 2px;
+    }
+}
+
+
+//Adding a default icon to Space Apps
+.uiIconDefaultApp:before {
+  content: "\e6d6";
+}
+
+
 
 /* Blue icons with optional class, or on hover/active states of certain elements */
 
@@ -37,10 +51,9 @@
 a:hover [class^="uiIcon"],
 .actionIcon.active [class^="uiIcon"],
 .nodeSelected:hover [class^="uiIcon"],
-.uiIconBlue
-{
-  background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
-
+.uiIconQuestion:hover, .actionIconSmall:hover [class^="uiIcon"],
+.uiIconBlue {
+	 color: @colorIconPrimary;
 }
 
 /* light grey icons with optional class, or on  */
@@ -52,7 +65,7 @@ a:hover [class^="uiIcon"],
 .uiIconClose,
 .uiIconLightGray
 {
-  background-image: url("@{images-path}/Icons/uiIconsDefault.png"); //remove late
+  color: @colorIconDefault;
 
 }
 
@@ -64,7 +77,7 @@ a:hover [class^="uiIcon"],
 .uiIconDarkGray,
 .uiIconExtra,
 .LeftNavigationTDContainer [class^="uiIcon"] {
-  background-image: url("@{images-path}/Icons/uiIconsExtra.png");
+  color: @colorIconExtra;
 }
 /* White icons with optional class, or on hover/active states of Drop down with Icons */
 
@@ -95,486 +108,189 @@ a:hover [class^="uiIcon"],
 .LeftNavigationTDContainer .uiInfoBar [class^="uiIcon"],
 .uiIconWhite
 {
-  background-image: url("@{images-path}/Icons/uiIconsSecondary.png");
+  color: @colorIconSecondary
+}
+
+.uiIconClose::before {
+    font-size: 9px;
 }
 
 .uiIconClose {
   .opacity(50);
   &:hover {
     .opacity(100);
-    background-image: url("@{images-path}/Icons/uiIconsDefault.png")!important;
+      color: @colorIconDefault!important;
   }
 }
 
 .actionIcon  {
   &:hover {
     .uiIconClose {
-      background-image: url("@{images-path}/Icons/uiIconsDefault.png") !important;
+       color: @colorIconDefault!important;
     }
   }
 
 }
 
-.uiIconSearch {
-	background-position: 0px 0px;
+.uiIconDelete:before,
+.uiIconDeleteTemplate:before,
+.uiIconDeleteNode:before,
+.uiIconDeleteDraft:before,
+.uiIconDeletePage:before,
+.uiIconDeleteCategory:before,
+.uiIconRemoveStyle:before,
+.uiIconRemovePermission:before,
+.uiIconRemoveTag:before,
+.uiIconRemoveNodeType:before,
+.uiIconDeleteMembership:before,
+.uiIconDeleteUser:before,
+.uiIconRemoveNavigationNode:before,
+.uiIconRemoveListTargetPage:before,
+.uiIconRemoveDetailTargetPage:before{
+	content: "\e799";
 }
 
-.uiIconTrash,
-.uiIconDelete,
-.uiIconDeleteNode,
-.uiIconDeleteDraft,
-.uiIconDeletePage,
-.uiIconDeleteCategory,
-.uiIconRemoveStyle,
-.uiIconRemovePermission,
-.uiIconRemoveTag,
-.uiIconRemoveNodeType,
-.uiIconDeleteMembership,
-.uiIconDeleteUser,
-.uiIconRemoveNavigationNode,
-.uiIconRemoveListTargetPage,
-.uiIconRemoveDetailTargetPage {
-	background-position: -20px 0px;
-}
-
-.uiIconEdit,
-.uiIconEditSelectedNode,
-.uiIconEditPage,
-.uiIconEditTag,
-.uiIconViewUserInfo,
-.uiIconEditStyle,
-.uiIconEditInfo,
-.uiIconEditMembership,
-.uiIconEditCategory {
-	background-position: -40px 0px;
-}
-
-.uiIconLock,
-.uiIconPagePermission {
-	background-position: -60px 0px;
-}
-
-.uiIconLink,
-.uiIconPermalink,
-.uiIconLinkr {
-	background-position: -80px 0px;
-}
-
-.uiIconWatch,
-.uiIconWatchPage,
-.uiIconUnWatchPage,
-.uiIconUnWatch {
-	background-position: -100px 0px;
-}
-
-.uiIconMove,
-.uiIconMovePage,
-.uiIconMoveCategory{
-	background-position: -120px 0px;
-}
-
-.uiIconPreview,
-.uiIconView {
-	background-position: -140px 0px;
-}
-
-.uiIconRestore {
-	background-position: -160px 0px;
-}
-
-.uiIconRefresh {
-	background-position: -180px 0px;
-}
-
-.uiIconCheckin {
-	background-position: 0px -20px;
-}
-
-.uiIconUpload {
-	background-position: -20px -20px;
-}
-
-
-.uiIconFile {
-  background-position: -60px -40px;
-}
-
-.uiIconDownload,.uiIconExt-downloads {
-	background-position: -40px -20px;
-}
-
-.uiIconTag {
-	background-position: -60px -20px;
-}
-
-.uiIconSave,
-.uiIconPasteNode {
-	background-position: -80px -20px;
-}
-
-.uiIconExport {
-	background-position: -100px -20px;
-}
-
-.uiIconImport {
-	background-position: -120px -20px;
-}
-
-.uiIconComment {
-	background-position: -140px -20px;
-}
-
-.uiIconAttach {
-	background-position: -160px -20px;
-}
-
-.uiIconBookmark {
-	background-position: -180px -20px;
-}
-
-.uiIconSetting {
-	background-position: 0px -40px;
-}
-
-.uiIconSettings,
-.uiIconMoreAction {
-	background-position: -20px -40px;
-}
-
-.uiIconTemplate,
-.uiIconFromTemplate,
-.uiIconAddPageFromTemplate {
-	background-position: -40px -40px;
-}
-
-.uiIconPublish,.uiIconBlankFile,
-.uiIconAddPage {
-	background-position: -80px -40px;
-}
-
-.uiIconViewChange,
-.uiIconViewDraftChange {
-	background-position: -100px -40px;
-}
-
-.uiIconExportPdf,.uiIconPdfExport,.uiIconExportAsPDF {
-	background-position: -120px -40px;
-}
-
-.uiIconUser,.uiIconSelectUser,.uiIconForumUser ,.uiIconProfile {
-	background-position: -140px -40px;
-}
-
-.uiIconMembership,.uiIconSelectMember {
-	background-position: -160px -40px;
-}
-
-.uiIconGroup,.uiIconAddAny {
-	background-position: -180px -40px;
-}
-
-.uiIconFolder {
-	background-position: 0px -60px;
-}
-
-.uiIconCategory {
-	background-position: -20px -60px;
-}
-
-.uiIconNotification {
-	background-position: -40px -60px;
-}
-
-.uiIconValidate,.uiIconOpen,.uiIconAddRootNode,.uiIconSelectPage,
-.uiIconAddAnyPermission {
-	background-position: -60px -60px;
-}
-
-.uiIconMinus,.uiIconStop {
-	background-position: -80px -60px;
-}
-
-.uiIconPlus,.uiIconAddPermission,.uiIconAddIcon,.uiIconAddPath,
-.uiIconSelectPath,
-.uiIconChooseNodeType,.uiIconAddNode,
-.uiIconSelectNavigationNode,.uiIconSelectListTargetPage,.uiIconSelectDetailTargetPage {
-	background-position: -100px -60px;
-}
-.uiIconSimplePlusMini {
-	background-position: -140px -140px;
-}
-.uiIconRemove {
-	background-position: -120px -60px;
-}
-
-.uiIconInformation,
-.uiIconPageInfo {
-	background-position: -140px -60px;
-}
-
-.uiIconMail {
-	background-position: -160px -60px;
-}
-
-.uiIconRss {
-	background-position: -180px -60px;
-}
-
-.uiIconReply {
-	background-position: 0px -80px;
-}
-
-.uiIconThumbUp {
-	background-position: -20px -80px;
-}
-
-.uiIconPrint {
-	background-position: -40px -80px;
-}
-
-.uiIconSortUp {
-	background-position: -60px -80px;
-}
-
-.uiIconSortDown {
-	background-position: -80px -80px;
-}
-
-.uiIconHome   {
-	background-position: -100px -80px;
-}
-
-.uiIconQuestion {
-	background-position: -120px -80px;
-}
-
-.uiIconFlags,.useful-icon-Translate {
-	background-position: -140px -80px;
-}
-
-.uiIconClock,
-.uiIconEvent {
-	background-position: -160px -80px;
-}
-
-.uiIconTree {
-	background-position: -180px -80px;
-}
-
-.uiIconGeneralDrive {
-	background-position: 0px -100px;
-}
-
-.uiIconForum,
-.uiIconUIForms,.uiIconDiscuss  {
-	background-position: -20px -100px;
-}
-
-.uiIconPoll {
-	background-position: -40px -100px;
-}
-
-.uiIconTrashMini {
-	background-position: -60px -100px;
-}
-
-.uiIconEditMini {
-	background-position: -80px -100px;
-}
-
-.uiIconUnlockMini  {
-	background-position: -100px -100px;
-}
-
-.uiIconLockMini {
-	background-position: -120px -100px;
-}
-
-.uiIconTick {
-	background-position: -140px -100px;
-}
-
-.uiIconClose {
-	background-position: -160px -100px;
-}
-
-.uiIconFileMini {
-	background-position: -180px -100px;
-}
-
-.uiIconArrowDown {
-	background-position: 0px -119px;
-}
-
-.uiIconArrowUp {
-	background-position: -20px -120px;
-}
 
-.uiIconArrowRight,.uiIconNextArrow {
-	background-position: -40px -120px;
+.uiIconEditSelectedNode:before,
+.uiIconEditTemplate:before,
+.uiIconEditPage:before,
+.uiIconEditTag:before,
+.uiIconViewUserInfo:before,
+.uiIconEditStyle:before,
+.uiIconEditInfo:before,
+.uiIconEditMembership:before,
+.uiIconEditCategory:before {
+	content: "\e791";
 }
+ 
 
-.uiIconArrowLeft,.uiIconPrevArrow {
-	background-position: -60px -120px;
+.uiIconPagePermission:before {
+	content: "\e794";
 }
 
-.uiIconTagMini {
-	background-position: -80px -120px;
-}
-
-.uiIconUpLevel {
-	background-position: -100px -120px;
-}
-
-.uiIconExpand,
-.uiIconResize {
-	background-position: -120px -120px;
-}
-
-.uiIconUnlockMedium {
-	background-position: -140px -120px;
-}
 
-.uiIconLockMedium {
-	background-position: -160px -120px;
+.uiIconPermalink:before,
+.uiIconLinkr:before {
+	content: "\e793";
 }
 
-.uiIconAddCategory {
-	background-position: -180px -120px;
-}
 
-.uiIconArrowDownMini,
-.uiIconMiniArrowDown {
-	background-position: 0px -140px;
+.uiIconWatchPage:before,
+.uiIconUnWatchPage:before,
+.uiIconUnWatch:before {
+	content: "\e79b";
 }
 
-.uiIconArrowUpMini,.uiIconMiniArrowUp {
-	background-position: -20px -140px;
-}
 
-.uiIconArrowRightMini,.uiIconMiniArrowRight {
-	background-position: -40px -140px;
+.uiIconMovePage:before,
+.uiIconMoveCategory:before{
+	content: "\e795";
 }
 
-.uiIconArrowLeftMini,.uiIconMiniArrowLeft {
-	background-position: -60px -140px;
+.uiIconView:before {
+	content: "\e788";
 }
 
-.uiIconGoUp {
-	background-position: -80px -140px;
+.uiIconExt-downloads:before {
+	content: "\e784";
 }
 
-.uiIconManageCategory {
-	background-position: -100px -140px;
-}
 
-.uiIconDragDrop {
-	background-position: -120px -140px;
-	cursor: move;
+.uiIconPasteNode:before {
+	content: "\e78a";
 }
 
-.uiIconSimplePlusMini {
-	background-position: -140px -140px;
+.uiIconMoreAction:before {
+	content: "\e78c";
 }
 
-.uiIconMinimize {
-	background-position: -160px -140px;
-}
 
-.uiIconMaximize {
-	background-position: -180px -140px;
+.uiIconFromTemplate:before,
+.uiIconAddPageFromTemplate:before {
+	content: "\e6b4";
 }
 
-.uiIconHomeInfo {
-	background-position: 0px -160px;
+.uiIconPublish:before,.uiIconBlankFile:before {
+	content: "\e6ba";
 }
 
-.uiIconBusinessInfo {
-	background-position: -20px -160px;
+.uiIconAddPage:before {
+	content: "\e6a1";
 }
 
-.uiIconEditLayout {
-	background-position: -40px -160px;
+.uiIconViewDraftChange:before {
+	content: "\e6b6";
 }
 
-.uiIconEditNavigation {
-	background-position: -60px -160px;
+.uiIconPdfExport:before,.uiIconExportAsPDF:before {
+	content: "\e679";	
 }
 
-.uiIconEditPortalConfig {
-	background-position: -80px -160px;
+.uiIconSelectUser:before,.uiIconForumUser:before ,.uiIconProfile:before{
+	content: "\e6cc";
 }
-
-.uiIconEditPageNode {
-	background-position: -100px -160px;
+.uiIconSelectMember:before {
+	content: "\e6cb";
 }
-
-.uiIconCopyNode {
-	background-position: -120px -160px;
+.uiIconAddAny:before {
+	content: "\e6ca";
 }
 
-.uiIconCloneNode {
-	background-position: -140px -160px;
+.uiIconOpen:before,.uiIconAddRootNode:before,.uiIconSelectPage:before,
+.uiIconAddAnyPermission:before {
+	content: "\e770";
 }
 
-.uiIconCutNode {
-	background-position: -160px -160px;
+.uiIconStop:before {
+	content: "\e768";
 }
 
-.uiIconMoveUp {
-	background-position: -180px -160px;
+.uiIconAddPermission:before,.uiIconAddIcon:before,.uiIconAddPath:before,
+.uiIconSelectPath:before,
+.uiIconChooseNodeType:before,.uiIconAddNode:before,
+.uiIconSelectNavigationNode:before,.uiIconSelectListTargetPage:before,.uiIconSelectDetailTargetPage:before {
+	content: "\e76a";
 }
 
-.uiIconMoveDown {
-	background-position: 0px -180px;
+.uiIconPageInfo:before {
+	content: "\e767";
 }
 
-.uiIconAddPage {
-	background-position: -20px -180px;
+.uiIconAddPermission:before,.uiIconAddIcon:before,.uiIconAddPath:before,
+.uiIconSelectPath:before,
+.uiIconChooseNodeType:before,.uiIconAddNode:before,
+.uiIconSelectNavigationNode:before,.uiIconSelectListTargetPage:before,.uiIconSelectDetailTargetPage:before {
+	content: "\e76a";
 }
 
-.uiIconManageApplication {
-	background-position: -40px -180px;
-}
 
-.uiIconPortlet {
-	background-position: -60px -180px;
+.useful-icon-Translate:before {
+	content: "\e747";
 }
 
-.uiIconGadgets {
-	background-position: -80px -180px;
-}
 
-.uiIconAddUser {
-	background-position: -100px -180px;
+.uiIconEvent:before {
+	content: "\e742";
 }
 
-.uiIconAddRemoteGadget {
-	background-position: -120px -180px;
-}
 
-.uiIconCreateNewGadget {
-	background-position: -140px -180px;
+.uiIconForum:before,
+.uiIconUIForms:before {
+	content: "\e68d";
 }
 
-.uiIconPortletConfig {
-	background-position: -160px -180px;
-}
 
-.uiIconContainerConfig {
-	background-position: -180px -180px;
+.uiIconNextArrow:before {
+	content: "\e75c";
 }
 
-.uiIconBack {
-	background-position: 0px -200px;
+.uiIconPrevArrow:before{
+	content: "\e75b";
 }
 
-.uiIconFavoriteDocument {
-	background-position: -20px -200px;
-}
 
-.uiIconUntag {
-	background-position: -40px -200px;
+.uiIconResize:before {
+	content: "\e74e" ;
 }
 
 
@@ -582,2302 +298,3164 @@ a:hover [class^="uiIcon"],
 
 /*----- IconLibrary-FileType-16x16 -----*/
 
-[class^="uiIcon16x16"] {
-  background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType16x16.png");
-  background-position: 0px -60px;
-  background-repeat: no-repeat;
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  .ie7-restore-right-whitespace();
-  line-height: 16px;
-  vertical-align: text-top;
+
+
+
+.uiIcon16x16FileDefault:before,.uiIcon16x16applicationoctet-stream:before {
+	content: "\e71c";
+	color:#cdcccc;
 }
 
-[class^="uiIcon16x16"]:hover,a:hover [class^="uiIcon16x16"] {
-  background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType16x16.png");
+.uiIcon16x16FileArchiveDefault:before,.uiIcon16x16applicationx-tar:before,
+.uiIcon16x16applicationx-gzip:before,.uiIcon16x16applicationx-bzip2:before,.uiIcon16x16applicationother-zip:before {
+	content: "\e718";
+	//color: #8acf3f;
+  	color: @compressedFilesIconColor;
 }
 
-.uiIcon16x16FileDefault,.uiIcon16x16applicationoctet-stream {
-	background-position: 0px -60px;
+.uiIcon16x16FileArchiveRar:before,.uiIcon16x16applicationrar:before  {
+	content: "\e719";
+	color: @compressedFilesIconColor;
 }
 
-.uiIcon16x16FileArchiveDefault,.uiIcon16x16applicationx-tar,
-.uiIcon16x16applicationx-gzip,.uiIcon16x16applicationx-bzip2,.uiIcon16x16applicationother-zip {
-	background-position: -20px -60px;
+.uiIcon16x16FileArchiveZip:before,.uiIcon16x16FileZip:before,.uiIcon16x16applicationzip:before {
+	content: "\e71a";
+	color: @compressedFilesIconColor;
 }
 
-.uiIcon16x16FileArchiveRar,.uiIcon16x16applicationrar  {
-	background-position: -40px -60px;
+.uiIcon16x16FileJar:before,.uiIcon16x16applicationjava-archive:before {
+	content: "\e71e";
+	color: #A34D46;
 }
 
-.uiIcon16x16FileArchiveZip,.uiIcon16x16FileZip,.uiIcon16x16applicationzip  {
-	background-position: -60px -60px;
+.uiIcon16x16FileEar:before,.uiIcon16x16applicationear-java-archive:before {
+	content: "\e71d";
+	color: #A34D46;
 }
 
-.uiIcon16x16FileJar,.uiIcon16x16applicationjava-archive {
-	background-position: -80px -60px;
+.uiIcon16x16FileWar:before,.uiIcon16x16applicationx-zip:before {
+	content: "\e71f";
+  	color: @compressedFilesIconColor;
+	//color: #A34D46;
 }
 
-.uiIcon16x16FileEar,.uiIcon16x16applicationear-java-archive {
-	background-position: -100px -60px;
+.uiIcon16x16FileAudioDefault:before,.uiIcon16x16audiomidi:before,.uiIcon16x16audiox-aiff:before,.uiIcon16x16audiobasic:before,
+.uiIcon16x16audiox-m4a:before,.uiIcon16x16audiox-wav:before,.uiIcon16x16audioother:before {
+	content: "\e71b";
+	color: #008b84;
 }
 
-.uiIcon16x16FileWar,.uiIcon16x16applicationx-zip {
-	background-position: -120px -60px;
+.uiIcon16x16FileMp3:before,.uiIcon16x16audiomp3:before {
+	content: "\e714";
+	color: #008b84;
 }
 
-.uiIcon16x16FileAudioDefault,.uiIcon16x16audiomidi,.uiIcon16x16audiox-aiff,.uiIcon16x16audiobasic,
-.uiIcon16x16audiox-m4a,.uiIcon16x16audiox-wav,.uiIcon16x16audioother {
-	background-position: -140px -60px;
+.uiIcon16x16FileWma:before,.uiIcon16x16audiox-ms-wma:before {
+	content: "\e716";
+	color: #008b84;
 }
 
-.uiIcon16x16FileMp3,.uiIcon16x16audiomp3 {
-	background-position: -160px -60px;
+.uiIcon16x16FileVideo:before,.uiIcon16x16videox-msvideo:before,.uiIcon16x16videoquicktime:before,
+.uiIcon16x16videox-sgi-movie:before,
+.uiIcon16x16videox-msvideo:before,.uiIcon16x16videompe:before {
+	content: "\e715";
+	color:#79577A;
 }
 
-.uiIcon16x16FileWma,.uiIcon16x16audiox-ms-wma {
-	background-position: -180px -60px;
+.uiIcon16x16FileFlash:before,.uiIcon16x16applicationx-shockwave-flash:before,.uiIcon16x16videox-flv:before  {
+	content: "\e713";
+	color: #d23327;
 }
 
-.uiIcon16x16FileVideo,.uiIcon16x16videox-msvideo,.uiIcon16x16videoquicktime,
-.uiIcon16x16videox-sgi-movie,
-.uiIcon16x16videox-msvideo,.uiIcon16x16videompe {
-	background-position: 0px -80px;
+.uiIcon16x16FileWmv:before,.uiIcon16x16videox-ms-wmv:before {
+	content: "\e717";
+	color:#79577A;
 }
 
-.uiIcon16x16FileFlash,.uiIcon16x16applicationx-shockwave-flash,.uiIcon16x16videox-flv  {
-	background-position: -20px -80px;
+.uiIcon16x16FileGdoc:before,.uiIcon16x16applicationvndgoogle-appsdocument:before {
+	content: "\e70c";
+	color: #1C98D7;
 }
 
-.uiIcon16x16FileWmv,.uiIcon16x16videox-ms-wmv {
-	background-position: -40px -80px;
+.uiIcon16x16FileWord:before,.uiIcon16x16applicationmsword:before,.uiIcon16x16applicationwordperfect:before,
+.uiIcon16x16applicationvndopenxmlformats-officedocumentwordprocessingmldocument:before,.uiIcon16x16FileDocx:before,
+.uiIcon16x16applicationvndms-worddocumentmacroenabled12:before,
+.uiIcon16x16applicationvndms-wordtemplatemacroenabled12:before,
+.uiIcon16x16applicationvndopenxmlformats-officedocumentwordprocessingmltemplate:before {
+	content: "\e6b1";
+	color: #094D7F;
 }
 
-.uiIcon16x16FileGdoc,.uiIcon16x16applicationvndgoogle-appsdocument {
-	background-position: -60px -80px;
+.uiIcon16x16FileOpenOffice1:before,.uiIcon16x16FileOpenOffice1:before,
+.uiIcon16x16applicationvndoasisopendocumenttext:before,
+.uiIcon16x16applicationvndoasisopendocumentdatabase:before {
+	content: "\e710";
+	color: #1c9bd7;
 }
 
-.uiIcon16x16FileWord,.uiIcon16x16applicationmsword,.uiIcon16x16applicationwordperfect,
-.uiIcon16x16applicationvndopenxmlformats-officedocumentwordprocessingmldocument,.uiIcon16x16FileDocx,
-.uiIcon16x16applicationvndms-worddocumentmacroenabled12,
-.uiIcon16x16applicationvndms-wordtemplatemacroenabled12,
-.uiIcon16x16applicationvndopenxmlformats-officedocumentwordprocessingmltemplate {
-	background-position: -80px -80px;
+.uiIcon16x16applicationvndoasisopendocumentspreadsheet:before {
+  content: "\e710";
+  color: #1a744b;
 }
 
-.uiIcon16x16FileOpenOffice1,.uiIcon16x16FileOdt,
-.uiIcon16x16applicationvndoasisopendocumenttext,
-.uiIcon16x16applicationvndoasisopendocumentspreadsheet,
-.uiIcon16x16applicationvndoasisopendocumentdatabase {
-	background-position: -100px -80px;
+.uiIcon16x16FileMpeg:before,.uiIcon16x16videompeg:before,.uiIcon16x16videompg:before,
+.uiIcon16x16videomp4:before {
+	content: "\e70f";
+	color:#79577A;
 }
 
-.uiIcon16x16FileMpeg,.uiIcon16x16videompeg,.uiIcon16x16videompg,
-.uiIcon16x16videomp4 {
-	background-position: -120px -80px;
+.uiIcon16x16FileM4v:before,.uiIcon16x16videox-m4v:before {
+	content: "\e70d";
+	color:#79577A;
 }
 
-.uiIcon16x16FileM4v,.uiIcon16x16videox-m4v {
-	background-position: -140px -80px;
+.uiIcon16x16FileMkv:before,.uiIcon16x16videox-matroska:before {
+	content: "\e70e";
+	color:#79577A;
 }
 
-.uiIcon16x16FileMkv,.uiIcon16x16videox-matroska {
-	background-position: -160px -80px;
+
+
+.uiIcon16x16FileTxt:before,.uiIcon16x16textplain:before {
+	content: "\e711";
+	color: #1c9bd7;
 }
 
-.uiIcon16x16FileTxt,.uiIcon16x16textplain {
-	background-position: -180px -80px;
+.uiIcon16x16FileLwp:before,.uiIcon16x16applicationlwp:before {
+	content: "\e707";
+	color: #1c9bd7
 }
 
-.uiIcon16x16FileLwp,.uiIcon16x16applicationlwp {
-	background-position: 0px -100px;
+.uiIcon16x16FilePage:before,.uiIcon16x16applepages:before {
+	content: "\e70a";
+	color: #1c9bd7
 }
 
-.uiIcon16x16FilePage,.uiIcon16x16applepages {
-	background-position: -20px -100px;
+.uiIcon16x16FileMdb:before,.uiIcon16x16applicationmsaccess:before {
+	content: "\e708";
+	color:#6a274c
 }
 
-.uiIcon16x16FileMdb,.uiIcon16x16applicationmsaccess {
-	background-position: -40px -100px;
+.uiIcon16x16FileOdf:before,.uiIcon16x16applicationvndoasisopendocumentformula:before {
+	content: "\e709";
+	color: #848585;
 }
 
-.uiIcon16x16FileOdf,.uiIcon16x16applicationvndoasisopendocumentformula {
-	background-position: -60px -100px;
+.uiIcon16x16FileExe:before,.uiIcon16x16applicationexe:before {
+	content: "\e706";
+	color: #cdcccc;
 }
 
-.uiIcon16x16FileExe,.uiIcon16x16applicationexe {
-	background-position: -80px -100px;
+.uiIcon16x16FilePdf:before,.uiIcon16x16applicationpdf:before {
+	content: "\e70b";
+	color:#d23327;
 }
 
-.uiIcon16x16FilePdf,.uiIcon16x16applicationpdf {
-	background-position: -100px -100px;
+.uiIcon16x16FileScript:before,.uiIcon16x16applicationpostscript:before {
+	content: "\e705";
+	color:#5e5e5e;
 }
 
-.uiIcon16x16FileScript,.uiIcon16x16applicationpostscript {
-	background-position: -120px -100px;
+.uiIcon16x16FileRtf:before,.uiIcon16x16applicationrtf:before {
+	content: "\e704";
+	color:#5e5e5e;
 }
 
-.uiIcon16x16FileRtf,.uiIcon16x16applicationrtf {
-	background-position: -140px -100px;
+.uiIcon16x16FileGslides:before,.uiIcon16x16applicationvndgoogle-appspresentation:before {
+	content: "\e701";
+	color:#de6227;
 }
 
-.uiIcon16x16FileGslides,.uiIcon16x16applicationvndgoogle-appspresentation {
-	background-position: -160px -100px;
+.uiIcon16x16FileAppleKey:before,.uiIcon16x16textkey:before {
+	content: "\e700";
+	color:#d37133;
 }
 
-.uiIcon16x16FileAppleKey,.uiIcon16x16textkey {
-	background-position: -180px -100px;
+.uiIcon16x16FileOpenOffice2:before,
+.uiIcon16x16applicationvndoasisopendocumentpresentation:before {
+	content: "\e702";
+	color:#d37133;
 }
 
-.uiIcon16x16FileOpenOffice2,
-.uiIcon16x16applicationvndoasisopendocumentpresentation {
-	background-position: 0px -120px;
-}
-
-.uiIcon16x16FilePpt,.uiIcon16x16applicationppt,.uiIcon16x16applicationvndms-powerpoint,
-.uiIcon16x16applicationvndopenxmlformats-officedocumentpresentationmlpresentation,
-.uiIcon16x16applicationvndopenxmlformats-officedocumentpresentationmltemplate,
-.uiIcon16x16applicationvndopenxmlformats-officedocumentpresentationmlslideshow,
-.uiIcon16x16applicationvndms-powerpointaddinmacroenabled12,
-.uiIcon16x16applicationvndms-powerpointpresentationmacroenabled12,
-.uiIcon16x16applicationvndms-powerpointtemplatemacroenabled12,
-.uiIcon16x16applicationvndms-powerpointslideshowmacroenabled12
+.uiIcon16x16FilePpt:before,.uiIcon16x16applicationppt:before,.uiIcon16x16applicationvndms-powerpoint:before,
+.uiIcon16x16applicationvndopenxmlformats-officedocumentpresentationmlpresentation:before,
+.uiIcon16x16applicationvndopenxmlformats-officedocumentpresentationmltemplate:before,
+.uiIcon16x16applicationvndopenxmlformats-officedocumentpresentationmlslideshow:before,
+.uiIcon16x16applicationvndms-powerpointaddinmacroenabled12:before,
+.uiIcon16x16applicationvndms-powerpointpresentationmacroenabled12:before,
+.uiIcon16x16applicationvndms-powerpointtemplatemacroenabled12:before,
+.uiIcon16x16applicationvndms-powerpointslideshowmacroenabled12:before
  {
-	background-position: -20px -120px;
+	content: "\e6b0";
+	color: #e45030;
 }
 
-.uiIcon16x16FilePrz,.uiIcon16x16applicationfreelance {
-	background-position: -40px -120px;
+.uiIcon16x16FilePrz:before,.uiIcon16x16applicationfreelance:before {
+	content: "\e6fe";
+	color: #d3703a;
 }
 
-.uiIcon16x16FileGsheet,.uiIcon16x16applicationvndgoogle-appsspreadsheet {
-	background-position: -60px -120px;
+.uiIcon16x16FileGsheet:before,.uiIcon16x16applicationvndgoogle-appsspreadsheet:before {
+	content: "\e6fa";
+	color: #119b48;
 }
 
-.uiIcon16x16FileExcel,.uiIcon16x16applicationxls,.uiIcon16x16applicationxlt,.uiIcon16x16applicationvndms-excel,
-.uiIcon16x16applicationvndopenxmlformats-officedocumentspreadsheetmlsheet,.uiIcon16x16FileXls,
-.uiIcon16x16applicationvndopenxmlformats-officedocumentspreadsheetmltemplate, 
-.uiIcon16x16applicationvndms-excelsheetmacroenabled12, 
-.uiIcon16x16applicationvndms-exceltemplatemacroenabled12, 
-.uiIcon16x16applicationvndms-exceladdinmacroenabled12, 
-.uiIcon16x16applicationvndms-excelsheetbinarymacroenabled12{
-	background-position: -80px -120px;
+.uiIcon16x16FileExcel:before,.uiIcon16x16applicationxls:before,.uiIcon16x16applicationxlt:before,.uiIcon16x16applicationvndms-excel:before,
+.uiIcon16x16applicationvndopenxmlformats-officedocumentspreadsheetmlsheet:before,.uiIcon16x16FileXls:before,
+.uiIcon16x16applicationvndopenxmlformats-officedocumentspreadsheetmltemplate:before, 
+.uiIcon16x16applicationvndms-excelsheetmacroenabled12:before, 
+.uiIcon16x16applicationvndms-exceltemplatemacroenabled12:before, 
+.uiIcon16x16applicationvndms-exceladdinmacroenabled12:before, 
+.uiIcon16x16applicationvndms-excelsheetbinarymacroenabled12:before{
+	content: "\e6af";
+	color: #1a744b;
 }
 
-.uiIcon16x16FileOpenOffice3,
-.uiIcon16x16applicationvndoasisopendocumentspreadsheet-template,
-.uiIcon16x16applicationvndsunxmlcalc{
-	background-position: -100px -120px;
+.uiIcon16x16FileOpenOffice3:before,
+.uiIcon16x16applicationvndoasisopendocumentspreadsheet-template:before,
+.uiIcon16x16applicationvndsunxmlcalc:before{
+	content: "\e6fd";
+	color: #119b48;
 }
 
-.uiIcon16x16FileHtml,.uiIcon16x16texthtml,.uiIcon16x16texthtm {
-	background-position: -120px -120px;
+.uiIcon16x16FileHtml:before,.uiIcon16x16texthtml:before,.uiIcon16x16texthtm:before {
+	content: "\e6fb";
+	color: #4b76bb;
 }
 
-.uiIcon16x16FileXml,.uiIcon16x16textxml {
-	background-position: -140px -120px;
+.uiIcon16x16FileXml:before,.uiIcon16x16textxml:before {
+	content: "\e6ff";
+	color: #4b76bb;
 }
 
-.uiIcon16x16FileJs,.uiIcon16x16applicationx-javascript {
-	background-position: -160px -120px;
+.uiIcon16x16FileJs:before,.uiIcon16x16applicationx-javascript:before {
+	content: "\e6fc";
+	color: #d23327;
 }
 
-.uiIcon16x16FileJson,.uiIcon16x16applicationjson {
-	background-position: -180px -120px;
+.uiIcon16x16FileJson:before,.uiIcon16x16applicationjson:before {
+	content: "\e6f7";
+	color: #5e5e5e;
 }
 
-.uiIcon16x16FileCss,.uiIcon16x16textcss {
-	background-position: 0px -140px;
+.uiIcon16x16FileCss:before,.uiIcon16x16textcss:before {
+	content: "\e6f4";
+	color: #A6346e;
 }
 
-.uiIcon16x16FileXsl,.uiIcon16x16textxsl,.uiIcon16x16textxslt {
-	background-position: -20px -140px;
+.uiIcon16x16FileXsl:before,.uiIcon16x16textxsl:before,.uiIcon16x16textxslt:before {
+	content: "\e6f8";
+	color: #A6346e;
 }
 
-.uiIcon16x16FileFont,.uiIcon16x16fonttff,.uiIcon16x16fontotf,
-.uiIcon16x16fontttc,.uiIcon16x16fonteot,.uiIcon16x16fontdfont,
-.uiIcon16x16fontttf,.uiIcon16x16fontwoff {
-	background-position: -40px -140px;
+.uiIcon16x16FileFont:before,.uiIcon16x16fonttff:before,.uiIcon16x16fontotf:before,
+.uiIcon16x16fontttc:before,.uiIcon16x16fonteot:before,.uiIcon16x16fontdfont:before,
+.uiIcon16x16fontttf:before,.uiIcon16x16fontwoff:before {
+	content: "\e6f5";
+	color: @fontIconColor;
 }
 
-.uiIcon16x16FileGdraw,.uiIcon16x16applicationvndgoogle-appsdrawing {
-	background-position: -60px -140px;
+.uiIcon16x16FileGdraw:before,.uiIcon16x16applicationvndgoogle-appsdrawing:before {
+	content: "\e6f6";
+	color: #EAB320;
 }
 
-.uiIcon16x16FileBmp,.uiIcon16x16imagebmp {
-	background-position: -80px -140px;
+.uiIcon16x16FileBmp:before,.uiIcon16x16imagebmp:before {
+	content: "\e6f3";
+	color: #EAB320;
 }
 
-.uiIcon16x16FileIco,.uiIcon16x16imagex-icon  {
-	background-position: -100px -140px;
+.uiIcon16x16FileIco:before,.uiIcon16x16imagex-icon:before  {
+	content: "\e6ee";
+	color: #EAB320;
 }
 
-.uiIcon16x16FileGif,.uiIcon16x16imagegif {
-	background-position: -120px -140px;
+.uiIcon16x16FileGif:before,.uiIcon16x16imagegif:before {
+	content: "\e6ed";
+	color: #EAB320;
 }
 
-.uiIcon16x16FileOdg,.uiIcon16x16applicationvndoasisopendocumentgraphics {
-	background-position: -140px -140px;
+.uiIcon16x16FileOdg:before,.uiIcon16x16applicationvndoasisopendocumentgraphics:before {
+	content: "\e6ef";
+	color: #EAB320;
 }
 
-.uiIcon16x16FilePng,.uiIcon16x16imagepng {
-	background-position: -160px -140px;
+.uiIcon16x16FilePng:before,.uiIcon16x16imagepng:before {
+	content: "\e6f0";
+	color: #EAB320;
 }
 
-.uiIcon16x16FilePsd,.uiIcon16x16imagepsd,
-.uiIcon16x16applicationx-photoshop {
-	background-position: -180px -140px;
+.uiIcon16x16FilePsd:before,.uiIcon16x16imagepsd:before,
+.uiIcon16x16applicationx-photoshop:before {
+	content: "\e6f1";
+	color: #1278ba;
 }
 
-.uiIcon16x16FileRaw,.uiIcon16x16applicationraw {
-	background-position: 0px -160px;
+.uiIcon16x16FileRaw:before,.uiIcon16x16applicationraw:before {
+	content: "\e6f2";
+	color: #6f6f6f;
 }
 
-.uiIcon16x16FileTif,.uiIcon16x16imagetiff {
-	background-position: -20px -160px;
+.uiIcon16x16FileTif:before,.uiIcon16x16imagetiff:before {
+	content: "\e6eb";
+	color: #6f6f6f;
 }
 
-.uiIcon16x16FileXcf,.uiIcon16x16imagexcf {
-	background-position: -40px -160px;
+.uiIcon16x16FileXcf:before,.uiIcon16x16imagexcf:before {
+	content: "\e6ec";
+	color: #EAB320;
 }
 
-.uiIcon16x16FileIndd,.uiIcon16x16applicationx-indesign {
-	background-position: -60px -160px;
+.uiIcon16x16FileIndd:before,.uiIcon16x16applicationx-indesign:before {
+	content: "\e6e8";
+	color: #a6346e
 }
 
-.uiIcon16x16FileAi,.uiIcon16x16applicationillustrator,.uiIcon16x16applicationeps {
-	background-position: -80px -160px;
+.uiIcon16x16FileAi:before,.uiIcon16x16applicationillustrator:before,.uiIcon16x16applicationeps:before {
+	content: "\e6e7";
+	color: #e79e24
 }
 
-.uiIcon16x16FileSvg,.uiIcon16x16imagesvg-xml   {
-	background-position: -100px -160px;
+.uiIcon16x16FileSvg:before,.uiIcon16x16imagesvg-xml:before   {
+	content: "\e6ea";
+	color: #EAB320;
 }
 
-.uiIcon16x16FileJpg,.uiIcon16x16imagejpeg {
-	background-position: -120px -160px;
+.uiIcon16x16FileJpg:before,.uiIcon16x16imagejpeg:before {
+	content: "\e6e9";
+	color: #EAB320;
 }
+
+.uiIcon16x16FileBlog {
+	content: "\e6e6";
+	color: #094d7f;
+}
+
+
 
 /*----- IconLibrary-FileType-24x24 -----*/
 
-[class^="uiIcon24x24"]{
-  background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType24x24.png");
-	background-position: 0px -84px;
-  background-repeat: no-repeat;
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  .ie7-restore-right-whitespace();
-  line-height: 24px;
-  vertical-align: text-top;
+
+
+
+.uiIcon24x24FileDefault:before,.uiIcon24x24applicationoctet-stream:before {
+	content: "\e71c";
+	color:#cdcccc;
 }
 
-[class^="uiIcon24x24"]:hover, a:hover [class^="uiIcon24x24"] {
-  background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType24x24.png");
+.uiIcon24x24FileArchiveDefault:before,.uiIcon24x24applicationx-tar:before,
+.uiIcon24x24applicationx-gzip:before,.uiIcon24x24applicationx-bzip2:before,.uiIcon24x24applicationother-zip:before {
+	content: "\e718";
+  	color: @compressedFilesIconColor;
+	//color: #8acf3f;
 }
 
-.uiIcon24x24FileDefault {
-	background-position: 0px -84px;
+.uiIcon24x24FileArchiveRar:before,.uiIcon24x24applicationrar:before  {
+	content: "\e719";
+	color: @compressedFilesIconColor;
 }
 
-.uiIcon24x24FileArchiveDefault,.uiIcon24x24applicationx-tar,
-.uiIcon24x24applicationx-gzip,.uiIcon24x24applicationx-bzip2,.uiIcon24x24applicationother-zip {
-	background-position: -28px -84px;
+.uiIcon24x24FileArchiveZip:before,.uiIcon24x24FileZip:before,.uiIcon24x24applicationzip:before {
+	content: "\e71a";
+	color: @compressedFilesIconColor;
 }
 
-.uiIcon24x24FileArchiveRar,.uiIcon24x24applicationrar  {
-	background-position: -56px -84px;
+.uiIcon24x24FileJar:before,.uiIcon24x24applicationjava-archive:before {
+	content: "\e71e";
+	color: #A34D46;
 }
 
-.uiIcon24x24FileArchiveZip,.uiIcon24x24FileZip,.uiIcon24x24applicationzip {
-	background-position: -84px -84px;
+.uiIcon24x24FileEar:before,.uiIcon24x24applicationear-java-archive:before {
+	content: "\e71d";
+	color: #A34D46;
 }
 
-.uiIcon24x24FileJar,.uiIcon24x24applicationjava-archive {
-	background-position: -112px -84px;
+.uiIcon24x24FileWar:before,.uiIcon24x24applicationx-zip:before {
+	content: "\e71f";
+  	color: @compressedFilesIconColor;
+	//color: #A34D46;
 }
 
-.uiIcon24x24FileEar,.uiIcon24x24applicationear-java-archive {
-	background-position: -140px -84px;
+.uiIcon24x24FileAudioDefault:before,.uiIcon24x24audiomidi:before,.uiIcon24x24audiox-aiff:before,.uiIcon24x24audiobasic:before,
+.uiIcon24x24audiox-m4a:before,.uiIcon24x24audiox-wav:before,.uiIcon24x24audioother:before {
+	content: "\e71b";
+	color: #008b84;
 }
 
-.uiIcon24x24FileWar,.uiIcon24x24applicationx-zip {
-	background-position: -168px -84px;
+.uiIcon24x24FileMp3:before,.uiIcon24x24audiomp3:before {
+	content: "\e714";
+	color: #008b84;
 }
 
-.uiIcon24x24FileAudioDefault,.uiIcon24x24audiomidi,.uiIcon24x24audiox-aiff,.uiIcon24x24audiobasic,
-.uiIcon24x24audiox-m4a,.uiIcon24x24audiox-wav,.uiIcon24x24audioother {
-	background-position: -196px -84px;
+.uiIcon24x24FileWma:before,.uiIcon24x24audiox-ms-wma:before {
+	content: "\e716";
+	color: #008b84;
 }
 
-.uiIcon24x24FileMp3,.uiIcon24x24audiomp3 {
-	background-position: -224px -84px;
+.uiIcon24x24FileVideo:before,.uiIcon24x24videox-msvideo:before,.uiIcon24x24videoquicktime:before,
+.uiIcon24x24videox-sgi-movie:before,
+.uiIcon24x24videox-msvideo:before,.uiIcon24x24videompe:before {
+	content: "\e715";
+	color:#79577A;
 }
 
-.uiIcon24x24FileWma,.uiIcon24x24audiox-ms-wma {
-	background-position: -252px -84px;
+.uiIcon24x24FileFlash:before,.uiIcon24x24applicationx-shockwave-flash:before,.uiIcon24x24videox-flv:before  {
+	content: "\e713";
+	color: #d23327;
 }
 
-.uiIcon24x24FileVideo,.uiIcon24x24videox-msvideo,.uiIcon24x24videoquicktime,
-.uiIcon24x24videox-sgi-movie,
-.uiIcon24x24videox-msvideo,.uiIcon24x24videompe {
-	background-position: 0px -112px;
+.uiIcon24x24FileWmv:before,.uiIcon24x24videox-ms-wmv:before {
+	content: "\e717";
+	color:#79577A;
 }
 
-.uiIcon24x24FileFlash,.uiIcon24x24applicationx-shockwave-flash,.uiIcon24x24videox-flv  {
-	background-position: -28px -112px;
+.uiIcon24x24FileGdoc:before,.uiIcon24x24applicationvndgoogle-appsdocument:before {
+	content: "\e70c";
+	color: #1C98D7;
 }
 
-.uiIcon24x24FileWmv,.uiIcon24x24videox-ms-wmv {
-	background-position: -56px -112px;
+.uiIcon24x24FileWord:before,.uiIcon24x24applicationmsword:before,.uiIcon24x24applicationwordperfect:before,
+.uiIcon24x24applicationvndopenxmlformats-officedocumentwordprocessingmldocument:before,.uiIcon24x24FileDocx:before,
+.uiIcon24x24applicationvndms-worddocumentmacroenabled12:before,
+.uiIcon24x24applicationvndms-wordtemplatemacroenabled12:before,
+.uiIcon24x24applicationvndopenxmlformats-officedocumentwordprocessingmltemplate:before {
+	content: "\e6b1";
+	color: #094D7F;
 }
 
-.uiIcon24x24FileGdoc,.uiIcon24x24applicationvndgoogle-appsdocument {
-	background-position: -84px -112px;
+.uiIcon24x24FileOpenOffice1:before,.uiIcon24x24FileOpenOffice1:before,
+.uiIcon24x24applicationvndoasisopendocumenttext:before,
+.uiIcon24x24applicationvndoasisopendocumentspreadsheet:before,
+.uiIcon24x24applicationvndoasisopendocumentdatabase:before {
+	content: "\e710";
+	color: #1c9bd7;
+}
+.uiIcon24x24FileMpeg:before,.uiIcon24x24videompeg:before,.uiIcon24x24videompg:before,
+.uiIcon24x24videomp4:before {
+	content: "\e70f";
+	color:#79577A;
 }
 
-.uiIcon24x24FileWord,.uiIcon24x24applicationmsword,.uiIcon24x24applicationwordperfect,
-.uiIcon24x24applicationvndopenxmlformats-officedocumentwordprocessingmldocument,
-.uiIcon24x24applicationvndopenxmlformats-officedocumentwordprocessingmltemplate,
-.uiIcon24x24applicationvndms-worddocumentmacroenabled12,
-.uiIcon24x24applicationvndms-wordtemplatemacroenabled12 {
-	background-position: -112px -112px;
+.uiIcon24x24FileM4v:before,.uiIcon24x24videox-m4v:before {
+	content: "\e70d";
+	color:#79577A;
 }
 
-.uiIcon24x24FileOpenOffice1,.uiIcon24x24FileOdt,
-.uiIcon24x24applicationvndoasisopendocumenttext,
-.uiIcon24x24applicationvndoasisopendocumentspreadsheet,
-.uiIcon24x24applicationvndoasisopendocumentdatabase {
-	background-position: -140px -112px;
+.uiIcon24x24FileMkv:before,.uiIcon24x24videox-matroska:before {
+	content: "\e70e";
+	color:#79577A;
 }
 
-.uiIcon24x24FileMpeg,.uiIcon24x24videompeg,.uiIcon24x24videompg,
-.uiIcon24x24videomp4 {
-	background-position: -168px -112px;
+
+
+.uiIcon24x24FileTxt:before,.uiIcon24x24textplain:before {
+	content: "\e711";
+	color: #1c9bd7;
 }
 
-.uiIcon24x24FileM4v,.uiIcon24x24videox-m4v {
-	background-position: -196px -112px;
+.uiIcon24x24FileLwp:before,.uiIcon24x24applicationlwp:before {
+	content: "\e707";
+	color: #1c9bd7
 }
 
-.uiIcon24x24FileMkv,.uiIcon24x24videox-matroska {
-	background-position: -224px -112px;
+.uiIcon24x24FilePage:before,.uiIcon24x24applepages:before {
+	content: "\e70a";
+	color: #1c9bd7
 }
 
-.uiIcon24x24FileTxt,.uiIcon24x24textplain {
-	background-position: -252px -112px;
+.uiIcon24x24FileMdb:before,.uiIcon24x24applicationmsaccess:before {
+	content: "\e708";
+	color:#6a274c
 }
 
-.uiIcon24x24FileIwp,.uiIcon24x24applicationiwp,.uiIcon24x24FileLwp,.uiIcon24x24applicationLwp {
-	background-position: 0px -140px;
+.uiIcon24x24FileOdf:before,.uiIcon24x24applicationvndoasisopendocumentformula:before {
+	content: "\e709";
+	color: #848585;
 }
 
-.uiIcon24x24FilePage,.uiIcon24x24applepages {
-	background-position: -28px -140px;
+.uiIcon24x24FileExe:before,.uiIcon24x24applicationexe:before {
+	content: "\e706";
+	color: #cdcccc;
 }
 
-.uiIcon24x24FileMdb,.uiIcon24x24applicationmsaccess {
-	background-position: -56px -140px;
+.uiIcon24x24FilePdf:before,.uiIcon24x24applicationpdf:before {
+	content: "\e70b";
+	color:#d23327;
 }
 
-.uiIcon24x24FileOdf,.uiIcon24x24applicationvndoasisopendocumentformula {
-	background-position: -84px -140px;
+.uiIcon24x24FileScript:before,.uiIcon24x24applicationpostscript:before {
+	content: "\e705";
+	color:#5e5e5e;
 }
 
-.uiIcon24x24FileExe,.uiIcon24x24applicationexe {
-	background-position: -112px -140px;
+.uiIcon24x24FileRtf:before,.uiIcon24x24applicationrtf:before {
+	content: "\e704";
+	color:#5e5e5e;
 }
 
-.uiIcon24x24FilePdf,.uiIcon24x24applicationpdf {
-	background-position: -140px -140px;
+.uiIcon24x24FileGslides:before,.uiIcon24x24applicationvndgoogle-appspresentation:before {
+	content: "\e701";
+	color:#de6227;
 }
 
-.uiIcon24x24FileScript,.uiIcon24x24applicationpostscript {
-	background-position: -168px -140px;
+.uiIcon24x24FileAppleKey:before,.uiIcon24x24textkey:before {
+	content: "\e700";
+	color:#d37133;
 }
 
-.uiIcon24x24FileRtf,.uiIcon24x24applicationrtf {
-	background-position: -196px -140px;
+.uiIcon24x24FileOpenOffice2:before,
+.uiIcon24x24applicationvndoasisopendocumentpresentation:before {
+	content: "\e702";
+	color:#d37133;
 }
 
-.uiIcon24x24FileGslides,.uiIcon24x24applicationvndgoogle-appspresentation {
-	background-position: -224px -140px;
+.uiIcon24x24FilePpt:before,.uiIcon24x24applicationppt:before,.uiIcon24x24applicationvndms-powerpoint:before,
+.uiIcon24x24applicationvndopenxmlformats-officedocumentpresentationmlpresentation:before,
+.uiIcon24x24applicationvndopenxmlformats-officedocumentpresentationmltemplate:before,
+.uiIcon24x24applicationvndopenxmlformats-officedocumentpresentationmlslideshow:before,
+.uiIcon24x24applicationvndms-powerpointaddinmacroenabled12:before,
+.uiIcon24x24applicationvndms-powerpointpresentationmacroenabled12:before,
+.uiIcon24x24applicationvndms-powerpointtemplatemacroenabled12:before,
+.uiIcon24x24applicationvndms-powerpointslideshowmacroenabled12:before
+ {
+	content: "\e6b0";
+	color: #e45030;
 }
 
-.uiIcon24x24FileAppleKey,.uiIcon24x24textkey {
-	background-position: -252px -140px;
+.uiIcon24x24FilePrz:before,.uiIcon24x24applicationfreelance:before {
+	content: "\e6fe";
+	color: #d3703a;
 }
 
-.uiIcon24x24FileOpenOffice2,
-.uiIcon24x24applicationvndoasisopendocumentpresentation {
-	background-position: 0px -168px;
+.uiIcon24x24FileGsheet:before,.uiIcon24x24applicationvndgoogle-appsspreadsheet:before {
+	content: "\e6fa";
+	color: #119b48;
 }
 
-.uiIcon24x24FilePpt,.uiIcon24x24applicationppt,.uiIcon24x24applicationvndms-powerpoint,
-.uiIcon24x24applicationvndopenxmlformats-officedocumentpresentationmlpresentation,
-.uiIcon24x24applicationvndopenxmlformats-officedocumentpresentationmltemplate,
-.uiIcon24x24applicationvndopenxmlformats-officedocumentpresentationmlslideshow,
-.uiIcon24x24applicationvndms-powerpointaddinmacroenabled12,
-.uiIcon24x24applicationvndms-powerpointpresentationmacroenabled12,
-.uiIcon24x24applicationvndms-powerpointtemplatemacroenabled12,
-.uiIcon24x24applicationvndms-powerpointslideshowmacroenabled12
-{
-	background-position: -28px -168px;
+.uiIcon24x24FileExcel:before,.uiIcon24x24applicationxls:before,.uiIcon24x24applicationxlt:before,.uiIcon24x24applicationvndms-excel:before,
+.uiIcon24x24applicationvndopenxmlformats-officedocumentspreadsheetmlsheet:before,.uiIcon24x24FileXls:before,
+.uiIcon24x24applicationvndopenxmlformats-officedocumentspreadsheetmltemplate:before, 
+.uiIcon24x24applicationvndms-excelsheetmacroenabled12:before, 
+.uiIcon24x24applicationvndms-exceltemplatemacroenabled12:before, 
+.uiIcon24x24applicationvndms-exceladdinmacroenabled12:before, 
+.uiIcon24x24applicationvndms-excelsheetbinarymacroenabled12:before{
+	content: "\e6af";
+	color: #1a744b;
 }
 
-.uiIcon24x24FilePrz,.uiIcon24x24applicationfreelance {
-	background-position: -56px -168px;
+.uiIcon24x24FileOpenOffice3:before,
+.uiIcon24x24applicationvndoasisopendocumentspreadsheet-template:before,
+.uiIcon24x24applicationvndsunxmlcalc:before{
+	content: "\e6fd";
+	color: #119b48;
 }
 
-.uiIcon24x24FileGsheet,.uiIcon24x24applicationvndgoogle-appsspreadsheet {
-	background-position: -84px -168px;
+.uiIcon24x24FileHtml:before,.uiIcon24x24texthtml:before,.uiIcon24x24texthtm:before {
+	content: "\e6fb";
+	color: #4b76bb;
 }
 
-.uiIcon24x24FileExcel,.uiIcon24x24applicationxls,.uiIcon24x24applicationxlt,.uiIcon24x24applicationvndms-excel,
-.uiIcon24x24applicationvndopenxmlformats-officedocumentspreadsheetmlsheet,
-.uiIcon24x24applicationvndopenxmlformats-officedocumentspreadsheetmltemplate, 
-.uiIcon24x24applicationvndms-excelsheetmacroenabled12, 
-.uiIcon24x24applicationvndms-exceltemplatemacroenabled12, 
-.uiIcon24x24applicationvndms-exceladdinmacroenabled12, 
-.uiIcon24x24applicationvndms-excelsheetbinarymacroenabled12{
-	background-position: -112px -168px;
+.uiIcon24x24FileXml:before,.uiIcon24x24textxml:before {
+	content: "\e6ff";
+	color: #4b76bb;
 }
 
-.uiIcon24x24FileOpenOffice3,
-.uiIcon24x24applicationvndsunxmlcalc,
-.uiIcon24x24applicationvndoasisopendocumentspreadsheet-template {
-	background-position: -140px -168px;
+.uiIcon24x24FileJs:before,.uiIcon24x24applicationx-javascript:before {
+	content: "\e6fc";
+	color: #d23327;
 }
 
-.uiIcon24x24FileHtml,.uiIcon24x24texthtml,.uiIcon24x24texthtm {
-	background-position: -168px -168px;
+.uiIcon24x24FileJson:before,.uiIcon24x24applicationjson:before {
+	content: "\e6f7";
+	color: #5e5e5e;
 }
 
-.uiIcon24x24FileXml,.uiIcon24x24textxml {
-	background-position: -196px -168px;
+.uiIcon24x24FileCss:before,.uiIcon24x24textcss:before {
+	content: "\e6f4";
+	color: #A6346e;
 }
 
-.uiIcon24x24FileJs,.uiIcon24x24applicationx-javascript {
-	background-position: -224px -168px;
+.uiIcon24x24FileXsl:before,.uiIcon24x24textxsl:before,.uiIcon24x24textxslt:before {
+	content: "\e6f8";
+	color: #A6346e;
 }
 
-.uiIcon24x24FileJson,.uiIcon24x24applicationjson {
-	background-position: -252px -168px;
+.uiIcon24x24FileFont:before,.uiIcon24x24fonttff:before,.uiIcon24x24fontotf:before,
+.uiIcon24x24fontttc:before,.uiIcon24x24fonteot:before,.uiIcon24x24fontdfont:before,
+.uiIcon24x24fontttf:before,.uiIcon24x24fontwoff:before {
+	content: "\e6f5";
+	color: @fontIconColor;
 }
 
-.uiIcon24x24FileCss,.uiIcon24x24textcss {
-	background-position: 0px -196px;
+.uiIcon24x24FileGdraw:before,.uiIcon24x24applicationvndgoogle-appsdrawing:before {
+	content: "\e6f6";
+	color: #EAB320;
 }
 
-.uiIcon24x24FileXsl,.uiIcon24x24textxsl,.uiIcon24x24textxslt {
-	background-position: -28px -196px;
+.uiIcon24x24FileBmp:before,.uiIcon24x24imagebmp:before {
+	content: "\e6f3";
+	color: #EAB320;
 }
 
-.uiIcon24x24FileFont,.uiIcon24x24fonttff,.uiIcon24x24fontotf,
-.uiIcon24x24fontttc,.uiIcon24x24fonteot,.uiIcon24x24fontdfont,
-.uiIcon24x24fontttf,.uiIcon24x24fontwoff {
-	background-position: -56px -196px;
+.uiIcon24x24FileIco:before,.uiIcon24x24imagex-icon:before  {
+	content: "\e6ee";
+	color: #EAB320;
 }
 
-.uiIcon24x24FileGdraw,.uiIcon24x24applicationvndgoogle-appsdrawing {
-	background-position: -84px -196px;
+.uiIcon24x24FileGif:before,.uiIcon24x24imagegif:before {
+	content: "\e6ed";
+	color: #EAB320;
 }
 
-.uiIcon24x24FileBmp,.uiIcon24x24imagebmp {
-	background-position: -112px -196px;
+.uiIcon24x24FileOdg:before,.uiIcon24x24applicationvndoasisopendocumentgraphics:before {
+	content: "\e6ef";
+	color: #EAB320;
 }
 
-.uiIcon24x24FileIco,.uiIcon24x24imagex-icon {
-	background-position: -140px -196px;
+.uiIcon24x24FilePng:before,.uiIcon24x24imagepng:before {
+	content: "\e6f0";
+	color: #EAB320;
 }
 
-.uiIcon24x24FileGif,.uiIcon24x24imagegif {
-	background-position: -168px -196px;
+.uiIcon24x24FilePsd:before,.uiIcon24x24imagepsd:before,
+.uiIcon24x24applicationx-photoshop:before {
+	content: "\e6f1";
+	color: #1278ba;
 }
 
-.uiIcon24x24FileOdg,.uiIcon24x24applicationvndoasisopendocumentgraphics {
-	background-position: -196px -196px;
+.uiIcon24x24FileRaw:before,.uiIcon24x24applicationraw:before {
+	content: "\e6f2";
+	color: #6f6f6f;
 }
 
-.uiIcon24x24FilePng,.uiIcon24x24imagepng {
-	background-position: -224px -196px;
+.uiIcon24x24FileTif:before,.uiIcon24x24imagetiff:before {
+	content: "\e6eb";
+	color: #6f6f6f;
 }
 
-.uiIcon24x24FilePsd,.uiIcon24x24imagepsd {
-	background-position: -252px -196px;
+.uiIcon24x24FileXcf:before,.uiIcon24x24imagexcf:before {
+	content: "\e6ec";
+	color: #EAB320;
 }
 
-.uiIcon24x24FileRaw,.uiIcon24x24applicationraw {
-	background-position: 0px -224px;
+.uiIcon24x24FileIndd:before,.uiIcon24x24applicationx-indesign:before {
+	content: "\e6e8";
+	color: #a6346e
 }
 
-.uiIcon24x24FileTif,.uiIcon24x24imagetiff {
-	background-position: -28px -224px;
+.uiIcon24x24FileAi:before,.uiIcon24x24applicationillustrator:before,.uiIcon24x24applicationeps:before {
+	content: "\e6e7";
+	color: #e79e24
 }
 
-.uiIcon24x24FileXcf,.uiIcon24x24imagexcf {
-	background-position: -56px -224px;
+.uiIcon24x24FileSvg:before,.uiIcon24x24imagesvg-xml:before   {
+	content: "\e6ea";
+	color: #EAB320;
 }
 
-.uiIcon24x24FileIndd ,.uiIcon24x24applicationx-indesign {
-	background-position: -84px -224px;
+.uiIcon24x24FileJpg:before,.uiIcon24x24imagejpeg:before {
+	content: "\e6e9";
+	color: #EAB320;
 }
 
-.uiIcon24x24FileAi,.uiIcon24x24applicationillustrator,.uiIcon24x24applicationeps {
-	background-position: -112px -224px;
-}
-
-.uiIcon24x24FileSvg,.uiIcon24x24imagesvg-xml   {
-	background-position: -140px -224px;
-}
-
-.uiIcon24x24FileJpg,.uiIcon24x24imagejpeg {
-	background-position: -168px -224px;
+.uiIcon24x24FileBlog {
+	content: "\e6e6";
+	color: #094d7f;
 }
 
 /*----- IconLibrary-FileType-32x32 -----*/
 
-[class^="uiIcon32x32"]{
-  background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType32x32.png");
-	background-position: 0px -108px;
-  background-repeat: no-repeat;
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  .ie7-restore-right-whitespace();
-  line-height: 32px;
-  vertical-align: text-top;
+
+
+
+.uiIcon32x32FileDefault:before,.uiIcon32x32applicationoctet-stream:before {
+	content: "\e71c";
+	color:#cdcccc;
 }
 
-[class^="uiIcon32x32"]:hover, a:hover [class^="uiIcon32x32"] {
-  background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType32x32.png");
+.uiIcon32x32FileArchiveDefault:before,.uiIcon32x32applicationx-tar:before,
+.uiIcon32x32applicationx-gzip:before,.uiIcon32x32applicationx-bzip2:before,.uiIcon32x32applicationother-zip:before {
+	content: "\e718";
+  	color: @compressedFilesIconColor;
+	//color: #8acf3f;
 }
 
-.uiIcon32x32FileDefault {
-	background-position: 0px -108px;
+.uiIcon32x32FileArchiveRar:before,.uiIcon32x32applicationrar:before  {
+	content: "\e719";
+	color: @compressedFilesIconColor;
 }
 
-.uiIcon32x32FileArchiveDefault {
-	background-position: -36px -108px;
+.uiIcon32x32FileArchiveZip:before,.uiIcon32x32FileZip:before,.uiIcon32x32applicationzip:before {
+	content: "\e71a";
+	color: @compressedFilesIconColor;
 }
 
-.uiIcon32x32FileArchiveRar {
-	background-position: -72px -108px;
+.uiIcon32x32FileJar:before,.uiIcon32x32applicationjava-archive:before {
+	content: "\e71e";
+	color: #A34D46;
 }
 
-.uiIcon32x32FileArchiveZip {
-	background-position: -108px -108px;
+.uiIcon32x32FileEar:before,.uiIcon32x32applicationear-java-archive:before {
+	content: "\e71d";
+	color: #A34D46;
 }
 
-.uiIcon32x32FileJar,.uiIcon32x32applicationjava-archive {
-	background-position: -144px -108px;
+.uiIcon32x32FileWar:before,.uiIcon32x32applicationx-zip:before {
+	content: "\e71f";
+  	color: @compressedFilesIconColor;
+	//color: #A34D46;
 }
 
-.uiIcon32x32FileEar {
-	background-position: -180px -108px;
+.uiIcon32x32FileAudioDefault:before,.uiIcon32x32audiomidi:before,.uiIcon32x32audiox-aiff:before,.uiIcon32x32audiobasic:before,
+.uiIcon32x32audiox-m4a:before,.uiIcon32x32audiox-wav:before,.uiIcon32x32audioother:before {
+	content: "\e71b";
+	color: #008b84;
 }
 
-.uiIcon32x32FileWar,.uiIcon32x32applicationx-zip {
-	background-position: -216px -108px;
+.uiIcon32x32FileMp3:before,.uiIcon32x32audiomp3:before {
+	content: "\e714";
+	color: #008b84;
 }
 
-.uiIcon32x32FileAudioDefault {
-	background-position: -252px -108px;
+.uiIcon32x32FileWma:before,.uiIcon32x32audiox-ms-wma:before {
+	content: "\e716";
+	color: #008b84;
 }
 
-.uiIcon32x32FileMp3 {
-	background-position: -288px -108px;
+.uiIcon32x32FileVideo:before,.uiIcon32x32videox-msvideo:before,.uiIcon32x32videoquicktime:before,
+.uiIcon32x32videox-sgi-movie:before,
+.uiIcon32x32videox-msvideo:before,.uiIcon32x32videompe:before {
+	content: "\e715";
+	color:#79577A;
 }
 
-.uiIcon32x32FileWma,.uiIcon32x32audiox-ms-wma {
-	background-position: -324px -108px;
+.uiIcon32x32FileFlash:before,.uiIcon32x32applicationx-shockwave-flash:before,.uiIcon32x32videox-flv:before  {
+	content: "\e713";
+	color: #d23327;
 }
 
-.uiIcon32x32FileVideo {
-	background-position: 0px -144px;
+.uiIcon32x32FileWmv:before,.uiIcon32x32videox-ms-wmv:before {
+	content: "\e717";
+	color:#79577A;
 }
 
-.uiIcon32x32FileFlash {
-	background-position: -36px -144px;
+.uiIcon32x32FileGdoc:before,.uiIcon32x32applicationvndgoogle-appsdocument:before {
+	content: "\e70c";
+	color: #1C98D7;
 }
 
-.uiIcon32x32FileWmv {
-	background-position: -72px -144px;
+.uiIcon32x32FileWord:before,.uiIcon32x32applicationmsword:before,.uiIcon32x32applicationwordperfect:before,
+.uiIcon32x32applicationvndopenxmlformats-officedocumentwordprocessingmldocument:before,.uiIcon32x32FileDocx:before,
+.uiIcon32x32applicationvndms-worddocumentmacroenabled12:before,
+.uiIcon32x32applicationvndms-wordtemplatemacroenabled12:before,
+.uiIcon32x32applicationvndopenxmlformats-officedocumentwordprocessingmltemplate:before {
+	content: "\e6b1";
+	color: #094D7F;
 }
 
-.uiIcon32x32FileGdoc,.uiIcon32x32applicationvndgoogle-appsdocument {
-	background-position: -108px -144px;
+.uiIcon32x32FileOpenOffice1:before,.uiIcon32x32FileOpenOffice1:before,
+.uiIcon32x32applicationvndoasisopendocumenttext:before,
+.uiIcon32x32applicationvndoasisopendocumentspreadsheet:before,
+.uiIcon32x32applicationvndoasisopendocumentdatabase:before {
+	content: "\e710";
+	color: #1c9bd7;
 }
 
-.uiIcon32x32FileWord {
-	background-position: -144px -144px;
+.uiIcon32x32FileMpeg:before,.uiIcon32x32videompeg:before,.uiIcon32x32videompg:before,
+.uiIcon32x32videomp4:before {
+	content: "\e70f";
+	color:#79577A;
 }
 
-.uiIcon32x32FileOpenOffice1,.uiIcon32x32FileOdt {
-	background-position: -180px -144px;
+.uiIcon32x32FileM4v:before,.uiIcon32x32videox-m4v:before {
+	content: "\e70d";
+	color:#79577A;
 }
 
-.uiIcon32x32FileMpeg {
-	background-position: -216px -144px;
+.uiIcon32x32FileMkv:before,.uiIcon32x32videox-matroska:before {
+	content: "\e70e";
+	color:#79577A;
 }
 
-.uiIcon32x32FileM4v {
-	background-position: -252px -144px;
+
+
+.uiIcon32x32FileTxt:before,.uiIcon32x32textplain:before {
+	content: "\e711";
+	color: #1c9bd7;
 }
 
-.uiIcon32x32FileMkv {
-	background-position: -288px -144px;
+.uiIcon32x32FileLwp:before,.uiIcon32x32applicationlwp:before {
+	content: "\e707";
+	color: #1c9bd7
 }
 
-.uiIcon32x32FileTxt {
-	background-position: -324px -144px;
+.uiIcon32x32FilePage:before,.uiIcon32x32applepages:before {
+	content: "\e70a";
+	color: #1c9bd7
 }
 
-.uiIcon32x32FileIwp,.uiIcon32x32FileLwp {
-	background-position: 0px -180px;
+.uiIcon32x32FileMdb:before,.uiIcon32x32applicationmsaccess:before {
+	content: "\e708";
+	color:#6a274c
 }
 
-.uiIcon32x32FilePage {
-	background-position: -36px -180px;
+.uiIcon32x32FileOdf:before,.uiIcon32x32applicationvndoasisopendocumentformula:before {
+	content: "\e709";
+	color: #848585;
 }
 
-.uiIcon32x32FileMdb {
-	background-position: -72px -180px;
+.uiIcon32x32FileExe:before,.uiIcon32x32applicationexe:before {
+	content: "\e706";
+	color: #cdcccc;
 }
 
-.uiIcon32x32FileOdf,.uiIcon32x32applicationvndoasisopendocumentformula {
-	background-position: -108px -180px;
+.uiIcon32x32FilePdf:before,.uiIcon32x32applicationpdf:before {
+	content: "\e70b";
+	color:#d23327;
 }
 
-.uiIcon32x32FileExe {
-	background-position: -144px -180px;
+.uiIcon32x32FileScript:before,.uiIcon32x32applicationpostscript:before {
+	content: "\e705";
+	color:#5e5e5e;
 }
 
-.uiIcon32x32FilePdf {
-	background-position: -180px -180px;
+.uiIcon32x32FileRtf:before,.uiIcon32x32applicationrtf:before {
+	content: "\e704";
+	color:#5e5e5e;
 }
 
-.uiIcon32x32FileScript {
-	background-position: -216px -180px;
+.uiIcon32x32FileGslides:before,.uiIcon32x32applicationvndgoogle-appspresentation:before {
+	content: "\e701";
+	color:#de6227;
 }
 
-.uiIcon32x32FileRtf {
-	background-position: -252px -180px;
+.uiIcon32x32FileAppleKey:before,.uiIcon32x32textkey:before {
+	content: "\e700";
+	color:#d37133;
 }
 
-.uiIcon32x32FileGslides,.uiIcon32x32applicationvndgoogle-appspresentation {
-	background-position: -288px -180px;
+.uiIcon32x32FileOpenOffice2:before,
+.uiIcon32x32applicationvndoasisopendocumentpresentation:before {
+	content: "\e702";
+	color:#d37133;
 }
 
-.uiIcon32x32FileAppleKey {
-	background-position: -324px -180px;
+.uiIcon32x32FilePpt:before,.uiIcon32x32applicationppt:before,.uiIcon32x32applicationvndms-powerpoint:before,
+.uiIcon32x32applicationvndopenxmlformats-officedocumentpresentationmlpresentation:before,
+.uiIcon32x32applicationvndopenxmlformats-officedocumentpresentationmltemplate:before,
+.uiIcon32x32applicationvndopenxmlformats-officedocumentpresentationmlslideshow:before,
+.uiIcon32x32applicationvndms-powerpointaddinmacroenabled12:before,
+.uiIcon32x32applicationvndms-powerpointpresentationmacroenabled12:before,
+.uiIcon32x32applicationvndms-powerpointtemplatemacroenabled12:before,
+.uiIcon32x32applicationvndms-powerpointslideshowmacroenabled12:before
+ {
+	content: "\e6b0";
+	color: #e45030;
 }
 
-.uiIcon32x32FileOpenOffice2 {
-	background-position: 0px -216px;
+.uiIcon32x32FilePrz:before,.uiIcon32x32applicationfreelance:before {
+	content: "\e6fe";
+	color: #d3703a;
 }
 
-.uiIcon32x32FilePpt {
-	background-position: -36px -216px;
+.uiIcon32x32FileGsheet:before,.uiIcon32x32applicationvndgoogle-appsspreadsheet:before {
+	content: "\e6fa";
+	color: #119b48;
 }
 
-.uiIcon32x32FilePrz {
-	background-position: -72px -216px;
+.uiIcon32x32FileExcel:before,.uiIcon32x32applicationxls:before,.uiIcon32x32applicationxlt:before,.uiIcon32x32applicationvndms-excel:before,
+.uiIcon32x32applicationvndopenxmlformats-officedocumentspreadsheetmlsheet:before,.uiIcon32x32FileXls:before,
+.uiIcon32x32applicationvndopenxmlformats-officedocumentspreadsheetmltemplate:before, 
+.uiIcon32x32applicationvndms-excelsheetmacroenabled12:before, 
+.uiIcon32x32applicationvndms-exceltemplatemacroenabled12:before, 
+.uiIcon32x32applicationvndms-exceladdinmacroenabled12:before, 
+.uiIcon32x32applicationvndms-excelsheetbinarymacroenabled12:before{
+	content: "\e6af";
+	color: #1a744b;
 }
 
-.uiIcon32x32FileGsheet {
-	background-position: -108px -216px;
+.uiIcon32x32FileOpenOffice3:before,
+.uiIcon32x32applicationvndoasisopendocumentspreadsheet-template:before,
+.uiIcon32x32applicationvndsunxmlcalc:before{
+	content: "\e6fd";
+	color: #119b48;
 }
 
-.uiIcon32x32FileExcel {
-	background-position: -144px -216px;
+.uiIcon32x32FileHtml:before,.uiIcon32x32texthtml:before,.uiIcon32x32texthtm:before {
+	content: "\e6fb";
+	color: #4b76bb;
 }
 
-.uiIcon32x32FileOpenOffice3 {
-	background-position: -180px -216px;
+.uiIcon32x32FileXml:before,.uiIcon32x32textxml:before {
+	content: "\e6ff";
+	color: #4b76bb;
 }
 
-.uiIcon32x32FileHtml {
-	background-position: -216px -216px;
+.uiIcon32x32FileJs:before,.uiIcon32x32applicationx-javascript:before {
+	content: "\e6fc";
+	color: #d23327;
 }
 
-.uiIcon32x32FileXml {
-	background-position: -252px -216px;
+.uiIcon32x32FileJson:before,.uiIcon32x32applicationjson:before {
+	content: "\e6f7";
+	color: #5e5e5e;
 }
 
-.uiIcon32x32FileJs {
-	background-position: -288px -216px;
+.uiIcon32x32FileCss:before,.uiIcon32x32textcss:before {
+	content: "\e6f4";
+	color: #A6346e;
 }
 
-.uiIcon32x32FileJson,.uiIcon32x32applicationjson {
-	background-position: -324px -216px;
+.uiIcon32x32FileXsl:before,.uiIcon32x32textxsl:before,.uiIcon32x32textxslt:before {
+	content: "\e6f8";
+	color: #A6346e;
 }
 
-.uiIcon32x32FileCss {
-	background-position: 0px -252px;
+.uiIcon32x32FileFont:before,.uiIcon32x32fonttff:before,.uiIcon32x32fontotf:before,
+.uiIcon32x32fontttc:before,.uiIcon32x32fonteot:before,.uiIcon32x32fontdfont:before,
+.uiIcon32x32fontttf:before,.uiIcon32x32fontwoff:before {
+	content: "\e6f5";
+	color: @fontIconColor;
 }
 
-.uiIcon32x32FileXsl,.uiIcon32x32textxsl {
-	background-position: -36px -252px;
+.uiIcon32x32FileGdraw:before,.uiIcon32x32applicationvndgoogle-appsdrawing:before {
+	content: "\e6f6";
+	color: #EAB320;
 }
 
-.uiIcon32x32FileFont {
-	background-position: -72px -252px;
+.uiIcon32x32FileBmp:before,.uiIcon32x32imagebmp:before {
+	content: "\e6f3";
+	color: #EAB320;
 }
 
-.uiIcon32x32FileGdraw,.uiIcon32x32applicationvndgoogle-appsdrawing {
-	background-position: -108px -252px;
+.uiIcon32x32FileIco:before,.uiIcon32x32imagex-icon:before  {
+	content: "\e6ee";
+	color: #EAB320;
 }
 
-.uiIcon32x32FileBmp {
-	background-position: -144px -252px;
+.uiIcon32x32FileGif:before,.uiIcon32x32imagegif:before {
+	content: "\e6ed";
+	color: #EAB320;
 }
 
-.uiIcon32x32FileIco,.uiIcon32x32imagex-icon  {
-	background-position: -180px -252px;
+.uiIcon32x32FileOdg:before,.uiIcon32x32applicationvndoasisopendocumentgraphics:before {
+	content: "\e6ef";
+	color: #EAB320;
 }
 
-.uiIcon32x32FileGif {
-	background-position: -216px -252px;
+.uiIcon32x32FilePng:before,.uiIcon32x32imagepng:before {
+	content: "\e6f0";
+	color: #EAB320;
 }
 
-.uiIcon32x32FileOdg,.uiIcon32x32applicationvndoasisopendocumentgraphics {
-	background-position: -252px -252px;
+.uiIcon32x32FilePsd:before,.uiIcon32x32imagepsd:before,
+.uiIcon32x32applicationx-photoshop:before {
+	content: "\e6f1";
+	color: #1278ba;
 }
 
-.uiIcon32x32FilePng {
-	background-position: -288px -252px;
+.uiIcon32x32FileRaw:before,.uiIcon32x32applicationraw:before {
+	content: "\e6f2";
+	color: #6f6f6f;
 }
 
-.uiIcon32x32FilePsd,.uiIcon32x32imagepsd {
-	background-position: -324px -252px;
+.uiIcon32x32FileTif:before,.uiIcon32x32imagetiff:before {
+	content: "\e6eb";
+	color: #6f6f6f;
 }
 
-.uiIcon32x32FileRaw,.uiIcon32x32applicationraw {
-	background-position: 0px -288px;
+.uiIcon32x32FileXcf:before,.uiIcon32x32imagexcf:before {
+	content: "\e6ec";
+	color: #EAB320;
 }
 
-.uiIcon32x32FileTif {
-	background-position: -36px -288px;
+.uiIcon32x32FileIndd:before,.uiIcon32x32applicationx-indesign:before {
+	content: "\e6e8";
+	color: #a6346e
 }
 
-.uiIcon32x32FileXcf,.uiIcon32x32imagexcf {
-	background-position: -72px -288px;
+.uiIcon32x32FileAi:before,.uiIcon32x32applicationillustrator:before,.uiIcon32x32applicationeps:before {
+	content: "\e6e7";
+	color: #e79e24
 }
 
-.uiIcon32x32FileIndd,.uiIcon32x32applicationx-indesign {
-	background-position: -108px -288px;
+.uiIcon32x32FileSvg:before,.uiIcon32x32imagesvg-xml:before   {
+	content: "\e6ea";
+	color: #EAB320;
 }
 
-.uiIcon32x32FileAi,.uiIcon32x32applicationillustrator {
-	background-position: -144px -288px;
+.uiIcon32x32FileJpg:before,.uiIcon32x32imagejpeg:before {
+	content: "\e6e9";
+	color: #EAB320;
 }
 
-.uiIcon32x32FileSvg,.uiIcon32x32imagesvg-xml  {
-	background-position: -180px -288px;
-}
-
-.uiIcon32x32FileJpg {
-	background-position: -216px -288px;
+.uiIcon32x32FileBlog {
+	content: "\e6e6";
+	color: #094d7f;
 }
 
 /*----- IconLibrary-FileType-48x48 -----*/
 
-[class^="uiIcon48x48"]{
-  background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType48x48.png");
-	background-position: 0px -156px;
-  background-repeat: no-repeat;
-  display: inline-block;
-  width: 48px;
-  height: 48px;
-  .ie7-restore-right-whitespace();
-  line-height: 48px;
-  vertical-align: text-top;
+
+
+
+
+.uiIcon48x48FileDefault:before,.uiIcon48x48applicationoctet-stream:before {
+	content: "\e71c";
+	color:#cdcccc;
 }
 
-[class^="uiIcon48x48"]:hover, a:hover [class^="uiIcon48x48"] {
-  background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType48x48.png");
+.uiIcon48x48FileArchiveDefault:before,.uiIcon48x48applicationx-tar:before,
+.uiIcon48x48applicationx-gzip:before,.uiIcon48x48applicationx-bzip2:before,.uiIcon48x48applicationother-zip:before {
+	content: "\e718";
+  	color: @compressedFilesIconColor;
+	//color: #8acf3f;
 }
 
-.uiIcon48x48FileDefault {
-	background-position: 0px -156px;
+.uiIcon48x48FileArchiveRar:before,.uiIcon48x48applicationrar:before  {
+	content: "\e719";
+	color: @compressedFilesIconColor;
 }
 
-.uiIcon48x48FileArchiveDefault {
-	background-position: -52px -156px;
+.uiIcon48x48FileArchiveZip:before,.uiIcon48x48FileZip:before,.uiIcon48x48applicationzip:before {
+	content: "\e71a";
+	color: @compressedFilesIconColor;
 }
 
-.uiIcon48x48FileArchiveRar {
-	background-position: -104px -156px;
+.uiIcon48x48FileJar:before,.uiIcon48x48applicationjava-archive:before {
+	content: "\e71e";
+	color: #A34D46;
 }
 
-.uiIcon48x48FileArchiveZip {
-	background-position: -156px -156px;
+.uiIcon48x48FileEar:before,.uiIcon48x48applicationear-java-archive:before {
+	content: "\e71d";
+	color: #A34D46;
 }
 
-.uiIcon48x48FileJar,.uiIcon48x48applicationjava-archive {
-	background-position: -208px -156px;
+.uiIcon48x48FileWar:before,.uiIcon48x48applicationx-zip:before {
+	content: "\e71f";
+  	color: @compressedFilesIconColor;
+	//color: #A34D46;
 }
 
-.uiIcon48x48FileEar {
-	background-position: -260px -156px;
+.uiIcon48x48FileAudioDefault:before,.uiIcon48x48audiomidi:before,.uiIcon48x48audiox-aiff:before,.uiIcon48x48audiobasic:before,
+.uiIcon48x48audiox-m4a:before,.uiIcon48x48audiox-wav:before,.uiIcon48x48audioother:before {
+	content: "\e71b";
+	color: #008b84;
 }
 
-.uiIcon48x48FileWar,.uiIcon48x48applicationx-zip{
-	background-position: -312px -156px;
+.uiIcon48x48FileMp3:before,.uiIcon48x48audiomp3:before {
+	content: "\e714";
+	color: #008b84;
 }
 
-.uiIcon48x48FileAudioDefault {
-	background-position: -364px -156px;
+.uiIcon48x48FileWma:before,.uiIcon48x48audiox-ms-wma:before {
+	content: "\e716";
+	color: #008b84;
 }
 
-.uiIcon48x48FileMp3 {
-	background-position: -416px -156px;
+.uiIcon48x48FileVideo:before,.uiIcon48x48videox-msvideo:before,.uiIcon48x48videoquicktime:before,
+.uiIcon48x48videox-sgi-movie:before,
+.uiIcon48x48videox-msvideo:before,.uiIcon48x48videompe:before {
+	content: "\e715";
+	color:#79577A;
 }
 
-.uiIcon48x48FileWma,.uiIcon48x48audiox-ms-wma {
-	background-position: -468px -156px;
+.uiIcon48x48FileFlash:before,.uiIcon48x48applicationx-shockwave-flash:before,.uiIcon48x48videox-flv:before  {
+	content: "\e713";
+	color: #d23327;
 }
 
-.uiIcon48x48FileVideo {
-	background-position: 0px -208px;
+.uiIcon48x48FileWmv:before,.uiIcon48x48videox-ms-wmv:before {
+	content: "\e717";
+	color:#79577A;
 }
 
-.uiIcon48x48FileFlash {
-	background-position: -52px -208px;
+.uiIcon48x48FileGdoc:before,.uiIcon48x48applicationvndgoogle-appsdocument:before {
+	content: "\e70c";
+	color: #1C98D7;
 }
 
-.uiIcon48x48FileWmv {
-	background-position: -104px -208px;
+.uiIcon48x48FileWord:before,.uiIcon48x48applicationmsword:before,.uiIcon48x48applicationwordperfect:before,
+.uiIcon48x48applicationvndopenxmlformats-officedocumentwordprocessingmldocument:before,.uiIcon48x48FileDocx:before,
+.uiIcon48x48applicationvndms-worddocumentmacroenabled12:before,
+.uiIcon48x48applicationvndms-wordtemplatemacroenabled12:before,
+.uiIcon48x48applicationvndopenxmlformats-officedocumentwordprocessingmltemplate:before {
+	content: "\e6b1";
+	color: #094D7F;
 }
 
-.uiIcon48x48FileGdoc,.uiIcon48x48applicationvndgoogle-appsdocument {
-	background-position: -156px -208px;
+.uiIcon48x48FileOpenOffice1:before,.uiIcon48x48FileOpenOffice1:before,
+.uiIcon48x48applicationvndoasisopendocumenttext:before,
+.uiIcon48x48applicationvndoasisopendocumentspreadsheet:before,
+.uiIcon48x48applicationvndoasisopendocumentdatabase:before {
+	content: "\e710";
+	color: #1c9bd7;
 }
 
-.uiIcon48x48FileWord {
-	background-position: -208px -208px;
+.uiIcon48x48FileMpeg:before,.uiIcon48x48videompeg:before,.uiIcon48x48videompg:before,
+.uiIcon48x48videomp4:before {
+	content: "\e70f";
+	color:#79577A;
 }
 
-.uiIcon48x48FileOpenOffice1,.uiIcon48x48FileOdt {
-	background-position: -260px -208px;
+.uiIcon48x48FileM4v:before,.uiIcon48x48videox-m4v:before {
+	content: "\e70d";
+	color:#79577A;
 }
 
-.uiIcon48x48FileMpeg {
-	background-position: -312px -208px;
+.uiIcon48x48FileMkv:before,.uiIcon48x48videox-matroska:before {
+	content: "\e70e";
+	color:#79577A;
 }
 
-.uiIcon48x48FileM4v {
-	background-position: -364px -208px;
+
+
+.uiIcon48x48FileTxt:before,.uiIcon48x48textplain:before {
+	content: "\e711";
+	color: #1c9bd7;
 }
 
-.uiIcon48x48FileMkv {
-	background-position: -416px -208px;
+.uiIcon48x48FileLwp:before,.uiIcon48x48applicationlwp:before {
+	content: "\e707";
+	color: #1c9bd7
 }
 
-.uiIcon48x48FileTxt {
-	background-position: -468px -208px;
+.uiIcon48x48FilePage:before,.uiIcon48x48applepages:before {
+	content: "\e70a";
+	color: #1c9bd7
 }
 
-.uiIcon48x48FileIwp,.uiIcon48x48FileLwp  {
-	background-position: 0px -260px;
+.uiIcon48x48FileMdb:before,.uiIcon48x48applicationmsaccess:before {
+	content: "\e708";
+	color:#6a274c
 }
 
-.uiIcon48x48FilePage {
-	background-position: -52px -260px;
+.uiIcon48x48FileOdf:before,.uiIcon48x48applicationvndoasisopendocumentformula:before {
+	content: "\e709";
+	color: #848585;
 }
 
-.uiIcon48x48FileMdb {
-	background-position: -104px -260px;
+.uiIcon48x48FileExe:before,.uiIcon48x48applicationexe:before {
+	content: "\e706";
+	color: #cdcccc;
 }
 
-.uiIcon48x48FileOdf,.uiIcon48x48applicationvndoasisopendocumentformula {
-	background-position: -156px -260px;
+.uiIcon48x48FilePdf:before,.uiIcon48x48applicationpdf:before {
+	content: "\e70b";
+	color:#d23327;
 }
 
-.uiIcon48x48FileExe {
-	background-position: -208px -260px;
+.uiIcon48x48FileScript:before,.uiIcon48x48applicationpostscript:before {
+	content: "\e705";
+	color:#5e5e5e;
 }
 
-.uiIcon48x48FilePdf {
-	background-position: -260px -260px;
+.uiIcon48x48FileRtf:before,.uiIcon48x48applicationrtf:before {
+	content: "\e704";
+	color:#5e5e5e;
 }
 
-.uiIcon48x48FileScript {
-	background-position: -312px -260px;
+.uiIcon48x48FileGslides:before,.uiIcon48x48applicationvndgoogle-appspresentation:before {
+	content: "\e701";
+	color:#de6227;
 }
 
-.uiIcon48x48FileRtf {
-	background-position: -364px -260px;
+.uiIcon48x48FileAppleKey:before,.uiIcon48x48textkey:before {
+	content: "\e700";
+	color:#d37133;
 }
 
-.uiIcon48x48FileGslides,.uiIcon48x48applicationvndgoogle-appspresentation {
-	background-position: -416px -260px;
+.uiIcon48x48FileOpenOffice2:before,
+.uiIcon48x48applicationvndoasisopendocumentpresentation:before {
+	content: "\e702";
+	color:#d37133;
 }
 
-.uiIcon48x48FileAppleKey {
-	background-position: -468px -260px;
+.uiIcon48x48FilePpt:before,.uiIcon48x48applicationppt:before,.uiIcon48x48applicationvndms-powerpoint:before,
+.uiIcon48x48applicationvndopenxmlformats-officedocumentpresentationmlpresentation:before,
+.uiIcon48x48applicationvndopenxmlformats-officedocumentpresentationmltemplate:before,
+.uiIcon48x48applicationvndopenxmlformats-officedocumentpresentationmlslideshow:before,
+.uiIcon48x48applicationvndms-powerpointaddinmacroenabled12:before,
+.uiIcon48x48applicationvndms-powerpointpresentationmacroenabled12:before,
+.uiIcon48x48applicationvndms-powerpointtemplatemacroenabled12:before,
+.uiIcon48x48applicationvndms-powerpointslideshowmacroenabled12:before
+ {
+	content: "\e6b0";
+	color: #e45030;
 }
 
-.uiIcon48x48FileOpenOffice2 {
-	background-position: 0px -312px;
+.uiIcon48x48FilePrz:before,.uiIcon48x48applicationfreelance:before {
+	content: "\e6fe";
+	color: #d3703a;
 }
 
-.uiIcon48x48FilePpt {
-	background-position: -52px -312px;
+.uiIcon48x48FileGsheet:before,.uiIcon48x48applicationvndgoogle-appsspreadsheet:before {
+	content: "\e6fa";
+	color: #119b48;
 }
 
-.uiIcon48x48FilePrz {
-	background-position: -104px -312px;
+.uiIcon48x48FileExcel:before,.uiIcon48x48applicationxls:before,.uiIcon48x48applicationxlt:before,.uiIcon48x48applicationvndms-excel:before,
+.uiIcon48x48applicationvndopenxmlformats-officedocumentspreadsheetmlsheet:before,.uiIcon48x48FileXls:before,
+.uiIcon48x48applicationvndopenxmlformats-officedocumentspreadsheetmltemplate:before, 
+.uiIcon48x48applicationvndms-excelsheetmacroenabled12:before, 
+.uiIcon48x48applicationvndms-exceltemplatemacroenabled12:before, 
+.uiIcon48x48applicationvndms-exceladdinmacroenabled12:before, 
+.uiIcon48x48applicationvndms-excelsheetbinarymacroenabled12:before{
+	content: "\e6af";
+	color: #1a744b;
 }
 
-.uiIcon48x48FileGsheet {
-	background-position: -156px -312px;
+.uiIcon48x48FileOpenOffice3:before,
+.uiIcon48x48applicationvndoasisopendocumentspreadsheet-template:before,
+.uiIcon48x48applicationvndsunxmlcalc:before{
+	content: "\e6fd";
+	color: #119b48;
 }
 
-.uiIcon48x48FileExcel {
-	background-position: -208px -312px;
+.uiIcon48x48FileHtml:before,.uiIcon48x48texthtml:before,.uiIcon48x48texthtm:before {
+	content: "\e6fb";
+	color: #4b76bb;
 }
 
-.uiIcon48x48FileOpenOffice3 {
-	background-position: -260px -312px;
+.uiIcon48x48FileXml:before,.uiIcon48x48textxml:before {
+	content: "\e6ff";
+	color: #4b76bb;
 }
 
-.uiIcon48x48FileHtml {
-	background-position: -312px -312px;
+.uiIcon48x48FileJs:before,.uiIcon48x48applicationx-javascript:before {
+	content: "\e6fc";
+	color: #d23327;
 }
 
-.uiIcon48x48FileXml {
-	background-position: -364px -312px;
+.uiIcon48x48FileJson:before,.uiIcon48x48applicationjson:before {
+	content: "\e6f7";
+	color: #5e5e5e;
 }
 
-.uiIcon48x48FileJs {
-	background-position: -416px -312px;
+.uiIcon48x48FileCss:before,.uiIcon48x48textcss:before {
+	content: "\e6f4";
+	color: #A6346e;
 }
 
-.uiIcon48x48FileJson,.uiIcon48x48applicationjson {
-	background-position: -468px -312px;
+.uiIcon48x48FileXsl:before,.uiIcon48x48textxsl:before,.uiIcon48x48textxslt:before {
+	content: "\e6f8";
+	color: #A6346e;
 }
 
-.uiIcon48x48FileCss {
-	background-position: 0px -364px;
+.uiIcon48x48FileFont:before,.uiIcon48x48fonttff:before,.uiIcon48x48fontotf:before,
+.uiIcon48x48fontttc:before,.uiIcon48x48fonteot:before,.uiIcon48x48fontdfont:before,
+.uiIcon48x48fontttf:before,.uiIcon48x48fontwoff:before {
+	content: "\e6f5";
+	color: @fontIconColor;
 }
 
-.uiIcon48x48FileXsl,.uiIcon48x48textxsl {
-	background-position: -52px -364px;
+.uiIcon48x48FileGdraw:before,.uiIcon48x48applicationvndgoogle-appsdrawing:before {
+	content: "\e6f6";
+	color: #EAB320;
 }
 
-.uiIcon48x48FileFont {
-	background-position: -104px -364px;
+.uiIcon48x48FileBmp:before,.uiIcon48x48imagebmp:before {
+	content: "\e6f3";
+	color: #EAB320;
 }
 
-.uiIcon48x48FileGdraw,.uiIcon48x48applicationvndgoogle-appsdrawing {
-	background-position: -156px -364px;
+.uiIcon48x48FileIco:before,.uiIcon48x48imagex-icon:before  {
+	content: "\e6ee";
+	color: #EAB320;
 }
 
-.uiIcon48x48FileBmp {
-	background-position: -208px -364px;
+.uiIcon48x48FileGif:before,.uiIcon48x48imagegif:before {
+	content: "\e6ed";
+	color: #EAB320;
 }
 
-.uiIcon48x48FileIco,.uiIcon48x48imagex-icon  {
-	background-position: -260px -364px;
+.uiIcon48x48FileOdg:before,.uiIcon48x48applicationvndoasisopendocumentgraphics:before {
+	content: "\e6ef";
+	color: #EAB320;
 }
 
-.uiIcon48x48FileGif {
-	background-position: -312px -364px;
+.uiIcon48x48FilePng:before,.uiIcon48x48imagepng:before {
+	content: "\e6f0";
+	color: #EAB320;
 }
 
-.uiIcon48x48FileOdg,.uiIcon48x48applicationvndoasisopendocumentgraphics {
-	background-position: -364px -364px;
+.uiIcon48x48FilePsd:before,.uiIcon48x48imagepsd:before,
+.uiIcon48x48applicationx-photoshop:before {
+	content: "\e6f1";
+	color: #1278ba;
 }
 
-.uiIcon48x48FilePng {
-	background-position: -416px -364px;
+.uiIcon48x48FileRaw:before,.uiIcon48x48applicationraw:before {
+	content: "\e6f2";
+	color: #6f6f6f;
 }
 
-.uiIcon48x48FilePsd,.uiIcon48x48imagepsd {
-	background-position: -468px -364px;
+.uiIcon48x48FileTif:before,.uiIcon48x48imagetiff:before {
+	content: "\e6eb";
+	color: #6f6f6f;
 }
 
-.uiIcon48x48FileRaw,.uiIcon48x48applicationraw {
-	background-position: 0px -416px;
+.uiIcon48x48FileXcf:before,.uiIcon48x48imagexcf:before {
+	content: "\e6ec";
+	color: #EAB320;
 }
 
-.uiIcon48x48FileTif {
-	background-position: -52px -416px;
+.uiIcon48x48FileIndd:before,.uiIcon48x48applicationx-indesign:before {
+	content: "\e6e8";
+	color: #a6346e
 }
 
-.uiIcon48x48FileXcf,.uiIcon48x48imagexcf {
-	background-position: -104px -416px;
+.uiIcon48x48FileAi:before,.uiIcon48x48applicationillustrator:before,.uiIcon48x48applicationeps:before {
+	content: "\e6e7";
+	color: #e79e24
 }
 
-.uiIcon48x48FileIndd,.uiIcon48x48applicationx-indesign {
-	background-position: -156px -416px;
+.uiIcon48x48FileSvg:before,.uiIcon48x48imagesvg-xml:before   {
+	content: "\e6ea";
+	color: #EAB320;
 }
 
-.uiIcon48x48FileAi,.uiIcon48x48applicationillustrator {
-	background-position: -208px -416px;
+.uiIcon48x48FileJpg:before,.uiIcon48x48imagejpeg:before {
+	content: "\e6e9";
+	color: #EAB320;
 }
 
-.uiIcon48x48FileSvg,.uiIcon48x48imagesvg-xml  {
-	background-position: -260px -416px;
+.uiIcon48x48FileBlog {
+	content: "\e6e6";
+	color: #094d7f;
 }
-
-.uiIcon48x48FileJpg {
-	background-position: -312px -416px;
-}
-
 
 /*----- IconLibrary-FileType-64x64 -----*/
 
-[class^="uiIcon64x64"] {
-  background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType64x64.png");
-	background-position: 0px -204px;
-  background-repeat: no-repeat;
-  display: inline-block;
-  width: 64px;
-  height: 64px;
-  .ie7-restore-right-whitespace();
-  line-height: 64px;
-  vertical-align: text-top;
+
+
+
+.uiIcon64x64FileDefault:before,.uiIcon64x64applicationoctet-stream:before {
+	content: "\e71c";
+	color:#cdcccc;
 }
 
-[class^="uiIcon64x64"]:hover, a:hover [class^="uiIcon64x64"] {
-  background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType64x64.png");
+.uiIcon64x64FileArchiveDefault:before,.uiIcon64x64applicationx-tar:before,
+.uiIcon64x64applicationx-gzip:before,.uiIcon64x64applicationx-bzip2:before,.uiIcon64x64applicationother-zip:before {
+	content: "\e718";
+  	color: @compressedFilesIconColor;
+	//color: #8acf3f;
 }
 
-.uiIcon64x64FileDefault {
-	background-position: 0px -204px;
+.uiIcon64x64FileArchiveRar:before,.uiIcon64x64applicationrar:before  {
+	content: "\e719";
+	color: @compressedFilesIconColor;
 }
 
-.uiIcon64x64FileArchiveDefault,.uiIcon64x64applicationx-tar,
-.uiIcon64x64applicationx-gzip,.uiIcon64x64applicationx-bzip2,.uiIcon64x64applicationother-zip {
-	background-position: -68px -204px;
+.uiIcon64x64FileArchiveZip:before,.uiIcon64x64FileZip:before,.uiIcon64x64applicationzip:before {
+	content: "\e71a";
+	color: @compressedFilesIconColor;
 }
 
-.uiIcon64x64FileArchiveRar,.uiIcon64x64applicationrar {
-	background-position: -136px -204px;
+.uiIcon64x64FileJar:before,.uiIcon64x64applicationjava-archive:before {
+	content: "\e71e";
+	color: #A34D46;
 }
 
-.uiIcon64x64FileArchiveZip,.uiIcon64x64FileZip,.uiIcon64x64applicationzip  {
-	background-position: -204px -204px;
+.uiIcon64x64FileEar:before,.uiIcon64x64applicationear-java-archive:before {
+	content: "\e71d";
+	color: #A34D46;
 }
 
-.uiIcon64x64FileJar,.uiIcon64x64applicationjava-archive {
-	background-position: -272px -204px;
+.uiIcon64x64FileWar:before,.uiIcon64x64applicationx-zip:before {
+	content: "\e71f";
+  	color: @compressedFilesIconColor;
+	//color: #A34D46;
 }
 
-.uiIcon64x64FileEar,.uiIcon64x64applicationear-java-archive {
-	background-position: -340px -204px;
+.uiIcon64x64FileAudioDefault:before,.uiIcon64x64audiomidi:before,.uiIcon64x64audiox-aiff:before,.uiIcon64x64audiobasic:before,
+.uiIcon64x64audiox-m4a:before,.uiIcon64x64audiox-wav:before,.uiIcon64x64audioother:before {
+	content: "\e71b";
+	color: #008b84;
 }
 
-.uiIcon64x64FileWar,.uiIcon64x64applicationx-zip {
-	background-position: -408px -204px;
+.uiIcon64x64FileMp3:before,.uiIcon64x64audiomp3:before {
+	content: "\e714";
+	color: #008b84;
 }
 
-.uiIcon64x64FileAudioDefault,.uiIcon64x64audiomidi,.uiIcon64x64audiox-aiff,.uiIcon64x64audiobasic,
-.uiIcon64x64audiox-m4a,.uiIcon64x64audiox-wav,.uiIcon64x64audioother {
-	background-position: -476px -204px;
+.uiIcon64x64FileWma:before,.uiIcon64x64audiox-ms-wma:before {
+	content: "\e716";
+	color: #008b84;
 }
 
-.uiIcon64x64FileMp3,.uiIcon64x64audiomp3 {
-	background-position: -544px -204px;
+.uiIcon64x64FileVideo:before,.uiIcon64x64videox-msvideo:before,.uiIcon64x64videoquicktime:before,
+.uiIcon64x64videox-sgi-movie:before,
+.uiIcon64x64videox-msvideo:before,.uiIcon64x64videompe:before {
+	content: "\e715";
+	color:#79577A;
 }
 
-.uiIcon64x64FileWma,.uiIcon64x64audiox-ms-wma {
-	background-position: -612px -204px;
+.uiIcon64x64FileFlash:before,.uiIcon64x64applicationx-shockwave-flash:before,.uiIcon64x64videox-flv:before  {
+	content: "\e713";
+	color: #d23327;
 }
 
-.uiIcon64x64FileVideo,.uiIcon64x64videox-msvideo,.uiIcon64x64videoquicktime,
-.uiIcon64x64videox-sgi-movie,
-.uiIcon64x64videox-msvideo,.uiIcon64x64videompe {
-	background-position: 0px -272px;
+.uiIcon64x64FileWmv:before,.uiIcon64x64videox-ms-wmv:before {
+	content: "\e717";
+	color:#79577A;
 }
 
-.uiIcon64x64FileFlash,.uiIcon64x64applicationx-shockwave-flash,.uiIcon64x64videox-flv  {
-	background-position: -68px -272px;
+.uiIcon64x64FileGdoc:before,.uiIcon64x64applicationvndgoogle-appsdocument:before {
+	content: "\e70c";
+	color: #1C98D7;
 }
 
-.uiIcon64x64FileWmv,.uiIcon64x64videox-ms-wmv {
-	background-position: -136px -272px;
+.uiIcon64x64FileWord:before,.uiIcon64x64applicationmsword:before,.uiIcon64x64applicationwordperfect:before,
+.uiIcon64x64applicationvndopenxmlformats-officedocumentwordprocessingmldocument:before,.uiIcon64x64FileDocx:before,
+.uiIcon64x64applicationvndms-worddocumentmacroenabled12:before,
+.uiIcon64x64applicationvndms-wordtemplatemacroenabled12:before,
+.uiIcon64x64applicationvndopenxmlformats-officedocumentwordprocessingmltemplate:before {
+	content: "\e6b1";
+	color: #094D7F;
 }
 
-.uiIcon64x64FileGdoc,.uiIcon64x64applicationvndgoogle-appsdocument {
-	background-position: -204px -272px;
+.uiIcon64x64FileOpenOffice1:before,.uiIcon64x64FileOpenOffice1:before,
+.uiIcon64x64applicationvndoasisopendocumenttext:before,
+.uiIcon64x64applicationvndoasisopendocumentspreadsheet:before,
+.uiIcon64x64applicationvndoasisopendocumentdatabase:before {
+	content: "\e710";
+	color: #1c9bd7;
 }
 
-.uiIcon64x64FileWord,.uiIcon64x64applicationmsword,.uiIcon64x64applicationwordperfect,
-.uiIcon64x64applicationvndopenxmlformats-officedocumentwordprocessingmldocument,
-.uiIcon64x64applicationvndms-worddocumentmacroenabled12,
-.uiIcon64x64applicationvndms-wordtemplatemacroenabled12,
-.uiIcon64x64applicationvndopenxmlformats-officedocumentwordprocessingmltemplate {
-	background-position: -272px -272px;
+.uiIcon64x64FileMpeg:before,.uiIcon64x64videompeg:before,.uiIcon64x64videompg:before,
+.uiIcon64x64videomp4:before {
+	content: "\e70f";
+	color:#79577A;
 }
 
-.uiIcon64x64FileOpenOffice1,.uiIcon64x64FileOdt,
-.uiIcon64x64applicationvndoasisopendocumenttext,
-.uiIcon64x64applicationvndoasisopendocumentspreadsheet,
-.uiIcon64x64applicationvndoasisopendocumentdatabase {
-	background-position: -340px -272px;
+.uiIcon64x64FileM4v:before,.uiIcon64x64videox-m4v:before {
+	content: "\e70d";
+	color:#79577A;
 }
 
-.uiIcon64x64FileMpeg,.uiIcon64x64videompeg,.uiIcon64x64videompg,
-.uiIcon64x64videomp4 {
-	background-position: -408px -272px;
+.uiIcon64x64FileMkv:before,.uiIcon64x64videox-matroska:before {
+	content: "\e70e";
+	color:#79577A;
 }
 
-.uiIcon64x64FileM4v,.uiIcon64x64videox-m4v {
-	background-position: -476px -272px;
+
+
+.uiIcon64x64FileTxt:before,.uiIcon64x64textplain:before {
+	content: "\e711";
+	color: #1c9bd7;
 }
 
-.uiIcon64x64FileMkv,.uiIcon64x64videox-matroska {
-	background-position: -544px -272px;
+.uiIcon64x64FileLwp:before,.uiIcon64x64applicationlwp:before {
+	content: "\e707";
+	color: #1c9bd7
 }
 
-.uiIcon64x64FileTxt,.uiIcon64x64textplain {
-	background-position: -612px -272px;
+.uiIcon64x64FilePage:before,.uiIcon64x64applepages:before {
+	content: "\e70a";
+	color: #1c9bd7
 }
 
-.uiIcon64x64FileIwp,.uiIcon64x64applicationiwp,.uiIcon64x64FileLwp,.uiIcon64x64applicationLwp {
-	background-position: 0px -340px;
+.uiIcon64x64FileMdb:before,.uiIcon64x64applicationmsaccess:before {
+	content: "\e708";
+	color:#6a274c
 }
 
-.uiIcon64x64FilePage,.uiIcon64x64applepages {
-	background-position: -68px -340px;
+.uiIcon64x64FileOdf:before,.uiIcon64x64applicationvndoasisopendocumentformula:before {
+	content: "\e709";
+	color: #848585;
 }
 
-.uiIcon64x64FileMdb,.uiIcon64x64applicationmsaccess {
-	background-position: -136px -340px;
+.uiIcon64x64FileExe:before,.uiIcon64x64applicationexe:before {
+	content: "\e706";
+	color: #cdcccc;
 }
 
-.uiIcon64x64FileOdf,.uiIcon64x64applicationvndoasisopendocumentformula {
-	background-position: -204px -340px;
+.uiIcon64x64FilePdf:before,.uiIcon64x64applicationpdf:before {
+	content: "\e70b";
+	color:#d23327;
 }
 
-.uiIcon64x64FileExe,.uiIcon64x64applicationexe {
-	background-position: -272px -340px;
+.uiIcon64x64FileScript:before,.uiIcon64x64applicationpostscript:before {
+	content: "\e705";
+	color:#5e5e5e;
 }
 
-.uiIcon64x64FilePdf,.uiIcon64x64applicationpdf {
-	background-position: -340px -340px;
+.uiIcon64x64FileRtf:before,.uiIcon64x64applicationrtf:before {
+	content: "\e704";
+	color:#5e5e5e;
 }
 
-.uiIcon64x64FileScript,.uiIcon64x64applicationpostscript {
-	background-position: -408px -340px;
+.uiIcon64x64FileGslides:before,.uiIcon64x64applicationvndgoogle-appspresentation:before {
+	content: "\e701";
+	color:#de6227;
 }
 
-.uiIcon64x64FileRtf,.uiIcon64x64applicationrtf {
-	background-position: -476px -340px;
+.uiIcon64x64FileAppleKey:before,.uiIcon64x64textkey:before {
+	content: "\e700";
+	color:#d37133;
 }
 
-.uiIcon64x64FileGslides,.uiIcon64x64applicationvndgoogle-appspresentation {
-	background-position: -544px -340px;
+.uiIcon64x64FileOpenOffice2:before,
+.uiIcon64x64applicationvndoasisopendocumentpresentation:before {
+	content: "\e702";
+	color:#d37133;
 }
 
-.uiIcon64x64FileAppleKey,.uiIcon64x64textkey {
-	background-position: -612px -340px;
+.uiIcon64x64FilePpt:before,.uiIcon64x64applicationppt:before,.uiIcon64x64applicationvndms-powerpoint:before,
+.uiIcon64x64applicationvndopenxmlformats-officedocumentpresentationmlpresentation:before,
+.uiIcon64x64applicationvndopenxmlformats-officedocumentpresentationmltemplate:before,
+.uiIcon64x64applicationvndopenxmlformats-officedocumentpresentationmlslideshow:before,
+.uiIcon64x64applicationvndms-powerpointaddinmacroenabled12:before,
+.uiIcon64x64applicationvndms-powerpointpresentationmacroenabled12:before,
+.uiIcon64x64applicationvndms-powerpointtemplatemacroenabled12:before,
+.uiIcon64x64applicationvndms-powerpointslideshowmacroenabled12:before
+ {
+	content: "\e6b0";
+	color: #e45030;
 }
 
-.uiIcon64x64FileOpenOffice2,
-.uiIcon64x64applicationvndoasisopendocumentpresentation {
-	background-position: 0px -408px;
+.uiIcon64x64FilePrz:before,.uiIcon64x64applicationfreelance:before {
+	content: "\e6fe";
+	color: #d3703a;
 }
 
-.uiIcon64x64FilePpt,.uiIcon64x64applicationppt,.uiIcon64x64applicationvndms-powerpoint,
-.uiIcon64x64applicationvndopenxmlformats-officedocumentpresentationmlpresentation,
-.uiIcon64x64applicationvndopenxmlformats-officedocumentpresentationmltemplate,
-.uiIcon64x64applicationvndopenxmlformats-officedocumentpresentationmlslideshow,
-.uiIcon64x64applicationvndms-powerpointaddinmacroenabled12,
-.uiIcon64x64applicationvndms-powerpointpresentationmacroenabled12,
-.uiIcon64x64applicationvndms-powerpointtemplatemacroenabled12,
-.uiIcon64x64applicationvndms-powerpointslideshowmacroenabled12
-{
-	background-position: -68px -408px;
+.uiIcon64x64FileGsheet:before,.uiIcon64x64applicationvndgoogle-appsspreadsheet:before {
+	content: "\e6fa";
+	color: #119b48;
 }
 
-.uiIcon64x64FilePrz,.uiIcon64x64applicationfreelance {
-	background-position: -136px -408px;
+.uiIcon64x64FileExcel:before,.uiIcon64x64applicationxls:before,.uiIcon64x64applicationxlt:before,.uiIcon64x64applicationvndms-excel:before,
+.uiIcon64x64applicationvndopenxmlformats-officedocumentspreadsheetmlsheet:before,.uiIcon64x64FileXls:before,
+.uiIcon64x64applicationvndopenxmlformats-officedocumentspreadsheetmltemplate:before, 
+.uiIcon64x64applicationvndms-excelsheetmacroenabled12:before, 
+.uiIcon64x64applicationvndms-exceltemplatemacroenabled12:before, 
+.uiIcon64x64applicationvndms-exceladdinmacroenabled12:before, 
+.uiIcon64x64applicationvndms-excelsheetbinarymacroenabled12:before{
+	content: "\e6af";
+	color: #1a744b;
 }
 
-.uiIcon64x64FileGsheet,.uiIcon64x64applicationvndgoogle-appsspreadsheet {
-	background-position: -204px -408px;
+.uiIcon64x64FileOpenOffice3:before,
+.uiIcon64x64applicationvndoasisopendocumentspreadsheet-template:before,
+.uiIcon64x64applicationvndsunxmlcalc:before{
+	content: "\e6fd";
+	color: #119b48;
 }
 
-.uiIcon64x64FileExcel,.uiIcon64x64applicationxls,.uiIcon64x64applicationxlt,.uiIcon64x64applicationvndms-excel,
-.uiIcon64x64applicationvndopenxmlformats-officedocumentspreadsheetmlsheet,
-.uiIcon64x64applicationvndopenxmlformats-officedocumentspreadsheetmlsheet,
-.uiIcon64x64applicationvndopenxmlformats-officedocumentspreadsheetmltemplate, 
-.uiIcon64x64applicationvndms-excelsheetmacroenabled12, 
-.uiIcon64x64applicationvndms-exceltemplatemacroenabled12, 
-.uiIcon64x64applicationvndms-exceladdinmacroenabled12, 
-.uiIcon64x64applicationvndms-excelsheetbinarymacroenabled12{
-	background-position: -272px -408px;
+.uiIcon64x64FileHtml:before,.uiIcon64x64texthtml:before,.uiIcon64x64texthtm:before {
+	content: "\e6fb";
+	color: #4b76bb;
 }
 
-.uiIcon64x64FileOpenOffice3,
-.uiIcon64x64applicationvndoasisopendocumentspreadsheet-template,
-.uiIcon64x64applicationvndsunxmlcalc{
-	background-position: -340px -408px;
+.uiIcon64x64FileXml:before,.uiIcon64x64textxml:before {
+	content: "\e6ff";
+	color: #4b76bb;
 }
 
-.uiIcon64x64FileHtml,.uiIcon64x64texthtml,.uiIcon64x64texthtm {
-	background-position: -408px -408px;
+.uiIcon64x64FileJs:before,.uiIcon64x64applicationx-javascript:before {
+	content: "\e6fc";
+	color: #d23327;
 }
 
-.uiIcon64x64FileXml,.uiIcon64x64textxml {
-	background-position: -476px -408px;
+.uiIcon64x64FileJson:before,.uiIcon64x64applicationjson:before {
+	content: "\e6f7";
+	color: #5e5e5e;
 }
 
-.uiIcon64x64FileJs,.uiIcon64x64applicationx-javascript {
-	background-position: -544px -408px;
+.uiIcon64x64FileCss:before,.uiIcon64x64textcss:before {
+	content: "\e6f4";
+	color: #A6346e;
 }
 
-.uiIcon64x64FileJson,.uiIcon64x64applicationjson {
-	background-position: -612px -408px;
+.uiIcon64x64FileXsl:before,.uiIcon64x64textxsl:before,.uiIcon64x64textxslt:before {
+	content: "\e6f8";
+	color: #A6346e;
 }
 
-.uiIcon64x64FileCss,.uiIcon64x64textcss {
-	background-position: 0px -476px;
+.uiIcon64x64FileFont:before,.uiIcon64x64fonttff:before,.uiIcon64x64fontotf:before,
+.uiIcon64x64fontttc:before,.uiIcon64x64fonteot:before,.uiIcon64x64fontdfont:before,
+.uiIcon64x64fontttf:before,.uiIcon64x64fontwoff:before {
+	content: "\e6f5";
+	color: @fontIconColor;
 }
 
-.uiIcon64x64FileXsl,.uiIcon64x64textxsl,.uiIcon64x64textxslt {
-	background-position: -68px -476px;
+.uiIcon64x64FileGdraw:before,.uiIcon64x64applicationvndgoogle-appsdrawing:before {
+	content: "\e6f6";
+	color: #EAB320;
 }
 
-.uiIcon64x64FileFont,.uiIcon64x64fonttff,.uiIcon64x64fontotf,
-.uiIcon64x64fontttc,.uiIcon64x64fonteot,.uiIcon64x64fontdfont,
-.uiIcon64x64fontttf,.uiIcon64x64fontwoff {
-	background-position: -136px -476px;
+.uiIcon64x64FileBmp:before,.uiIcon64x64imagebmp:before {
+	content: "\e6f3";
+	color: #EAB320;
 }
 
-.uiIcon64x64FileGdraw,.uiIcon64x64applicationvndgoogle-appsdrawing {
-	background-position: -204px -476px;
+.uiIcon64x64FileIco:before,.uiIcon64x64imagex-icon:before  {
+	content: "\e6ee";
+	color: #EAB320;
 }
 
-.uiIcon64x64FileBmp,.uiIcon64x64imagebmp {
-	background-position: -272px -476px;
+.uiIcon64x64FileGif:before,.uiIcon64x64imagegif:before {
+	content: "\e6ed";
+	color: #EAB320;
 }
 
-.uiIcon64x64FileIco,.uiIcon64x64imagex-icon  {
-	background-position: -340px -476px;
+.uiIcon64x64FileOdg:before,.uiIcon64x64applicationvndoasisopendocumentgraphics:before {
+	content: "\e6ef";
+	color: #EAB320;
 }
 
-.uiIcon64x64FileGif,.uiIcon64x64imagegif {
-	background-position: -408px -476px;
+.uiIcon64x64FilePng:before,.uiIcon64x64imagepng:before {
+	content: "\e6f0";
+	color: #EAB320;
 }
 
-.uiIcon64x64FileOdg,.uiIcon64x64applicationvndoasisopendocumentgraphics {
-	background-position: -476px -476px;
+.uiIcon64x64FilePsd:before,.uiIcon64x64imagepsd:before,
+.uiIcon64x64applicationx-photoshop:before {
+	content: "\e6f1";
+	color: #1278ba;
 }
 
-.uiIcon64x64FilePng,.uiIcon64x64imagepng {
-	background-position: -544px -476px;
+.uiIcon64x64FileRaw:before,.uiIcon64x64applicationraw:before {
+	content: "\e6f2";
+	color: #6f6f6f;
 }
 
-.uiIcon64x64FilePsd,.uiIcon64x64imagepsd {
-	background-position: -612px -476px;
+.uiIcon64x64FileTif:before,.uiIcon64x64imagetiff:before {
+	content: "\e6eb";
+	color: #6f6f6f;
 }
 
-.uiIcon64x64FileRaw,.uiIcon64x64applicationraw {
-	background-position: 0px -544px;
+.uiIcon64x64FileXcf:before,.uiIcon64x64imagexcf:before {
+	content: "\e6ec";
+	color: #EAB320;
 }
 
-.uiIcon64x64FileTif,.uiIcon64x64imagetiff {
-	background-position: -68px -544px;
+.uiIcon64x64FileIndd:before,.uiIcon64x64applicationx-indesign:before {
+	content: "\e6e8";
+	color: #a6346e
 }
 
-.uiIcon64x64FileXcf,.uiIcon64x64imagexcf {
-	background-position: -136px -544px;
+.uiIcon64x64FileAi:before,.uiIcon64x64applicationillustrator:before,.uiIcon64x64applicationeps:before {
+	content: "\e6e7";
+	color: #e79e24
 }
 
-.uiIcon64x64FileIndd,.uiIcon64x64applicationx-indesign {
-	background-position: -204px -544px;
+.uiIcon64x64FileSvg:before,.uiIcon64x64imagesvg-xml:before   {
+	content: "\e6ea";
+	color: #EAB320;
 }
 
-.uiIcon64x64FileAi,.uiIcon64x64applicationillustrator,.uiIcon64x64applicationeps {
-	background-position: -272px -544px;
+.uiIcon64x64FileJpg:before,.uiIcon64x64imagejpeg:before {
+	content: "\e6e9";
+	color: #EAB320;
 }
 
-.uiIcon64x64FileSvg,.uiIcon64x64imagesvg-xml  {
-	background-position: -340px -544px;
+.uiIcon64x64FileBlog {
+	content: "\e6e6";
+	color: #094d7f;
 }
 
-.uiIcon64x64FileJpg,.uiIcon64x64imagejpeg {
-	background-position: -408px -544px;
-}
+
+
 
 /*---------- IconLibrary-FolderType -----*/
 
 /*----- IconLibrary-FolderType-16x16 -----*/
 
-.uiIcon16x16FolderDefault {
-	background-position: 0px -200px;
+.uiIcon16x16FolderDefault:before {
+	content: "\e665";
 }
 
-.uiIcon16x16FolderWebcontentBlue,.uiIcon16x16exo_webFolder {
-	background-position: -20px -200px;
+.uiIcon16x16FolderWebcontentBlue:before,.uiIcon16x16exo_webFolder:before {
+	color: @colorIconPrimary;
+	content: "\e665";
 }
 
-.uiIcon16x16FolderPrivate,.uiIcon16x16exo_privateFolder {
-	background-position: -40px -200px;
+
+.uiIcon16x16FolderPrivate:before,.uiIcon16x16exo_privateFolder:before {
+	content: "\e667";
 }
 
-.uiIcon16x16FolderFavorite,.uiIcon16x16exo_favoriteFolder {
-	background-position: -60px -200px;
+.uiIcon16x16FolderFavorite:before,.uiIcon16x16exo_favoriteFolder:before {
+	content: "\e666";
 }
 
-.uiIcon16x16FolderDocument,.uiIcon16x16exo_documentFolder {
-	background-position: -80px -200px;
+.uiIcon16x16FolderDocument:before,.uiIcon16x16exo_documentFolder:before {
+	content: "\e65e";
 }
 
-.uiIcon16x16FolderNtUnstruct,.uiIcon16x16nt_unstructured {
-	background-position: -100px -200px;
+.uiIcon16x16FolderNtUnstruct:before,.uiIcon16x16nt_unstructured:before {
+	content: "\e661";
 }
 
-.uiIcon16x16FolderJs,.uiIcon16x16exo_jsFolder {
-	background-position: -120px -200px;
+.uiIcon16x16FolderJs:before,.uiIcon16x16exo_jsFolder:before {
+	content: "\e660";
 }
 
-.uiIcon16x16FolderWeb {
-	background-position: -140px -200px;
+.uiIcon16x16FolderWeb:before {
+	content: "\e664";
 }
 
-.uiIcon16x16FolderSound,.uiIcon16x16exo_audioFolder,.uiIcon16x16exo_musicFolder {
-	background-position: -160px -200px;
+.uiIcon16x16FolderSound:before,.uiIcon16x16exo_audioFolder:before,.uiIcon16x16exo_musicFolder:before {
+	content: "\e663";
 }
 
-.uiIcon16x16FolderPublic,.uiIcon16x16exo_publicFolder {
-	background-position: -180px -200px;
+.uiIcon16x16FolderPublic:before,.uiIcon16x16exo_publicFolder:before {
+	content: "\e662";
 }
 
-.uiIcon16x16FolderGraphic,.uiIcon16x16exo_pictureFolder {
-	background-position: 0px -220px;
+.uiIcon16x16FolderGraphic:before,.uiIcon16x16exo_pictureFolder:before {
+	content: "\e65f";
+}
+.uiIcon16x16FolderSearch:before,.uiIcon16x16exo_searchFolder:before {
+	content: "\e65a";
 }
 
-.uiIcon16x16FolderSearch,.uiIcon16x16exo_searchFolder  {
-	background-position: -20px -220px;
+.uiIcon16x16FolderCss:before,.uiIcon16x16exo_cssFolder:before {
+	content: "\e657";
+} 
+
+.uiIcon16x16FolderProduct:before,.uiIcon16x16acme_product:before {
+	content: "\e659";
 }
 
-.uiIcon16x16FolderCss,.uiIcon16x16exo_cssFolder {
-	background-position: -40px -220px;
+.uiIcon16x16FolderTaxonomy:before,.uiIcon16x16exo_taxonomy:before {
+	content: "\e65b";
 }
 
-.uiIcon16x16FolderProduct,.uiIcon16x16acme_product {
-	background-position: -60px -220px;
+.uiIcon16x16FolderExoContent:before,.uiIcon16x16exo_webContent:before {
+	content: "\e658";
 }
 
-.uiIcon16x16FolderTaxonomy,.uiIcon16x16exo_taxonomy {
-	background-position: -80px -220px;
+.uiIcon16x16FolderTheme:before,.uiIcon16x16exo_themeFolder:before {
+	content: "\e65c";
 }
 
-.uiIcon16x16FolderExoContent,.uiIcon16x16exo_webContent {
-	background-position: -100px -220px;
+.uiIcon16x16FolderVideoMedia:before,.uiIcon16x16exo_multimediaFolder:before,.uiIcon16x16exo_videoFolder:before {
+	content: "\e65d";
 }
 
-.uiIcon16x16FolderTheme,.uiIcon16x16exo_themeFolder {
-	background-position: -120px -220px;
+.uiIcon16x16FolderLink:before,.uiIcon16x16exo_linkFolder:before {
+	content: "\e656";
 }
 
-.uiIcon16x16FolderVideoMedia,.uiIcon16x16exo_multimediaFolder,.uiIcon16x16exo_videoFolder {
-	background-position: -140px -220px;
+.uiIcon16x16exo_driveDefault:before {
+	content: "\e68a";
 }
 
-.uiIcon16x16FolderLink,.uiIcon16x16exo_linkFolder {
-	background-position: -160px -220px;
+.uiIcon16x16exo_tagStyleDefault:before {
+	content: "\e600";
 }
 
-.uiIcon16x16exo_driveDefault {
-	background-position: -140px -240px;
-}
-
-.uiIcon16x16exo_tagStyleDefault {
-	background-position: -160px -240px;
-}
-
-.uiIcon16x16exo_viewDefault {
-	background-position: -180px -240px;
+.uiIcon16x16exo_viewDefault:before {
+	content: "\e655";
 }
 
 /*----- IconLibrary-FolderType-24x24 -----*/
-
-.uiIcon24x24FolderDefault {
-	background-position: 0px -280px;
+.uiIcon24x24FolderDefault:before {
+	content: "\e665";
 }
 
-.uiIcon24x24FolderWebcontentBlue,.uiIcon24x24exo_webFolder {
-	background-position: -28px -280px;
+.uiIcon24x24FolderWebcontentBlue:before,.uiIcon24x24exo_webFolder:before {
+	color: @colorIconPrimary;
+	content: "\e665";
 }
 
-.uiIcon24x24FolderPrivate,.uiIcon24x24exo_privateFolder {
-	background-position: -56px -280px;
+
+.uiIcon24x24FolderPrivate:before,.uiIcon24x24exo_privateFolder:before {
+	content: "\e667";
 }
 
-.uiIcon24x24FolderFavorite,.uiIcon24x24exo_favoriteFolder {
-	background-position: -84px -280px;
+.uiIcon24x24FolderFavorite:before,.uiIcon24x24exo_favoriteFolder:before {
+	content: "\e666";
 }
 
-.uiIcon24x24FolderDocument,.uiIcon24x24exo_documentFolder {
-	background-position: -112px -280px;
+.uiIcon24x24FolderDocument:before,.uiIcon24x24exo_documentFolder:before {
+	content: "\e65e";
 }
 
-.uiIcon24x24FolderNtUnstruct,.uiIcon24x24nt_unstructured {
-	background-position: -140px -280px;
+.uiIcon24x24FolderNtUnstruct:before,.uiIcon24x24nt_unstructured:before {
+	content: "\e661";
 }
 
-.uiIcon24x24FolderJs,.uiIcon24x24exo_jsFolder {
-	background-position: -168px -280px;
+.uiIcon24x24FolderJs:before,.uiIcon24x24exo_jsFolder:before {
+	content: "\e660";
 }
 
-.uiIcon24x24FolderWeb {
-	background-position: -196px -280px;
+.uiIcon24x24FolderWeb:before {
+	content: "\e664";
 }
 
-.uiIcon24x24FolderSound,.uiIcon24x24exo_audioFolder,.uiIcon24x24exo_musicFolder {
-	background-position: -224px -280px;
+.uiIcon24x24FolderSound:before,.uiIcon24x24exo_audioFolder:before,.uiIcon24x24exo_musicFolder:before {
+	content: "\e663";
 }
 
-.uiIcon24x24FolderPublic,.uiIcon24x24exo_publicFolder {
-	background-position: -252px -280px;
+.uiIcon24x24FolderPublic:before,.uiIcon24x24exo_publicFolder:before {
+	content: "\e662";
 }
 
-.uiIcon24x24FolderGraphic,.uiIcon24x24exo_pictureFolder {
-	background-position: 0px -308px;
+.uiIcon24x24FolderGraphic:before,.uiIcon24x24exo_pictureFolder:before {
+	content: "\e65f";
+}
+.uiIcon24x24FolderSearch:before,.uiIcon24x24exo_searchFolder:before {
+	content: "\e65a";
 }
 
-.uiIcon24x24FolderSearch,.uiIcon24x24exo_searchFolder  {
-	background-position: -28px -308px;
+.uiIcon24x24FolderCss:before,.uiIcon24x24exo_cssFolder:before {
+	content: "\e657";
+} 
+
+.uiIcon24x24FolderProduct:before,.uiIcon24x24acme_product:before {
+	content: "\e659";
 }
 
-.uiIcon24x24FolderCss,.uiIcon24x24exo_cssFolder {
-	background-position: -56px -308px;
+.uiIcon24x24FolderTaxonomy:before,.uiIcon24x24exo_taxonomy:before {
+	content: "\e65b";
 }
 
-.uiIcon24x24FolderProduct,.uiIcon24x24acme_product {
-	background-position: -84px -308px;
+.uiIcon24x24FolderExoContent:before,.uiIcon24x24exo_webContent:before {
+	content: "\e658";
 }
 
-.uiIcon24x24FolderTaxonomy,.uiIcon24x24exo_taxonomy {
-	background-position: -112px -308px;
+.uiIcon24x24FolderTheme:before,.uiIcon24x24exo_themeFolder:before {
+	content: "\e65c";
 }
 
-.uiIcon24x24FolderExoContent,.uiIcon24x24exo_webContent {
-	background-position: -140px -308px;
+.uiIcon24x24FolderVideoMedia:before,.uiIcon24x24exo_multimediaFolder:before,.uiIcon24x24exo_videoFolder:before {
+	content: "\e65d";
 }
 
-.uiIcon24x24FolderTheme,.uiIcon24x24exo_themeFolder {
-	background-position: -168px -308px;
+.uiIcon24x24FolderLink:before,.uiIcon24x24exo_linkFolder:before {
+	content: "\e656";
 }
 
-.uiIcon24x24FolderVideoMedia,.uiIcon24x24exo_multimediaFolder,.uiIcon24x24exo_videoFolder {
-	background-position: -196px -308px;
+.uiIcon24x24exo_driveDefault:before {
+	content: "\e68a";
 }
 
-.uiIcon24x24FolderLink,.uiIcon24x24exo_linkFolder {
-	background-position: -224px -308px;
+.uiIcon24x24exo_tagStyleDefault:before {
+	content: "\e600";
 }
 
-.uiIcon24x24exo_driveDefault {
-	background-position: -194px -336px;
+.uiIcon24x24exo_viewDefault:before {
+	content: "\e655";
 }
-
-.uiIcon24x24exo_tagStyleDefault {
-	background-position: -224px -336px;
-}
-
-.uiIcon24x24exo_viewDefault {
-	background-position: -252px -336px;
-}
-
 
 /*----- IconLibrary-FolderType-32x32 -----*/
-
-.uiIcon32x32FolderDefault {
-	background-position: 0px -360px;
+.uiIcon32x32FolderDefault:before {
+	content: "\e665";
 }
 
-.uiIcon32x32FolderWebcontentBlue {
-	background-position: -36px -360px;
+.uiIcon32x32FolderWebcontentBlue:before,.uiIcon32x32exo_webFolder:before {
+	color: @colorIconPrimary;
+	content: "\e665";
 }
 
-.uiIcon32x32FolderPrivate {
-	background-position: -72px -360px;
+
+.uiIcon32x32FolderPrivate:before,.uiIcon32x32exo_privateFolder:before {
+	content: "\e667";
 }
 
-.uiIcon32x32FolderFavorite {
-	background-position: -108px -360px;
+.uiIcon32x32FolderFavorite:before,.uiIcon32x32exo_favoriteFolder:before {
+	content: "\e666";
 }
 
-.uiIcon32x32FolderDocument {
-	background-position: -144px -360px;
+.uiIcon32x32FolderDocument:before,.uiIcon32x32exo_documentFolder:before {
+	content: "\e65e";
 }
 
-.uiIcon32x32FolderNtUnstruct,.uiIcon32x32nt_unstructured {
-	background-position: -180px -360px;
+.uiIcon32x32FolderNtUnstruct:before,.uiIcon32x32nt_unstructured:before {
+	content: "\e661";
 }
 
-.uiIcon32x32FolderJs {
-	background-position: -216px -360px;
+.uiIcon32x32FolderJs:before,.uiIcon32x32exo_jsFolder:before {
+	content: "\e660";
 }
 
-.uiIcon32x32FolderWeb {
-	background-position: -252px -360px;
+.uiIcon32x32FolderWeb:before {
+	content: "\e664";
 }
 
-.uiIcon32x32FolderSound {
-	background-position: -288px -360px;
+.uiIcon32x32FolderSound:before,.uiIcon32x32exo_audioFolder:before,.uiIcon32x32exo_musicFolder:before {
+	content: "\e663";
 }
 
-.uiIcon32x32FolderPublic {
-	background-position: -324px -360px;
+.uiIcon32x32FolderPublic:before,.uiIcon32x32exo_publicFolder:before {
+	content: "\e662";
 }
 
-.uiIcon32x32FolderGraphic {
-	background-position: 0px -396px;
+.uiIcon32x32FolderGraphic:before,.uiIcon32x32exo_pictureFolder:before {
+	content: "\e65f";
+}
+.uiIcon32x32FolderSearch:before,.uiIcon32x32exo_searchFolder:before {
+	content: "\e65a";
 }
 
-.uiIcon32x32FolderSearch {
-	background-position: -36px -396px;
+.uiIcon32x32FolderCss:before,.uiIcon32x32exo_cssFolder:before {
+	content: "\e657";
+} 
+
+.uiIcon32x32FolderProduct:before,.uiIcon32x32acme_product:before {
+	content: "\e659";
 }
 
-.uiIcon32x32FolderCss {
-	background-position: -72px -396px;
+.uiIcon32x32FolderTaxonomy:before,.uiIcon32x32exo_taxonomy:before {
+	content: "\e65b";
 }
 
-.uiIcon32x32FolderProduct {
-	background-position: -108px -396px;
+.uiIcon32x32FolderExoContent:before,.uiIcon32x32exo_webContent:before {
+	content: "\e658";
 }
 
-.uiIcon32x32FolderTaxonomy {
-	background-position: -144px -396px;
+.uiIcon32x32FolderTheme:before,.uiIcon32x32exo_themeFolder:before {
+	content: "\e65c";
 }
 
-.uiIcon32x32FolderExoContent {
-	background-position: -180px -396px;
+.uiIcon32x32FolderVideoMedia:before,.uiIcon32x32exo_multimediaFolder:before,.uiIcon32x32exo_videoFolder:before {
+	content: "\e65d";
 }
 
-.uiIcon32x32FolderTheme {
-	background-position: -216px -396px;
+.uiIcon32x32FolderLink:before,.uiIcon32x32exo_linkFolder:before {
+	content: "\e656";
 }
 
-.uiIcon32x32FolderVideoMedia {
-	background-position: -252px -396px;
+.uiIcon32x32exo_driveDefault:before {
+	content: "\e68a";
 }
 
-.uiIcon32x32FolderLink {
-	background-position: -288px -396px;
+.uiIcon32x32exo_tagStyleDefault:before {
+	content: "\e600";
 }
 
-.uiIcon32x32exo_driveDefault {
-	background-position: -252px -432px;
+.uiIcon32x32exo_viewDefault:before {
+	content: "\e655";
 }
 
-.uiIcon32x32exo_tagStyleDefault {
-	background-position: -288px -432px;
-}
-
-.uiIcon32x32exo_viewDefault {
-	background-position: -324px -432px;
-}
 
 /************** IconLibrary-FolderType-48x48 *************/
-
-.uiIcon48x48FolderDefault {
-	background-position: 0px -520px;
+.uiIcon48x48FolderDefault:before {
+	content: "\e665";
 }
 
-.uiIcon48x48FolderWebcontentBlue {
-	background-position: -52px -520px;
+.uiIcon48x48FolderWebcontentBlue:before,.uiIcon48x48exo_webFolder:before {
+	color: @colorIconPrimary;
+	content: "\e665";
 }
 
-.uiIcon48x48FolderPrivate {
-	background-position: -104px -520px;
+
+.uiIcon48x48FolderPrivate:before,.uiIcon48x48exo_privateFolder:before {
+	content: "\e667";
 }
 
-.uiIcon48x48FolderFavorite {
-	background-position: -156px -520px;
+.uiIcon48x48FolderFavorite:before,.uiIcon48x48exo_favoriteFolder:before {
+	content: "\e666";
 }
 
-.uiIcon48x48FolderDocument {
-	background-position: -208px -520px;
+.uiIcon48x48FolderDocument:before,.uiIcon48x48exo_documentFolder:before {
+	content: "\e65e";
 }
 
-.uiIcon48x48FolderNtUnstruct,.uiIcon48x48nt_unstructured {
-	background-position: -260px -520px;
+.uiIcon48x48FolderNtUnstruct:before,.uiIcon48x48nt_unstructured:before {
+	content: "\e661";
 }
 
-.uiIcon48x48FolderJs {
-	background-position: -312px -520px;
+.uiIcon48x48FolderJs:before,.uiIcon48x48exo_jsFolder:before {
+	content: "\e660";
 }
 
-.uiIcon48x48FolderWeb {
-	background-position: -364px -520px;
+.uiIcon48x48FolderWeb:before {
+	content: "\e664";
 }
 
-.uiIcon48x48FolderSound {
-	background-position: -416px -520px;
+.uiIcon48x48FolderSound:before,.uiIcon48x48exo_audioFolder:before,.uiIcon48x48exo_musicFolder:before {
+	content: "\e663";
 }
 
-.uiIcon48x48FolderPublic {
-	background-position: -468px -520px;
+.uiIcon48x48FolderPublic:before,.uiIcon48x48exo_publicFolder:before {
+	content: "\e662";
 }
 
-.uiIcon48x48FolderGraphic {
-	background-position: 0px -572px;
+.uiIcon48x48FolderGraphic:before,.uiIcon48x48exo_pictureFolder:before {
+	content: "\e65f";
+}
+.uiIcon48x48FolderSearch:before,.uiIcon48x48exo_searchFolder:before {
+	content: "\e65a";
 }
 
-.uiIcon48x48FolderSearch {
-	background-position: -52px -572px;
+.uiIcon48x48FolderCss:before,.uiIcon48x48exo_cssFolder:before {
+	content: "\e657";
+} 
+
+.uiIcon48x48FolderProduct:before,.uiIcon48x48acme_product:before {
+	content: "\e659";
 }
 
-.uiIcon48x48FolderCss {
-	background-position: -104px -572px;
+.uiIcon48x48FolderTaxonomy:before,.uiIcon48x48exo_taxonomy:before {
+	content: "\e65b";
 }
 
-.uiIcon48x48FolderProduct {
-	background-position: -156px -572px;
+.uiIcon48x48FolderExoContent:before,.uiIcon48x48exo_webContent:before {
+	content: "\e658";
 }
 
-.uiIcon48x48FolderTaxonomy {
-	background-position: -208px -572px;
+.uiIcon48x48FolderTheme:before,.uiIcon48x48exo_themeFolder:before {
+	content: "\e65c";
 }
 
-.uiIcon48x48FolderExoContent {
-	background-position: -260px -572px;
+.uiIcon48x48FolderVideoMedia:before,.uiIcon48x48exo_multimediaFolder:before,.uiIcon48x48exo_videoFolder:before {
+	content: "\e65d";
 }
 
-.uiIcon48x48FolderTheme {
-	background-position: -312px -572px;
+.uiIcon48x48FolderLink:before,.uiIcon48x48exo_linkFolder:before {
+	content: "\e656";
 }
 
-.uiIcon48x48FolderVideoMedia {
-	background-position: -364px -572px;
+.uiIcon48x48exo_driveDefault:before {
+	content: "\e68a";
 }
 
-.uiIcon48x48FolderLink {
-	background-position: -416px -572px;
+.uiIcon48x48exo_tagStyleDefault:before {
+	content: "\e600";
 }
 
-.uiIcon48x48exo_driveDefault {
-	background-position: -364px -624px;
+.uiIcon48x48exo_viewDefault:before {
+	content: "\e655";
 }
 
-.uiIcon48x48exo_tagStyleDefault {
-	background-position: -416px -624px;
-}
-
-.uiIcon48x48exo_viewDefault {
-	background-position: -468px -624px;
-}
 
 /*----- IconLibrary-FolderType-64x64 -----*/
-
-.uiIcon64x64FolderDefault {
-	background-position: 0px -680px;
+.uiIcon64x64FolderDefault:before {
+	content: "\e665";
 }
 
-.uiIcon64x64FolderWebcontentBlue,.uiIcon64x64exo_webFolder {
-	background-position: -68px -680px;
+.uiIcon64x64FolderWebcontentBlue:before,.uiIcon64x64exo_webFolder:before {
+	color: @colorIconPrimary;
+	content: "\e665";
 }
 
-.uiIcon64x64FolderPrivate,.uiIcon64x64exo_privateFolder {
-	background-position: -136px -680px;
+
+.uiIcon64x64FolderPrivate:before,.uiIcon64x64exo_privateFolder:before {
+	content: "\e667";
 }
 
-.uiIcon64x64FolderFavorite,.uiIcon64x64exo_favoriteFolder {
-	background-position: -204px -680px;
+.uiIcon64x64FolderFavorite:before,.uiIcon64x64exo_favoriteFolder:before {
+	content: "\e666";
 }
 
-.uiIcon64x64FolderDocument,.uiIcon64x64exo_documentFolder {
-	background-position: -272px -680px;
+.uiIcon64x64FolderDocument:before,.uiIcon64x64exo_documentFolder:before {
+	content: "\e65e";
 }
 
-.uiIcon64x64FolderNtUnstruct,.uiIcon64x64nt_unstructured {
-	background-position: -340px -680px;
+.uiIcon64x64FolderNtUnstruct:before,.uiIcon64x64nt_unstructured:before {
+	content: "\e661";
 }
 
-.uiIcon64x64FolderJs,.uiIcon64x64exo_jsFolder {
-	background-position: -408px -680px;
+.uiIcon64x64FolderJs:before,.uiIcon64x64exo_jsFolder:before {
+	content: "\e660";
 }
 
-.uiIcon64x64FolderWeb {
-	background-position: -476px -680px;
+.uiIcon64x64FolderWeb:before {
+	content: "\e664";
 }
 
-.uiIcon64x64FolderSound,.uiIcon64x64exo_audioFolder,.uiIcon64x64exo_musicFolder {
-	background-position: -544px -680px;
+.uiIcon64x64FolderSound:before,.uiIcon64x64exo_audioFolder:before,.uiIcon64x64exo_musicFolder:before {
+	content: "\e663";
 }
 
-.uiIcon64x64FolderPublic,.uiIcon64x64exo_publicFolder {
-	background-position: -612px -680px;
+.uiIcon64x64FolderPublic:before,.uiIcon64x64exo_publicFolder:before {
+	content: "\e662";
 }
 
-.uiIcon64x64FolderGraphic,.uiIcon64x64exo_pictureFolder {
-	background-position: 0px -748px;
+.uiIcon64x64FolderGraphic:before,.uiIcon64x64exo_pictureFolder:before {
+	content: "\e65f";
+}
+.uiIcon64x64FolderSearch:before,.uiIcon64x64exo_searchFolder:before {
+	content: "\e65a";
 }
 
-.uiIcon64x64FolderSearch,.uiIcon64x64exo_searchFolder {
-	background-position: -68px -748px;
+.uiIcon64x64FolderCss:before,.uiIcon64x64exo_cssFolder:before {
+	content: "\e657";
+} 
+
+.uiIcon64x64FolderProduct:before,.uiIcon64x64acme_product:before {
+	content: "\e659";
 }
 
-.uiIcon64x64FolderCss,.uiIcon64x64exo_cssFolder {
-	background-position: -136px -748px;
+.uiIcon64x64FolderTaxonomy:before,.uiIcon64x64exo_taxonomy:before {
+	content: "\e65b";
 }
 
-.uiIcon64x64FolderProduct,.uiIcon64x64acme_product {
-	background-position: -204px -748px;
+.uiIcon64x64FolderExoContent:before,.uiIcon64x64exo_webContent:before {
+	content: "\e658";
 }
 
-.uiIcon64x64FolderTaxonomy,.uiIcon64x64exo_taxonomy {
-	background-position: -272px -748px;
+.uiIcon64x64FolderTheme:before,.uiIcon64x64exo_themeFolder:before {
+	content: "\e65c";
 }
 
-.uiIcon64x64FolderExoContent,.uiIcon64x64exo_webContent {
-	background-position: -340px -748px;
+.uiIcon64x64FolderVideoMedia:before,.uiIcon64x64exo_multimediaFolder:before,.uiIcon64x64exo_videoFolder:before {
+	content: "\e65d";
 }
 
-.uiIcon64x64FolderTheme,.uiIcon64x64exo_themeFolder {
-	background-position: -408px -748px;
+.uiIcon64x64FolderLink:before,.uiIcon64x64exo_linkFolder:before {
+	content: "\e656";
 }
 
-.uiIcon64x64FolderVideoMedia,.uiIcon64x64exo_multimediaFolder,.uiIcon64x64exo_videoFolder {
-	background-position: -476px -748px;
+.uiIcon64x64exo_driveDefault:before {
+	content: "\e68a";
 }
 
-.uiIcon64x64FolderLink,.uiIcon64x64exo_linkFolder {
-	background-position: -544px -748px;
+.uiIcon64x64exo_tagStyleDefault:before {
+	content: "\e600";
 }
 
-.uiIcon64x64exo_driveDefault {
-	background-position: -476px -816px;
-}
-
-.uiIcon64x64exo_tagStyleDefault {
-	background-position: -544px -816px;
-}
-
-.uiIcon64x64exo_viewDefault {
-	background-position: -612px -816px;
+.uiIcon64x64exo_viewDefault:before {
+	content: "\e655";
 }
 
 /*---------- IconLibrary-TemplateType -----*/
 
 /*----- IconLibrary-TemplateType-16x16 -----*/
 
-.uiIcon16x16TemplateDefault,.uiIcon16x16exo_default {
-	background-position: 0px 0px;
+.uiIcon16x16TemplateDefault:before,.uiIcon16x16exo_default:before {
+	content: "\e722";
 }
 
-.uiIcon16x16TemplateAnnounment,.uiIcon16x16Templateexo_announcement,.uiIcon16x16exo_announcement,.uiIcon16x16TemplateAnnouncement {
-	background-position: -20px 0px;
+
+.uiIcon16x16TemplateAnnounment:before,
+.uiIcon16x16Templateexo_announcement:before,
+.uiIcon16x16exo_announcement:before,
+.uiIcon16x16TemplateAnnouncement:before {
+	content: "\e736";
+	color: #6EAD51;
 }
 
-.uiIcon16x16TemplateContactRequest,.uiIcon16x16Templateacme_contact_us,.uiIcon16x16exo_contactUs,.uiIcon16x16TemplateContactUs, .uiIcon16x16Templateexo_contact {
-	background-position: -40px 0px;
+.uiIcon16x16TemplateContactRequest:before,
+.uiIcon16x16TemplateContact:before,
+.uiIcon16x16Templateacme_contact_us:before,
+.uiIcon16x16exo_contactUs:before,
+.uiIcon16x16TemplateContactUs:before,.uiIcon16x16Templateexo_contact:before {
+	content: "\e737";
+	color: #acaf58;
 }
 
-.uiIcon16x16TemplateJs,.uiIcon16x16Templateexo_jsFile,.uiIcon16x16textjavascript,.uiIcon16x16TemplateJavascriptFile {
-	background-position: -60px 0px;
+.uiIcon16x16TemplateJs:before,
+.uiIcon16x16Templateexo_jsFile:before,
+.uiIcon16x16textjavascript:before,
+.uiIcon16x16TemplateJavascriptFile:before {
+	content: "\e738";
+	color: #87412F;
 }
 
-.uiIcon16x16TemplatePictureOnHead,.uiIcon16x16Templateexo_pictureOnHeadWebcontent,.uiIcon16x16exo_pictureOnHeadWebcontent,
-.uiIcon16x16TemplateIllustratedWebContent {
-	background-position: -80px 0px;
+.uiIcon16x16TemplatePictureOnHead:before,.uiIcon16x16Templateexo_pictureOnHeadWebcontent:before,.uiIcon16x16exo_pictureOnHeadWebcontent:before,
+.uiIcon16x16TemplateIllustratedWebContent:before {
+	content: "\e733";
+	color: #3f917d;
 }
 
-.uiIcon16x16TemplateSiteBreadcrumb,.uiIcon16x16Templatewai_siteBreadcrumb,.uiIcon16x16wai_siteBreadcrumb,
-.uiIcon16x16TemplateAccessibleBreadcrumb {
-	background-position: -100px 0px;
+.uiIcon16x16TemplateSiteBreadcrumb:before,.uiIcon16x16Templatewai_siteBreadcrumb:before,.uiIcon16x16wai_siteBreadcrumb:before,
+.uiIcon16x16TemplateAccessibleBreadcrumb:before {
+	content: "\e735";
+	color: #66537c;
 }
 
-.uiIcon16x16TemplateAccessibilityMedia,.uiIcon16x16Templateexo_accessibleMedia,.uiIcon16x16exo_accessibleMedia,
-.uiIcon16x16TemplateAccessibleMedia {
-	background-position: -120px 0px;
+.uiIcon16x16TemplateAccessibilityMedia:before,.uiIcon16x16Templateexo_accessibleMedia:before,.uiIcon16x16exo_accessibleMedia:before,
+.uiIcon16x16TemplateAccessibleMedia:before {
+	content: "\e72f";
+	color:#525584;
 }
 
-.uiIcon16x16TemplateFile,.uiIcon16x16Templatent_file {
-	background-position: -140px 0px;
+.uiIcon16x16TemplateFile:before,.uiIcon16x16Templatent_file:before {
+	content: "\e731";
+	color: #bf9b2e;
 }
 
-.uiIcon16x16TemplateCss,.uiIcon16x16Templateexo_cssFile,.uiIcon16x16TemplateCSSFile  {
-	background-position: -160px 0px;
+.uiIcon16x16TemplateCss:before,.uiIcon16x16Templateexo_cssFile:before,.uiIcon16x16TemplateCSSFile:before  {
+	content: "\e730";
+	color: #8f3461;
 }
 
-.uiIcon16x16TemplateHtml,.uiIcon16x16Templateexo_htmlFile,.uiIcon16x16TemplateHTMLFile  {
-	background-position: -180px 0px;
+.uiIcon16x16TemplateHtml:before,.uiIcon16x16Templateexo_htmlFile:before,.uiIcon16x16TemplateHTMLFile:before  {
+	content: "\e724";
+	color: #4c6ea4;
 }
 
-.uiIcon16x16TemplateProduct,.uiIcon16x16Templateacme_product {
-	background-position: 0px -20px;
+.uiIcon16x16TemplateProduct:before,.uiIcon16x16Templateacme_product:before {
+	content: "\e734";
+	color: #AE7651;
 }
 
-.uiIcon16x16TemplateNavigation,.uiIcon16x16Templatewai_siteNavigationWebContent,.uiIcon16x16wai_siteNavigationWebContent ,
-.uiIcon16x16TemplateAccessibleNavigation{
-	background-position: -20px -20px;
+.uiIcon16x16TemplateNavigation:before,.uiIcon16x16Templatewai_siteNavigationWebContent:before,
+.uiIcon16x16wai_siteNavigationWebContent:before ,
+.uiIcon16x16TemplateAccessibleNavigation:before{
+	content: "\e72a";
+	color: #3c7096;
 } 
 
-.uiIcon16x16TemplateWebLink,.uiIcon16x16Templateexo_link,.uiIcon16x16exo_link ,.uiIcon16x16TemplateWeb{
-	background-position: -40px -20px;
+.uiIcon16x16TemplateWebLink:before,.uiIcon16x16Templateexo_link:before,.uiIcon16x16exo_link:before ,.uiIcon16x16TemplateWeb:before{
+	content: "\e72e";
+	color: #79505d;
 }
 
-.uiIcon16x16TemplateSearchBox,.uiIcon16x16Templatewai_siteSearchBox,.uiIcon16x16wai_siteSearchBox,.uiIcon16x16TemplateAccessibleSiteSearchBox {
-	background-position: -60px -20px;
+.uiIcon16x16TemplateSearchBox:before,
+.uiIcon16x16Templatewai_siteSearchBox:before,
+.uiIcon16x16wai_siteSearchBox:before,
+.uiIcon16x16TemplateAccessibleSiteSearchBox:before {
+		content: "\e72d";
+		color: #824f81;
 }
 
-.uiIcon16x16TemplateFreeLayout,.uiIcon16x16Templateexo_webContent,.uiIcon16x16exo_webContent,.uiIcon16x16TemplateWebContent {
-	background-position: -80px -20px;
+.uiIcon16x16TemplateFreeLayout:before,.uiIcon16x16Templateexo_webContent:before,
+.uiIcon16x16exo_webContent:before,.uiIcon16x16TemplateWebContent:before {
+	content: "\e729";
+	color: #707071;
 }
+
 
 .uiIcon16x16TemplateArticle, .uiIcon16x16Templateexo_article, .uiIcon16x16exo_article {
-	background-position: -100px -20px;
+    &:before {
+        content: "\e727";
+        color: #1CBDC4;
+    }
 }
 
-.uiIcon16x16TemplateBannerSlideImage, .uiIcon16x16Templateexo_bannerSlideImage, .uiIcon16x16exo_bannerSlideImage {
-	background-position: -120px -20px;
+.uiIcon16x16TemplateBannerSlideImage, .uiIcon16x16Templateexo_bannerSlideImage , .uiIcon16x16exo_bannerSlideImage {
+    &:before {
+        content: "\e720";
+        color: #33B98E;
+    }
 }
 
-.uiIcon16x16TemplateBlog, .uiIcon16x16Templateexo_dnblog, .uiIcon16x16exo_dnblog {
-	background-position: -140px -20px;
+.uiIcon16x16TemplateBlog, .uiIcon16x16Templateexo_dnblog , .uiIcon16x16exo_dnblog {
+    &:before {
+        content: "\e721";
+        color: #BAC233;
+    }
 }
 
-.uiIcon16x16TemplateGoogleMap, .uiIcon16x16Templateexo_googleMap, .uiIcon16x16exo_googleMap {
-	background-position: -160px -20px;
+.uiIcon16x16TemplateGoogleMap, .uiIcon16x16Templateexo_googleMap, .uiIcon16x16exo_googleMap,.uiIcon16x16TemplateMap {
+    &:before {
+        content: "\e723";
+        color: #7656A4;
+    }
 }
 
-.uiIcon16x16TemplateNews, .uiIcon16x16Templateexo_news, .uiIcon16x16exo_news {
-	background-position: -180px -20px;
+.uiIcon16x16TemplateNews, .uiIcon16x16Templateexo_news , .uiIcon16x16exo_news {
+    &:before {
+        content: "\e72b";
+        color: #BA5391;
+    }
+}
+.uiIcon16x16TemplateService,.uiIcon16x16TemplateWebService, .uiIcon16x16Templateexo_services, .uiIcon16x16exo_services, .uiIcon16x16TemplateServices {
+    &:before {
+        content: "\e726";
+        color: #5572B7;
+    }
 }
 
-.uiIcon16x16TemplateWebService, .uiIcon16x16Templateexo_services, .uiIcon16x16exo_services, .uiIcon16x16TemplateServices {
-	background-position: 0 -40px;
-}
-
-.uiIcon16x16TemplateTestimonial, .uiIcon16x16Templateexo_testimonial, .uiIcon16x16exo_testimonial {
-	background-position: -20px -40px;
+.uiIcon16x16TemplateTestimonial, .uiIcon16x16Templateexo_testimonial , .uiIcon16x16exo_testimonial {
+    &:before {
+        content: "\e725";
+        color: #c12626;
+    }
 }
 
 .uiIcon16x16TemplatePlayMedia, .uiIcon16x16Templateexo_playMedia {
-	background-position: -40px -40px;
+    &:before {
+        content: "\e72c";
+    }
 }
 
 .uiIcon16x16TemplateFeatures, .uiIcon16x16Templateexo_features {
-	background-position: -60px -40px;
+    &:before {
+        content: "\e728";
+    }
 }
 
-.uiIcon16x16TemplateTeamMember, .uiIcon16x16Templateexo_teamMember, .uiIcon16x16exo_teamMember {
-	background-position: -80px -40px;
+.uiIcon16x16TemplateTeamMember, .uiIcon16x16Templateexo_teamMember , .uiIcon16x16exo_teamMember {
+    &:before {
+        content: "\e724";
+        color: #54B459;
+    }
 }
-
 /************** IconLibrary-TemplateType-24x24 *************/
 
-.uiIcon24x24TemplateDefault,.uiIcon24x24exo_default {
-	background-position: 0px 0px;
+.uiIcon24x24TemplateDefault:before,.uiIcon24x24exo_default:before {
+	content: "\e722";
 }
 
-.uiIcon24x24TemplateAnnounment,.uiIcon24x24Templateexo_announcement,.uiIcon24x24exo_announcement {
-	background-position: -28px 0px;
+.uiIcon24x24TemplateAnnounment:before,
+.uiIcon24x24Templateexo_announcement:before,
+.uiIcon24x24exo_announcement:before,
+.uiIcon24x24TemplateAnnouncement:before {
+	content: "\e736";
+	color: #6EAD51;
 }
 
-.uiIcon24x24TemplateContactRequest,.uiIcon24x24Templateacme_contact_us,.uiIcon24x24exo_contactUs, .uiIcon24x24Templateexo_contact {
-	background-position: -56px 0px;
+
+.uiIcon24x24TemplateContactRequest:before,
+.uiIcon24x24TemplateContact:before,
+.uiIcon24x24Templateacme_contact_us:before,
+.uiIcon24x24exo_contactUs:before,
+.uiIcon24x24TemplateContactUs:before ,.uiIcon24x24Templateexo_contact:before{
+	content: "\e737";
+	color: #acaf58;
 }
 
-.uiIcon24x24TemplateJs ,.uiIcon24x24Templateexo_jsFile,.uiIcon24x24textjavascript {
-	background-position: -84px 0px;
+.uiIcon24x24TemplateJs:before,
+.uiIcon24x24Templateexo_jsFile:before,
+.uiIcon24x24textjavascript:before,
+.uiIcon24x24TemplateJavascriptFile:before {
+	content: "\e738";
+	color: #87412F;
 }
 
-.uiIcon24x24TemplatePictureOnHead,.uiIcon24x24Templateexo_pictureOnHeadWebcontent,.uiIcon24x24exo_pictureOnHeadWebcontent {
-	background-position: -112px 0px;
+.uiIcon24x24TemplatePictureOnHead:before,.uiIcon24x24Templateexo_pictureOnHeadWebcontent:before,.uiIcon24x24exo_pictureOnHeadWebcontent:before,
+.uiIcon24x24TemplateIllustratedWebContent:before {
+	content: "\e733";
+	color: #3f917d;
 }
 
-.uiIcon24x24TemplateSiteBreadcrumb,.uiIcon24x24Templatewai_siteBreadcrumb,.uiIcon24x24wai_siteBreadcrumb {
-	background-position: -140px 0px;
+.uiIcon24x24TemplateSiteBreadcrumb:before,.uiIcon24x24Templatewai_siteBreadcrumb:before,.uiIcon24x24wai_siteBreadcrumb:before,
+.uiIcon24x24TemplateAccessibleBreadcrumb:before {
+	content: "\e735";
+	color: #66537c;
 }
 
-.uiIcon24x24TemplateAccessibilityMedia,.uiIcon24x24Templateexo_accessibleMedia,.uiIcon24x24exo_accessibleMedia {
-	background-position: -168px 0px;
+.uiIcon24x24TemplateAccessibilityMedia:before,.uiIcon24x24Templateexo_accessibleMedia:before,.uiIcon24x24exo_accessibleMedia:before,
+.uiIcon24x24TemplateAccessibleMedia:before {
+	content: "\e72f";
+	color:#525584;
 }
 
-.uiIcon24x24TemplateFile,.uiIcon24x24Templatent_file {
-	background-position: -196px 0px;
+.uiIcon24x24TemplateFile:before,.uiIcon24x24Templatent_file:before {
+	content: "\e731";
+	color: #bf9b2e;
 }
 
-.uiIcon24x24TemplateCss,.uiIcon24x24Templateexo_cssFile {
-	background-position: -224px 0px;
+.uiIcon24x24TemplateCss:before,.uiIcon24x24Templateexo_cssFile:before,.uiIcon24x24TemplateCSSFile:before  {
+	content: "\e730";
+	color: #8f3461;
 }
 
-.uiIcon24x24TemplateHtml,.uiIcon24x24Templateexo_htmlFile {
-	background-position: -252px 0px;
+.uiIcon24x24TemplateHtml:before,.uiIcon24x24Templateexo_htmlFile:before,.uiIcon24x24TemplateHTMLFile:before  {
+	content: "\e724";
+	color: #4c6ea4;
 }
 
-.uiIcon24x24TemplateProduct,.uiIcon24x24Templateacme_product {
-	background-position: 0px -28px;
+.uiIcon24x24TemplateProduct:before,.uiIcon24x24Templateacme_product:before {
+	content: "\e734";
+	color: #AE7651;
 }
 
-.uiIcon24x24TemplateNavigation,.uiIcon24x24Templatewai_siteNavigationWebContent,.uiIcon24x24wai_siteNavigationWebContent {
-	background-position: -28px -28px;
+.uiIcon24x24TemplateNavigation:before,.uiIcon24x24Templatewai_siteNavigationWebContent:before,
+.uiIcon24x24wai_siteNavigationWebContent:before ,
+.uiIcon24x24TemplateAccessibleNavigation:before{
+	content: "\e72a";
+	color: #3c7096;
+} 
+
+.uiIcon24x24TemplateWebLink:before,.uiIcon24x24Templateexo_link:before,.uiIcon24x24exo_link:before ,.uiIcon24x24TemplateWeb:before{
+	content: "\e72e";
+	color: #79505d;
 }
 
-.uiIcon24x24TemplateWebLink,.uiIcon24x24Templateexo_link,.uiIcon24x24exo_link {
-	background-position: -56px -28px;
+.uiIcon24x24TemplateSearchBox:before,
+.uiIcon24x24Templatewai_siteSearchBox:before,
+.uiIcon24x24wai_siteSearchBox:before,
+.uiIcon24x24TemplateAccessibleSiteSearchBox:before {
+		content: "\e72d";
+		color: #824f81;
 }
 
-.uiIcon24x24TemplateSearchBox,.uiIcon24x24Templatewai_siteSearchBox,.uiIcon24x24wai_siteSearchBox {
-	background-position: -84px -28px;
+.uiIcon24x24TemplateFreeLayout:before,.uiIcon24x24Templateexo_webContent:before,
+.uiIcon24x24exo_webContent:before,.uiIcon24x24TemplateWebContent:before {
+	content: "\e729";
+	color: #707071;
 }
 
-.uiIcon24x24TemplateFreeLayout,.uiIcon24x24Templateexo_webContent,.uiIcon24x24exo_webContent {
-	background-position: -112px -28px;
+.uiIcon24x24TemplateArticle, .uiIcon24x24Templateexo_article , .uiIcon24x24exo_article{
+    &:before {
+        content: "\e727";
+        color: #1CBDC4;
+    }
 }
 
-.uiIcon24x24TemplateArticle, .uiIcon24x24Templateexo_article, .uiIcon24x24exo_article {
-	background-position: -140px -28px;
-}
-
-.uiIcon24x24TemplateBannerSlideImage, .uiIcon24x24Templateexo_bannerSlideImage, .uiIcon24x24exo_bannerSlideImage {
-	background-position: -168px -28px;
+.uiIcon24x24TemplateBannerSlideImage, .uiIcon24x24Templateexo_bannerSlideImage, .uiIcon24x24exo_bannerSlideImage  {
+    &:before {
+        content: "\e720";
+        color: #33B98E;
+    }
 }
 
 .uiIcon24x24TemplateBlog, .uiIcon24x24Templateexo_dnblog, .uiIcon24x24exo_dnblog {
-	background-position: -196px -28px;
+    &:before {
+        content: "\e721";
+        color: #BAC233;
+    }
 }
 
-.uiIcon24x24TemplateGoogleMap, .uiIcon24x24Templateexo_googleMap, .uiIcon24x24exo_googleMap {
-	background-position: -224px -28px;
+.uiIcon24x24TemplateGoogleMap, .uiIcon24x24Templateexo_googleMap , .uiIcon24x24exo_googleMap ,.uiIcon24x24TemplateMap{
+    &:before {
+        content: "\e723";
+        color: #7656A4;
+    }
 }
 
-.uiIcon24x24TemplateNews, .uiIcon24x24Templateexo_news, .uiIcon24x24exo_news {
-	background-position: -252px -28px;
+.uiIcon24x24TemplateNews, .uiIcon24x24Templateexo_news , .uiIcon24x24exo_news {
+    &:before {
+        content: "\e72b";
+        color: #BA5391;
+    }
 }
 
-.uiIcon24x24TemplateService, .uiIcon24x24Templateexo_services, .uiIcon24x24exo_services {
-	background-position: 0 -56px;
+.uiIcon24x24TemplateService, .uiIcon24x24Templateexo_services , .uiIcon24x24exo_services {
+    &:before {
+        content: "\e726";
+        color: #5572B7;
+    }
 }
 
-.uiIcon24x24TemplateTestimonial, .uiIcon24x24Templateexo_testimonial, .uiIcon24x24exo_testimonial {
-	background-position: -28px -56px;
+.uiIcon24x24TemplateTestimonial, .uiIcon24x24Templateexo_testimonial , .uiIcon24x24exo_testimonial {
+    &:before {
+        content: "\e725";
+        color: #c12626;
+    }
 }
 
 .uiIcon24x24TemplatePlayMedia, .uiIcon24x24Templateexo_playMedia {
-	background-position: -56px -56px;
+    &:before {
+        content: "\e72c";
+    }
 }
 
 .uiIcon24x24TemplateFeatures, .uiIcon24x24Templateexo_features {
-	background-position: -84px -56px;
+    &:before {
+        content: "\e728";
+    }
 }
 
-.uiIcon24x24TemplateTeamMember, .uiIcon24x24Templateexo_teamMember, .uiIcon24x24exo_teamMember {
-	background-position: -112px -56px;
-}
 
+.uiIcon24x24TemplateTeamMember, .uiIcon24x24Templateexo_teamMember,.uiIcon24x24exo_teamMember {
+    &:before {
+        content: "\e724";
+        color: #54B459;
+    }
+}
 
 /*----- IconLibrary-TemplateType-32x32 -----*/
 
-.uiIcon32x32TemplateDefault {
-	background-position: 0px 0px;
+.uiIcon32x32TemplateDefault:before,.uiIcon32x32exo_default:before {
+	content: "\e722";
 }
 
-.uiIcon32x32TemplateAnnounment {
-	background-position: -36px 0px;
+.uiIcon32x32TemplateAnnounment:before,
+.uiIcon32x32Templateexo_announcement:before,
+.uiIcon32x32exo_announcement:before,
+.uiIcon32x32TemplateAnnouncement:before {
+	content: "\e736";
+	color: #6EAD51;
 }
 
-.uiIcon32x32TemplateContactRequest, .uiIcon32x32Templateexo_contact  {
-	background-position: -72px 0px;
+.uiIcon32x32TemplateContactRequest:before,
+.uiIcon32x32TemplateContact:before,
+.uiIcon32x32Templateacme_contact_us:before,
+.uiIcon32x32exo_contactUs:before,
+.uiIcon32x32TemplateContactUs:before,.uiIcon32x32Templateexo_contact:before {
+	content: "\e737";
+	color: #acaf58;
 }
 
-.uiIcon32x32TemplateJs {
-	background-position: -108px 0px;
+.uiIcon32x32TemplateJs:before,
+.uiIcon32x32Templateexo_jsFile:before,
+.uiIcon32x32textjavascript:before,
+.uiIcon32x32TemplateJavascriptFile:before {
+	content: "\e738";
+	color: #87412F;
 }
 
-.uiIcon32x32TemplatePictureOnHead {
-	background-position: -144px 0px;
+.uiIcon32x32TemplatePictureOnHead:before,.uiIcon32x32Templateexo_pictureOnHeadWebcontent:before,.uiIcon32x32exo_pictureOnHeadWebcontent:before,
+.uiIcon32x32TemplateIllustratedWebContent:before {
+	content: "\e733";
+	color: #3f917d;
 }
 
-.uiIcon32x32TemplateSiteBreadcrumb {
-	background-position: -180px 0px;
+.uiIcon32x32TemplateSiteBreadcrumb:before,.uiIcon32x32Templatewai_siteBreadcrumb:before,.uiIcon32x32wai_siteBreadcrumb:before,
+.uiIcon32x32TemplateAccessibleBreadcrumb:before {
+	content: "\e735";
+	color: #66537c;
 }
 
-.uiIcon32x32TemplateAccessibilityMedia {
-	background-position: -216px 0px;
+.uiIcon32x32TemplateAccessibilityMedia:before,.uiIcon32x32Templateexo_accessibleMedia:before,.uiIcon32x32exo_accessibleMedia:before,
+.uiIcon32x32TemplateAccessibleMedia:before {
+	content: "\e72f";
+	color:#525584;
 }
 
-.uiIcon32x32TemplateFile {
-	background-position: -252px 0px;
+.uiIcon32x32TemplateFile:before,.uiIcon32x32Templatent_file:before {
+	content: "\e731";
+	color: #bf9b2e;
 }
 
-.uiIcon32x32TemplateCss {
-	background-position: -288px 0px;
+.uiIcon32x32TemplateCss:before,.uiIcon32x32Templateexo_cssFile:before,.uiIcon32x32TemplateCSSFile:before  {
+	content: "\e730";
+	color: #8f3461;
 }
 
-.uiIcon32x32TemplateHtml {
-	background-position: -324px 0px;
+.uiIcon32x32TemplateHtml:before,.uiIcon32x32Templateexo_htmlFile:before,.uiIcon32x32TemplateHTMLFile:before  {
+	content: "\e732";
+	color: #4c6ea4;
 }
 
-.uiIcon32x32TemplateProduct {
-	background-position: 0px -36px;
+.uiIcon32x32TemplateProduct:before,.uiIcon32x32Templateacme_product:before {
+	content: "\e734";
+	color: #AE7651;
 }
 
-.uiIcon32x32TemplateNavigation {
-	background-position: -36px -36px;
+.uiIcon32x32TemplateNavigation:before,.uiIcon32x32Templatewai_siteNavigationWebContent:before,
+.uiIcon32x32wai_siteNavigationWebContent:before ,
+.uiIcon32x32TemplateAccessibleNavigation:before{
+	content: "\e72a";
+	color: #3c7096;
+} 
+
+.uiIcon32x32TemplateWebLink:before,.uiIcon32x32Templateexo_link:before,.uiIcon32x32exo_link:before ,.uiIcon32x32TemplateWeb:before{
+	content: "\e72e";
+	color: #79505d;
 }
 
-.uiIcon32x32TemplateWebLink {
-	background-position: -72px -36px;
+.uiIcon32x32TemplateSearchBox:before,
+.uiIcon32x32Templatewai_siteSearchBox:before,
+.uiIcon32x32wai_siteSearchBox:before,
+.uiIcon32x32TemplateAccessibleSiteSearchBox:before {
+		content: "\e72d";
+		color: #832f81;
 }
 
-.uiIcon32x32TemplateSearchBox {
-	background-position: -108px -36px;
+.uiIcon32x32TemplateFreeLayout:before,.uiIcon32x32Templateexo_webContent:before,
+.uiIcon32x32exo_webContent:before,.uiIcon32x32TemplateWebContent:before {
+	content: "\e729";
+	color: #707071;
 }
 
-.uiIcon32x32TemplateFreeLayout {
-	background-position: -144px -36px;
+
+.uiIcon32x32TemplateArticle, .uiIcon32x32Templateexo_article , .uiIcon32x32exo_article {
+    &:before {
+        content: "\e727";
+        color: #1CBDC4;
+    }
 }
 
-.uiIcon32x32TemplateArticle, .uiIcon32x32Templateexo_article, .uiIcon32x32exo_article {
-	background-position: -180px -36px;
-}
-
-.uiIcon32x32TemplateBannerSlideImage, .uiIcon32x32Templateexo_bannerSlideImage, .uiIcon32x32exo_bannerSlideImage {
-	background-position: -216px -36px;
+.uiIcon32x32TemplateBannerSlideImage, .uiIcon32x32Templateexo_bannerSlideImage , .uiIcon32x32exo_bannerSlideImage {
+    &:before {
+        content: "\e720";
+        color: #33B98E;
+    }
 }
 
 .uiIcon32x32TemplateBlog, .uiIcon32x32Templateexo_dnblog, .uiIcon32x32exo_dnblog {
-	background-position: -252px -36px;
+    &:before {
+        content: "\e721";
+        color: #BAC233;
+    }
 }
 
-.uiIcon32x32TemplateGoogleMap, .uiIcon32x32Templateexo_googleMap, .uiIcon32x32exo_googleMap {
-	background-position: -288px -36px;
+.uiIcon32x32TemplateGoogleMap, .uiIcon32x32Templateexo_googleMap , .uiIcon32x32exo_googleMap,.uiIcon32x32TemplateMap {
+    &:before {
+        content: "\e723";
+        color: #7656A4;
+    }
 }
 
 .uiIcon32x32TemplateNews, .uiIcon32x32Templateexo_news, .uiIcon32x32exo_news {
-	background-position: -324px -36px;
+    &:before {
+        content: "\e72b";
+        color: #BA5391;
+    }
 }
 
-.uiIcon32x32TemplateService, .uiIcon32x32Templateexo_services, .uiIcon32x32exo_services {
-	background-position: -0 -72px;
+.uiIcon32x32TemplateService, .uiIcon32x32Templateexo_services , .uiIcon32x32exo_services {
+    &:before {
+        content: "\e726";
+        color: #5572B7;
+    }
 }
 
-.uiIcon32x32TemplateTestimonial, .uiIcon32x32Templateexo_testimonial, .uiIcon32x32exo_testimonial {
-	background-position: -36px -72px;
+.uiIcon32x32TemplateTestimonial, .uiIcon32x32Templateexo_testimonial , .uiIcon32x32exo_testimonial {
+    &:before {
+        content: "\e725";
+        color: #c12626;
+    }
 }
 
 .uiIcon32x32TemplatePlayMedia, .uiIcon32x32Templateexo_playMedia {
-	background-position: -72px -72px;
+    &:before {
+        content: "\e72c";
+    }
 }
 
 .uiIcon32x32TemplateFeatures, .uiIcon32x32Templateexo_features {
-	background-position: -108px -72px;
+    &:before {
+        content: "\e728";
+    }
 }
 
-.uiIcon32x32TemplateTeamMember, .uiIcon32x32Templateexo_teamMember, .uiIcon32x32exo_teamMember {
-	background-position: -144px -72px;
+.uiIcon32x32TemplateTeamMember, .uiIcon32x32Templateexo_teamMember ,.uiIcon32x32exo_teamMember{
+    &:before {
+        content: "\e724";
+        color: #54B459;
+    }
 }
-
 
 /*----- IconLibrary-TemplateType-48x48 -----*/
 
-.uiIcon48x48TemplateDefault {
-	background-position: 0px 0px;
+.uiIcon48x48TemplateDefault:before,.uiIcon48x48exo_default:before {
+	content: "\e722";
 }
 
-.uiIcon48x48TemplateAnnounment {
-	background-position: -52px 0px;
+.uiIcon48x48TemplateAnnounment:before,
+.uiIcon48x48Templateexo_announcement:before,
+.uiIcon48x48exo_announcement:before,
+.uiIcon48x48TemplateAnnouncement:before {
+	content: "\e736";
+	color: #6EAD51;
 }
 
-.uiIcon48x48TemplateContactRequest, .uiIcon48x48Templateexo_contact {
-	background-position: -104px 0px;
+.uiIcon48x48TemplateContactRequest:before,
+.uiIcon48x48TemplateContact:before,
+.uiIcon48x48Templateacme_contact_us:before,
+.uiIcon48x48exo_contactUs:before,
+.uiIcon48x48TemplateContactUs:before,.uiIcon48x48Templateexo_contact:before {
+	content: "\e737";
+	color: #acaf58;
 }
 
-.uiIcon48x48TemplateJs {
-	background-position: -156px 0px;
+.uiIcon48x48TemplateJs:before,
+.uiIcon48x48Templateexo_jsFile:before,
+.uiIcon48x48textjavascript:before,
+.uiIcon48x48TemplateJavascriptFile:before {
+	content: "\e738";
+	color: #87412F;
 }
 
-.uiIcon48x48TemplatePictureOnHead {
-	background-position: -208px 0px;
+.uiIcon48x48TemplatePictureOnHead:before,.uiIcon48x48Templateexo_pictureOnHeadWebcontent:before,.uiIcon48x48exo_pictureOnHeadWebcontent:before,
+.uiIcon48x48TemplateIllustratedWebContent:before {
+	content: "\e733";
+	color: #3f917d;
 }
 
-.uiIcon48x48TemplateSiteBreadcrumb {
-	background-position: -260px 0px;
+.uiIcon48x48TemplateSiteBreadcrumb:before,.uiIcon48x48Templatewai_siteBreadcrumb:before,.uiIcon48x48wai_siteBreadcrumb:before,
+.uiIcon48x48TemplateAccessibleBreadcrumb:before {
+	content: "\e735";
+	color: #66537c;
 }
 
-.uiIcon48x48TemplateAccessibilityMedia {
-	background-position: -312px 0px;
+.uiIcon48x48TemplateAccessibilityMedia:before,.uiIcon48x48Templateexo_accessibleMedia:before,.uiIcon48x48exo_accessibleMedia:before,
+.uiIcon48x48TemplateAccessibleMedia:before {
+	content: "\e72f";
+	color:#525584;
 }
 
-.uiIcon48x48TemplateFile {
-	background-position: -364px 0px;
+.uiIcon48x48TemplateFile:before,.uiIcon48x48Templatent_file:before {
+	content: "\e731";
+	color: #bf9b2e;
 }
 
-.uiIcon48x48TemplateCss {
-	background-position: -416px 0px;
+.uiIcon48x48TemplateCss:before,.uiIcon48x48Templateexo_cssFile:before,.uiIcon48x48TemplateCSSFile:before  {
+	content: "\e730";
+	color: #8f3461;
 }
 
-.uiIcon48x48TemplateHtml {
-	background-position: -468px 0px;
+.uiIcon48x48TemplateHtml:before,.uiIcon48x48Templateexo_htmlFile:before,.uiIcon48x48TemplateHTMLFile:before  {
+	content: "\e732";
+	color: #4c6ea4;
 }
 
-.uiIcon48x48TemplateProduct {
-	background-position: 0px -52px;
+.uiIcon48x48TemplateProduct:before,.uiIcon48x48Templateacme_product:before {
+	content: "\e734";
+	color: #AE7651;
 }
 
-.uiIcon48x48TemplateNavigation {
-	background-position: -52px -52px;
+.uiIcon48x48TemplateNavigation:before,.uiIcon48x48Templatewai_siteNavigationWebContent:before,
+.uiIcon48x48wai_siteNavigationWebContent:before ,
+.uiIcon48x48TemplateAccessibleNavigation:before{
+	content: "\e72a";
+	color: #3c7096;
+} 
+
+.uiIcon48x48TemplateWebLink:before,.uiIcon48x48Templateexo_link:before,.uiIcon48x48exo_link:before ,.uiIcon48x48TemplateWeb:before{
+	content: "\e72e";
+	color: #79505d;
 }
 
-.uiIcon48x48TemplateWebLink {
-	background-position: -104px -52px;
+.uiIcon48x48TemplateSearchBox:before,
+.uiIcon48x48Templatewai_siteSearchBox:before,
+.uiIcon48x48wai_siteSearchBox:before,
+.uiIcon48x48TemplateAccessibleSiteSearchBox:before {
+		content: "\e72d";
+		color: #848f81;
 }
 
-.uiIcon48x48TemplateSearchBox {
-	background-position: -156px -52px;
+.uiIcon48x48TemplateFreeLayout:before,.uiIcon48x48Templateexo_webContent:before,
+.uiIcon48x48exo_webContent:before,.uiIcon48x48TemplateWebContent:before {
+	content: "\e729";
+	color: #707071;
 }
 
-.uiIcon48x48TemplateFreeLayout {
-	background-position: -208px -52px;
+.uiIcon48x48TemplateArticle, .uiIcon48x48Templateexo_article , .uiIcon48x48exo_article {
+    &:before {
+        content: "\e727";
+        color: #1CBDC4;
+    }
 }
 
-.uiIcon48x48TemplateArticle, .uiIcon48x48Templateexo_article, .uiIcon48x48exo_article {
-	background-position: -260px -52px;
-}
-
-.uiIcon48x48TemplateBannerSlideImage, .uiIcon48x48Templateexo_bannerSlideImage, .uiIcon48x48exo_bannerSlideImage {
-	background-position: -312px -52px;
+.uiIcon48x48TemplateBannerSlideImage, .uiIcon48x48Templateexo_bannerSlideImage , .uiIcon48x48exo_bannerSlideImage {
+    &:before {
+        content: "\e720";
+        color: #33B98E;
+    }
 }
 
 .uiIcon48x48TemplateBlog, .uiIcon48x48Templateexo_dnblog, .uiIcon48x48exo_dnblog {
-	background-position: -364px -52px;
+    &:before {
+        content: "\e721";
+        color: #BAC233;
+    }
 }
 
-.uiIcon48x48TemplateGoogleMap, .uiIcon48x48Templateexo_googleMap, .uiIcon48x48exo_googleMap {
-	background-position: -416px -52px;
+.uiIcon48x48TemplateGoogleMap, .uiIcon48x48Templateexo_googleMap , .uiIcon48x48exo_googleMap ,.uiIcon48x48TemplateMap{
+    &:before {
+        content: "\e723";
+        color: #7656A4;
+    }
 }
 
-.uiIcon48x48TemplateNews, .uiIcon48x48Templateexo_news, .uiIcon48x48exo_news {
-	background-position: -468px -52px;
+.uiIcon48x48TemplateNews, .uiIcon48x48Templateexo_news , .uiIcon48x48exo_news {
+    &:before {
+        content: "\e72b";
+        color: #BA5391;
+    }
 }
 
-.uiIcon48x48TemplateService, .uiIcon48x48Templateexo_services, .uiIcon48x48exo_services {
-	background-position: -0 -104px;
+.uiIcon48x48TemplateService, .uiIcon48x48Templateexo_services , .uiIcon48x48exo_services {
+    &:before {
+        content: "\e726";
+        color: #5572B7;
+    }
 }
 
-.uiIcon48x48TemplateTestimonial, .uiIcon48x48Templateexo_testimonial, .uiIcon48x48exo_testimonial {
-	background-position: -52px -104px;
+.uiIcon48x48TemplateTestimonial, .uiIcon48x48Templateexo_testimonial , .uiIcon48x48exo_testimonial {
+    &:before {
+        content: "\e725";
+        color: #c12626;
+    }
 }
 
 .uiIcon48x48TemplatePlayMedia, .uiIcon48x48Templateexo_playMedia {
-	background-position: -104px -104px;
+    &:before {
+        content: "\e72c";
+    }
 }
 
 .uiIcon48x48TemplateFeatures, .uiIcon48x48Templateexo_features {
-	background-position: -156px -104px;
+    &:before {
+        content: "\e728";
+    }
 }
 
 .uiIcon48x48TemplateTeamMember, .uiIcon48x48Templateexo_teamMember, .uiIcon48x48exo_teamMember {
-	background-position: -208px -104px;
+    &:before {
+        content: "\e724";
+        color: #54B459;
+    }
 }
-
 /*----- IconLibrary-TemplateType-64x64 -----*/
 
-.uiIcon64x64TemplateDefault,.uiIcon64x64exo_default {
-	background-position: 0px 0px;
+
+.uiIcon64x64TemplateDefault:before,.uiIcon64x64exo_default:before {
+	content: "\e722";
 }
 
-.uiIcon64x64TemplateAnnounment,.uiIcon64x64Templateexo_announcement,.uiIcon64x64exo_announcement {
-	background-position: -68px 0px;
+
+
+.uiIcon64x64TemplateAnnounment:before,
+.uiIcon64x64Templateexo_announcement:before,
+.uiIcon64x64exo_announcement:before,
+.uiIcon64x64TemplateAnnouncement:before, .uiIcon64x64Templateexo_contact:before {
+	content: "\e736";
+	color: #6EAD51;
+}
+.uiIcon64x64TemplateContactRequest:before,
+.uiIcon64x64TemplateContact:before,
+.uiIcon64x64Templateacme_contact_us:before,
+.uiIcon64x64exo_contactUs:before,
+.uiIcon64x64TemplateContactUs:before {
+	content: "\e737";
+	color: #acaf58;
 }
 
-.uiIcon64x64TemplateContactRequest,.uiIcon64x64Templateacme_contact_us,.uiIcon64x64exo_contactUs, .uiIcon64x64Templateexo_contact {
-	background-position: -136px 0px;
+.uiIcon64x64TemplateJs:before,
+.uiIcon64x64Templateexo_jsFile:before,
+.uiIcon64x64textjavascript:before,
+.uiIcon64x64TemplateJavascriptFile:before {
+	content: "\e738";
+	color: #87412F;
 }
 
-.uiIcon64x64TemplateJs ,.uiIcon64x64Templateexo_jsFile,.uiIcon64x64textjavascript {
-	background-position: -204px 0px;
+.uiIcon64x64TemplatePictureOnHead:before,.uiIcon64x64Templateexo_pictureOnHeadWebcontent:before,.uiIcon64x64exo_pictureOnHeadWebcontent:before,
+.uiIcon64x64TemplateIllustratedWebContent:before {
+	content: "\e733";
+	color: #3f917d;
 }
 
-.uiIcon64x64TemplatePictureOnHead,.uiIcon64x64Templateexo_pictureOnHeadWebcontent,.uiIcon64x64exo_pictureOnHeadWebcontent {
-	background-position: -272px 0px;
+.uiIcon64x64TemplateSiteBreadcrumb:before,.uiIcon64x64Templatewai_siteBreadcrumb:before,.uiIcon64x64wai_siteBreadcrumb:before,
+.uiIcon64x64TemplateAccessibleBreadcrumb:before {
+	content: "\e735";
+	color: #66537c;
 }
 
-.uiIcon64x64TemplateSiteBreadcrumb,.uiIcon64x64Templatewai_siteBreadcrumb,.uiIcon64x64wai_siteBreadcrumb {
-	background-position: -340px 0px;
+.uiIcon64x64TemplateAccessibilityMedia:before,.uiIcon64x64Templateexo_accessibleMedia:before,.uiIcon64x64exo_accessibleMedia:before,
+.uiIcon64x64TemplateAccessibleMedia:before {
+	content: "\e72f";
+	color:#525584;
 }
 
-.uiIcon64x64TemplateAccessibilityMedia,.uiIcon64x64Templateexo_accessibleMedia,.uiIcon64x64exo_accessibleMedia {
-	background-position: -408px 0px;
+.uiIcon64x64TemplateFile:before,.uiIcon64x64Templatent_file:before {
+	content: "\e731";
+	color: #bf9b2e;
 }
 
-.uiIcon64x64TemplateFile,.uiIcon64x64Templatent_file {
-	background-position: -476px 0px;
+.uiIcon64x64TemplateCss:before,.uiIcon64x64Templateexo_cssFile:before,.uiIcon64x64TemplateCSSFile:before  {
+	content: "\e730";
+	color: #8f3461;
 }
 
-.uiIcon64x64TemplateCss,.uiIcon64x64Templateexo_cssFile {
-	background-position: -544px 0px;
+.uiIcon64x64TemplateHtml:before,.uiIcon64x64Templateexo_htmlFile:before,.uiIcon64x64TemplateHTMLFile:before  {
+	content: "\e732";
+	color: #4c6ea4;
 }
 
-.uiIcon64x64TemplateHtml,.uiIcon64x64Templateexo_htmlFile {
-	background-position: -612px 0px;
+.uiIcon64x64TemplateProduct:before,.uiIcon64x64Templateacme_product:before {
+	content: "\e734";
+	color: #AE7651;
 }
 
-.uiIcon64x64TemplateProduct,.uiIcon64x64Templateacme_product {
-	background-position: 0px -68px;
+.uiIcon64x64TemplateNavigation:before,.uiIcon64x64Templatewai_siteNavigationWebContent:before,
+.uiIcon64x64wai_siteNavigationWebContent:before ,
+.uiIcon64x64TemplateAccessibleNavigation:before{
+	content: "\e72a";
+	color: #3c7096;
+} 
+
+.uiIcon64x64TemplateWebLink:before,.uiIcon64x64Templateexo_link:before,.uiIcon64x64exo_link:before ,.uiIcon64x64TemplateWeb:before{
+	content: "\e72e";
+	color: #79505d;
 }
 
-.uiIcon64x64TemplateNavigation,.uiIcon64x64Templatewai_siteNavigationWebContent,.uiIcon64x64wai_siteNavigationWebContent {
-	background-position: -68px -68px;
+.uiIcon64x64TemplateSearchBox:before,
+.uiIcon64x64Templatewai_siteSearchBox:before,
+.uiIcon64x64wai_siteSearchBox:before,
+.uiIcon64x64TemplateAccessibleSiteSearchBox:before {
+		content: "\e72d";
+		color: #864f81;
 }
 
-.uiIcon64x64TemplateWebLink,.uiIcon64x64Templateexo_link,.uiIcon64x64exo_link {
-	background-position: -136px -68px;
+.uiIcon64x64TemplateFreeLayout:before,.uiIcon64x64Templateexo_webContent:before,
+.uiIcon64x64exo_webContent:before,.uiIcon64x64TemplateWebContent:before {
+	content: "\e729";
+	color: #707071;
 }
 
-.uiIcon64x64TemplateSearchBox,.uiIcon64x64Templatewai_siteSearchBox,.uiIcon64x64wai_siteSearchBox {
-	background-position: -204px -68px;
-}
-
-.uiIcon64x64TemplateFreeLayout,.uiIcon64x64Templateexo_webContent,.uiIcon64x64exo_webContent {
-	background-position: -272px -68px;
-}
-
-.uiIcon64x64TemplateArticle, .uiIcon64x64Templateexo_article, .uiIcon64x64exo_article {
-	background-position: -340px -68px;
+.uiIcon64x64TemplateArticle, .uiIcon64x64Templateexo_article , .uiIcon64x64exo_article {
+    &:before {
+        content: "\e727";
+        color: #1CBDC4;
+    }
 }
 
 .uiIcon64x64TemplateBannerSlideImage, .uiIcon64x64Templateexo_bannerSlideImage, .uiIcon64x64exo_bannerSlideImage {
-	background-position: -408px -68px;
+    &:before {
+        content: "\e720";
+        color: #33B98E;
+    }
 }
 
-.uiIcon64x64TemplateBlog, .uiIcon64x64Templateexo_dnblog, .uiIcon64x64exo_dnblog {
-	background-position: -476px -68px;
+.uiIcon64x64TemplateBlog, .uiIcon64x64Templateexo_dnblog , .uiIcon64x64exo_dnblog {
+    &:before {
+        content: "\e721";
+        color: #BAC233;
+    }
 }
 
-.uiIcon64x64TemplateMap, .uiIcon64x64Templateexo_googleMap, .uiIcon64x64exo_googleMap {
-	background-position: -544px -68px;
+.uiIcon64x64TemplateGoogleMap, .uiIcon64x64Templateexo_googleMap , .uiIcon64x64exo_googleMap ,.uiIcon64x64TemplateMap{
+    &:before {
+        content: "\e723";
+        color: #7656A4;
+    }
 }
 
 .uiIcon64x64TemplateNews, .uiIcon64x64Templateexo_news, .uiIcon64x64exo_news {
-	background-position: -612px -68px;
+    &:before {
+        content: "\e72b";
+        color: #BA5391;
+    }
 }
 
-.uiIcon64x64TemplateWebService, .uiIcon64x64Templateexo_services, .uiIcon64x64exo_services {
-	background-position: -0 -136px;
+.uiIcon64x64TemplateService, .uiIcon64x64Templateexo_services , .uiIcon64x64exo_services {
+    &:before {
+        content: "\e726";
+        color: #5572B7;
+    }
 }
 
-.uiIcon64x64TemplateTestimonial, .uiIcon64x64Templateexo_testimonial, .uiIcon64x64exo_testimonial {
-	background-position: -68px -136px;
+.uiIcon64x64TemplateTestimonial, .uiIcon64x64Templateexo_testimonial , .uiIcon64x64exo_testimonial {
+    &:before {
+        content: "\e725";
+        color: #c12626;
+    }
 }
 
 .uiIcon64x64TemplatePlayMedia, .uiIcon64x64Templateexo_playMedia {
-	background-position: -136px -136px;
+    &:before {
+        content: "\e72c";
+    }
 }
 
 .uiIcon64x64TemplateFeatures, .uiIcon64x64Templateexo_features {
-	background-position: -204px -136px;
+    &:before {
+        content: "\e728";
+    }
 }
 
-.uiIcon64x64TemplateTeamMember, .uiIcon64x64Templateexo_teamMember, .uiIcon64x64exo_teamMember {
-	background-position: -272px -136px;
+.uiIcon64x64TemplateTeamMember, .uiIcon64x64Templateexo_teamMember , .uiIcon64x64exo_teamMember {
+    &:before {
+        content: "\e724";
+        color: #54B459;
+    }
 }
 
 
+.uiIcon16x16applicationvndoasisopendocumentspreadsheet:before,
+.uiIcon24x24applicationvndoasisopendocumentspreadsheet:before,
+.uiIcon32X32applicationvndoasisopendocumentspreadsheet:before,
+.uiIcon48X48applicationvndoasisopendocumentspreadsheet:before,
+.uiIcon64X64applicationvndoasisopendocumentspreadsheet:before{
+    color: #119b48;
+}
+
+/* Icons For WCM Template  */
+
+/* SIZE 16 */
+.uiIcon16x16TemplateVideo,
+.uiIcon16x16Templateexo_embeddedVideo,
+.uiIcon16x16exo_embeddedVideo {
+    &:before {
+        content: "\e72c";
+        color: #B0B54F;
+    }
+}
+.uiIcon16x16TemplateFeature,
+.uiIcon16x16Templateexo_feature,
+.uiIcon16x16exo_feature {
+    &:before {
+        content: "\e728";
+        color: #1F86BF;
+    }
+}
+.uiIcon16x16TemplateContactUsForm,
+.uiIcon16x16Templateexo_contactUsForm,
+.uiIcon16x16exo_contactUsForm {
+    &:before {
+        content: "\e737";
+        color: #1f86c2;
+    }
+}
+.uiIcon16x16TemplateContactUs2Horizontal,
+.uiIcon16x16Templateexo_contactUs2Horizontal,
+.uiIcon16x16exo_contactUs2Horizontal {
+    &:before {
+        content: "\e737";
+        color: #f49a18;
+    }
+}
+.uiIcon16x16TemplateSubscribe,
+.uiIcon16x16Templateexo_subscribe,
+.uiIcon16x16exo_subscribe {
+    &:before {
+        content: "\e800";
+        color: #f97319;
+    }
+}
+
+/* SIZE 24 */
+.uiIcon24x24TemplateVideo,
+.uiIcon24x24Templateexo_embeddedVideo,
+.uiIcon24x24exo_embeddedVideo {
+    &:before {
+        content: "\e72c";
+        color: #B0B54F;
+    }
+}
+.uiIcon24x24TemplateFeature,
+.uiIcon24x24Templateexo_feature,
+.uiIcon24x24exo_feature {
+    &:before {
+        content: "\e728";
+        color: #1F86BF;
+    }
+}
+.uiIcon24x24TemplateContactUsForm,
+.uiIcon24x24Templateexo_contactUsForm,
+.uiIcon24x24exo_contactUsForm {
+    &:before {
+        content: "\e737";
+        color: #1f86c2;
+    }
+}
+.uiIcon24x24TemplateContactUs2Horizontal,
+.uiIcon24x24Templateexo_contactUs2Horizontal,
+.uiIcon24x24exo_contactUs2Horizontal {
+    &:before {
+        content: "\e737";
+        color: #f49a18;
+    }
+}
+.uiIcon24x24TemplateSubscribe,
+.uiIcon24x24Templateexo_subscribe,
+.uiIcon24x24exo_subscribe {
+    &:before {
+        content: "\e800";
+        color: #f97319;
+    }
+}
+
+/* SIZE 32 */
+.uiIcon32x32TemplateVideo,
+.uiIcon32x32Templateexo_embeddedVideo,
+.uiIcon32x32exo_embeddedVideo {
+    &:before {
+        content: "\e72c";
+        color: #B0B54F;
+    }
+}
+.uiIcon32x32TemplateFeature,
+.uiIcon32x32Templateexo_feature,
+.uiIcon32x32exo_feature {
+    &:before {
+        content: "\e728";
+        color: #1F86BF;
+    }
+}
+.uiIcon32x32TemplateContactUsForm,
+.uiIcon32x32Templateexo_contactUsForm,
+.uiIcon32x32exo_contactUsForm {
+    &:before {
+        content: "\e737";
+        color: #1f86c2;
+    }
+}
+.uiIcon32x32TemplateContactUs2Horizontal,
+.uiIcon32x32Templateexo_contactUs2Horizontal,
+.uiIcon32x32exo_contactUs2Horizontal {
+    &:before {
+        content: "\e737";
+        color: #f49a18;
+    }
+}
+.uiIcon32x32TemplateSubscribe,
+.uiIcon32x32Templateexo_subscribe,
+.uiIcon32x32exo_subscribe {
+    &:before {
+        content: "\e800";
+        color: #f97319;
+    }
+}
+
+/* SIZE 48 */
+.uiIcon48x48TemplateVideo,
+.uiIcon48x48Templateexo_embeddedVideo,
+.uiIcon48x48exo_embeddedVideo {
+    &:before {
+        content: "\e72c";
+        color: #B0B54F;
+    }
+}
+.uiIcon48x48TemplateFeature,
+.uiIcon48x48Templateexo_feature,
+.uiIcon48x48exo_feature {
+    &:before {
+        content: "\e728";
+        color: #1F86BF;
+    }
+}
+.uiIcon48x48TemplateContactUsForm,
+.uiIcon48x48Templateexo_contactUsForm,
+.uiIcon48x48exo_contactUsForm {
+    &:before {
+        content: "\e737";
+        color: #1f86c2;
+    }
+}
+.uiIcon48x48TemplateContactUs2Horizontal,
+.uiIcon48x48Templateexo_contactUs2Horizontal,
+.uiIcon48x48exo_contactUs2Horizontal {
+    &:before {
+        content: "\e737";
+        color: #f49a18;
+    }
+}
+.uiIcon48x48TemplateSubscribe,
+.uiIcon48x48Templateexo_subscribe,
+.uiIcon48x48exo_subscribe {
+    &:before {
+        content: "\e800";
+        color: #f97319;
+    }
+}
+
+/* SIZE 64 */
+.uiIcon64x64TemplateVideo,
+.uiIcon64x64Templateexo_embeddedVideo,
+.uiIcon64x64exo_embeddedVideo {
+    &:before {
+        content: "\e72c";
+        color: #B0B54F;
+    }
+}
+.uiIcon64x64TemplateFeature,
+.uiIcon64x64Templateexo_feature,
+.uiIcon64x64exo_feature {
+    &:before {
+        content: "\e728";
+        color: #1F86BF;
+    }
+}
+.uiIcon64x64TemplateContactUsForm,
+.uiIcon64x64Templateexo_contactUsForm,
+.uiIcon64x64exo_contactUsForm {
+    &:before {
+        content: "\e737";
+        color: #1f86c2;
+    }
+}
+.uiIcon64x64TemplateContactUs2Horizontal,
+.uiIcon64x64Templateexo_contactUs2Horizontal,
+.uiIcon64x64exo_contactUs2Horizontal {
+    &:before {
+        content: "\e737";
+        color: #f49a18;
+    }
+}
+.uiIcon64x64TemplateSubscribe,
+.uiIcon64x64Templateexo_subscribe,
+.uiIcon64x64exo_subscribe {
+    &:before {
+        content: "\e800";
+        color: #f97319;
+    }
+}
 /*---------- Icon of all applications ----------*/
 
 [class^="uiIconApp"],
@@ -2885,16 +3463,9 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 .active [class^="uiIconApp"]:hover,
 .dropdown-menu > li > a > [class^="uiIconApp"]
  {
-  display: inline-block;
-  width: 35px;
-  height: 35px;
-  .ie7-restore-right-whitespace();
-  line-height: 35px;
-  vertical-align: middle;
-  background-image: url("@{images-path}/Icons/AppIcons/uiIconAppDefault.png");
-  background-repeat: no-repeat;
+ 	color: @colorIconDefault;
 }
-
+/*
 [class^="uiIconApp24x24"], [class^="uiIconApp24x24"]:hover,
 .dropdown-menu > li > a:hover > [class^="uiIconApp24x24"],
 .uiSpaceMenuPortlet .active [class^="uiIconApp24x24"],
@@ -2903,267 +3474,214 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
   width: 24px;
   height: 24px;
 }
-.uiIconApp24x24PageSite{
-  background-position: 0 0;
+*/
+
+.uiIconApp24x24PageSite:before{
+  content: "\e6a6";
 }
-.uiIconApp24x24Wiki{
-  background-position: -28px 0;
+.uiIconApp24x24Wiki:before{
+  content: "\e695";
 }
-.uiIconApp24x24ActivityStream{
-  background-position: -56px 0;
+.uiIconApp24x24ActivityStream:before{
+  content: "\e6d5";
 }
-.uiIconApp24x24Answers{
-  background-position: -84px 0;
+.uiIconApp24x24Answers:before{
+  content: "\e68b";
 }
-.uiIconApp24x24Forum{
-  background-position: -112px 0;
-}
-.uiIconApp24x24TaskNeedActions{
-  background-position: -140px 0;
-}
-.uiIconApp24x24TaskProgress{
-  background-position: -168px 0;
-}
-.uiIconApp24x24TaskDone{
-  background-position: -196px 0;
-}
-.uiIconApp24x24TaskCanceled{
-  background-position: -224px 0;
+.uiIconApp24x24Forum:before{
+  content: "\e68d";
 }
 
-[class^="uiIconApp64x64"], [class^="uiIconApp64x64"]:hover,
-.dropdown-menu > li > a:hover > [class^="uiIconApp64x64"],
-.uiSpaceMenuPortlet .active [class^="uiIconApp64x64"],
-.uiUserNavigationPortlet .active [class^="uiIconApp64x64"]{
-  background-image: url("@{images-path}/Icons/AppIcons/uiIconApp64x64Default.png");
-  width: 64px;
-  height: 64px;
+.uiIconApp24x24TaskNeedActions:before{
+  content: "\e76f";
 }
-.uiIconApp64x64PageSite{
-  background-position: 0 0;
+.uiIconApp24x24TaskProgress:before {
+  content: "\e6d4";
 }
-.uiIconApp64x64Wiki{
-  background-position: -68px 0;
+.uiIconApp24x24TaskDone:before {
+  content: "\e76f";
+   color: @colorIconPrimary;
 }
-.uiIconApp64x64ActivityStream{
-  background-position: -136px 0;
+.uiIconApp24x24TaskCanceled:before {
+  content: "\e6d3";
 }
-.uiIconApp64x64Answers{
-  background-position: -204px 0;
+
+.uiIconApp64x64PageSite:before{
+  content: "\e6a6";
 }
-.uiIconApp64x64Forum{
-  background-position: -272px 0;
+.uiIconApp64x64Wiki:before{
+  content: "\e695";
 }
-.uiIconApp64x64TaskNeedActions{
-  background-position: -340px 0;
+.uiIconApp64x64ActivityStream:before{
+  content: "\e6d5";
 }
-.uiIconApp64x64TaskProgress{
-  background-position: -408px 0;
+.uiIconApp64x64Answers:before{
+  content: "\e68b";
 }
-.uiIconApp64x64TaskDone{
-  background-position: -476px 0;
+.uiIconApp64x64Forum:before{
+  content: "\e68d";
 }
-.uiIconApp64x64TaskCanceled{
-  background-position: -544px 0;
+
+.uiIconApp64x64TaskNeedActions:before{
+  content: "\e76f";
+}
+.uiIconApp64x64TaskProgress:before {
+  content: "\e6d4";
+}
+.uiIconApp64x64TaskDone:before {
+  content: "\e76f";
+   color: @colorIconPrimary;
+}
+.uiIconApp64x64TaskCanceled:before {
+  content: "\e6d3";
 }
 
 .dropdown-menu > li > a:hover > [class^="uiIconApp"],
 .uiSpaceMenuPortlet .active [class^="uiIconApp"],
 .uiUserNavigationPortlet .active [class^="uiIconApp"] {
- background-image: url("@{images-path}/Icons/AppIcons/uiIconAppSecondary.png");
+ color: @colorIconSecondary;
 }
 
-.uiIconAppprofile {
-	background-position: 0 0;
+[class^="uiIconApp"]{
+	font-size: 35px;
 }
 
-.uiIconAppactivities,.uiIconAppSpaceActivityStreamPortlet {
-	background-position: -34px 0;
+[class^="uiIconApp24x24"] {
+	font-size: 35px;
 }
 
-.uiIconAppconnections {
-	background-position: -70px 0;
+.uiIconAppprofile:before {
+	content: "\e6d6";
 }
 
-.uiIconAppwiki {
-	background-position: -106px 0;
+.uiIconAppactivities:before,.uiIconAppSpaceActivityStreamPortlet:before {
+	content: "\e6d5";
 }
 
-.uiIconAppdashboard,.uiIconAppDashboardPortlet {
-	background-position: -142px 0;
+.uiIconAppconnections:before {
+	content: "\e6c0";
 }
 
-.uiIconAppNotications,
-.uiIconAppNotificationSettingsPortlet {
-	background-position: -178px 0;
+.uiIconAppwiki:before {
+	content: "\e67a";
 }
 
-.uiIconAppForumPortlet {
-	background-position: -214px 0;
+.uiIconAppdashboard:before,.uiIconAppDashboardPortlet:before {
+	content: "\e6ce";
 }
 
-.uiIconAppWikiPortlet {
-	background-position: -250px 0;
+.uiIconAppNotications:before ,
+.uiIconAppNotificationSettingsPortlet:before {
+	content: "\e73a";
 }
 
-.uiIconAppCalendarPortlet,
-.uiIconAppAgenda,.uiIconAppCalendar,.uiIconAppCalendarGadget {
-	background-position: -286px 0;
+.uiIconAppForumPortlet:before {
+	content: "\e68d";
 }
 
-.uiIconAppAnswersPortlet {
-	background-position: -322px 0;
+.uiIconAppWikiPortlet:before {
+	content: "\e695";
 }
 
-.uiIconAppFAQPortlet {
-	background-position: 0px -35px;
+.uiIconAppCalendarPortlet:before,
+.uiIconAppAgenda,.uiIconAppCalendar:before,.uiIconAppCalendarGadget:before {
+		content: "\e68c";
 }
 
-.uiIconAppFileExplorerPortlet {
-	background-position: -35px -35px;
+.uiIconAppAnswersPortlet:before {
+	content: "\e68b";
 }
 
-.uiIconAppMembersPortlet {
-	background-position: -72px -35px;
+.uiIconAppFAQPortlet:before {
+	content: "\e68f";
+}
+
+.uiIconAppFileExplorerPortlet:before {
+	content: "\e68e";
+}
+
+.uiIconAppMembersPortlet:before {
+	content: "\e6e1";
 }
 
 .uiIconAppFeaturedPoll {
-	background-position: -105px -35px;
+	content: "\e73e";
 }
 
-.uiIconAppSpaceSettingPortlet {
-	background-position: -142px -35px;
-}
-
-.uiIconAppMoreButton {
-	background-position: -178px -35px;
-}
-
-.uiIconBusinessInfo  {
-	background-position: -20px -160px;
-}
-
-.uiIconHomeInfo   {
-	background-position: 0px -160px;
+.uiIconAppSpaceSettingPortlet:before {
+	content: "\e78b";
 }
 
 
-.uiIconEditLayout {
-	background-position: -40px -160px;
-}
-
-.uiIconNavigation {
-	background-position: -60px -160px;
-}
-
-.uiIconEditPortalConfig {
-	background-position: -80px -160px;
+.uiIconHomeInfo:before   {
+	content: "\e6bf";
 }
 
 [class^="uiIconStatus"] {
-	.square(38px);
-	display: inline-block;
-	background: url("@{images-path}/Icons/status-task.png");
-	margin-top: 1px;
-	&:hover {
-		background: url("@{images-path}/Icons/status-task.png");
-	}
+	font-size: 32px;
 }
-.uiIconStatus-needs-action,.uiIconStatus-needs-action:hover {
-	background-position: 0px 0px;
+.uiIconStatus-needs-action:before {
+    content: "\e76f";
 }
-.uiIconStatus-in-process,.uiIconStatus-in-process:hover {
-	background-position: -60px 0px;
+.uiIconStatus-in-process:before {
+    content: "\e6d4";
 }
-.uiIconStatus-completed ,.uiIconStatus-completed:hover{
-	background-position: -120px 0px;
+.uiIconStatus-completed:before{
+    content: "\e76f";
+    color: @colorIconPrimary;
 }
-.uiIconStatus-canceled,.uiIconStatus-canceled:hover {
-	background-position: -180px 0px;
+.uiIconStatus-canceled:before {
+    content: "\e6d3";
 }
 
 
 [class^="uiIconStatus-20"] {
-	.square(20px);
-	display: inline-block;
-	background: url("@{images-path}/Icons/status-task-20.png");
-	margin-top: 1px;
-	&:hover {
-		background: url("@{images-path}/Icons/status-task-20.png");
-	}
+	font-size: @sizeIcon24x24;
 }
-.uiIconStatus-20-needs-action,.uiIconStatus-20-needs-action:hover {
-	background-position: 0px 0px;
+.uiIconStatus-20-needs-action:before{
+	content: "\e76f";
 }
-.uiIconStatus-20-in-process,.uiIconStatus-20-in-process:hover {
-	background-position: -24px 0px;
+
+.uiIconStatus-20-in-process:before {
+	content: "\e6d4";
 }
-.uiIconStatus-20-completed ,.uiIconStatus-20-completed:hover{
-	background-position: -48px 0px;
+.uiIconStatus-20-completed:before {
+	content: "\e76f";
+   color: @colorIconPrimary;
 }
-.uiIconStatus-20-canceled,.uiIconStatus-20-canceled:hover {
-	background-position: -72px 0px;
+.uiIconStatus-20-canceled:before{
+	 content: "\e6d3";
 }
 
 [class^="uiIconStatus-64"] {
-	.square(64px);
-	display: inline-block;
-	background: url("@{images-path}/Icons/status-task-64.png");
-	margin-top: 1px;
-	&:hover {
-		background: url("@{images-path}/Icons/status-task-64.png");
-	}
+	font-size: @sizeIcon64x64;
 }
-.uiIconStatus-64-needs-action,.uiIconStatus-64-needs-action:hover {
-	background-position: 0px 0px;
+.uiIconStatus-64-needs-action:before{
+	content: "\e76f";
 }
-.uiIconStatus-64-in-process,.uiIconStatus-64-in-process:hover {
-	background-position: -80px 0px;
+.uiIconStatus-64-in-process:before {
+	content: "\e6d4";
 }
-.uiIconStatus-64-completed ,.uiIconStatus-64-completed:hover{
-	background-position: -160px 0px;
-}
-.uiIconStatus-64-canceled,.uiIconStatus-64-canceled:hover {
-	background-position: -240px 0px;
+.uiIconStatus-64-completed:before {
+	content: "\e76f";
+   color: @colorIconPrimary;
 }
 
-.uiIconShowSlidebar{
-	background-position: -140px -201px;
+.uiIconStatus-64-canceled:before{
+	 content: "\e6d3";
 }
 
-.uiIconUpToFirst{
-	background-position: -120px -200px;
+
+.uiIconViewStatistic:before ,.uiIconExt-activity-statistics:before{
+	content: "\e73f";
 }
 
-.uiIconDownToBottom{
-	background-position: -100px -200px;
-}
-
-.uiIconRotateRight{
-	background-position: -160px -200px;
-}
-
-.uiIconRotateLeft{
-	background-position: -180px -200px;
-}
-
-.uiIconViewStatistic ,.uiIconExt-activity-statistics{
-	background-position: 0 -219px;
-}
-
-.uiIconViewList {
-	background-position: -20px -220px;
-}
-
-.uiIconViewByChart {
-	background-position: -40px -220px;
-}
 
 .uiIconShare {
 	background-position: -140px -220px;
 }
 /*---------- Portlet Icons ----------*/
-
+/*
 [class^="uiIconPortlet64x64"], [class^="uiIconPortlet64x64"]:hover{
   background-image: url("@{images-path}/Icons/Portlet64x64Icons/uiIconsPortlet.png");
   width: 64px;
@@ -3318,17 +3836,8 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 	background-position: -60px -220px;
 }
 
-.uiIconStar {
-	background-position: -80px -220px;
-}
+*/
 
-.uiIconVideo {
-	background-position: -100px -220px;
-}
-
-.uiIconPopOut {
-	background-position: -120px -220px;
-}
 
 // Loading Icons
 [class^=uiLoadingIcon] {
@@ -3361,92 +3870,132 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
   .loading-action;
 }
 
-[class^="uiIconColor"],[class^="uiIconColor"]:hover ,.actionIcon:hover [class^="uiIconColor"]{
-  background-image: url("@{images-path}/Icons/uiIconsColor.png") ;
+
+.uiIconArrowDownLast:before {
+    content: "\e75f";
+}
+.uiIconArrowUpFirst:before {
+    content: "\e766";
 }
 
-.uiIconPatse{background-position: -60px -200px;}
-.uiIconRestoreWindow {background-position: -80px -200px;}
-.uiIconArrowDownLast {background-position: -100px -200px;}
-.uiIconArrowUpFirst {background-position: -120px -200px;}
-.uiIconShare {background-position: -140px -220px;}
+.uiIconAddProject:before {
+    content: "\e6ac";
+}
+.uiIconShowProject:before {
+    content: "\e6ab";
+}
+.uiIconRightMenu:before {
+    content: "\e73d";
+}
+.uiIconTime:before {
+    content: "\e749";
+}
+.uiIconAddLabel:before {
+    content: "\e773";
+}
+.uiIconShowLabel:before {
+    content: "\e778";
+}
 
-.uiIconAddProject {background-position: 0 -280px;}
-.uiIconHide {background-position: -20px -280px;}
-.uiIconShowProject {background-position: -40px -280px;}
-.uiIconRightMenu {background-position: -60px -280px;}
-.uiIconHag {background-position: -80px -280px;}
-.uiIconFilter {background-position: -100px -280px;}
-.uiIconTime {background-position: -120px -280px;}
-.uiIconAddLabel {background-position: -140px -280px;}
-.uiIconShowLabel {background-position: -160px -280px;}
-.uiIconTask {background-position: -180px -280px;}
+.uiIconTask:before {
+    content: "\e690";
+}
 
-.uiIconColorError{ background-position: 0 0;}
-.uiIconColorWarning{ background-position: -20px 0;}
-.uiIconColorInfo{ background-position: -40px 0;}
-.uiIconColorValidate{ background-position: -60px 0;}
-.uiIconColorQuestion{ background-position: -80px 0;}
-.uiIconColorMiniSquareBlank{ background-position: -100px 0;}
-.uiIconColorMiniSquarePlus{ background-position: -120px 0;}
-.uiIconColorMiniSquareMinus{ background-position: -140px 0;}
-.uiIconColorBell{ background-position: -160px 0;}
-.uiIconColorErrorGray{ background-position: -180px 0;}
 
-.uiIconColorStarGray{ background-position: 0 -20px;}
-.uiIconColorStarYellow{ background-position: -20px -20px;}
-.uiIconColorStarRated{ background-position: -40px -20px;}
-.uiIconColorStarHaft { background-position: -60px -20px;}
-.uiIconColorStarDisabled { background-position: -80px -20px;}
-.uiIconColorStarRateDisabled { background-position: -100px -20px;}
-.uiIconColorStarRateHaftDisabled { background-position: -120px -20px;}
-.uiIconColorDottedGreen { background-position: -140px -20px;}
-.uiIconColorDottedOrange{ background-position: -160px -20px;}
-.uiIconColorDottedRed{ background-position: -180px -20px;}
+.uiIconColorWarningInRed:before {
+    content: "\e772";
+    color: @errorColor;
+}
+.uiIconColorWarningInBlue:before {
+    content: "\e772";
+    color: @infoColor;
+}
 
-.uiIconColorStarGrayMini{ background-position: 0 -40px;}
-.uiIconColorStarYellowMini{ background-position: -20px -40px;}
-.uiIconColorStarRatedMini{ background-position: -40px -40px;}
-.uiIconColorStarHaftMini { background-position: -60px -40px;}
-.uiIconColorGreenTick { background-position: -80px -40px;}
-.uiIconColorGrayCircleTick { background-position: -100px -40px;}
-.uiIconColorSeo { background-position: -120px -40px;}
-.uiIconColorDottedGray { background-position: -140px -40px;}
-.uiIconColorConnected{ background-position: -160px -40px;}
-.uiIconColorDisconnected{ background-position: -180px -40px;}
+.uiIconColorFlagGreen,.uiIconColorPriorityLOW { color: @successColor; }
+.uiIconColorFlagYellow,.uiIconColorPriorityMEDIUM  { color: @warningColor;}
+.uiIconColorFlagRed,.uiIconColorPriorityHIGH { color: @errorColor; }
 
-.uiIconColorCircleGreen{ background-position: 0 -60px;}
-.uiIconColorCircleRed{ background-position: -20px -60px;}
-.uiIconColorCircleOrange{ background-position: -40px -60px;}
-.uiIconColorCircleGray { background-position: -60px -60px;}
+.uiIconColorFlagGray ,.uiIconColorPriorityUNDEFINED,
+.uiIconColorFlagGreen,.uiIconColorPriorityLOW ,
+.uiIconColorFlagYellow,.uiIconColorPriorityMEDIUM ,
+.uiIconColorFlagRed,.uiIconColorPriorityHIGH {
+    &:before {
+        content: "\e746";
+    }
+}
 
-.uiIconColorWarningInRed{ background-position: -100px -60px;}
-.uiIconColorWarningInBlue { background-position: -80px -60px;}
 
-.uiIconColorFlagGray ,.uiIconColorPriorityUNDEFINED{ background-position: -120px -60px;}
-.uiIconColorFlagGreen,.uiIconColorPriorityLOW { background-position: -140px -60px;}
-.uiIconColorFlagYellow,.uiIconColorPriorityMEDIUM  { background-position: -160px -60px;}
-.uiIconColorFlagRed,.uiIconColorPriorityHIGH { background-position: -180px -60px;}
 
-.uiIconExt-answers {background-position: -160px -220px;}
-.uiIconExt-discover,.uiIconPlay,.uiIconVideo {background-position: -180px -220px;}
-.uiIconExt-documentation ,.uiIconDocumentation,.useful-icon-Doc{background-position: 0px -240px;}
-.uiIconExt-add-ons ,.uiIconAddon,.useful-icon-addon{background-position: -20px -240px;}
-.uiIconExt-feature-requests ,.uiIconLamb,.uiIconIdeas{background-position: -40px -240px;}
-.uiIconExt-cloud ,.uiIconCloud{background-position: -60px -240px;}
-.uiIconExt-open-source-projects ,.uiIconOpenSource{background-position: -80px -240px;}
-.uiIconChat{background-position: -100px -240px;}
-.uiIconJira,.useful-icon-jira{background-position: -120px -240px;}
-.uiIconGithub,.useful-icon-github{background-position: -140px -240px;}
-.uiIconFisheyes,.useful-icon-fisheye{background-position: -160px -240px;}
-.uiIconSonar,.useful-icon-sonar{background-position: -180px -240px;}
+.uiIconColorStarGray:before,
+.uiIconColorStarYellow:before,
+.uiIconColorStarRated:before,
+.uiIconColorStarDisabled:before {
+	content: "\e779";
+}
+.uiIconColorStarGray,.uiIconColorDottedGray,.uiIconColorCircleGray,.uiIconColorGrayCircleTick  {color:@colorIconDefault}
+.uiIconColorStarYellow {color:#e9c608}
+.uiIconColorStarRated {color:#c9a006}
 
-.uiIconDocker,.useful-icon-docker{background-position: 0px -260px;}
-.uiIconGuidelines,.useful-icon-UxGui{background-position: -20px -260px;}
-.uiIconEXO,.useful-icon-Blog{background-position: -40px -260px;}
-.uiIconConfigure,.useful-icon-Resource{background-position: -60px -260px;}
+.uiIconColorStarDisabled:before,
+.uiIconColorStarRateHaftDisabled:before, 
+.uiIconColorStarRateDisabled:before ,
+.uiIconColorStarRateDisabled:before{
+	opacity: 0.5;
+}
+
+.uiIconColorStarHaft:before,
+.uiIconColorStarRateHaftDisabled:before { content: "\e77a";}
+
+
+.uiIconColorDottedGreen:before,
+.uiIconColorDottedOrange:before,
+.uiIconColorDottedRed:before,
+.uiIconColorDottedGray:before,
+.uiIconColorCircleGreen:before,
+.uiIconColorCircleRed:before,
+.uiIconColorCircleOrange:before,
+.uiIconColorCircleGray:before{
+	content: "\e76e";
+}
+.uiIconColorDottedGreen,.uiIconColorCircleGreen,.uiIconColorGreenTick ,.uiIconColorConnected{ color: @successColor;}
+.uiIconColorDottedOrange,.uiIconColorCircleOrange{ color: @colorIconOrange;}
+.uiIconColorDottedRed,.uiIconColorCircleRed,.uiIconColorSeo,.uiIconColorDisconnected{ color:@errorColor;}
+
+.uiIconColorStarGrayMini:before ,
+.uiIconColorStarYellowMini:before,
+.uiIconColorStarRatedMini:before,
+.uiIconColorStarHaftMini:before {
+	content: "\e779";
+}
+
+.uiIconColorGreenTick:before,.uiIconColorGrayCircleTick:before,.uiIconColorConnected:before {content: "\e76f";}
+
+
+.uiIconColorSeo:before{content: "\e694";}
+.uiIconColorDisconnected:before{content: "\e75e";}
+
+
+
+
+.uiIconExt-answers:before {content: "\e68b";}
+.uiIconExt-discover:before,.uiIconPlay:before{content: "\e602";}
+.uiIconExt-documentation:before ,.useful-icon-Doc:before{content: "\e689";}
+.uiIconExt-add-ons:before ,.useful-icon-addon:before{content: "\e688";}
+.uiIconExt-feature-requests:before ,.uiIconIdeas:before{content: "\e686";}
+.uiIconExt-cloud:before {content: "\e682";}
+.uiIconExt-open-source-projects:before,.uiIconOpenSource:before{content: "\e687";}
+.uiIconJira:before,.useful-icon-jira:before{content: "\e67f";}
+.useful-icon-github:before,uiIconGithub:before{content: "\e67e";}
+.uiIconFisheyes:before,.useful-icon-fisheye:before{content: "\e67d";}
+.useful-icon-sonar:before,.uiIconSonar:before{content: "\e67b";}
+
+.useful-icon-docker:before,.uiIconDocker:before{content: "\e67c";}
+.uiIconGuidelines:before,.useful-icon-UxGui:before{content: "\e699";}
+.useful-icon-Blog:before,.uiIconEXO:before{content: "\e683";}
+.uiIconConfigure:before,.useful-icon-Resource:before{content: "\e73b";}
 
 /* override css for icon 'Open document in office' - ecms - start  */
+/*
 .dropdown-menu > li > a > [class^="uiIcon16x16"],
 .dropdown-menu > .active > a > [class^="uiIcon16x16"],
 .actionBar li > a > [class^="uiIcon16x16"],
@@ -3464,7 +4013,7 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 	background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType16x16DefaultSecondary.png");
 }
 /* override css for icon 'Open document in office' - ecms - end  */
-
+/*
 .ActionMenuPlaceHolder .uiFileViewActionBar .uiRightPopupMenuContainer.dropdown-menu > li > a > [class^="uiIcon16x16"]:hover,
 .ActionMenuPlaceHolder .uiFileViewActionBar .uiRightPopupMenuContainer.dropdown-menu > li > a:hover > [class^="uiIcon16x16"],
 .ActionMenuPlaceHolder .uiFileViewActionBar .uiRightPopupMenuContainer.dropdown-menu > .active > a > [class^="uiIcon16x16"]:hover,
@@ -3480,39 +4029,322 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 	background-image: url("@{images-path}/Icons/TypeIcons/uiIconsType16x16Primary.png");
 }
 
-.uiRightPopupMenuContainer.dropdown-menu > li > a .uiIconOpenOnDesktop {
-	background-image: url("@{images-path}/Icons/uiIconsDefault.png");
-	background-position: -100px -20px;
-}
+ */
 
-.uiRightPopupMenuContainer.dropdown-menu > li > a:hover .uiIconOpenOnDesktop,
-.uiRightPopupMenuContainer.dropdown-menu > li > a .uiIconOpenOnDesktop:hover {
-	background-image: url("@{images-path}/Icons/uiIconsSecondary.png");
-	background-position: -100px -20px;
-}
 
-.actionBar li > a > .uiIconOpenOnDesktop,
-.uiActionBar li > a > .uiIconOpenOnDesktop {
-	background-image: url("@{images-path}/Icons/uiIconsDefault.png");
-	background-position: -100px -20px;
-}
 
-.actionBar li > a > .uiIconOpenOnDesktop:hover,
-.actionBar li > a:hover > .uiIconOpenOnDesktop,
-.uiActionBar li > a > .uiIconOpenOnDesktop:hover,
-.uiActionBar li > a:hover > .uiIconOpenOnDesktop {
-	background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
-	background-position: -100px -20px;
-}
-
-.detailContainer .btn > .uiIconOpenOnDesktop {
-  background-image: url("@{images-path}/Icons/uiIconsDefault.png");
-  background-position: -100px -20px;
+ .actionBar li > a > .uiIconOpenOnDesktop,.uiActionBar li > a > .uiIconOpenOnDesktop
+ .uiActionBar li > a > .uiIconOpenOnDesktop:hover, 
+ .actionBar li > a > .uiIconOpenOnDesktop:hover,
+ .uiRightPopupMenuContainer.dropdown-menu > li > a .uiIconOpenOnDesktop,
+ .uiRightPopupMenuContainer.dropdown-menu > li > a .uiIconOpenOnDesktop:hover{
+	color:@colorIconPrimary;	
  }
+
+.uiActionBar li > a:hover > .uiIconOpenOnDesktop:before,
+.uiRightPopupMenuContainer.dropdown-menu > li > a:hover .uiIconOpenOnDesktop:before,
+.uiRightPopupMenuContainer.dropdown-menu > li > a .uiIconOpenOnDesktop:before,
+.detailContainer .btn > .uiIconOpenOnDesktop:before ,.uiActionBar li > a > .uiIconOpenOnDesktop:before ,
+.actionBar li > a > .uiIconOpenOnDesktop:before{	 
+	 content: "\e785";
+}
+.uiActionBar .actionIcon, .detailContainer .btn, .contentBox .ContentActivityIcon a{
+	.uiIcon16x16applicationmsword:before, .uiIcon16x16applicationxls:before, .uiIconOpenOnDesktop:before, 
+	.uiIcon16x16FilePpt::before, .uiIcon16x16applicationppt::before, .uiIcon16x16applicationvndms-powerpoint::before, 
+	.uiIcon16x16applicationvndopenxmlformats-officedocumentpresentationmlpresentation::before, 
+	.uiIcon16x16applicationvndopenxmlformats-officedocumentpresentationmltemplate::before, 
+	.uiIcon16x16applicationvndopenxmlformats-officedocumentpresentationmlslideshow::before, 
+	.uiIcon16x16applicationvndms-powerpointaddinmacroenabled12::before, 
+	.uiIcon16x16applicationvndms-powerpointpresentationmacroenabled12::before, 
+	.uiIcon16x16applicationvndms-powerpointtemplatemacroenabled12::before, 
+	.uiIcon16x16applicationvndms-powerpointslideshowmacroenabled12::before{
+		color:@colorIconDefault;
+	}
+}
+.uiActionBar .actionIcon:hover, .detailContainer .btn:hover, .contentBox .ContentActivityIcon a:hover {
+	.uiIcon16x16applicationmsword:before, .uiIcon16x16applicationxls:before, .uiIconOpenOnDesktop:before, 
+	.uiIcon16x16FilePpt::before, .uiIcon16x16applicationppt::before, .uiIcon16x16applicationvndms-powerpoint::before, 
+	.uiIcon16x16applicationvndopenxmlformats-officedocumentpresentationmlpresentation::before, 
+	.uiIcon16x16applicationvndopenxmlformats-officedocumentpresentationmltemplate::before, 
+	.uiIcon16x16applicationvndopenxmlformats-officedocumentpresentationmlslideshow::before, 
+	.uiIcon16x16applicationvndms-powerpointaddinmacroenabled12::before, 
+	.uiIcon16x16applicationvndms-powerpointpresentationmacroenabled12::before, 
+	.uiIcon16x16applicationvndms-powerpointtemplatemacroenabled12::before, 
+	.uiIcon16x16applicationvndms-powerpointslideshowmacroenabled12::before{
+		color:@colorIconPrimary;
+	}
+}
+.font10,[class^="uiIcon"][class*="Mini"]  {
+ 	font-size: @sizeIcon12x12;
+ }
+
+.font12,[class^="uiIcon"][class*="Medium"] {
+ 	font-size: @sizeIconDefault - 2;
+ }
+.btn-group [class^="uiIconMini"][class*="Arrow"]{
+	top: 1px;
+}
+ [class^="uiIconMini"][class*="Arrow"],[class^="uiIconMini"],[class^="uiIconArrow"], .uiItemSelector .selectedItem [class^="uiIconArrow"]{
+	font-size:  @sizeIcon12x12 - 1;
+	top: -1px;
+ }
+ .uiItemSelector .selectedItem [class^="uiIconArrow"]{
+	font-size:  @sizeIcon12x12 - 1 !important;
+ }
+ [class*="24x24"] {
+	font-size: @sizeIcon24x24;
+ }
+ [class*="32x32"] {
+	font-size: @sizeIcon32x32;
+ }
+ 
+ [class*="64x64"] {
+	font-size: @sizeIcon64x64;
+ }
+ 
+
+.uiIconTagMini:before {
+	content: "\e77c";
+}
+
+.uiIconFileMini:before {
+	content: "\e6ba";
+}
+
+.uiIconUnlockMedium:before, .uiIconUnlockMini:before {
+	content: "\e79a";
+} 
+
+.uiIconLockMedium:before {
+	content: "\e794";
+}
+
+.uiIconArrowDownMini:before ,.uiIconMiniArrowDown:before{
+	content: "\e75a";
+}
+
+.uiIconArrowUpMini:before ,.uiIconMiniArrowUp:before{
+	content: "\e75d";
+}
+
+.uiIconArrowRightMini:before,.uiIconMiniArrowRight:before {
+	content: "\e75c";
+}
+
+
+// .detailContainer .btn > .uiIconOpenOnDesktop {
+//     color: @colorIconDefault;
+//     &:before {
+//         content: "\e777";
+//     }
+//  }
  .detailContainer .btn:hover > .uiIconOpenOnDesktop {
-  background-image: url("@{images-path}/Icons/uiIconsPrimary.png");
+  color:@colorIconPrimary;
  }
 
-.uiIconExt-tasks {
-	background-position: -180px -280px;
+.uiIconExt-tasks:before {
+    content: "\e690";
+}
+.uiIconArrowLeftMini:before ,.uiIconMiniArrowLeft:before{
+	content: "\e75b";	
+}
+
+.uiIconTrashMini:before {
+	content: "\e799";
+}
+
+.uiIconEditMini:before {
+	content: "\e791";
+}
+
+.uiIconColorError:before ,.uiIconColorErrorGray:before{
+	content: "\e76d";
+	color: @errorColor;
+}
+.uiIconColorErrorGray:before{
+	color: @colorIconDefault;
+}
+
+.uiIconColorWarning:before {
+	content: "\e771";
+	color: @warningColor;
+} 
+
+.uiIconColorInfo:before{
+	content: "\e767";
+	color: @infoColor;
+} 
+.uiIconColorValidate:before {
+	content: "\e770";
+	color: @successColor;	
+}
+
+.uiIconColorQuestion:before{
+	content: "\e76b";
+	color:  @infoColor;	
+}
+
+.uiIconColorBell:before {
+	content: "\e73a";
+	color: @warningColor;
+}
+
+.uiIconColorStarYellow:before {
+	content: "\e779";
+	color: @warningColor;
+}
+
+.uiIconWarningInRed:before {
+	content: "\e772";
+	color: @errorColor;
+}
+
+.uiIconWarningInBlue:before{
+	content: "\e772";
+	color:  @infoColor;
+}
+
+.uiIconFlagGreen:before {
+	content: "\e746";
+	color: @successColor;
+}
+.uiIconFlagRed:before {
+	content: "\e746";
+	color: @errorColor;
+}
+.uiIconFlagYellow:before {
+	content: "\e746";
+	color: @warningColor;
+}
+
+
+.uiIconExpands:before {
+	content: "\e6a5";
+}
+
+.uiIconExpand:before {
+	content: "\e74e" !important;
+}
+
+
+.uiNotifChatIcon:before {
+	content: "\e601";
+}
+
+.uiNotifWeemoIcon:before {
+	content: "\e602";
+}
+
+.uiIconChatTeam:before {
+	content: "\e6be";
+}
+
+.uiConChatSpace:before {
+	content: "\e6c1";
+}
+
+.uiIconAssign:before {
+	content: "\e6c6";
+}
+
+.uiIconChat32x32RaiseHand:before {
+	content: "\e622";
+}
+
+.uiIconChat32x32Team:before {
+	content: "\e6be";
+}
+
+.uiIconChat32x32HyperLink:before {
+	content: "\e61b";
+}
+
+.uiIconChat32x32Event:before {
+	content: "\e619";
+}
+
+.uiIconChat32x32Task:before {
+	content: "\e690";
+}
+
+.uiIconChat32x32FinishCall:before {
+	content: "\e61e";
+}
+
+.uiIconChat32x32ShareFile:before {
+	content: "\e6b3";
+}
+
+.uiIconChat32x32Space:before {
+	content: "\e6c1";
+}
+
+
+.uiIconChat32x32Question:before {
+	content: "\e76b";
+}
+
+.uiIconChat32x32Metting:before {
+	content: "\e61a";
+}
+
+.uiIconChat32x32AddCall:before {
+	content: "\e618";
+}
+
+.uiIconChat32x32MeetingStop:before {
+	content: "\e61f";
+}
+
+.uiIconChat32x32StartCall:before {
+	content: "\e61c";
+}
+
+.uiIconChat32x32MeetingStart:before {
+	content: "\e61d";
+}
+
+.uiIconChat32x32Blog:before {
+	content: "\e678";
+}
+
+
+//answer
+.uiIconAnsThumbDownMini:before {
+	content: "\e77d";
+}
+
+.uiIconAnsThumbUpMini:before {
+	content: "\e77e";
+}
+
+.uiIconSimplePlusMini:before {
+    content: "\e74b";
+}
+
+// Chat Icon for navigation bar : font setup and size cause the class name doesn't begin with "uiIconPLF24x24"
+.uiNotifChatIcon {
+  	font-family: "PLF-FONT-ICONS";
+  	font-size: @sizeIcon24x24;
+}
+
+.uiIconCutNode:before {
+    content: "\e790";
+}
+
+.uiIconAnsDiscuss:before {
+    content: "\e604";
+}
+
+
+.uiIconSocialNetworksInfo:before {
+    content: "\e6c1";
+}
+
+.uiIconWikiMyWiki:before {
+    content: "\e67a";
+}
+
+.uiIconWikiWiki:before {
+    content: "\e695";
 }

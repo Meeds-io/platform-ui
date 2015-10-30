@@ -71,6 +71,11 @@
 			font-weight: 100;
 			padding: 3px 8px;
 		}
+	  	// Aligning Apps Icons in "More" menu
+	  	li.dropdown.open ul.dropdown-menu li.item a span {
+		  	position: relative;
+		  	bottom: 8px;
+		}
 	}
 
 	.nodeIconBg {
@@ -79,4 +84,89 @@
 	  width: 39px;
 	  background-position:center;
 	}
+}
+
+@media(max-width: 1024px) {
+	.uiSpaceMenu{
+		.spaceMenuTab{
+			> .active {
+		        background: none;
+		    }
+		    li.dropdown.open ul.dropdown-menu li.item a span {
+		        bottom: 12px;
+		    }
+		    > li > a,
+		    > li > a:hover,
+		    > .active > a,
+		    > .active > a:hover {
+		        .box-sizing(border-box);
+		        height: 90px;
+		        padding: 12px ;
+		        margin: 0 20px;
+		        .border-radius(0);
+		    }
+		    > li > a > .tabName {
+		        margin: 6px 0 0 ;
+		    }
+		}
+	    .dropdown span {
+	        margin-top: 6px;
+	    }
+	    [class^="uiIcon"] {
+	        font-size: 42px;
+	    }
+	    .dropdown-menu {
+            margin-top: -4px;
+            .border-radius(0);
+        }
+	}
+}
+
+@media(max-width: 767px){
+    .uiSpaceMenu {
+        [class^="uiIcon"]{
+        	font-size: 35px;
+        }
+        .spaceMenuTab{
+        	> li > a > .tabName, > li > a > span {
+		        font-size: 13px;
+		    }
+        }
+        
+    }
+}
+
+@media(max-width: 480px){
+    .uiSpaceMenu {
+    	height: 60px;
+        margin-top: -9px;
+        .spaceMenuTab{
+        	height: 60px;
+        	> li > a > .tabName, > li > a > span {
+		       display: none;
+		    }
+		    > li > a,
+		    > li > a:hover,
+		    > .active > a,
+		    > .active > a:hover {
+		        height: 60px;
+		        padding: 15px ;
+		        margin: 0 5px;
+		    }
+		    > li.item:last > a {
+		        margin-right: 0;
+		    }
+		    > li > a.dropdown-toggle {
+		        float: right ;
+		        padding: 12px 20px;
+		        margin-left: 0;
+		        margin-right: 0;
+		        display: inline-block;
+		    }
+        }
+	    [class^="uiIcon"] {
+	        font-size: 35px;
+	    }
+    }
+
 }
