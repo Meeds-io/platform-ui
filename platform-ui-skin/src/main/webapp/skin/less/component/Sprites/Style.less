@@ -3912,13 +3912,13 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 }
 
 .uiIconColorFlagGreen,.uiIconColorPriorityLOW { color: @successColor; }
-.uiIconColorFlagYellow,.uiIconColorPriorityMEDIUM  { color: @warningColor;}
+.uiIconColorFlagYellow,.uiIconColorPriorityMEDIUM ,.uiIconColorPriorityNORMAL { color: @warningColor;}
 .uiIconColorFlagRed,.uiIconColorPriorityHIGH { color: @errorColor; }
 
 .uiIconColorFlagGray ,.uiIconColorPriorityUNDEFINED,
 .uiIconColorFlagGreen,.uiIconColorPriorityLOW ,
 .uiIconColorFlagYellow,.uiIconColorPriorityMEDIUM ,
-.uiIconColorFlagRed,.uiIconColorPriorityHIGH {
+.uiIconColorFlagRed,.uiIconColorPriorityHIGH ,.uiIconColorPriorityNONE,.uiIconColorPriorityNORMAL{
     &:before {
         content: "\e746";
     }
@@ -4076,6 +4076,7 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 }
 .font10,[class^="uiIcon"][class*="Mini"]  {
  	font-size: @sizeIcon12x12;
+ 	top: 0;
  }
 
 .font12,[class^="uiIcon"][class*="Medium"] {
