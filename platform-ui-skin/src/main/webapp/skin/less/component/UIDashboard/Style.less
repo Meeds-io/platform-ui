@@ -143,10 +143,18 @@
 	  height: 100%;
 	  min-height: 400px;
 	  .UIColumn {
-		  float: left;
 		  width: auto;
 		  padding: 2px;
+          float: left;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
 		}
+      @media(max-width: 768px) {
+          .UIColumn {
+              float: none;
+              width: 100%!important;
+          }
+      }
 	}
 	.UIGadget .GadgetMenuBar{
 	  text-align: left;
