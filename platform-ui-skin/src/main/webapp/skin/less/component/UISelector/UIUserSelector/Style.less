@@ -14,7 +14,7 @@
 
 	.searchByGroup + .searchByUser {
 		float: left;
-    margin-left: 12px;
+        margin-left: 12px;
 	}
 	.searchByUser{
 		.inputLarge {
@@ -33,4 +33,56 @@
   .inputLarge {
     vertical-align: middle;
   }
+}
+
+@media(max-width: 1024px) {
+
+    .uiUserSelector .searchByGroup + .searchByUser,.uiSearch  .searchByGroup {
+        float: none;
+        margin-left: 0px;
+        display: block;
+        input ,select{
+            width: 100%;
+            margin: 0 0 15px 0!important;
+        }
+    }
+
+    .uiSearch{
+        #filter {
+            margin-top: 15px;
+        }
+        .searchByGroup,.searchByUser {
+            position: relative;
+            span {
+                position: relative;
+                display: block;  width: 100%;
+            }
+            input {
+                padding-right: 30px;
+            }
+            .inputLarge + .actionIcon {
+                position: absolute;
+                right: 2px;
+                top: 0px;
+            }
+            .actionIcon,.btnSearchUser {
+                position: absolute;
+                right: 2px;
+                top: 4px;
+            }
+            .btnSearchUser {
+                right: 5px;
+            }
+        }
+        .searchByUser {
+            > span {
+                float: none;
+                display: block;
+                input ,select{
+                    width: 100%!important;
+                }
+            }
+        }
+    }
+
 }

@@ -187,3 +187,38 @@
 }
 
 
+@media (max-width: 1204px) {
+    .uiOrganizationPortlet {
+        .organizationPortletContainer {
+            min-width: auto!important;
+        }
+    }
+    .uiOrganizationPortlet .groupNavigation {
+        width: 100%;
+        float: none;
+        & + .groupDetail {
+            margin-left: 0;
+        }
+
+    }
+    .uiOrganizationPortlet .uiFormWithTitle .form-horizontal {
+        width: auto;
+    }
+    .uiOrganizationPortlet .groupNavigation + .groupDetail .form-horizontal {
+        overflow: visible;
+    }
+}
+@media (max-width: 767px) {
+
+    .groupDetail {
+       
+        #UIGridUser {
+            overflow: auto;
+        }
+    }
+    .uiToolbar .managementIconContainer   .pull-left {
+        display: block;
+        float: none;
+        margin: 5px ;
+    }
+}
