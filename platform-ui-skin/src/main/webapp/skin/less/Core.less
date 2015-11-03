@@ -1006,3 +1006,57 @@ hr {
 }
 
 @import "_responsive.less";
+#auto-versioning-actions.alert {
+	padding-right: 14px;
+}
+#auto-versioning-actions {
+	margin-bottom: 15px;
+	.fileNameBox {
+		padding-bottom: 5px;
+		.fileName {
+			margin-top: 3px;
+		}
+	}
+}
+.uiPopupContentSelector {
+	.ActionContainer {
+		margin: 15px auto 0;
+		td:last-child {
+			white-space: nowrap;
+		}
+		td {
+			vertical-align: top;
+		}
+		.Delete {
+			background: none;
+		}
+		input {
+			width: 100%;
+			select {
+				width: 100%;
+				textarea {
+					width: 100%;
+				}
+			}
+		}
+		.UploadInfo {
+			.Abort {
+				display: inline-block;
+				.uiPopupContentSelector {
+					.ActionContainer {
+						.UploadInfo {
+							.Delete {
+								display: inline-block;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.UploadInfo {
+		.progress {
+			margin-top: 2px;
+		}
+	}
+}
