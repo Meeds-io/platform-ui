@@ -1613,11 +1613,21 @@ blockquote:after {
 		}
 	}
 
-    .fileActivity .introBox .isPreviewable .PlayerContianer,
-    .fileActivity .introBox .isPreviewable .PlayerContent,
-    .fileActivity .introBox .isPreviewable .PlayerContent{
-        width: 100%;
-    } 
+    .fileActivity .introBox .isPreviewable  {
+        .pull-left {
+            float: none;
+            & + .text {
+                overflow: visible;
+            }
+        }
+        .mediaContent {
+            max-width: 100%;
+            margin: 0 0 10px;
+        }
+        .PlayerContianer,.PlayerContent {
+            width: 100%;
+        }
+    }
 }
 // end 767
 
@@ -1627,7 +1637,7 @@ blockquote:after {
 	.activityStream .introBox .pull-left {
 		display: block;
 		float: none;
-		margin: 0 0 10px !important;
+		margin: 0 0 10px 0 !important;
 	}
     .fileActivity .introBox .isPreviewable .PlayerContent,
     .fileActivity .introBox .isPreviewable .PlayerContianer {
