@@ -1856,7 +1856,13 @@
 .UIJCRExplorer #UIDocumentWorkspace {
   background: @baseBackground!important;
 }
-
+/* Landscape phone to portrait tablet */
+@media (min-width: 481px) and (max-width: 1024px){
+    .UIWCMDashboardPortlet .uiAuthoringDashboard .elements,
+    .uiItemList li{
+        font-size: inherit;
+    }
+}
 @media(max-width: 768px){
     .uiWorkingArea .resizeBar {display: none}
     .uiWorkingArea .leftContainer ,.uiWorkingArea .rightContainer{
