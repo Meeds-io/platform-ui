@@ -315,6 +315,7 @@ a:hover [class^="uiIconEcms"],
 .dropdown-menu > li > a,
 .uiActionBar  {
 	.uiIconEcmsEditDocument,
+	.uiIconEcmsEditProperty,
 	.uiIconEcmsManageActions,
 	.uiIconEcmsWatchDocument,
 	.uiIconEcmsManageCategories,
@@ -327,8 +328,9 @@ a:hover [class^="uiIconEcms"],
 	}
 }
 
-.uiIconEcmsEditDocument:before {
-	content: "\e791";
+.uiIconEcmsEditDocument:before,
+.uiIconEcmsEditProperty:before{
+  content: "\e791";
 }
 
 .uiIconEcmsManageActions:before {
@@ -366,7 +368,9 @@ a:hover [class^="uiIconEcms"],
 .dropdown-menu > li > a,
 .uiActionBar  {
 	.actionIcon:hover .uiIconEcmsEditDocument,
+	.actionIcon:hover .uiIconEcmsEditProperty,
 	.uiIconEcmsEditDocument:hover,
+	.uiIconEcmsEditProperty:hover,
 	.actionIcon:hover .uiIconEcmsManageActions,
 	.uiIconEcmsManageActions:hover,
 	.actionIcon:hover .uiIconEcmsWatchDocument,
@@ -389,7 +393,9 @@ a:hover [class^="uiIconEcms"],
 
 .uiActionBar .listHiddenActionsContainer .dropdown-menu {
 	.actionIcon:hover .uiIconEcmsEditDocument,
+	.actionIcon:hover .uiIconEcmsEditProperty,
 	.uiIconEcmsEditDocument:hover,
+	.uiIconEcmsEditProperty:hover,
 	.actionIcon:hover .uiIconEcmsManageActions,
 	.uiIconEcmsManageActions:hover,
 	.actionIcon:hover .uiIconEcmsWatchDocument,
@@ -407,7 +413,12 @@ a:hover [class^="uiIconEcms"],
 		color: @colorIconSecondary
 	}
 }
-
+.uiIconEcmsCreateNewVersion {
+  background-position: -40px -160px;
+}
+.uiIconEcmsUploadNewVersion {
+  background-position: -60px -160px;
+}
 /************** icons Ecms 24x24 *************************/
 
 [class^="uiIconEcms24x24"]{
