@@ -335,30 +335,6 @@
 	}
 }
 
-.uiListGrid {
-
-	[class^="uiIcon24x24"] {
-		position: relative;
-	}
-
-	.LinkSmall,.IconLocked  {
-	  	font-size: @sizeIconDefault - 2;
-	  	color: @warningColor;
-		bottom: -4px;
-		right: 0px;
-		position: absolute;
-	}
-    .LinkSmall:before {
-        content: "\e793";
-    }
-	.IconLocked {
-        &:before {
-            content: "\e794";
-        }
-		top: 0px;
-        bottom: auto;
-	}
-}
 
 /*############################## -- Begin UIThumbnailsView -- ##############################*/
 
@@ -409,7 +385,6 @@
 		.bgThumbnailImage {
 			padding: 5px;
 			background: none;
-		    box-shadow: none;
             visibility: hidden;
 
             display: inline-block;
@@ -480,30 +455,7 @@
 		}
 	}
 
-	[class^="uiIcon64x64"] {
-		margin: auto;
-		position: relative;
-        .Link {
-            right: 34px;
-            font-size: @sizeIcon24x24;
-        }
 
-	}
-
-	.Link,.IconLocked {
-		position: absolute;
-		right: 25px;
-		bottom: 0;
-	}
-
-	.IconLocked {
-		&:before {
-            content: "\e794";
-        }
-		top: 10px;
-        bottom: auto;
-        font-size: @sizeIcon24x24;
-	}
 }
 
 /*############################## -- End UIThumbnailsView -- ##############################*/
@@ -1925,4 +1877,102 @@
 				margin: 0;
 			}
 	}
+}
+
+.uiThumbnailsView {
+
+}
+
+.UIDocumentInfo {
+    .IconLocked,.Link {
+        .font-icon();
+    }
+    .IconLocked {
+        &:before {
+            content: "\e794";
+        }
+    }
+    .uiListGrid {
+
+        [class^="uiIcon24x24"] {
+            position: relative;
+        }
+
+        .LinkSmall,.IconLocked  {
+            font-size: @sizeIconDefault - 2;
+            color: @warningColor;
+            bottom: -4px;
+            right: 0px;
+            position: absolute;
+        }
+        .LinkSmall:before {
+            content: "\e793";
+        }
+        .IconLocked {
+            top: 0px;
+            bottom: auto;
+        }
+    }
+    .LinkSmall:before, .IconLocked:before ,
+    .iconLinkSmall:before, .iconLockedsmall:before,
+    .thumbnailImage .Link:before{
+        text-shadow:0 0px 1px rgba(0, 0, 0, 1);
+        color: #edad00;
+    }
+    .thumbnailImage {
+        .IconLocked,.Link {
+            &:before {
+                font-size: 22px;
+            }
+        }
+    }
+    .uiThumbnailsView {
+        [class^="uiIcon64x64"] {
+            margin: auto;
+            position: relative;
+            .Link {
+                right: 34px;
+                &:before {font-size: @sizeIcon24x24;}
+            }
+
+        }
+
+        .Link,.IconLocked {
+            position: absolute!important;
+            right: 25px;
+            bottom: 0!important;
+            top: auto!important;
+        }
+
+        .IconLocked {
+            &:before {
+                content: "\e794";
+                font-size: @sizeIcon24x24;
+            }
+            top: 10px;
+            bottom: auto;
+        }
+    }
+    .thumbnailImage {
+        .loadingProgressIcon {
+            .IconLocked,.Link {
+                right: -4px;
+            }
+        }
+        .IconLocked,.Link {
+            position: absolute ;
+            right: 26px ;
+            top: 12px ;
+        }
+        .Link {
+            top: auto;
+            bottom: 0;
+        }
+    }
+}
+
+.iconLinkSmall, .iconLockedsmall {
+    &:before {
+        text-shadow:0 0px 1px rgba(0, 0, 0, 1);
+    }
 }
