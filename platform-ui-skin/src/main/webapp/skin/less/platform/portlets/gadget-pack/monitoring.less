@@ -1,6 +1,12 @@
 @import "../../../variables.less"; 
 @import "../../../mixins.less";
 // ---------------------------
+
+body, td, div, span, p {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 13px;
+}
+
 /** Memory Graph **/
 .uiGadgetThemes{
 	 .gadContent{
@@ -13,21 +19,29 @@
 	text-transform: capitalize;
 	.list-memory{
 		width: 168px;
-		margin: 27px 0 10px 13px;
+		margin: 0px 0 30px 0px;
 		float: left;
 		border: 1px solid @borderColor;
 		.table-striped tbody td:first-child{
 			border-right: 1px solid @borderColor;
 		 }
+		 td{
+		 	padding: 5px;
+		 }
 		.memory-label {
   			color: @linkColor;
 		 }
+
 	}
+	h6{
+	 	font-size: 13px;
+	 	margin: 20px 0 10px 0;
+	 }
 }
 
 .graph-memory-zone {
 	width: 0;
-	height: 170px;
+	height: 160px;
 	width: 100%;
 	margin-right: 0;
 	float: left;
