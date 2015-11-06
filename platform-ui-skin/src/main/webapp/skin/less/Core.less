@@ -78,7 +78,7 @@
 	.actionContainer();
 }
 
-a,a:hover,a:focus, a:visited {
+a,a:hover,a:focus {
   color: @linkColor;
   text-decoration: none;
 }
@@ -120,9 +120,6 @@ table {
 	font-size: 11px;
 	padding-left: 7px;
 	padding-right: 7px;
-	&:visited{
-		color: @primaryColor;
-	}
 }
 
 /*************** multiValueContainer *********************/
@@ -284,9 +281,6 @@ table {
 
 .actionIcon, .actionIconSmall{
 	.actionIcon();
-	&:visited {
-      color: @textColor;
-    }
 }
 
 .actionIconSmall {
@@ -642,7 +636,7 @@ hr {
 		&.open, &.active {
 			background-color: @primaryBackgroundHover;
 		}
-		a.project-name {
+		a.project-name, a.label-name {
 			padding: 8px 20px;
 			display: block;
 			font-weight: bold;
@@ -657,8 +651,12 @@ hr {
 		a.dropdownIcon {
 			margin: 7px 12px 0 0;
 		}
-		.list-projects {
+		.list-projects, .list-labels {
 			background-color: @baseBackground;
+			input{
+				width: 90%;
+				margin: auto;
+			}
 		}
 		.sub-item {
 			border-bottom: 1px solid @white;
@@ -675,7 +673,7 @@ hr {
 					display: block;
 				}
 			}
-			.project-name {
+			.project-name, .label-name {
 				display: block;
     			padding: 6px 20px;
     			font-weight: normal;
