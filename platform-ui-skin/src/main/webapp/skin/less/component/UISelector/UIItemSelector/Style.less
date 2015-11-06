@@ -24,8 +24,12 @@
 	margin: 2px 0px 2px 2px;
 	padding: 10px;
 	.itemListContainer {
-		width: 220px;
-		margin-right: 20px;
+        float: none;
+        @media (min-width: 768px) {
+            float: left;
+            width: 220px;
+            margin-right: 20px;
+        }
 		margin-bottom: 0;
 		&.uiBox {
 			 .title {

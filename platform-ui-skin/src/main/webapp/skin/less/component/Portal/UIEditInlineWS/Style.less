@@ -235,3 +235,35 @@
 .UISwitchingContainer.ToggledRow>.UIComponentBlock>div>div>.UISwitchingColumn>.TRContainer>.SwitchingContainer {
   display: block;
 }
+.UIEditInlineWS {
+    .popupHeader [class^="uiIcon"] {
+        margin-left: 6px!important;
+    }
+}
+@media (max-width: 1024px) {
+    #UIPageEditor,#UIPortalComposer,.uiDashboardPortlet .uiPopup   {
+        float: right;
+        width: 400px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    #UIPageEditor ,#UIPortalComposer,.uiDashboardPortlet .uiPopup {
+        .uiAction .btn {
+            display: block;
+            margin: 10px;
+            max-width: 100%;
+        }
+    }
+}
+@media (max-width: 480px) {
+    #UIPageEditor ,#UIPortalComposer,.uiDashboardPortlet .uiPopup {
+        width: 70% !important;
+    }
+
+}
+@media (max-width: 320px) {
+    .UIEditInlineWS .uiContainerList [class*="ContainerLayout"] {
+        color: transparent;
+    }
+}

@@ -14,7 +14,11 @@
 		border: 1px solid @borderColor;
 		.border-radius(1px);
 		.pageNodeContainer {
-			width: 240px;
+            float: none;
+            @media (min-width: 768px) {
+                width: 240px;
+                float: left;
+            }
 			.uiTrees {
 				max-height: 402px;
 				overflow: auto;
@@ -24,19 +28,28 @@
 			}
 		}
 		.selectedPageInfo {
-			margin-left: 240px;
+            border-top: 1px solid @borderColor;
             min-height:412px;
-			border-left: 1px solid @borderColor;
+            @media (min-width: 768px) {
+                margin-left: 240px;
+                border-left: 1px solid @borderColor;
+                border-top: none;
+            }
+
+            .form-horizontal {
+                padding: 15px;
+            }
 			.pageNodeInfo {
 				background: @primaryBackground;
 				padding: 8px 15px;
 				border-bottom: 1px solid @borderColor;
 				.label {
 					background: none;
-					color: @textColor;
+					color: @textColor!important;
 					box-shadow: none;
 					text-shadow: none;
-					font-size: 14px;
+					font-size: inherit;
+                    padding: 0;
 				}
 			}
 
@@ -72,9 +85,23 @@
 	.UIWizardPageSelectLayoutForm {
 		background: @primaryBackgroundLight;
     	border: 1px solid @borderColor;
-    	.uiItemSelector {padding: 0;}
+        @media (max-width: 768px) {
+            border-left: none;
+            overflow: visible;
+        }
+    	.uiItemSelector {
+            padding: 0;
+             @media (max-width: 768px) {
+                    .itemDetail .title {
+                        border-top: 1px solid @borderColor;
+                }
+            }
+        }
 		.itemListContainer {
 			padding: 20px;
+            @media (max-width: 768px) {
+                border-left: 1px solid @borderColor;
+            }
 			.uiBox {
 				margin: 0;
 				.itemList {

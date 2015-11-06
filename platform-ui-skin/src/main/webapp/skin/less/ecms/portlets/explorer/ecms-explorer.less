@@ -1764,12 +1764,16 @@
 		}
 		
 		.alignLeft {
-			float: left;
-			width: 30%;
-			margin-left: 20px;
-			min-width: 225px;
+            margin: 10px;
 		}
-		
+		@media (min-width: 980px) {
+            .alignLeft {
+                float: left;
+                width: 30%;
+                margin: 0 0 15px 20px;
+                min-width: 225px;
+            }
+        }
 		.elements {
 			text-align: left;
 			padding: 10px;

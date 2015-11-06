@@ -5,15 +5,23 @@
 
 .uiECMAdminPortlet{
 	.uiResizableBlock{
-		.ShowSideBar{
-			margin-left: 256px;
-		}
+        @media (min-width: 980px){
+            .ShowSideBar{
+                margin-left: 256px;
+            }
+        }
 	}
 	.ecmAdminPanel{
 		height: 100%;
 		overflow: auto;
-		width: 233px;
-		padding: 24px 13px 0px 24px;
+		float: none;
+        margin: 15px;
+        @media (min-width: 980px){
+            width: 233px;
+            float: left;
+            padding: 24px 13px 0px 24px;
+            margin: 0;
+        }
 	}
 	.uiECMAdminWorkingArea{
 		margin: 24px 10px 10px;
@@ -269,7 +277,7 @@ a:hover .uiIconEcmsUnLockManager{
         float: none;
         margin:10px 0;
         width: 100%;
-        padding: 15px;
+        padding: 0 15px;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
     }
