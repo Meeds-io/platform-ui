@@ -582,6 +582,11 @@ hr {
       &:first-child {
         border-top: none;
       }
+    &.collapsed {
+      & > * {
+          border-bottom: none;
+      }
+    }
       .box-shadow(0 0 3px 0 rgba(0, 0, 0, 0.1));
       &:hover,&.open,&.active {
         background-color: @primaryBackgroundLight
@@ -620,6 +625,11 @@ hr {
 		border-bottom: none;
 		background-color: @primaryBackgroundLight;
 		box-shadow: none;
+        &.collapsed {
+            & > div{
+                border-bottom: none;
+            }
+        }
 		&:first-child {
 			border-radius: @baseBorderRadius @baseBorderRadius 0 0;
 		}
@@ -649,7 +659,7 @@ hr {
 			border-bottom: 1px solid @borderColor;
 		}
 		a.dropdownIcon {
-			margin: 7px 12px 0 0;
+			margin: 8px 10px 0 0;
 		}
 		.list-projects, .list-labels {
 			background-color: @baseBackground;
@@ -662,6 +672,7 @@ hr {
 			border-bottom: 1px solid @white;
 			margin-left: 1px;
 			position: relative;
+			white-space: nowrap;
 			&:hover {
 				background-color: @primaryBackgroundLight;
 				.iconGreater {
@@ -675,8 +686,11 @@ hr {
 			}
 			.project-name, .label-name {
 				display: block;
-    			padding: 6px 20px;
+    			padding: 6px 30px;
     			font-weight: normal;
+    			max-width: 100%;
+    			.text-overflow;
+    			.box-sizing(border-box);
 			}
 			> a {
 				color: @textColor;
@@ -684,10 +698,11 @@ hr {
 				&.dropdown-toggle {
 					display: none;
 					margin: 6px 12px 0 0;
+					position: relative;
 				}
 			}
 		}
-		.project-item {	
+		.project-item, .label-item {	
 			&.active, &.open {
 				> .sub-item {
 					#gradient > .vertical(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
@@ -724,7 +739,12 @@ hr {
 		.noLabel {
 		  background: @baseBackground;
           border-radius: 0 0 3px 3px;
-          padding: 10px 0;
+          padding: 10px;
+          input {
+          	max-width: 100%;
+          	.box-sizing(border-box);
+          	margin-bottom: 0;
+          }
 		}
 	}
 }
@@ -796,6 +816,9 @@ hr {
 }
 
 .uiEditableInline {
+	.uiIconClose {
+		display: none;
+	}
 	&.active {
 	    .editable-element {
 	        display: none;
@@ -876,12 +899,12 @@ hr {
 	.hoverStatus {
 		display: inline-block;
 		cursor: pointer;
+		vertical-align: middle;
 		&.hoverStatusBlock {
 			display: block;
 		}
-		vertical-align: middle;
 		> * {
-			vertical-align: middle;
+			//vertical-align: middle;
 		}
 		&.editableField {
 			.view-value:hover, .input-value:hover {
@@ -894,6 +917,11 @@ hr {
 				&:hover, &:focus {
 					background-color: @inputBackground;
 				}
+			}
+		}
+		&:hover {
+			.uiIconClose {
+				display: inline-block;
 			}
 		}
 	}
@@ -951,7 +979,9 @@ hr {
 		}
 	}
 }
-
+.hoverStatus *:last-child {
+	margin-bottom: 0;
+}
 .form-dropdown {
 	position: relative;
 	display: inline-block;
@@ -960,11 +990,21 @@ hr {
 		text-align: center;
 	}
 }
-//clear margin-left of row in cke_editable
-.cke_editable {
-    .row {
-        margin: 0;
-    }
+
+// Reset some component for Task
+#taskManagement {
+	.uiAccordion.leftPanel .accordion-heading .item {
+		border-bottom: none;
+	}
+	.uiAccordion.leftPanel .accordion-heading .item + .list-projects {
+		border-top: 1px solid @borderColor;
+	}
+	.uiAccordion.leftPanel .accordion-heading .sub-item {
+		border-bottom: none;
+		+ .sub-menu {
+			border-top: 1px solid @white;
+		}
+	}
 }
 
 // Reset line-height for ECME Product Template
@@ -1002,7 +1042,6 @@ hr {
 .width-full {
     width: 100%;
 }
-
 
 #auto-versioning-actions.alert {
     padding-right: 14px;
@@ -1056,5 +1095,15 @@ hr {
 }
 
 
+.sharePrjDialog {
+	.uiAction .btn:first-child {
+		.btn;
+	}
+}
+.sharePrjDialog {
+	.uiAction .btn:last-child {
+		.btn;
+	}
+}
 @import "_responsive.less";
 

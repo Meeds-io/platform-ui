@@ -29,24 +29,36 @@
 	.block-show {
 		display: block;
 	}
-	.inline-show {
-		display: inline;
-	}
-	.inline-block-show {
-		display: inline-block;
-	}
+    .visibility-show,
+    .visibility-visible {
+        visibility: visible;
+    }
+    .inline-show {
+        display: inline;
+    }
+    .inline-block-show {
+        display: inline-block;
+    }
+
 	.inline-hide,
 	.inline-block-hide,
 	.block-show,
 	.hide {
 		display: none;
 	}
+    .visibility-hidden {
+        visibility: hidden;
+    }
 	&:hover, &.selected {
 		.block-show,
 		.inline-show,
 		.inline-block-show {
 			display: none;
 		}
+        .visibility-show,
+        .visibility-visible {
+            visibility: hidden;
+        }
 		.block-hide {
 			display: block;
 		}
@@ -56,6 +68,9 @@
 		.inline-block-hide {
 			display: inline-block;
 		}
+        .visibility-hidden {
+            visibility: visible;
+        }
 	}
 }
 .hoverStatus {
@@ -84,9 +99,15 @@
     display: table;
     width: 100%;
     table-layout: fixed;
+    .dropdown-group {
+        position: relative;
+    }
     .row-item {
         display: table-row;
         cursor: pointer;
+        .dropdown-group {
+            display: inline-block;
+        }
         &.heading {
             font-weight: bold;
             .column-item {
@@ -107,6 +128,10 @@
         .text-time {
             height: 26px;
             line-height: 26px;
+            vertical-align: top;
+            &:empty {
+                display: none;
+            }
         }
         &:hover,&.selected {
             &.group {
@@ -161,8 +186,8 @@
 .table-project-collapse {
     margin-bottom: 30px;
     .heading {
-        padding: 4px 8px;
-        .group-name {
+        padding: 5px 8px 6px;
+        .group-name, .amount-item {
             font-weight: bold;
         }
     }

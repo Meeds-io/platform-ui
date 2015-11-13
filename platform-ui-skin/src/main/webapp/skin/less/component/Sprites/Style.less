@@ -106,7 +106,8 @@ a:hover [class^="uiIcon"],
 .uiQuestions .attachmentContentImage .actionAttachImg a:hover i,
 .viewIconContainer > div:hover [class^="uiIcon"],
 .LeftNavigationTDContainer .uiInfoBar [class^="uiIcon"],
-.uiIconWhite
+.uiIconWhite,
+.displayItems > li:hover .uiIconBlue 
 {
   color: @colorIconSecondary
 }
@@ -3597,6 +3598,14 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 	content: "\e6e1";
 }
 
+.uiIconAppTaskManagementApplication {
+	&:before {
+		content: "\e690";
+		font-size: 35px;
+	}
+}
+
+
 .uiIconAppFeaturedPoll {
 	content: "\e73e";
 }
@@ -3670,9 +3679,7 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 }
 
 
-.uiIconShare {
-	background-position: -140px -220px;
-}
+
 /*---------- Portlet Icons ----------*/
 /*
 [class^="uiIconPortlet64x64"], [class^="uiIconPortlet64x64"]:hover{
@@ -3863,7 +3870,6 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
   .loading-action;
 }
 
-
 .uiIconArrowDownLast:before {
     content: "\e75f";
 }
@@ -3978,7 +3984,7 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 .uiIconExt-cloud:before {content: "\e682";}
 .uiIconExt-open-source-projects:before,.uiIconOpenSource:before{content: "\e687";}
 .uiIconJira:before,.useful-icon-jira:before{content: "\e67f";}
-.useful-icon-github:before,uiIconGithub:before{content: "\e67e";}
+.useful-icon-github:before,.uiIconGithub:before{content: "\e67e";}
 .uiIconFisheyes:before,.useful-icon-fisheye:before{content: "\e67d";}
 .useful-icon-sonar:before,.uiIconSonar:before{content: "\e67b";}
 
@@ -3986,6 +3992,7 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 .uiIconGuidelines:before,.useful-icon-UxGui:before{content: "\e699";}
 .useful-icon-Blog:before,.uiIconEXO:before{content: "\e683";}
 .uiIconConfigure:before,.useful-icon-Resource:before{content: "\e73b";}
+
 
 /* override css for icon 'Open document in office' - ecms - start  */
 /*
@@ -4341,4 +4348,24 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 
 .uiIconWikiWiki:before {
     content: "\e695";
+}
+
+.uiIconExt-tasks {
+	&:before {
+		content: "\e690";
+	}
+}
+
+.uiIcon40x40TickGray {
+	background-image: url("/eXoSkin/skin/images/system/unified-search/tick.png");
+}
+.uiIcon40x40TickBlue {
+	background-image: url("/eXoSkin/skin/images/system/unified-search/tick-blue.png");
+}
+
+.uiIcon40x40TickBlue,.uiIcon40x40TickGray {
+	width: 38px;
+	display: inline-block;
+	vertical-align: middle;
+	height: 36px;
 }
