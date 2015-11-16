@@ -656,6 +656,15 @@
     <skin-name>Default</skin-name>
     <css-path>/skin/css/platform/portlets/extensions/login.css</css-path>
   </portlet-skin>
+
+
+  <!-- Platform - software registration skins -->
+  <portlet-skin>
+    <application-name>portal</application-name>
+    <portlet-name>SoftwareRegistration</portlet-name>
+    <skin-name>Default</skin-name>
+    <css-path>/skin/css/platform/portlets/extensions/registration.css</css-path>
+  </portlet-skin>
   
   <!-- Simple window style -->
   <window-style>

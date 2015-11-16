@@ -89,6 +89,7 @@
                                 <include>platform/portlets/welcome-screens/unlockTrial.less</include>
                                 <include>platform/portlets/extensions/login.less</include>
                                 <include>platform/portlets/extensions/welcome-screens.less</include>
+                                <include>platform/portlets/extensions/registration.less</include>
                                 <include>platform/portlets/gadget-pack/canvas.less</include>
                                 <include>platform/portlets/gadget-pack/forumsStatistic.less</include>
                                 <include>platform/portlets/gadget-pack/home.less</include>

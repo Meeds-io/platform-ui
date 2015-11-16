@@ -1,0 +1,71 @@
+//@import "../../../variables.less";
+//@import "../../../mixins.less";
+@import "../../../Core.less";
+body {
+    background: rgba(0, 0, 0, 0) url("/eXoSkin/skin/images/themes/default/platform/portlets/extensions/login_texture.jpg") repeat scroll 0 0;
+    color: #333333;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 13px;
+}
+
+.popupDarkStyle{
+	border: 1px solid #333333;
+    border-radius: 8px;
+    left: 50%;
+    max-width: 515px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    .popupHeader {
+	    background: #484848 none repeat scroll 0 0;
+	    border: 1px solid #333333;
+	    border-radius: 6px 6px 0 0;
+	    box-shadow: none;
+	    height: 42px;
+	    margin: -1px;
+	    padding: 0 30px;
+	    .popupTitle {
+		    color: #c1c1c1;
+		    font-size: 18px;
+		    font-weight: bold;
+		    line-height: 42px;
+		    text-shadow: 1px 0 1px rgba(0, 0, 0, 0.2);
+		}
+	}
+	.popupContent {
+	    background: url("/eXoSkin/skin/images/themes/default/platform/portlets/extensions/popupDarkStyleBGL.png") no-repeat scroll left bottom, 
+	    url("/eXoSkin/skin/images/themes/default/platform/portlets/extensions/popupDarkStyleBGR.png") no-repeat scroll right bottom, 
+	    rgba(0, 0, 0, 0) url("/eXoSkin/skin/images/themes/default/platform/portlets/extensions/popupDarkStyleBGC.png") repeat-x scroll center bottom;
+	    border: 1px solid #333333;
+	    border-radius: 0 0 6px 6px;
+	    margin: -1px;
+	    padding: 30px;
+	    .firstText{
+	    	color: @darkBlue;
+	    	font-weight: bold;
+	    }
+	    .uiAction {
+	    	padding-top: 50px;
+	    	.btn {
+			    font-size: 16px;
+			    padding: 10px 35px;
+			}
+		}
+		.loading-text{
+			background: url("/eXoSkin/skin/images/themes/default/Loading/loading24x24Light.png");
+			animation: 1s linear 0s normal none infinite running loading;
+			width: 24px;
+			height: 24px;
+			margin: 50px auto;
+			display: none;
+		}
+		.signin-title{
+			display: none;
+		}
+	}
+}
+.img-responsive{
+	max-width: 100%;
+	display: block;
+	margin: 15px auto 5px;
+}
