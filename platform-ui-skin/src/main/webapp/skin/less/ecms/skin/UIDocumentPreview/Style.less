@@ -200,9 +200,7 @@
 			left: 50%;
 			position: absolute;
 			top: 50%;
-			transform: translate(-50%, -50%);
-			-ms-transform: translate(-50%, -50%);
-			-webkit-transform: translate(-50%, -50%);
+            .translate(-50%, -50%);
 		}
 		.fileContent {
 			margin-right: 335px;
@@ -261,9 +259,7 @@
 					left: 50%;
 				    position: absolute;
 					top: 50%;
-				    transform: translate(-50%, -50%);
-				    -ms-transform: translate(-50%, -50%);
-				    -webkit-transform: translate(-50%, -50%);
+                    .translate(-50%, -50%);
 				}
 				video {
 				  width: 100%;
@@ -351,9 +347,6 @@
 
 
     .document-preview-default {
-        .exit-document-preview {
-            display: block;
-        }
         .dowload-link{
             display: none;
         }
@@ -364,9 +357,13 @@
         .maskLayer .uiDocumentPreview .commentArea {
             display: none!important;
         }
-
+        .document-preview-default .content img {
+            left: 50%;
+            position: absolute;
+        }
         .maskLayer .uiDocumentPreview .fileContent .navigationContainer img,
-        .maskLayer .uiDocumentPreview .fileContent .navigationContainer object {
+        .maskLayer .uiDocumentPreview .fileContent .navigationContainer object,
+        .document-preview-default .content img{
             top: 34px;
             .translate(-50%, 0px);
         }
@@ -399,7 +396,26 @@
             box-shadow: none;
             overflow: visible;
             margin: 0 !important;
-
+            .exit-document-preview {
+                display: block;
+                .uiIconClose  {
+                    //left: 15px;
+                    right: 18px;
+                    color: @colorIconDefault;
+                    cursor: pointer;
+                    z-index: 10009!important;
+                    top: 20px!important;
+                    position: fixed!important;
+                    .opacity(100);
+                    &:before {
+                        font-size: 20px;
+                    }
+                    &:hover {
+                        color: @colorIconPrimary;
+                        &:before { color: @colorIconPrimary;}
+                    }
+                }
+            }
             .uiIconResize {
                 display: none!important;
             }
@@ -499,10 +515,7 @@
                             &:before { color: @colorIconPrimary;}
                         }
                     }
-                    .uiContentBox {
-                        background: none ;
-                        padding: 0  20px!important;
-                    }
+
                 }
             }
         }
@@ -528,32 +541,39 @@
             left: 14px;
         }
     }
-    .document-preview-default {
-        .voteRatingInfo ,.uiVote .voteRatingInfo span{
-            color: white;
+    #UISocialPopupWindow {
+        .uiVote ,.downloadBtn ,.dowload-link{
+            display: none;
         }
-        .exit-document-preview .uiIconClose  {
-            //left: 15px;
-            right: 18px;
-            color: @colorIconDefault;
-            cursor: pointer;
-            z-index: 10009!important;
-            top: 20px!important;
-            position: fixed!important;
-            .opacity(100);
-            &:before {
-                font-size: 20px;
-            }
-            &:hover {
-                color: @colorIconPrimary;
-                &:before { color: @colorIconPrimary;}
+    }
+    #UISocialPopupWindow {
+        .uiDocumentPreview ,.document-preview-default,.document-preview-content-file{
+            .uiContentBox {
+                background: none ;
+                padding: 0  20px!important;
             }
         }
     }
 
 
+
+}
+//end 1024
+@media (min-width: 768px) and (max-width: 1024px) {
+    .uiDocumentPreview .findbar {
+        left: 40px; //1.2
+    }
 }
 
+@media (max-width: 480px) {
+    #UISocialPopupWindow {
+        .uiDocumentPreview ,.document-preview-default,.document-preview-content-file{
+            .uiContentBox {
+                padding: 0  10px!important;
+            }
+        }
+    }
+}
 
 //hack safari document preview
 
