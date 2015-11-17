@@ -12,7 +12,7 @@ body {
 	border: 1px solid #333333;
     border-radius: 8px;
     left: 50%;
-    max-width: 515px;
+    max-width: 514px;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
@@ -68,4 +68,26 @@ body {
 	max-width: 100%;
 	display: block;
 	margin: 15px auto 5px;
+}
+
+@media (max-width: 1024px) {
+	.popupDarkStyle{
+	    transform: none;
+	}
+}
+
+@media (max-width: 480px) {
+	.popupDarkStyle{
+		.popupContent {
+		    background: none;
+		}
+		.uiAction {
+			.btn{
+				width: auto;
+			}
+			input.btn{
+				width: 100%;
+			}
+		}
+	}
 }
