@@ -1,29 +1,19 @@
-//@import "../../../variables.less";
-//@import "../../../mixins.less";
 @import "../../../Core.less";
+
 body {
-    background: rgba(0, 0, 0, 0) url("/eXoSkin/skin/images/themes/default/platform/portlets/extensions/login_texture.jpg") repeat scroll 0 0;
-    color: #333333;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 13px;
+    background:  url("/eXoSkin/skin/images/themes/default/platform/portlets/extensions/login_texture.jpg") repeat scroll 0 0;
+    color: @textColor;
+    font-family: @sansFontFamily;
+    font-size: @baseFontSize;
 }
-@font-face {
-	font-family: 'PLF-FONT-ICONs';
-	src:url('../../../../fonts/PLF-FONT-ICONS.eot?-m9uidt');
-	src:url('../../../../fonts/PLF-FONT-ICONS.eot?#iefix-m9uidt') format('embedded-opentype'),
-		url('../../../../fonts/PLF-FONT-ICONS.ttf?-m9uidt') format('truetype'),
-		url('../../../../fonts/PLF-FONT-ICONS.woff?-m9uidt') format('woff'),
-		url('../../../../fonts/PLF-FONT-ICONS.svg?-m9uidt#PLF-FONT-ICONS') format('svg');
-	font-weight: normal;
-	font-style: normal;
-} 
+
 .popupDarkStyle{
 	border: 1px solid #333333;
     border-radius: 8px;
     left: 50%;
     max-width: 514px;
     top: 50%;
-    transform: translate(-50%, -50%);
+    .translate(-50%, -50%);
     width: 90%;
     .popupHeader {
 	    background: #484848 none repeat scroll 0 0;
@@ -62,9 +52,9 @@ body {
 		}
 		.loading-text{
 			background: url("/eXoSkin/skin/images/themes/default/Loading/loading24x24Light.png");
-			animation: 1s linear 0s normal none infinite running loading;
-			width: 24px;
-			height: 24px;
+			-webkit-animation: 1s linear 0s normal none infinite running loading;
+            animation: 1s linear 0s normal none infinite running loading;
+			.square(24px);
 			margin: 50px auto;
 			display: none;
 		}
@@ -81,7 +71,8 @@ body {
 
 @media (max-width: 1024px) {
 	.popupDarkStyle{
-	    transform: none;
+        -webkit-transform : none;
+        transform: none;
 	}
 }
 
