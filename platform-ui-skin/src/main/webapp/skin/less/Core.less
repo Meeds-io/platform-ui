@@ -1104,5 +1104,27 @@ hr {
 		.btn;
 	}
 }
+#tiptip_holder {
+
+    blockquote {
+        background: url("@{images-path}/social/skin/Activity/right-quote.png") no-repeat right bottom;
+        padding-right: 25px;
+        padding-left: 25px;
+        color: @baseColorLight;
+        border-left: medium none;
+        width:75%;
+        word-wrap:break-word;
+        position: relative;
+    }
+
+    blockquote:after {
+        background: url("@{images-path}/social/skin/Activity/left-quote.png") no-repeat left top;
+        .size(13px,15px);
+        position:absolute;
+        top:2px;
+        left: 0;
+    }
+}
+
 @import "_responsive.less";
 
