@@ -9,10 +9,6 @@
 		margin-left: 15px;
 	}
 	width: @calComponentWidth;
-	.actionIcon{
-		line-height: 14px;
-		padding: 2px;
-	}
 	.highLight{
 		font-weight: bold;
 	}
@@ -22,11 +18,35 @@
 	}
 	h5.title{
 		text-align: center;
-		line-height: 14px;
-		padding: 10px;
+		position: relative;
+		padding: 8px 10px;
 		span {
 			font-size: @baseFontSize;
+			display: block;
+			padding: 0 25px;
+			.text-overflow();
 		}
+		.tooltip-inner {
+		    white-space: nowrap;
+		}
+		.actionIcon  {
+			position: absolute;
+			top: 9px;
+			left: 5px;
+			padding: 0;
+			line-height: 15px;
+			text-align: center;
+			.square(16px);
+			.uiIconMiniArrowLeft  {
+				left: -1px;
+			}
+			
+			&.pull-right {
+				right: 5px;
+				left: auto;
+			}
+		}
+		
 	}
 	h5.title, h5.title span a {
 		color: @calComponentWidthTitleColor;
@@ -37,16 +57,6 @@
 		tr td {
 			text-align: center;
 			line-height: @baseLineHeight + 4;
-		}
-	}
-	table {
-		tr{
-			display: table!important;
-			width: 100%
-		}
-		td{
-			display: table-cell!important;
-			width: auto!important;
 		}
 	}
 	table.weekList{
