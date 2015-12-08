@@ -19,9 +19,6 @@
 	.accordion-toggle a{
 	  display: block;
 	  padding: 8px 8px 8px 15px;
-	  [class^="uiIcon"].pull-right {
-	  	margin-top: 2px;
-	  }
         [class^="uiIconArrow"] {
             margin-top: 5px!important;
         }
@@ -77,9 +74,9 @@
 		  padding: 8px 15px;
 		  display: block;
 		}
-		.uiIconSelected {
-		  background-position: 0px -140px;
-			margin-top: 2px;
+		.uiIconSelected:before {
+		  content: "\e75a";
+		  font-size: 9px;
 		}
 	}
 	.expaned:hover {
@@ -90,9 +87,9 @@
 		  padding: 8px 15px;
 		  display: block;
 		}
-		.uiIconSelected {
-		  background-position: -40px -140px;
-			margin-top: 2px;
+		.uiIconSelected:before {
+		  content: "\e75c";
+		  font-size: 9px;
 		}
 	}
 	.accordion-inner{
