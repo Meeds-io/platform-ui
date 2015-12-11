@@ -1174,12 +1174,18 @@
                 .border-radius(4px);
                 margin: 4px 0 0;
                 table{
-                    th{display: none;}
+                    table-layout: fixed;
+                    th, colgroup{display: none;}
                     td{
                         width: 100%;
                         border-left: none;
                         .avatarTiny{
                             white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            width: auto;
+                            height: auto;
+                            display: block;
                         }
                     }
                 }
@@ -1263,10 +1269,6 @@
     }
     .nav-tabs > li {
         margin-bottom: 0;
-    }
-
-    .uiQuickSearchResult {
-        //width: 380px !important;
     }
 
 }
