@@ -107,13 +107,25 @@
            border-radius: 3px;
            color: @uiMentionColor;
            border: 1px solid @uiMentionBorder;
-		  padding: 1px 5px;
-		  display: inline-block;
-		   i {
+			display: inline-block;
+			max-width: 150px;
+		    overflow: hidden;
+		    padding: 1px 16px 1px 5px;
+		    position: relative;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		    top: 3px;
+		    i {
 			  margin-left: 4px;
               font-size: 0;
 			}
-
+			.removeValue{
+				position: absolute;
+    			right: 4px;
+			}
+		}
+		input{
+			top: -6px;
 		}
 
 	}
