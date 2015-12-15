@@ -550,16 +550,26 @@
 
 
 //responsive wiki
-
+@media (min-width: 769px) and (max-width: 1024px) {
+    .uiLeftContainerArea {
+        max-width: 35%;
+    }
+}
 @media(max-width: 768px){
+    .uiLeftContainerArea {
+        max-width: none;
+    }
     #UIWikiMiddleArea {
-        height: auto !important;
+       // height: auto !important;
         overflow: visible !important;
         #UITreeExplorer {
             height: auto !important;
             max-height: 300px!important;
             min-height: 200px
         }
+    }
+    .uiRightContainerArea {
+        overflow: visible;
     }
     body .uiWikiMiddleArea .resizeBar {
         display: none!important;
