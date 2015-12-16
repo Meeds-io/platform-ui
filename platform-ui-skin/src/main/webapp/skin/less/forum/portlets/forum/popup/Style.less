@@ -108,6 +108,11 @@
 			}
 			.controls{
 				margin-left: 210px;
+				position: relative;
+				.actionIcon{
+					position: absolute;
+					right: -7px;
+				}
 			}
 		}
 	}
@@ -155,4 +160,49 @@
     }
   }
 }
-
+@media(max-width: 1024px){
+	.uiNotificationForm{
+		.form-horizontal{
+			.control-group{
+				.controls{
+					.actionIcon{
+						right: -12px;
+					}
+				}
+			}
+		}
+	}
+}
+@media(max-width: 768px){
+	.uiNotificationForm{
+		.form-horizontal{
+			.control-group{
+				.control-label{
+					width: 100%;
+					text-align: left;
+					float: none;
+				}
+				.controls{
+					margin-left: 0;
+					white-space: normal;
+					.actionIcon{
+						right: -7px;
+					}
+				}
+			}
+		}
+	}
+}
+@media(max-width: 480px){
+	.uiNotificationForm{
+		.form-horizontal{
+			.control-group{
+				.controls{
+					.actionIcon{
+						right: -12px;
+					}
+				}
+			}
+		}
+	}
+}
