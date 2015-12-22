@@ -119,10 +119,12 @@
 			  margin-left: 4px;
               font-size: 0;
 			}
-			.removeValue{
-				position: absolute;
-    			right: 4px;
+			.removePermission .uiIconClose{
+				top: 7px !important;
 			}
+		}
+		.removePermission .uiIconClose{
+			top: 2px !important;
 		}
 		span + input{
 			top: -6px;
@@ -141,9 +143,6 @@
 	  padding: 0px;
 	  display: inline;
 	  width: 0px;
-	}
-	span .removePermission{
-		position: absolute;
 	}
 	 .uiIconClose {
 	  cursor: pointer;
@@ -168,8 +167,10 @@
 		}
 		.uiIconClose  {
 		  display:inline-block !important;
-		  position:static !important;
 		  cursor:pointer;
+		  position: absolute;
+		    right: 4px;
+		    top: 7px !important;
 		}
 
 
