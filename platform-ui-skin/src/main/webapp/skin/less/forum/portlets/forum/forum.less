@@ -25,7 +25,11 @@
     min-height: 38px;
 }
 
-.uiForumPortlet{
+.uiForumPortlet {
+	.breadcrumb .active {
+		max-width: 450px;
+	}
+
 	.uiGrid.table caption + thead tr{
 		th {
 			background-color: @primaryBackgroundLight;
@@ -83,7 +87,10 @@
 }
 
 @media(max-width: 955px) {
-
+    .uiForumPortlet .breadcrumb .active {
+        max-width: 140px;
+    }
+	
     .rounded-corners-top .actionExpandCollapse {
         display: none;
     }
