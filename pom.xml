@@ -34,7 +34,6 @@
   <name>Platform-UI</name>
   <modules>
     <module>platform-ui-skin</module>
-    <module>config</module>
     <module>packaging</module>
   </modules>
   <scm>
