@@ -103,7 +103,7 @@
  <!--- forum portlet --> 
    <portal-skin>
     <skin-name>Default</skin-name>
-    <skin-module>forumResources</skin-module>
+    <skin-module>forum</skin-module>
     <css-path>/skin/css/forum/skin/forum-resources.css</css-path>
   </portal-skin>
   
