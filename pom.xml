@@ -29,7 +29,7 @@
   </parent>
   <groupId>org.exoplatform.platform-ui</groupId>
   <artifactId>platform-ui</artifactId>
-  <version>4.4.0-M02</version>
+  <version>4.4.x-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Platform-UI</name>
   <modules>
@@ -39,7 +39,7 @@
   <scm>
     <connection>scm:git:git://github.com/exoplatform/platform-ui.git</connection>
     <developerConnection>scm:git:git@github.com:exoplatform/platform-ui.git</developerConnection>
-    <tag>4.4.0-M02</tag>
+    <tag>HEAD</tag>
     <url>https://github.com/exoplatform/platform-ui</url>
   </scm>
   <properties>
