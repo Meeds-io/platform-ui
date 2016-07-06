@@ -312,14 +312,18 @@
 				}
 			}	
 		}
-		.downloadBtn {
+		.previewBtn {
 			bottom: 7px;
-		  text-align: right;
-		  margin-right: 335px;
-		  padding: 5px 10px 0 0;
+		  	text-align: right;
+		  	margin-right: 335px;
+		  	padding: 5px 10px 0 0;
+		  	.openBtn, .downloadBtn {
+			    float: right;
+			  	padding-left: 15px;
+			}
 		    a {
 		    	color: @btnPrimaryColor;
-		    	&:hover .uiIconDownload, &:active .uiIconDownload, &.active .uiIconDownload {
+		    	&:hover i, &:active i, &.active i, {
                     color: @colorIconSecondary;
 		    	}
 		    }
