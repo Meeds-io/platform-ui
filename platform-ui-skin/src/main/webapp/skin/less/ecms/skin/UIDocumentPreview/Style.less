@@ -303,20 +303,25 @@
 			word-wrap: break-word;
 		}
 		.uiVote {
+		  	float: left;
 			height: 20px;
 			padding: 5px 0;
 			.voteRatingInfo {
 				color: @btnPrimaryColor;
+			  	line-height: inherit;
 				span {
 					color: @btnPrimaryColor;
 				}
-			}	
+			}
+			.avgRatingImages {
+				float: right;
+			}
 		}
 		.previewBtn {
 			bottom: 7px;
 		  	text-align: right;
 		  	margin-right: 335px;
-		  	padding: 5px 10px 0 0;
+		  	padding: 5px 0px 0 0;
 		  	.openBtn, .downloadBtn {
 			    float: right;
 			  	padding-left: 15px;
@@ -388,7 +393,9 @@
             margin: 0
         }
         .maskLayer .uiDocumentPreview {
-            padding: 0
+			padding-left: 20px;
+			padding-right: 20px;
+		  	padding-top: 0;
         }
 
 
@@ -562,7 +569,6 @@
         .uiDocumentPreview ,.document-preview-default,.document-preview-content-file{
             .uiContentBox {
                 background: none ;
-                padding: 0  20px!important;
             }
 			.previewBtn {
 			  	margin-right: 0px;
@@ -575,17 +581,25 @@
 }
 //end 1024
 @media (min-width: 768px) and (max-width: 1024px) {
-    .uiDocumentPreview .findbar {
-        left: 40px; //1.2
-    }
+  .maskLayer .uiDocumentPreview {
+	  padding-left: 10px;
+	  padding-right: 10px;
+
+	  .findbar {
+		  left: 40px; //1.2
+	  }
+  }
 }
 
 @media (max-width: 480px) {
     #UISocialPopupWindow {
-        .uiDocumentPreview ,.document-preview-default,.document-preview-content-file{
-            .uiContentBox {
-                padding: 0  10px!important;
-            }
+        .uiDocumentPreview {
+			padding-left: 10px;
+			padding-right: 10px;
+
+		  	.voteRatingInfo {
+			    display: none;
+			}
 
 			.previewBtn {
 				margin-right: 0px;
