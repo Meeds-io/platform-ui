@@ -504,8 +504,32 @@ body.phoneDisplay .uiComposer.uiGrayLightBox {
 			overflow: hidden;
 		}
 	  	.fileBreadCrumb {
-		  	display: table;
 		  	padding: 5px 0px;
+
+			.fixedBreadCrumb {
+			  	float: left;
+
+			  	&:after {
+					display: none;
+					content: '\02026';
+				}
+
+				&.active:after {
+				  	display: inline-block;
+				}
+			}
+
+			.fileBreadCrumbContent {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+
+			  	span {
+				  	min-width: 100%;
+					float: right;
+					overflow: hidden;
+				}
+			}
 
 		    .uiIconArrowRight {
 			  	padding: 0 4px;
