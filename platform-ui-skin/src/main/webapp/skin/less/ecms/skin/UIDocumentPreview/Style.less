@@ -83,48 +83,55 @@
 						}
 					}						
 				}
-				.commentList {
-					max-height: 485px;
-    				overflow: auto;
-    				background: @bodyBackground;
-                  padding: 8px 0;
-    				li {
-    					padding: 8px 10px;
-					  	.close {
-						  position: absolute;
-						  right: -19px;
-						  top: 3px;
-						  display: none;
+				.comments {
+					.uiLoadingIconSmall {
+						margin: 10px auto;
+						display: block;
+					}
+					.commentList {
+						max-height: 485px;
+						overflow: auto;
+						background: @bodyBackground;
+						padding: 8px 0;
+						li {
+							padding: 8px 10px;
+							.close {
+							  position: absolute;
+							  right: -19px;
+							  top: 3px;
+							  display: none;
+							}
+							&:hover {
+							  .close {
+								display: block;
+							  }
+							}
 						}
-					  	&:hover {
-						  .close {
-							display: block;
+						.avatarXSmall {
+							margin-top: 5px;
+						}
+						.rightBlock {
+							margin-left: 45px;
+							margin-right: 15px;
+							position: relative;
+							.tit {
+								a {
+									font-weight: bold;
+									color: @linkColor;
+								}
+								.dateTime {
+									color: @textLightColor;
+									font-size: 11px;
+								}
+							}
+						  .cont {
+							word-wrap: break-word;
+							margin: 0 ;
 						  }
 						}
-    				}
-					.avatarXSmall {
-						margin-top: 5px;					
 					}
-					.rightBlock {
-						margin-left: 45px;
-					 	margin-right: 15px;
-					  	position: relative;
-						.tit {
-							a {
-								font-weight: bold;
-								color: @linkColor;
-							}
-							.dateTime {
-								color: @textLightColor;
-								font-size: 11px;
-							}	
-						}
-					  .cont {
-						word-wrap: break-word;
-                        margin: 0 ;
-					  }
-					}
-				}
+			  	}
+
 				.noComment {
 					text-align: center;
 					margin: 0 auto;
