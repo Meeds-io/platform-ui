@@ -286,7 +286,7 @@ body.phoneDisplay .uiComposer.uiGrayLightBox {
 		color: @baseColorDark;
 	}
 	.contentForum span ,.dataInfor .dateTime a,.dataInfor .dateTime span,.statusAction.pull-left a,.commentItem .viewComment
-	,.author span,.introBox .text span,.linkSources span,.listLikedBox  p,.theContent a,.theContent span {
+	,.author span,.introBox .text .infoFile :not(.versionFile),.linkSources span,.listLikedBox  p,.theContent a,.theContent span {
 		color: @baseColorLight;font-size: 12px;
 	}
 	.heading ,.description,.actionBar {
@@ -503,17 +503,63 @@ body.phoneDisplay .uiComposer.uiGrayLightBox {
 		.pull-left + .text {
 			overflow: hidden;
 		}
+	  	.fileBreadCrumb {
+		  	padding: 5px 0px;
+
+			.fixedBreadCrumb {
+			  	float: left;
+
+			  	&:after {
+					display: none;
+					content: '\02026';
+				}
+
+				&.active:after {
+				  	display: inline-block;
+				}
+			}
+
+			.fileBreadCrumbContent {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+
+			  	span {
+				  	min-width: 100%;
+					float: right;
+					overflow: hidden;
+
+					div.fileBreadCrumbWrapper {
+					  	display: table;
+					}
+				}
+			}
+
+		    .uiIconArrowRight {
+			  	padding: 0 4px;
+			}
+	  	}
 		.descriptionText {
-			    word-wrap: break-word;
-			    min-height: 30px;
+			word-wrap: break-word;
+			min-height: 30px;
+		  	padding-top: 10px;
 		}
 		.isPreviewable {
 			position: relative;
+
 			.mediaContent  {
+			  	display: table;
 				max-width: 300px;
-			}
-			.versionFile {
-				color: @baseColorLight;font-size: 12px;
+			  	cursor: pointer;
+
+			  	.doc-preview-thumbnail-footer {
+				  	pointer-events: none;
+					height: 25px;
+					font-size: 13px;
+					line-height: 15px;
+					border-top-left-radius: 0;
+					border-top-right-radius: 0;
+				}
 			}
 		}
 
