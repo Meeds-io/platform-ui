@@ -4,6 +4,7 @@
 @import "UIAddressBar/Style.less";
 @import "MultiUpload/Style.less";
 @import "UIFileView/Style.less";
+@import "Xeditable/bootstrap3-editable.less";
 
 .UIJCRExplorerPortlet {
 	padding: 25px;
@@ -919,6 +920,32 @@
 
 /******** UIVersionInfo **************/
 .uiVersionInfo  {
+	.uiBox.noRounded {
+		border: none;
+		box-shadow: none;
+		padding: @paddingXLarge 0px 15px;
+		.editable-inline {
+			.btn {
+				background: none;
+				border: none;
+				.box-shadow(none);
+				padding: 5px;
+				[class^="icon-"] {
+					.font-icon();
+					font-size: @sizeIcon12x12 + 2;
+				}
+				&.editable-submit .icon-ok:before {
+					content: "\e791";
+				}
+				&.editable-cancel .icon-remove:before {
+					content: "\e75e";
+				}
+			}
+		}
+	}
+	.pagination {
+		padding: @paddingXLarge;
+	}
 	.uiGrid label {
 		display: inline;
 		margin: 0px;
