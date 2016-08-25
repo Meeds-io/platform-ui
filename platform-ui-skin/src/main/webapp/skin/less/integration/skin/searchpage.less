@@ -96,6 +96,22 @@
           border-top-left-radius: 0;
           border-top-right-radius: 0;
         }
+        .preview {
+          display: none;
+          position: absolute;
+          top: 35%;
+          left: 35%;
+          .uiIconSearch {
+            color: white;
+            font-size: 20px;
+          }
+        }
+        &:hover .preview {
+          display: block;
+        }
+        &:hover .main {
+          opacity: 0.8;
+        }
       }
       .content {
         margin-left: 85px;
