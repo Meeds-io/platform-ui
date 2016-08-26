@@ -11,6 +11,7 @@
 	.uiDocumentPreview {
 		padding-left: 30px;
 		padding-top: 35px;
+		
 		.exitWindow .uiIconClose { 
 			position: absolute;
 			top: 7px;
@@ -140,6 +141,12 @@
 					.info {
                         background: url("/eXoSkin/skin/images/system/no_comment.png") no-repeat center center;
 						color: @textLightColor;
+						font-size: @fontSizeLarge;
+						padding: 80px 0 0;
+					}
+					.error {
+                        background: url("/eXoSkin/skin/images/system/no_comment.png") no-repeat center center;
+						color: @errorColor;
 						font-size: @fontSizeLarge;
 						padding: 80px 0 0;
 					}				
@@ -613,17 +620,17 @@
 @media (max-width: 480px) {
     #UISocialPopupWindow {
         .uiDocumentPreview {
-			padding-left: 10px;
-			padding-right: 10px;
-
-		  	.voteRatingInfo {
-			    display: none;
-			}
-
-			.previewBtn {
-				margin-right: 0px;
-				font-size: 0;
-			}
+            padding-left: 10px;
+            padding-right: 10px;
+            
+            .voteRatingInfo {
+                display: none;
+            }
+            
+            .previewBtn {
+              margin-right: 0px;
+              font-size: 0;
+            }
         }
     }
 }
