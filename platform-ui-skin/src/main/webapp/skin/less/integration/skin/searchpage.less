@@ -80,10 +80,12 @@
       overflow:hidden;
       .avatar {
         width: 70px;
+        height: 70px;
         overflow: hidden;
         text-align: center;
         > img {
-          max-width: 70px;
+          width: 100%;
+          height: 100%;
         }
         &.userThumbnail > img {
           .border-radius(4px);
@@ -99,8 +101,11 @@
         .preview {
           display: none;
           position: absolute;
-          top: 35%;
-          left: 35%;
+          top: 0px;
+          width: 100%;
+          height: 100%;
+          padding-top: 35%;
+          background: rgba(0, 0, 0, 0.5);
           .uiIconSearch {
             color: white;
             font-size: 20px;
@@ -110,7 +115,6 @@
           display: block;
         }
         &:hover .main {
-          opacity: 0.8;
         }
       }
       .content {
