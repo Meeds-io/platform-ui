@@ -737,9 +737,6 @@ a.ui-button:active,
 .selectize-control.plugin-remove_button [data-value] .remove:hover {
   background: rgba(0, 0, 0, 0.05);
 }
-.selectize-control.plugin-remove_button [data-value].active .remove {
-  border-left-color: #cacaca;
-}
 .selectize-control.plugin-remove_button .disabled [data-value] .remove:hover {
   background: none;
 }
@@ -829,13 +826,7 @@ a.ui-button:active,
   border-radius: 3px;
 }
 
-.selectize-control.multi .selectize-input > div.active {
-  background: #e8e8e8;
-  color: #303030;
-  border: 0 solid #cacaca;
-}
-.selectize-control.multi .selectize-input.disabled > div,
-.selectize-control.multi .selectize-input.disabled > div.active {
+.selectize-control.multi .selectize-input.disabled > div {
   color: #7d7d7d;
   background: #ffffff;
   border: 0 solid #ffffff;
