@@ -8,6 +8,23 @@
 	z-index: 100;
 	background: rgba(0, 0, 0, 0.8);
 	color: @textColor;
+	.uiDocumentPreview.collapsed {
+		#documentPreviewContent, .uiPreviewWebContent, .EmbedHtml, .previewBtn {
+			margin-right: 30px;
+		}
+		.commentArea {
+			display: none;
+		}
+		.resizeButton {
+			right: 5px;
+			.uiIconMiniArrowLeft {
+				display: block;
+			}
+			.uiIconMiniArrowRight {
+				display: none;
+			}
+		}
+	}
 	.uiDocumentPreview {
 		padding-left: 30px;
 		padding-top: 35px;
@@ -198,6 +215,12 @@
 		    right: 310px;
 		    position: absolute;
 		    top: 50%;	
+				.uiIconMiniArrowLeft {
+					display: none;
+				}
+				.uiIconMiniArrowRight {
+					display: block;
+				}
 		}
 
 	    .EmbedHtml {
@@ -391,20 +414,30 @@
 }
 @media(max-width: 1024px) {
 
-
     .document-preview-default {
         .dowload-link{
             display: none;
         }
     }
 
-    body   {
-        .maskLayer .uiDocumentPreview .uiPreviewWebContent {
-            margin-right:0;
+        .maskLayer .uiDocumentPreview {
+	        #documentPreviewContent, .uiPreviewWebContent, .previewBtn {
+	        	margin-right: 0;
+	        }
+	        .commentArea, .resizeButton {
+	            display: none;
+	        }
+	        
         }
-        .maskLayer .uiDocumentPreview .commentArea {
-            display: none!important;
+        .maskLayer .uiDocumentPreview.collapsed {
+	        #documentPreviewContent, .uiPreviewWebContent, .previewBtn {
+	        	margin-right: 0;
+	        }
+	        .commentArea {
+	            display: none;
+	        }
         }
+        
         .document-preview-default .content img {
             left: 50%;
             position: absolute;
@@ -421,7 +454,6 @@
         .maskLayer .uiDocumentPreview {
 			padding-left: 20px;
 			padding-right: 20px;
-		  	padding-top: 0;
         }
 
 
@@ -600,7 +632,6 @@
 			  	margin-right: 0px;
 			}
         }
-    }
 
 
 
