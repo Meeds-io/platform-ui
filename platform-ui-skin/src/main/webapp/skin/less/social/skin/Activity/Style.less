@@ -5,7 +5,28 @@
 	margin-bottom: 30px;
 
 	div#ActivityComposerExt {
-		margin-bottom: 8px;
+		height: 30px;
+
+		.ActivityComposerExtItem {
+			height: 30px;
+			padding-left: 15px;
+
+			a {
+				color: @textLightColor;
+				&:hover {
+					color: @linkColorHover;
+				}
+				i.uiIconSocLightGray {
+					padding-right: 4px;
+				}
+			}
+
+			.ActivityComposerExtItemSelected {
+				margin-left: 10px;
+				height: 30px;
+				border-bottom: 1px solid #2f5e92;
+			}
+		}
 	}
 
 	.desktop-input {
