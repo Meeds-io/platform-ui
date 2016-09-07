@@ -414,227 +414,185 @@
 }
 @media(max-width: 1024px) {
 
-    .document-preview-default {
-        .dowload-link{
-            display: none;
-        }
-    }
+	.document-preview-default {
+		.dowload-link {
+			display: none;
+		}
+	}
 
-        .maskLayer .uiDocumentPreview {
-	        #documentPreviewContent, .uiPreviewWebContent, .previewBtn {
-	        	margin-right: 0;
-	        }
-	        .commentArea, .resizeButton {
-	            display: none;
-	        }
-	        
-        }
-        .maskLayer .uiDocumentPreview.collapsed {
-	        #documentPreviewContent, .uiPreviewWebContent, .previewBtn {
-	        	margin-right: 0;
-	        }
-	        .commentArea {
-	            display: none;
-	        }
-        }
-        
-        .document-preview-default .content img {
-            left: 50%;
-            position: absolute;
-        }
-        .maskLayer .uiDocumentPreview .fileContent .navigationContainer img,
-        .maskLayer .uiDocumentPreview .fileContent .navigationContainer object,
-        .document-preview-default .content img{
-            top: 34px;
-            .translate(-50%, 0px);
-        }
-        .maskLayer .uiDocumentPreview .fileContent {
-            margin: 0
-        }
-        .maskLayer .uiDocumentPreview {
-			padding-left: 20px;
-			padding-right: 20px;
-        }
+	.maskLayer .uiDocumentPreview {
+		#documentPreviewContent, .uiPreviewWebContent, .previewBtn {
+			margin-right: 0;
+		}
+		.commentArea, .resizeButton {
+			display: none;
+		}
 
+	}
 
+	.maskLayer .uiDocumentPreview.collapsed {
+		#documentPreviewContent, .uiPreviewWebContent, .previewBtn {
+			margin-right: 0;
+		}
+		.commentArea {
+			display: none;
+		}
+	}
 
-        // document preview
+	.document-preview-default .content img {
+		left: 50%;
+		position: absolute;
+	}
 
-        #UISocialPopupWindow {
-            left: 0 !important;
-            max-height: none!important;
-            max-width: auto;
-            position: fixed !important;
-            top: 0px !important;
-            -webkit-transform: none!important;
-            transform: none!important;
-            width: 100% !important;
-            max-width: none !important;
-            border: none!important;
-            border-radius: 0;
-            background: rgba(0,0,0,0.8);
-            z-index: 99999;
-            height: 100% !important;
-            box-shadow: none;
-            overflow: visible;
-            margin: 0 !important;
-            .exit-document-preview {
-                display: block;
-                .uiIconClose  {
-                    //left: 15px;
-                    right: 18px;
-                    color: @colorIconDefault;
-                    cursor: pointer;
-                    z-index: 10009!important;
-                    top: 20px!important;
-                    position: fixed!important;
-                    .opacity(100);
-                    &:before {
-                        font-size: 20px;
-                    }
-                    &:hover {
-                        color: @colorIconPrimary;
-                        &:before { color: @colorIconPrimary;}
-                    }
-                }
-            }
-            .uiIconResize {
-                display: none!important;
-            }
-            .secondaryToolbar .dropdown-menu li > a:focus > [class^="uiIcon"] {
-                background: none;
-            }
-            .PopupContent {
-                height: 100% !important;
-                margin-bottom: 0px!important;
-                margin-top: 0px!important;
-                max-height: none!important;
-                padding: 0 0 0 0 !important;
-                width: 100%;
-                overflow: visible;
-                position: absolute !important;
-                top: 50px !important;//1.2
-                background: none;
-            }
-            #toolbarContainer {
-                .outerCenter{
-                    display: none;
-                }
-            }
-            .secondaryToolbar {
-                top: 42px;//1.2
-            }
-            #sidebarContainer {
-                top:38px;//1.2
-            }
-            #sidebarContent {
-                background: rgba(240, 240, 240, 0.8);
-                border:  none;
-                //top: 38px;
-                width: 132px;
-            }
-            #toolbarSidebar {
-                background: rgba(240, 240, 240, 0.8);
-                border:  none;
-                height: auto;width: 132px;
-                #viewThumbnail {
-                    margin-left: 7px;
-                }
-            }
-            #toolbarViewer {
-                height: 38px;//1.2
-                #toolbarViewerLeft {
-                    -webkit-box-sizing: border-box;
-                    box-sizing: border-box;
-                    text-align: center;
-                    width: 60%;
+	.maskLayer .uiDocumentPreview .fileContent .navigationContainer img,
+	.maskLayer .uiDocumentPreview .fileContent .navigationContainer object,
+	.document-preview-default .content img {
+		top: 34px;
+		.translate(-50%, 0px);
+	}
 
-                }
-                #toolbarViewerRight{
-                    -webkit-box-sizing: border-box;box-sizing: border-box;
-                    width: 40%;
-                    text-align: right;
-                    & > a {
-                        float: none;
-                    }
-                }
-            }
+	.maskLayer .uiDocumentPreview .fileContent {
+		margin: 0
+	}
 
-            #outerContainer {
-                background: white;
-                min-width: 100px;
-            }
-            #viewerContainer {
-                background: white;
-            }
-            .popupHeader ,.maskLayer .uiDocumentPreview .resizeButton{
-                display: none;
-            }
+	.maskLayer .uiDocumentPreview {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
 
-            .maskLayer {
-                top:98px;
-                position: static;
-                background: none;
-                .fileContent .navigationContainer {
-                    background: none!important;
-                }
-                .uiDocumentPreview {
-                    .exitWindow .uiIconClose {
-                        //left: 15px;
-                        right: 18px;
-                        color: @colorIconDefault;
-                        cursor: pointer;
-                        z-index: 10009!important;
-                        top: 20px!important;
-                        position: fixed!important;
-                        .opacity(100);
-                        &:before {
-                            //content: "\e74f";
-                            font-size: 20px;
-                        }
-                        &:hover {
-                            color: @colorIconPrimary;
-                            &:before { color: @colorIconPrimary;}
-                        }
-                    }
-
-                }
-            }
-        }
-
-    }
-
-
-    // document preview
-    .uiDocumentPreview{
-        #outerContainer.sidebarOpen > #mainContainer {
-            left: 0;
-        }
-        #outerContainer.sidebarOpen > #sidebarContainer {
-            left: 0;
-        }
-        #sidebarContainer {
-            z-index: 100;
-        }
-        .doorHanger:after, .doorHanger:before {
-            margin-left: 5px;
-        }
-        .doorHanger:after {
-            left: 14px;
-        }
-    }
-    #UISocialPopupWindow {
-        .uiDocumentPreview ,.document-preview-default,.document-preview-content-file{
-            .uiContentBox {
-                background: none ;
-            }
-			.previewBtn {
-			  	margin-right: 0px;
+	#documentPreviewContainer {
+		.uiIconResize {
+			display: none !important;
+		}
+		.secondaryToolbar .dropdown-menu li > a:focus > [class^="uiIcon"] {
+			background: none;
+		}
+		.PopupContent {
+			height: 100% !important;
+			margin-bottom: 0px !important;
+			margin-top: 0px !important;
+			max-height: none !important;
+			padding: 0 0 0 0 !important;
+			width: 100%;
+			overflow: visible;
+			position: absolute !important;
+			top: 50px !important; //1.2
+			background: none;
+		}
+		#toolbarContainer {
+			.outerCenter {
+				display: none;
 			}
-        }
+		}
+		.secondaryToolbar {
+			top: 42px; //1.2
+		}
+		#sidebarContainer {
+			top: 38px; //1.2
+		}
+		#sidebarContent {
+			background: rgba(240, 240, 240, 0.8);
+			border: none;
+			//top: 38px;
+			width: 132px;
+		}
+		#toolbarSidebar {
+			background: rgba(240, 240, 240, 0.8);
+			border: none;
+			height: auto;
+			width: 132px;
+			#viewThumbnail {
+				margin-left: 7px;
+			}
+		}
+		#toolbarViewer {
+			height: 38px; //1.2
+			#toolbarViewerLeft {
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				text-align: center;
+				width: 60%;
 
+			}
+			#toolbarViewerRight {
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				width: 40%;
+				text-align: right;
+				& > a {
+					float: none;
+				}
+			}
+		}
 
+		#outerContainer {
+			background: white;
+			min-width: 100px;
+		}
+		#viewerContainer {
+			background: white;
+		}
+		.popupHeader, .maskLayer .uiDocumentPreview .resizeButton {
+			display: none;
+		}
+	}
 
+	.maskLayer {
+		.fileContent .navigationContainer {
+			background: none !important;
+		}
+		.uiDocumentPreview {
+			padding-top: 50px;
+
+			.exitWindow .uiIconClose {
+				//left: 15px;
+				right: 18px;
+				color: @colorIconDefault;
+				cursor: pointer;
+				z-index: 10009 !important;
+				top: 20px !important;
+				position: fixed !important;
+				.opacity(100);
+				&:before {
+					//content: "\e74f";
+					font-size: 20px;
+				}
+				&:hover {
+					color: @colorIconPrimary;
+					&:before {
+						color: @colorIconPrimary;
+					}
+				}
+			}
+		}
+	}
+
+	.uiDocumentPreview {
+		#outerContainer.sidebarOpen > #mainContainer {
+			left: 0;
+		}
+		#outerContainer.sidebarOpen > #sidebarContainer {
+			left: 0;
+		}
+		#sidebarContainer {
+			z-index: 100;
+		}
+		.doorHanger:after, .doorHanger:before {
+			margin-left: 5px;
+		}
+		.doorHanger:after {
+			left: 14px;
+		}
+	}
+
+	.uiDocumentPreview, .document-preview-default, .document-preview-content-file {
+		.uiContentBox {
+			background: none;
+		}
+		.previewBtn {
+			margin-right: 0px;
+		}
+	}
 }
 //end 1024
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -649,7 +607,7 @@
 }
 
 @media (max-width: 480px) {
-    #UISocialPopupWindow {
+    #documentPreviewContainer {
         .uiDocumentPreview {
             padding-left: 10px;
             padding-right: 10px;
@@ -667,7 +625,6 @@
 }
 
 //hack safari document preview
-
 @media (max-width: 1024px)  and (-webkit-min-device-pixel-ratio:0) {
-    body  #UISocialPopupWindow { top: 0px !important;}
+    body  #documentPreviewContainer { top: 0px !important;}
 }
