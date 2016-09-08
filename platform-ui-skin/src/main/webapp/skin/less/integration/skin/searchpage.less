@@ -79,17 +79,42 @@
       margin: 20px 0;
       overflow:hidden;
       .avatar {
-        width: 64px;
+        width: 70px;
+        height: 70px;
         overflow: hidden;
         text-align: center;
         > img {
-          max-width: 54px;
-          max-height: 54px;
+          width: 100%;
+          height: 100%;
         }
         &.userThumbnail > img {
           .border-radius(4px);
-          height: 54px;
-          width: 54px;
+          width: 70px;
+        }
+        .doc-preview-thumbnail-footer {
+          pointer-events: none;
+          font-size: 10px;
+          padding: 0;
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+        }
+        .preview {
+          display: none;
+          position: absolute;
+          top: 0px;
+          width: 100%;
+          height: 100%;
+          padding-top: 35%;
+          background: rgba(0, 0, 0, 0.5);
+          .uiIconSearch {
+            color: white;
+            font-size: 20px;
+          }
+        }
+        &:hover .preview {
+          display: block;
+        }
+        &:hover .main {
         }
       }
       .content {
