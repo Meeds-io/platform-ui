@@ -29,7 +29,7 @@
 
     <artifactId>platform-ui-skin</artifactId>
     <packaging>war</packaging>
-    <name>Platform UI - Skin</name>
+    <name>eXo PLF:: Platform UI - Skin</name>
 
     <build>
         <finalName>${platform-ui-skin-final-name}</finalName>

@@ -31,7 +31,7 @@
   <artifactId>platform-ui</artifactId>
   <version>4.4.x-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>Platform-UI</name>
+  <name>eXo PLF:: Platform-UI</name>
   <modules>
     <module>platform-ui-skin</module>
     <module>packaging</module>

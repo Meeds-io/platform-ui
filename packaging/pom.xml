@@ -31,7 +31,7 @@
 
     <artifactId>skin-addon-packaging</artifactId>
     <packaging>pom</packaging>
-    <name>eXo skin add-on packaging</name>
+    <name>eXo PLF:: skin add-on packaging</name>
     <description>The eXo skin add-on packaging</description>
     <dependencies>
         <dependency>
