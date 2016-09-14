@@ -1254,9 +1254,32 @@
 }
 
 .uiDiff {
+	margin: 0 10px;
+
 	.contentEmpty {
 		text-align: center;
     color: @baseColorLight;
+	}
+
+	.headTitle {
+		margin: 10px 0;
+		> div {
+			width: 49%;
+			display: inline-block;
+		}
+	}
+
+	.uiContentBox {
+		.uiBox {
+			width: 230px;
+			.boxVersionDetail {
+				padding: @paddingSmall;
+				> span {
+					display: block;
+					line-height: 30px;
+				}
+			}
+		}
 	}
 
 	.uiGrid .diffDelete {
