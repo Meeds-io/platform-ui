@@ -18,6 +18,82 @@
 			}
 		}
 	}
+	.addInvite {
+		margin-top: 1%;
+		.uiGrayLightBox {
+			height: 32px;
+		}
+		.mention-input {
+			.selectize-input {
+				position: absolute;
+			}
+			width: 55%;
+		}
+	}
+	.sharePermission {
+		margin-right: -5px;
+		.dropdown-toggle {
+			width: 93%;
+		}
+	}
+	.uiActionWithLabel {
+		line-height: 23px;
+	}
+	.addEntry {
+		width: 2%;
+		height: 20px;
+		.actionIcon {
+			margin-left: -70%;
+			margin-top: -35%;
+			border: none;
+		}
+	}
+	#who {
+		clear: both;
+		margin-top: 1%;
+		.uiGrayLightBox {
+			max-height: 130px;
+			overflow-y: auto;
+		}
+		#owner {
+			.accessMember {
+				width: 37%;
+				margin-top: -22px;
+			}
+		}
+	}
+	#entry {
+		white-space: nowrap;
+		width: 48%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	#whoHasAccess {
+		#AccessEntry {
+			.btn-toolbar {
+				width: 36%!important;
+				margin-right: 4%!important;
+				margin-top: -27px!important;
+			}
+			.deleteEntry {
+				margin-right: -41%;
+				margin-top: -27px!important;
+			}
+		}
+	}
+	#share-with {
+		color: black;
+	}
+	#add {
+		color: black;
+	}
+	.dropdown-menu {
+		min-width: initial;
+		cursor: pointer;
+	}
+	.btn-toolbar {
+		font-size: 100%;
+	}
 	.spaceOption>i {
 		margin-right: 10px;
 	}
@@ -41,6 +117,9 @@
 			margin-right: 5px;
 		}
 	}
+	#TextArea {
+		margin-top: 5%;
+	}
 	.addComment {
 		textarea {
 			width: 100%;
@@ -63,30 +142,84 @@
 	}
 }
 
-.uiShareDocuments {
-	.spaceSwitcherContainer {
-		.SpaceSwitcher {
-			overflow: hidden;
+@media (max-width: 1024px) {
+	#who {
+		#owner {
+			.accessMember {
+				margin-top: -25px!important;
+			}
 		}
-		.spaceChooser {
-			.dropdown-toggle {
-				text-align: right;
-				-moz-box-sizing: border-box;
-				-webkit-box-sizing: border-box;
-				-o-box-sizing: border-box;
-				-ms-box-sizing: border-box;
-				box-sizing: border-box;
-				> span {
-					float: left;
-					text-transform: none;
-				}
-				> span.spiter {
-					float: none;
-				}
+	}
+	#whoHasAccess {
+		#AccessEntry {
+			.deleteEntry {
+				margin-right: -39%!important;
 			}
 		}
 	}
 }
-.uiShareDocuments .spaceSwitcherContainer .spaceChooser,.uiShareDocuments .spaceSwitcherContainer .spaceChooser .dropdown-toggle {
+
+@media (max-width: 420px) {
+	.addInvite {
+		.mention-input {
+			width: 100%!important;
+			.selectize-input {
+				position: relative!important;
+				height: 60px;
+				max-height: 61px;
+			}
+			.selectize-dropdown {
+				max-width: 200px;
+			}
+		}
+	}
+	.uiUserInvitation {
+		.uiGrayLightBox {
+			height: 94px!important;
+		}
+	}
+	.sharePermission {
+		float: left!important;
+		margin-right: 29px!important;
+		width: 165px!important;
+	}
+	.addEntry {
+		.actionIcon {
+			margin-left: -130%!important;
+		}
+	}
+	#who {
+		#owner {
+			.accessMember {
+				width: 30% !important;
+				margin-top: -21px !important;
+				font-size: 10px;
+			}
+		}
+	}
+	#whoHasAccess {
+		#AccessEntry {
+			.btn-toolbar {
+				.dropdown {
+					margin-left: 23%;
+				}
+				.dropdown-menu {
+					margin-left: -41%;
+				}
+				.btn-group {
+					margin-left: 30%;
+				}
+				.responsivePerm {
+					display: none;
+				}
+			}
+		}
+	}
+	#entry {
+		width: 48%!important;
+	}
+}
+
+.uiShareDocuments .spaceSwitcherContainer .spaceChooser, .uiShareDocuments .spaceSwitcherContainer .spaceChooser .dropdown-toggle {
 	width: 100%;
 }
