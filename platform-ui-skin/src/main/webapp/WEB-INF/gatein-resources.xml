@@ -128,7 +128,7 @@
   
   <portal-skin>
 		<skin-name>Default</skin-name>
-		<skin-module>DocumentSelector</skin-module>
+		<skin-module>commons</skin-module>
 		<css-path>/skin/css/commons/skin/commons.css</css-path>
 	</portal-skin>
 	

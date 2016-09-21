@@ -1,9 +1,52 @@
 @import "../../../variables.less"; 
 @import "../../../mixins.less";
 
-.uiMembersPortlet .spaceMemberListBox {
-    background-color: @baseBackground;
-    border: 1px solid @borderColor;
-    border-radius: 4px;
-    padding: 10px;
+.uiMembersPortlet {
+	.spaceMemberListBox {
+	    background-color: @baseBackground;
+	    border: 1px solid @borderColor;
+	    border-radius: 4px;
+	    padding: 10px;
+	}
+	
+	.uiTableProfileUserSearchArrow {
+			display: none;
+			> i {
+				margin: 5px;
+			}
+	}
+	
+	.uiUserInvitation {
+		margin: 10px 0;
+	}
+}
+
+@media (max-width: 768px) {
+	.uiMembersPortlet {
+		.uiTableProfileUserSearchArrow {
+			display: block;
+			float:right;
+			margin-top:5px;
+		}
+
+		.uiTableProfileUserSearchInput {
+			display: none;
+		}
+
+		.uiProfileUserSearch .uiIconArrowDown {
+			display: none;
+		}
+
+		.uiProfileUserSearch.open {
+			.uiIconArrowDown {
+				display: block;
+			}
+			.uiIconArrowRight {
+				display: none;
+			}
+			.uiTableProfileUserSearchInput {
+				display: block;
+			}
+		}
+	}
 }
