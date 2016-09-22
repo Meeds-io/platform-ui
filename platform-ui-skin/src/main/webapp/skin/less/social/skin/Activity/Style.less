@@ -295,9 +295,18 @@ body.phoneDisplay .uiComposer.uiGrayLightBox {
 	.description,.theContent,.viewComment, .contentAnswer, .calendarBox, .titleWiki, a{
 		word-wrap: break-word;
 	}
-    .author .spaceName .uiIconArrowRightMini {
-	    font-size: 8px;
-    }
+    .author {
+	   display: inline-block;
+	  .spaceName .uiIconArrowRightMini {
+		font-size: 8px;
+	  }
+	  .circleSpaceAvatar {
+		.circleBorderAvatar(22px);
+		padding: 1px;
+		border: none;
+		box-shadow: none;
+	  }
+	}
 }
 
 
@@ -908,7 +917,7 @@ body.phoneDisplay .uiComposer.uiGrayLightBox {
 	}
 }
 
-/*======= User Profile Popup ==========*/
+/*======= User Profile and Space Popup ==========*/
 #tipName {
     .name {
     font-weight: bold;
@@ -923,8 +932,26 @@ body.phoneDisplay .uiComposer.uiGrayLightBox {
   &+ .connectAction {
     margin-top: 35px;
   }
+  #profileName {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	max-width: 20px;
+  }
+  #description {
+	max-height: 100px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	max-width: 95%;
+  }
+  #recentActivity {
+	max-height: 100px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding-right :15px;
+	max-width: 95%;
+  }
 }
-
 .connectAction {
     text-align: center;
     background: @primaryBackground;
