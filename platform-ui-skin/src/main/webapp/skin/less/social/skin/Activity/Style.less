@@ -299,14 +299,44 @@ body.phoneDisplay .uiComposer.uiGrayLightBox {
 	}
     .author {
 	   display: inline-block;
-	  .spaceName .uiIconArrowRightMini {
+	   white-space: nowrap;
+	   overflow: hidden;
+	   width: 100%;
+	   .spaceName .uiIconArrowRightMini {
 		font-size: 8px;
 	  }
 	  .circleSpaceAvatar {
 		.circleBorderAvatar(22px);
-		padding: 1px;
-		border: none;
-		box-shadow: none;
+		line-height: 5px;
+		padding: 2px;
+		display: inline-block;
+		vertical-align: top;
+		border: 1px solid @borderColor;
+	    .box-shadow(0px 0px 1px rgba(13px, 13px, 13px, 0.27));
+	  }
+	  .spaceName{
+		max-width: 50%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		display: inline-block;
+		vertical-align: middle;
+	  }
+	  .ownerName{
+		max-width: 50%;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		display: inline-block;
+		vertical-align: middle;
+	  }
+	  .owner{
+		max-width: 80%;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		display: inline-block;
+		vertical-align: middle;
 	  }
 	}
 }
@@ -398,7 +428,7 @@ body.phoneDisplay .uiComposer.uiGrayLightBox {
                 margin-left: 5px;
             }
             .uiIconLink {
-                top: -1px;
+                top: 2px;
             }
 		}
 		&:hover .actLink{
@@ -1292,7 +1322,7 @@ blockquote:after {
 //end 1024
 
 
-@media (min-width: 768px) and (max-width: 899px) {
+@media (min-width: 768px) and (max-width: 1024px) {
 
     // Hide Column Timeline when show Right Sidebar
 
