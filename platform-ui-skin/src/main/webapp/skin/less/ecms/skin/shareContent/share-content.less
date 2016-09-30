@@ -25,9 +25,12 @@
 		}
 		.mention-input {
 			.selectize-input {
+				.input {
+					width: 254px;
+				}
 				position: absolute;
 			}
-			width: 55%;
+			width: 61%;
 		}
 	}
 	.sharePermission {
@@ -57,26 +60,26 @@
 		}
 		#owner {
 			.accessMember {
-				width: 37%;
+				width: 35%;
 				margin-top: -22px;
 			}
 		}
 	}
 	#entry {
 		white-space: nowrap;
-		width: 48%;
+		width: 52%;
 		overflow: hidden;
 		text-overflow: ellipsis;
 	}
 	#whoHasAccess {
 		#AccessEntry {
 			.btn-toolbar {
-				width: 36%!important;
+				width: 33%!important;
 				margin-right: 4%!important;
 				margin-top: -27px!important;
 			}
 			.deleteEntry {
-				margin-right: -41%;
+				margin-right: -37%;
 				margin-top: -27px!important;
 			}
 		}
@@ -150,12 +153,20 @@
 			}
 		}
 	}
-	#whoHasAccess {
-		#AccessEntry {
-			.deleteEntry {
-				margin-right: -39%!important;
-			}
-		}
+}
+
+@media (max-width: 1024px) and (min-width: 481px) {
+	.selectize-input > input {
+		height: 28px!important;
+	}
+	.mention-input {
+		width: 58%!important;
+	}
+}
+
+@media (max-width: 1024px) {
+	.selectize-input > input {
+		font-size: 11px!important;
 	}
 }
 
@@ -168,6 +179,7 @@
 				height: 60px;
 				max-height: 61px;
 			}
+
 			.selectize-dropdown {
 				max-width: 200px;
 			}
