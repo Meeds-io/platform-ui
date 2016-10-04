@@ -32,19 +32,35 @@
 		}
 	}
 	.sharePermission {
-		margin-right: -5px;
-		.dropdown-toggle {
-			width: 93%;
+		margin-left: 62%;
+		width: 27%;
+		.btn-toolbar {
+			width: 100%;
+			.btn-group {
+				width: 100%;
+				.dropdown-toggle {
+					width: 100%;
+					> a {
+						float: left;
+						margin-left: -6px;
+					}
+				}
+			}
 		}
+	}
+	.uiIconMiniArrowDown {
+		float: right;
+		top: 6px !important;
 	}
 	.uiActionWithLabel {
 		line-height: 23px;
 	}
 	.addEntry {
-		width: 2%;
+		width: 1%;
+		margin-right: 3%;
 		height: 20px;
 		.actionIcon {
-			margin-left: -70%;
+			margin-left: -160%;
 			margin-top: -35%;
 			border: none;
 		}
@@ -56,7 +72,8 @@
 		max-height: 130px;
 		#owner {
 			.accessMember {
-				width: 35%;
+				width: 27%;
+				margin-right: 3%;
 				margin-top: -22px;
 			}
 		}
@@ -66,16 +83,23 @@
 		width: 52%;
 		overflow: hidden;
 		text-overflow: ellipsis;
+		font-weight: bold;
 	}
 	#whoHasAccess {
 		#AccessEntry {
 			.btn-toolbar {
-				width: 33%!important;
-				margin-right: 4%!important;
+				width: 27%!important;
+				margin-right: 8%!important;
 				margin-top: -27px!important;
+				.dropdown {
+					width: 100%;
+					.uiActionWithLabel {
+						width: 85%;
+					}
+				}
 			}
 			.deleteEntry {
-				margin-right: -37%;
+				margin-right: -34%;
 				margin-top: -27px!important;
 			}
 		}
@@ -92,6 +116,10 @@
 	}
 	.btn-toolbar {
 		font-size: 100%;
+		a {
+			color: #333;
+		}
+
 	}
 	.spaceOption>i {
 		margin-right: 10px;
