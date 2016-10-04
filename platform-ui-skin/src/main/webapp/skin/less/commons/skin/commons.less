@@ -578,6 +578,30 @@ a.ui-button:active,
 	border-bottom-right-radius: 3px;
 }
 
+.mention-item {
+	position: relative;
+	background-color: #e2eafa;
+	border-radius: 3px;
+	color: #215ab2;
+	border: 1px solid #215ab2;
+	max-width: 150px;
+	overflow: hidden;
+	padding: 2px 16px 2px 5px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+
+	a.remove {
+		z-index: 1;
+    position: absolute;
+    bottom: 1px;
+    width: 17px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #91949c;
+	}
+}
+
 /* Overlays */
 .ui-widget-overlay {
 	background: #aaaaaa;
@@ -627,11 +651,6 @@ a.ui-button:active,
   font-weight: inherit;
   background-color: #a3bcea;
   display: inline;
-  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
-}
-
-[data-mention] {
-  background-color: #a3bcea;
   filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
 }
 
