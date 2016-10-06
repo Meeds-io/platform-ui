@@ -68,22 +68,13 @@
 	.uiActionWithLabel {
 		line-height: 23px;
 	}
-	.addEntry {
-		width: 1%;
-		margin-right: 2.5%;
-		height: 20px;
-		.actionIcon {
-			margin-left: -160%;
-			margin-top: -35%;
-			border: none;
-		}
-	}
 	#addActionBtn {
-		margin-right: -7.5%;
+		margin-right: 2.5%;
 		width: 37px;
 		height: 31px;
-		background-color: transparent;
-		border: none;
+	}
+	.uiIconAddUser {
+		margin-left: -50%;
 	}
 	#who {
 		clear: both;
@@ -93,7 +84,7 @@
 		#owner {
 			.accessMember {
 				width: 27%;
-				margin-right: 3%;
+				margin-right: 3.5%;
 				margin-top: -22px;
 			}
 		}
@@ -109,7 +100,7 @@
 		#AccessEntry {
 			.btn-toolbar {
 				width: 27%!important;
-				margin-right: 8%!important;
+				margin-right: 9%!important;
 				margin-top: -27px!important;
 				.dropdown {
 					width: 100%;
@@ -119,8 +110,8 @@
 				}
 			}
 			.deleteEntry {
-				margin-right: -34%;
 				margin-top: -27px!important;
+				margin-right: 1%;
 			}
 		}
 	}
@@ -190,9 +181,18 @@
 }
 
 @media (max-width: 1024px) {
+	.sharePermission {
+		margin-left: 56.5%!important;
+		width: 27.5%!important;
+	}
+	.selectize-input > input {
+		font-size: 11px!important;
+	}
 	#who {
 		#owner {
 			.accessMember {
+				width: 27% !important;
+				margin-right: 7.5%!important;
 				margin-top: -25px!important;
 			}
 		}
@@ -206,11 +206,13 @@
 	.mention-input {
 		width: 58%!important;
 	}
-}
-
-@media (max-width: 1024px) {
-	.selectize-input > input {
-		font-size: 11px!important;
+	#whoHasAccess {
+		#AccessEntry {
+			#selectPermission {
+				width: 31% !important;
+				margin-right: 9% !important;
+			}
+		}
 	}
 }
 
@@ -229,25 +231,31 @@
 			}
 		}
 	}
+	#who {
+		max-height: 100px!important;
+		margin-top: 2%!important;
+	}
+	.pd-15-0 {
+		margin-bottom: 25%;
+	}
 	.uiUserInvitation {
 		.uiGrayLightBox {
 			height: 94px!important;
 		}
 	}
 	.sharePermission {
-		float: left!important;
-		margin-right: 29px!important;
+		margin-left: 0px!important;
+		margin-top: 65px;
 		width: 165px!important;
-	}
-	.addEntry {
-		.actionIcon {
-			margin-left: -130%!important;
+		.dropdown-menu {
+			width: 100%;
 		}
 	}
 	#who {
 		#owner {
 			.accessMember {
 				width: 30% !important;
+				margin-right: 4%!important;
 				margin-top: -21px !important;
 				font-size: 10px;
 			}
@@ -255,12 +263,13 @@
 	}
 	#whoHasAccess {
 		#AccessEntry {
-			.btn-toolbar {
+			#selectPermission {
 				.dropdown {
-					margin-left: 23%;
+					width: 70%!important;
 				}
 				.dropdown-menu {
-					margin-left: -41%;
+					margin-left: -45%;
+					width: 225%;
 				}
 				.btn-group {
 					margin-left: 30%;
