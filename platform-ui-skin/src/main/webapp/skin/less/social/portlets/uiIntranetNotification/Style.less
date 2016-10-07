@@ -72,15 +72,14 @@
       .quoteContainer {
         padding-left: 20px;
         margin: 5px 0;
-        max-height: 60px;
         overflow: hidden;
       }
-      .comment, .readmore {
+      .comment, .commentNoHtml, .readmore {
         max-width: 400px;
         padding-left: 20px;
         font-style: italic;
        }      
-      .comment {
+      .comment, .commentNoHtml {
         border-left: 6px solid #aacded;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -89,6 +88,9 @@
       }
       .readMore {
         color: blue;
+      }
+      .commentNoHtml {
+        display: none;
       }
       .lastUpdatedTime {
         color: @textLightColor;
