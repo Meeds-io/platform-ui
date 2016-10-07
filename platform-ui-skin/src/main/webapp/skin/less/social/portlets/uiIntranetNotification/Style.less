@@ -75,11 +75,20 @@
         max-height: 60px;
         overflow: hidden;
       }
-      .comment {
-        border-left: 6px solid #aacded;
+      .comment, .readmore {
         max-width: 400px;
         padding-left: 20px;
         font-style: italic;
+       }      
+      .comment {
+        border-left: 6px solid #aacded;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        max-height: 20px;
+      }
+      .readMore {
+        color: blue;
       }
       .lastUpdatedTime {
         color: @textLightColor;
