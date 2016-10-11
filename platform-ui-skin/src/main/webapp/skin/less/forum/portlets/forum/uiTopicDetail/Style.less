@@ -1,3 +1,56 @@
+
+ul.topnav {
+  list-style-type: none; 
+  margin: 0;
+  padding: 0;
+}
+
+ul.topnav li {/*float: left;*/}
+
+ul.topnav li a {
+  display: block;
+}
+
+ul.topnav li input+a {
+  display: inline-block;
+}
+
+ul.topnav li a:hover { /* background-color: #555; */} 
+
+ul.topnav li.icon {display: none;}
+
+@media screen and (max-width:680px) {
+  ul.topnav li:not(:first-child) {display: none;}
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:680px) {
+  .postViewHeader>.pull-right{
+    float : none;
+    position: relative;
+    left: -37px;
+    top: 14px;
+  }
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: block;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
+
+
 #titleTopic {
   right: 0;
   position: relative;
@@ -5,8 +58,12 @@
   font-weight: bold;
   font-size: medium;
   color : @linkColor;
+  width: 33%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis
 }
-div.dropdown.uiUserInfo {
+#fullNameTopic {
   position: relative;
   top: 9px;
   left: 6px;
