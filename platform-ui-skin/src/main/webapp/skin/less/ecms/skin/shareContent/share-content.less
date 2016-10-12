@@ -18,6 +18,122 @@
 			}
 		}
 	}
+	.addInvite {
+		margin-top: 1%;
+		height: 32px;
+		.mention-input {
+			.selectize-input {
+				.input {
+					width: 254px;
+				}
+				position: relative;
+			}
+			width: 61%;
+		}
+	}
+	.sharePermission {
+		margin-left: 61.5%;
+		width: 27.5%;
+		position: relative;
+		margin-top: -8%;
+		.btn-toolbar {
+			width: 100%;
+			.btn-group {
+				width: 100%;
+				.dropdown-toggle {
+					width: 100%;
+					.uiIconMiniArrowDown {
+						margin-right: -2px;
+					}
+					> a {
+						float: left;
+						margin-left: -6px;
+					}
+				}
+			}
+		}
+	}
+	.dropdown-menu {
+		width: 100%;
+	}
+	.uiIconWatch {
+		color: #2f5e92!important;
+	}
+	.uiIconEdit {
+		color: #2f5e92!important;
+	}
+	.uiIconMiniArrowDown {
+		float: right;
+		top: 6px !important;
+	}
+	.uiActionWithLabel {
+		line-height: 23px;
+	}
+	#addActionBtn {
+		margin-right: 2.5%;
+		width: 37px;
+		height: 31px;
+		margin-top: -8%;
+	}
+	.uiIconAddUser {
+		margin-left: -50%;
+	}
+	#who {
+		clear: both;
+		margin-top: 1%;
+		overflow-y: auto;
+		max-height: 130px;
+		#owner {
+			.accessMember {
+				width: 27%;
+				margin-right: 3.5%;
+				margin-top: -22px;
+			}
+		}
+	}
+	#entry {
+		white-space: nowrap;
+		width: 52%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		font-weight: bold;
+	}
+	#whoHasAccess {
+		#AccessEntry {
+			.btn-toolbar {
+				width: 28%!important;
+				margin-right: 8%!important;
+				margin-top: -27px!important;
+				.dropdown {
+					width: 100%;
+					.uiActionWithLabel {
+						width: 85%;
+					}
+				}
+			}
+			.deleteEntry {
+				margin-top: -27px!important;
+				margin-right: 1%;
+			}
+		}
+	}
+	#share-with {
+		color: black;
+	}
+	#add {
+		color: black;
+	}
+	.dropdown-menu {
+		min-width: initial;
+		cursor: pointer;
+	}
+	.btn-toolbar {
+		font-size: 100%;
+		a {
+			color: #333;
+		}
+
+	}
 	.spaceOption>i {
 		margin-right: 10px;
 	}
@@ -41,6 +157,9 @@
 			margin-right: 5px;
 		}
 	}
+	#TextArea {
+		margin-top: 5%;
+	}
 	.addComment {
 		textarea {
 			width: 100%;
@@ -63,30 +182,121 @@
 	}
 }
 
-.uiShareDocuments {
-	.spaceSwitcherContainer {
-		.SpaceSwitcher {
-			overflow: hidden;
-		}
-		.spaceChooser {
-			.dropdown-toggle {
-				text-align: right;
-				-moz-box-sizing: border-box;
-				-webkit-box-sizing: border-box;
-				-o-box-sizing: border-box;
-				-ms-box-sizing: border-box;
-				box-sizing: border-box;
-				> span {
-					float: left;
-					text-transform: none;
-				}
-				> span.spiter {
-					float: none;
-				}
+@media (max-width: 1024px) {
+	.sharePermission {
+		margin-left: 59.5%!important;
+		width: 29.5%!important;
+		margin-top: -8%!important;
+	}
+	.selectize-input > input {
+		font-size: 11px!important;
+	}
+	#who {
+		#owner {
+			.accessMember {
+				width: 27% !important;
+				margin-right: 7.5%!important;
+				margin-top: -25px!important;
 			}
 		}
 	}
 }
-.uiShareDocuments .spaceSwitcherContainer .spaceChooser,.uiShareDocuments .spaceSwitcherContainer .spaceChooser .dropdown-toggle {
+
+@media (max-width: 1024px) and (min-width: 481px) {
+	#whoHasAccess {
+		#AccessEntry {
+			.deleteEntry {
+				margin-right: 3%!important;
+			}
+		}
+	}
+	.selectize-input > input {
+		height: 28px!important;
+	}
+	.mention-input {
+		width: 58%!important;
+	}
+	#whoHasAccess {
+		#AccessEntry {
+			#selectPermission {
+				width: 30% !important;
+				margin-right: 10% !important;
+			}
+		}
+	}
+}
+
+@media (max-width: 420px) {
+	.addInvite {
+		.mention-input {
+			width: 100%!important;
+			.selectize-input {
+				position: relative!important;
+				height: 60px;
+				max-height: 61px;
+			}
+			.selectize-dropdown {
+				max-width: 200px;
+			}
+		}
+	}
+	#who {
+		max-height: 100px!important;
+		margin-top: 2%!important;
+	}
+	.pd-15-0 {
+		margin-bottom: 25%;
+	}
+	.uiUserInvitation {
+		.uiGrayLightBox {
+			height: 94px!important;
+		}
+	}
+	.sharePermission {
+		margin-left: 0px!important;
+		margin-top: 0px!important;
+		width: 165px!important;
+		.dropdown-menu {
+			width: 100%!important;
+		}
+	}
+	#addActionBtn {
+		margin-top: 0px!important;
+	}
+	#who {
+		#owner {
+			.accessMember {
+				width: 30% !important;
+				margin-right: 4%!important;
+				margin-top: -21px !important;
+				font-size: 10px;
+			}
+		}
+	}
+	#whoHasAccess {
+		#AccessEntry {
+			#selectPermission {
+				.dropdown {
+					width: 70%!important;
+				}
+				.dropdown-menu {
+					margin-left: 54%!important;
+					width: 38%!important;
+				}
+				.btn-group {
+					margin-left: 30%;
+				}
+				.responsivePerm {
+					display: none;
+				}
+			}
+		}
+	}
+	#entry {
+		width: 48%!important;
+	}
+}
+
+.uiShareDocuments .spaceSwitcherContainer .spaceChooser, .uiShareDocuments .spaceSwitcherContainer .spaceChooser .dropdown-toggle {
 	width: 100%;
 }
