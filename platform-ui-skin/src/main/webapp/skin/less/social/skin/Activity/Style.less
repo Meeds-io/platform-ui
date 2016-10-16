@@ -9,7 +9,7 @@
 
 		.ActivityComposerExtItem {
 			height: 30px;
-			padding-left: 15px;
+			margin-left: 15px;
 
 			a {
 				color: @textLightColor;
@@ -21,10 +21,17 @@
 				}
 			}
 
-			.ActivityComposerExtItemSelected {
-				margin-left: 10px;
+			&.ActivityComposerExtItemSelected {
 				height: 30px;
-				border-bottom: 1px solid #2f5e92;
+				box-sizing: border-box;
+				border-bottom: 1px solid @linkColorHover;
+
+				a {
+					color: @linkColorHover;
+					i.uiIconSocLightGray {
+						color: @linkColorHover;
+					}
+				}
 			}
 		}
 	}
