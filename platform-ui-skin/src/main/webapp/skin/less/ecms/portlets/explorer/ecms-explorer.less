@@ -924,7 +924,29 @@
 		border: none;
 		box-shadow: none;
 		padding: @paddingXLarge 0px 15px;
+		.editable.editable-empty {
+			color: gray;
+		}
+		.editable:hover {
+			border-bottom: dashed 1px #08c;
+		}
+		.editable {
+			color: black;
+			border-bottom: none;
+		}
 		.editable-inline {
+			width: 85%;
+			.editable-input {
+				width:85%;
+				> input {
+					width: 100%;
+				}
+			}
+			.editable-clear-x {
+				margin-right: -56px;
+				opacity: 6;
+				cursor: pointer;
+			}
 			.btn {
 				background: none;
 				border: none;
@@ -935,10 +957,10 @@
 					font-size: @sizeIcon12x12 + 2;
 				}
 				&.editable-submit .icon-ok:before {
-					content: "\e791";
+					content: "\e78a"; //save icon
 				}
-				&.editable-cancel .icon-remove:before {
-					content: "\e75e";
+				&.editable-cancel {
+					display: none;
 				}
 			}
 		}
@@ -1894,6 +1916,17 @@
     .uiItemList li{
         font-size: inherit;
     }
+}
+@media (max-width: 1024px) {
+	.uiVersionInfo {
+		.uiBox.noRounded {
+			.editable-inline {
+				.editable-clear-x {
+					margin-top: -9px;
+				}
+			}
+		}
+	}
 }
 @media(max-width: 768px){
     .uiWorkingArea .resizeBar {display: none}
