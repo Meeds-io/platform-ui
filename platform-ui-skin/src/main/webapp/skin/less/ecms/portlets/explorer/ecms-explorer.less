@@ -1289,16 +1289,29 @@
 		}
 	}
 
-	.uiGrid .diffDelete {
-		background: #fce8d4;
-	}
+	.diff > .diffmodifiedline {
+		> span {
+			&.diffaddword {
+				background-color: @successColorLight;
+			}
+			&.diffremoveword {
+				background-color: @errorColorLight;
+			}
+		}
+		> pre {
+			border: none;
+			border-radius: 0;
+			margin: 0;
+			padding: 0;
+			white-space: normal;
+			&.diffaddword {
+				background-color: @successColorLight;
+			}
 
-	.uiGrid .diffModify {
-		background: #fffdd3;
-	}
-
-	.uiGrid .diffAdd {
-		background: #e7f9c8;
+			&.diffremoveword {
+				background-color: @errorColorLight;
+			}
+		}
 	}
 }
 
