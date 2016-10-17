@@ -1291,13 +1291,14 @@ blockquote:after {
 /*======= End of User Profile Popup ==========*/
 
 .uiActivityFileAttachment, .uiActivityActionAttach {
+	box-sizing: border-box;
 	border: 1px solid @borderColor;
     .box-shadow(~'0 2px 1px -2px rgba(255,255,255,1), 0 3px 1px -2px rgba(255,255,255,0.6) inset');
     display: inline-block;
     margin-bottom: 10px;
-    padding: 5px 8px;
+    padding: 5px 0px;
     color: @baseColorDark;
-    width: 97.5%;
+    width: 100%;
     
     .fileName {
       color: #2f5e92;
