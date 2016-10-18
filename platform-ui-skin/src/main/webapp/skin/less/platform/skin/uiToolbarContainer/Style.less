@@ -457,6 +457,21 @@
 	}
 	.dropdown-menu {
 		padding: 0;
+		.displayItems {
+      .quoteContainer {
+        padding-left: 5px;
+        margin: 5px 0;
+        max-height: 20px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .comment {
+        border-left: 6px solid #aacded;
+        padding-left: 5px;
+        font-style: italic;
+      }
+		}
 	}
 	.actionMark {
 		display:none;
@@ -528,7 +543,7 @@
 		}
 		> li {
 			display: block;
-			padding: 6px 25px 6px 10px;
+			padding: 6px 10px 6px 10px;
 			border-top: 1px solid @borderColor;
 			border-top: none;
 			position: relative;

@@ -69,6 +69,31 @@
         margin-top: 4px;
         .roundedCornerAvatar(45px, 2px);
       }
+      .quoteContainer {
+        padding-left: 20px;
+        margin: 5px 0;
+        overflow: hidden;
+      }
+      .comment, .commentNoHtml, .readmore {
+        max-width: 400px;
+        padding-left: 20px;
+        font-style: italic;
+       }      
+      .comment, .commentNoHtml {
+        border-left: 6px solid #aacded;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-height: 20px;
+      }
+      .readMore {
+        color: #4672A1;
+        display: none;
+        font-style: italic;
+      }
+      .commentNoHtml {
+        display: none;
+        white-space: nowrap;
+      }
       .lastUpdatedTime {
         color: @textLightColor;
         font-size: 12px;
@@ -109,6 +134,9 @@
         }
         .uiIconSocLightGray	{
             color: @colorIconSecondary;
+        }
+        .readMore {
+          color: white;
         }
       }
     }
