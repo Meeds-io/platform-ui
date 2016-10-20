@@ -4,6 +4,10 @@
 .uiComposer {
 	margin-bottom: 30px;
 
+	.ShareButtonsTop {
+
+	}
+
 	div#ActivityComposerExt {
 		height: 30px;
 
@@ -1372,6 +1376,38 @@ blockquote:after {
         white-space: normal;
     }
 }
+
+/* Responsive */
+
+@media (max-width: 480px) {
+	.uiComposer .blastContainer .share-buttons-down {
+		.btn-primary {
+			float: left;
+			margin-right: 10px;
+		}
+		.btn-cancel {
+			display: block;
+			visibility: visible;
+		}
+	}
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+	.uiComposer {
+		.share-buttons-top {
+			display: block;
+			visibility: visible;
+			float: right;
+		}
+		.blastContainer {
+			padding-top: 5px;
+			.share-buttons-down {
+				display: none;
+			}
+		}
+	}
+}
+
 /* Landscape phone to portrait tablet */
 @media (max-width: 1024px) {
 
