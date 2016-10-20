@@ -710,7 +710,7 @@
 				position: absolute;
 				right: -10px;
 				top: 0px;
-				display:none;
+				display:block;
 				.tooltip {
 					-moz-pointer-events: none;
 					-webkit-pointer-events: none;
@@ -734,9 +734,6 @@
             .uiIconClose + .viewComment {
 				right: 25px;
 			}
-			&:hover  .actLink{
-				display: block;
-			}
 			.commmentLeft {
 				float:left;
 				&+ .commentRight{
@@ -749,8 +746,8 @@
 			.commentInputBox  {
 				padding: 3px 0 0 ;
 				.btn {
-					margin-left: 10px;
-					 position: relative;
+					margin-top: 1%;
+					position: relative;
     				z-index: 1;
 				}
 				.commentInput {
@@ -758,6 +755,11 @@
 						 .size(28px,100%);
 						 resize: none;
 						 max-height: 28px;
+					}
+					.cke {
+						.cke_contents {
+							max-height: 60px;
+						}
 					}
 				}
 			}
@@ -1567,7 +1569,7 @@ blockquote:after {
 
 }
 @media (min-width: 481px ) and (max-width: 1024px) {
-    .activityStream .heading .actLink .uiIconClose:before {
+    .activityStream .heading .actLink .uiIconTrash:before {
         font-size: 10px;
         position: relative;
         top: -2px;
