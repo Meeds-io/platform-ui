@@ -492,7 +492,16 @@
 			display: block;
 		}
 		.actionBar,.listLikedBox , .description,.commentBox {
+			display: block;
 			border-top: 1px solid @borderColor;
+
+			ul {
+				margin: 0 0 10px 25px;
+				li {
+					list-style-type: disc;
+					list-style-position: inside;
+				}
+			}
 		}
 		.actionBar +.listLikedBox , .actionBar  + .commentBox {
 			border-top: none;
