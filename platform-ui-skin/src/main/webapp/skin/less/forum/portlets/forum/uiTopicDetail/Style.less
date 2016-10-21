@@ -5,7 +5,6 @@ ul.topnav {
   padding: 0;
 }
 
-ul.topnav li {/*float: left;*/}
 
 ul.topnav li a {
   display: block;
@@ -15,57 +14,22 @@ ul.topnav li input+a {
   display: inline-block;
 }
 
-ul.topnav li a:hover { /* background-color: #555; */} 
 
 ul.topnav li.icon {display: none;}
 
-@media screen and (max-width:680px) {
-  ul.topnav li:not(:first-child) {display: none;}
-  ul.topnav li.icon {
-    float: right;
-    display: inline-block;
-  }
+#profileWrapper {
+  display: inline-block;	
 }
-
-@media screen and (max-width:680px) {
-  .postViewHeader>.pull-right{
-    float : none;
-    position: relative;
-    left: -37px;
-    top: 14px;
-  }
-  ul.topnav.responsive {position: relative;}
-  ul.topnav.responsive li.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  ul.topnav.responsive li {
-    float: none;
-    display: block;
-  }
-  ul.topnav.responsive li a {
-    display: block;
-    text-align: left;
-  }
-}
-
 
 #titleTopic {
-  right: 0;
-  position: relative;
-  top: 4px;
   font-weight: bold;
   font-size: medium;
   color : @linkColor;
-  max-width: 32%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis
+  line-height: 25px;
 }
 #fullNameTopic {
   position: relative;
-  top: 9px;
+  top: 50%;
   left: 6px;
 }
 
@@ -95,14 +59,15 @@ ul.topnav li.icon {display: none;}
 }
 
 .postViewContainer{
-	padding-left: 10px;
+  padding-left: 0;
 	width: 100%;
 }
 
 .postViewHeader{
 	background: @primaryBackgroundLight;
-	padding: 10px 15px;
-	min-height:20px;
+	padding: 7px;
+	min-height: 20px;
+	line-height: 36px;
 	margin-bottom: 5px;
 	.border-radius(2px);
 	.postViewTitle{
@@ -123,11 +88,24 @@ ul.topnav li.icon {display: none;}
 		color: @baseColorLight;
 		margin-right: 10px;
 	}
+	@media (min-width: 480px) {
+		> .postHeaderInfo {
+		 float: right;
+	    }
+	}
+	@media (max-width: 480px) {
+	  > .postHeaderInfo {
+		line-height: initial;
+		float: left;
+		margin-top: 5px;
+	  }
+	}
+
 }
 
 .postContent{
 	word-wrap: break-word;
-	min-height: 167px;
+    margin: 0 10px;
 	br {
 		display: block;
 		margin-top: 10px;
@@ -239,10 +217,28 @@ ul.topnav li.icon {display: none;}
 	}
 
 	.line{
-		margin: 10px -10px;
+		margin: 0;
 		background: @borderColor;
 		height: 1px;
 		display: block;
+	}
+	.footPost {
+	  margin: 0;
+	  padding: 10px;
+	  .btnDetailTopic {
+		margin: 0;
+		@media (max-width: 480px) {
+		  .btn {
+			font-size: 11px;
+			height: 10px;
+			line-height: 10px;
+			padding: 3px 12px;
+		  }
+		}
+	  }
+	}
+	.uiTopicDetail .postContentContainer {
+	  margin: 0 10px;
 	}
 
 	.divRow:last-child .line{

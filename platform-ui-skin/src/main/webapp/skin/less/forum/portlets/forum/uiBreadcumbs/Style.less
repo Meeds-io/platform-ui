@@ -5,8 +5,16 @@
 		padding-left: 10px;
 		margin-top: 3px;
 	}
-	.permaLink{
-		line-height: 27px;
-		margin-left: 10px;
+	@media (min-width: 480px) {
+		.permaLink {
+		  line-height: 27px;
+		  margin-left: 10px;
+		}
+	}
+	@media (max-width: 480px) {
+		.permaLink {
+		  line-height: 27px;
+		  margin: 0;
+		}
 	}
 }
