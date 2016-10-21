@@ -53,8 +53,7 @@
 	}
 
 	.uiComposerLink {
-		display: inline-block;
-		width: 100%;
+		display: block;
 		background-color: #F8F8F8;
 		box-sizing: border-box;
 		border-top-left-radius: 0;
@@ -1380,14 +1379,30 @@ blockquote:after {
 /* Responsive */
 
 @media (max-width: 480px) {
-	.uiComposer .blastContainer .share-buttons-down {
-		.btn-primary {
-			float: left;
-			margin-right: 10px;
+	.uiComposer .blastContainer {
+		.share-buttons-down {
+			.btn-primary {
+				float: left;
+				margin-right: 10px;
+			}
+			.btn-cancel {
+				display: block;
+				visibility: visible;
+			}
 		}
-		.btn-cancel {
-			display: block;
-			visibility: visible;
+
+		.uiComposerLink {
+			.buttonLink, .inputLink {
+				display: block;
+				width: inherit;
+			}
+			.buttonLink {
+				padding-top: 0px;
+
+				.btn {
+					width: 100%;
+				}
+			}
 		}
 	}
 }
