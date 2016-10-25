@@ -510,7 +510,6 @@
 		}
 		.description {
 		  display: inline-block;
-		  width: 95%;
 		}
 		.actionBar +.listLikedBox , .actionBar  + .commentBox {
 			border-top: none;
@@ -1921,4 +1920,14 @@ blockquote:after {
 			}
 		}
 	}
+}
+
+@media (min-width: 481px) {
+  .activityStream {
+    .contentBox {
+      .description {
+        width: 95%;
+      }
+    }
+  }
 }
