@@ -244,16 +244,25 @@
 	padding: 5px;
 
 	img {
-		.border-radius(100px);
-		.square(@size);
+		 max-height: @size;
+		 max-width: @size;
+		 margin: 0;
+		 padding: 0;
+		 position: relative;
+		 top: 50%;
+		 left: 50%;
+		 transform: translateX(-50%) translateY(-50%);
+		 .border-radius(100px);
 	}
 }
 
 .roundedCornerAvatar(@size, @radius) {
-	.square(@size);
+	max-height: @size;
+	max-width: @size;
 	img {
-		.border-radius(@radius);
-		.square(@size);
+		 max-height: @size;
+		 max-width: @size;
+		 .border-radius(@radius);
 	}
 }
 
@@ -298,7 +307,13 @@
 }
 
 .avatarMini() {
-	.roundedCornerAvatar(20px, 2px);
+	width: 20px;
+	height: 20px;
+	img {
+	     max-height: 20px;
+	     max-width: 20px;
+	     .border-radius(2px);
+	 }
 }
 
 .avatarTiny() {
@@ -315,8 +330,15 @@
 	display: block;
 
 	img {
-		.border-radius(4px);
-		.square(@size);
+		 max-height: @size;
+		 max-width: @size;
+		 margin: 0;
+		 padding: 0;
+		 position: relative;
+		 top: 50%;
+		 left: 50%;
+		 transform: translateX(-50%) translateY(-50%);
+		 .border-radius(0px);
 	}
 }
 
