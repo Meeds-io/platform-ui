@@ -508,8 +508,10 @@
 				}
 			}
 		}
-		.description {
-		  display: inline-block;
+		.description:after {
+			content: '';
+			display: block;
+			clear: both;
 		}
 		.actionBar +.listLikedBox , .actionBar  + .commentBox {
 			border-top: none;
@@ -1920,14 +1922,4 @@ blockquote:after {
 			}
 		}
 	}
-}
-
-@media (min-width: 481px) {
-  .activityStream {
-    .contentBox {
-      .description {
-        width: 95%;
-      }
-    }
-  }
 }
