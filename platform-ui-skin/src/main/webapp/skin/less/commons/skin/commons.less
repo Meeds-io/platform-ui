@@ -121,7 +121,8 @@
 }
 .ui-menu .ui-menu-item-wrapper {
 	position: relative;
-	padding: 3px 1em 3px .4em;
+	padding: 5px;
+	display: block;
 }
 .ui-menu .ui-menu-divider {
 	margin: 5px 0;
@@ -129,10 +130,6 @@
 	font-size: 0;
 	line-height: 0;
 	border-width: 1px 0 0 0;
-}
-.ui-menu .ui-state-focus,
-.ui-menu .ui-state-active {
-	margin: -1px;
 }
 
 /* icon support */
@@ -176,6 +173,7 @@
 }
 .ui-widget.ui-widget-content {
 	border: 1px solid #c5c5c5;
+	min-width: 200px;
 }
 .ui-widget-content {
 	border: 1px solid #dddddd;
@@ -257,10 +255,7 @@ a.ui-button:focus {
 a.ui-button:active,
 .ui-button:active,
 .ui-button.ui-state-active:hover {
-	border: 1px solid #003eff;
-	background: #007fff;
-	font-weight: normal;
-	color: #ffffff;
+	background: #f5fafd;
 }
 .ui-icon-background,
 .ui-state-active .ui-icon-background {
@@ -578,6 +573,30 @@ a.ui-button:active,
 	border-bottom-right-radius: 3px;
 }
 
+.mention-item {
+	position: relative;
+	background-color: #e2eafa;
+	border-radius: 3px;
+	color: #215ab2;
+	border: 1px solid #215ab2;
+	max-width: 150px;
+	overflow: hidden;
+	padding: 2px 16px 2px 5px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+
+	a.remove {
+		z-index: 1;
+    position: absolute;
+    bottom: 1px;
+    width: 17px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #91949c;
+	}
+}
+
 /* Overlays */
 .ui-widget-overlay {
 	background: #aaaaaa;
@@ -627,11 +646,6 @@ a.ui-button:active,
   font-weight: inherit;
   background-color: #a3bcea;
   display: inline;
-  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
-}
-
-[data-mention] {
-  background-color: #a3bcea;
   filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
 }
 
@@ -706,11 +720,11 @@ a.ui-button:active,
 .selectize-dropdown.plugin-optgroup_columns .optgroup-header {
   border-top: 0 none;
 }
-.selectize-control.plugin-remove_button [data-value] {
+.selectize-control.plugin-remove_button .item[data-value] {
   position: relative;
   padding-right: 24px !important;
 }
-.selectize-control.plugin-remove_button [data-value] .remove {
+.selectize-control.plugin-remove_button .item[data-value] .remove {
   z-index: 1;
   /* fixes ie bug (see #392) */
   position: absolute;
