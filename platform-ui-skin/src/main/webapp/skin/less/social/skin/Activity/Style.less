@@ -482,7 +482,7 @@
 .activityStream {
 	.contentBox {
 		position: relative;
-		padding-bottom: 15px;
+		padding-bottom: 30px;
 		margin: 0px ;
 		.commentBox {
 			&.noneCommentOrLike {
@@ -710,7 +710,7 @@
 				position: absolute;
 				right: -10px;
 				top: 0px;
-				display:block;
+				display:none;
 				.tooltip {
 					-moz-pointer-events: none;
 					-webkit-pointer-events: none;
@@ -734,6 +734,9 @@
             .uiIconClose + .viewComment {
 				right: 25px;
 			}
+			&:hover  .actLink{
+				display: block;
+			}
 			.commmentLeft {
 				float:left;
 				&+ .commentRight{
@@ -747,6 +750,7 @@
 				padding: 3px 0 0 ;
 				.btn {
 					margin-top: 1%;
+					margin-right: 2%;
 					position: relative;
     				z-index: 1;
 				}
