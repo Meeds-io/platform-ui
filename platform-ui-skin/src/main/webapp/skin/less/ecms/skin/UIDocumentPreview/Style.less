@@ -51,7 +51,7 @@
 		.commentArea {
 			height: 610px;
 		    margin-bottom: 0;
-		    width: 300px;
+		    width: 365px;
 			.title {
 				font-weight: bold;
 				overflow: hidden;
@@ -177,11 +177,21 @@
 					border-bottom: 1px solid @borderColor;
 				    margin: 0;
 				    padding: 20px 10px;
-				  	textarea {
+					padding-bottom: 35px;
+				  	.commentBox {
+						padding-left: 40px;
+					}
+					textarea {
 						height: 28px;
 						margin: 4px 0 4px 9px;
 						width: 235px;
 						resize: none;
+					}
+					.btn {
+						margin-top: 4px;
+					}
+					#CancelButton {
+						margin-left: 4px;
 					}
 				    .mask {
 				    	position: relative;
@@ -216,7 +226,7 @@
 		.resizeButton {
 			cursor: pointer;
 		    height: 16px;
-		    right: 310px;
+		    right: 371px;
 		    position: absolute;
 		    top: 50%;	
 				.uiIconMiniArrowLeft {
@@ -247,7 +257,7 @@
 		}
 	  	#documentPreviewContent {
 			position: relative;
-			margin-right: 335px;
+			margin-right: 390px;
 
 			div.loading {
 				width: 100%;
@@ -373,9 +383,9 @@
 		.previewBtn {
 			bottom: 7px;
 		  	text-align: right;
-		  	margin-right: 335px;
+		  	margin-right: 390px;
 		  	padding: 5px 0px 0 0;
-		  	.openBtn, .downloadBtn {
+		  	.openBtn, .downloadBtn, .showComments {
 			    float: right;
 			  	padding-left: 15px;
 			}
@@ -430,6 +440,10 @@
 		}
 		.commentArea, .resizeButton {
 			display: none;
+			width: 100%;
+		}
+		.commentList {
+			max-height: 125px!important;
 		}
 
 	}
@@ -440,6 +454,7 @@
 		}
 		.commentArea {
 			display: none;
+			width: 100%;
 		}
 	}
 
