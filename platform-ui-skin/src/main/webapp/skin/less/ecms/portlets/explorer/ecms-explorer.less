@@ -1289,9 +1289,14 @@
 
 	.headTitle {
 		margin: 10px 0;
-		> div {
-			width: 49%;
-			display: inline-block;
+		> button {
+			float: left;
+			position: fixed;
+		}
+		> h5 {
+			text-align: center;
+			line-height: 30px;
+			vertical-align: middle;
 		}
 	}
 
@@ -1941,10 +1946,14 @@
         height: auto!important;
     }
 	.uiDiff {
-		.headTitle>div {
-			white-space: nowrap;
-			margin: auto;
-			display: table;
+		.headTitle > button {
+			float: left;
+			position: fixed;
+		}
+		.headTitle > h5 {
+			text-align: center;
+			line-height: 30px;
+			vertical-align: middle;
 		}
 		.changes {
 			font-size: @fontSizeSmall;
