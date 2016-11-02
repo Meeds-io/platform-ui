@@ -4,6 +4,7 @@
 @import "UIAddressBar/Style.less";
 @import "MultiUpload/Style.less";
 @import "UIFileView/Style.less";
+@import "Xeditable/bootstrap3-editable.less";
 
 .UIJCRExplorerPortlet {
 	padding: 25px;
@@ -919,9 +920,60 @@
 
 /******** UIVersionInfo **************/
 .uiVersionInfo  {
-	.uiGrid label {
-		display: inline;
-		margin: 0px;
+	.uiBox.noRounded {
+		border: none;
+		box-shadow: none;
+		padding: @paddingXLarge 0px 15px;
+		.editable.editable-empty {
+			color: gray;
+		}
+		.editable:hover {
+			border-bottom: dashed 1px #08c;
+		}
+		.editable {
+			color: black;
+			border-bottom: none;
+		}
+		.editable-inline {
+			width: 85%;
+			.editable-input {
+				width:85%;
+				> input {
+					width: 100%;
+				}
+			}
+			.editable-clear-x {
+				margin-right: -56px;
+				opacity: 6;
+				cursor: pointer;
+			}
+			.btn {
+				background: none;
+				border: none;
+				.box-shadow(none);
+				padding: 5px;
+				[class^="icon-"] {
+					.font-icon();
+					font-size: @sizeIcon12x12 + 2;
+				}
+				&.editable-submit .icon-ok:before {
+					content: "\e78a"; //save icon
+				}
+				&.editable-cancel {
+					display: none;
+				}
+			}
+		}
+	}
+	.pagination {
+		padding: @paddingXLarge;
+	}
+	.uiGrid {
+		margin: 10px 0px;
+		label {
+			display: inline;
+			margin: 0px;
+		}
 	}
 
 	.UIFormWithTitle {
@@ -1224,21 +1276,72 @@
 }
 
 .uiDiff {
+	margin: 0 10px;
+	.alert.alert-warning {
+		width: 35%;
+		margin-left: 30%;
+		text-align: center;
+	}
 	.contentEmpty {
 		text-align: center;
     color: @baseColorLight;
 	}
 
-	.uiGrid .diffDelete {
-		background: #fce8d4;
+	.headTitle {
+		margin: 10px 0;
+		> button {
+			position: absolute;
+		}
+		> h5 {
+			text-align: center;
+			line-height: 30px;
+			vertical-align: middle;
+		}
 	}
 
-	.uiGrid .diffModify {
-		background: #fffdd3;
+	.uiContentBox {
+		.uiBox {
+			width: 230px;
+			.boxVersionDetail {
+				padding: @paddingSmall;
+				> span {
+					display: block;
+					line-height: 30px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+			}
+		}
+		.comparedwith {
+			font-size: @fontSizeLarge;
+			padding: 50px 0px;
+		}
 	}
 
-	.uiGrid .diffAdd {
-		background: #e7f9c8;
+	.diff > .diffmodifiedline {
+		> span {
+			&.diffaddword {
+				background-color: @successColorLight;
+			}
+			&.diffremoveword {
+				background-color: @errorColorLight;
+			}
+		}
+		> pre {
+			border: none;
+			border-radius: 0;
+			margin: 0;
+			padding: 0;
+			white-space: normal;
+			&.diffaddword {
+				background-color: @successColorLight;
+			}
+
+			&.diffremoveword {
+				background-color: @errorColorLight;
+			}
+		}
 	}
 }
 
@@ -1822,6 +1925,17 @@
         font-size: inherit;
     }
 }
+@media (max-width: 1024px) {
+	.uiVersionInfo {
+		.uiBox.noRounded {
+			.editable-inline {
+				.editable-clear-x {
+					margin-top: -9px;
+				}
+			}
+		}
+	}
+}
 @media(max-width: 768px){
     .uiWorkingArea .resizeBar {display: none}
     .uiWorkingArea .leftContainer ,.uiWorkingArea .rightContainer{
@@ -1830,6 +1944,19 @@
         width: 100%!important;
         height: auto!important;
     }
+	.uiDiff {
+		.headTitle > button {
+			position: absolute;
+		}
+		.headTitle > h5 {
+			text-align: center;
+			line-height: 30px;
+			vertical-align: middle;
+		}
+		.changes {
+			font-size: @fontSizeSmall;
+		}
+	}
 }
 
 @media(max-width: 480px){
