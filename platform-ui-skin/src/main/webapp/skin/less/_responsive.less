@@ -661,14 +661,6 @@
     }
 }
 @media (min-width: 768px) and (max-width: 980px) {
-    .active.ToolbarContainer   {
-        .UISetupPlatformToolBarPortletIDTDContainer,
-        .UICreatePlatformToolBarPortletIDTDContainer,
-        #chat-status {
-            display: none!important;
-        }
-    }
-
     .ToolbarContainer.active #ToolBarSearch.uiDropdownWithIcon {
         background: none!important;
     }
@@ -1218,6 +1210,10 @@
         -webit-transform: translateX(-50%);
         transform: translateX(-50%);
     }
+    #chat-status .pull-right > .dropdown-menu {
+            right: auto;
+            left: 0;
+    }
 }
 
 
@@ -1235,11 +1231,6 @@
     }
     .uiSocApplication .itemContainer:nth-child(odd) .checkedBox{
         margin-right: 0px!important;
-    }
-}
-@media (max-width: 599px) {
-    #chat-status {
-        display: none!important;
     }
 }
 @media (max-width: 600px) {
@@ -1309,7 +1300,12 @@
         .box-sizing(border-box);
     }
 }
-
+@media (min-width: 481px) and (max-width: 505px) {
+    body .UIToolbarContainer .uiDropdownWithIcon > a {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+}
 @media (max-width: 480px) {
     .uiEditUserProfileForm {
         .form-horizontal {
