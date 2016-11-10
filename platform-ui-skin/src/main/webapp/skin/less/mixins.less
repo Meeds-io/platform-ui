@@ -241,17 +241,18 @@
 	.border-radius(100px);
 	.box-shadow(0px 2px 4px rgba(13px, 13px, 13px, 0.27));
 	border: 1px solid #b1b1b1;
-	padding: 5px;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+    line-height: 37px;
 
 	img {
 		 max-height: @size;
 		 max-width: @size;
 		 margin: 0;
 		 padding: 0;
-		 position: relative;
-		 top: 50%;
-		 left: 50%;
-		 transform: translateX(-50%) translateY(-50%);
+         border-radius: 50%;
+         display: inline;
 		 .border-radius(100px);
 	}
 }
