@@ -153,8 +153,17 @@ a:hover [class^="uiIconSoc"],
 
 
 /* Icons that we cant change their name */
+.uiIconSocUIDefaultActivityComposer:before {
+	content: "\e64e";
+}
+
+.uiIconSocUIDefaultActivityComposer:hover,
+.actionIcon:hover .uiIconSocUIDefaultActivityComposer {
+	color: @colorIconPrimary;
+}
+
 .uiIconSocUIDocActivityComposer:before {
-	content: "\e6ba";
+	content: "\e780";
 }
 
 .uiIconSocUIDocActivityComposer:hover,

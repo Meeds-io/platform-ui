@@ -1,49 +1,77 @@
 
 /*=================uiComposer =================*/
 
+.uiComposer {
+	margin-bottom: 30px;
 
-.uiComposer.uiGrayLightBox {
-	margin: 0 0 30px 0;
-	.box-shadow(0 2px 4px -1px rgba(13, 13, 13, 0.27));
-	.textarea {
-		width: 100%;
-		resize: none;
-		height: 60px e('!important');
+	.ShareButtonsTop {
+
 	}
-	.blastInputPeople ,.uiComposerLink ,.blastInputSpace  {
-		margin: 0 0 10px 0;
+
+	div#ActivityComposerExt {
+		height: 30px;
+
+		.ActivityComposerExtItem {
+			height: 30px;
+			margin-left: 15px;
+
+			a {
+				color: @textLightColor;
+				&:hover {
+					color: @linkColorHover;
+				}
+				i.uiIconSocLightGray {
+					padding-right: 4px;
+				}
+			}
+
+			&.ActivityComposerExtItemSelected {
+				height: 30px;
+				box-sizing: content-box;
+				border-bottom: 1px solid @linkColorHover;
+
+				a {
+					color: @linkColorHover;
+					font-weight: bold;
+					i.uiIconSocLightGray {
+						color: @linkColorHover;
+						font-weight: bold;
+					}
+				}
+			}
+		}
 	}
-	.inputLink {
-		overflow: hidden;
-		input[type="text"] {
+
+	.desktop-input {
+		margin-bottom: 10px;
+
+		.blastInputPeople, .blastInputSpace {
+			textarea {
+				display: none;
+			}
+		}
+	}
+
+	.uiComposerLink {
+		display: block;
+		background-color: #F8F8F8;
+		box-sizing: border-box;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		padding: 0px;
+
+		.buttonLink, .inputLink {
+			display: table-cell;
 			width: 100%;
-			height: 28px;
+			padding: 8px;
+		}
+
+		.inputLink input {
+			width: 100%;
 		}
 	}
-	.btn {
-		margin-left: 10px;
-		min-width: 82px;
-	}
-	.blastShare  {
-		.uiContentBox {
-			padding: 5px;
-		}
-	}
-	.attachMents .actionIcon{
-		margin: 0;
-		float: right;
-	}
 }
-body.phoneDisplay .uiComposer.uiGrayLightBox {
-	position: relative;
-	margin-top: 45px;
-	.button-group {
-		position: absolute;
-		bottom: 100%;
-		margin-bottom: 15px;
-		right: 0;
-	}
-}
+
 .uiLinkShareDisplay {
 	position: relative;
 	.border-radius(@baseBorderRadius);
@@ -182,11 +210,14 @@ body.phoneDisplay .uiComposer.uiGrayLightBox {
 
 	.description {
 		padding: 30px 16px;
-		.img {
+		display: inline-block;
+		
+		img {
 		margin: 0 20px 20px 0;
 		text-align: center;
 		width: 47.2%;
 		}
+		
 	}
 }
 
@@ -466,7 +497,21 @@ body.phoneDisplay .uiComposer.uiGrayLightBox {
 			display: block;
 		}
 		.actionBar,.listLikedBox , .description,.commentBox {
+			display: block;
 			border-top: 1px solid @borderColor;
+
+			ul {
+				margin: 0 0 10px 25px;
+				li {
+					list-style-type: disc;
+					list-style-position: inside;
+				}
+			}
+		}
+		.description:after {
+			content: '';
+			display: block;
+			clear: both;
 		}
 		.actionBar +.listLikedBox , .actionBar  + .commentBox {
 			border-top: none;
@@ -1275,14 +1320,50 @@ blockquote:after {
 
 /*======= End of User Profile Popup ==========*/
 
-.uiActivityFileAttachment {
+.uiActivityFileAttachment, .uiActivityActionAttach {
+	box-sizing: border-box;
 	border: 1px solid @borderColor;
     .box-shadow(~'0 2px 1px -2px rgba(255,255,255,1), 0 3px 1px -2px rgba(255,255,255,0.6) inset');
     display: inline-block;
     margin-bottom: 10px;
-    padding: 5px 8px;
-	color: @baseColorDark;
+    padding: 5px 0px;
+    color: @baseColorDark;
+    width: 100%;
+    
+    .fileName {
+      color: #2f5e92;
+    }
+    
+    .userInfo {
+      color: #9F9F9F;
+    }
 }
+
+.uiActivityFileAttachment {
+    padding: 20px 10px;
+    font-weight: bold;
+    background-color: #EFEFEF;
+    
+    .uiClose {
+        top: -10px;
+    }
+}
+
+.uiActivityActionAttach {
+    text-align: center;
+	padding: 10px 0px;
+
+	a {
+		font-size: 15px;
+		font-weight: bold;
+
+		.uiIconPlus {
+			font-size: 20px;
+			vertical-align: top;
+		}
+	}
+}
+
 .uiUserActivityStreamPortlet {
 	.uiPopup {
 		z-index: 100;
@@ -1301,6 +1382,54 @@ blockquote:after {
         white-space: normal;
     }
 }
+
+/* Responsive */
+
+@media (max-width: 480px) {
+	.uiComposer .blastContainer {
+		.share-buttons-down {
+			.btn-primary {
+				float: left;
+				margin-right: 10px;
+			}
+			.btn-cancel {
+				display: block;
+				visibility: visible;
+			}
+		}
+
+		.uiComposerLink {
+			.buttonLink, .inputLink {
+				display: block;
+				width: inherit;
+			}
+			.buttonLink {
+				padding-top: 0px;
+
+				.btn {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+	.uiComposer {
+		.share-buttons-top {
+			display: block;
+			visibility: visible;
+			float: right;
+		}
+		.blastContainer {
+			padding-top: 5px;
+			.share-buttons-down {
+				display: none;
+			}
+		}
+	}
+}
+
 /* Landscape phone to portrait tablet */
 @media (max-width: 1024px) {
 
@@ -1313,11 +1442,6 @@ blockquote:after {
         right: 0;
         min-width: 164px;
     }
-    .attachMents  .uidocactivitycomposer {
-        display: none;//for P1
-    }
-
-
 }
 //end 1024
 
