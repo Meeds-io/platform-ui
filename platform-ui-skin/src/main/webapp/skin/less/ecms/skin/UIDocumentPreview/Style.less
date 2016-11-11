@@ -111,7 +111,6 @@
 						display: block;
 					}
 					.commentList {
-						max-height: 200px!important;
 						overflow: auto;
 						background: @bodyBackground;
 						padding: 8px 0;
@@ -177,9 +176,16 @@
 					border-bottom: 1px solid @borderColor;
 				    margin: 0;
 				    padding: 20px 10px;
-					padding-bottom: 35px;
+					padding-bottom: 45px;
+					max-height: 148px;
+					overflow-y: auto;
 				  	.commentBox {
 						padding-left: 40px;
+						.cke {
+							.cke_contents {
+								overflow: hidden !important;
+							}
+						}
 					}
 					textarea {
 						height: 28px;
@@ -187,8 +193,11 @@
 						width: 235px;
 						resize: none;
 					}
+					#CancelButton {
+						display: none;
+					}
 					.btn {
-						margin-top: 4px;
+						margin-top: 8px;
 					}
 					#CancelButton {
 						margin-left: 4px;
@@ -389,6 +398,9 @@
 			    float: right;
 			  	padding-left: 15px;
 			}
+			.showComments {
+				display: none;
+			}
 		    a {
 		    	color: @btnPrimaryColor;
 		    	&:hover i, &:active i, &.active i, {
@@ -426,11 +438,41 @@
 .exit-document-preview {
     display: none;
 }
+
+@media (max-width: 767px) {
+	.maskLayer {
+		.uiDocumentPreview {
+			.commentArea {
+				overflow-y: auto;
+				.uiContentBox {
+					.commentInputBox {
+						padding-bottom: 120px !important;
+					}
+					.comments {
+						.commentList {
+							overflow: hidden !important;
+							max-height: none !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 @media(max-width: 1024px) {
 
 	.document-preview-default {
 		.dowload-link {
 			display: none;
+		}
+	}
+
+	.uiDocumentPreview {
+		.previewBtn {
+			.showComments {
+				display: block!important;
+			}
 		}
 	}
 
@@ -442,10 +484,23 @@
 			display: none;
 			width: 100%;
 		}
-		.commentList {
-			max-height: 125px!important;
+		.commentArea {
+			.uiContentBox {
+				.actionBar{
+					display: none;
+				}
+				.highlightBox {
+					.profile {
+						display: none;
+					}
+				}
+				.commentInputBox {
+					#CancelButton {
+						display: block;
+					}
+				}
+			}
 		}
-
 	}
 
 	.maskLayer .uiDocumentPreview.collapsed {
