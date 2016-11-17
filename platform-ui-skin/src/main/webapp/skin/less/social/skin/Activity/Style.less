@@ -482,7 +482,7 @@
 .activityStream {
 	.contentBox {
 		position: relative;
-		padding-bottom: 15px;
+		padding-bottom: 30px;
 		margin: 0px ;
 		.commentBox {
 			&.noneCommentOrLike {
@@ -749,8 +749,9 @@
 			.commentInputBox  {
 				padding: 3px 0 0 ;
 				.btn {
-					margin-left: 10px;
-					 position: relative;
+					margin-top: 1%;
+					margin-right: 2%;
+					position: relative;
     				z-index: 1;
 				}
 				.commentInput {
@@ -758,6 +759,11 @@
 						 .size(28px,100%);
 						 resize: none;
 						 max-height: 28px;
+					}
+					.cke {
+						.cke_contents {
+							overflow: hidden;
+						}
 					}
 				}
 			}
@@ -1567,7 +1573,7 @@ blockquote:after {
 
 }
 @media (min-width: 481px ) and (max-width: 1024px) {
-    .activityStream .heading .actLink .uiIconClose:before {
+    .activityStream .heading .actLink .uiIconTrash:before {
         font-size: 10px;
         position: relative;
         top: -2px;
@@ -1641,12 +1647,12 @@ blockquote:after {
 	}
 	.activityStream .contentBox .listLikedBox {
         border: medium none;
-        display: none;
+        //display: none;
         padding: 0;
 	}
 	.activityStream .contentBox .commentBox {
         border: medium none;
-        display: none;
+        //display: none;
 	}
 	.activityStream.block-activity .contentBox .actionBar {
 		border-bottom: 1px solid @borderColor;
@@ -1753,7 +1759,7 @@ blockquote:after {
 	    li {
 		    padding: 8px 10px;
 		    .close {
-			    display: none;
+			    //display: none;
 			    position: absolute;
 			    right: -19px;
 			    top: 3px;

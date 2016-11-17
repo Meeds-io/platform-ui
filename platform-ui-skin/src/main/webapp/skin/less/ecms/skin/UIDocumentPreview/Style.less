@@ -51,7 +51,7 @@
 		.commentArea {
 			height: 610px;
 		    margin-bottom: 0;
-		    width: 300px;
+		    width: 365px;
 			.title {
 				font-weight: bold;
 				overflow: hidden;
@@ -111,7 +111,6 @@
 						display: block;
 					}
 					.commentList {
-						max-height: 485px;
 						overflow: auto;
 						background: @bodyBackground;
 						padding: 8px 0;
@@ -176,12 +175,31 @@
 					border-top: 1px solid @borderColor;
 					border-bottom: 1px solid @borderColor;
 				    margin: 0;
-				    padding: 20px 10px;
-				  	textarea {
+				    padding: 10px;
+					height: 158px;
+					overflow-y: auto;
+				  	.commentBox {
+						padding-left: 40px;
+						.cke {
+							.cke_contents {
+								overflow: hidden !important;
+							}
+						}
+					}
+					textarea {
 						height: 28px;
 						margin: 4px 0 4px 9px;
 						width: 235px;
 						resize: none;
+					}
+					#CancelButton {
+						display: none;
+					}
+					.btn {
+						margin-top: 8px;
+					}
+					#CancelButton {
+						margin-left: 4px;
 					}
 				    .mask {
 				    	position: relative;
@@ -216,7 +234,7 @@
 		.resizeButton {
 			cursor: pointer;
 		    height: 16px;
-		    right: 310px;
+		    right: 371px;
 		    position: absolute;
 		    top: 50%;	
 				.uiIconMiniArrowLeft {
@@ -247,7 +265,7 @@
 		}
 	  	#documentPreviewContent {
 			position: relative;
-			margin-right: 335px;
+			margin-right: 390px;
 
 			div.loading {
 				width: 100%;
@@ -373,11 +391,14 @@
 		.previewBtn {
 			bottom: 7px;
 		  	text-align: right;
-		  	margin-right: 335px;
+		  	margin-right: 390px;
 		  	padding: 5px 0px 0 0;
-		  	.openBtn, .downloadBtn {
+		  	.openBtn, .downloadBtn, .showComments {
 			    float: right;
 			  	padding-left: 15px;
+			}
+			.showComments {
+				display: none;
 			}
 		    a {
 		    	color: @btnPrimaryColor;
@@ -416,11 +437,41 @@
 .exit-document-preview {
     display: none;
 }
+
+@media (max-width: 767px) {
+	.maskLayer {
+		.uiDocumentPreview {
+			.commentArea {
+				overflow-y: auto;
+				.uiContentBox {
+					.commentInputBox {
+						padding-bottom: 120px !important;
+					}
+					.comments {
+						.commentList {
+							overflow: hidden !important;
+							max-height: none !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 @media(max-width: 1024px) {
 
 	.document-preview-default {
 		.dowload-link {
 			display: none;
+		}
+	}
+
+	.uiDocumentPreview {
+		.previewBtn {
+			.showComments {
+				display: block!important;
+			}
 		}
 	}
 
@@ -430,8 +481,25 @@
 		}
 		.commentArea, .resizeButton {
 			display: none;
+			width: 100%;
 		}
-
+		.commentArea {
+			.uiContentBox {
+				.actionBar{
+					display: none;
+				}
+				.highlightBox {
+					.profile {
+						display: none;
+					}
+				}
+				.commentInputBox {
+					#CancelButton {
+						display: block;
+					}
+				}
+			}
+		}
 	}
 
 	.maskLayer .uiDocumentPreview.collapsed {
@@ -440,6 +508,7 @@
 		}
 		.commentArea {
 			display: none;
+			width: 100%;
 		}
 	}
 
