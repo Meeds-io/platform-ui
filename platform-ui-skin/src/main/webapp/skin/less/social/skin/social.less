@@ -266,3 +266,64 @@
 		}
 	}
 }
+
+.uiTableProfileUserSearchInput, .uiSpaceSearch {
+    .selectize-control {
+        width: 100%;
+        margin-right: -44px;
+        max-width: 100%;
+        .selectize-input {
+            max-height: 28px;
+            min-height: 28px;
+            white-space: nowrap;
+            max-width: 100%;
+            min-width: 100%;
+            padding: 0 10px;
+            overflow: hidden;
+        }
+        .selectize-input:after {
+            display: none;
+        }
+        .exo-mention {
+            line-height: 30px;
+        }
+    }
+    .column:first-child {
+        max-width: 100%;
+    }
+    .selectize-dropdown {
+        width: auto !important;
+        min-width: 100%;
+        margin-top: 2px;
+        .optionAvatar {
+            display: table-cell;
+            white-space: nowrap;
+            margin-right:5px;
+        }
+        .optionName {
+            display: table-cell;
+            white-space: nowrap;
+            padding-left: 5px;
+        }
+        .active {
+            background-color: #578dc9;
+            color: #ffffff;
+        }
+    }
+    .selectize-dropdown-content {
+        width: auto !important;
+        min-width: 100%;
+    }
+}
+.uiSpaceSearch {
+	.selectize-control {
+	  padding-right: 45px;
+	  min-width: 280px;
+	}
+	.selectize-dropdown {
+	  min-width: 280px;
+	}
+	.advancedSearch {
+		z-index: 1000;
+	}
+}
