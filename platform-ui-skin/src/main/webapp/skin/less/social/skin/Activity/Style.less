@@ -1623,7 +1623,25 @@ blockquote:after {
 	  display: none;
 	}
 	.activityStream.block-activity .inputContainer {
-    	display: none !important;
+		.box-shadow(0 0 5px 0 rgba(0,0,0,0.3));
+		border-top: solid 1px #ccc;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		background-color: #f0f0f0;
+		padding: 0;
+		width: 100%;
+
+		> div {
+			padding: 10px;
+		}
+
+		.commmentLeft {
+			display: none;
+			&+ .commentRight{
+				margin-left: 0px;
+			}
+		}
 	}
 	.activityStream .arrowLeft {
 		display: none;
