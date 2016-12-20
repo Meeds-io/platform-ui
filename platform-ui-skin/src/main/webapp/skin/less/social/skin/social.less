@@ -28,6 +28,12 @@
 			}
 		}
 	}
+	.uiTableProfileUserSearchArrow {
+		display: none;
+		> i {
+			margin: 5px;
+		}
+	}
 	.uiSpaceSearch {
 		margin-bottom: 10px;
 	}
@@ -218,6 +224,31 @@
 		
 	} 
 	.uiSocApplication {
+		.uiTableProfileUserSearchArrow {
+			display: block;
+			float:right;
+			margin-top:5px;
+		}
+
+		.uiTableProfileUserSearchInput {
+			display: none;
+		}
+
+		.uiProfileUserSearch .uiIconArrowDown {
+			display: none;
+		}
+
+		.uiProfileUserSearch.open {
+			.uiIconArrowDown {
+				display: block;
+			}
+			.uiIconArrowRight {
+				display: none;
+			}
+			.uiTableProfileUserSearchInput {
+				display: block;
+			}
+		}
 		.uiProfileUserSearch {
 			.uiGrayLightBox{
 				position: relative;
