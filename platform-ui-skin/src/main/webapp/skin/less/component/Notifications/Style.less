@@ -42,11 +42,12 @@
 	}
 
 	a:not(.btn) {
-		color: @linkColor;
+		color: @linkInAlertColor;
+		text-decoration: @linkInAlertTextDecoration;
 
 		&:hover {
 			font-weight: normal;
-			text-decoration: none;
+			text-decoration: @linkInAlertTextDecoration;
 		}
 	}
 }
