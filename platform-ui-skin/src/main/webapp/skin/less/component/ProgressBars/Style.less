@@ -3,7 +3,7 @@
 // --------------------------------------------------
 .progress {
   	height: 18px;
-	.border-radius(20px);
+	.border-radius(@progressBarBorderRadius);
 	#gradient .vertical(@primaryBackgroundHover, @primaryBackground);
 	.bar {
 		#gradient .vertical(@primaryLightColor, @primaryColor);
@@ -84,11 +84,11 @@
 .progress.progessStart{
 	height: 18px;
 	border: none;
-	.border-radius(20px);
+	.border-radius(@progressBarBorderRadius);
 	.box-shadow(none);
 	padding: 3px;
 	.bar{
-		.border-radius(20px);
+		.border-radius(@progressBarBorderRadius);
 		#gradient .vertical(@primaryLightColor, @primaryColor);
 	}
 }
