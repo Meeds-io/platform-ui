@@ -575,13 +575,13 @@ a.ui-button:active,
 
 .mention-item {
 	position: relative;
-	background-color: #e2eafa;
+	background-color: @mentionBackground;
 	border-radius: 3px;
-	color: #215ab2;
+	color: @mentionColor;
 	border: 1px solid #215ab2;
 	max-width: 150px;
 	overflow: hidden;
-	padding: 2px 16px 2px 5px;
+	padding: @mentionPadding;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 
@@ -593,7 +593,7 @@ a.ui-button:active,
     text-align: center;
     font-weight: bold;
     font-size: 18px;
-    color: #91949c;
+    color: @removeMentionColor;
 	}
 }
 
@@ -728,14 +728,14 @@ a.ui-button:active,
   z-index: 1;
   /* fixes ie bug (see #392) */
   position: absolute;
-  top: 0;
+  top: @removeMentionTop;
   right: 0;
   bottom: 0;
   width: 17px;
   text-align: center;
   font-weight: bold;
   font-size: 18px;
-  color: #91949C;
+  color: @removeMentionColor;
   text-decoration: none;
   vertical-align: middle;
   display: inline-block;
@@ -826,8 +826,8 @@ a.ui-button:active,
   cursor: pointer;
   margin: 0 3px 3px 0;
   padding: 2px 6px;
-  background: #e2eafa;
-  color: #215ab2;
+  background: @mentionBackground;
+  color: @mentionColor;
   border: 1px solid #215ab2;
   border-radius: 3px;
 }
