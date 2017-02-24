@@ -126,10 +126,13 @@
 
 @uiCheckboxCheckedBorder: 			@primaryColor;
 @uiCheckboxBackground: 				@borderColor;
+@uiCheckboxCheckedBackground:       @borderColor;
 
 @uiRadioCheckedColor: 				@primaryColor;
 @uiRadioCheckedBackground: 			@borderColor;
 @uiRadioCheckedDisabledBackground: @baseColorLight;
+@uiRadioCheckedbackgroundBefore:    @borderColor;
+@uiRadioCheckedbackgroundImage: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.27));
 
 @uiCheckboxCheckedDisabledBorder: @baseColorLight;
 @formReadOnyBackground: @primaryBackgroundHover;
@@ -544,5 +547,21 @@
 
 /* progress bar */
 @progressBarBorderRadius: 20px;
+
+/* uiradio */
+@uiRadioCheckedAfterBackground: rgba(0,0,0,0.27);
+
+/* uiSwitchBtn */
+@uiSwitchColorOn1: @primaryLightColor;
+@uiSwitchColorOn2: @primaryColor;
+@uiSwitchBorderColor: @primaryColor;
+@uiSwitchColorOff1: rgba(255, 255, 255, .0);
+@uiSwitchColorOff2: rgba(0, 0, 0, 0.09);
+@uiSwitchShadowOn: inset 0px 3px 5px @primaryDarkColor;
+@uiSwitchShadowOff: inset 0px 1px 1px rgba(0, 0, 0, 0.43);
+
+/* switchBtnHandle */
+@switchBtnHandleColor1: @btnBackground;
+@switchBtnHandleColor2: @btnBackgroundHighlight;
 
 @import "customVariables.less";
