@@ -6,6 +6,8 @@
 	border-bottom-color: @btnBorder;
     text-shadow: none!important;
     color: @btnColor;
+	background-color: @btnBackgroundColor;
+	background-image: @btnBackgroundImage;
     &:hover,
     &:focus {
       color: @btnColor;
@@ -15,7 +17,10 @@
 	font-family: @sansBoldFontFamily;
 	font-weight: bold;
 	.buttonBackgroundEXO(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder, @btnPrimaryColor);
+}
 
+.btn-primary.dropdown-toggle {
+	background-color: @btnPrimaryDropdownBackground;
 }
 
 .uiAction .btn:first-child {
