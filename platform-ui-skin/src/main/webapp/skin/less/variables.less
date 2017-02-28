@@ -517,6 +517,42 @@
 }
 .setColor(@baseColor);
 
+/* default btn */
+@btnBackgroundColor: inherit;
+@btnBackgroundImage: inherit;
+@btnHoverBackgroundColor: rgba(255, 255, 255, 0.5);
+
+/* primary btn */
+@btnPrimaryHoverBackgroundColor: inherit;
+@btnPrimaryHoverBackgroundPosition: inherit;
+
+/* dropdown */
+@btnDropdownBackground: @btnBackgroundHighlight;
+@btnPrimaryDropdownBackground: @btnPrimaryBackgroundHighlight;
+@dropdownMenuBorderColor: inherit;
+
+/* btn dropdown */
+@btnDropdownImage: inherit;
+@dropdownEndColor: darken(@dropdownLinkBackgroundHover, 15%);
+
+/* btn-primary dropdown */
+@btnPrimaryDropdownBackgroundImage: inherit;
+
+/* uiradio */
+@uiRadioCheckedAfterBackground: rgba(0,0,0,0.27);
+
+/* uiSwitchBtn */
+@uiSwitchColorOn1: @primaryLightColor;
+@uiSwitchColorOn2: @primaryColor;
+@uiSwitchBorderColor: @primaryColor;
+@uiSwitchColorOff1: rgba(255, 255, 255, .0);
+@uiSwitchColorOff2: rgba(0, 0, 0, 0.09);
+@uiSwitchShadowOn: inset 0px 3px 5px @primaryDarkColor;
+@uiSwitchShadowOff: inset 0px 1px 1px rgba(0, 0, 0, 0.43);
+
+/* switchBtnHandle */
+@switchBtnHandleColor1: @btnBackground;
+@switchBtnHandleColor2: @btnBackgroundHighlight;
 
 /* Tags and mention */
 @mentionBackground: #e2eafa;
@@ -547,22 +583,6 @@
 
 /* progress bar */
 @progressBarBorderRadius: 20px;
-
-/* uiradio */
-@uiRadioCheckedAfterBackground: rgba(0,0,0,0.27);
-
-/* uiSwitchBtn */
-@uiSwitchColorOn1: @primaryLightColor;
-@uiSwitchColorOn2: @primaryColor;
-@uiSwitchBorderColor: @primaryColor;
-@uiSwitchColorOff1: rgba(255, 255, 255, .0);
-@uiSwitchColorOff2: rgba(0, 0, 0, 0.09);
-@uiSwitchShadowOn: inset 0px 3px 5px @primaryDarkColor;
-@uiSwitchShadowOff: inset 0px 1px 1px rgba(0, 0, 0, 0.43);
-
-/* switchBtnHandle */
-@switchBtnHandleColor1: @btnBackground;
-@switchBtnHandleColor2: @btnBackgroundHighlight;
 
 /*  tabs  */
 @tabNormalLinkBorderTop: 1px solid @tabNormalLinkBorder;
