@@ -4,6 +4,7 @@
 .dropdown-menu{
 	.border-radius(@borderRadiusSmall);
 	.box-shadow(0 2px 6px rgba(0,0,0,.1));
+	border: 1px solid @dropdownMenuBorderColor;
 
 	// Links within the dropdown menu
 	li > a {
@@ -55,7 +56,7 @@
 .dropdown-menu .active > a:hover,
 .dropdown-submenu:hover > a ,
 .uiDropdownMenu  li > a.active{
-  #gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 15%));
+  #gradient > .vertical(@dropdownLinkBackgroundHover, @dropdownEndColor);
 }
 .uiDropdownMenu  li > a.active {
 	color: @dropdownLinkColorHover;
@@ -92,7 +93,7 @@
 		    	color: @linkColor;
 		    }
 		    &:hover {
-				#gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 15%));
+				#gradient > .vertical(@dropdownLinkBackgroundHover, @dropdownEndColor);
 				color: @dropdownLinkColorHover;
 				* {
 					color: @dropdownLinkColorHover;
@@ -168,7 +169,7 @@
 .uiDropdownMenu .active > a:hover {
 		text-decoration: none;
   	    color: @dropdownLinkColorHover;
-  		#gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 15%));	 	
+		#gradient > .vertical(@dropdownLinkBackgroundHover, @dropdownEndColor);
 }
 
 
