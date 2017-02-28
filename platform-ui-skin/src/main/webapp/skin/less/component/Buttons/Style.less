@@ -11,16 +11,29 @@
     &:hover,
     &:focus {
       color: @btnColor;
+	  background-color: @btnHoverBackgroundColor;
     }
 }
+
+.btn.dropdown-toggle {
+	padding-right: 5px;
+	background-color: @btnDropdownBackground;
+	background-image: @btnDropdownImage;
+}
+
 .btn-primary{
 	font-family: @sansBoldFontFamily;
 	font-weight: bold;
 	.buttonBackgroundEXO(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder, @btnPrimaryColor);
 }
 
-.btn-primary.dropdown-toggle {
+.btn.btn-primary.dropdown-toggle {
 	background-color: @btnPrimaryDropdownBackground;
+}
+
+.btn-primary:hover {
+	background-color: @btnPrimaryHoverBackgroundColor;
+	background-position: @btnPrimaryHoverBackgroundPosition;
 }
 
 .uiAction .btn:first-child {
