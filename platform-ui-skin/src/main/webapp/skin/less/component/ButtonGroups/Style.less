@@ -44,6 +44,11 @@
 	.btn {
 		min-width: 0;
 	}
+	.btn:active, .btn:focus {
+		background-color: @btnGroupActiveBackground;
+		color: @btnGroupActiveColor;
+		border: 1px solid @btnGroupActiveBorderColor;
+	}
 	.btn-small {
 		&.dropdown-toggle .uiIconMiniArrowDown {
 			margin: -1px -2px 0 0;
