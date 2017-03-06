@@ -195,7 +195,7 @@ body {
 			opacity: 0;
 		}
 		label.switchBtnLabelOff {
-			#gradient > .vertical(@uiSwitchColorOff1, @uiSwitchColorOff2);
+			#gradient > .vertical(rgba(255, 255, 255, .0), rgba(0, 0, 0, 0.09));
 			border-bottom-right-radius: 9px;
 			border-top-right-radius: 9px;
 			.box-shadow(0 1px 1px rgba(0, 0, 0, 0.43) inset);
@@ -206,8 +206,8 @@ body {
 			height: 17px;
 		}
 		label.switchBtnLabelOn {
-			#gradient > .vertical(@uiSwitchColorOn1, @uiSwitchColorOn2);
-			border: 1px solid @uiSwitchBorderColor;
+			#gradient > .vertical(@primaryLightColor, @primaryColor);
+			border: 1px solid @primaryColor;
 			border-bottom-left-radius: 9px;
 			border-top-left-radius: 9px;
 			.box-shadow(0 3px 5px @primaryDarkColor inset);
