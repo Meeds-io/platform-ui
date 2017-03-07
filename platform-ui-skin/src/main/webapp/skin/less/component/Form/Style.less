@@ -296,6 +296,10 @@ input[disabled], select[disabled], textarea[disabled] {
 	cursor: pointer;
 }
 
+.uiRadio input[type="radio"]:disabled + span:after {
+	background-color: @uiRadioCheckedDisabledBackground;
+}
+
 .selectboxMini  {
 	.uiSelectbox {
 		width: 84px;
