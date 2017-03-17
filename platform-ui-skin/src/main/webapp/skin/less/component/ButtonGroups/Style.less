@@ -40,9 +40,18 @@
 	}
 }
 
+.btn-group .btn.dropdown-toggle {
+	background-color: @btnGroupDropdownBackground;
+}
+.btn-group.open .btn.dropdown-toggle {
+	background-color: @btnGroupOpenDropdownBackground;
+}
+
+
 .btn-group {
 	.btn {
 		min-width: 0;
+		background-color: @btnGroupBackground;
 	}
 	.btn:active, .btn:focus {
 		background-color: @btnGroupActiveBackground;

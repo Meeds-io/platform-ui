@@ -139,6 +139,17 @@ h1,h2,h3,h4 {
 
 .btn.disabled, .btn[disabled] {
   color: @btnDisableColor;
+  background-color: @btnDisableBackground;
+}
+
+.btn.btn-primary.disabled,
+.btn.btn-primary[disabled] {
+	background-color: @btnPrimaryDisableBackground;
+}
+
+.btn.btn-primary.disabled:hover,
+.btn.btn-primary[disabled]:hover {
+	background-color: @btnPrimaryDisableHoverBackground;
 }
 
 .uiAction .btn-primary.disabled:first-child,
