@@ -518,15 +518,19 @@
 @btnBackgroundColor: inherit;
 @btnBackgroundImage: inherit;
 @btnHoverBackgroundColor: rgba(255, 255, 255, 0.5);
+@btnDisableBackground: inherit;
 
 /* primary btn */
 @btnPrimaryHoverBackgroundColor: inherit;
 @btnPrimaryHoverBackgroundPosition: inherit;
+@btnPrimaryDisableHoverBackground: inherit;
+@btnPrimaryDisableBackground: inherit;
 
 /* btn group */
 @btnGroupActiveBackground: inherit;
 @btnGroupActiveColor: @baseBackground;
 @btnGroupActiveBorderColor: inherit;
+@btnGroupBackground: inherit;
 
 /* dropdown */
 @dropdownMenuBorderColor: inherit;
@@ -541,12 +545,32 @@
 @btnPrimaryDropdownBackground: @btnPrimaryBackgroundHighlight;
 @btnPrimaryDropdownBackgroundImage: inherit;
 
+/* btn group dropdown */
+@btnGroupDropdownToggeleBackground: inherit;
+@btnGroupDropdownBackground: inherit;
+@btnGroupOpenDropdownBackground: inherit;
+
+/* switchBtnHandle */
+@switchBtnHandleStartColor: @btnBackground;
+@switchBtnHandleEndColor: @btnBackgroundHighlight;
+
+/* switchBtnLabelOff */
+@switchBtnLabelOffStartColor: rgba(0,0,0,0);
+@switchBtnLabelOffStartColor: rgba(0,0,0,0.09);
+
+/* switchBtnLabelOn */
+@switchBtnLabelOnStartColor: @primaryLightColor;
+@switchBtnLabelOnStartColor: @primaryColor;
+
 /* uiradio */
 @uiRadioCheckedBeforeBackground: @borderColor;
 @uiRadioCheckedAfterBackground: rgba(0,0,0,0.27);
 
 /* uicheckbox */
 @uiCheckboxCheckedBackground: @borderColor;
+
+/* input-append btn */
+@inputAppendBtnBackground: inherit;
 
 /* Tags and mention */
 @mentionBackground: #e2eafa;
@@ -580,6 +604,8 @@
 
 /* progress bar */
 @progressBarBorderRadius: 20px;
+@progressBarIconBackground: inherit;
+@progressBarIconBackgroundImage: inherit;
 
 /*  tabs  */
 @tabNormalLinkBorderTop: 1px solid @tabNormalLinkBorder;
@@ -613,5 +639,19 @@
 @pageIteratorBackgroundPosition: 0 -15px;
 @pageIteratorActiveBackground: @btnBackgroundHighlight;
 @pageIteratorMargin: 0px;
+
+/* Badge */
+@badgeDefaultBackground: @primaryBackground;
+
+/* uiBox */
+@weekListBackground: inherit;
+@calComponentTodayBackground: inherit;
+@uiCalendarComponentTitleBackground: inherit;
+@uiMiniCalendarTitleBackground: inherit;
+@uiMiniCalendarTodayBackground: inherit;
+@uiMiniCalendarCurrentWeekBackground: @primaryBackground;
+@uicalendarComponentTitleBackground: inherit;
+@uiMiniCalendarBorder: inherit;
+@uicalendarComponentBorder: inherit;
 
 @import "customVariables.less";
