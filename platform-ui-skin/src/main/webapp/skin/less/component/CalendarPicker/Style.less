@@ -20,6 +20,8 @@
 		text-align: center;
 		position: relative;
 		padding: 8px 10px;
+		background-color: @uicalendarComponentTitleBackground;
+		border: @uicalendarComponentBorder;
 		span {
 			font-size: @baseFontSize;
 			display: block;
@@ -50,6 +52,7 @@
 	}
 	h5.title, h5.title span a {
 		color: @calComponentWidthTitleColor;
+		background-color: @uiCalendarComponentTitleBackground;
 	}
 
 	table {
@@ -63,7 +66,7 @@
 		padding: 0 9px;
 		margin: 2px 0;
 		font-size: @baseFontSize - 2;
-
+		background-color: @weekListBackground;
 	}
 
 	table.weekDays{
@@ -89,6 +92,7 @@
 					border: 1px solid @borderColor;
 					.border-radius(@borderRadiusSmall);
 					font-weight: bold;
+					background-color: @calComponentTodayBackground;
 				}
 				.selected {
 					background-color: @calComponentDaySelectedBackground;
