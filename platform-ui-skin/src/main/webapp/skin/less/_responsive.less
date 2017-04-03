@@ -335,7 +335,7 @@
         .uiPopupWrapper {
             .uiPopup {
                 .translate(0, 0);
-                margin: 50px auto!important;
+                margin: @margin auto!important;
                 max-width: 90%!important;
             }
         }
@@ -352,7 +352,7 @@
         bottom: auto!important;
         z-index: 10000!important;
         position: relative!important;
-        margin: 50px auto 20px!important;
+        margin: @margin auto 20px!important;
         width: 560px!important;
         .translate(0px, -25%);
         .transition(transform 0.3s ease-out 0s);
@@ -606,7 +606,7 @@
 /* Landscape phone to portrait tablet */
 @media (min-width: 768px) and (max-width: 1024px) {
     #UIMaskWorkspace .UIMaskWorkspace{
-        margin-top: 50px!important;
+        margin-top: @margin!important;
     }
 
     body .OfficeMiddleTDContainer + .OfficeRightTDContainer {
@@ -721,11 +721,11 @@
         }
         .UIToolbarContainer .NormalContainerBlock .ToolbarContainer .TRContainer,
         .UIToolbarContainer .NormalContainerBlock .ToolbarContainer {
-            height:50px!important;//1.2
+            height:@margin!important;//1.2
         }
         .UIToolbarContainer .uiDropdownWithIcon > a {
-            line-height: 50px;//1.2
-            height: 50px;
+            line-height: @margin;//1.2
+            height: @margin;
         }
         .toggle-left-bar {
             margin-right: 15px;
