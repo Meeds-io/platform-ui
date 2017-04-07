@@ -652,7 +652,7 @@
   <portlet-skin>
     <application-name>portal</application-name>
     <portlet-name>login</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
+    <skin-name>Default</skin-name>
     <css-path>/skin/css/platform/portlets/extensions/login.css</css-path>
   </portlet-skin>
 
@@ -661,7 +661,7 @@
   <portlet-skin>
     <application-name>portal</application-name>
     <portlet-name>SoftwareRegistration</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
+    <skin-name>Default</skin-name>
     <css-path>/skin/css/platform/portlets/extensions/registration.css</css-path>
   </portlet-skin>
 
