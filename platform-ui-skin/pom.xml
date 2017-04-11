@@ -31,9 +31,32 @@
     <packaging>war</packaging>
     <name>eXo PLF:: Platform UI - Skin</name>
 
+    <!-- set the skin name -->
+    <properties>
+        <exo.skin.name>Default</exo.skin.name>
+        <exo.skin.display.name>eXoSkin</exo.skin.display.name>
+    </properties>
     <build>
         <finalName>${platform-ui-skin-final-name}</finalName>
         <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>add-source</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>${project.basedir}/src/main/webapp</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.lesscss</groupId>
                 <artifactId>lesscss-maven-plugin</artifactId>
@@ -58,12 +81,13 @@
                     <execution>
                         <id>core</id>
                         <configuration>
-                           <!-- SourceDirectory shouldn't exist and we should have as default the lesss folder in /src/main/less     -->
+                            <!-- SourceDirectory shouldn't exist and we should have as default the lesss folder in /src/main/less     -->
                             <sourceDirectory>${project.basedir}/src/main/webapp/skin/less</sourceDirectory>
                             <outputDirectory>${project.build.directory}/${project.build.finalName}/skin/css</outputDirectory>
                             <compress>false</compress>
                             <includes>
                                 <include>Core.less</include>
+                                <include>customStyle.less</include>
                                 <include>Portlets/UIOrganizationPortlet/Style.less</include>
                                 <include>Portlets/UITabbedDashboardPortlet/Style.less</include>
                                 <include>Portlets/SiteNavigationPortlet/Style.less</include>
@@ -121,8 +145,8 @@
                                 <include>ecms/skin/ecms-resources-dmsskin.less</include>
                                 <include>ecms/portlets/administration/ecms-administration.less</include>
                                 <include>ecms/portlets/explorer/ecms-explorer.less</include>
-								                <include>ecms/portlets/search/ecms-search.less</include>
-								                <include>ecms/portlets/fastcontentcreator/fast-content-creator.less</include>
+                                <include>ecms/portlets/search/ecms-search.less</include>
+                                <include>ecms/portlets/fastcontentcreator/fast-content-creator.less</include>
                                 <include>ecms/portlets/presentation/ecms-presentation-categorynavigationportlet.less</include>
                                 <include>ecms/portlets/presentation/ecms-presentation-contentlistviewerportlet.less</include>
                                 <include>ecms/portlets/presentation/ecms-presentation-singlecontentviewer.less</include>
@@ -182,7 +206,18 @@
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
                 <configuration>
-                  <packagingExcludes>skin/images/PSD/,skin/images/themes/blue/,skin/images/themes/green/,skin/images/themes/orange/,skin/images/themes/pink/,skin/images/themes/red/</packagingExcludes>
+                    <webResources>
+                        <resource>
+                            <directory>${project.basedir}/src/main/webapp/WEB-INF</directory>
+                            <targetPath>WEB-INF</targetPath>
+                            <includes>
+                                <include>gatein-resources.xml</include>
+                                <include>web.xml</include>
+                            </includes>
+                            <filtering>true</filtering>
+                        </resource>
+                    </webResources>
+                    <packagingExcludes>skin/images/PSD/,skin/images/themes/blue/,skin/images/themes/green/,skin/images/themes/orange/,skin/images/themes/pink/,skin/images/themes/red/</packagingExcludes>
                 </configuration>
             </plugin>
         </plugins>
