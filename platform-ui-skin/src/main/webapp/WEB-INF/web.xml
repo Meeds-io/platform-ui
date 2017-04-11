@@ -26,7 +26,7 @@ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
-  <display-name>eXoSkin</display-name>
+  <display-name>${exo.skin.display.name}</display-name>
 
   <absolute-ordering/>
 
