@@ -29,7 +29,7 @@
   </parent>
   <groupId>org.exoplatform.platform-ui</groupId>
   <artifactId>platform-ui</artifactId>
-  <version>5.0.x-enterprise-skin-SNAPSHOT</version>
+  <version>5.0.0-enterprise-skin-M03</version>
   <packaging>pom</packaging>
   <name>eXo PLF:: Platform-UI</name>
   <modules>
@@ -39,7 +39,7 @@
   <scm>
     <connection>scm:git:git://github.com/exoplatform/platform-ui.git</connection>
     <developerConnection>scm:git:git@github.com:exoplatform/platform-ui.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>5.0.0-enterprise-skin-M03</tag>
     <url>https://github.com/exoplatform/platform-ui</url>
   </scm>
   <properties>
