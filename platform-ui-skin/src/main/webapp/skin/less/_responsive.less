@@ -325,6 +325,12 @@
         z-index: 99999!important;
     }
 
+    // do not display grey mask in edit page/layout mode
+    .UIEditInlineWS .uiPopupWrapper {
+        position: relative;
+        overflow: initial;
+    }
+
     .wiki-body {
         .uiPopupWrapper {
             .uiPopup {
