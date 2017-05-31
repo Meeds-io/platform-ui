@@ -28,6 +28,10 @@ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
 
   <display-name>${exo.skin.display.name}</display-name>
 
+  <listener>
+    <listener-class>org.exoplatform.container.web.PortalContainerConfigOwner</listener-class>
+  </listener>
+
   <absolute-ordering/>
 
 </web-app>
