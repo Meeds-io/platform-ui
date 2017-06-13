@@ -503,6 +503,16 @@
 				}
 			}
 		}
+		.actionCommentBar {
+        	display: block;
+
+        	ul {
+        		margin: 0 0 10px 25px;
+        		li {
+        			list-style-type: disc;
+        		}
+        	}
+        }
 		.description {
 			img {
 				margin: 0 10px 10px 0;
@@ -540,6 +550,32 @@
 
 			}
 		}
+
+		.actionCommentBar  {
+        			.tooltip-inner {
+        				white-space: nowrap;
+        			}
+        			.tooltip.bottom {
+        				margin-left: -10px;
+        			}
+        			.statusAction {
+        				list-style: none;
+        				margin: 0;
+        				li {
+        					display: inline;
+        					a:hover {
+        						color: @linkColorHover;
+        					}
+        				}
+        				.likeLink {
+        				    color: #2f5e92;
+                            font-family: "Helvetica Neue Bold",Helvetica,Lucida,Arial,sans-serif;
+                            font-weight: bold;
+                            word-wrap: break-word;
+        				}
+
+        			}
+        		}
 
 		.listLikedBox {
 			padding: 16px 0px 16px 16px;
