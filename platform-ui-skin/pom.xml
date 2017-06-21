@@ -178,7 +178,7 @@
                                 <include>social/portlets/uiSocialExtensionLogoPortlet/Style.less</include>
                                 <include>social/portlets/uiSocialNavigationPortlet/Style.less</include>
                                 <include>social/portlets/uiSpaceAccessPortlet/Style.less</include>
-                                <include>social/portlets/uiSpaceActivityStreamPortlet/Style.less</include>
+                                <include>social/portlets/uiActivityStreamPortlet/Style.less</include>
                                 <include>social/portlets/uiSpaceMenuPortlet/Style.less</include>
                                 <include>social/portlets/uiSpaceNavigationPortlet/Style.less</include>
                                 <include>social/portlets/uiSpaceSettingPortlet/Style.less</include>

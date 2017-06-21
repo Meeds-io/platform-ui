@@ -276,17 +276,109 @@
 				}
 		}
 	  	#documentPreviewContent {
-			position: relative;
-			margin-right: 390px;
+            position: relative;
+            margin-right: 390px;
+            background-color: white;
 
 			div.loading {
-				width: 100%;
+               margin: auto 0;
+               width: 100%;
+               position: absolute;
+               height: 100%;
+               background: white;
 
 				i {
-					margin: 0 auto;
-					display: block;
+                  position: absolute;
+                  top: 45vh;
+                  left: 50%;
 				}
 			}
+            .EmptyDocumentPreview {
+                text-align: center;
+                display: table;
+                width: 100%;
+                box-sizing: border-box;
+                padding: 20px;
+
+                > .message {
+                    height: 100%;
+                    width: 100%;
+                    box-sizing: border-box;
+                    text-align: center;
+                    border: 1px solid #000;
+                    display: table-cell;
+                    vertical-align: middle;
+                    white-space: nowrap;
+
+                    > .content {
+                      line-height: 40px;
+                    }
+                }
+            }
+            
+            #NavCommands {
+                margin: 0 auto;
+                padding: 10px 0;
+                white-space: nowrap;
+                width: 100%;
+                background: white;
+
+                > div {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+            
+                > .arrowPrevious,
+                > .arrowNext {
+                    min-width: 30%;
+                    width: 30%;
+            
+                    > span{
+                        width: 28px;
+                        height: 28px;
+                        line-height: 28px;
+                        background: black;
+                        border-radius: 50%;
+                        display: inline-block;
+                        cursor: pointer;
+                        text-align: center;
+                        vertical-align: middle;
+                    }
+                }
+                .disabled > span {
+                    background: gray;
+                }
+                > .arrowPrevious {
+                    text-align: right;
+                }
+                > .arrowNext {
+                    text-align: left;
+                }
+                > .fileTitle {
+                    text-align: center;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    width: 40%;
+                    max-width: 40%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    box-sizing: border-box;
+                }
+                > .arrowNext > span:before {
+                    font-family: "PLF-FONT-ICONS";
+                    content: "\e903";
+                    font-size: 2em;
+                    font-weight: bolder;
+                    color: white;
+                }
+                > .arrowPrevious > span:before {
+                    font-family: "PLF-FONT-ICONS";
+                    content: "\e901";
+                    font-size: 2em;
+                    font-weight: bolder;
+                    color: white;
+                }
+            }
 	  	}
 		.EmbedHtml > a > img {
 			width: auto;
@@ -295,6 +387,9 @@
 			position: absolute;
 			top: 50%;
             .translate(-50%, -50%);
+		}
+		#NavCommands {
+            background: white;
 		}
 		.fileContent {
 			.title {
@@ -305,14 +400,15 @@
 				border-radius: 3px;
 				overflow-y: auto;
 				margin-bottom: 0px;
-				height: 580px;		
+				height: 580px;
+                box-sizing: border-box;
 			}
 			.navigationContainer {
 				border: none;
 				margin-bottom: 0;
 				overflow: hidden;
 				position: relative;
-				background: @baseColor;
+                background: white;
 				.title {
 					display:  none;
 					visibility: hidden;
@@ -405,7 +501,7 @@
 		  	text-align: right;
 		  	margin-right: 390px;
 		  	padding: 5px 0px 0 0;
-		  	.openBtn, .downloadBtn, .showComments {
+		  	.openBtn, .downloadBtn, .openDocBtn, .showComments {
 			    float: right;
 			  	padding-left: 15px;
 			}
@@ -453,6 +549,13 @@
 @media (max-width: 767px) {
 	.maskLayer {
 		.uiDocumentPreview {
+		    #documentPreviewContent {
+                .EmptyDocumentPreview > .message {
+                    .content {
+                        white-space: normal;
+                    }
+                }
+            }
 			.commentArea {
 				overflow-y: auto;
 				.uiContentBox {
@@ -531,7 +634,9 @@
 	}
 
 	.maskLayer .uiDocumentPreview .fileContent {
-		margin: 0
+		margin: 0;
+        background: white;
+        border-radius: 5px;
 	}
 
 	.maskLayer .uiDocumentPreview {
@@ -666,7 +771,7 @@
 
 	.uiDocumentPreview, .document-preview-default, .document-preview-content-file {
 		.uiContentBox {
-			background: none;
+            background: white;
 		}
 		.previewBtn {
 			margin-right: 0px;
