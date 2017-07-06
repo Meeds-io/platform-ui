@@ -2,6 +2,7 @@
 @import "../../mixins.less";
 @import "Sprites/Style.less";
 @import "uiToolbarContainer/Style.less";
+@import "perfect-scrollbar.less";
 // -------------------------
 .TDContainer{
 	vertical-align: top;
@@ -22,7 +23,7 @@
 	background: @contentBackground;
 }
 
-.RightBodyTDContainer, .LeftNavigationTDContainer {
+body .RightBodyTDContainer {
     padding-top: @navbarHeight;
     > div {
       min-height: calc(~"100vh" - @navbarHeight);
@@ -111,4 +112,230 @@
 	.OfficeMiddleTDContainer {
 	    padding: 20px !important;
 	}
+}
+
+/* humberger menu */
+.toggle-left-bar {
+  width: 25px;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+
+  span {
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    background: #626262;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+
+    &:nth-child(1) {
+      top: 0px;
+    }
+    &:nth-child(2), &:nth-child(3) {
+      top: 9px;
+    }
+    &:nth-child(4) {
+      top: 18px;
+    }
+  }
+}
+.expand-left-bar .toggle-left-bar {
+  span {
+    &:nth-child(1) {
+      top: 18px;
+      width: 0%;
+      left: 50%;
+    }
+    &:nth-child(2) {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+    &:nth-child(3) {
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+    &:nth-child(4) {
+      top: 18px;
+      width: 0%;
+      left: 50%;
+    }
+  }
+}
+
+.uiCompanyNavigationPortlet .toggle-left-bar {
+  display: none;
+}
+.UIToolbarContainer .toggle-left-bar span {
+  background: white;
+}
+@media (min-width: 1025px) {
+  .UIToolbarContainer .toggle-left-bar {
+    display: none;
+  }
+
+  .uiCompanyNavigationPortlet {
+    .toggle-left-bar {
+      display: inline-block;
+    }
+  }
+  .LeftNavigationTDContainer {
+    overflow: hidden;
+    transition: width 0.3s;
+  }
+  #LeftNavigation {
+    width: 250px;
+    position: fixed;
+    transition: width 0.3s;
+  }
+
+  .UIToolbarContainer {
+    left: 250px;
+    right: 0;
+    width: auto;
+    transition: left 0.31s;
+  }
+  .uiCompanyNavigationPortlet .uiCompanyNavigations {
+    > li > a {
+      text-overflow: clip !important;
+    }
+  }
+
+  .uiSpaceNavigationPortlet .uiIconEcmsViewDocument {
+    display: inline !important;
+    font-size: 16px;
+    margin-left: 9px;
+  }
+
+  .collapse-left-bar {
+    .UIToolbarContainer {
+      left: 65px;
+      transition: left 0.3s;
+    }
+    td.LeftNavigationTDContainer {
+      width: 65px;
+      transition: width 0.31s;
+    }
+    div#LeftNavigation {
+      width: 65px;
+      position: fixed;
+    }
+    .uiCompanyNavigationPortlet {
+      h5.title {
+        vertical-align: middle;
+        > span {
+          display: none;
+        }
+      }
+      .uiCompanyNavigations {
+        span {
+          display: none;
+        }
+      }
+    }
+
+    .uiSpaceNavigationPortlet {
+      h5.title {
+        a {
+          display: none;
+        }
+      }
+      .spaceCont {
+        .searchInput {
+          input {
+            display: none;
+          }
+        }
+      }
+      ul.spaceNavigation {
+        max-height: none;
+        .spaceItemSelected  a {
+          line-height: 28px;
+        }
+        .spaceItem {
+          padding: 2px 22px !important;
+        }
+        span {
+          display: none;
+        }
+        .spaceIcon {
+          height: 30px;
+          text-overflow: clip !important;
+          > img {
+            width: 20px;
+            height: 20px;
+            max-width: 100px;
+            line-height: 30px;
+            max-height: 100px;
+          }
+        }
+      }
+      div.joinSpace {
+        border: none;
+        overflow: hidden;
+        white-space: nowrap;
+        > a {
+          padding-left: 24px;
+          > i.uiIconPLFMan {
+            margin-right: 1000px;
+          }
+        }
+      }
+    }
+
+    #LeftBreadCrumbNavigationPortlet {
+      display: none;
+    }
+
+    .uiGroupsNavigationPortlet {
+      h5 {
+        text-overflow: clip;
+        .uiIconGadgets {
+          display: inline !important;
+          font-size: 16px;
+          margin-left: 10px;
+        }
+      }
+      h5 > span, a > .nodeLabel, .uiIconMiniArrowDown {
+        display: none;
+      }
+      a > i {
+        background-size: cover;
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+      }
+      .groupNavigation {
+        padding: 5px 0 13px 0;
+        .groupIcon {
+          margin-left: 14px !important;
+          text-overflow: clip !important;
+        }
+        .childrenContainer {
+          display: block !important;
+        }
+      }
+    }
+  }
 }

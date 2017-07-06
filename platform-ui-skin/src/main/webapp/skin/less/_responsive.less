@@ -19,7 +19,7 @@
     display: none;
 }
 
-.mobile-visible, .mask-layer-right  {
+.mask-layer-right  {
     display: none;
 }
 
@@ -37,13 +37,13 @@
     margin-right:5px;
     vertical-align: middle;
     width: 28px;
-    height: 21px;
+    height: 24px;
     outline: medium none !important;
     cursor: pointer;
 
     .uiIconMenu {
        color: @toolbarDarkLinkColor;
-       font-size: 24px;
+       font-size: 21px;
     }
     &:hover {
         i {color: @toolbarDarkLinkColor; }
@@ -170,9 +170,6 @@
     #Officebody > div > div > div > .UITableColumn {
         background: @contentBackground;
     }
-    .open-left-bar .toggle-left-bar {
-        margin-left: -25px;
-    }
 
     .UIToolbarContainer #HomeLink {
         overflow: hidden;
@@ -232,7 +229,7 @@
         }
     }
 
-    .toggle-left-bar {
+    .UIToolbarContainer .toggle-left-bar {
         display: inline-block;
     }
 
@@ -709,9 +706,6 @@
             line-height: @margin;//1.2
             height: @margin;
         }
-        .toggle-left-bar {
-            margin-right: 15px;
-        }
 
         .UIToolbarContainer #HomeLink {
             padding: 14px 14px 0;//1.2
@@ -999,9 +993,6 @@
                 }
             }
         }
-    }
-    .open-left-bar .toggle-left-bar {
-        margin-left: -22px;
     }
     .UIToolbarContainer .NormalContainerBlock .ToolbarContainer.active .TRContainer > div.SearchPortletTDContainer {
         padding:0!important;
