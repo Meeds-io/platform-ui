@@ -26,7 +26,7 @@
     <parent>
         <artifactId>platform-ui</artifactId>
         <groupId>org.exoplatform.platform-ui</groupId>
-        <version>5.0.x-enterprise-skin-SNAPSHOT</version>
+        <version>5.0.0-enterprise-skin-M14</version>
     </parent>
 
     <artifactId>skin-addon-packaging</artifactId>
