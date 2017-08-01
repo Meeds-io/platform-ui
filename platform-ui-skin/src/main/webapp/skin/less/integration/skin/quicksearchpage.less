@@ -7,9 +7,24 @@
   margin-top: 6px;
   margin-left: 3px;
   display:none;
-  z-index: 1001;
+  .result-container{
+    max-height: 70vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .seeAllmsg {
+    background: @baseBackground;
+    border: 1px solid @borderColor;
+    text-align: center;
+    padding: 5px 0;
+    a {
+      color: @baseColor;
+      font-weight: bold;
+    }
+  }
   .uiGrid {
     margin: 0;
+    border-bottom: none;
     tr th {
       border: none;
       text-align: right;
@@ -100,7 +115,6 @@
    	}
   }
 }
-
 .uiEDWidth70, .uiEDWidth70 select.uiResultPerPage, select.uiResultPerPage {
 	width: 70px;
 }
