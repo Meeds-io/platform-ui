@@ -1933,12 +1933,6 @@ blockquote:after {
         margin-right: 10px;
         max-width: 30%;
     }
-    //| S_AS_05 | P1 |
-    .activityStream .pull-left.statusAction {
-        a {
-            font-size: 0;
-        }
-    }
 	.introBox {
 		embed,object,iframe,video {
 			max-width: 100%;
@@ -2058,14 +2052,38 @@ blockquote:after {
 	display:none;
 }
 
-.likeCommentBackground i {
-	background:#2f5e92;
-	border-radius:12px;
-	padding: 5px;
+.likeCommentBackground {
+	i.uiIconThumbUp {
+		&:before {
+			content: none;
+		}
+
+		&.icon-thumb-drawn {
+			display: inline;
+			top: -2px;
+			.path1:before {
+				content: "\e901";
+				color: rgb(40, 77, 117);
+			}
+			.path2:before {
+				content: "\e906";
+				margin-left: -1.0361328125em;
+				color: rgb(117, 143, 181);
+			}
+		}
+	}
+
+	&:hover, &:hover i {
+		color:#fff !important;
+	}
 }
 
-.likeCommentBackground:hover, .likeCommentBackground:hover i{
-	color:#fff !important;
+@media (min-width: 481px) and (max-width: 767px) {
+	.likeCommentBackground {
+		i.uiIconThumbUp.icon-thumb-drawn {
+			top: -5px;
+		}
+	}
 }
 
 @media (max-width: 767px) {
