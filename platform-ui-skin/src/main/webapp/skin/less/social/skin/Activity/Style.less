@@ -2002,73 +2002,78 @@ blockquote:after {
 // Like Comment Popup
 
 #likersDetail {
-    img {
-            border-radius: 3px;
-            max-height: 34px;
-            max-width: 34px;
-    }
+	.likerAvatar {
+		width: 34px;
+		img {
+			border-radius: 3px;
+			max-height: 34px;
+			max-width: 34px;
+		}
+	}
 
     .likerName {
-                max-width: 100px;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
+		max-width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+		padding-left: 8px;
     }
 
     .likeClick {
-               /* padding-left:20%;*/
+		width: 1%;
     }
 
     td + td a {
-                font-weight: bold;
+        font-weight: bold;
     }
 
     td {
-            padding-bottom:10px;
+        padding-bottom:10px;
+		.uiActionLike {
+			text-align:right;
+		}
+		.uiActionLike .btn {
+			width:140px;
+		}
     }
-
-    td .uiActionLike {
-            text-align:right;
-    }
-
-    td .uiActionLike .btn {
-            width:140px;
-    }
-
 }
 
 #likersPopup{
 	display: block;
     position: relative;
-    width: 330px;
+    width: 560px;
     margin: auto;
     top: 40%!important;
 }
 
-
-
 #likersPopupMask {
-        position:fixed;
-        top:0;
-        left:0;
-        background-color: rgba(0, 0, 0, 0.49);
-        z-index:10;
-        width:100%;
-        height:100%;
-        filter: alpha(opacity=30);
-        display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	background-color: rgba(0, 0, 0, 0.49);
+	z-index:10;
+	width:100%;
+	height:100%;
+	filter: alpha(opacity=30);
+	display:none;
 }
 
 .likeCommentBackground i {
-		background:#2f5e92;
-		border-radius:12px;
-		padding: 5px;
+	background:#2f5e92;
+	border-radius:12px;
+	padding: 5px;
 }
 
 .likeCommentBackground:hover, .likeCommentBackground:hover i{
-		color:#fff !important;
+	color:#fff !important;
 }
 
-
+@media (max-width: 767px) {
+	#likersDetail {
+		.likerName {
+			max-width: 100px;
+		}
+	}
+}
 
 
