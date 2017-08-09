@@ -2045,46 +2045,46 @@ blockquote:after {
 // Like Comment Popup
 
 #likersDetail {
-	.likerAvatar {
-		width: 34px;
-		img {
-			border-radius: 3px;
-			max-height: 34px;
-			max-width: 34px;
+	.liker {
+		clear: both;
+		height: 34px;
+		line-height: 34px;
+		padding: 10px 0px;
+
+		.likerAvatar {
+			float: left;
+			width: 34px;
+			img {
+				border-radius: 3px;
+				max-height: 34px;
+				max-width: 34px;
+			}
+		}
+
+		.likerName {
+			display: inline-block;
+			width: 300px;
+			height: 100%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			font-weight: bold;
+			padding-left: 8px;
+		}
+
+		.likeClick {
+			float: right;
+			.btn {
+				width: 140px;
+			}
 		}
 	}
-
-    .likerName {
-		max-width: 200px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-		padding-left: 8px;
-    }
-
-    .likeClick {
-		width: 1%;
-    }
-
-    td + td a {
-        font-weight: bold;
-    }
-
-    td {
-        padding-bottom:10px;
-		.uiActionLike {
-			text-align:right;
-		}
-		.uiActionLike .btn {
-			width:140px;
-		}
-    }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 480px) {
 	#likersDetail {
 		.likerName {
-			max-width: 100px;
+			max-width: 90px;
 		}
 	}
 }
