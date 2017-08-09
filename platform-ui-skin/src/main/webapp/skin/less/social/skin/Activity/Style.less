@@ -552,64 +552,6 @@
 
 			}
 		}
-
-		.actionCommentBar  {
-        			.tooltip-inner {
-        				white-space: nowrap;
-        			}
-        			.tooltip.bottom {
-        				margin-left: -10px;
-        			}
-        			.statusAction {
-        				list-style: none;
-        				margin: 0;
-        				li {
-        					display: inline;
-        					a:hover {
-        						color: @linkColorHover;
-        					}
-        				}
-
-        				@media (max-width: 767px){
-        				    .likeLink {
-        				        font: inherit !important;
-                            }
-                        }
-
-        				.likeLink {
-        				    color: #2f5e92;
-                            font-family: "Helvetica Neue Bold",Helvetica,Lucida,Arial,sans-serif;
-                            font-weight: bold;
-                            word-wrap: break-word;
-        				}
-
-        			}
-        		}
-
-		.listLikedBox {
-			padding: 16px 0px 16px 16px;
-			.listLiked {
-				margin-top: 10px;
-				a {
-					margin: 0 8px 8px 0;
-					display: inline-block;
-				}
-				.btn {
-					background: @primaryBackground;
-				    border: none;
-				    .border-radius(2px);
-				    box-shadow: none;
-				    color: @baseColorLight;
-				    font-size: 22px;
-				    padding: 0 0 10px;
-				    .size(36px, 36px);
-				    display:none;
-				}
-			}
-			p {
-				margin: 0;
-			}
-		}
 		.introBox  + .actionBar   {
 			border-top: none;
 		}
@@ -769,7 +711,6 @@
 					color: @linkColorHover;
 				}
 			}
-
         
 			.uiIconClose {
 				top: -1px;
@@ -811,6 +752,87 @@
 							overflow: hidden;
 						}
 					}
+				}
+			}
+
+			.actionCommentBar {
+				.tooltip-inner {
+					white-space: nowrap;
+				}
+				.tooltip.bottom {
+					margin-left: -10px;
+				}
+				.statusAction {
+					list-style: none;
+					margin: 0;
+					li {
+						display: inline;
+						a:hover {
+							color: @linkColorHover;
+						}
+					}
+
+					@media (max-width: 767px){
+						.likeLink {
+							font: inherit !important;
+						}
+					}
+
+					.likeLink {
+						color: #2f5e92;
+						font-family: "Helvetica Neue Bold",Helvetica,Lucida,Arial,sans-serif;
+						font-weight: bold;
+						word-wrap: break-word;
+					}
+
+					.likeCommentBackground {
+						color: @baseColorDark;
+
+						i.uiIconThumbUp {
+							&:before {
+								content: none;
+							}
+
+							&.icon-thumb-drawn {
+								display: inline;
+								top: -2px;
+								.path1:before {
+									content: "\e901";
+									color: rgb(40, 77, 117);
+								}
+								.path2:before {
+									content: "\e906";
+									margin-left: -1.0361328125em;
+									color: rgb(117, 143, 181);
+								}
+							}
+						}
+					}
+				}
+			}
+
+			.listLikedBox {
+				padding: 16px 0px 16px 16px;
+				.listLiked {
+					margin-top: 10px;
+					a {
+						margin: 0 8px 8px 0;
+						display: inline-block;
+					}
+					.btn {
+						background: @primaryBackground;
+						border: none;
+						.border-radius(2px);
+						box-shadow: none;
+						color: @baseColorLight;
+						font-size: 22px;
+						padding: 0 0 10px;
+						.size(36px, 36px);
+						display:none;
+					}
+				}
+				p {
+					margin: 0;
 				}
 			}
 		}
@@ -1438,6 +1460,27 @@ blockquote:after {
     }
 }
 
+#likersPopup {
+	display: block;
+	position: relative;
+	width: 560px;
+	margin: auto;
+	top: 40% !important;
+}
+
+#likersPopupMask {
+	position:fixed;
+	top:0;
+	left:0;
+	background-color: rgba(0, 0, 0, 0.49);
+	z-index:10;
+	width:100%;
+	height:100%;
+	filter: alpha(opacity=30);
+	display:none;
+}
+
+
 /* Responsive */
 
 @media (max-width: 480px) {
@@ -1483,11 +1526,18 @@ blockquote:after {
 			}
 		}
 	}
+
+	.activityStream {
+		.commentItem .actionCommentBar .likeCommentBackground {
+			i.uiIconThumbUp.icon-thumb-drawn {
+				top: -5px;
+			}
+		}
+	}
 }
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 1024px) {
-
 
     .activityStream .arrowLeft {
         display: none;
@@ -1958,7 +2008,6 @@ blockquote:after {
 // end 767
 
 
-
 @media (max-width: 480px) {
 	.activityStream .introBox .pull-left {
 		display: block;
@@ -2032,60 +2081,6 @@ blockquote:after {
     }
 }
 
-#likersPopup{
-	display: block;
-    position: relative;
-    width: 560px;
-    margin: auto;
-    top: 40%!important;
-}
-
-#likersPopupMask {
-	position:fixed;
-	top:0;
-	left:0;
-	background-color: rgba(0, 0, 0, 0.49);
-	z-index:10;
-	width:100%;
-	height:100%;
-	filter: alpha(opacity=30);
-	display:none;
-}
-
-.likeCommentBackground {
-	i.uiIconThumbUp {
-		&:before {
-			content: none;
-		}
-
-		&.icon-thumb-drawn {
-			display: inline;
-			top: -2px;
-			.path1:before {
-				content: "\e901";
-				color: rgb(40, 77, 117);
-			}
-			.path2:before {
-				content: "\e906";
-				margin-left: -1.0361328125em;
-				color: rgb(117, 143, 181);
-			}
-		}
-	}
-
-	&:hover, &:hover i {
-		color:#fff !important;
-	}
-}
-
-@media (min-width: 481px) and (max-width: 767px) {
-	.likeCommentBackground {
-		i.uiIconThumbUp.icon-thumb-drawn {
-			top: -5px;
-		}
-	}
-}
-
 @media (max-width: 767px) {
 	#likersDetail {
 		.likerName {
@@ -2093,5 +2088,3 @@ blockquote:after {
 		}
 	}
 }
-
-
