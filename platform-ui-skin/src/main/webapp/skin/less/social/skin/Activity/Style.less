@@ -551,6 +551,31 @@
 
 			}
 		}
+
+		.listLikedBox {
+			padding: 16px 0px 16px 16px;
+			.listLiked {
+				margin-top: 10px;
+				a {
+					margin: 0 8px 8px 0;
+					display: inline-block;
+				}
+				.btn {
+					background: @primaryBackground;
+					border: none;
+					.border-radius(2px);
+					box-shadow: none;
+					color: @baseColorLight;
+					font-size: 22px;
+					padding: 0 0 10px;
+					.size(36px, 36px);
+					display:none;
+				}
+			}
+			p {
+				margin: 0;
+			}
+		}
 		.introBox  + .actionBar   {
 			border-top: none;
 		}
@@ -807,31 +832,6 @@
 							}
 						}
 					}
-				}
-			}
-
-			.listLikedBox {
-				padding: 16px 0px 16px 16px;
-				.listLiked {
-					margin-top: 10px;
-					a {
-						margin: 0 8px 8px 0;
-						display: inline-block;
-					}
-					.btn {
-						background: @primaryBackground;
-						border: none;
-						.border-radius(2px);
-						box-shadow: none;
-						color: @baseColorLight;
-						font-size: 22px;
-						padding: 0 0 10px;
-						.size(36px, 36px);
-						display:none;
-					}
-				}
-				p {
-					margin: 0;
 				}
 			}
 		}
