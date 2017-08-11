@@ -451,9 +451,6 @@
                 vertical-align: middle;
 
             }
-            [class^="uiIcon"] {
-                margin-left: 5px;
-            }
             .uiIconLink {
                 top: -1px;
             }
@@ -739,9 +736,6 @@
 			.uiIconClose {
 				top: -1px;
 			}
-            [class^="uiIcon"] {
-                margin-left: 5px;
-            }
             .uiIconClose + .viewComment {
 				right: 25px;
 			}
@@ -796,41 +790,14 @@
 						}
 					}
 
-					@media (max-width: 767px){
-						.likeCommentLink {
-							font: inherit !important;
-						}
-					}
-
-					.likeCommentLink {
-						color: #2f5e92;
-						font-family: "Helvetica Neue Bold",Helvetica,Lucida,Arial,sans-serif;
-						font-weight: bold;
-						word-wrap: break-word;
-					}
-
 					.likeCommentCount {
-						color: @baseColorDark;
+						color: @textLightColor;
+						font-weight: bold;
+						margin-left: 3px;
+					}
 
-						i.uiIconThumbUp {
-							&:before {
-								content: none;
-							}
-
-							&.icon-thumb-drawn {
-								display: inline;
-								top: -2px;
-								.path1:before {
-									content: "\e901";
-									color: rgb(40, 77, 117);
-								}
-								.path2:before {
-									content: "\e906";
-									margin-left: -1.0361328125em;
-									color: rgb(117, 143, 181);
-								}
-							}
-						}
+					.commentLiked {
+						color: @primaryColor;
 					}
 				}
 			}
