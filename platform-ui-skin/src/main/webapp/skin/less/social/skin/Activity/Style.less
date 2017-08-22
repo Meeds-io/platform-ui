@@ -2029,8 +2029,41 @@ blockquote:after {
 
 		.likeClick {
 			float: right;
+		}
+	}
+}
+
+@media (min-width: 481px) {
+	#likersDetail {
+		.likeClick {
 			.btn {
 				width: 140px;
+				span {
+					display: block;
+				}
+				i {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+	#likersDetail {
+		.likerName {
+			max-width: 270px;
+		}
+
+		.likeClick {
+			.btn {
+				width: 180px;
+				span {
+					display: block;
+				}
+				i {
+					display: none;
+				}
 			}
 		}
 	}
@@ -2039,7 +2072,20 @@ blockquote:after {
 @media (max-width: 480px) {
 	#likersDetail {
 		.likerName {
-			max-width: 90px;
+			max-width: 200px;
+		}
+
+		.likeClick {
+			.btn {
+				width: 20px;
+				padding: 6px 10px;
+				span {
+					display: none;
+				}
+				i {
+					display: block;
+				}
+			}
 		}
 	}
 }
