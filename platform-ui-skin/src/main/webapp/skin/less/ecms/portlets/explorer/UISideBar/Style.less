@@ -160,12 +160,26 @@
 		margin: -3px;
 	}
 
-	.tagContainer a {
+	.tagContainer div {
 		color: @baseColorDark;
-		margin: 0px 15px 7px 0px;
+        margin: 3px;
+        padding: 3px 7px;
+        border-radius: 5px;
+        white-space: nowrap;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 15px;
+        display: inline;
+        cursor: pointer;
 
 		&:hover {
 		color: @linkColorHover;
+		}
+
+		&.selected {
+		  color: @baseBackground;
+		  background-color: @baseColorDark;
 		}
 	}
 }
