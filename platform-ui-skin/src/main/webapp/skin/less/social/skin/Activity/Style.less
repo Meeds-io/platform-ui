@@ -325,6 +325,7 @@
 	   display: inline-block;
 	   white-space: nowrap;
 	   overflow: hidden;
+	   text-overflow: ellipsis;
 	   width: 100%;
 	   .spaceName .uiIconArrowRightMini {
 		font-size: 8px;
@@ -339,12 +340,12 @@
 	    .box-shadow(0px 0px 1px rgba(13px, 13px, 13px, 0.27));
 	  }
 	  .spaceName{
-		max-width: 50%;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
-		display: inline-block;
 		vertical-align: middle;
+		max-width: none;
+		display: inline;
 	  }
 	  .ownerName{
 		max-width: 50%;
@@ -1968,10 +1969,21 @@ blockquote:after {
 
 
 @media (max-width: 480px) {
-	.activityStream .introBox .pull-left {
-		display: block;
-		float: none;
-		margin: 0 0 10px 0 !important;
+	.activityStream {
+		.introBox .pull-left {
+			display: block;
+			float: none;
+			margin: 0 0 10px 0 !important;
+		}
+		.author {
+			.ownerName {
+				max-width: 40%;
+				padding-left: 3px;
+			}
+			.owner {
+				padding-left: 3px;
+			}
+		}
 	}
     .fileActivity .introBox .isPreviewable .PlayerContent,
     .fileActivity .introBox .isPreviewable .PlayerContianer {
