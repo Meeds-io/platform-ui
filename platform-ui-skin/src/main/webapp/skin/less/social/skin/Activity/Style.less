@@ -315,6 +315,9 @@
 	,.author span,.introBox .text .infoFile :not(.versionFile),.linkSources span,.listLikedBox  p,.theContent a,.theContent span {
 		color: @baseColorLight;font-size: 12px;
 	}
+  .statusAction.pull-left a.subComment {
+    color: @linkColor;
+  }
 	.heading ,.description,.actionBar {
 		padding: 16px;
 	}
@@ -344,8 +347,8 @@
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		vertical-align: middle;
-		max-width: none;
 		display: inline;
+		max-width: none;
 	  }
 	  .ownerName{
 		max-width: 50%;
@@ -482,6 +485,9 @@
 				border: none;
 				border-top: 1px solid @borderColor;
 			}
+            > .inputContainer {
+                padding: 15px;
+            }
 		}
 		.commentBlockBoundNone {
 			display: none;
@@ -506,7 +512,7 @@
 			ul {
 				height:25px;
 				line-height:25px;
-				margin: 0 0 10px 25px;
+				margin: 0;
 				li {
 					list-style-type: disc;
 				}
@@ -707,105 +713,128 @@
 			&.focus {
 				background-color: @primaryBackgroundLight;
 			}
+			&:last-child {
+        padding-bottom: 10px;
+			}
 		}
-		.commentItem {
-			position: relative;
-			&+ .commentItem {
-				margin: 15px 0 0 0;
+    .k {
+      padding-left: 45px;
+      
+      > div {
+        padding-left: 5px;
+      }
+    }
+  }
+  .subCommentBlock {
+    margin-left: 45px;
+  }
+	.subCommentShowAll {
+    margin: 0 0 0 45px;
+    padding: 0;
+	}
+	.subCommentShowAllLink {
+    cursor: pointer;
+	}
+	.commentItem {
+		position: relative;
+		&+ .commentItem {
+			margin: 15px 0 0 0;
+		}
+		.ContentBlock {
+			 word-wrap: break-word;
+		}
+		.actLink {
+			position: absolute;
+			right: -10px;
+			top: 0px;
+			display:none;
+			.tooltip {
+				-moz-pointer-events: none;
+				-webkit-pointer-events: none;
+				-ms-pointer-events: none;
+				pointer-events: none;
 			}
-			.ContentBlock {
-				 word-wrap: break-word;
+		}
+		.uiIconClose ,.viewComment,.uiIconLink{
+			&:hover {
+				color: @linkColorHover;
 			}
-			.actLink {
-				position: absolute;
-				right: -10px;
-				top: 0px;
-				display:none;
-				.tooltip {
-					-moz-pointer-events: none;
-					-webkit-pointer-events: none;
-					-ms-pointer-events: none;
-					pointer-events: none;
+		}
+      
+		.uiIconClose {
+			top: -1px;
+		}
+          .uiIconClose + .viewComment {
+			right: 25px;
+		}
+		&:hover  .actLink{
+			display: block;
+		}
+      }
+		.commmentLeft {
+			float:left;
+			&+ .commentRight{
+				 margin-left: 45px;
+			}
+			.avatarXSmall {
+				.center-block();
+			}
+		}
+		.commentInputBox  {
+			padding: 3px 0 0 ;
+			.btn {
+				margin-top: 1%;
+				margin-right: 2%;
+				position: relative;
+  				z-index: 1;
+			}
+			.commentInput {
+				textarea {
+					 .size(28px,100%);
+					 resize: none;
+					 max-height: 28px;
 				}
-			}
-			.uiIconClose ,.viewComment,.uiIconLink{
-				&:hover {
-					color: @linkColorHover;
-				}
-			}
-        
-			.uiIconClose {
-				top: -1px;
-			}
-            .uiIconClose + .viewComment {
-				right: 25px;
-			}
-			&:hover  .actLink{
-				display: block;
-			}
-			.commmentLeft {
-				float:left;
-				&+ .commentRight{
-					 margin-left: 45px;
-				}
-				.avatarXSmall {
-					.center-block();
-				}
-			}
-			.commentInputBox  {
-				padding: 3px 0 0 ;
-				.btn {
-					margin-top: 1%;
-					margin-right: 2%;
-					position: relative;
-    				z-index: 1;
-				}
-				.commentInput {
-					textarea {
-						 .size(28px,100%);
-						 resize: none;
-						 max-height: 28px;
-					}
-					.cke {
-						.cke_contents {
-							overflow: hidden;
-						}
-					}
-				}
-			}
-
-			.actionCommentBar {
-				.tooltip-inner {
-					white-space: nowrap;
-				}
-				.tooltip.bottom {
-					margin-left: -10px;
-				}
-				.statusAction {
-					list-style: none;
-					margin: 0;
-					li {
-						display: inline;
-						a:hover {
-							color: @linkColorHover;
-						}
-					}
-
-					.likeCommentCount {
-						color: @textLightColor;
-						font-weight: bold;
-						margin-left: 3px;
-					}
-
-					.commentLiked {
-						color: @primaryColor;
+				.cke {
+					.cke_contents {
+						overflow: hidden;
 					}
 				}
 			}
 		}
-		.commentItemFirst {
-			padding-top: 15px;
+
+		.actionCommentBar {
+			.tooltip-inner {
+				white-space: nowrap;
+			}
+			.tooltip.bottom {
+				margin-left: -10px;
+			}
+			.statusAction {
+				list-style: none;
+				margin: 0;
+				li {
+					display: inline;
+					a:hover {
+						color: @linkColorHover;
+					}
+					&.separator {
+						padding:0 10px;
+					}
+				}
+
+				.likeCommentCount {
+					color: @textLightColor;
+					font-weight: bold;
+					margin-left: 3px;
+				}
+
+				.commentLiked {
+					color: @primaryColor;
+				}
+			}
 		}
+	.commentItemFirst {
+		padding-top: 15px;
 	}
 	.inputContainer {
 	  display: none;
@@ -1686,33 +1715,45 @@ blockquote:after {
 	.activityStreamStatus .arrowBottom {
 	  display: none;
 	}
-	.activityStream.block-activity .inputContainer {
-		.box-shadow(0 0 5px 0 rgba(0,0,0,0.3));
-		border-top: solid 1px #ccc;
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		background-color: #f0f0f0;
-		padding: 0;
-		width: 100%;
-
-		> div {
-			padding: 10px;
-		}
-
-		.commmentLeft {
-			display: none;
-			&+ .commentRight{
-				margin-left: 0px;
-			}
-		}
-	}
-	.activityStream .arrowLeft {
-		display: none;
-	}
-	.activityStream .boxContainer {
-		margin: 0;
-	}
+	.activityStream {
+	 .contentBox .commentBox .inputContainer {
+  		.box-shadow(0 0 5px 0 rgba(0,0,0,0.3));
+  		border-top: solid 1px #ccc;
+  		position: fixed;
+  		bottom: 0;
+  		left: 0;
+  		background-color: #f0f0f0;
+  		padding: 0;
+      margin: 0;
+  		width: 100%;
+      z-index: 1000;
+  
+      &.subCommentBlock {
+        padding-left: 0;
+        margin-left: 0;
+      }
+  
+  		> div {
+  			padding: 10px;
+  		}
+  
+  		.commmentLeft {
+  			display: none;
+  			&+ .commentRight{
+  				margin-left: 0px;
+  			}
+  		}
+  	}
+   .arrowLeft {
+  		display: none;
+  	}
+  	.boxContainer {
+  		margin: 0;
+  	}
+    &.block-activity {
+        padding-bottom: 50vh;
+    }
+  }
 	.uiActivityStream, .uiActivitiesLoader {
 	    background: none;
 	}
