@@ -69,39 +69,50 @@
 	margin: 0px 21px;
 }
 
-.uiLeftContainerArea {
-	width: 273px;
-	padding: 4px 0 4px 4px;
-	float:left;
-	overflow: auto;
-	.wikiBox {
-		h6.titleWikiBox {
-			a {
-				display: block;
-			    overflow: hidden;
-			    text-overflow: ellipsis;
-			    white-space: nowrap;
+.uiWikiMiddleArea{
+    display: flex;
+	padding-bottom: 10px;
+	.uiLeftContainerArea {
+		width: 25%;
+		height: 100%;
+		flex: 0 0 auto;
+		padding: 4px;
+		float:left;
+		overflow: auto;
+		&.collapsed {
+			display: none;
+		}
+		+ .resizeBar {
+			display: block;
+		}
+		.wikiBox {
+			h6.titleWikiBox {
+				min-height: 20px;
+				a {
+					display: block;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+			}
+			.uiTreeExplorer {
+				min-height: 50px;
+				margin: 0;
+				padding-bottom: 15px;
 			}
 		}
 	}
-}
 
-.uiRightContainerArea {
-	padding: 4px;
-	float:left;
-	overflow: auto;
-	position: absolute;
-	right: 0;
-}
-
-.uiWikiMiddleArea .UIWikiNavigationContainer {
-	padding: 8px 2px 0 2px;
-	visibility: '';
-	overflow: visible;
-}
-
-
-.uiWikiMiddleArea{
+	.uiRightContainerArea {
+		padding: 4px;
+		flex: 1 1 auto;
+        width: 0;
+	}
+	.UIWikiNavigationContainer {
+		padding: 8px 2px 0 2px;
+		visibility: '';
+		overflow: visible;
+	}
 	.uiWikiPageEditForm .uiWikiPageContainer {
 		margin-top: 10px;
 	}
@@ -119,6 +130,9 @@
 	#UISubmitToolBarBottom{
 		margin-top: 20px;
 	}
+    .UIWikiPageSettingContainer {
+      width: 100%;
+    }
 }
 
 *+html .uiWikiMiddleArea .uiWikiPageContainer {
@@ -151,7 +165,9 @@
 	}
 }
 .uiWikiBottomArea {
-	padding-top: 15px;
+    > div {
+        margin-top: 15px; 
+    }
 	.uiWikiPageVersionsList {
 		padding: 15px;
 	}
@@ -167,16 +183,17 @@
 		float: left;
 		width: 26px;
 		margin-top: 5px;
-
+		flex: 0 0 auto;
+		display: none;
 		.resizeBarContent {
 			width: 15px;
+			height: 100%;
 			cursor:col-resize;
 			position: relative;
 			margin-left: 5px;
 			&:hover {
 				border-right: solid 1px @borderColor;
-
-					.resizeButton {
+				.resizeButton {
 					display: block;
 				}
 			}
@@ -208,13 +225,31 @@
 		.resizeButton:hover .uiIconMiniArrowRight{
             color: @colorIconPrimary;
 		}
-		
-		.showLeftContent {
-			display: block;
-			border: 1px solid @borderColor;
-            border-left: none;
-			.border-radius(0px @borderRadiusSmall @borderRadiusSmall 0px);
-			float: left;
+	}
+	
+	.collapsed {
+		+ .resizeBar {
+			width: 20px;
+			.resizeBarContent {
+			  margin-left: 0;
+			}
+			&:hover {
+			cursor: default;
+			}
+			.resizeBarContent:hover {
+				border: none;
+				cursor: default;
+			}
+			.resizeButton {
+				display: block;
+				border: 1px solid @borderColor;
+				border-left: none;
+				.border-radius(0px @borderRadiusSmall @borderRadiusSmall 0px);
+				float: left;
+				.uiIconMiniArrowLeft:before {
+					
+				}
+			}
 		}
 	}
 
@@ -227,19 +262,6 @@
 		}
 	}
 	
-	.resizeNoneBorder {
-		width: 20px;
-		.resizeBarContent {
-          margin-left: 0;
-        }
-		&:hover {
-		cursor: default;
-		}
-		.resizeBarContent:hover {
-			border: none;
-			cursor: default;
-		}
-	}
 }
 
 .nonePaddingLeft {
@@ -523,36 +545,40 @@
 
 //responsive wiki
 @media (min-width: 769px) and (max-width: 1024px) {
-    .uiLeftContainerArea {
+    .uiWikiMiddleArea .uiLeftContainerArea {
         max-width: 35%;
     }
 }
 @media(max-width: 768px){
-    .uiLeftContainerArea {
+    .uiWikiMiddleArea .uiLeftContainerArea {
         max-width: none;
     }
     #UIWikiMiddleArea {
-       // height: auto !important;
-        overflow: visible !important;
+        display: block;
+        overflow: visible;
         #UITreeExplorer {
-            height: auto !important;
-            max-height: 300px!important;
+            height: auto ;
+            max-height: 300px;
             min-height: 200px
         }
     }
-    .uiRightContainerArea {
+    .uiWikiMiddleArea .uiRightContainerArea {
       overflow: visible;
       position: relative;
     }
-    body .uiWikiMiddleArea .resizeBar {
-        display: none!important;
-    }
-    .uiLeftContainerArea ,.uiRightContainerArea{
-        float: none !important;
-        height: auto !important;
-        margin: 10px 0;
-        width: 100% !important;;min-height: 200px
-    }
+	.uiWikiMiddleArea {
+		.uiLeftContainerArea + .resizeBar {
+			display: none;
+		}
+		.uiLeftContainerArea ,.uiRightContainerArea{
+			float: none;
+			height: auto;
+			margin: 10px 0;
+			width: 100% !important;
+			min-height: 200px;
+			box-sizing: border-box;
+		}
+	}
     .uiWikiPageControlArea {
         .uiPageToolBar {
             float: none; margin: 0;
