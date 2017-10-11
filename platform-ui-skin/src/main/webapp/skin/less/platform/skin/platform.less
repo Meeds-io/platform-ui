@@ -22,8 +22,11 @@
 	background: @contentBackground;
 }
 
-body .RightBodyTDContainer, body .LeftNavigationTDContainer {
+.RightBodyTDContainer, .LeftNavigationTDContainer {
     padding-top: @navbarHeight;
+    > div {
+      min-height: calc(~"100vh" - @navbarHeight);
+    }
 }
 
 .rounded-corners (@radius: 5px) {
