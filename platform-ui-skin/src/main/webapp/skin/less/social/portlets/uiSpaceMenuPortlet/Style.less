@@ -5,10 +5,8 @@
 	border-bottom: 1px solid @borderColor;
 	#gradient > .vertical(@primaryBackgroundLight, @primaryBackgroundHover);
 	.box-shadow(inset);
-	height: 90px;
 
 	.spaceMenuTab {
-		background: url("@{images-path}/social/skin/SpaceMenuPortlet/shadow.png") no-repeat left center;	
 		height: 90px;
 		border-bottom: none;
 
@@ -76,6 +74,10 @@
 		  	position: relative;
 		  	bottom: 8px;
 		}
+		> li > a .tabName,
+		> li > a > span {
+      font-size: 13px;
+    }
 	}
 
 	.nodeIconBg {
@@ -84,89 +86,382 @@
 	  width: 39px;
 	  background-position:center;
 	}
-}
 
-@media(max-width: 1024px) {
-	.uiSpaceMenu{
-		.spaceMenuTab{
-			> .active {
-		        background: none;
-		    }
-		    li.dropdown.open ul.dropdown-menu li.item a span {
-		        bottom: 12px;
-		    }
-		    > li > a,
-		    > li > a:hover,
-		    > .active > a,
-		    > .active > a:hover {
-		        .box-sizing(border-box);
-		        height: 90px;
-		        padding: 12px ;
-		        margin: 0 20px;
-		        .border-radius(0);
-		    }
-		    > li > a > .tabName {
-		        margin: 6px 0 0 ;
-		    }
-		}
-	    .dropdown span {
-	        margin-top: 6px;
-	    }
-	    [class^="uiIcon"] {
-	        font-size: 42px;
-	    }
-	    .dropdown-menu {
-            margin-top: -4px;
-            .border-radius(0);
-        }
-	}
-}
+  .userAvt {
+    position: relative;
 
-@media(max-width: 767px){
-    .uiSpaceMenu {
-        [class^="uiIcon"]{
-        	font-size: 35px;
-        }
-        .spaceMenuTab{
-        	> li > a > .tabName, > li > a > span {
-		        font-size: 13px;
-		    }
-        }
-        
+    a {
+      position: absolute;
+      top: 49px;
+      left: 15px;
+      display: inline-block;
+      width: 110px;
+      height: 111px;
     }
-}
+    [class^="uiIcon"] {
+        border: 1px solid #fff;
+        color: #fff;
+        padding: 3px;
+        border-radius: 20px;
+        display: none;
+        font-size: 18px;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    a:hover .uiIconCamera {
+      display: inline;
+      cursor: pointer;
+    }
+    .uiIconCamera {
+      top: 63%;
+      left: 61%;
+      font-size: 27px;
+    }
+    img {
+      width: 100px;
+      height: 100px;
+      margin-left: 15px;
+      margin-top: 50px;
+      border: 5px solid #ffffff;
+      .border-radius(5px 5px 5px 5px);
+      .box-shadow(0px 2px 4px rgba(0, 0, 0, 0.17));
+    }
+  }
 
-@media(max-width: 480px){
-    .uiSpaceMenu {
-    	height: 60px;
-        margin-top: -9px;
-        .spaceMenuTab{
-        	height: 60px;
-        	> li > a > .tabName, > li > a > span {
-		       display: none;
-		    }
-		    > li > a,
-		    > li > a:hover,
-		    > .active > a,
-		    > .active > a:hover {
-		        height: 60px;
-		        padding: 15px ;
-		        margin: 0 5px;
-		    }
-		    > li.item:last > a {
-		        margin-right: 0;
-		    }
-		    > li > a.dropdown-toggle {
-		        float: right ;
-		        padding: 12px 20px;
-		        margin-left: 0;
-		        margin-right: 0;
-		        display: inline-block;
-		    }
-        }
-	    [class^="uiIcon"] {
-	        font-size: 35px;
-	    }
+  .spaceMenuNavHeader {
+    padding-top: 50px;
+    padding-bottom: 40px;
+    background: url(/eXoSkin/skin/images/themes/default/social/skin/SpaceMenuPortlet/menuBg.png) no-repeat 90% center, -moz-linear-gradient(0deg,#99a1b6 0,#8c94a7 100%);
+    background: url(/eXoSkin/skin/images/themes/default/social/skin/SpaceMenuPortlet/menuBg.png) no-repeat 90% center, -webkit-linear-gradient(0deg,#99a1b6 0,#8c94a7 100%);;
+    background: url(/eXoSkin/skin/images/themes/default/social/skin/SpaceMenuPortlet/menuBg.png) no-repeat 90% center, -ms-linear-gradient(0deg,#99a1b6 0,#8c94a7 100%);;
+
+    > a [class^="uiIcon"] {
+        position: absolute;
+        border: 1px solid #fff;
+        color: #fff;
+        padding: 5px;
+        .border-radius(50%);
+        display: none;
+        font-size: 18px;
+        background-color: rgba(0, 0, 0, 0.2);
+        width: 30px;
+        height: 30px;
+        box-sizing: border-box;
+    }
+    .uiIconTrash {
+      top: 54px;
+      right: 44px;
+    }
+    .uiIconCamera {
+      top: 54px;
+      right: 6px;
+    }
+    &:hover .uiIconTrash,
+    &:hover .uiIconCamera {
+      display: inline;
+      cursor: pointer;
     }
 
+    h3 {
+      color: #ffffff;
+      margin-top: 0px;
+      font-weight: bold;
+      margin-left: 140px;
+      text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+    }
+    .spaceMenuApps {
+      margin-left: 15px;
+      width: 200px;
+      white-space: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+      .btn {
+        color: @btnColor;
+        > i {
+          color: inherit;
+        }
+      }
+      li {
+        margin-left: 15px;
+        display: inline-block;
+      }
+      li:first-child {
+        margin-left: 0px;
+      }
+    }
+  }
+
+  .nav {
+    margin-bottom: 0px;
+    [class^="uiIconApp"] {
+      font-size: 25px;
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  .collapse-left-bar .sticky .uiSpaceMenu {
+    left: 65px;
+  }
+  .sticky {
+    .uiSpaceMenu {
+      position: fixed;
+      z-index: 4;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+      top: 42px;
+      left: 250px;
+      right: 0px;
+
+      .userAvt {
+        background-color: #f9f9f9;
+        background-image: -moz-linear-gradient(top, #ffffff, #f0f0f0);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f0f0f0));
+        background-image: -webkit-linear-gradient(top, #ffffff, #f0f0f0);
+        background-image: -o-linear-gradient(top, #ffffff, #f0f0f0);
+        background-image: linear-gradient(to bottom, #ffffff, #f0f0f0);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff0f0f0', GradientType=0);
+        width: 41px;
+        height: 41px;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        border-radius: 100px;
+        -webkit-box-shadow: 0px 2px 4px rgba(13, 13, 13, 0.27);
+        -moz-box-shadow: 0px 2px 4px rgba(13, 13, 13, 0.27);
+        box-shadow: 0px 2px 4px rgba(13, 13, 13, 0.27);
+        border: 1px solid #b1b1b1;
+        padding: 0px;
+        position: relative;
+        text-align: center;
+        line-height: 37px;
+        margin-left: 20px;
+        margin-top: 21px;
+
+        a {
+          display: none;
+        }
+
+        img {
+          max-height: 40px;
+          max-width: 40px;
+          margin: 0;
+          padding: 0;
+          border-radius: 50%;
+          display: inline;
+          -webkit-border-radius: 100px;
+          -moz-border-radius: 100px;
+          border-radius: 100px;
+          border: 1px solid #ffffff;
+        }
+      }
+
+      .spaceMenuNavHeader {
+        float: left;
+        background: transparent !important;
+        padding-top: 30px;
+        padding-bottom: inherit;
+
+        > a .uiIconTrash,
+        > a .uiIconCamera {
+          display: none;
+        }
+
+        h3 {
+          float: left;
+          font-size: 20px;
+          color: black;
+          vertical-align: middle;
+          display: inline-block;
+          margin-left: 13px;
+          margin-top: auto;
+          margin-bottom: auto;
+          text-shadow: none;
+        }
+
+        .spaceMenuApps {
+          display: inline-block;
+          margin-top: 0px;
+          vertical-align: middle;
+          margin-left: auto;
+
+          [class^="uiIcon"] {
+            margin-right: 0px;
+          }
+          .btn {
+            color: #999999;
+            padding: 4px 13px;
+            span {
+              display: none;
+            }
+          }
+          li {
+            margin-left: 10px;
+          }
+        }
+      }
+
+      .spaceMenuTab {
+        [class^="uiIcon"] {
+          font-size: 26px;
+        }
+        > li > a,
+        > li > a:hover,
+        > .active > a,
+        > .active > a:hover {
+          margin: 10px 16px;
+          padding-right: 10px;
+          padding-left: 10px;
+          min-width: 39px;
+        }
+      }
+    }
+
+    #Application {
+      padding-top: 191px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  #Application {
+    padding-top: 170px;
+  }
+  .uiSpaceMenu {
+    position: fixed;
+    width: 100%;
+    z-index: 4;
+
+    .spaceMenuTab {
+      height: 40px;
+      display: block;
+      white-space: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+
+      > .active {
+        background: none;
+      }
+      > li > a, > li > a:hover,
+      > .active > a, > .active > a:hover {
+        background-color: inherit;
+        background-image: none;
+        filter: none;
+        box-shadow: none;
+        height: auto;
+        margin: auto;
+      }
+      > .active > a span {
+        color: #2f5e92;
+        font-weight: bold;
+      }
+      > li {
+        float: none;
+        display: inline-block;
+        &.active > a {
+          border-bottom: 3px solid #2f5e92;
+          border-radius: 0px;
+          padding-bottom: 5px;
+        }
+        i {
+          display: none;
+        }
+        > a > .tabName {
+          margin: 4px 4px 0;
+        }
+      }
+    }
+
+    .spaceMenuNavHeader {
+      h3, .spaceMenuApps {
+        margin-left: 74px;
+      }
+      h3 {
+        margin-top: 4px;
+        margin-bottom: 7px;
+      }
+      > a .uiIconTrash {
+        top: 13px;
+        right: 44px;
+      }
+      > a .uiIconCamera {
+        top: 13px;
+        right: 6px;
+      }
+    }
+    .spaceMenuNavHeader .spaceMenuApps .btn {
+      padding: 5px 10px;
+
+      i {
+        margin-right: 2px;
+      }
+      span {
+        display: none;
+      }
+    }
+
+    .userAvt {
+      background-color: #f9f9f9;
+      background-image: -moz-linear-gradient(top, #ffffff, #f0f0f0);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f0f0f0));
+      background-image: -webkit-linear-gradient(top, #ffffff, #f0f0f0);
+      background-image: -o-linear-gradient(top, #ffffff, #f0f0f0);
+      background-image: linear-gradient(to bottom, #ffffff, #f0f0f0);
+      background-repeat: repeat-x;
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff0f0f0', GradientType=0);
+      width: 41px;
+      height: 41px;
+      -webkit-border-radius: 100px;
+      -moz-border-radius: 100px;
+      border-radius: 100px;
+      -webkit-box-shadow: 0px 2px 4px rgba(13, 13, 13, 0.27);
+      -moz-box-shadow: 0px 2px 4px rgba(13, 13, 13, 0.27);
+      box-shadow: 0px 2px 4px rgba(13, 13, 13, 0.27);
+      border: 1px solid #b1b1b1;
+      padding: 0px;
+      position: relative;
+      text-align: center;
+      line-height: 37px;
+      margin-left: 21px;
+      margin-top: 43px;
+
+      a {
+        display: none;
+      }
+      img {
+        max-height: 40px;
+        max-width: 40px;
+        margin: 0;
+        padding: 0;
+        border-radius: 50%;
+        display: inline;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        border-radius: 100px;
+        border: 1px solid #ffffff;
+      }
+    }
+  }
+}
+@media (max-width: 480px) {
+  .uiSpaceMenu {
+    .userAvt {
+      margin-left: 15px;
+    }
+    .spaceMenuNavHeader {
+      h3 {
+        text-overflow: ellipsis;
+        width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        margin-left: 67px;
+      }
+      .spaceMenuApps {
+        margin-left: 67px;
+      }
+    }
+  }
 }

@@ -2,21 +2,15 @@
 @import "../../../../mixins.less";
 // -------------------------
 .uiUserNavigationPortlet {
-	border-bottom: 1px solid @borderColor;
 	#gradient > .vertical(@primaryBackgroundLight, @primaryBackgroundHover);
 	.box-shadow(inset);
-	height: 90px;
 
 	.userNavigation {
-		background: url("@{images-path}/platform/portlets/platfromNavigation/UserNavigationPortlet/shadow.png") no-repeat left center;	
 		height: 90px;
 		border-bottom: none;
 
 		> li {
 			padding-bottom: 3px;
-			.uiIconDefaultApp{
-				vertical-align: middle;
-			}
 		}
 
 		> .active {
@@ -74,77 +68,454 @@
 		}
 	}
 }
-@media(max-width: 1024px) {
-	.uiUserNavigationPortlet{
-		.userNavigation{
-			height: 90px;
-			[class^="uiIconApp"]{
-				font-size: 42px;
-			}
-			.tabName{
-				margin: 6px 0 0;
-			}
-			> .active{
-				background: none;
-			}
-			>li{
-				padding-bottom: 0;
-			}
-			> li > a, > li > a:hover, > .active > a, > .active > a:hover{
-				margin: 0 20px;
-    			padding: 12px;
-    			height: 90px;
-    			.border-radius(0);
-			}
-			.uiIconAppMoreButton{
-				margin-bottom: 8px;
-			}
-		}
-	}
-}
-@media(max-width: 767px) {
-	.uiUserNavigationPortlet{
-		.userNavigation{
-			[class^="uiIconApp"]{
-				font-size: 35px;
-			}
-			.tabName, li a span{
-				font-size: 13px;
-			}
-		}
-	}
 
+.uiProfileMenu {
+  border-bottom: 1px solid @borderColor;
+  #gradient > .vertical(@primaryBackgroundLight, @primaryBackgroundHover);
+  .box-shadow(inset);
+
+  .userNavigation {
+    .tabName, li a span {
+      font-size: 13px;
+    }
+  }
+
+  .profileMenuNav {
+    padding-top: 50px;
+    padding-bottom: 40px;
+    background: url(/eXoSkin/skin/images/themes/default/social/skin/UserNavigationPortlet/profileMenuBg.png) no-repeat 90% center, -moz-linear-gradient(0deg,#99a1b6 0,#8c94a7 100%);;
+    background: url(/eXoSkin/skin/images/themes/default/social/skin/UserNavigationPortlet/profileMenuBg.png) no-repeat 90% center, -webkit-linear-gradient(0deg,#99a1b6 0,#8c94a7 100%);;
+    background: url(/eXoSkin/skin/images/themes/default/social/skin/UserNavigationPortlet/profileMenuBg.png) no-repeat 90% center, -ms-linear-gradient(0deg,#99a1b6 0,#8c94a7 100%);;
+
+    .profileMenuNavHeader {
+      > a [class^="uiIcon"] {
+        position: absolute;
+        border: 1px solid #fff;
+        color: #fff;
+        padding: 5px;
+        .border-radius(50%);
+        display: none;
+        font-size: 18px;
+        background-color: rgba(0, 0, 0, 0.2);
+        width: 30px;
+        height: 30px;
+        box-sizing: border-box;
+      }
+      .uiIconTrash {
+        top: 54px;
+        right: 44px;
+      }
+      .uiIconCamera {
+        top: 54px;
+        right: 6px;
+      }
+    }
+    &:hover .profileMenuNavHeader > a {
+      .uiIconTrash, .uiIconCamera {
+        display: inline;
+        cursor: pointer;
+      }
+    }
+
+    h3 {
+      color: white;
+      margin-top: 0px;
+      margin-left: 140px;
+      text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+      i {
+        font-size: 18px;
+      }
+      .uiIconUserAvailable:before,
+      .uiIconUserOnline:before,
+      .uiIconUserInvisible:before,
+      .uiIconUserOffline:before,
+      .uiIconUserAway:before,
+      .uiIconUserDonotdisturb:before {
+        content: "\e76e";
+        font-size: 11px;
+        vertical-align: middle;
+      }
+      .uiIconUserAvailable,
+      .uiIconUserOnline {
+        color: #2ec24d;
+      }
+      .uiIconUserInvisible,
+      .uiIconUserOffline {
+        color: #e3e3e3;
+      }
+      .uiIconUserAway {
+        color: #fd8c40;
+      }
+      .uiIconUserDonotdisturb {
+        color: #c72222;
+      }
+      .uiIconStatusConnect {
+        display: none;
+      }
+      .uiIconStatusSent {
+        display: none;
+      }
+      .uiIconStatusDeny {
+        display: none;
+      }
+      .uiIconStatusAccept {
+        display: none;
+      }
+    }
+    .profileMenuApps {
+      margin-left: 15px;
+      width: 200px;
+      white-space: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+      .btn {
+        color: @btnColor;
+        > i {
+          color: inherit;
+        }
+      }
+      li {
+        margin-left: 15px;
+        display: inline-block;
+      }
+      li:first-child {
+        margin-left: 0px;
+      }
+    }
+  }
+
+  .userAvt {
+    position: relative;
+
+    [class^="uiIcon"] {
+        position: absolute;
+        border: 1px solid #fff;
+        color: #fff;
+        padding: 5px;
+        border-radius: 14px;
+        display: none;
+        font-size: 18px;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    a:hover .uiIconCamera {
+      display: inline;
+      cursor: pointer;
+    }
+    a {
+      position: absolute;
+      top: 49px;
+      left: 15px;
+      display: inline-block;
+      width: 110px;
+      height: 111px;
+    }
+    .uiIconCamera {
+      top: 67%;
+      left: 65%;
+    }
+    img {
+      width: 100px;
+      height: 100px;
+      margin-left: 15px;
+      margin-top: 50px;
+      border: 5px solid #ffffff;
+      .border-radius(5px 5px 5px 5px);
+      .box-shadow(0px 2px 4px rgba(0, 0, 0, 0.17));
+    }
+  }
+  .nav {
+    margin-bottom: 0px;
+    [class^="uiIconApp"] {
+      font-size: 25px;
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  .collapse-left-bar .sticky .uiProfileMenu {
+    left: 65px;
+  }
+  .sticky {
+    padding-top: 191px;
+
+    .uiProfileMenu {
+      position: fixed;
+      z-index: 4;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+      top: 42px;
+      left: 250px;
+      right: 0px;
+
+      .userAvt {
+        background-color: #f9f9f9;
+        background-image: -moz-linear-gradient(top, #ffffff, #f0f0f0);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f0f0f0));
+        background-image: -webkit-linear-gradient(top, #ffffff, #f0f0f0);
+        background-image: -o-linear-gradient(top, #ffffff, #f0f0f0);
+        background-image: linear-gradient(to bottom, #ffffff, #f0f0f0);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff0f0f0', GradientType=0);
+        width: 41px;
+        height: 41px;
+        .border-radius(100px);
+        .box-shadow(0px 2px 4px rgba(13, 13, 13, 0.27));
+        border: 1px solid #b1b1b1;
+        padding: 0px;
+        position: relative;
+        text-align: center;
+        line-height: 37px;
+        margin-left: 20px;
+        margin-top: 21px;
+
+        a {
+          display: none;
+        }
+        
+        img {
+          max-height: 40px;
+          max-width: 40px;
+          margin: 0;
+          padding: 0;
+          border-radius: 50%;
+          display: inline;
+          -webkit-border-radius: 100px;
+          -moz-border-radius: 100px;
+          border-radius: 100px;
+          border: 1px solid #ffffff;
+        }
+      }
+
+      .profileMenuNav {
+        float: left;
+        background: transparent !important;
+        padding-top: 30px;
+        padding-bottom: inherit;
+
+        .profileMenuNavHeader > a {
+          .uiIconTrash, .uiIconCamera {
+            display: none;
+          }
+        }
+
+        h3 {
+          float: left;
+          font-size: 20px;
+          color: black;
+          vertical-align: middle;
+          display: inline-block;
+          margin-left: 13px;
+          margin-top: auto;
+          margin-bottom: auto;
+          text-shadow: none;
+        }
+        .profileMenuApps {
+          display: inline-block;
+          margin-top: 0px;
+          vertical-align: middle;
+          margin-left: auto;
+
+          [class^="uiIcon"] {
+            margin-right: 0px;
+          }
+          .btn {
+            color: #999999;
+            padding: 4px 13px;
+            span {
+              display: none;
+            }
+          }
+          .btn, li {
+            margin-left: 10px;
+          }
+        }
+      }
+
+      .userNavigation {
+        [class^="uiIcon"] {
+          font-size: 26px;
+        }
+        > li > a,
+        > li > a:hover,
+        > .active > a,
+        > .active > a:hover {
+          margin: 10px 16px;
+          padding-right: 10px;
+          padding-left: 10px;
+          min-width: 39px;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 1024px) {
+  .uiUserNavigationPortlet {
+    padding-bottom: 170px;
+
+    .userNavigation {
+      .tabName{
+        margin: 6px 0 0;
+      }
+      > .active{
+        background: none;
+      }
+      >li{
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  .uiProfileMenu {
+    position: fixed;
+    width: 100%;
+    z-index: 4;
+
+    .userNavigation {
+      height: 40px;
+      display: block;
+      white-space: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+      > .active {
+        background: none;
+      }
+
+      > li > a, > li > a:hover,
+      > .active > a, > .active > a:hover {
+        background-color: inherit;
+        background-image: none;
+        filter: none;
+        box-shadow: none;
+        height: auto;
+        margin: auto;
+      }
+      > .active > a span {
+        color: #2f5e92;
+        font-weight: bold;
+      }
+      > li {
+        float: none;
+        display: inline-block;
+        div {
+          display: none;
+        }
+        &.active > a {
+          border-bottom: 3px solid #2f5e92;
+          border-radius: 0px;
+          padding-bottom: 5px;
+        }
+        > a > .tabName {
+          margin: 4px 4px 0;
+        }
+      }
+    }
+
+    .profileMenuNav {
+      .profileMenuNavHeader {
+        .uiIconTrash {
+          top: 13px;
+          right: 44px;
+        }
+        .uiIconCamera {
+          top: 13px;
+          right: 6px;
+        }
+      }
+      .profileMenuApps .btn {
+        padding: 5px 10px;
+        i {
+          margin-right: 2px;
+        }
+        span {
+          display: none;
+        }
+      }
+      h3, .profileMenuApps {
+        margin-left: 74px;
+      }
+      h3 {
+        margin-top: 4px;
+        margin-bottom: 7px;
+      }
+    }
+
+    .userAvt {
+      background-color: #f9f9f9;
+      background-image: -moz-linear-gradient(top, #ffffff, #f0f0f0);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f0f0f0));
+      background-image: -webkit-linear-gradient(top, #ffffff, #f0f0f0);
+      background-image: -o-linear-gradient(top, #ffffff, #f0f0f0);
+      background-image: linear-gradient(to bottom, #ffffff, #f0f0f0);
+      background-repeat: repeat-x;
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff0f0f0', GradientType=0);
+      width: 41px;
+      height: 41px;
+      -webkit-border-radius: 100px;
+      -moz-border-radius: 100px;
+      border-radius: 100px;
+      -webkit-box-shadow: 0px 2px 4px rgba(13, 13, 13, 0.27);
+      -moz-box-shadow: 0px 2px 4px rgba(13, 13, 13, 0.27);
+      box-shadow: 0px 2px 4px rgba(13, 13, 13, 0.27);
+      border: 1px solid #b1b1b1;
+      padding: 0px;
+      position: relative;
+      text-align: center;
+      line-height: 37px;
+      margin-left: 21px;
+      margin-top: 43px;
+
+      a {
+        display: none;
+      }
+      img {
+        max-height: 40px;
+        max-width: 40px;
+        margin: 0;
+        padding: 0;
+        border-radius: 50%;
+        display: inline;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        border-radius: 100px;
+        border: 1px solid #ffffff;
+      }
+    }
+  }
 }
 @media(max-width: 480px) {
-	.uiUserNavigationPortlet{
-		margin-top: -4px;
-		height: 60px;
-		.userNavigation{
-			height: 60px;
-			[class^="uiIconApp"]{
-				font-size: 35px;
-			}
-			.tabName, li a span{
-				display: none;
-			}
-			.dropdown-menu a span{
+  .uiProfileMenu {
+    .profileMenuNav {
+      h3, .profileMenuApps {
+        margin-left: 67px;
+      }
+      h3 {
+        text-overflow: ellipsis;
+        width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+    .userAvt {
+      margin-left: 15px;
+    }
+  }
+
+	.uiUserNavigationPortlet {
+		.userNavigation {
+			.dropdown-menu a span {
 				display: inline-block;
 			}
-			> .active{
+			> .active {
 				background: none;
-				a{
-					margin: 0 20px; 
-				}
 			}
-			>li{
+			>li {
 				padding-bottom: 0;
 			}
-			> li > a, > li > a:hover, > .active > a, > .active > a:hover{
-				margin: 0 5px; 
-				padding: 13px 0 0;
-				height: 60px;
-			}
 		}
-		
 	}
 }
