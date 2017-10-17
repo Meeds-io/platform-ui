@@ -528,7 +528,7 @@
         }
 	}
     li.itemsContainer {
-        max-height: 50vh;
+        max-height: ~"calc(100vh - 132px)";
         overflow-y: auto;
     }
 	.displayItems {
@@ -569,6 +569,7 @@
 				display: block;
 				line-height: 18px;
 				margin-bottom: 3px;
+        margin-right: 10px; 
 			}
 			.content {
 				font-weight: bold;
@@ -591,6 +592,7 @@
 
 				p {
 					.text-overflow;
+          display: inline;
 				}
 			}
 			.avatarXSmall {
