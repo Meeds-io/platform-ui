@@ -52,11 +52,13 @@
 	.btn {
 		min-width: 0;
 		background-color: @btnGroupBackground;
-	}
-	.btn:active, .btn:focus {
-		background-color: @btnGroupActiveBackground;
-		color: @btnGroupActiveColor;
-		border: 1px solid @btnGroupActiveBorderColor;
+		&:active, &:focus, &.active {
+			background-color: @btnGroupActiveBackground;
+			border: 1px solid @btnGroupActiveBorderColor;
+		}
+		&:hover {
+			background-color: @btnGroupHoverBackgroundColor;
+		}
 	}
 	.btn-small {
 		&.dropdown-toggle .uiIconMiniArrowDown {

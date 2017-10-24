@@ -515,40 +515,38 @@
 .setColor(@baseColor);
 
 /* default btn */
-@btnBackgroundColor: inherit;
-@btnBackgroundImage: inherit;
-@btnHoverBackgroundColor: rgba(255, 255, 255, 0.5);
-@btnDisableBackground: inherit;
+@btnBackgroundColor: #f5f5f5;
+@btnBackgroundImage: linear-gradient(to bottom,#fff,#e6e6e6);
+@btnHoverBackgroundColor: #e6e6e6;
+@btnDisableBackground: #e6e6e6;
 
 /* primary btn */
-@btnPrimaryHoverBackgroundColor: inherit;
-@btnPrimaryHoverBackgroundPosition: inherit;
-@btnPrimaryDisableHoverBackground: inherit;
-@btnPrimaryDisableBackground: inherit;
+@btnPrimaryHoverBackgroundColor: @primaryColor;
+@btnPrimaryHoverBackgroundPosition: 0 -15px;
+@btnPrimaryDisableHoverBackground: @primaryColor;
+@btnPrimaryDisableBackground: @primaryColor;
 
 /* btn group */
-@btnGroupActiveBackground: inherit;
+@btnGroupActiveBackground: #e6e6e6;
 @btnGroupActiveColor: @baseBackground;
-@btnGroupActiveBorderColor: inherit;
-@btnGroupBackground: inherit;
+@btnGroupActiveBorderColor: @borderColor;
+@btnGroupBackground: @btnBackgroundColor;
+@btnGroupHoverBackgroundColor: @btnHoverBackgroundColor;
 
 /* dropdown */
-@dropdownMenuBorderColor: inherit;
+@dropdownMenuBorderColor: @borderColor;
 @dropdownEndColor: darken(@dropdownLinkBackgroundHover, 15%);
 
 /* btn dropdown */
-@btnDropdownImage: inherit;
+@btnDropdownImage: @btnBackgroundImage;
 @btnDropdownBackground: @btnBackgroundHighlight;
-@btnDropdownBackgroundImage: inherit;
 
 /* btn-primary dropdown */
 @btnPrimaryDropdownBackground: @btnPrimaryBackgroundHighlight;
-@btnPrimaryDropdownBackgroundImage: inherit;
 
 /* btn group dropdown */
-@btnGroupDropdownToggeleBackground: inherit;
-@btnGroupDropdownBackground: inherit;
-@btnGroupOpenDropdownBackground: inherit;
+@btnGroupDropdownBackground: @btnBackgroundColor;
+@btnGroupOpenDropdownBackground: @btnGroupActiveBackground;
 
 /* switchBtnHandle */
 @switchBtnHandleStartColor: @btnBackground;
@@ -570,7 +568,7 @@
 @uiCheckboxCheckedBackground: @borderColor;
 
 /* input-append btn */
-@inputAppendBtnBackground: inherit;
+@inputAppendBtnBackground: #e6e6e6;
 
 /* Tags and mention */
 @mentionBackground: #e2eafa;
@@ -584,13 +582,13 @@
 @ThumbnailMargin: 45px 0 0 0;
 @ThumbnailView-DownloadColor: #fff;
 @ColorThumbnailBackground: rgba(0,0,0,0.1);
-@ThumbnailView-DownloadFloat: inherit;
-@ThumbnailView-DownloadDisplay: inherit;
-@ThumbnailView-DownloadWidth: inherit;
-@ThumbnailView-DownloadHeight: inherit;
-@ThumbnailView-Download-IconsColor: inherit;
-@ThumbnailView-DownloadMarginRight: inherit;
-@ThumbnailView-DownloadMarginLeft: inherit;
+@ThumbnailView-DownloadFloat: none;
+@ThumbnailView-DownloadDisplay: inline;
+@ThumbnailView-DownloadWidth: auto;
+@ThumbnailView-DownloadHeight: auto;
+@ThumbnailView-Download-IconsColor: #fff;
+@ThumbnailView-DownloadMarginRight: 0;
+@ThumbnailView-DownloadMarginLeft: 0;
 
 /* popover  */
 @popoverBorder: 1px solid @borderColor;
@@ -600,12 +598,12 @@
 
 /* alerts  */
 @linkInAlertColor: @linkColor;
-@linkInAlertTextDecoration: inherit;
+@linkInAlertTextDecoration: none;
 
 /* progress bar */
 @progressBarBorderRadius: 20px;
-@progressBarIconBackground: inherit;
-@progressBarIconBackgroundImage: inherit;
+@progressBarIconBackground: #f9f9f9;
+@progressBarIconBackgroundImage: linear-gradient(to bottom, #ffffff, #f0f0f0);
 
 /*  tabs  */
 @tabNormalLinkBorderTop: 1px solid @tabNormalLinkBorder;
@@ -626,11 +624,11 @@
 /*  popup   */
 @uiIconCloseFontSize: 9px;
 @uiPopupHeaderBoxShadow: inset 0 -1px 0 @borderColor;
-@popupTitleFontSize: inherit;
+@popupTitleFontSize: 14px;
 @uiActionBorderBorderTop: 1px solid @borderColor;
 @uiActionBorderMarginTop: 15px;
 @uiIconCloseColor: inherit;
-@uiPopupHeaderMarginBottom: inherit;
+@uiPopupHeaderMarginBottom: 0;
 
 /* pagination */
 @pageIteratorStartColor: @btnBackground;
@@ -645,15 +643,14 @@
 @badgeDefaultBackground: @primaryBackground;
 
 /* uiBox */
-@weekListBackground: inherit;
-@calComponentTodayBackground: inherit;
-@uiCalendarComponentTitleBackground: inherit;
-@uiMiniCalendarTitleBackground: inherit;
-@uiMiniCalendarTodayBackground: inherit;
+@weekListBackground: transparent;
+@calComponentTodayBackground: transparent;
+@uiCalendarComponentTitleBackground: @primaryBackground;
+@uiMiniCalendarTitleBackground: @primaryBackground;
+@uiMiniCalendarTodayBackground: transparent;
 @uiMiniCalendarCurrentWeekBackground: @primaryBackground;
-@uicalendarComponentTitleBackground: inherit;
-@uiMiniCalendarBorder: inherit;
-@uicalendarComponentBorder: inherit;
+@uiMiniCalendarBorder: 1px solid @borderColor;
+@uicalendarComponentBorder: 1px solid @borderColor;
 
 /* Alert */
 @alertBorder: 1px;
