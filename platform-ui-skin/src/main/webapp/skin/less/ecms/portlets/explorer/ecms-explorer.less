@@ -21,6 +21,12 @@
 			.nav-pills {
 				.border-top-radius(3px);
 			}
+            .nav {
+                display: flex;
+                > li {
+                    flex-shrink: 0;
+                }
+            }
 		}
 	}
     .UIDocumentWorkspace .FileContent .Content .FlashViewer {
@@ -58,8 +64,10 @@
 
 	.uiViewBarContainer {
 		position: absolute;
-		right: 10px;
+		right: 0;
 		top: 4px;
+		padding: 0 10px;
+    	background-color: @primaryBackground;
 
 		.noneDrivesButton {
 			padding: 3px 6px;
@@ -128,17 +136,25 @@
 /********Resize Content********/
 .uiWorkingArea {
 	width: 100%;
-
+    display: flex;
 	.leftContainer {
 		float: left;
 		width: 240px;
 		overflow: hidden;
         min-width: 240px;
+      &.collapsed {
+        display: none;
+      }
 	}
 
 	.rightContainer {
-		float: left;
+		flex: 1 1 auto;
+        overflow: hidden;
 	}
+    
+    .resizeBar, .leftContainer {
+        flex: 0 0 auto;
+    }
 
   	/*// changing icons for Sites Management
   	.leftContainer, .rightContainer {
@@ -542,10 +558,11 @@
 /***** ResizeBar *****/
 .uiWorkingArea .resizeBar {
 	float: left;
-	width: 40px;
+	width: 30px;
 
 	.resizeBarContent {
 		width: 22px;
+        height: 100%;
 		cursor:col-resize;
 		position: relative;
 
@@ -1792,7 +1809,7 @@
 	}
 	.UIJCRExplorer{
 		 .UIDocumentWorkspace {
-			min-height: auto;
+			min-height: 50vh;
 			.UIDocumentInfo {
 				min-height: auto;
 			}
@@ -1955,7 +1972,10 @@
 	}
 }
 @media(max-width: 768px){
-    .uiWorkingArea .resizeBar {display: none}
+    .uiWorkingArea {
+        flex-direction: column;
+        .resizeBar {display: none} 
+    }
     .uiWorkingArea .leftContainer ,.uiWorkingArea .rightContainer{
         float: none;
         margin: 10px 0;
@@ -2045,7 +2065,17 @@
         }
     }
     .uiListGrid {
-
+        .uiBox {
+            display: table;
+            width: 100%;
+			box-sizing: border-box;
+            > div {
+               display: flex;
+               > div {
+                  flex-shrink: 0;
+               }
+            }
+        }
         [class^="uiIcon24x24"] {
             position: relative;
         }
