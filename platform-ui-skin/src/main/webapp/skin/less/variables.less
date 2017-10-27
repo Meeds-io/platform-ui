@@ -514,5 +514,149 @@
 }
 .setColor(@baseColor);
 
+/* default btn */
+@btnBackgroundColor: #f5f5f5;
+@btnBackgroundImage: linear-gradient(to bottom,#fff,#e6e6e6);
+@btnHoverBackgroundColor: #e6e6e6;
+@btnDisableBackground: #e6e6e6;
+
+/* primary btn */
+@btnPrimaryHoverBackgroundColor: @primaryColor;
+@btnPrimaryHoverBackgroundPosition: 0 -15px;
+@btnPrimaryDisableHoverBackground: @primaryColor;
+@btnPrimaryDisableBackground: @primaryColor;
+
+/* btn group */
+@btnGroupActiveBackground: #e6e6e6;
+@btnGroupActiveColor: @baseBackground;
+@btnGroupActiveBorderColor: @borderColor;
+@btnGroupBackground: @btnBackgroundColor;
+@btnGroupHoverBackgroundColor: @btnHoverBackgroundColor;
+
+/* dropdown */
+@dropdownMenuBorderColor: @borderColor;
+@dropdownEndColor: darken(@dropdownLinkBackgroundHover, 15%);
+
+/* btn dropdown */
+@btnDropdownImage: @btnBackgroundImage;
+@btnDropdownBackground: @btnBackgroundHighlight;
+
+/* btn-primary dropdown */
+@btnPrimaryDropdownBackground: @btnPrimaryBackgroundHighlight;
+
+/* btn group dropdown */
+@btnGroupDropdownBackground: @btnBackgroundColor;
+@btnGroupOpenDropdownBackground: @btnGroupActiveBackground;
+
+/* switchBtnHandle */
+@switchBtnHandleStartColor: @btnBackground;
+@switchBtnHandleEndColor: @btnBackgroundHighlight;
+
+/* switchBtnLabelOff */
+@switchBtnLabelOffStartColor: rgba(0,0,0,0);
+@switchBtnLabelOffStartColor: rgba(0,0,0,0.09);
+
+/* switchBtnLabelOn */
+@switchBtnLabelOnStartColor: @primaryLightColor;
+@switchBtnLabelOnStartColor: @primaryColor;
+
+/* uiradio */
+@uiRadioCheckedBeforeBackground: @borderColor;
+@uiRadioCheckedAfterBackground: rgba(0,0,0,0.27);
+
+/* uicheckbox */
+@uiCheckboxCheckedBackground: @borderColor;
+
+/* input-append btn */
+@inputAppendBtnBackground: #e6e6e6;
+
+/* Tags and mention */
+@mentionBackground: #e2eafa;
+@mentionPadding: 2px 16px 2px 5px;
+@mentionColor: #215ab2;
+@removeMentionColor: #91949c;
+@removeMentionTop: 0;
+@removeTagColor: #578dc9;
+
+/* Thumbnail */
+@ThumbnailMargin: 45px 0 0 0;
+@ThumbnailView-DownloadColor: #fff;
+@ColorThumbnailBackground: rgba(0,0,0,0.1);
+@ThumbnailView-DownloadFloat: none;
+@ThumbnailView-DownloadDisplay: inline;
+@ThumbnailView-DownloadWidth: auto;
+@ThumbnailView-DownloadHeight: auto;
+@ThumbnailView-Download-IconsColor: #fff;
+@ThumbnailView-DownloadMarginRight: 0;
+@ThumbnailView-DownloadMarginLeft: 0;
+
+/* popover  */
+@popoverBorder: 1px solid @borderColor;
+
+/* */
+@tiptipBorder: 1px solid @borderColor;
+
+/* alerts  */
+@linkInAlertColor: @linkColor;
+@linkInAlertTextDecoration: none;
+
+/* progress bar */
+@progressBarBorderRadius: 20px;
+@progressBarIconBackground: #f9f9f9;
+@progressBarIconBackgroundImage: linear-gradient(to bottom, #ffffff, #f0f0f0);
+
+/*  tabs  */
+@tabNormalLinkBorderTop: 1px solid @tabNormalLinkBorder;
+@tabNormalLinkBorderRight: 1px solid @tabNormalLinkBorder;
+@tabNormalLinkBorderBottom: 1px solid @tabNormalLinkBorder;
+@tabNormalLinkBorderLeft: 1px solid @tabNormalLinkBorder;
+@tabNormalLinkHoverBorderTop: 1px solid @borderColor;
+@tabNormalLinkHoverBorderRight: 1px solid @borderColor;
+@tabNormalLinkHoverBorderBottom: 1px solid @borderColor;
+@tabNormalLinkHoverBorderLeft: 1px solid @borderColor;
+@tabNormalActiveLinkColor: @textColor;
+@tabContentBorder: 1px solid @tabNormalContentBorder;
+
+/* tables */
+@tableThBackground: @primaryBackground;
+@tableRadius: 0px;
+
+/*  popup   */
+@uiIconCloseFontSize: 9px;
+@uiPopupHeaderBoxShadow: inset 0 -1px 0 @borderColor;
+@popupTitleFontSize: 14px;
+@uiActionBorderBorderTop: 1px solid @borderColor;
+@uiActionBorderMarginTop: 15px;
+@uiIconCloseColor: inherit;
+@uiPopupHeaderMarginBottom: 0;
+
+/* pagination */
+@pageIteratorStartColor: @btnBackground;
+@pageIteratorEndColor: @btnBackgroundHighlight;
+@pageIteratorHoverBackground: @btnBackgroundHighlight;
+@pageIteratorColor: @linkColor;
+@pageIteratorBackgroundPosition: 0 -15px;
+@pageIteratorActiveBackground: @btnBackgroundHighlight;
+@pageIteratorMargin: 0px;
+
+/* Badge */
+@badgeDefaultBackground: @primaryBackground;
+
+/* uiBox */
+@weekListBackground: transparent;
+@calComponentTodayBackground: transparent;
+@uiCalendarComponentTitleBackground: @primaryBackground;
+@uiMiniCalendarTitleBackground: @primaryBackground;
+@uiMiniCalendarTodayBackground: transparent;
+@uiMiniCalendarCurrentWeekBackground: @primaryBackground;
+@uiMiniCalendarBorder: 1px solid @borderColor;
+@uicalendarComponentBorder: 1px solid @borderColor;
+
+/* Alert */
+@alertBorder: 1px;
+
+
+/* Left bar */
+@margin: 50px;
 
 @import "customVariables.less";

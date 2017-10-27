@@ -44,17 +44,26 @@
 				display: none;
 				top: 0;
 				left: 0;
-				background-color: rgba(0,0,0,0.1);
+				background-color: @ColorThumbnailBackground;
 				.square(128px);
 				p{
 					a{
-						color: #fff; // alway white no need a variable
+						color: @ThumbnailView-DownloadColor; // alway white no need a variable
+						float: @ThumbnailView-DownloadFloat;
+						display: @ThumbnailView-DownloadDisplay;
+						margin-right: @ThumbnailView-DownloadMarginRight;
+						margin-left: @ThumbnailView-DownloadMarginLeft;
+						width: @ThumbnailView-DownloadWidth;
+						height: @ThumbnailView-DownloadHeight;
 						&:hover{
 							font-weight: bold;
 						}
+						i{
+							color: @ThumbnailView-Download-IconsColor;
+						}
 					}
 
-					margin: 45px 0 0 0;
+					margin: @ThumbnailMargin;
 					&+p{
 						margin-top: 0;
 					}

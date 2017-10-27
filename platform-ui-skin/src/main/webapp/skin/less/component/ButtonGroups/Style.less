@@ -34,18 +34,31 @@
     font-size: @baseFontSize ;
 }
 
-.btn.dropdown-toggle {
-	padding-right: 5px;
-}
 .btn-group.btn-without-icon {
 	.btn.active {
 		color: @primaryColor;
 	}
 }
 
+.btn-group .btn.dropdown-toggle {
+	background-color: @btnGroupDropdownBackground;
+}
+.btn-group.open .btn.dropdown-toggle {
+	background-color: @btnGroupOpenDropdownBackground;
+}
+
+
 .btn-group {
 	.btn {
 		min-width: 0;
+		background-color: @btnGroupBackground;
+		&:active, &:focus, &.active {
+			background-color: @btnGroupActiveBackground;
+			border: 1px solid @btnGroupActiveBorderColor;
+		}
+		&:hover {
+			background-color: @btnGroupHoverBackgroundColor;
+		}
 	}
 	.btn-small {
 		&.dropdown-toggle .uiIconMiniArrowDown {

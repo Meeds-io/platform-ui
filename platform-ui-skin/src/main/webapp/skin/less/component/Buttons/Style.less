@@ -6,16 +6,30 @@
 	border-bottom-color: @btnBorder;
     text-shadow: none!important;
     color: @btnColor;
+	background-color: @btnBackgroundColor;
+	background-image: @btnBackgroundImage;
     &:hover,
     &:focus {
       color: @btnColor;
+	  background-color: @btnHoverBackgroundColor;
     }
 }
+
+.btn.dropdown-toggle {
+	padding-right: 5px;
+	background-color: @btnDropdownBackground;
+	background-image: @btnDropdownImage;
+}
+
 .btn-primary{
 	font-family: @sansBoldFontFamily;
 	font-weight: bold;
 	.buttonBackgroundEXO(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder, @btnPrimaryColor);
+}
 
+.btn-primary:hover {
+	background-color: @btnPrimaryHoverBackgroundColor;
+	background-position: @btnPrimaryHoverBackgroundPosition;
 }
 
 .uiAction .btn:first-child {
@@ -32,10 +46,10 @@
 }
 
 .uiActionBorder{
-	border-top: 1px solid @borderColor;
+	border-top: @uiActionBorderBorderTop;
 	text-align: center;
 	padding: 15px 0;
-	margin-top: 15px;
+	margin-top: @uiActionBorderMarginTop;
 	margin-left: -15px;
 	margin-right: -15px;
 }
@@ -121,6 +135,17 @@ h1,h2,h3,h4 {
 
 .btn.disabled, .btn[disabled] {
   color: @btnDisableColor;
+  background-color: @btnDisableBackground;
+}
+
+.btn.btn-primary.disabled,
+.btn.btn-primary[disabled] {
+	background-color: @btnPrimaryDisableBackground;
+}
+
+.btn.btn-primary.disabled:hover,
+.btn.btn-primary[disabled]:hover {
+	background-color: @btnPrimaryDisableHoverBackground;
 }
 
 .uiAction .btn-primary.disabled:first-child,

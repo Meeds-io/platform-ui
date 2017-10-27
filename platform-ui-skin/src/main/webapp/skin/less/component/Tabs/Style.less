@@ -17,7 +17,10 @@
 		> li > a {
 			padding: 5px 15px;
 			margin: 0px;
-			border: 1px solid @tabNormalLinkBorder;
+			border-top: @tabNormalLinkBorderTop;
+			border-right: @tabNormalLinkBorderRight;
+			border-bottom: @tabNormalLinkBorderBottom;
+			border-left: @tabNormalLinkBorderLeft;
 			color: @tabNormalLinkColor;
 			.border-radius(0px);
 			background-color: @tabNormalLinkBackground;
@@ -32,7 +35,10 @@
 		}
 
 		> li > a:hover {
-			border: 1px solid @borderColor;
+			border-top: @tabNormalLinkHoverBorderTop;
+			border-right: @tabNormalLinkHoverBorderRight;
+			border-bottom: @tabNormalLinkHoverBorderBottom;
+			border-left: @tabNormalLinkHoverBorderLeft;
 			background-color: @primaryBackgroundLight;
 		}
 
@@ -43,7 +49,7 @@
 			background-color: @tabNormalActiveLinkBackground;
 		}
 		> .active > a {
-			color: @textColor;
+			color: @tabNormalActiveLinkColor;
 		}
 
 		> li.dropdown {
@@ -89,7 +95,7 @@
 
 	.tab-content {
 		background: @tabNormalContentBackground; 
-		border: 1px solid @tabNormalContentBorder;
+		border: @tabContentBorder;
 		border-top: none;
 		padding: 15px;
 		.border-radius(0px 0px @borderRadiusSmall @borderRadiusSmall);

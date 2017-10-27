@@ -14,6 +14,8 @@
 		span a{
 		color: @textColor;
 		}
+		background-color: @uiMiniCalendarTitleBackground;
+		border-bottom: @uiMiniCalendarBorder;
 	}
 
 
@@ -29,6 +31,7 @@
 		padding: 0 9px;
 		margin: 2px 0;
 		font-size: @baseFontSize - 2;
+		background-color: @weekListBackground;
 
 	}
 
@@ -50,6 +53,7 @@
 				border: 1px solid @borderColor;
 				.border-radius(@borderRadiusSmall);
 				font-weight: bold;
+				background-color: @uiMiniCalendarTodayBackground;
 			}
 		}
 
@@ -57,7 +61,7 @@
 		tr.currentWeek {
 
 			td {
-				background-color: @primaryBackground;
+				background-color: @uiMiniCalendarCurrentWeekBackground;
 
 				&:hover{
 					border: 1px solid @borderColor;
