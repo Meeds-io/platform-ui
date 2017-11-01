@@ -82,10 +82,31 @@
 	padding: 10px 5px;
 }
 .calendarWorkingWorkspace {
-	padding: 20px 20px 0 20px;
+	padding: 20px;
 	.uiActionBar {
 		margin: 0 0 15px 0;
 	}
+}
+.UICalendarWorkingContainer {
+	display: flex;
+	.uiCalendarViewContainer {
+		position: relative;
+		flex: 1;
+	}
+	&.collapsed {
+		.UICalendarContainer {
+			display: none;
+		}
+		.uiCalendarViewContainer {
+			margin-left: 0;
+			.resizeButton {
+				left: -15px;
+			}
+		}
+	}
+    .UICalendarContainer {
+    	margin-right: 25px;
+    }
 }
 
 /**=========================calNotification===========================*/
