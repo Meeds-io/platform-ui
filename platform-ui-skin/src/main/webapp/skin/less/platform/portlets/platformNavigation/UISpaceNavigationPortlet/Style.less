@@ -40,21 +40,25 @@
 	    text-align: center;
 		}
 		.spaceItem {
-			padding: 5px 25px;
+          	line-height: 28px;
+			padding: 2px 22px;
             display: block;
             border-top: 1px solid transparent;
             border-bottom: 1px solid transparent;
 		}
 
 		.spaceIcon {
-			    color: @plfNavigationColor;
-			    display: block;
-			    overflow: hidden;
-			    text-overflow: ellipsis;
-			    white-space: nowrap;
-			    width: inherit;
+			color: @plfNavigationColor;
+			display: block;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			width: inherit;
+		  	height: 30px;
 			> img {
 				margin-right: 5px;
+				width: 20px;
+				height: 20px;
 			}
 
 			&:hover {
@@ -63,7 +67,6 @@
 		}
 
 		.spaceItemSelected {
-			padding: 7px 25px;
             position: relative;
             background: @plfNavigationBgSelected;
             border-top: 1px solid @plfNavigationBorderSelected;
@@ -71,16 +74,16 @@
             .box-shadow(0 0px 3px rgba(0, 0, 0, 0.11));
 			&:after {
 				background: @plfNavigationBgBorderLeft;
-				    border: 1px solid @plfNavigationBorderLeft;
-				    border-left: 0;
-				    .box-shadow(~"inset -1px 0px 2px rgba(255, 255, 255, 0.14)");
-				    content: "";
-				    height: 34px;
-				    left: 0;
-				   	top: -1px;
-				    position: absolute;
-				    width: 5px;
-		  }
+				border: 1px solid @plfNavigationBorderLeft;
+				border-left: 0;
+				.box-shadow(~"inset -1px 0px 2px rgba(255, 255, 255, 0.14)");
+				content: "";
+				height: 34px;
+				left: 0;
+				top: -1px;
+				position: absolute;
+				width: 5px;
+		  	}
 			> a {
 				font-weight: bold;
               color: @plfNavigationColorSelected;
