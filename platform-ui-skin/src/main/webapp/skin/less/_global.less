@@ -1099,4 +1099,32 @@ hr {
         left: 0;
     }
 }
+.ellipsis-reverse {
+    display: flex;
+    flex-direction: row !important;
+    text-overflow: clip !important;
+}
+.ellipsis-reverse-content {
+    flex: 0 12px;
+    height: 20px;
+    padding-right: 5px;
+    margin: auto;
+    display: inline-flex;
 
+    &.hidden {
+      /* Used to force width = 0 on flex items for IE */
+      position: absolute;
+      flex: 0 0 0px;
+      width: 0;
+    }
+}
+.ellipsis-reverse-apply {
+    overflow: hidden;
+    position: relative;
+    flex: 1 auto;
+    height: 20px;
+    width: 100%;
+    direction:rtl;
+    max-width: 100%;
+    margin: auto;
+}

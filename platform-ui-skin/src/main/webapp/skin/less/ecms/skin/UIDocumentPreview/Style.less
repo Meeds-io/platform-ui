@@ -369,21 +369,30 @@
             
             #NavCommands {
                 margin: 0 auto;
-                padding: 10px 0;
+                padding: 10px;
                 white-space: nowrap;
-                width: 100%;
+                width: ~"calc(100% - 20px)";
+                max-width: ~"calc(100% - 20px)";
                 background: white;
+                display: flex;
 
+                .ellipsis {
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  max-width: 100%;
+                }
                 > div {
                     display: inline-block;
                     vertical-align: middle;
+                    flex: 1 auto;
                 }
             
                 > .arrowPrevious,
                 > .arrowNext {
-                    min-width: 30%;
-                    width: 30%;
-            
+                    height: 28px;
+                    margin: auto 10px;
+
                     > span{
                         width: 28px;
                         height: 28px;
@@ -407,13 +416,43 @@
                 }
                 > .fileTitle {
                     text-align: center;
-                    padding-left: 20px;
-                    padding-right: 20px;
-                    width: 40%;
-                    max-width: 40%;
                     overflow: hidden;
                     text-overflow: ellipsis;
                     box-sizing: border-box;
+                    width: 100%;
+
+                    > .fileName {
+                      width: 100%;
+                      > * {
+                        display: inline-block;
+                        vertical-align: middle;
+                      }
+                      .ellipsis {
+                          overflow: hidden;
+                          text-overflow: ellipsis;
+                          white-space: nowrap;
+                          max-width: ~"calc(100% - 50px)";
+                      }
+                    }
+                    .fileVersion {
+                      cursor: pointer;
+                      &:hover {
+                        text-decoration: underline;
+                      }
+                    }
+                    .breadCrumb {
+                      margin: 5px 0;
+
+                      > * {
+                        line-height: 20px;
+                        display: inline;
+                        font-weight: bold;
+                      }
+
+                      a {
+                        text-decoration: underline;
+                      }
+                    }
                 }
                 > .arrowNext > span:before {
                     font-family: "PLF-FONT-ICONS";
@@ -440,7 +479,7 @@
             .translate(-50%, -50%);
 		}
 		#NavCommands {
-            background: white;
+      background: white;
 		}
 		.fileContent {
 			.title {
@@ -883,6 +922,7 @@
 	  .findbar {
 		  left: 40px; //1.2
 	  }
+
   }
 }
 
@@ -899,6 +939,10 @@
             .previewBtn {
               margin-right: 0px;
               font-size: 0;
+            }
+
+            .fileInfo {
+              font-size: 12px;
             }
         }
     }
