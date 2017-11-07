@@ -532,8 +532,6 @@
         overflow-y: auto;
     }
 	.displayItems {
-		min-width: 300px;
-		max-width: 300px;
 		overflow-x: hidden;
 		&.scroll {
 			overflow: auto;
@@ -543,6 +541,10 @@
 		}
 		.user-name{
 			color: @linkColor;
+		}
+		.media {
+			min-width: 300px;
+			max-width: 100%;
 		}
 		> li {
 			display: block;
