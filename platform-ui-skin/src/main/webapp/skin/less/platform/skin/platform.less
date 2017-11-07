@@ -308,19 +308,22 @@ body .RightBodyTDContainer {
         display: none;
       }
       a > i {
-        background-size: cover;
         width: 16px;
         height: 16px;
         display: inline-block;
       }
       .groupNavigation {
         padding: 5px 0 13px 0;
-        .groupIcon {
-          margin-left: 14px !important;
-          text-overflow: clip !important;
-        }
-        .childrenContainer {
-          display: block !important;
+        .groupItem {
+          &> div {
+            .groupIcon {
+              margin-left: 14px;
+              text-overflow: clip;
+            }
+          }
+          .childrenContainer {
+            display: block !important;
+          }
         }
       }
     }
