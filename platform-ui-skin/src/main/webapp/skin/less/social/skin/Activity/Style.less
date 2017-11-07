@@ -2058,6 +2058,7 @@ blockquote:after {
 
 #likersDetail {
 	.liker {
+                display: flex;
 		clear: both;
 		height: 34px;
 		line-height: 34px;
@@ -2075,17 +2076,17 @@ blockquote:after {
 
 		.likerName {
 			display: inline-block;
-			width: 300px;
 			height: 100%;
 			overflow: hidden;
 			text-overflow: ellipsis;
 			white-space: nowrap;
 			font-weight: bold;
-			padding-left: 8px;
+			margin: 0 8px;
+                        flex: 1;
 		}
 
 		.likeClick {
-			float: right;
+			margin-left: auto;
 		}
 	}
 }
@@ -2094,7 +2095,6 @@ blockquote:after {
 	#likersDetail {
 		.likeClick {
 			.btn {
-				width: 140px;
 				span {
 					display: block;
 				}
