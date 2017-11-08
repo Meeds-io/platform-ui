@@ -155,7 +155,7 @@
             line-height: 75px;
             width: 94%;
             border-radius: 5px;
-            border: 3px dashed #e6e6e6;
+            border: 3px dashed @dropFileAreaBackgroundOnDragEnter;
             font-size: 14px;
             color: #333333;
             margin-top: 10px;
@@ -547,8 +547,7 @@
     }
 
     #UIPopupComposer .PopupContent .uiAction button {
-        width: auto;
-        display: inline;
+        display: block;
     }
 
     #UIDocumentSelectorTab .selectionBox {
