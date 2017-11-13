@@ -27,6 +27,10 @@
       }
 	}
 
+	.toggle-left-bar {
+		display: none;
+	}
+
 	.uiCompanyNavigations {
 		list-style: none;
 		margin: 0;
@@ -82,4 +86,19 @@
 		}
 
 	}
+}
+
+@media (min-width: 1025px) {
+
+  .uiCompanyNavigationPortlet {
+    .toggle-left-bar {
+      display: inline-block;
+    }
+
+    .uiCompanyNavigations {
+      > li > a {
+        text-overflow: clip !important;
+      }
+    }
+  }
 }
