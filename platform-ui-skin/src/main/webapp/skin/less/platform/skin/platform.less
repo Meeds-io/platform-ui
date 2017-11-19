@@ -139,6 +139,7 @@ body .RightBodyTDContainer {
     border-radius: 9px;
     opacity: 1;
     left: 0;
+    z-index: 100;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
@@ -151,39 +152,43 @@ body .RightBodyTDContainer {
     &:nth-child(1) {
       top: 0px;
     }
-    &:nth-child(2), &:nth-child(3) {
+    &:nth-child(2) {
       top: 9px;
     }
-    &:nth-child(4) {
+    &:nth-child(3) {
       top: 18px;
     }
   }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -26px 0 0 -26px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    background: rgba(111, 148, 182, 0.3);
+  }
+
+  &.toggle-left-bar-click:after {
+    animation: anim-effect-boris 0.3s forwards;
+  }
 }
 
-.expand-left-bar .LeftNavigationTDContainer .toggle-left-bar, .open-left-bar .UIToolbarContainer .toggle-left-bar {
-  span {
-    &:nth-child(1) {
-      top: 18px;
-      width: 0%;
-      left: 50%;
-    }
-    &:nth-child(2) {
-      -webkit-transform: rotate(45deg);
-      -moz-transform: rotate(45deg);
-      -o-transform: rotate(45deg);
-      transform: rotate(45deg);
-    }
-    &:nth-child(3) {
-      -webkit-transform: rotate(-45deg);
-      -moz-transform: rotate(-45deg);
-      -o-transform: rotate(-45deg);
-      transform: rotate(-45deg);
-    }
-    &:nth-child(4) {
-      top: 18px;
-      width: 0%;
-      left: 50%;
-    }
+@keyframes anim-effect-boris {
+  0% {
+    transform: scale3d(0.3, 0.3, 1);
+  }
+  25%, 50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale3d(1.2, 1.2, 1);
   }
 }
 
