@@ -16,6 +16,10 @@
 		float: right !important;
 	}
 
+  	.toggle-left-bar span {
+    	background: white;
+  	}
+
 	.uiCreate{
 		min-width: 240px;
 		.uiAction{
@@ -815,4 +819,17 @@
             top:0;
         }
     }
+}
+
+@media (min-width: 1025px) {
+  	.UIToolbarContainer {
+      	left: 250px;
+      	right: 0;
+      	width: auto;
+      	transition: left 0.31s;
+
+    	.toggle-left-bar {
+      		display: none;
+    	}
+  	}
 }

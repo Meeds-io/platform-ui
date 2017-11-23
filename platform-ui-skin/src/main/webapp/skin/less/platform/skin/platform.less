@@ -1,32 +1,33 @@
-@import "../../variables.less"; 
+@import "../../variables.less";
 @import "../../mixins.less";
 @import "Sprites/Style.less";
 @import "uiToolbarContainer/Style.less";
+@import "perfect-scrollbar.less";
 // -------------------------
-.TDContainer{
-	vertical-align: top;
+.TDContainer {
+  vertical-align: top;
 }
 
-.LeftNavigationTDContainer{
-    width: 250px;
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2) inset;
-    background: @sidebarBackground;
-    border-right: 1px solid @borderColor;
-    vertical-align: top;
-    padding: 0px;
+.LeftNavigationTDContainer {
+  width: 250px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.2) inset;
+  background: @sidebarBackground;
+  border-right: 1px solid @borderColor;
+  vertical-align: top;
+  padding: 0px;
 }
 
 .RightBodyTDContainer {
-	padding: 0px;
-	vertical-align: top;
-	background: @contentBackground;
+  padding: 0px;
+  vertical-align: top;
+  background: @contentBackground;
 }
 
-.RightBodyTDContainer, .LeftNavigationTDContainer {
-    padding-top: @navbarHeight;
-    > div {
-      min-height: calc(~"100vh" - @navbarHeight);
-    }
+body .RightBodyTDContainer {
+  padding-top: @navbarHeight;
+  > div {
+    min-height: calc(~"100vh" - @navbarHeight);
+  }
 }
 
 .rounded-corners (@radius: 5px) {
@@ -38,64 +39,65 @@
 }
 
 .OfficeLeftTDContainer {
-	padding: 40px 0 0 40px;
+  padding: 40px 0 0 40px;
 }
 
 .OfficeMiddleTDContainer {
-  padding: 40px!important;
-  .calendarWorkingWorkspace ,
+  padding: 40px !important;
+  .calendarWorkingWorkspace,
   .uiAnswersPortlet,
   .uiFAQPortlet,
   .uiForumPortlet,
   .uiPollPortlet,
   .uiWikiUpperArea,
   .wikiLayout,
-  .UIJCRExplorerPortlet{
-  	padding: 0px;
-  	margin: 0 0 15px;
+  .UIJCRExplorerPortlet {
+    padding: 0px;
+    margin: 0 0 15px;
   }
-  .uiSocApplication  {
- 	 padding: 0px;
+  .uiSocApplication {
+    padding: 0px;
   }
-  .uiAnswersPortlet ,.uiECMAdminPortlet .ecmAdminPanel{
-  	padding-left:0!important;
+  .uiAnswersPortlet, .uiECMAdminPortlet .ecmAdminPanel {
+    padding-left: 0 !important;
   }
- .uiPollPortlet .uiPollContainer  {
-  	margin:0;
+  .uiPollPortlet .uiPollContainer {
+    margin: 0;
   }
   .uiLeftContainerArea {
-  	padding-left: 0px;
+    padding-left: 0px;
   }
   .uiRightContainerArea {
-  	padding-right: 0px;
+    padding-right: 0px;
   }
   .uiECMAdminPortlet .uiECMAdminWorkingArea {
-  	margin-right:0;
+    margin-right: 0;
   }
-  .uiECMAdminPortlet .uiResizableBlock .ShowSideBar > div{
-  	width:100%!important
+  .uiECMAdminPortlet .uiResizableBlock .ShowSideBar > div {
+    width: 100% !important
   }
 }
 
 .OfficeRightTDContainer {
-  width: 285px!important;
+  width: 285px !important;
   padding: 40px 20px 40px 0;
 }
 
 #header {
   .rounded-corners;
 }
+
 #footer {
   .rounded-corners(10px);
 }
 
 .QuickEditUnchecked {
-    background: url("@{images-path}/platform/skin/ToolbarContainer/ToolbarContainer.png") no-repeat scroll left -48px transparent;
+  background: url("@{images-path}/platform/skin/ToolbarContainer/ToolbarContainer.png") no-repeat scroll left -48px transparent;
 }
 
 .QuickEditChecked {
-    background: url("@{images-path}/platform/skin/ToolbarContainer/ToolbarContainer.png") no-repeat scroll left -69px transparent;
-    padding-left: 24px !important;
+  background: url("@{images-path}/platform/skin/ToolbarContainer/ToolbarContainer.png") no-repeat scroll left -69px transparent;
+  padding-left: 24px !important;
 }
 
 /* Monitoring */
@@ -103,12 +105,212 @@
 .MonitoringRightTDContainer {
   padding: 20px 20px;
 }
+
 .MonitoringMiddleTDContainer {
   padding: 20px 0 0;
 }
 
 @media (max-width: 767px) {
-	.OfficeMiddleTDContainer {
-	    padding: 20px !important;
-	}
+  .OfficeMiddleTDContainer {
+    padding: 20px !important;
+  }
+}
+
+/* Hamburger menu */
+.toggle-left-bar {
+  width: 25px;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+
+  span {
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    background: #626262;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    z-index: 100;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+
+    &:nth-child(1) {
+      top: 0px;
+    }
+    &:nth-child(2) {
+      top: 9px;
+    }
+    &:nth-child(3) {
+      top: 18px;
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -26px 0 0 -26px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    background: rgba(111, 148, 182, 0.3);
+  }
+
+  &.toggle-left-bar-click:after {
+    animation: anim-effect-boris 0.3s forwards;
+  }
+}
+
+@keyframes anim-effect-boris {
+  0% {
+    transform: scale3d(0.3, 0.3, 1);
+  }
+  25%, 50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale3d(1.2, 1.2, 1);
+  }
+}
+
+@media (min-width: 1025px) {
+
+  .LeftNavigationTDContainer {
+    overflow: hidden;
+    transition: width 0.3s;
+  }
+
+  #LeftNavigation {
+    width: 250px;
+    position: fixed;
+    transition: width 0.3s;
+    height: 100vh;
+    .ps__scrollbar-y-rail {
+      background-color: transparent;
+    }
+  }
+
+  .uiSpaceNavigationPortlet .uiIconSpaceNavigation {
+    display: inline;
+    font-size: 16px;
+    margin-left: 9px;
+    margin-right: 8px;
+  }
+
+  .collapse-left-bar {
+    .UIToolbarContainer {
+      left: 65px;
+      transition: left 0.3s;
+    }
+    .LeftNavigationTDContainer {
+      width: 65px;
+      transition: width 0.31s;
+    }
+    #LeftNavigation {
+      width: 65px;
+      position: fixed;
+    }
+    .uiCompanyNavigationPortlet {
+      h5.title {
+        vertical-align: middle;
+        > span {
+          display: none;
+        }
+      }
+      .uiCompanyNavigations {
+        > li > a {
+          text-overflow: clip;
+        }
+        span {
+          display: none;
+        }
+      }
+    }
+
+    .uiSpaceNavigationPortlet {
+      h5.title {
+        a span {
+          display: none;
+        }
+      }
+      .spaceCont {
+        .searchInput {
+          input {
+            display: none;
+          }
+        }
+      }
+      .spaceNavigation {
+        max-height: none;
+        span {
+          display: none;
+        }
+      }
+      .moreSpace {
+        display: none;
+      }
+      .joinSpace {
+        border: none;
+        overflow: hidden;
+        white-space: nowrap;
+        > a {
+          padding-left: 24px;
+          > i.uiIconPLFMan {
+            margin-right: 1000px;
+          }
+        }
+      }
+    }
+
+    #LeftBreadCrumbNavigationPortlet {
+      display: none;
+    }
+
+    .uiGroupsNavigationPortlet {
+      h5 {
+        text-overflow: clip;
+      }
+      h5 > span, a > .nodeLabel, .uiIconMiniArrowDown {
+        display: none;
+      }
+      a > i {
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+      }
+      .groupNavigation {
+        padding: 5px 0 13px 0;
+        .groupItem {
+          &> div {
+            .groupIcon {
+              margin-left: 14px;
+              text-overflow: clip;
+            }
+          }
+          .childrenContainer {
+            display: block !important;
+          }
+        }
+      }
+    }
+  }
 }
