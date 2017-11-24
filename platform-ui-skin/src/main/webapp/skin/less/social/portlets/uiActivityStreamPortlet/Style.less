@@ -161,6 +161,7 @@
             margin-top: 10px;
             a {
                 text-decoration: underline;
+                
             }
 
             .mobileText {
@@ -345,193 +346,251 @@
         max-height: 300px;
         padding: 0 16px 16px 16px;
     }
-
+    .ellipsis {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
     .fileShare {
         display: block;
         width: 100%;
         height: 300px;
         max-height: 300px;
         overflow: hidden;
-        .MediaName {
-            white-space: nowrap;
-            line-height: 48px;
-            text-align: left;
-            width: 100%;
-            color: #fff;
-            text-decoration: none;
-            background-color: #555;
-            opacity: 0.7;
-            height: 48px;
-            display: block;
-            vertical-align: middle;
-            box-sizing: border-box;
-            float: left;
-            max-width: 100%;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            position: relative;
-            bottom: 48px;
-            padding-right: 10px;
-            font-weight: bold;
-            
-            div {
-                display: inline-block;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                width: 100%;
-                max-width: 100%;
-
-                i {
-                    height: 33px;
-                    width: 38px;
-                    background-size: 33px;
-                    vertical-align: middle;
-                    margin: 0;
-                }
-            }
-        }
-
-        .mediaContent + .MediaName {
-            bottom: -5px;
-        }
-
-        .isPreviewable {
-            box-sizing: border-box;
-            overflow: hidden;
-            max-height: 300px;
-            cursor: pointer;
-            > div:first-child {
-                margin-top: 0px;
-                text-align: center;
-                vertical-align: middle;
-                width: 100%;
-                height: 300px;
-                max-height: 300px;
-                line-height: 300px;
-                overflow: hidden;
-                position: relative;
-                top: 0;
-                border: 1px solid #ccc;
-                box-sizing: border-box;
-                border-radius: 2px;
-                img {
-                    max-width: 100%;
-                    width: 100%;
-                }
-            }
-            > .MediaName:first-child {
-                padding-left: 10px;
-                vertical-align: middle;
-                text-align: center;
-                display: block;
-
-                div {
-                    display: inline-block;
-                    line-height: 1em;
-                    text-align: center;
-                    vertical-align: middle;
-                    max-width: 100%;
-                    margin: auto 0;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-
-                    i {
-                        display: block;
-                        margin: 10px auto;
-                    }
-    
-                    span {
-                        white-space: nowrap;
-                    }
-                }
-            }
-        }
-
-        .previewable10 , .previewable20 , .previewable21 , .previewable31 {
-            > div:first-child {
-                line-height: 300px;
-                max-height: 300px;
-            }
-        }
-
-        .previewable31 , .previewable32 {
-            > div:first-child {
-                line-height: 145px;
-                max-height: 145px;
-            }
-        }
-
-        .previewable10 {
-            display: block;
-            width: 100%;
-            height: 300px;
-            padding: 0;
-            margin: 0;
-        }
-
-        .previewable20 {
-            display: table-cell;
-            width: 50%;
-            height: 300px;
-            float: left;
-            padding: 0;
-            margin: 0;
-        }
-
-        .previewable21 {
-            display: block;
-            padding: 0 0 0 10px;
-            margin: 0;
-            width: 50%;
-            height: 300px;
-            float: right;
-        }
-
-        .previewable30 {
-            display: table-cell;
-            width: 50%;
-            margin: 0;
-            padding: 0;
-            height: 300px;
-            float: left;
-        }
-
-        .previewable31 {
-            display: block;
-            width: 50%;
-            margin: 0;
-            padding: 0 0 5px 10px;
-            height: 150px;
-            max-height: 150px;
-            float: right;
-        }
-
-        .previewable32 {
-            display: block;
-            width: 50%;
-            margin: 0;
-            padding: 5px 0 0 10px;
-            max-height: 150px;
-            float: right;
-        }
-
-        .LoadMore {
-            display: block;
-            vertical-align: middle;
-            text-align: center;
-            float: left;
-            line-height: 145px;
-            height: 145px;
-            max-height: 145px;
-            top: -145px;
-            font-size: 1.4em;
-            font-weight: normal;
-        }
-
-        .LoadMore:hover {
-            text-decoration: underline;
-        }
+        
     }
+
+    .isPreviewable {
+      position: relative;
+      box-sizing: border-box;
+      overflow: hidden;
+      max-height: 300px;
+      text-align: center;
+      cursor: pointer;
+      border: 1px solid #ccc;
+    }
+
+    .MediaName {
+        height: 100%;
+        white-space: nowrap;
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+        color: #fff;
+        background-color: rgba(0,0,0,.6);
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        position: absolute;
+        opacity: 1;
+        -webkit-transition: opacity 0.35s;
+        transition: opacity 0.35s;
+
+        > * {
+          position: relative;
+          flex: 1 auto;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          padding: 0 10px;
+          width: ~"calc(100% - 20px)";
+          margin: 0;
+
+          > .content {
+            margin: auto;
+
+            > * {
+              margin: auto;
+            }
+          }
+        }
+         a {
+          color: #fff;
+          text-decoration: underline;
+          font-weight: bold;
+         }
+        .fileName {
+          font-size: 1.3em;
+          color: #fff;
+          font-weight: normal;
+
+          .fileTitle {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            .fileNameParentLink {
+                max-width: ~"calc(100% - 50px)";
+                margin: 0;
+                display: flex;
+
+                a {
+                  margin: auto;
+                  text-decoration: none;
+
+                  &:hover {
+                    text-decoration: underline;
+                  }
+                }
+            }
+          }
+          .fileVersion {
+            margin: 0 5px;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+        .uiIconArrowRight {
+          color: #fff;
+          width: 20px;
+          text-decoration: none;
+        }
+        .borderTop {
+          width: 80%;
+          margin: 0 auto;
+          flex: 0 auto;
+          padding: 0;
+          height: 0;
+          border-top: 1px solid #fff;
+        }
+        .fileBreadCrumbContent {
+          .fileBreadCrumbWrapper {
+            margin: auto;
+            height: 20px;
+          }
+        }
+      }
+
+      .mediaContent {
+         display:flex;
+         min-height: 100%;
+         max-height: 100%;
+
+         img {
+           margin: auto;
+           flex: 0 0 auto;
+         }
+
+         & + .MediaName {
+          opacity: 0;
+          transition-delay: 0.2s;
+
+          > * {
+            transition-delay: 0.2s;
+            &:first-child {
+                transform: scale(0,2);
+                transition-duration: 0.35s;
+                transform-origin: bottom;
+            }
+            &:last-child {
+                transform: scale(0,2);
+                transition-duration: 0.35s;
+                transform-origin: top;
+            }
+          }
+
+          .borderTop {
+            transform: scale(0,1);
+            transition-delay: 0.2s;
+          }
+          &.LoadMore {
+              opacity: 1;
+              transition-delay: 0s;
+          }
+        }
+      }
+
+      .isPreviewable:hover .mediaContent, .isPreviewable .NoPreview {
+        & + .MediaName {
+          opacity: 1;
+          -webkit-transition: opacity 0.35s;
+          transition: opacity 0.35s;
+          transition-delay: 0s;
+
+          > * {
+            transform: scale(1);
+            -webkit-transition-duration: 0.35s;
+            transition-duration: 0.35s;
+            transition-delay: 0s;
+          }
+          .borderTop {
+            transform: scale(1);
+            transition-duration: 0.35s;
+            transition-delay: 0s;
+          }
+        }
+      }
+
+      .previewable10 {
+          display: block;
+          width: 100%;
+          height: 300px;
+          padding: 0;
+          margin: 0;
+      }
+
+      .previewable20 {
+          display: table-cell;
+          width: ~"calc(50% - 5px)";
+          height: 300px;
+          float: left;
+          margin: 0 5px 0 0;
+          padding: 0;
+      }
+
+      .previewable21 {
+          display: block;
+          margin: 0 0 0 5px;
+          padding: 0;
+          width: ~"calc(50% - 5px)";
+          height: 300px;
+          float: right;
+      }
+
+      .previewable30 {
+          display: table-cell;
+          width: 50%;
+          margin: 0;
+          padding: 0;
+          height: 300px;
+          float: left;
+      }
+
+      .previewable31 {
+          display: block;
+          width: ~"calc(50% - 10px)";
+          padding: 0;
+          margin: 0 0 5px 10px;
+          height: 145px;
+          max-height: 145px;
+          float: right;
+      }
+
+      .previewable32 {
+        display: block;
+        width: ~"calc(50% - 10px)";
+        margin: 5px 0 0 10px;
+        padding: 0;
+        height: 145px;
+        max-height: 145px;
+        float: right;
+      }
+
+      .LoadMore {
+          display: block;
+          vertical-align: middle;
+          text-align: center;
+          float: left;
+          height: 145px;
+          max-height: 145px;
+          line-height: 145px;
+          font-size: 1.4em;
+          font-weight: normal;
+          text-decoration: underline;
+      }
 }
 
 @media (max-width: 480px) {
@@ -637,15 +696,11 @@
             }
         }
     }
+}
 
+@media (max-width: 768px) and (max-height: 1024px), (max-width: 1024px) and (max-height: 768px) {
     .multiFilesActivity .fileShare {
         display: block;
-        .isPreviewable {
-            > div:first-child {
-                max-height: 100%;
-                line-height: initial;
-            }
-        }
 
         .previewable10 > div:first-child , .previewable20 > div:first-child , .previewable21 > div:first-child , .previewable30 > div:first-child {
             line-height: initial;
@@ -684,27 +739,58 @@
 
         .previewable31 {
             display: inline-block;
-            width: 50%;
+            width: ~"calc(50% - 2px)";
             height: 50%;
-            margin: 0;
-            padding: 0 5px 0 0;
+            margin: 0 2px 0 0;
+            padding: 0;
             float: left;
         }
 
         .previewable32 {
             display: inline-block;
-            width: 50%;
+            width: ~"calc(50% - 2px)";
             height: 50%;
-            margin: 0;
+            margin: 0 0 0 2px;
             float: right;
             padding: 0;
         }
+        .isPreviewable {
+            > div:first-child {
+                max-height: 100%;
+                line-height: normal;
+            }
 
-        .MediaName:before {
-            display: inline-block;
-            height: 100%;
-            vertical-align: middle;
-            content: "";
+            .MediaName {
+              opacity: 1;
+
+              > * {
+                transform: scale(1);
+                > * {
+                  transform: scale(1);
+                }
+              }
+            }
+            .mediaContent+.MediaName {
+              top: auto;
+              bottom: 0;
+              height: 40px;
+
+              .infoFile, .fileBreadCrumbContent, .borderTop {
+                display: none;
+              }
+              .infoFile {
+                font-size: 12px;
+              }
+            }
+            .NoPreview +.MediaName, .mediaContent+.MediaName.LoadMore {
+              top: 0;
+              bottom: auto;
+              height: 100%;
+
+              .infoFile, .fileBreadCrumbContent, .borderTop {
+                display: flex;
+              }
+            }
         }
     }
 }
@@ -953,4 +1039,29 @@
 
 .uiBgd64x64FileBlog {
     background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileBlog.png");
+}
+
+.uiBgdFile {
+    background: url("@{images-path}/social/skin/Activity/Fileicons/file.png") no-repeat top center /50%;
+}
+.uiBgdFileExcel {
+    background: url("@{images-path}/social/skin/Activity/Fileicons/excel.png") no-repeat top center /50%;
+}
+.uiBgdFilePPT {
+    background: url("@{images-path}/social/skin/Activity/Fileicons/ppt.png") no-repeat top center /50%;
+}
+.uiBgdFilePDF {
+    background: url("@{images-path}/social/skin/Activity/Fileicons/pdf.png") no-repeat top center /50%;
+}
+.uiBgdFileWord {
+    background: url("@{images-path}/social/skin/Activity/Fileicons/word.png") no-repeat top center /50%;
+}
+.uiBgdFileImage {
+    background: url("@{images-path}/social/skin/Activity/Fileicons/image.png") no-repeat top center /50%;
+}
+
+@media (max-width: 480px) {
+  div[class^='uiBgdFile'], div[class*=' uiBgdFile'] {
+      background-position-y: center;
+  }
 }
