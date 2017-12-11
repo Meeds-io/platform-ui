@@ -1,60 +1,20 @@
 @import "../../../../variables.less"; 
 @import "../../../../mixins.less";
 
+#LeftBreadCrumbNavigationPortlet {
+  display: none;
+}
 .uiBreadcumbsNavigationPortlet {
-  background: @primaryBackgroundHover;
-  .uiContainer {
-    /*border-bottom: 1px solid @borderColor;*/
-    color: @textColor;
-    padding: 11px;
-    height: 68px;
-    .userAvt {
-      width: 68px;
-      top: 50%;
-      position: relative;
-      transform: translateY(-50%);
-      img {
-        border: 1px solid @baseBackground;
-        border-radius: 5px 5px 5px 5px;
-        max-height: 66px;
-        max-width: 66px;
-      }
-    }
-
-    .breadcumbEntry {
-      margin-left: 69px;
-      padding-left: 10px;
-    }
-
-    .name {
-      height: 64px;
-      line-height: 64px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      text-transform: uppercase;
-      white-space: nowrap;
-      width: 100%;
-        & + .chat-button {
-            margin-top: -40px;
-        }
-    }
-
-    .changeAvatar {
-      color: @primaryColor;
-      font-size: 12px;
-      display: block;
-      margin-top: -13px;
-      white-space: nowrap;
-      width: 100%;
-      text-overflow: ellipsis;
-      overflow: hidden;
-    }
-  }
+  background: @baseBackground;
+  margin: 12px 10px 0px 10px;
   .uiBreadcumbsNavigations {
     list-style: none;
     margin: 0;
-    padding: 10px 0px;
+    padding: 4px 0px;
     position: relative;
+    border: 1px solid #cccccc;
+    .border-radius(0 0 3px 3px);
+    .box-shadow(0px 0px 1px rgba(0, 0, 0, 0.17));
     .navItemSelected{
       padding: 5px 25px;
       font-weight: bold;
@@ -63,15 +23,9 @@
       border-bottom: 1px solid @plfNavigationBgSelected;
       display: block;
       .text-overflow;
-      &:after {
-        background: @plfNavigationBgBorderLeft;
-        border: 1px solid @plfNavigationBorderLeft;
-        content: "";
-        left: 0;
-        top: 10px;
-        bottom: 10px;
-        position: absolute;
-        width: 5px;
+      .breadcumbEntry:before {
+        content: '>';
+        margin: auto 10px;
       }
     }
   }
