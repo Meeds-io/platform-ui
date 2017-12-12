@@ -134,31 +134,28 @@
     background: url(/eXoSkin/skin/images/themes/default/social/skin/SpaceMenuPortlet/menuBg.png) no-repeat 90% center, -webkit-linear-gradient(0deg,#99a1b6 0,#8c94a7 100%);;
     background: url(/eXoSkin/skin/images/themes/default/social/skin/SpaceMenuPortlet/menuBg.png) no-repeat 90% center, -ms-linear-gradient(0deg,#99a1b6 0,#8c94a7 100%);;
 
-    > a [class^="uiIcon"] {
-        position: absolute;
-        border: 1px solid #fff;
-        color: #fff;
-        padding: 5px;
-        .border-radius(50%);
+    .bannerControls {
         display: none;
-        font-size: 18px;
-        background-color: rgba(0, 0, 0, 0.2);
-        width: 30px;
-        height: 30px;
-        box-sizing: border-box;
+        position: absolute;
+        cursor: pointer;
+        right: 5px;
+        top: 47px;
+
+        a [class^="uiIcon"] {
+            border: 1px solid #fff;
+            color: #fff;
+            padding: 5px;
+            .border-radius(50%);
+            font-size: 18px;
+            background-color: rgba(0, 0, 0, 0.2);
+            width: 30px;
+            height: 30px;
+            box-sizing: border-box;
+        }
     }
-    .uiIconTrash {
-      top: 54px;
-      right: 44px;
-    }
-    .uiIconCamera {
-      top: 54px;
-      right: 6px;
-    }
-    &:hover .uiIconTrash,
-    &:hover .uiIconCamera {
-      display: inline;
-      cursor: pointer;
+
+    &:hover .bannerControls {
+      display: inline-block;
     }
 
     h3 {
@@ -263,8 +260,7 @@
         padding-top: 30px;
         padding-bottom: inherit;
 
-        > a .uiIconTrash,
-        > a .uiIconCamera {
+        > .bannerControls {
           display: none;
         }
 
@@ -383,13 +379,8 @@
         margin-top: 4px;
         margin-bottom: 7px;
       }
-      > a .uiIconTrash {
-        top: 13px;
-        right: 44px;
-      }
-      > a .uiIconCamera {
-        top: 13px;
-        right: 6px;
+      .bannerControls {
+        top: 16px;
       }
     }
     .spaceMenuNavHeader .spaceMenuApps .btn {
@@ -461,6 +452,9 @@
       }
       .spaceMenuApps {
         margin-left: 67px;
+      }
+      .bannerControls {
+        top: 7px;
       }
     }
   }
