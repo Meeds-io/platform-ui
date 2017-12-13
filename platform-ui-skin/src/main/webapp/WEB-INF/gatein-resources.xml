@@ -672,6 +672,29 @@
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/platform/portlets/extensions/registration.css</css-path>
   </portlet-skin>
+  
+  <portlet-skin>
+    <application-name>portal</application-name>
+    <portlet-name>AccountSetup</portlet-name>
+    <skin-name>${exo.skin.name}</skin-name>
+    <css-path>/skin/css/platform/portlets/extensions/welcome-screens.css</css-path>
+  </portlet-skin>
+  
+  <!-- Platform - welcome screens skins -->
+  <portlet-skin>
+    <application-name>portal</application-name>
+    <portlet-name>Conditions</portlet-name>
+    <skin-name>${exo.skin.name}</skin-name>
+    <css-path>/skin/css/platform/portlets/welcome-screens/termsandconditions.css</css-path>
+  </portlet-skin>
+  
+  <portlet-skin>
+    <application-name>trial</application-name>
+    <portlet-name>UnlockTrial</portlet-name>
+    <skin-name>${exo.skin.name}</skin-name>
+    <css-path>/skin/css/platform/portlets/welcome-screens/unlockTrial.css</css-path>
+  </portlet-skin>
+  
 
   <!-- Simple window style -->
   <window-style>
