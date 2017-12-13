@@ -9,6 +9,14 @@
 	position: absolute;
 	max-width: 95%;
 	word-wrap: break-word;
+
+    .cke_dialog {
+        width: auto;
+        .uiIconClose {
+            background: none;
+            top: 10px;
+        }
+    }
 	.popupHeader {
 		background-color: @uiPopupHeaderBackground;
 		.box-shadow(@uiPopupHeaderBoxShadow);
@@ -16,8 +24,10 @@
 		margin-bottom: @uiPopupHeaderMarginBottom;
 		.border-radius(4px 4px 0 0 );
 		padding: 8px 10px 8px 15px;
-		font-size: 14px;
+		font-size: @popupTitleFontSize;
 		font-weight: bold;
+        color: @uiPopupTitleColor;
+		
 		[class^="uiIcon"] {
 			margin: 0 0 0 4px;
 			cursor: pointer;
@@ -35,8 +45,8 @@
 			margin: 0;
 			color: @uiPopupTitleColor;
 			display: block;
-			cursor: move;
-			font-size: 14px;
+            cursor: move;
+			font-size: @popupTitleFontSize;
 			font-weight: bold;
 		}
 	}
