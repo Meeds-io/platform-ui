@@ -90,6 +90,7 @@
                                 <include>customStyle.less</include>
                                 <include>Portlets/UIOrganizationPortlet/Style.less</include>
                                 <include>Portlets/UITabbedDashboardPortlet/Style.less</include>
+                                <include>Portlets/UIGadgetPortlet/Style.less</include>
                                 <include>Portlets/SiteNavigationPortlet/Style.less</include>
                                 <include>Portlets/UIAccountPortlet/Style.less</include>
                                 <include>Portlets/UIApplicationRegistryPortlet/Style.less</include>

@@ -69,6 +69,14 @@
     <css-path>/skin/css/Portlets/UITabbedDashboardPortlet/Style.css</css-path>
     <overwrite>true</overwrite>
   </portlet-skin>
+  
+  <!-- GadgetPortlet skins -->
+  <portlet-skin>
+    <application-name>dashboard</application-name>
+    <portlet-name>GadgetPortlet</portlet-name>
+    <skin-name>${exo.skin.name}</skin-name>
+    <css-path>/skin/css/Portlets/UIGadgetPortlet/Style.css</css-path>
+  </portlet-skin>
 
   <!-- PortalNavigationPortlet skins -->
   <portlet-skin>
