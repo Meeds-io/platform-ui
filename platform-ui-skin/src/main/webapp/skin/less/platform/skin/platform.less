@@ -21,13 +21,12 @@
   padding: 0px;
   vertical-align: top;
   background: @contentBackground;
+  padding-top: @navbarHeight;
 }
 
-body .RightBodyTDContainer {
-  padding-top: @navbarHeight;
-  > div {
-    min-height: calc(~"100vh" - @navbarHeight);
-  }
+#RightBody {
+  min-height: calc(~"100vh" - @navbarHeight);
+  .clearfix();
 }
 
 .rounded-corners (@radius: 5px) {

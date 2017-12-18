@@ -685,6 +685,11 @@
             width: 114px!important;
         }
     }
+  
+    .UIToolbarContainer .dropdown-menu {
+        max-height: calc(~"100vh" - @navbarHeight + 30px);
+        overflow-y: auto; 
+    }
 }
 
 @media (max-width: 640px) {
