@@ -167,24 +167,20 @@
       text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
     }
     .spaceMenuApps {
+      display: inline-flex;
       margin-left: 15px;
-      width: 200px;
-      white-space: nowrap;
-      overflow-x: auto;
-      overflow-y: hidden;
-      -webkit-overflow-scrolling: touch;
-      -ms-overflow-style: -ms-autohiding-scrollbar;
+      min-width: 200px;
       .btn {
         color: @btnColor;
         > i {
           color: inherit;
         }
       }
-      li {
+      > li {
+        display: inline-flex;
         margin-left: 15px;
-        display: inline-block;
       }
-      li:first-child {
+      > li:first-child {
         margin-left: 0px;
       }
     }
@@ -282,9 +278,6 @@
         }
 
         .spaceMenuApps {
-          display: inline-block;
-          margin-top: 0px;
-          vertical-align: middle;
           margin-left: auto;
 
           [class^="uiIcon"] {
@@ -297,7 +290,7 @@
               display: none;
             }
           }
-          li {
+          > li {
             margin-left: 10px;
           }
         }
