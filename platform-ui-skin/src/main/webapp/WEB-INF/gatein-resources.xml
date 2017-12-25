@@ -703,6 +703,12 @@
     <css-path>/skin/css/platform/portlets/welcome-screens/unlockTrial.css</css-path>
   </portlet-skin>
   
+  <!-- Ckeditor - suggester -->
+  <portal-skin>
+    <skin-module>ckeditor-suggester</skin-module>
+    <skin-name>${exo.skin.name}</skin-name>
+    <css-path>/skin/css/commons/skin/CkeditorSuggester/Style.css</css-path>
+  </portal-skin>
 
   <!-- Simple window style -->
   <window-style>

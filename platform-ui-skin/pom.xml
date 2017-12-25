@@ -192,6 +192,7 @@
                                 <include>forum/portlets/forum/forum.less</include>
                                 <include>forum/portlets/poll/pollPortlet.less</include>
                                 <include>commons/skin/commons.less</include>
+                                <include>commons/skin/CkeditorSuggester/Style.less</include>
                                 <include>integration/skin/quicksearchpage.less</include>
                                 <include>integration/skin/searchAdmin.less</include>
                                 <include>integration/skin/searchpage.less</include>
