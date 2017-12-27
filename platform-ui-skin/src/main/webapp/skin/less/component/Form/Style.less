@@ -410,7 +410,47 @@ textarea {
   .placeholder(@placeholderText);
 }
 
-/* switch button */
+/* switch radio*/
+.uiSwitcher {
+	position: relative;
+	display: inline-block;
+	width: 45px;
+	height: 10px;
+	margin-bottom: 0;
+    input {
+      display: none;
+      &:focus + .switcher-slider {
+        box-shadow: 0 0 1px #2196F3;
+      }
+      &:checked + .switcher-slider:before {
+        transform: translateX(18px);
+        background: @uiSwitcherOnBackground;
+      }
+    }
+    .switcher-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: @uiSwitcherBackground;
+      border-radius: 8px;
+      &:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 5px;
+        bottom: -4px;
+        background: @uiSwitcherOffBackground;
+        border-radius: 50%;
+        transition: transform .4s;
+      }
+    }
+}
+
+/* switch button with label*/
 .uiSwitchBtn {
    -webkit-transform: translate3d(0, 0, 0);
    position: relative;
