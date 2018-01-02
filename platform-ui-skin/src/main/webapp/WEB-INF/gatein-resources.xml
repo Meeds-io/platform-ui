@@ -705,8 +705,8 @@
   
   <!-- Ckeditor - suggester -->
   <portal-skin>
-    <skin-module>ckeditor-suggester</skin-module>
     <skin-name>${exo.skin.name}</skin-name>
+    <skin-module>ckeditor-suggester</skin-module>
     <css-path>/skin/css/commons/skin/CkeditorSuggester/Style.css</css-path>
   </portal-skin>
 
