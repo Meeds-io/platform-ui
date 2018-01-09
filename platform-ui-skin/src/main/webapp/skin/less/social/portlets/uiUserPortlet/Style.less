@@ -182,19 +182,18 @@ td.right-column-containerTDContainer {
  							white-space: normal;
  						}
 					}
-				}
-				.uiPosition {
-					max-width: 190px;
+                    &.ellipsis {
+                        max-width: 100%;
+                    }
 				}
 				.listContent {
-					> div {
-						margin: 0;
-						word-break: break-word;
-						&:first-child {
-							width: 80px;
-							display: inline-block;
-							vertical-align: top;
-						}
+                    display: flex;
+                    padding-bottom: 5px;
+					> div:first-child {
+						flex-shrink: 0;
+                        [class^="uiIcon"] {
+                          vertical-align: text-bottom;
+                        }
 					}
 				}
 			}
@@ -493,17 +492,6 @@ td.right-column-containerTDContainer {
 	}
 }
 @media(max-width: 768px){
-	.uiBasicProfilePortlet {
-		.uiBasicInfoSection {
-			.group-user-info {
-				.value-user-info {
-					.uiPosition {
-						max-width: 100%; 
-					}
-				}
-			}
-		}
-	}
 	 body #socialMainLayout {
         padding: 0  15px;
         table.UITableColumn {
