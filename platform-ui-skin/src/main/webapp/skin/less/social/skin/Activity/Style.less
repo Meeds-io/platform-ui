@@ -1076,7 +1076,8 @@
 
 /*======= User Profile and Space Popup ==========*/
 #tipName {
-    .name {
+  table-layout: fixed;
+  .name {
     font-weight: bold;
     color: @linkColor;
   }
@@ -1100,6 +1101,8 @@
 	overflow-y: auto;
 	overflow-x: hidden;
 	max-width: 95%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
   #recentActivity {
 	max-height: 100px;
