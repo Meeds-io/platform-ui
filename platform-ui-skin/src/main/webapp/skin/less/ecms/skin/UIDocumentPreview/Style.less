@@ -330,6 +330,7 @@
             position: relative;
             margin-right: 390px;
             background-color: white;
+			height: ~"calc(100vh - 82px)";
 
 			div.loading {
                margin: auto 0;
@@ -564,12 +565,14 @@
 
 		.uiPreviewWebContent {
 			background: @baseBackground;
-			height: 550px;
 			margin-right: 335px;
-			padding: 15px;
 			border-radius: 3px;
 			overflow-y: auto;
 			word-wrap: break-word;
+
+			.webContentContainer {
+				padding: 15px;
+			}
 		}
 		.uiVote {
 		  	float: left;
