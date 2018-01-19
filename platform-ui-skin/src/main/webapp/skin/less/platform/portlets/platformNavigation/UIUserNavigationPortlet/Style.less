@@ -122,8 +122,20 @@
       margin-top: 0px;
       margin-left: 140px;
       text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
-      i {
+      > span {
+        max-width: calc(~"50%" - 20px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: inline-block;
+        vertical-align: middle;
+        @media (max-width: 1024px) {
+          max-width: calc(~"100%" - 40px);
+        }
+      }
+      > i {
         font-size: 18px;
+        position: static;
       }
       .uiIconUserAvailable:before,
       .uiIconUserOnline:before,
@@ -304,6 +316,9 @@
           margin-top: auto;
           margin-bottom: auto;
           text-shadow: none;
+          > span {
+            max-width: 250px;
+          }
         }
         .profileMenuApps {
           margin-left: auto;
@@ -478,12 +493,6 @@
     .profileMenuNav {
       h3, .profileMenuApps {
         margin-left: 67px;
-      }
-      h3 {
-        text-overflow: ellipsis;
-        width: 200px;
-        white-space: nowrap;
-        overflow: hidden;
       }
       .profileMenuNavHeader .bannerControls {
         top: 7px;

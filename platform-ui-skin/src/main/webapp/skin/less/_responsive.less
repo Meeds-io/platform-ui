@@ -526,10 +526,6 @@
        .uiDropdownWithIcon > a > i {
            top: 0;
        }
-       .uiUserToolBarPortlet > a > img {
-           position: relative;
-           top: -3px;
-       }
     }
 
     .action_close .uiIconClose:before {
@@ -556,14 +552,9 @@
     .visible-tabletL{
         display: block;
     }
-    .uiUserToolBarPortlet {
-        & > {
-            .dropdown-toggle {
-                    max-width: 140px;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
-            }
+    .uiUserToolBarPortlet.uiDropdownWithIcon {
+        .dropdown-toggle {
+            max-width: 140px;
         }
     }
     .UserInfoPortletTDContainer  .dropdown-menu{
