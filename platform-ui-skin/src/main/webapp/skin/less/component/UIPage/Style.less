@@ -7,3 +7,23 @@
 		margin: 0 15px 0 0;
 	}
 }
+.UIPortalWarning.Empty {
+  text-align: center;
+  height: ~"calc(100vh - @navbarHeight - 3px)";
+  display: flex;
+
+  .content {
+    margin: 50px auto auto;
+    .disabled {
+      color: #999999;
+      margin: 15px 0 20px;
+    }
+    .uiIconWarning {
+      font-size: 5em;
+      border-radius: 50%;
+      background-color: #ccc;
+      color: #ffffff;
+      padding: 20px 30px 30px;
+    }
+  }
+}
