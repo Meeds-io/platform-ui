@@ -21,32 +21,6 @@ td.right-column-containerTDContainer {
 
 #socialTopLayout {
 	padding: 10px 20px 0;
-	h3.user-status {
-		margin: 0;
-        width: 100%;
-		> span {
-		    display: inline-block;
-			vertical-align: middle;
-            max-width: calc(~"100%" - 25px);
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-		}
-		> [class^="uiIcon"]{
-			vertical-align: middle;
-		}
-	}
-	.uiRelationshipAction {
-		.user-actions .btn {
-			margin-left: 10px;
-			&.show-default, &.hide-default {
-				padding: 4px 12px 4px 8px;
-			}
-		}
-	}
-} 
-#socialMainLayout {
-	padding: 10px;
 }
 .left-border-row {
 	position: absolute;
@@ -55,7 +29,8 @@ td.right-column-containerTDContainer {
 	bottom: 0px;
 	border-left: solid 1px @borderColor;
 }
-#socialMainLayout,#socialTopLayout {
+#socialMainLayout {
+  padding: 20px 10px 10px;
   .uiSocApplication {
     padding: 10px;
     .uiSocApplication {
@@ -162,16 +137,6 @@ td.right-column-containerTDContainer {
 		display: inline-block;
 		padding: 0px 5px 
 	}
-}
-.uiStatusProfilePortlet{
-	.user-status .uiIconUserOnline:hover, .user-status .uiIconUserAvailable:hover {
-        color: #2ec24d;
-        font-size: 11px;
-	}
-	.uiIconUserAvailable{
-		font-size: 11px;
-	}
-
 }
 .uiBasicProfilePortlet {
 	.uiBasicInfoSection {
@@ -298,9 +263,7 @@ td.right-column-containerTDContainer {
 
 .uiExperienceProfilePortlet {
 	.no-content {
-		.btn {
-			margin-top: 25px;
-		}
+		margin-bottom: 10px;
 	}
 	.experience-container {
 		border-top: 1px solid @borderColor;
