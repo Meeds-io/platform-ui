@@ -196,15 +196,16 @@
 @media (min-width: 1025px) {
 
   .LeftNavigationTDContainer {
-    overflow: hidden;
     transition: width 0.3s;
   }
 
   #LeftNavigation {
     width: 250px;
-    position: fixed;
-    transition: width 0.3s;
-    height: 100vh;
+    &:not(.EdittingContainer) {
+      position: fixed;
+      transition: width 0.3s;
+      height: 100vh;
+    }
     .ps__scrollbar-y-rail {
       background-color: transparent;
     }
