@@ -110,7 +110,7 @@
                                 <include>platform/portlets/homepage/suggestions.less</include>
                                 <include>platform/portlets/homepage/whoisonline.less</include>
                                 <include>platform/portlets/branding/branding.less</include>
-                                <include>platform/portlets/welcome-screens/termsandconditions.less</include>
+                                <include>platform/portlets/welcome-screens/termsAndConditions/style.less</include>
                                 <include>platform/portlets/welcome-screens/unlockTrial.less</include>
                                 <include>platform/portlets/extensions/login.less</include>
                                 <include>platform/portlets/extensions/welcome-screens.less</include>

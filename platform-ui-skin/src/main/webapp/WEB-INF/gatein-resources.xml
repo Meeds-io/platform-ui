@@ -693,7 +693,7 @@
     <application-name>portal</application-name>
     <portlet-name>Conditions</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/platform/portlets/welcome-screens/termsandconditions.css</css-path>
+    <css-path>/skin/css/platform/portlets/welcome-screens/termsAndConditions/style.css</css-path>
   </portlet-skin>
   
   <portlet-skin>
