@@ -563,10 +563,6 @@
 		.user-name{
 			color: @linkColor;
 		}
-		.media {
-			min-width: 300px;
-			max-width: 100%;
-		}
 		> li {
 			display: block;
 			padding: 6px 10px 6px 10px;
@@ -854,4 +850,10 @@
       		display: none;
     	}
   	}
+}
+
+@media (min-width: 768px) {
+	.uiNotificationPopoverToolbarPortlet .dropdown-menu {
+		width: 300px;
+	}
 }
