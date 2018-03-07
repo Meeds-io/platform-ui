@@ -4365,17 +4365,14 @@ a:hover [class^="uiIconApp"], [class^="uiIconApp"]:hover,
 }
 
 .uiIcon40x40TickGray {
-	background-image: url("/eXoSkin/skin/images/system/unified-search/tick.png");
-}
-.uiIcon40x40TickBlue {
-	background-image: url("/eXoSkin/skin/images/system/unified-search/tick-blue.png");
+	color: #999;
 }
 
 .uiIcon40x40TickBlue,.uiIcon40x40TickGray {
-	width: 38px;
-	display: inline-block;
-	vertical-align: middle;
-	height: 36px;
+	font-size: 36px;
+	&:before {
+		content: "\e76f";
+	}
 }
 .btn.disabled:hover [class^="uiIcon"]:before ,input[type="text"]:disabled [class^="uiIcon"]:before {
     color:@colorIconDefault;
