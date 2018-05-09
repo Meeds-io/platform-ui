@@ -41,6 +41,7 @@
     <skin-name>${exo.skin.name}</skin-name>
     <skin-module>customModule</skin-module>
     <css-path>/skin/css/customStyle.css</css-path>
+    <css-priority>0</css-priority>
   </portal-skin>
   <!-- AccountPortlet skins -->
 
