@@ -4,9 +4,9 @@
 //========================================
 body {
 	background: url("@{images-path}/platform/portlets/extensions/login_texture.jpg") repeat;
-  font-family: @baseFontFamily;
-  font-size: @baseFontSize;
-  color: @textColor; 
+	font-family: @baseFontFamily;
+	font-size: @baseFontSize;
+	color: @textColor;
 }
 .loginBGLight {
 	background: @baseBackground;
@@ -23,15 +23,15 @@ body {
 	color: @textColor;
 	display: block;
 	left: 50%;
-    .translate(-50%, -50%);
-    position: absolute;
+	.translate(-50%, -50%);
+	position: absolute;
 	top: 50%;
 	width: 392px;
 	.loginContainer {
 		border-radius: 8px;
-		background: url("@{images-path}/platform/portlets/extensions/loginLeftBG.png") no-repeat left bottom, 
-    			url("@{images-path}/platform/portlets/extensions/loginRightBG.png") no-repeat right bottom,
-    			url("@{images-path}/platform/portlets/extensions/loginCenterBG.png") repeat-x bottom;
+		background: url("@{images-path}/platform/portlets/extensions/loginLeftBG.png") no-repeat left bottom,
+		url("@{images-path}/platform/portlets/extensions/loginRightBG.png") no-repeat right bottom,
+		url("@{images-path}/platform/portlets/extensions/loginCenterBG.png") repeat-x bottom;
 		padding: 0 40px 15px;
 		background-color: @baseBackground;
 	}
@@ -73,9 +73,35 @@ body {
 		.password {
 			background: url("@{images-path}/platform/portlets/extensions/password.png") no-repeat left top;
 		}
+		.iconUser, .iconPswrd{
+			position: relative;
+			left: 1px;
+			top: 37px;
+			display: inline-block;
+			width: 39px;
+			height: 35px;
+			border-right: solid 1px #e1e8ee;
+			border-radius: 4px 0 0 4px;
+		}
+		.iconUser{
+			background: url("@{images-path}/platform/portlets/extensions/username.png") no-repeat left -3px;
+		}
+		.iconPswrd{
+			background: url("@{images-path}/platform/portlets/extensions/password.png") no-repeat left -3px;
+		}
+		.userCredentials:first-child{
+			margin-top: -20px;
+		}
+		.userCredentials{
+			max-height: 60px;
+		}
+		input:-webkit-autofill:focus {
+			box-shadow: inset 0 0 0px 9999px white !important;
+			transition: all 5000s ease-in-out 0s;
+		}
 		input {
 			width: 260px;
-			height: 36px;
+			height: 33px;
 			border: solid 1px @inputBorder;
 			background: @inputBackground;
 			margin: 0 0 14px;
@@ -86,7 +112,7 @@ body {
 			font-size: 18px;
 			outline: none;
 		}
-		input:not(*:root) { 
+		input:not(*:root) {
 			height: 33px;
 		}
 		input::-webkit-input-placeholder {
@@ -111,18 +137,18 @@ body {
 		.loginButton {
 			padding: 30px 0 12px;
 			.button {
-              .border-radius(4px);
+				.border-radius(4px);
 				text-align: center;
 				width: 313px;
 				height: 43px;
 				cursor: pointer;
-                font-family: @sansBoldFontFamily;
-                font-size: 16px;
+				font-family: @sansBoldFontFamily;
+				font-size: 16px;
 				font-weight: bold;
 				outline: none;
 				padding: 0;
-              .buttonBackgroundEXO(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder,@btnPrimaryColor);
-              .box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
+				.buttonBackgroundEXO(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder,@btnPrimaryColor);
+				.box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
 
 			}
 		}
@@ -164,7 +190,7 @@ body {
 			}
 		}
 		.centerLoginContent a{
-			color: @linkColor;  
+			color: @linkColor;
 			text-decoration: none;
 			display: block;
 			margin: 3px 0;
@@ -173,6 +199,8 @@ body {
 	.spaceRole {
 		clear: both;
 		padding: 2px 0 11px;
+		margin-top: 30px;
+
 	}
 	.switchBtnDisabled {
 		filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 50);
@@ -278,6 +306,7 @@ body {
 	border-top: medium none;
 	content: "";
 	display: inline-block;
+	padding-left: 50px;
 	height: 0;
 	position: absolute;
 	top: -1px;
@@ -324,20 +353,20 @@ body {
 	line-height: 12px;
 	padding: 6px 3px 0 0;
 	min-height: 31px;
-	font-size: 11px; 
+	font-size: 11px;
 }
 
 // remove clear button on IE
 input::-ms-clear,input[type=password]::-ms-reveal{
-  display: none;
+	display: none;
 }
 /** Login form **/
 @media (min-width: 639px) and (max-width: 767px) {
-    .uiLogin {
-        -webkit-transform: translateX(-50%);
-        transform: translateX(-50%);
-        top: auto;
-    }
+	.uiLogin {
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-50%);
+		top: auto;
+	}
 }
 @media (max-width: 480px) {
 	.uiLogin {
@@ -348,24 +377,22 @@ input::-ms-clear,input[type=password]::-ms-reveal{
 			padding: 2px 12px;
 			.userLoginIcon {
 				font-size: inherit;
-    			font-weight: 600;
-    			width: 145px;
-    			font-size: 10px;
+				font-weight: 600;
+				width: 145px;
+				font-size: 10px;
 			}
-		} 
+		}
 		.loginContainer{
 			padding: 0 32px 15px;
-			background: url("@{images-path}/platform/portlets/extensions/loginLeftBGXs.png") no-repeat left bottom, 
-    			url("@{images-path}/platform/portlets/extensions/loginRightBGXs.png") no-repeat right bottom,
-    			url("@{images-path}/platform/portlets/extensions/loginCenterBGXs.png") repeat-x bottom;
+			background: url("@{images-path}/platform/portlets/extensions/loginLeftBGXs.png") no-repeat left bottom,
+			url("@{images-path}/platform/portlets/extensions/loginRightBGXs.png") no-repeat right bottom,
+			url("@{images-path}/platform/portlets/extensions/loginCenterBGXs.png") repeat-x bottom;
 			background-color: @baseBackground;
 			.loginContent {
 				input {
 					width: 172px;
 					background-position: left -5px;
 					font-size: 16px;
-					height: 26px;
-					margin: 5px 0;
 					&:focus{
 						background-position: left -46px;
 					}
@@ -411,21 +438,21 @@ input::-ms-clear,input[type=password]::-ms-reveal{
 			input:not(*:root) { width: 166px; }
 		}
 		.titleLogin {
-		    font-size: 10px;
-		    line-height: 10px;
-		    min-height: 16px;
-		    padding: 3px 3px 0 0;
-		    .signinFail{
-		        font-size: 10px;
-		        margin: 0;
-		        width: 225px;  
-		        .uiIconError{
-		        	padding: 2px 10px;
-		        }
-		    }
+			font-size: 10px;
+			line-height: 10px;
+			min-height: 16px;
+			padding: 3px 3px 0 0;
+			.signinFail{
+				font-size: 10px;
+				margin: 0;
+				width: 225px;
+				.uiIconError{
+					padding: 2px 10px;
+				}
+			}
 		}
 		.rememberTxt {
-			font-weight: normal;		
+			font-weight: normal;
 		}
 		.spaceRole{
 			padding: 1px 0 8px;
@@ -435,15 +462,15 @@ input::-ms-clear,input[type=password]::-ms-reveal{
 		height: 150px;
 	}
 	@supports (-webkit-appearance:none) { .uiLogin .loginContainer .loginContent input {
-	    width: 172px;
+		width: 172px;
 	} }
-} 
+}
 input[type=text]::-ms-clear,input[type=password]::-ms-reveal{
-  display: none;
+	display: none;
 }
 
 @media (max-width: 767px) {
-    .loginBGLight {
-        display: none;
-    }
+	.loginBGLight {
+		display: none;
+	}
 }
