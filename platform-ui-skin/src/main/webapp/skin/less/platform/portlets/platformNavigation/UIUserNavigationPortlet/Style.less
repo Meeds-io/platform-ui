@@ -191,6 +191,19 @@
         margin-left: 0px;
       }
     }
+    .popStatusAnswer {
+      display: none;
+    }
+    .uiRelationshipAction .user-actions {
+      margin-right: 10px;
+      .dropdown-menu {
+        min-width: 61px;
+        margin: 0px;
+        li > a {
+          padding: 0px 10px;
+        }
+      }
+    }
   }
 
   .userAvt {
@@ -244,6 +257,12 @@
   .collapse-left-bar .sticky .uiProfileMenu {
     left: 65px;
   }
+  .uiProfileMenu .profileMenuNav .uiRelationshipAction {
+    i, .statusAnswer {
+      display: none;
+    }
+  }
+
   .sticky {
     padding-top: 191px;
 
@@ -335,6 +354,9 @@
           > li {
             margin-left: 10px;
           }
+        }
+        .uiRelationshipAction {
+          display: none;
         }
       }
 
@@ -442,6 +464,24 @@
         margin-top: 4px;
         margin-bottom: 7px;
       }
+
+      .uiRelationshipAction {
+        .btn {
+          font-size: 14px;
+          width: 38px;
+          padding: 5px 10px;
+        }
+        [class^="uiIcon"] {
+          color: @btnColor;
+          opacity: 1;
+        }
+        .statusAnswer {
+          width: 19px;
+        }
+        .btnStatusAnswer, span {
+          display: none;
+        }
+      }
     }
 
     .userAvt {
@@ -484,6 +524,20 @@
         border-radius: 100px;
         border: 1px solid #ffffff;
       }
+    }
+  }
+
+  .popStatusAnswer {
+    max-width: 200px;
+    border-radius: 3px;
+    margin: auto;
+    top: 150px;
+    div {
+      text-align: center;
+      margin: 10px 0px;
+    }
+    hr {
+      margin: 8px 0;
     }
   }
 }
