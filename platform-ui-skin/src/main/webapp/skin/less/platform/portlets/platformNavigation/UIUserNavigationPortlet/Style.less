@@ -253,6 +253,68 @@
   }
 }
 
+.sticky {
+  .uiProfileMenu {
+    position: fixed;
+    z-index: 4;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    top: 42px;
+    left: 250px;
+    right: 0px;
+
+    .profileMenuNav {
+      float: left;
+      background: transparent !important;
+      padding-top: 30px;
+      padding-bottom: inherit;
+
+      .profileMenuNavHeader .bannerControls {
+        display: none;
+      }
+
+      h3 {
+        float: left;
+        font-size: 20px;
+        color: black;
+        vertical-align: middle;
+        display: inline-block;
+        margin-left: 13px;
+        margin-top: auto;
+        margin-bottom: auto;
+        text-shadow: none;
+      }
+      .profileMenuApps {
+        [class^="uiIcon"] {
+          margin-right: 0px;
+        }
+        .btn {
+          color: #999999;
+          padding: 4px 13px;
+          span {
+            display: none;
+          }
+        }
+        > li {
+          margin-left: 10px;
+        }
+      }
+      .uiRelationshipAction {
+        display: none;
+      }
+    }
+
+    .userNavigation {
+      [class^="uiIcon"] {
+        font-size: 26px;
+      }
+    }
+    .uiRelationshipAction {
+      display: none;
+    }
+  }
+}
+
 @media (min-width: 1025px) {
   .collapse-left-bar .sticky .uiProfileMenu {
     left: 65px;
@@ -267,14 +329,6 @@
     padding-top: 191px;
 
     .uiProfileMenu {
-      position: fixed;
-      z-index: 4;
-      -webkit-transition: all 0.3s;
-      transition: all 0.3s;
-      top: 42px;
-      left: 250px;
-      right: 0px;
-
       .userAvt {
         background-color: #f9f9f9;
         background-image: -moz-linear-gradient(top, #ffffff, #f0f0f0);
@@ -315,45 +369,13 @@
       }
 
       .profileMenuNav {
-        float: left;
-        background: transparent !important;
-        padding-top: 30px;
-        padding-bottom: inherit;
-
-        .profileMenuNavHeader .bannerControls {
-          display: none;
-        }
-
         h3 {
-          float: left;
-          font-size: 20px;
-          color: black;
-          vertical-align: middle;
-          display: inline-block;
-          margin-left: 13px;
-          margin-top: auto;
-          margin-bottom: auto;
-          text-shadow: none;
           > span {
             max-width: 250px;
           }
         }
         .profileMenuApps {
           margin-left: auto;
-
-          [class^="uiIcon"] {
-            margin-right: 0px;
-          }
-          .btn {
-            color: #999999;
-            padding: 4px 13px;
-            span {
-              display: none;
-            }
-          }
-          > li {
-            margin-left: 10px;
-          }
         }
         .uiRelationshipAction {
           display: none;
@@ -361,9 +383,6 @@
       }
 
       .userNavigation {
-        [class^="uiIcon"] {
-          font-size: 26px;
-        }
         > li > a,
         > li > a:hover,
         > .active > a,
@@ -375,12 +394,14 @@
         }
       }
     }
+    .uiUserNavigationPortlet {
+      padding-bottom: 50px;
+    }
   }
 }
 
 @media(max-width: 1024px) {
   .uiUserNavigationPortlet {
-    padding-bottom: 170px;
 
     .userNavigation {
       .tabName{
@@ -395,11 +416,36 @@
     }
   }
 
-  .uiProfileMenu {
-    position: fixed;
-    width: 100%;
-    z-index: 4;
+  .sticky {
+    .uiProfileMenu {
+      left: 0px;
+      right: 0px;
 
+      .userAvt {
+        margin-left: 20px;
+        margin-top: 12px;
+      }
+      .profileMenuNav {
+        padding-top: 20px;
+        h3 {
+          width: 120px;
+        }
+        .profileMenuApps {
+          margin-left: auto;
+          min-width: 150px;
+        }
+      }
+      .nav {
+        float: left;
+        width: 100%;
+      }
+    }
+    .uiUserNavigationPortlet {
+      padding-bottom: 250px;
+    }
+  }
+
+  .uiProfileMenu {
     .userNavigation {
       height: 40px;
       display: block;
@@ -541,6 +587,11 @@
     }
   }
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .sticky .uiProfileMenu {
+    top: 52px;
+  }
+}
 @media(max-width: 480px) {
   .uiProfileMenu {
     .profileMenuNav {
@@ -567,3 +618,19 @@
 		}
 	}
 }
+@media (max-width: 320px) {
+  .sticky {
+    .uiProfileMenu {
+      .profileMenuNav {
+        h3 {
+          width: 100px;
+        }
+        .profileMenuApps {
+          margin-left: auto;
+          min-width: 140px;
+        }
+      }
+    }
+  }
+}
+

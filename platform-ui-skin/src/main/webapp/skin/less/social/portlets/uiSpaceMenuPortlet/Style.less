@@ -197,20 +197,71 @@
   }
 }
 
+
+.sticky {
+  .uiSpaceMenu {
+    position: fixed;
+    z-index: 4;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    top: 42px;
+    left: 250px;
+    right: 0px;
+
+    .spaceMenuNavHeader {
+      float: left;
+      background: transparent !important;
+      padding-top: 30px;
+      padding-bottom: inherit;
+
+      > .bannerControls {
+        display: none;
+      }
+
+      h3 {
+        float: left;
+        font-size: 20px;
+        color: black;
+        vertical-align: middle;
+        display: inline-block;
+        margin-left: 13px;
+        margin-top: auto;
+        margin-bottom: auto;
+        text-shadow: none;
+      }
+
+      .spaceMenuApps {
+        [class^="uiIcon"] {
+          margin-right: 0px;
+        }
+        .btn {
+          color: #999999;
+          padding: 4px 13px;
+          span {
+            display: none;
+          }
+        }
+        > li {
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .spaceMenuTab {
+      [class^="uiIcon"] {
+        font-size: 26px;
+      }
+    }
+  }
+}
+
+
 @media (min-width: 1025px) {
   .collapse-left-bar .sticky .uiSpaceMenu {
     left: 65px;
   }
   .sticky {
     .uiSpaceMenu {
-      position: fixed;
-      z-index: 4;
-      -webkit-transition: all 0.3s;
-      transition: all 0.3s;
-      top: 42px;
-      left: 250px;
-      right: 0px;
-
       .userAvt {
         background-color: #f9f9f9;
         background-image: -moz-linear-gradient(top, #ffffff, #f0f0f0);
@@ -255,50 +306,12 @@
       }
 
       .spaceMenuNavHeader {
-        float: left;
-        background: transparent !important;
-        padding-top: 30px;
-        padding-bottom: inherit;
-
-        > .bannerControls {
-          display: none;
-        }
-
-        h3 {
-          float: left;
-          font-size: 20px;
-          color: black;
-          vertical-align: middle;
-          display: inline-block;
-          margin-left: 13px;
-          margin-top: auto;
-          margin-bottom: auto;
-          text-shadow: none;
-        }
-
         .spaceMenuApps {
           margin-left: auto;
-
-          [class^="uiIcon"] {
-            margin-right: 0px;
-          }
-          .btn {
-            color: #999999;
-            padding: 4px 13px;
-            span {
-              display: none;
-            }
-          }
-          > li {
-            margin-left: 10px;
-          }
         }
       }
 
       .spaceMenuTab {
-        [class^="uiIcon"] {
-          font-size: 26px;
-        }
         > li > a,
         > li > a:hover,
         > .active > a,
@@ -310,7 +323,9 @@
         }
       }
     }
-
+    #Application {
+      margin-top: 50px;
+    }
     &#RightBody {
       padding-top: 191px;
     }
@@ -318,14 +333,35 @@
 }
 
 @media (max-width: 1024px) {
-  #Application {
-    padding-top: 170px;
+  .sticky {
+    .uiSpaceMenu {
+      left: 0px;
+      right: 0px;
+
+      .userAvt {
+        margin-left: 20px;
+        margin-top: 12px;
+      }
+      .spaceMenuNavHeader {
+        padding-top: 20px;
+        h3 {
+          width: 120px;
+        }
+        .spaceMenuApps {
+          margin-left: auto;
+          min-width: 150px;
+        }
+      }
+      nav {
+        float: left;
+        width: 100%;
+      }
+    }
+    #Application {
+      margin-top: 250px;
+    }
   }
   .uiSpaceMenu {
-    position: fixed;
-    width: 100%;
-    z-index: 4;
-
     .spaceMenuTab {
       height: 40px;
       display: block;
@@ -434,6 +470,11 @@
     }
   }
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+    .sticky .uiSpaceMenu {
+      top: 52px;
+    }
+}
 @media (max-width: 480px) {
   .uiSpaceMenu {
     .userAvt {
@@ -452,6 +493,21 @@
       }
       .bannerControls {
         margin-top: -40px;
+      }
+    }
+  }
+}
+@media (max-width: 320px) {
+  .sticky {
+    .uiSpaceMenu {
+      .spaceMenuNavHeader {
+        h3 {
+          width: 100px;
+        }
+        .spaceMenuApps {
+          margin-left: auto;
+          min-width: 140px;
+        }
       }
     }
   }
