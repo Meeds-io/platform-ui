@@ -77,9 +77,15 @@
 	.uiSpaceAppInstaller {
 
 		.itemListCont {
-			width: 218px;
+			width: 205px;
+			@media (max-width: 767px) {
+				width: 100%;
+			}
 			.itemList {
 				height: 324px;
+				@media (max-width: 767px) {
+					height: auto;
+				}
 				overflow: auto;
 				a {
 					color: @textColor;
@@ -107,8 +113,12 @@
 		}
 
 		.itemDetailList {
-			width: 332px;
+			width: calc(~"100%" - 225px);
 			margin-left: 10px;
+			@media (max-width: 767px) {
+				width: 100%;
+				margin: 10px 0 0 0;
+			}
 			.appList {
 				height: 304px;
 				overflow-x: hidden;
