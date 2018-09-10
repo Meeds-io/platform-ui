@@ -29,7 +29,7 @@
   </parent>
   <groupId>org.exoplatform.platform-ui</groupId>
   <artifactId>platform-ui</artifactId>
-  <version>5.1.x-SNAPSHOT</version>
+  <version>5.2.x-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>eXo PLF:: Platform-UI</name>
   <modules>
@@ -55,7 +55,7 @@
     <!-- **************************************** -->
     <!-- Dependencies versions                    -->
     <!-- **************************************** -->
-    <org.exoplatform.depmgt.version>14-SNAPSHOT</org.exoplatform.depmgt.version>
+    <org.exoplatform.depmgt.version>15-SNAPSHOT</org.exoplatform.depmgt.version>
   </properties>
   <dependencyManagement>
     <!-- ### NEVER CHANGE THIS ORDER OF DEPMGT ### -->
