@@ -35,6 +35,8 @@
     <properties>
         <exo.skin.name>Default</exo.skin.name>
         <exo.skin.display.name>eXoSkin</exo.skin.display.name>
+        <!-- Force Sonar sources folder to avoid failure of Sonar analysis -->
+        <sonar.sources>src</sonar.sources>
     </properties>
     <build>
         <finalName>${platform-ui-skin-final-name}</finalName>
