@@ -24,7 +24,7 @@
 		}
 	}
 	.addInvite {
-		margin-top: 1%;
+		margin-top: 3px;
 		height: 32px;
 		.mention-input {
 			.selectize-input {
@@ -33,11 +33,11 @@
 				}
 				position: relative;
 			}
-			width: 90%;
+			width: calc(~"100% - 65px");
 		}
 	}
 	.sharePermission {
-		width: 9%;
+		width: 60px;
 		.btn-toolbar {
 			width: 100%;
 			.btn-group {
@@ -100,7 +100,6 @@
 	#whoHasAccess {
 		#AccessEntry {
 			.btn-toolbar {
-				width: 7%!important;
 				margin-right: 8%!important;
 				margin-top: -27px!important;
 				.dropdown {
@@ -184,23 +183,18 @@
 }
 
 @media (max-width: 1024px) {
-	.sharePermission {
-		margin-left: 87.5%!important;
-		width: 11.5%!important;
-		margin-top: -8%!important;
-	}
-	.selectize-input > input {
-		font-size: 11px!important;
-	}
-	#who {
-		#owner {
-			.accessMember {
-				width: 19% !important;
-				margin-right: 7.5%!important;
-				margin-top: -25px!important;
-			}
-		}
-	}
+    .selectize-input > input {
+	    font-size: 11px!important;
+    }
+    #who {
+	    #owner {
+		    .accessMember {
+			    width: 19% !important;
+			    margin-right: 7.5%!important;
+			    margin-top: -25px!important;
+		    }
+	    }
+    }
 }
 
 @media (max-width: 1024px) and (min-width: 481px) {
@@ -214,13 +208,10 @@
 	.selectize-input > input {
 		height: 28px!important;
 	}
-	.mention-input {
-		width: 87%!important;
-	}
 	#whoHasAccess {
 		#AccessEntry {
 			#selectPermission {
-				width: 9% !important;
+				width: 13% !important;
 				margin-right: 10% !important;
 			}
 		}
@@ -257,9 +248,6 @@
 		}
 	}
 	.sharePermission {
-		margin-left: 0px!important;
-		margin-top: 0px!important;
-		width: 57px!important;
 		.dropdown-menu {
 			width: 200%!important;
 			left: 0px;
