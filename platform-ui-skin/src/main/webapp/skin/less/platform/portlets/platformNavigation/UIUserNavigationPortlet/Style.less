@@ -96,7 +96,15 @@
         display: none;
         cursor: pointer;
         float: right;
+        text-align: right;
         margin: -45px 5px 0;
+
+        .dropdown-menu {
+          position: relative;
+          float: none;
+          min-width: 110px;
+          text-align: left;
+        }
 
         a [class^="uiIcon"] {
           border: 1px solid #fff;
@@ -223,13 +231,17 @@
       display: inline;
       cursor: pointer;
     }
-    a {
+    .dropdown-toggle {
       position: absolute;
       top: 49px;
       left: 15px;
       display: inline-block;
       width: 110px;
       height: 111px;
+    }
+    .dropdown-menu {
+      left: 14px;
+      min-width: 110px;    
     }
     .uiIconCamera {
       top: 67%;

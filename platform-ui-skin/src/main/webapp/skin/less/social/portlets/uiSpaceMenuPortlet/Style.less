@@ -90,13 +90,17 @@
   .userAvt {
     position: relative;
 
-    a {
+    .dropdown-toggle {
       position: absolute;
       top: 49px;
       left: 15px;
       display: inline-block;
       width: 110px;
       height: 111px;
+    }
+    .dropdown-menu {
+      left: 14px;
+      min-width: 110px;    
     }
     [class^="uiIcon"] {
         border: 1px solid #fff;
@@ -112,9 +116,8 @@
       cursor: pointer;
     }
     .uiIconCamera {
-      top: 63%;
-      left: 61%;
-      padding: 5px;
+      top: 67%;
+      left: 65%;
     }
     img {
       width: 100px;
@@ -135,10 +138,19 @@
     background: url(/eXoSkin/skin/images/themes/default/social/skin/SpaceMenuPortlet/menuBg.png) no-repeat 90% center, -ms-linear-gradient(0deg,#99a1b6 0,#8c94a7 100%);;
 
     .bannerControls {
+        position: relative;
         display: none;
         cursor: pointer;
         float: right;
+        text-align: right;
         margin: -45px 5px 0;
+
+        .dropdown-menu {
+          position: relative;
+          float: none;
+          min-width: 110px;
+          text-align: left;
+        }
 
         a [class^="uiIcon"] {
             border: 1px solid #fff;
