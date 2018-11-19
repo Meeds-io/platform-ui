@@ -290,13 +290,24 @@
 	}
 }
 @media(max-width: 768px){
-  .activityStream .dataInfor .actionLink{
-	float: right;
-	position: relative;
-	a{
-	  margin: 5px;
-	  margin-left: 0;
-	}
+  .activityStream .dataInfor .actionLink {
+	  float: right;
+	  position: relative;
+    top: -36px;
+
+    &.open .dropdown-toggle {
+      box-shadow: none;
+      line-height: 0px;
+    }
+    .dropdown-menu {
+      right: 10px;
+      top: 17px;
+    }
+
+	  a {
+	    margin: 5px;
+	    margin-left: 0;
+	  }
   }
 }
 
