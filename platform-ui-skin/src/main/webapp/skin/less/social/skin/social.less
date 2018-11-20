@@ -290,31 +290,37 @@
 	}
 }
 @media(max-width: 768px){
-  .activityStream .dataInfor .actionLink {
-	  float: right;
-	  position: relative;
-    top: -36px;
-
-    &.open .dropdown-toggle {
-      box-shadow: none;
-      line-height: 0px;
-    }
-    .dropdown-menu {
-      right: 10px;
-      top: 17px;
+  .activityStream {
+    .contentBox .actionCommentBar ul {
+      height: auto;
     }
 
-	  a {
-	    margin: 5px;
-	    margin-left: 0;
-	  }
+    .dataInfor .actionLink {
+      float: right;
+      position: relative;
+      top: -36px;
+
+      &.open .dropdown-toggle {
+        box-shadow: none;
+        line-height: 0px;
+      }
+      .dropdown-menu {
+        right: 10px;
+        top: 17px;
+      }
+
+      a {
+        margin: 5px;
+        margin-left: 0;
+      }
+    }
   }
 }
 
 @media (max-width: 480px) {
      .activityStream .commentList .commentItem .actLink {
         right: -10px!important;
-         top: -10px;
+         top: -5px;
     }
     .uiSocApplication {
 		.uiProfileUserSearch {
