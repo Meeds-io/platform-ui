@@ -500,22 +500,27 @@
 	    overflow-y: visible;
 	}
 	.actionMark {
-		display:none;
 		text-align: right;
 		padding: 5px 10px;
 		border-bottom: 1px solid  @borderColor;
-		> a {
+		#markAllReadLink {
+			pointer-events: none;
+			background: none;
+			outline: none;
 			display: inline-block;
-			color: @linkColor;
+			color: @textLightColor;
 			padding: 0!important;
 			&:hover {
-				background: none;
-				color: @linkColorHover;
+			    background: none;
+			    color: @textLightColor;
 			}
 		}
 	}
-	.actionMark.markAll {
-		display: block;
+	.actionMark.enabled {
+		#markAllReadLink {
+		  pointer-events: auto;
+		  color: @linkColor;
+		}
 		+ li .displayItems {
 			li:first-child {
 				.border-radius(0);
