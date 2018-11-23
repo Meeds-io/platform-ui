@@ -1783,34 +1783,47 @@ blockquote:after {
 	  display: none;
 	}
 	.activityStream {
-	 .contentBox .commentBox .inputContainer {
-  		.box-shadow(0 0 5px 0 rgba(0,0,0,0.3));
-  		border-top: solid 1px #ccc;
-  		position: fixed;
-  		bottom: 0;
-  		left: 0;
-  		background-color: #f0f0f0;
-  		padding: 0;
-      margin: 0;
-  		width: 100%;
-      z-index: 1000;
-  
-      &.subCommentBlock {
-        padding-left: 0;
-        margin-left: 0;
+    .contentBox .commentBox {
+      .inputContainer, .blastInputPeople {
+        .box-shadow(0 0 5px 0 rgba(0,0,0,0.3));
+        border-top: solid 1px #ccc;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: #f0f0f0;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        z-index: 1000;
+
+        > div {
+          padding: 10px;
+        }
       }
-  
-  		> div {
-  			padding: 10px;
-  		}
-  
-  		.commmentLeft {
-  			display: none;
-  			&+ .commentRight{
-  				margin-left: 0px;
-  			}
-  		}
-  	}
+      .inputContainer {
+        &.subCommentBlock {
+          padding-left: 0;
+          margin-left: 0;
+        }
+
+        .commmentLeft {
+          display: none;
+          &+ .commentRight{
+            margin-left: 0px;
+          }
+        }
+      }
+      .backdrop {
+        z-index: 999;
+        opacity: 0.3;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #000000;
+      }
+	  }
    .arrowLeft {
   		display: none;
   	}
@@ -2231,19 +2244,20 @@ blockquote:after {
 //Activity Action Icon
 
 .uiIconActivityAction::before {
-	content: "\e961"
-}html:lang(ar) .activityStream .description, html:lang(ar) .activityStream .contentComment {
-    direction: rtl;
 	content: "\e961";
-	font-size: 20px;
+}
+html:lang(ar) .activityStream .description, html:lang(ar) .activityStream .contentComment {
+  direction: rtl;
+  content: "\e961";
+  font-size: 20px;
 }
 
 //
 
 .hideEffect {
-    display:none;
+  display:none;
 }
 
-.paddingAction{
-padding-bottom:30px;
+.paddingAction {
+  padding-bottom: 30px;
 }
