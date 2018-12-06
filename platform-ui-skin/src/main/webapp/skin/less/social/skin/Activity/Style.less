@@ -315,6 +315,9 @@
 	,.author span,.introBox .text .infoFile :not(.versionFile),.linkSources span,.listLikedBox  p,.theContent a,.theContent span {
 		color: @baseColorLight;font-size: 12px;
 	}
+	.contentForum span ,.dataInfor .dateTime a:hover {
+	 text-decoration:underline;
+	}
   .statusAction.pull-left a.subComment {
     color: @linkColor;
   }
@@ -394,6 +397,14 @@
 		}
 		span {
 			font-size: @fontSizeSmall;
+			a {
+			  color: @baseColorLight;
+			  font-size: 12px;
+			  font-weight: normal;
+			}
+			a:hover {
+			  text-decoration: underline;
+			}
 		}
 	}
 	.arrowBottom {
@@ -450,7 +461,15 @@
 			position: absolute;
 			top: 5px;
 			right: 10px;
-			display: none;
+			.dropdown-menu {
+                         right: 10px;
+                         top: 17px;
+                       }
+                       &.open .dropdown-toggle {
+                         box-shadow: none;
+                         line-height: 0px;
+                       }
+
             [class^="uiIcon"]:before {
                 vertical-align: middle;
 
@@ -711,6 +730,15 @@
 	.commentListInfo {
 		padding:10px 15px;
 	}
+	.uiDropdownWithIcon {
+        cursor: pointer;
+    }
+    .blastInputPeople {
+    	display:none;
+    }
+    .dropdown-menu {
+        min-width:100px;
+    }
 	.commentListInfo  + .commentList {
 		padding-top: 0;
 	}
@@ -758,7 +786,14 @@
 			position: absolute;
 			right: -10px;
 			top: 0px;
-			display:none;
+			.dropdown-menu {
+                         right: 10px;
+                         top: 19px;
+                       }
+                       &.open .dropdown-toggle {
+                         box-shadow: none;
+                         line-height: 0px;
+                       }
 			.tooltip {
 				-moz-pointer-events: none;
 				-webkit-pointer-events: none;
@@ -1748,34 +1783,47 @@ blockquote:after {
 	  display: none;
 	}
 	.activityStream {
-	 .contentBox .commentBox .inputContainer {
-  		.box-shadow(0 0 5px 0 rgba(0,0,0,0.3));
-  		border-top: solid 1px #ccc;
-  		position: fixed;
-  		bottom: 0;
-  		left: 0;
-  		background-color: #f0f0f0;
-  		padding: 0;
-      margin: 0;
-  		width: 100%;
-      z-index: 1000;
-  
-      &.subCommentBlock {
-        padding-left: 0;
-        margin-left: 0;
+    .contentBox .commentBox {
+      .inputContainer, .blastInputPeople {
+        .box-shadow(0 0 5px 0 rgba(0,0,0,0.3));
+        border-top: solid 1px #ccc;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: #f0f0f0;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        z-index: 1000;
+
+        > div {
+          padding: 10px;
+        }
       }
-  
-  		> div {
-  			padding: 10px;
-  		}
-  
-  		.commmentLeft {
-  			display: none;
-  			&+ .commentRight{
-  				margin-left: 0px;
-  			}
-  		}
-  	}
+      .inputContainer {
+        &.subCommentBlock {
+          padding-left: 0;
+          margin-left: 0;
+        }
+
+        .commmentLeft {
+          display: none;
+          &+ .commentRight{
+            margin-left: 0px;
+          }
+        }
+      }
+      .backdrop {
+        z-index: 999;
+        opacity: 0.3;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #000000;
+      }
+	  }
    .arrowLeft {
   		display: none;
   	}
@@ -2192,6 +2240,24 @@ blockquote:after {
         width: 100%;
     }
 }
+
+//Activity Action Icon
+
+.uiIconActivityAction::before {
+	content: "\e961";
+}
 html:lang(ar) .activityStream .description, html:lang(ar) .activityStream .contentComment {
-    direction: rtl;
+  direction: rtl;
+  content: "\e961";
+  font-size: 20px;
+}
+
+//
+
+.hideEffect {
+  display:none;
+}
+
+.paddingAction {
+  padding-bottom: 30px;
 }
