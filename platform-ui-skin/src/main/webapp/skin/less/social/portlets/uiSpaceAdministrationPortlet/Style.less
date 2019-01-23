@@ -1,0 +1,83 @@
+@import "../../../variables.less"; 
+@import "../../../mixins.less";
+
+.spacesAdministration {
+   padding: 20px 10px;
+
+  .uiTabInPage {
+    .nav-tabs {
+      padding: 10px 10px 0px 10px;
+    }
+    .tab-content {
+      padding: 20px 10px;
+    }
+  }
+
+  .manageSpaces, .spacesPermissions {
+    .table {
+      th {
+        border-right: 1px solid #e1e8ee;
+      }
+
+      tr > td:nth-of-type(1) {
+        width: 25%;
+      }
+      tr > td:nth-of-type(2) {
+        width: 60%;
+      }
+      tr > td:nth-of-type(3) {
+        width: 15%;
+      }
+
+      td {
+        .title {
+          font-size: 15px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .manageSpaces {
+    .uiSearchInput {
+      margin: 0px 0px 12px 4px;;
+      float: right;
+
+      .showInputSearch {
+        border: 1px solid #e1e8ee;
+        margin-right: 30px;
+        width: 380px;
+      }
+    }
+
+    .avatar {
+      width: 20px;
+    }
+  }
+
+  .modal-mask {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &, &.uiPopupWrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 999;
+    }
+    .modal-content {
+      width: 600px;
+      position: relative;
+      user-select: none;
+
+      .popupTitle {
+        cursor: auto;
+      }
+    }
+  }
+}
+
+
+
