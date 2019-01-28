@@ -188,6 +188,7 @@
                                 <include>social/portlets/uiWarningPortlet/Style.less</include>
                                 <include>social/portlets/uiIntranetNotification/Style.less</include>
                                 <include>social/portlets/uiUserPortlet/Style.less</include>
+                                <include>social/portlets/uiSpaceInfosPortlet/Style.less</include>
                                 <include>forum/skin/forum-resources.less</include>
                                 <include>forum/portlets/forum/forum.less</include>
                                 <include>forum/portlets/poll/pollPortlet.less</include>
