@@ -134,3 +134,624 @@
         }
     }
 }
+
+/*=============== Drawer component ===========*/
+.hide-scroll {
+	height: 100%;
+	overflow: hidden;
+}
+
+.drawer {
+	width: 0px;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0px;
+	overflow: hidden;
+	transition: 0.3s;
+	background: #fff;
+	z-index: 9999;
+}
+
+.drawer.open {
+	width: 500px;
+}
+
+#ExoCalendarEventForm .backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	opacity: 0.5;
+	z-index:998;
+	background-color: #000;
+}
+
+.drawer .header span {
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.drawer .control-label {
+	line-height: 25px;
+}
+
+.drawer .content {
+	overflow-y: auto;
+	overflow-x: hidden;
+	position: absolute;
+	top: 50px;
+	bottom: 70px;
+}
+
+.drawer .content .trimText {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.drawer .content .dropdown {
+	padding: 0 10px;
+	color: #333333;
+	box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.075);
+	font-size: 13px;
+	box-sizing: border-box;
+	height: 30px;
+	border: 1px solid #cccccc;
+	background-color: #ffffff;
+	transition: border linear .2s, box-shadow linear .2s;
+	display: inline-block;
+	line-height: 30px;
+	border-radius: 3px;
+	vertical-align: middle;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.drawer .content .dropdown .dropdown-toggle > div {
+	max-width: 140px;
+	display: inline-block;
+}
+
+.drawer .content .dropdown .caret {
+	margin-top: 12px;
+	float: right;
+}
+
+.drawer .content .dropdown .dropdown-menu {
+	width: 100%;
+	overflow: hidden;
+}
+
+.drawer .content .dropdown .dropdown-menu .dropdown-header {
+	padding: 0px 7px;
+	font-weight: bold;
+}
+
+.drawer .content .dropdown .dropdown-menu li {
+	line-height: 20px;
+}
+
+.drawer .content .dropdown .dropdown-menu li > a {
+	padding: 0px 6px;
+	width: 100%;
+	display: inline-block;
+	font-weight: normal;
+}
+
+.drawer .content .dropdown .color {
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	margin-right: 3px;
+}
+
+.drawer .content .calendarSelector {
+	width: 40%;
+	display: inline-block;
+}
+
+.drawer .content .calendarSelector .dropdown {
+	width: 100%;
+}
+
+.drawer .content .eventTitle {
+	width: 67%;
+}
+
+.drawer .content .category {
+	width: 30%;
+	margin-left: 5px;
+}
+
+.drawer .content .calDate {
+	width: 49%;
+	display: inline-block;
+}
+
+.drawer .content .location {
+	width: 100%;
+}
+
+.drawer .content .participants {
+	width: 100%;
+}
+.drawer .calDate .controls {
+	border: solid 2px #e1e8ee;
+	border-radius: 5px;
+	line-height: 38px;
+}
+
+.drawer .calDate input {
+	border: none;
+	margin: 0;
+	box-shadow: none;
+}
+
+.drawer .calDate input[disabled] {
+	background-color: transparent;
+}
+
+.drawer .calDate input.date {
+	width: 130px;
+}
+
+.drawer .calDate .cbb_input {
+	width: 82px;
+	text-align: center;
+}
+
+.drawer .content .allday .uiCheckbox {
+	margin: 0 0px;
+}
+
+.drawer .content .allday input {
+	float: left;
+	margin-right: 3px;
+}
+
+.drawer .content .findtime {
+	text-decoration: underline;
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+.drawer .content .description textarea {
+	width: 100%;
+	height: 120px;
+}
+
+.drawer .content .attachments textarea {
+	margin-top: 15px;
+	width: 100%;
+}
+
+.drawer .content .reminder {
+	width: 29%;
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.drawer .content .reminder .controls,
+.drawer .content .repeat .controls {
+	white-space: nowrap;
+}
+
+.drawer .content .reminder .controls > a,
+.drawer .content .repeat .controls > a {
+	text-decoration: underline;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.drawer .content .repeat {
+	width: 25%;
+	display: inline-block;
+}
+
+.drawer .content .iphoneCheckbox {
+	margin-top: 4px;
+	display: inline-block;
+}
+
+.drawer > div {
+	padding: 15px;
+	min-width: 500px;
+	box-sizing: border-box;
+}
+
+.drawer .content .description textarea {
+	resize: vertical;
+}
+
+.drawer .footer {
+	position: absolute;
+	bottom: 0;
+}
+
+.drawer .footer .uiAction {
+	padding: 0;
+}
+
+
+.drawer .footer button {
+	float: right;
+}
+
+.drawer .footer button.clearBtn {
+	float: left;
+}
+
+.drawer .closebtn {
+	font-size: 36px;
+	float: right;
+}
+
+.drawer .fileDrop,
+.drawer [class^="uiIcon"] {
+	color: #2f5e92;
+}
+
+.drawer .fileDrop .dropZone {
+	border-radius: 5px;
+	border: 3px dashed #e6e6e6;
+	font-size: 14px;
+	height: 50px;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+.drawer .fileDrop .attachFile {
+	display: none;
+}
+
+.drawer .fileDrop .attachFileIcon:before {
+	content: "\e780";
+	font-weight: bold;
+}
+
+.drawer .fileDrop .uploadContainer .fileNameLabel {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 345px;
+}
+
+.drawer .fileDrop .uploadContainer .file {
+	margin-top: 10px;
+}
+
+.drawer .fileDrop .uploadContainer .file .fileSize {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.drawer .fileDrop .uploadContainer > .uploadError {
+	text-align: center;
+}
+
+.drawer .fileDrop .uploadContainer .uploadError {
+	color: red;
+}
+
+.drawer .uiUserSelector .list-user-container {
+	max-height: 330px;
+	overflow: auto;
+}
+
+.drawer .uiPopup {
+	top: 50% !important;
+	left: 50% !important;
+	transform: translate(-50%, -50%);
+	position: fixed !important;
+	z-index: 1000;
+}
+
+/*chrome bug: blurring when using translate() if the size is odd*/
+.drawer .reminder .uiPopup {
+	width: 356px;
+	height: 256px;
+}
+
+/*chrome bug: blurring when using translate() if the size is odd*/
+.drawer .repeat .uiPopup {
+	width: 432px;
+	height: 322px;
+}
+
+/*chrome bug: blurring when using translate() if the size is odd*/
+.drawer .popup-message {
+	width: 432px;
+}
+
+/*chrome bug: blurring when using translate() if the size is odd*/
+.drawer .findtime-popup {
+	width: 700px;
+}
+
+.drawer .findtime-popup table td:first-child {
+	padding: 7px;
+}
+
+.drawer .par-selector {
+	width: 648px;
+}
+
+.drawer .uiPopup.findtime-popup .popupContent {
+	max-width: none;
+}
+
+.drawer .findtime-popup .popupContent .checktime-lbl {
+	margin-right: 5px;
+}
+
+.drawer .findtime-popup .popupContent .allDay {
+	line-height: 25px;
+}
+
+.drawer .findtime-popup .popupContent .allDay .allday-lbl {
+	margin-right: 5px;
+}
+
+.drawer .uiPopup .form-horizontal .controls [type="date"] {
+	width: 145px;
+}
+
+.drawer .uiPopup .uiEventReminder {
+	width: 325px;
+}
+
+.drawer .uiPopup .uiRepeatEventForm [name="endAfterNumber"] {
+	margin-left: -18px;
+	width: 53px;
+}
+
+.drawer .uiPopup .selectUserContainer {
+	max-height: 360px;
+}
+
+.drawer .uiPopup .errorMessage {
+	min-width: 400px;
+	color: red;
+}
+
+.drawer .uiPopup .errorMessage span {
+	display: inline-block;
+}
+
+.drawer .uiPopup .errorMessage span:first-letter {
+	text-transform: capitalize;
+}
+
+.drawer .uiPopup .popupContent {
+	white-space: normal;
+	max-width: 400px;
+}
+
+@media (min-width: 1024px) {
+	.drawer .uiPopup .form-horizontal .control-label {
+		width: 100px;
+	}
+
+	.drawer .uiPopup .form-horizontal .controls {
+		margin-left: 110px;
+		width: 295px;
+	}
+}
+
+.drawer.open .mobile-header .uiAction {
+	display: none;
+}
+
+@media (max-width: 767px) {
+	.drawer.open {
+		width: 100%;
+	}
+	.drawer .header {
+		display: none;
+	}
+	.drawer .content {
+		top: 0px;
+		height: 100%;
+	}
+	.drawer .footer {
+		display: none;
+	}
+	.drawer > div {
+		min-width: auto;
+	}
+
+	.drawer .content .calendarSelector {
+		display: block;
+		float: none;
+		width: 100%;
+	}
+
+	.drawer .content .reminder {
+		margin-right: 60px;
+		margin-top: 10px;
+	}
+
+	.drawer .content .repeat {
+		margin-top: 10px;
+	}
+
+	.drawer .content .description {
+		margin-top: 20px;
+	}
+
+	.drawer .content .selectize-input > input {
+		font-size: 16px !important;
+	}
+
+	.drawer.open .content {
+		position: static;
+	}
+
+	.drawer.open .mobile-header {
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		padding-left: 15px;
+		padding-right: 15px;
+		background-color: rgb(71, 106, 156);
+	}
+
+	.drawer.open .mobile-header .uiAction {
+		margin-bottom: 15px;
+		display: block;
+	}
+
+	.drawer.open .mobile-header .uiAction .btn {
+		width: 75px;
+		color: #fff;
+		box-shadow: none;
+		border: none;
+	}
+
+	.drawer.open .mobile-header .uiAction .btn-primary {
+		float: right;
+		background-image: none;
+		height: 30px;
+		background-color: #578dc9;
+	}
+
+	.drawer.open .mobile-header .uiAction .cancel {
+		float: left;
+		background: none;
+		text-transform: uppercase;
+		margin-left: -12px !important;
+	}
+
+	.drawer.open .mobile-header .controls {
+		white-space: nowrap;
+	}
+
+	.drawer.open .mobile-header .eventTitle {
+		width: 60%;
+	}
+
+	.drawer.open .mobile-header .category {
+		width: 37%;
+	}
+
+	.drawer.open .mobile-content {
+		overflow-x: hidden;
+		overflow-y: auto;
+		position: absolute;
+		top: 120px;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.uiRepeatEventForm .weeklyByDay .controls {
+		width: auto;
+	}
+
+	.drawer.open .mobile-content .uiPopup {
+		transform: translate(-56%, -50%);
+		width: 90% !important;
+	}
+
+	.drawer .reminder .uiPopup {
+		height: 276px;
+	}
+
+	.drawer .repeat .uiPopup {
+		height: 502px;
+	}
+
+	.drawer.open .mobile-content .uiPopup .uiEventReminder {
+		width: auto;
+	}
+
+	.drawer .popup-message {
+		width: 278px !important;
+	}
+
+	.drawer.open .uiPopup .errorMessage {
+		min-width: auto;
+	}
+
+	.drawer.open .mobile-content .calDate {
+		display: block;
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	.drawer.open .mobile-content .calDate .control-label {
+		display: inline-block;
+	}
+
+	.drawer.open .mobile-content .calDate .controls {
+		float: right;
+		width: 83%;
+	}
+
+	.drawer.open .mobile-content .allday {
+		padding: 5px;
+		margin-left: 45px;
+	}
+
+	.drawer.open .mobile-content .findtime {
+		display: none;
+	}
+}
+
+
+/* Begin: Vue ComboBox component */
+ .cbb input {
+	 width: 100%;
+ }
+
+.cbb_list_wrapper {
+	position: absolute;
+	z-index: 9;
+}
+
+.cbb_input {
+	padding: 0.5rem;
+	width: 100%;
+	font-size: 15px;
+	-webkit-appearance: none;
+	border: 1px solid rgba(0, 0, 0, 0.08);
+	border-radius: 3px;
+	text-align: left;
+	background: white;
+}
+
+.cbb_list:focus {
+	box-shadow: none;
+	-webkit-appearance: none;
+	outline: 0;
+}
+
+.cbb_list {
+	background: white;
+	border: 1px solid rgba(0, 0, 0, 0.08);
+	overflow-y: auto;
+	max-height: 150px;
+	min-width: 85px;
+	color: #333;
+}
+
+.cbb_item {
+	margin: 0;
+	list-style-type: none;
+	padding: 8px 10px;
+	font-size: 14px;
+	display: block;
+	cursor: pointer;
+}
+
+.cbb_item:hover, .cbb_item.selected {
+	background-color: #82aad7;
+	color: #fff;
+}
+/* End */
