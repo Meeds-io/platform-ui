@@ -334,23 +334,23 @@
 		.seoImgBlock{
 			padding: 5px 20px 5px 10px;
 			.UISEOToolbarPorlet .SEOToolbar {
-			  .Enable, .Disable {
-				//	padding: 0 5px;
-				//	margin-left: 2px;
-
-			  	//Removing the image, replacing it with font-icon, and positioning it
-				img {
-				  	display: none;
-				}
-				span:after {
-				  	font-family: "PLF-FONT-ICONS";
-				  	font-size: 17px;
-				  	color: #d80303;
-				  	content: "\e694";
-				  	position: relative;
-				  	top: 2px;
-				}
-			  }
+                span:after {
+                   font-family: "PLF-FONT-ICONS";
+                   font-size: 17px;
+                   color: @baseColorLight;
+                   content: "\e694";
+                   position: relative;
+                   top: 2px;
+                }
+                .Full span:after {
+                   color: @successColor;
+                }
+                .Partial span:after {
+                   color: @colorIconOrange;
+                }
+                .Empty span:after {
+                   color: @errorColor;
+                }
 			}
 		}
 		.seoImgBlock:hover,
