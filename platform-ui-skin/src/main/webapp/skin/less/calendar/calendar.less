@@ -449,26 +449,8 @@
 	z-index: 1000;
 }
 
-/*chrome bug: blurring when using translate() if the size is odd*/
-.drawer .reminder .uiPopup {
-	width: 356px;
-	height: 256px;
-}
-
-/*chrome bug: blurring when using translate() if the size is odd*/
-.drawer .repeat .uiPopup {
-	width: 432px;
-	height: 322px;
-}
-
-/*chrome bug: blurring when using translate() if the size is odd*/
-.drawer .popup-message {
-	width: 432px;
-}
-
-/*chrome bug: blurring when using translate() if the size is odd*/
 .drawer .findtime-popup {
-	width: 700px;
+	max-width: 700px;
 }
 
 .drawer .findtime-popup table td:first-child {
@@ -665,14 +647,6 @@
 	.drawer.open .mobile-content .uiPopup {
 		transform: translate(-56%, -50%);
 		width: 90% !important;
-	}
-
-	.drawer .reminder .uiPopup {
-		height: 276px;
-	}
-
-	.drawer .repeat .uiPopup {
-		height: 502px;
 	}
 
 	.drawer.open .mobile-content .uiPopup .uiEventReminder {
