@@ -28,6 +28,8 @@
 	}
 
 	.columnText {
+		display: flex;
+		flex-flow: column;
 		margin: 0px 45px 0px 75px;
 	}
 
@@ -44,13 +46,13 @@
 			font-weight: bold;
 			color: @baseColorDark;
 			white-space: nowrap;
-            		text-overflow: ellipsis;
-            		overflow: hidden;
-            		display: block;
+			text-overflow: ellipsis;
+			overflow: hidden;
 		}
 
 		.nodeLabel {
 			color: @baseColorLight;
+			display: flex;
 		}
 
 		.fileInfoBottom {
