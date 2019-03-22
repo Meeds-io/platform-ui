@@ -1,4 +1,4 @@
-@import "../../variables.less"; 
+@import "../../variables.less";
 @import "../../mixins.less";
 @import "Seo/Style.less";
 @import "Sprites/Style.less";
@@ -209,30 +209,34 @@
 	}
 }
 
-/******** EdittingToolBar **************/
+/******** middleDecorator ***************/
+.middleDecorator{
+	position: relative;
+}
+
 
 .edittingToolBarContainer,.edittingContent {
 	display: none;
 	float: right;
-	position: relative;
-	right: 0;
-	top: 0;
+	right: 0px;
+	top: 0px;
 	width: 160px;
-	z-index: 1;
-	.edittingToolBar {
-		background: @primaryLightColor;
-		padding: 5px;
-		.border-radius(3px 3px 0px 0px);
-	    position: absolute;
-	    right: -1px;
-	    top: -39px;
-
+	position: unset;
+		.edittingToolBar {
+			background: #578ecc;
+			padding: 5px;
+			-webkit-border-radius: 3px 3px 0px 0px;
+			-moz-border-radius: 3px 3px 0px 0px;
+			border-radius: 3px 3px 0px 0px;
+			position: absolute;
+			right: 0px;
+			top: -39px;
 		.btn-group {
 			position: static;
 			.btn {
 				padding: 3px 5px;
-				border: 1px solid @primaryDarkColor;
-				background: @primaryLightColor;
+				border: 1px solid #446cc6;
+				background: #3b7bc2;
 				box-shadow: none;
 				margin-left: -5px;
 				&:hover {
@@ -279,9 +283,16 @@
     top: 0px;
 	}
 }
+
 .UICLVPortlet, .UIPresentationContainer{
 	border: 1px solid transparent;
+	position: relative;
 }
+.middleDecorator .UIPresentationContainer , .middleDecorator .UICLVPortlet{
+	position: unset;
+}
+
+
 .containerHoverClass {
   border:1px solid @primaryLightColor !important;
 	.edittingToolBarContainer {
@@ -634,4 +645,3 @@
 .parentPosition:hover .uiIconQuestion {
   color: @linkColor;
 }
-
