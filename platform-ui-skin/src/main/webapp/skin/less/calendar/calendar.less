@@ -140,37 +140,53 @@
 	height: 100%;
 	overflow: hidden;
 }
-
 .drawer {
-	width: 0px;
 	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0px;
-	overflow: hidden;
-	transition: 0.3s;
-	background: #fff;
-	z-index: 9999;
+    width: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    transition: .3s;
+    background: #fff;
+    z-index: 9999;
 }
-
 .drawer.open {
-	width: 500px;
+	width: 33%;
 }
 
-#ExoCalendarEventForm .backdrop {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	opacity: 0.5;
-	z-index:998;
-	background-color: #000;
+.drawer-backdrop{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.3;
+  z-index: 998;
+  background-color: #000;
 }
 
-.drawer .header span {
-	font-size: 17px;
-	font-weight: bold;
+.drawer .header{
+  height: 50px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid rgba(13,13,13,0.05);
+  box-sizing: border-box;
+  padding: 15px;
+  span {
+  	color: #4D5466;
+    font-family: Helvetica;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 20px;
+  }
+  .closebtn{
+    color: #DEE4F2;
+    font-size: 32px;
+    line-height: 20px;
+    float: right;
+  }
 }
 
 .drawer .control-label {
@@ -178,11 +194,14 @@
 }
 
 .drawer .content {
-	overflow-y: auto;
-	overflow-x: hidden;
-	position: absolute;
-	top: 50px;
-	bottom: 70px;
+  position: absolute;
+  padding: 15px;
+  top: 50px;
+  bottom: 70px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .drawer .content .trimText {
@@ -265,8 +284,8 @@
 }
 
 .drawer .content .calDate {
-	width: 49%;
 	display: inline-block;
+	margin-right: 19px;
 }
 
 .drawer .content .location {
@@ -277,6 +296,7 @@
 	width: 100%;
 }
 .drawer .calDate .controls {
+    width: 100%;
 	border: solid 2px #e1e8ee;
 	border-radius: 5px;
 	line-height: 38px;
@@ -293,11 +313,11 @@
 }
 
 .drawer .calDate input.date {
-	width: 130px;
+	width: 97px;
 }
 
 .drawer .calDate .cbb_input {
-	width: 82px;
+	width: 65px;
 	text-align: center;
 }
 
@@ -355,19 +375,22 @@
 	display: inline-block;
 }
 
-.drawer > div {
-	padding: 15px;
-	min-width: 500px;
-	box-sizing: border-box;
-}
-
 .drawer .content .description textarea {
 	resize: vertical;
 }
 
 .drawer .footer {
-	position: absolute;
-	bottom: 0;
+  position: absolute;
+  min-width: 100%;
+  background-color: #FFFFFF;
+  border-top: 1px solid rgba(13,13,13,0.05);
+  padding: 15px;
+  bottom: 0;
+  box-sizing: border-box;
+  button{
+    margin: 0 5px;
+    float: right;
+  }
 }
 
 .drawer .footer .uiAction {
@@ -375,17 +398,8 @@
 }
 
 
-.drawer .footer button {
-	float: right;
-}
-
 .drawer .footer button.clearBtn {
 	float: left;
-}
-
-.drawer .closebtn {
-	font-size: 36px;
-	float: right;
 }
 
 .drawer .fileDrop,
@@ -534,8 +548,12 @@
 .drawer.open .mobile-header .uiAction {
 	display: none;
 }
-
-@media (max-width: 767px) {
+@media (min-width: 768px) and (max-width: 1024px) {
+  .drawer.open {
+    width: 50%;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
 	.drawer.open {
 		width: 100%;
 	}
