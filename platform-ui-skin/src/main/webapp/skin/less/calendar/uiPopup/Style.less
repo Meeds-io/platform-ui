@@ -124,12 +124,22 @@
 
 
 /*===================UIEventRemindersTab===========================*/
+.reminderInput {
+	float: left;
+	input {
+		width: 60px;
+		margin-right: 5px;
+	}
+	input[type=number] {
+		padding-right: 0;
+	}
+}
 .reminderByPopup ,.reminderByEmail{
 	.selectboxSmall {
 		padding: 5px 0;
 	}
 	.mailReminder + div ,.popupReminder + div {
-		margin: 0 0 0 30px;
+		margin: 0 0 0 10px;
 	}
 	a {
 		color: @baseColorDark;
