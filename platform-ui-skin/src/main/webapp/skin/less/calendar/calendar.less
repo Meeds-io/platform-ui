@@ -285,7 +285,8 @@
 
 .drawer .content .calDate {
 	display: inline-block;
-	margin-right: 19px;
+	margin-right: 15px;
+	width: 45%;
 }
 
 .drawer .content .location {
@@ -312,12 +313,15 @@
 	background-color: transparent;
 }
 
-.drawer .calDate input.date {
-	width: 97px;
+.drawer .calDate .periodDate{
+    width: 58%;
+}
+
+.drawer .calDate .time{
+    width: 38%;
 }
 
 .drawer .calDate .cbb_input {
-	width: 65px;
 	text-align: center;
 }
 
@@ -549,8 +553,20 @@
 	display: none;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  .drawer.open {
+  .drawer.open{
     width: 50%;
+    .content{
+      .calDate{
+        width: 46%;
+        margin-right: 10px;
+        .periodDate{
+          width: 60%;
+        }
+        .time{
+          width: 36%;
+        }
+      }
+    }
   }
 }
 @media (min-width: 320px) and (max-width: 767px) {
@@ -680,27 +696,47 @@
 	}
 
 	.drawer.open .mobile-content .calDate {
-		display: block;
-		width: 100%;
-		margin-bottom: 10px;
-	}
-
-	.drawer.open .mobile-content .calDate .control-label {
-		display: inline-block;
-	}
-
-	.drawer.open .mobile-content .calDate .controls {
-		float: right;
-		width: 83%;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 5px;
+        .control-label {
+            display: inline-block;
+            position: absolute;
+            top: 25%;
+        }
+        .controls {
+            float: right;
+            width: 83%;
+            .periodDate{
+                width: 50%;
+                >input{
+                    width: 100%;
+                }
+            }
+            .time{
+                right: 0;
+                position: absolute;
+                width: 25%;
+                margin: 1px;
+                .cbb_list_wrapper{
+                    left: 15%;
+                    right: 15%;
+                }
+            }
+        }
 	}
 
 	.drawer.open .mobile-content .allday {
 		padding: 5px;
-		margin-left: 45px;
+		margin-left: 16%;
 	}
 
 	.drawer.open .mobile-content .findtime {
 		display: none;
+	}
+	.control-group{
+	  margin-bottom: 0;
 	}
 }
 
@@ -713,6 +749,7 @@
 .cbb_list_wrapper {
 	position: absolute;
 	z-index: 9;
+	text-align: center;
 }
 
 .cbb_input {
@@ -737,7 +774,6 @@
 	border: 1px solid rgba(0, 0, 0, 0.08);
 	overflow-y: auto;
 	max-height: 150px;
-	min-width: 85px;
 	color: #333;
 }
 
