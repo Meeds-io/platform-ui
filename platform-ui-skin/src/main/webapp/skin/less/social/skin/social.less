@@ -389,6 +389,61 @@
         min-width: 100%;
     }
 }
+#UIPopupAddSpace {
+	h5.title, .require {
+		display: none;
+	}
+	.form-horizontal {
+		.control-label {
+			width: 90px;
+		}
+		.controls {
+			margin-left: 100px;
+		}
+	}
+	input, select, .selectize-control {
+		width: 95%;
+		margin-bottom: 8px;
+	}
+	textarea {
+		width: 95%;
+		font-size: 15px;
+	}
+	#UISpaceTemplateDescription {
+		margin-bottom: 8px;
+		.uiIconInformation {
+			color: inherit;
+			font-size: 16px;
+		}
+	}
+	.uiSpaceVisibility {
+		.spaceVisibility {
+			margin-top: 5px;
+			margin-bottom: -5px;
+			width: 60px
+		}
+	}
+	.selectize-control {
+		.selectize-input {
+			white-space: normal;
+			height: 58px;
+			max-height: 58px;
+			overflow-y: auto;
+		}
+		.selectize-dropdown-content .option img.thumb {
+			margin-right: 4px;
+		}
+		.item {
+			line-height: 18px;
+		}
+	}
+}
+@media (max-width: 600px) {
+	#UIPopupAddSpace .form-horizontal .controls {
+		margin-left: 0;
+	}
+
+}
 .uiSpaceSearch {
 	.selectize-control {
 	  padding-right: 45px;
