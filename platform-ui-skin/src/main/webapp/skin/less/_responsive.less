@@ -140,8 +140,12 @@
     .form-horizontal {
         .controls {
             white-space: nowrap;
-            select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+            select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input, .selectize-control {
                 max-width: 94%;
+            }
+            .selectize-control {
+                min-width: 0!important;
+                width: inherit!important;
             }
         }
     }
