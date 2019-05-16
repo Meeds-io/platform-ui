@@ -29,7 +29,7 @@
   </parent>
   <groupId>org.exoplatform.platform-ui</groupId>
   <artifactId>platform-ui</artifactId>
-  <version>5.2.1</version>
+  <version>5.2.x-acc222-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>eXo PLF:: Platform-UI</name>
   <modules>
