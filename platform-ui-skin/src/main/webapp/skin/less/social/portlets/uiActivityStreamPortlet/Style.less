@@ -357,6 +357,71 @@
               }
             }
           }
+            border-radius: 0px;
+
+            #newsForm {
+              padding: 25px 0 40px 0;
+
+              .newsFormRow {
+                margin: 5px;
+                width: 100%;
+                display: flex;
+                flex-flow: row wrap;
+                align-items: normal;
+
+                &.newsFormButtons {
+                  display: block;
+                  width: auto;
+                  margin: 0 15px 0 7%;
+
+                  .uiCheckbox {
+                    color: #5e6977;
+                    margin: 3px 5px;
+
+                    > span {
+                      text-indent: 22px;
+                      margin-top: 2px;
+                    }
+                  }
+
+                  #newsPlus {
+                    float: right;
+                    margin: 5px 15px;
+                    padding: 10px;
+
+                    > i {
+                      font-size: 10px;
+                    }
+                  }
+
+                  #newsPost {
+                    float: right;
+                    margin: 5px;
+                    width: 100px;
+                    font-size: 1.2em;
+                  }
+                }
+
+                &.newsFormContent {
+                  .cke_editor_newsContent {
+                    flex-grow: 1;
+                    margin-right: 25px;
+                    border: solid 2px #e1e8ee;
+                  }
+                }
+
+                .newsFormLabel {
+                  width: 7%;
+                }
+
+                .newsFormInput {
+                  flex-grow: 1;
+                  margin-right: 25px;
+                  border-radius: 0px;
+                }
+              }
+            }
+>>>>>>> PLF-8383: improve style
         }
     }
 }
