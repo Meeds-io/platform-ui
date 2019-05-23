@@ -39,138 +39,214 @@
 }
 
 #ComposerContainer {
-    border-right: 1px solid #b6b6b6;
-    border-left: 1px solid #b6b6b6;
+    width: 100%;
     overflow: hidden;
 
-    .uploadContainer {
-        border-top: 1px #b6b6b6 solid;
-        clear: both;
-        margin: 0;
-        padding: 0;
-        height: 36px;
-        > div {
-            height: 36px;
-            line-height: 36px;
-            overflow: hidden;
-            white-space: nowrap;
-            margin: 0 10px;
+    .UIActivityComposerContainer {
+
+        #UIActivityComposerContainer_LINK_ACTIVITY_, #UIActivityComposerContainer_DOC_ACTIVITY_ {
+          border-right: 1px solid #b6b6b6;
+          border-left: 1px solid #b6b6b6;
         }
 
-        .progress {
-            width: 20%;
-            height: 20px;
-            margin-top: 8px;
-            .bar {
-                height: 20px;
-                line-height: 20px;
-                text-align: center;
-                vertical-align: center;
-            }
-        }
-
-        .fileNameLabel {
-            width: 35%;
-            text-overflow: ellipsis;
-        }
-
-        .fileType {
-            display: inline-block;
-            height: 30px;
-            width: 30px;
-            margin-top: 2px;
-            background-size: 100%;
-            background-repeat: no-repeat;
-        }
-
-        .fileSize {
-            width: 75px;
-        }
-    }
-
-    .uploadContainers {
-        clear: both;
-        background: white;
-        border-top: 1px #b6b6b6 solid;
         .uploadContainer {
-            border-top: 0;
-            border-bottom: 1px #b6b6b6 solid;
-        }
-    }
-
-    .sizeExceeded {
-        margin-top: 50px;
-    }
-
-    .fileAlreadyExists {
-        margin-top: -50px;
-    }
-
-    .fileAlreadyExists , .sizeExceeded , .countExceeded {
-        display: block;
-        position: absolute;
-        width: auto;
-        left: 50vw;
-        z-index: 100;
-        transform: translateX(-50%);
-    }
-
-    .limitMessage {
-        height: 20px;
-        padding: 12px 23px;
-        color: #555;
-        .sizeLimit , .countLimit {
-            margin-right: 2px;
-            line-height: 16px;
-            box-sizing: border-box;
-        }
-
-        .sizeLimit:before {
-            font-family: "PLF-FONT-ICONS";
-            content: "\e771";
-        }
-
-        .countLimit:before {
-            font-family: "PLF-FONT-ICONS";
-            content: "\e767";
-        }
-    }
-
-    .multiploadFilesSelector {
-        width: 100%;
-        text-align: center;
-        > div {
-            white-space: nowrap;
-            display: inline-block;
-            margin: 5px auto 0;
+            border-top: 1px #b6b6b6 solid;
+            clear: both;
+            margin: 0;
             padding: 0;
-        }
-
-        .dragEntered {
-            background: #ccc;
-        }
-
-        .dropFileBox {
-            height: 75px;
-            line-height: 75px;
-            width: 94%;
-            border-radius: 5px;
-            border: 3px dashed @dropFileAreaBackgroundOnDragEnter;
-            font-size: 14px;
-            color: #333333;
-            margin-top: 10px;
-            a {
-                text-decoration: underline;
-                
+            height: 36px;
+            > div {
+                height: 36px;
+                line-height: 36px;
+                overflow: hidden;
+                white-space: nowrap;
+                margin: 0 10px;
             }
 
-            .mobileText {
-                display: none;
+            .progress {
+                width: 20%;
+                height: 20px;
+                margin-top: 8px;
+                .bar {
+                    height: 20px;
+                    line-height: 20px;
+                    text-align: center;
+                    vertical-align: center;
+                }
+            }
+
+            .fileNameLabel {
+                width: 35%;
+                text-overflow: ellipsis;
+            }
+
+            .fileType {
+                display: inline-block;
+                height: 30px;
+                width: 30px;
+                margin-top: 2px;
+                background-size: 100%;
+                background-repeat: no-repeat;
+            }
+
+            .fileSize {
+                width: 75px;
             }
         }
 
-        .multiploadWordSeperator {
+        .uploadContainers {
+            clear: both;
+            background: white;
+            border-top: 1px #b6b6b6 solid;
+            .uploadContainer {
+                border-top: 0;
+                border-bottom: 1px #b6b6b6 solid;
+            }
+        }
+
+        .sizeExceeded {
+            margin-top: 50px;
+        }
+
+        .fileAlreadyExists {
+            margin-top: -50px;
+        }
+
+        .fileAlreadyExists , .sizeExceeded , .countExceeded {
             display: block;
+            position: absolute;
+            width: auto;
+            left: 50vw;
+            z-index: 100;
+            transform: translateX(-50%);
+        }
+
+        .limitMessage {
+            height: 20px;
+            padding: 12px 23px;
+            color: #555;
+            .sizeLimit , .countLimit {
+                margin-right: 2px;
+                line-height: 16px;
+                box-sizing: border-box;
+            }
+
+            .sizeLimit:before {
+                font-family: "PLF-FONT-ICONS";
+                content: "\e771";
+            }
+
+            .countLimit:before {
+                font-family: "PLF-FONT-ICONS";
+                content: "\e767";
+            }
+        }
+
+        .multiploadFilesSelector {
+            width: 100%;
+            text-align: center;
+            > div {
+                white-space: nowrap;
+                display: inline-block;
+                margin: 5px auto 0;
+                padding: 0;
+            }
+
+            .dragEntered {
+                background: #ccc;
+            }
+
+            .dropFileBox {
+                height: 75px;
+                line-height: 75px;
+                width: 94%;
+                border-radius: 5px;
+                border: 3px dashed @dropFileAreaBackgroundOnDragEnter;
+                font-size: 14px;
+                color: #333333;
+                margin-top: 10px;
+                a {
+                    text-decoration: underline;
+
+                }
+
+                .mobileText {
+                    display: none;
+                }
+            }
+
+            .multiploadWordSeperator {
+                display: block;
+            }
+        }
+
+        #newsActivityComposer {
+            border-radius: 0px;
+
+            #newsForm {
+              padding: 25px 0 40px 0;
+              margin-bottom: 35px;
+
+              .newsFormRow {
+                margin: 5px;
+                width: 100%;
+                display: flex;
+                flex-flow: row wrap;
+                align-items: normal;
+
+                &.newsFormButtons {
+                  display: block;
+                  width: auto;
+                  margin: 0 15px 0 7%;
+
+                  .uiCheckbox {
+                    color: #5e6977;
+                    margin: 3px 5px;
+
+                    > span {
+                      text-indent: 22px;
+                      margin-top: 2px;
+                    }
+                  }
+
+                  #newsPlus {
+                    float: right;
+                    margin: 5px 15px;
+                    padding: 10px;
+
+                    > i {
+                      font-size: 10px;
+                    }
+                  }
+
+                  #newsPost {
+                    float: right;
+                    margin: 5px;
+                    width: 100px;
+                    font-size: 1.2em;
+                  }
+                }
+
+                &.newsFormContent {
+                  .cke_editor_newsContent {
+                    flex-grow: 1;
+                    margin-right: 25px;
+                    border: solid 2px #e1e8ee;
+                  }
+                }
+
+                .newsFormLabel {
+                  width: 7%;
+                  margin-top: 10px;
+                }
+
+                .newsFormInput {
+                  flex-grow: 1;
+                  margin-right: 25px;
+                  border-radius: 0px;
+                }
+              }
+            }
         }
     }
 }
