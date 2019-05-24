@@ -611,6 +611,14 @@
     <css-priority>1</css-priority>
   </portlet-skin>
 
+  <!-- platform: Bookmark -->
+  <portlet-skin>
+    <application-name>bookmark-vue-portlet</application-name>
+    <portlet-name>Bookmark</portlet-name>
+    <skin-name>${exo.skin.name}</skin-name>
+    <css-path>/skin/css/platform/portlets/bookmark/Bookmark.css</css-path>
+  </portlet-skin>
+
   <!-- ecms:  WCMSkin -->
   <portal-skin>
     <skin-name>${exo.skin.name}</skin-name>
