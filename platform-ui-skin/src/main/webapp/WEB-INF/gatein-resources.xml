@@ -613,7 +613,7 @@
 
   <!-- platform: Bookmark -->
   <portlet-skin>
-    <application-name>bookmark-vue-portlet</application-name>
+    <application-name>portlets</application-name>
     <portlet-name>Bookmark</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/platform/portlets/bookmark/Bookmark.css</css-path>
