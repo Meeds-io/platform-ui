@@ -181,72 +181,83 @@
         }
 
         #newsActivityComposer {
-            border-radius: 0px;
+          border-radius: 0px;
 
-            #newsForm {
-              padding: 25px 0 40px 0;
-              margin-bottom: 35px;
+          #newsForm {
+            padding: 25px 0 40px 0;
+            margin-bottom: 35px;
 
-              .newsFormRow {
-                margin: 5px;
-                width: 100%;
+            .newsFormLabelsInputs {
+              display: flex;
+
+              .newsFormColumn {
+                margin: 10px;
                 display: flex;
-                flex-flow: row wrap;
+                flex-flow: column;
                 align-items: normal;
 
-                &.newsFormButtons {
-                  display: block;
-                  width: auto;
-                  margin: 0 15px 0 7%;
+                &.newsFormInputs {
+                  flex: 2;
+                  margin-right: 25px;
 
-                  .uiCheckbox {
-                    color: #5e6977;
-                    margin: 3px 5px;
-
-                    > span {
-                      text-indent: 22px;
-                      margin-top: 2px;
-                    }
-                  }
-
-                  #newsPlus {
-                    float: right;
-                    margin: 5px 15px;
-                    padding: 10px;
-
-                    > i {
-                      font-size: 10px;
-                    }
-                  }
-
-                  #newsPost {
-                    float: right;
-                    margin: 5px;
-                    width: 100px;
-                    font-size: 1.2em;
-                  }
-                }
-
-                &.newsFormContent {
-                  .cke_editor_newsContent {
-                    flex-grow: 1;
+                  .newsFormInput {
+                    width: 100%;
                     margin-right: 25px;
+                    border-radius: 0px;
+                  }
+
+                  .cke_editor_newsContent {
                     border: solid 2px #e1e8ee;
                   }
+
+                  .newsFormButtons {
+                    margin-top: 15px;
+
+                    .uiCheckbox {
+                      color: #5e6977;
+                      margin: 3px 0;
+
+                      > span {
+                        text-indent: 22px;
+                        margin-top: 2px;
+                      }
+                    }
+
+                    #newsPlus {
+                      float: right;
+                      margin: 5px 15px;
+                      padding: 10px;
+
+                      > i {
+                        font-size: 10px;
+                      }
+                    }
+
+                    #newsPost {
+                      float: right;
+                      margin: 5px 0;
+                      width: 100px;
+                      font-size: 1.2em;
+                    }
+                  }
                 }
 
-                .newsFormLabel {
-                  width: 7%;
-                  margin-top: 10px;
-                }
+                &.newsFormLabels{
+                  .newsFormLabel {
+                    margin-top: 10px;
 
-                .newsFormInput {
-                  flex-grow: 1;
-                  margin-right: 25px;
-                  border-radius: 0px;
+                    &.newsFormTitleLabel {
+                      flex: 1;
+                    }
+
+                    &.newsFormContentLabel {
+                      flex: 3;
+                    }
+                  }
                 }
               }
             }
+          }
         }
     }
 }
