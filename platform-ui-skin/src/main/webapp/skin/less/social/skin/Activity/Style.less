@@ -214,6 +214,47 @@
 	}
 }
 
+/*============== Activity News ====================*/
+
+.activityStream.uiNewsActivity {
+    .heading .actLink {
+      right: 0;
+      top: 0;
+    }
+
+    .newsRibbon {
+        background-image: url("@{images-path}/social/skin/Activity/ribbon-news.png");
+        background-repeat: no-repeat;
+        position: absolute;
+        width: 85px;
+        height: 87px;
+        left: auto;
+        right: -9px;
+        top: -9px;
+    }
+
+    .newsImage {
+        float: left;
+    }
+
+    .newsDetails {
+        .newsTitle {
+            padding-bottom: 10px;
+            font-weight: bold;
+
+            a {
+                color: @baseColorDark;
+            }
+        }
+
+        .newsBody .seeMore {
+            font-weight: bold;
+            padding-left: 3px;
+        }
+    }
+}
+
+
 /*==============activityStreamStatus=============== */
 
 .activityStreamStatus {
@@ -897,11 +938,11 @@
     }
 }
 
-.uiUserActivityDetail .activityStream .commentList .commentItem .actLink {
+.activityStream .commentList .commentItem .actLink {
   right: 0;
 }
 
-.uiUserActivityDetail .activityStream .heading .actLink {
+.activityStream .heading .actLink {
   right: 15px;
 }
 
