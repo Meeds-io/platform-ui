@@ -619,6 +619,14 @@
     <css-path>/skin/css/platform/portlets/bookmark/Bookmark.css</css-path>
   </portlet-skin>
 
+  <!-- platform: LoginHistory -->
+  <portlet-skin>
+    <application-name>portlets</application-name>
+    <portlet-name>LoginHistory</portlet-name>
+    <skin-name>${exo.skin.name}</skin-name>
+    <css-path>/skin/css/platform/portlets/loginHistory/loginHistory.css</css-path>
+  </portlet-skin>
+
   <!-- ecms:  WCMSkin -->
   <portal-skin>
     <skin-name>${exo.skin.name}</skin-name>
