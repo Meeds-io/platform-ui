@@ -114,6 +114,7 @@
                                 <include>platform/portlets/branding/branding.less</include>
                                 <include>platform/portlets/bookmark/Bookmark.less</include>
                                 <include>platform/portlets/loginHistory/loginHistory.less</include>
+                                <include>platform/portlets/featuredPoll/Poll.less</include>
                                 <include>platform/portlets/welcome-screens/termsAndConditions/style.less</include>
                                 <include>platform/portlets/welcome-screens/unlockTrial.less</include>
                                 <include>platform/portlets/extensions/login.less</include>

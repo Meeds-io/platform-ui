@@ -627,6 +627,14 @@
     <css-path>/skin/css/platform/portlets/loginHistory/loginHistory.css</css-path>
   </portlet-skin>
 
+  <!-- platform: FeaturedPoll -->
+  <portlet-skin>
+    <application-name>portlets</application-name>
+    <portlet-name>FeaturedPoll</portlet-name>
+    <skin-name>${exo.skin.name}</skin-name>
+    <css-path>/skin/css/platform/portlets/featuredPoll/Poll.css</css-path>
+  </portlet-skin>
+
   <!-- ecms:  WCMSkin -->
   <portal-skin>
     <skin-name>${exo.skin.name}</skin-name>
