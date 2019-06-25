@@ -3,182 +3,183 @@
 @import "../../../ecms/skin/Sprites/Style.less";
 
 #UIPopupComposer {
-    .PopupContent {
-        padding: 0;
-        .uiActionBorder {
-            margin: 0;
-            padding: 15px;
-        }
-
-        .uiAction {
-            padding-top: 5px;
-            margin: 0;
-        }
-
-        .limitMessage {
-            text-align: left;
-            line-height: 30px;
-            color: #555;
-        }
+  .PopupContent {
+    padding: 0;
+    .uiActionBorder {
+      margin: 0;
+      padding: 15px;
     }
 
-    .popupHeader {
-        padding: 12px 10px 12px 15px;
-        .uiIconClose {
-            top: 12px;
-        }
+    .uiAction {
+      padding-top: 5px;
+      margin: 0;
     }
+
+    .limitMessage {
+      text-align: left;
+      line-height: 30px;
+      color: #555;
+    }
+  }
+
+  .popupHeader {
+    padding: 12px 10px 12px 15px;
+    .uiIconClose {
+      top: 12px;
+    }
+  }
 }
 
 #UIDocActivitySelector {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 #UIComposer .cke_chrome {
-    border-radius: 0 ! important;
+  border-radius: 0 ! important;
 }
 
 #ComposerContainer {
-    width: 100%;
-    overflow: hidden;
+  width: 100%;
+  overflow: hidden;
 
-    .UIActivityComposerContainer {
+  .UIActivityComposerContainer {
 
-        #UIActivityComposerContainer_LINK_ACTIVITY_, #UIActivityComposerContainer_DOC_ACTIVITY_ {
-          border-right: 1px solid #b6b6b6;
-          border-left: 1px solid #b6b6b6;
+    #UIActivityComposerContainer_LINK_ACTIVITY_, #UIActivityComposerContainer_DOC_ACTIVITY_ {
+      border-right: 1px solid #b6b6b6;
+      border-left: 1px solid #b6b6b6;
+    }
+
+    .uploadContainer {
+      clear: both;
+      margin: 0;
+      padding: 0;
+      height: 36px;
+      > div {
+        height: 36px;
+        line-height: 36px;
+        overflow: hidden;
+        white-space: nowrap;
+        margin: 0 10px;
+      }
+
+      .progress {
+        width: 20%;
+        height: 20px;
+        margin-top: 8px;
+        .bar {
+          height: 20px;
+          line-height: 20px;
+          text-align: center;
+          vertical-align: center;
+        }
+      }
+
+      .fileNameLabel {
+        width: 35%;
+        text-overflow: ellipsis;
+      }
+
+      .fileType {
+        display: inline-block;
+        height: 30px;
+        width: 30px;
+        margin-top: 2px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+      }
+
+      .fileSize {
+        width: 75px;
+      }
+    }
+
+    .uploadContainers {
+      clear: both;
+      background: white;
+      border-top: 1px #b6b6b6 solid;
+      .uploadContainer {
+        border-top: 0;
+        border-bottom: 1px #b6b6b6 solid;
+      }
+    }
+
+    .sizeExceeded {
+      margin-top: 50px;
+    }
+
+    .fileAlreadyExists {
+      margin-top: -50px;
+    }
+
+    .fileAlreadyExists , .sizeExceeded , .countExceeded {
+      display: block;
+      position: absolute;
+      width: auto;
+      left: 50vw;
+      z-index: 100;
+      transform: translateX(-50%);
+    }
+
+    .limitMessage {
+      height: 20px;
+      padding: 12px 23px;
+      color: #555;
+      .sizeLimit , .countLimit {
+        margin-right: 2px;
+        line-height: 16px;
+        box-sizing: border-box;
+      }
+
+      .sizeLimit:before {
+        font-family: "PLF-FONT-ICONS";
+        content: "\e771";
+      }
+
+      .countLimit:before {
+        font-family: "PLF-FONT-ICONS";
+        content: "\e767";
+      }
+    }
+
+    .multiploadFilesSelector {
+      width: 100%;
+      text-align: center;
+      > div {
+        white-space: nowrap;
+        display: inline-block;
+        margin: 5px auto 0;
+        padding: 0;
+      }
+
+      .dragEntered {
+        background: #ccc;
+      }
+
+      .dropFileBox {
+        height: 75px;
+        line-height: 75px;
+        width: 94%;
+        border-radius: 5px;
+        border: 3px dashed @dropFileAreaBackgroundOnDragEnter;
+        font-size: 14px;
+        color: #333333;
+        margin-top: 10px;
+        a {
+          text-decoration: underline;
+
         }
 
-        .uploadContainer {
-            clear: both;
-            margin: 0;
-            padding: 0;
-            height: 36px;
-            > div {
-                height: 36px;
-                line-height: 36px;
-                overflow: hidden;
-                white-space: nowrap;
-                margin: 0 10px;
-            }
-
-            .progress {
-                width: 20%;
-                height: 20px;
-                margin-top: 8px;
-                .bar {
-                    height: 20px;
-                    line-height: 20px;
-                    text-align: center;
-                    vertical-align: center;
-                }
-            }
-
-            .fileNameLabel {
-                width: 35%;
-                text-overflow: ellipsis;
-            }
-
-            .fileType {
-                display: inline-block;
-                height: 30px;
-                width: 30px;
-                margin-top: 2px;
-                background-size: 100%;
-                background-repeat: no-repeat;
-            }
-
-            .fileSize {
-                width: 75px;
-            }
+        .mobileText {
+          display: none;
         }
+      }
 
-        .uploadContainers {
-            clear: both;
-            background: white;
-            border-top: 1px #b6b6b6 solid;
-            .uploadContainer {
-                border-top: 0;
-                border-bottom: 1px #b6b6b6 solid;
-            }
-        }
-
-        .sizeExceeded {
-            margin-top: 50px;
-        }
-
-        .fileAlreadyExists {
-            margin-top: -50px;
-        }
-
-        .fileAlreadyExists , .sizeExceeded , .countExceeded {
-            display: block;
-            position: absolute;
-            width: auto;
-            left: 50vw;
-            z-index: 100;
-            transform: translateX(-50%);
-        }
-
-        .limitMessage {
-            height: 20px;
-            padding: 12px 23px;
-            color: #555;
-            .sizeLimit , .countLimit {
-                margin-right: 2px;
-                line-height: 16px;
-                box-sizing: border-box;
-            }
-
-            .sizeLimit:before {
-                font-family: "PLF-FONT-ICONS";
-                content: "\e771";
-            }
-
-            .countLimit:before {
-                font-family: "PLF-FONT-ICONS";
-                content: "\e767";
-            }
-        }
-
-        .multiploadFilesSelector {
-            width: 100%;
-            text-align: center;
-            > div {
-                white-space: nowrap;
-                display: inline-block;
-                margin: 5px auto 0;
-                padding: 0;
-            }
-
-            .dragEntered {
-                background: #ccc;
-            }
-
-            .dropFileBox {
-                height: 75px;
-                line-height: 75px;
-                width: 94%;
-                border-radius: 5px;
-                border: 3px dashed @dropFileAreaBackgroundOnDragEnter;
-                font-size: 14px;
-                color: #333333;
-                margin-top: 10px;
-                a {
-                    text-decoration: underline;
-
-                }
-
-                .mobileText {
-                    display: none;
-                }
-            }
-
-            .multiploadWordSeperator {
-                display: block;
-            }
-        }
-
+<<<<<<< HEAD
+      .multiploadWordSeperator {
+        display: block;
+      }
+    }
+=======
         #newsActivityComposer {
           border-radius: 0px;
           &.extended {
@@ -189,1132 +190,1076 @@
             font-weight: bold;
             padding: 25px 15px 0;
           }
+>>>>>>> 22ef5cb0... Improve style of extended form
 
-          .newsForm {
-            padding: 25px 0 40px 0;
-            margin-bottom: 35px;
+    #newsActivityComposer {
+      border-radius: 0px;
+      &.extended {
+        margin-top: 10px;
+      }
+      .createNews{
+        font-size: 22px;
+        font-weight: bold;
+        padding: 25px 15px 0;
+      }
 
-            .newsFormLabelsInputs {
-              display: flex;
+      .newsForm {
+        padding: 25px 0 40px 0;
+        margin-bottom: 35px;
 
-              .newsFormColumn {
-                margin: 10px;
-                display: flex;
-                flex-flow: column;
-                align-items: normal;
+        .newsFormLabelsInputs {
+          display: flex;
 
-                &.newsFormInputs {
-                  flex: 2;
-                  margin-right: 25px;
+          .newsFormColumn {
+            margin: 10px;
+            display: flex;
+            flex-flow: column;
+            align-items: normal;
 
-                  .newsFormInput {
-                    width: 100%;
-                    margin-right: 25px;
-                    border-radius: 0px;
-                  }
+            &.newsFormInputs {
+              flex: 2;
+              margin-right: 25px;
 
-                  .cke_editor_newsContent {
-                    border: solid 2px #e1e8ee;
-                  }
+              .newsFormInput {
+                width: 100%;
+                margin-right: 25px;
+                border-radius: 0px;
+              }
 
-                  .newsFormButtons {
-                    margin-top: 15px;
+              .cke_editor_newsContent {
+                border: solid 2px #e1e8ee;
+              }
 
-                    .uiCheckbox {
-                      color: #5e6977;
-                      margin: 3px 0;
+              .newsFormButtons {
+                margin-top: 15px;
 
-                      > span {
-                        text-indent: 22px;
-                        margin-top: 2px;
-                      }
-                    }
+                .uiCheckbox {
+                  color: #5e6977;
+                  margin: 3px 0;
 
-                    #newsPlus {
-                      float: right;
-                      margin: 5px 15px;
-                      padding: 10px;
-
-                      > i {
-                        font-size: 10px;
-                      }
-                    }
-
-                    #newsPost {
-                      float: right;
-                      margin: 5px 0;
-                      width: 100px;
-                      font-size: 1.2em;
-                    }
+                  > span {
+                    text-indent: 22px;
+                    margin-top: 2px;
                   }
                 }
 
-                &.newsFormLabels{
-                  .newsFormLabel {
-                    margin-top: 10px;
-                    flex: 3;
-                    &.newsFormTitleLabel {
-                      flex: 1;
-                    }
+                #newsPlus {
+                  float: right;
+                  margin: 5px 15px;
+                  padding: 10px;
+
+                  > i {
+                    font-size: 10px;
                   }
+                }
+
+                #newsPost {
+                  float: right;
+                  margin: 5px 0;
+                  width: 100px;
+                  font-size: 1.2em;
                 }
               }
             }
-            &.extended {
-              height: 78%;
 
-              .newsFormLabelsInputs {
-                height: 90%;
-
-                .newsFormLabels{
-                  height: 72%;
-
-                  .newsFormLabel.newsFormSummaryLabel {
-                    margin-top: 40px;
-                  }
-
-                  .newsFormLabel.newsFormContentLabel {
-                    margin-top: 122px;
-                  }
-                }
-
-                .newsFormInputs{
-                  height: 100%;
-                }
-
-                .newsFormInput:first-child {
-                  margin-bottom: 25px;
-                }
-
-                .newsFormInput {
-                  width: 79% !important;
-                }
-                .uiIconInformation{
-                  color: #000;
-                }
-
-                .newsInputsRows {
-                  margin-bottom: 8px;
-                  position: relative;
-                }
-
-                .attachments {
-                  position: absolute;
-                  right: 0;
-                  top: 0;
-                  bottom: 0;
-                  width: 19%;
-
-                  .controls {
-                    height: 100%;
-
-                    .fileDrop {
-                      height: 100%;
-                      .dropZone {
-                        border-radius: 5px;
-                        border: 3px dashed #e6e6e6;
-                        font-size: 14px;
-                        height: 100%;
-                        align-items: center;
-                        justify-content: center;
-                        display: flex;
-                        text-align: center;
-                        .uiIconUpload {
-                          display: block;
-                          font-size: 37px;
-                          color: #578dc9;
-                        }
-                      }
-                      .attachFile {
-                        display: none;
-                      }
-                      .removeButton {
-                        position: absolute;
-                        right: -5px;
-                        top: -12px;
-                      }
-                      img {
-                        max-width: 100%;
-                        max-height: 100%;
-                      }
-                      .uploadError {
-                        height: 27px;
-                        margin: 5px 0;
-                        line-height: 17px;
-                        word-wrap: break-word;
-                        color: #771414;
-                        text-align: center;
-                        white-space: normal;
-                      }
-                    }
-                  }
-                }
-
-                .UINewsSummaryDescription {
-                  margin-bottom: 25px;
-                  margin-left: 10px;
+            &.newsFormLabels{
+              .newsFormLabel {
+                margin-top: 10px;
+                flex: 3;
+                &.newsFormTitleLabel {
+                  flex: 1;
                 }
               }
             }
           }
-            border-radius: 0px;
+        }
+        &.extended {
+          height: 78%;
+          .newsFormLabelsInputs {
+            height: 90%;
 
-            #newsForm {
-              padding: 25px 0 40px 0;
-              margin-bottom: 35px;
+            .newsFormLabels{
+              height: 72%;
 
-              .newsFormRow {
-                margin: 5px;
-                width: 100%;
-                display: flex;
-                flex-flow: row wrap;
-                align-items: normal;
+              .newsFormLabel.newsFormSummaryLabel {
+                margin-top: 40px;
+              }
 
-                &.newsFormButtons {
-                  display: block;
-                  width: auto;
-                  margin: 0 15px 0 7%;
+              .newsFormLabel.newsFormContentLabel {
+                margin-top: 122px;
+              }
+            }
 
-                  .uiCheckbox {
-                    color: #5e6977;
-                    margin: 3px 5px;
+            .newsFormInputs{
+              height: 100%;
+            }
 
-                    > span {
-                      text-indent: 22px;
-                      margin-top: 2px;
+            .newsFormInput:first-child {
+              margin-bottom: 25px;
+            }
+
+            .newsFormInput {
+              width: 79% !important;
+            }
+            .uiIconInformation{
+              color: #000;
+            }
+
+            .newsInputsRows {
+              margin-bottom: 8px;
+              position: relative;
+            }
+
+            .attachments {
+              position: absolute;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              width: 19%;
+
+              .controls {
+                height: 100%;
+
+                .fileDrop {
+                  height: 100%;
+                  .dropZone {
+                    border-radius: 5px;
+                    border: 3px dashed #e6e6e6;
+                    font-size: 14px;
+                    height: 100%;
+                    align-items: center;
+                    justify-content: center;
+                    display: flex;
+                    text-align: center;
+                    .uiIconUpload {
+                      display: block;
+                      font-size: 37px;
+                      color: #578dc9;
                     }
                   }
-
-                  #newsPlus {
-                    float: right;
-                    margin: 5px 15px;
-                    padding: 10px;
-
-                    > i {
-                      font-size: 10px;
-                    }
+                  .attachFile {
+                    display: none;
                   }
-
-                  #newsPost {
-                    float: right;
-                    margin: 5px;
-                    width: 100px;
-                    font-size: 1.2em;
+                  .removeButton {
+                    position: absolute;
+                    right: -5px;
+                    top: -12px;
                   }
-                }
-
-                &.newsFormContent {
-                  .cke_editor_newsContent {
-                    flex-grow: 1;
-                    margin-right: 25px;
-                    border: solid 2px #e1e8ee;
+                  img {
+                    max-width: 100%;
+                    max-height: 100%;
                   }
-                }
-
-                .newsFormLabel {
-                  width: 7%;
-                  margin-top: 10px;
-                }
-
-                .newsFormInput {
-                  flex-grow: 1;
-                  margin-right: 25px;
-                  border-radius: 0px;
+                  .uploadError {
+                    height: 27px;
+                    margin: 5px 0;
+                    line-height: 17px;
+                    word-wrap: break-word;
+                    color: #771414;
+                    text-align: center;
+                    white-space: normal;
+                  }
                 }
               }
             }
->>>>>>> PLF-8383: improve style
+
+            .UINewsSummaryDescription {
+              margin-bottom: 25px;
+              margin-left: 10px;
+            }
+          }
         }
+      }
     }
+  }
 }
 
 #UIDocumentSelectorTab {
-    .breadcrumbContainer {
-        display: inline-block;
-        padding: 5px 20px;
-        border-bottom: 1px #ccc solid;
-        box-sizing: border-box;
-        line-height: 33px;
-        width: 100%;
-        .breadcrumb {
-            margin: 6px 0;
-            display: flex;
-            .backBTN {
-                display: none;
-            }
-
-            > li {
-                height: 21px;
-                max-width: 100px;
-                display: flex;
-                a {
-                    float: initial;
-                }
-            }
-
-            .uiIconMiniArrowRight {
-                margin: 7px 5px 5px 5px;
-            }
-
-            .active {
-                color: #2f5e92;
-                max-width: 100px;
-            }
-        }
-
-        .searchBox {
-            width: 150px;
-            position: relative;
-            > input {
-                width: 100%;
-                margin: 0;
-                padding: 0 0 0 6px;
-            }
-
-            > a {
-                position: absolute;
-                right: 5px;
-                top: 4px;
-            }
-        }
-    }
-
-    .selectionBox {
-        height: 350px;
-        max-height: 350px;
-        overflow: auto;
-        padding: 5px;
-        background-position-y: -50px;
-        background-size: 100%;
-        background-repeat: no-repeat;
-
-        h4 {
-            margin-left: 20px;
-        }
-
-        .driveData , .folderSelection , .fileSelection {
-            display: inline-table;
-            text-align: center;
-            border: 1px transparent solid;
-        }
-
-        .folderSelection , .fileSelection {
-            margin: 5px;
-            width: 95px;
-            padding: 0;
-        }
-
-        .driveData {
-            margin: 0 5px;
-            width: 114px;
-            padding: 20px;
-        }
-
-        .center {
-            margin: auto;
-            padding: 2px;
-            text-align: center;
-            word-break: normal;
-        }
-
-        .selectionLabel {
-            padding-top: 2px;
-            display: block;
-            padding: 0;
-            color: #000;
-        }
-
-        .folderSelection .selectionIcon {
-            padding-bottom: 2px;
-            font-size: 55px;
-        }
-
-        .driveData .selectionIcon {
-            padding-bottom: 2px;
-            font-size: 55px;
-        }
-
-        .fileSelection .selectionIcon {
-            display: inline-block;
-            height: 55px;
-            width: 55px;
-            margin-top: 2px;
-            background-size: 100%;
-            background-repeat: no-repeat;
-        }
-
-        .fileSelection.selected {
-            border: 1px #2f5e92 solid;
-            background-repeat: no-repeat;
-            background-position-x: 102%;
-            background-position-y: -2px;
-            background-image: url("@{images-path}/social/skin/Activity/selectedDocument.gif");
-        }
-
-        .truncate {
-            max-width: 90px;
-            width: 90px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-    }
-    .emptyFolder, .emptyResults {
-        margin: auto 0;
-        line-height: 50px;
-        display: block;
-        text-align: center;
-        vertical-align: middle;
-        font-size: 1.5em;
-        color: black;
-        white-space: pre-line;
+  .breadcrumbContainer {
+    display: inline-block;
+    padding: 5px 20px;
+    border-bottom: 1px #ccc solid;
+    box-sizing: border-box;
+    line-height: 33px;
+    width: 100%;
+    .breadcrumb {
+      margin: 6px 0;
+      display: flex;
+      .backBTN {
         display: none;
-        background-position-x: 50%;
-        background-repeat: no-repeat;
-        margin-top: 15%;
-        padding-top: 45px;
+      }
+
+      > li {
+        height: 21px;
+        max-width: 100px;
+        display: flex;
+        a {
+          float: initial;
+        }
+      }
+
+      .uiIconMiniArrowRight {
+        margin: 7px 5px 5px 5px;
+      }
+
+      .active {
+        color: #2f5e92;
+        max-width: 100px;
+      }
     }
 
-    .emptyFolder {
-        background-image: url("@{images-path}/social/skin/Activity/emptyfolder.png");
-    }
+    .searchBox {
+      width: 150px;
+      position: relative;
+      > input {
+        width: 100%;
+        margin: 0;
+        padding: 0 0 0 6px;
+      }
 
-    .emptyResults {
-        background-image: url("@{images-path}/social/skin/Activity/noresult.png");
-    }
-
-    .fileAlreadySelected {
+      > a {
         position: absolute;
-        width: 75%;
-        opacity: 0.9;
+        right: 5px;
+        top: 4px;
+      }
     }
+  }
+
+  .selectionBox {
+    height: 350px;
+    max-height: 350px;
+    overflow: auto;
+    padding: 5px;
+    background-position-y: -50px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    h4 {
+      margin-left: 20px;
+    }
+
+    .driveData , .folderSelection , .fileSelection {
+      display: inline-table;
+      text-align: center;
+      border: 1px transparent solid;
+    }
+
+    .folderSelection , .fileSelection {
+      margin: 5px;
+      width: 95px;
+      padding: 0;
+    }
+
+    .driveData {
+      margin: 0 5px;
+      width: 114px;
+      padding: 20px;
+    }
+
+    .center {
+      margin: auto;
+      padding: 2px;
+      text-align: center;
+      word-break: normal;
+    }
+
+    .selectionLabel {
+      padding-top: 2px;
+      display: block;
+      padding: 0;
+      color: #000;
+    }
+
+    .folderSelection .selectionIcon {
+      padding-bottom: 2px;
+      font-size: 55px;
+    }
+
+    .driveData .selectionIcon {
+      padding-bottom: 2px;
+      font-size: 55px;
+    }
+
+    .fileSelection .selectionIcon {
+      display: inline-block;
+      height: 55px;
+      width: 55px;
+      margin-top: 2px;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+
+    .fileSelection.selected {
+      border: 1px #2f5e92 solid;
+      background-repeat: no-repeat;
+      background-position-x: 102%;
+      background-position-y: -2px;
+      background-image: url("@{images-path}/social/skin/Activity/selectedDocument.gif");
+    }
+
+    .truncate {
+      max-width: 90px;
+      width: 90px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  .emptyFolder, .emptyResults {
+    margin: auto 0;
+    line-height: 50px;
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.5em;
+    color: black;
+    white-space: pre-line;
+    display: none;
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+    margin-top: 15%;
+    padding-top: 45px;
+  }
+
+  .emptyFolder {
+    background-image: url("@{images-path}/social/skin/Activity/emptyfolder.png");
+  }
+
+  .emptyResults {
+    background-image: url("@{images-path}/social/skin/Activity/noresult.png");
+  }
+
+  .fileAlreadySelected {
+    position: absolute;
+    width: 75%;
+    opacity: 0.9;
+  }
 }
 
 .multiFilesActivity {
-    .previews {
-        box-sizing: content-box;
-        display: block;
-        clear: both;
-        height: 100%;
-        max-height: 300px;
-        padding: 0 16px 16px 16px;
-    }
-    .ellipsis {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 100%;
-    }
-    .fileShare {
-        display: block;
-        width: 100%;
-        height: 300px;
-        max-height: 300px;
-        overflow: hidden;
-        
-    }
+  .previews {
+    box-sizing: content-box;
+    display: block;
+    clear: both;
+    height: 100%;
+    max-height: 300px;
+    padding: 0 16px 16px 16px;
+  }
+  .ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+  .fileShare {
+    display: block;
+    width: 100%;
+    height: 300px;
+    max-height: 300px;
+    overflow: hidden;
 
-    .isPreviewable {
+  }
+
+  .isPreviewable {
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    max-height: 300px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #ccc;
+  }
+
+  .MediaName {
+    height: 100%;
+    white-space: nowrap;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    color: #fff;
+    background-color: rgba(0,0,0,.6);
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    position: absolute;
+    opacity: 1;
+    -webkit-transition: opacity 0.35s;
+    transition: opacity 0.35s;
+
+    > * {
       position: relative;
-      box-sizing: border-box;
-      overflow: hidden;
-      max-height: 300px;
+      flex: 1 auto;
+      display: flex;
+      flex-direction: column;
       text-align: center;
-      cursor: pointer;
-      border: 1px solid #ccc;
-    }
+      padding: 0 10px;
+      width: ~"calc(100% - 20px)";
+      margin: 0;
 
-    .MediaName {
-        height: 100%;
-        white-space: nowrap;
-        text-align: center;
-        width: 100%;
-        max-width: 100%;
-        color: #fff;
-        background-color: rgba(0,0,0,.6);
-        display: flex;
-        flex-direction: column;
-        top: 0;
-        position: absolute;
-        opacity: 1;
-        -webkit-transition: opacity 0.35s;
-        transition: opacity 0.35s;
+      > .content {
+        margin: auto;
 
         > * {
-          position: relative;
-          flex: 1 auto;
-          display: flex;
-          flex-direction: column;
-          text-align: center;
-          padding: 0 10px;
-          width: ~"calc(100% - 20px)";
-          margin: 0;
-
-          > .content {
-            margin: auto;
-
-            > * {
-              margin: auto;
-            }
-          }
+          margin: auto;
         }
-         a {
-          color: #fff;
-          text-decoration: underline;
-          font-weight: bold;
-         }
-        .fileName {
-          font-size: 1.3em;
-          color: #fff;
-          font-weight: normal;
+      }
+    }
+    a {
+      color: #fff;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+    .fileName {
+      font-size: 1.3em;
+      color: #fff;
+      font-weight: normal;
 
-          .fileTitle {
-            width: 100%;
-            display: flex;
-            justify-content: center;
+      .fileTitle {
+        width: 100%;
+        display: flex;
+        justify-content: center;
 
-            .fileNameParentLink {
-                max-width: ~"calc(100% - 50px)";
-                margin: 0;
-                display: flex;
+        .fileNameParentLink {
+          max-width: ~"calc(100% - 50px)";
+          margin: 0;
+          display: flex;
 
-                a {
-                  margin: auto;
-                  text-decoration: none;
-
-                  &:hover {
-                    text-decoration: underline;
-                  }
-                }
-            }
-          }
-          .fileVersion {
-            margin: 0 5px;
+          a {
+            margin: auto;
+            text-decoration: none;
 
             &:hover {
               text-decoration: underline;
             }
           }
         }
-        .uiIconArrowRight {
-          color: #fff;
-          width: 20px;
-          text-decoration: none;
-        }
-        .borderTop {
-          width: 80%;
-          margin: 0 auto;
-          flex: 0 auto;
-          padding: 0;
-          height: 0;
-          border-top: 1px solid #fff;
-        }
-        .fileBreadCrumbContent {
-          .fileBreadCrumbWrapper {
-            margin: auto;
-            height: 20px;
-          }
-        }
       }
+      .fileVersion {
+        margin: 0 5px;
 
-      .mediaContent {
-         display:flex;
-         min-height: 100%;
-         max-height: 100%;
-
-         img {
-           margin: auto;
-           flex: 0 0 auto;
-         }
-
-         & + .MediaName {
-          opacity: 0;
-          transition-delay: 0.2s;
-
-          > * {
-            transition-delay: 0.2s;
-            &:first-child {
-                transform: scale(0,2);
-                transition-duration: 0.35s;
-                transform-origin: bottom;
-            }
-            &:last-child {
-                transform: scale(0,2);
-                transition-duration: 0.35s;
-                transform-origin: top;
-            }
-          }
-
-          .borderTop {
-            transform: scale(0,1);
-            transition-delay: 0.2s;
-          }
-          &.LoadMore {
-              opacity: 1;
-              transition-delay: 0s;
-          }
-        }
-      }
-
-      .isPreviewable:hover .mediaContent, .isPreviewable .NoPreview {
-        & + .MediaName {
-          opacity: 1;
-          -webkit-transition: opacity 0.35s;
-          transition: opacity 0.35s;
-          transition-delay: 0s;
-
-          > * {
-            transform: scale(1);
-            -webkit-transition-duration: 0.35s;
-            transition-duration: 0.35s;
-            transition-delay: 0s;
-          }
-          .borderTop {
-            transform: scale(1);
-            transition-duration: 0.35s;
-            transition-delay: 0s;
-          }
-        }
-      }
-
-      .previewable10 {
-          display: block;
-          width: 100%;
-          height: 300px;
-          padding: 0;
-          margin: 0;
-      }
-
-      .previewable20 {
-          display: table-cell;
-          width: ~"calc(50% - 5px)";
-          height: 300px;
-          float: left;
-          margin: 0 5px 0 0;
-          padding: 0;
-      }
-
-      .previewable21 {
-          display: block;
-          margin: 0 0 0 5px;
-          padding: 0;
-          width: ~"calc(50% - 5px)";
-          height: 300px;
-          float: right;
-      }
-
-      .previewable30 {
-          display: table-cell;
-          width: 50%;
-          margin: 0;
-          padding: 0;
-          height: 300px;
-          float: left;
-      }
-
-      .previewable31 {
-          display: block;
-          width: ~"calc(50% - 10px)";
-          padding: 0;
-          margin: 0 0 5px 10px;
-          height: 145px;
-          max-height: 145px;
-          float: right;
-      }
-
-      .previewable32 {
-        display: block;
-        width: ~"calc(50% - 10px)";
-        margin: 5px 0 0 10px;
-        padding: 0;
-        height: 145px;
-        max-height: 145px;
-        float: right;
-      }
-
-      .LoadMore {
-          display: block;
-          vertical-align: middle;
-          text-align: center;
-          float: left;
-          height: 145px;
-          max-height: 145px;
-          line-height: 145px;
-          font-size: 1.4em;
-          font-weight: normal;
+        &:hover {
           text-decoration: underline;
+        }
       }
+    }
+    .uiIconArrowRight {
+      color: #fff;
+      width: 20px;
+      text-decoration: none;
+    }
+    .borderTop {
+      width: 80%;
+      margin: 0 auto;
+      flex: 0 auto;
+      padding: 0;
+      height: 0;
+      border-top: 1px solid #fff;
+    }
+    .fileBreadCrumbContent {
+      .fileBreadCrumbWrapper {
+        margin: auto;
+        height: 20px;
+      }
+    }
+  }
+
+  .mediaContent {
+    display:flex;
+    min-height: 100%;
+    max-height: 100%;
+
+    img {
+      margin: auto;
+      flex: 0 0 auto;
+    }
+
+    & + .MediaName {
+      opacity: 0;
+      transition-delay: 0.2s;
+
+      > * {
+        transition-delay: 0.2s;
+        &:first-child {
+          transform: scale(0,2);
+          transition-duration: 0.35s;
+          transform-origin: bottom;
+        }
+        &:last-child {
+          transform: scale(0,2);
+          transition-duration: 0.35s;
+          transform-origin: top;
+        }
+      }
+
+      .borderTop {
+        transform: scale(0,1);
+        transition-delay: 0.2s;
+      }
+      &.LoadMore {
+        opacity: 1;
+        transition-delay: 0s;
+      }
+    }
+  }
+
+  .isPreviewable:hover .mediaContent, .isPreviewable .NoPreview {
+    & + .MediaName {
+      opacity: 1;
+      -webkit-transition: opacity 0.35s;
+      transition: opacity 0.35s;
+      transition-delay: 0s;
+
+      > * {
+        transform: scale(1);
+        -webkit-transition-duration: 0.35s;
+        transition-duration: 0.35s;
+        transition-delay: 0s;
+      }
+      .borderTop {
+        transform: scale(1);
+        transition-duration: 0.35s;
+        transition-delay: 0s;
+      }
+    }
+  }
+
+  .previewable10 {
+    display: block;
+    width: 100%;
+    height: 300px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .previewable20 {
+    display: table-cell;
+    width: ~"calc(50% - 5px)";
+    height: 300px;
+    float: left;
+    margin: 0 5px 0 0;
+    padding: 0;
+  }
+
+  .previewable21 {
+    display: block;
+    margin: 0 0 0 5px;
+    padding: 0;
+    width: ~"calc(50% - 5px)";
+    height: 300px;
+    float: right;
+  }
+
+  .previewable30 {
+    display: table-cell;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    height: 300px;
+    float: left;
+  }
+
+  .previewable31 {
+    display: block;
+    width: ~"calc(50% - 10px)";
+    padding: 0;
+    margin: 0 0 5px 10px;
+    height: 145px;
+    max-height: 145px;
+    float: right;
+  }
+
+  .previewable32 {
+    display: block;
+    width: ~"calc(50% - 10px)";
+    margin: 5px 0 0 10px;
+    padding: 0;
+    height: 145px;
+    max-height: 145px;
+    float: right;
+  }
+
+  .LoadMore {
+    display: block;
+    vertical-align: middle;
+    text-align: center;
+    float: left;
+    height: 145px;
+    max-height: 145px;
+    line-height: 145px;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-decoration: underline;
+  }
 }
 
 @media (max-width: 480px) {
-    #UIPopupComposer .PopupContent {
-        .uiAction {
-            clear: both;
-            width: 100%;
-        }
-
-        .limitMessage {
-            display: none;
-        }
+  #UIPopupComposer .PopupContent {
+    .uiAction {
+      clear: both;
+      width: 100%;
     }
 
-    #UIPopupComposer .PopupContent .uiAction button {
-        display: block;
+    .limitMessage {
+      display: none;
+    }
+  }
+
+  #UIPopupComposer .PopupContent .uiAction button {
+    display: block;
+  }
+
+  #UIDocumentSelectorTab .selectionBox {
+    height: 50vh;
+    max-height: 50vh;
+    .driveData {
+      width: 90px;
+    }
+  }
+
+  #UIDocumentSelectorTab .breadcrumbContainer {
+    .breadcrumb {
+      .normal {
+        display: none;
+      }
+
+      .backBTN {
+        display: inline-block;
+        padding-top: 2px;
+        padding-right: 5px;
+      }
+
+      .uiIconMiniArrowRight {
+        display: none;
+      }
     }
 
-    #UIDocumentSelectorTab .selectionBox {
-        height: 50vh;
-        max-height: 50vh;
-        .driveData {
-            width: 90px;
-        }
+    .searchBox {
+      clear: both;
+      width: 100%;
+      text-align: center;
+      > input {
+        width: 98%;
+      }
+    }
+  }
+
+  .dropFileBox {
+    .dropMsg {
+      display: none;
     }
 
-    #UIDocumentSelectorTab .breadcrumbContainer {
-        .breadcrumb {
-            .normal {
-                display: none;
-            }
-
-            .backBTN {
-                display: inline-block;
-                padding-top: 2px;
-                padding-right: 5px;
-            }
-
-            .uiIconMiniArrowRight {
-                display: none;
-            }
-        }
-
-        .searchBox {
-            clear: both;
-            width: 100%;
-            text-align: center;
-            > input {
-                width: 98%;
-            }
-        }
+    .or {
+      display: none;
     }
 
-    .dropFileBox {
-        .dropMsg {
-            display: none;
-        }
+    span {
+      display: block;
+      line-height: 37px;
+    }
+  }
 
-        .or {
-            display: none;
-        }
-
-        span {
-            display: block;
-            line-height: 37px;
-        }
+  #ComposerContainer {
+    .limitMessage {
+      .sizeLimit , .countLimit {
+        width: 100%;
+      }
     }
 
-    #ComposerContainer {
-        .limitMessage {
-            .sizeLimit , .countLimit {
-                width: 100%;
-            }
-        }
-
-        .fileSize {
-            display: none;
-        }
-
-        .uploadContainer {
-            > div {
-                margin: 0 5px;
-            }
-
-            .fileType {
-                display: none;
-            }
-
-            .progress {
-                width: 40%;
-            }
-        }
-
-        .multiploadFilesSelector .dropFileBox {
-            .uploadButton {
-                .text {
-                    display: none;
-                }
-
-                .mobileText {
-                    display: block;
-                }
-            }
-        }
+    .fileSize {
+      display: none;
     }
+
+    .uploadContainer {
+      > div {
+        margin: 0 5px;
+      }
+
+      .fileType {
+        display: none;
+      }
+
+      .progress {
+        width: 40%;
+      }
+    }
+
+    .multiploadFilesSelector .dropFileBox {
+      .uploadButton {
+        .text {
+          display: none;
+        }
+
+        .mobileText {
+          display: block;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 768px) and (max-height: 1024px), (max-width: 1024px) and (max-height: 768px) {
-    .multiFilesActivity .fileShare {
-        display: block;
+  .multiFilesActivity .fileShare {
+    display: block;
 
-        .previewable10 > div:first-child , .previewable20 > div:first-child , .previewable21 > div:first-child , .previewable30 > div:first-child {
-            line-height: initial;
-        }
-
-        .previewable10 {
-            display: block;
-            width: 100%;
-            height: 100%;
-            margin: 0;
-        }
-
-        .previewable20 {
-            display: block;
-            width: 100%;
-            height: 50%;
-            margin: 0 0 5px 0;
-            padding: 0;
-        }
-
-        .previewable21 {
-            display: block;
-            width: 100%;
-            height: 50%;
-            margin: 0;
-            padding: 0;
-        }
-
-        .previewable30 {
-            display: block;
-            width: 100%;
-            height: 50%;
-            margin: 0 0 5px 0;
-            padding: 0;
-        }
-
-        .previewable31 {
-            display: inline-block;
-            width: ~"calc(50% - 2px)";
-            height: 50%;
-            margin: 0 2px 0 0;
-            padding: 0;
-            float: left;
-        }
-
-        .previewable32 {
-            display: inline-block;
-            width: ~"calc(50% - 2px)";
-            height: 50%;
-            margin: 0 0 0 2px;
-            float: right;
-            padding: 0;
-        }
-        .isPreviewable {
-            > div:first-child {
-                max-height: 100%;
-                line-height: normal;
-            }
-
-            .MediaName {
-              opacity: 1;
-
-              > * {
-                transform: scale(1);
-                > * {
-                  transform: scale(1);
-                }
-              }
-            }
-            .mediaContent+.MediaName {
-              top: auto;
-              bottom: 0;
-              height: 40px;
-
-              .infoFile, .fileBreadCrumbContent, .borderTop {
-                display: none;
-              }
-              .infoFile {
-                font-size: 12px;
-              }
-            }
-            .NoPreview +.MediaName, .mediaContent+.MediaName.LoadMore {
-              top: 0;
-              bottom: auto;
-              height: 100%;
-
-              .infoFile, .fileBreadCrumbContent, .borderTop {
-                display: flex;
-              }
-            }
-        }
+    .previewable10 > div:first-child , .previewable20 > div:first-child , .previewable21 > div:first-child , .previewable30 > div:first-child {
+      line-height: initial;
     }
+
+    .previewable10 {
+      display: block;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+
+    .previewable20 {
+      display: block;
+      width: 100%;
+      height: 50%;
+      margin: 0 0 5px 0;
+      padding: 0;
+    }
+
+    .previewable21 {
+      display: block;
+      width: 100%;
+      height: 50%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .previewable30 {
+      display: block;
+      width: 100%;
+      height: 50%;
+      margin: 0 0 5px 0;
+      padding: 0;
+    }
+
+    .previewable31 {
+      display: inline-block;
+      width: ~"calc(50% - 2px)";
+      height: 50%;
+      margin: 0 2px 0 0;
+      padding: 0;
+      float: left;
+    }
+
+    .previewable32 {
+      display: inline-block;
+      width: ~"calc(50% - 2px)";
+      height: 50%;
+      margin: 0 0 0 2px;
+      float: right;
+      padding: 0;
+    }
+    .isPreviewable {
+      > div:first-child {
+        max-height: 100%;
+        line-height: normal;
+      }
+
+      .MediaName {
+        opacity: 1;
+
+        > * {
+          transform: scale(1);
+          > * {
+            transform: scale(1);
+          }
+        }
+      }
+      .mediaContent+.MediaName {
+        top: auto;
+        bottom: 0;
+        height: 40px;
+
+        .infoFile, .fileBreadCrumbContent, .borderTop {
+          display: none;
+        }
+        .infoFile {
+          font-size: 12px;
+        }
+      }
+      .NoPreview +.MediaName, .mediaContent+.MediaName.LoadMore {
+        top: 0;
+        bottom: auto;
+        height: 100%;
+
+        .infoFile, .fileBreadCrumbContent, .borderTop {
+          display: flex;
+        }
+      }
+    }
+  }
 }
 
 .uiBgd64x64FileDefault {
-    display: inline-block;
-    height: 55px;
-    width: 55px;
-    margin-top: 2px;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileDefault.png");
+  display: inline-block;
+  height: 55px;
+  width: 55px;
+  margin-top: 2px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileDefault.png");
 }
 
 .uiBgd64x64FileDefault , .uiBgd64x64applicationoctet-stream {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileDefault.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileDefault.png");
 }
 
 .uiBgd64x64FileArchiveDefault , .uiBgd64x64applicationx-tar , .uiBgd64x64applicationx-gzip , .uiBgd64x64applicationx-bzip2 , .uiBgd64x64applicationother-zip {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileArchiveZip.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileArchiveZip.png");
 }
 
 .uiBgd64x64FileArchiveRar , .uiBgd64x64applicationrar {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileArchiveRar.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileArchiveRar.png");
 }
 
 .uiBgd64x64FileArchiveZip , .uiBgd64x64FileZip , .uiBgd64x64applicationzip {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileArchiveZip.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileArchiveZip.png");
 }
 
 .uiBgd64x64FileJar , .uiBgd64x64applicationjava-archive {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileJar.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileJar.png");
 }
 
 .uiBgd64x64FileEar , .uiBgd64x64applicationear-java-archive {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileEar.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileEar.png");
 }
 
 .uiBgd64x64FileWar , .uiBgd64x64applicationx-zip {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileWar.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileWar.png");
 }
 
 .uiBgd64x64FileAudioDefault , .uiBgd64x64audiomidi , .uiBgd64x64audiox-aiff , .uiBgd64x64audiobasic , .uiBgd64x64audiox-m4a , .uiBgd64x64audiox-wav , .uiBgd64x64audioother {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileAudioDefault.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileAudioDefault.png");
 }
 
 .uiBgd64x64FileMp3 , .uiBgd64x64audiomp3 {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileMp3.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileMp3.png");
 }
 
 .uiBgd64x64FileWma , .uiBgd64x64audiox-ms-wma {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileAudioDefault.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileAudioDefault.png");
 }
 
 .uiBgd64x64FileVideo , .uiBgd64x64videox-msvideo , .uiBgd64x64videoquicktime , .uiBgd64x64videox-sgi-movie , .uiBgd64x64videox-msvideo , .uiBgd64x64videompe {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileVideo.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileVideo.png");
 }
 
 .uiBgd64x64FileFlash , .uiBgd64x64applicationx-shockwave-flash , .uiBgd64x64videox-flv {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileFlash.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileFlash.png");
 }
 
 .uiBgd64x64FileWmv , .uiBgd64x64videox-ms-wmv {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileWmv.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileWmv.png");
 }
 
 .uiBgd64x64FileGdoc , .uiBgd64x64applicationvndgoogle-appsdocument {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileGdoc.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileGdoc.png");
 }
 
 .uiBgd64x64FileWord , .uiBgd64x64applicationmsword , .uiBgd64x64applicationwordperfect , .uiBgd64x64applicationvndopenxmlformats-officedocumentwordprocessingmldocument , .uiBgd64x64FileDocx , .uiBgd64x64applicationvndms-worddocumentmacroenabled12 , .uiBgd64x64applicationvndms-wordtemplatemacroenabled12 , .uiBgd64x64applicationvndopenxmlformats-officedocumentwordprocessingmltemplate {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileWord.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileWord.png");
 }
 
 .uiBgd64x64FileOpenOffice1 , .uiBgd64x64FileOpenOffice1 , .uiBgd64x64applicationvndoasisopendocumenttext , .uiBgd64x64applicationvndoasisopendocumentdatabase {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileOpenOffice1.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileOpenOffice1.png");
 }
 
 .uiBgd64x64applicationvndoasisopendocumentspreadsheet {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileGsheet.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileGsheet.png");
 }
 
 .uiBgd64x64FileMpeg , .uiBgd64x64videompeg , .uiBgd64x64videompg , .uiBgd64x64videomp4 {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileMpeg.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileMpeg.png");
 }
 
 .uiBgd64x64FileM4v , .uiBgd64x64videox-m4v {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileM4v.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileM4v.png");
 }
 
 .uiBgd64x64FileMkv , .uiBgd64x64videox-matroska {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileMkv.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileMkv.png");
 }
 
 .uiBgd64x64FileTxt , .uiBgd64x64textplain {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileTxt.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileTxt.png");
 }
 
 .uiBgd64x64FileLwp , .uiBgd64x64applicationlwp {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileLwp.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileLwp.png");
 }
 
 .uiBgd64x64FilePage , .uiBgd64x64applepages {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FilePage.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FilePage.png");
 }
 
 .uiBgd64x64FileMdb , .uiBgd64x64applicationmsaccess {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileMdb.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileMdb.png");
 }
 
 .uiBgd64x64FileOdf , .uiBgd64x64applicationvndoasisopendocumentformula {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileOdf.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileOdf.png");
 }
 
 .uiBgd64x64FileExe , .uiBgd64x64applicationexe {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileExe.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileExe.png");
 }
 
 .uiBgd64x64FilePdf , .uiBgd64x64applicationpdf {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FilePdf.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FilePdf.png");
 }
 
 .uiBgd64x64FileScript , .uiBgd64x64applicationpostscript {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileScript.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileScript.png");
 }
 
 .uiBgd64x64FileRtf , .uiBgd64x64applicationrtf {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileRtf.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileRtf.png");
 }
 
 .uiBgd64x64FileGslides , .uiBgd64x64applicationvndgoogle-appspresentation {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileGslides.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileGslides.png");
 }
 
 .uiBgd64x64FileAppleKey , .uiBgd64x64textkey {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileKey.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileKey.png");
 }
 
 .uiBgd64x64FileOpenOffice2 , .uiBgd64x64applicationvndoasisopendocumentpresentation {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileOpenOffice2.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileOpenOffice2.png");
 }
 
 .uiBgd64x64FilePpt , .uiBgd64x64applicationppt , .uiBgd64x64applicationvndms-powerpoint , .uiBgd64x64applicationvndopenxmlformats-officedocumentpresentationmlpresentation , .uiBgd64x64applicationvndopenxmlformats-officedocumentpresentationmltemplate , .uiBgd64x64applicationvndopenxmlformats-officedocumentpresentationmlslideshow , .uiBgd64x64applicationvndms-powerpointaddinmacroenabled12 , .uiBgd64x64applicationvndms-powerpointpresentationmacroenabled12 , .uiBgd64x64applicationvndms-powerpointtemplatemacroenabled12 , .uiBgd64x64applicationvndms-powerpointslideshowmacroenabled12 {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FilePpt.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FilePpt.png");
 }
 
 .uiBgd64x64FilePrz , .uiBgd64x64applicationfreelance {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FilePrz.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FilePrz.png");
 }
 
 .uiBgd64x64FileGsheet , .uiBgd64x64applicationvndgoogle-appsspreadsheet {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileGsheet.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileGsheet.png");
 }
 
 .uiBgd64x64FileExcel , .uiBgd64x64applicationxls , .uiBgd64x64applicationxlt , .uiBgd64x64applicationvndms-excel , .uiBgd64x64applicationvndopenxmlformats-officedocumentspreadsheetmlsheet , .uiBgd64x64FileXls , .uiBgd64x64applicationvndopenxmlformats-officedocumentspreadsheetmltemplate , .uiBgd64x64applicationvndms-excelsheetmacroenabled12 , .uiBgd64x64applicationvndms-exceltemplatemacroenabled12 , .uiBgd64x64applicationvndms-exceladdinmacroenabled12 , .uiBgd64x64applicationvndms-excelsheetbinarymacroenabled12 {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileExcel.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileExcel.png");
 }
 
 .uiBgd64x64FileOpenOffice3 , .uiBgd64x64applicationvndoasisopendocumentspreadsheet-template , .uiBgd64x64applicationvndsunxmlcalc {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileOpenOffice3.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileOpenOffice3.png");
 }
 
 .uiBgd64x64FileHtml , .uiBgd64x64texthtml , .uiBgd64x64texthtm {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileHtml.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileHtml.png");
 }
 
 .uiBgd64x64FileXml , .uiBgd64x64textxml {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileXml.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileXml.png");
 }
 
 .uiBgd64x64FileJs , .uiBgd64x64applicationx-javascript {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileJs.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileJs.png");
 }
 
 .uiBgd64x64FileJson , .uiBgd64x64applicationjson {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileJson.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileJson.png");
 }
 
 .uiBgd64x64FileCss , .uiBgd64x64textcss {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileCss.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileCss.png");
 }
 
 .uiBgd64x64FileXsl , .uiBgd64x64textxsl , .uiBgd64x64textxslt {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileXsl.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileXsl.png");
 }
 
 .uiBgd64x64FileFont , .uiBgd64x64fonttff , .uiBgd64x64fontotf , .uiBgd64x64fontttc , .uiBgd64x64fonteot , .uiBgd64x64fontdfont , .uiBgd64x64fontttf , .uiBgd64x64fontwoff {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileFont.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileFont.png");
 }
 
 .uiBgd64x64FileGdraw , .uiBgd64x64applicationvndgoogle-appsdrawing {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileGdraw.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileGdraw.png");
 }
 
 .uiBgd64x64FileBmp , .uiBgd64x64imagebmp {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileBmp.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileBmp.png");
 }
 
 .uiBgd64x64FileIco , .uiBgd64x64imagex-icon {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileIco.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileIco.png");
 }
 
 .uiBgd64x64FileGif , .uiBgd64x64imagegif {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileGif.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileGif.png");
 }
 
 .uiBgd64x64FileOdg , .uiBgd64x64applicationvndoasisopendocumentgraphics {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileOdg.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileOdg.png");
 }
 
 .uiBgd64x64FilePng , .uiBgd64x64imagepng {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FilePng.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FilePng.png");
 }
 
 .uiBgd64x64FilePsd , .uiBgd64x64imagepsd , .uiBgd64x64applicationx-photoshop {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FilePsd.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FilePsd.png");
 }
 
 .uiBgd64x64FileRaw , .uiBgd64x64applicationraw {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileRaw.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileRaw.png");
 }
 
 .uiBgd64x64FileTif , .uiBgd64x64imagetiff {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileTif.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileTif.png");
 }
 
 .uiBgd64x64FileXcf , .uiBgd64x64imagexcf {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileXcf.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileXcf.png");
 }
 
 .uiBgd64x64FileIndd , .uiBgd64x64applicationx-indesign {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileIndd.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileIndd.png");
 }
 
 .uiBgd64x64FileAi , .uiBgd64x64applicationillustrator , .uiBgd64x64applicationeps {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileAi.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileAi.png");
 }
 
 .uiBgd64x64FileSvg , .uiBgd64x64imagesvg-xml {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileSvg.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileSvg.png");
 }
 
 .uiBgd64x64FileJpg , .uiBgd64x64imagejpeg {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileJpg.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileJpg.png");
 }
 
 .uiBgd64x64FileBlog {
-    background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileBlog.png");
+  background-image: url("@{images-path}/Icons/TypeIcons/EmailNotificationIcons/uiIcon64x64FileBlog.png");
 }
 
 .uiBgdFile {
-    background: url("@{images-path}/social/skin/Activity/Fileicons/file.png") no-repeat top center /50%;
+  background: url("@{images-path}/social/skin/Activity/Fileicons/file.png") no-repeat top center /50%;
 }
 .uiBgdFileExcel {
-    background: url("@{images-path}/social/skin/Activity/Fileicons/excel.png") no-repeat top center /50%;
+  background: url("@{images-path}/social/skin/Activity/Fileicons/excel.png") no-repeat top center /50%;
 }
 .uiBgdFilePPT {
-    background: url("@{images-path}/social/skin/Activity/Fileicons/ppt.png") no-repeat top center /50%;
+  background: url("@{images-path}/social/skin/Activity/Fileicons/ppt.png") no-repeat top center /50%;
 }
 .uiBgdFilePDF {
-    background: url("@{images-path}/social/skin/Activity/Fileicons/pdf.png") no-repeat top center /50%;
+  background: url("@{images-path}/social/skin/Activity/Fileicons/pdf.png") no-repeat top center /50%;
 }
 .uiBgdFileWord {
-    background: url("@{images-path}/social/skin/Activity/Fileicons/word.png") no-repeat top center /50%;
+  background: url("@{images-path}/social/skin/Activity/Fileicons/word.png") no-repeat top center /50%;
 }
 .uiBgdFileImage {
-    background: url("@{images-path}/social/skin/Activity/Fileicons/image.png") no-repeat top center /50%;
+  background: url("@{images-path}/social/skin/Activity/Fileicons/image.png") no-repeat top center /50%;
 }
 
 @media (max-width: 480px) {
   div[class^='uiBgdFile'], div[class*=' uiBgdFile'] {
-      background-position-y: center;
+    background-position-y: center;
   }
 }
