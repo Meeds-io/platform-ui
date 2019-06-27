@@ -50,7 +50,6 @@
         }
 
         .uploadContainer {
-            border-top: 1px #b6b6b6 solid;
             clear: both;
             margin: 0;
             padding: 0;
@@ -182,8 +181,16 @@
 
         #newsActivityComposer {
           border-radius: 0px;
+          &.extended {
+            margin-top: 10px;
+          }
+          .createNews{
+            font-size: 22px;
+            font-weight: bold;
+            padding: 25px 15px 0;
+          }
 
-          #newsForm {
+          .newsForm {
             padding: 25px 0 40px 0;
             margin-bottom: 35px;
 
@@ -245,15 +252,107 @@
                 &.newsFormLabels{
                   .newsFormLabel {
                     margin-top: 10px;
-
+                    flex: 3;
                     &.newsFormTitleLabel {
                       flex: 1;
                     }
+                  }
+                }
+              }
+            }
+            &.extended {
+              height: 78%;
 
-                    &.newsFormContentLabel {
-                      flex: 3;
+              .newsFormLabelsInputs {
+                height: 90%;
+
+                .newsFormLabels{
+                  height: 72%;
+
+                  .newsFormLabel.newsFormSummaryLabel {
+                    margin-top: 40px;
+                  }
+
+                  .newsFormLabel.newsFormContentLabel {
+                    margin-top: 122px;
+                  }
+                }
+
+                .newsFormInputs{
+                  height: 100%;
+                }
+
+                .newsFormInput:first-child {
+                  margin-bottom: 25px;
+                }
+
+                .newsFormInput {
+                  width: 79% !important;
+                }
+                .uiIconInformation{
+                  color: #000;
+                }
+
+                .newsInputsRows {
+                  margin-bottom: 8px;
+                  position: relative;
+                }
+
+                .attachments {
+                  position: absolute;
+                  right: 0;
+                  top: 0;
+                  bottom: 0;
+                  width: 19%;
+
+                  .controls {
+                    height: 100%;
+
+                    .fileDrop {
+                      height: 100%;
+                      .dropZone {
+                        border-radius: 5px;
+                        border: 3px dashed #e6e6e6;
+                        font-size: 14px;
+                        height: 100%;
+                        align-items: center;
+                        justify-content: center;
+                        display: flex;
+                        text-align: center;
+                        .uiIconUpload {
+                          display: block;
+                          font-size: 37px;
+                          color: #578dc9;
+                        }
+                      }
+                      .attachFile {
+                        display: none;
+                      }
+                      .removeButton {
+                        position: absolute;
+                        right: -5px;
+                        top: -12px;
+                      }
+                      img {
+                        max-width: 100%;
+                        max-height: 100%;
+                      }
+                      .uploadError {
+                        height: 27px;
+                        margin: 5px 0;
+                        line-height: 17px;
+                        word-wrap: break-word;
+                        color: #771414;
+                        text-align: center;
+                        white-space: normal;
+                      }
                     }
                   }
+                }
+
+                .UINewsSummaryDescription {
+                  margin-bottom: 25px;
+                  margin-left: 10px;
                 }
               }
             }
