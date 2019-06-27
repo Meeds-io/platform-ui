@@ -415,17 +415,20 @@
 		width: 95%;
 		font-size: 15px;
 	}
-	#UISpaceTemplateDescription {
+	#UISpaceTemplateDescription, #Visibility, #Registration {
 		margin-bottom: 8px;
-		.uiIconInformation {
-			color: inherit;
-			font-size: 16px;
-		}
+		margin-top: -15px;
+		font-size: 13px;
+		margin-left: 100px;
+		color: gray;
+		font-style: italic;
+	}
+	#Registration {
+		margin-top: -25px;
 	}
 	.uiSpaceVisibility {
 		.spaceVisibility {
 			margin-top: 5px;
-			margin-bottom: -5px;
 			width: 60px
 		}
 	}
@@ -453,8 +456,10 @@
 	}
 }
 @media (max-width: 600px) {
-	#UIPopupAddSpace .form-horizontal .controls {
-		margin-left: 0;
+	#UIPopupAddSpace {
+		.form-horizontal .controls, #UISpaceTemplateDescription, #Visibility, #Registration {
+			margin-left: 0;
+		}
 	}
 
 }
