@@ -38,3 +38,7 @@ target/
 release.properties
 pom.xml.releaseBackup
 pom.xml.tag
+
+# JRebel
+rebel.xml
+rebel-remote.xml

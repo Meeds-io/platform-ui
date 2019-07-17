@@ -230,7 +230,7 @@
 
     .newsImage {
         float: left;
-		max-width: 150px;
+        max-width: 150px;
     }
 
     .newsDetails {
@@ -250,9 +250,121 @@
 				padding-left: 3px;
 			}
 		}
+
     }
 }
 
+/*============== Full Activity News ====================*/
+.uiNewsActivity {
+	.illustrationPicture {
+		width: 165px;
+		height: 150px;
+	}
+
+	.activityLinkColor {
+		color: #578dc9;
+	}
+
+	.italicLabel {
+		font-style: italic;
+	}
+
+	.boldText {
+		font-weight: bold;
+	}
+
+	.newsDetails {
+		padding-left: 18%;
+	}
+
+	.summary {
+		margin-top: 1%;
+		height: 74px;
+		padding: 1%;
+		text-align: justify;
+		width: 90%;
+		border: 1px solid #ccc !important;
+		cursor: auto;
+		overflow: auto;
+	}
+
+	.fullDetailsBody {
+		border: 2px solid #ccc !important;
+		margin-top: 2%;
+		padding: 1%;
+		text-align: justify;
+		width: 91%;
+		height: 300px;
+		cursor: auto;
+		overflow: auto;
+	}
+}
+
+/*==============News Share Popup=============== */
+#newsShareActivity {
+    .uiPopup {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50vw;
+        height: 70vh;
+        .popupContent {
+            height: 85%;
+        }
+    }
+    .newsShareForm {
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+        height: 90%;
+        label {
+            font-weight: bold;
+        }
+        .shareButtons {
+            align-self: flex-end;
+            #newsShareButton:hover {
+                background-color: #fff;
+            }
+            #newsShareButton {
+                position: absolute;
+                top: 25px;
+                right: 25px;
+                border-color: #fff;
+                padding: 0;
+                .uiIconShare {
+                    font-size: 25px;
+                }
+            }
+        }
+        .newsShareDescription {
+            flex: 2;
+            width: 100%;
+        }
+        .shareSpaces input {
+            width: 100%;
+            margin-bottom: 50px;
+        }
+        .newsTitle {
+            margin-bottom: 25px;
+        }
+        .shareSpaces > * {
+            margin-bottom: 15px;
+        }
+    }
+    .selectize-dropdown-content .optionItem {
+        .optionAvatar {
+            display: table-cell;
+            white-space: nowrap;
+            margin-right: 5px;
+        }
+
+        .optionName {
+            display: table-cell;
+            white-space: nowrap;
+            margin-left: 5px;
+        }
+    }
+}
 
 /*==============activityStreamStatus=============== */
 
