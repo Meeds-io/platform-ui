@@ -255,48 +255,82 @@
 }
 
 /*============== Full Activity News ====================*/
+
 .uiNewsActivity {
-	.illustrationPicture {
-		width: 165px;
-		height: 150px;
-	}
+	.newsDetails-description {
+	    padding: 25px 15px;
+        .newsDetails-header {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            .news-illustration {
+                flex: 1 1 150px;
+                img {
+                    width: 100%;
+                    max-width: inherit!important;
+                    border: 1px dashed lightgray;
+                }
+            }
 
-	.activityLinkColor {
-		color: #578dc9;
-	}
+            .newsDetails {
+                flex: 1 1 75%;
+                padding-left: 15px;
+                .news-top-information {
+                    display: flex;
+                    width: 100%;
+                    flex-wrap: wrap;
+                    .news-header-content {
+                        flex: 1 1 80%;
+                        .newsTitle {
+                            .newsTitleLink {
+                                color:  @primaryColor;
+                                font-size: 16px;
+                                letter-spacing: .5px;
+                            }
+                        }
 
-	.italicLabel {
-		font-style: italic;
-	}
+                        .news-informtions {
+                            .news-informationsLabel {
+                                font-style: italic;
+                            }
 
-	.boldText {
-		font-weight: bold;
-	}
+                            .news-informationsValue {
+                                font-weight: bold;
+                            }
 
-	.newsDetails {
-		padding-left: 18%;
-	}
+                            .newsInformationSeparator {
+                                padding: 0 15px;
+                            }
+                        }
+                    }
 
-	.summary {
-		margin-top: 1%;
-		height: 74px;
-		padding: 1%;
-		text-align: justify;
-		width: 90%;
-		border: 1px solid #ccc !important;
-		cursor: auto;
-		overflow: auto;
-	}
+                    #newsShareActivity {
+                        flex: 1 1 20%;
+                        text-align: right;
+                        #newsShareButton {
+                           border: none;
+                           i {
+                              font-size: 28px;
+                           }
+                        }
+                    }
+                }
 
-	.fullDetailsBody {
-		border: 2px solid #ccc !important;
-		margin-top: 2%;
-		padding: 1%;
-		text-align: justify;
-		width: 91%;
-		height: 300px;
-		cursor: auto;
-		overflow: auto;
+                .summary {
+                    padding-top: 20px;
+                    padding-left: 20px;
+                    font-style: italic;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .newsBody {
+            padding-top: 20px;
+            letter-spacing: .1px;
+            line-height: 1.7em;
+            font-size: 14px;
+        }
 	}
 }
 
