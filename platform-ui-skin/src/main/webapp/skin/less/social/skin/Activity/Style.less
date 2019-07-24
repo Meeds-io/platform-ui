@@ -260,27 +260,16 @@
 	.newsDetails-description {
 	    padding: 25px 15px;
         .newsDetails-header {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            .news-illustration {
-                flex: 1 1 150px;
-                img {
-                    width: 100%;
-                    max-width: inherit!important;
-                    border: 1px dashed lightgray;
-                }
-            }
-
             .newsDetails {
-                flex: 1 1 75%;
-                padding-left: 15px;
+                img {
+                   float: left;
+                   max-width: 150px;
+                   margin-right: 20px;
+                   margin-bottom: 20px;
+                   border: 1px dashed lightgray;
+                 }
                 .news-top-information {
-                    display: flex;
-                    width: 100%;
-                    flex-wrap: wrap;
                     .news-header-content {
-                        flex: 1 1 80%;
                         .newsTitle {
                             .newsTitleLink {
                                 color:  @primaryColor;
@@ -288,7 +277,6 @@
                                 letter-spacing: .5px;
                             }
                         }
-
                         .news-informtions {
                             .news-informationsLabel {
                                 font-style: italic;
@@ -301,12 +289,20 @@
                             .newsInformationSeparator {
                                 padding: 0 15px;
                             }
+                            a {
+                                color: @globalLoadingBorder;
+                                &:hover {
+                                 color: @primaryColor;
+                                }
+                            }
                         }
                     }
 
                     #newsShareActivity {
-                        flex: 1 1 20%;
                         text-align: right;
+                        width: 20%;
+                        float: right;
+                        margin-top: -50px;
                         #newsShareButton {
                            border: none;
                            i {
