@@ -260,6 +260,29 @@
 	.newsDetails-description {
 	    padding: 25px 15px;
         .newsDetails-header {
+            #newsActivityEditComposer {
+              float: right;
+
+              &.completeWidth {
+                width: 100%;
+               	float: none;
+               	margin-left: 0px;
+              }
+            }
+
+            #newsShareActivity {
+              float: right;
+              margin-left: 10px;
+            }
+
+            #newsShareButton, #newsEditButton {
+               border: none;
+               padding: 9px 10px;
+               i {
+                  font-size: 24px;
+               }
+            }
+
             .newsDetails {
                 img {
                    float: left;
@@ -277,37 +300,33 @@
                                 letter-spacing: .5px;
                             }
                         }
-                        .news-informtions {
-                            .news-informationsLabel {
+                        .newsInformation {
+                            display: flex;
+                            padding-left: 7px;
+
+                            .newsAuthor {
+                                padding-right: 30px;
+                            }
+
+                            .newsUpdater {
+                                padding-left: 30px;
+                                border-left: 2px solid #CCCCCC;
+                            }
+
+                            .newsInformationLabel {
                                 font-style: italic;
                             }
 
-                            .news-informationsValue {
+                            .newsInformationValue {
                                 font-weight: bold;
                             }
 
-                            .newsInformationSeparator {
-                                padding: 0 15px;
-                            }
                             a {
                                 color: @globalLoadingBorder;
                                 &:hover {
                                  color: @primaryColor;
                                 }
                             }
-                        }
-                    }
-
-                    #newsShareActivity {
-                        text-align: right;
-                        width: 20%;
-                        float: right;
-                        margin-top: -50px;
-                        #newsShareButton {
-                           border: none;
-                           i {
-                              font-size: 28px;
-                           }
                         }
                     }
                 }
@@ -327,6 +346,10 @@
             line-height: 1.7em;
             font-size: 14px;
         }
+	}
+
+	#newsActivityEditComposer.newsComposer #newsForm .newsFormButtons {
+	  justify-content: end;
 	}
 }
 
