@@ -3,47 +3,123 @@
 
 .uiBrandingPortlet {
 	padding: 10px 10px;
+
 	> .boxContent {
 		padding: 10px 0;
 	}
-	h4.titleWithBorder {
-		margin: 20px 0;
-		line-height: 21px;
-	}
-	.alert {
-		display: none;
-		left: 60%;
-	    position: absolute;
-	    transform: translate(-50%);
-	    margin-top: 0;
-	}
+
+  h4 {
+    margin-top: 20px;
+  }
+
+  .alert {
+    display: none;
+    left: 57%;
+    position: absolute;
+    transform: translate(-50%);
+    margin-top: 0;
+  }
+	
+	#companyNameInput {
+    margin-bottom: 0px;
+  }
 
 	.logoForm {
+	  background-color: #FFFFFF;
+    padding: 1px 10px 0px 10px;
+
+    .info {
+      color: @baseColorLight;
+      padding-left: 2px;
+      font-size: 12px;
+      font-style: italic;
+    }
+
 		.previewLogo {
+		  position: relative;
+		  display: flex;
+      justify-content: center;
+      align-items: center;
 			.box-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 			border: 1px solid @borderColor;
-			padding: 20px;
-			margin: 10px 0;
-	    text-align: center;
-	    .size(34px,300px);
+			padding: 15px;
+			margin: 5px 60px 10px;
+	    .size(50px, 250px);
+
+      img {
+        max-width: 300px;
+        max-height: 70px;
+      }
+
+	    &.hover {
+        width: 180px;
+        height: 45px;
+      	border: 1px solid @errorColor;
+      }
+
+      .removeButton {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        cursor: pointer;
+      }
 		}
-		#PreviewImgDiv.hover {
-			border: 1px solid @errorColor;
-		}
-		.info {
-			margin: 10px 0 0;
-			color: @baseColorLight;
-			width: 341px;
-			text-align: center;
-			font-size: 12px;
-		}
+
+    .progress {
+      width: 250px;
+      height: 20px;
+      padding: 0px 15px;
+      margin: 0px 60px;
+      background: none;
+
+      &.upload-completed {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s 3s, opacity 2s 1s linear;
+      }
+    }
+
+    #navigationStyle .uiRadio {
+      padding-right: 20px;
+    }
 
 		.uiAction {
-			padding: 34px 20px;
+			padding: 23px 15px;
+			text-align: left;
 		}
+
+		#StylePreview {
+      width: 90%;
+      padding: 30px 0px 30px;
+      margin: auto;
+    }
+
+    .fileDrop {
+      padding-top: 6px;
+      &, [class^="uiIcon"] {
+        color: @primaryColor;
+      }
+      .dropZone {
+        border-radius: 5px;
+        border: 1px dashed @primaryLightColor;
+        font-size: 14px;
+        height: 70px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        padding: 5px 10px;
+      }
+      .attachFileIcon:before {
+        content: "\e780";
+        font-weight: bold;
+      }
+      .attachFile {
+        display: none;
+      }
+    }
+    .dropMsg [class^="uiIcon"] {
+      color: @primaryColor;
+    }
 	}
 
-	.dropdown-menu {
-		min-width: 72px;
-	}
 }
