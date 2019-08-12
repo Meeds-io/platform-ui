@@ -231,6 +231,8 @@
     .newsImage {
         float: left;
         max-width: 150px;
+        margin-right: 20px;
+        margin-bottom: 20px;
     }
 
     .newsDetails {
@@ -259,93 +261,92 @@
 .uiNewsActivity {
 	.newsDetails-description {
 	    padding: 25px 15px;
-        .newsDetails-header {
-            #newsActivityEditComposer {
-              float: right;
 
-              &.completeWidth {
-                width: 100%;
-               	float: none;
-               	margin-left: 0px;
+      #newsActivityEditComposer {
+        float: right;
+
+        &.completeWidth {
+          width: 100%;
+          float: none;
+          margin-left: 0px;
+        }
+      }
+
+      #newsShareActivity {
+        float: right;
+        margin-left: 10px;
+      }
+
+      #newsShareButton, #newsEditButton {
+         border: none;
+         padding: 9px 10px;
+         i {
+            font-size: 24px;
+         }
+      }
+
+      .newsDetails {
+          img {
+             float: left;
+             max-width: 150px;
+             margin-right: 20px;
+             margin-bottom: 20px;
+             border: 1px dashed lightgray;
+           }
+          .news-top-information {
+              .news-header-content {
+                  .newsTitle {
+                      .newsTitleLink {
+                          color:  @primaryColor;
+                          font-size: 16px;
+                          letter-spacing: .5px;
+                      }
+                  }
+                  .newsInformation {
+                      display: flex;
+                      padding-left: 7px;
+
+                      .newsAuthor {
+                          padding-right: 30px;
+                      }
+
+                      .newsUpdater {
+                          padding-left: 30px;
+                          border-left: 2px solid #CCCCCC;
+                      }
+
+                      .newsInformationLabel {
+                          font-style: italic;
+                      }
+
+                      .newsInformationValue {
+                          font-weight: bold;
+                      }
+
+                      a {
+                          color: @globalLoadingBorder;
+                          &:hover {
+                           color: @primaryColor;
+                          }
+                      }
+                  }
               }
-            }
+          }
 
-            #newsShareActivity {
-              float: right;
-              margin-left: 10px;
-            }
+          .summary {
+              padding-top: 20px;
+              padding-left: 20px;
+              font-style: italic;
+              font-size: 14px;
+          }
+      }
 
-            #newsShareButton, #newsEditButton {
-               border: none;
-               padding: 9px 10px;
-               i {
-                  font-size: 24px;
-               }
-            }
-
-            .newsDetails {
-                img {
-                   float: left;
-                   max-width: 150px;
-                   margin-right: 20px;
-                   margin-bottom: 20px;
-                   border: 1px dashed lightgray;
-                 }
-                .news-top-information {
-                    .news-header-content {
-                        .newsTitle {
-                            .newsTitleLink {
-                                color:  @primaryColor;
-                                font-size: 16px;
-                                letter-spacing: .5px;
-                            }
-                        }
-                        .newsInformation {
-                            display: flex;
-                            padding-left: 7px;
-
-                            .newsAuthor {
-                                padding-right: 30px;
-                            }
-
-                            .newsUpdater {
-                                padding-left: 30px;
-                                border-left: 2px solid #CCCCCC;
-                            }
-
-                            .newsInformationLabel {
-                                font-style: italic;
-                            }
-
-                            .newsInformationValue {
-                                font-weight: bold;
-                            }
-
-                            a {
-                                color: @globalLoadingBorder;
-                                &:hover {
-                                 color: @primaryColor;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                .summary {
-                    padding-top: 20px;
-                    padding-left: 20px;
-                    font-style: italic;
-                    font-size: 14px;
-                }
-            }
-        }
-
-        .newsBody {
-            padding-top: 20px;
-            letter-spacing: .1px;
-            line-height: 1.7em;
-            font-size: 14px;
-        }
+      .newsBody {
+          padding-top: 20px;
+          letter-spacing: .1px;
+          line-height: 1.7em;
+          font-size: 14px;
+      }
 	}
 
 	#newsActivityEditComposer.newsComposer #newsForm .newsFormButtons {
@@ -353,14 +354,29 @@
 	}
 }
 
+.uiSharedNewsActivity {
+  .sharedNewsTitle {
+    padding: 0px 15px 20px 15px;
+  }
+  .sharedNewsDetails {
+    margin: 0px 15px 10px 13px;
+    border: 2px solid #f8f8f8;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    padding: 10px;
+    display: flow-root;
+  }
+}
+
 /*==============News Share Popup=============== */
 #newsShareActivity {
     .uiPopup {
-        top: 50%;
+        position: fixed;
+        top: 400px;
         left: 50%;
-        transform: translate(-50%, -50%);
-        width: 50vw;
-        height: 70vh;
+        transform: translate(-50%,-50%);
+        width: 800px;
+        height: 500px;
         .popupContent {
             height: 85%;
         }
@@ -406,16 +422,39 @@
     }
     .selectize-dropdown-content .optionItem {
         .optionAvatar {
-            display: table-cell;
+            display: inline-block;
             white-space: nowrap;
             margin-right: 5px;
         }
 
         .optionName {
-            display: table-cell;
+            display: inline-block;
             white-space: nowrap;
-            margin-left: 5px;
         }
+    }
+
+    .alert {
+      position: fixed;
+      top: 70px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 1000;
+
+      ul {
+        margin: 3px 0 0px 60px;
+
+        li {
+          list-style: unset;
+        }
+      }
+    }
+
+    .fade-leave-active {
+      transition: opacity 1s
+    }
+
+    .fade-leave-to {
+      opacity: 0
     }
 }
 
