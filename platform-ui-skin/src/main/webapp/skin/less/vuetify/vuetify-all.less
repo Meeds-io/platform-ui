@@ -1,0 +1,87 @@
+@import "../variables.less";
+
+@import './lib/fontawesome.less';
+@import './lib/materialdesign-icons.less';
+
+.VuetifyApp {
+  @import './lib/vuetify.less';
+  @import './lib/Chart.min.less';
+
+  .hide-scroll {
+    overflow: hidden;
+  }
+
+  .v-card__text {
+    box-sizing: border-box;
+  }
+
+  .v-textarea>.v-input__control>.v-input__slot:before {
+     border: 0;
+  }
+
+  .container.fluid .layout .flex {
+    box-sizing: border-box;
+  }
+
+  .grid-list-md {
+    box-sizing: border-box;
+  }
+
+  .v-input--is-disabled .v-input__slot {
+    background-color: #f2f2f2;
+    border-radius: 4px;
+  }
+
+  .application--wrap {
+    min-height: auto !important;
+  }
+  
+  .v-tooltip__content {
+    z-index: 2000!important;
+  }
+
+  .v-btn,
+  .v-input,
+  .v-select,
+  .v-textarea {
+    background-color: transparent;
+    border-style: none;
+    color: inherit;
+  }
+
+  .v-btn--icon {
+    border: 0;
+  }
+  
+  .border-box-sizing {
+    box-sizing: border-box;
+  }
+  
+  .v-input.text-xs-center input {
+    text-align: center;
+  }
+}
+
+@media (max-width : 959px) {
+  .VuetifyApp {
+
+    .uiPopup.v-dialog:not(.v-dialog--fullscreen) .v-card__text {
+      max-height: ~"calc(100vh - 235px)";
+      overflow-y: auto;
+      overflow-x: hidden;
+      
+      > .container {
+        max-width: ~"calc(100% - 32px)";
+      }
+    }
+
+    .v-dialog {
+      overflow: visible;
+      border-radius: 4px;
+      transform: translate(0);
+      max-width: 100vw !important;
+      max-height: 100vh;
+      margin: 0;
+    }
+  }
+}

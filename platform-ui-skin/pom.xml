@@ -201,7 +201,7 @@
                                 <include>integration/skin/quicksearchpage.less</include>
                                 <include>integration/skin/searchAdmin.less</include>
                                 <include>integration/skin/searchpage.less</include>
-
+                                <include>vuetify/vuetify-all.less</include>
                             </includes>
                         </configuration>
                         <goals>
