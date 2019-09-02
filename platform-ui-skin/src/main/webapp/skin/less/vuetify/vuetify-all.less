@@ -7,69 +7,91 @@
   @import './lib/vuetify.less';
   @import './lib/Chart.min.less';
 
-  .hide-scroll {
-    overflow: hidden;
-  }
+  .v-application {
+    .display-4 {
+      font-family: inherit !important;
+    }
+    .display-3 {
+      font-family: inherit !important;
+    }
+    .display-2 {
+      font-family: inherit !important;
+    }
+    .display-1 {
+      font-family: inherit !important;
+    }
+    .headline {
+      font-family: inherit !important;
+    }
+    .title {
+      font-family: inherit !important;
+    }
 
-  .v-card__text {
-    box-sizing: border-box;
-  }
+    .v-card__text {
+      box-sizing: border-box;
+    }
 
-  .v-textarea>.v-input__control>.v-input__slot:before {
-     border: 0;
-  }
-
-  .container.fluid .layout .flex {
-    box-sizing: border-box;
-  }
-
-  .grid-list-md {
-    box-sizing: border-box;
-  }
-
-  .v-input--is-disabled .v-input__slot {
-    background-color: #f2f2f2;
-    border-radius: 4px;
-  }
-
-  .application--wrap {
-    min-height: auto !important;
-  }
+    .container.fluid .layout .flex {
+      box-sizing: border-box;
+    }
   
-  .v-tooltip__content {
-    z-index: 2000!important;
-  }
+    .grid-list-md {
+      box-sizing: border-box;
+    }
 
-  .v-btn,
-  .v-input,
-  .v-select,
-  .v-textarea {
-    background-color: transparent;
-    border-style: none;
-    color: inherit;
-  }
+    .v-tooltip__content {
+      z-index: 2000!important;
+    }
 
-  .v-btn--icon {
-    border: 0;
-  }
-  
-  .border-box-sizing {
-    box-sizing: border-box;
-  }
-  
-  .v-input.text-xs-center input {
-    text-align: center;
+    .v-btn--icon {
+      border: 0;
+    }
+
+    textarea {
+      border: Solid 2px #e1e8ee !important;
+    }
+
+    .border-box-sizing {
+      box-sizing: border-box;
+    }
+
+    .v-text-field {
+      padding-top: 22px;
+    }
+
+    .v-text-field__details {
+      display: contents;
+    }
+
+    textarea {
+      border: Solid 2px #e1e8ee !important;
+    }
+
+    .v-input.text-center input {
+      text-align: center;
+    }
+
+    .uiPopup .popupHeader {
+      margin-bottom: 22px;
+    }
   }
 }
 
-@media (max-width : 959px) {
-  .VuetifyApp {
+.hide-scroll {
+  overflow: hidden;
+}
 
+.v-application--wrap {
+  min-height: auto !important;
+}
+
+@media (max-width : 959px) {
+  .VuetifyApp .v-application {
     .uiPopup.v-dialog:not(.v-dialog--fullscreen) .v-card__text {
       max-height: ~"calc(100vh - 235px)";
       overflow-y: auto;
       overflow-x: hidden;
-      
+
       > .container {
         max-width: ~"calc(100% - 32px)";
       }
