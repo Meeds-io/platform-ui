@@ -12672,21 +12672,21 @@ html {
   /* iOS 8+ */
 }
 
-*,
-::before,
-::after {
+*:not(.ignore-vuetify-classes),
+:not(.ignore-vuetify-classes)::before,
+:not(.ignore-vuetify-classes)::after {
   box-sizing: inherit;
 }
 
-::before,
-::after {
+:not(.ignore-vuetify-classes)::before,
+:not(.ignore-vuetify-classes)::after {
   text-decoration: inherit;
   /* Inherit text-decoration and vertical align to ::before and ::after pseudo elements */
   vertical-align: inherit;
 }
 
 /* Remove margin, padding of all elements and set background-no-repeat as default */
-* {
+*:not(.ignore-vuetify-classes) {
   background-repeat: no-repeat;
   /* Set `background-repeat: no-repeat` to all elements */
   padding: 0;
@@ -12698,12 +12698,12 @@ html {
    # General elements
    # ================================================================= */
 /* Add the correct display in iOS 4-7.*/
-audio:not([controls]) {
+audio:not([controls]):not(.ignore-vuetify-classes) {
   display: none;
   height: 0;
 }
 
-hr {
+hr:not(.ignore-vuetify-classes) {
   overflow: visible;
   /* Show the overflow in Edge and IE */
 }
@@ -12714,222 +12714,222 @@ hr {
 * and Firefox
 * Correct `block` display not defined for `main` in IE 11
 */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-menu,
-nav,
-section,
-summary {
+article:not(.ignore-vuetify-classes),
+aside:not(.ignore-vuetify-classes),
+details:not(.ignore-vuetify-classes),
+figcaption:not(.ignore-vuetify-classes),
+figure:not(.ignore-vuetify-classes),
+footer:not(.ignore-vuetify-classes),
+header:not(.ignore-vuetify-classes),
+main:not(.ignore-vuetify-classes),
+menu:not(.ignore-vuetify-classes),
+nav:not(.ignore-vuetify-classes),
+section:not(.ignore-vuetify-classes),
+summary:not(.ignore-vuetify-classes) {
   display: block;
 }
 
-summary {
+summary:not(.ignore-vuetify-classes) {
   display: list-item;
   /* Add the correct display in all browsers */
 }
 
-small {
+small:not(.ignore-vuetify-classes) {
   font-size: 80%;
   /* Set font-size to 80% in `small` elements */
 }
 
-[hidden],
-template {
+[hidden]:not(.ignore-vuetify-classes),
+template:not(.ignore-vuetify-classes) {
   display: none;
   /* Add the correct display in IE */
 }
 
-abbr[title] {
+abbr[title]:not(.ignore-vuetify-classes) {
   border-bottom: 1px dotted;
   /* Add a bordered underline effect in all browsers */
   text-decoration: none;
   /* Remove text decoration in Firefox 40+ */
 }
 
-a {
+a:not(.ignore-vuetify-classes) {
   background-color: transparent;
   /* Remove the gray background on active links in IE 10 */
   -webkit-text-decoration-skip: objects;
   /* Remove gaps in links underline in iOS 8+ and Safari 8+ */
 }
 
-a:active,
-a:hover {
+a:active:not(.ignore-vuetify-classes),
+a:hover:not(.ignore-vuetify-classes) {
   outline-width: 0;
   /* Remove the outline when hovering in all browsers */
 }
 
-code,
-kbd,
-pre,
-samp {
+code:not(.ignore-vuetify-classes),
+kbd:not(.ignore-vuetify-classes),
+pre:not(.ignore-vuetify-classes),
+samp:not(.ignore-vuetify-classes) {
   font-family: monospace, monospace;
   /* Specify the font family of code elements */
 }
 
-b,
-strong {
+b:not(.ignore-vuetify-classes),
+strong:not(.ignore-vuetify-classes) {
   font-weight: bolder;
   /* Correct style set to `bold` in Edge 12+, Safari 6.2+, and Chrome 18+ */
 }
 
-dfn {
+dfn:not(.ignore-vuetify-classes) {
   font-style: italic;
   /* Address styling not present in Safari and Chrome */
 }
 
 /* Address styling not present in IE 8/9 */
-mark {
+mark:not(.ignore-vuetify-classes) {
   background-color: #ff0;
   color: #000;
 }
 
 /* https://gist.github.com/unruthless/413930 */
-sub,
-sup {
+sub:not(.ignore-vuetify-classes),
+sup:not(.ignore-vuetify-classes) {
   font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
 }
 
-sub {
+sub:not(.ignore-vuetify-classes) {
   bottom: -0.25em;
 }
 
-sup {
+sup:not(.ignore-vuetify-classes) {
   top: -0.5em;
 }
 
 /* # =================================================================
    # Forms
    # ================================================================= */
-input {
+input:not(.ignore-vuetify-classes) {
   border-radius: 0;
 }
 
 /* Apply cursor pointer to button elements */
-button,
-[type=button],
-[type=reset],
-[type=submit] [role=button] {
+button:not(.ignore-vuetify-classes),
+[type=button]:not(.ignore-vuetify-classes),
+[type=reset]:not(.ignore-vuetify-classes),
+[type=submit] [role=button]:not(.ignore-vuetify-classes) {
   cursor: pointer;
 }
 
 /* Replace pointer cursor in disabled elements */
-[disabled] {
+[disabled]:not(.ignore-vuetify-classes) {
   cursor: default;
 }
 
-[type=number] {
+[type=number]:not(.ignore-vuetify-classes) {
   width: auto;
   /* Firefox 36+ */
 }
 
-[type=search] {
+[type=search]:not(.ignore-vuetify-classes) {
   -webkit-appearance: textfield;
   /* Safari 8+ */
 }
 
-[type=search]::-webkit-search-cancel-button,
-[type=search]::-webkit-search-decoration {
+[type=search]::-webkit-search-cancel-button:not(.ignore-vuetify-classes),
+[type=search]::-webkit-search-decoration:not(.ignore-vuetify-classes) {
   -webkit-appearance: none;
   /* Safari 8 */
 }
 
-textarea {
+textarea:not(.ignore-vuetify-classes) {
   overflow: auto;
   /* Internet Explorer 11+ */
   resize: vertical;
   /* Specify textarea resizability */
 }
 
-button,
-input,
-optgroup,
-select,
-textarea {
+button:not(.ignore-vuetify-classes),
+input:not(.ignore-vuetify-classes),
+optgroup:not(.ignore-vuetify-classes),
+select:not(.ignore-vuetify-classes),
+textarea:not(.ignore-vuetify-classes) {
   font: inherit;
   /* Specify font inheritance of form elements */
 }
 
-optgroup {
+optgroup:not(.ignore-vuetify-classes) {
   font-weight: bold;
   /* Restore the font weight unset by the previous rule. */
 }
 
-button {
+button:not(.ignore-vuetify-classes) {
   overflow: visible;
   /* Address `overflow` set to `hidden` in IE 8/9/10/11 */
 }
 
 /* Remove inner padding and border in Firefox 4+ */
-button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
+button::-moz-focus-inner:not(.ignore-vuetify-classes),
+[type=button]::-moz-focus-inner:not(.ignore-vuetify-classes),
+[type=reset]::-moz-focus-inner:not(.ignore-vuetify-classes),
+[type=submit]::-moz-focus-inner:not(.ignore-vuetify-classes) {
   border-style: 0;
   padding: 0;
 }
 
 /* Replace focus style removed in the border reset above */
-button:-moz-focusring,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
+button:-moz-focusring:not(.ignore-vuetify-classes),
+[type=button]::-moz-focus-inner:not(.ignore-vuetify-classes),
+[type=reset]::-moz-focus-inner:not(.ignore-vuetify-classes),
+[type=submit]::-moz-focus-inner:not(.ignore-vuetify-classes) {
   outline: 0;
   border: 0;
 }
 
-button,
-html [type=button],
-[type=reset],
-[type=submit] {
+button:not(.ignore-vuetify-classes),
+html [type=button]:not(.ignore-vuetify-classes),
+[type=reset]:not(.ignore-vuetify-classes),
+[type=submit]:not(.ignore-vuetify-classes) {
   -webkit-appearance: button;
   /* Correct the inability to style clickable types in iOS */
 }
 
-button,
-select {
+button:not(.ignore-vuetify-classes),
+select:not(.ignore-vuetify-classes) {
   text-transform: none;
   /* Firefox 40+, Internet Explorer 11- */
 }
 
 /* Remove the default button styling in all browsers */
-button,
-input,
-select,
-textarea {
+button:not(.ignore-vuetify-classes),
+input:not(.ignore-vuetify-classes),
+select:not(.ignore-vuetify-classes),
+textarea:not(.ignore-vuetify-classes) {
   background-color: transparent;
   border-style: none;
   color: inherit;
 }
 
 /* Style select like a standard input */
-select {
+select:not(.ignore-vuetify-classes) {
   -moz-appearance: none;
   /* Firefox 36+ */
   -webkit-appearance: none;
   /* Chrome 41+ */
 }
 
-select::-ms-expand {
+select::-ms-expand:not(.ignore-vuetify-classes) {
   display: none;
   /* Internet Explorer 11+ */
 }
 
-select::-ms-value {
+select::-ms-value:not(.ignore-vuetify-classes) {
   color: currentColor;
   /* Internet Explorer 11+ */
 }
 
-legend {
+legend:not(.ignore-vuetify-classes) {
   border: 0;
   /* Correct `color` not being inherited in IE 8/9/10/11 */
   color: inherit;
@@ -12942,14 +12942,14 @@ legend {
   /* Correct the text wrapping in Edge and IE */
 }
 
-::-webkit-file-upload-button {
+::-webkit-file-upload-button:not(.ignore-vuetify-classes) {
   -webkit-appearance: button;
   /* Correct the inability to style clickable types in iOS and Safari */
   font: inherit;
   /* Change font properties to `inherit` in Chrome and Safari */
 }
 
-[type=search] {
+[type=search]:not(.ignore-vuetify-classes) {
   -webkit-appearance: textfield;
   /* Correct the odd appearance in Chrome and Safari */
   outline-offset: -2px;
@@ -12959,25 +12959,25 @@ legend {
 /* # =================================================================
    # Specify media element style
    # ================================================================= */
-img {
+img:not(.ignore-vuetify-classes) {
   border-style: none;
   /* Remove border when inside `a` element in IE 8/9/10 */
 }
 
 /* Add the correct vertical alignment in Chrome, Firefox, and Opera */
-progress {
+progress:not(.ignore-vuetify-classes) {
   vertical-align: baseline;
 }
 
-svg:not(:root) {
+svg:not(:root):not(.ignore-vuetify-classes) {
   overflow: hidden;
   /* Internet Explorer 11- */
 }
 
-audio,
-canvas,
-progress,
-video {
+audio:not(.ignore-vuetify-classes),
+canvas:not(.ignore-vuetify-classes),
+progress:not(.ignore-vuetify-classes),
+video:not(.ignore-vuetify-classes) {
   display: inline-block;
   /* Internet Explorer 11+, Windows Phone 8.1+ */
 }
