@@ -236,30 +236,39 @@
     }
 
     .newsDetails {
-        .newsTitle {
-            padding-bottom: 10px;
-            font-weight: bold;
-
-            a {
-                color: @baseColorDark;
-            }
+      ul {
+        margin: 0 0 10px 25px;
+        
+        li {
+          list-style-position: inside;
+          list-style-type: disc;
         }
+      }
 
-        .newsBody {
-			text-align: justify;
-			.readMore {
-				font-weight: bold;
-				padding-left: 3px;
-			}
-		}
+      .newsTitle {
+        padding-bottom: 10px;
+        font-weight: bold;
 
+        a {
+          color: @baseColorDark;
+        }
+      }
+
+      .newsBody {
+        text-align: justify;
+        .readMore {
+          font-weight: bold;
+          padding-left: 3px;
+        }
+      }
     }
-	.confirmPinMessage {
-		position: absolute;
-		width: 100%;
-		z-index: 2;
-		top: -10px;
-	}
+
+    .confirmPinMessage {
+      position: absolute;
+      width: 100%;
+      z-index: 2;
+      top: -10px;
+    }
 }
 
 /*============== Full Activity News ====================*/
@@ -299,6 +308,15 @@
            margin-bottom: 20px;
            border: 1px dashed lightgray;
          }
+         ul {
+           margin: 0 0 10px 25px;
+
+           li {
+             list-style-position: inside;
+             list-style-type: disc;
+           }
+         }
+         
         .news-top-information {
             .news-header-content {
                 .newsTitle {
