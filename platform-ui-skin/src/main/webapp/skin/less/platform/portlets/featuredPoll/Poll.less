@@ -1,7 +1,7 @@
-@import "../../../../variables.less";
-@import "../../../../mixins.less";
+@import "../../../variables.less";
+@import "../../../mixins.less";
 //============================================
-.uiGadgetThemes{
+.uiFeaturedPoll{
 	.gadContent {
 		padding: 8px 16px;
 		.question, .question .text{
@@ -15,7 +15,6 @@
 			> i {
 				float: left;
 				margin-right: 5px;
-				margin-top: 1px;
 			}
 			.text {
 				display: block;
@@ -26,7 +25,7 @@
 		.poll{
 			h6{
 				padding: 4px 0 12px;
-				line-height: 30px;
+				line-height: 40px;
 				margin: 0px;
 				border-bottom: 1px solid @borderColor;
 			}
@@ -70,7 +69,7 @@
 			line-height: 28px;
 			border-top: 1px solid @borderColor;
 			padding: 14px 0 6px;
-			text-align: left;
+			text-align: center;
 		}
 
 		.voteResult tr:first-child td:first-child{
@@ -106,8 +105,7 @@
 		}
 
 		.listpoll {
-			display:none;
-			margin: 6px 2px 8px 0;
+			margin: 0px 2px 20px 0;
 			.form-horizontal{
 				padding: 0px;
 			}
@@ -122,6 +120,7 @@
 				}
 			}
 			.selectbox{
+				margin-top: 10px;
 				width: 100%;
 				max-width: none;
 			}

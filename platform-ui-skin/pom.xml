@@ -112,37 +112,16 @@
                                 <include>platform/portlets/homepage/suggestions.less</include>
                                 <include>platform/portlets/homepage/whoisonline.less</include>
                                 <include>platform/portlets/branding/branding.less</include>
+                                <include>platform/portlets/bookmark/Bookmark.less</include>
+                                <include>platform/portlets/loginHistory/loginHistory.less</include>
+                                <include>platform/portlets/featuredPoll/Poll.less</include>
                                 <include>platform/portlets/welcome-screens/termsAndConditions/style.less</include>
                                 <include>platform/portlets/welcome-screens/unlockTrial.less</include>
                                 <include>platform/portlets/extensions/login.less</include>
                                 <include>platform/portlets/extensions/welcome-screens.less</include>
                                 <include>platform/portlets/extensions/registration.less</include>
-                                <include>platform/portlets/gadget-pack/canvas.less</include>
-                                <include>platform/portlets/gadget-pack/forumsStatistic.less</include>
-                                <include>platform/portlets/gadget-pack/home.less</include>
-                                <include>platform/portlets/gadget-pack/latestForumPosts.less</include>
-                                <include>platform/portlets/gadget-pack/loginHistory-jquery-ui-1.8.13.custom.less</include>
-                                <include>platform/portlets/gadget-pack/loginHistory.less</include>
-                                <include>platform/portlets/gadget-pack/monitoring.less</include>
-                                <include>platform/portlets/gadget-pack/pagination.less</include>
-                                <include>platform/portlets/gadget-pack/scriptConsoleColorpicker.less</include>
-                                <include>platform/portlets/gadget-pack/scriptConsoleStyle.less</include>
-                                <include>platform/portlets/gadget-pack/suggestion.less</include>
-                                <include>platform/portlets/gadget-pack/topVoteTopic.less</include>
-                                <include>platform/portlets/gadget-pack/caches.less</include>
-                                <include>platform/portlets/gadget-pack/allTemplatesStatistics.less</include>
-                                <include>platform/portlets/gadget-pack/applicationsStatistics.less</include>
                                 <include>platform/samples/acme-website/Style.less</include>
                                 <include>platform/samples/acme-intranet/SpaceSummaryInfoPortlet.less</include>
-                                <include>platform/samples/gadgets-sample/exo-gadget-resources/gadget-common.less</include>
-                                <include>platform/samples/gadgets-sample/gadgets/Agenda.less</include>
-                                <include>platform/samples/gadgets-sample/gadgets/Bookmark.less</include>
-                                <include>platform/samples/gadgets-sample/gadgets/FavoriteDocument.less</include>
-                                <include>platform/samples/gadgets-sample/gadgets/Invitations.less</include>
-                                <include>platform/samples/gadgets-sample/gadgets/NewSpace.less</include>
-                                <include>platform/samples/gadgets-sample/gadgets/Poll.less</include>
-                                <include>platform/samples/gadgets-sample/gadgets/Profile.less</include>
-                                <include>platform/samples/gadgets-sample/gadgets/WhoIsOnline.less</include>
                                 <include>platform/portlets/platformNavigation/UIGroupsNavigationPortlet/Style.less</include>
                                 <include>ecms/skin/ecms-resources-wcmskin.less</include>
                                 <include>ecms/skin/ecms-resources-dmsskin.less</include>

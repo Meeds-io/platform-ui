@@ -1,10 +1,7 @@
-@import "../../../../variables.less";
-@import "../../../../mixins.less";
+@import "../../../variables.less";
+@import "../../../mixins.less";
 //============================================
 /************** BookMarks **********/
-.Button {
-  vertical-align: text-top;
-}
 
 .BookMarks {
   margin: 0px 0px 10px 0px;
@@ -18,12 +15,13 @@
   line-height: 23px;
   clear: both;
 }
-
-.ListItem .editHoverZone{
-  display:none;
-}
-.ListItem:hover .editHoverZone{
-  display:block;
+.ListItem {
+  .editHoverZone{
+    display:none;
+  }
+  &.editable:hover .editHoverZone{
+    display:block;
+  }
 }
 
 .ContBookmark {padding-left: 10px;}
@@ -81,39 +79,35 @@
 .bookmark ul li {
   margin: 0 0 5px;
 }
+.bookmark ul li {
+  a.bookmarkTit {
+    padding: 2px 10px;
+    display: block;
+    color: @linkColor;
+    line-hight: 12px;
+  }
 
-.bookmark ul li a.bookmarkTit {
-  padding: 2px 10px;
-  display: block;
-  color: @linkColor;
-  font-weight: bold;
-  line-hight: 12px;
-}
+  a.bookmarkTit:hover {
+    text-decoration: none;
+  }
 
-.bookmark ul li a.bookmarkTit:hover {
-  text-decoration: none;
-}
+  &.editable:hover {
+    background: @primaryBackgroundHover;
+    border-radius: 2px;
+  }
 
-.bookmark ul li:hover {
-  background: @primaryBackgroundHover;
-  border-radius: 2px;
-}
+  &.active:hover, &.addBookmark:hover {
+    background: none;
+    border-radius: 0;
+  }
 
-.bookmark ul li.active:hover, .bookmark ul li.addBookmark:hover {
-  background: none;
-  border-radius: 0;
-}
-
-.bookmark ul li .editHoverZone {
-  margin: 4px 5px 0 0;
-}
-
-.bookmark ul li .editHoverZone a {
-  margin: 0 5px;
+  .editHoverZone a {
+    margin: 0 5px;
+  }
 }
 
 .bookmark .editZone {
-  margin: 10px 10px 0 10px;
+  margin: 10px;
 }
 
 .bookmark .editZone .btn {

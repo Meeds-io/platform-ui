@@ -31,13 +31,22 @@
     background-position: -180px -200px;
 }
 
-.uiGadgetThemes{
+.uiLoginHistory{
 	.uiContentBox{
 		height: auto;
 		overflow: auto;
 	}
 	.gadContent{
 		margin: 0 -10px;
+		.uiTabSelectorCenter {
+			margin-bottom: 20px;
+			text-align: center;
+			.btn-group{
+				.btn{
+					padding: 9px 15px;
+				}
+			}
+		}
 		.searchUser{
 			width: 100%;
 			margin-bottom: 15px;
@@ -52,16 +61,16 @@
 			}
 			.btn:nth-child(2n+2){
 				min-width: 100px;
-    			padding: 3px 8px;
 				text-align: center;
 			}
 			.selectWeek{
-				margin:15px 9px 10px;
+				margin:15px 0px 10px;
 			}
 
 		}
 		.userForm{
 			border-top: 1px solid @borderColor;
+			margin-top: 20px;
 			legend {
 			      display: block;
 				  width: auto;
