@@ -16,7 +16,7 @@
         display: flex;
         flex-direction: column;
 
-        #UIDocumentSelectorTab {
+        #UIDocumentSelectorTab, #UIFolderSelectorTab {
           display: flex;
           flex-direction: column;
           height: ~"calc( 100% - 65px )";
@@ -59,9 +59,11 @@
 }
 
 @media (max-width: 767px) {
-  .selectExistingDriveDialog .PopupContent .UIDocActivityPopup #UIDocumentSelectorTab {
-    .selectionBox .folderSelection, .selectionBox .fileSelection {
-      margin: 0;
+  .selectExistingDriveDialog .PopupContent .UIDocActivityPopup {
+    #UIDocumentSelectorTab, #UIFolderSelectorTab {
+      .selectionBox .folderSelection, .selectionBox .fileSelection {
+        margin: 0;
+      }
     }
   }
 }

@@ -124,6 +124,7 @@
             height: 20px;
             padding: 12px 23px;
             color: #555;
+            display: flex;
             .sizeLimit , .countLimit {
                 margin-right: 2px;
                 line-height: 16px;
@@ -139,6 +140,18 @@
                 font-family: "PLF-FONT-ICONS";
                 content: "\e767";
             }
+        }
+
+        .selectFolder {
+          display: inline-block;
+          margin: auto;
+          padding-right: 5px;
+          line-height: 20px;
+
+          .uiIconClose {
+            top: 0;
+            left: 5px;
+          }
         }
 
         .multiploadFilesSelector {
@@ -181,7 +194,7 @@
     }
 }
 
-#UIDocumentSelectorTab {
+#UIDocumentSelectorTab, #UIFolderSelectorTab {
     .breadcrumbContainer {
         display: inline-block;
         padding: 5px 20px;
@@ -615,15 +628,16 @@
         display: block;
     }
 
-    #UIDocumentSelectorTab .selectionBox {
+    #UIDocumentSelectorTab, #UIFolderSelectorTab {
+      .selectionBox {
         height: 50vh;
         max-height: 50vh;
         .driveData {
             width: 90px;
         }
-    }
+      }
 
-    #UIDocumentSelectorTab .breadcrumbContainer {
+      .breadcrumbContainer {
         .breadcrumb {
             .normal {
                 display: none;
@@ -648,6 +662,7 @@
                 width: 98%;
             }
         }
+      }
     }
 
     .dropFileBox {
@@ -665,9 +680,11 @@
         }
     }
 
-    #ComposerContainer {
+    #ComposerContainer .UIActivityComposerContainer {
         .limitMessage {
-            .sizeLimit , .countLimit {
+            display: block;
+
+            .sizeLimit , .countLimit, .selectFolder {
                 width: 100%;
             }
         }
