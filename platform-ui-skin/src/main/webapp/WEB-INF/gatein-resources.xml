@@ -117,11 +117,13 @@
   </portlet-skin>
 
   <!--- forum portlet -->
-  <portal-skin>
+  <portlet-skin>
+    <application-name>forum</application-name>
+    <portlet-name>ForumPortlet</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
-    <skin-module>forum</skin-module>
     <css-path>/skin/css/forum/skin/forum-resources.css</css-path>
-  </portal-skin>
+    <css-priority>1</css-priority>
+  </portlet-skin>
 
   <portlet-skin>
     <application-name>poll</application-name>
