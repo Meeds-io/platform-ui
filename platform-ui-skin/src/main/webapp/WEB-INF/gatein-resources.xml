@@ -599,7 +599,7 @@
 
   <!--- platform: branding -->
   <portlet-skin>
-    <application-name>platform-branding</application-name>
+    <application-name>exoadmin</application-name>
     <portlet-name>Branding</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/platform/portlets/branding/branding.css</css-path>
