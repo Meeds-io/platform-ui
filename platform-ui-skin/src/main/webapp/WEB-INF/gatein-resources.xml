@@ -606,7 +606,7 @@
     <css-priority>1</css-priority>
   </portlet-skin>
   <portlet-skin>
-    <application-name>platform-notification</application-name>
+    <application-name>commons-extension</application-name>
     <portlet-name>NotificationsAdminJuzuPortlet</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/platform/portlets/notification/notificationsAdmin.css</css-path>
