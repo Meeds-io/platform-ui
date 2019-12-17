@@ -562,7 +562,7 @@
 
   <!--- platform: homepage -->
   <portlet-skin>
-    <application-name>homepage-portlets</application-name>
+    <application-name>social-portlet</application-name>
     <portlet-name>WhoIsOnLinePortlet</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/platform/portlets/homepage/whoisonline.css</css-path>
