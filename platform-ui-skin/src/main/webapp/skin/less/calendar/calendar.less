@@ -326,6 +326,10 @@
 	padding: 0;
 }
 
+.drawer .footer button {
+    width: auto!important;	
+}
+
 
 .drawer .footer button.clearBtn {
 	float: left;
@@ -473,10 +477,6 @@
 		width: 295px;
 	}
 }
-
-.drawer.open .mobile-header .uiAction {
-	display: none;
-}
 @media (min-width: 768px) and (max-width: 1024px) {
   .drawer.open.content{
       .calDate{
@@ -519,51 +519,15 @@
 		position: static;
 	}
 
-	.drawer.open .mobile-header {
-		position: fixed;
-		top: 0px;
-		left: 0px;
-		right: 0px;
-		padding-left: 15px;
-		padding-right: 15px;
-		background-color: rgb(71, 106, 156);
-	}
-
-	.drawer.open .mobile-header .uiAction {
-		margin-bottom: 15px;
-		display: block;
-	}
-
-	.drawer.open .mobile-header .uiAction .btn {
-		width: auto;
-		color: #fff;
-		box-shadow: none;
-		border: none;
-	}
-
-	.drawer.open .mobile-header .uiAction .btn-primary {
-		float: right;
-		background-image: none;
-		height: 30px;
-		background-color: #578dc9;
-	}
-
-	.drawer.open .mobile-header .uiAction .cancel {
-		float: left;
-		background: none;
-		text-transform: uppercase;
-		margin-left: -12px !important;
-	}
-
-	.drawer.open .mobile-header .controls {
+	.drawer.open .controls {
 		white-space: nowrap;
 	}
 
-	.drawer.open .mobile-header .eventTitle {
+	.drawer.open .eventTitle {
 		width: 60%;
 	}
 
-	.drawer.open .mobile-header .category {
+	.drawer.open .category {
 		width: 37%;
 	}
 
