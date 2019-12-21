@@ -576,14 +576,14 @@
     <css-priority>1</css-priority>
   </portlet-skin>
   <portlet-skin>
-    <application-name>homepage-portlets</application-name>
+    <application-name>social-juzu</application-name>
     <portlet-name>SuggestionsPeopleSpace</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/platform/portlets/homepage/suggestions.css</css-path>
     <css-priority>1</css-priority>
   </portlet-skin>
   <portlet-skin>
-    <application-name>homepage-portlets</application-name>
+    <application-name>social-juzu</application-name>
     <portlet-name>Invitations</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/platform/portlets/homepage/invitations.css</css-path>
