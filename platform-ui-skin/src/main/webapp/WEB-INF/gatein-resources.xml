@@ -542,12 +542,6 @@
     <css-path>/skin/css/platform/portlets/platformNavigation/UIHelpPlatformToolbarPortlet/Style.css</css-path>
   </portlet-skin>
   <portlet-skin>
-    <application-name>platformNavigation</application-name>
-    <portlet-name>UISearchPlatformToolbarPortlet</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/platform/portlets/platformNavigation/UISearchPlatformToolbarPortlet/Style.css</css-path>
-  </portlet-skin>
-  <portlet-skin>
     <application-name>social-portlet</application-name>
     <portlet-name>UISpaceNavigationPortlet</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>

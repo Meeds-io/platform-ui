@@ -102,7 +102,6 @@
                                 <include>platform/portlets/platformNavigation/UICompanyNavigationPortlet/Style.less</include>
                                 <include>platform/portlets/platformNavigation/UIGroupsNavigationPortlet/Style.less</include>
                                 <include>platform/portlets/platformNavigation/UIHelpPlatformToolbarPortlet/Style.less</include>
-                                <include>platform/portlets/platformNavigation/UISearchPlatformToolbarPortlet/Style.less</include>
                                 <include>platform/portlets/platformNavigation/UISpaceNavigationPortlet/Style.less</include>
                                 <include>platform/portlets/platformNavigation/UIUserNavigationPortlet/Style.less</include>
                                 <include>platform/portlets/notification/notificationsAdmin.less</include>
