@@ -62,41 +62,6 @@
     <overwrite>true</overwrite>
   </portlet-skin>
 
-  <!-- TabbedDashboardPortlet skins -->
-  <portlet-skin>
-    <application-name>dashboard</application-name>
-    <portlet-name>TabbedDashboardPortlet</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/Portlets/UITabbedDashboardPortlet/Style.css</css-path>
-    <overwrite>true</overwrite>
-  </portlet-skin>
-  
-  <!-- GadgetPortlet skins -->
-  <portlet-skin>
-    <application-name>dashboard</application-name>
-    <portlet-name>GadgetPortlet</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/Portlets/UIGadgetPortlet/Style.css</css-path>
-  </portlet-skin>
-
-  <!-- PortalNavigationPortlet skins -->
-  <portlet-skin>
-    <application-name>exoadmin</application-name>
-    <portlet-name>PortalNavigationPortlet</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/Portlets/SiteNavigationPortlet/Style.css</css-path>
-    <overwrite>true</overwrite>
-  </portlet-skin>
-
-  <!-- GroupNavigationPortlet skins -->
-  <portlet-skin>
-    <application-name>exoadmin</application-name>
-    <portlet-name>GroupNavigationPortlet</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/Portlets/SiteNavigationPortlet/Style.css</css-path>
-    <overwrite>true</overwrite>
-  </portlet-skin>
-
   <!-- ApplicationRegistryPortlet skins -->
   <portlet-skin>
     <application-name>exoadmin</application-name>
@@ -536,25 +501,19 @@
     <css-path>/skin/css/platform/portlets/platformNavigation/UIGroupsNavigationPortlet/Style.css</css-path>
   </portlet-skin>
   <portlet-skin>
-    <application-name>platformNavigation</application-name>
+    <application-name>social-portlet</application-name>
     <portlet-name>UIHelpPlatformToolbarPortlet</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/platform/portlets/platformNavigation/UIHelpPlatformToolbarPortlet/Style.css</css-path>
   </portlet-skin>
   <portlet-skin>
-    <application-name>platformNavigation</application-name>
-    <portlet-name>UISearchPlatformToolbarPortlet</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/platform/portlets/platformNavigation/UISearchPlatformToolbarPortlet/Style.css</css-path>
-  </portlet-skin>
-  <portlet-skin>
-    <application-name>platformNavigation</application-name>
+    <application-name>social-portlet</application-name>
     <portlet-name>UISpaceNavigationPortlet</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/platform/portlets/platformNavigation/UISpaceNavigationPortlet/Style.css</css-path>
   </portlet-skin>
   <portlet-skin>
-    <application-name>platformNavigation</application-name>
+    <application-name>social-portlet</application-name>
     <portlet-name>UIUserNavigationPortlet</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/platform/portlets/platformNavigation/UIUserNavigationPortlet/Style.css</css-path>
@@ -562,8 +521,8 @@
 
   <!--- platform: homepage -->
   <portlet-skin>
-    <application-name>homepage-portlets</application-name>
-    <portlet-name>WhoIsOnLinPortlet</portlet-name>
+    <application-name>social-portlet</application-name>
+    <portlet-name>WhoIsOnLinePortlet</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/platform/portlets/homepage/whoisonline.css</css-path>
     <css-priority>1</css-priority>
@@ -576,14 +535,14 @@
     <css-priority>1</css-priority>
   </portlet-skin>
   <portlet-skin>
-    <application-name>homepage-portlets</application-name>
+    <application-name>social-juzu</application-name>
     <portlet-name>SuggestionsPeopleSpace</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/platform/portlets/homepage/suggestions.css</css-path>
     <css-priority>1</css-priority>
   </portlet-skin>
   <portlet-skin>
-    <application-name>homepage-portlets</application-name>
+    <application-name>social-juzu</application-name>
     <portlet-name>Invitations</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/platform/portlets/homepage/invitations.css</css-path>
@@ -599,14 +558,14 @@
 
   <!--- platform: branding -->
   <portlet-skin>
-    <application-name>platform-branding</application-name>
+    <application-name>exoadmin</application-name>
     <portlet-name>Branding</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/platform/portlets/branding/branding.css</css-path>
     <css-priority>1</css-priority>
   </portlet-skin>
   <portlet-skin>
-    <application-name>platform-notification</application-name>
+    <application-name>commons-extension</application-name>
     <portlet-name>NotificationsAdminJuzuPortlet</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/platform/portlets/notification/notificationsAdmin.css</css-path>
