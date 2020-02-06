@@ -1088,3 +1088,139 @@
       background-position-y: center;
   }
 }
+
+/******** New Activity Composer **********/
+
+.activityComposer {
+  padding: 0 0 10px 0;
+
+  .fade-leave-active {
+    transition: opacity .6s;
+  }
+
+  .fade-leave-to {
+    opacity: 0;
+  }
+
+  .openLink {
+    padding: 15px;
+    background-color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #e1e8ee;
+  }
+
+  .openLink a {
+    cursor: pointer;
+  }
+
+  .openLink a:hover {
+    text-decoration: underline;
+  }
+
+  .openLink .uiIconPlus {
+    padding-right: 5px;
+  }
+
+  .openLink .uiIconPlus:before {
+    content: "\e76a";
+    font-size: 16px;
+  }
+
+  .drawer .header {
+    height: 30px;
+    font-weight: bold;
+  }
+
+  .drawer .header img {
+    width: 38px;
+    padding-right: 10px;
+  }
+
+  .drawer .uiIconCloseComposer {
+    cursor: pointer;
+    color: #a8b3c5;
+    font-size: 26px;
+  }
+
+  .drawer .uiIconCloseComposer:before {
+    content: "\e937";
+  }
+
+  .drawer .content {
+    padding: 30px;
+    top: 60px;
+  }
+
+  .drawer .content .activityRichEditor {
+    position: relative;
+  }
+
+  .drawer .content .activityRichEditor textarea {
+    width: 100%;
+    border-radius: 10px;
+    resize: none;
+  }
+
+  .drawer .content .activityRichEditor .cke_bottom {
+    box-sizing: border-box;
+    border-top: none;
+    background-color: transparent;
+    padding-left: 2px;
+    height: 30px;
+
+    .cke_button_icon {
+      filter: opacity(0.5);
+    }
+
+    .cke_button__bulletedlist_icon {
+      background-image: none!important;
+      font-family: "PLF-FONT-ICONS";
+
+      &:before {
+        content: "\e69b";
+      }
+    }
+  }
+
+  .drawer .content .activityRichEditor .activityCharsCount {
+    position: absolute;
+    bottom: 8px;
+    right: 10px;
+    color: #adadad;
+  }
+
+  .drawer .content .activityRichEditor .uiIconMessageLength {
+    font-size: 14px;
+    color: #2eb58c;
+  }
+
+  .drawer .content .activityRichEditor .uiIconMessageLength:before {
+    content: "\e910";
+  }
+
+  .drawer .content .activityRichEditor .tooManyChars {
+    color: #bc4343;
+  }
+
+  .drawer .content .activityRichEditor .tooManyChars .uiIconMessageLength {
+    color: #bc4343;
+  }
+
+  .drawer .content .activityRichEditor .loadingRing {
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #578dc9;
+  }
+
+  .drawer .content .composerActions {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+  }
+}
