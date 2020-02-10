@@ -3,7 +3,7 @@
 @import "forgot-password.less";
 //========================================
 body {
-	background: url("@{images-path}/platform/portlets/extensions/login_texture.jpg") repeat;
+	background-color: #476a9c;
 	font-family: @baseFontFamily;
 	font-size: @baseFontSize;
 	color: @textColor;
@@ -26,33 +26,14 @@ body {
 	.translate(-50%, -50%);
 	position: absolute;
 	top: 50%;
-	width: 392px;
+	width: 420px;
 	.loginContainer {
 		border-radius: 8px;
-		background: url("@{images-path}/platform/portlets/extensions/loginLeftBG.png") no-repeat left bottom,
-		url("@{images-path}/platform/portlets/extensions/loginRightBG.png") no-repeat right bottom,
-		url("@{images-path}/platform/portlets/extensions/loginCenterBG.png") repeat-x bottom;
-		padding: 0 40px 15px;
+		padding: 0 50px 15px;
 		background-color: @baseBackground;
 	}
 	.loginHeader {
-		background: url("@{images-path}/platform/portlets/extensions/LoginHeader.png") repeat-x scroll 0 0 transparent;
-		border: 1px solid #555555;
-		border-radius: 0 0 4px 4px;
-		margin-top: -8px;
-		padding: 8px 12px;
-		position: absolute;
-		width: 286px;
-		box-shadow: 1px 2px 3px -1px rgba(0, 0, 0, 0.43);
-		.userLoginIcon {
-			background: url("@{images-path}/platform/portlets/extensions/UserLoginIcon.png") no-repeat scroll 0 0 transparent;
-			color: @textLightColor;
-			font-size: 20px;
-			font-weight: 500;
-			line-height: 41px;
-			padding-left: 52px;
-			width: 236px;
-		}
+		display: none;
 	}
 	.introBox:after {
 		border-bottom: 8px solid #2a323e;
@@ -65,45 +46,42 @@ body {
 		left: -8px;
 	}
 	.loginContent {
-		padding-top: 45px;
-		.username {
-			margin-top: 15px;
-			background: url("@{images-path}/platform/portlets/extensions/username.png") no-repeat left top;
+		padding: 45px 0;
+		.iconUser {
+			background: #fff url("@{images-path}/username.png") no-repeat left -3px;
 		}
-		.password {
-			background: url("@{images-path}/platform/portlets/extensions/password.png") no-repeat left top;
+		.iconPswrd {
+			background: #fff url("@{images-path}/password.png") no-repeat left -3px;
 		}
-		.iconUser{
-			background: url("@{images-path}/platform/portlets/extensions/username.png") no-repeat left -3px;
-		}
-		.iconPswrd{
-			background: url("@{images-path}/platform/portlets/extensions/password.png") no-repeat left -3px;
+		input:-webkit-autofill:focus {
+			box-shadow: inset 0 0 0px 9999px white !important;
+			transition: all 5000s ease-in-out 0s;
 		}
 		.userCredentials {
 			position: relative;
-			margin-top: 15px;
+			margin-top: 12px;
 			& + .userCredentials {
 				margin-top: 0;
 			}
 			.iconUser, .iconPswrd {
-				border-right: solid 1px @inputBorder;
-				border-radius: 4px 0 0 4px;
+				border-right: solid 1px @baseGreyColor;
+				border-radius: 5px 0 0 5px;
 				position: absolute;
 				width: 40px;
-				left: 1px;
-				top: 1px;
-				bottom: 15px;
+				left: 2px;
+				top: 2px;
+				bottom: 16px;
 			}
 		}
 		input {
 			width: 260px;
 			height: 36px;
-			border: solid 1px @inputBorder;
+			border: solid 2px @baseGreyColor;
 			background: @inputBackground;
 			margin: 0 0 14px;
 			color: @inputColor;
 			.box-shadow(1px 2px 1px rgba(0, 0, 0, 0.075) inset);
-			.border-radius(4px);
+			.border-radius(7px);
 			padding-left: 50px;
 			font-size: 18px;
 			outline: none;
@@ -111,6 +89,11 @@ body {
 		}
 		input:not(*:root) {
 			height: 33px;
+			box-shadow: none;
+			border: solid 2px @baseGreyColor;
+			border-radius: 7px;
+			font-family: @sansFontFamily;
+			font-size: 15px;
 		}
 		input::-webkit-input-placeholder {
 			color: @placeholderText;
@@ -129,19 +112,24 @@ body {
 			color: @inputFocusColor;
 			border-color: @inputFocusBorder;
 			.box-shadow(0px 0px 5px rgba(19, 75, 159, 0.45));
-			background-position: 0 -41px;
+		}
+		input[name="username"]:focus {
+			background-position: 0 -45px;
+		}
+		input[name="password"]:focus {
+			background-position: 0 -44px;
 		}
 		.loginButton {
-			padding: 30px 0 12px;
+			padding: 5px 0 0 0;
 			.button {
 				.border-radius(4px);
 				text-align: center;
 				width: 313px;
 				height: 43px;
 				cursor: pointer;
-				font-family: @sansBoldFontFamily;
+				font-family: @sansFontFamily;
 				font-size: 16px;
-				font-weight: bold;
+				font-weight: normal;
 				outline: none;
 				padding: 0;
 				.buttonBackgroundEXO(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder,@btnPrimaryColor);
@@ -324,7 +312,7 @@ body {
 #platformInfoDiv {
 	font-size: 12px;
 	text-align:center;
-	color: @textColor;
+	color: @baseBackground;
 	opacity: 0.6;
 	margin-top: 15px;
 }
@@ -342,13 +330,7 @@ body {
 	color: #ffffff;
 	margin-top: 14px;
 }
-.titleLogin {
-	//padding: 15px 0 5px;
-	line-height: 12px;
-	padding: 6px 3px 0 0;
-	min-height: 31px;
-	font-size: 11px;
-}
+
 
 // remove clear button on IE
 input::-ms-clear,input[type=password]::-ms-reveal{
@@ -367,25 +349,16 @@ input::-ms-clear,input[type=password]::-ms-reveal{
 		width: 290px;
 		//margin: 0;
 		.loginHeader {
-			width: 199px;
-			padding: 2px 12px;
-			.userLoginIcon {
-				font-size: inherit;
-				font-weight: 600;
-				width: 145px;
-				font-size: 10px;
-			}
+			display: none;
 		}
 		.loginContainer{
 			padding: 0 32px 15px;
-			background: url("@{images-path}/platform/portlets/extensions/loginLeftBGXs.png") no-repeat left bottom,
-			url("@{images-path}/platform/portlets/extensions/loginRightBGXs.png") no-repeat right bottom,
-			url("@{images-path}/platform/portlets/extensions/loginCenterBGXs.png") repeat-x bottom;
 			background-color: @baseBackground;
 			.loginContent {
 			    	.iconUser, .iconPswrd {
-			        	top: 5px;
-			        	bottom: 6px;
+			        	top: 7px;
+			        	bottom: 7px;
+					background-position-y: -5px;
 			    	}
 				input {
 					width: 172px;
@@ -398,7 +371,7 @@ input::-ms-clear,input[type=password]::-ms-reveal{
 					}
 				}
 				.loginButton {
-					padding: 18px 0 8px;
+					padding: 3px 0 0 0;
 					.button {
 						width: 100%;
 						font-size: 12px;

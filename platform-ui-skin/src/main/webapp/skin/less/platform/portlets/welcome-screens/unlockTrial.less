@@ -1,48 +1,45 @@
-
 @import "../../../variables.less";
+@import "../../../customVariables.less";
 @import "../../../mixins.less";
+//========================================
+
+@font-face {
+    font-family: 'PLF-FONT-ICONS';
+    src:url('@{font-path}/PLF-FONT-ICONS.eot?-m9uidt');
+    src:url('@{font-path}/PLF-FONT-ICONS.eot?#iefix-m9uidt') format('embedded-opentype'),
+    url('@{font-path}/PLF-FONT-ICONS.ttf?-m9uidt') format('truetype'),
+    url('@{font-path}/PLF-FONT-ICONS.woff?-m9uidt') format('woff'),
+    url('@{font-path}/PLF-FONT-ICONS.svg?-m9uidt#PLF-FONT-ICONS') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body {
-    background: url("@{images-path}/platform/portlets/extensions/login_texture.jpg") repeat;
-    font-family: @baseFontFamily;
-    font-size: @baseFontSize;
-    color: @textColor;
-    overflow: auto;
-    height: auto;
-}
-
-a {
-    color: @linkColor;
-}
-
-.backLight {
-    .border-radius(80px);
-    .box-shadow(0 0 200px @baseBackground);
-    .square(280px);
-    margin: 140px auto 0;
+    background: @secondarySkinColor;
+    display: flex;
+    align-items: center;
+    height: 0; 
+    min-height: 100vh;
+    padding: 15px;
+    box-sizing: border-box;
 }
 
 .uiWelcomeBox {
 	background-color: @baseBackground;
-	.box-shadow(0 1px 3px #3d3d3d);
-	margin: -380px auto 0;
+	margin: auto;
 	width: 512px;
-	.border-radius(8px); 
-    border: 1px solid @baseColorDark;
+	border-radius: 8px;
 	.header {
-		.gradientBar(@toolbarDarkEndBackground, @toolbarDarkStartBackground);
+		background: @uiPopupHeaderBackground;
 		padding: 0 10px;
-		border: 1px solid @baseColorDark;
-		margin: -1px;
-		.border-radius(6px 6px 0 0);
+        border-radius: 6px 6px 0 0;
 		height: 42px;
-		.box-shadow(none);
+		box-shadow: none;
 		.logo{
 			background: url("@{images-path}/platform/portlets/extensions/Logo.png") no-repeat scroll 18px center;
-			color: @header-popup-title;
+			color: #61676e;
 			font-size: 18px;
 			font-weight: bold;
-			text-shadow: 1px 0 1px rgba(0, 0, 0, 0.2);
 			line-height: 42px;
 			text-align: center;
 		}
@@ -51,10 +48,7 @@ a {
 		background-color: @baseBackground;
 		margin: 0 auto;
 		padding: 10px 23px;
-		position: static;
-		width: auto;
-		vertical-align: text-top;
-		 p {
+        p {
 			text-align: center;
 		}
 		.btn-buy {
@@ -70,7 +64,6 @@ a {
 				vertical-align: middle;
 			}
 			input {
-				font-size: large;
 				letter-spacing: 1px;
 				width: 64%;
 				margin: 0px;
@@ -78,7 +71,7 @@ a {
 		}
 
 		.steps {
-			margin: 0 0 35px;
+			margin: 0 0 15px;
 		}
 		.rightCol {
 			strong{
@@ -96,6 +89,7 @@ a {
 				font-size: medium;
 				font-weight: bold;
 				float: left;
+                margin-top: 9px;
 			}
 			.Text {
 				width: 100%;
@@ -118,54 +112,45 @@ a {
 		}
 		
 		.alert.alert-error {
-			margin: 0 43px 15px 0;
+			margin: -15px 43px 15px 53px;
 			.uiIconError {
-				background: url("@{images-path}/platform/portlets/extensions/errorIcon.png") no-repeat left center;
-				white-space: nowrap;
+				font-size: 15px;
+                font-weight: bold;
 			}
 	 	}
 	}
 	.bottom {
-		background: url("@{images-path}/platform/portlets/extensions/loginLeftBG.png") no-repeat left bottom, 
-    			url("@{images-path}/platform/portlets/extensions/loginRightBG.png") no-repeat right bottom,
-    			url("@{images-path}/platform/portlets/extensions/loginCenterBG.png") repeat-x bottom;
-		text-align: center;
-		 padding: 30px 0;
-         border-radius: 8px;
-        color:@textColor;
+        background: @baseGreyColor;
+        text-align: center;
+		padding: 20px 0;
+        border-radius: 0 0 8px 8px;
+        color: @textColor;
 		  a {
 			text-decoration: none;
 		}
 	}
-
-	.backOutdated {
-		background: #e97f7f;
-		color: @baseBackground;
-		 .border-radius(4px);
+    
+    .backOutdated, .backNotOutdated {
+        border-radius: 4px;
 		text-align: center;
 		padding: 8px;
 		margin: 10px 0 15px;
+    }
+	.backOutdated {
+		background: @backgroundWarningNotification;
+		color: @colorWarningNotification;
+        border: 2px solid @borderWarningNotification;
 	}
 	.backNotOutdated {
-		background: #b5b5b5;
-		color: @baseBackground;
-		.border-radius(4px);
-		text-align: center;
-		padding: 8px;
-		margin: 10px 0 15px;
+		background: @backgroundInfoNotification;
+		color: @borderInfoNotification;
+        border: 2px solid @borderInfoNotification;
 	}
-
-}
-
-// remove clear button on IE
-input::-ms-clear,input[type=password]::-ms-reveal{
-  display: none;
 }
 
 @media (max-width: 600px) {
 	.uiWelcomeBox {
 		width: auto;
-		margin: -380px 15px 0;
 		.header {
 			.logo{ background: none;}
 		}
@@ -189,7 +174,8 @@ input::-ms-clear,input[type=password]::-ms-reveal{
 }
 @media (max-width: 480px) {
 	.uiWelcomeBox {
-		.content{
+		.content {
+            padding: 10px;
 			.rightCol {
 				.form-input{
 					padding: 0 10px 0 0;
@@ -203,6 +189,9 @@ input::-ms-clear,input[type=password]::-ms-reveal{
 					width: 100%;
 				}
 			}
+            .alert.alert-error {
+                margin: -15px 0 15px 0;
+            }
 		}
 	}
 }

@@ -1,16 +1,21 @@
 @import "../../../../variables.less";
+@import "../../../../customVariables.less";
 @import "../../../../mixins.less";
 @import "generatedStyle.less";
 
 /* Styles of terms and conditions screen */
 
 body {
-    background: url("@{images-path}/platform/portlets/extensions/login_texture.jpg") repeat;
+    background: @secondarySkinColor;
     font-family: @baseFontFamily;
     font-size: @baseFontSize;
     color: @textColor;
-    overflow: auto;
-    height: auto;
+    display: flex;
+    align-items: center;
+    height: 0; 
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
 }
 
 .pull-left {
@@ -26,7 +31,7 @@ body {
 .clearfix:after {
     display: table;
     content: "";
-			    line-height: 0;
+    line-height: 0;
     }
 
 .clearfix:after {
@@ -38,52 +43,41 @@ a {
     color: @linkColor;
 }
 
-
-.backLight {
-    .border-radius(80px);
-    .box-shadow(0 0 200px @baseBackground);
-    .square(280px);
-    margin: 140px auto 0;
-}
-
 .uiWelcomeBox {
 	background-color: @baseBackground;
-	.border-radius(10px);
-	.box-shadow(0 1px 3px #3d3d3d);
-	margin: -380px auto 0;
+	margin: auto;
 	width: 512px;
+	border-radius: 8px;
     .header {
-		.gradientBar(@toolbarDarkEndBackground, @toolbarDarkStartBackground);
-		border: 1px solid #393939;
-		.border-radius(4px 4px 0 0);
-		width: 511px;
+		background: @uiPopupHeaderBackground;
 		line-height: 22px;
-		padding: 10px 0;
+		padding: 10px;
 		text-align: center;
 		font-size: 18px;
 		font-weight: bold;
-      color: @textLightColor;
+        color: #61676e;
+        border-radius: 6px 6px 0 0;
+		box-shadow: none;
 	}
 	 .content {
 		background-color: @baseBackground;
 		margin: 0 auto;
-		padding: 10px 20px;
+		padding: 10px 30px;
 		position: static;
 		width: auto;
 		height: 400px;
         overflow-y: scroll;
 	}
 	.bottom {
-		background: url("@{images-path}/platform/portlets/extensions/bottomBG.png") no-repeat center bottom;
+		background: @lightGrey;
 		text-align: center;
-		 padding: 25px 30px;
-      border-radius: 8px;
+		padding: 25px 30px;
+        border-radius: 0 0 8px 8px;
 	}
-	.btn{
-		.border-radius(4px);
+	.btn {
+		border-radius: 4px;
 		cursor: pointer;
 		display: inline-block;
-		font-weight: bold;
 		line-height: 41px;
 		text-align: center;
 		text-shadow: none;
@@ -93,12 +87,17 @@ a {
         font-family: @baseFontFamily;
         font-size: 16px;
 		padding: 0 6px;
-		.buttonBackgroundEXO(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder,@btnPrimaryColor);
+        .buttonBackgroundEXO(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder,@btnPrimaryColor);
+		background: @primaryColor;
+        &:hover:not([disabled]) {
+          background: @secondarySkinColor;
+          background-position: 0 -45px;
+        }
 
 	}
 
 	button.inactive {
-		.opacity(50);
+		opacity: .5;
 		cursor: default;
 	}
 	.uiCheckbox {
@@ -117,10 +116,6 @@ a {
 			z-index: 100;
 
 		}
-		input {
-			margin-left: -18px e("\0/");
-			min-height: 10px e("\0/");
-		}
 		> span {
 			display: inline-block;
             color: @textColor;
@@ -132,58 +127,45 @@ a {
 
 
 .uiWelcomeBox .uiCheckbox input[type="checkbox"]:checked + span:after {
-    border-bottom: 2px solid @primaryColor;
-    border-left: 2px solid @primaryColor;
+    border-bottom: 2px solid @lightWhite;
+    border-left: 2px solid @lightWhite;
     content: "";
-    .size(3px,6px);
-    -webkit-transform: skew(45deg, -49deg);
-     -moz-transform: skew(45deg, -49deg);
-      -ms-transform: skewX(30deg) skewY(-35deg);
-       -o-transform: skew(45deg, -49deg);
-          transform: skew(45deg, -49deg);
-  -webkit-backface-visibility: hidden;
-	left: 4px;
+    transform: skew(45deg, -49deg);
 	position: absolute;
-	top: 4px;
-	left: 2px\9;
-	width: 10px\9;
-	height: 4px\9;
-	background: transparent e("\0/");
+	top: 7px;
+    left: 1px;
+	width: 4px;
+	height: 2px;
 }
 
 .uiWelcomeBox .uiCheckbox input[type="checkbox"] + span:before {
-    background: @primaryBackgroundHover;
-    .border-radius(3px);
-    .box-shadow(~'0 1px 2px rgba(0, 0, 0, 0.17) inset');
-    .square(12px);
-    top: 4px;
-    left: 0px;
+    background: @primaryColor;
+    border-radius: 3px;
+    .square(16px);
+    top: 2px;
+    left: -4px;
     content: " ";
     position: absolute;
-    background: transparent e("\0/");
-}
-
-.uiWelcomeBox input:focus {
-  .box-shadow(~'inset 0 1px 1px rgba(0,0,0,.075), 0 0 5px rgba(29,75,159,.6)');
-  color:  @inputFocusColor;
 }
 
 @media (max-width: 640px){
-  .backLight{
-    display: none;
+  body {
+    display: block;
+    padding: 10px;
   }
   .uiWelcomeBox {
-    margin: 0 15px;
     width: auto;
     .header {
 	    width: auto;
 	}
     .content {
 	    padding: 10px 20px;
+        height: ~"calc(100vh - 240px)";
 	}
     .bottom{
       background: none;
       text-align: left;
+      padding: 15px;
       .pull-left, .pull-right{
         float: none;
       }

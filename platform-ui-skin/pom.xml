@@ -33,7 +33,7 @@
 
     <!-- set the skin name -->
     <properties>
-        <exo.skin.name>Default</exo.skin.name>
+        <exo.skin.name>Enterprise</exo.skin.name>
         <exo.skin.display.name>eXoSkin</exo.skin.display.name>
         <!-- Force Sonar sources folder to avoid failure of Sonar analysis -->
         <sonar.sources>src</sonar.sources>

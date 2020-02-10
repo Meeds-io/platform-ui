@@ -9,31 +9,57 @@
 @baseColor:                 #000000; // text color , border color, and other UI elements..
 
 // Background color
-@baseBackground:                 #ffffff; // default background , background for content display....
+@baseBackground: #ffffff; // default background , background for content display....
 
 // Primary Color
-@primaryColor:			#2f5e92; // primary button and link color...
+@primaryColor: #578dc9;
 
 // Background primary color
 @primaryBackground:		#f0f0f0; // main background such as , header popup background, tab items...
 
 // Icon color
 
-@colorIconDefault: #999999;
-@colorIconExtra: #626262;
+@colorIconDefault: @primaryColor;
+@colorIconExtra: @primaryColor; //#626262;
 @colorIconPrimary: @primaryColor;
 @colorIconOrange: #ff9916;
-@colorIconSecondary:#ffffff;
+@colorIconSecondary:@baseBackground;
 @sizeIcon24x24: 22px;
 @sizeIcon12x12: 10px;
 @sizeIcon64x64: 60px;
 @sizeIcon32x32: 30px;
-@sizeIconDefault: 14px;
+@sizeIconDefault: 18px;
 @compressedFilesIconColor: #717272;
+
+// Other base colors
+
 @darkBlue: #295f9b;
+@baseGreyColor: #e1e8ee;
+@secondarySkinColor: #476a9c;
+@tertiaryColor: #385989;
+@secondaryBackground: #476a9c;
+@lightWhite: #ffffff;
+@secondaryColor: #000000;
+@darkGrey: #4d5466;
+@lightGrey: #f2f2f2;
+@disableBackground: @lightGrey;
+@lightYellow: #ffd800;
+@darkYellow: #ffb441;
+@backgroundSuccesNotification: #6ccbae;
+@backgroundWarningNotification: #ffca7a;
+@colorWarningNotification: #905904;
+@backgroundInfoNotification: #89afd9;
+@backgroundErrorNotification: #d07b7b;
+@borderSuccesNotification: #2eb58c;
+@borderWarningNotification: #ffb441;
+@borderInfoNotification: #476a9c;
+@borderErrorNotification: #bc4343;
+@borderErrorInput: #cb6d6d;
+
 // Image Patch
 // -------------------------
-@images-path: 			"/eXoSkin/skin/images/themes/default";
+@base-images-path: 			"/eXoSkin/skin/images";
+@images-path: 			"@{base-images-path}/themes/default";
 
 // Font icon path
 @font-path: 			"/eXoSkin/skin/fonts";
@@ -42,22 +68,22 @@
 @header-popup-title: #c1c1c1;
 // Accent colors
 // -------------------------
-@errorColor:                   #C72222;							// Red Primary
-@errorColorLight:				lighten(spin(@errorColor, 5%), 30%);		// #ed9c95
+@errorColor:        @borderErrorNotification;		  // border error
+@errorColorLight:	@backgroundErrorNotification;	  // background error
 
-@warningColor:                #EDAD00;							// Orange Primary
-@warningColorLight:			lighten(spin(@warningColor, 5%), 42%);	// #fff4c4
+@warningColor:      @borderWarningNotification;		  // border warning
+@warningColorLight: @backgroundWarningNotification;	  // background warning
 
-@infoColor: 					#215ab2;							// Blue Primary
-@infoColorLight: 			lighten(spin(@infoColor, 5%), 48%);		// #dee3fa
+@infoColor: 	    @borderInfoNotification;          // border info
+@infoColorLight:    @backgroundInfoNotification;	  // background info
 
-@successColor:                 #39C522;							// Green Primary
-@successColorLight:			lighten(spin(@successColor, 5%), 45%);		// #d7f8d5
+@successColor:      @borderSuccesNotification;        // border success
+@successColorLight: @backgroundSuccesNotification;    // background success
 
 // Scaffolding
 // -------------------------
 @bodyBackground: @baseBackground;
-@sidebarBackground: @primaryBackground;
+@sidebarBackground: @secondarySkinColor;
 @contentBackground:  @baseBackground	url("@{images-path}/ShareImages/Background/texture.png") repeat left top;
 @textColor: @baseColorDark;				// #333333
 @textMediumColor: @baseColorMedium; 					// #808080
@@ -83,21 +109,21 @@
 // Tables
 // -------------------------
 @tableBackground:                   transparent; 				// overall background-color
-@tableBackgroundAccent: @primaryBackgroundLight; 	// for striping
+@tableBackgroundAccent: #f6f7fa;
 @tableBackgroundHover: @primaryBackgroundHover; 	// for hover
 @tableBorder:                       @borderColor; 				// table and cell border
 
 
 // Buttons
 // -------------------------
-@btnColor:                            @baseColorDark;
-@btnBorder:                           @borderColor;
-@btnDisableColor :                    @textLightColor;
+@btnColor: @darkGrey;
+@btnBorder: @baseGreyColor;
+@btnDisableColor: #c6c6c6;
 
-@btnPrimaryColor: #ffffff;
-@btnPrimaryBackground:              @primaryLightColor;
+@btnPrimaryColor: @lightWhite;
+@btnPrimaryBackground:              @primaryColor;
 @btnPrimaryBackgroundHighlight:     @primaryColor;
-@btnPrimaryBorder: 					@primaryDarkColor;
+@btnPrimaryBorder: 					@primaryColor;
 
 @paddingXLarge:         9px 15px;
 @paddingLarge:          4px 10px;
@@ -124,11 +150,11 @@
 
 @inputHeight:                   	@baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
 
-@uiCheckboxCheckedBorder: 			@primaryColor;
-@uiCheckboxBackground: 				@borderColor;
+@uiCheckboxCheckedBorder: @baseBackground;
+@uiCheckboxBackground: @primaryColor;
 
-@uiRadioCheckedColor: 				@primaryColor;
-@uiRadioCheckedBackground: 			@borderColor;
+@uiRadioCheckedColor: @baseBackground;
+@uiRadioCheckedBackground: @baseGreyColor;
 @uiRadioCheckedDisabledBackground: @baseColorLight;
 
 @uiCheckboxCheckedDisabledBorder: @baseColorLight;
@@ -138,9 +164,9 @@
 
 // Dropdowns
 // -------------------------
-@dropdownBorder:                	@borderColor;
+@dropdownBorder: @baseBackground;
 @dropdownBackground: @baseBackground;
-@dropdownLinkBackgroundHover:   	@primaryLightColor;
+@dropdownLinkBackgroundHover: @primaryColor;
 @dropdownLinkColor: @textColor;
 @dropdownLinkColorHover: #fff;
 @dropdownLinkColorActive:       #fff;
@@ -148,17 +174,18 @@
 
 // Typography
 // -------------------------
+@fontFamily: Helvetica, arial, sans-serif;
 @sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
 @sansBoldFontFamily :   "Helvetica Neue Bold" , Helvetica, Lucida, Arial, sans-serif;
 @serifFontFamily:       Georgia, "Times New Roman", Times, serif;
 @monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
 
-@baseFontSize:          13px;
-@baseFontFamily:        @sansFontFamily;
+@baseFontSize:          14px;
+@baseFontFamily:        @fontFamily;
 @baseLineHeight:        20px;
 @altFontFamily:         @serifFontFamily;
 
-@headingsFontWeight:    bold;    // instead of browser default, bold
+@headingsFontWeight:    bold;
 
 
 
@@ -212,7 +239,7 @@
 @navbarCollapseWidth:             979px;
 @navbarCollapseDesktopWidth:      @navbarCollapseWidth + 1;
 
-@navbarHeight:                    40px;
+@navbarHeight: 58px;
 @navbarBackgroundHighlight:       #ffffff;
 @navbarBackground:                darken(@navbarBackgroundHighlight, 5%);
 @navbarBorder:                    darken(@navbarBackground, 12%);
@@ -255,8 +282,8 @@
 
 // Hero unit
 // -------------------------
-@heroUnitBackground: @primaryBackgroundLight;
-@heroUnitHeadingColor:    inherit;
+@heroUnitBackground: #476a9c;
+@heroUnitHeadingColor: @baseBackground;
 @heroUnitLeadColor:       inherit;
 
 
@@ -338,12 +365,12 @@
 // -------------------------
 @breadcrumbColor: @baseColorDark;
 @breadcrumbHoverColor: 			@primaryColor;
-@breadcrumbActiveColor: 		@textLightColor;
+@breadcrumbActiveColor: 		@primaryColor;
 
 // Calendar Component
 // -------------------------
 @calComponentWidth:						225px;
-@calComponentWidthTitleColor:			@textColor;
+@calComponentWidthTitleColor: @baseBackground;
 @calComponentDayColor:					@textColor;
 @calComponentOtherMonthColor:			@textLightColor;
 @calComponentDayHoverBackground: @primaryBackground;
@@ -351,9 +378,9 @@
 @calComponentDaySelectedColor: @baseBackground;
 @calComponentDayTodayBackground: 		@primaryColor;
 @calComponentDayTodayColor: @baseBackground;
-@calComponentCurrentWeekBackground: @primaryBackground;
+@calComponentCurrentWeekBackground: @baseBackground;
 @calComponentCurrentWeekBorder: 		@borderColor;
-@calComponentTimeInputBoxBackground: @primaryBackground;
+@calComponentTimeInputBoxBackground: #578dc9;
 @calComponentTimeInputColor: 			@textColor;
 @calComponentTimeInputBackground: @baseBackground;
 @calComponentTimeInputBorder: 			@borderColor;
@@ -368,7 +395,7 @@
 // Popup
 @uiPopupBackground: @baseBackground;
 @uiPopupBorder: 						@borderColor;
-@uiPopupHeaderBackground: @primaryBackground;
+@uiPopupHeaderBackground: #f2f2f2;
 @uiPopupHeaderBorder: 0px solid  @primaryBackground;
 @uiPopupTitleColor: 					@textColor;
 @uiPopupContentBackground: @baseBackground;
@@ -381,10 +408,10 @@
 // -------------------------
 @tabNormalLinkColor: 					@textColor;
 @tabNormalLinkBorder: 					@borderColor;
-@tabNormalLinkBackground: @primaryBackground;
+@tabNormalLinkBackground: #f0f4f7;
 
 @tabNormalActiveLinkBorder: 			@borderColor;
-@tabNormalActiveLinkBackground: @baseBackground;
+@tabNormalActiveLinkBackground: @primaryColor;
 
 @tabNormalContentBackground: @baseBackground;
 @tabNormalContentBorder: 				@borderColor;
@@ -414,19 +441,19 @@
 
 // Toolbar
 // -------------------------
-@toolbarDarkStartBackground:			#5b5b5b;
-@toolbarDarkEndBackground:				#474747;
-@toolbarDarkBorder: 					#2c3440;
-@toolbarDarkLinkColor: #ffffff;
-@toolbarDarkLinkHoverColor: #ffffff;
+@toolbarDarkStartBackground:			#2D3138;;
+@toolbarDarkEndBackground:				#2D3138;;
+@toolbarDarkBorder: 					#2D3138;;
+@toolbarDarkLinkColor: @baseBackground;
+@toolbarDarkLinkHoverColor: @baseBackground;
 @toolbarDarkBackgroundHover: #3f3f3f;
 
-@toolbarLightStartBackground:			#f4f4f4;
-@toolbarLightEndBackground:				#d4d4d4;
-@toolbarLightBorder: 					#333333;
-@toolbarLightLinkColor: 				#333333;
-@toolbarLightLinkHoverColor: 			#333333;
-@toolbarLightBackgroundHover: rgba(128,128,128,0.3);
+@toolbarLightStartBackground:			@baseBackground;
+@toolbarLightEndBackground:				@baseBackground;
+@toolbarLightBorder: 					@baseBackground;
+@toolbarLightLinkColor: 				@primaryColor;
+@toolbarLightLinkHoverColor: 			#4d5466;
+@toolbarLightBackgroundHover:           @baseBackground;
 
 //UIBox
 
@@ -436,8 +463,8 @@
 @uiBoxGray: @primaryBackground;
 
 // Quote
-@quoteBorder: @primaryBackgroundHover;
-@quoteBackgound: @primaryBackground;
+@quoteBorder: #a8b3c5;
+@quoteBackgound: none;
 @quoteBackgoundForum: #eff4fa;
 @quoteBorderForum: #aac5e3;
 
@@ -447,9 +474,9 @@
 
 
 // UIMention
-@uiMentionColor: @infoColor;
+@uiMentionColor: @baseBackground;
 @uiMentionBorder: @infoColor;
-@uiMentionBackground:					lighten(@infoColorLight, 4%);
+@uiMentionBackground: @mentionBackground;
 
 //@paddingXLarge:         10px 15px;
 //@paddingLarge:          4px 10px;
@@ -464,7 +491,7 @@
 // navigation left
 @plfNavigationTitleColor: @primaryColor;
 @plfNavigationBgBorderLeft :@primaryLightColor;
-@plfNavigationBorderLeft: @primaryDarkColor;
+@plfNavigationBorderLeft: @lightWhite;
 @plfNavigationColor: @baseColorMedium;
 @plfNavigationBgSelected : @baseBackground;
 @plfNavigationBorderSelected: @borderColor;
@@ -481,7 +508,7 @@
   @baseColorDark:       lighten(@baseColor, 20%); // #333333 Default color for all title, text, text input, label
   @baseColorMedium:         lighten(@baseColor, 50%); // #808080 Navigation text color, special purpose in use
   @baseColorLight:        lighten(@baseColor, 60%); // #999999 Default @baseColorMedium color for small text, sub title, text field explanation
-  @borderColor:             lighten(@baseColor, 80%); // #cccccc
+@borderColor: @baseGreyColor;
   @primaryBackgroundHover:  darken(@primaryBackground, 4%);
   @primaryBackgroundLight:  lighten(@primaryBackground, 3%);
   @revealBackgroundHover:  lighten(@baseColor, 98%);
@@ -501,7 +528,7 @@
   @baseColorLight:        darken(@baseColor, 20%);
   @baseColorMedium:         lighten(@baseColor, 50%);
   @baseColorDark:       lighten(@baseColor, 60%);
-  @borderColor:             darken(@baseColor, 20%);
+@borderColor: @baseGreyColor;
   @primaryBackgroundLight:  lighten(@primaryBackground, 4%);
   @primaryBackgroundHover : darken(@primaryBackground, 3%);
   @revealBackgroundHover:  darken(@baseColor, 98%);
@@ -517,57 +544,59 @@
 .setColor(@baseColor);
 
 /* default btn */
-@btnBackgroundColor: #f5f5f5;
-@btnBackgroundImage: linear-gradient(to bottom,#fff,#e6e6e6);
-@btnHoverBackgroundColor: #e6e6e6;
-@btnDisableBackground: #e6e6e6;
+@btnBackgroundColor: @baseBackground;
+@btnBackgroundImage: none;
+@btnHoverBackgroundColor: @baseGreyColor;
+@btnDisableBackground: #f2f2f2;
 
 /* primary btn */
-@btnPrimaryHoverBackgroundColor: @primaryColor;
-@btnPrimaryHoverBackgroundPosition: 0 -15px;
-@btnPrimaryDisableHoverBackground: @primaryColor;
-@btnPrimaryDisableBackground: @primaryColor;
+@btnPrimaryHoverBackgroundColor: #476a9c;
+@btnPrimaryHoverBackgroundPosition: 0 -45px;
+@btnPrimaryDisableHoverBackground: #476a9c;
+@btnPrimaryDisableBackground: #afc9e5;
 
 /* btn group */
-@btnGroupActiveBackground: #e6e6e6;
+@btnGroupActiveBackground: inherit;
 @btnGroupActiveColor: @baseBackground;
-@btnGroupActiveBorderColor: @borderColor;
-@btnGroupBackground: @btnBackgroundColor;
+@btnGroupActiveBorderColor: @primaryColor;
+@btnGroupBackground: #f0f4f7;
 @btnGroupHoverBackgroundColor: @btnHoverBackgroundColor;
 
 /* dropdown */
-@dropdownMenuBorderColor: @borderColor;
-@dropdownEndColor: darken(@dropdownLinkBackgroundHover, 15%);
+@dropdownMenuBorderColor: @baseBackground;
+@dropdownEndColor: @primaryColor;
 
 /* btn dropdown */
-@btnDropdownImage: @btnBackgroundImage;
-@btnDropdownBackground: @btnBackgroundHighlight;
+@btnDropdownImage: none;
+@btnDropdownBackground: @baseGreyColor;
 
 /* btn-primary dropdown */
-@btnPrimaryDropdownBackground: @btnPrimaryBackgroundHighlight;
+@btnPrimaryDropdownBackground: @primaryColor;
 
 /* btn group dropdown */
-@btnGroupDropdownBackground: @btnBackgroundColor;
-@btnGroupOpenDropdownBackground: @btnGroupActiveBackground;
+@btnGroupDropdownBackground: @baseGreyColor;
+@btnGroupOpenDropdownBackground: @baseGreyColor;
 
 /* switchBtnHandle */
-@switchBtnHandleStartColor: @btnBackground;
-@switchBtnHandleEndColor: @btnBackgroundHighlight;
+@switchBtnHandleStartColor: #b5bdc6;
+@switchBtnHandleEndColor: #b5bdc6;
 
 /* switchBtnLabelOff */
-@switchBtnLabelOffStartColor: rgba(0,0,0,0);
-@switchBtnLabelOffStartColor: rgba(0,0,0,0.09);
+@uiSwitchOffColor: #e1e8ee;
+@switchBtnLabelOffStartColor: @uiSwitchOffColor;
+@switchBtnLabelOffStartColor: @uiSwitchOffColor;
 
 /* switchBtnLabelOn */
-@switchBtnLabelOnStartColor: @primaryLightColor;
-@switchBtnLabelOnStartColor: @primaryColor;
+@uiSwitchOnColor: #89afd9;
+@switchBtnLabelOnStartColor: @uiSwitchOnColor;
+@switchBtnLabelOnStartColor: @uiSwitchOnColor;
 
 /* uiradio */
-@uiRadioCheckedBeforeBackground: @borderColor;
-@uiRadioCheckedAfterBackground: rgba(0,0,0,0.27);
+@uiRadioCheckedBeforeBackground: @primaryColor;
+@uiRadioCheckedAfterBackground: @baseBackground;
 
 /* uicheckbox */
-@uiCheckboxCheckedBackground: @borderColor;
+@uiCheckboxCheckedBackground: @primaryColor;
 
 /* uiSwitcher */
 @uiSwitcherBackground: #d8dadd;
@@ -575,100 +604,162 @@
 @uiSwitcherOffBackground: #9ea6b2;
 
 /* input-append btn */
-@inputAppendBtnBackground: #e6e6e6;
+@inputAppendBtnBackground: @primaryColor;
 
 /* Tags and mention */
-@mentionBackground: #e2eafa;
-@mentionPadding: 2px 16px 2px 5px;
-@mentionColor: #215ab2;
-@mentionBorder: 1px solid @mentionColor;
-@mentionRemovePositionRight: 4px;
-@removeMentionColor: #91949c;
-@removeMentionTop: 0;
-@removeTagColor: #578dc9;
+@mentionBackground: @primaryColor;
+@mentionPadding: 2px 20px 0 5px;
+@mentionColor: @lightWhite;
+@mentionBorder: none;
+@mentionRemovePositionRight: 6px;
+@removeMentionColor: @secondarySkinColor;
+@removeMentionTop: 2px;
+@removeTagColor: @removeMentionColor;
 
 /* Thumbnail */
-@ThumbnailMargin: 45px 0 0 0;
-@ThumbnailView-DownloadColor: #fff;
-@ColorThumbnailBackground: rgba(0,0,0,0.1);
-@ThumbnailView-DownloadFloat: none;
-@ThumbnailView-DownloadDisplay: inline;
-@ThumbnailView-DownloadWidth: auto;
-@ThumbnailView-DownloadHeight: auto;
-@ThumbnailView-Download-IconsColor: #fff;
-@ThumbnailView-DownloadMarginRight: 0;
-@ThumbnailView-DownloadMarginLeft: 0;
+@ThumbnailMargin: 45px 0 0 40px;
+@ThumbnailView-DownloadColor: transparent;
+@ColorThumbnailBackground: rgba(0,0,0,0.4);
+@ThumbnailView-DownloadFloat: left;
+@ThumbnailView-DownloadDisplay: inline-block;
+@ThumbnailView-DownloadWidth: 22px;
+@ThumbnailView-DownloadHeight: 22px;
+@ThumbnailView-Download-IconsColor: @baseBackground;
+@ThumbnailView-DownloadMarginRight: 15px;
+@ThumbnailView-DownloadMarginLeft: -5px;
 
 /* popover  */
-@popoverBorder: 1px solid @borderColor;
+@popoverBorder: none;
 
 /* */
-@tiptipBorder: 1px solid @borderColor;
+@tiptipBorder: 1px none @baseGreyColor;
 
 /* alerts  */
-@linkInAlertColor: @linkColor;
-@linkInAlertTextDecoration: none;
+@linkInAlertColor: @baseBackground;                   // link in the alert
+@linkInAlertTextDecoration: underline;                // underline link in the alert
 
 /* progress bar */
-@progressBarBorderRadius: 20px;
-@progressBarIconBackground: #f9f9f9;
-@progressBarIconBackgroundImage: linear-gradient(to bottom, #ffffff, #f0f0f0);
+@progressBarBorderRadius: 0;
+@progressBarIconBackground: #e1e8ee;
+@progressBarIconBackgroundImage: none;
 
 /*  tabs  */
-@tabNormalLinkBorderTop: 1px solid @tabNormalLinkBorder;
-@tabNormalLinkBorderRight: 1px solid @tabNormalLinkBorder;
-@tabNormalLinkBorderBottom: 1px solid @tabNormalLinkBorder;
-@tabNormalLinkBorderLeft: 1px solid @tabNormalLinkBorder;
-@tabNormalLinkHoverBorderTop: 1px solid @borderColor;
-@tabNormalLinkHoverBorderRight: 1px solid @borderColor;
-@tabNormalLinkHoverBorderBottom: 1px solid @borderColor;
-@tabNormalLinkHoverBorderLeft: 1px solid @borderColor;
-@tabNormalActiveLinkColor: @textColor;
-@tabContentBorder: 1px solid @tabNormalContentBorder;
+@tabNormalLinkBorderTop: none;
+@tabNormalLinkBorderRight: none;
+@tabNormalLinkBorderBottom: 2px solid #f0f4f7;
+@tabNormalLinkBorderLeft: 2px solid @baseGreyColor;
+@tabNormalLinkHoverBorderTop: none;
+@tabNormalLinkHoverBorderRight: @tabNormalLinkBorderRight;
+@tabNormalLinkHoverBorderBottom: 1px solid #f8f8f8;
+@tabNormalLinkHoverBorderLeft: none;
+@tabNormalActiveLinkColor: @baseBackground;
+@tabContentBorder: 2px solid @baseGreyColor;
 
 /* tables */
-@tableThBackground: @primaryBackground;
+@tableThBackground: #f6f7fa;
 @tableRadius: 0px;
 
 /*  popup   */
-@uiIconCloseFontSize: 9px;
-@uiPopupHeaderBoxShadow: inset 0 -1px 0 @borderColor;
-@popupTitleFontSize: 14px;
-@uiActionBorderBorderTop: 1px solid @borderColor;
-@uiActionBorderMarginTop: 15px;
-@uiIconCloseColor: inherit;
-@uiPopupHeaderMarginBottom: 0;
+@uiIconCloseFontSize: 12px;
+@uiPopupHeaderBoxShadow: none;
+@popupTitleFontSize: 18px;
+@uiActionBorderBorderTop: none;
+@uiActionBorderMarginTop: 30px;
+@uiIconCloseColor: #333333;
+@uiPopupHeaderMarginBottom: 7px;
 
 /* pagination */
-@pageIteratorStartColor: @btnBackground;
-@pageIteratorEndColor: @btnBackgroundHighlight;
-@pageIteratorHoverBackground: @btnBackgroundHighlight;
-@pageIteratorColor: @linkColor;
-@pageIteratorBackgroundPosition: 0 -15px;
-@pageIteratorActiveBackground: @btnBackgroundHighlight;
-@pageIteratorMargin: 0px;
+@pageIteratorStartColor: @baseBackground;
+@pageIteratorEndColor: @baseBackground;
+@pageIteratorHoverBackground: @baseGreyColor;
+@pageIteratorColor: @baseBackground;
+@pageIteratorBackgroundPosition: 0 -30px;
+@pageIteratorActiveBackground: @primaryColor;
+@pageIteratorMargin: 4px;
 
 /* Badge */
-@badgeDefaultBackground: @primaryBackground;
+@badgeDefaultBackground: @baseGreyColor;
 
 /* uiBox */
-@weekListBackground: transparent;
-@calComponentTodayBackground: transparent;
-@uiCalendarComponentTitleBackground: @primaryBackground;
-@uiMiniCalendarTitleBackground: @primaryBackground;
-@uiMiniCalendarTodayBackground: transparent;
-@uiMiniCalendarCurrentWeekBackground: @primaryBackground;
-@uiMiniCalendarBorder: 1px solid @borderColor;
-@uicalendarComponentBorder: 1px solid @borderColor;
+@weekListBackground: #578dc9;
+@calComponentTodayBackground: #578dc9;
+@uicalendarComponentTitleBackground: #578dc9;
+@uiCalendarComponentTitleBackground: #578dc9;
+@uiMiniCalendarTitleBackground: #578dc9;
+@uiMiniCalendarTodayBackground: #eceaea;
+@uiMiniCalendarCurrentWeekBackground: @baseBackground;
+@uiMiniCalendarBorder: none;
+@uicalendarComponentBorder: none;
 
 /* Alert */
 @alertBorder: 1px;
+@alertSuccessColor: #084130;
+@alertErrorColor: #771414;
+@alertInfoColor: #193e67;
+@alertWarningColor: #8f5804;
+@alertWarningIconColor: #b46f05;
 
 
 /* Left bar */
-@margin: 50px;
+@margin: 57px;
 
 /* The background of drop area when a file is dragged into it */
 @dropFileAreaBackgroundOnDragEnter: #e6e6e6;
+
+// Other variables
+@commentBackgroundColor: #f2f5f8;
+@uiTreeEmptyColor: @lightWhite;
+@uiIconRefreshColor: @primaryColor;
+@toolbarContainerDarkColor: @lightWhite;
+@uiPageIteratorActiveColor: @lightWhite;
+@btnGroupColor: @lightWhite;
+@uiActionBarBtnColor: @lightWhite;
+@inputAppendColor: @lightWhite;
+@selectOptionColor: @lightWhite;
+@heroUnitColor: @lightWhite;
+@jumbotronColor: @lightWhite;
+@calendarWeekListColor: @lightWhite;
+@calendarTitleColor: @lightWhite;
+@companyNavigationPortletColor: @lightWhite;
+@navItemColor: @lightWhite;
+@boxLoadMoreColor: @lightWhite;
+@activityStreamCommentBtnColor: @lightWhite;
+@itemSelectorColor: @lightWhite;
+@tableColor: @darkGrey;
+@popupHeaderColor: @darkGrey;
+@toolbarContainerLightColor: @darkGrey;
+@dropdownMenuColor: @darkGrey;
+@treeIconColor: @darkGrey;
+@uiPageIteratorColor: @darkGrey;
+@popupHeaderBackground: @lightGrey;
+@rightBodyContainerBackground: @lightGrey;
+@activityStreamBackground: @baseBackground;
+@toggeleInvisibleColor: @baseGreyColor;
+@likeButtonColor: #c6c6c6;
+@controlGroupErrorColor: #bc4343;
+@controlGroupSuccessColor: #2eb58c;
+@calendarColor: #333333;
+@navigationPortletBackground: @tertiaryColor;
+@btnAllActivitiesColor: @tertiaryColor;
+@offlineColor: #a8b3c5;
+@toolbarLightIconColor:           #a8b3c5;
+@toolbarLightIconHoverColor:      @primaryColor;
+@colorIconSecondaryHover:@primaryColor;
+@sizeSideBarIcon: 20px;
+@headingColor: #4d5466;
+@plfNavigationBgBorderLeft: @lightWhite;
+@badgePrimaryColor : #ff5335;
+@paddingBadgeDefault-mini : 0;
+@widthBadgeDefault-mini : 20px;
+@heightBadgeDefault-mini : 20px;
+@textAlignBadgeDefault-mini : center;
+@borderRadiusBadgeDefault-mini : 50%;
+@lineHeightBadgeDefault-mini : 20px;
+@btnPrimaryDropdownBackgroundImage: none;
+@btnGroupDropdownToggeleBackground: @baseGreyColor;
+@uiCheckboxDisabledBackground: #999;
+@chatBubbleBackground: #edf3ff;
+@chatBubbleOddBackground: #dceaf9;
+@chatFileUploadPopOverBackground: #88b3d8;
 
 @import "customVariables.less";

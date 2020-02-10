@@ -1,57 +1,58 @@
-@import "../../../Core.less";
+@import "../../../_bootstrap.less";
+@import "../../../variables.less";
+@import "../../../customVariables.less";
+@import "../../../mixins.less";
+@import "../../../component/Buttons/Style.less";
+@import "../../../component/Notifications/Style.less";
+@import "../../../customStyle.less";
 
 body {
-    background:  url("/eXoSkin/skin/images/themes/default/platform/portlets/extensions/login_texture.jpg") repeat scroll 0 0;
+    background: @secondarySkinColor;
     color: @textColor;
     font-family: @sansFontFamily;
     font-size: @baseFontSize;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    padding: 15px;
+    box-sizing: border-box;
 }
 
 .popupDarkStyle{
-	border: 1px solid #333333;
-    border-radius: 8px;
-    left: 50%;
-    max-width: 514px;
-    top: 50%;
-    .translate(-50%, -50%);
-    width: 90%;
+    width: 520px;
+    margin: auto;
+    border-radius: 4px;
     .popupHeader {
-	    background: #484848 none repeat scroll 0 0;
-	    border: 1px solid #333333;
-	    border-radius: 6px 6px 0 0;
+	    background:@uiPopupHeaderBackground;
 	    box-shadow: none;
 	    height: 42px;
-	    margin: -1px;
-	    padding: 0 30px;
+	    padding: 0 10px;
+        text-align: center;
 	    .popupTitle {
-		    color: #c1c1c1;
+		    color: #61676e;
 		    font-size: 18px;
 		    font-weight: bold;
 		    line-height: 42px;
-		    text-shadow: 1px 0 1px rgba(0, 0, 0, 0.2);
 		}
 	}
 	.popupContent {
-	    background: url("/eXoSkin/skin/images/themes/default/platform/portlets/extensions/popupDarkStyleBGL.png") no-repeat scroll left bottom, 
-	    url("/eXoSkin/skin/images/themes/default/platform/portlets/extensions/popupDarkStyleBGR.png") no-repeat scroll right bottom, 
-	    rgba(0, 0, 0, 0) url("/eXoSkin/skin/images/themes/default/platform/portlets/extensions/popupDarkStyleBGC.png") repeat-x scroll center bottom;
-	    border: 1px solid #333333;
-	    border-radius: 0 0 6px 6px;
+        background: @lightWhite;
+	    border-radius: 4px;
 	    margin: -1px;
-	    padding: 31px;
+	    padding: 30px 30px 0;
 	    .firstText{
 	    	color: @darkBlue;
 	    	font-weight: bold;
 	    }
 	    .uiAction {
-	    	padding-top: 50px;
+	    	padding: 20px;
 	    	.btn {
 			    font-size: 16px;
 			    padding: 10px 35px;
 			}
 		}
 		.loading-text{
-			background: url("/eXoSkin/skin/images/themes/default/Loading/loading24x24Light.png");
+			background: url("@{images-path}/Loading/loading24x24Light.png");
 			-webkit-animation: 1s linear 0s normal none infinite running loading;
             animation: 1s linear 0s normal none infinite running loading;
 			.square(24px);
@@ -61,6 +62,14 @@ body {
 		.signin-title{
 			display: none;
 		}
+        .plf-registration {
+            background: @lightGrey;
+			border-radius: 0 0 4px 4px;
+			margin: 0 -30px;
+            form {
+          		margin: 0;
+            }
+        }
 	}
 }
 .img-responsive{
@@ -77,10 +86,7 @@ body {
 }
 
 @media (max-width: 480px) {
-	.popupDarkStyle{
-		.popupContent {
-		    background: none;
-		}
+	.popupDarkStyle {
 		.uiAction {
 			.btn{
 				width: auto;
