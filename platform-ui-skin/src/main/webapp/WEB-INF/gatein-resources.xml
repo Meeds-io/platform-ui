@@ -44,6 +44,39 @@
     <css-priority>10</css-priority>
   </portal-skin>
 
+  <portal-skin>
+    <skin-name>${exo.skin.name}</skin-name>
+    <skin-module>commons</skin-module>
+    <css-path>/skin/css/commons/skin/commons.css</css-path>
+  </portal-skin>
+
+  <portal-skin>
+    <skin-name>${exo.skin.name}</skin-name>
+    <skin-module>unified-search</skin-module>
+    <css-path>/skin/css/integration/skin/quicksearchpage.css</css-path>
+    <css-priority>1</css-priority>
+  </portal-skin>
+
+  <portal-skin>
+    <skin-name>${exo.skin.name}</skin-name>
+    <skin-module>Social</skin-module>
+    <css-path>/skin/css/social/skin/social.css</css-path>
+  </portal-skin>
+
+  <portal-skin>
+    <skin-name>${exo.skin.name}</skin-name>
+    <skin-module>Platform-css</skin-module>
+    <css-path>/skin/css/platform/skin/platform.css</css-path>
+    <overwrite>true</overwrite>
+  </portal-skin>
+
+  <!-- Ckeditor - suggester -->
+  <portal-skin>
+    <skin-name>${exo.skin.name}</skin-name>
+    <skin-module>ckeditor-suggester</skin-module>
+    <css-path>/skin/css/commons/skin/CkeditorSuggester/Style.css</css-path>
+  </portal-skin>
+
   <!-- AccountPortlet skins -->
   <portlet-skin>
     <application-name>exoadmin</application-name>
@@ -71,59 +104,16 @@
     <overwrite>true</overwrite>
   </portlet-skin>
 
-  <!--- Wiki portlet -->
-
+  <!-- NotificationsAdminJuzuPortlet skins -->
   <portlet-skin>
-    <application-name>wiki</application-name>
-    <portlet-name>WikiPortlet</portlet-name>
+    <application-name>commons-extension</application-name>
+    <portlet-name>NotificationsAdminJuzuPortlet</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/wiki/wiki.css</css-path>
+    <css-path>/skin/css/platform/portlets/notification/notificationsAdmin.css</css-path>
     <css-priority>1</css-priority>
   </portlet-skin>
 
-  <!--- forum portlet -->
-  <portlet-skin>
-    <application-name>forum</application-name>
-    <portlet-name>ForumPortlet</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/forum/skin/forum-resources.css</css-path>
-    <css-priority>1</css-priority>
-  </portlet-skin>
-
-  <portlet-skin>
-    <application-name>poll</application-name>
-    <portlet-name>PollPortlet</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/forum/portlets/poll/pollPortlet.css</css-path>
-    <css-priority>1</css-priority>
-  </portlet-skin>
-
-  <portlet-skin>
-    <application-name>forum</application-name>
-    <portlet-name>ForumPortlet</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/forum/portlets/forum/forum.css</css-path>
-    <css-priority>1</css-priority>
-  </portlet-skin>
-
-
-  <!-- commons -->
-
-  <portal-skin>
-    <skin-name>${exo.skin.name}</skin-name>
-    <skin-module>commons</skin-module>
-    <css-path>/skin/css/commons/skin/commons.css</css-path>
-  </portal-skin>
-
-  <!-- integration -->
-
-  <portal-skin>
-    <skin-name>${exo.skin.name}</skin-name>
-    <skin-module>unified-search</skin-module>
-    <css-path>/skin/css/integration/skin/quicksearchpage.css</css-path>
-    <css-priority>1</css-priority>
-  </portal-skin>
-
+  <!-- unified search -->
   <portlet-skin>
     <application-name>unified-search</application-name>
     <portlet-name>UnifiedsearchPortlet</portlet-name>
@@ -131,7 +121,6 @@
     <css-path>/skin/css/integration/skin/searchpage.css</css-path>
     <css-priority>1</css-priority>
   </portlet-skin>
-
 
   <portlet-skin>
     <application-name>unified-search</application-name>
@@ -141,26 +130,7 @@
     <css-priority>1</css-priority>
   </portlet-skin>
 
-  <!-- calendar -->
-
-  <portlet-skin>
-    <application-name>calendar</application-name>
-    <portlet-name>CalendarPortlet</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/calendar/calendar.css</css-path>
-    <css-priority>1</css-priority>
-  </portlet-skin>
-
-  <!--- social -->
-
-  <portal-skin>
-    <skin-name>${exo.skin.name}</skin-name>
-    <skin-module>Social</skin-module>
-    <css-path>/skin/css/social/skin/social.css</css-path>
-  </portal-skin>
-
-  <!--social: GadgetPortlet skins -->
-
+  <!--social portlet skins -->
   <portlet-skin>
     <application-name>social-portlet</application-name>
     <portlet-name>SocialBannerPortlet</portlet-name>
@@ -473,45 +443,20 @@
     <css-priority>1</css-priority>
   </portlet-skin>
 
-  <!--- platform -->
-  <portal-skin>
-    <skin-name>${exo.skin.name}</skin-name>
-    <skin-module>Platform-css</skin-module>
-    <css-path>/skin/css/platform/skin/platform.css</css-path>
-    <overwrite>true</overwrite>
-  </portal-skin>
-
-  <!--- platform: platformNagivation -->
-  <portlet-skin>
-    <application-name>platformNavigation</application-name>
-    <portlet-name>UICompanyNavigationPortlet</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/platform/portlets/platformNavigation/UICompanyNavigationPortlet/Style.css</css-path>
-  </portlet-skin>
-  <portlet-skin>
-    <application-name>platformNavigation</application-name>
-    <portlet-name>UIBreadCrumbsNavigationPortlet</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/platform/portlets/platformNavigation/UIBreadCrumbsNavigationPortlet/Style.css</css-path>
-  </portlet-skin>
-  <portlet-skin>
-    <application-name>platformNavigation</application-name>
-    <portlet-name>UIGroupsNavigationPortlet</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/platform/portlets/platformNavigation/UIGroupsNavigationPortlet/Style.css</css-path>
-  </portlet-skin>
   <portlet-skin>
     <application-name>social-portlet</application-name>
     <portlet-name>UIHelpPlatformToolbarPortlet</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/platform/portlets/platformNavigation/UIHelpPlatformToolbarPortlet/Style.css</css-path>
   </portlet-skin>
+
   <portlet-skin>
     <application-name>social-portlet</application-name>
     <portlet-name>UISpaceNavigationPortlet</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/platform/portlets/platformNavigation/UISpaceNavigationPortlet/Style.css</css-path>
   </portlet-skin>
+
   <portlet-skin>
     <application-name>social-portlet</application-name>
     <portlet-name>UIUserNavigationPortlet</portlet-name>
@@ -519,7 +464,6 @@
     <css-path>/skin/css/platform/portlets/platformNavigation/UIUserNavigationPortlet/Style.css</css-path>
   </portlet-skin>
 
-  <!--- platform: homepage -->
   <portlet-skin>
     <application-name>social-portlet</application-name>
     <portlet-name>WhoIsOnLinePortlet</portlet-name>
@@ -527,13 +471,7 @@
     <css-path>/skin/css/platform/portlets/homepage/whoisonline.css</css-path>
     <css-priority>1</css-priority>
   </portlet-skin>
-  <portlet-skin>
-    <application-name>homepage-portlets</application-name>
-    <portlet-name>GettingStartedPortlet</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/platform/portlets/homepage/gettingstarted.css</css-path>
-    <css-priority>1</css-priority>
-  </portlet-skin>
+
   <portlet-skin>
     <application-name>social-juzu</application-name>
     <portlet-name>SuggestionsPeopleSpace</portlet-name>
@@ -548,13 +486,6 @@
     <css-path>/skin/css/platform/portlets/homepage/invitations.css</css-path>
     <css-priority>1</css-priority>
   </portlet-skin>
-  <portlet-skin>
-    <application-name>homepage-portlets</application-name>
-    <portlet-name>HomePageCalendarPortlet</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/platform/portlets/homepage/calendar.css</css-path>
-    <css-priority>1</css-priority>
-  </portlet-skin>
 
   <!--- platform: branding -->
   <portlet-skin>
@@ -563,115 +494,6 @@
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/platform/portlets/branding/branding.css</css-path>
     <css-priority>1</css-priority>
-  </portlet-skin>
-  <portlet-skin>
-    <application-name>commons-extension</application-name>
-    <portlet-name>NotificationsAdminJuzuPortlet</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/platform/portlets/notification/notificationsAdmin.css</css-path>
-    <css-priority>1</css-priority>
-  </portlet-skin>
-
-  <!-- platform: Bookmark -->
-  <portlet-skin>
-    <application-name>portlets</application-name>
-    <portlet-name>Bookmark</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/platform/portlets/bookmark/Bookmark.css</css-path>
-  </portlet-skin>
-
-  <!-- platform: LoginHistory -->
-  <portlet-skin>
-    <application-name>portlets</application-name>
-    <portlet-name>LoginHistory</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/platform/portlets/loginHistory/loginHistory.css</css-path>
-  </portlet-skin>
-
-  <!-- platform: FeaturedPoll -->
-  <portlet-skin>
-    <application-name>portlets</application-name>
-    <portlet-name>FeaturedPoll</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/platform/portlets/featuredPoll/Poll.css</css-path>
-  </portlet-skin>
-
-  <!-- ecms:  WCMSkin -->
-  <portal-skin>
-    <skin-name>${exo.skin.name}</skin-name>
-    <skin-module>WCMSkin</skin-module>
-    <css-path>/skin/css/ecms/skin/ecms-resources-wcmskin.css</css-path>
-    <css-priority>1</css-priority>
-  </portal-skin>
-
-
-  <!-- ecms: ECMAdminPortlet skin -->
-  <portlet-skin>
-    <application-name>ecmadmin</application-name>
-    <portlet-name>ECMAdminPortlet</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/ecms/portlets/administration/ecms-administration.css</css-path>
-  </portlet-skin>
-
-
-  <!-- ecms: FileExplorerPortlet skin -->
-  <portlet-skin>
-    <application-name>ecmexplorer</application-name>
-    <portlet-name>FileExplorerPortlet</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/ecms/portlets/explorer/ecms-explorer.css</css-path>
-  </portlet-skin>
-  <!-- SingleContentViewer skins -->
-
-
-  <portlet-skin>
-    <application-name>searches</application-name>
-    <portlet-name>WCMAdvanceSearchPortlet</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/ecms/portlets/search/ecms-search.css</css-path>
-  </portlet-skin>
-  <!-- FastContentCreatorPortlet skins -->
-
-  <portlet-skin>
-    <application-name>fastcontentcreator</application-name>
-    <portlet-name>FastContentCreatorPortlet</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/ecms/portlets/fastcontentcreator/fast-content-creator.css</css-path>
-  </portlet-skin>
-
-  <!-- FastContentCreatorBasicPortlet skins -->
-
-  <portlet-skin>
-    <application-name>fastcontentcreator</application-name>
-    <portlet-name>FastContentCreatorBasicPortlet</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/ecms/portlets/fastcontentcreator/fast-content-creator.css</css-path>
-  </portlet-skin>
-
-  <!-- FastContentCreatorPortletStandard skins -->
-
-
-  <portlet-skin>
-    <application-name>presentation</application-name>
-    <portlet-name>SingleContentViewer</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/ecms/portlets/presentation/ecms-presentation-singlecontentviewer.css</css-path>
-  </portlet-skin>
-
-  <!-- ContentListViewerPortlet skins -->
-
-  <portlet-skin>
-    <application-name>presentation</application-name>
-    <portlet-name>ContentListViewerPortlet</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/ecms/portlets/presentation/ecms-presentation-contentlistviewerportlet.css</css-path>
-  </portlet-skin>
-
-  <portlet-skin>
-    <application-name>presentation</application-name>
-    <portlet-name>ContentListViewerByQueryPortlet</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/ecms/portlets/presentation/ecms-presentation-contentlistviewerportlet.css</css-path>
   </portlet-skin>
 
   <!-- Login Page skins -->
@@ -712,13 +534,6 @@
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/platform/portlets/welcome-screens/unlockTrial.css</css-path>
   </portlet-skin>
-  
-  <!-- Ckeditor - suggester -->
-  <portal-skin>
-    <skin-name>${exo.skin.name}</skin-name>
-    <skin-module>ckeditor-suggester</skin-module>
-    <css-path>/skin/css/commons/skin/CkeditorSuggester/Style.css</css-path>
-  </portal-skin>
 
   <!-- Simple window style -->
   <window-style>

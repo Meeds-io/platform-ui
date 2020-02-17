@@ -75,6 +75,12 @@
       <!-- Declare our own artifacts -->
       <dependency>
         <groupId>org.exoplatform.platform-ui</groupId>
+        <artifactId>platform-ui-skin</artifactId>
+        <version>${project.version}</version>
+        <classifier>sources</classifier>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform-ui</groupId>
         <artifactId>platform-ui</artifactId>
         <version>${project.version}</version>
         <classifier>source-release</classifier>

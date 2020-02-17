@@ -95,24 +95,15 @@
                                 <include>Portlets/UIGadgetPortlet/Style.less</include>
                                 <include>Portlets/UIAccountPortlet/Style.less</include>
                                 <include>Portlets/UIApplicationRegistryPortlet/Style.less</include>
-                                <include>wiki/wiki.less</include>
                                 <include>platform/skin/platform.less</include>
-                                <include>platform/portlets/platformNavigation/UIBreadCrumbsNavigationPortlet/Style.less</include>
-                                <include>platform/portlets/platformNavigation/UICompanyNavigationPortlet/Style.less</include>
-                                <include>platform/portlets/platformNavigation/UIGroupsNavigationPortlet/Style.less</include>
                                 <include>platform/portlets/platformNavigation/UIHelpPlatformToolbarPortlet/Style.less</include>
                                 <include>platform/portlets/platformNavigation/UISpaceNavigationPortlet/Style.less</include>
                                 <include>platform/portlets/platformNavigation/UIUserNavigationPortlet/Style.less</include>
                                 <include>platform/portlets/notification/notificationsAdmin.less</include>
-                                <include>platform/portlets/homepage/calendar.less</include>
-                                <include>platform/portlets/homepage/gettingstarted.less</include>
                                 <include>platform/portlets/homepage/invitations.less</include>
                                 <include>platform/portlets/homepage/suggestions.less</include>
                                 <include>platform/portlets/homepage/whoisonline.less</include>
                                 <include>platform/portlets/branding/branding.less</include>
-                                <include>platform/portlets/bookmark/Bookmark.less</include>
-                                <include>platform/portlets/loginHistory/loginHistory.less</include>
-                                <include>platform/portlets/featuredPoll/Poll.less</include>
                                 <include>platform/portlets/welcome-screens/termsAndConditions/style.less</include>
                                 <include>platform/portlets/welcome-screens/unlockTrial.less</include>
                                 <include>platform/portlets/extensions/login.less</include>
@@ -120,17 +111,6 @@
                                 <include>platform/portlets/extensions/registration.less</include>
                                 <include>platform/samples/acme-website/Style.less</include>
                                 <include>platform/samples/acme-intranet/SpaceSummaryInfoPortlet.less</include>
-                                <include>platform/portlets/platformNavigation/UIGroupsNavigationPortlet/Style.less</include>
-                                <include>ecms/skin/ecms-resources-wcmskin.less</include>
-                                <include>ecms/skin/ecms-resources-dmsskin.less</include>
-                                <include>ecms/portlets/administration/ecms-administration.less</include>
-                                <include>ecms/portlets/explorer/ecms-explorer.less</include>
-                                <include>ecms/portlets/search/ecms-search.less</include>
-                                <include>ecms/portlets/fastcontentcreator/fast-content-creator.less</include>
-                                <include>ecms/portlets/presentation/ecms-presentation-categorynavigationportlet.less</include>
-                                <include>ecms/portlets/presentation/ecms-presentation-contentlistviewerportlet.less</include>
-                                <include>ecms/portlets/presentation/ecms-presentation-singlecontentviewer.less</include>
-                                <include>calendar/calendar.less</include>
                                 <include>social/skin/social.less</include>
                                 <include>social/juzu-portlet/notification.less</include>
                                 <include>social/portlets/uiAllPeoplePortlet/Style.less</include>
@@ -170,9 +150,6 @@
                                 <include>social/portlets/uiSpacesAdministrationPortlet/Style.less</include>
                                 <include>social/portlets/uiSpaceTemplatesPortlet/Style.less</include>
                                 <include>social/portlets/uiSpaceInfosPortlet/Style.less</include>
-                                <include>forum/skin/forum-resources.less</include>
-                                <include>forum/portlets/forum/forum.less</include>
-                                <include>forum/portlets/poll/pollPortlet.less</include>
                                 <include>commons/skin/commons.less</include>
                                 <include>commons/skin/CkeditorSuggester/Style.less</include>
                                 <include>integration/skin/quicksearchpage.less</include>
