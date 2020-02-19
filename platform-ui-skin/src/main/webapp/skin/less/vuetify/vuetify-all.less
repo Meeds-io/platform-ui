@@ -55,6 +55,26 @@
       box-sizing: border-box;
     }
 
+    .v-divider--vertical {
+      vertical-align: middle;
+    }
+
+    .v-select__selections {
+      max-width: 80%;
+    }
+
+    .layout {
+      max-width: 100%;
+    }
+
+    .v-messages {
+      min-height: auto;
+    }
+
+    .v-divider {
+      margin: 0;
+    }
+
     .v-text-field {
       padding-top: 22px;
     }
@@ -63,16 +83,48 @@
       display: contents;
     }
 
-    textarea {
-      border: Solid 2px #e1e8ee !important;
-    }
-
     .v-input.text-center input {
       text-align: center;
     }
 
     .uiPopup .popupHeader {
       margin-bottom: 22px;
+    }
+
+    label {
+      margin-bottom: 0;
+    }
+
+    textarea {
+      margin-bottom: 0;
+    }
+
+    code {
+      padding: 0;
+      max-width: 100%;
+      white-space: normal;
+    }
+
+    .v-input input {
+      margin-bottom: 0;
+      border: 0;
+      box-shadow: none;
+    }
+
+    .paragraph {
+      white-space: pre-line;
+    }
+
+    .v-dialog {
+      transform: translate(0);
+      max-width: 100vw !important;
+      max-height: 100vh;
+      margin: 0;
+    }
+
+    .v-dialog.with-overflow {
+      overflow-y: auto;
+      overflow-x: hidden;
     }
   }
 }
