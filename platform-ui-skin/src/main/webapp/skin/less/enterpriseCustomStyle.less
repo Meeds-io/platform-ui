@@ -1,0 +1,4526 @@
+//put your custom style classes here
+@import "variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "mixins.less";
+
+/*trees*/
+.uiTrees {
+  .expandIcon:before {
+    content: "\f383";
+    font-family: IONIC-FONT;
+    font-size: 14px;
+    border-radius: 2px;
+    text-align: center;
+    border: 2px solid @baseGreyColor;
+  }
+
+  .collapseIcon:before {
+    content: "\f2c7";
+    font-family: IONIC-FONT;
+    font-size: 14px;
+    border-radius: 2px;
+    text-align: center;
+    border: 2px solid @baseGreyColor;
+  }
+}
+.uiTreeExplorer {
+  .emptyIcon:before {
+    content: "\f371";
+    font-family: IONIC-FONT;
+    color: @uiTreeEmptyColor;
+    font-size: 14px;
+    border-radius: 2px;
+    border: 2px solid @baseGreyColor;
+  }
+  .expandIcon:before {
+    content: "\f2c7";
+    font-family: IONIC-FONT;
+    font-size: 14px;
+    border-radius: 2px;
+    border: 2px solid @baseGreyColor;
+  }
+  .collapseIcon:before {
+    content: "\f2f4";
+    font-family: IONIC-FONT;
+    font-size: 14px;
+    border-radius: 2px;
+    text-align: center;
+    border: 2px solid @baseGreyColor;
+  }
+}
+
+.uiTrees .treeContainer .node .uiIconNode i {
+  width: 17px;
+  height: 17px;
+}
+
+.uiTrees .treeContainer .node {
+  padding-top: 13px;
+}
+
+/*=====================================*/
+/*                 ICONS               */
+.uiIconStarBlank:before {
+  font-family: IONIC-FONT;
+  content: "\f3ae";
+}
+.uiIconMyWiki:before, .uiIconWikiMyWiki:before {
+  content: "\f3e7";
+  font-family: IONIC-FONT;
+}
+.uiIconWiki:before, .uiIconWikiWiki:before {
+  font-family: IONIC-FONT;
+  content: "\f3e7";
+  font-size: 16px;
+}
+.uiIconHome:before {
+  content: "\f447";
+  font-family: IONIC-FONT;
+  font-size: 16px;
+}
+.uiIconPLFDashboard:before {
+  content: "\f3c2";
+  font-family: IONIC-FONT;
+}
+.uiIconPLFEventTask:before {
+  /*content: "\e6d0";*/
+  font-family: IONIC-FONT;
+  content: "\f117";
+}
+.uiIconPLFLogout:before {
+  content: "\f29f";
+  font-family: IONIC-FONT;
+}
+.uiIconPLFActivityStream:before {
+  font-family: IONIC-FONT;
+  content: "\f2b5";
+}
+.uiIconPLFProfile:before {
+  font-family: IONIC-FONT;
+  content: "\f391";
+}
+.uiIconPoll:before {
+  font-family: IONIC-FONT;
+  content: "\f2b5";
+}
+.uiIconFlags:before {
+  content: "\f279";
+  font-family: IONIC-FONT;
+}
+.uiIconForward:before {
+  font-family: IONIC-FONT;
+  content: "\f21d";
+}
+.uiIconReply:before {
+  font-family: IONIC-FONT;
+  content: "\f21e";
+}
+.uiIconThumbUp:before {
+  font-family: IONIC-FONT;
+  content: "\f251";
+  color: @likeButtonColor;
+}
+.uiIconComment:before {
+  font-family: IONIC-FONT;
+  content: "\f11e";
+}
+.uiIconDownload:before {
+  font-family: IONIC-FONT;
+  content: "\f2dd";
+}
+.uiIconSetting:before {
+  font-family: IONIC-FONT;
+  content: "\f4a6";
+}
+.uiIconUpload:before {
+  font-family: IONIC-FONT;
+  content: "\f255";
+}
+.uiIconLink:before, .uiIconPermalink:before, .uiIconLinkr:before {
+  font-family: IONIC-FONT;
+  content: "\f1fe";
+}
+.uiIconRefresh:before {
+  font-family: IONIC-FONT;
+  content: "\f21c";
+  color: @uiIconRefreshColor;
+}
+.uiIconTrash:before {
+  font-family: IONIC-FONT;
+  content: "\f252";
+}
+.uiIconExt-downloads:before {
+  content: "\f407";
+  font-family: IONIC-FONT;
+}
+.uiIconForum:before,
+.uiIconUIForms:before {
+  content: "\f3f9"!important;
+  font-family: IONIC-FONT;
+  font-size: 16px;
+}
+.uiIconExt-discover:before,.uiIconPlay:before{content: "\f4cc";font-family: IONIC-FONT;}
+.uiIconExt-documentation:before ,.useful-icon-Doc:before{content: "\f3e9";font-family: IONIC-FONT;}
+.uiIconExt-add-ons:before ,.useful-icon-addon:before{content: "\f228";font-family: IONIC-FONT;}
+.uiIconExt-feature-requests:before ,.uiIconIdeas:before{content: "\f451";font-family: IONIC-FONT;}
+.uiIconArrowDownMini:before ,.uiIconMiniArrowDown:before{
+  font-family: IONIC-FONT;
+  content: "\f123";
+  color: #5b6272;
+}
+.uiIconExt-tasks:before {
+  /*content: "\e690";*/
+  font-family: IONIC-FONT;
+  content: "\f373";
+  font-size: 16px;
+}
+.uiNotifChatIcon:before {
+  font-family: IONIC-FONT;
+  content: "\f11a"!important;
+}
+.uiIconPLF24x24Setting:before,
+.uiIconPLF24x24Setup:before {
+  /*content: "\e78b";*/
+  font-family: IONIC-FONT;
+  content: "\f13e";
+}
+
+.uiIconPLF24x24Search:before {
+  /*content: "\e74a";*/
+  font-family: IONIC-FONT;
+  content: "\f4a4";
+}
+
+.uiIconPLF24x24Help:before {
+  /*content: "\e76b";*/
+  font-family: IONIC-FONT;
+  content: "\f142";
+}
+
+.uiIconPLF24x24Bell:before {
+  /*content: "\e73a";*/
+  font-family: IONIC-FONT;
+  content: "\f39b";
+}
+
+.uiIconPLFMyConnection:before {
+  content: "\f212";
+  font-family: IONIC-FONT;
+  .navItem &{content: "\f47b";font-size: 16px;}
+  .navItemSelected &{content: "\f47b";font-size: 16px;}
+}
+
+.uiIconPLFCalendar:before {
+  content: "\f3f4";
+  font-family: IONIC-FONT;
+  .navItem &{content: "\f3f3";font-size: 16px;}
+  .navItemSelected &{content: "\f3f3";font-size: 16px;}
+}
+
+.uiIconPLFDocuments:before {
+  content: "\f435";
+  font-size: 16px;
+  font-family: IONIC-FONT;
+  .navItem &{content: "\f434";font-size: 16px;}
+  .navItemSelected &{content: "\f434";}
+}
+
+
+.uiIconPLFNotifications:before {
+  font-family: IONIC-FONT;
+  content: "\f39b";
+}
+.uiIconPLF24x24Add:before {
+  /*content: "\e739";*/
+  font-family: IONIC-FONT;
+  content: "\f48b";
+}
+
+.uiIconPLF24x24Edit:before {
+  font-family: IONIC-FONT;
+  content: "\f2ad";
+}
+.uiIconPrevArrow:before {
+  content: "\f3d2";
+  font-family: IONIC-FONT;
+  color: black;
+  font-size: 14px;
+}
+.uiIconNextArrow:before {
+  content: "\f3d3";
+  font-family: IONIC-FONT;
+  color: black;
+  font-size: 14px;
+}
+.uiIconSortDown:before {
+  content: "\f35d";
+  font-family: IONIC-FONT;
+}
+.uiIconSortUp:before {
+  content: "\f366";
+  font-family: IONIC-FONT;
+}
+.uiIconChatSmile:before {
+  content: "\f38e";
+  font-family: IONIC-FONT;
+}
+.alert-success .uiIconSuccess:before {
+  content: "\f122";
+  font-family: IONIC-FONT;
+  color: @alertSuccessColor;
+}
+.alert-error .uiIconError:before {
+  content: "\f12a";
+  font-family: IONIC-FONT;
+  color: @alertErrorColor;
+}
+.alert-info .uiIconInfo:before {
+  content: "\f14a";
+  font-family: IONIC-FONT;
+  color: @alertInfoColor;
+}
+.alert-warning .uiIconWarning:before {
+  content: "\f100";
+  font-family: IONIC-FONT;
+  color: @alertWarningIconColor;
+}
+/*             end ICONS               */
+/*=====================================*/
+
+.badgeDefault {
+  &.badgePrimary {
+    background-color: @badgePrimaryColor;
+    .border-radius(50%);
+  }
+}
+.versionFile {
+  &.badgeDefault {
+    &.badgePrimary {
+      background-color: @primaryColor;
+    }
+  }
+}
+
+/*=====================================*/
+/*            TOOLBAR                  */
+
+.UIToolbarContainer {
+  left: 250px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.16), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+
+  &.UIToolbarContainerLight [class^="uiIconPLF24x24"] {
+    color: @primaryColor;
+  }
+  &.UIToolbarContainerLight a:hover [class^="uiIconPLF24x24"],
+  &.UIToolbarContainerLight [class^="uiIconPLF24x24"]:hover {
+    color: @toolbarLightIconHoverColor;
+  }
+  [class^="uiIconPLF24x24"]{
+    color: @toolbarDarkLinkColor;
+  }
+  a:hover [class^="uiIconPLF24x24"],[class^="uiIconPLF24x24"]:hover {
+    color: @toolbarDarkLinkHoverColor
+  }
+  .badgeDefault {
+    &.badgePrimary {
+      background-color: @badgePrimaryColor;
+    }
+    &.mini {
+      padding: @paddingBadgeDefault-mini;
+      width: @widthBadgeDefault-mini;
+      height: @heightBadgeDefault-mini;
+      text-align: @textAlignBadgeDefault-mini;
+      border-radius: @borderRadiusBadgeDefault-mini;
+      line-height: @lineHeightBadgeDefault-mini;
+    }
+  }
+  .NormalContainerBlock .ToolbarContainer {
+    height: 57px;
+    .TRContainer {
+      height: 57px;
+      .SearchPortletTDContainer .uiSearchPlatformToolBarPortlet {
+        > a {
+          .uiIconCloseSearchBox:before {
+            /*content: "\e75e";*/
+            font-family: IONIC-FONT;
+            content: "\f129";
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+  .uiDropdownWithIcon {
+    > a {
+      line-height: 58px;
+      height: 58px;
+      font-size: 14px;
+      font-weight: bold;
+      color: @toolbarContainerLightColor;
+    }
+    > .dropdown-menu {
+      margin-top: 0;
+    }
+  }
+  .uiDropdownWithIcon.pull-left {
+    > .dropdown-menu {
+      margin-top: 10px;
+      &:before {
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid @dropdownBorder;
+        top: -10px;
+        left: 10px;
+        z-index: 1;
+      }
+      &:after {
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-bottom: 7px solid @dropdownBackground;
+      }
+    }
+  }
+  .uiDropdownWithIcon.pull-right {
+    > .dropdown-menu {
+        margin-top: 12px;
+      &:before {
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid @dropdownBorder;
+        top: -10px;
+        z-index: 1;
+      }
+    }
+  }
+  .uiSearchPlatformToolBarPortlet {
+    > input.loadding[type=text] {
+      + a {
+        &:after {
+          top:18px;
+        }
+      }
+    }
+  }
+  #HomeLink {
+    height: 47px;
+    display: flex;
+    align-items: center;
+    .HomeLink {
+      position: relative;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      > img {
+        vertical-align: baseline;
+        max-height: 47px;
+        @media (max-width: 767px) {
+          max-width: ~"calc(100vw - 435px)";
+        }
+        @media (max-width: 480px) {
+          max-width: ~"calc(100vw - 232px)";
+        }
+      }
+    }
+  }
+  .uiCreateToolBarPortlet {
+    .uiQuickAddEvent {
+      .form-horizontal .title input[type="text"], .selectboxMedium .uiSelectbox .selectbox {
+        width: 213px;
+      }
+      .selectboxMini .uiSelectbox .selectbox {
+        width: 105px;
+      }
+    }
+    .uiCreateForm .control-label {
+      padding-top: 10px;
+    }
+    .uiDropdownWithIcon .dropdown-toggle .uiIconMiniArrowDown {
+      color: @darkGrey;
+    }
+  }
+  .CreatePortletPopUPContainer .uiDocumentSelector {
+    .uiIconEcmsAddFolder {
+      font-size: 12px;
+      color: #999;
+    }
+    .actionIcon:hover {
+      background-color: #f9f9f9;
+      background-image: linear-gradient(to bottom, @baseBackground, @primaryBackground);
+      box-shadow: 0 1px 2px 0px rgba(255, 255, 255, 0);
+      .uiIconEcmsAddFolder {
+        color: #2f5e92;
+      }
+    }
+  }
+}
+.UIToolbarContainerDark {
+  .NormalContainerBlock .ToolbarContainer {
+    box-shadow: none;
+  }
+
+  .uiDropdownWithIcon.dropdown, .uiHelpPLFToolbarPortlet {
+    line-height: 58px;
+    height: 58px;
+    background: none;
+    > a:hover, &.open > a {
+      border-bottom: solid 3px @toolbarDarkLinkHoverColor;
+      box-sizing: border-box;
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .UIToolbarContainer .uiDropdownWithIcon > a {
+    font-size: 0;
+    display: block;
+  }
+}
+.UIToolbarContainerDark .uiDropdownWithIcon > a {
+  color: @toolbarContainerDarkColor;
+}
+
+.UIToolbarContainerLight {
+  .NormalContainerBlock .ToolbarContainer {
+    box-shadow: none;
+  }
+
+  .uiDropdownWithIcon {
+    background: none;
+    > a:hover, &.open > a {
+      background: none;
+      border-bottom: solid 3px @toolbarLightIconHoverColor;
+      box-sizing: border-box;
+    }
+  }
+}
+@media (max-width: 480px) {
+  #UICreateList.dropdown-menu {
+    top: 48px;
+  }
+  .UIToolbarContainer .uiUserToolBarPortlet.uiDropdownWithIcon > .dropdown-menu {
+    top: 60px!important;
+  }
+  .chatStatusPortlet .dropdown-menu {
+    margin-top: 2px!important;
+  }
+}
+.uiNotificationPopoverToolbarPortlet {
+  .badgeNotification {
+    top: -8px;
+    right: -10px;
+  }
+  .actionLink {
+    padding: 12px 0;
+    text-align: center;
+    background: @toolbarLightIconColor;
+    font-family: "RobotoMedium";
+    font-size: 13px;
+    > div {
+      > a.btn {
+        background: none;
+        border: 0;
+        padding: 0;
+        box-shadow: none;
+        color: @lightWhite;
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    .dropdown-menu {
+      width: 400px;
+    } 
+  }
+  .displayItems {
+    max-width: 100%;
+    > li {
+      .avatarXSmall {
+        float: left;
+      }
+      .media {
+        padding-right: 15px;
+      }
+      &:hover {
+        background: @dropdownLinkBackgroundHover;
+        .uiIconClose:before {
+          color: @lightWhite;
+        }
+        .confirm .btn-primary {
+          border: 1px solid @lightWhite;
+        }
+      }
+    }
+  }
+  &.mobile-mode .dropdown-menu {
+    width: auto;
+  }
+}
+/*              end Toolbar            */
+/*=====================================*/
+
+/*=====================================*/
+/*          pagination                 */
+.uiPageIterator ul > li > a,
+.uiPageIterator ul > li > a:hover,
+.uiPageIterator ul > li.disabled > a,
+.uiPageIterator ul > li.disabled > a:hover {
+  color: @uiPageIteratorColor;
+  margin-right: 4px;
+  background-image: none;
+  .box-shadow(none);
+  border: 2px solid @baseGreyColor;
+  background-position: 0 -30px;
+}
+.uiPageIterator ul > .active > a,
+.uiPageIterator ul > .active > a:hover,
+.uiPageIterator ul > .active > span,
+.uiPageIterator ul > .active > span:hover {
+  color: @uiPageIteratorColor;
+  background-image: none;
+  .box-shadow(none);
+  border: 2px solid @primaryColor;
+  background-position: 0 -30px;
+}
+
+.uiPageIterator p {
+  margin: 0 10px 0 0;
+  line-height: 40px;
+}
+.uiIconPrevArrow:before {
+  content: "\f124";
+  font-family: IONIC-FONT;
+  margin-left: -5px;
+}
+.uiIconNextArrow:before {
+  content: "\f125";
+  font-family: IONIC-FONT;
+  margin-left: -5px;
+}
+/*            end pagination           */
+/*=====================================*/
+
+/*=====================================*/
+/*          breadcrumb                 */
+.breadcrumb [class^="uiIcon"] {
+  color: #505154;
+}
+
+/*            end breadcrumb           */
+/*=====================================*/
+
+/* Enterprise skin-default btn */
+.btn, .uiActionWithLabel:not(.uiDropdown) {
+  font-family: @baseFontFamily;
+  font-size: 15px;
+  padding: 9px 20px;
+  color: @btnColor;
+  border: 1px solid @baseGreyColor;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+.btn:active,
+.btn:focus,
+.uiActionWithLabel:active,
+.uiActionWithLabel:focus {
+  color: @btnColor;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.11);
+}
+
+.btn.disabled,
+.btn[disabled],
+.uiActionWithLabel.disabled {
+  border: solid 2px @disableBackground;
+  color: @btnDisableColor;
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  body .btn {
+    padding: 9px 20px;
+    font-size: 15px;
+  }
+}
+
+/* Enterprise skin-btn primary */
+.btn.btn-primary,
+.btn-primary {
+  font-family: @baseFontFamily;
+  font-weight: normal;
+  color: @btnPrimaryColor;
+  border: none;
+  box-shadow: none;
+  padding: 10px 20px;
+  &[disabled], &.disabled {
+    border-color: @btnPrimaryDisableBackground;
+    color: @lightWhite;
+    &:hover {
+      background: @btnPrimaryDisableBackground; 
+    }
+  }
+}
+
+/* Enterprise skin-btn small */
+.btn.btn-small,
+.btn.btn-small.active,
+.btn-group .btn.dropdown-toggle.btn-small {
+  font-size: 12px;
+  padding: 2px 10px;
+}
+
+/* Enterprise skin-btn mini */
+
+.btn.btn-mini,
+.btn-group .btn.dropdown-toggle.btn-mini {
+  font-size: 11px;
+  padding: 0 10px;
+}
+
+/* Enterprise skin-btn group */
+.btn-group > .btn {
+  border: 1px solid @baseGreyColor;
+  box-shadow: none;
+  padding: 9px 20px;
+}
+.btn-group > .btn:hover,
+.btn-group > .btn:focus,
+.btn-group > .btn:active,
+.btn-group > .btn.active {
+  border: 1px solid @baseGreyColor;
+  z-index: 0;
+}
+.btn-group > .btn:focus,
+.btn-group > .btn.active{
+  background-color: @primaryColor;
+  border: solid 1px @primaryColor;
+  color: @btnGroupColor;
+}
+#documentPreviewContent {
+  .btn-group > .btn:focus,
+  .btn-group > .btn.active {
+    background-color: inherit;
+  }
+}
+.btn-group > .btn:not(.dropdown-toggle):focus a,
+.btn-group > .btn:not(.dropdown-toggle).active a{
+  color: @btnGroupColor;
+}
+.btn-group > .btn > i, .btn-group > .btn:hover > i, .btn-group > .btn:focus > i {
+  color: inherit;
+}
+.uiActionBar .alignBtnGroup .btn.active a {
+  color: @uiActionBarBtnColor;
+}
+/* Enterprise skin-btn default dropdown */
+.uiActionWithLabel:not(.uiDropdown) {
+  padding: 8px 10px;
+  cursor: pointer;
+  display: inline-block;
+  &:hover {
+    color: @btnColor;
+    border: 1px solid @baseGreyColor;
+    background: @baseGreyColor;
+    box-shadow: none;
+    &:focus, &:active {
+      border: 1px solid @baseGreyColor;
+      background: @baseGreyColor;
+      box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.11);
+    }
+  }
+}
+.uiActionWithLabel.uiDropdown {
+  background: none;
+}
+/* Enterprise skin-btn primary dropdown */
+.btn.btn-primary.dropdown-toggle {
+  color: @btnPrimaryColor;
+  background-color: @btnPrimaryDropdownBackground;
+  box-shadow: none;
+}
+/* Enterprise skin-btn group dropdown */
+.btn-group .btn.dropdown-toggle {
+  color: @darkGrey;
+  background-color: @lightWhite;
+  border-width: 1px;
+  padding: 8px 15px;
+  &:focus {border: 2px solid @baseGreyColor;}
+  .uiIconArrowDownMini, .uiIconMiniArrowDown {
+    top: -1px;
+    &:before {
+      color: inherit;
+      margin-left: 5px;
+    }
+  }
+}
+.btn-group.open .dropdown-toggle {
+  box-shadow: none;
+}
+
+/* Enterprise skin-btn primary group dropdown */
+.btn-group .btn.btn-primary, .btn-group .btn.btn-primary.dropdown-toggle {
+  color: @btnPrimaryColor;
+  background: @btnPrimaryDropdownBackground;
+  border-color: @btnPrimaryDropdownBackground;
+}
+
+/* Enterprise skin-btn large */
+.btn.btn-large,
+.btn.dropdown-toggle.btn-large.btn-primary,
+.btn.dropdown-toggle.btn-large {
+  padding: 12px 20px;
+}
+
+/* Enterprise skin - uiaction buttons */
+.uiAction .btn:first-child {
+  border: none;
+  padding: 10px 20px;
+  &:hover {
+    background-color: @btnPrimaryHoverBackgroundColor;
+    background-position: 0 -45px;
+  }
+}
+
+/* Enterprise skin-Form*/
+
+//input
+.input-append, .input-prepend {
+  .add-on {
+    border: 2px solid @borderColor;
+    background: none;
+    box-sizing: border-box;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+  }
+}
+.input-append {
+  .btn {
+    color: @inputAppendColor;
+    margin-left: -8px;
+    border: 2px solid @primaryColor;
+    position: relative;
+    z-index: 2;
+  }
+  .add-on {
+    border-left-width: 0;
+  }
+  input[type="text"]{
+    border-right-width: 1px;
+    border-radius: 5px 0 0 5px;
+  }
+}
+.input-prepend {
+  .add-on {
+    border-right-width: 0;
+  }
+  input[type="text"]{
+    border-left-width: 1px;
+    border-radius: 0 5px 5px 0;
+  }
+}
+
+input[type="text"],
+input[type="password"],
+input[disabled],
+.form-horizontal select,
+.uiPassword input[type="password"],
+.selectize-control .selectize-input,
+.uiSocApplication .selectize-control .selectize-input,
+.uiSearch .quickSet .uiSelectbox .selectbox,
+.selectboxMedium .uiSelectbox .selectbox,
+.UIToolbarContainer .uiCreateToolBarPortlet .uiQuickAddEvent .selectboxMini .uiSelectbox .selectbox,
+.UIToolbarContainer .uiCreateToolBarPortlet .uiQuickAddEvent .selectboxMedium .uiSelectbox .selectbox {
+  font-size: 15px;
+  min-height: 40px;
+  padding: 0 10px;
+  border: Solid 2px @baseGreyColor;
+  border-radius: 5px;
+  box-shadow: none;
+  max-height: 115px;
+  text-overflow: ellipsis;
+}
+.selectize-control .selectize-input.focus {
+  border-color: @inputFocusBorder;
+  .box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 5px @{inputFocusShadow}");
+}
+.selectize-control .selectize-input input:-ms-input-placeholder {
+  color: @textLightColor;
+}
+.uiTableProfileUserSearchInput .selectize-control .selectize-input {
+  text-overflow: clip;
+}
+.form-horizontal select,
+.uiSearch .quickSet .uiSelectbox .selectbox,
+.selectboxMedium .uiSelectbox .selectbox,
+.UIToolbarContainer .uiCreateToolBarPortlet .uiQuickAddEvent .selectboxMini .uiSelectbox .selectbox,
+.UIToolbarContainer .uiCreateToolBarPortlet .uiQuickAddEvent .selectboxMedium .uiSelectbox .selectbox {
+  padding: 0 0 0 10px;
+}
+@media(max-width: 768px) {
+  .uiSpaceSearch {
+    .selectize-control, .uiIconSearch {
+      margin-top: 10px;
+    }
+  }
+}
+
+input[type="text"]:active,
+input[disabled]:active,
+.uiSearchInput input[type="text"]:active,
+.uiPassword input[type="password"]:active,
+textarea:active,
+select:active {
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.11);
+}
+
+//error
+.control-group.error input,
+.control-group.error select,
+.control-group.error textarea {
+  background-color : @baseBackground;
+  color: @controlGroupErrorColor;
+  border: Solid 2px @controlGroupErrorColor;
+  height: 39px;
+  border-radius: 4px;
+}
+.form-horizontal .control-group .controls .uiRadio {
+  margin: 8px 25px 0px 0;
+}
+
+//success
+.control-group.success input,
+.control-group.success select,
+.control-group.success textarea {
+  background-color: @baseBackground;
+  color: @controlGroupSuccessColor;
+  border : Solid 2px @controlGroupSuccessColor;
+  height: 39px;
+  border-radius: 4px;
+}
+
+//select option
+select, textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"], input[type="month"],
+input[type="time"], input[type="week"],
+input[type="number"], input[type="email"],
+input[type="url"], input[type="search"],
+input[type="tel"], input[type="color"],
+.uneditable-input {
+  box-shadow: none;
+}
+
+select option:checked {
+  background-color: @primaryColor;
+  color: @lightWhite;
+}
+option:checked:active {
+  background: linear-gradient(@primaryColor, @primaryColor);
+  color: @selectOptionColor;
+}
+option:checked:hover {
+  background: linear-gradient(@primaryColor, @primaryColor);
+  color: @selectOptionColor;
+}
+
+//disable
+input[disabled],
+select[disabled],
+textarea[disabled] {
+  background-color: @disableBackground;
+  height: 39px;
+  border-radius: 4px;
+}
+
+//checkbox //radiobox
+.uiCheckbox input[type="checkbox"]:checked,
+.uiCheckbox input[type="checkbox"]:not(:checked),
+.uiRadio input[type="radio"]:checked,
+.uiRadio input[type="radio"]:not(:checked) {
+  box-shadow: none;
+  width: 24px;
+  height: 24px;
+}
+
+.uiCheckbox input[type="checkbox"]:checked + span:after {
+  width: 4px;
+  height: 2px;
+  box-shadow: none;
+  left: 5px;
+  top: 9px;
+}
+.uiCheckbox input[type="checkbox"]:disabled + span:before {
+  background: @uiCheckboxDisabledBackground;
+  opacity: .3;
+}
+.uiCheckbox input[type="checkbox"]:disabled + span:after {
+  border-bottom: 2px solid @uiCheckboxCheckedBorder;
+  border-left: 2px solid @uiCheckboxCheckedBorder;
+}
+.uiCheckbox input[type="checkbox"] + span:before {
+  background: @uiCheckboxBackground;
+  box-shadow: none;
+  width: 16px;
+  height: 16px;
+}
+
+.uiRadio input[type="radio"]:checked + span:after {
+  width: 6px;
+  height: 6px;
+  box-shadow: none;
+  left: 4px;
+  top: 7px;
+  background: @primaryColor;
+}
+
+.uiRadio input[type="radio"] + span:before {
+  box-shadow: none;
+  background: none;
+  border: 2px solid @primaryColor;
+  box-sizing: border-box;
+  width: 14px;
+  height: 14px;
+  top: 3px;
+}
+.uiRadio input[type="radio"]:checked + span:before {
+  background: none;
+}
+
+//UiSwitchBtn On/Off
+label.switchBtnLabelOn,
+label.switchBtnLabelOff {
+  width: 55px;
+  height: 15px;
+  font-size: 11px;
+  box-shadow: none;
+  span {
+    line-height: 1;
+  }
+}
+
+//switchBtnHandle
+.switchBtnHandle {
+  width: 16px;
+  height: 16px;
+  top: 0px;
+}
+
+//text area
+textarea {
+  border: Solid 2px @baseGreyColor;
+  box-shadow: none;
+}
+
+//label
+.form-horizontal .control-label {
+  padding-top: 8px;
+}
+
+/* Enterprise skin-heading */
+h1, h2, h3, h4, h5 {
+  color: @headingColor;
+  font-family: @baseFontFamily;
+}
+h1 {
+  font-weight: 800;
+}
+h3, h4, h5 {
+  font-weight: normal;
+}
+
+/* Enterprise skin-page title */
+h4.titleWithBorder {
+  color: @headingColor;
+  font-size: 24px;
+}
+
+/* Enterprise skin-hero-unit */
+.hero-unit {
+  h1 {
+    font-weight: bold;
+    font-size: 48px;
+  }
+  p {
+    color: @heroUnitColor;
+  }
+}
+
+/* Enterprise skin-paragraph and comments */
+p, .postContent, .uiWikiContentDisplay{
+  font-size: 14px;
+}
+
+.contentComment{
+	p {
+		margin: 0;
+	}
+}
+
+/* Enterprise skin-Lead body copy */
+.lead {
+  font-size: 18px;
+  font-family: @baseFontFamily;
+}
+
+/* Enterprise skin-jumbotron */
+.jumbotron {
+  h1 {
+    color: @jumbotronColor;
+  }
+}
+
+/* Enterprise skin-popover */
+.popover-content {
+  padding: 20px;
+}
+.popover {
+  border-radius: 7px;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+  &.right .arrow {
+    left: -10px;
+  }
+  &.left .arrow {
+    right: -10px;
+  }
+}
+
+/* Enterprise skin-mention */
+.uiMention{
+  a, a:hover, a:focus {
+    color: @mentionColor;
+  }
+}
+
+/* Enterprise skin-badge */
+.badgeDefault {
+  .box-shadow(none);
+}
+
+/* Enterprise skin-Calendar */
+.uiCalendarComponent{
+  -webkit-box-shadow: 1px 1px 3px 0px rgba(255,255,255,0.15);
+  -moz-box-shadow: 1px 1px 3px 0px rgba(255,255,255,0.15);
+  box-shadow: 1px 1px 3px 0px rgba(255,255,255,0.15);
+  table.weekList{
+    margin: 0px;
+    color: @calendarWeekListColor;
+    font-size: 12px;
+    border-top: 1px solid @baseBackground;
+    padding: 7px 9px;
+    td font {
+      color: @calendarWeekListColor;
+    }
+  }
+}
+
+.uiCalendarComponent table tr td {
+  line-height: 27px;
+}
+
+.uiCalendarComponent table.weekDays tr td{
+  a {font-size: 12px;}
+  .today {font-weight: bold;}
+  .selected {border: none;}
+}
+
+.uiCalendarComponent h5.title {
+  position: static;
+  font-size: 12px;
+}
+.uiCalendarComponent h5.title span {
+  font-size: 12px;
+  display: inline-block;
+}
+
+#UIMiniCalendar .uiMiniCalendar {
+  -webkit-box-shadow: 1px 1px 3px 0px rgba(255,255,255,0.15);
+  -moz-box-shadow: 1px 1px 3px 0px rgba(255,255,255,0.15);
+  box-shadow: 1px 1px 3px 0px rgba(255,255,255,0.15);
+  table.weekList {
+    margin: 0px;
+    color: @calendarWeekListColor;
+    font-size: 12px;
+  }
+}
+
+#UIMiniCalendar .uiMiniCalendar table tr td {
+  line-height: 27px;
+}
+
+#UIMiniCalendar .uiMiniCalendar table.weekDays tr.currentWeek td.selected, .uiCalendarComponent table.weekDays tr td .selected {
+  border-radius: 50%;
+  color: @calendarWeekListColor;
+  font-size: 12px;
+  border-color: @primaryColor;
+}
+
+#UIMiniCalendar .uiMiniCalendar table.weekDays tr.currentWeek td:hover {
+  border-radius: 50%;
+  color: @calendarColor;
+  font-size: 12px;
+  background: @primaryBackground;
+}
+
+#UIMiniCalendar .uiMiniCalendar h5.title {
+  position: static;
+  color: @calendarTitleColor;
+  font-size: 12px;
+}
+
+#UIMiniCalendar .uiMiniCalendar h5.title span a {
+  color: @calendarTitleColor;
+  font-size: 12px;
+}
+
+#UIMiniCalendar .uiMiniCalendar table.weekList {
+  padding: 7px 9px;
+  border-top: 1px solid @lightWhite;
+}
+#UIMiniCalendar .uiMiniCalendar table.weekDays tr td.today:not(.selected), .uiCalendarComponent table.weekDays tr td a.today:not(.selected) {
+  background-color: @uiMiniCalendarTodayBackground;
+  color: @calendarColor;
+  border: 2px solid @uiMiniCalendarTodayBackground;
+  border-radius: 50%;
+  font-size: 12px;
+}
+#UIMiniCalendar .uiMiniCalendar table.weekDays tr.currentWeek td:hover {
+  border: none;
+  font-size: 12px;
+}
+
+#UIMiniCalendar .uiMiniCalendar table.weekDays tr {
+  font-size: 12px;
+}
+
+#UIMiniCalendar .uiMiniCalendar .actionIconSmall:hover {
+  Background-color: @primaryColor;
+  font-size: 12px;
+}
+
+.uiIconArrowLeftMini:before, .uiIconMiniArrowLeft:before {
+  content: "\f124";
+  color: @secondaryColor;
+  font-family: IONIC-FONT;
+}
+.uiIconArrowRightMini:before, .uiIconMiniArrowRight:before {
+  content: "\f125";
+  color: @secondaryColor;
+  font-family: IONIC-FONT;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.actionIcon:hover, .actionIconSmall:hover {
+  background: none;
+}
+
+#UIMiniCalendar .uiMiniCalendar .actionIconSmall > .uiIconArrowLeftMini:before,
+#UIMiniCalendar .uiMiniCalendar .actionIconSmall > .uiIconMiniArrowLeft:before,
+#UIMiniCalendar .uiMiniCalendar .actionIconSmall > .uiIconArrowRightMini:before,
+#UIMiniCalendar .uiMiniCalendar .actionIconSmall > .uiIconMiniArrowRight:before {
+  color: #ffffff;
+}
+
+#UIMiniCalendar .uiMiniCalendar table.weekDays tr td,
+.uiCalendarComponent table.weekDays tr td a,
+.uiCalendarComponent table.weekDays tr.currentWeek tr td a {
+  border: 2px solid @lightWhite;
+}
+
+#UIMiniCalendar .uiMiniCalendar table.weekDays tr td:hover,
+#UIMiniCalendar .uiMiniCalendar table.weekDays tr.currentWeek td:hover,
+.uiCalendarComponent table.weekDays tr td a:hover,
+.uiCalendarComponent table.weekDays tr.currentWeek td a:hover{
+  cursor: pointer;
+  border: 2px solid @primaryColor;
+  background: @baseBackground;
+  color: @primaryColor;
+  font-weight: normal;
+  border-radius: 50%;
+}
+
+.calendarCheckboxBlock .checkbox {
+  top: -7px;
+}
+
+.UICalendarPortlet {
+  .drawer .content {
+    .iphoneCheckbox {
+      margin-top: 10px;
+    }
+
+    .dropdown {
+      height: 40px;
+      line-height: 40px;
+      font-size: 15px;
+      border: Solid 2px #e1e8ee;
+      border-radius: 5px;
+      box-shadow: none;
+      .caret {
+        margin-top: 18px;
+      }
+    }
+
+    .allday .uiCheckbox {
+      line-height: 25px;
+    }
+
+    .allday .uiCheckbox > span {
+      text-indent: 21px;
+    }
+
+    .calDate {
+      input.date {
+        width: 97px;
+      }
+    }
+
+    .drawer .findtime-popup {
+      min-height: 318px;
+    }
+
+    .uiRepeatEventForm {
+      .checkBoxArea {
+        .textLabel {
+          line-height: 40px;
+        }
+      }
+    }
+
+  }
+}
+
+@media (max-width: 767px) {
+  .UICalendarPortlet {
+    .drawer.open .mobile-content {
+      top: 140px;
+
+      .uiRepeatEventForm .form-horizontal {
+        height: 300px;
+        overflow: auto;
+      }
+    }
+
+    .drawer.open .mobile-header .uiAction .btn:first-child {
+      padding: 5px 20px;
+      margin-top: 7px !important;
+    }
+  }
+}
+
+/* Enterprise skin-Message */
+.uiPopup .popupMessage > li span.errorIcon:before, .modal.uiPopup .popupMessage > li span.errorIcon:before {
+  content: "\f128";
+  color: #bc4343;
+  font-family: IONIC-FONT;
+
+}
+
+.uiPopup .popupMessage > li span.warningIcon:before, .modal.uiPopup .popupMessage > li span.warningIcon:before {
+  content: "\f100";
+  color: @darkYellow;
+  font-family: IONIC-FONT;
+}
+
+.uiPopup .popupMessage > li span.infoIcon:before, .modal.uiPopup .popupMessage > li span.infoIcon:before {
+  content: "\f149";
+  font-family: IONIC-FONT;
+}
+
+.uiPopup .popupMessage > li span[class*="Icon"]:before, .modal.uiPopup .popupMessage > li span[class*="Icon"]:before {
+  top: -1px;
+}
+
+/* Enterprise skin-Alert */
+.alert {
+  border-width: 2px;
+  box-shadow: none;
+  padding: 12px 15px;
+}
+
+.alert i {
+  margin-right: 15px;
+  top: 1px;
+  vertical-align: baseline;
+}
+.alert-warning {
+  color: @alertWarningColor;
+}
+.alert-success {
+  color: @alertSuccessColor;
+}
+.alert-info {
+  color: @alertInfoColor;
+}
+.alert-error {
+  color: @alertErrorColor;
+}
+
+/* Enterprise skin-Dropdown */
+.dropdown-menu li > a {
+  color: @dropdownMenuColor;
+  padding: 7px 20px;
+  border-radius : 3px;
+  &:hover > [class^="uiIcon"]:before, &:focus > [class^="uiIcon"]:before {
+    color: @lightWhite;
+  }
+}
+
+.dropdown-menu > li > a > [class^="uiIcon"], .uiUserNavigationPortlet .userNavigation .dropdown-menu > li > a > [class^="uiIcon"] {
+  font-size: 13px;
+}
+@media (max-width: 1024px) and (min-width: 481px) {
+  .dropdown-menu > li > a > [class^="uiIcon"], .uiUserNavigationPortlet .userNavigation .dropdown-menu > li > a > [class^="uiIcon"] {
+    font-size: 17px;
+  }
+}
+
+[class^="uiIconMini"][class*="Arrow"],
+[class^="uiIconMini"],
+.uiItemSelector .selectedItem [class^="uiIconArrow"] {
+  color: @itemSelectorColor;
+}
+#documentPreviewContent {
+  [class^="uiIconMini"][class*="Arrow"],
+  [class^="uiIconMini"],
+  .uiItemSelector .selectedItem [class^="uiIconArrow"] {
+    color: @primaryColor;
+  }
+}
+
+.LeftNavigationTDContainer .uiPopup [class^="uiIcon"] {
+  padding-left: 15px;
+  padding-right: 10px;
+}
+
+
+/* Enterprise skin-Progress bar*/
+.progress,
+.progress.progessStart {
+  height: 10px;
+  margin-top: 5px;
+  box-shadow: none;
+}
+.progressBarFrame .progress {
+  margin-top: 8px;
+}
+#UIMultiUpload {
+  .progress,
+  .progress.progessStart {
+    .bar {
+      background-image: none;
+    }
+    .textPercent {
+      color: #eaeaea;
+    }
+    height: 20px;
+    box-shadow: none;
+  }
+  .uiBox {
+    box-shadow  : 1px 1px 0px 2px rgba(16, 16, 16, 0.12);
+    border : 1px solid rgba(0, 0, 0, 0.13);
+    .title {
+        background-color: @secondarySkinColor;
+        color: @lightWhite;
+    }
+   }
+   .multiUploadAbortAll .action, .uiIconQuestion:before, .uiIconNoneClose:before {
+        color: @lightWhite;
+   }
+}
+
+/* Enterprise skin-uiMention */
+.uiMention {
+  background: @primaryColor;
+  border-radius: 3px;
+  border : none;
+  padding : 4px 10px;
+  .uiIconClose::before {
+    color: @secondarySkinColor;
+  }
+}
+.uiIconClose::before {
+  color: @primaryColor;
+  content: "\f12a";
+  font-family: 'IONIC-FONT';
+}
+
+/* Enterprise skin-Tree */
+.LeftNavigationTDContainer .uiPopup [class^="uiIcon"] {
+  padding-left: 15px;
+}
+
+.uiTrees .collapseIcon:before,
+.uiTreeExplorer .expandIcon:before {
+  content: "\f489";
+  font-family: IONIC-FONT;
+  font-size: 15px;
+  width: 20px;
+  height: 12px;
+  color: @treeIconColor;
+  text-align: center;
+  top: -3px;
+  padding-top: 2px;
+  padding-bottom: 6px;
+}
+
+.uiTrees .expandIcon:before,
+.uiTreeExplorer .collapseIcon:before {
+  content: "\f462";
+  font-family: IONIC-FONT;
+  font-size: 15px;
+  width: 20px;
+  height: 12px;
+  color: @treeIconColor;
+  text-align: center;
+  top: -3px;
+  padding-top: 2px;
+  padding-bottom: 6px;
+}
+
+.uiTreeExplorer .emptyIcon:before {
+  content: "";
+  font-size: 15px;
+  width: 20px;
+  height: 12px;
+  text-align: center;
+  top: -3px;
+  padding-top: 2px;
+  padding-bottom: 6px;
+}
+
+/* Enterprise skin-Tabs */
+  /** Normal Tabs **/
+.uiTabNormal .nav-tabs > .active > a,
+.uiTabNormal .nav-tabs > li:first-child > a,
+.uiTabNormal .nav-tabs > li:last-child > a,
+.uiTabNormal .nav-tabs > li.last > a{
+  border-radius: 0;
+}
+.uiTabNormal, .uiTabInPage, .uiTabGrayInPage {
+  .nav-tabs {
+    background: none;
+    border: none;
+    border-bottom: 2px solid @borderColor;
+    padding: 0;
+    > li {
+      margin-bottom: -2px;
+      > a, a:hover {
+        border: 2px solid @borderColor;
+        border-right-color: transparent;
+        /*border-bottom: none;*/
+      }
+      > a {
+        padding: 9px 15px;
+      }
+      &.active {
+        a, a:hover {
+          border-color: @primaryColor;
+          border-width: 2px;
+          /*border-bottom: none;*/
+        }
+        + li a {
+          border-left-color: transparent;
+        }
+        &:first-child:before {
+          display: none;
+        }
+      }
+      .uiIconClose:before {
+        color: @lightWhite;
+      }
+      &:not(.active):last-child a {
+        border-right: 2px solid @borderColor;
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .uiTabInPage .nav-tabs > li > a, .uiTabInPage .nav-tabs > li > a:hover {
+    padding: 7px 15px;
+    border: none;
+    text-align: center;
+  }
+}
+
+  /** Advanced Tabs **/
+.uiTabAdvanced {
+  .nav-tabs {
+    background-color: @baseBackground;
+    border-bottom: 1px solid @baseGreyColor;
+    > li{
+      a{
+        background-color: @baseBackground;
+        border: none;
+        color: #9aa2a7;
+      }
+      a:hover{
+        color: @primaryColor;
+        border: none;
+      }
+      &.active{
+        a,a:hover{
+          color: @primaryColor;
+          font-weight: bold;
+          background-color: white;
+          border: none;
+          border-bottom: 3px solid @primaryColor;
+        }
+      }
+      &:not(.active):last-child a{
+        background-color: @baseBackground;
+        border: none;
+        color: #9aa2a7;
+      }
+    }
+  }
+  .tab-content {
+    border:none;
+    background-color: #fff;
+  }
+}
+
+/* Enterprise skin-table */
+.table-responsive,
+.table {
+  margin-bottom: 0px;
+}
+
+.uiGrid.table tr {
+  color: @tableColor;
+  font-size: 14px;
+  th {
+    font-weight: bold;
+    padding: 10px 15px;
+  }
+  td {
+    padding: 5px 15px;
+    .empty {
+      background-color: @baseBackground;
+      color: inherit;
+    }
+  }
+  .table-striped tbody {
+    tr:nth-child(odd) td {
+      background-color: @baseBackground;
+    }
+    tr:nth-child(even) td {
+      background-color: @tableBackgroundAccent;
+    }
+  }
+}
+
+.uiGrid.table td,
+.uiGrid.table th {
+  color: @tableColor;
+  font-size: 16px;
+  padding: 16px 15px;
+  text-align: left;
+}
+/* Enterprise skin-raiting */
+.uiVote .avgRatingImages .voted:before
+.uiVoteForm .voteFormContainer .uiRatingInfoContainer .uiIconOverVote:before,
+.uiVoteForm .voteFormContainer .uiRatingInfoContainer .uiIconRatedVote:before {
+  content: "\f2fc";
+  font-family: IONIC-FONT;
+  color: @lightYellow;
+}
+
+.uiVote .avgRatingImages .unvoted:before,
+.uiVoteForm .voteFormContainer .uiRatingInfoContainer [class^="uiIcon"]:before {
+  content: "\f2fc";
+  font-family: IONIC-FONT;
+  color: #eaeaec;
+}
+.uiVoteMini .avgRatingImages .voted,
+.uiVoteMini .avgRatingImages .votedHaft,
+.uiVoteMini .avgRatingImages .unvoted {
+  font-size: 14px;
+}
+
+/* Enterprise skin-navigation */
+.uiPageIterator ul > .active > a,
+.uiPageIterator ul > .active > a:hover,
+.uiPageIterator ul > .active > span,
+.uiPageIterator ul > .active > span:hover,
+.uiPageIterator ul > li > a,
+.uiPageIterator ul > li > a:hover,
+.uiPageIterator ul > li.disabled > a,
+.uiPageIterator ul > li.disabled > a:hover {
+  min-width: 40px;
+  height: 38px;
+  line-height: 31px;
+  border-radius: 3px;
+  font-size: 15px;
+  margin: 0 2.5px;
+  box-sizing: border-box;
+}
+.uiPageIterator ul li a i:before{
+  margin: 0;
+}
+
+/* Enterprise skin-popup */
+.uiPopup {
+  border: solid 1px #f8f8f8;
+  .popupHeader .uiIconClose {
+    z-index: 1;
+  }
+}
+
+.uiPopup .popupHeader,
+.modal.uiPopup .popupHeader {
+  background-color: @popupHeaderBackground;
+  color: @popupHeaderColor;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+@media (min-width: 1025px){
+  .uiPopupWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, .3);
+    z-index: 999;
+    &.UISocialConfirmation {
+      background: none;
+      .MaskLayer {
+        opacity: .3!important;
+      }
+    }
+    .uiPopupWrapper {
+      position: static;
+    }
+  }
+}
+.uiPopup .uiIconResize, .modal.uiPopup .uiIconResize {margin: -19px 3px 0px}
+
+// do not display grey mask in edit page/layout mode
+.UIEditInlineWS .uiPopupWrapper {
+  position: static;
+  overflow: visible;
+}
+
+/* Enterprise skin-left navigation bar */
+.LeftNavigationTDContainer {
+  padding-top: 0px;
+  border-right: none;
+}
+
+.RightBodyTDContainer {
+  background: @rightBodyContainerBackground;
+  .uiBox {
+    box-shadow: 0 2px 3px -2px rgba(35,44,48,0.18);
+    .title {
+      border: none;
+      box-shadow: none;
+      position: relative;
+    }
+  }
+}
+
+.LeftNavigationTDContainer [class^="uiIcon"] {
+    color: @lightWhite;
+}
+
+@media(max-width: 1024px) {
+  body .RightBodyTDContainer {
+    width: 100%;
+    padding-left: 0;
+  }
+  body .LeftNavigationTDContainer {
+    padding-top: 15px;
+  }
+}
+@media (min-width: 481px) and (max-width: 1024px) {
+  body .LeftNavigationTDContainer {
+    width: 40%;
+  }
+}
+.uiGroupsNavigationPortlet {
+  .title {
+    background: @secondaryBackground;
+    color: @lightWhite;
+    border: none;
+  }
+  .uiIconGroupNavigation, .groupNavigation .groupItem {
+    a {
+      color: #e2e6ed;
+    }
+    [class^="uiIcon"]:before {
+      color: @lightWhite;
+    }
+  }
+}
+
+.uiCompanyNavigationPortlet .uiCompanyNavigations .navItemSelected,
+.uiGroupsNavigationPortlet .groupNavigation .groupItem .active,
+.uiSpaceNavigationPortlet .spaceNavigation .spaceItemSelected {
+  background: @navigationPortletBackground;
+  border-top: 1px solid @navigationPortletBackground;
+  border-bottom: 1px solid @navigationPortletBackground;
+  padding: 5px 22px;
+}
+
+.uiCompanyNavigationPortlet .uiCompanyNavigations .navItemSelected:after,
+.uiGroupsNavigationPortlet .groupNavigation .active:after {
+  background: #ffffff;
+  border: 0px solid #ffffff;
+}
+
+.uiCompanyNavigationPortlet .uiCompanyNavigations > li > a,
+.uiCompanyNavigationPortlet .uiCompanyNavigations > li > a > i,
+.uiCompanyNavigationPortlet .uiCompanyNavigations > li.navItemSelected > a {
+  color: #e2e6ed!important;
+  padding-bottom: 5px!important;
+  max-height: 21px!important;
+  font-weight: bold!important;
+  text-transform: uppercase!important;
+  font-size: 12px!important;
+  padding: 2px;
+}
+.uiSpaceNavigationPortlet {
+
+  .searchInput {
+    &:before {
+      font-family: 'IONIC-FONT';
+      content: "\f4a4";
+      color: #9ba9c0;
+      position: relative;
+      left: 35px;
+      top: 24px;
+      font-size: 20px;
+    }
+
+    input {
+      background-color: @secondaryBackground;
+      background-repeat: no-repeat;
+      height: 35px;
+      border-radius: 25px;
+      border-color: #9ba9c0;
+      padding-left: 30px;
+      padding-bottom: 5px;
+      padding-top: 3px;
+      margin: 10px auto 0px 25px;
+      &::-webkit-input-placeholder {
+        color: #9ba9c0;
+        font-weight: bold;
+        font-size: 12px;
+      }
+      &::-moz-placeholder {
+        color: #9ba9c0;
+        font-weight: bold;
+        font-size: 12px;
+      }
+      &:-ms-input-placeholder {
+        color: #9ba9c0;
+        font-weight: bold;
+        font-size: 12px;
+      }
+      &:focus {
+        &::-webkit-input-placeholder {
+          color: transparent;
+        }
+        &::-moz-placeholder {
+          color: transparent;
+        }
+      }
+    }
+    input[placeholder]  {
+      color: #f7f8fa;
+      text-overflow: ellipsis;
+      margin-top: -5px;
+    }
+  }
+  .joinSpace > a,
+  .joinSpace > a > i,
+  .spaceNavigation a.spaceIcon {
+    color: #e2e6ed;
+  }
+  .joinSpace > a:hover,
+  .spaceNavigation .spaceIcon:hover {
+    color: @companyNavigationPortletColor;
+  }
+  .joinSpace {
+    height: 35px!important;
+    top: inherit!important;
+    background: @navigationPortletBackground!important;
+    border-bottom: none!important;
+    border-top: none!important;
+    padding-top: 5px!important;
+    padding-bottom: 5px!important;
+  }
+}
+
+.navItem {
+  color: @navItemColor;
+}
+
+.uiCompanyNavigationPortlet, .uiSpaceNavigationPortlet {
+  .title {
+    background-color: transparent!important;
+    background-image: none!important;
+    border: 0!important;
+    color: @companyNavigationPortletColor!important;
+    font-weight: bold;
+    a {
+      color: @companyNavigationPortletColor!important;
+    }
+    margin-top: 10px;
+    margin-bottom: -3px;
+  }
+}
+
+.uiIconMenu:before {
+  font-family: IONIC-FONT;
+  content: "\f20e";
+  font-size: 30px;
+  color: @toolbarLightIconColor;
+}
+
+
+@media(max-width: 1024px) {
+  .uiSpaceNavigationPortlet .searchInput input[placeholder]  {
+    margin-top: 20px!important;
+  }
+}
+
+.uiCompanyNavigationPortlet .uiCompanyNavigations > li > a:hover,
+.uiGroupsNavigationPortlet .groupNavigation .groupIcon:hover {
+  color: @companyNavigationPortletColor!important;
+}
+
+.toggle-status-invisible {
+  color: @toggeleInvisibleColor;
+}
+
+
+@media (max-width: 480px) {
+  body .uiSpaceNavigationPortlet .accordionCont .spaceNavigation {
+    margin-top: inherit!important;
+  }
+}
+
+.uiIconPLFMan:before {
+  content: "\f47c";
+  font-family: "IONIC-FONT";
+  font-size: 22px;
+  color: @lightWhite;
+  margin-right: 5px;
+  position: relative;
+  top: 4px;
+}
+
+.uiCompanyNavigationPortlet .uiCompanyNavigations > li > a:hover,
+.uiCompanyNavigationPortlet .uiCompanyNavigations > li > a > i:hover,
+.uiCompanyNavigationPortlet .uiCompanyNavigations > li.navItemSelected > a:hover {
+  color: @companyNavigationPortletColor!important;
+}
+
+@media (max-width: 1024px) {
+  .uiSpaceNavigationPortlet .searchInput:before {
+    display: none;
+  }
+}
+
+/* Enterprise skin-Login form */
+.uiLogin .loginContent .loginButton .button {
+  background-color: @primaryColor;
+  background-image: none;
+  border-color: @primaryColor;
+}
+
+.uiLogin .loginHeader {
+  display: none;
+}
+
+/* Enterprise skin-Activity stream && Entreprise skin-test space */
+.uiUserActivityStreamPortlet,
+.uiSocApplication.uiRecentActivitiesPortlet,
+.uiDisplaySpaceActivities.uiActivitiesDisplay {
+  .activityTimeLine .activityType {
+    display: none;
+  }
+
+  .uiActivityStream, .uiActivitiesLoader {
+    background: none;
+    padding-top: 0;
+  }
+
+  .activityStream {
+    background: @activityStreamBackground;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 0;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 2px -2px rgba(0,0,0,.1);
+    .boxContainer {
+      border: 1px solid @baseGreyColor;
+    }
+  }
+
+  .activityStream .arrowLeft {
+    display: none;
+  }
+
+  .activityStream .heading {
+    margin-left: 70px;
+    color: #999999;
+    .actionLink {
+      position: absolute;
+      top: 0;
+      right: 5px;
+      a[class^="uiIcon"] {
+        font-size: 17px;
+        padding: 5px 7px;
+      }
+      @media (max-width: 768px) {
+        position: relative;
+        right: -10px;
+      }
+    }
+  }
+
+  .activityStream .calendarShare .heading {
+    margin-left: 0;
+    color: @lightWhite;
+    background-color: @primaryColor;
+    background-image: none;
+  }
+
+  .activityTimeLine {
+    position: relative;
+    z-index: 1;
+    margin: 15px;
+  }
+
+  .activityStream .boxContainer,
+  .activityStream .introBox {
+    margin: 0;
+  }
+
+  .activityStream .contentBox {
+    box-shadow: none;
+    padding-bottom: 0;
+  }
+
+  .activityStream .contentBox .actionBar {
+    margin: 0;
+    border-radius: 0;
+    background:  @lightWhite;
+    border-top: 1px solid @baseGreyColor;
+    border-bottom: 0;
+  }
+
+  .activityStream .description {
+    padding: 25px 15px;
+    margin: 0;
+    position: relative;
+  }
+
+  .activityStream .contentBox .commentBox {
+    border: 0;
+  }
+
+  .activityStream .contentBox .listLikedBox {
+    padding: 16px 0px 0 16px;
+  }
+
+  .activityStream .author a + span {
+    float: none;
+    font-size: 12px;
+    margin-left: 10px;
+  }
+
+  .activityStream .introBox {
+    border-bottom: 1px solid @baseGreyColor;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    box-shadow: none;
+    background-image: none;
+    padding: 16px 0;
+    margin: 0 16px;
+  }
+
+  .activityStream .introBox:before {
+    display: none;
+  }
+
+  .activityStream .introBox:after {
+    display: none;
+  }
+
+  .boxLoadMore {
+    background: none;
+  }
+
+  .activityStream .introBox .isPreviewable .mediaContent .doc-preview-thumbnail-footer {
+    padding-top: 6px;
+    height: 29px;
+  }
+  @media (max-width: 1024px) and (min-width: 768px) {
+    .activityTimeLine{
+      display: none!important;
+    }
+  }
+  @media (min-width: 768px) {
+    .activityTop {
+      margin: -60px 0 25px;
+      .dropdown-menu{
+        min-width: 100%;
+        box-sizing: border-box;
+      }
+    }
+    .composerHintCont {
+      margin-bottom: 70px;
+    }
+  }
+}
+.activityStream .commentList {
+  background: @commentBackgroundColor;
+  padding-top: 0;
+  .statusAction .commentLiked:before {
+    color: @primaryColor;
+  }
+}
+.uiIconThumbUp.uiIconBlue:before, .uiIconThumbUp.commentLiked:before {
+  color: @primaryColor;
+}
+.uiDocumentPreview {
+  .uiIconClose:before {
+    color: inherit;
+  }
+  .resizeButton .uiIconWhite:before {
+    color: @lightWhite;
+  }
+  .uiDocumentPreviewMainWindow .commentArea .uiContentBox .commentInputBox {
+    padding-bottom: 5px;
+    height: 160px;
+  }
+  .uiDocumentPreviewMainWindow .commentArea .uiContentBox .comments .commentList.commentBoxOpen {
+    height: ~"calc(100vh - 460px)";
+  }
+}
+
+@media(max-width: 1024px) {
+  .uiUserActivityStreamPortlet,
+  .uiSocApplication.uiRecentActivitiesPortlet,
+  .uiDisplaySpaceActivities.uiActivitiesDisplay {
+    .activityStream .heading {
+      margin-left: inherit!important;
+    }
+    .activityStream .author a + span {
+      margin-right: inherit!important;
+    }
+  }
+  .activityStream .author {
+    margin-bottom: inherit!important;
+  }
+  .activityStream .commentList .commentItem .commentInputBox {
+    .btn {
+      color: @darkGrey!important;
+    }
+    .btn-primary {
+      color: @baseBackground!important;
+    }
+  }  
+  .uiUserToolBarPortlet > .dropdown-toggle:before {
+    font-family: PLF-FONT-ICONS;
+    top: 14px;
+  }
+}
+.open-left-bar {
+  #UIToolbarContainer, .RightBodyTDContainer, .uiProfileMenu, .uiSpaceMenu {
+    width: 100%;
+    @media (min-width: 481px) and (max-width: 1024px) {
+      left: 40%;
+      margin-left: 1px;
+    }
+    @media(max-width: 480px) {
+      left: 75%;
+    }
+  }
+}
+
+@media(max-width: 480px) {
+  #uiWikiSpaceSwitcher_CreateWiki {
+    .dropdown-toggle {
+      top: -11px;
+    }
+  }
+  #likersDetail .likeClick .btn {
+    width: auto;
+  }
+}
+
+.mini-chat {
+  .uiActionWithLabel i {
+    opacity: 1;
+  }
+  .uiIconClose::before {
+    color: @lightWhite;
+  }
+  .msAvatarLink {
+    background: none;
+    border: none;
+    box-shadow: none;
+  }
+  .msRow .msAvatarLink, .msRow .msAvatarLink img {
+    border-radius: 6px;
+  }
+}
+
+.chat-button.actionIcon .chat-label-status {
+  color: @lightWhite;
+}
+
+#tiptip_content .connectAction .btn {
+  width: 40px;
+  height: 35px;
+  padding: 0 10px;
+}
+.uiUserInvitation {
+  .btn {
+    padding: 9px 15px;
+  }
+  .selectize-input > input {
+    height: 36px;
+  }
+  .selectize-control {
+    max-height: 40px;
+  }
+}
+/* Entreprise-skin home page */
+.uiBox {
+  box-shadow: 0 2px 3px -2px rgba(35,44,48,0.18);
+  border: none;
+  border-radius: 7px;
+}
+
+.activityStream .author a {
+  font-family: @baseFontFamily;
+}
+
+.uiIconClock:before {
+  font-size: 12px;
+  color: #999999;
+}
+
+.avatarCircle img {
+  max-height: 50px;
+  max-width: 50px;
+  margin: -5px;
+}
+
+.activityTop .activityStreamStatus .arrowBottom {
+  display: none;
+}
+
+.uiActivitiesDisplay .activityTop .activityStreamStatus {
+  background: @baseBackground;
+  border: 1px solid @baseGreyColor;
+  max-width: 5px;
+  max-height: 15px;
+  float: right;
+  padding: 3px 19px 11px 11px;
+  margin-right: 10px;
+  @media (max-width: 767px) {
+    margin-right: 0;
+  }
+}
+@media (max-width: 1024px) and (min-width: 768px){
+  .open-right-bar .activityStreamStatus {
+    float: right;
+  }
+}
+
+.activityStream .author {
+  margin-bottom: -10px;
+}
+
+.activityStream .commentList .commentItem .commentInputBox .btn {
+  color: @activityStreamCommentBtnColor;
+}
+
+.uiGettingStarted .gsList li:after {
+  left: 4px;
+  top: 7px;
+  width: 4px;
+  height: 2px;
+}
+
+.uiSuggestions {
+  .peopleAction, .spaceAction {
+    margin-top: -10px;
+  }
+}
+
+.uiInvitations {
+  .peopleInviteAction, .spaceInviteAction {
+    margin-top: -10px;
+  }
+}
+
+.cke_bottom.cke_bottom_visible {
+  border-top: none;
+}
+
+.cke_chrome {
+  border-radius: 0;
+}
+
+.OfficeMiddleTDContainer {
+  padding: 40px 20px !important;
+}
+.OfficeRightTDContainer, .SpaceHomePortletsTDContainer {
+  .uiBox {
+    .clearfix;
+    .title {
+      background: @lightWhite;
+    }
+  }
+}
+
+.uiComposer div#ActivityComposerExt .ActivityComposerExtItem {
+  margin-left: 0;
+  margin-right: 15px;
+}
+
+.uiComposer div#ActivityComposerExt .ActivityComposerExtItem.ActivityComposerExtItemSelected {
+  border-bottom: 2px solid @primaryColor;
+  height: 29px;
+}
+.uiComposer .share-buttons-top .btn-cancel {
+  padding: 3px 20px;
+}
+
+.activityTop .btn-group > .btn {
+  font-weight: bold;
+  font-size: 12px;
+  border-width: 1px;
+  padding: 5px 10px;
+  line-height: 19px;
+  > span:first-child {
+    text-transform: uppercase;
+  }
+  .spiter {
+    display: none;
+  }
+  .uiIconArrowDownMini:before, .uiIconMiniArrowDown:before {
+    color: @darkGrey;
+  }
+}
+
+.uiIconSocUIDocActivityComposer:before,
+.uiIconSocUIDefaultActivityComposer:before,
+.uiIconSocUILinkActivityComposer:before {
+  font-size: 14px;
+}
+
+.activityTop .changeStatus {
+    padding: 4px 10px;
+}
+.uiTabPaneHomePage {
+  .share-button {
+    padding: 5px 20px;
+    &[disabled] {
+      border-color: @btnPrimaryDisableBackground;
+    }
+    @media (max-width: 480px) {
+      padding: 10px 20px;
+    }
+  }
+}
+
+.dropFileWindow .cke_dialog_title {
+  margin-bottom: 0;
+}
+/* Entreprise-skin tasks*/
+#taskManagement {
+  .taskBoardView .table-project-collapse {
+    padding: 10px;
+    .caption-heading .hover-action-reveal {
+      background: @baseBackground;
+      color: @secondaryColor;
+      border-bottom: 2px solid @baseGreyColor;
+      border-right: 10px solid @baseBackground;
+      padding-left: 0;
+      text-align: left;
+      &:nth-last-child(-n+2) {
+        border-right: none;
+      }
+      .inline-block-hide:hover .uiIcon {
+        color: @primaryColor;
+      }
+    }
+
+    .taskItem .date-task,
+    .taskItem .date-task:hover {
+      color: @lightWhite!important;
+      float: right;
+      background: @tertiaryColor;
+      padding-right: 10px;
+      padding-left: 10px;
+      font-size: 12px;
+    }
+
+    .taskItem .col + .col {
+      border-left: none;
+      &.col-new {
+        border-left: 10px solid @baseBackground;
+      }
+    }
+    
+    .taskItem .box-small .box-small-inner:hover {
+      border: 1px solid @baseGreyColor;
+      background: @baseGreyColor;
+    }
+
+    .caption-heading {
+      border-top: none;
+      box-sizing: border-box;
+      .uiIconWhite {
+        color: @primaryColor;
+      }
+    }
+
+    .caption-heading .hover-action-reveal {
+      outline: none;
+    }
+
+    .taskItem .box-small {
+      margin-left: -5px;
+      min-height: 38px;
+    }
+  }
+  .groupByOptions .action-bar .actionIcon [class^="uiIcon"] {
+    top: 2px;
+  }
+  .uiCheckbox input[type="checkbox"] + span {
+    &:before {
+      top: 2px;
+    }
+    &:after {
+      top: 7px;
+    }
+  }
+  .addProject .popupTitle .actionIconSmall {
+    margin-top: -9px;
+  }
+}
+
+.btn.btn-primary.btn-add-task {
+  font-size: 14px;
+  padding: 6px 20px;
+}
+
+.btn.btn-primary.btn-add-task > .uiIconSimplePlusMini:before {
+  display: none;
+}
+
+.centerPanel .uiHeaderBar .alignBtnGroup > .btn-group > .btn {
+  background: @baseBackground;
+  border: 1px solid @baseGreyColor;
+  padding: 7px 20px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.centerPanel .uiHeaderBar .alignBtnGroup > .btn-group > .btn.active {
+  background: @tertiaryColor;
+  border: none;
+  padding: 8px 20px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+#taskManagement {
+  .centerPanel.uiBox .projectListView .title .settingActionButtons {
+    margin-top: 7px;
+    a {
+      .uiIconFilter {
+        font-family: 'IONIC-FONT';
+        color: @baseGreyColor;
+        &:before {
+          content: '\f31b';
+        }
+      }
+      .uiIconBlue {
+        color: @primaryColor;
+      }
+    }
+  }
+  .uiHeaderBar {
+    .projectName {
+      margin-top: 7px;
+    }
+    .alignBtnGroup {
+      margin-top: 3px;
+    }
+  }
+  .rightPanelContent {
+    .uiIconArrowDown:before {
+      color: inherit;
+    }
+    .uiIconPermalink {
+      top: 2px;
+    }
+  }
+  .table-project .row-item {
+    height: 38px;
+  }
+  .date-work-plan .uiIconPLFCalendar  {
+    margin-top: 4px;
+    color: #999;
+    &.uiIconPLFBlue {
+      color: @primaryColor;
+    }
+  }
+  .addTask .uiIconClock{
+    vertical-align: baseline;
+  }
+  .leftPanel {
+    &.uiAccordion  {
+      border: none;
+    }
+    .accordion-heading {
+      border-top: none;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .sub-item {
+        margin-left: 0;
+      }
+      .uiDropdownMenu .uiIconTrash {
+        padding: 0 4px 0 2px;
+      }
+    }
+  }
+  .centerPanel.uiBox .projectListView .title .taskSearchForm .uiSearchInput .advancedSearch {
+    top: 9px;
+  }
+  .centerPanel.span5 .settingActionButtons .advancedSearch-action .action-close {
+    margin: 1px 6px 0 4px;
+  }
+  .taskFilter .title {
+    background: @lightWhite;
+    border-bottom: 1px solid #ccc;
+    .actionIcon.hideFilter {
+      margin-top: -3px;
+    }
+  }
+}
+
+.uiIconSimplePlusMini:before {
+  content: "\f489";
+  font-family: 'IONIC-FONT';
+  background: @primaryColor;
+  color: @lightWhite;
+  font-size: 16px;
+  padding: 5px 8px 4px 8px;
+  border-radius: 3px;
+}
+#documentPreviewContent {
+  .uiIconSimplePlusMini:before {
+    font-family: "PLF-FONT-ICONS";
+    content: "\e74b";
+    color: inherit;
+    background: inherit;
+    font-size: inherit;
+    padding: inherit;
+  }
+}
+
+.uiAccordion.leftPanel .accordion-heading .sub-item .project-name .badgeDefault.mini {
+  background: @tertiaryColor;
+  color: @lightWhite;
+  margin-left: 15px;
+}
+
+.taskBoardView .table-project-collapse .caption-heading .hover-action-reveal .number-tasks {
+  background: #578dc9;
+  color: #fff;
+  border-radius: 9px;
+  padding: 2px 15px 2px 15px;
+  font-size: 12px;
+}
+
+#taskManagement .centerPanel.uiBox .centerPanelContent .projectListView .title {
+  background: white;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  box-shadow: none;
+  border-bottom: 20px solid #f2f2f2;
+  min-height: 40px;
+}
+
+.uiForumBreadCrumb .permaLink {
+  margin-top: 5px;
+}
+
+#taskManagement .uiAccordion.leftPanel .accordion-heading .item + .list-projects {
+  border: none;
+}
+
+#taskManagement .uiAccordion.leftPanel .accordion-heading .item {
+  background: @baseBackground;
+}
+
+.uiAccordion.leftPanel .accordion-heading {
+  margin-bottom: 10px;
+  .uiIconSimplePlusMini:before {
+    background: @lightWhite;
+    color: @primaryColor;
+    font-size: 13px;
+    border: 1px solid @baseGreyColor;
+  }
+  .actionIcon:hover, .actionIconSmall:hover {
+    background-color: transparent;
+    border: none;
+  }
+}
+
+.uiAccordion.leftPanel .accordion-heading .sub-item .project-name > .badgeDefault.badgePrimary {
+  border-radius: 0;
+}
+
+#taskManagement .uiAccordion.leftPanel .accordion-heading {
+  .list-labels, .dropdown-toggle {
+    border: none;
+  }
+  .actionIconSmall {
+    margin-top: 11px;
+  }
+  .collapseTree {
+    width: 10px;
+    margin-right: 8px;
+  }
+  .uiIconArrowRightMini:before {
+    margin: 0;
+  }
+}
+
+/* Entreprise-skin documents */
+.UIJCRExplorerPortlet .uiActionBarAlone .tab-content .nav-pills {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: @toolbarLightIconColor;
+}
+.UIJCRExplorerPortlet .uiActionBarAlone {
+  height: 59px;
+  .fileViewStatus button.btn {
+    margin-top: -5px;
+  }
+}
+.ActionMenuPlaceHolder .uiFileViewActionBar .uiRightPopupMenuContainer {
+  margin-top: 10px;
+  background: inherit;
+  .uiIconEcmsCopyUrlToClipboard {
+    font-size: 13px;
+  }
+}
+#ECMContextMenu {
+  height: 57px;
+}
+.ActionMenuPlaceHolder .uiFileViewActionBar {
+  background: @toolbarLightIconColor;
+  height: 100%;
+  [class^="uiIcon"]:before {
+    color: @lightWhite;
+  }
+  .uiRightPopupMenuContainer .dropdown-menu li a {
+    color: @darkGrey;
+    background: @lightWhite;
+    [class^="uiIconEcms"]:before {
+      color: @primaryColor;
+    }
+    &:hover {
+      background: @primaryColor;
+      [class^="uiIconEcms"]:before {
+        color: @lightWhite;
+      }
+    }
+  }
+  .uiRightPopupMenuContainer #hiddenMoreButton > a {
+    color: @lightWhite;
+    border: none;
+    outline: none;
+    .uiIconMiniArrowDown {
+      font-size: 9px;
+    }
+  }
+}
+.uiTabGrayInPage .tab-content .nav-pills > li > a,
+.uiActionBar .uiViewBarContainer .actionIcon {
+  border: none;
+  color: @lightWhite;
+}
+.uiTabGrayInPage .tab-content .nav-pills > li > a:hover,
+.uiActionBar .uiViewBarContainer .actionIcon:hover,
+.uiTabGrayInPage .tab-content .nav-pills > li > a:active,
+.uiActionBar .uiViewBarContainer .actionIcon:active,
+.uiTabGrayInPage .tab-content .nav-pills > li > a:focus,
+.uiActionBar .uiViewBarContainer .actionIcon:focus,
+.ActionMenuPlaceHolder .uiFileViewActionBar .uiRightPopupMenuContainer li > a,
+.ActionMenuPlaceHolder .uiFileViewActionBar .uiRightPopupMenuContainer li > .menuItemSelected,
+.ActionMenuPlaceHolder .uiFileViewActionBar .uiRightPopupMenuContainer li > a:hover {
+  background: @toolbarLightIconColor;
+  border: none;
+  color: @lightWhite;
+}
+
+#uiActionsBarContainer {
+  [class^="uiIcon"], [class^="uiIcon"]:before {
+    color: @lightWhite;
+  }
+  & .dropdown-menu{
+    [class^="uiIcon"], [class^="uiIcon"]:before {
+      color: @primaryColor;
+    }
+    a:hover {
+      [class^="uiIcon"], [class^="uiIcon"]:before {
+        color: @lightWhite;
+      }
+    }
+  }
+  .nav-pills > li:not(.dropdown), .uiViewBarContainer {
+    .actionIcon [class^="uiIcon"]:not(.uiIconArrowDown) {
+      top: 2px;
+    }
+  }
+  .nav-pills .open .dropdown-toggle {
+    border: none;
+    color: @lightWhite;
+  }
+  .showDrivesButton {
+    background: none;
+  }
+  .listHiddenActionsContainer {
+    margin-top: 3px;
+  }
+  .uiViewBarContainer {
+    margin-top: 2px;
+  }
+}
+
+.dropdown-menu > li > a > [class^="uiIcon"]:before {
+  color: @primaryColor;
+}
+
+.uiRightClickPopupMenu .uiRightPopupMenuContainer>li>a:hover {
+  [class^="uiIconEcms"]:before{
+      color: @lightWhite
+  }
+}
+
+.uiActionBar .uiViewBarContainer {
+  background: @toolbarLightIconColor;
+  top: 13px;
+}
+
+.uiTabGrayInPage .tab-content .nav-pills > li > a > .uiIconArrowDownMini:before,
+.uiTabGrayInPage .tab-content .nav-pills > li > a > .uiIconMiniArrowDown:before {
+  color: @lightWhite;
+}
+
+.ActionMenuPlaceHolder .fileViewStatus {
+  padding: 15px 10px 0px 0px;
+  color: @lightWhite;
+}
+
+.uiAddressBar .detailViewIcon .btn-group .btn {
+  margin-right: 5px;
+}
+
+.uiGrayLightBox {
+  background: @baseBackground;
+}
+
+.uiAddressBar .detailViewIcon > .btn-group > .btn {
+  background: @baseBackground;
+  border: none;
+}
+.uiAddressBar .detailViewIcon > .btn-group > .btn.active {
+  background: @primaryColor;
+  border: none;
+}
+
+.uiFileView .uiListGrid .titleTable .btn-group .btn > .uiIconArrowDownMini:before,
+.uiFileView .uiListGrid .titleTable .btn-group .btn > .uiIconMiniArrowDown:before {
+  color: inherit;
+  margin-left: 5px;
+}
+.uiFileView .uiListGrid .titleTable .dropdown-menu [class^="uiIconSort"]:before {
+  color: @lightWhite;
+}
+
+.actionIcon > .uiIconArrowDown:before {
+  color: @lightWhite;
+}
+#documentPreviewContent {
+  .actionIcon > .uiIconArrowDown:before {
+    color: inherit;
+  }
+}
+
+.uiAddressBar .uiAddressBarAction .dropDownButtonBox .uiIconArrowDown {
+  margin-top: 13px;
+}
+.uiAddressBar .right .advance .searchBtn {
+  top: 9px;
+}
+
+.uiWorkingArea .resizeNoneBorder .resizeButton {
+  right: 4px;
+}
+.uiAddFolder .actionLabel {
+  .uiSelectbox, .uiSelectbox .selectbox {
+      width: 160px;
+  }
+}
+.uiDrivesArea .uiDriversAreaContainer {
+  overflow: visible;
+}
+.uiPreferencesForm .advanceContent .row-fluid .span6 .control-label {
+  width: 220px;
+}
+.uiPreferencesForm .checkBoxContent {
+  width: auto;
+  margin-right: 15px;
+  .control-label {
+    max-width: none;
+  }
+  .uiCheckbox {
+    margin-top: 0;
+  }
+}
+.uiActionBar .ActionMenuPlaceHolder {
+  z-index: 4;
+}
+.uiDiff .headTitle > h5 {
+  line-height: 40px;
+}
+.selectTemplateTitle .btn-group .active [class^="uiIconEcms"] {
+  color: @lightWhite;
+}
+#outerContainer {
+  #toolbarViewerLeft {
+    .btn-group .btn {
+      padding: 3px 8px 1px 8px;
+    }
+    .actionIcon > .uiIconArrowDown:before {
+      color: @primaryColor;
+    }
+    input {
+      height: 27px;
+    }
+    .btn-group > .btn:focus, .btn-group > .btn.active {
+      background: none;
+      color: @btnColor;
+    }
+  }
+  .outerCenter {
+    .uiIconSimplePlusMini:before {
+      content: "\e74b";
+      font-family: "PLF-FONT-ICONS";
+      font-size: 10px;
+      background: none;
+      padding: 0;
+    }
+  }
+  .uiIconMinimize, .uiIconSimplePlusMini:before {
+    color: @primaryColor;
+  }
+  .findbar {
+    left: 42px;
+    padding: 6px 4px;
+    display: flex;
+    align-items: center;
+    .uiCheckbox input[type="checkbox"] + span {
+      &:before {
+        top: 2px;
+      }
+      &:after {
+        top: 7px;
+      }
+    }
+  }
+}
+.uiShareDocuments {
+  .addInvite {
+    .sharePermission {
+      a [class^="uiIcon"] {
+        font-size: 16px;
+      }
+      .dropdown-menu {
+        left: -63px;
+      }
+    }
+  }
+  #addActionBtn {
+    width: 40px;
+    height: 40px;
+  }
+  #whoHasAccess {
+      #AccessEntry {
+        .deleteEntry {
+          margin-top: -20px;
+        }
+        .btn-toolbar {
+          margin-right: 3%!important;
+          width: 60px!important;
+          .dropdown .uiActionWithLabel {
+            width: 100%;
+            a [class^="uiIcon"] {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+      .dropdown-menu {
+        margin-top: 18px;
+        left: -44px;
+      }
+    }
+}
+.uiContentSearchForm .uiRadio input[type="radio"] + span {
+  position: relative;
+  top: -19px;
+}
+.UIJCRExplorer {
+  .EditQueryForm .uiAction {
+    margin-top: 0;
+  }
+  .UITagExplorer .uiIconEdit {
+    color: @lightWhite;
+  }
+  .UIRelationManager .uiTrees .collapseIcon {
+    padding-left: 28px;
+  }
+}
+#UISearchContainer .constraintsForm .constraintOption {
+  .label-inline {
+    width: 135px;
+    padding-right: 5px;
+  }
+  .uiCheckbox {
+    margin: 0;
+  }
+}
+
+/* Entreprise-skin adjustments */
+.actionIcon {
+  margin-right: -1px;
+}
+
+.uiFileView .uiListGrid .titleTable .btn-group .btn {
+  height: 28px;
+  padding: 0 10px;
+}
+
+#taskManagement .centerPanel.uiBox .projectListView .title .uiSearchForm.uiSearchInput input[type="text"] {
+  min-height: 40px;
+}
+
+.uiAddressBar .detailViewIcon .btn-group .active > i {
+  color: @lightWhite;
+  margin-top: 1px;
+}
+
+.selectize-input > input {
+  padding-bottom: 1px !important;
+  padding-left: 2px !important;
+  height: 36px;
+}
+
+.uiSocApplication .uiTableProfileUserSearch .column label {
+  padding-top: 11px;
+}
+
+.uiSpaceNavigationPortlet .joinSpace > a > i {
+  margin-right: 0px;
+}
+
+.uiSpaceNavigationPortlet .joinSpace > a {
+  font-size: 11px!important;
+  font-weight: bold!important;
+  color: @lightWhite!important;
+  text-transform: uppercase!important;
+}
+
+.uiSpaceNavigationPortlet .spaceNavigation .noSpace {
+  color: #f7f8fa!important;
+}
+
+.uiAddressBar .backAndRefreshBlock > .refreshIcon > .uiIconRefresh:before {
+  color: @primaryColor;
+}
+
+.UIToolbarContainer .uiCreateToolBarPortlet .uiCreateForm {
+  min-width: 202px;
+}
+
+.uiTreeExplorer , .uiTrees .treeContainer .node {
+  .emptyIcon, .expandIcon, .collapseIcon {
+    padding-left: 30px;
+  }
+}
+
+.uiPageIterator ul > .active > a {
+  color: @lightWhite;
+}
+
+.btn-group.btn-without-icon .btn.active {
+  color: @lightWhite;
+}
+
+.uiTabNormal .nav-tabs > .active > a, .uiTabNormal .nav-tabs > .active > a:hover {
+  font-weight: normal;
+}
+
+.activityBottom {
+  background: none;
+}
+
+.uiGettingStarted .gsList li:before {
+  background: #fff;
+  border: 2px solid @baseGreyColor;
+  box-shadow: none;
+}
+
+.uiGettingStarted .gsList li.done:before {
+  background: @primaryColor;
+  border: 1px solid @primaryColor;
+  box-shadow: none;
+}
+
+.defaultStyle.forumSeparatorLine > .btn {
+  padding: 0px;
+  color: #333333;
+}
+
+@media (max-width: 1024px) {
+  body .OfficeMiddleTDContainer {
+    padding: 20px 5px!important;
+  }
+}
+.uiSocApplication {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.uiForumPortlet {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+@media(max-width: 1024px) {
+  .uiForumPortlet {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .uiForumPortlet .uiForumIconState .forumContains {
+    padding: 12px 15px;
+  }
+}
+@media(max-width: 360px) {
+  .uiFormSliderInput .slideSearch .slide {
+    width: 270px;
+  }
+}
+.calendarWorkingWorkspace {
+  padding-left: 10px;
+}
+.taskMngCont {
+  padding-left: 0;
+  margin: 0;
+  margin-top: 20px;
+}
+.UIJCRExplorerPortlet {
+  padding: 20px;
+  .uiWorkingArea .leftContainer {
+    .uiBox .title {
+      color: @lightWhite;
+      background: @toolbarLightIconColor;
+      [class^="uiIcon"]:before {
+        color: @lightWhite;
+      }
+      .actionIcon:hover {
+        background-color: transparent;
+      }
+    }
+    .uiSelectContent {
+      background: @toolbarLightIconColor;
+      & .selectedItem {
+        background: none;
+        border-left: none;
+        border-right: none;
+        [class^="uiIcon"] {
+          color: @lightWhite;
+        }
+      }
+    }
+    .uiBox {
+      border: 1px solid transparent;
+      background-clip: padding-box;
+    }
+  }
+}
+@media(max-width: 1024px) {
+  .UIJCRExplorerPortlet {
+    padding-left: 10px !important;
+    padding-right: 10px;
+  }
+}
+.btn-group.uiDropdownWithIcon .btn .spiter {
+  background: none;
+}
+
+.btn-group.normal-group .btn.active a {
+  color: @lightWhite;
+}
+
+.uiIconEcmsAddDocument:before {
+  color: @lightWhite;
+}
+
+.uiIconEcmsAddLocalizationLink:before {
+  color: @lightWhite;
+}
+
+h4.titleWithBorder {
+  padding-bottom: 5px;
+}
+
+.uiSearchPortlet .filterContainer > .uiBox .title {
+  background: #fff;
+  border: none;
+  box-shadow: none;
+  margin-bottom: -15px;
+  border-radius: 10px;
+}
+
+.uiSocApplication.uiExperienceProfilePortlet > .no-content.center > .btn-primary > .uiIconChatChat:before,
+.uiSocApplication.uiExperienceProfilePortlet > .no-content.center > .btn-primary > .uiIconEdit:before {
+  color: @lightWhite;
+}
+
+.inputSmall input[type="text"] {
+  max-width: 104px;
+  width: 104px;
+}
+
+li > a > .uiIconSetting:before,
+li > a > .uiIconRefresh:before {
+  color: @primaryColor;
+}
+
+.UIMaskWorkspace .MaskContainer .uiChangeLanguageForm .uiAction {
+  padding-bottom: 15px;
+}
+
+#UIPortalApplication {
+  position: relative;
+  min-height: 100vh;
+}
+.ajaxLoadingMask {
+  padding: 8px 7px 8px 11px;
+  .uiIconClose {
+    top: -2px;
+    &:before {
+      color: @lightWhite;
+    }
+  }
+}
+
+/** Forum **/
+.uiForumPortlet {
+  .uiForumBreadCrumb{
+    .border-radius(8px);
+    .breadcrumb{
+      > li {
+        > a {
+          line-height: 32px;
+          color: @darkGrey;
+        }
+        > .uiIconMiniArrowRight {
+          margin-top: 12px;
+        }
+      }
+    }
+    .actionIcon {
+      line-height: 32px;
+    }
+    .uiIconLightGray {
+      color: @darkGrey;
+    }
+  }
+
+  .uiIconForumColorOffline, .uiIconForumColorOffline:hover, .textTitleProfile:hover .uiIconForumColorOffline {
+    color: @offlineColor;
+  }
+
+  /******************************************** UIForumActionBar ****************************************/
+  .uiForumActionBar {
+    //background: @baseBackground;
+    padding: 7px 10px;
+    li > a, li > .actionIcon, li > div > .actionIcon {
+      display: block;
+      line-height: 32px;
+    }
+    >ul > li > .actionIcon, >ul > li > div > .actionIcon, .defaultStyle.forumSeparatorLine > .btn {
+      color: @btnColor;
+      background-color: @btnBackgroundColor;
+      background-image: @btnBackgroundImage;
+      border: 1px solid @btnBorder;
+      .border-radius(3px);
+      padding: 3px 10px;
+
+      [class^="uiIcon"],.uiIconSetting.uiIconLightGray {
+        color: @btnColor;
+        &:before {
+          color: @btnColor;
+        }
+      }
+      .uiIconMiniArrowDown {
+        padding-left: 5px;
+      }
+
+      &:hover,&:active, &:focus {
+        background-color: @btnHoverBackgroundColor;
+        background-image: none;
+        color: @btnColor;
+        border-color: @btnHoverBackgroundColor;
+        .border-radius(3px);
+        .transition(background-color .3s ease-out);
+        > [class^="uiIcon"], .uiIconSetting.uiIconLightGray {
+          color: @btnColor;
+        }
+      }
+      &:hover:focus,&:hover:active {
+        background-color: @btnHoverBackgroundColor;
+        > [class^="uiIcon"] {
+          color: @btnColor;
+        }
+      }
+    }
+    .dropdown-menu li {
+      padding: 0;
+    }
+  }
+
+  .uiGrid.table {
+    border-width: 0;
+    box-shadow: none;
+  }
+  caption.rounded-corners-top {
+    border-width: 0;
+    background-color: #f9f9f9;
+  }
+  .uiGrid.table + .uiGrid.table {
+    margin-top: 35px;
+  }
+  .uiGrid.table caption + thead tr{
+    th {
+      background-color: @primaryBackgroundLight;
+      border-top: solid 1px @primaryBackgroundHover;
+    }
+  }
+
+  #uiRightActionBar {
+    width: auto!important;
+  }
+
+  .uiCategories, .uiCategory{
+    tbody tr td{
+      background: @baseBackground;
+    }
+  }
+  .forumSeparatorLine + .forumSeparatorLine {
+    background-image: none;
+  }
+  .rounded-corners-top {
+    background-color: #f9f9f9;
+  }
+  .textTitleCategories{
+    color: @darkGrey;
+    font-weight: bold;
+    font-family: @baseFontFamily;
+    a {
+      color: @primaryColor;
+    }
+  }
+  .uiCategoryInfo {
+    margin-top: 35px;
+    .uiGrid.table th{
+      padding: 0;
+    }
+    .uiGrid.table tbody {
+      tr td {
+        background: @baseBackground;
+        padding: 0 15px;
+      }
+      tr:first-child td {
+        padding-top: 16px;
+      }
+      tr:last-child td {
+        padding-bottom: 16px;
+      }
+    }
+  }
+  .uiForumIconState {
+    margin-top: 10px;
+    padding: 5px 0;
+  }
+  .containerTopicDetail .uiActionWithLabel {
+    padding: 2px 4px;
+    border: 1px solid transparent;
+    &:hover {
+      border-color: @borderColor;
+    }
+  }
+  .uiFormInputWithActions .mySubscriptions .control-label {
+    width: 200px;
+  }
+  #messageContent {
+    min-height: 304px;
+  }
+  #KSMaskLayer {
+    display: none;
+  }
+}
+
+.actionIcon [class^="uiIcon"],
+.actionIcon .LeftNavigationTDContainer .uiPopup [class^="uiIcon"] {
+  top: 0;
+}
+#documentPreviewContent {
+  .actionIcon [class^="uiIcon"],
+  .actionIcon .LeftNavigationTDContainer .uiPopup [class^="uiIcon"] {
+    top: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .uiTopicDetail .footPost .btnDetailTopic .btn {
+    box-sizing: content-box;
+  }
+}
+
+/* Entreprise-skin navigation */
+.uiProfileMenu .userNavigation > li,
+.uiSpaceMenu .spaceMenuTab > li {
+  padding-bottom: 0px;
+}
+.uiSpaceMenu {
+  .userAvt img {
+    width: 104px;
+    height: 104px;
+    border: 2px solid @lightWhite;
+  }
+  .spaceMenuNavHeader {
+    > a .uiIconTrash {
+      line-height: 13px;
+      padding: 8px;
+    }
+    .spaceMenuApps {
+      .btn {
+        background-color: rgba(0, 0, 0, 0.3);
+        border: 1px solid #fff;
+        padding: 4px 13px;
+        border-radius: 0px;
+      }
+      .btn span {
+        color: #ffffff;
+      }
+      .btn [class^="uiIcon"]:before {
+        color: @lightWhite;
+      }
+      .chat-status-available {
+        background-color:#46a546 !important;
+      }
+      .chat-status-donotdisturb {
+        background-color:#d62126 !important;
+      }
+      .chat-status-away {
+        background-color:#f89406 !important;
+      }
+      .chat-status-invisible {
+        background-color:#999999 !important;
+      }
+    }
+  }
+}
+
+.uiProfileMenu .profileMenuNav .profileMenuApps .chat-status-available,
+.uiSpaceMenu .spaceMenuNavHeader .spaceMenuApps .chat-status-available {
+  background-color:#46a546 !important;
+}
+.uiProfileMenu .profileMenuNav .profileMenuApps .chat-status-donotdisturb,
+.uiSpaceMenu .spaceMenuNavHeader .spaceMenuApps .chat-status-donotdisturb {
+  background-color:#d62126 !important;
+}
+.uiProfileMenu .profileMenuNav .profileMenuApps .chat-status-away,
+.uiSpaceMenu .spaceMenuNavHeader .spaceMenuApps .chat-status-away {
+  background-color:#f89406 !important;
+}
+.uiProfileMenu .profileMenuNav .profileMenuApps .chat-status-invisible,
+.uiSpaceMenu .spaceMenuNavHeader .spaceMenuApps .chat-status-invisible {
+  background-color:#999999 !important;
+}
+
+
+.sticky {
+  .uiProfileMenu .userAvt,
+  .uiSpaceMenu .userAvt {
+    margin-top: 13px;
+  }
+  .uiProfileMenu .profileMenuNav,
+  .uiSpaceMenu .spaceMenuNavHeader {
+    padding-top: 20px;
+  }
+  .uiProfileMenu .profileMenuNav .profileMenuApps .btn,
+  .uiSpaceMenu .spaceMenuNavHeader .spaceMenuApps .btn {
+    border: 1px solid #578dc9;
+    background: none;
+  }
+  .uiProfileMenu .profileMenuNav .profileMenuApps .btn [class^="uiIcon"]:before,
+  .uiSpaceMenu .spaceMenuNavHeader .spaceMenuApps .btn [class^="uiIcon"]:before {
+    color: #578dc9;
+  }
+}
+
+@media (min-width: 1025px) {
+  .uiSpaceMenu .spaceMenuTab {
+    height: 68px;
+  }
+  .uiActivityStream.clearBG {
+    margin-top: 60px;
+  }
+  .sticky {
+    .uiProfileMenu, .uiSpaceMenu {
+      top: 58px;
+      width: auto;
+    }
+    #Application {
+      margin-top: 30px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .uiProfileMenu, .uiSpaceMenu {
+    top: 51px !important;
+  }
+  .uiProfileMenu .userNavigation > li > a,
+  .uiSpaceMenu .spaceMenuTab > li > a {
+    margin: 0px !important;
+  }
+  .sticky #Application {
+    margin-top: 220px;
+  }
+}
+@media (max-width: 320px) {
+  .uiProfileMenu .profileMenuNav .profileMenuApps {
+    min-width: 190px;
+  }
+}
+
+
+.uiProfileMenu,
+.uiSpaceMenu {
+  background-color: @baseBackground;
+  background-image: none;
+  box-shadow: none;
+}
+.uiProfileMenu .userNavigation > .active > a,
+.uiProfileMenu .userNavigation > .active > a:hover,
+.uiSpaceMenu .spaceMenuTab > .active > a,
+.uiSpaceMenu .spaceMenuTab > .active > a:hover {
+  background: @baseBackground;
+  background-image: none;
+  color: @primaryColor;
+  border-bottom: 4px solid @primaryColor;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.uiProfileMenu .userNavigation > li .uiIconDefaultApp,
+.uiSpaceMenu .spaceMenuTab > li .uiIconDefaultApp {
+  color: #A8B3C5;
+  vertical-align: baseline;
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  body .UIToolbarContainer #HomeLink {
+    padding: 11px 10px 0;
+  }
+}
+
+@media(max-width: 1024px) {
+  .uiSocApplication {
+    padding-left: 10px;
+  }
+}
+
+.uiSpaceMenu .spaceMenuTab li.dropdown.open ul.dropdown-menu li.item a span {
+  bottom: 0px!important;
+}
+.uiProfileMenu .userNavigation > .active > a > span,
+.uiSpaceMenu .spaceMenuTab > .active > a > span {
+  color: @primaryColor;
+}
+
+.uiProfileMenu .userNavigation > .active > a > div,
+.uiSpaceMenu .spaceMenuTab > .active > a > i  {
+  color: @primaryColor;
+}
+
+.uiProfileMenu .userNavigation > li > a:hover,
+.uiSpaceMenu .spaceMenuTab > li > a:hover {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+/*  Entreprise-skin profile page */
+@media (min-width: 1025px) {
+  .sticky .uiUserNavigationPortlet {
+    padding-bottom: 30px;
+  }
+  .uiProfileMenu .userNavigation {
+    height: 68px;
+  }
+  .uiSpaceMenu .spaceMenuTab > li a,
+  .uiSpaceMenu .spaceMenuTab > li a:hover,
+  .uiProfileMenu .userNavigation > li > a,
+  .uiProfileMenu .userNavigation > li > a:hover,
+  .uiProfileMenu .userNavigation > .active > a,
+  .uiProfileMenu .userNavigation > .active > a:hover {
+    margin: 0px 20px !important;
+    height: auto !important;
+  }
+}
+.uiProfileMenu {
+  .userAvt img {
+    width: 104px;
+    height: 104px;
+    border: 2px solid #ffffff;
+  }
+  .profileMenuNav {
+    .profileMenuApps .btn {
+      background-color: rgba(0, 0, 0, 0.3);
+      border: 1px solid #fff;
+      border-radius: 0px;
+      padding: 4px 13px;
+    }
+    .profileMenuNavHeader {
+      > a .uiIconTrash {
+        line-height: 13px;
+        padding: 8px;
+      }
+    }
+    .profileMenuApps {
+      .btn {
+        span {
+          color: #ffffff;
+        }
+        [class^="uiIcon"]:before {
+          color: #ffffff;
+        }
+      }
+    }
+    .uiRelationshipAction {
+      .btn {
+        border: 1px solid #fff;
+        border-radius: 0px;
+        padding: 4px 13px;
+      }
+      .btn-group .btn.dropdown-toggle {
+        padding: 4px 12px;
+      }
+      .user-actions .dropdown-menu {
+        min-width: 71px;
+      }
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .uiProfileMenu {
+    .profileMenuNav {
+      .uiRelationshipAction {
+        .btn {
+          padding: 5px 0px 3px 0px;
+          width: 48px;
+        }
+        .uiIconClose {
+          margin: 4px 0px;
+        }
+        .uiIconClose:before {
+          font-size: 14px;
+          color: @btnColor;
+        }
+        .uiIconClock:before {
+          font-size: 18px;
+          color: inherit;
+        }
+      }
+    }
+  }
+  .sticky .uiUserNavigationPortlet {
+    padding-bottom: 245px;
+  }
+}
+
+.uiSocApplication.uiRecentActivitiesPortlet .activityStream {
+  background: none;
+  box-shadow: none;
+  margin: 0;
+  padding-bottom: 15px;
+  .boxContainer {border: none}
+  .content {
+    margin-left: 75px;
+    border: none;
+    @media (max-width: 1024px) {
+      margin-left: 0;
+    }
+  }
+}
+
+.uiRecentActivitiesPortlet .avatarCircle {
+  margin-top: -20px
+}
+
+.uiExperienceProfilePortlet .experience-container .labelName {
+  width: 110px;
+}
+
+.uiEditUserProfileForm #BaseSection .control-group .controls {
+  .uiSelectbox select {
+    width: 130px;
+  }
+  input {
+    width: 310px;
+  }
+}
+.uiEditUserProfileForm #AboutSection textarea {
+    width: 490px;
+}
+/*  Entreprise-skin dashboard page */
+.uiTabPaneDashboard {
+  .editing input[type="text"] {
+    height: 36px;
+  }
+  .addDashboard span {
+    margin-top: 13px;
+  }
+}
+.uiDashboardPortlet .gadgetControl .pull-right .actionIcon {
+  [class^="uiIcon"], .uiIconArrowDown:before {
+    color: @primaryColor;
+  }
+  .uiIconMaximize, .uiIconArrowDown {
+    font-size: 13px;
+  }
+  .uiIconEditMini {
+    font-size: 16px;
+  }
+  .uiIconClose {
+    opacity: 1;
+    top: -2px;
+  }
+}
+.UIDashboardContainer .GadgetContainer .ContainerControlBarL .AddIcon > a:first-child {
+  background-color: @primaryColor;
+  background-image: none;
+  border: 1px solid @primaryColor;
+}
+.UIDashboardSelectContainer .DashboardItemContainer .InputContainer input {
+  width: calc(~"100% - 35px");
+}
+@media(min-width: 1025px) {
+  .UIDashboard .UIPopupWindow {
+    width: 700px;
+    margin-top: -130px;
+    .popupContent {
+      max-height: 70vh;
+    }
+  }
+  .UIDashboardSelectContainer .DashboardItemContainer {
+    .MiddleItemContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .GadgetCategory {
+      width: 30%;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .uiDashboardPortlet .uiPopup {
+    margin-bottom: 150px!important;
+  }
+}
+/* Wiki */
+.uiWikiPortlet {
+  padding-left: 10px;
+  .uiWikiUpperArea {
+    padding: 14px 20px 14px 0;
+    .uiGrayLightBox {
+      border: none;
+      box-shadow: none;
+    }
+    .breadcrumb, .breadcrumb .active {
+      font-size: unset;
+    }
+    .UIWikiToolBar {
+      width: auto;
+
+      .dropdown {
+        line-height: 25px;
+      }
+    }
+    .uiWikiBreadCrumb {
+      padding-top: 7px;
+      .uiSpaceSwitcher_BreadCrumb {
+        margin: -8px 8px 0 0;
+      }
+      .breadcrumb > .uiIconMiniArrowRight {
+        margin: 3px 0 0;
+      }
+      .uiIconMiniArrowRight {
+        margin: 0 0 0 5px;
+        line-height: 20px;
+      }
+      .breadcrumb .active > a {
+        padding-bottom: 1px;
+      }
+      @media (max-width: 768px) {
+        margin-top: 10px;
+      }
+    }
+    .uiWikiSearchBox {
+      padding-left: 20px;
+
+      .uiIconSearch {
+        padding-top: 1px;
+        color: @darkGrey;
+      }
+    }
+  }
+
+  .uiWikiMiddleArea {
+    padding-left: 0;
+    margin: 0 21px 0 0;
+
+    .uiLeftContainerArea {
+      padding: 0px;
+
+      .wikiBox {
+        border: none;
+        border-radius: 0px;
+        box-shadow: none;
+
+        .titleWikiBox {
+          box-shadow: none;
+          border: none;
+          background-image: none;
+          background: @baseBackground;
+          padding: 8px 15px;
+        }
+        .uiTreeExplorer {
+          .node .node {
+            padding-left: 12px;
+          }
+          .emptyIcon, .expandIcon, .collapseIcon {
+            padding-left: 23px;
+          }
+          .emptyIcon:before, .expandIcon:before, .collapseIcon:before {
+            width: 16px;
+            height: 8px;
+            top: 0px;
+            padding-top: 1px;
+            padding-bottom: 7px;
+          }
+          .uiIconFileMini:before {
+            content: unset;
+          }
+        }
+      }
+    }
+
+    .uiRightContainerArea {
+      padding: 0px;
+
+      .UIWikiPageArea {
+        .uiWikiPageContentArea {
+          border: none;
+          border-radius: 0px;
+          box-shadow: none;
+        }
+        .uiWikiPageInfoArea {
+          .txtFeed {
+            color: @darkGrey;
+
+            .label {
+              background-color: @primaryColor;
+            }
+          }
+          .uiIconLightGray, .uiIconAttach {
+            font-size: 12px;
+            top: 0px;
+            color: @darkGrey;
+          }
+        }
+      }
+    }
+
+    .uiWikiBottomArea, .uiWikiDraftGrid {
+      .uiGrid.table {
+        margin-bottom: 10px;
+      }
+    }
+
+    .uiWikiBottomArea {
+      .uiWikiPageVersionsList {
+        background: @baseBackground;
+        padding: 15px;
+      }
+      .UIAttachmentContainer {
+        border: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .uiActionWithLabel, .uiWikiBreadCrumb .uiDropdownWithIcon .dropdown-toggle {
+    border-radius: 2px;
+    border: 1px solid #e1e8ee;
+    padding: 9px 10px;
+    margin-left: 5px;
+    background-color: #FFFFFF;
+
+    &:hover {
+      background-image: none;
+    }
+    &:active {
+      box-shadow: none;
+      border: 1px solid #c7c7c7;
+    }
+
+    .uiIconEditPage {
+      font-size: 1rem;
+    }
+    .uiIconMiniArrowDown {
+      padding-left: 10px;
+    }
+  }
+  .uiPopupWrapper {
+    position: fixed;
+  }
+}
+.spaceChooserPopup {
+  top: 40px;
+  .title, .spaceTitle, .spaceOption.hover:hover {
+    background-image: none;
+  }
+  .uiIconWikiWiki:before {
+    content: "\f3e9";
+  }
+  .spaceOption {
+    [class^="uiIcon"] {
+      margin-right: 4px;
+    }
+    [class^="uiIcon"], &:hover [class^="uiIcon"] {
+      color: inherit;
+    }
+  }
+}
+@media(max-width: 767px) {
+  .uiWikiPortlet .uiWikiUpperArea .uiWikiSearchBox {
+    padding-left: 0;
+  }
+}
+@media(max-width: 1024px) {
+  .uiWikiPortlet {
+    padding-left: 20px;
+    .xToolbar .gwt-ListBox {
+      height: 25px;
+    }
+    #UISubmitToolBarUpper {
+      button.btn {
+        padding: 3px 7px;
+      }
+    }
+  }
+}
+@media (max-width: 480px) {
+  #UIWikiUpperArea > .uiGrayLightBox > .uiSearchInput {
+    width: 55%;
+  }
+  .UIWikiRichTextEditor .gwt-MenuBar-horizontal table {
+    width: 100%;
+  }
+  #UIWikiMiddleArea {
+    .uiScrollTop, .uiScrollBottom {
+      display: none!important;
+    }
+  }
+  .uiWikiPortlet .uiWikiPageControlArea .uiDropdownWithIcon {
+    display: -webkit-flex;
+    display: flex;
+    margin: 0 0 10px;
+    .uiActionWithLabel {
+      padding: 8px;
+      text-align: center;
+      i {
+        display: none;
+      }
+    }
+    li:first-child .uiActionWithLabel {
+      margin-left: 0;
+    }
+  }
+}
+
+/* Search */
+#resultSort {
+  display: block;
+  margin-right: 50px;
+  .uiDropdownWithIcon.open {
+    .btn.dropdown-toggle {
+      background-color: @baseGreyColor;
+    }
+  }
+  .btn.dropdown-toggle {
+    width: 120px;
+    > span:first-child {
+      text-transform: none;
+      font-size: 14px;
+      font-weight: normal;
+      color: inherit;
+    }
+  }
+  #sortOptions {
+    width: 140px;
+    margin-right: -12px;
+    .uiIconSortDown:before {
+      margin-left: 24px;
+      font-size: 16px;
+      color: @darkGrey;
+    }
+    .uiIconSortUp:before {
+      margin-left: 24px;
+      font-size: 16px;
+      color: @darkGrey;
+    }
+  }
+}
+#txtQuery {
+  margin-right: -5px;
+  border-radius: 5px 0 0 5px;
+}
+#btnSearch {
+  border-radius: 0 5px 5px 0;
+  height: 39px;
+}
+@media (max-width: 1024px) and (min-width: 481px) {
+  #btnSearch {
+    height: 32px;
+  }
+  #whoHasAccess #AccessEntry #selectPermission {
+    width: 60px !important;
+    margin-right: 7% !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .pd-15-0 {
+    margin-bottom: 19%;
+  }
+  .uiShareDocuments .selectize-control {
+    max-height: none;
+  }
+  .uiShareDocuments .sharePermission {
+    .dropdown-menu {
+      width: 191%!important;
+      left: 0px !important;
+    }
+  }
+  .uiShareDocuments #whoHasAccess #AccessEntry .btn-toolbar {
+    width: 86px!important;
+    margin-right: -3%!important;
+  }
+}
+
+
+/* Space */
+.activityStream {
+  .commentBox {
+    .numberComment {
+      color: @primaryColor;
+    }
+    .author {
+      margin-bottom: 0;
+    }
+  }
+}
+.boxLoadMore {
+  padding-left: 0;
+}
+#spaceManagerListBox .itemContainer .spaceBox {
+  background: @baseBackground;
+  .connectionBtn .btn {
+    border: 2px solid @baseGreyColor;
+  }
+}
+.uiSpaceSettingPortlet {
+  .addInvite {
+    margin-bottom: 20px;
+    padding-top: 0;
+  }
+  .avatarXLargeWithBorder {
+    width: 150px;
+    height: 150px;
+    img {
+      max-height: 150px;
+      max-width: 150px;
+    }
+  }
+}
+#UISpaceSetting .uiSpaceMember {
+  .uiUserInvitation {
+    .selectize-control {
+      max-height: 40px;
+      .selectize-input, .selectize-input input {
+        height: 40px;
+      }
+      .selectize-input {
+        box-shadow: none;
+        border: Solid 2px @baseGreyColor;
+        border-radius: 5px;
+        padding: 0 10px;
+        overflow: hidden;
+        &:before {
+          display: none;
+        }
+      }
+      .selectize-input > div {
+        margin-top: 7px;
+      }
+      .selectize-dropdown {
+        border: none;
+      }
+    }
+    .btn {
+      padding: 9px 15px;
+    }
+  }
+  .uiGrid {
+    margin-bottom: 20px;
+    td:last-child {
+      width: 15%;
+    }
+  }
+}
+
+/* People */
+.uiSocApplication {
+  .itemContainer {
+    .checkedBox {
+      background-image: url("@{images-path}/checked.png");
+    }
+    .spaceBox {
+      background-color: @baseBackground;
+    }
+  }
+  .itemContainer .spaceBox .connectionBtn .btn {
+    margin: 1px 0 0 10px;
+    float: right;
+    overflow: hidden;
+    text-align: center;
+    padding: 4px 15px;
+    &:nth-of-type(3){
+      margin-left: 0;
+    }
+    &.btn-primary {
+      padding: 5px 15px;
+    }
+  }
+}
+.uiSpaceSearch .selectize-control {
+  margin-right: 0;
+  padding-right: 0;
+  max-height: 40px;
+  .exo-mention {
+    line-height: 36px;
+  }
+}
+.uiTableProfileUserSearchInput {
+  .selectize-control .item {
+    line-height: 36px;
+  }
+  .selectize-dropdown {
+    border: none;
+  }
+  .selectize-input:before {
+    display: none;
+  }
+  .selectize-input > input {
+    padding-left: 0px!important;
+  }
+  .selectize-control {
+    max-height: 40px;
+  }
+}
+.uiSearchInput .advancedSearch, .uiSearchInput .AdvancedSearch {
+  top: 9px;
+  z-index: 2;
+}
+@media (max-width: 1024px){
+  .uiTableProfileUserSearch .selectize-input > input {
+    font-size: 15px!important;
+  }
+}
+@media (max-width: 768px){
+  .uiSocApplication .uiTableProfileUserSearch {
+    > .column label {
+      padding-top: 6px;
+      padding-bottom: 4px;
+    }
+    .uiTableProfileUserSearchInput {
+      margin-top: 10px;
+      .input-wrap {
+        margin-top: 2px;
+        float: left;
+      }
+      button {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+/* Calendar */
+#UICalendarWorkingContainer, .uiCalendarComponent {
+  .actionIcon:hover, .actionIconSmall:hover {
+    background-color: inherit;
+  }
+  .title {
+    .uiIconArrowLeftMini:before, .uiIconMiniArrowLeft:before {
+      content: "\f361";
+      font-size: 18px;
+      color: @lightWhite;
+    }
+    .uiIconArrowRightMini:before, .uiIconMiniArrowRight:before {
+      content: "\f363";
+      font-size: 18px;
+      color: @lightWhite;
+    }
+  }
+}
+
+#UICalendarPortlet {
+  .uiIconSetting:before {
+    color: inherit;
+  }
+}
+
+.uiCalendarViewContainer {
+  .uiGrid.table {
+    background: @lightWhite;
+    td {
+      border-left-width: 3px;
+    }
+    .tdTime {
+      border-top-width: 2px;
+    }
+  }
+  .uiBox .title {
+    background-color: @primaryColor;
+    color: @lightWhite;
+    .titleHeader > a {
+      color: @lightWhite;
+    }
+    .btn-primary {
+      padding: 5px 10px;
+      border: 1px solid #fff;
+    }
+  }
+  .uiHeaderBar [class^="uiIcon"] {
+    color: @lightWhite;
+  }
+  .uiListContainer .uiPreview .viewContainer {
+    padding-bottom: 11px;
+  }
+  .resizeButton {
+    margin-left: 4px;
+    [class^="uiIcon"] {
+      font-size: 10px;
+    }
+  }
+}
+.uiCalendars {
+  .title {
+    background: @primaryColor;
+    color: @lightWhite;
+    .uiIconCalPlus:before, .uiIconCalSimplePlus:before {
+      color: @lightWhite;
+    }
+  }
+  .calendarTitle {
+    background: @btnGroupBackground;
+  }
+}
+.eventDayContent .eventContainerBorder, .eventWeekContent .eventContainerBorder {
+  cursor: pointer;
+}
+.eventAlldayBoard .eventContainer {
+  padding-left: 5px;
+}
+.calendarWorkingWorkspace {
+  .uiSearchInput .advancedSearch, .uiSearchInput .AdvancedSearch {
+    top: 9px;
+  }
+  .uiActionBar .settingActionBar {
+    margin: 7px 15px 0 10px;
+  }
+}
+.uiCalendarComponent {
+  &.uiBox {
+    border: 2px solid #f0f0f1;
+  }
+  h5.title .actionIcon.pull-right {
+    right: inherit;
+    left: 200px;
+  }
+  .uiIconMiniArrowRight, .uiIconMiniArrowLeft {
+    top: -1px;
+  }
+}
+#UIEventForm {
+  .uiIconArrowLeftMini:before, .uiIconMiniArrowLeft:before {
+    content: "\f107";
+  }
+  .uiIconArrowRightMini:before, .uiIconMiniArrowRight:before {
+    content: "\f10a";
+  }
+}
+.uiRepeatEventForm .inputMini input[type="text"] {
+  width: 35px;
+}
+.rangeCalendar-container .input-size-mini {
+  height: 25px!important;
+  width: 70px!important;
+}
+.uiEditableInline .choose-time {
+  > [class*="span"] {
+    width: 33.33333333%;
+    margin: 0;
+  }
+}
+.uiEditableInline .choose-time, .uiEventReminder {
+  .uiCheckbox input[type="checkbox"] + span:before {
+    top: 2px;
+    left: -4px;
+  }
+  .uiCheckbox input[type="checkbox"]:checked + span:after {
+    left: 1px;
+    top: 7px;
+  }
+}
+.uiEventReminder .uiIconPlus {
+  top: 3px;
+}
+@media(max-width: 1024px) {
+  .UICalendarPortlet {
+    padding-left: 15px;
+    .uiIconMiniArrowDown {
+      top: 0!important;
+    }
+  }
+  .eventDetail {
+    width: auto;
+    .controls {
+      .date input {
+        width: 130px;
+      }
+      .time .UIComboboxInput {
+        width: 70px;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .uiSearchInput.searchWithIcon.pull-right {
+    margin: 0;
+  }
+}
+@media (max-width: 480px) {
+  .UICalendarPopupAction .settingCalendarTab .workingTime {
+    span {
+      display: inline-block;
+      min-width: 60px;
+      text-align: right;
+      &:nth-of-type(2) {
+        clear: both;
+      }
+    }
+    div:first-of-type {
+      margin-bottom: 10px;
+    }
+  }
+}
+.eventCategory .uiSelectbox .selectbox {
+  height: 28px;
+}
+.uiEventCategoryManager .uiEventCategoryForm .inputLarge input[type="text"]{
+  width: 180px;
+}
+.UICalendarPopupAction .eventDetail .uiIconPlus {
+  margin-top: 8px;
+}
+.UICalendarPopupAction .eventDetail .uiIconDelete {
+  vertical-align: middle;
+}
+
+/* Answers */
+.uiAnswersPortlet {
+  .uiQuestions .answerToolbar {
+    background: @toolbarLightIconColor!important;
+    [class^="uiIcon"], [class^="uiIcon"]:before {
+      color: @lightWhite;
+    }
+    a {
+      color: @lightWhite;
+      padding: 3px 10px;
+      border: none;
+    }
+    .dropdown-menu {
+      a {
+        color: @darkGrey;
+        [class^="uiIcon"]:before {
+          color: @primaryColor;
+        }
+      }
+      a:hover {
+        [class^="uiIcon"]:before {
+          color: @lightWhite;
+        }
+      }
+    }
+    .addNewQuestion {
+      padding: 2px 20px;
+    }
+    .uiActionWithLabel {
+      &:hover:focus, &:hover:active {
+        border: none;
+        background: none;
+      }
+    }
+  }
+  .uiActionWithLabel:hover {
+    background: inherit;
+  }
+  .uiBox .title {
+    background: @primaryColor;
+    color: @lightWhite;
+    [class^="uiIcon"] {
+      color: @lightWhite;
+    }
+  }
+  #UIQuestions {
+    .uiBox {
+      border: 1px solid @baseGreyColor;
+    }
+    .boxNum:first-child {
+      background: @primaryBackground;
+    }
+    .uiBox .title {
+      background: inherit;
+      color: @baseColorDark;
+    }
+    .moreAction {
+      .btn {
+        [class^="uiIcon"]:before {
+          color: @primaryColor;
+        }
+      }
+    }
+    .questionContent {
+      .pull-right {
+        margin-top: 10px;
+      }
+      .voteResult {
+        .result {
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+  .responseItemContainer .actionBar {
+    min-height: 36px;
+  }
+}
+#UIAnswersPopupAction {
+  [class^="uiIconAns"] {
+    color: @primaryColor;
+  }
+}
+.PrintAllAnswersPortlet {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+/* edit profile portlet */
+.uiEditUserProfilePortlet {
+  .uiCalendarComponent h5.title {
+    a {
+      .uiIconArrowLeftMini:before, .uiIconMiniArrowLeft:before {
+        content: "\f124";
+        color: @lightWhite;
+      }
+      .uiIconArrowRightMini:before, .uiIconMiniArrowRight:before {
+        color: @lightWhite;
+      }
+    }
+  }
+}
+.uiUserSettingForm .form-horizontal .control-group .uiSelectbox .selectbox {
+    width: 180px;
+    margin-bottom: 5px;
+}
+
+/* Gadget Administration */
+#UIGadgetInfo {
+  .uiIconRefresh:before {
+    color: @primaryColor
+  }
+}
+
+#UIGridUser{
+  table{
+    table-layout: fixed;
+    th{
+      width: 16%;
+    }
+    td{
+      word-wrap: break-word;
+    }
+  }
+}
+
+/* Notification settings & Administration*/
+.uiNotificationSettings .table {
+  margin-bottom: 20px;
+}
+.uiNotificationAdmin .control-groups label {
+  margin-top: 5px;
+}
+#ApplicationRegistryCategory .accordion-heading .actionIcon [class^="uiIcon"] {
+  font-size: inherit;
+}
+
+/* Edit layout*/
+.UIPortalToolPanel .uiInfoBar .uiIconEdit:before {
+  color: #fff;
+}
+
+/* Unlock screen */
+.footerWLC.backOutdated {
+    background: rgba(188, 67, 67, 0.6);
+}
+.footerWLC.backNotOutdated {
+    background: rgba(0, 0, 0, 0.6);
+}
+#WLCFooter .footerWLC .btn {
+  .btn-primary;
+  background: @primaryColor;
+  font-size: @baseFontSize;
+  &:hover {
+    background: @secondarySkinColor;
+  }
+}
+/* Hamburger menu */
+.uiCompanyNavigationPortlet .toggle-left-bar span {
+  background-color: #e2e6ed !important;
+}
+
+@media(max-width: 767px) {
+  .toggle-left-bar {
+    margin-right: 5px;
+  }
+}
+
+.UIToolbarContainer {
+  #HomeLink .toggle-left-bar {
+    margin-right: 8px;
+  }
+  &.UIToolbarContainerLight #HomeLink .toggle-left-bar span {
+    background: @toolbarLightIconColor;
+  }
+}
+.uiCompanyNavigationPortlet .title {
+  line-height: 40px;
+}
+.uiSpaceNavigationPortlet h5 .uiIconSpaceNavigation {
+  color: #e2e6ed;
+}
+
+@media (min-width: 1025px) {
+  .uiIconSpaceNavigation:before {
+    content: "\f229";
+    font-size: 20px;
+    font-family: IONIC-FONT;
+  }
+  .uiCompanyNavigationPortlet .uiCompanyNavigations .navItem,
+  .uiGroupsNavigationPortlet .groupNavigation .groupItem .active,
+  .uiSpaceNavigationPortlet ul.spaceNavigation .spaceItemSelected {
+    padding: 5px 22px;
+  }
+  .collapse-left-bar {
+    .UIToolbarContainer {
+      left: 64px;/*fixing browser bug: humberger menu width not correct after moving*/
+    }
+    .uiSpaceNavigationPortlet .searchInput:before {
+      display: none;
+    }
+  }
+}
+
+/* ECMS administration portlet style: from ecms-administration.less */
+.uiTaxonomyTreeWizard .UIActionTaxonomyManager .controls {
+  line-height: 39px;
+}
+
+/* Users Administration */
+.uiOrganizationPortlet .uiFormWithTitle {
+  margin-top: 20px;
+	.title {
+		background-color: @lightWhite;
+		font-weight: bold;
+	}
+}
+
+/* Chat application */
+#chatApplicationNotification .notif-total {
+	right: -8px;
+	top: -10px;
+}
+
+/******* Spaces administration *******************/
+.spacesAdministration {
+  .table {
+    th {
+      border-right: 1px solid #e1e8ee;
+      text-align: center;
+    }
+  }
+  .actionIcon {
+    margin: 0px 5px;
+  }
+}

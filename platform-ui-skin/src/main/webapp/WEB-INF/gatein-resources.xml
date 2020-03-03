@@ -25,9 +25,16 @@
 
   <portal-skin>
     <skin-name>${exo.skin.name}</skin-name>
+    <skin-module>Core</skin-module>
     <css-path>/skin/css/Core.css</css-path>
-    <css-priority>1</css-priority>
     <overwrite>false</overwrite>
+  </portal-skin>
+
+  <portal-skin>
+    <skin-name>${exo.skin.name}</skin-name>
+    <skin-module>customModuleEnterprise</skin-module>
+    <css-path>/skin/css/enterpriseCustomStyle.css</css-path>
+    <css-priority>-1</css-priority>
   </portal-skin>
 
   <portal-skin>

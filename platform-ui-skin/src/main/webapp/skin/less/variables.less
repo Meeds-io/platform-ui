@@ -6,93 +6,115 @@
 
 // Base color
 
-@baseColor:                 #000000; // text color , border color, and other UI elements..
+@baseColorDefault:          #000000;
+@baseColor:                 var(--allPagesBaseColor, @baseColorDefault); // text color , border color, and other UI elements..
 
 // Background color
-@baseBackground: #ffffff; // default background , background for content display....
+@baseBackgroundDefault: #ffffff;
+@baseBackground: var(--allPagesBaseBackground, @baseBackgroundDefault); // default background , background for content display....
+@baseBackgroundDark: var(--allPagesBaseBackgroundDark, darken(@baseBackgroundDefault, 10%));
 
 // Primary Color
-@primaryColor: #578dc9;
+@primaryColorDefault: #578dc9;
+@primaryColor: var(--allPagesPrimaryColor, @primaryColorDefault);
+@primaryColorLight: var(--allPagesPrimaryColorLight, lighten(@primaryColorDefault, 10%));
+@primaryDarkColorGradientEnd: var(--allPagesPrimaryDarkColorGradientEnd, darken(@primaryColorDefault, 5%));
+@primaryDarkerColorGradientEnd: var(--allPagesPrimaryDarkerColorGradientEnd, darken(@primaryColorDefault, 15%));
 
 // Background primary color
-@primaryBackground:		#f0f0f0; // main background such as , header popup background, tab items...
+@primaryBackgroundDefault:   #f0f0f0;
+@primaryBackground:   var(--allPagesPrimaryBackground, @primaryBackgroundDefault); // main background such as , header popup background, tab items...
 
 // Icon color
 
 @colorIconDefault: @primaryColor;
-@colorIconExtra: @primaryColor; //#626262;
+@colorIconExtra: @primaryColor;
 @colorIconPrimary: @primaryColor;
-@colorIconOrange: #ff9916;
+@colorIconOrange: var(--allPagesColorIconOrange, #ff9916);
 @colorIconSecondary:@baseBackground;
 @sizeIcon24x24: 22px;
 @sizeIcon12x12: 10px;
 @sizeIcon64x64: 60px;
 @sizeIcon32x32: 30px;
 @sizeIconDefault: 18px;
-@compressedFilesIconColor: #717272;
+@compressedFilesIconColor: var(--allPagesCompressedFilesIconColor, #717272);
 
 // Other base colors
 
-@darkBlue: #295f9b;
-@baseGreyColor: #e1e8ee;
-@secondarySkinColor: #476a9c;
-@tertiaryColor: #385989;
-@secondaryBackground: #476a9c;
-@lightWhite: #ffffff;
-@secondaryColor: #000000;
-@darkGrey: #4d5466;
-@lightGrey: #f2f2f2;
+@darkBlue: var(--allPagesDarkBlue, #295f9b);
+@baseGreyColorDefault: #e1e8ee;
+@baseGreyColor: var(--allPagesBaseGreyColor, #e1e8ee);
+
+@secondaryBackgroundDefault: #476a9c;
+@secondarySkinColor: var(--allPagesSecondarySkinColor, @secondaryBackgroundDefault);
+@secondaryBackground: var(--allPagesSecondaryBackground, @secondaryBackgroundDefault);
+
+@secondaryColorDefault: #000000;
+@secondaryColor: var(--allPagesSecondaryColor, @secondaryColorDefault);
+@secondaryColorDark: var(--allPagesSecondaryColorDark, darken(@secondaryColorDefault, 15%));
+
+@tertiaryColor: var(--allPagesTertiaryColor, #385989);
+
+@lightWhite: var(--allPagesLightWhite, #ffffff);
+@darkGrey: var(--allPagesDarkGrey, #4d5466);
+@lightGrey: var(--allPagesLightGrey, #f2f2f2);
 @disableBackground: @lightGrey;
-@lightYellow: #ffd800;
-@darkYellow: #ffb441;
-@backgroundSuccesNotification: #6ccbae;
-@backgroundWarningNotification: #ffca7a;
-@colorWarningNotification: #905904;
-@backgroundInfoNotification: #89afd9;
-@backgroundErrorNotification: #d07b7b;
-@borderSuccesNotification: #2eb58c;
-@borderWarningNotification: #ffb441;
-@borderInfoNotification: #476a9c;
-@borderErrorNotification: #bc4343;
-@borderErrorInput: #cb6d6d;
+@lightYellow: var(--allPagesLightYellow, #ffd800);
+@darkYellow: var(--allPagesDarkYellow, #ffb441);
+
+// Accent colors
+// -------------------------
+@errorColor:        #bc4343;     // border error
+@errorColorLight:   #d07b7b;   // background error
+
+@warningColor:      #ffb441;     // border warning
+@warningColorLight: #ffca7a;   // background warning
+
+@infoColor:         @secondarySkinColor;          // border info
+@infoColorLight:    #89afd9;    // background info
+
+@successColor:      #2eb58c;        // border success
+@successColorLight: #6ccbae;    // background success
+
+@backgroundSuccesNotification: var(--allPagesBackgroundSuccesNotification, @successColorLight);
+@backgroundWarningNotification: var(--allPagesBackgroundWarningNotification, @warningColorLight);
+@colorWarningNotification: var(--allPagesColorWarningNotification, #905904);
+@backgroundInfoNotification: var(--allPagesBackgroundInfoNotification, @infoColorLight);
+@backgroundErrorNotification: var(--allPagesBackgroundErrorNotification, @errorColorLight);
+
+@borderColor: @baseGreyColor;
+@borderColorLight: #666666;
+@borderColorDark:  darken(@baseGreyColorDefault, 10%);
+@borderSuccesNotification: @successColor;
+@borderWarningNotification: @warningColor;
+@borderInfoNotification: @infoColor;
+@borderErrorNotification: var(--allPagesBorderErrorNotification, @errorColor);
+@borderErrorInput: var(--allPagesBorderErrorInput, #cb6d6d);
 
 // Image Patch
 // -------------------------
-@base-images-path: 			"/eXoSkin/skin/images";
-@images-path: 			"@{base-images-path}/themes/default";
+@base-images-path:      "/eXoSkin/skin/images";
+@images-path:       "@{base-images-path}/themes/default";
 
 // Font icon path
-@font-path: 			"/eXoSkin/skin/fonts";
+@font-path:       "/eXoSkin/skin/fonts";
 
-@header-popup-bg: #484848;
-@header-popup-title: #c1c1c1;
-// Accent colors
-// -------------------------
-@errorColor:        @borderErrorNotification;		  // border error
-@errorColorLight:	@backgroundErrorNotification;	  // background error
-
-@warningColor:      @borderWarningNotification;		  // border warning
-@warningColorLight: @backgroundWarningNotification;	  // background warning
-
-@infoColor: 	    @borderInfoNotification;          // border info
-@infoColorLight:    @backgroundInfoNotification;	  // background info
-
-@successColor:      @borderSuccesNotification;        // border success
-@successColorLight: @backgroundSuccesNotification;    // background success
+@header-popup-bg: var(--allPagesHeader-popup-bg, #484848);
+@header-popup-title: var(--allPagesHeader-popup-title, #c1c1c1);
 
 // Scaffolding
 // -------------------------
 @bodyBackground: @baseBackground;
 @sidebarBackground: @secondarySkinColor;
-@contentBackground:  @baseBackground	url("@{images-path}/ShareImages/Background/texture.png") repeat left top;
-@textColor: @baseColorDark;				// #333333
-@textMediumColor: @baseColorMedium; 					// #808080
-@textLightColor: @baseColorLight;				// #999999
+@contentBackground:  @baseBackground  url("@{images-path}/ShareImages/Background/texture.png") repeat left top;
+@textColor: @baseColorDark;       // #333333
+@textMediumColor: @baseColorMedium;           // #808080
+@textLightColor: @baseColorLight;       // #999999
 
 
 // Links
 // -------------------------
-@linkColor:             @primaryColor;			// Special title, text, hover, press, hyper-link or selected link
+@linkColor:             @primaryColor;      // Special title, text, hover, press, hyper-link or selected link
 @linkColorHover:        @primaryColor;
 
 // Component Variables
@@ -100,55 +122,57 @@
 
 // Define common padding and margin size
 // Currenly only use for the box
-@gutterSizeBase: 			10px;
-@gutterSizeXLarge: 			20px;
-@gutterSizeLarge: 			15px;
-@gutterSizeSmall: 			5px;
+@gutterSizeBase:      10px;
+@gutterSizeXLarge:      20px;
+@gutterSizeLarge:       15px;
+@gutterSizeSmall:       5px;
 
 
 // Tables
 // -------------------------
-@tableBackground:                   transparent; 				// overall background-color
-@tableBackgroundAccent: #f6f7fa;
-@tableBackgroundHover: @primaryBackgroundHover; 	// for hover
-@tableBorder:                       @borderColor; 				// table and cell border
+@tableBackground:                   transparent;        // overall background-color
+@tableBackgroundAccent: var(--allPagesTableBackgroundAccent, #f6f7fa);
+@tableBackgroundHover: @primaryBackgroundHover;   // for hover
+@tableBorder:                       @borderColor;         // table and cell border
 
 
 // Buttons
 // -------------------------
 @btnColor: @darkGrey;
-@btnBorder: @baseGreyColor;
-@btnDisableColor: #c6c6c6;
+@btnBorder: var(--allPagesBtnBorder, @baseGreyColor);
+@btnBorderBottom: var(--allPagesBtnBorderBottom, darken(@baseGreyColorDefault, 10%));
+@btnDisableColor: var(--allPagesBtnDisableColor, #c6c6c6);
 
 @btnPrimaryColor: @lightWhite;
 @btnPrimaryBackground:              @primaryColor;
 @btnPrimaryBackgroundHighlight:     @primaryColor;
-@btnPrimaryBorder: 					@primaryColor;
+@btnPrimaryBorder:          @primaryColor;
 
-@paddingXLarge:         9px 15px;
-@paddingLarge:          4px 10px;
-@paddingDefault:		3px 10px;
-@paddingSmall:          2px 10px;
-@paddingMini:           0 10px;
+@paddingXLarge:         var(--allPagesPaddingXLarge, 9px 15px);
+@paddingLarge:          var(--allPagesPaddingLarge, 4px 10px);
+@paddingDefault:        var(--allPagesPaddingDefault, 3px 10px);
+@paddingSmall:          var(--allPagesPaddingSmall, 2px 10px);
+@paddingMini:           var(--allPagesPaddingMini, 0 10px);
 
 // Forms
 // -------------------------
 @inputColor: @baseColorDark;
 @inputDisableColor: @textLightColor;
 @inputBackground: @baseBackground;
-@inputBorder:                   	@borderColor;
-@inputBorderRadius:             	@baseBorderRadius;
+@inputBackgroundUneditable: darken(@baseBackgroundDefault, 1%);
+@inputBorder:                     @borderColor;
+@inputBorderRadius:               @baseBorderRadius;
 @inputDisabledBackground: @primaryBackgroundHover;
 @formActionsBackground: @primaryBackground;
 // Input placeholder text color
 // -------------------------
 @placeholderText:         @textLightColor;
 
-@inputFocusColor:               	@inputColor;
-@inputFocusBorder:              	lighten(@infoColor, 30%);
-@inputFocusShadow:              	lighten(@infoColor, 40%);
+@inputFocusColor:                 @inputColor;
+@inputFocusBorder:                var(--allPagesInputFocusBorder, lighten(@secondaryBackgroundDefault, 30%));
+@inputFocusShadow:                var(--allPagesInputFocusShadow, lighten(@secondaryBackgroundDefault, 40%));
 
-@inputHeight:                   	@baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
+@inputHeight:                     @baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
 
 @uiCheckboxCheckedBorder: @baseBackground;
 @uiCheckboxBackground: @primaryColor;
@@ -165,11 +189,19 @@
 // Dropdowns
 // -------------------------
 @dropdownBorder: @baseBackground;
+@dropdownBorderLeft: darken(@baseBackgroundDefault, 20%);
 @dropdownBackground: @baseBackground;
+@dropdownLinkBackgroundActive:  @primaryColor;
+@dropdownLinkBackgroundActiveGradient:  @primaryDarkColorGradientEnd;
 @dropdownLinkBackgroundHover: @primaryColor;
+@dropdownLinkBackgroundHoverDark: @primaryDarkColor;
+@dropdownLinkBackgroundHoverGradient: @primaryDarkColorGradientEnd;
+@dropdownLinkBackgroundHoverGradientDarker: @primaryDarkerColorGradientEnd;
+
+
 @dropdownLinkColor: @textColor;
-@dropdownLinkColorHover: #fff;
-@dropdownLinkColorActive:       #fff;
+@dropdownLinkColorHover: var(--allPagesDropdownLinkColorHover, #fff);
+@dropdownLinkColorActive:       var(--allPagesDropdownLinkColorActive, #fff);
 @dropdownDividerTop:            @borderColor;
 
 // Typography
@@ -192,10 +224,10 @@
 // Component sizing
 // -------------------------
 // Based on 14px font-size and 20px line-height
-@fontsizeXlarge:		16px;
-@fontSizeLarge:         14px;
-@fontSizeSmall:         12px;
-@fontSizeMini:          11px;
+@fontsizeXlarge:        var(--allPagesFontsizeXlarge, 16px);
+@fontSizeLarge:         var(--allPagesFontSizeLarge, 14px);
+@fontSizeSmall:         var(--allPagesFontSizeSmall, 12px);
+@fontSizeMini:          var(--allPagesFontSizeMini, 11px);
 
 @baseBorderRadius:      3px;
 @borderRadiusLarge:     3px;
@@ -210,12 +242,12 @@
 // -------------------------
 // Used for a bird's eye view of components dependent on the z-axis
 // Try to avoid customizing these :)
-@zindexDropdown:          1040;
-@zindexPopover:           1030;
-@zindexTooltip:           1030;
-@zindexFixedNavbar:       1030;
-@zindexModalBackdrop:     1040;
-@zindexModal:             1050;
+@zindexDropdown:          var(--allPagesZindexDropdown, 1040);
+@zindexPopover:           var(--allPagesZindexPopover, 1030);
+@zindexTooltip:           var(--allPagesZindexTooltip, 1030);
+@zindexFixedNavbar:       var(--allPagesZindexFixedNavbar, 1030);
+@zindexModalBackdrop:     var(--allPagesZindexModalBackdrop, 1040);
+@zindexModal:             var(--allPagesZindexModal, 1050);
 
 
 
@@ -226,12 +258,13 @@
 
 // Horizontal forms & lists
 // -------------------------
-@horizontalComponentOffset:       180px;
+@horizontalComponentOffset: 180px;
 
 
 // Wells
 // -------------------------
 @wellBackground: @primaryBackgroundLight;
+@wellBorder: darken(@primaryBackgroundDefault, 4%);
 
 
 // Navbar
@@ -240,12 +273,12 @@
 @navbarCollapseDesktopWidth:      @navbarCollapseWidth + 1;
 
 @navbarHeight: 58px;
-@navbarBackgroundHighlight:       #ffffff;
-@navbarBackground:                darken(@navbarBackgroundHighlight, 5%);
-@navbarBorder:                    darken(@navbarBackground, 12%);
+@navbarBackgroundHighlight:          #ffffff;
+@navbarBackground:                   darken(@navbarBackgroundHighlight, 5%);
+@navbarBorder:                       darken(@navbarBackground, 12%);
 
-@navbarText:                      #777;
-@navbarLinkColor:                 #777;
+@navbarText:                      var(--allPagesNavbarText, #777);
+@navbarLinkColor:                 var(--allPagesNavbarLinkColor, #777);
 @navbarLinkColorHover: @baseColorDark;
 @navbarLinkColorActive: @baseColorMedium;
 @navbarLinkBackgroundHover:       transparent;
@@ -254,7 +287,8 @@
 @navbarBrandColor:                @navbarLinkColor;
 
 // Inverted navbar
-@navbarInverseBackground:                #111111;
+@navbarInverseBackgroundDefault:         #111111;
+@navbarInverseBackground:                @navbarInverseBackgroundDefault;
 @navbarInverseBackgroundHighlight:       #222222;
 @navbarInverseBorder:                    #252525;
 
@@ -265,10 +299,10 @@
 @navbarInverseLinkBackgroundHover:       transparent;
 @navbarInverseLinkBackgroundActive:      @navbarInverseBackground;
 
-@navbarInverseSearchBackground:          lighten(@navbarInverseBackground, 25%);
-@navbarInverseSearchBackgroundFocus: @baseBackground;
+@navbarInverseSearchBackground:          var(--allPagesNavbarInverseSearchBackground, lighten(@navbarInverseBackgroundDefault, 25%));
+@navbarInverseSearchBackgroundFocus:     @baseBackground;
 @navbarInverseSearchBorder:              @navbarInverseBackground;
-@navbarInverseSearchPlaceholderColor:    #ccc;
+@navbarInverseSearchPlaceholderColor:    var(--allPagesNavbarInverseSearchPlaceholderColor, #ccc);
 
 @navbarInverseBrandColor:                @navbarInverseLinkColor;
 
@@ -276,46 +310,50 @@
 // Pagination
 // -------------------------
 @paginationBackground: @baseBackground;
-@paginationBorder:                    	@borderColor;
+@paginationBorder:                      @borderColor;
 @paginationActiveBackground: @primaryBackgroundLight;
 
 
 // Hero unit
 // -------------------------
-@heroUnitBackground: #476a9c;
+@heroUnitBackground: @secondarySkinColor;
 @heroUnitHeadingColor: @baseBackground;
 @heroUnitLeadColor:       inherit;
 
 
 // Form states and alerts
 // -------------------------
-@warningText:             #333333;
+@warningText: #333333;
+@warningTextFocus: var(--allPagesWarningTextFocus, darken(@warningText, 10%));
 @warningBackground: @warningColorLight;
 @warningBorder: @warningColor;
 
-@errorText:               #333333;
+@errorText: #333333;
 @errorBackground: @errorColorLight;
 @errorBorder: @errorColor;
 
-@successText:             #333333;
+@successText: #333333;
 @successBackground: @successColorLight;
 @successBorder: @successColor;
 
-@infoText:                #333333;
+@infoText: #333333;
 @infoBackground: @infoColorLight;
-@infoBorder: @infoColor;
+@infoBorderDefault: @secondaryBackgroundDefault;
+@infoBorder: @infoBorderDefault;
+@infoBorderFocus: darken(@infoBorderDefault, 10%);
 
 
 // Tooltips and popovers
 // -------------------------
-@tooltipColor:            #fff;
-@tooltipBackground:       #000;
+@tooltipColor:            var(--allPagesTooltipColor, #fff);
+@tooltipBackground:       var(--allPagesTooltipBackground, #000);
 @tooltipArrowColor:       @tooltipBackground;
 
-@popoverBackground: @baseBackground;
-@popoverArrowWidth:       10px;
-@popoverArrowColor:       @popoverBackground;
-@popoverTitleBackground:  darken(@popoverBackground, 3%);
+@popoverBackground:         @baseBackgroundDefault;
+@popoverArrowWidth:         10px;
+@popoverArrowColor:         @popoverBackground;
+@popoverTitleBackground:    darken(@popoverBackground, 3%);
+@popoverTitleBackgroundDark:    darken(@popoverTitleBackground, 5%);
 
 
 
@@ -364,95 +402,95 @@
 // Breadcrumbs
 // -------------------------
 @breadcrumbColor: @baseColorDark;
-@breadcrumbHoverColor: 			@primaryColor;
-@breadcrumbActiveColor: 		@primaryColor;
+@breadcrumbHoverColor:      @primaryColor;
+@breadcrumbActiveColor:     @primaryColor;
 
 // Calendar Component
 // -------------------------
-@calComponentWidth:						225px;
+@calComponentWidth:           var(--allPagesCalComponentWidth, 225px);
 @calComponentWidthTitleColor: @baseBackground;
-@calComponentDayColor:					@textColor;
-@calComponentOtherMonthColor:			@textLightColor;
+@calComponentDayColor:          @textColor;
+@calComponentOtherMonthColor:     @textLightColor;
 @calComponentDayHoverBackground: @primaryBackground;
-@calComponentDaySelectedBackground:		@primaryColor;
+@calComponentDaySelectedBackground:   @primaryColor;
 @calComponentDaySelectedColor: @baseBackground;
-@calComponentDayTodayBackground: 		@primaryColor;
+@calComponentDayTodayBackground:    @primaryColor;
 @calComponentDayTodayColor: @baseBackground;
 @calComponentCurrentWeekBackground: @baseBackground;
-@calComponentCurrentWeekBorder: 		@borderColor;
-@calComponentTimeInputBoxBackground: #578dc9;
-@calComponentTimeInputColor: 			@textColor;
+@calComponentCurrentWeekBorder:     @borderColor;
+@calComponentTimeInputBoxBackground: @primaryColor;
+@calComponentTimeInputColor:      @textColor;
 @calComponentTimeInputBackground: @baseBackground;
-@calComponentTimeInputBorder: 			@borderColor;
-@calComponentTimeInputTorcusBorder: 	@primaryLightColor;
+@calComponentTimeInputBorder:       @borderColor;
+@calComponentTimeInputTorcusBorder:   @primaryColorLighter;
 
 // Label Badges
 // -------------------------
 @labelColor: @baseBackground;
 @labelBackground: @baseColorLight;
-@labelHoverBackground: 					@primaryLightColor;
+@labelHoverBackground:          @primaryColorLighter;
 
 // Popup
 @uiPopupBackground: @baseBackground;
-@uiPopupBorder: 						@borderColor;
-@uiPopupHeaderBackground: #f2f2f2;
-@uiPopupHeaderBorder: 0px solid  @primaryBackground;
-@uiPopupTitleColor: 					@textColor;
+@uiPopupBorder:             @borderColor;
+@uiPopupHeaderBackground: var(--allPagesUiPopupHeaderBackground, #f2f2f2);
+@uiPopupHeaderBorder: var(--allPagesUiPopupHeaderBorder, 0px solid  @primaryBackground);
+@uiPopupTitleColor:           @textColor;
 @uiPopupContentBackground: @baseBackground;
-@popupMessageColor: 					@textColor;
+@popupMessageColor:           @textColor;
 
 @multipleMessageBackground: @primaryBackgroundLight;
-@multipleMessageBorder: 				@borderColor;
+@multipleMessageBorder:         @borderColor;
 
 // Tabs Normal
 // -------------------------
-@tabNormalLinkColor: 					@textColor;
-@tabNormalLinkBorder: 					@borderColor;
-@tabNormalLinkBackground: #f0f4f7;
+@tabNormalLinkColor:          @textColor;
+@tabNormalLinkBorder:           @borderColor;
+@tabNormalLinkBackground: var(--allPagesTabNormalLinkBackground, #f0f4f7);
 
-@tabNormalActiveLinkBorder: 			@borderColor;
+@tabNormalActiveLinkBorder:       @borderColor;
 @tabNormalActiveLinkBackground: @primaryColor;
 
 @tabNormalContentBackground: @baseBackground;
-@tabNormalContentBorder: 				@borderColor;
+@tabNormalContentBorder:        @borderColor;
 
 // Tabs GrayInPage
 // -------------------------
 @tabGrayInPageNavBackground: @primaryBackgroundHover;
-@tabGrayInPageNavBorder: 					@borderColor;
+@tabGrayInPageNavBorder:          @borderColor;
 @tabGrayInPageActiveLinkStartBackground: @baseBackground;
 @tabGrayInPageActiveLinkMiddleBackground: @primaryBackground;
-@tabGrayInPageActiveLinkEndBackground: 		@tabGrayInPageActiveLinkMiddleBackground;
+@tabGrayInPageActiveLinkEndBackground:    @tabGrayInPageActiveLinkMiddleBackground;
 @tabGrayInPageContentBackground: @primaryBackground;
 
-@tabGrayInPageLinkColor: 				@textColor;
+@tabGrayInPageLinkColor:        @textColor;
 @tabGrayInPageLinkBorder: @primaryBackground;
 @tabGrayInPageHoverLinkColor: @primaryBackground;
-@tabGrayInPageHoverLinkBorder: 			@borderColor;
+@tabGrayInPageHoverLinkBorder:      @borderColor;
 @tabGrayInPageCaretColor: @baseColorMedium;
-@tabGrayInPageHoverCaretColor: 			@primaryLightColor;
+@tabGrayInPageHoverCaretColor:      @primaryColorLighter;
 
 // Tab Container
 // -------------------------
 @tabContainerBackground: @baseColorLight;
 @tabContainerLinkColor: @baseBackground;
-@tabContainerActiveLinkBackground:  	@primaryLightColor;
+@tabContainerActiveLinkBackground:    @primaryColorLighter;
 @tabContainerActiveLinkColor: @baseBackground;
 
 // Toolbar
 // -------------------------
-@toolbarDarkStartBackground:			#2D3138;;
-@toolbarDarkEndBackground:				#2D3138;;
-@toolbarDarkBorder: 					#2D3138;;
+@toolbarDarkStartBackground:      var(--allPagesToolbarDarkStartBackground, #2D3138);
+@toolbarDarkEndBackground:        var(--allPagesToolbarDarkEndBackground, #2D3138);
+@toolbarDarkBorder:           var(--allPagesToolbarDarkBorder, #2D3138);
 @toolbarDarkLinkColor: @baseBackground;
 @toolbarDarkLinkHoverColor: @baseBackground;
-@toolbarDarkBackgroundHover: #3f3f3f;
+@toolbarDarkBackgroundHover: var(--allPagesToolbarDarkBackgroundHover, #3f3f3f);
 
-@toolbarLightStartBackground:			@baseBackground;
-@toolbarLightEndBackground:				@baseBackground;
-@toolbarLightBorder: 					@baseBackground;
-@toolbarLightLinkColor: 				@primaryColor;
-@toolbarLightLinkHoverColor: 			#4d5466;
+@toolbarLightStartBackground:     @baseBackground;
+@toolbarLightEndBackground:       @baseBackground;
+@toolbarLightBorder:          @baseBackground;
+@toolbarLightLinkColor:         @primaryColor;
+@toolbarLightLinkHoverColor:      var(--allPagesToolbarLightLinkHoverColor, #4d5466);
 @toolbarLightBackgroundHover:           @baseBackground;
 
 //UIBox
@@ -463,14 +501,15 @@
 @uiBoxGray: @primaryBackground;
 
 // Quote
-@quoteBorder: #a8b3c5;
+@quoteBorder: var(--allPagesQuoteBorder, #a8b3c5);
 @quoteBackgound: none;
-@quoteBackgoundForum: #eff4fa;
-@quoteBorderForum: #aac5e3;
+@quoteBackgoundForum: var(--allPagesQuoteBackgoundForum, #eff4fa);
+@quoteBorderForum: var(--allPagesQuoteBorderForum, #aac5e3);
 
 @quotecolor: @textColor;
 
-@quotePrimaryBorder: 					lighten(@primaryColor, 40%);
+@quotePrimaryBorderDefault: lighten(@primaryColorDefault, 40%);
+@quotePrimaryBorder: var(--allPagesQuotePrimaryBorder, @quotePrimaryBorderDefault);
 
 
 // UIMention
@@ -484,13 +523,13 @@
 //@paddingMini:           0 10px;
 
 // Global Loading
-@globalLoadingBackground: #808080;
-@globalLoadingBorder: #333;
-@globalLoadingColor: #fff;
+@globalLoadingBackground: var(--allPagesGlobalLoadingBackground, #808080);
+@globalLoadingBorder: var(--allPagesGlobalLoadingBorder, #333);
+@globalLoadingColor: var(--allPagesGlobalLoadingColor, #fff);
 
 // navigation left
 @plfNavigationTitleColor: @primaryColor;
-@plfNavigationBgBorderLeft :@primaryLightColor;
+@plfNavigationBgBorderLeft :@primaryColorLighter;
 @plfNavigationBorderLeft: @lightWhite;
 @plfNavigationColor: @baseColorMedium;
 @plfNavigationBgSelected : @baseBackground;
@@ -499,67 +538,73 @@
 @plfNavigationColorHover:  @linkColorHover;
 
 // notification
-@notifcationUnreadBackground: #e3ecf6;
+@notifcationUnreadBackground: var(--allPagesNotifcationUnreadBackground, #e3ecf6);
 
 // -------------------------Color  generation formula -------------------------//
 
 //Return true if base color is darker ( this is default skin)
 .setColor (@a) when (lightness(@a) < 50%) {
-  @baseColorDark:       lighten(@baseColor, 20%); // #333333 Default color for all title, text, text input, label
-  @baseColorMedium:         lighten(@baseColor, 50%); // #808080 Navigation text color, special purpose in use
-  @baseColorLight:        lighten(@baseColor, 60%); // #999999 Default @baseColorMedium color for small text, sub title, text field explanation
-@borderColor: @baseGreyColor;
-  @primaryBackgroundHover:  darken(@primaryBackground, 4%);
-  @primaryBackgroundLight:  lighten(@primaryBackground, 3%);
-  @revealBackgroundHover:  lighten(@baseColor, 98%);
-  @revealBackgroundSelected: lighten(spin(@primaryColor, -10%), 52%);
-  @primaryDarkColor:    darken(@primaryColor, 10.5%);   //#224469
-  @primaryLightColor:   lighten(@primaryColor, 18.5%);    //#578dc9
+  @baseColorDark:       var(--allPagesBaseColorDark, lighten(@baseColorDefault, 20%)); // #333333 Default color for all title, text, text input, label
+  @baseColorMedium:         var(--allPagesBaseColorMedium, lighten(@baseColorDefault, 50%)); // #808080 Navigation text color, special purpose in use
+  @baseColorLight:        var(--allPagesBaseColorLight, lighten(@baseColorDefault, 60%)); // #999999 Default @baseColorMedium color for small text, sub title, text field explanation
+  @primaryBackgroundHover:  var(--allPagesPrimaryBackgroundHover, darken(@primaryBackgroundDefault, 4%));
+  @primaryBackgroundLight:  var(--allPagesPrimaryBackgroundLight, lighten(@primaryBackgroundDefault, 3%));
+  @primaryBackgroundLighter:  var(--allPagesPrimaryBackgroundLighter, lighten(@primaryBackgroundDefault, 13%));
+  @revealBackgroundHover:  var(--allPagesRevealBackgroundHover, lighten(@baseColorDefault, 98%));
+  @revealBackgroundSelected: var(--allPagesRevealBackgroundSelected, lighten(spin(@primaryColorDefault, -10%), 52%));
+  @primaryDarkerColor:    var(--allPagesPrimaryDarkerColor, darken(@primaryColorDefault, 10.5%));   //#224469
+  @primaryDarkColor:    var(--allPagesPrimaryDarkColor, darken(@primaryColorDefault, 15%));
+  @primaryColorLighterDefault: lighten(@primaryColorDefault, 18.5%);
+  @primaryColorLighter:   var(--allPagesPrimaryColorLighter, @primaryColorLighterDefault);
+  @primaryColorLighterGradientEnd: var(--allPagesPrimaryColorLighterGradientEnd, darken(@primaryColorLighterDefault, 15%));
   // button primary
   @btnBackground:            @baseBackground;
   @btnBackgroundHighlight:  @primaryBackground;
 
-  @dropdownArrowRight:  darken(@baseBackground, 20%);   // #aac5e3
-  @quotePrimaryBackground:        lighten(@quotePrimaryBorder, 18%);  // #aac5e3
+  @dropdownArrowRight:  var(--allPagesDropdownArrowRight, darken(@baseBackgroundDefault, 20%));   // #aac5e3
+  @quotePrimaryBackground:        var(--allPagesQuotePrimaryBackground, lighten(@quotePrimaryBorderDefault, 18%));  // #aac5e3
 }
 
 //Return true if base color is lighter
 .setColor (@a) when (lightness(@a) >= 50%) {
-  @baseColorLight:        darken(@baseColor, 20%);
-  @baseColorMedium:         lighten(@baseColor, 50%);
-  @baseColorDark:       lighten(@baseColor, 60%);
-@borderColor: @baseGreyColor;
-  @primaryBackgroundLight:  lighten(@primaryBackground, 4%);
-  @primaryBackgroundHover : darken(@primaryBackground, 3%);
-  @revealBackgroundHover:  darken(@baseColor, 98%);
-  @revealBackgroundSelected: darken(spin(@primaryColor, -10%), 52%);
-  @primaryLightColor:   lighten(@primaryColor, 10.5%);    //#224469
-  @primaryDarkColor :   darken(@primaryColor, 18.5%);   //#578dc9
+  @baseColorLight:        var(--allPagesBaseColorLight, darken(@baseColorDefault, 20%));
+  @baseColorMedium:         var(--allPagesBaseColorMedium, lighten(@baseColorDefault, 50%));
+  @baseColorDark:       var(--allPagesBaseColorDark, lighten(@baseColorDefault, 60%));
+  @primaryBackgroundLighter:  var(--allPagesPrimaryBackgroundLighter, lighten(@primaryBackgroundDefault, 14%));
+  @primaryBackgroundLight:  var(--allPagesPrimaryBackgroundLight, lighten(@primaryBackgroundDefault, 4%));
+  @primaryBackgroundHover : var(--allPagesPrimaryBackgroundHover , darken(@primaryBackgroundDefault, 3%));
+  @revealBackgroundHover:  var(--allPagesRevealBackgroundHover, darken(@baseColorDefault, 98%));
+  @revealBackgroundSelected: var(--allPagesRevealBackgroundSelected, darken(spin(@primaryColorDefault, -10%), 52%));
+  @primaryColorLighterDefault: lighten(@primaryColorDefault, 10.5%);
+  @primaryColorLighter:   var(--allPagesPrimaryColorLighter, @primaryColorLighterDefault);    //#224469
+  @primaryColorLighterGradientEnd: var(--allPagesPrimaryColorLighterGradientEnd, darken(@primaryColorLighterDefault, 15%));
+  @primaryDarkColor:    var(--allPagesPrimaryDarkColor, darken(@primaryColorDefault, 15%));
+  @primaryDarkerColor:   var(--allPagesPrimaryDarkerColor , darken(@primaryColorDefault, 18.5%));
   // button primary
   @btnBackground:           @primaryBackground;
   @btnBackgroundHighlight: @baseBackground;
-  @dropdownArrowRight:  lighten(@baseBackground, 90%);
-  @quotePrimaryBackground:        darken(@primaryColor, 10%); // #aac5e3
+  @dropdownArrowRight:  var(--allPagesDropdownArrowRight, lighten(@baseBackgroundDefault, 90%));
+  @quotePrimaryBackground:        var(--allPagesQuotePrimaryBackground, darken(@primaryColorDefault, 10%)); // #aac5e3
 }
-.setColor(@baseColor);
+.setColor(@baseColorDefault);
 
 /* default btn */
 @btnBackgroundColor: @baseBackground;
 @btnBackgroundImage: none;
 @btnHoverBackgroundColor: @baseGreyColor;
-@btnDisableBackground: #f2f2f2;
+@btnDisableBackground: var(--allPagesBtnDisableBackground, #f2f2f2);
 
 /* primary btn */
-@btnPrimaryHoverBackgroundColor: #476a9c;
+@btnPrimaryHoverBackgroundColor: @secondarySkinColor;
 @btnPrimaryHoverBackgroundPosition: 0 -45px;
-@btnPrimaryDisableHoverBackground: #476a9c;
-@btnPrimaryDisableBackground: #afc9e5;
+@btnPrimaryDisableHoverBackground: @secondarySkinColor;
+@btnPrimaryDisableBackground: var(--allPagesBtnPrimaryDisableBackground, #afc9e5);
 
 /* btn group */
 @btnGroupActiveBackground: inherit;
 @btnGroupActiveColor: @baseBackground;
 @btnGroupActiveBorderColor: @primaryColor;
-@btnGroupBackground: #f0f4f7;
+@btnGroupBackground: var(--allPagesBtnGroupBackground, #f0f4f7);
 @btnGroupHoverBackgroundColor: @btnHoverBackgroundColor;
 
 /* dropdown */
@@ -578,16 +623,16 @@
 @btnGroupOpenDropdownBackground: @baseGreyColor;
 
 /* switchBtnHandle */
-@switchBtnHandleStartColor: #b5bdc6;
-@switchBtnHandleEndColor: #b5bdc6;
+@switchBtnHandleStartColor: var(--allPagesSwitchBtnHandleStartColor, #b5bdc6);
+@switchBtnHandleEndColor: var(--allPagesSwitchBtnHandleEndColor, #b5bdc6);
 
 /* switchBtnLabelOff */
-@uiSwitchOffColor: #e1e8ee;
+@uiSwitchOffColor: @baseGreyColor;
 @switchBtnLabelOffStartColor: @uiSwitchOffColor;
 @switchBtnLabelOffStartColor: @uiSwitchOffColor;
 
 /* switchBtnLabelOn */
-@uiSwitchOnColor: #89afd9;
+@uiSwitchOnColor: var(--allPagesUiSwitchOnColor, lighten(@primaryColorDefault, 30%));
 @switchBtnLabelOnStartColor: @uiSwitchOnColor;
 @switchBtnLabelOnStartColor: @uiSwitchOnColor;
 
@@ -599,9 +644,9 @@
 @uiCheckboxCheckedBackground: @primaryColor;
 
 /* uiSwitcher */
-@uiSwitcherBackground: #d8dadd;
+@uiSwitcherBackground: var(--allPagesUiSwitcherBackground, #d8dadd);
 @uiSwitcherOnBackground: @primaryColor;
-@uiSwitcherOffBackground: #9ea6b2;
+@uiSwitcherOffBackground: var(--allPagesUiSwitcherOffBackground, #9ea6b2);
 
 /* input-append btn */
 @inputAppendBtnBackground: @primaryColor;
@@ -640,7 +685,7 @@
 
 /* progress bar */
 @progressBarBorderRadius: 0;
-@progressBarIconBackground: #e1e8ee;
+@progressBarIconBackground: @baseGreyColor;
 @progressBarIconBackgroundImage: none;
 
 /*  tabs  */
@@ -656,7 +701,7 @@
 @tabContentBorder: 2px solid @baseGreyColor;
 
 /* tables */
-@tableThBackground: #f6f7fa;
+@tableThBackground: var(--allPagesTableThBackground, #f6f7fa);
 @tableRadius: 0px;
 
 /*  popup   */
@@ -681,33 +726,33 @@
 @badgeDefaultBackground: @baseGreyColor;
 
 /* uiBox */
-@weekListBackground: #578dc9;
-@calComponentTodayBackground: #578dc9;
-@uicalendarComponentTitleBackground: #578dc9;
-@uiCalendarComponentTitleBackground: #578dc9;
-@uiMiniCalendarTitleBackground: #578dc9;
-@uiMiniCalendarTodayBackground: #eceaea;
+@weekListBackground: @primaryColor;
+@calComponentTodayBackground: @primaryColor;
+@uicalendarComponentTitleBackground: @primaryColor;
+@uiCalendarComponentTitleBackground: @primaryColor;
+@uiMiniCalendarTitleBackground: @primaryColor;
+@uiMiniCalendarTodayBackground: var(--allPagesUiMiniCalendarTodayBackground, #eceaea);
 @uiMiniCalendarCurrentWeekBackground: @baseBackground;
 @uiMiniCalendarBorder: none;
 @uicalendarComponentBorder: none;
 
 /* Alert */
-@alertBorder: 1px;
-@alertSuccessColor: #084130;
-@alertErrorColor: #771414;
-@alertInfoColor: #193e67;
-@alertWarningColor: #8f5804;
-@alertWarningIconColor: #b46f05;
+@alertBorder: var(--allPagesAlertBorder, 1px);
+@alertSuccessColor: var(--allPagesAlertSuccessColor, #084130);
+@alertErrorColor: var(--allPagesAlertErrorColor, #771414);
+@alertInfoColor: var(--allPagesAlertInfoColor, #193e67);
+@alertWarningColor: var(--allPagesAlertWarningColor, #8f5804);
+@alertWarningIconColor: var(--allPagesAlertWarningIconColor, #b46f05);
 
 
 /* Left bar */
 @margin: 57px;
 
 /* The background of drop area when a file is dragged into it */
-@dropFileAreaBackgroundOnDragEnter: #e6e6e6;
+@dropFileAreaBackgroundOnDragEnter: var(--allPagesDropFileAreaBackgroundOnDragEnter, #e6e6e6);
 
 // Other variables
-@commentBackgroundColor: #f2f5f8;
+@commentBackgroundColor: var(--allPagesCommentBackgroundColor, #f2f5f8);
 @uiTreeEmptyColor: @lightWhite;
 @uiIconRefreshColor: @primaryColor;
 @toolbarContainerDarkColor: @lightWhite;
@@ -735,31 +780,31 @@
 @rightBodyContainerBackground: @lightGrey;
 @activityStreamBackground: @baseBackground;
 @toggeleInvisibleColor: @baseGreyColor;
-@likeButtonColor: #c6c6c6;
-@controlGroupErrorColor: #bc4343;
-@controlGroupSuccessColor: #2eb58c;
-@calendarColor: #333333;
+@likeButtonColor: var(--allPagesLikeButtonColor, #c6c6c6);
+@controlGroupErrorColor: var(--allPagesControlGroupErrorColor, #bc4343);
+@controlGroupSuccessColor: var(--allPagesControlGroupSuccessColor, @successColor);
+@calendarColor: var(--allPagesCalendarColor, #333333);
 @navigationPortletBackground: @tertiaryColor;
 @btnAllActivitiesColor: @tertiaryColor;
-@offlineColor: #a8b3c5;
-@toolbarLightIconColor:           #a8b3c5;
+@offlineColor: var(--allPagesOfflineColor, #a8b3c5);
+@toolbarLightIconColor:           var(--allPagesToolbarLightIconColor, #a8b3c5);
 @toolbarLightIconHoverColor:      @primaryColor;
 @colorIconSecondaryHover:@primaryColor;
-@sizeSideBarIcon: 20px;
-@headingColor: #4d5466;
+@sizeSideBarIcon: var(--allPagesSizeSideBarIcon, 20px);
+@headingColor: var(--allPagesHeadingColor, #4d5466);
 @plfNavigationBgBorderLeft: @lightWhite;
-@badgePrimaryColor : #ff5335;
-@paddingBadgeDefault-mini : 0;
-@widthBadgeDefault-mini : 20px;
-@heightBadgeDefault-mini : 20px;
+@badgePrimaryColor : var(--allPagesBadgePrimaryColor , #ff5335);
+@paddingBadgeDefault-mini : var(--allPagesPaddingBadgeDefault-mini , 0);
+@widthBadgeDefault-mini : var(--allPagesWidthBadgeDefault-mini , 20px);
+@heightBadgeDefault-mini : var(--allPagesHeightBadgeDefault-mini , 20px);
 @textAlignBadgeDefault-mini : center;
-@borderRadiusBadgeDefault-mini : 50%;
-@lineHeightBadgeDefault-mini : 20px;
+@borderRadiusBadgeDefault-mini : var(--allPagesBorderRadiusBadgeDefault-mini , 50%);
+@lineHeightBadgeDefault-mini : var(--allPagesLineHeightBadgeDefault-mini , 20px);
 @btnPrimaryDropdownBackgroundImage: none;
 @btnGroupDropdownToggeleBackground: @baseGreyColor;
-@uiCheckboxDisabledBackground: #999;
-@chatBubbleBackground: #edf3ff;
-@chatBubbleOddBackground: #dceaf9;
-@chatFileUploadPopOverBackground: #88b3d8;
+@uiCheckboxDisabledBackground: var(--allPagesUiCheckboxDisabledBackground, #999);
+@chatBubbleBackground: var(--allPagesChatBubbleBackground, #edf3ff);
+@chatBubbleOddBackground: var(--allPagesChatBubbleOddBackground, #dceaf9);
+@chatFileUploadPopOverBackground: var(--allPagesChatFileUploadPopOverBackground, #88b3d8);
 
 @import "customVariables.less";

@@ -34,12 +34,13 @@
 // -------------------------
 @bodyBackground:        @white;
 @textColor:             @grayDark;
-
+@lightTextColor:        lighten(@grayDark, 15%);
+@borderColor:           @gray;
 
 // Links
 // -------------------------
 @linkColor:             #08c;
-@linkColorHover:        darken(@linkColor, 15%);
+@linkColorHover:        darken(#08c, 15%);
 
 
 // Typography
@@ -87,9 +88,10 @@
 @btnBackground:                     @white;
 @btnBackgroundHighlight:            darken(@white, 10%);
 @btnBorder:                         #ccc;
+@btnBorderBottom:                   darken(#ccc, 10%);
 
 @btnPrimaryBackground:              @linkColor;
-@btnPrimaryBackgroundHighlight:     spin(@btnPrimaryBackground, 20%);
+@btnPrimaryBackgroundHighlight:     spin(#08c, 20%);
 
 @btnInfoBackground:                 #5bc0de;
 @btnInfoBackgroundHighlight:        #2f96b4;
@@ -110,6 +112,7 @@
 // Forms
 // -------------------------
 @inputBackground:               @white;
+@inputBackgroundUneditable:     darken(@white, 1%);
 @inputBorder:                   #ccc;
 @inputBorderRadius:             @baseBorderRadius;
 @inputDisabledBackground:       @grayLighter;
@@ -121,6 +124,7 @@
 // -------------------------
 @dropdownBackground:            @white;
 @dropdownBorder:                rgba(0,0,0,.2);
+@dropdownBorderLeft:            darken(@white, 20%);
 @dropdownDividerTop:            #e5e5e5;
 @dropdownDividerBottom:         @white;
 
@@ -129,7 +133,9 @@
 @dropdownLinkColorActive:       @white;
 
 @dropdownLinkBackgroundActive:  @linkColor;
+@dropdownLinkBackgroundActiveGradient:  @dropdownLinkBackgroundActiveGradient;
 @dropdownLinkBackgroundHover:   @dropdownLinkBackgroundActive;
+@dropdownLinkBackgroundHoverGradient: @dropdownLinkBackgroundHoverGradient;
 
 
 
@@ -231,21 +237,40 @@
 // Form states and alerts
 // -------------------------
 @warningText:             #c09853;
+@warningTextFocus:        darken(@warningText, 10%);
+@warningTextHref:         darken(@warningText, 10%);
+@warningTextShadow:       lighten(@warningText, 20%);
 @warningBackground:       #fcf8e3;
 @warningBorder:           darken(spin(@warningBackground, -10), 3%);
+@warningBorderFocus:      darken(@warningBorder, 10%);
+@warningBorderShadow:     lighten(@warningBorder, 20%);
 
 @errorText:               #b94a48;
+@errorTextHref:           darken(@errorText, 10%);
+@errorTextShadow:         lighten(@errorText, 20%);
 @errorBackground:         #f2dede;
 @errorBorder:             darken(spin(@errorBackground, -10), 3%);
+@errorBorderFocus:        darken(@errorBorder, 10%);
+@errorBorderShadow:       lighten(@errorBorder, 20%);
 
 @successText:             #468847;
+@successTextHref:         darken(@successText, 10%);
+@successTextShadow:       lighten(@successText, 20%);
 @successBackground:       #dff0d8;
 @successBorder:           darken(spin(@successBackground, -10), 5%);
+@successBorderFocus:      darken(@successBorder, 10%);
+@successBorderShadow:     lighten(@successBorder, 20%);
 
 @infoText:                #3a87ad;
+@infoTextHref:            darken(@infoText, 10%);
+@infoTextShadow:          lighten(@infoText, 20%);
 @infoBackground:          #d9edf7;
 @infoBorder:              darken(spin(@infoBackground, -10), 7%);
+@infoBorderFocus:         darken(@infoBorder, 10%);
+@infoBorderShadow:        lighten(@infoBorder, 20%);
 
+@inverseText:             @grayDark;
+@inverseTextHref:         darken(@inverseText, 10%);
 
 // Tooltips and popovers
 // -------------------------

@@ -64,23 +64,6 @@
                 <artifactId>lesscss-maven-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>bootstrap</id>
-                        <configuration>
-                            <!--Should be the final one because the less folder should be outside the webapp in /src/main/less   -->
-                            <!--<sourceDirectory>${basedir}/src/main/less/bootstrap/less</sourceDirectory>-->
-                            <sourceDirectory>${project.basedir}/src/main/webapp/skin/bootstrap/less</sourceDirectory>
-                            <outputDirectory>${project.build.directory}/${project.build.finalName}/skin/bootstrap/css</outputDirectory>
-                            <compress>false</compress>
-                            <includes>
-                                <include>bootstrap.less</include>
-                                <include>responsive.less</include>
-                            </includes>
-                        </configuration>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                    </execution>
-                    <execution>
                         <id>core</id>
                         <configuration>
                             <!-- SourceDirectory shouldn't exist and we should have as default the lesss folder in /src/main/less     -->
@@ -90,6 +73,7 @@
                             <includes>
                                 <include>Core.less</include>
                                 <include>customStyle.less</include>
+                                <include>enterpriseCustomStyle.less</include>
                                 <include>Portlets/UIOrganizationPortlet/Style.less</include>
                                 <include>Portlets/UITabbedDashboardPortlet/Style.less</include>
                                 <include>Portlets/UIGadgetPortlet/Style.less</include>

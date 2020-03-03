@@ -355,7 +355,7 @@ table {
 Round corner box with title
   - border: 1px solid @tableBorder;
   - Title:
-    + gray background (#f0f0f0)
+    + gray background (@primaryBackground)
     + round corner at left-top and right-top
     + text title is bold, class name is "titleBox", color is @@baseColorDark
   - content box:
@@ -753,7 +753,7 @@ hr {
       color: @dropdownLinkColor;
     }
     &:hover,&.selected {
-      #gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 15%));
+      #gradient > .vertical(@dropdownLinkBackgroundHover, @dropdownLinkBackgroundHoverDark);
         * {
           color: @dropdownLinkColorHover;
         }

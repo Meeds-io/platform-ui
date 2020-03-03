@@ -54,7 +54,7 @@
 			}
 
 			.btn-group li > a.selected{
-			   #gradient > .vertical(@primaryLightColor, darken(@primaryLightColor, 15%));
+			   #gradient > .vertical(@primaryColorLighter, @primaryDarkColor);
 			    color: @baseBackground;
 			}
 			.uiFormScrollMenu{
@@ -362,7 +362,7 @@
 		.dropdown-submenu:hover > .seoImgBlock,
 		.dropdown-menu .active > .seoImgBlock,
 		.dropdown-menu .active > .seoImgBlock:hover  {
-			#gradient > .vertical(@primaryLightColor, darken(@primaryLightColor, 15%));
+			#gradient > .vertical(@primaryColorLighter, @primaryDarkColor);
 			color: @dropdownLinkColorHover;
 		}
 
@@ -652,7 +652,7 @@
 				background-color: @notifcationUnreadBackground;
 			}
 			&:hover {
-				#gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 15%));
+				#gradient > .vertical(@dropdownLinkBackgroundHover, @dropdownLinkBackgroundHoverDark);
 				color: @dropdownLinkColorHover;
 				cursor: pointer;
 				> .remove-item {

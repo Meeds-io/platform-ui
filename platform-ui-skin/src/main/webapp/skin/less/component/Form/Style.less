@@ -383,20 +383,19 @@ input[disabled], select[disabled], textarea[disabled] {
 
 // Warning
 .control-group.warning {
-  .formFieldState(@warningText, @warningBorder, @warningBackground);
-
+  .formFieldState(@warningText, @warningBorder, @warningBorderFocus, @warningBorderShadow, @warningBackground);
 }
 // Error
 .control-group.error {
-  .formFieldState(@errorText, @errorBorder, @errorBackground);
+  .formFieldState(@errorText, @errorBorder, @errorBorderFocus, @errorBorderShadow, @errorBackground);
 }
 // Success
 .control-group.success {
-  .formFieldState(@successText, @successBorder, @successBackground);
+  .formFieldState(@successText, @successBorder, @successBorderFocus, @successBorderShadow, @successBackground);
 }
 // Success
 .control-group.info {
-  .formFieldState(@infoText, @infoBorder, @infoBackground);
+  .formFieldState(@infoText, @infoBorder, @infoBackground, @infoBorderShadow, @infoBackground);
 }
 .control-group.error > .control-label, .control-group.error .help-block, .control-group.error .help-inline {
   color: @textColor; 
@@ -503,7 +502,7 @@ label.switchBtnLabelOn {
    min-width: 9px;
    top: 1px;
    #gradient > .vertical(@switchBtnLabelOnStartColor, @switchBtnLabelOnStartColor);
-   .box-shadow(inset 0px 3px 5px @primaryDarkColor);
+   .box-shadow(inset 0px 3px 5px @primaryDarkerColor);
    .border-top-left-radius (9px);
    .border-bottom-left-radius(9px);
 }

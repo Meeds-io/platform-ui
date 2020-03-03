@@ -188,7 +188,7 @@ input[type="checkbox"]:focus {
 .uneditable-input,
 .uneditable-textarea {
   color: @grayLight;
-  background-color: darken(@inputBackground, 1%);
+  background-color: @inputBackgroundUneditable;
   border-color: @inputBorder;
   .box-shadow(inset 0 1px 2px rgba(0,0,0,.025));
   cursor: not-allowed;
@@ -349,19 +349,19 @@ input[type="checkbox"][readonly] {
 
 // Warning
 .control-group.warning {
-  .formFieldState(@warningText, @warningText, @warningBackground);
+  .formFieldState(@warningText, @warningText, @warningTextHref, @warningTextShadow, @warningBackground);
 }
 // Error
 .control-group.error {
-  .formFieldState(@errorText, @errorText, @errorBackground);
+  .formFieldState(@errorText, @errorText, @errorTextHref, @errorTextShadow, @errorBackground);
 }
 // Success
 .control-group.success {
-  .formFieldState(@successText, @successText, @successBackground);
+  .formFieldState(@successText, @successText, @successTextHref, @successTextShadow, @successBackground);
 }
 // Success
 .control-group.info {
-  .formFieldState(@infoText, @infoText, @infoBackground);
+  .formFieldState(@infoText, @infoText, @infoTextHref, @infoTextShadow, @infoBackground);
 }
 
 // HTML5 invalid states
@@ -399,7 +399,7 @@ select:focus:invalid {
 
 .help-block,
 .help-inline {
-  color: lighten(@textColor, 15%); // lighten the text some for contrast
+  color: @lightTextColor; // lighten the text some for contrast
 }
 
 .help-block {

@@ -94,8 +94,8 @@
   }
 
   .quickSearchResult:hover, .quickSearchResult.arrowResult {
-    #gradient > .vertical(@primaryLightColor, darken(@primaryLightColor, 15%));
-    border-color: @primaryDarkColor;
+    #gradient > .vertical(@primaryColorLighter, @primaryDarkColor);
+    border-color: @primaryDarkerColor;
     a {
 		color: @baseBackground;
 	    > [class^="uiIconPLF"] {

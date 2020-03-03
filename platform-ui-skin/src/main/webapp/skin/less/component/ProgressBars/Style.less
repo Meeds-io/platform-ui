@@ -6,13 +6,13 @@
 	.border-radius(@progressBarBorderRadius);
 	#gradient .vertical(@primaryBackgroundHover, @primaryBackground);
 	.bar {
-		#gradient .vertical(@primaryLightColor, @primaryColor);
+		#gradient .vertical(@primaryColorLighter, @primaryColor);
 	}
 }
 
 // Striped bars
 .progress-striped .bar {
-  #gradient > .striped(lighten(@primaryColor, 10%));
+  #gradient > .striped(@primaryColorLight);
 }
 
 // upload files
@@ -93,7 +93,7 @@
 	padding: 3px;
 	.bar{
 		.border-radius(@progressBarBorderRadius);
-		#gradient .vertical(@primaryLightColor, @primaryColor);
+		#gradient .vertical(@primaryColorLighter, @primaryColor);
 	}
 }
 
