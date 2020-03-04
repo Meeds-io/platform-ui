@@ -82,169 +82,168 @@
     }
   }
 
-  .v-overlay {
-    z-index: 1055!important;
-  }
+  .manageSpaces {
+    .v-overlay {
+      z-index: 1055!important;
+      position: fixed !important;
+    }
 
-  #GroupBindingDrawer {
-    z-index: 1055!important;
+    #GroupBindingDrawer {
+      z-index: 1055!important;
+      position: fixed !important;
 
-    .title {
-      border-bottom: 1px solid rgba(13,13,13,0.05);
-      box-sizing: border-box;
-      padding: 0px!important;
+      .title {
+        border-bottom: 1px solid rgba(13,13,13,0.05);
+        box-sizing: border-box;
+        padding: 0px!important;
 
-      span {
+        span {
+          color: #4d5466;
+          font-size: 18px;
+          font-weight: bold;
+          line-height: 20px;
+          padding-left: 4%;
+        }
+      }
+
+      .content {
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 80.5vh;
+
+        span {
+          color: #4d5466;
+          font-size: 18px;
+          font-weight: bold;
+          line-height: 20px;
+          padding-left: 4%;
+        }
+
+        .selectize-input {
+          max-height: inherit;
+          min-height: 80px;
+          height: max-content;
+          padding: 8px;
+
+          .item {
+            padding-right: 35px !important;
+            background: #ccddef;
+            color: #568dc9;
+            border: 1px solid #568dc9;
+            border-radius: 15px;
+            margin: 4px 10px 4px 4px;
+            font-size: 13px;
+
+            a {
+              color: #ccddef;
+              background-color: #568dc9;
+              border-radius: 50%;
+              font-size: 12px;
+              width: 16px;
+              height: 17px;
+              top: 3px;
+              right: 10px;
+            }
+          }
+        }
+      }
+
+      .boundGroups {
+        padding-left: 1%;
+        max-height: 100%!important;
+      }
+      .delete {
+        margin-right: 7%;
+
+        .uiIconLightGray {
+          color: #a8b3c5;
+          font-size: 12px;
+        }
+      }
+
+      .closeIcon {
+        color: #e1e8ee!important;
+      }
+
+      .close {
+        margin-right: 2%;
+      }
+      .uiIconEcmsGoBack {
         color: #4d5466;
-        font-size: 18px;
-        font-weight: bold;
-        line-height: 20px;
-        padding-left: 4%;
+      }
+      .leftIcon {
+        margin-left: 18% !important;
+      }
+      .drawerActions {
+        overflow-y: auto;
+        overflow-x: hidden;
+        width: 100%;
+        height: 60px;
+        position: absolute;
+        bottom: 0;
+        border-top: 1px solid rgba(13,13,13,0.05);
+        padding-top: 4px!important;
+        padding-bottom: 12px!important;
+
+        .btn-primary {
+          color: @white!important;
+        }
+        .btn-primary:hover {
+          background-color: #578DC9;
+        }
       }
     }
 
-    .content {
-      overflow-y: auto;
-      overflow-x: hidden;
-      max-height: 80.5vh;
+    .bindingModal {
+      z-index: 1055!important;
 
-      span {
-        color: #4d5466;
-        font-size: 18px;
-        font-weight: bold;
-        line-height: 20px;
-        padding-left: 4%;
-      }
+      .modal-content {
+        right: 9%;
+        bottom: 9% !important;
+        width: auto!important;
 
-      .selectize-input {
-        max-height: inherit;
-        min-height: 80px;
-        height: max-content;
-        padding: 8px;
+        .popupHeader {
+          margin-bottom: auto;
+          background-color: @white;
+          display: inline-flex;
 
-        .item {
-          padding-right: 35px !important;
-          background: #ccddef;
-          color: #568dc9;
-          border: 1px solid #568dc9;
-          border-radius: 15px;
-          margin: 4px 10px 4px 4px;
-          font-size: 13px;
+          .closeBindingModal {
+            left: 77%;
+          }
+        }
 
-          a {
-            color: #ccddef;
-            background-color: #568dc9;
-            border-radius: 50%;
-            font-size: 12px;
-            width: 16px;
-            height: 17px;
-            top: 3px;
-            right: 10px;
+        .popupContent {
+          p {
+            margin-bottom: 60px;
+          }
+
+          .uiAction.uiActionBorder {
+            padding-bottom: 8px!important;
+            .btn.btn-primary, .btn {
+              position: relative;
+              left: 27%;
+              font-weight: normal!important;
+            }
+            .btn {
+              min-width: 13%;
+            }
           }
         }
       }
     }
 
-    .boundGroups {
-      padding-left: 1%;
-      max-height: 100%!important;
-    }
-    .delete {
-      margin-right: 7%;
-
-      .uiIconLightGray {
-        color: #a8b3c5;
-        font-size: 12px;
-      }
-    }
-
-    .closeIcon {
-      color: #e1e8ee!important;
-    }
-
-    .close {
-      margin-right: 2%;
-    }
-    .uiIconEcmsGoBack {
-      color: #4d5466;
-    }
-    .leftIcon {
-      margin-left: 18% !important;
-    }
-    .drawerActions {
-      overflow-y: auto;
-      overflow-x: hidden;
-      width: 100%;
-      height: 60px;
-      position: absolute;
-      bottom: 0;
-      border-top: 1px solid rgba(13,13,13,0.05);
-      padding-top: 4px!important;
-      padding-bottom: 12px!important;
-
-      .btn-primary {
-        color: @white!important;
-      }
-      .btn-primary:hover {
-        background-color: @primaryColor;
-      }
-    }
-  }
-
-  .bindingModal {
-    z-index: 1055!important;
-
-    .modal-content {
-      right: 9%;
-      bottom: 9% !important;
-      width: auto!important;
-
-      .popupHeader {
-        margin-bottom: auto;
-        background-color: @white;
-        display: inline-flex;
-
+    @media (max-width: 767px) {
+      .bindingModal {
         .closeBindingModal {
-          left: 77%;
-        }
-      }
-
-      .popupContent {
-        p {
-          margin-bottom: 60px;
+          left: 37%;
         }
 
         .uiAction.uiActionBorder {
-          padding-bottom: 8px!important;
           .btn.btn-primary, .btn {
-            position: relative;
-            left: 27%;
-            font-weight: normal!important;
-          }
-          .btn {
-            min-width: 13%;
+            left: 22%;
           }
         }
       }
     }
   }
 }
-
-@media (max-width: 767px) {
-  #appId {
-    .bindingModal {
-      .closeBindingModal {
-        left: 37%;
-      }
-
-      .uiAction.uiActionBorder {
-        .btn.btn-primary, .btn {
-          left: 22%;
-        }
-      }
-    }
-  }
-}
-
-
-
