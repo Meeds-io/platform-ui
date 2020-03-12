@@ -1,0 +1,386 @@
+@import "../../../variables.less";
+
+#ParentSiteContainer {
+  background: @lightGrey;
+}
+
+#UITopBarContainerParent, #UITopBarContainer {
+  height: 58px;
+  max-height: 58px;
+  min-height: 58px;
+}
+
+#UITopBarContainer {
+  box-shadow: none;
+  background-image: linear-gradient(to bottom, white, white);
+  border-bottom: 1px solid white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 100%;
+  z-index: @zindexFixedNavbar;
+
+  &.top-bar-scrolled {
+    box-shadow: 0 6px 4px -4px rgba(0, 0, 0, .3);
+  }
+
+  .uiDropdownWithIcon > a {
+    color: @toolbarLightIconColor;
+    text-transform: uppercase !important;
+    font-weight: normal;
+    font-size: 15px;
+    
+    &:hover {
+      color: @toolbarLightIconColor;
+      background: none;
+    }
+  }
+
+  [class^="uiIconPLF24x24"] {
+    color: @toolbarLightIconColor;
+    font-size: 26px;
+  }
+
+  .uiDropdownWithIcon > a {
+    padding: 0 12px 0 12px;
+  }
+
+  .UITopBarContainerItemsParent {
+    
+
+    .UITopBarContainerItem {
+      margin: auto;
+      height: 57px;
+      min-height: 57px;
+      max-height: 57px;
+      display: flex;
+
+      .uiSearchPlatformToolBarPortlet > * {
+        margin: 0;
+      }
+
+      > * {
+        margin: auto;
+      }
+    }
+  }
+}
+
+#brandingToBar {
+  .logoContainer {
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      top:6px;
+      right: 0;
+      width: 1px;
+      height: 23px;
+      background: @baseGreyColor;
+    }
+  }
+  .brandingContainer {
+    color: @toolbarLightLinkHoverColor;
+    padding-top: 3px;
+  }
+}
+@media (max-width: 599px) {
+  #brandingToBar {
+    .logoContainer {
+      &:after {
+        display: none;
+      }
+    }
+    .brandingContainer {
+      display: none;
+    }
+  }
+}
+
+.NotificationTopBarTDContainer {
+  #NotificationPopoverPortlet {
+    .container.white{
+      width: auto!important;
+    }
+    .VuetifyApp .v-badge__badge {
+      padding: 0px;
+      font-size: 12px;
+      min-width: 20px;
+      height: 20px;
+      line-height: 20px;
+    }
+
+    .VuetifyApp .v-overlay--absolute, .VuetifyApp .v-navigation-drawer--absolute {
+      position: fixed;
+    }
+    .VuetifyApp .v-list-item {
+      padding: 0px;
+    }
+    .VuetifyApp .v-navigation-drawer--temporary {
+      z-index: 1050;
+    }
+    .notifDrawer {
+      .notifDrawerHeader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 396px;
+        border-bottom: 1px solid #0000001f;
+        background: white;
+        z-index: 9999;
+        .notifDrawerTitle {
+          font-size: 18px;
+          font-weight: bold;
+          color: @toolbarLightLinkHoverColor;
+        }
+        .notifDrawerIcons {
+          flex-direction: row!important;
+          i {
+            cursor: pointer;
+          }
+        }
+      }
+      .notifDrawerItems {
+        padding-bottom: 70px;
+        padding-top: 55px;
+        .notifDrawerItem {
+            li {
+              list-style: none;
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-between;
+              padding: 12px;
+              cursor: pointer;
+
+              &:hover {
+                background: #e3eef7;
+                cursor: pointer;
+                -o-transition: all 0.2s linear;
+                -moz-transition: all 0.2s linear;
+                -webkit-transition: all 0.2s linear;
+                transition: all 0.2s linear;
+                }
+
+              &:before {
+                display: none;
+              }
+
+              &:after {
+                display: none;
+              }
+
+              .media {
+                max-width: 360px;
+                .avatarXSmall {
+                  max-height: 45px;
+                  max-width: 45px;
+
+                  img {
+                    border-radius: 50%;
+                    width: 45px !important;
+                    height: 45px;
+                  }
+                }
+
+                .media-body {
+                  .contentSmall {
+                    .status {
+                      .user-name {
+                        font-weight: bold;
+                      }
+                    }
+
+                    .content {
+                      text-overflow: ellipsis;
+                      white-space: nowrap;
+                      font-size: 13px;
+                      font-style: italic;
+                      max-width: 280px;
+                      overflow: hidden;
+                      display: flex;
+
+                      .user-name {
+                        color: @primaryColor;
+                        font-weight: bold;
+                      }
+
+                      p {
+                        margin-bottom: 8px;
+                        font-size: 13px;
+                        font-style: italic;
+                      }
+
+                      blockquote {
+                        p {
+                          padding: 10px 0 !important;
+                        }
+                      }
+
+                      i {
+                        margin-right: 8px;
+                        font-size: 15px;
+                        color: #abc8e6!important;
+                        &:before {
+                          color: inherit;
+                        }
+                      }
+                      .confirm {
+                        padding: 8px 0;
+                        .action-item {
+                          font-style: normal;
+                          letter-spacing: .5px;
+                          background-color: transparent!important;
+                          background-image: none;
+                          padding: 0 5px !important;
+                          position: relative;
+                          padding-left: 25px!important;
+                          border-radius: 4px;
+                          border:1px solid @primaryColor;
+                          color: @primaryColor;
+                          -o-transition: all 0.2s linear;
+                          -moz-transition: all 0.2s linear;
+                          -webkit-transition: all 0.2s linear;
+                          transition: all 0.2s linear;
+                          &:before {
+                            content: '\e9c8';
+                            font-family: 'PLF-FONT-ICONS' !important;
+                            position: absolute;
+                            height: 100%;
+                            border-right: 1px solid @primaryColor;
+                            padding-right: 3px;
+                            left:0;
+                            padding-left: 3px;
+                          }
+                          &:hover {
+                            background-color: @primaryColor!important;
+                            color:  white;
+                            &:before {
+                              border-right: 1px solid white;
+                            }
+                          }
+                        }
+                        .cancel-item {
+                          font-style: normal;
+                          letter-spacing: .5px;
+                          background-color: transparent !important;
+                          background-image: none;
+                          padding: 0 5px !important;
+                          position: relative;
+                          padding-left: 25px!important;
+                          border-radius: 4px;
+                          margin-left:5px;
+                          color: @toolbarLightIconColor;
+                          border:1px solid @toolbarLightIconColor;
+                          -o-transition: all 0.2s linear;
+                          -moz-transition: all 0.2s linear;
+                          -webkit-transition: all 0.2s linear;
+                          transition: all 0.2s linear;
+                          &:before {
+                            content: '\E9D2';
+                            font-family: 'PLF-FONT-ICONS' !important;
+                            position: absolute;
+                            height: 100%;
+                            border-right: 1px solid @toolbarLightIconColor;
+                            padding-right: 3px;
+                            padding-left: 3px;
+                            left: 0;
+                            border-radius: 5px 0 0 5px;
+                          }
+                          &:hover {
+                            background-color: @toolbarLightIconColor!important;
+                            color:  white;
+                            &:before {
+                              border-right: 1px solid white;
+                            }
+                          }
+                        }
+                      }
+                    }
+
+                    .lastUpdatedTime {
+                      color: @toolbarLightIconColor;
+                      font-size: 12px;
+                      i {
+                        margin-right: 10px;
+                        color: #abc8e6;
+                      }
+                    }
+
+                    .quoteContainer {
+                      padding-left: 5px;
+                      margin: 5px 0;
+                      max-height: 20px;
+                      overflow: hidden;
+                      white-space: nowrap;
+                      text-overflow: ellipsis;
+                      font-size: 13px;
+
+                      .comment {
+                        border-left: 6px solid #aacded;
+                        padding-left: 5px;
+                        font-style: italic;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .kudosWebNotifContent {
+                .content {
+                  display: block !important;
+                }
+              }
+            }
+            .unread {
+              background: #f0f7fd;
+            }
+        }
+      }
+      .notifFooterActions {
+        position: fixed;
+        bottom: 0;
+        left:0;
+        width: 408px;
+        padding-top: 20px;
+        border-top: 1px solid #0000001f;
+        background: white;
+        padding-bottom: 20px;
+        padding-right: 12px;
+        .seeAllNotif {
+          border: 1px solid @primaryColor;
+        }
+        .markAllAsRead {
+          border: 1px solid transparent;
+        }
+      }
+      .noNoticationWrapper {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        background-color: #a8b3c521;
+        margin-top: -1px;
+        .noNotificationsContent {
+          text-align: center;
+          margin-top: -10%;
+          .uiNoNotifIcon {
+            color: #a8b3c521;
+            font-size: 10rem;
+            font-style: normal;
+            font-weight: normal;
+            &:before {
+              font-family: 'PLF-FONT-ICONS';
+              content: "\e965" !important;
+            }
+          }
+          p {
+            font-size: 15px;
+            color: #a8b3c5;
+            margin-top: -50px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

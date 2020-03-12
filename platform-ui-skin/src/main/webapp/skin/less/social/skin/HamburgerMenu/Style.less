@@ -1,0 +1,224 @@
+/**
+ * Copyright (C) 2020 eXo Platform SAS.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+ */
+
+@import "../../../variables.less";
+
+.iconSnapshot:before {
+  content: "\eb67";
+}
+.iconStream:before {
+  content: "\e6d5";
+}
+.iconSpaces:before {
+  content: '\e648';
+}
+.iconPeople:before {
+  content: '\eac1';
+}
+.settingsIcon:before {
+  content: "\eaf2";
+}
+.securityIcon:before {
+  content: "\e794";
+}
+.notifIcon:before {
+  content: "\e963";
+}
+
+.languageIcon:before {
+  content: "\e9f1";
+}
+
+.helpIcon:before {
+  content: "\ea05";
+}
+.logoutIcon:before {
+  content: "\e6d1";
+}
+.spacesIcon:before {
+   content: '\e630';
+}
+
+.HamburgerNavigationMenu {
+  .HamburgerMenuLevelsParent {
+    flex-direction: column;
+    min-height: 100vh;
+    max-height: 100vh;
+  }
+  .HamburgerMenuFirstLevelParent {
+    max-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height:100%;
+    max-width:310px;
+    min-width:310px;
+    left: 0;
+  }
+  .HamburgerMenuSecondLevelParent {
+    max-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height:100%;
+    max-width:310px;
+    min-width:310px;
+  }
+  .HamburgerNavigationMenuLink  {
+    border-right: 1px solid #a8b3c521;
+
+    i {
+      color: @toolbarLightIconColor !important;
+    }
+  }
+  .uiArrowRightIcon {
+    font-size: 18px;
+    color: @toolbarLightLinkHoverColor;
+    &:before {
+     content: '\e91a';
+    }
+  }
+  .uiIcon.uiIconToolbarNavItem {
+    font-size: 22px;
+    color: @toolbarLightIconColor !important;
+  }
+  .accountTitleWrapper {
+    border-bottom: 1px solid #f9f9f9;
+    .accountTitleItem {
+      &:before {
+        display: none!important;
+      }
+      &:hover {
+        &:before {
+          opacity: 0;
+        }
+      }
+      &:focus {
+        &:before {
+          opacity: 0;
+        }
+      }
+      .accountTitleLabel {
+        color: @toolbarLightLinkHoverColor;
+        font-size: 0.9rem!important;
+      }
+    }
+  }
+  .v-list-item-group {
+    .v-list-item {
+      color: @toolbarLightLinkHoverColor !important;
+      .v-list-item__icon i {
+        color: @toolbarLightIconColor;
+        font-size: 22px;
+      }
+    }
+    .v-list-item--active {
+      color: white!important;
+      background: @secondarySkinColor;
+      .v-list-item__icon i {
+        color: @toolbarDarkLinkHoverColor !important;
+      }
+    }
+  }
+  .administrationTitle {
+   cursor: pointer;
+   .uiAdministrationIcon {
+     color: @toolbarLightIconColor;
+     font-size: 22px;
+     &:before {
+       content: '\e97a';
+     }
+   }
+   .titleLabel {
+     color: @toolbarLightLinkHoverColor !important;
+   }
+  }
+  .adminMenu {
+    .subItemTitle {
+      color: @toolbarLightLinkHoverColor !important;
+      .v-treeview-node__root {
+        margin: 0!important;
+        .v-treeview-node__label {
+          a {
+            color: @toolbarLightLinkHoverColor !important;
+          }
+        }
+      }
+    }
+  }
+  .titleLabel {
+    color: @toolbarLightLinkHoverColor!important;
+  }
+  .recentDrawer {
+    .recentSpacesTitle {
+      height: 56px!important;
+      .uiArrowBackIcon {
+        color: @toolbarLightLinkHoverColor;
+        font-size: 20px;
+        &:before {
+          content: '\e913';
+        }
+      }
+      .recentSpacesTitleLabel {
+        color: @toolbarLightLinkHoverColor!important;
+      }
+      .recentSpacesTitleIcon {
+        .uiSearchIcon {
+          color: @toolbarLightLinkHoverColor;
+          font-family: 'PLF-FONT-ICONS';
+          font-size: 20px;
+          &:before {
+            content: '\e978';
+         }
+         }
+      }
+    }
+    .recentSpacesFilter {
+      input {
+        box-shadow: none;
+        border-color: transparent;
+        margin-bottom: 0;
+        padding: 0;
+      }
+      label {
+        font-size: 14px;
+      }
+      >.v-input__control>.v-input__slot:before {
+        display: none;
+      }
+       >.v-input__control>.v-input__slot:after {
+        display: none;
+      }
+    }
+    .recentSpacesWrapper {
+      .addSpaces {
+        border: 1px dashed @borderColor;
+        .v-avatar {
+          background: @borderColorDark;
+          border-radius: 4px;
+          .uiPlusEmptyIcon {
+            color: @toolbarLightLinkHoverColor;
+            font-size: 22px;
+            &:before {
+              content: '\ead0';
+            }
+          }
+        }
+      }
+    }
+  }
+}
