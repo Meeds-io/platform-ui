@@ -22,14 +22,16 @@
 .iconSnapshot:before {
   content: "\eb67";
 }
-.iconStream:before {
-  content: "\e6d5";
+.iconStream:before, .uiIconToolbarNavItem.uiIconHome:before {
+  content: "\e6d5" !important;
+  font-family: "PLF-FONT-ICONS" !important;
 }
 .iconSpaces:before {
   content: '\e648';
 }
-.iconPeople:before {
-  content: '\eac1';
+.iconPeople:before, .uiIconToolbarNavItem.uiIconConnexions:before {
+  content: "\eac1" !important;
+  font-family: "PLF-FONT-ICONS" !important;
 }
 .settingsIcon:before {
   content: "\eaf2";
@@ -215,6 +217,8 @@
             font-size: 22px;
             &:before {
               content: '\ead0';
+              margin-left: -4px;
+              font-family: "PLF-FONT-ICONS";
             }
           }
         }
