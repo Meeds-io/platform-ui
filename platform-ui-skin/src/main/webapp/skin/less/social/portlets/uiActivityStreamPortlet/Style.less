@@ -1235,42 +1235,48 @@
   #activityComposerApp {
     .drawer {
       .content {
-        .appsItem {
-          display: flex;
-          padding: 10px;
-          border: 1px solid #E1E8EE;
-          margin: 10px 0;
-          border-radius: 5px;
+        .composerApps {
+          margin-top: 8%;
+          padding-top: 8%;
+          border-top: 1px solid #efefef;
 
-          .appsItemIcon {
-            margin: 15px 15px 0 5px;
+          .appsItem {
+            display: flex;
+            padding: 10px;
+            border: 1px solid #E1E8EE;
+            margin: 10px 0;
+            border-radius: 5px;
 
-            .addFileComposerIcon {
-              background: url('/eXoSkin/skin/images/system/composer/addFile.png') no-repeat;
-              width: 40px;
-              height: 40px;
-              background-size: 40px;
-            }
-          }
+            .appsItemIcon {
+              margin: 15px 15px 0 5px;
 
-          .appsItemDescription {
-            border-left: 1px solid #E1E8EE;
-            padding: 9px 10px;
-
-            .appLabel {
-              font-weight: bold;
-              font-size: 18px;
+              .addFileComposerIcon {
+                background: url('/eXoSkin/skin/images/system/composer/addFile.png') no-repeat;
+                width: 40px;
+                height: 40px;
+                background-size: 40px;
+              }
             }
 
-            .appDescription > p {
-              color: #A8B3C5;
-              font-size: 12px;
-            }
-          }
+            .appsItemDescription {
+              border-left: 1px solid #E1E8EE;
+              padding: 9px 10px;
 
-          &:hover {
-            box-shadow: 0 0 8px #888888;
-            cursor: pointer;
+              .appLabel {
+                font-weight: bold;
+                font-size: 18px;
+              }
+
+              .appDescription > p {
+                color: #A8B3C5;
+                font-size: 12px;
+              }
+            }
+
+            &:hover {
+              box-shadow: 0 0 8px #888888;
+              cursor: pointer;
+            }
           }
         }
       }
