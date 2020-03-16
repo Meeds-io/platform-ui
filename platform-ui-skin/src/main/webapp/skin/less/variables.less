@@ -25,12 +25,20 @@
 @primaryBackgroundDefault:   #f0f0f0;
 @primaryBackground:   var(--allPagesPrimaryBackground, @primaryBackgroundDefault); // main background such as , header popup background, tab items...
 
-// Icon color
+// Secondary Color
+@secondaryColorDefault: #476a9c;
+@secondaryColor: var(--allPagesSecondaryColor, @secondaryColorDefault);
+@secondaryColorDarken1: darken(@secondaryColorDefault, 15%);;
 
+@tertiaryColorDefault: #578dc9;
+@tertiaryColor: var(--allPagesTertiaryColor, @tertiaryColorDefault);
+
+// Icon color
+@orangeColor: #ff9916;
 @colorIconDefault: @primaryColor;
 @colorIconExtra: @primaryColor;
 @colorIconPrimary: @primaryColor;
-@colorIconOrange: var(--allPagesColorIconOrange, #ff9916);
+@colorIconOrange: var(--allPagesColorIconOrange, @orangeColor);
 @colorIconSecondary:@baseBackground;
 @sizeIcon24x24: 22px;
 @sizeIcon12x12: 10px;
@@ -42,25 +50,23 @@
 // Other base colors
 
 @darkBlue: var(--allPagesDarkBlue, #295f9b);
-@baseGreyColorDefault: #e1e8ee;
-@baseGreyColor: var(--allPagesBaseGreyColor, #e1e8ee);
-
-@secondaryBackgroundDefault: #476a9c;
-@secondarySkinColor: var(--allPagesSecondarySkinColor, @secondaryBackgroundDefault);
-@secondaryBackground: var(--allPagesSecondaryBackground, @secondaryBackgroundDefault);
-
-@secondaryColorDefault: #000000;
-@secondaryColor: var(--allPagesSecondaryColor, @secondaryColorDefault);
-@secondaryColorDark: var(--allPagesSecondaryColorDark, darken(@secondaryColorDefault, 15%));
-
-@tertiaryColor: var(--allPagesTertiaryColor, #385989);
+@greyColorDefault: #e1e8ee;
+@greyColor: var(--allPagesGreyColor, @greyColorDefault);
+@greyColorLighten1Default: #a8b3c5;
+@greyColorLighten1: var(--allPagesGreyColorLighten1, @greyColorLighten1Default);
+@greyColorLighten1Opacity1: var(--allPagesGreyColorLighten1Opacity1, fade(@greyColorLighten1Default, 13%));
 
 @lightWhite: var(--allPagesLightWhite, #ffffff);
 @darkGrey: var(--allPagesDarkGrey, #4d5466);
 @lightGrey: var(--allPagesLightGrey, #f2f2f2);
 @disableBackground: @lightGrey;
-@lightYellow: var(--allPagesLightYellow, #ffd800);
-@darkYellow: var(--allPagesDarkYellow, #ffb441);
+@lightYellowDefault: #ffd800;
+@lightYellow: var(--allPagesLightYellow, @lightYellowDefault);
+@darkYellowDefault: #ffb441;
+@darkYellow: var(--allPagesDarkYellow, @darkYellowDefault);
+@blackColorDefault: #000000;
+@blackColor: var(--allPagesBlackColor, @blackColorDefault);
+@blackColorDark: var(--allPagesBlackColorDark, darken(@blackColorDefault, 15%));
 
 // Accent colors
 // -------------------------
@@ -70,7 +76,7 @@
 @warningColor:      #ffb441;     // border warning
 @warningColorLight: #ffca7a;   // background warning
 
-@infoColor:         @secondarySkinColor;          // border info
+@infoColor:         #476a9c;    // border info
 @infoColorLight:    #89afd9;    // background info
 
 @successColor:      #2eb58c;        // border success
@@ -82,9 +88,9 @@
 @backgroundInfoNotification: var(--allPagesBackgroundInfoNotification, @infoColorLight);
 @backgroundErrorNotification: var(--allPagesBackgroundErrorNotification, @errorColorLight);
 
-@borderColor: @baseGreyColor;
+@borderColor: var(--allPagesBorderColor, @greyColorDefault);
 @borderColorLight: #666666;
-@borderColorDark:  darken(@baseGreyColorDefault, 10%);
+@borderColorDark:  darken(@greyColorDefault, 10%);
 @borderSuccesNotification: @successColor;
 @borderWarningNotification: @warningColor;
 @borderInfoNotification: @infoColor;
@@ -105,9 +111,10 @@
 // Scaffolding
 // -------------------------
 @bodyBackground: @baseBackground;
-@sidebarBackground: @secondarySkinColor;
+@sidebarBackground: @secondaryColor;
 @contentBackground:  @baseBackground  url("@{images-path}/ShareImages/Background/texture.png") repeat left top;
-@textColor: @baseColorDark;       // #333333
+@textColorDefault: #333333;
+@textColor: var(--allPagesBaseTextColor, @textColorDefault);       // #333333
 @textMediumColor: @baseColorMedium;           // #808080
 @textLightColor: @baseColorLight;       // #999999
 
@@ -139,8 +146,8 @@
 // Buttons
 // -------------------------
 @btnColor: @darkGrey;
-@btnBorder: var(--allPagesBtnBorder, @baseGreyColor);
-@btnBorderBottom: var(--allPagesBtnBorderBottom, darken(@baseGreyColorDefault, 10%));
+@btnBorder: var(--allPagesBtnBorder, @greyColor);
+@btnBorderBottom: var(--allPagesBtnBorderBottom, darken(@greyColorDefault, 10%));
 @btnDisableColor: var(--allPagesBtnDisableColor, #c6c6c6);
 
 @btnPrimaryColor: @lightWhite;
@@ -169,8 +176,8 @@
 @placeholderText:         @textLightColor;
 
 @inputFocusColor:                 @inputColor;
-@inputFocusBorder:                var(--allPagesInputFocusBorder, lighten(@secondaryBackgroundDefault, 30%));
-@inputFocusShadow:                var(--allPagesInputFocusShadow, lighten(@secondaryBackgroundDefault, 40%));
+@inputFocusBorder:                var(--allPagesInputFocusBorder, lighten(@secondaryColorDefault, 30%));
+@inputFocusShadow:                var(--allPagesInputFocusShadow, lighten(@secondaryColorDefault, 40%));
 
 @inputHeight:                     @baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
 
@@ -178,7 +185,7 @@
 @uiCheckboxBackground: @primaryColor;
 
 @uiRadioCheckedColor: @baseBackground;
-@uiRadioCheckedBackground: @baseGreyColor;
+@uiRadioCheckedBackground: @greyColor;
 @uiRadioCheckedDisabledBackground: @baseColorLight;
 
 @uiCheckboxCheckedDisabledBorder: @baseColorLight;
@@ -316,7 +323,7 @@
 
 // Hero unit
 // -------------------------
-@heroUnitBackground: @secondarySkinColor;
+@heroUnitBackground: @secondaryColor;
 @heroUnitHeadingColor: @baseBackground;
 @heroUnitLeadColor:       inherit;
 
@@ -338,7 +345,7 @@
 
 @infoText: #333333;
 @infoBackground: @infoColorLight;
-@infoBorderDefault: @secondaryBackgroundDefault;
+@infoBorderDefault: #476a9c;
 @infoBorder: @infoBorderDefault;
 @infoBorderFocus: darken(@infoBorderDefault, 10%);
 
@@ -501,7 +508,7 @@
 @uiBoxGray: @primaryBackground;
 
 // Quote
-@quoteBorder: var(--allPagesQuoteBorder, #a8b3c5);
+@quoteBorder: var(--allPagesQuoteBorder, @greyColorLighten1Default);
 @quoteBackgound: none;
 @quoteBackgoundForum: var(--allPagesQuoteBackgoundForum, #eff4fa);
 @quoteBorderForum: var(--allPagesQuoteBorderForum, #aac5e3);
@@ -591,14 +598,15 @@
 /* default btn */
 @btnBackgroundColor: @baseBackground;
 @btnBackgroundImage: none;
-@btnHoverBackgroundColor: @baseGreyColor;
+@btnHoverBackgroundColor: @greyColor;
 @btnDisableBackground: var(--allPagesBtnDisableBackground, #f2f2f2);
 
 /* primary btn */
-@btnPrimaryHoverBackgroundColor: @secondarySkinColor;
+@btnPrimaryHoverBackgroundColorDefault: darken(desaturate(spin(@primaryColorDefault, 3.7152), 13.9064), 11.9608);
+@btnPrimaryHoverBackgroundColor: var(--allPagesBtnPrimaryHoverBackgroundColor, @btnPrimaryHoverBackgroundColorDefault);
 @btnPrimaryHoverBackgroundPosition: 0 -45px;
-@btnPrimaryDisableHoverBackground: @secondarySkinColor;
-@btnPrimaryDisableBackground: var(--allPagesBtnPrimaryDisableBackground, #afc9e5);
+@btnPrimaryDisableHoverBackground: @secondaryColor;
+@btnPrimaryDisableBackground: var(--allPagesBtnPrimaryDisableBackground, lighten(desaturate(spin(@primaryColorDefault, 0.0714), 0.6494), 22.7451));
 
 /* btn group */
 @btnGroupActiveBackground: inherit;
@@ -613,27 +621,26 @@
 
 /* btn dropdown */
 @btnDropdownImage: none;
-@btnDropdownBackground: @baseGreyColor;
+@btnDropdownBackground: @greyColor;
 
 /* btn-primary dropdown */
 @btnPrimaryDropdownBackground: @primaryColor;
 
 /* btn group dropdown */
-@btnGroupDropdownBackground: @baseGreyColor;
-@btnGroupOpenDropdownBackground: @baseGreyColor;
+@btnGroupDropdownBackground: @greyColor;
+@btnGroupOpenDropdownBackground: @greyColor;
 
 /* switchBtnHandle */
 @switchBtnHandleStartColor: var(--allPagesSwitchBtnHandleStartColor, #b5bdc6);
 @switchBtnHandleEndColor: var(--allPagesSwitchBtnHandleEndColor, #b5bdc6);
 
 /* switchBtnLabelOff */
-@uiSwitchOffColor: @baseGreyColor;
+@uiSwitchOffColor: @greyColor;
 @switchBtnLabelOffStartColor: @uiSwitchOffColor;
 @switchBtnLabelOffStartColor: @uiSwitchOffColor;
 
 /* switchBtnLabelOn */
-@uiSwitchOnColor: var(--allPagesUiSwitchOnColor, lighten(@primaryColorDefault, 30%));
-@switchBtnLabelOnStartColor: @uiSwitchOnColor;
+@uiSwitchOnColor: var(--allPagesUiSwitchOnColor, @primaryColorDefault);
 @switchBtnLabelOnStartColor: @uiSwitchOnColor;
 
 /* uiradio */
@@ -657,7 +664,7 @@
 @mentionColor: @lightWhite;
 @mentionBorder: none;
 @mentionRemovePositionRight: 6px;
-@removeMentionColor: @secondarySkinColor;
+@removeMentionColor: @secondaryColor;
 @removeMentionTop: 2px;
 @removeTagColor: @removeMentionColor;
 
@@ -677,7 +684,7 @@
 @popoverBorder: none;
 
 /* */
-@tiptipBorder: 1px none @baseGreyColor;
+@tiptipBorder: 1px none @greyColor;
 
 /* alerts  */
 @linkInAlertColor: @baseBackground;                   // link in the alert
@@ -685,20 +692,20 @@
 
 /* progress bar */
 @progressBarBorderRadius: 0;
-@progressBarIconBackground: @baseGreyColor;
+@progressBarIconBackground: @greyColor;
 @progressBarIconBackgroundImage: none;
 
 /*  tabs  */
 @tabNormalLinkBorderTop: none;
 @tabNormalLinkBorderRight: none;
 @tabNormalLinkBorderBottom: 2px solid #f0f4f7;
-@tabNormalLinkBorderLeft: 2px solid @baseGreyColor;
+@tabNormalLinkBorderLeft: 2px solid @greyColor;
 @tabNormalLinkHoverBorderTop: none;
 @tabNormalLinkHoverBorderRight: @tabNormalLinkBorderRight;
 @tabNormalLinkHoverBorderBottom: 1px solid #f8f8f8;
 @tabNormalLinkHoverBorderLeft: none;
 @tabNormalActiveLinkColor: @baseBackground;
-@tabContentBorder: 2px solid @baseGreyColor;
+@tabContentBorder: 2px solid @greyColor;
 
 /* tables */
 @tableThBackground: var(--allPagesTableThBackground, #f6f7fa);
@@ -716,14 +723,18 @@
 /* pagination */
 @pageIteratorStartColor: @baseBackground;
 @pageIteratorEndColor: @baseBackground;
-@pageIteratorHoverBackground: @baseGreyColor;
+@pageIteratorHoverBackground: @greyColor;
 @pageIteratorColor: @baseBackground;
 @pageIteratorBackgroundPosition: 0 -30px;
 @pageIteratorActiveBackground: @primaryColor;
 @pageIteratorMargin: 4px;
 
+
+/* Welcome pages */
+@welcomePagesBackground: var(--allPagesWelcomePagesBackground, @secondaryColorDefault);
+
 /* Badge */
-@badgeDefaultBackground: @baseGreyColor;
+@badgeDefaultBackground: @greyColor;
 
 /* uiBox */
 @weekListBackground: @primaryColor;
@@ -779,15 +790,15 @@
 @popupHeaderBackground: @lightGrey;
 @rightBodyContainerBackground: @lightGrey;
 @activityStreamBackground: @baseBackground;
-@toggeleInvisibleColor: @baseGreyColor;
+@toggeleInvisibleColor: @greyColor;
 @likeButtonColor: var(--allPagesLikeButtonColor, #c6c6c6);
 @controlGroupErrorColor: var(--allPagesControlGroupErrorColor, #bc4343);
 @controlGroupSuccessColor: var(--allPagesControlGroupSuccessColor, @successColor);
 @calendarColor: var(--allPagesCalendarColor, #333333);
-@navigationPortletBackground: @tertiaryColor;
-@btnAllActivitiesColor: @tertiaryColor;
-@offlineColor: var(--allPagesOfflineColor, #a8b3c5);
-@toolbarLightIconColor:           var(--allPagesToolbarLightIconColor, #a8b3c5);
+@navigationPortletBackground: @secondaryColor;
+@btnAllActivitiesColor: @secondaryColor;
+@offlineColor: var(--allPagesOfflineColor, @greyColorLighten1Default);
+@toolbarLightIconColor:           var(--allPagesToolbarLightIconColor, @greyColorLighten1Default);
 @toolbarLightIconHoverColor:      @primaryColor;
 @colorIconSecondaryHover:@primaryColor;
 @sizeSideBarIcon: var(--allPagesSizeSideBarIcon, 20px);
@@ -801,7 +812,7 @@
 @borderRadiusBadgeDefault-mini : var(--allPagesBorderRadiusBadgeDefault-mini , 50%);
 @lineHeightBadgeDefault-mini : var(--allPagesLineHeightBadgeDefault-mini , 20px);
 @btnPrimaryDropdownBackgroundImage: none;
-@btnGroupDropdownToggeleBackground: @baseGreyColor;
+@btnGroupDropdownToggeleBackground: @greyColor;
 @uiCheckboxDisabledBackground: var(--allPagesUiCheckboxDisabledBackground, #999);
 @chatBubbleBackground: var(--allPagesChatBubbleBackground, #edf3ff);
 @chatBubbleOddBackground: var(--allPagesChatBubbleOddBackground, #dceaf9);

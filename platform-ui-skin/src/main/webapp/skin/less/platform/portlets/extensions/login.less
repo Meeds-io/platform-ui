@@ -3,7 +3,7 @@
 @import "forgot-password.less";
 //========================================
 body {
-	background-color: #476a9c;
+	background-color: @welcomePagesBackground;
 	font-family: @baseFontFamily;
 	font-size: @baseFontSize;
 	color: @textColor;
@@ -64,7 +64,7 @@ body {
 				margin-top: 0;
 			}
 			.iconUser, .iconPswrd {
-				border-right: solid 1px @baseGreyColor;
+				border-right: solid 1px @greyColor;
 				border-radius: 5px 0 0 5px;
 				position: absolute;
 				width: 40px;
@@ -76,7 +76,7 @@ body {
 		input {
 			width: 260px;
 			height: 36px;
-			border: solid 2px @baseGreyColor;
+			border: solid 2px @greyColor;
 			background: @inputBackground;
 			margin: 0 0 14px;
 			color: @inputColor;
@@ -90,7 +90,7 @@ body {
 		input:not(*:root) {
 			height: 33px;
 			box-shadow: none;
-			border: solid 2px @baseGreyColor;
+			border: solid 2px @greyColor;
 			border-radius: 7px;
 			font-family: @sansFontFamily;
 			font-size: 15px;

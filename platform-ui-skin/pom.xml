@@ -73,13 +73,13 @@
                             <includes>
                                 <include>Core.less</include>
                                 <include>customStyle.less</include>
-                                <include>enterpriseCustomStyle.less</include>
                                 <include>Portlets/UIOrganizationPortlet/Style.less</include>
                                 <include>Portlets/UITabbedDashboardPortlet/Style.less</include>
                                 <include>Portlets/UIGadgetPortlet/Style.less</include>
                                 <include>Portlets/UIAccountPortlet/Style.less</include>
                                 <include>Portlets/UIApplicationRegistryPortlet/Style.less</include>
                                 <include>platform/skin/platform.less</include>
+                                <include>platform/skin/enterprise.less</include>
                                 <include>platform/portlets/platformNavigation/UIHelpPlatformToolbarPortlet/Style.less</include>
                                 <include>platform/portlets/platformNavigation/UISpaceNavigationPortlet/Style.less</include>
                                 <include>platform/portlets/platformNavigation/UIUserNavigationPortlet/Style.less</include>

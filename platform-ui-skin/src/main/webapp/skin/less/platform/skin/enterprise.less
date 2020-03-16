@@ -1,6 +1,6 @@
 //put your custom style classes here
-@import "variables.less"; // Modify this for custom colors, font-sizes, etc
-@import "mixins.less";
+@import "../../variables.less";
+@import "../../mixins.less";
 
 /*trees*/
 .uiTrees {
@@ -10,7 +10,7 @@
     font-size: 14px;
     border-radius: 2px;
     text-align: center;
-    border: 2px solid @baseGreyColor;
+    border: 2px solid @greyColor;
   }
 
   .collapseIcon:before {
@@ -19,7 +19,7 @@
     font-size: 14px;
     border-radius: 2px;
     text-align: center;
-    border: 2px solid @baseGreyColor;
+    border: 2px solid @greyColor;
   }
 }
 .uiTreeExplorer {
@@ -29,14 +29,14 @@
     color: @uiTreeEmptyColor;
     font-size: 14px;
     border-radius: 2px;
-    border: 2px solid @baseGreyColor;
+    border: 2px solid @greyColor;
   }
   .expandIcon:before {
     content: "\f2c7";
     font-family: IONIC-FONT;
     font-size: 14px;
     border-radius: 2px;
-    border: 2px solid @baseGreyColor;
+    border: 2px solid @greyColor;
   }
   .collapseIcon:before {
     content: "\f2f4";
@@ -44,7 +44,7 @@
     font-size: 14px;
     border-radius: 2px;
     text-align: center;
-    border: 2px solid @baseGreyColor;
+    border: 2px solid @greyColor;
   }
 }
 
@@ -299,7 +299,7 @@
 /*=====================================*/
 /*            TOOLBAR                  */
 
-.UIToolbarContainer {
+#UIPortalApplication .UIToolbarContainer {
   left: 250px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.16), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
 
@@ -351,7 +351,6 @@
       height: 58px;
       font-size: 14px;
       font-weight: bold;
-      color: @toolbarContainerLightColor;
     }
     > .dropdown-menu {
       margin-top: 0;
@@ -561,7 +560,7 @@
   margin-right: 4px;
   background-image: none;
   .box-shadow(none);
-  border: 2px solid @baseGreyColor;
+  border: 2px solid @greyColor;
   background-position: 0 -30px;
 }
 .uiPageIterator ul > .active > a,
@@ -607,7 +606,7 @@
   font-size: 15px;
   padding: 9px 20px;
   color: @btnColor;
-  border: 1px solid @baseGreyColor;
+  border: 1px solid @greyColor;
   box-shadow: none;
   box-sizing: border-box;
 }
@@ -670,7 +669,7 @@
 
 /* Enterprise skin-btn group */
 .btn-group > .btn {
-  border: 1px solid @baseGreyColor;
+  border: 1px solid @greyColor;
   box-shadow: none;
   padding: 9px 20px;
 }
@@ -678,7 +677,7 @@
 .btn-group > .btn:focus,
 .btn-group > .btn:active,
 .btn-group > .btn.active {
-  border: 1px solid @baseGreyColor;
+  border: 1px solid @greyColor;
   z-index: 0;
 }
 .btn-group > .btn:focus,
@@ -710,12 +709,12 @@
   display: inline-block;
   &:hover {
     color: @btnColor;
-    border: 1px solid @baseGreyColor;
-    background: @baseGreyColor;
+    border: 1px solid @greyColor;
+    background: @greyColor;
     box-shadow: none;
     &:focus, &:active {
-      border: 1px solid @baseGreyColor;
-      background: @baseGreyColor;
+      border: 1px solid @greyColor;
+      background: @greyColor;
       box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.11);
     }
   }
@@ -735,7 +734,7 @@
   background-color: @lightWhite;
   border-width: 1px;
   padding: 8px 15px;
-  &:focus {border: 2px solid @baseGreyColor;}
+  &:focus {border: 2px solid @greyColor;}
   .uiIconArrowDownMini, .uiIconMiniArrowDown {
     top: -1px;
     &:before {
@@ -825,7 +824,7 @@ input[disabled],
   font-size: 15px;
   min-height: 40px;
   padding: 0 10px;
-  border: Solid 2px @baseGreyColor;
+  border: Solid 2px @greyColor;
   border-radius: 5px;
   box-shadow: none;
   max-height: 115px;
@@ -1002,7 +1001,7 @@ label.switchBtnLabelOff {
 
 //text area
 textarea {
-  border: Solid 2px @baseGreyColor;
+  border: Solid 2px @greyColor;
   box-shadow: none;
 }
 
@@ -1194,12 +1193,12 @@ p, .postContent, .uiWikiContentDisplay{
 
 .uiIconArrowLeftMini:before, .uiIconMiniArrowLeft:before {
   content: "\f124";
-  color: @secondaryColor;
+  color: @blackColor;
   font-family: IONIC-FONT;
 }
 .uiIconArrowRightMini:before, .uiIconMiniArrowRight:before {
   content: "\f125";
-  color: @secondaryColor;
+  color: @blackColor;
   font-family: IONIC-FONT;
   margin-left: 5px;
   margin-right: 5px;
@@ -1248,7 +1247,7 @@ p, .postContent, .uiWikiContentDisplay{
       height: 40px;
       line-height: 40px;
       font-size: 15px;
-      border: Solid 2px #e1e8ee;
+      border: Solid 2px @greyColor;
       border-radius: 5px;
       box-shadow: none;
       .caret {
@@ -1415,7 +1414,7 @@ p, .postContent, .uiWikiContentDisplay{
     box-shadow  : 1px 1px 0px 2px rgba(16, 16, 16, 0.12);
     border : 1px solid rgba(0, 0, 0, 0.13);
     .title {
-        background-color: @secondarySkinColor;
+        background-color: @secondaryColor;
         color: @lightWhite;
     }
    }
@@ -1431,7 +1430,7 @@ p, .postContent, .uiWikiContentDisplay{
   border : none;
   padding : 4px 10px;
   .uiIconClose::before {
-    color: @secondarySkinColor;
+    color: @secondaryColor;
   }
 }
 .uiIconClose::before {
@@ -1542,7 +1541,7 @@ p, .postContent, .uiWikiContentDisplay{
 .uiTabAdvanced {
   .nav-tabs {
     background-color: @baseBackground;
-    border-bottom: 1px solid @baseGreyColor;
+    border-bottom: 1px solid @greyColor;
     > li{
       a{
         background-color: @baseBackground;
@@ -1671,7 +1670,7 @@ p, .postContent, .uiWikiContentDisplay{
 }
 @media (min-width: 1025px){
   .uiPopupWrapper {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -1736,7 +1735,7 @@ p, .postContent, .uiWikiContentDisplay{
 }
 .uiGroupsNavigationPortlet {
   .title {
-    background: @secondaryBackground;
+    background: @secondaryColor;
     color: @lightWhite;
     border: none;
   }
@@ -1790,7 +1789,7 @@ p, .postContent, .uiWikiContentDisplay{
     }
 
     input {
-      background-color: @secondaryBackground;
+      background-color: @secondaryColor;
       background-repeat: no-repeat;
       height: 35px;
       border-radius: 25px;
@@ -1952,7 +1951,7 @@ p, .postContent, .uiWikiContentDisplay{
     margin-bottom: 25px;
     box-shadow: 0 3px 2px -2px rgba(0,0,0,.1);
     .boxContainer {
-      border: 1px solid @baseGreyColor;
+      border: 1px solid @greyColor;
     }
   }
 
@@ -2005,7 +2004,7 @@ p, .postContent, .uiWikiContentDisplay{
     margin: 0;
     border-radius: 0;
     background:  @lightWhite;
-    border-top: 1px solid @baseGreyColor;
+    border-top: 1px solid @greyColor;
     border-bottom: 0;
   }
 
@@ -2030,7 +2029,7 @@ p, .postContent, .uiWikiContentDisplay{
   }
 
   .activityStream .introBox {
-    border-bottom: 1px solid @baseGreyColor;
+    border-bottom: 1px solid @greyColor;
     border-left: 0;
     border-right: 0;
     border-bottom: 0;
@@ -2216,7 +2215,7 @@ p, .postContent, .uiWikiContentDisplay{
 
 .uiActivitiesDisplay .activityTop .activityStreamStatus {
   background: @baseBackground;
-  border: 1px solid @baseGreyColor;
+  border: 1px solid @greyColor;
   max-width: 5px;
   max-height: 15px;
   float: right;
@@ -2339,8 +2338,8 @@ p, .postContent, .uiWikiContentDisplay{
     padding: 10px;
     .caption-heading .hover-action-reveal {
       background: @baseBackground;
-      color: @secondaryColor;
-      border-bottom: 2px solid @baseGreyColor;
+      color: @blackColor;
+      border-bottom: 2px solid @greyColor;
       border-right: 10px solid @baseBackground;
       padding-left: 0;
       text-align: left;
@@ -2356,7 +2355,7 @@ p, .postContent, .uiWikiContentDisplay{
     .taskItem .date-task:hover {
       color: @lightWhite!important;
       float: right;
-      background: @tertiaryColor;
+      background: @secondaryColorDarken1;
       padding-right: 10px;
       padding-left: 10px;
       font-size: 12px;
@@ -2370,8 +2369,8 @@ p, .postContent, .uiWikiContentDisplay{
     }
     
     .taskItem .box-small .box-small-inner:hover {
-      border: 1px solid @baseGreyColor;
-      background: @baseGreyColor;
+      border: 1px solid @greyColor;
+      background: @greyColor;
     }
 
     .caption-heading {
@@ -2418,14 +2417,14 @@ p, .postContent, .uiWikiContentDisplay{
 
 .centerPanel .uiHeaderBar .alignBtnGroup > .btn-group > .btn {
   background: @baseBackground;
-  border: 1px solid @baseGreyColor;
+  border: 1px solid @greyColor;
   padding: 7px 20px;
   text-transform: uppercase;
   font-size: 14px;
 }
 
 .centerPanel .uiHeaderBar .alignBtnGroup > .btn-group > .btn.active {
-  background: @tertiaryColor;
+  background: @secondaryColorDarken1;
   border: none;
   padding: 8px 20px;
   text-transform: uppercase;
@@ -2438,7 +2437,7 @@ p, .postContent, .uiWikiContentDisplay{
     a {
       .uiIconFilter {
         font-family: 'IONIC-FONT';
-        color: @baseGreyColor;
+        color: @greyColor;
         &:before {
           content: '\f31b';
         }
@@ -2530,7 +2529,7 @@ p, .postContent, .uiWikiContentDisplay{
 }
 
 .uiAccordion.leftPanel .accordion-heading .sub-item .project-name .badgeDefault.mini {
-  background: @tertiaryColor;
+  background: @secondaryColorDarken1;
   color: @lightWhite;
   margin-left: 15px;
 }
@@ -2570,7 +2569,7 @@ p, .postContent, .uiWikiContentDisplay{
     background: @lightWhite;
     color: @primaryColor;
     font-size: 13px;
-    border: 1px solid @baseGreyColor;
+    border: 1px solid @greyColor;
   }
   .actionIcon:hover, .actionIconSmall:hover {
     background-color: transparent;
@@ -2982,7 +2981,7 @@ p, .postContent, .uiWikiContentDisplay{
 
 .uiGettingStarted .gsList li:before {
   background: #fff;
-  border: 2px solid @baseGreyColor;
+  border: 2px solid @greyColor;
   box-shadow: none;
 }
 
@@ -3443,7 +3442,7 @@ li > a > .uiIconRefresh:before {
 
 .uiProfileMenu .userNavigation > li .uiIconDefaultApp,
 .uiSpaceMenu .spaceMenuTab > li .uiIconDefaultApp {
-  color: #A8B3C5;
+  color: @greyColorLighten1;
   vertical-align: baseline;
 }
 
@@ -3793,7 +3792,7 @@ li > a > .uiIconRefresh:before {
 
   .uiActionWithLabel, .uiWikiBreadCrumb .uiDropdownWithIcon .dropdown-toggle {
     border-radius: 2px;
-    border: 1px solid #e1e8ee;
+    border: 1px solid @greyColor;
     padding: 9px 10px;
     margin-left: 5px;
     background-color: #FFFFFF;
@@ -3887,7 +3886,7 @@ li > a > .uiIconRefresh:before {
   margin-right: 50px;
   .uiDropdownWithIcon.open {
     .btn.dropdown-toggle {
-      background-color: @baseGreyColor;
+      background-color: @greyColor;
     }
   }
   .btn.dropdown-toggle {
@@ -3969,7 +3968,7 @@ li > a > .uiIconRefresh:before {
 #spaceManagerListBox .itemContainer .spaceBox {
   background: @baseBackground;
   .connectionBtn .btn {
-    border: 2px solid @baseGreyColor;
+    border: 2px solid @greyColor;
   }
 }
 .uiSpaceSettingPortlet {
@@ -3995,7 +3994,7 @@ li > a > .uiIconRefresh:before {
       }
       .selectize-input {
         box-shadow: none;
-        border: Solid 2px @baseGreyColor;
+        border: Solid 2px @greyColor;
         border-radius: 5px;
         padding: 0 10px;
         overflow: hidden;
@@ -4334,7 +4333,7 @@ li > a > .uiIconRefresh:before {
   }
   #UIQuestions {
     .uiBox {
-      border: 1px solid @baseGreyColor;
+      border: 1px solid @greyColor;
     }
     .boxNum:first-child {
       background: @primaryBackground;
@@ -4443,7 +4442,7 @@ li > a > .uiIconRefresh:before {
   background: @primaryColor;
   font-size: @baseFontSize;
   &:hover {
-    background: @secondarySkinColor;
+    background: @secondaryColor;
   }
 }
 /* Hamburger menu */
@@ -4517,7 +4516,7 @@ li > a > .uiIconRefresh:before {
 .spacesAdministration {
   .table {
     th {
-      border-right: 1px solid #e1e8ee;
+      border-right: 1px solid @greyColor;
       text-align: center;
     }
   }

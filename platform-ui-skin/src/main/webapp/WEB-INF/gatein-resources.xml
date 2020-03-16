@@ -27,54 +27,35 @@
     <skin-name>${exo.skin.name}</skin-name>
     <skin-module>Core</skin-module>
     <css-path>/skin/css/Core.css</css-path>
-    <overwrite>false</overwrite>
-  </portal-skin>
-
-  <portal-skin>
-    <skin-name>${exo.skin.name}</skin-name>
-    <skin-module>customModuleEnterprise</skin-module>
-    <css-path>/skin/css/enterpriseCustomStyle.css</css-path>
-    <css-priority>-1</css-priority>
-  </portal-skin>
-
-  <portal-skin>
-    <skin-name>${exo.skin.name}</skin-name>
-    <skin-module>customModule</skin-module>
-    <css-path>/skin/css/customStyle.css</css-path>
     <css-priority>0</css-priority>
-  </portal-skin>
-
-  <portal-skin>
-    <skin-name>${exo.skin.name}</skin-name>
-    <skin-module>customModuleVuetify</skin-module>
-    <css-path>/skin/css/vuetify/vuetify-all.css</css-path>
-    <css-priority>10</css-priority>
   </portal-skin>
 
   <portal-skin>
     <skin-name>${exo.skin.name}</skin-name>
     <skin-module>commons</skin-module>
     <css-path>/skin/css/commons/skin/commons.css</css-path>
+    <css-priority>1</css-priority>
   </portal-skin>
 
   <portal-skin>
     <skin-name>${exo.skin.name}</skin-name>
     <skin-module>unified-search</skin-module>
     <css-path>/skin/css/integration/skin/quicksearchpage.css</css-path>
-    <css-priority>1</css-priority>
+    <css-priority>2</css-priority>
   </portal-skin>
 
   <portal-skin>
     <skin-name>${exo.skin.name}</skin-name>
     <skin-module>Social</skin-module>
     <css-path>/skin/css/social/skin/social.css</css-path>
+    <css-priority>3</css-priority>
   </portal-skin>
 
   <portal-skin>
     <skin-name>${exo.skin.name}</skin-name>
     <skin-module>Platform-css</skin-module>
     <css-path>/skin/css/platform/skin/platform.css</css-path>
-    <overwrite>true</overwrite>
+    <css-priority>4</css-priority>
   </portal-skin>
 
   <!-- Ckeditor - suggester -->
@@ -82,6 +63,28 @@
     <skin-name>${exo.skin.name}</skin-name>
     <skin-module>ckeditor-suggester</skin-module>
     <css-path>/skin/css/commons/skin/CkeditorSuggester/Style.css</css-path>
+    <css-priority>5</css-priority>
+  </portal-skin>
+
+  <portal-skin>
+    <skin-name>${exo.skin.name}</skin-name>
+    <skin-module>vuetify</skin-module>
+    <css-path>/skin/css/vuetify/vuetify-all.css</css-path>
+    <css-priority>100</css-priority>
+  </portal-skin>
+
+  <portal-skin>
+    <skin-name>${exo.skin.name}</skin-name>
+    <skin-module>customModuleEnterprise</skin-module>
+    <css-path>/skin/css/platform/skin/enterprise.css</css-path>
+    <css-priority>0</css-priority>
+  </portal-skin>
+
+  <portal-skin>
+    <skin-name>${exo.skin.name}</skin-name>
+    <skin-module>customModule</skin-module>
+    <css-path>/skin/css/customStyle.css</css-path>
+    <css-priority>-1</css-priority>
   </portal-skin>
 
   <!-- AccountPortlet skins -->
@@ -90,7 +93,6 @@
     <portlet-name>AccountPortlet</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/Portlets/UIAccountPortlet/Style.css</css-path>
-    <overwrite>true</overwrite>
   </portlet-skin>
 
   <!-- OrganizationPortlet skins -->
@@ -99,7 +101,6 @@
     <portlet-name>OrganizationPortlet</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/Portlets/UIOrganizationPortlet/Style.css</css-path>
-    <overwrite>true</overwrite>
   </portlet-skin>
 
   <!-- ApplicationRegistryPortlet skins -->
@@ -108,7 +109,6 @@
     <portlet-name>ApplicationRegistryPortlet</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/Portlets/UIApplicationRegistryPortlet/Style.css</css-path>
-    <overwrite>true</overwrite>
   </portlet-skin>
 
   <!-- NotificationsAdminJuzuPortlet skins -->

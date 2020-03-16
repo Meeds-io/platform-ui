@@ -1,4 +1,5 @@
 @import "../variables.less";
+@import "../mixins.less";
 
 @import './lib/fontawesome.less';
 @import './lib/materialdesign-icons.less';
@@ -8,25 +9,8 @@
   @import './lib/Chart.min.less';
 
   .v-application {
-    a {
-      color: @primaryColor;
-    }
-    .primary {
-      background-color: @primaryColor !important;
-      border-color: @primaryColor !important;
-    }
-    .primary--text {
-      color: @primaryColor !important;
-      caret-color: @primaryColor !important;
-    }
-    .accent {
-      background-color: @primaryColor !important;
-      border-color: @primaryColor !important;
-    }
-    .accent--text {
-      color: @primaryColor !important;
-      caret-color: @primaryColor !important;
-    }
+    background: transparent !important;
+
     .display-4 {
       font-family: inherit !important;
     }
@@ -66,8 +50,12 @@
       border: 0;
     }
 
+    a {
+      color: @primaryColor;
+    }
+
     textarea {
-      border: Solid 2px #e1e8ee !important;
+      border: Solid 2px @greyColor !important;
     }
 
     .border-box-sizing {
@@ -156,6 +144,104 @@
       max-height: 100vh;
       max-width: 100vw;
       overflow: hidden;
+    }
+
+    // Apply Custom Branding
+    .primary {
+      background-color: @primaryColor !important;
+      border-color: @primaryColor !important;
+    }
+    .primary--text {
+      color: @primaryColor !important;
+      caret-color: @primaryColor !important;
+    }
+    .secondary {
+      background-color: @textColor !important;
+      border-color: @textColor !important;
+    }
+    .accent {
+      background-color: @primaryColor !important;
+      border-color: @primaryColor !important;
+    }
+    .accent--text {
+      color: @primaryColor !important;
+      caret-color: @primaryColor !important;
+    }
+    .v-btn--outlined {
+      border: thin solid @primaryColor !important;
+    }
+    .v-btn, .btn {
+      border-bottom-color: @btnBorder !important;
+      text-shadow: none !important;
+      color: @btnColor !important;
+      background-color: @btnBackgroundColor !important;
+      background-image: @btnBackgroundImage !important;
+      &:hover, &:focus {
+        color: @btnColor !important;
+      }
+    }
+    .v-btn.primary, .btn-primary {
+      font-family: @sansBoldFontFamily !important;
+      font-weight: bold !important;
+      .buttonBackgroundEXO(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder, @btnPrimaryColor) !important;
+    }
+    
+    .btn-primary:hover .v-btn.primary:hover {
+      background-color: @btnPrimaryHoverBackgroundColor !important;
+      background-position: @btnPrimaryHoverBackgroundPosition !important;
+    }
+
+    .btn-primary.disabled, .v-btn.primary.disabled,
+    .btn-primary[disabled], .v-btn.primary[disabled] {
+      background-color: @btnPrimaryDisableBackground !important;
+    }
+    
+    .btn-primary.disabled:hover, .v-btn.primary.disabled:hover,
+    .btn-primary[disabled]:hover, .v-btn.primary[disabled]:hover {
+      background-color: @btnPrimaryDisableHoverBackground !important;
+    }
+    
+    .uiAction .v-btn.primary.disabled:first-child,
+    .uiAction .v-btn.primary[disabled]:first-child ,
+    .v-btn.primary[disabled]:first-child,
+    .v-btn.primary[disabled],
+    .uiAction .btn.disabled:first-child,
+    .uiAction .btn[disabled]:first-child,
+    .uiAction .btn-primary.disabled:first-child,
+    .uiAction .btn-primary[disabled]:first-child ,
+    .btn-primary[disabled]:first-child,
+    .btn-primary[disabled],
+    .uiAction .btn.disabled:first-child,
+    .uiAction .btn[disabled]:first-child {
+      color: @btnPrimaryColor !important;
+    }
+    .primary--text {
+      color: @primaryColor !important;
+    }
+    .primary:not([disabled]) {
+      background-color: @primaryColor !important;
+      color: #fff !important;
+    }
+    .primary--text {
+      color: @primaryColor !important;
+      caret-color: @primaryColor !important;
+    }
+    .v-tab {
+      color: @greyColorLighten1 !important;
+    }
+    .v-tab--active {
+      color: @tertiaryColor !important;
+    }
+    .v-tabs-slider-wrapper {
+      .v-tabs-slider.primary {
+        background-color: @tertiaryColor !important;
+      }
+      .v-tabs-slider {
+        color: @tertiaryColor !important;
+      }
+    }
+    .row {
+      padding: 0;
     }
   }
 }

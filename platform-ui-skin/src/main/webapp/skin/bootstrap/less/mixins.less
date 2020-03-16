@@ -405,10 +405,10 @@
 }
 
 // Gradient Bar Colors for buttons and alerts
-.gradientBar(@primaryColor, @secondaryColor, @textColor: #fff, @textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
+.gradientBar(@primaryColor, @blackColor, @textColor: #fff, @textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
   color: @textColor;
   text-shadow: @textShadow;
-  #gradient > .vertical(@primaryColor, @secondaryColor);
+  #gradient > .vertical(@primaryColor, @blackColor);
   border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);
 }
 

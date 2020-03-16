@@ -2,6 +2,8 @@
 
 #ParentSiteContainer {
   background: @lightGrey;
+  height: 100%;
+  min-height: 100vh;
 }
 
 #UITopBarContainerParent, #UITopBarContainer {
@@ -66,7 +68,7 @@
   }
 }
 
-#brandingToBar {
+#brandingTopBar {
   .logoContainer {
     position: relative;
     &:after {
@@ -76,7 +78,7 @@
       right: 0;
       width: 1px;
       height: 23px;
-      background: @baseGreyColor;
+      background: @greyColor;
     }
   }
   .brandingContainer {
@@ -85,7 +87,7 @@
   }
 }
 @media (max-width: 599px) {
-  #brandingToBar {
+  #brandingTopBar {
     .logoContainer {
       &:after {
         display: none;
@@ -351,13 +353,13 @@
         height: 100%;
         align-items: center;
         justify-content: center;
-        background-color: #a8b3c521;
+        background-color: @greyColorLighten1Opacity1;
         margin-top: -1px;
         .noNotificationsContent {
           text-align: center;
           margin-top: -10%;
           .uiNoNotifIcon {
-            color: #a8b3c521;
+            color: @greyColorLighten1Opacity1;
             font-size: 10rem;
             font-style: normal;
             font-weight: normal;
@@ -368,7 +370,7 @@
           }
           p {
             font-size: 15px;
-            color: #a8b3c5;
+            color: @greyColorLighten1;
             margin-top: -50px;
             font-weight: bold;
           }

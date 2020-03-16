@@ -1,13 +1,15 @@
+@import "../../../_bootstrap.less";
 @import "../../../variables.less";
 @import "../../../customVariables.less";
 @import "../../../mixins.less";
-@import "../../../component/Buttons/Style.less";
 @import "../../../component/Form/Style.less";
+@import "../../../component/Buttons/Style.less";
+@import "../../../component/Notifications/Style.less";
 @import "../../../customStyle.less";
 //========================================
 
 body {
-    background: @secondarySkinColor;
+    background: @welcomePagesBackground;
     font-family: @baseFontFamily;
     font-size: @baseFontSize;
     color: @textColor;
@@ -69,6 +71,7 @@ a {
     .btn  {
         border-radius: 3px;
 		line-height: 20px;
+        padding: 5px 20px;
 		&:active {
 			outline: none;
 			background-position: 0 -45px;
