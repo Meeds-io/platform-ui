@@ -71,19 +71,17 @@
 #brandingTopBar {
   .logoContainer {
     position: relative;
-    &:after {
-      content: "";
-      position: absolute;
-      top:6px;
-      right: 0;
-      width: 1px;
-      height: 23px;
-      background: @greyColor;
+    img {
+      max-width: 200px;
+      max-height: 30px;
+      min-height: 30px;
     }
   }
   .brandingContainer {
     color: @toolbarLightLinkHoverColor;
     padding-top: 3px;
+    padding-bottom: 3px;
+    border-left: Solid 1px @greyColor;
   }
 }
 @media (max-width: 599px) {
