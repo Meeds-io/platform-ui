@@ -493,6 +493,13 @@
     <css-path>/skin/css/platform/portlets/homepage/invitations.css</css-path>
     <css-priority>1</css-priority>
   </portlet-skin>
+  <portlet-skin>
+    <application-name>social-vue-portlet</application-name>
+    <portlet-name>GettingStarted</portlet-name>
+    <skin-name>${exo.skin.name}</skin-name>
+    <css-path>/skin/css/social/portlets/uiGettingStartedPortlet/Style.css</css-path>
+    <css-priority>1</css-priority>
+  </portlet-skin>
 
   <!--- platform: branding -->
   <portlet-skin>
