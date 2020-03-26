@@ -75,7 +75,7 @@
 .visible-phone-small {
     display: none;
 }
-.UIToolbarContainer .NormalContainerBlock .ToolbarContainer {
+.UIToolbarContainer .NormalContainerBlock .ToolbarContainer, .UITopBarContainer .NormalContainerBlock {
     .TRContainer {
         .SearchPortletTDContainer .uiSearchPlatformToolBarPortlet{
             > a {
@@ -476,7 +476,7 @@
     }
 
     //search bar
-    .UIToolbarContainer .NormalContainerBlock .ToolbarContainer {
+    .UIToolbarContainer .NormalContainerBlock .ToolbarContainer, .UITopBarContainer .NormalContainerBlock {
         .TRContainer {
             .SearchPortletTDContainer{
                 input[name="adminkeyword"] {
@@ -1105,6 +1105,10 @@
     .quickSearchDisplay .footComment{
         display: none!important;
     }
+	
+	.activeInputSearch .SearchPortletTDContainer{
+		display: block !important;
+	}
     .activeInputSearch .SearchPortletTDContainer{
         position: fixed;
         background: rgba(0, 0, 0, 0.8);
@@ -1163,6 +1167,17 @@
     }
     .uiQuickSearchResult {
         position: absolute!important;
+    }
+	
+	//search bar
+    .UITopBarContainer .NormalContainerBlock {
+        .TRContainer {
+            .SearchPortletTDContainer {
+                .uiIconCloseSearchBox {
+                    top: 8px !important;
+                }
+            }
+        }
     }
 
 	embed,object,iframe,video {
