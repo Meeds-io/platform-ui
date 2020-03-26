@@ -1226,9 +1226,69 @@
     color: @primaryColor;
   }
 
-  .drawer .content .composerActions {
+  .drawer .content .composerButtons {
     display: flex;
     justify-content: flex-end;
     padding-top: 10px;
   }
+
+  #activityComposerApp {
+    .drawer {
+      .content {
+        .attachmentsList{
+          display: flex;
+          .attachedFiles{
+            margin-left: 3%;
+          }
+          .uiIconAttach {
+            color: #333;
+          }
+        }
+        .composerActions {
+          margin-top: 8%;
+          padding-top: 8%;
+          border-top: 1px solid #efefef;
+
+          .actionItem {
+            display: flex;
+            align-items: center;
+            padding: 10px 10px 0 10px;
+            border: 1px solid #E1E8EE;
+            margin: 10px 0;
+            border-radius: 5px;
+
+            .actionItemIcon {
+              .addFileComposerIcon {
+                background: url('/eXoSkin/skin/images/system/composer/addFile.png') no-repeat;
+                width: 60px;
+                height: 60px;
+                margin: 10px 0 0 10px;
+                background-size: 40px;
+              }
+            }
+
+            .actionItemDescription {
+              padding: 9px 10px;
+
+              .actionLabel {
+                font-weight: bold;
+                font-size: 16px;
+              }
+
+              .actionDescription > p {
+                color: #A8B3C5;
+                font-size: 12px;
+              }
+            }
+
+            &:hover {
+              box-shadow: 0 0 8px #888888;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+
 }
