@@ -103,6 +103,7 @@
                                 <include>social/portlets/uiConnectionsNavigationPortlet/Style.less</include>
                                 <include>social/portlets/uiConnectionsPortlet/Style.less</include>
                                 <include>social/portlets/uiFooterPortlet/Style.less</include>
+                                <include>social/portlets/uiGettingStartedPortlet/Style.less</include>
                                 <include>social/portlets/uiInvitationSpacesPortlet/Style.less</include>
                                 <include>social/portlets/uiInvitationsPortlet/Style.less</include>
                                 <include>social/portlets/uiMembersPortlet/Style.less</include>
@@ -133,7 +134,7 @@
                                 <include>social/portlets/uiUserPortlet/Style.less</include>
                                 <include>social/portlets/uiSpacesAdministrationPortlet/Style.less</include>
                                 <include>social/portlets/uiSpaceTemplatesPortlet/Style.less</include>
-                                <include>social/portlets/uiSpaceInfosPortlet/Style.less</include>
+                                <include>social/portlets/uiSpaceInfosPortlet/Style.less</include>                        
                                 <include>commons/skin/commons.less</include>
                                 <include>commons/skin/CkeditorSuggester/Style.less</include>
                                 <include>integration/skin/quicksearchpage.less</include>
