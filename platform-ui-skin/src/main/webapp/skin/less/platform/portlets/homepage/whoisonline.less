@@ -3,94 +3,86 @@
 
 .onlineHeader {
     background: @primaryBackgroundLight;
-    border    : 1px solid @primaryBackgroundHover;
+    border: 1px solid @primaryBackgroundHover;
     .border-radius(@borderRadiusSmall);
-    color        : @textColor;
-    line-height  : 25px;
-    padding      : 0 5px 0 8px;
-    font-weight  : bold;
+    color: @textColor;
+    line-height: 25px;
+    padding: 0 5px 0 8px;
+    font-weight: bold;
     margin-bottom: 5px;
 }
-
 #OnlinePortlet {
     #onlineContent {
-        box-shadow   : none;
-        border       : none;
-        padding      : 15px 10px !important;
+        box-shadow : none;
+        border: none;
+        padding: 15px 10px !important;
         border-radius: 0;
-
         .title {
-            background    : transparent;
-            border-bottom : none;
-            box-shadow    : none;
-            text-align    : left;
+            background: transparent;
+            border-bottom: none;
+            box-shadow: none;
+            text-align: left;
             text-transform: uppercase;
-            font-weight   : normal;
-            font-size     : 1rem;
-            color         : @greyColorLighten1;
+            font-weight: normal;
+            font-size: 1rem;
+            color: @greyColorLighten1;
         }
-
         ul {
             list-style-type: none;
             text-align: center;
             padding: 10px 0 0 0!important;
-        }
 
+         }
         .gallery li {
-            display   : inline;
+            display: inline;
             list-style: none;
-            .size(40px, 30px);
+            .size(40px,30px);
             text-align: center;
-
             img {
-                max-height   : 36px;
-                max-width    : 36px;
-                height       : 36px;
-                width        : 36px;
-                padding      : 5px;
+                max-height : 36px;
+                max-width : 36px;
+                height : 36px;
+                width : 36px;
+                padding: 5px;
                 border-radius: 50%;
+                .border-radius(@borderRadiusSmall);
             }
         }
-
-    }
+	}
 }
 
 #tipName {
     .name {
-        font-weight: bold;
-        color      : @linkColor;
-    }
-
-    &+blockquote {
-        margin-top: 5px;
-    }
-
-    &+#connectMessge {
-        margin-top: 30px;
-    }
-
-    &+.connectAction {
-        margin-top: 35px;
-    }
+		font-weight: bold;
+		color: @linkColor;
+	}
+	&+ blockquote {
+		margin-top: 5px;
+	}
+	&+ #connectMessge{
+		margin-top: 30px;
+	}
+	&+ .connectAction {
+		margin-top: 35px;
+	}
 }
 
 .connectAction {
     text-align: center;
     background: @primaryBackground;
-    margin    : -10px;
-    padding   : 10px;
-    .border-radius(0 0 @borderRadiusSmall @borderRadiusSmall);
+    margin:-10px;
+    padding: 10px;
+	.border-radius(0 0 @borderRadiusSmall @borderRadiusSmall);
 }
-
 /* TipTip CSS - Version 1.2 */
 
 #tiptip_holder {
-    display : none;
+    display: none;
     position: absolute;
-    top     : 0;
-    left    : 0;
-    z-index : 99999;
-    width   : 240px;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    width: 240px;
 }
 
 #tiptip_holder.tip_top {
@@ -110,67 +102,61 @@
 }
 
 #tiptip_content {
-    font-size : @baseFontSize - 1;
-    color     : @baseColorLight;
-    background: @baseBackground;
-    padding   : 10px;
-    border    : @tiptipBorder;
+    font-size: @baseFontSize - 1;
+	color: @baseColorLight;
+	background: @baseBackground;
+    padding: 10px;
+    border: @tiptipBorder;
     .border-radius(@borderRadiusSmall);
-    .box-shadow(0 3px 4px rgba(0, 0, 0, 0.15));
+    .box-shadow(0 3px 4px rgba(0,0,0,0.15));
 }
 
 // Arrows
 
-#tiptip_arrow,
-#tiptip_arrow_inner {
-    position    : absolute;
-    display     : inline-block;
-    width       : 0;
-    height      : 0;
-    border-color: transparent;
-    border-style: solid;
+#tiptip_arrow, #tiptip_arrow_inner{
+  position: absolute;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+#tiptip_holder  #tiptip_arrow_inner {
+  z-index: -1;
 }
 
-#tiptip_holder #tiptip_arrow_inner {
-    z-index: -1;
-}
-
-#tiptip_holder {
-
-    &.tip_left_top #tiptip_arrow,
-    &.tip_left_bottom #tiptip_arrow {
-        display: none;
+#tiptip_holder{
+	&.tip_left_top  #tiptip_arrow,&.tip_left_bottom  #tiptip_arrow{
+		display: none;
+	}
+  #tiptip_arrow{
+    right: -@popoverArrowWidth + 6;
+    border-width:  (@popoverArrowWidth - 1)  0  (@popoverArrowWidth - 1)  @popoverArrowWidth ;
+    border-left-color: @dropdownBackground;
+     #tiptip_arrow_inner {
+      border-width: @popoverArrowOuterWidth 0 @popoverArrowOuterWidth @popoverArrowOuterWidth;
+      border-left-color: @dropdownBorder;
+      bottom: -@popoverArrowOuterWidth;
+      right: -1px;
     }
-
-    #tiptip_arrow {
-        right            : -@popoverArrowWidth + 6;
-        border-width     : (@popoverArrowWidth - 1) 0 (@popoverArrowWidth - 1) @popoverArrowWidth ;
-        border-left-color: @dropdownBackground;
-
-        #tiptip_arrow_inner {
-            border-width     : @popoverArrowOuterWidth 0 @popoverArrowOuterWidth @popoverArrowOuterWidth;
-            border-left-color: @dropdownBorder;
-            bottom           : -@popoverArrowOuterWidth;
-            right            : -1px;
-        }
-    }
+  }
 }
 
 #tipName img {
-    max-height: 40px;
-    max-width : 40px;
-    .border-radius(@borderRadiusSmall);
+   max-height: 40px;
+   max-width: 40px;
+   .border-radius(@borderRadiusSmall);
 }
 
 #connectMessge {
-    background : @primaryBackground;
-    margin     : -10px;
-    padding    : 10px 20px;
-    color      : @baseColorLight;
+    background: @primaryBackground;
+    margin: -10px;
+    padding: 10px 20px;
+    color: @baseColorLight;
     font-weight: bold;
 }
 
 
 #tiptip_holder .detail {
-    margin-left: 45px;
+	margin-left: 45px;
 }
