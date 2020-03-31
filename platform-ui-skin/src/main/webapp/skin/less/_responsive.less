@@ -75,23 +75,18 @@
 .visible-phone-small {
     display: none;
 }
-.UIToolbarContainer .NormalContainerBlock .ToolbarContainer, .UITopBarContainer .NormalContainerBlock {
-    .TRContainer {
-        .SearchPortletTDContainer .uiSearchPlatformToolBarPortlet{
-            > a {
-                .uiIconCloseSearchBox:before{
-                    content: "\e75e";
-                    font-size: 16px;
-                }
-            }
-            input[type="text"]{
-                display: none !important;
-            }
-            input[type="text"].showInputSearch{
-                display: inline !important;
-            }
-
+.SearchPortletTDContainer .uiSearchPlatformToolBarPortlet{
+    > a {
+        .uiIconCloseSearchBox:before{
+            content: "\e75e";
+            font-size: 16px;
         }
+    }
+    input[type="text"]{
+        display: none !important;
+    }
+    input[type="text"].showInputSearch{
+        display: inline !important;
     }
 }
 
@@ -476,17 +471,13 @@
     }
 
     //search bar
-    .UIToolbarContainer .NormalContainerBlock .ToolbarContainer, .UITopBarContainer .NormalContainerBlock {
-        .TRContainer {
-            .SearchPortletTDContainer{
-                input[name="adminkeyword"] {
-                    width: auto;
-                    margin-top: 10px;
-                }
-                .uiIconCloseSearchBox{
-                    top: -5px;
-                }
-            }
+    .SearchPortletTDContainer{
+        input[name="adminkeyword"] {
+            width: auto;
+            margin-top: 10px;
+        }
+        .uiIconCloseSearchBox{
+            top: -5px;
         }
     }
     // end search
@@ -1106,10 +1097,14 @@
         display: none!important;
     }
 	
-	.activeInputSearch .SearchPortletTDContainer{
-		display: block !important;
-	}
-    .activeInputSearch .SearchPortletTDContainer{
+    .UITopBarContainerItem.activeInputSearch.SearchPortletTDContainer {
+        display: block !important;
+        .uiSearchPlatformToolBarPortlet input[type="text"], .uiDropdownWithIcon > a {
+            margin-top: 6px !important;
+        }
+    }
+	
+    .activeInputSearch.SearchPortletTDContainer {
         position: fixed;
         background: rgba(0, 0, 0, 0.8);
         width: 100%;
