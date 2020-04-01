@@ -1235,60 +1235,79 @@
   #activityComposerApp {
     .drawer {
       .content {
-        .attachmentsList{
-          display: flex;
-          .attachedFiles{
-            margin-left: 3%;
-          }
-          .uiIconAttach {
-            color: #333;
-          }
-        }
-        .composerActions {
-          margin-top: 8%;
-          padding-top: 8%;
-          border-top: 1px solid #efefef;
-
-          .actionItem {
+        .VuetifyApp {
+          .attachmentsList{
             display: flex;
             align-items: center;
-            padding: 10px 10px 0 10px;
-            border: 1px solid #E1E8EE;
-            margin: 10px 0;
-            border-radius: 5px;
-
-            .actionItemIcon {
-              .addFileComposerIcon {
-                background: url('/eXoSkin/skin/images/system/composer/addFile.png') no-repeat;
-                width: 60px;
-                height: 60px;
-                margin: 10px 0 0 10px;
-                background-size: 40px;
+            .attachedFiles{
+              margin-left: 3%;
+            }
+            .uiIconAttach {
+              top: -1px;
+              color: #333;
+            }
+            .v-progress-circular {
+              svg {
+                color: transparent;
+              }
+              circle {
+                color: #FFF;
+              }
+              &.uploading svg {
+                color: #578dc9;
               }
             }
+          }
+        }
 
-            .actionItemDescription {
-              padding: 9px 10px;
+        .v-navigation-drawer {
+          z-index: 20;
+        }
+      }
 
-              .actionLabel {
-                font-weight: bold;
-                font-size: 16px;
-              }
+      .composerActions {
+        margin-top: 8%;
+        padding-top: 8%;
+        border-top: 1px solid #efefef;
 
-              .actionDescription > p {
-                color: #A8B3C5;
-                font-size: 12px;
-              }
+        .actionItem {
+          display: flex;
+          align-items: center;
+          padding: 10px 10px 0 10px;
+          border: 1px solid #E1E8EE;
+          margin: 10px 0;
+          border-radius: 5px;
+
+          .actionItemIcon {
+            .addFileComposerIcon {
+              background: url('/eXoSkin/skin/images/system/composer/addFile.png') no-repeat;
+              width: 60px;
+              height: 60px;
+              margin: 10px 0 0 10px;
+              background-size: 40px;
+            }
+          }
+
+          .actionItemDescription {
+            padding: 9px 10px;
+
+            .actionLabel {
+              font-weight: bold;
+              font-size: 16px;
             }
 
-            &:hover {
-              box-shadow: 0 0 8px #888888;
-              cursor: pointer;
+            .actionDescription > p {
+              color: #A8B3C5;
+              font-size: 12px;
             }
+          }
+
+          &:hover {
+            box-shadow: 0 0 8px #888888;
+            cursor: pointer;
           }
         }
       }
     }
   }
-
 }
