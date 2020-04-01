@@ -175,7 +175,8 @@
           }
         }
         .content {
-          overflow: hidden!important;
+          overflow: auto!important;
+          max-height: 80.5vh;
           
           .v-treeview-node__root.bound, .v-treeview-node__content.bound {
             color: grey!important;
@@ -229,6 +230,9 @@
         }
         .btn-primary:hover {
           background-color: #578DC9;
+        }        
+        .btn:focus {
+          outline: none!important;
         }
       }
     }
