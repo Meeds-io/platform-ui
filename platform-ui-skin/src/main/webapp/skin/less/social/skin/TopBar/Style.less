@@ -183,14 +183,13 @@
                       }
                     }
 
-                    .content {
+                    .content, content-normal {
+                      font-size: 12px;
+                      overflow: hidden;
                       text-overflow: ellipsis;
                       white-space: nowrap;
-                      font-size: 13px;
-                      font-style: italic;
-                      max-width: 280px;
-                      overflow: hidden;
-                      display: flex;
+                      font-weight: bold;
+                      max-height: 30px;
 
                       .user-name {
                         color: @primaryColor;
@@ -201,6 +200,10 @@
                         margin-bottom: 8px;
                         font-size: 13px;
                         font-style: italic;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        display: inline;
                       }
 
                       blockquote {
