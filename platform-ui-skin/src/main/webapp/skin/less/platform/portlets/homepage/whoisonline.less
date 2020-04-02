@@ -1,4 +1,4 @@
-@import "../../../variables.less"; 
+@import "../../../variables.less";
 @import "../../../mixins.less";
 
 .onlineHeader {
@@ -12,25 +12,42 @@
     margin-bottom: 5px;
 }
 #OnlinePortlet {
-    margin-right: 3px;
-	ul {
-		list-style-type: none;
-		padding-left: 10px;
-		padding-right: 0px;
+    #onlineContent {
+        box-shadow : none;
+        border: none;
+        padding: 15px 10px !important;
+        border-radius: 0;
+        .title {
+            background: transparent;
+            border-bottom: none;
+            box-shadow: none;
+            text-align: left;
+            text-transform: uppercase;
+            font-weight: normal;
+            font-size: 1rem;
+            color: @greyColorLighten1;
+        }
+        ul {
+            list-style-type: none;
+            text-align: center;
+            padding: 10px 0 0 0!important;
 
-	}
-	.gallery li {
-		display: inline;
-		list-style: none;
-		.size(40px,30px);
-		margin: 0 5px 5px 0;
-		text-align: center;
-		img {
-			max-height : 36px;
-			max-width : 36px;
-			margin-bottom: 10px;
-			.border-radius(@borderRadiusSmall);
-		}
+         }
+        .gallery li {
+            display: inline;
+            list-style: none;
+            .size(40px,30px);
+            text-align: center;
+            img {
+                max-height : 36px;
+                max-width : 36px;
+                height : 36px;
+                width : 36px;
+                padding: 5px;
+                border-radius: 50%;
+                .border-radius(@borderRadiusSmall);
+            }
+        }
 	}
 }
 
