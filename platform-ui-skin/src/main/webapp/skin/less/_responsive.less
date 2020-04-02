@@ -474,7 +474,6 @@
     .uiSearchPlatformToolBarPortlet{
         input[name="adminkeyword"] {
             width: auto;
-            margin-top: 10px;
         }
         .uiIconCloseSearchBox{
             top: -5px;
@@ -1097,30 +1096,20 @@
         display: none!important;
     }	
 
-    .uiSearchPlatformToolBarPortlet{
-        position: absolute;
-        width: 80%;
+    .uiSearchPlatformToolBarPortlet.activeInputSearch{
         left: 50%;
         .translate(-50%, 0);
-        background: none;
+		position: fixed;
+        background: #fff;
+        padding-top: 5px;
+        z-index: 3000;
+        top: 0;
+        right: 0;
 
         input[type="text"]{
             width: 100% !important;
-            margin: 0 !important;
             &.loadding {
                 + a {position: absolute;}
-            }
-        }
-        > a {
-            height: auto;
-            position: absolute;
-            top: -6px;
-            right: -30px;
-            &:hover{
-                background: none;
-            }
-            .uiIconCloseSearchBox{
-                color: white !important;
             }
         }
         .uiQuickSearchResult{
@@ -1144,17 +1133,6 @@
                 }
             }
         }
-    }
-    .uiSearchPlatformToolBarPortlet.activeInputSearch {
-        position: fixed;
-        background: #fff;
-        padding-top: 5px;
-        height: 58px;
-        z-index: 3000;
-        top: 0;
-        left: 0;
-        right: 0;
-        display: flex;
     }
     .uiQuickSearchResult {
         position: absolute!important;

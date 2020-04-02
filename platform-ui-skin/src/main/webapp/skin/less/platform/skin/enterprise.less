@@ -298,13 +298,11 @@
 
 .uiSearchPlatformToolBarPortlet {
   display :flex;
+  outline: none!important;
   > * {
     margin: auto 0;
   }
   > a {
-    .uiIconCloseSearchBox {
-      top: -4px;
-    }
     .uiIconCloseSearchBox:before {
       /*content: "\e75e";*/
       font-family: IONIC-FONT;
@@ -316,6 +314,26 @@
     + a {
       &:after {
         top:18px;
+      }
+    }
+  }
+  > input[type=text] {
+    padding-right: 30px;
+	&.loadding {
+      + a {
+        &:after {
+          display: block;
+          background-image: url("@{images-path}/Loading/loading24x24Light.png");
+          background-position: right center;
+          background-repeat: no-repeat;
+          .loading-action;
+          position: absolute;
+          .square(24px);
+          left: -30px;
+          top:9px;
+          content: "";
+        }
+        position: relative;
       }
     }
   }
