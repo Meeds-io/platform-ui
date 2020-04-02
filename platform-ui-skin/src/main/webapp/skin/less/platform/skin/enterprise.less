@@ -296,8 +296,15 @@
   }
 }
 
-.SearchPortletTDContainer .uiSearchPlatformToolBarPortlet {
+.uiSearchPlatformToolBarPortlet {
+  display :flex;
+  > * {
+    margin: auto 0;
+  }
   > a {
+    .uiIconCloseSearchBox {
+      top: -4px;
+    }
     .uiIconCloseSearchBox:before {
       /*content: "\e75e";*/
       font-family: IONIC-FONT;
@@ -305,20 +312,17 @@
       font-size: 16px;
     }
   }
-}
-
-/*=====================================*/
-/*            TOOLBAR                  */
-
-#UIPortalApplication .UITopBarContainer {
-  .SearchPortletTDContainer .uiSearchPlatformToolBarPortlet {
-    > a {
-	  .uiIconCloseSearchBox {
-        top: -4px;
+  > input.loadding[type=text] {
+    + a {
+      &:after {
+        top:18px;
       }
     }
   }
 }
+
+/*=====================================*/
+/*            TOOLBAR                  */
 
 #UIPortalApplication .UIToolbarContainer {
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.16), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
@@ -396,15 +400,7 @@
       }
     }
   }
-  .uiSearchPlatformToolBarPortlet {
-    > input.loadding[type=text] {
-      + a {
-        &:after {
-          top:18px;
-        }
-      }
-    }
-  }
+  
   #HomeLink {
     height: 47px;
     display: flex;
