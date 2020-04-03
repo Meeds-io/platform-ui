@@ -1,0 +1,113 @@
+@import "../../../variables.less"; 
+@import "../../../mixins.less";
+
+@spaceCardParentMargin: 22px;
+@spaceCardMaxHeight: 244px;
+@spaceCardParentMaxHeight: @spaceCardParentMargin + @spaceCardMaxHeight;
+
+#spacesListApplication {
+  .selectSpacesFilter {
+    height: 50px;
+    width: auto;
+    padding-right: 20px;
+  }
+  .inputSpacesFilter {
+    max-width: 215px;
+  }
+  .spaceAvatarImg {
+    margin-top: -42px;
+  }
+  .joinSpaceButton, .acceptToJoinSpaceButton, .spaceButtonMenu {
+    border: 1px solid @btnPrimaryBorder !important;
+    color: @btnPrimaryBorder !important;
+    i {
+      color: @btnPrimaryBorder !important;
+    }
+  }
+  .cancelRequestToJoinSpaceButton {
+    border: 1px solid @btnBorder !important;
+    color: @btnColor !important;
+  }
+  .leaveSpaceButton, .refuseToJoinSpaceButton {
+    border: 1px solid @errorColor !important;
+    color: @errorColor !important;
+  }
+  .refuseToJoinSpaceButton {
+    margin-top: 2px;
+  }
+  .spaceInfoIcon {
+    border: 1px solid @infoBorder !important;
+    color: @infoBorder !important;
+  }
+  .spaceActionIcon {
+    background: transparent !important;
+    color: #fff !important;
+  }
+  .spaceActionMenu {
+    right: 21px;
+    left: auto !important;
+    top: 42px !important;
+  }
+  .spaceCardFlipped {
+    transform: rotateY(180deg);
+  }
+  .spaceCardFlip {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    min-height: @spaceCardParentMaxHeight;
+    margin-bottom: @spaceCardParentMargin;
+  }
+  .spaceCardFront, .spaceCardBack {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: @spaceCardMaxHeight;
+    max-height: @spaceCardMaxHeight;
+    width: 100%;
+    max-width: 100%;
+  }
+  .spaceCardFront {
+    z-index: 2;
+    transform: rotateY(0deg);
+  }
+  .spaceCardBack {
+    transform: rotateY(180deg);
+  }
+  .spaceCardFront, .spaceCardBack {
+    > * {
+      margin: 0 5px;
+    }
+  }
+  .spaceCardItem {
+    height: @spaceCardMaxHeight;
+    max-height: @spaceCardMaxHeight;
+  }
+  .spaceCardActions {
+    button i {
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  }
+  .joinSpaceDisabledLabel, .invitationButtons {
+    width:100%;
+  }
+  .acceptToJoinSpaceButtonParent {
+    white-space: nowrap;
+
+    .acceptToJoinSpaceButton {
+      max-width: 85%;
+      width: 85%;
+    }
+    .spaceButtonMenu {
+      max-width: 15%;
+      width: 15%;
+      padding: 5px 20px;
+      height: auto;
+      i {
+        margin: 0;
+      }
+    }
+  }
+}

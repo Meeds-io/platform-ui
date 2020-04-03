@@ -436,6 +436,14 @@
 
   <portlet-skin>
     <application-name>social-vue-portlet</application-name>
+    <portlet-name>SpacesList</portlet-name>
+    <skin-name>${exo.skin.name}</skin-name>
+    <css-path>/skin/css/social/portlets/SpacesList/Style.css</css-path>
+    <css-priority>1</css-priority>
+  </portlet-skin>
+
+  <portlet-skin>
+    <application-name>social-vue-portlet</application-name>
     <portlet-name>SpaceTemplates</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/social/portlets/uiSpaceTemplatesPortlet/Style.css</css-path>
@@ -630,6 +638,5 @@
       <theme-name>VistaTheme</theme-name>
     </style-theme>
   </window-style>
-
 
 </gatein-resources>
