@@ -56,6 +56,7 @@
 
     textarea {
       border: Solid 2px @greyColor !important;
+      max-width: 100%;
     }
 
     .border-box-sizing {
@@ -170,12 +171,13 @@
     .v-btn--outlined {
       border: thin solid @primaryColor !important;
     }
-    .v-btn, .btn {
-      border-bottom-color: @btnBorder !important;
-      text-shadow: none !important;
+    .btn {
+      border: 1px solid @btnBorder !important;
       color: @btnColor !important;
       background-color: @btnBackgroundColor !important;
       background-image: @btnBackgroundImage !important;
+      text-shadow: none !important;
+      box-shadow: none !important;
       &:hover, &:focus {
         color: @btnColor !important;
       }
@@ -245,6 +247,70 @@
     }
     .v-text-field .v-input__prepend-inner {
       margin: auto;
+    }
+    .v-stepper {
+      box-shadow: none;
+
+      .v-stepper__step:not(.v-stepper__step--inactive) .v-stepper__step__step {
+        background-color: @tertiaryColor !important;
+      }
+    }
+    .v-stepper--vertical {
+      margin-left: -23px;
+      margin-top: -23px;
+    }
+    .warning {
+      background: @warningBackground !important;
+      border-color: @warningBorder !important;
+      color: @warningText !important;
+
+      i:before {
+        color: @warningColor !important;
+      }
+    }
+    .error {
+      background: @errorBackground !important;
+      border-color: @errorBorder !important;
+      color: @errorText !important;
+
+      i:before {
+        color: @errorColor !important;
+      }
+      .v-alert__icon:before {
+        font-family: "PLF-FONT-ICONS";
+        content: "\e76d";
+      }
+    }
+    .success {
+      background: @errorBackground !important;
+      border-color: @errorBorder !important;
+      color: @errorText !important;
+
+      i:before {
+        color: @successColor !important;
+      }
+      .v-alert__icon:before {
+        font-family: "PLF-FONT-ICONS";
+        content: "\e770";
+      }
+    }
+    .info {
+      background: @infoBackground !important;
+      border-color: @infoBorder !important;
+      color: @infoText !important;
+
+      i:before {
+        color: @infoColor !important;
+      }
+      .v-alert__icon:before {
+        font-family: "PLF-FONT-ICONS";
+        content: "\e767";
+      }
+    }
+    .autocompleteSelectedItem {
+      background: @mentionBackground !important;
+      color: @mentionColor !important;
+      border: @mentionBorder !important;
     }
   }
 }
