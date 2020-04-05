@@ -9,19 +9,20 @@
 
   .UIRowContainer:first-of-type {
     display: flex;
-    
+    width:100%;
+
     > div {
       width:100%;
     }
 
-    #leftSocialPage {
+    > #leftSocialPage, > .leftSocialPage {
       flex: 0 1 70%;
       max-width: 70%;
       padding-right: 10px;
       box-sizing: border-box;
     }
 
-    #rightSocialPage {
+    > #rightSocialPage, > .rightSocialPage {
       flex: 0 1 30%;
       max-width: 30%;
       padding-left: 10px;
