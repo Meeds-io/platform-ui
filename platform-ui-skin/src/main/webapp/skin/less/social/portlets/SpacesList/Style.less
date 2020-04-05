@@ -40,6 +40,11 @@
     background: #fff;
     color: @infoBorder !important;
   }
+  .spaceToolbarIcons {
+    margin-top: -100px;
+    margin-bottom: 48px;
+    display: flex;
+  }
   .spaceActionIcon {
     background: transparent !important;
     color: #fff !important;
@@ -91,7 +96,6 @@
   }
   .spaceCardActions {
     button i {
-      border-radius: 50%;
       margin-right: 10px;
     }
   }
@@ -104,12 +108,20 @@
     .acceptToJoinSpaceButton {
       max-width: 85%;
       width: 85%;
+      border-right: 0;
+      border-bottom-right-radius: 0 !important;
+      border-top-right-radius: 0 !important;
     }
     .spaceButtonMenu {
       max-width: 15%;
       width: 15%;
       padding: 5px 20px;
       height: auto;
+      border-left: 0;
+      margin-left: -11px;
+      border-bottom-left-radius: 0 !important;
+      border-top-left-radius: 0 !important;
+
       i {
         margin: 0;
       }
@@ -126,6 +138,99 @@
       width: 100%;
       height: 100%;
       line-height: 38px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #spacesListApplication {
+    .spacesListToolbar {
+      .addNewSpaceButton {
+        padding: 7px 8px;
+      }
+    }
+
+    .inputSpacesFilter .v-input__prepend-inner {
+      display: none;
+    }
+
+    .spaceCardFront, .spaceCardItem, .spaceCardFlip {
+      height: 90px;
+      max-height: 90px;
+      min-height: 90px;
+    }
+
+    .spaceAvatarImg {
+      position: absolute;
+      max-width: 50px;
+      margin: 7px 10px 0;
+      padding-top: 3px !important;
+    }
+
+    .spaceToolbarIcons {
+      width: 50px;
+      right: 3px;
+      margin: auto;
+      position: absolute;
+
+      .spaceActionIcon {
+        color: @btnColor !important;
+      }
+    }
+
+    .spaceCardActions {
+      float: right;
+      margin-top: 37px;
+      margin-right: 2px;
+
+      button {
+        border-radius: 50%;
+        padding: 5px;
+
+        i {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .spaceCardBody {
+      float: left;
+      left: 50px;
+      position: absolute;
+      width: ~"calc(100% - 70px)";
+      align-items: start !important;
+      text-align: left !important;
+
+      > * {
+        float: left;
+        padding: 0 !important;
+        display: block !important;
+        clear: both;
+        max-width: 100%;
+        margin: 6px 5px 0;
+      }
+    }
+
+    .invitationButtons {
+      display: flex;
+
+      button {
+        max-width: none !important;
+        width: auto !important;
+        min-width: auto !important;
+      }
+
+      .refuseToJoinSpaceButton {
+        display: block !important;
+        margin-top: 0;
+        margin-left: 6px !important;
+      }
+
+      .acceptToJoinSpaceButtonParent {
+        .acceptToJoinSpaceButton {
+          border-radius: 50% !important;
+        }
+      }
     }
   }
 }
