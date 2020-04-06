@@ -113,10 +113,20 @@
       white-space: normal;
     }
 
-    .v-input input {
-      margin-bottom: 0;
-      border: 0;
-      box-shadow: none;
+    .v-input {
+      input {
+        margin-bottom: 0;
+        border: 0;
+        box-shadow: none;
+      }
+
+      input::placeholder, i {
+        color: @greyColorLighten1;
+      }
+
+      i {
+        font-size: 16px;
+      }
     }
 
     .paragraph {
@@ -168,9 +178,6 @@
       color: @primaryColor !important;
       caret-color: @primaryColor !important;
     }
-    .v-btn--outlined {
-      border: thin solid @primaryColor !important;
-    }
     .btn {
       border: 1px solid @btnBorder !important;
       color: @btnColor !important;
@@ -182,12 +189,20 @@
         color: @btnColor !important;
       }
     }
+
     .v-btn.primary, .btn-primary {
       font-family: @sansBoldFontFamily !important;
-      font-weight: bold !important;
-      .buttonBackgroundEXO(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder, @btnPrimaryColor) !important;
+      &:not(.v-btn--outlined) {
+        font-weight: bold !important;
+        .buttonBackgroundEXO(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder, @btnPrimaryColor) !important;
+      }
+      &.v-btn--outlined {
+        border: thin solid @primaryColor !important;
+        font-weight: normal;
+        .buttonBackgroundEXO(@btnPrimaryColor, @btnPrimaryColor, @btnPrimaryBorder, @btnPrimaryBackground) !important;
+      }
     }
-    
+
     .btn-primary:hover .v-btn.primary:hover {
       background-color: @btnPrimaryHoverBackgroundColor !important;
       background-position: @btnPrimaryHoverBackgroundPosition !important;

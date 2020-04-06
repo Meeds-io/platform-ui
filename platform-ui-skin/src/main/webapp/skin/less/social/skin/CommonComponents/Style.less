@@ -1,0 +1,48 @@
+/*================= Suggester =================*/
+
+.identitySuggester {
+  border: 1px solid @inputBorder;
+  border-radius: 5px;
+  padding: 0 0 0 10px !important;
+  margin: 12px 0 !important;
+
+  .v-input__slot {
+    align-items: start !important;
+
+    &:before, &:after {
+      content: none !important;
+    }
+  }
+
+  .v-select__slot {
+    overflow: auto;
+    max-height: 100%;
+    display: block !important;
+  }
+
+  .v-select__selections {
+    display: block !important;
+  }
+
+  .identitySuggesterItem {
+    background-color: @primaryColorLight !important;
+    border: 1px solid @primaryDarkerColorGradientEnd !important;
+    color: @btnPrimaryColor !important;
+  }
+}
+
+/*================= Identity avatars List =================*/
+
+.notDisplayedIdentitiesOverlay {
+  position: absolute !important;
+  right: 24px;
+  cursor: pointer;
+
+  .notDisplayedIdentities {
+    background: #0000005c;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    line-height: 38px;
+  }
+}
