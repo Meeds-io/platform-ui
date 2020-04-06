@@ -1513,50 +1513,52 @@
     padding: 0 !important;
 
     .UIMobileSwipeParentContainer {
-      transition: ~"0.6s";
-      transform-style: ~"preserve-3d";
+      transition: ~"width 0.6s";
       margin: 10px;
       max-width: ~"calc(100% - 20px)" !important;
-  
+
       .UIMobileSwipeChildContainer {
         position: absolute;
-        backface-visibility: hidden;
-        top: 0;
-        left: 0;
-        width: 100% !important;
-        max-width: 100% !important;
+        width: ~"calc(100% - 20px)" !important;
+        max-width: ~"calc(100% - 20px)" !important;
         margin: 0 !important;
         padding: 0 !important;
   
         &.active {
-          transform: ~"rotateY(0deg)";
+          display: block;
         }
   
         &:not(.active) {
-          transform: ~"rotateY(180deg)";
+          display: none;
         }
       }
     }
 
     .UIMobileSwipe {
       position: fixed;
-      top: calc(40vh);
-      height: 100px;
-      background-color: #00000052;
+      top: 60vh;
+      height: 60px;
+      width: 60px;
+      background-color: #fff;
       z-index: 1500;
-      width: 14px;
       display: flex;
+      box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12) !important;
 
       &.left {
         left: 0;
+        border-bottom-right-radius: 7px;
+        border-top-right-radius: 7px;
       }
 
       &.right {
         right: 0;
+        border-bottom-left-radius: 7px;
+        border-top-left-radius: 7px;
       }
 
       i {
-        margin: auto;          
+        margin: auto;
+        color: @textColor !important;
       }
     }
   }
