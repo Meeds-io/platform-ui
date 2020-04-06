@@ -104,6 +104,7 @@
                                 <include>social/portlets/uiConnectionsPortlet/Style.less</include>
                                 <include>social/portlets/uiFooterPortlet/Style.less</include>
                                 <include>social/portlets/uiGettingStartedPortlet/Style.less</include>
+                                <include>social/portlets/uiSuggestionsPortlet/Style.less</include>
                                 <include>social/portlets/uiInvitationSpacesPortlet/Style.less</include>
                                 <include>social/portlets/uiInvitationsPortlet/Style.less</include>
                                 <include>social/portlets/uiMembersPortlet/Style.less</include>

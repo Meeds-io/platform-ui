@@ -1,0 +1,46 @@
+@import "../../../variables.less"; 
+@import "../../../mixins.less";
+
+#SuggestionsPeopleAndSpace {
+    .suggestions-wrapper {
+        border-radius: 0px !important;
+        .suggestions-title {
+                color: @greyColorLighten1;
+            }
+        .suggestions-list {
+            .suggestions-list-item {
+                .suggestions-list-item-title {
+                    color: @textColor;
+                }
+                .suggestions-list-item-subtitle {
+                    color: @greyColorLighten1;
+                }
+                .suggestions-list-item-actions {
+                    .suggestions-btn-action {
+                        .uiIconCloseCircled {
+                          color: @tertiaryColor;
+                          padding-left: 5px;
+                          &:before {
+                            font-size: 18px;
+                          }
+                        }
+                        .uiIconInviteUser {
+                          &:before {
+                            font-size: 18px;
+                          }
+                        }
+                        .uiIconPlusLight {
+                          &:before {
+                            font-size: 18px;
+                          }
+                        }
+                    }
+                }
+            }
+        }
+        .people-list {
+            border-bottom: 1px solid @greyColorLighten1Opacity1;
+            border-radius: 0;
+        }
+    }
+}
