@@ -75,23 +75,18 @@
 .visible-phone-small {
     display: none;
 }
-.UIToolbarContainer .NormalContainerBlock .ToolbarContainer {
-    .TRContainer {
-        .SearchPortletTDContainer .uiSearchPlatformToolBarPortlet{
-            > a {
-                .uiIconCloseSearchBox:before{
-                    content: "\e75e";
-                    font-size: 16px;
-                }
-            }
-            input[type="text"]{
-                display: none !important;
-            }
-            input[type="text"].showInputSearch{
-                display: inline !important;
-            }
-
+.uiSearchPlatformToolBarPortlet{
+    > a {
+        .uiIconCloseSearchBox:before{
+            content: "\e75e";
+            font-size: 16px;
         }
+    }
+    input[type="text"]{
+        display: none !important;
+    }
+    input[type="text"].showInputSearch{
+        display: inline !important;
     }
 }
 
@@ -346,7 +341,7 @@
         overflow-y: hidden!important;
     }
 
-.uiPopup{
+    .uiPopup{
         left: auto!important;
         top: auto!important;
         right: auto!important;
@@ -476,17 +471,12 @@
     }
 
     //search bar
-    .UIToolbarContainer .NormalContainerBlock .ToolbarContainer {
-        .TRContainer {
-            .SearchPortletTDContainer{
-                input[name="adminkeyword"] {
-                    width: auto;
-                    margin-top: 10px;
-                }
-                .uiIconCloseSearchBox{
-                    top: -5px;
-                }
-            }
+    .uiSearchPlatformToolBarPortlet{
+        input[name="adminkeyword"] {
+            width: auto;
+        }
+        .uiIconCloseSearchBox{
+            top: -5px;
         }
     }
     // end search
@@ -1104,58 +1094,50 @@
     }
     .quickSearchDisplay .footComment{
         display: none!important;
-    }
-    .activeInputSearch .SearchPortletTDContainer{
-        position: fixed;
-        background: rgba(0, 0, 0, 0.8);
-        width: 100%;
-        height: 100%;
-        padding-top: 5px;
-        z-index: 1000;
-        .uiSearchPlatformToolBarPortlet{
-            position: absolute;
-            width: 80%;
-            left: 50%;
-            .translate(-50%, 0);
-            background: none;
+    }	
 
-            input[type="text"]{
-                width: 100% !important;
-                margin: 0 !important;
-                &.loadding {
-                    + a {position: absolute;}
+    .uiSearchPlatformToolBarPortlet.activeInputSearch{
+        display: flex;
+        left: 50%;
+        .translate(-50%, 0);
+		position: fixed;
+        z-index: 3000;
+		padding-top: 10px;
+        top: 0;
+        right: 0;                		
+		> input {
+            margin-top: 0 !important;
+        }		
+        > input[type=text] {
+            &.loadding {
+                + a {
+                    &:after {
+                        top:5px;
+                    }
                 }
             }
-            > a {
-                height: auto;
-                position: absolute;
-                top: -6px;
-                right: -30px;
-                &:hover{
-                    background: none;
-                }
-                .uiIconCloseSearchBox{
-                    color: white !important;
-                }
-            }
-            .uiQuickSearchResult{
-                width: 100% !important;
-                .border-radius(4px);
-                margin: 4px 0 0;
-                table{
-                    table-layout: fixed;
-                    th, colgroup{display: none;}
-                    td{
-                        width: 100%;
-                        border-left: none;
-                        .avatarTiny{
-                            white-space: nowrap;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                            width: auto;
-                            height: auto;
-                            display: block;
-                        }
+        }
+
+        input[type="text"]{
+            width: 100% !important;
+        }
+        .uiQuickSearchResult{
+            width: 100% !important;
+            .border-radius(4px);
+            margin: 47px 0 0 !important;
+            table{
+                table-layout: fixed;
+                th, colgroup{display: none;}
+                td{
+                    width: 100%;
+                    border-left: none;
+                    .avatarTiny{
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        width: auto;
+                        height: auto;
+                        display: block;
                     }
                 }
             }
@@ -1263,6 +1245,9 @@
     }
 }
 @media (max-width: 480px) {
+	.uiSearchPlatformToolBarPortlet.activeInputSearch{
+        left: 40%;
+    }
     .uiEditUserProfileForm {
         .form-horizontal {
             .controls {
