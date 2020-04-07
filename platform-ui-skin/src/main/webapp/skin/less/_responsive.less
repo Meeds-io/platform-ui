@@ -1097,25 +1097,34 @@
     }	
 
     .uiSearchPlatformToolBarPortlet.activeInputSearch{
+        display: flex;
         left: 50%;
         .translate(-50%, 0);
 		position: fixed;
-        background: #fff;
-        padding-top: 5px;
         z-index: 3000;
+		padding-top: 10px;
         top: 0;
-        right: 0;
+        right: 0;                		
+		> input {
+            margin-top: 0 !important;
+        }		
+        > input[type=text] {
+            &.loadding {
+                + a {
+                    &:after {
+                        top:5px;
+                    }
+                }
+            }
+        }
 
         input[type="text"]{
             width: 100% !important;
-            &.loadding {
-                + a {position: absolute;}
-            }
         }
         .uiQuickSearchResult{
             width: 100% !important;
             .border-radius(4px);
-            margin: 4px 0 0;
+            margin: 47px 0 0 !important;
             table{
                 table-layout: fixed;
                 th, colgroup{display: none;}
@@ -1236,6 +1245,9 @@
     }
 }
 @media (max-width: 480px) {
+	.uiSearchPlatformToolBarPortlet.activeInputSearch{
+        left: 40%;
+    }
     .uiEditUserProfileForm {
         .form-horizontal {
             .controls {
