@@ -4,6 +4,11 @@
 .spacesAdministration {
   padding: 20px 10px;
 
+  .avatar {
+    width: 30px;
+    border-radius: 10%;
+  }
+
   .uiTabInPage {
     .nav-tabs {
       padding: 10px 10px 0px 10px;
@@ -42,6 +47,70 @@
       }
     }
   }
+  
+  .bindingReports {
+    .inProgress {
+      span {
+        color: grey;
+        font-style: italic;
+      }
+    }
+
+    .reportsFilterSearch {
+      margin-bottom: 16px!important;
+      i {
+        color: grey!important;
+      }
+      .layout {
+        height: 40px!important;
+      }
+      .v-input__prepend-inner {
+        margin-top: 6px!important;
+      }
+      .v-text-field {
+        padding-top: 0!important;
+        margin-top: 0!important;
+      }
+      .v-text-field__slot {
+        height: 48px!important;
+      }
+      .v-input__slot {
+        height: 36px!important;
+      }
+      .filter {
+        max-width: 11%!important;
+        .btn.dropdown-toggle {
+          border: 1px solid @greyColorDefault!important;
+        }
+        .dropdown-menu {
+          padding-left: 0!important;
+          a {
+            color: @darkGrey;
+            &:hover {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+
+    .v-data-footer {
+      .v-data-footer__select {
+        .v-select__slot {
+          height: 30px!important;
+        }
+        .v-text-field {
+          padding-top: 0!important;
+        }
+        .v-select__selections {
+          height: 100%!important;
+        }
+        .v-input__append-inner {
+          margin-top: 0!important;
+        }
+      }
+    }
+  }
 
   .manageSpaces {
     .uiSearchInput {
@@ -52,10 +121,6 @@
         border: 1px solid @borderColor;
         width: 380px;
       }
-    }
-
-    .avatar {
-      width: 20px;
     }
     
     .uiIconSpaceBinding.uiIconGroup.bound {
@@ -114,11 +179,6 @@
         overflow-y: auto;
         overflow-x: hidden;
         max-height: 80.5vh;
-
-        .avatar {
-          width: 28px;
-          border-radius: 20%;
-        }
         
         .spaceName {
           span {
