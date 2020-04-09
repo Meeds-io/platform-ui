@@ -1,0 +1,28 @@
+@import "../../../variables.less"; 
+@import "../../../mixins.less";
+
+#SuggestionsPeopleAndSpace {
+    .suggestions-wrapper {
+        border-radius: 0px !important;
+        .suggestions-title {
+                color: @greyColorLighten1;
+            }
+        .suggestions-list {
+          .suggestions-btn-action {
+            i {
+              font-size:20px;
+            }
+           }
+           .fade-enter-active, .fade-leave-active {
+             transition: opacity .8s;
+           }
+           .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+             opacity: 0;
+           }
+        }
+        .people-list {
+            border-bottom: 1px solid @greyColorLighten1Opacity1;
+            border-radius: 0;
+        }
+    }
+}
