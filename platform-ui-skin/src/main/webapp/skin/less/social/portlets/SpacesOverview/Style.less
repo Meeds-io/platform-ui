@@ -1,0 +1,57 @@
+@import "../../../variables.less"; 
+@import "../../../mixins.less";
+
+#SpacesOverview {
+  .spacesOverviewCard {
+    max-height: 114px;
+    min-height: 114px;
+    height: 114px;
+    max-width: ~"calc(50% - 5px)";
+    width: ~"calc(50% - 5px)";
+  }
+
+  .spacesOverviewCount {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .spacesOverviewTitle {
+    font-size: 16px;
+  }
+
+  .spacesOverviewVertivalSeparator {
+    height: 85px;
+  }
+
+  .spacesOverviewHorizontalSeparator {
+    width: 70px;
+  }
+
+  .spacesOverviewCheck:not(.outlined) {
+    background-color: @successColor;
+    color: #fff;
+  }
+
+  .spacesOverviewCheck.outlined {
+    background-color: transparent;
+    color: @successColor;
+
+    &:before {
+      background-color: transparent;
+    }
+  }
+
+  .spacesOverviewClose:not(.outlined) {
+    background-color: @errorColor;
+    color: #fff;
+  }
+
+  .spacesOverviewClose.outlined {
+    background-color: transparent;
+    color: @errorColor;
+
+    &:before {
+      background-color: transparent;
+    }
+  }
+}
