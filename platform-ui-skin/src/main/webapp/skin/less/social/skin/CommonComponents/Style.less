@@ -3,7 +3,7 @@
 .identitySuggester {
   border: 1px solid @inputBorder;
   border-radius: 5px;
-  padding: 0 0 0 10px !important;
+  padding: 0 !important;
   margin: 12px 0 !important;
 
   .v-input__slot {
@@ -22,6 +22,8 @@
 
   .v-select__selections {
     display: block !important;
+    max-width: 100%;
+    padding-left: 10px;
   }
 
   .identitySuggesterItem {
@@ -50,5 +52,13 @@
     width: 100%;
     height: 100%;
     line-height: 38px;
+  }
+}
+
+/*================= Identity avatar item =================*/
+.spaceAvatar {
+  border-radius: 5px;
+  > div {
+    border-radius: 5px;  
   }
 }
