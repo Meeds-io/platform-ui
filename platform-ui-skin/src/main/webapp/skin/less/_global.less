@@ -1189,6 +1189,13 @@ hr {
   * {
     border-color: @skeletonColor !important;
   }
+
+  &[type="button"][disabled] {
+    &.btn, &.v-btn, &.btn-primary, &.v-btn.primary {
+        background-color: @skeletonColor !important;
+        border-color: @skeletonColor !important;
+    }
+  }
 }
 .skeleton-border-radius {
   border-radius: 4px;
