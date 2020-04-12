@@ -12,6 +12,7 @@
     display: flex;
     width:100%;
     flex-wrap: wrap;
+    flex-direction: row;
 
     > div {
       width:100%;
@@ -33,6 +34,11 @@
       max-width: 30%;
       padding-left: 10px;
       box-sizing: border-box;
+
+      /* Added for sticky container */
+      .UIContainer, .NormalContainerBlock, .VIEW-CONTAINER, .UIIntermediateContainer, .UIRowContainer {
+        display: inline;
+      }
     }
   }
 }  
@@ -41,11 +47,13 @@
   #parentSocialPage {
     .UIRowContainer:first-of-type {
       > #rightSocialPage, > .rightSocialPage {
-        position: sticky;
-        top: 70px;
-        height: auto;
-        display: table;
-        z-index: @zindexStickyContainer;
+        #stickyBlockDesktop, .stickyBlockDesktop, &.stickyBlockDesktop {
+          position: sticky;
+          top: 70px;
+          height: auto;
+          display: table;
+          z-index: @zindexStickyContainer;
+        }
       }
     }
   }
