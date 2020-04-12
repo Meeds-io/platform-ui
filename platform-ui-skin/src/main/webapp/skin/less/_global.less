@@ -1166,3 +1166,30 @@ hr {
 .clickable {
   cursor: pointer;
 }
+.skeleton-text {
+  color: @skeletonColor !important;
+  * {
+    color: @skeletonColor !important;
+  }
+  &::placeholder, *::placeholder {
+    background-color: @skeletonColor !important;
+    border-radius: 4px;
+    color: @skeletonColor !important;
+    width: 100%;
+  }
+}
+.skeleton-background {
+  background-color: @skeletonColor !important;
+  border-color: @skeletonColor !important;
+
+  &::before, &[disabled] {
+    background-color: @skeletonColor !important;
+    border-color: @skeletonColor !important;
+  }
+  * {
+    border-color: @skeletonColor !important;
+  }
+}
+.skeleton-border-radius {
+  border-radius: 4px;
+}

@@ -26,7 +26,7 @@
       border-radius: 5px;
     }
   }
-  .joinSpaceButton, .acceptToJoinSpaceButton, .spaceButtonMenu {
+  .joinSpaceButton:not(.skeleton-text), .acceptToJoinSpaceButton:not(.skeleton-text), .spaceButtonMenu:not(.skeleton-text) {
     border: 1px solid @btnPrimaryBorder !important;
     color: @btnPrimaryBorder !important;
     i {
@@ -45,22 +45,28 @@
     margin-top: 2px;
   }
   .spaceMenuIcon {
-    color: #fff;
-    background: @btnPrimaryDisableBackground !important;
     height: 26px;
     width: 26px;
     margin-top: 6px;
+
+    &:not(.skeleton-text) {
+      color: #fff;
+      background: @btnPrimaryDisableBackground !important;
+    }
   }
   .inputSpacesFilter input{
     padding: 6px 0 0;
   }
   .spaceInfoIcon {
-    border: 1px solid @infoBorder !important;
-    background: #fff;
-    color: @infoBorder !important;
     height: 26px;
     width: 26px;
     margin-top: 6px;
+    
+    &:not(.skeleton-text) {
+      background: #fff;
+      border: 1px solid @infoBorder !important;
+      color: @infoBorder !important;
+    }
   }
   .spaceToolbarIcons {
     display: flex;
