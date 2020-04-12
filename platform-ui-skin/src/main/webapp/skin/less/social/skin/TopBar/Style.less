@@ -373,6 +373,11 @@ body.decrease-z-index-more #UITopBarContainer {
   }
 }
 
-.hide-scroll #UITopBarContainer {
-  width: ~"calc(100% - 15px)";
+@media (min-width: 768px) {
+  .hide-scroll #UITopBarContainer {
+    width: ~"calc(100% - 15px)";
+  }
+  .hide-scroll {
+    margin-right: 15px !important;
+  }
 }
