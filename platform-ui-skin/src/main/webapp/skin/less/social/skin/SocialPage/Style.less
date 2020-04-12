@@ -2,8 +2,9 @@
 /*================= Stream page =================*/
 
 #parentSocialPage {
-  padding: 25px;
+  padding: 25px 25px 0;
   width: 100%;
+  min-width: 100%;
   max-width: 100%;
   box-sizing: border-box;
 
@@ -14,6 +15,9 @@
 
     > div {
       width:100%;
+    }
+
+    .PORTLET-FRAGMENT {
       margin-bottom: 22px;
     }
 
@@ -32,3 +36,16 @@
     }
   }
 }  
+
+@media (min-width: 768px) {
+  #parentSocialPage {
+    .UIRowContainer:first-of-type {
+      > #rightSocialPage, > .rightSocialPage {
+        position: sticky;
+        top: 70px;
+        height: auto;
+        display: table;
+      }
+    }
+  }
+}
