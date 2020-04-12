@@ -80,6 +80,15 @@
     border-left: Solid 1px @greyColor;
   }
 }
+
+/* Make TopBar under drawers and other modals when opened */
+body.decrease-z-index #UITopBarContainer {
+  z-index: @zindexFixedNavbarUnder;
+}
+body.decrease-z-index-more #UITopBarContainer {
+  z-index: @zindexFixedNavbarUnderMore;
+}
+
 @media (max-width: 599px) {
   #brandingTopBar {
     .logoContainer {

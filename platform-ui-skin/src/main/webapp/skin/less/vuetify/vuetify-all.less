@@ -43,7 +43,7 @@
     }
 
     .v-tooltip__content {
-      z-index: 2000!important;
+      z-index: @zindexTooltip !important;
     }
 
     .v-btn--icon {
@@ -342,7 +342,7 @@
 
 .v-navigation-drawer {
   position: fixed !important;
-  z-index: 2000 !important;
+  z-index: @zindexDrawer !important;
 }
 
 @media (max-width : 959px) {

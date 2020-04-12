@@ -45,8 +45,16 @@
         top: 70px;
         height: auto;
         display: table;
-        z-index: @zindexFixedNavbar;
+        z-index: @zindexStickyContainer;
       }
     }
   }
+
+  /* Make TopBar under drawers and other modals when opened */
+  body.hide-scroll #parentSocialPage .UIRowContainer:first-of-type {
+    > #rightSocialPage, > .rightSocialPage {
+      z-index: @zindexStickyContainerUnder;
+    }
+  }
+
 }
