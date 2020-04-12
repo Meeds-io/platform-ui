@@ -1191,10 +1191,37 @@ hr {
   }
 
   &[type="button"][disabled] {
-    &.btn, &.v-btn, &.btn-primary, &.v-btn.primary {
+    &.btn, &.v-btn, &.btn-primary, &.v-btn.primary, &.v-btn.v-btn.primary, &.v-btn.btn, &.v-btn.v-btn.primary.btn.btn-primary {
+      &:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
         background-color: @skeletonColor !important;
         border-color: @skeletonColor !important;
+      }
     }
+  }
+}
+
+.skeleton-background, .skeleton-text {
+  position: relative;
+  max-height: 100%;
+  overflow: hidden !important;
+  box-shadow: none !important;
+
+  &::after {
+    -webkit-animation: loading 1.5s infinite;
+    animation: loading 1.5s infinite;
+    content: "";
+    height: 100%;
+    max-height: 100%;
+    min-width: 50%;
+    overflow: hidden !important;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(-100%);
+    z-index: 1;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    box-shadow: none !important;
   }
 }
 .skeleton-border-radius {
