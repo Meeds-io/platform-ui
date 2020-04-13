@@ -1,13 +1,6 @@
 @import "../../../variables.less"; 
 @import "../../../mixins.less";
 
-#vuetify-apps {
-  .v-menu__content {
-    top: 270px!important;
-    left: 1220px!important;
-    min-width: 180px!important;
-  }
-}
 .spacesAdministration {
   padding: 20px 10px;
 
@@ -74,8 +67,14 @@
       legend {
         display: none!important;
       }
+      .v-input__prepend-inner {
+        margin-top: 12px!important;
+      }
       .v-text-field {
         padding-top: 0!important;
+      }
+      .v-text-field__slot {
+        height: 48px!important;
       }
       .v-input__slot {
         padding: 0!important;
