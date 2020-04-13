@@ -2,17 +2,24 @@
 /*================= Stream page =================*/
 
 #parentSocialPage {
-  padding: 25px;
+  padding: 25px 25px 0;
   width: 100%;
+  min-width: 100%;
   max-width: 100%;
   box-sizing: border-box;
 
   .UIRowContainer:first-of-type {
     display: flex;
     width:100%;
+    flex-wrap: wrap;
+    flex-direction: row;
 
     > div {
       width:100%;
+    }
+
+    .v-application {
+      margin-bottom: 22px;
     }
 
     > #leftSocialPage, > .leftSocialPage {
@@ -26,8 +33,36 @@
       flex: 0 1 30%;
       max-width: 30%;
       padding-left: 10px;
-      padding-top: 20px;
       box-sizing: border-box;
+
+      /* Added for sticky container */
+      .UIContainer, .NormalContainerBlock, .VIEW-CONTAINER, .UIIntermediateContainer, .UIRowContainer {
+        display: inline;
+      }
     }
   }
 }  
+
+@media (min-width: 768px) {
+  #parentSocialPage {
+    .UIRowContainer:first-of-type {
+      > #rightSocialPage, > .rightSocialPage {
+        #stickyBlockDesktop, .stickyBlockDesktop, &.stickyBlockDesktop {
+          position: sticky;
+          top: 70px;
+          height: auto;
+          display: table;
+          z-index: @zindexStickyContainer;
+        }
+      }
+    }
+  }
+
+  /* Make TopBar under drawers and other modals when opened */
+  body.hide-scroll #parentSocialPage .UIRowContainer:first-of-type {
+    > #rightSocialPage, > .rightSocialPage {
+      z-index: @zindexStickyContainerUnder;
+    }
+  }
+
+}

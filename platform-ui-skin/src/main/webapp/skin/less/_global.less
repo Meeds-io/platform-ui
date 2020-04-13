@@ -1147,10 +1147,14 @@ hr {
 }
 .hide-scroll {
   overflow: hidden !important;
-  margin-right: 15px !important;
 }
 .text-color {
   color: @textColor !important;
+}
+.text-header-title {
+  font-size: 18px !important;
+  font-weight: bold !important;
+  color: @toolbarLightLinkHoverColor !important;
 }
 .text-sub-title {
   color: @greyColorLighten1 !important;
@@ -1158,4 +1162,67 @@ hr {
 .tertiary-color {
   color: @tertiaryColor!important;
 }
+.clickable {
+  cursor: pointer;
+}
+.skeleton-text {
+  color: @skeletonColor !important;
+  * {
+    color: @skeletonColor !important;
+  }
+  &::placeholder, *::placeholder {
+    background-color: @skeletonColor !important;
+    border-radius: 4px;
+    color: @skeletonColor !important;
+    width: 100%;
+  }
+}
+.skeleton-background {
+  background-color: @skeletonColor !important;
+  border-color: @skeletonColor !important;
 
+  &::before, &[disabled] {
+    background-color: @skeletonColor !important;
+    border-color: @skeletonColor !important;
+  }
+  * {
+    border-color: @skeletonColor !important;
+  }
+
+  &[type="button"][disabled] {
+    &.btn, &.v-btn, &.btn-primary, &.v-btn.primary, &.v-btn.v-btn.primary, &.v-btn.btn, &.v-btn.v-btn.primary.btn.btn-primary {
+      &:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
+        background-color: @skeletonColor !important;
+        border-color: @skeletonColor !important;
+      }
+    }
+  }
+}
+
+.skeleton-background, .skeleton-text {
+  position: relative;
+  max-height: 100%;
+  overflow: hidden !important;
+  box-shadow: none !important;
+
+  &::after {
+    -webkit-animation: loading 1.5s infinite;
+    animation: loading 1.5s infinite;
+    content: "";
+    height: 100%;
+    max-height: 100%;
+    min-width: 50%;
+    overflow: hidden !important;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(-100%);
+    z-index: 1;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    box-shadow: none !important;
+  }
+}
+.skeleton-border-radius {
+  border-radius: 4px;
+}

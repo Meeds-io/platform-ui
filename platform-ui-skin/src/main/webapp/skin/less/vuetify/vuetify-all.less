@@ -43,7 +43,7 @@
     }
 
     .v-tooltip__content {
-      z-index: 2000!important;
+      z-index: @zindexTooltip !important;
     }
 
     .v-btn--icon {
@@ -190,34 +190,34 @@
       }
     }
 
-    .v-btn.primary, .btn-primary {
+    .v-btn.primary:not(.v-btn--text), .btn-primary:not(.v-btn--text) {
       font-family: @sansBoldFontFamily !important;
+
       &:not(.v-btn--outlined) {
         font-weight: bold !important;
         .buttonBackgroundEXO(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder, @btnPrimaryColor) !important;
       }
+
       &.v-btn--outlined {
         border: thin solid @primaryColor !important;
         font-weight: normal;
         .buttonBackgroundEXO(@btnPrimaryColor, @btnPrimaryColor, @btnPrimaryBorder, @btnPrimaryBackground) !important;
       }
+
+      &:hover {
+        background-color: @btnPrimaryHoverBackgroundColor !important;
+        background-position: @btnPrimaryHoverBackgroundPosition !important;
+      }
+
+      &.disabled, &[disabled] {
+        background-color: @btnPrimaryDisableBackground !important;
+
+        &:hover {
+          background-color: @btnPrimaryDisableHoverBackground !important;
+        }
+      }
     }
 
-    .btn-primary:hover .v-btn.primary:hover {
-      background-color: @btnPrimaryHoverBackgroundColor !important;
-      background-position: @btnPrimaryHoverBackgroundPosition !important;
-    }
-
-    .btn-primary.disabled, .v-btn.primary.disabled,
-    .btn-primary[disabled], .v-btn.primary[disabled] {
-      background-color: @btnPrimaryDisableBackground !important;
-    }
-    
-    .btn-primary.disabled:hover, .v-btn.primary.disabled:hover,
-    .btn-primary[disabled]:hover, .v-btn.primary[disabled]:hover {
-      background-color: @btnPrimaryDisableHoverBackground !important;
-    }
-    
     .uiAction .v-btn.primary.disabled:first-child,
     .uiAction .v-btn.primary[disabled]:first-child ,
     .v-btn.primary[disabled]:first-child,
@@ -327,6 +327,11 @@
       color: @mentionColor !important;
       border: @mentionBorder !important;
     }
+    .v-skeleton-loader {
+      .v-skeleton-loader__avatar, .v-skeleton-loader__button, .v-skeleton-loader__chip, .v-skeleton-loader__divider, .v-skeleton-loader__heading, .v-skeleton-loader__image, .v-skeleton-loader__text {
+        background: @skeletonColor;
+      }
+    }
   }
 }
 
@@ -337,7 +342,7 @@
 
 .v-navigation-drawer {
   position: fixed !important;
-  z-index: 2000 !important;
+  z-index: @zindexDrawer !important;
 }
 
 @media (max-width : 959px) {

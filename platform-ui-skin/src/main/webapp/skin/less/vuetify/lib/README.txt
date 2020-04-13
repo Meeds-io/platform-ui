@@ -8,3 +8,10 @@ Modifications applied on imported libraries:
   - Delete font definition on button, input, optgroup, select and textarea elements to use the inherited font from eXo Platform or the icons font-family if one of those elements defines an icon.
   - Delete padding and margin reset definition defined for all elements:
       the default margin and padding definition for all elements using (*) generic selector is deleted to avoid applying it for all the application including default elements style predefined in eXo Platform
+  - Change responsibe breakpoints :
+      @mobileWidth: 768px;
+      @tabletWidth: 980px;
+      @largeTabletWidth: 1024px;
+      @desktop: 1280px;
+      @largeDesktop: 1700px;
+  
