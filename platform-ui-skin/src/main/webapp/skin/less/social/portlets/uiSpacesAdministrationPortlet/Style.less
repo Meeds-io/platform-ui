@@ -1,6 +1,13 @@
 @import "../../../variables.less"; 
 @import "../../../mixins.less";
 
+#vuetify-apps {
+  .v-menu__content {
+    top: 270px!important;
+    left: 1220px!important;
+    min-width: 180px!important;
+  }
+}
 .spacesAdministration {
   padding: 20px 10px;
 
@@ -55,8 +62,33 @@
     }
 
     .reportsFilterSearch {
+      i {
+        color: grey!important;
+      }
+      fieldset {
+        height: 90% !important;
+        margin-top: 7px!important;
+        border-color: rgba(0, 0, 0, 0.38)!important;
+        border-width: 1px!important;
+      }
+      legend {
+        display: none!important;
+      }
       .v-text-field {
         padding-top: 0!important;
+      }
+      .v-input__slot {
+        padding: 0!important;
+      }
+      .v-select {
+        max-width: 90% !important;
+        margin-left: 10% !important;
+      }
+      .v-select__slot {
+        padding: 0 6px!important;
+      }
+      .select {
+        max-width: 16% !important;
       }
     }
 
