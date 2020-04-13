@@ -4,6 +4,11 @@
 .spacesAdministration {
   padding: 20px 10px;
 
+  .avatar {
+    width: 30px;
+    border-radius: 10%;
+  }
+
   .uiTabInPage {
     .nav-tabs {
       padding: 10px 10px 0px 10px;
@@ -44,12 +49,63 @@
   }
   
   .bindingReports {
-    img.avatar {
-      width: 20px;
-    }
     .inProgress span {
       color: grey;
       font-style: italic;
+    }
+
+    .reportsFilterSearch {
+      i {
+        color: grey!important;
+      }
+      fieldset {
+        height: 90% !important;
+        margin-top: 7px!important;
+        border-color: rgba(0, 0, 0, 0.38)!important;
+        border-width: 1px!important;
+      }
+      legend {
+        display: none!important;
+      }
+      .v-input__prepend-inner {
+        margin-top: 12px!important;
+      }
+      .v-text-field {
+        padding-top: 0!important;
+      }
+      .v-text-field__slot {
+        height: 48px!important;
+      }
+      .v-input__slot {
+        padding: 0!important;
+      }
+      .v-select {
+        max-width: 90% !important;
+        margin-left: 10% !important;
+      }
+      .v-select__slot {
+        padding: 0 6px!important;
+      }
+      .select {
+        max-width: 16% !important;
+      }
+    }
+
+    .v-data-footer {
+      .v-data-footer__select {
+        .v-select__slot {
+          height: 30px!important;
+        }
+        .v-text-field {
+          padding-top: 0!important;
+        }
+        .v-select__selections {
+          height: 100%!important;
+        }
+        .v-input__append-inner {
+          margin-top: 0!important;
+        }
+      }
     }
   }
 
@@ -62,10 +118,6 @@
         border: 1px solid @borderColor;
         width: 380px;
       }
-    }
-
-    .avatar {
-      width: 20px;
     }
     
     .uiIconSpaceBinding.uiIconGroup.bound {
@@ -124,11 +176,6 @@
         overflow-y: auto;
         overflow-x: hidden;
         max-height: 80.5vh;
-
-        .avatar {
-          width: 28px;
-          border-radius: 20%;
-        }
         
         .spaceName {
           span {
