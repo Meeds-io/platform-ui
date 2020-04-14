@@ -1,0 +1,53 @@
+@import "../../../variables.less"; 
+@import "../../../mixins.less";
+
+#PeopleOverview {
+  .peopleOverviewCard {
+    max-height: 114px;
+    min-height: 114px;
+    height: 114px;
+    max-width: ~"calc(50% - 5px)";
+    width: ~"calc(50% - 5px)";
+  }
+
+  .peopleOverviewCount {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .peopleOverviewTitle {
+    font-size: 16px;
+  }
+
+  .peopleOverviewVertivalSeparator {
+    height: 85px;
+  }
+
+  .peopleOverviewCheck:not(.outlined) {
+    background-color: @successColor;
+    color: #fff;
+  }
+
+  .peopleOverviewCheck.outlined {
+    background-color: transparent;
+    color: @successColor;
+
+    &:before {
+      background-color: transparent;
+    }
+  }
+
+  .peopleOverviewClose:not(.outlined) {
+    background-color: @errorColor;
+    color: #fff;
+  }
+
+  .peopleOverviewClose.outlined {
+    background-color: transparent;
+    color: @errorColor;
+
+    &:before {
+      background-color: transparent;
+    }
+  }
+}
