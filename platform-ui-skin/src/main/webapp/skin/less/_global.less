@@ -1205,24 +1205,6 @@ hr {
   max-height: 100%;
   overflow: hidden !important;
   box-shadow: none !important;
-
-  &::after {
-    -webkit-animation: loading 1.5s infinite;
-    animation: loading 1.5s infinite;
-    content: "";
-    height: 100%;
-    max-height: 100%;
-    min-width: 50%;
-    overflow: hidden !important;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transform: translateX(-100%);
-    z-index: 1;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    box-shadow: none !important;
-  }
 }
 .skeleton-border-radius {
   border-radius: 4px;
@@ -1231,7 +1213,6 @@ hr {
 .skeleton-header {
   width:50%;
   height: 15px;
-
 }
 
 .skeleton-list-item-title {
