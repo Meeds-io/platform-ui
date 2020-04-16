@@ -1236,25 +1236,36 @@
     .drawer {
       .content {
         .VuetifyApp {
-          .attachmentsList{
+          .attachmentsList {
             display: flex;
             align-items: center;
-            .attachedFiles{
+
+            .attachedFiles {
               margin-left: 3%;
             }
+
             .uiIconAttach {
               top: -1px;
               color: #333;
             }
+
             .v-progress-circular {
               svg {
                 color: transparent;
               }
+
               circle {
                 color: #FFF;
               }
-              &.uploading svg {
-                color: #578dc9;
+
+              &.uploading {
+                svg {
+                  color: #578dc9;
+                }
+
+                circle.v-progress-circular__overlay {
+                  color: #578dc9;
+                }
               }
             }
           }
