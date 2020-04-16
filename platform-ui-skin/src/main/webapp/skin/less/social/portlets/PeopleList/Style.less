@@ -172,7 +172,9 @@
     width:100%;
   }
   .acceptToConnectButtonParent {
-    white-people: nowrap;
+    white-people: nowrap !important;
+    display: inline-flex;
+    max-width: 90%;
 
     .acceptToConnectButton {
       max-width: 85%;
@@ -180,6 +182,18 @@
       border-right: 0;
       border-bottom-right-radius: 0 !important;
       border-top-right-radius: 0 !important;
+
+      .v-btn__content {
+        max-width: 100%;
+        span {
+          width: auto;
+          max-width: calc( 100% - 28px );
+          min-width: auto;
+          display: inline-block !important;
+          overflow: hidden !important;
+          text-overflow: ellipsis !important;
+        }
+      }
     }
     .peopleButtonMenu {
       max-width: 15%;
