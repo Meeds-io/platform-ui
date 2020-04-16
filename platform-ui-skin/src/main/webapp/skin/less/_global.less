@@ -1159,8 +1159,15 @@ hr {
 .text-sub-title {
   color: @greyColorLighten1 !important;
 }
+.disabled-background {
+  background-color: @disableBackground !important;
+}
 .tertiary-color {
   color: @tertiaryColor!important;
+}
+.tertiary {
+  background-color: @tertiaryColor!important;
+  color: @lightWhite;
 }
 
 .clickable {
@@ -1208,6 +1215,15 @@ hr {
 }
 .skeleton-border-radius {
   border-radius: 4px;
+}
+
+.skeleton-text-width {
+  min-width: 120px;
+}
+.skeleton-text-height {
+  max-height: 8px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .skeleton-header {

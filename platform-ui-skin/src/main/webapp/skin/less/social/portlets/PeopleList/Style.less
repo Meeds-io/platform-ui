@@ -31,6 +31,9 @@
   .inputPeopleFilter {
     max-width: 215px;
   }
+  .showingPeopleText {
+    min-width: 120px;
+  }
   .peopleBannerImg {
     position: absolute;
   }
@@ -77,6 +80,15 @@
     &:not(.skeleton-text) {
       color: #fff;
       background: @btnPrimaryDisableBackground !important;
+    }
+  }
+  .peopleActionItem {
+    display: flex;
+    line-height: 20px;
+
+    i {
+      font-size: 18px;
+      margin-right: 7px;
     }
   }
   .inputPeopleFilter input{
