@@ -53,10 +53,34 @@
   .cancelRequestToJoinSpaceButton {
     border: 1px solid @btnBorder !important;
     color: @btnColor !important;
+
+    .v-btn__content {
+      max-width: 100%;
+      span {
+        width: auto;
+        max-width: calc( 100% - 28px );
+        min-width: auto;
+        display: inline-block !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+      }
+    }
   }
   .leaveSpaceButton, .refuseToJoinSpaceButton {
     border: 1px solid @errorColor !important;
     color: @errorColor !important;
+
+    .v-btn__content {
+      max-width: 100%;
+      span {
+        width: auto;
+        max-width: calc( 100% - 28px );
+        min-width: auto;
+        display: inline-block !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+      }
+    }
   }
   .refuseToJoinSpaceButton {
     margin-top: 2px;
@@ -150,13 +174,24 @@
   }
   .acceptToJoinSpaceButtonParent {
     white-space: nowrap;
-
     .acceptToJoinSpaceButton {
       max-width: 85%;
       width: 85%;
       border-right: 0;
       border-bottom-right-radius: 0 !important;
       border-top-right-radius: 0 !important;
+
+      .v-btn__content {
+        max-width: 100%;
+        span {
+          width: auto;
+          max-width: calc( 100% - 28px );
+          min-width: auto;
+          display: inline-block !important;
+          overflow: hidden !important;
+          text-overflow: ellipsis !important;
+        }
+      }
     }
     .spaceButtonMenu {
       max-width: 15%;
