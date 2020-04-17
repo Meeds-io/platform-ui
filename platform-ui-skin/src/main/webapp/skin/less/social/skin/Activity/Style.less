@@ -312,6 +312,24 @@
 	.statusAction.pull-right a{
 		color: @baseColorDark;
 	}
+	.statusAction .dateTime {
+		padding-left: 30px;
+	}
+	.statusAction 
+		.SendKudosButtonTemplate {
+			.kudosLabel{
+				color: @baseColorLight;
+				font-size: 12px;
+				letter-spacing: 0!important;
+			}
+			.lightGrey {
+				color: @baseColorLight;
+			}
+			.hasKudos {
+				color: @primaryColor;
+			}
+		}
+	}
 	.contentForum span ,.dataInfor .dateTime a,.dataInfor .dateTime span,.statusAction.pull-left a,.commentItem .viewComment
 	,.author span,.introBox .text .infoFile :not(.versionFile),.linkSources span,.listLikedBox  p,.theContent a,.theContent span {
 		color: @baseColorLight;font-size: 12px;
@@ -374,7 +392,7 @@
 		  .border-radius(2px);
 	  }
 	}
-}
+
 
 
 .activityStream{
@@ -491,8 +509,30 @@
         .tooltip-inner {
             white-space: nowrap;
         }
-    }
-
+	}
+	
+	.boxContainer {
+		.fileActionsBar {
+			.statusAction {
+				display: inline-flex;
+                background: @commentBackgroundColor;
+    			width: 100%;
+    			padding: 10px;
+				box-sizing: border-box;
+				li {
+					padding-right: 15px;
+					a {
+						i {
+							color: @baseColorLight;
+						}
+						i:before {
+							color: @baseColorLight;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 /*=============contentBox  activityStreams==================*/
@@ -517,7 +557,6 @@
 		}
 		.actionBar,.listLikedBox , .description,.commentBox {
 			display: block;
-			border-top: 1px solid @borderColor;
 
 			ul {
 				margin: 0 0 10px 25px;
@@ -565,8 +604,8 @@
 		}
 
 		.actionBar  {
-			background: @primaryBackground;border-bottom: 1px solid @borderColor;
-			padding: 8px 18px;
+			border-bottom: 1px solid @borderColor;
+			padding: 8px 0px;
 			.tooltip-inner {
 				white-space: nowrap;
 			}
@@ -583,17 +622,21 @@
 						color: @linkColorHover;
 					}
 				}
+				.SendKudosButtonTemplate button{
+					margin-top: -2px;
+				}
 
 			}
 		}
 
 		.listLikedBox {
-			padding: 16px 0px 16px 16px;
 			.listLiked {
-				margin-top: 10px;
 				a {
-					margin: 0 8px 8px 0;
+					margin-right: 5px;
 					display: inline-block;
+					img {
+						border-radius: 50%;
+					}
 				}
 				.btn {
 					background: @primaryBackground;
@@ -605,6 +648,7 @@
 					padding: 0 0 10px;
 					.size(36px, 36px);
 					display:none;
+					margin-right: 8px;
 				}
 			}
 			p {
@@ -730,6 +774,9 @@
 .activityStream {
 	.commentListInfo {
 		padding:10px 15px;
+		a {
+			font-weight: bold;
+		}
 	}
 	.uiDropdownWithIcon {
         cursor: pointer;
@@ -749,9 +796,6 @@
 			padding: 5px;
 			+ div {
 				margin-top: 4px;
-			}
-			&.focus {
-				background-color: @primaryBackgroundLight;
 			}
 			&:last-child {
         padding-bottom: 10px;
@@ -777,6 +821,7 @@
 	}
 	.commentItem {
 		position: relative;
+		display: inline-flex;
 		&+ .commentItem {
 			margin: 15px 0 0 0;
 		}
@@ -820,11 +865,27 @@
       }
 		.commmentLeft {
 			float:left;
+			padding-right: 10px;
 			&+ .commentRight{
-				 margin-left: 45px;
+				padding-right: 20px;
+				.authorCommentContainer {
+				  background: @commentBackgroundColor;
+				  padding: 10px;
+				  border-radius: 10px;
+				  .author {
+					display: inline;
+					padding-right: 10px;
+				  }
+				  .contentComment {
+					display: inline;
+				  }
+				}
 			}
 			.avatarXSmall {
 				.center-block();
+				img {
+					border-radius: 50%;
+				}
 			}
 		}
 		.commentInputBox  {
@@ -865,7 +926,7 @@
 						color: @linkColorHover;
 					}
 					&.separator {
-						padding:0 10px;
+						padding:0 4px;
 					}
 				}
 
@@ -887,7 +948,11 @@
 	  display: none;
 		padding-top: 0;
 		.commentItem  {
+			display: block;
 			padding-bottom: 15px;
+			.commentRight {
+				margin-left: 45px;
+			}
 		}
 	}
 	.noCommentFormBox {

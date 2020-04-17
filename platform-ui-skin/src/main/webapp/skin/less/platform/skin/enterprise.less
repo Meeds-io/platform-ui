@@ -1978,9 +1978,6 @@ p, .postContent, .uiWikiContentDisplay{
     padding: 0;
     margin-bottom: 25px;
     box-shadow: 0 3px 2px -2px rgba(0,0,0,.1);
-    .boxContainer {
-      border: 1px solid @greyColor;
-    }
   }
 
   .activityStream .arrowLeft {
@@ -1989,7 +1986,7 @@ p, .postContent, .uiWikiContentDisplay{
 
   .activityStream .heading {
     margin-left: 70px;
-    color: #999999;
+    color: @textLightColor;
     .actionLink {
       position: absolute;
       top: 0;
@@ -2028,26 +2025,39 @@ p, .postContent, .uiWikiContentDisplay{
     padding-bottom: 0;
   }
 
-  .activityStream .contentBox .actionBar {
-    margin: 0;
-    border-radius: 0;
-    background:  @lightWhite;
-    border-top: 1px solid @greyColor;
-    border-bottom: 0;
-  }
-
   .activityStream .description {
-    padding: 25px 15px;
+    padding: 10px 15px;
     margin: 0;
     position: relative;
+    border-top: 1px solid  @greyColorLighten1Opacity1;
   }
 
   .activityStream .contentBox .commentBox {
     border: 0;
   }
-
-  .activityStream .contentBox .listLikedBox {
-    padding: 16px 0px 0 16px;
+  .activityStream .contentBox .actionsDetailsWrapper {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 10px;
+     margin-bottom: 20px;
+     border-top: 1px solid  @greyColorLighten1Opacity1;
+     border-bottom: 1px solid  @greyColorLighten1Opacity1;
+    .listLikedBox {
+      min-width: 70%;
+      flex: 1;
+      .listPeopleContent {
+        display: flex;
+        align-items: center;
+      }
+    }
+   .actionBar {
+      flex:1;
+      margin: 0;
+      border-radius: 0;
+      background:  @lightWhite;
+      border-bottom: 0;
+   }
   }
 
   .activityStream .author a + span {
@@ -2102,7 +2112,6 @@ p, .postContent, .uiWikiContentDisplay{
   }
 }
 .activityStream .commentList {
-  background: @commentBackgroundColor;
   padding-top: 0;
   .statusAction .commentLiked:before {
     color: @primaryColor;
