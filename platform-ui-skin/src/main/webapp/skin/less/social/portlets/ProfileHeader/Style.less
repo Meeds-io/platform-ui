@@ -29,6 +29,11 @@
     }
   }
 
+  .profileHeaderTitle {
+    margin-top: 28px;
+    margin-bottom: 28px;
+  }
+
   .changeAvatarButton, .changeBannerButton {
     position: absolute;
     padding: 0;
@@ -96,11 +101,16 @@
         border-top-left-radius: 0 !important;
         min-width: auto;
         padding: 0;
-  
+
         i {
           margin: 0;
         }
+
+        &.dialogButton {
+          display: none;
+        }  
       }
+
     }
     .refuseToConnectButton {
       margin-top: 2px;
@@ -109,6 +119,101 @@
       top: 24px;
       min-width: 76%;
       max-width: 76%;
+    }
+  }
+}
+
+@media (max-width: @tabletWidth) {
+  #ProfileHeader {
+    .profileBannerImg {
+      height: 218px !important;
+      min-height: 218px !important;
+      max-height: 218px !important;
+      background: white;
+
+      > .v-image__image {
+        max-height: 50% !important;
+        max-width: ~"calc( 100% - 12px )";
+        margin: 6px;
+      }
+
+      > .v-responsive__content {
+        max-height: 50% !important;
+        margin-top: 108px;
+        display: block;
+
+        > .layout {
+          max-height: 100%;
+        }
+
+        .profileHeaderTitle {
+          margin: 0;
+        }
+
+        .profileHeaderText {
+          position: absolute;
+          top: 145px;
+
+          .headline {
+            color: @textColor !important;
+          }
+          .subtitle {
+            color: @greyColorLighten1 !important;
+          }
+        }
+
+        .profileHeaderAvatar {
+          height: 95px !important;
+          min-width: 95px !important;
+          width: 95px !important;
+          position: absolute;
+          top: 50px;
+        }
+
+        #profileHeaderActions {
+          margin: 8px 0 !important;
+
+          button {
+            margin: 0 6px !important;
+            padding: 0 !important;
+            min-width: auto !important;
+            background: transparent !important;
+            border: 0 !important;
+
+            .buttonText {
+              display: none;
+            }
+            i {
+              color: @primaryColor !important;
+            }
+          }
+
+          .acceptToConnectButton, .refuseToConnectButton {
+            display: none;
+          }
+
+          .invitationButtons {
+            min-width: 24px;
+            display: inline-block !important;
+            height: 21px;
+            top: 0;
+          }
+
+          .acceptToConnectButtonParent {
+            position: absolute;
+          }
+
+          .peopleButtonMenu {
+            &.dropdownButton {
+              display: none;
+            }
+            &.dialogButton {
+              margin: 0 !important;
+              display: block;
+            }
+          }
+        }
+      }
     }
   }
 }
