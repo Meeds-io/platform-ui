@@ -62,12 +62,15 @@
   }
   .changeBannerButton {
     background: #00000036;
-    border: 1px solid @btnBorder !important;
     left: auto;
     top: 15px;
     height: 36px;
     width: 36px;
     border-radius: 50%;
+
+    &:not(.skeleton-background) {
+      border: 1px solid @btnBorder !important;
+    }
 
     button {
       margin: auto;
@@ -154,6 +157,10 @@
           position: absolute;
           top: 145px;
 
+          > .skeleton-text {
+            margin-top: 10px !important;
+            margin-left: 18px !important;
+          }
           .headline {
             color: @textColor !important;
           }
