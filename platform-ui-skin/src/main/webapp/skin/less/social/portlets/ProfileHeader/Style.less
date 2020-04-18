@@ -1,0 +1,114 @@
+@import "../../../variables.less"; 
+@import "../../../mixins.less";
+
+#ProfileHeader {
+  /* Only for owner because the 'refuse connection' button
+  that is displayed on profile of profile of other user
+  will be displayed under the banner */
+  &.profileHeaderOwner {
+    overflow: hidden;
+  }
+
+  .profileBannerImg {
+    overflow: visible;
+
+    .v-responsive__sizer {
+      padding-bottom: 0 !important;
+    }
+  }
+  .profileHeaderAvatar {
+    border: 2px solid @lightWhite !important;
+    position: relative;
+
+    &.profileHeaderAvatarHoverEdit {
+      background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(4, 4, 4) 80%, rgba(0,0,0,1) 100%);
+
+      .v-image__image {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .changeAvatarButton, .changeBannerButton {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    display: inline;
+
+    .v-input__prepend-outer {
+      margin: 0;
+
+      button {
+        color: #fff;
+        padding: 3px;
+      }
+    }
+
+    .v-input__control {
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
+  }
+  .changeAvatarButton {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .changeBannerButton {
+    background: #00000036;
+    border: 1px solid @btnBorder !important;
+    left: auto;
+    top: 15px;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+
+    button {
+      margin: auto;
+      min-width: 30px;
+      height: 30px;
+      justify-content: flex-end;
+    }
+  }
+
+  .invitationButtons {
+    position: relative;
+    top: 4px;
+
+    .acceptToConnectButtonParent {
+      display: inline-flex;
+  
+      .acceptToConnectButton {
+        border-right: 1px solid @btnBorder !important;
+        border-bottom-right-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+  
+        .v-btn__content {
+          span {
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+          }
+        }
+      }
+      .peopleButtonMenu {
+        border-bottom-left-radius: 0 !important;
+        border-top-left-radius: 0 !important;
+        min-width: auto;
+        padding: 0;
+  
+        i {
+          margin: 0;
+        }
+      }
+    }
+    .refuseToConnectButton {
+      margin-top: 2px;
+      position: absolute;
+      left: 0;
+      top: 24px;
+      min-width: 76%;
+      max-width: 76%;
+    }
+  }
+}
