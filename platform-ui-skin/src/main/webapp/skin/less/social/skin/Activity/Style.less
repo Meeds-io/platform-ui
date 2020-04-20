@@ -217,30 +217,31 @@
 /*==============activityStreamStatus=============== */
 
 .activityStreamStatus {
-	.border-radius(@baseBorderRadius);
-	background: @primaryBackground;
-	border: 1px solid @borderColor;
-	padding: 5px 18px;
-	position: relative;
-	.arrowBottom {
-	    border-left: 9px solid transparent;
-	    border-right: 9px solid transparent;
-	    border-top: 9px solid @borderColor;
-	    display: block;
-	    left: 16px;
-	    position: absolute;
-	    top: 100%;
-		&:after {
-		    border-left: 9px solid transparent;
-		    border-right: 9px solid transparent;
-		    border-top: 9px solid @primaryBackground;
-		    bottom: 1px;
-		    content: "";
-		    display: block;
-		    left: -9px;
-		    position: absolute;
-		}
-	}
+  display: none; /* Keep it to allow to use the related WebUI action, but hide it */
+  .border-radius(@baseBorderRadius);
+  background: @primaryBackground;
+  border: 1px solid @borderColor;
+  padding: 5px 18px;
+  position: relative;
+  .arrowBottom {
+  border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 9px solid @borderColor;
+    display: block;
+    left: 16px;
+    position: absolute;
+    top: 100%;
+    &:after {
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+      border-top: 9px solid @primaryBackground;
+      bottom: 1px;
+      content: "";
+      display: block;
+      left: -9px;
+      position: absolute;
+    }
+  }
 }
 
 .uiUserActivitiesDisplay.notSeen {
