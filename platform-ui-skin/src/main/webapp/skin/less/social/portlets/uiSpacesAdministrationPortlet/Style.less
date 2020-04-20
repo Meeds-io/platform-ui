@@ -161,7 +161,13 @@
       z-index: 1055!important;
       position: fixed !important;
 
+      v-navigation-drawer__content {
+        overflow-y: hidden!important;
+      }
+
       .title {
+        height: 6.7vh;
+        min-height: 52px;
         border-bottom: 1px solid rgba(13,13,13,0.05);
         box-sizing: border-box;
         padding: 0px!important;
@@ -175,11 +181,7 @@
         }
       }
 
-      .content {
-        overflow-y: auto;
-        overflow-x: hidden;
-        max-height: 80.5vh;
-        
+      .content {        
         .spaceName {
           span {
             color: #578dc9;
@@ -228,15 +230,23 @@
       }
 
       .secondDrawer {
-        .treeGroupSearch {
-          padding-top: 0;
-          .v-input__control {
-            min-height: 40px;
+        height: 100vh;
+        .title {
+          .treeGroupSearch {
+            padding-top: 0;
+            .v-input__control {
+              min-height: 40px;
+            }
+            button {
+              color: rgba(0, 0, 0, 0.54)!important;
+            }
           }
         }
         .content {
+          display: grid!important;
           overflow: auto!important;
-          max-height: 80.5vh;
+          max-height: 84vh;
+          box-sizing: border-box!important;
           
           .v-treeview-node__root.bound, .v-treeview-node__content.bound {
             color: grey!important;
@@ -250,7 +260,8 @@
 
       .boundGroups {
         padding-left: 1%;
-        max-height: 100%!important;
+        overflow-y: auto;
+        max-height: 57vh!important;
       }
       .delete {
         margin-right: 7%;
@@ -278,7 +289,7 @@
         overflow-y: auto;
         overflow-x: hidden;
         width: 100%;
-        height: 60px;
+        height: 7vh;
         position: absolute;
         bottom: 0;
         border-top: 1px solid rgba(13,13,13,0.05);
@@ -332,15 +343,27 @@
       }
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 767px) {      
       .bindingModal {
         .closeBindingModal {
           left: 37%;
         }
-
         .uiAction.uiActionBorder {
           .btn.btn-primary, .btn {
             left: 22%;
+          }
+        }
+      }
+    }
+
+    @media (max-height: 667px) {
+      #GroupBindingDrawer {
+        .boundGroups {
+          max-height: 48vh!important;
+        }
+        .secondDrawer {
+          .content {
+            max-height: 82vh;
           }
         }
       }
