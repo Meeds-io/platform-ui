@@ -16,29 +16,23 @@
       padding-bottom: 0 !important;
     }
   }
-  .profileHeaderAvatar {
-    border: 2px solid @lightWhite !important;
-    position: relative;
-
-    &.profileHeaderAvatarHoverEdit {
-      background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(4, 4, 4) 80%, rgba(0,0,0,1) 100%);
-
-      .v-image__image {
-        opacity: 0.8;
-      }
-    }
-  }
 
   .profileHeaderTitle {
     margin-top: 28px;
     margin-bottom: 28px;
   }
 
-  .changeAvatarButton, .changeBannerButton {
+  .changeBannerButton {
     position: absolute;
     padding: 0;
     margin: 0;
     display: inline;
+    background: #00000036;
+    left: auto;
+    top: 15px;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
 
     .v-input__prepend-outer {
       margin: 0;
@@ -54,19 +48,6 @@
       width: 0;
       height: 0;
     }
-  }
-  .changeAvatarButton {
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .changeBannerButton {
-    background: #00000036;
-    left: auto;
-    top: 15px;
-    height: 36px;
-    width: 36px;
-    border-radius: 50%;
 
     &:not(.skeleton-background) {
       border: 1px solid @btnBorder !important;
@@ -126,6 +107,44 @@
   }
 }
 
+.profileHeaderAvatar {
+  border: 2px solid @lightWhite !important;
+  position: relative !important;
+
+  &.profileHeaderAvatarHoverEdit {
+    background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(4, 4, 4) 80%, rgba(0,0,0,1) 100%);
+
+    .v-image__image {
+      opacity: 0.8;
+    }
+  }
+
+  .changeAvatarButton {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    display: inline;
+
+    .v-input__prepend-outer {
+      margin: 0;
+
+      button {
+        color: #fff;
+        padding: 3px;
+      }
+    }
+
+    .v-input__control {
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
+  }
+}
+
 @media (max-width: @tabletWidth) {
   #ProfileHeader {
     .profileBannerImg {
@@ -149,6 +168,14 @@
           max-height: 100%;
         }
 
+        .profileHeaderAvatar {
+          height: 95px !important;
+          min-width: 95px !important;
+          width: 95px !important;
+          position: absolute !important;
+          top: 50px !important;
+        }
+
         .profileHeaderTitle {
           margin: 0;
         }
@@ -167,14 +194,6 @@
           .subtitle {
             color: @greyColorLighten1 !important;
           }
-        }
-
-        .profileHeaderAvatar {
-          height: 95px !important;
-          min-width: 95px !important;
-          width: 95px !important;
-          position: absolute;
-          top: 50px;
         }
 
         #profileHeaderActions {
