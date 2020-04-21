@@ -57,6 +57,7 @@
     textarea {
       border: Solid 2px @greyColor !important;
       max-width: 100%;
+      padding: 3px 10px;
     }
 
     .border-box-sizing {
@@ -320,6 +321,27 @@
       .v-alert__icon:before {
         font-family: "PLF-FONT-ICONS";
         content: "\e767";
+      }
+    }
+    .error--text {
+      color: @errorColor !important;
+
+      i:before {
+        color: @errorColor !important;
+      }
+    }
+    .success--text {
+      color: @successColor !important;
+
+      i:before {
+        color: @successColor !important;
+      }
+    }
+    .info--text {
+      color: @infoColor !important;
+
+      i:before {
+        color: @infoColor !important;
       }
     }
     .autocompleteSelectedItem {

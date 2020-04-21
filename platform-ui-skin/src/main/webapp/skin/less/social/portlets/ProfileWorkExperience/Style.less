@@ -2,5 +2,60 @@
 @import "../../../mixins.less";
 
 #ProfileWorkExperience {
-  
+
+  .workExperienceTimeLine {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 964px;
+
+    &:before {
+      left: 177px !important;
+    }
+
+    .workExperienceTimeLineItem {
+
+      .v-timeline-item__body {
+        max-width: ~"calc(100% - 96px - 130px)";
+      }
+      .v-timeline-item__opposite {
+        max-width: 130px;
+        flex: none;
+        align-self: flex-start;
+        margin-top: 10px;
+      }
+      .workExperienceTimeLineItemTime {
+        text-align: left;
+      }
+    }
+  }
+
+  .errorBox {
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+  }
+
+  .profileWorkExperiencesEditItem {
+    border-radius: 5px;
+
+    &:after {
+      content: none;
+    }
+
+    > * {
+      max-width: 100%;
+      .half-width {
+        max-width: ~"calc(50% - 8px)";
+      }
+      input {
+        max-width: 100%;
+      }
+    }
+
+    textarea {
+      min-width: 100%;
+      min-height: 150px;
+      resize: none;
+    }
+  }
 }
