@@ -1,68 +1,80 @@
 /*================= Suggester =================*/
-
-.identitySuggester {
-  border: 1px solid @inputBorder;
-  border-radius: 5px;
-  padding: 0 !important;
-  margin: 12px 0 !important;
-
-  .v-input__slot {
-    align-items: start !important;
-
-    &:before, &:after {
-      content: none !important;
+.VuetifyApp .v-application {
+  .identitySuggester {
+    border: 1px solid @inputBorder;
+    border-radius: 5px;
+    padding: 0 !important;
+    margin: 12px 0 !important;
+  
+    .v-input__slot {
+      align-items: start !important;
+  
+      &:before, &:after {
+        content: none !important;
+      }
+    }
+  
+    .v-select__slot {
+      overflow: auto;
+      max-height: 100%;
+      display: block !important;
+    }
+  
+    .v-select__selections {
+      display: block !important;
+      max-width: 100%;
+      padding-left: 10px;
+    }
+  
+    .identitySuggesterItem {
+      background-color: @primaryColorLight !important;
+      border: 1px solid @primaryDarkerColorGradientEnd !important;
+      color: @btnPrimaryColor !important;
+    }
+  
+  }
+  
+  .identitySuggestionMenuItemText {
+    max-width: 300px;
+  }
+  /*================= Identity avatar item =================*/
+  
+    .exo-avatar-item-title, .exo-avatar-item-subtitle {
+      flex: 1 1 100%;
+    }
+  
+  /*================= Identity avatars List =================*/
+  
+  .notDisplayedIdentitiesOverlay {
+    position: absolute !important;
+    right: 24px;
+    cursor: pointer;
+  
+    .notDisplayedIdentities {
+      background: #0000005c;
+      color: #fff;
+      width: 100%;
+      height: 100%;
+      line-height: 38px;
+    }
+  }
+  
+  /*================= Identity avatar item =================*/
+  .spaceAvatar {
+    border-radius: 5px !important;
+    > div {
+      border-radius: 5px !important;
     }
   }
 
-  .v-select__slot {
-    overflow: auto;
-    max-height: 100%;
-    display: block !important;
-  }
+  .datePickerComponent {
+    input {
+      max-width: 100%;
+    }
 
-  .v-select__selections {
-    display: block !important;
-    max-width: 100%;
-    padding-left: 10px;
-  }
-
-  .identitySuggesterItem {
-    background-color: @primaryColorLight !important;
-    border: 1px solid @primaryDarkerColorGradientEnd !important;
-    color: @btnPrimaryColor !important;
-  }
-
-}
-
-.identitySuggestionMenuItemText {
-  max-width: 300px;
-}
-/*================= Identity avatar item =================*/
-
-  .exo-avatar-item-title, .exo-avatar-item-subtitle {
-    flex: 1 1 100%;
-  }
-
-/*================= Identity avatars List =================*/
-
-.notDisplayedIdentitiesOverlay {
-  position: absolute !important;
-  right: 24px;
-  cursor: pointer;
-
-  .notDisplayedIdentities {
-    background: #0000005c;
-    color: #fff;
-    width: 100%;
-    height: 100%;
-    line-height: 38px;
-  }
-}
-
-/*================= Identity avatar item =================*/
-.spaceAvatar {
-  border-radius: 5px !important;
-  > div {
-    border-radius: 5px !important;
+    input[readonly] {
+      cursor: pointer;
+      background: #fff;
+    }
   }
 }
