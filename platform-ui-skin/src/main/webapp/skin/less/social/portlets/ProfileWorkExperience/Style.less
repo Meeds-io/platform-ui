@@ -59,3 +59,27 @@
     }
   }
 }
+
+@media(max-width: @tabletWidth) {
+  #ProfileWorkExperience {
+  
+    .workExperienceTimeLine {
+      &:before {
+        left: 15px !important;
+      }
+  
+      .workExperienceTimeLineItem {
+        .v-timeline-item__body {
+          max-width: ~"calc(100% - 32px)";
+        }
+        .v-timeline-item__opposite {
+          display: none;
+        }
+        .v-timeline-item__divider {
+          min-width: 32px;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+}
