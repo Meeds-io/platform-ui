@@ -35,27 +35,33 @@
     z-index: 2000;
   }
 
-  .profileWorkExperiencesEditItem {
-    border-radius: 5px;
-
-    &:after {
-      content: none;
+  .profileWorkExperiencesDrawer {
+    .uiIconSocSimplePlus {
+      font-size: 14px;
     }
 
-    > * {
-      max-width: 100%;
-      .half-width {
-        max-width: ~"calc(50% - 8px)";
+    .profileWorkExperiencesEditItem {
+      border-radius: 5px;
+  
+      &:after {
+        content: none;
       }
-      input {
+  
+      > * {
         max-width: 100%;
+        .half-width {
+          max-width: ~"calc(50% - 8px)";
+        }
+        input {
+          max-width: 100%;
+        }
       }
-    }
-
-    textarea {
-      min-width: 100%;
-      min-height: 150px;
-      resize: none;
+  
+      textarea {
+        min-width: 100%;
+        min-height: 150px;
+        resize: none;
+      }
     }
   }
 }
