@@ -1977,7 +1977,6 @@ p, .postContent, .uiWikiContentDisplay{
     border-radius: 5px;
     padding: 0;
     margin-bottom: 25px;
-    box-shadow: 0 3px 2px -2px rgba(0,0,0,.1);
   }
 
   .activityStream .arrowLeft {
@@ -1985,8 +1984,8 @@ p, .postContent, .uiWikiContentDisplay{
   }
 
   .activityStream .heading {
-    margin-left: 70px;
     color: @textLightColor;
+    border-bottom: 1px solid  @greyColorLighten1Opacity1;
     .actionLink {
       position: absolute;
       top: 0;
@@ -2029,7 +2028,6 @@ p, .postContent, .uiWikiContentDisplay{
     padding: 10px 15px;
     margin: 0;
     position: relative;
-    border-top: 1px solid  @greyColorLighten1Opacity1;
   }
 
   .activityStream .contentBox .commentBox {
@@ -2039,7 +2037,7 @@ p, .postContent, .uiWikiContentDisplay{
      display: flex;
      align-items: center;
      justify-content: space-between;
-     padding: 10px;
+     padding: 5px 10px;
      margin-bottom: 20px;
      border-top: 1px solid  @greyColorLighten1Opacity1;
      border-bottom: 1px solid  @greyColorLighten1Opacity1;
@@ -2266,10 +2264,6 @@ p, .postContent, .uiWikiContentDisplay{
   .open-right-bar .activityStreamStatus {
     float: right;
   }
-}
-
-.activityStream .author {
-  margin-bottom: -10px;
 }
 
 .activityStream .commentList .commentItem .commentInputBox .btn {

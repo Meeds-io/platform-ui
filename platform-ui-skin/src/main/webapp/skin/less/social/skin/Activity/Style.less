@@ -43,8 +43,6 @@
 	}
 
 	.desktop-input {
-		margin-bottom: 10px;
-
 		.blastInputPeople, .blastInputSpace {
 			textarea {
 				display: none;
@@ -475,11 +473,21 @@
 
 .activityStream{
 	.heading  {
-		position: relative;
+		display: flex;
+		justify-content: space-between;
+		.activityHeader {
+			display: flex;
+			align-items: center;
+			.activityAvatar {
+				margin-right: 10px;
+			}
+			.activityAuthorAndDate {
+				.dataInfor {
+					margin-top: -10px;
+				}
+			}
+		}
 		.actLink {
-			position: absolute;
-			top: 5px;
-			right: 10px;
 			.dropdown-menu {
                          right: 10px;
                          top: 17px;
@@ -510,7 +518,28 @@
             white-space: nowrap;
         }
 	}
-	
+	.actionBarMobile {
+		padding: 0 15px 10px 15px;
+		a {
+			font-size: 13px;
+		}
+		.likesNumber {
+			&:after {
+				content: '-';
+				padding-left: 10px;
+				padding-right: 6px;
+			}
+		}
+
+		.CommentsNumber {
+			&:after {
+				content: '-';
+				padding-left: 10px;
+				padding-right: 6px;
+			}
+		}
+	}
+
 	.boxContainer {
 		.fileActionsBar {
 			.statusAction {
@@ -965,10 +994,6 @@
 
 .activityStream .commentList .commentItem .actLink {
   right: 0;
-}
-
-.activityStream .heading .actLink {
-  right: 15px;
 }
 
 /*================uiAnswerActivity=======================*/
@@ -1616,7 +1641,7 @@ blockquote:after {
 
 /* Responsive */
 
-@media (max-width: 480px) {
+@media (max-width: @smallMobileWidth) {
 	.uiComposer .blastContainer {
 		.share-buttons-down {
 			.btn-primary {
@@ -1913,8 +1938,7 @@ blockquote:after {
 		border-bottom: none;
 	}
 	.activityStream .contentBox .listLikedBox {
-        border: medium none;
-        padding: 5px 15px 0;
+        display: none;
 	}
 	.activityStream .contentBox .commentBox {
         border: medium none;
@@ -2103,7 +2127,25 @@ blockquote:after {
         display: none;
     }
     .uiActivityStream {
-        padding-top: 10px; 
+		padding-top: 10px;
+		.activityStream {
+			.boxContainer {
+				.heading {
+					padding:8px;
+					.activityHeader {
+						.activityAvatar {
+							border: none;
+							background-image: none;
+							img {
+								max-height: 40px;
+								max-width: 40px;
+								margin: 0px;
+							}
+						}
+					}
+				}
+			}
+		}
     }
     .uiActivityStream.clearBG, .uiActivitiesLoader.clearBG {
         padding-top:10px;
@@ -2150,7 +2192,32 @@ blockquote:after {
         .PlayerContianer,.PlayerContent {
             width: 100%;
         }
-    }
+	}
+	.uiActivityStream {
+		.contentBox {
+			padding-bottom: 0px;
+			.actionsDetailsWrapper {
+				.actionBar {
+					.statusAction {
+						width: 100%;
+						display: flex;
+						justify-content: space-around;
+						.CommentLabel, .LikeLabel, .kudosLabelMobile {
+							letter-spacing: 0;
+							font-size: 14px;
+						}
+						i {
+							padding-right: 2px;
+						}
+						.kudosActivityNumber, .LikesActionNumber, .commentsActionNumber{
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+
 }
 // end 767
 
@@ -2247,6 +2314,22 @@ blockquote:after {
 				i {
 					display: none;
 				}
+			}
+		}
+	}
+	.actionBarMobile {
+		display: none;
+	}
+	.actionBar {
+		.statusAction {
+			.kudosLabelMobile {
+				display: none;
+			}
+			.LikeLabel {
+				display: none;
+			}
+			.CommentLabel {
+				display: none;
 			}
 		}
 	}
