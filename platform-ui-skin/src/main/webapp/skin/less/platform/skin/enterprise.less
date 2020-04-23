@@ -434,7 +434,7 @@
         @media (max-width: 767px) {
           max-width: ~"calc(100vw - 435px)";
         }
-        @media (max-width: 480px) {
+        @media (max-width: @smallMobileWidth) {
           max-width: ~"calc(100vw - 232px)";
         }
       }
@@ -510,7 +510,7 @@
     }
   }
 }
-@media (max-width: 480px) {
+@media (max-width: @smallMobileWidth) {
   #UICreateList.dropdown-menu {
     top: 48px;
   }
@@ -1919,7 +1919,7 @@ p, .postContent, .uiWikiContentDisplay{
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: @smallMobileWidth) {
   body .uiSpaceNavigationPortlet .accordionCont .spaceNavigation {
     margin-top: inherit!important;
   }
@@ -1977,7 +1977,6 @@ p, .postContent, .uiWikiContentDisplay{
     border-radius: 5px;
     padding: 0;
     margin-bottom: 25px;
-    box-shadow: 0 3px 2px -2px rgba(0,0,0,.1);
   }
 
   .activityStream .arrowLeft {
@@ -1985,8 +1984,8 @@ p, .postContent, .uiWikiContentDisplay{
   }
 
   .activityStream .heading {
-    margin-left: 70px;
     color: @textLightColor;
+    border-bottom: 1px solid  @greyColorLighten1Opacity1;
     .actionLink {
       position: absolute;
       top: 0;
@@ -2029,7 +2028,6 @@ p, .postContent, .uiWikiContentDisplay{
     padding: 10px 15px;
     margin: 0;
     position: relative;
-    border-top: 1px solid  @greyColorLighten1Opacity1;
   }
 
   .activityStream .contentBox .commentBox {
@@ -2039,7 +2037,7 @@ p, .postContent, .uiWikiContentDisplay{
      display: flex;
      align-items: center;
      justify-content: space-between;
-     padding: 10px;
+     padding: 5px 10px;
      margin-bottom: 20px;
      border-top: 1px solid  @greyColorLighten1Opacity1;
      border-bottom: 1px solid  @greyColorLighten1Opacity1;
@@ -2170,13 +2168,13 @@ p, .postContent, .uiWikiContentDisplay{
       left: 40%;
       margin-left: 1px;
     }
-    @media(max-width: 480px) {
+    @media(max-width: @smallMobileWidth) {
       left: 75%;
     }
   }
 }
 
-@media(max-width: 480px) {
+@media(max-width: @smallMobileWidth) {
   #uiWikiSpaceSwitcher_CreateWiki {
     .dropdown-toggle {
       top: -11px;
@@ -2268,10 +2266,6 @@ p, .postContent, .uiWikiContentDisplay{
   }
 }
 
-.activityStream .author {
-  margin-bottom: -10px;
-}
-
 .activityStream .commentList .commentItem .commentInputBox .btn {
   color: @activityStreamCommentBtnColor;
 }
@@ -2360,7 +2354,7 @@ p, .postContent, .uiWikiContentDisplay{
     &[disabled] {
       border-color: @btnPrimaryDisableBackground;
     }
-    @media (max-width: 480px) {
+    @media (max-width: @smallMobileWidth) {
       padding: 10px 20px;
     }
   }
@@ -3333,7 +3327,7 @@ li > a > .uiIconRefresh:before {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: @smallMobileWidth) {
   .uiTopicDetail .footPost .btnDetailTopic .btn {
     box-sizing: content-box;
   }
@@ -3888,7 +3882,7 @@ li > a > .uiIconRefresh:before {
     }
   }
 }
-@media (max-width: 480px) {
+@media (max-width: @smallMobileWidth) {
   #UIWikiUpperArea > .uiGrayLightBox > .uiSearchInput {
     width: 55%;
   }
@@ -4295,7 +4289,7 @@ li > a > .uiIconRefresh:before {
     margin: 0;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: @smallMobileWidth) {
   .UICalendarPopupAction .settingCalendarTab .workingTime {
     span {
       display: inline-block;
