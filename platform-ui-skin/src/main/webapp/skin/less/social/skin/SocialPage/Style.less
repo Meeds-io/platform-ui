@@ -45,9 +45,47 @@
       }
     }
   }
-}  
+}
 
-@media (min-width: 768px) {
+.profile-after-about-me-container {
+  .UIRowContainer {
+    display: flex;
+
+    > div:first-child {
+      margin-right: 20px;
+      min-width: 65%;
+      min-height: 100%;
+      height: 174px;
+      max-height: 174px;
+      flex: 1 1 auto;
+    }
+    > div:nth-child(2) {
+      width: 100%;
+      min-height: 100%;
+      height: 174px;
+      max-height: 174px;
+      flex: 1 1 auto;
+    }
+  }
+}
+
+@media (max-width: @tabletWidth) {
+  .profile-after-about-me-container {
+    .UIRowContainer {
+      display: block;
+
+      > div:first-child, > div:nth-child(2) {
+        width: 100%;
+        max-width: 100%;
+        margin-right: 0;
+        max-height: none;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media (min-width: @mobileWidth) {
   #parentSocialPage {
     .UIRowContainer:first-of-type {
       > #rightSocialPage, > .rightSocialPage {
