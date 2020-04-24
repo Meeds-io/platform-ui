@@ -376,6 +376,67 @@
 	}
 }
 
+.linkPreview {
+	display: flex;
+	margin-top: -30px;
+	margin-bottom: 30px;
+	margin-left: 16px;
+	margin-right: 16px;
+	.imagePreview {
+		height: 180px;
+		width: 270px;
+		border-top-left-radius: 10px;
+		border-bottom-left-radius: 10px;
+		border: 1px solid #a8b3c5;
+	}
+
+	.boxDescription {
+		width: 69%;
+		margin-left: -2px;
+		background: #e1e8ee;
+		border: 1px solid #a8b3c5;
+
+		.block {
+			display: flex;
+			flex-direction: column;
+			padding: 20px;
+			margin-top: 6px;
+
+			.titlePreview {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+
+				> a {
+					font-size: 18px;
+					font-weight: bold;
+					color: black;
+				}
+			}
+
+			.descriptionLink {
+				margin-top: 5px;
+				height: 64px;
+				overflow: hidden;
+				white-space: initial;
+				-webkit-line-clamp: 3;
+				-webkit-box-orient: vertical;
+				display: -webkit-box;
+				word-break: break-word;
+			}
+
+			.link {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+
+				> a {
+					color: #a8b3c5;
+				}
+			}
+		}
+	}
+}
 
 .activityStream{
 	.contentComment {
@@ -1786,6 +1847,22 @@ blockquote:after {
 }
 
 /* Responsive */
+
+@media screen and (max-width: 650px) {
+	.linkPreview {
+		flex-direction: column;
+		.imagePreview{
+			width: 100%;
+			height: 365px;
+			border-top-left-radius:0px;
+			border-bottom-left-radius:0px;
+		}
+		.boxDescription{
+			width: 100%;
+			margin-left: 0px;
+		}
+	}
+}
 
 @media (max-width: 480px) {
 	.uiComposer .blastContainer {
