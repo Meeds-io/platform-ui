@@ -68,8 +68,21 @@
   }
 
   .datePickerComponent {
+    position: relative;
+
+    &:after {
+      color: @greyColor;
+      font-family: "PLF-FONT-ICONS";
+      content: "\e92a";
+      font-size: 18px;
+      position: absolute;
+      right: 3px;
+      top: 9px;
+    }
+
     input {
       max-width: 100%;
+      padding-right: 18px;
     }
 
     input[readonly] {
