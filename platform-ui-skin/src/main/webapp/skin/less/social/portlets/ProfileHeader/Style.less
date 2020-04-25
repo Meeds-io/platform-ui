@@ -200,6 +200,14 @@
           .subtitle {
             color: @greyColorLighten1 !important;
           }
+          .headline, .subtitle {
+            max-width: ~"calc(100vw - 50px)";
+            box-sizing: border-box;
+            white-space: nowrap !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+            display: block;
+          }
         }
 
         #profileHeaderActions {
