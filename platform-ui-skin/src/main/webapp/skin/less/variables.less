@@ -378,11 +378,16 @@
 
 // RESPONSIVE
 // --------------------------------------------------
-@mobileWidth: 768px;
-@tabletWidth: 980px;
-@largeTabletWidth: 1024px;
-@desktop: 1280px;
-@largeDesktop: 1700px;
+@smallMobileWidth: 480px;
+@maxMobileWidth: 767px;
+@minTabletWidth: (@maxMobileWidth + 1px);
+@maxTabletWidth: 979px;
+@minLargeTabletWidth: (@maxTabletWidth + 1px);
+@maxLargeTabletWidth: 1023px;
+@minDesktop: (@maxLargeTabletWidth + 1px);
+@maxDesktop: 1279px;
+@minLargeDesktop: (@maxDesktop + 1px);
+@maxLargeDesktop: 1700px;
 
 // Default 940px grid
 // -------------------------

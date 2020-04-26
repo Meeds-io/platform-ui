@@ -1597,7 +1597,7 @@ blockquote:after {
 }
 
 /* Landscape phone to portrait tablet */
-@media (max-width: 1024px) {
+@media (max-width: @maxLargeTabletWidth) {
 
     .activityStream .arrowLeft {
         display: none;
@@ -1611,7 +1611,7 @@ blockquote:after {
 //end 1024
 
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: @minTabletWidth) and (max-width: @maxLargeTabletWidth) {
 
     // Hide Column Timeline when show Right Sidebar
 
@@ -1689,7 +1689,7 @@ blockquote:after {
 //end 768 and 1024
 
 
-@media (min-width: 481px) and (max-width: 1024px) {
+@media (min-width: 481px) and (max-width: @maxLargeTabletWidth) {
     .activityStream .author span {
         font-size: 16px;
     }
@@ -1721,7 +1721,7 @@ blockquote:after {
 
 // end 481 1024
 
-@media (max-width: 768px) {
+@media (max-width: @maxMobileWidth) {
     .uiProfileUserSearch {
         input {
             display: block;
@@ -1731,7 +1731,7 @@ blockquote:after {
     }
 
 }
-@media (min-width: 481px ) and (max-width: 1024px) {
+@media (min-width: 481px ) and (max-width: @maxLargeTabletWidth) {
     .activityStream .heading .actLink .uiIconTrash:before {
         font-size: 10px;
         position: relative;
@@ -2172,7 +2172,7 @@ blockquote:after {
 	}
 }
 
-@media (min-width: 768px) {
+@media (min-width: @minTabletWidth) {
 	#likersDetail {
 		.likeClick {
 			.btn {

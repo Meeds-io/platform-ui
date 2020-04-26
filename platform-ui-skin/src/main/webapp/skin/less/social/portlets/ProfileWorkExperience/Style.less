@@ -66,17 +66,18 @@
   }
 }
 
-@media(max-width: @tabletWidth) {
+@media(max-width: @maxTabletWidth) {
   #ProfileWorkExperience {
-  
+
     .workExperienceTimeLine {
+
       &:before {
         left: 15px !important;
       }
   
       .workExperienceTimeLineItem {
         .v-timeline-item__body {
-          max-width: ~"calc(100% - 32px)";
+          max-width: ~"calc(100% - 32px)" !important;
         }
         .v-timeline-item__opposite {
           display: none;
