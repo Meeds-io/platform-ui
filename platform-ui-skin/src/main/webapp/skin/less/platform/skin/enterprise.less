@@ -486,7 +486,7 @@
     }
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: @maxLargeTabletWidth) {
   .UIToolbarContainer .uiDropdownWithIcon > a {
     font-size: 0;
     display: block;
@@ -542,7 +542,7 @@
       }
     }
   }
-  @media (min-width: 768px) {
+  @media (min-width: @minTabletWidth) {
     .dropdown-menu {
       width: 400px;
     } 
@@ -650,7 +650,7 @@
   color: @btnDisableColor;
 }
 
-@media (min-width: 481px) and (max-width: 1024px) {
+@media (min-width: 481px) and (max-width: @maxLargeTabletWidth) {
   body .btn {
     padding: 9px 20px;
     font-size: 15px;
@@ -873,7 +873,7 @@ input[disabled],
 .UIToolbarContainer .uiCreateToolBarPortlet .uiQuickAddEvent .selectboxMedium .uiSelectbox .selectbox {
   padding: 0 0 0 10px;
 }
-@media(max-width: 768px) {
+@media(max-width: @maxMobileWidth) {
   .uiSpaceSearch {
     .selectize-control, .uiIconSearch {
       margin-top: 10px;
@@ -1391,7 +1391,7 @@ p, .postContent, .uiWikiContentDisplay{
 .dropdown-menu > li > a > [class^="uiIcon"], .uiUserNavigationPortlet .userNavigation .dropdown-menu > li > a > [class^="uiIcon"] {
   font-size: 13px;
 }
-@media (max-width: 1024px) and (min-width: 481px) {
+@media (max-width: @maxLargeTabletWidth) and (min-width: 481px) {
   .dropdown-menu > li > a > [class^="uiIcon"], .uiUserNavigationPortlet .userNavigation .dropdown-menu > li > a > [class^="uiIcon"] {
     font-size: 17px;
   }
@@ -1747,7 +1747,7 @@ p, .postContent, .uiWikiContentDisplay{
     color: @lightWhite;
 }
 
-@media(max-width: 1024px) {
+@media(max-width: @maxLargeTabletWidth) {
   body .RightBodyTDContainer {
     width: 100%;
     padding-left: 0;
@@ -1756,7 +1756,7 @@ p, .postContent, .uiWikiContentDisplay{
     padding-top: 15px;
   }
 }
-@media (min-width: 481px) and (max-width: 1024px) {
+@media (min-width: 481px) and (max-width: @maxLargeTabletWidth) {
   body .LeftNavigationTDContainer {
     width: 40%;
   }
@@ -1903,7 +1903,7 @@ p, .postContent, .uiWikiContentDisplay{
 }
 
 
-@media(max-width: 1024px) {
+@media(max-width: @maxLargeTabletWidth) {
   .uiSpaceNavigationPortlet .searchInput input[placeholder]  {
     margin-top: 20px!important;
   }
@@ -1941,7 +1941,7 @@ p, .postContent, .uiWikiContentDisplay{
   color: @companyNavigationPortletColor!important;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: @maxLargeTabletWidth) {
   .uiSpaceNavigationPortlet .searchInput:before {
     display: none;
   }
@@ -1998,7 +1998,7 @@ p, .postContent, .uiWikiContentDisplay{
         font-size: 17px;
         padding: 5px 7px;
       }
-      @media (max-width: 768px) {
+      @media (max-width: @maxMobileWidth) {
         position: relative;
         right: -10px;
       }
@@ -2083,12 +2083,12 @@ p, .postContent, .uiWikiContentDisplay{
     padding-top: 6px;
     height: 29px;
   }
-  @media (max-width: 1024px) and (min-width: 768px) {
+  @media (max-width: @maxLargeTabletWidth) and (min-width: @minTabletWidth) {
     .activityTimeLine{
       display: none!important;
     }
   }
-  @media (min-width: 768px) {
+  @media (min-width: @minTabletWidth) {
     .activityTop {
       margin: -60px 0 25px;
       .dropdown-menu{
@@ -2127,7 +2127,7 @@ p, .postContent, .uiWikiContentDisplay{
   }
 }
 
-@media(max-width: 1024px) {
+@media(max-width: @maxLargeTabletWidth) {
   .uiUserActivityStreamPortlet,
   .uiSocApplication.uiRecentActivitiesPortlet,
   .uiDisplaySpaceActivities.uiActivitiesDisplay {
@@ -2157,7 +2157,7 @@ p, .postContent, .uiWikiContentDisplay{
 .open-left-bar {
   #UIToolbarContainer, .RightBodyTDContainer, .uiProfileMenu, .uiSpaceMenu {
     width: 100%;
-    @media (min-width: 481px) and (max-width: 1024px) {
+    @media (min-width: 481px) and (max-width: @maxLargeTabletWidth) {
       left: 40%;
       margin-left: 1px;
     }
@@ -2253,7 +2253,7 @@ p, .postContent, .uiWikiContentDisplay{
     margin-right: 0;
   }
 }
-@media (max-width: 1024px) and (min-width: 768px){
+@media (max-width: @maxLargeTabletWidth) and (min-width: @minTabletWidth){
   .open-right-bar .activityStreamStatus {
     float: right;
   }
@@ -3024,7 +3024,7 @@ p, .postContent, .uiWikiContentDisplay{
   color: #333333;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: @maxLargeTabletWidth) {
   body .OfficeMiddleTDContainer {
     padding: 20px 5px!important;
   }
@@ -3037,7 +3037,7 @@ p, .postContent, .uiWikiContentDisplay{
   padding-left: 10px;
   padding-right: 10px;
 }
-@media(max-width: 1024px) {
+@media(max-width: @maxLargeTabletWidth) {
   .uiForumPortlet {
     padding-left: 10px;
     padding-right: 10px;
@@ -3089,7 +3089,7 @@ p, .postContent, .uiWikiContentDisplay{
     }
   }
 }
-@media(max-width: 1024px) {
+@media(max-width: @maxLargeTabletWidth) {
   .UIJCRExplorerPortlet {
     padding-left: 10px !important;
     padding-right: 10px;
@@ -3431,7 +3431,7 @@ li > a > .uiIconRefresh:before {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: @maxLargeTabletWidth) {
   .uiProfileMenu, .uiSpaceMenu {
     top: 51px !important;
   }
@@ -3474,13 +3474,13 @@ li > a > .uiIconRefresh:before {
   vertical-align: baseline;
 }
 
-@media (min-width: 481px) and (max-width: 1024px) {
+@media (min-width: 481px) and (max-width: @maxLargeTabletWidth) {
   body .UIToolbarContainer #HomeLink {
     padding: 11px 10px 0;
   }
 }
 
-@media(max-width: 1024px) {
+@media(max-width: @maxLargeTabletWidth) {
   .uiSocApplication {
     padding-left: 10px;
   }
@@ -3568,7 +3568,7 @@ li > a > .uiIconRefresh:before {
     }
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: @maxLargeTabletWidth) {
   .uiProfileMenu {
     .profileMenuNav {
       .uiRelationshipAction {
@@ -3604,7 +3604,7 @@ li > a > .uiIconRefresh:before {
   .content {
     margin-left: 75px;
     border: none;
-    @media (max-width: 1024px) {
+    @media (max-width: @maxLargeTabletWidth) {
       margin-left: 0;
     }
   }
@@ -3681,7 +3681,7 @@ li > a > .uiIconRefresh:before {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: @maxLargeTabletWidth) {
   .uiDashboardPortlet .uiPopup {
     margin-bottom: 150px!important;
   }
@@ -3720,7 +3720,7 @@ li > a > .uiIconRefresh:before {
       .breadcrumb .active > a {
         padding-bottom: 1px;
       }
-      @media (max-width: 768px) {
+      @media (max-width: @maxMobileWidth) {
         margin-top: 10px;
       }
     }
@@ -3866,7 +3866,7 @@ li > a > .uiIconRefresh:before {
     padding-left: 0;
   }
 }
-@media(max-width: 1024px) {
+@media(max-width: @maxLargeTabletWidth) {
   .uiWikiPortlet {
     padding-left: 20px;
     .xToolbar .gwt-ListBox {
@@ -3949,7 +3949,7 @@ li > a > .uiIconRefresh:before {
   border-radius: 0 5px 5px 0;
   height: 39px;
 }
-@media (max-width: 1024px) and (min-width: 481px) {
+@media (max-width: @maxLargeTabletWidth) and (min-width: 481px) {
   #btnSearch {
     height: 32px;
   }
@@ -4107,12 +4107,12 @@ li > a > .uiIconRefresh:before {
   top: 9px;
   z-index: 2;
 }
-@media (max-width: 1024px){
+@media (max-width: @maxLargeTabletWidth){
   .uiTableProfileUserSearch .selectize-input > input {
     font-size: 15px!important;
   }
 }
-@media (max-width: 768px){
+@media (max-width: @maxMobileWidth){
   .uiSocApplication .uiTableProfileUserSearch {
     > .column label {
       padding-top: 6px;
@@ -4262,7 +4262,7 @@ li > a > .uiIconRefresh:before {
 .uiEventReminder .uiIconPlus {
   top: 3px;
 }
-@media(max-width: 1024px) {
+@media(max-width: @maxLargeTabletWidth) {
   .UICalendarPortlet {
     padding-left: 15px;
     .uiIconMiniArrowDown {
@@ -4281,7 +4281,7 @@ li > a > .uiIconRefresh:before {
     }
   }
 }
-@media (max-width: 768px) {
+@media (max-width: @maxMobileWidth) {
   .uiSearchInput.searchWithIcon.pull-right {
     margin: 0;
   }
