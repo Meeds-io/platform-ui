@@ -57,6 +57,25 @@
 
 @media (max-width: @tabletWidth) {
   #StreamPage {
-    padding: 20px;
+  > div {
+   > div {
+    > .UIRowContainer:first-of-type {
+        .StreamMainContainer {
+          flex: 0 1 100%;
+          padding-right: 10px;
+          box-sizing: border-box;
+          max-width: 100%!important;
+          width: 100%!important;
+          padding: 0 15px!important;
+        }
+        .StreamRightContainer {
+          box-sizing: border-box;
+          max-width: 100%!important;
+          width: 100%!important;
+          padding: 20px!important;
+        }
+      }
+    }
   }
+}
 }
