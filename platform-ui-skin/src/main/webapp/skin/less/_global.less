@@ -1162,6 +1162,9 @@ hr {
 .border-color {
   border: 1px solid @btnBorder;
 }
+.no-border {
+  border: 0;
+}
 .border-radius {
   border-radius: @inputBorderRadius;
 }
@@ -1222,22 +1225,42 @@ hr {
 }
 
 .skeleton-background, .skeleton-text {
-  position: relative;
-  max-height: 100%;
+  position: relative !important;
+  max-height: 100% !important;
   overflow: hidden !important;
   box-shadow: none !important;
 }
 .skeleton-border-radius {
-  border-radius: 4px;
+  border-radius: 4px !important;
 }
 
 .skeleton-text-width {
-  min-width: 120px;
+  min-width: 120px !important;
+}
+.skeleton-text-half-width {
+  min-width: 50% !important;
+  max-width: 50% !important;
+  width: 50% !important;
+}
+.skeleton-text-full-width {
+  min-width: 100% !important;
+  max-width: 100% !important;
+  width: 100% !important;
 }
 .skeleton-text-height {
-  max-height: 8px;
-  margin-top: auto;
-  margin-bottom: auto;
+  max-height: 8px !important;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+.skeleton-text-height-thick {
+  max-height: 10px !important;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+.skeleton-text-height-fine {
+  max-height: 6px !important;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
 }
 
 .skeleton-header {
