@@ -306,6 +306,21 @@
 	 }
 	.boxContainer{
 		margin: 0px 0px 0px 65px;
+		blockquote {
+			margin-left: 20px;
+			margin: 20px 0 7px 20px;
+			background: @baseBackground;
+			border-left: 5px solid @primaryColor!important;
+			padding: 10px 0 10px 10px!important;
+			p {
+				margin-bottom: 0;
+				font-size: 14px!important;
+				font-weight: 300;
+				line-height: 1.25;
+				font-style: italic;
+				color: @textColor!important;
+			}
+		}
 	}
 	.statusAction.pull-right a{
 		color: @baseColorDark;
@@ -1527,6 +1542,7 @@ blockquote:after {
   left: 0;
 }
 */
+
 #tipName img {
    max-height : 34px;
    max-width : 34px;
@@ -1696,7 +1712,8 @@ blockquote:after {
         left: auto;
         right: 0;
         min-width: 164px;
-    }
+	}
+
 }
 //end 1024
 
