@@ -1548,6 +1548,237 @@ blockquote:after {
 	display:none;
 }
 
+.activityStream {
+	.SendKudosButtonTemplate {
+		.kudosLabelMobile {
+			display: none;
+		}
+	}
+	.statusAction {
+		.SendKudosButtonTemplate {
+			.kudosLabel {
+				color: @baseColorLight;
+				font-size: 12px;
+				letter-spacing: 0!important;
+			}
+		}
+	}
+}
+
+.uiActivityStreamWrapper {
+	.contentBox {
+		.heading {
+			color: @textLightColor;
+			border-bottom: 1px solid  @greyColorLighten1Opacity1;
+			display: flex;
+			justify-content: space-between;
+			margin-left: 0!important;
+			.activityHeader {
+				display: flex;
+				align-items: center;
+				.activityAvatar {
+					margin-right: 10px;
+				}
+				.activityAuthorAndDate {
+					.author {
+						margin-bottom: 0!important;
+					}
+					.dataInfor {
+						margin-top: -10px;
+					}
+				}
+			}
+			.actLink {
+				position: relative;
+				right: 0!important;
+			}
+		}
+		.description {
+			padding: 10px 15px!important;
+			border-top: none!important;
+		}
+
+		.actionBarMobile {
+			padding: 0 15px 10px 15px;
+			a {
+				font-size: 13px;
+			}
+			.likesNumber {
+				&:after {
+					content: '-';
+					padding-left: 10px;
+					padding-right: 6px;
+				}
+			}
+	
+	
+			 .CommentsNumber {
+				&:after {
+					content: '-';
+					padding-left: 10px;
+					padding-right: 6px;
+				}
+			}
+		}	
+
+		.actionsDetailsWrapper {
+			display: flex;
+    		align-items: center;
+     		justify-content: space-between;
+     		padding: 5px 10px;
+     		margin-bottom: 20px;
+     		border-top: 1px solid  @greyColorLighten1Opacity1;
+       		border-bottom: 1px solid  @greyColorLighten1Opacity1;
+			.listLikedBox {
+				min-width: 70%;
+				flex: 1;
+				border-top: none!important;
+				padding: 0 !important;
+				.listPeopleContent {
+					display: flex;
+					align-items: center;
+					.listLiked {
+						margin-top: 0;
+						a {
+							margin-right: 5px;
+							img {
+								border-radius: 50%;
+							}
+						}
+						.btn {
+							margin-right: 8px;
+						}
+					}
+				}
+			}
+			.actionBar {
+				flex:1;
+				background:  @lightWhite!important;
+				border-bottom: none!important;
+				border-top: none!important;
+				padding: 8px 0;
+			}
+		}
+		.commentBox {
+			border-top: none;
+			.commentList {
+				background-color: @baseBackground;
+				.commentItem {
+					display: inline-flex;
+					.commmentLeft {
+						padding-right: 10px;
+						&+ .commentRight{
+							padding-right: 20px;
+							margin-left: 0;
+						   .authorCommentContainer {
+							 background: @commentBackgroundColor;
+							 padding: 10px;
+							 border-radius: 10px;
+							 .author {
+							   display: inline;
+							   padding-right: 10px;
+							 }
+							 .contentComment {
+							   display: inline;
+							 }
+						   }
+						   .actionCommentBar {
+								.statusAction {
+									.dateTime {
+										padding-left: 15px;
+									}
+									.SendKudosButtonTemplate {
+										.kudosLabel {
+											color: @baseColorLight;
+											font-size: 12px;
+											letter-spacing: 0!important;
+										}
+										.lightGrey {
+											color: @baseColorLight;
+										}
+										.hasKudos {
+											color: @primaryColor;
+										}
+									}
+								}
+						   }
+						}
+						.avatarXSmall {
+							img {
+								border-radius: 50%;
+							}
+						}
+					}
+				}
+				.inputContainer {
+					.commentItem  {
+						display: block;
+						padding-bottom: 15px;
+						.commentRight {
+							margin-left: 45px;
+						}
+					}
+				}
+			}
+		}
+		.commentListInfo {
+			a {
+				font-weight: bold;
+			}
+		}
+	}
+
+		blockquote {
+			margin-left: 20px;
+			margin: 20px 0 7px 20px;
+			background: @baseBackground;
+			border-left: 5px solid @primaryColor!important;
+			padding: 10px 0 10px 10px!important;
+			p {
+				margin-bottom: 0;
+				font-size: 14px!important;
+				font-weight: 300;
+				line-height: 1.25;
+				font-style: italic;
+				color: @textColor!important;
+			}
+		}
+		
+		.fileActionsBar {
+			.statusAction {
+				display: inline-flex;
+                background: @commentBackgroundColor;
+    			width: 100%;
+    			padding: 10px;
+				box-sizing: border-box;
+				li {
+					padding-right: 15px;
+					a {
+						i {
+							color: @baseColorLight;
+						}
+						i:before {
+							color: @baseColorLight;
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+
+.uiActivityStreamWrapper.uiForumActivity {
+	.forumActions {
+		.statusAction {
+			display: inline-flex;
+			width: 100%;
+			li {
+				padding: 10px;
+			}
+		}
+	}
+}
 
 /* Responsive */
 
@@ -2085,7 +2316,52 @@ blockquote:after {
         .PlayerContianer,.PlayerContent {
             width: 100%;
         }
-    }
+	}
+	.uiActivityStreamWrapper {
+		.contentBox {
+			padding-bottom: 0px;
+			.heading {
+				padding:8px;
+				.activityHeader {
+					.activityAvatar {
+						border: none;
+						background-image: none;
+						img {
+							max-height: 40px;
+							max-width: 40px;
+							margin: 0px;
+						}
+					}
+				}
+			}
+			.actionsDetailsWrapper {
+				.actionBar {
+					.statusAction {
+						width: 100%;
+						display: flex;
+						justify-content: space-around;
+						.CommentLabel, .LikeLabel, .kudosLabelMobile {
+							letter-spacing: 0;
+							font-size: 14px;
+						}
+						.kudosLabelMobile {
+							display: block;
+						}
+						i {
+							padding-right: 2px;
+						}
+						.kudosActivityNumber, .LikesActionNumber, .commentsActionNumber{
+							display: none;
+						}
+					}
+				}
+				.listLikedBox  {
+					display: none;
+				}
+			}
+		}
+	}
+	
 }
 // end 767
 
@@ -2180,6 +2456,24 @@ blockquote:after {
 					display: block;
 				}
 				i {
+					display: none;
+				}
+			}
+		}
+	}
+	.uiActivityStreamWrapper {
+		.actionBarMobile {
+			display: none;
+		}
+		.actionBar {
+			.statusAction {
+				.kudosLabelMobile {
+					display: none;
+				}
+				.LikeLabel {
+					display: none;
+				}
+				.CommentLabel {
 					display: none;
 				}
 			}
