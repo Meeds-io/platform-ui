@@ -1226,8 +1226,30 @@
 
   .drawer .content .composerButtons {
     display: flex;
-    justify-content: flex-end;
     padding-top: 10px;
+    .emptyMessage{
+      width: 100%;
+    }
+    .btnStyle{
+      text-transform: uppercase;
+    }
+    .action{
+      width: 100%;
+      margin-top: 10px;
+      .message{
+        color: #578dc9;
+        border-bottom: 1px solid #578dc9;
+        cursor: pointer;
+        font-family: Helvetica;
+        font-size: 16px;
+        line-height: 20px;
+      }
+      .colorIcon{
+        color: #578dc9;
+        cursor: pointer;
+      }
+    }
+
   }
 
   #activityComposerApp {
