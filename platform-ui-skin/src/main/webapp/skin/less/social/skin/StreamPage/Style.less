@@ -9,12 +9,20 @@
         display: flex;
 
         .StreamMainContainer {
-          flex: 0 1 70%;
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: ~"calc(100% - 320px)";
+          max-width: ~"calc(100% - 320px)";
           padding-right: 10px;
           box-sizing: border-box;
+          .uiSocApplication {
+            padding-left: 0;
+            padding-right: 0;
+          }
         }
         .StreamRightContainer {
-          flex: 0 1 30%;
+          flex: 0 1 320px;
+          max-width: 320px;
           padding-left: 10px;
           padding-top: 20px;
           box-sizing: border-box;
@@ -53,9 +61,25 @@
       }
     }
   }
+  .UIMobileSwipeParentContainer {
+  display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      width:100%;
+
+      > div {
+        width:100%;
+      }
+  }
 }
 
 /*responsive*/
+@media (max-width: @maxTabletWidth) {
+  #StreamPage {
+    padding: 20px;
+  }
+}
+
 @media (max-width: 767px) {
   #StreamPage {
   > div {
