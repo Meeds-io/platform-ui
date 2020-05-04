@@ -10,9 +10,7 @@ body {
 }
 
 #UITopBarContainerParent, #UITopBarContainer {
-  height: 58px;
-  max-height: 58px;
-  min-height: 58px;
+  height: 56px;
 }
 
 #UITopBarContainer {
@@ -52,6 +50,7 @@ body {
 
   .UITopBarContainerItemsParent {
     margin-right: 20px;
+    display: flex;
 
     .UITopBarContainerItem {
       margin: auto;
@@ -59,9 +58,22 @@ body {
       min-height: 57px;
       max-height: 57px;
       display: flex;
+      flex-grow: 0;
+      flex-shrink: 0;
 
       > * {
         margin: auto;
+      }
+
+      &.MiddleToolBarTDContainer {
+        flex-grow: 1;
+        flex-shrink: 1;
+        overflow: hidden;
+
+        > .MiddleToolBar {
+          max-width: 100%;
+          margin-bottom: 0;
+        }
       }
     }
 
