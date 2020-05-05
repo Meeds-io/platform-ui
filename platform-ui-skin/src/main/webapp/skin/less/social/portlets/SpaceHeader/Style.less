@@ -1,0 +1,62 @@
+@import "../../../variables.less"; 
+@import "../../../mixins.less";
+
+#SpaceHeader {
+  min-height: 264px;
+  margin: 24px 24px 0 24px;
+
+  &.hasNavigations {
+    margin: 0;
+    background: #fff !important;
+  }
+
+  .spaceBannerImg {
+    overflow: visible;
+    background: #fff;
+
+    .v-responsive__sizer {
+      padding-bottom: 0 !important;
+    }
+  }
+
+  .changeBannerButton {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    display: inline;
+    background: rgba(0, 0, 0, 0.2) !important;
+    left: auto;
+    top: 15px;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+
+    .v-input__prepend-outer {
+      margin: 0;
+
+      button {
+        color: #fff;
+        padding: 3px;
+      }
+    }
+
+    .v-input__control {
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
+
+    button {
+      margin: auto;
+      min-width: 30px;
+      height: 30px;
+      justify-content: flex-end;
+
+      &:before {
+        font-family: "PLF-FONT-ICONS";
+        content: "\e956";
+        font-size: 18px;
+      }
+    }
+  }
+}
