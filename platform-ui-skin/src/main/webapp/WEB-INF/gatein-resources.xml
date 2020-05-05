@@ -196,14 +196,6 @@
 
   <portlet-skin>
     <application-name>social-portlet</application-name>
-    <portlet-name>SpaceMenuPortlet</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/social/portlets/uiSpaceMenuPortlet/Style.css</css-path>
-    <css-priority>1</css-priority>
-  </portlet-skin>
-
-  <portlet-skin>
-    <application-name>social-portlet</application-name>
     <portlet-name>SpaceSettingPortlet</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/social/portlets/uiSpaceSettingPortlet/Style.css</css-path>
@@ -436,17 +428,17 @@
 
   <portlet-skin>
     <application-name>social-vue-portlet</application-name>
-    <portlet-name>SpaceMenu</portlet-name>
+    <portlet-name>SpacesList</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/social/portlets/SpaceMenu/Style.css</css-path>
+    <css-path>/skin/css/social/portlets/SpacesList/Style.css</css-path>
     <css-priority>1</css-priority>
   </portlet-skin>
 
   <portlet-skin>
-    <application-name>social-vue-portlet</application-name>
-    <portlet-name>SpacesList</portlet-name>
+    <application-name>social-portlet</application-name>
+    <portlet-name>SpaceMenuPortlet</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/social/portlets/SpacesList/Style.css</css-path>
+    <css-path>/skin/css/social/portlets/SpaceHeader/Style.css</css-path>
     <css-priority>1</css-priority>
   </portlet-skin>
 

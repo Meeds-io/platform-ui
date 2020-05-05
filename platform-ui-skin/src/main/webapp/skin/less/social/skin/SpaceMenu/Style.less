@@ -1,7 +1,4 @@
-@import "../../../variables.less"; 
-@import "../../../mixins.less";
-
-#SpaceMenuApplication {
+.spaceMenuParent {
   height: 56px;
 
   .v-slide-group__wrapper {
@@ -13,7 +10,11 @@
   }
 
   .spaceNavigationTab {
-    font-size: 12px;
+    font-size: 12px !important;
+  }
+
+  .v-tabs-bar {
+    min-height: 56px;
   }
 }
 .VuetifyApp .v-application .v-dialog.spaceButtomNavigation {
