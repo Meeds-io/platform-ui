@@ -1853,13 +1853,21 @@ blockquote:after {
 		flex-direction: column;
 		.imagePreview{
 			width: 100%;
-			height: 365px;
+			height: 250px;
 			border-top-left-radius:0px;
 			border-bottom-left-radius:0px;
 		}
-		.boxDescription{
+
+		.boxDescription {
 			width: 100%;
 			margin-left: 0px;
+
+			.block {
+				.descriptionLink {
+					-webkit-line-clamp: 1;
+					height: 25px;
+				}
+			}
 		}
 	}
 }
