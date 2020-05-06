@@ -26,12 +26,16 @@
           padding-left: 10px;
           padding-top: 20px;
           box-sizing: border-box;
-
-          #GettingStartedContainer {
-            padding-bottom: 20px;
+          .v-application {
+            margin-bottom: 20px;
           }
+
+           /* Added for sticky container */
+            .UIContainer, .NormalContainerBlock, .VIEW-CONTAINER, .UIIntermediateContainer, .UIRowContainer {
+              display: inline;
+            }
+
           #PerkstoreWalletContainer {
-            padding-top: 10px;
 
             > div{
               > div {
@@ -54,9 +58,6 @@
               }
             }
           }
-          #WhoIsOnLineContainer {
-            padding-top: 20px;
-          }
         }
       }
     }
@@ -73,7 +74,24 @@
   }
 }
 
-/*responsive*/
+/*media queries*/
+
+@media (min-width: @minTabletWidth) {
+  #StreamPage {
+    .UIRowContainer:first-of-type {
+      > #StreamRightContainer, > .StreamRightContainer {
+        #stickyBlockDesktop, .stickyBlockDesktop, &.stickyBlockDesktop {
+          position: sticky;
+          top: 70px;
+          height: auto;
+          display: block;
+          z-index: @zindexStickyContainer;
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: @maxTabletWidth) {
   #StreamPage {
     padding: 20px;
