@@ -137,7 +137,6 @@
                                 <include>social/portlets/uiSpaceTemplatesPortlet/Style.less</include>
                                 <include>social/portlets/uiSpaceInfosPortlet/Style.less</include>                        
                                 <include>social/portlets/SpacesList/Style.less</include>                        
-                                <include>social/portlets/SpaceMenu/Style.less</include>
                                 <include>social/portlets/SpacesOverview/Style.less</include>
                                 <include>social/portlets/SpaceHeader/Style.less</include>
                                 <include>social/portlets/PeopleList/Style.less</include>                        
