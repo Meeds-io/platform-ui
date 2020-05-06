@@ -69,10 +69,17 @@ body {
         flex-grow: 1;
         flex-shrink: 1;
         overflow: hidden;
+        justify-content: center;
 
         > .MiddleToolBar {
-          max-width: 100%;
-          margin-bottom: 0;
+          max-width: 70%;
+          margin: 0 15%;
+          display: flex;
+          box-sizing: border-box;
+
+          > div {
+            max-width: 100%;
+          }
         }
       }
     }
