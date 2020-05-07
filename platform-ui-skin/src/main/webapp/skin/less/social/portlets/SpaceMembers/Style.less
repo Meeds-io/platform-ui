@@ -5,13 +5,13 @@
 @peopleCardMaxHeight: 227px;
 @peopleCardParentMaxHeight: @peopleCardParentMargin + @peopleCardMaxHeight;
 
-#peopleListApplication {
+#spaceMembersApplication {
   .selectPeopleFilter {
     height: 50px;
     width: auto;
     padding-right: 20px;
   }
-  #peopleListBody {
+  #spaceMembersBody {
     min-height: ~"calc(100vh - 180px)";
   }
   .noPeopleYetBlock {
@@ -218,11 +218,8 @@
 }
 
 @media (max-width: @maxMobileWidth) {
-  #peopleListApplication {
-    #peopleListToolbar {
-      .addNewPeopleButton {
-        padding: 0 !important;
-      }
+  #spaceMembersApplication {
+    #spaceMembersToolbar {
       .inputPeopleFilter {
         max-width: none;
       }
