@@ -189,7 +189,7 @@
     <application-name>social-portlet</application-name>
     <portlet-name>SpaceSettingPortlet</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/social/portlets/uiSpaceSettingPortlet/Style.css</css-path>
+    <css-path>/skin/css/social/portlets/SpaceSettings/Style.css</css-path>
     <css-priority>1</css-priority>
   </portlet-skin>
 
