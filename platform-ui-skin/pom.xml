@@ -140,6 +140,7 @@
                                 <include>social/portlets/SpacesOverview/Style.less</include>
                                 <include>social/portlets/SpaceHeader/Style.less</include>
                                 <include>social/portlets/SpaceMembers/Style.less</include>
+                                <include>social/portlets/SpaceSettings/Style.less</include>
                                 <include>social/portlets/PeopleList/Style.less</include>                        
                                 <include>social/portlets/PeopleOverview/Style.less</include>
                                 <include>social/portlets/ProfileHeader/Style.less</include>
