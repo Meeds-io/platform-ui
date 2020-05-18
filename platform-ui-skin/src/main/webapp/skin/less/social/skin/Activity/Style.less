@@ -159,55 +159,6 @@
 }
 
 .uiUserActivitiesDisplay {
-	.composerHintCont {
-		background: @infoColorLight;
-	    border: 1px solid @infoColor;
-	    .border-radius(4px);
-	    margin: -20px 0 20px;
-	    padding: 10px 30px 10px 15px;
-	    position: relative;
-	}
-	.composerHintCont .arrowLeft {
-	    border-bottom: 15px solid @infoColor;
-	    border-left: 15px solid transparent;
-	    border-right: 15px solid transparent;
-	    bottom: 100%;
-	    display: block;
-	    position: absolute;
-	    right: 24px;
-	    &:after {
-			border-bottom: 16px solid @infoColorLight;
-			border-left: 16px solid transparent;
-			border-right: 16px solid transparent;
-			content: "";
-			display: block;
-			left: -16px;
-			position: absolute;
-			top: 1px;
-	    }
-	}
-
-	.composerHintCont .iconBorder {
-		background-color: @primaryBackgroundLight;
-	    border: 1px solid @borderColor;
-	    .border-radius(3px);
-	    cursor: pointer;
-	    display: block;
-	    padding: 0px 5px; // padding changed to get the close button to be square
-	    line-height: 20px;
-	    position: absolute;
-	    right: 7px;
-	    top: 9px;
-        .uiIconClose {
-            top: -1px;
-        }
-	}
-
-	.composerHintCont .hint {
-		font-size: 16px;
-		color: @infoText;
-	}
-
 	.description {
 		padding: 30px 16px;
 		display: inline-block;
@@ -2134,9 +2085,6 @@ blockquote:after {
     .uiMyConnections .uiTabNormal .nav-tabs > li > a {
         padding: 10px 15px;
     }
-    .uiUserActivitiesDisplay .composerHintCont .iconBorder .uiIconClose {
-        top: -3px;
-    }
 
 }
 
@@ -2473,12 +2421,6 @@ blockquote:after {
     }
     .exo-mentions .replaceTextArea {
         min-height: 20px;
-    }
-    .uiUserActivitiesDisplay .composerHintCont {
-        margin: 20px 0;
-        .arrowLeft {
-            display: none;
-        }
     }
     .activityStream .introBox .isPreviewable .mediaContent {
         max-width: 30%;
