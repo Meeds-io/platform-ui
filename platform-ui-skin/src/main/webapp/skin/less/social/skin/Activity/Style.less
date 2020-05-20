@@ -1956,7 +1956,7 @@ blockquote:after {
 		flex-direction: column;
 		.imagePreview{
 			width: 100%;
-			height: 250px;
+			height: 350px;
 			border-top-left-radius:0px;
 			border-bottom-left-radius:0px;
 		}
@@ -1974,7 +1974,21 @@ blockquote:after {
 		}
 	}
 }
+@media screen and (max-width: 350px) {
+	.linkPreview {
+		.imagePreview {
+			height: 200px;
+		}
+	}
+}
 
+@media (min-width: 351px) and (max-width: 480px) {
+	.linkPreview {
+		.imagePreview {
+			height: 250px;
+		}
+	}
+}
 @media (max-width: 480px) {
 	.uiComposer .blastContainer {
 		.share-buttons-down {
