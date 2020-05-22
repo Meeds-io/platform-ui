@@ -1920,6 +1920,23 @@ blockquote:after {
     }
   }
 }
+@media (min-width: @minDesktop) {
+  #sociallayout {
+    padding: 0 15%;
+  }
+}
+@media (max-width: @maxDesktop) and (min-width: @minTabletWidth) {
+  #sociallayout {
+    padding: 0 10%;
+  }
+}
+
+@media (max-width: @minTabletWidth) {
+  #sociallayout {
+    padding: 0 5%;
+  }
+}
+
 
 /* Responsive */
 @media (min-width: 651px) and (max-width: 1024px) {
