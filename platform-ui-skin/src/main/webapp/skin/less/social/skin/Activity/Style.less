@@ -332,44 +332,48 @@
   margin-bottom: -5px;
 }
 
-.box {
-  background: #333333;
-  opacity: 90%;
-  margin-top: -5px;
-  display: flex;
+.uiBox.roundedBottom.introBox.linkShare {
+	.box {
+		background: #333333;
+		opacity: 90%;
+		margin-top: -5px;
+		display: flex;
 
-  .boxLink {
-    width: 50%;
-    padding: 7px;
-    margin-left: 8px;
+		.boxLink {
+			width: 50%;
+			padding: 7px;
+			margin-left: 8px;
 
-    .linkVideo {
-      width: 75%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+			.linkVideo {
+				width: 75%;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
 
-      > a {
-        color: white;
-        font-size: 12px;
-      }
-	}
-  }
-
-	.boxSite {
-		width: 50%;
-		color: white;
-		padding: 7px;
-		font-size: 12px;
-		white-space: nowrap;
-		> p {
-			float: right;
-			margin-bottom: 0px;
-			> i {
-				padding: 0px 6px;
+				> a {
+					color: white;
+					font-size: 12px;
+				}
 			}
 		}
 
+		.boxSite {
+			width: 50%;
+			color: white;
+			padding: 7px;
+			font-size: 12px;
+			white-space: nowrap;
+
+			> p {
+				float: right;
+				margin-bottom: 0px;
+
+				> i {
+					padding: 0px 6px;
+				}
+			}
+
+		}
 	}
 }
 
@@ -1691,7 +1695,7 @@ blockquote:after {
      		padding: 5px 10px;
      		margin-bottom: 20px;
      		border-top: 1px solid  @greyColorLighten1Opacity1;
-       		border-bottom: 1px solid  @greyColorLighten1Opacity1;
+     		border-bottom: 1px solid  @greyColorLighten1Opacity1;
 			.listLikedBox {
 				min-width: 70%;
 				flex: 1;
@@ -1727,11 +1731,17 @@ blockquote:after {
 			.commentList {
 				background-color: @baseBackground;
 				.commentItem {
-					display: inline-flex;
+				  display: inline-flex;
+				  max-width: 100%;
+				  width: 100%;
+          .actLink {
+            position: relative;
+            top: 0px;
+          }
 					.commmentLeft {
 						padding-right: 10px;
 						&+ .commentRight{
-							padding-right: 20px;
+							max-width: calc(~"100% - 60px");
 							margin-left: 0;
 						   .authorCommentContainer {
 							 background: @commentBackgroundColor;
@@ -1833,6 +1843,7 @@ blockquote:after {
 
 .uiActivityStreamWrapper.uiForumActivity {
 	.forumActions {
+	  background: @tabNormalLinkHoverBorderBottom;
 		.statusAction {
 			display: inline-flex;
 			width: 100%;
@@ -1903,7 +1914,7 @@ blockquote:after {
 		flex-direction: column;
 		.imagePreview{
 			width: 100%;
-			height: 250px;
+			height: 350px;
 			border-top-left-radius:0px;
 			border-bottom-left-radius:0px;
 		}
@@ -1921,7 +1932,21 @@ blockquote:after {
 		}
 	}
 }
+@media screen and (max-width: 350px) {
+	.linkPreview {
+		.imagePreview {
+			height: 200px;
+		}
+	}
+}
 
+@media (min-width: 351px) and (max-width: 480px) {
+	.linkPreview {
+		.imagePreview {
+			height: 250px;
+		}
+	}
+}
 @media (max-width: 480px) {
 	.uiComposer .blastContainer {
 		.share-buttons-down {
