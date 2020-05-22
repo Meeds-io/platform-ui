@@ -9,15 +9,18 @@
         display: flex;
 
         .StreamMainContainer {
-          flex-grow: 0;
-          flex-shrink: 0;
-          flex-basis: ~"calc(100% - 320px)";
-          max-width: ~"calc(100% - 320px)";
-          padding-right: 10px;
-          box-sizing: border-box;
+          flex-direction: row;
+          display: flex;
+          overflow: hidden;
+
           .uiSocApplication {
             padding-left: 0;
             padding-right: 0;
+          }
+
+          > div:first-child {
+            flex: 1 1 auto;
+            max-width: ~"calc(100% - 320px)";
           }
         }
         .StreamRightContainer {
