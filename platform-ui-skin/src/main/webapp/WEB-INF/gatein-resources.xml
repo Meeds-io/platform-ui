@@ -555,6 +555,30 @@
     <css-priority>1</css-priority>
   </portlet-skin>
 
+  <portlet-skin>
+    <application-name>social-portlet</application-name>
+    <portlet-name>IDMUsersManagement</portlet-name>
+    <skin-name>${exo.skin.name}</skin-name>
+    <css-path>/skin/css/social/portlets/IDMUsersManagement/Style.css</css-path>
+    <css-priority>1</css-priority>
+  </portlet-skin>
+
+  <portlet-skin>
+    <application-name>social-portlet</application-name>
+    <portlet-name>IDMGroupsManagement</portlet-name>
+    <skin-name>${exo.skin.name}</skin-name>
+    <css-path>/skin/css/social/portlets/IDMGroupsManagement/Style.css</css-path>
+    <css-priority>1</css-priority>
+  </portlet-skin>
+
+  <portlet-skin>
+    <application-name>social-portlet</application-name>
+    <portlet-name>IDMMembershipsManagement</portlet-name>
+    <skin-name>${exo.skin.name}</skin-name>
+    <css-path>/skin/css/social/portlets/IDMMembershipsManagement/Style.css</css-path>
+    <css-priority>1</css-priority>
+  </portlet-skin>
+
   <!--- platform: branding -->
   <portlet-skin>
     <application-name>exoadmin</application-name>

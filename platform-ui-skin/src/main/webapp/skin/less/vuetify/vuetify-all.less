@@ -375,6 +375,16 @@
         background: @skeletonColor;
       }
     }
+
+    .btn-group {
+      > .btn:first-child {
+        border-radius: 4px 0 0 4px;
+      }
+      > .btn:last-child, > .dropdown-toggle {
+        border-radius: 0 4px 4px 0;
+        margin-left: 1px;
+      }
+    }
   }
 }
 
