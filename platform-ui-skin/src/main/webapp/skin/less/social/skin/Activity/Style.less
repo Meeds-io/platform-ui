@@ -306,7 +306,6 @@
 		max-width: none;
 	  }
 	  .ownerName{
-		max-width: 50%;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		overflow: hidden;
@@ -1643,21 +1642,42 @@ blockquote:after {
 			.activityHeader {
 				display: flex;
 				align-items: center;
+				max-width: 100%;
+				min-width: 100%;
+				overflow: visible;
 				.activityAvatar {
 					margin-right: 10px;
+					flex: 0 0 auto;
 				}
 				.activityAuthorAndDate {
+				  flex: 1 1 auto;
+				  display: flex;
+				  flex-direction: column;
+				  overflow: auto;
 					.author {
 						margin-bottom: 0!important;
+						display: flex;
+						flex: 1 1 auto;
+						max-width: none;
+						width: auto;
+						.ownerName {
+						  flex: 0 1 auto;
+						  max-width: none;
+						}
+						.spaceName {
+						  flex: 0 1 auto;
+						}
 					}
 					.dataInfor {
-						margin-top: -10px;
+						flex: 1 1 auto;
 					}
 				}
-			}
-			.actLink {
-				position: relative;
-				right: 0!important;
+				.actLink {
+				  position: relative;
+				  right: 0!important;
+				  flex: 0 0 auto;
+				  margin-top: -20px;
+				}
 			}
 		}
 		.description {
@@ -2532,7 +2552,6 @@ blockquote:after {
 		}
 		.author {
 			.ownerName {
-				max-width: 40%;
 				padding-left: 3px;
 			}
 			.owner {
