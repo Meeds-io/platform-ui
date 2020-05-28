@@ -387,6 +387,41 @@
       text-align: center;
       cursor: pointer;
       border: 1px solid #ccc;
+
+      &.linkExists {
+        &.previewable30 {
+          width: 70%;
+          padding: 0 !important;;
+        }
+        &.previewable20 {
+          width: 63%;
+          padding: 0 !important;;
+        }
+        &.previewable21 {
+          width: calc(37% - 5px);
+        }
+        &.previewable31, &.previewable32 {
+          width: ~"calc(30% - 10px)";
+        }
+      }
+
+      .embedBox {
+        margin: 0 !important;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .EmbedHtml {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          flex: 1 0 auto;
+
+          #player {
+            flex: 1 0 auto;
+          }
+        }
+      }
     }
 
     .MediaName {
