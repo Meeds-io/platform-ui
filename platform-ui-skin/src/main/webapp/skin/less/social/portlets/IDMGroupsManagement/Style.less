@@ -2,5 +2,31 @@
 @import "../../../mixins.less";
 
 #GroupsManagement {
-  
+  .groupActionMenu {
+    left: auto !important;
+    top: 100% !important;
+    right: 0px !important;
+  }
+  .v-data-table td {
+    word-break: break-word;
+  }
+  .v-pagination button {
+    box-shadow: none !important;
+    margin: 0 5px !important;
+    font-size: 14px;
+
+    &.v-pagination__item--active {
+      color: @primaryColor !important;
+      background-color: transparent !important;
+    }
+  }
+  .groupsManagementToolbarFilter {
+    position: relative;
+
+    .groupSearchingProgressBar {
+      position: absolute;
+      width: 100%;
+      bottom: 4px;
+    }
+  }
 }
