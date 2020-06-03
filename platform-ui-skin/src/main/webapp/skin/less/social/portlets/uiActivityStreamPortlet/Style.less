@@ -803,150 +803,177 @@
 }
 
 @media (max-width: 767px) and (max-height: 1024px), (max-width: 1024px) and (max-height: 768px) {
-    .multiFilesActivity .fileShare {
-        display: block;
+  .multiFilesActivity .previews {
+    height: 365px;
+    max-height: 365px;
 
-        .previewable10 > div:first-child , .previewable20 > div:first-child , .previewable21 > div:first-child , .previewable30 > div:first-child {
-            line-height: initial;
+    .fileShare {
+      display: block;
+      height: 365px;
+      max-height: 365px;
+
+      .previewable10 > div:first-child, .previewable20 > div:first-child, .previewable21 > div:first-child, .previewable30 > div:first-child {
+        line-height: initial;
+      }
+
+      .previewable10 {
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+
+      .previewable20 {
+        display: block;
+        width: 100%;
+        height: 50%;
+        margin: 0 0 5px 0;
+        padding: 0;
+      }
+
+      .previewable21 {
+        display: block;
+        width: 100%;
+        height: 50%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .previewable30 {
+        display: block;
+        width: 100%;
+        height: 50%;
+        margin: 0 0 5px 0;
+        padding: 0;
+      }
+
+      .previewable31 {
+        display: inline-block;
+        width: ~"calc(50% - 2px)";
+        height: 50%;
+        margin: 0 2px 0 0;
+        padding: 0;
+        float: left;
+      }
+
+      .previewable32 {
+        display: inline-block;
+        width: ~"calc(50% - 2px)";
+        height: 50%;
+        margin: 0 0 0 2px;
+        float: right;
+        padding: 0;
+      }
+
+      .isPreviewable {
+        > div:first-child {
+          max-height: 100%;
+          line-height: normal;
         }
 
-        .previewable10 {
+        .MediaName {
+          opacity: 1;
+
+          > * {
+            transform: scale(1);
+
+            > * {
+              transform: scale(1);
+            }
+          }
+        }
+
+        .mediaContent + .MediaName {
+          top: auto;
+          bottom: 0;
+          height: 40px;
+
+          .infoFile, .fileBreadCrumbContent, .borderTop {
+            display: none;
+          }
+
+          .infoFile {
+            font-size: 12px;
+          }
+        }
+
+        .NoPreview + .MediaName, .mediaContent + .MediaName.LoadMore {
+          top: 0;
+          bottom: auto;
+          height: 100%;
+
+          .infoFile, .fileBreadCrumbContent, .borderTop {
+            display: flex;
+          }
+        }
+
+        &.linkExists {
+          &.previewable10 {
             display: block;
             width: 100%;
             height: 100%;
             margin: 0;
-        }
+          }
 
-        .previewable20 {
+          &.previewable20 {
             display: block;
             width: 100%;
             height: 50%;
-            margin: 0 0 5px 0;
+            margin: 0 0 5px 0 !important;
             padding: 0;
-        }
+          }
 
-        .previewable21 {
+          &.previewable21 {
             display: block;
             width: 100%;
             height: 50%;
             margin: 0;
             padding: 0;
-        }
+          }
 
-        .previewable30 {
+          &.previewable30 {
             display: block;
             width: 100%;
-            height: 50%;
-            margin: 0 0 5px 0;
+            height: 220px;
+            margin: 0 0 5px 0 !important;
             padding: 0;
-        }
 
-        .previewable31 {
+            .linkPreview {
+              &.defaultPreview {
+                background-image: none !important;
+                flex-direction: column;
+
+                .defaultImage {
+                  background-size: contain;
+                  background-repeat: no-repeat;
+                  background-position: center;
+                  flex: 1 0 auto;
+                }
+              }
+            }
+          }
+
+          &.previewable31 {
             display: inline-block;
             width: ~"calc(50% - 2px)";
             height: 50%;
             margin: 0 2px 0 0;
             padding: 0;
             float: left;
-        }
+          }
 
-        .previewable32 {
+          &.previewable32 {
             display: inline-block;
             width: ~"calc(50% - 2px)";
             height: 50%;
             margin: 0 0 0 2px;
             float: right;
             padding: 0;
-        }
-        .isPreviewable {
-            > div:first-child {
-                max-height: 100%;
-                line-height: normal;
-            }
-
-            .MediaName {
-              opacity: 1;
-
-              > * {
-                transform: scale(1);
-                > * {
-                  transform: scale(1);
-                }
-              }
-            }
-            .mediaContent+.MediaName {
-              top: auto;
-              bottom: 0;
-              height: 40px;
-
-              .infoFile, .fileBreadCrumbContent, .borderTop {
-                display: none;
-              }
-              .infoFile {
-                font-size: 12px;
-              }
-            }
-            .NoPreview +.MediaName, .mediaContent+.MediaName.LoadMore {
-              top: 0;
-              bottom: auto;
-              height: 100%;
-
-              .infoFile, .fileBreadCrumbContent, .borderTop {
-                display: flex;
-              }
-            }
-          &.linkExists {
-            &.previewable10 {
-              display: block;
-              width: 100%;
-              height: 100%;
-              margin: 0;
-            }
-
-            &.previewable20 {
-              display: block;
-              width: 100%;
-              height: 50%;
-              margin: 0 0 5px 0 !important;
-              padding: 0;
-            }
-
-            &.previewable21 {
-              display: block;
-              width: 100%;
-              height: 50%;
-              margin: 0;
-              padding: 0;
-            }
-
-            &.previewable30 {
-              display: block;
-              width: 100%;
-              height: 50%;
-              margin: 0 0 5px 0 !important;
-              padding: 0;
-            }
-
-            &.previewable31 {
-              display: inline-block;
-              width: ~"calc(50% - 2px)";
-              height: 50%;
-              margin: 0 2px 0 0;
-              padding: 0;
-              float: left;
-            }
-
-            &.previewable32 {
-              display: inline-block;
-              width: ~"calc(50% - 2px)";
-              height: 50%;
-              margin: 0 0 0 2px;
-              float: right;
-              padding: 0;
-            }
           }
         }
+      }
     }
+  }
 }
 
 .uiBgd64x64FileDefault {
