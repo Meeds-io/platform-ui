@@ -1676,7 +1676,8 @@ blockquote:after {
 				  position: relative;
 				  right: 0!important;
 				  flex: 0 0 auto;
-				  margin-top: -20px;
+				  margin-bottom: auto;
+				  margin-top: 0px;
 				}
 			}
 		}
@@ -1863,7 +1864,6 @@ blockquote:after {
 
 .uiActivityStreamWrapper.uiForumActivity {
 	.forumActions {
-	  background: @greyColorLighten1Opacity2;
 		.statusAction {
 			display: inline-flex;
 			width: 100%;
@@ -1874,26 +1874,13 @@ blockquote:after {
 	}
 }
 
-.uiActivityStreamWrapper.uiWikiActivity {
-  .wikiViewChanges {
+.uiActivityStreamWrapper {
+  .statusAction {
      background: @greyColorLighten1Opacity2;
      padding: 10px;
   }
 }
 
-.uiActivityStreamWrapper.uiPollActivity {
-  .uiPollVoteAction {
-     background: @greyColorLighten1Opacity2;
-     padding: 10px;
-  }
-}
-
-.uiActivityStreamWrapper.uiLinkActivity {
-  .uiLinkActions {
-     background: @greyColorLighten1Opacity2;
-     padding: 10px;
-  }
-}
 
 #welcomeActivity {
   box-shadow: none!important;
