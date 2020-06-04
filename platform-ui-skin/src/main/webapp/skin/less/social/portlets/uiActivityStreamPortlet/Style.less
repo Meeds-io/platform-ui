@@ -937,20 +937,6 @@
             height: 220px;
             margin: 0 0 5px 0 !important;
             padding: 0;
-
-            .linkPreview {
-              &.defaultPreview {
-                background-image: none !important;
-                flex-direction: column;
-
-                .defaultImage {
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  background-position: center;
-                  flex: 1 0 auto;
-                }
-              }
-            }
           }
 
           &.previewable31 {
@@ -969,6 +955,20 @@
             margin: 0 0 0 2px;
             float: right;
             padding: 0;
+          }
+
+          .linkPreview {
+            &.defaultPreview {
+              background-image: none !important;
+              flex-direction: column;
+
+              .defaultImage {
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                flex: 1 0 auto;
+              }
+            }
           }
         }
       }
