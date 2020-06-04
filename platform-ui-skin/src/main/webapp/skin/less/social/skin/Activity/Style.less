@@ -1676,7 +1676,8 @@ blockquote:after {
 				  position: relative;
 				  right: 0!important;
 				  flex: 0 0 auto;
-				  margin-top: -20px;
+				  margin-bottom: auto;
+				  margin-top: 0px;
 				}
 			}
 		}
@@ -1863,7 +1864,6 @@ blockquote:after {
 
 .uiActivityStreamWrapper.uiForumActivity {
 	.forumActions {
-	  background: @tabNormalLinkHoverBorderBottom;
 		.statusAction {
 			display: inline-flex;
 			width: 100%;
@@ -1873,6 +1873,14 @@ blockquote:after {
 		}
 	}
 }
+
+.uiActivityStreamWrapper {
+  .statusAction {
+     background: @greyColorLighten1Opacity2;
+     padding: 10px;
+  }
+}
+
 
 #welcomeActivity {
   box-shadow: none!important;
