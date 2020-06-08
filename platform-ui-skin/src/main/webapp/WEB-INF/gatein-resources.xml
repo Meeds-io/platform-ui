@@ -410,7 +410,7 @@
   </portlet-skin>
   
   <portlet-skin>
-    <application-name>social-vue-portlet</application-name>
+    <application-name>social-portlet</application-name>
     <portlet-name>SpacesAdministration</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/social/portlets/uiSpacesAdministrationPortlet/Style.css</css-path>
@@ -418,7 +418,7 @@
   </portlet-skin>
 
   <portlet-skin>
-    <application-name>social-vue-portlet</application-name>
+    <application-name>social-portlet</application-name>
     <portlet-name>SpacesList</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/social/portlets/SpacesList/Style.css</css-path>
@@ -434,7 +434,7 @@
   </portlet-skin>
 
   <portlet-skin>
-    <application-name>social-vue-portlet</application-name>
+    <application-name>social-portlet</application-name>
     <portlet-name>ProfileHeader</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/social/portlets/ProfileHeader/Style.css</css-path>
@@ -442,7 +442,7 @@
   </portlet-skin>
 
   <portlet-skin>
-    <application-name>social-vue-portlet</application-name>
+    <application-name>social-portlet</application-name>
     <portlet-name>ProfileAboutMe</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/social/portlets/ProfileAboutMe/Style.css</css-path>
@@ -450,7 +450,7 @@
   </portlet-skin>
 
   <portlet-skin>
-    <application-name>social-vue-portlet</application-name>
+    <application-name>social-portlet</application-name>
     <portlet-name>ProfileContactInformation</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/social/portlets/ProfileContactInformation/Style.css</css-path>
@@ -458,7 +458,7 @@
   </portlet-skin>
 
   <portlet-skin>
-    <application-name>social-vue-portlet</application-name>
+    <application-name>social-portlet</application-name>
     <portlet-name>ProfileWorkExperience</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/social/portlets/ProfileWorkExperience/Style.css</css-path>
@@ -466,7 +466,7 @@
   </portlet-skin>
 
   <portlet-skin>
-    <application-name>social-vue-portlet</application-name>
+    <application-name>social-portlet</application-name>
     <portlet-name>SpaceTemplates</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/social/portlets/uiSpaceTemplatesPortlet/Style.css</css-path>
@@ -525,14 +525,14 @@
     <css-priority>1</css-priority>
   </portlet-skin>
   <portlet-skin>
-    <application-name>social-vue-portlet</application-name>
+    <application-name>social-portlet</application-name>
     <portlet-name>GettingStarted</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/social/portlets/uiGettingStartedPortlet/Style.css</css-path>
     <css-priority>1</css-priority>
   </portlet-skin>
   <portlet-skin>
-    <application-name>social-vue-portlet</application-name>
+    <application-name>social-portlet</application-name>
     <portlet-name>SuggestionsPeopleAndSpace</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/social/portlets/uiSuggestionsPortlet/Style.css</css-path>
@@ -540,7 +540,7 @@
   </portlet-skin>
 
   <portlet-skin>
-    <application-name>social-vue-portlet</application-name>
+    <application-name>social-portlet</application-name>
     <portlet-name>SpacesOverview</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/social/portlets/SpacesOverview/Style.css</css-path>
@@ -548,7 +548,7 @@
   </portlet-skin>
 
   <portlet-skin>
-    <application-name>social-vue-portlet</application-name>
+    <application-name>social-portlet</application-name>
     <portlet-name>PeopleOverview</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/social/portlets/PeopleOverview/Style.css</css-path>
