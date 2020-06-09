@@ -1,0 +1,20 @@
+@import "../../../variables.less"; 
+@import "../../../mixins.less";
+
+@spaceCardParentMargin: 22px;
+@spaceCardMaxHeight: 227px;
+@spaceCardParentMaxHeight: @spaceCardParentMargin + @spaceCardMaxHeight;
+
+.searchCard {
+  @import "../SpaceCard/Style.less";
+
+  .btn {
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: @maxMobileWidth) {
+  .searchCard {
+    @import "../SpaceCard/Style-mobile.less";
+  }
+}

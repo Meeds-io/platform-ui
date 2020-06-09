@@ -201,6 +201,15 @@
     <css-priority>1</css-priority>
   </portlet-skin>
 
+  <!-- Not a portlet but a module -->
+  <portlet-skin>
+    <application-name>social-portlet</application-name>
+    <portlet-name>SpaceSearch</portlet-name>
+    <skin-name>${exo.skin.name}</skin-name>
+    <css-path>/skin/css/social/portlets/SpaceSearch/Style.css</css-path>
+    <css-priority>1</css-priority>
+  </portlet-skin>
+
   <portlet-skin>
     <application-name>social-portlet</application-name>
     <portlet-name>InvitationSpacesPortlet</portlet-name>
@@ -438,6 +447,15 @@
     <portlet-name>ProfileHeader</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/social/portlets/ProfileHeader/Style.css</css-path>
+    <css-priority>1</css-priority>
+  </portlet-skin>
+
+  <!-- Not a portlet but a module -->
+  <portlet-skin>
+    <application-name>social-portlet</application-name>
+    <portlet-name>ProfileSearch</portlet-name>
+    <skin-name>${exo.skin.name}</skin-name>
+    <css-path>/skin/css/social/portlets/ProfileSearch/Style.css</css-path>
     <css-priority>1</css-priority>
   </portlet-skin>
 
