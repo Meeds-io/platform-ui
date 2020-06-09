@@ -1,0 +1,20 @@
+@import "../../../variables.less"; 
+@import "../../../mixins.less";
+
+@peopleCardParentMargin: 22px;
+@peopleCardMaxHeight: 227px;
+@peopleCardParentMaxHeight: @peopleCardParentMargin + @peopleCardMaxHeight;
+
+.searchCard {
+  @import "../ProfileCard/Style.less";
+
+  .btn {
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: @maxMobileWidth) {
+  .searchCard {
+    @import "../ProfileCard/Style-mobile.less";
+  }
+}
