@@ -1648,6 +1648,18 @@ blockquote:after {
 				.activityAvatar {
 					margin-right: 10px;
 					flex: 0 0 auto;
+					border: none!important;
+					padding: 0!important;
+					min-width: 45px;
+					min-height: 45px;
+					.activityHeadingAvatar {
+					    display: block;
+					    height: 100%;
+					    width: 100%;
+					    border-radius: 50%;
+					    background-position: 50%;
+					    background-size: cover;
+					}
 				}
 				.activityAuthorAndDate {
 				  flex: 1 1 auto;
@@ -1761,6 +1773,13 @@ blockquote:after {
           }
 					.commmentLeft {
 						padding-right: 10px;
+						.commenterAvatar {
+						    height: 34px;
+						    width: 34px;
+						    border-radius: 50%;
+						    background-position: 50%;
+						    background-size: cover;
+						}
 						&+ .commentRight{
 							max-width: calc(~"100% - 60px");
 							margin-left: 0;
@@ -1813,7 +1832,20 @@ blockquote:after {
 						}
 					}
 				}
-			}
+      }
+      .inputContainer {
+        .commentItem {
+          .commmentLeft {
+            .commenterAvatar {
+              height: 34px;
+              width: 34px;
+              border-radius: 50%;
+              background-position: 50%;
+              background-size: cover;
+            }
+          }
+        }
+      }
 		}
 		.commentListInfo {
 			a {
@@ -1875,7 +1907,7 @@ blockquote:after {
 }
 
 .uiActivityStreamWrapper {
-  .statusAction {
+  .uiActivityActions {
      background: @greyColorLighten1Opacity2;
      padding: 10px;
   }
