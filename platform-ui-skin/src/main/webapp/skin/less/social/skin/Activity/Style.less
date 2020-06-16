@@ -1635,7 +1635,6 @@ blockquote:after {
 	.contentBox {
 		.heading {
 			color: @textLightColor;
-			border-bottom: 1px solid  @greyColorLighten1Opacity1;
 			display: flex;
 			justify-content: space-between;
 			margin-left: 0!important;
@@ -1729,28 +1728,116 @@ blockquote:after {
      		margin-bottom: 20px;
      		border-top: 1px solid  @greyColorLighten1Opacity1;
      		border-bottom: 1px solid  @greyColorLighten1Opacity1;
-			.listLikedBox {
-				min-width: 70%;
-				flex: 1;
-				border-top: none!important;
-				padding: 0 !important;
-				.listPeopleContent {
-					display: flex;
-					align-items: center;
-					.listLiked {
-						margin-top: 0;
-						a {
-							margin-right: 5px;
-							img {
-								border-radius: 50%;
-							}
-						}
-						.btn {
-							margin-right: 8px;
-						}
+        .likersAndKudosContainer {
+					min-width: 70%;
+					.reactionsNumber {
+						color: @baseColorLight;
 					}
+					.likersList {
+				    border-bottom: 1px solid @greyColorLighten1Opacity1;
+				    &:after {
+				      content: "\e77e";
+				      font-family: "PLF-FONT-ICONS";
+				      color: @primaryColor;
+				      font-size: 18px;
+				      position: absolute;
+				      left: 30px;
+				      top: 30px;
+				    }
+				  }
+					.kudosList {
+						border-bottom: 1px solid @greyColorLighten1Opacity1;
+						&:after {
+							content: "\eb6d";
+							font-family: "PLF-FONT-ICONS";
+							color: @secondaryColor;
+							font-size: 18px;
+							position: absolute;
+							left: 30px;
+							top: 30px;
 				}
 			}
+				  .activityLikersDrawerTitle {
+						.v-tabs-slider-wrapper {
+							display: none;
+						}
+						.v-tab {
+							width: auto;
+							min-width: inherit;
+							font-weight: bold;
+							font-size: 16px;
+							text-transform: capitalize;
+							&:hover {
+								&:before {
+									display: none;
+								}
+							}
+						}
+						.text-color.v-tab {
+							color: @textColor !important;
+						}
+						.kudosNumberLabel {
+							color: @secondaryColor;
+						}
+				    .allLikers {
+				      padding: 0 12px;
+				      color: @primaryColor;
+				      .uiIconThumbUp {
+				        font-size: 24px;
+								padding-right: 5px;
+								margin-top: -5px;
+				        &:before {
+				          color: @primaryColor;
+				        }
+				      }
+				    }
+				    .allKudos {
+				      color: @secondaryColor;
+				      .uiIconAward {
+				        font-size: 24px;
+								margin-top: -2px;
+				          &:before {
+				            color: @secondaryColor;
+				          }
+				        }
+				      }
+				    }
+				    .activityLikersAndKudosDrawer {
+				      .seeMoreLikers {
+				        width: 30px;
+				        position: relative;
+				        height: 30px;
+				        &:before {
+				          content: "";
+				          width: 100%;
+				          height: 100%;
+				          position: absolute;
+				          background: @baseColorMedium;
+				          border-radius: 50%;
+				          opacity: .5;
+				          z-index: 1;
+				        }
+				        .seeMoreLikersDetails {
+				          position: absolute;
+				          top: 0;
+				          left: 0;
+				          right: 0;
+				          text-align: center;
+				          width: 30px;
+				          height: 30px;
+				          color: white;
+				          display: flex;
+				          align-items: center;
+				          justify-content: center;
+				          cursor: pointer;
+				          font-size: 15px;
+				          font-weight: bold;
+				          z-index: 1;
+				          }
+				        }
+				      }
+				}
+		
 			.actionBar {
 				flex:1;
 				background:  @lightWhite!important;
