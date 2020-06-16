@@ -10,6 +10,23 @@
   overflow-y: auto;
   overflow-x: hidden;
 
+  #searchInput {
+    font-size: 30px;
+  }
+
+  .searchInputParent {
+    .v-input__slot {
+      margin: 0;
+
+      &:after {
+        content: none;
+      }
+      &:before {
+        content: none;
+      }
+    }
+  }
+
   .searchResultsParent {
     .searchCard {
       max-width: 224px !important;
