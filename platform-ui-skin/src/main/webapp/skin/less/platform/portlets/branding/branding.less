@@ -2,11 +2,20 @@
 @import "../../../mixins.less";
 
 .uiBrandingPortlet {
-	padding: 10px 10px;
+  margin-left: 13%;
+  margin-right: 10%;
+  margin-top: 18px;
+  border-radius: 66px;
+  padding: 10px 10px;
 
-	> .boxContent {
-		padding: 10px 0;
-	}
+  > .boxContent {
+    padding: 10px 0;
+
+    > h4 {
+      font-weight: bold;
+    }
+
+  }
 
   h4 {
     margin-top: 20px;
@@ -23,48 +32,122 @@
 	#companyNameInput {
     margin-bottom: 0px;
   }
+  .inputCompany{
+    margin-top: 4px;
+    margin-left: -9px;
+    width: 32%;
+    border: 0px;
+  }
+  .button_back{
+    width: 42%;
+    .linkBack {
+      float: right;
+      color: #bc4343;
+      text-decoration: underline;
+      text-transform: uppercase;
+      > i {
+        padding: 2px;
+        margin-top: 4px;
+      }
+    }
+  }
 
-	.logoForm {
-	  background-color: #FFFFFF;
-    padding: 1px 10px 0px 10px;
+  .lastSeparation {
+    .labelTheme{
+      >h4{
+        font-weight: bold;
+      }
+    }
+    margin-left: -8px;
+    margin-top: 40px;
+  }
 
+  .colorsBlock {
+    margin-left: 5%;
+  }
+
+  #companyNameInput:focus {
+    border: Solid 1px var(--allPagesGreyColor, @greyColorDefault);
+  }
+
+  .labelStyle {
+    margin-bottom: 3px;
+    font-weight: bold;
+  }
+
+  .logoForm {
+    border-radius: 7px;
+    background-color: @lightWhite;
+    padding: 1px 10px 0px 21px;
+
+    .separation {
+      argin-left: -10px;
+    }
+
+    .styleSelectLogo {
+      margin-top: -8px;
+      font-weight: bold;
+    }
+
+    .labelLocation {
+      margin-top: -6px;
+      margin-bottom: 26px;
+    }
     .info {
       color: @baseColorLight;
       background-color: transparent !important;
       padding-left: 2px;
       font-size: 12px;
       font-style: italic;
+
+      > p {
+        margin-bottom: 0px;
+        color: @textLightColor;
+        font-size: 12px;
+      }
     }
 
-		.previewLogo {
-		  position: relative;
-		  display: flex;
-      justify-content: center;
-      align-items: center;
-			.box-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-			border: 1px solid @borderColor;
-			padding: 15px;
-			margin: 5px 60px 10px;
-	    .size(50px, 250px);
+    .btnAction {
+      display: none;
+    }
 
-      img {
-        max-width: 300px;
-        max-height: 70px;
+    .previewLogo {
+      display: flex;
+      flex-direction: row-reverse;
+      border: 1px solid white;
+      border-radius: 8px;
+      width: 395px;
+      .previewImg {
+        padding: 52px;
+        height: 121px;
+      }
       }
 
-	    &.hover {
-        width: 180px;
-        height: 45px;
-      	border: 1px solid @errorColor;
-      }
+    .previewLogo:hover {
+      border: 1px solid darkgrey;
 
-      .removeButton {
-        position: absolute;
-        top: -5px;
-        right: -5px;
-        cursor: pointer;
+      .btnAction {
+        display: block;
+        float: right;
+        margin-bottom: -12px;
+        z-index: 999;
+
+        .iconDelete {
+          color: @primaryColorDefault;
+          float: right;
+          margin-right: 6px;
+          margin-top: 9px;
+          cursor: pointer;
+        }
+
+        .iconEdit {
+          float: right;
+          margin-right: 6px;
+          margin-top: 5px;
+          cursor: pointer;
+        }
       }
-		}
+    }
 
     .progress {
       width: 250px;
@@ -86,7 +169,7 @@
 
 		.uiAction {
 			padding: 23px 15px;
-			text-align: left;
+			text-align: right;
 		}
 
 		#StylePreview {
@@ -101,14 +184,70 @@
         color: @primaryColor;
       }
       .dropZone {
+        height: 211px;
+        width: 367px;
         border-radius: 5px;
-        border: 1px dashed @primaryColorLighter;
+        border: 3px dashed @skeletonColor;
         font-size: 14px;
-        height: 70px;
         align-items: center;
         justify-content: center;
         display: flex;
         padding: 5px 10px;
+
+        .firstBlockOfDropAttachment {
+          text-align: center;
+
+          > i {
+            color: @textLightColor;
+          }
+
+          > label {
+            margin-top: 10px;
+            font-size: 16px;
+            color: @textLightColor;
+          }
+        }
+
+        .blockOr {
+          display: flex;
+          flex-direction: row;
+          text-align: center;
+          margin-top: 10px;
+          margin-bottom: 10px;
+
+          .lastSeparationBlockOR {
+            width: 15%;
+          }
+
+          .firstSeparation {
+            width: 15%;
+            margin-left: 15%;
+          }
+
+          .labelValue {
+            padding: 9px;
+            text-transform: uppercase;
+            color: @skeletonColor;
+          }
+        }
+
+        .lastBlock {
+          text-align: center;
+          .iconUpload{
+            > i {
+               color: @primaryColorDefault;
+            }
+          }
+          > i {
+            color: @textLightColor;
+          }
+
+          > label {
+            margin-top: 10px;
+            font-size: 16px;
+            color: @textLightColor;
+          }
+        }
       }
       .attachFileIcon:before {
         content: "\e780";
@@ -122,5 +261,34 @@
       color: @primaryColor;
     }
 	}
+
+}
+
+.themeColor {
+  display: flex;
+  flex-direction: row;
+
+  .colorSelected {
+    width: 47px;
+    height: 47px;
+    margin-top: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    border: 1px solid @greyColor;
+  }
+
+  .infoOfTheme {
+    .labelColor {
+      font-style: oblique;
+      font-size: 16px;
+      color: @textLightColor;
+      margin-bottom: 7px;
+      margin-top: 3px;
+    }
+
+    .colorCode {
+      cursor: pointer;
+    }
+  }
 
 }
