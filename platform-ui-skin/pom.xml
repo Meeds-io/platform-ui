@@ -141,12 +141,15 @@
                                 <include>social/portlets/SpaceHeader/Style.less</include>
                                 <include>social/portlets/SpaceMembers/Style.less</include>
                                 <include>social/portlets/SpaceSettings/Style.less</include>
+                                <include>social/portlets/SpaceSearch/Style.less</include>
+                                <include>social/portlets/ActivitySearch/Style.less</include>
                                 <include>social/portlets/PeopleList/Style.less</include>                        
                                 <include>social/portlets/PeopleOverview/Style.less</include>
                                 <include>social/portlets/ProfileHeader/Style.less</include>
                                 <include>social/portlets/ProfileAboutMe/Style.less</include>
                                 <include>social/portlets/ProfileContactInformation/Style.less</include>
                                 <include>social/portlets/ProfileWorkExperience/Style.less</include>
+                                <include>social/portlets/ProfileSearch/Style.less</include>
                                 <include>social/portlets/IDMUsersManagement/Style.less</include>
                                 <include>social/portlets/IDMGroupsManagement/Style.less</include>
                                 <include>social/portlets/IDMMembershipsManagement/Style.less</include>

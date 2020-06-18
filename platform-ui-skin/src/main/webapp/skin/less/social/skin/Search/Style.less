@@ -1,0 +1,51 @@
+#searchDialog {
+  border-top: 1px solid @greyColorLighten1Opacity1;
+  position: fixed;
+  z-index: @zindexInnerModal;
+  top: 57px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  #searchInput {
+    font-size: 30px;
+  }
+
+  .searchInputParent {
+    .v-input__slot {
+      margin: 0;
+
+      &:after {
+        content: none;
+      }
+      &:before {
+        content: none;
+      }
+    }
+  }
+
+  .searchResultsParent {
+    .searchCard {
+      max-width: 224px !important;
+      width: 224px !important;
+      min-width: 224px !important;
+    }
+  }
+
+  .searchNoResultsParent {
+    .uiIconSearchLight {
+      font-size: 160px;
+
+      .uiIconCloseLight {
+        font-size:60px;
+        position: absolute;
+        left: 36px;
+        top: 38px;
+        font-weight: bold;
+      }
+    }
+  }
+}
