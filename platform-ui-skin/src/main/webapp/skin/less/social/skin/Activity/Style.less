@@ -1732,6 +1732,8 @@ blockquote:after {
 					min-width: 70%;
 					.reactionsNumber {
 						color: @baseColorLight;
+						margin-top: -20px;
+						padding-left: 35px!important;
 					}
 					.likersList {
 				    border-bottom: 1px solid @greyColorLighten1Opacity1;
@@ -2270,7 +2272,11 @@ blockquote:after {
             width: 100% !important;
         }
     }
-
+	.actionsDetailsWrapper {
+		.likersAndKudosContainer {
+			display: none;
+		}
+	}
 }
 @media (min-width: 481px ) and (max-width: @maxLargeTabletWidth) {
     .activityStream .heading .actLink .uiIconTrash:before {
@@ -2767,19 +2773,6 @@ blockquote:after {
 	.uiActivityStreamWrapper {
 		.actionBarMobile {
 			display: none;
-		}
-		.actionBar {
-			.statusAction {
-				.kudosLabelMobile {
-					display: none;
-				}
-				.LikeLabel {
-					display: none;
-				}
-				.CommentLabel {
-					display: none;
-				}
-			}
 		}
 	}
 }
