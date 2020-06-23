@@ -1,4 +1,4 @@
-@import "../../../variables.less"; 
+@import "../../../variables.less";
 @import "../../../mixins.less";
 
 .uiBrandingPortlet {
@@ -28,23 +28,27 @@
     transform: translate(-50%);
     margin-top: 0;
   }
-	
-	#companyNameInput {
+
+  #companyNameInput {
     margin-bottom: 0px;
   }
-  .inputCompany{
+
+  .inputCompany {
     margin-top: 4px;
     margin-left: -9px;
     width: 32%;
     border: 0px;
   }
-  .button_back{
+
+  .button_back {
     width: 42%;
+
     .linkBack {
       float: right;
-      color: #bc4343;
+      color: @errorColor;
       text-decoration: underline;
       text-transform: uppercase;
+
       > i {
         padding: 2px;
         margin-top: 4px;
@@ -94,6 +98,7 @@
       margin-top: -6px;
       margin-bottom: 26px;
     }
+
     .info {
       color: @baseColorLight;
       background-color: transparent !important;
@@ -118,11 +123,12 @@
       border: 1px solid white;
       border-radius: 8px;
       width: 395px;
+
       .previewImg {
         padding: 52px;
         height: 121px;
       }
-      }
+    }
 
     .previewLogo:hover {
       border: 1px solid darkgrey;
@@ -168,12 +174,12 @@
       padding-right: 20px;
     }
 
-		.uiAction {
-			padding: 23px 15px;
-			text-align: right;
-		}
+    .uiAction {
+      padding: 23px 15px;
+      text-align: right;
+    }
 
-		#StylePreview {
+    #StylePreview {
       width: 90%;
       padding: 30px 0px 30px;
       margin: auto;
@@ -181,9 +187,11 @@
 
     .fileDrop {
       padding-top: 6px;
+
       &, [class^="uiIcon"] {
         color: @primaryColor;
       }
+
       .dropZone {
         height: 211px;
         width: 367px;
@@ -234,11 +242,13 @@
 
         .lastBlock {
           text-align: center;
-          .iconUpload{
+
+          .iconUpload {
             > i {
-               color: @primaryColorDefault;
+              color: @primaryColorDefault;
             }
           }
+
           > i {
             color: @textLightColor;
           }
@@ -250,18 +260,21 @@
           }
         }
       }
+
       .attachFileIcon:before {
         content: "\e780";
         font-weight: bold;
       }
+
       .attachFile {
         display: none;
       }
     }
+
     .dropMsg [class^="uiIcon"] {
       color: @primaryColor;
     }
-	}
+  }
 
 }
 
