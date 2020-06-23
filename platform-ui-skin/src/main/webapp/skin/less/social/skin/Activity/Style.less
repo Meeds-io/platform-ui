@@ -1728,12 +1728,14 @@ blockquote:after {
      		margin-bottom: 20px;
      		border-top: 1px solid  @greyColorLighten1Opacity1;
      		border-bottom: 1px solid  @greyColorLighten1Opacity1;
-        .likersAndKudosContainer {
-					min-width: 70%;
+        .activityReactionsContainer {
 					.reactionsNumber {
 						color: @baseColorLight;
 						margin-top: -20px;
 						padding-left: 35px!important;
+					}
+					.likersNumber {
+						color: @baseColorLight;
 					}
 					.likersList {
 				    border-bottom: 1px solid @greyColorLighten1Opacity1;
@@ -1747,7 +1749,7 @@ blockquote:after {
 				      top: 30px;
 				    }
 				  }
-					.kudosList {
+					.KudosList {
 						border-bottom: 1px solid @greyColorLighten1Opacity1;
 						&:after {
 							content: "\eb6d";
@@ -1778,14 +1780,14 @@ blockquote:after {
 						.text-color.v-tab {
 							color: @textColor !important;
 						}
-						.kudosNumberLabel {
+						.KudosNumberLabel {
 							color: @secondaryColor;
 						}
 				    .allLikers {
 				      padding: 0 12px;
 				      color: @primaryColor;
 				      .uiIconThumbUp {
-				        font-size: 24px;
+				        font-size: 22px;
 								padding-right: 5px;
 								margin-top: -5px;
 				        &:before {
@@ -1795,11 +1797,12 @@ blockquote:after {
 				    }
 				    .allKudos {
 				      color: @secondaryColor;
-				      .uiIconAward {
-				        font-size: 24px;
+				      .uiIconKudos {
+				        font-size: 18px;
 								margin-top: -2px;
+								padding-right: 4px;
 				          &:before {
-				            color: @secondaryColor;
+				            color: @secondaryColor!important;
 				          }
 				        }
 				      }
@@ -1846,6 +1849,13 @@ blockquote:after {
 				border-bottom: none!important;
 				border-top: none!important;
 				padding: 8px 0;
+				.uiIconComment, .uiIconThumbUp, .uiKudosAction {
+					font-size: 15px!important;
+
+				}
+				.reactionLabel {
+					font-size: 13px;
+				}
 			}
 		}
 		.commentBox {
@@ -2273,7 +2283,7 @@ blockquote:after {
         }
     }
 	.actionsDetailsWrapper {
-		.likersAndKudosContainer {
+		.activityReactionsContainer {
 			display: none;
 		}
 	}
