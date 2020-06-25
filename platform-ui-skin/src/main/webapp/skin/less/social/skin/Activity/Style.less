@@ -926,7 +926,7 @@
 						color: @linkColorHover;
 					}
 					&.separator {
-						padding:0 10px;
+						padding:0 2px;
 					}
 				}
 
@@ -1733,6 +1733,7 @@ blockquote:after {
 						color: @baseColorLight;
 						margin-top: -20px;
 						padding-left: 35px!important;
+						cursor: pointer;
 					}
 					.likersNumber {
 						color: @baseColorLight;
@@ -1761,9 +1762,12 @@ blockquote:after {
 							top: 30px;
 				}
 			}
-				  .activityLikersDrawerTitle {
-						.v-tabs-slider-wrapper {
-							display: none;
+				  .activityReactionsTitle {
+						.v-tabs-bar {
+							height: auto;
+							.v-tabs-slider-wrapper {
+								display: none;
+							}
 						}
 						.v-tab {
 							width: auto;
@@ -1799,7 +1803,6 @@ blockquote:after {
 				      color: @secondaryColor;
 				      .uiIconKudos {
 				        font-size: 18px;
-								margin-top: -2px;
 								padding-right: 4px;
 				          &:before {
 				            color: @secondaryColor!important;
@@ -1847,7 +1850,7 @@ blockquote:after {
 				flex:1;
 				background:  @lightWhite!important;
 				border-bottom: none!important;
-				border-top: none!important;
+				border-top: none;
 				padding: 8px 0;
 				.uiIconComment, .uiIconThumbUp, .uiKudosAction {
 					font-size: 15px!important;
@@ -2283,8 +2286,22 @@ blockquote:after {
         }
     }
 	.actionsDetailsWrapper {
+		display: block!important;
+		border-top: none!important;
+		padding: 5px 0!important;
+		.actionBar {
+			border-top: 1px solid  @greyColorLighten1Opacity1!important;
+		}
 		.activityReactionsContainer {
-			display: none;
+			.reactionsUsersAvatar {
+				display: none;
+			}
+			.seeMoreLikers {
+				display: none;
+			}
+			.reactionsNumber {
+				display: none;
+			}
 		}
 	}
 }
