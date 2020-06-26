@@ -926,7 +926,7 @@
 						color: @linkColorHover;
 					}
 					&.separator {
-						padding:0 10px;
+						padding:0 2px;
 					}
 				}
 
@@ -1635,7 +1635,6 @@ blockquote:after {
 	.contentBox {
 		.heading {
 			color: @textLightColor;
-			border-bottom: 1px solid  @greyColorLighten1Opacity1;
 			display: flex;
 			justify-content: space-between;
 			margin-left: 0!important;
@@ -1703,20 +1702,20 @@ blockquote:after {
 			a {
 				font-size: 13px;
 			}
-			.likesNumber {
-				&:after {
+			.KudosNumber {
+				&:before {
 					content: '-';
-					padding-left: 10px;
-					padding-right: 6px;
+					padding-left: 4px;
+					padding-right: 4px;
 				}
 			}
 	
 	
 			 .CommentsNumber {
-				&:after {
+				&:before {
 					content: '-';
-					padding-left: 10px;
-					padding-right: 6px;
+					padding-left: 4px;
+					padding-right: 4px;
 				}
 			}
 		}	
@@ -1729,34 +1728,136 @@ blockquote:after {
      		margin-bottom: 20px;
      		border-top: 1px solid  @greyColorLighten1Opacity1;
      		border-bottom: 1px solid  @greyColorLighten1Opacity1;
-			.listLikedBox {
-				min-width: 70%;
-				flex: 1;
-				border-top: none!important;
-				padding: 0 !important;
-				.listPeopleContent {
-					display: flex;
-					align-items: center;
-					.listLiked {
-						margin-top: 0;
-						a {
-							margin-right: 5px;
-							img {
-								border-radius: 50%;
+        .activityReactionsContainer {
+					.likersNumber {
+						color: @baseColorLight;
+						cursor: pointer;
+					}
+					.likersList {
+				    border-bottom: 1px solid @greyColorLighten1Opacity1;
+				    &:after {
+				      content: "\e77e";
+				      font-family: "PLF-FONT-ICONS";
+				      color: @primaryColor;
+				      font-size: 18px;
+				      position: absolute;
+				      left: 30px;
+				      top: 30px;
+				    }
+				  }
+					.KudosList {
+						border-bottom: 1px solid @greyColorLighten1Opacity1;
+						&:after {
+							content: "\eb6d";
+							font-family: "PLF-FONT-ICONS";
+							color: @secondaryColor;
+							font-size: 18px;
+							position: absolute;
+							left: 30px;
+							top: 30px;
+						}
+					}
+					.activityReactionsTitle {
+						.v-tabs-bar {
+							height: auto;
+							.v-tabs-slider-wrapper {
+								display: none;
 							}
 						}
-						.btn {
-							margin-right: 8px;
+						.v-tab {
+							width: auto;
+							min-width: inherit;
+							font-weight: bold;
+							font-size: 16px;
+							text-transform: capitalize;
+							&:hover {
+								&:before {
+									display: none;
+								}
+							}
+						}
+						.text-color.v-tab {
+							color: @textColor !important;
+						}
+						.KudosNumberLabel {
+							color: @secondaryColor;
+						}
+				    .allLikers {
+				      padding: 0 12px;
+				      color: @primaryColor;
+				      .uiIconThumbUp {
+				        font-size: 22px;
+								padding-right: 5px;
+								margin-top: -5px;
+				        &:before {
+				          color: @primaryColor;
+				        }
+				      }
+				    }
+				    .allKudos {
+				      color: @secondaryColor;
+				      .uiIconKudos {
+				        font-size: 18px;
+								padding-right: 4px;
+				          &:before {
+				            color: @secondaryColor!important;
+				          }
+				        }
+				      }
+				    }
+					.activityLikersAndKudosDrawer {
+						.seeMoreReactionsContainer {
+							display: flex;
+							min-height: 30px;
+							.seeMoreLikers {
+								width: 30px;
+								position: relative;
+								height: 30px;
+								&:before {
+									content: "";
+									width: 100%;
+									height: 100%;
+									position: absolute;
+									background: @baseColorMedium;
+									border-radius: 50%;
+									opacity: .5;
+									z-index: 1;
+								}
+								.seeMoreLikersDetails {
+									position: absolute;
+									top: 0;
+									left: 0;
+									right: 0;
+									text-align: center;
+									width: 30px;
+									height: 30px;
+									color: white;
+									display: flex;
+									align-items: center;
+									justify-content: center;
+									cursor: pointer;
+									font-size: 15px;
+									font-weight: bold;
+									z-index: 1;
+								}
+							} 
 						}
 					}
 				}
-			}
+		
 			.actionBar {
 				flex:1;
 				background:  @lightWhite!important;
 				border-bottom: none!important;
-				border-top: none!important;
+				border-top: none;
 				padding: 8px 0;
+				.uiIconComment, .uiIconThumbUp, .uiKudosAction {
+					font-size: 15px!important;
+
+				}
+				.reactionLabel {
+					font-size: 13px;
+				}
 			}
 		}
 		.commentBox {
@@ -1783,19 +1884,19 @@ blockquote:after {
 						&+ .commentRight{
 							max-width: calc(~"100% - 60px");
 							margin-left: 0;
-						   .authorCommentContainer {
-							 background: @commentBackgroundColor;
-							 padding: 10px;
-							 border-radius: 10px;
-							 .author {
-							   display: inline;
-							   padding-right: 10px;
-							 }
-							 .contentComment {
-							   display: inline;
-							 }
-						   }
-						   .actionCommentBar {
+							.authorCommentContainer {
+								background: @commentBackgroundColor;
+								padding: 10px;
+								border-radius: 10px;
+								.author {
+									display: inline;
+									padding-right: 10px;
+								} 
+								.contentComment {
+									display: inline;
+								}
+							}
+							.actionCommentBar {
 								.statusAction {
 									.dateTime {
 										padding-left: 15px;
@@ -1814,7 +1915,7 @@ blockquote:after {
 										}
 									}
 								}
-						   }
+							}
 						}
 						.avatarXSmall {
 							img {
@@ -2183,7 +2284,19 @@ blockquote:after {
             width: 100% !important;
         }
     }
-
+	.actionsDetailsWrapper {
+		display: block!important;
+		border-top: none!important;
+		padding: 5px 0!important;
+		.actionBar {
+			border-top: 1px solid  @greyColorLighten1Opacity1!important;
+		}
+		.activityReactionsContainer {
+			.reactionsUsersAvatar, .seeMoreLikers, .seeMoreReactionsContainer, .likersNumber {
+				display: none!important;
+			}
+		}
+	}
 }
 @media (min-width: 481px ) and (max-width: @maxLargeTabletWidth) {
     .activityStream .heading .actLink .uiIconTrash:before {
@@ -2680,19 +2793,6 @@ blockquote:after {
 	.uiActivityStreamWrapper {
 		.actionBarMobile {
 			display: none;
-		}
-		.actionBar {
-			.statusAction {
-				.kudosLabelMobile {
-					display: none;
-				}
-				.LikeLabel {
-					display: none;
-				}
-				.CommentLabel {
-					display: none;
-				}
-			}
 		}
 	}
 }
