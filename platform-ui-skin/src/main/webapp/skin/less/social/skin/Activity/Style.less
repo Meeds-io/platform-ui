@@ -1729,14 +1729,9 @@ blockquote:after {
      		border-top: 1px solid  @greyColorLighten1Opacity1;
      		border-bottom: 1px solid  @greyColorLighten1Opacity1;
         .activityReactionsContainer {
-					.reactionsNumber {
-						color: @baseColorLight;
-						margin-top: -20px;
-						padding-left: 35px!important;
-						cursor: pointer;
-					}
 					.likersNumber {
 						color: @baseColorLight;
+						cursor: pointer;
 					}
 					.likersList {
 				    border-bottom: 1px solid @greyColorLighten1Opacity1;
@@ -1760,9 +1755,9 @@ blockquote:after {
 							position: absolute;
 							left: 30px;
 							top: 30px;
-				}
-			}
-				  .activityReactionsTitle {
+						}
+					}
+					.activityReactionsTitle {
 						.v-tabs-bar {
 							height: auto;
 							.v-tabs-slider-wrapper {
@@ -1810,40 +1805,44 @@ blockquote:after {
 				        }
 				      }
 				    }
-				    .activityLikersAndKudosDrawer {
-				      .seeMoreLikers {
-				        width: 30px;
-				        position: relative;
-				        height: 30px;
-				        &:before {
-				          content: "";
-				          width: 100%;
-				          height: 100%;
-				          position: absolute;
-				          background: @baseColorMedium;
-				          border-radius: 50%;
-				          opacity: .5;
-				          z-index: 1;
-				        }
-				        .seeMoreLikersDetails {
-				          position: absolute;
-				          top: 0;
-				          left: 0;
-				          right: 0;
-				          text-align: center;
-				          width: 30px;
-				          height: 30px;
-				          color: white;
-				          display: flex;
-				          align-items: center;
-				          justify-content: center;
-				          cursor: pointer;
-				          font-size: 15px;
-				          font-weight: bold;
-				          z-index: 1;
-				          }
-				        }
-				      }
+					.activityLikersAndKudosDrawer {
+						.seeMoreReactionsContainer {
+							display: flex;
+							min-height: 30px;
+							.seeMoreLikers {
+								width: 30px;
+								position: relative;
+								height: 30px;
+								&:before {
+									content: "";
+									width: 100%;
+									height: 100%;
+									position: absolute;
+									background: @baseColorMedium;
+									border-radius: 50%;
+									opacity: .5;
+									z-index: 1;
+								}
+								.seeMoreLikersDetails {
+									position: absolute;
+									top: 0;
+									left: 0;
+									right: 0;
+									text-align: center;
+									width: 30px;
+									height: 30px;
+									color: white;
+									display: flex;
+									align-items: center;
+									justify-content: center;
+									cursor: pointer;
+									font-size: 15px;
+									font-weight: bold;
+									z-index: 1;
+								}
+							} 
+						}
+					}
 				}
 		
 			.actionBar {
@@ -1885,19 +1884,19 @@ blockquote:after {
 						&+ .commentRight{
 							max-width: calc(~"100% - 60px");
 							margin-left: 0;
-						   .authorCommentContainer {
-							 background: @commentBackgroundColor;
-							 padding: 10px;
-							 border-radius: 10px;
-							 .author {
-							   display: inline;
-							   padding-right: 10px;
-							 }
-							 .contentComment {
-							   display: inline;
-							 }
-						   }
-						   .actionCommentBar {
+							.authorCommentContainer {
+								background: @commentBackgroundColor;
+								padding: 10px;
+								border-radius: 10px;
+								.author {
+									display: inline;
+									padding-right: 10px;
+								} 
+								.contentComment {
+									display: inline;
+								}
+							}
+							.actionCommentBar {
 								.statusAction {
 									.dateTime {
 										padding-left: 15px;
@@ -1916,7 +1915,7 @@ blockquote:after {
 										}
 									}
 								}
-						   }
+							}
 						}
 						.avatarXSmall {
 							img {
@@ -2297,9 +2296,6 @@ blockquote:after {
 				display: none;
 			}
 			.seeMoreLikers {
-				display: none;
-			}
-			.reactionsNumber {
 				display: none;
 			}
 		}
