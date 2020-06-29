@@ -69,18 +69,18 @@
   }
 }
 
-#SpacePage {
-  margin: auto;
-  max-width: ~"calc(100% - 22px)";
-}
-
-#singlePageApplicationContainer, .singlePageApplication {
+#singlePageApplicationContainer, .singlePageApplication, .SpaceActivityStreamPortlet {
   max-width: 100%;
   width: @maxTabletWidth;
   margin: 22px auto 10px;
 }
 
 @media (max-width: @maxTabletWidth) {
+  #SpacePage {
+    margin: auto;
+    max-width: ~"calc(100% - 22px)";
+  }
+
   .profile-after-about-me-container {
     .UIRowContainer {
       display: block;
