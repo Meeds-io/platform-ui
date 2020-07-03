@@ -58,16 +58,26 @@
 .inputPeopleFilter input{
   padding: 6px 0 0;
 }
-.peopleInfoIcon {
+.peopleInfoIcon, .peopleGroupMemberBindingIcon {
   height: 26px;
   width: 26px;
   margin-top: 6px;
-  
+
   &:not(.skeleton-text) {
     background: #fff;
     border: 1px solid @infoBorder !important;
     color: @infoBorder !important;
   }
+}
+.peopleInfoIcon:not(.skeleton-text) {
+  background: #fff;
+  border: 1px solid @infoBorder !important;
+  color: @infoBorder !important;
+}
+.peopleGroupMemberBindingIcon:not(.skeleton-text) {
+  background: @darkGrey;
+  border: 1px solid #fff !important;
+  color: #fff !important;
 }
 .peopleToolbarIcons {
   display: flex;
