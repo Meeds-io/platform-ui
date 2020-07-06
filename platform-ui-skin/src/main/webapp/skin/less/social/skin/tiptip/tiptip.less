@@ -81,6 +81,8 @@
     font-family: "PLF-FONT-ICONS";
     font-style: normal;
     font-weight: normal;
+    font-size: 20px;
+    color: @primaryColor;
   }
   .uiIconInviteUser {
     &:before {
@@ -95,6 +97,12 @@
       &:before {
         content: '\e6c3';
       }
+    }
+  }
+  i {
+    &:hover {
+      color: @greyColorLighten1;
+      transition: all 0.2s;
     }
   }
 }
