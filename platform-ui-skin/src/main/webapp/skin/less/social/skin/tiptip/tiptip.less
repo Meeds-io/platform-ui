@@ -1,0 +1,190 @@
+
+/* ====================Tiptip style======================*/
+#tipName {
+  table-layout: fixed;
+  .name {
+    font-weight: bold;
+    color: @linkColor;
+  }
+  &+ #connectMessge{
+    margin-top: 30px;
+  }
+  &+ .connectAction {
+    margin-top: 10px;
+  }
+
+  #profileName {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 20px;
+    padding-left: 10px;
+  }
+  #description {
+    max-height: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-width: 95%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  #recentActivity {
+    max-height: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right :15px;
+    max-width: 95%;
+  }
+  img {
+    max-height: 50px;
+    max-width: 50px;
+    border-radius: 50%;
+  }
+}
+
+.connectAction {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  margin:-10px;
+  padding: 10px;
+  .border-radius(0 0 @borderRadiusSmall @borderRadiusSmall);
+  border-top: 1px solid @greyColorLighten1Opacity1;
+  > * {
+    flex: 0 0 auto;
+    margin-left: 5px;
+  }
+  .btn {
+    margin: 0;
+    font-size: 0;
+    height: 30px;
+    width: 35px;
+    min-width: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    > * {
+      position: static;
+    }
+  }
+  .btn-link {
+    text-decoration: underline;
+    cursor: pointer;
+    margin: 0 auto 0 5px;
+    &:only-child {
+      margin: auto;
+    }
+  }
+  .uiIcon {
+    font-family: "PLF-FONT-ICONS";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: @primaryColor;
+  }
+  .uiIconInviteUser {
+    &:before {
+      content: '\e6c9';
+    }
+    .uiIconAcceptUser {
+      &:before {
+        content: '\e6c2';
+      }
+    }
+    .uiIconDisconnectUser {
+      &:before {
+        content: '\e6c3';
+      }
+    }
+  }
+  i {
+    &:hover {
+      color: @greyColorLighten1;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+  }
+}
+/* TipTip CSS - Version 1.2 */
+
+#tiptip_holder {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  width: 240px;
+}
+
+#tiptip_holder.tip_top {
+  padding-bottom: 5px;
+}
+
+#tiptip_holder.tip_bottom {
+  padding-top: 5px;
+}
+
+#tiptip_holder.tip_right {
+  padding-left: 5px;
+}
+
+#tiptip_holder.tip_left {
+  padding-right: 5px;
+}
+
+#tiptip_content {
+  font-size: @baseFontSize - 1;
+  color: @baseColorLight;
+  background: @baseBackground;
+  padding: 10px;
+  border: @tiptipBorder;
+  .border-radius(@borderRadiusSmall);
+  .box-shadow(0 3px 4px rgba(0,0,0,0.15));
+}
+
+// Arrows
+
+#tiptip_arrow, #tiptip_arrow_inner{
+  position: absolute;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+#tiptip_holder  #tiptip_arrow_inner {
+  z-index: -1;
+}
+
+#tiptip_holder{
+  &.tip_left_top  #tiptip_arrow,&.tip_left_bottom  #tiptip_arrow{
+    display: none;
+  }
+  #tiptip_arrow{
+    right: -@popoverArrowWidth + 6;
+    border-width:  (@popoverArrowWidth - 1)  0  (@popoverArrowWidth - 1)  @popoverArrowWidth ;
+    border-left-color: @dropdownBackground;
+    #tiptip_arrow_inner {
+      border-width: @popoverArrowOuterWidth 0 @popoverArrowOuterWidth @popoverArrowOuterWidth;
+      border-left-color: @dropdownBorder;
+      bottom: -@popoverArrowOuterWidth;
+      right: -1px;
+    }
+  }
+}
+
+
+#connectMessge {
+  background: @primaryBackground;
+  margin: -10px;
+  padding: 10px 20px;
+  color: @baseColorLight;
+  font-weight: bold;
+}
+
+
+#tiptip_holder .detail {
+  margin-left: 45px;
+}
