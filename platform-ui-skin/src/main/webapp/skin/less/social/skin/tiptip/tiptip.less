@@ -19,15 +19,35 @@
     text-overflow: ellipsis;
     max-width: 20px;
     padding-left: 10px;
+    .space-members {
+      .space-members-count {
+        font-size: 12px;
+      }
+      .uiIconMembers {
+        font-family: "PLF-FONT-ICONS";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        padding-right: 5px;
+        color: @baseColorLight;
+        &:before {
+          content: '\e6cb';
+        }
+      }
+    }
+    #description {
+      max-height: 100px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      max-width: 95%;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      font-size: 10px;
+      text-overflow: ellipsis;
+    }
   }
-  #description {
-    max-height: 100px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    max-width: 95%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
+
+
   #recentActivity {
     max-height: 100px;
     overflow-y: auto;
@@ -40,15 +60,18 @@
     max-width: 50px;
     border-radius: 50%;
   }
+  .tiptip-space-avatar {
+    .border-radius(@borderRadiusSmall);
+  }
 }
 
 .connectAction {
   display: flex;
   align-items: center;
   text-align: center;
-  justify-content: space-between;
+  justify-content: space-around;
   margin:-10px;
-  padding: 10px;
+  padding: 5px;
   .border-radius(0 0 @borderRadiusSmall @borderRadiusSmall);
   border-top: 1px solid @greyColorLighten1Opacity1;
   > * {
@@ -70,7 +93,7 @@
     }
   }
   .btn-link {
-    text-decoration: underline;
+    text-decoration: none!important;
     cursor: pointer;
     margin: 0 auto 0 5px;
     &:only-child {
@@ -104,6 +127,28 @@
       color: @greyColorLighten1;
       transition: all 0.2s;
       cursor: pointer;
+    }
+  }
+  .join-space {
+    cursor: pointer;
+    &:before {
+      content: '\e74b';
+      font-family: "PLF-FONT-ICONS";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 10px;
+      padding-right: 3px;
+    }
+  }
+  .leave-space {
+    cursor: pointer;
+    &:before {
+      content: '\e9cf';
+      font-family: "PLF-FONT-ICONS";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 10px;
+      padding-right: 3px;
     }
   }
 }
