@@ -1503,7 +1503,36 @@
 				  right: 0!important;
 				  flex: 0 0 auto;
 				  margin-bottom: auto;
-				  margin-top: 0px;
+				  margin-top: 0;
+					.actLink-items {
+						border-width: 0;
+						padding: 0;
+						.actLink-item {
+							a {
+								border-radius: 0;
+								padding: 7px 14px 7px 14px;
+								.actLink-icon {
+									margin-right: 5px;
+									font-size: 15px;
+								}
+								.uiIconTrashActivity {
+									&:before {
+										font-family: "PLF-FONT-ICONS";
+										content: '\e799';
+									}
+								}
+								.uiIconOpenActivity {
+									&:before {
+										font-family: "PLF-FONT-ICONS";
+										content: '\e966';
+									}
+								}
+								.actLink-label {
+									font-size: 14px;
+								}
+							}
+						}
+					}
 				}
 			}
 		}
