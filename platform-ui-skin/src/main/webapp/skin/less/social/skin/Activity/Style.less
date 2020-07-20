@@ -262,7 +262,13 @@
 	.statusAction.pull-right a{
 		color: @baseColorDark;
 	}
-	.contentForum span ,.dataInfor .dateTime a,.dataInfor .dateTime span,.statusAction.pull-left a,.commentItem .viewComment
+	.statusAction.pull-left a{
+		color: @tertiaryColor;
+	}
+	.editCommentTimeComment {
+		color: @greyColorLighten1 !important;
+	}
+	.contentForum span ,.dataInfor .dateTime a,.dataInfor .dateTime span,.commentItem .viewComment
 	,.author span,.introBox .text .infoFile :not(.versionFile),.linkSources span,.listLikedBox  p,.theContent a,.theContent span {
 		color: @baseColorLight;font-size: 12px;
 	}
@@ -1718,12 +1724,9 @@
 									}
 									.SendKudosButtonTemplate {
 										.kudosLabel {
-											color: @baseColorLight;
+											color: @tertiaryColor;
 											font-size: 12px;
 											letter-spacing: 0!important;
-										}
-										.lightGrey {
-											color: @baseColorLight;
 										}
 										.hasKudos {
 											color: @primaryColor;
