@@ -141,15 +141,25 @@ body.decrease-z-index-more #UITopBarContainer {
 
 .NotificationTopBarTDContainer {
   #NotificationPopoverPortlet {
+    margin-right: 10px;
     .container.white{
       width: auto!important;
     }
     .v-badge__badge {
-      padding: 0px;
+      position: absolute;
+      left: 21px;
+      top: -9px;
       font-size: 12px;
       min-width: 20px;
       height: 20px;
       line-height: 20px;
+      text-align: center;
+      text-indent: 0;
+      letter-spacing: 0;
+      padding: 0;
+      border-radius: 10px;
+      white-space: nowrap;
+      font-weight: normal;
     }
     .grey-color {
       color: @toolbarLightIconColor;
