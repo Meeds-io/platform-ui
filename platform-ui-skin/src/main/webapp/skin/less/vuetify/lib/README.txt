@@ -14,4 +14,4 @@ Modifications applied on imported libraries:
       @largeTabletWidth: 1024px;
       @desktop: 1280px;
       @largeDesktop: 1700px;
-  
+  - .v-tabs--centered > .v-tabs-bar .v-tabs-slider-wrapper (centered tabs) doesn't use centered tabs because of bad usage of CSS priorities, thus !important is added to effectively center tabs
