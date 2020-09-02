@@ -162,6 +162,9 @@ body.decrease-z-index-more #UITopBarContainer {
       font-weight: normal;
       background-color: @badgePrimaryColor;
     }
+    .grey-color {
+      color: @toolbarLightIconColor;
+    }
     .v-list-item {
       padding: 0px;
     }
@@ -170,11 +173,14 @@ body.decrease-z-index-more #UITopBarContainer {
         position: fixed;
         top: 0;
         left: 0;
-        width: 396px;
+        width: 100%;
         border-bottom: 1px solid rgba(13, 13, 13, 0.05);
         background: white;
         z-index: 9999;
+        max-width: 100%;
+        box-sizing: border-box;
         .notifDrawerTitle {
+          margin-left: 13px;
           font-size: 18px;
           font-weight: bold;
           color: @toolbarLightLinkHoverColor;
@@ -185,7 +191,7 @@ body.decrease-z-index-more #UITopBarContainer {
             cursor: pointer;
           }
           .uiCloseIcon {
-            color: @greyColor;
+            color: @greyColorLighten1;
             font-size: 20px;
             font-style: normal;
             &:before {
@@ -195,7 +201,7 @@ body.decrease-z-index-more #UITopBarContainer {
           }
 
           .uiSettingsIcon {
-            color: @greyColor;
+            color: @greyColorLighten1;
             font-size: 19px;
             font-style: normal;
             &:before {
@@ -393,10 +399,12 @@ body.decrease-z-index-more #UITopBarContainer {
         position: fixed;
         bottom: 0;
         left:0;
-        width: 396px;
+        width: 100%;
         border-top: 1px solid rgba(13, 13, 13, 0.05);
         background: white;
         padding-right: 12px;
+        max-width: 100%;
+        box-sizing: border-box;
         .seeAllNotif {
           border: 1px solid @primaryColor !important;
           margin-top: 13px;
