@@ -1432,6 +1432,7 @@
   }
   .statusAction {
     .SendKudosButtonTemplate {
+      cursor: pointer;
       .kudosLabel {
         color: @baseColorLight;
         font-size: 12px;
@@ -1700,6 +1701,12 @@
         .reactionLabel {
           font-size: 13px;
         }
+        .hasKudos {
+          color: @primaryColor;
+        }
+        .CommentLabel {
+          color: @primaryColor;
+        }
       }
     }
     .commentBox {
@@ -1751,6 +1758,9 @@
                       color: @baseColorLight;
                       font-size: 12px;
                       letter-spacing: 0!important;
+                      &:hover {
+                        color: @primaryColor;
+                      }
                     }
                     .lightGrey {
                       color: @baseColorLight;
