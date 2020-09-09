@@ -407,6 +407,21 @@
     .v-data-table table {
       table-layout: fixed;
     }
+
+    .v-input--switch.reverse {
+      width: fit-content;
+      width: -moz-fit-content;
+      max-width: 100%;
+
+      .v-input__slot {
+        display: flex;
+        flex-direction: row-reverse;
+
+        label {
+          margin-right: 16px;
+        }
+      }
+    }
   }
 }
 
