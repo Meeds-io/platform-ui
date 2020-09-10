@@ -55,7 +55,7 @@
     }
 
     textarea {
-      border: Solid 2px @greyColor !important;
+      border: Solid 1px @greyColor !important;
       max-width: 100%;
       padding: 3px 10px;
     }
@@ -136,13 +136,14 @@
         box-shadow: none;
       }
 
-      input::placeholder, i {
-        color: @greyColorLighten1;
-      }
-
       i {
+        color: @greyColorLighten1;
         font-size: 16px;
       }
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: @greyColorLighten1 !important;
     }
 
     .paragraph {
@@ -405,6 +406,21 @@
 
     .v-data-table table {
       table-layout: fixed;
+    }
+
+    .v-input--switch.reverse {
+      width: fit-content;
+      width: -moz-fit-content;
+      max-width: 100%;
+
+      .v-input__slot {
+        display: flex;
+        flex-direction: row-reverse;
+
+        label {
+          margin-right: 16px;
+        }
+      }
     }
   }
 }
