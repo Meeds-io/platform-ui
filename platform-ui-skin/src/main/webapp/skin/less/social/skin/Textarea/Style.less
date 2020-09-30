@@ -1,0 +1,31 @@
+.extended-textarea {
+  textarea {
+    min-width: 100%;
+    min-height: 230px;
+    resize: none;
+  }
+
+  .v-input__slot {
+    &:after, &:before {
+      content: none;
+    }
+  }
+
+  .v-text-field__details {
+    display: flex !important;
+    .v-counter {
+      &:after {
+        content: "\e769";
+        font-family: "PLF-FONT-ICONS";
+        color: @successColor;
+        padding-left: 5px;
+        top: 1px;
+        position: relative;
+      }
+    }
+  }
+
+  &.error--text .v-counter:after {
+    color: @errorColor;
+  }
+}
