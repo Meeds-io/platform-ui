@@ -470,14 +470,6 @@
 
   <portlet-skin>
     <application-name>social-portlet</application-name>
-    <portlet-name>ProfileAboutMe</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/social/portlets/ProfileAboutMe/Style.css</css-path>
-    <css-priority>1</css-priority>
-  </portlet-skin>
-
-  <portlet-skin>
-    <application-name>social-portlet</application-name>
     <portlet-name>ProfileContactInformation</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/social/portlets/ProfileContactInformation/Style.css</css-path>
