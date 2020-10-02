@@ -408,6 +408,18 @@
       table-layout: fixed;
     }
 
+    .v-autocomplete.v-input--is-focused {
+      .box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6)");
+      box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.11);
+      outline: 0;
+      border: Solid 1px @inputFocusBorder;
+
+      &.required-field.invalid {
+        border-color: #e9322d;
+        box-shadow: 0 0 6px #f8b9b7;
+      }
+    }
+
     .v-input--switch.reverse {
       width: fit-content;
       width: -moz-fit-content;
