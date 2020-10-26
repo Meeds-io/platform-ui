@@ -181,55 +181,20 @@ body.decrease-z-index-more #UITopBarContainer {
     .grey-color {
       color: @toolbarLightIconColor;
     }
-    .v-list-item {
-      padding-left: 0px;
-    }
     .notifDrawer {
-      .notifDrawerHeader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        border-bottom: 1px solid rgba(13, 13, 13, 0.05);
-        background: white;
-        z-index: 9999;
-        max-width: 100%;
-        box-sizing: border-box;
-        .notifDrawerTitle {
-          margin-left: 13px;
-          font-size: 18px;
-          font-weight: bold;
-          color: @toolbarLightLinkHoverColor;
-        }
-        .notifDrawerIcons {
-          flex-direction: row!important;
-          i {
-            cursor: pointer;
-          }
-          .uiCloseIcon {
-            color: @greyColorLighten1;
-            font-size: 20px;
-            font-style: normal;
-            &:before {
-              font-family: 'PLF-FONT-ICONS';
-              content: "\e937" !important;
-            }
-          }
-
-          .uiSettingsIcon {
-            color: @greyColorLighten1;
-            font-size: 19px;
-            font-style: normal;
-            &:before {
-              font-family: 'PLF-FONT-ICONS';
-              content: "\e78b" !important;
-            }
-          }
+      .uiSettingsIcon {
+        color: @greyColorLighten1;
+        font-size: 21px;
+        font-style: normal;
+        &:before {
+          font-family: 'PLF-FONT-ICONS';
+          content: "\e78b" !important;
         }
       }
       .notifDrawerItems {
-        padding-bottom: 70px;
-        padding-top: 55px;
+        .v-list-item {
+          padding-left: 0px;
+        }
         .notifDrawerItem {
             li {
               list-style: none;
