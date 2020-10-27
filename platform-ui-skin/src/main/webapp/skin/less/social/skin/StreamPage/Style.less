@@ -40,8 +40,14 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
           max-width: 320px;
           padding-left: 10px;
           box-sizing: border-box;
+
           .v-application {
-            margin-bottom: 20px;
+            &:not(.hiddenable-widget) {
+              margin-bottom: 20px;
+            }
+            &.hiddenable-widget > .v-application--wrap > div {
+              margin-bottom: 20px;
+            }
           }
 
            /* Added for sticky container */
