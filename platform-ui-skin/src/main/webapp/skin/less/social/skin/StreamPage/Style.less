@@ -2,7 +2,6 @@
 /*================= Stream page =================*/
 
 #StreamPage {
-  padding: 20px 10%;
   > div{
     > div {
       > .UIRowContainer:first-of-type {
@@ -74,7 +73,11 @@
 }
 
 /*media queries*/
-
+@media (min-width: @minLargeDesktop) {
+  #StreamPage {
+    padding: 20px 14%;
+  }
+}
 @media (min-width: @minTabletWidth) {
   #StreamPage {
     .UIRowContainer:first-of-type {
