@@ -19,7 +19,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 @import "forgot-password.less";
 //========================================
 body {
-	background-color: @welcomePagesBackground;
+	background-color: @baseBackgroundDefault;
 	font-family: @baseFontFamily;
 	font-size: @baseFontSize;
 	color: @textColor;
@@ -35,6 +35,50 @@ body {
 	width: 200px;
 	height: 200px;
 }
+.brandingComanyClass{
+    color: @baseBackground;
+    font-size: 24px;
+}
+.uiCheckbox{
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+}
+.rememberContent{
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: @baseBackground;
+    font-weight: 400;
+    font-family: "ubuntu";
+}
+.forgotPasswordClass {
+    text-align: center;
+    padding: 6px;
+}
+.brandingImageContent {
+    img.brandingImage {
+        width: 150px;
+    }
+    bottom:40px;
+    right:40px;
+    position: fixed;
+}
+input[type="checkbox"]{
+    cursor: pointer;
+    top: 3px;
+    display: inline-block;
+    position: relative;
+    width: 17px!important;
+    z-index: 100;
+    height: 17px!important;
+    margin-right: 10px;
+}
+.uiCheckbox > span {
+    display: inline-block;
+    text-indent: 5px;
+    font-size: 14px;
+    font-family: "ubuntumedium";
+}
 .uiLogin {
 	color: @textColor;
 	display: block;
@@ -46,7 +90,7 @@ body {
 	.loginContainer {
 		border-radius: 8px;
 		padding: 0 50px 15px;
-		background-color: @baseBackground;
+		background-color: @primaryColor;
 	}
 	.loginHeader {
 		display: none;
@@ -62,7 +106,7 @@ body {
 		left: -8px;
 	}
 	.loginContent {
-		padding: 45px 0;
+		padding: 10px 0;
 		.iconUser {
 			background: #fff url("@{images-path}/username.png") no-repeat left -3px;
 		}
@@ -145,10 +189,10 @@ body {
 				cursor: pointer;
 				font-family: @sansFontFamily;
 				font-size: 16px;
-				font-weight: normal;
+				font-weight: bold;
 				outline: none;
 				padding: 0;
-				.buttonBackgroundEXO(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder,@btnPrimaryColor);
+				.buttonBackgroundEXO(@secondaryColor, @secondaryColor, @secondaryColor, @baseColorDefault);
 				.box-shadow(~"inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
 
 			}
@@ -191,7 +235,7 @@ body {
 			}
 		}
 		.centerLoginContent a{
-			color: @linkColor;
+			color: @baseBackground;
 			text-decoration: none;
 			display: block;
 			margin: 3px 0;
@@ -369,7 +413,7 @@ input::-ms-clear,input[type=password]::-ms-reveal{
 		}
 		.loginContainer{
 			padding: 0 32px 15px;
-			background-color: @baseBackground;
+			background-color: @primaryColor;
 			.loginContent {
 			    	.iconUser, .iconPswrd {
 			        	top: 7px;
