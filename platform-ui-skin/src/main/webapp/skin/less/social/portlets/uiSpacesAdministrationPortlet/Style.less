@@ -14,7 +14,7 @@ You should have received a copy of the GNU Lesser General Public License
 along with this program; if not, write to the Free Software Foundation,
 Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
-@import "../../../variables.less"; 
+@import "../../../variables.less";
 @import "../../../mixins.less";
 
 .spacesAdministration {
@@ -71,7 +71,12 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         font-style: italic;
       }
     }
-
+    .nameGroupBinding {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      cursor: default;
+    }
     .reportsFilterSearch {
       margin-bottom: 16px!important;
       i {
@@ -230,6 +235,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
             border-radius: 15px;
             margin: 4px 10px 4px 4px;
             font-size: 13px;
+            max-width: -webkit-fill-available;
+            word-wrap: break-word;
 
             a {
               color: #ccddef;
@@ -330,7 +337,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       .modal-content {
         right: 9%;
         bottom: 9% !important;
-        width: auto!important;
 
         .popupHeader {
           margin-bottom: auto;
