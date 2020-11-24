@@ -56,7 +56,9 @@
 
 .spaceInvitationDrawer {
   .externalList {
-    background-color: @tableThBackground!important;
+    .v-list-item {
+      background-color: @tableThBackground!important;
+    }
     .v-badge--bordered .v-badge__badge::after {
       border-width: 1px;
     }
@@ -96,10 +98,18 @@
     }
   }
   .alreadyExistAlert {
-    color: @errorColor!important;
+    color: #7F221D!important;
+    background-color: @errorColorLight!important;
+    border: 2px solid @errorColor!important;
+    position: fixed;
+    z-index: 1;
+    width: 93%;
+    opacity: 0.9;
+    border-radius: 6px;
+    font-size: 0.8rem!important;
   }
   .successfulInvitation {
-    color: @alertSuccessColor;
+    color: @alertSuccessColor!important;
     background-color: @successColor!important;
     border: 2px solid!important;
     font-size: 13.5px;
