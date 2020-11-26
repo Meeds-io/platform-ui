@@ -55,8 +55,67 @@
 }
 
 .spaceInvitationDrawer {
-  .identitySuggester {
-    min-height: 100px;
+  .externalList {
+    padding: 0px !important;
+    position: relative!important;
+    .v-list-item {
+      background-color: @tableThBackground!important;
+    }
+    .v-badge--bordered .v-badge__badge::after {
+      border-width: 1px;
+    }
+
+    .theme--light.v-badge .v-badge__badge::after {
+      border-color: @primaryColor;
+
+    }
+
+    .v-badge__badge {
+      background-color: @white!important;
+      padding-left: 3px;
+      padding-top: 1px;
+      height: 18px;
+      width: 18px;
+      min-width: 18px!important;
+    }
+    .mdi-close-circle {
+      color: @errorColor!important;
+    }
+    .externalUserEmail {
+      color: #333333;
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 1.375rem!important;
+      letter-spacing: 0.0071428571em;
+    }
+    .subEmail {
+      color: @greyColorLighten1!important;
+    }
+    .uiIconSocUserProfile {
+      font-size: 12px;
+    }
+    .helpIcon {
+      margin-left: -10px!important;
+      margin-bottom: 6px!important;
+      font-size: 8px!important;
+    }
+  }
+  .alreadyExistAlert {
+    color: #7F221D!important;
+    background-color: @errorColorLight!important;
+    border: 2px solid @errorColor!important;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    opacity: 0.9;
+    border-radius: 6px;
+    font-size: 0.875rem!important;
+  }
+  .successfulInvitation {
+    color: @alertSuccessColor!important;
+    background-color: @successColor!important;
+    border: 2px solid!important;
+    font-size: 13.5px;
   }
 }
 
