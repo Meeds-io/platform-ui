@@ -61,6 +61,9 @@
     .v-list-item {
       background-color: @tableThBackground!important;
     }
+    .v-list-item__content {
+      cursor: default;
+    }
     .v-badge--bordered .v-badge__badge::after {
       border-width: 1px;
     }
@@ -71,7 +74,6 @@
     }
 
     .v-badge__badge {
-      background-color: @white!important;
       padding-left: 3px;
       padding-top: 1px;
       height: 18px;
@@ -90,6 +92,9 @@
     }
     .subEmail {
       color: @greyColorLighten1!important;
+    }
+    .subExpired {
+      color: @errorColor!important;
     }
     .uiIconSocUserProfile {
       font-size: 12px;
