@@ -24,6 +24,12 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   @import './lib/vuetify.less';
   @import './lib/Chart.min.less';
 
+  .v-card--flat {
+    &, &.v-sheet:not(.v-sheet--outlined) {
+      box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);
+    }
+  }
+
   .v-application {
     background: transparent !important;
 

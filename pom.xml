@@ -21,12 +21,12 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <parent>
     <artifactId>maven-parent-pom</artifactId>
     <groupId>org.exoplatform</groupId>
-    <version>22-M01</version>
+    <version>23-M02</version>
     <relativePath />
   </parent>
   <groupId>org.exoplatform.platform-ui</groupId>
   <artifactId>platform-ui</artifactId>
-  <version>6.1.x-SNAPSHOT</version>
+  <version>6.2.x-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>eXo PLF:: Platform-UI</name>
   <modules>
@@ -52,7 +52,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <!-- **************************************** -->
     <!-- Dependencies versions                    -->
     <!-- **************************************** -->
-    <org.exoplatform.depmgt.version>18.x-SNAPSHOT</org.exoplatform.depmgt.version>
+    <org.exoplatform.depmgt.version>19.x-SNAPSHOT</org.exoplatform.depmgt.version>
   </properties>
   <dependencyManagement>
     <!-- ### NEVER CHANGE THIS ORDER OF DEPMGT ### -->
