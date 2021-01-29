@@ -22,4 +22,25 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     color: @baseColorLight;
     font-weight: normal;
   }
+  .v-chip.v-chip--outlined.v-chip.v-chip {
+    background-color: lighten(@primaryColorDefault, 18.5%)!important;
+    color: @primaryDarkerColorGradientEnd;
+    border-color: @primaryDarkerColorGradientEnd;
+    font-size: 12px;
+    height: 25px;
+    cursor: default;
+  }
+  .inputKeyword {
+    border: 1px solid @greyColorLighten1Default;
+    border-radius: 5px;
+    padding: 8px;
+    width: -webkit-fill-available;
+  }
+  .uiIconEdit {
+    font-size: 20px;
+  }
+  .v-chip .v-chip__close.v-icon {
+    font-size: 14px!important;
+    display: initial;
+  }
 }
