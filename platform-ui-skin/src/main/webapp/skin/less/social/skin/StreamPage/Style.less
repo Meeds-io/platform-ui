@@ -16,7 +16,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
 /*================= Stream page =================*/
-
+@import "../../../variables.less";
 #StreamPage {
   > div{
     > div {
@@ -41,6 +41,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
           padding-left: 10px;
           box-sizing: border-box;
 
+          #tasks{
+            background-color: @streamWidgetsBgColor !important;
+          }
           .v-application {
             &:not(.hiddenable-widget) {
               margin-bottom: 20px;
