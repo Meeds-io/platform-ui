@@ -103,6 +103,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                                 <include>social/portlets/uiGettingStartedPortlet/Style.less</include>
                                 <include>social/portlets/ExternalSpacesListPortlet/Style.less</include>
                                 <include>social/portlets/DlpQuarantinePortlet/Style.less</include>
+                                <include>social/portlets/mfaAccess/Style.less</include>
                                 <include>social/portlets/uiSuggestionsPortlet/Style.less</include>
                                 <include>social/portlets/uiInvitationSpacesPortlet/Style.less</include>
                                 <include>social/portlets/uiInvitationsPortlet/Style.less</include>
