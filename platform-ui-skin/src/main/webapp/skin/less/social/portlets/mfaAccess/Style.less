@@ -18,10 +18,14 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 @import "../../../mixins.less";
 
 /******* mfa access page ******/
+body {
+  height: 100%;
+  background: #ffffff;
+}
 #mfaAccess {
   padding-top: 60px;
   background: @baseBackground url('@{images-path}/ShareImages/Background/texture.png') repeat top center;
-  .mfaAccessBlock {
+  .otpAccessBlock {
     width: 685px;
     padding-top: 160px;
     margin: 0 auto;
@@ -29,7 +33,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     h3 {
       color: @baseColorMedium;
     }
-    .mfaAccessInfo {
+    .otpAccessInfo {
       font-size: 18px;
       padding: 10px 0 25px;
       color: @baseColorMedium;
@@ -38,6 +42,21 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   .lockIcon {
     background: url('@{images-path}/social/skin/RestrictedArea/lockIcon.png') no-repeat top center;
   }
+
+  .usbIcon {
+    background: url('@{images-path}/social/skin/Icons/USB_ICON.png') no-repeat top center;
+  }
+  .titleClass {
+    font-size: 22px;
+  }
+  .infoClass {
+    font-size: 16px;
+    padding: 15px;
+  }
+  .progressCircularBlock {
+    padding: 20px;
+  }
+
   #tokenInput {
     margin-bottom:0px;
     height: 42px;
