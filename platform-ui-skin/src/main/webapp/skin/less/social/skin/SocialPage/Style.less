@@ -99,13 +99,25 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     }
   }
 }
-#singlePageApplicationContainer, .singlePageApplication, .SpaceActivityStreamPortletPage {
+#singlePageApplicationContainer, #singlePageUserManegementApplicationContainer, .singlePageApplication, .SpaceActivityStreamPortletPage {
   max-width: 100%;
 }
 
 @media (min-width: @minLargeDesktop) {
   #singlePageApplicationContainer, .singlePageApplication, .SpaceActivityStreamPortletPage {
     padding: 20px 14%;
+  }
+}
+
+@media (min-width: @minLargeDesktop) {
+  #singlePageUserManegementApplicationContainer {
+    padding: 20px 5%;
+  }
+}
+
+@media (max-width: @maxDesktop) {
+  #singlePageUserManegementApplicationContainer {
+    margin: 22px 1% 10px;
   }
 }
 
