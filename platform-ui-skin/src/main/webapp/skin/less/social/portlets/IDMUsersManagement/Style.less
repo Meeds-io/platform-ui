@@ -1,6 +1,18 @@
 @import "../../../variables.less"; 
 @import "../../../mixins.less";
 
+@media (min-width: @minLargeDesktop) {
+  #singlePageApplicationContainer{
+    padding: 20px 1%!important;
+  }
+}
+
+@media (max-width: @maxDesktop) {
+  #singlePageApplicationContainer{
+    margin: 22px auto 10px!important;
+  }
+}
+
 #UsersManagement {
   .selectUsersFilter {
     height: 40px;
