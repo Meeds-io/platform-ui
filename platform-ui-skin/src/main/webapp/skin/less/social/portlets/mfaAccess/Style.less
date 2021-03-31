@@ -27,7 +27,7 @@ body {
   background: @baseBackground url('@{images-path}/ShareImages/Background/texture.png') repeat top center;
   .otpAccessBlock {
     width: 685px;
-    padding-top: 160px;
+    padding-top: 200px;
     margin: 0 auto;
     text-align: center;
     h3 {
@@ -44,14 +44,47 @@ body {
   }
 
   .usbIcon {
-    background: url('@{images-path}/social/skin/Icons/USB_ICON.png') no-repeat top center;
+    background: url('@{images-path}/social/skin/Icons/usb_drive.png') no-repeat top center;
+  }
+  .lockIconColor {
+    position: absolute;
+    display: block;
+    padding: 5px;
+    right: 47%;
+    font-size: 35px;
+    color: @greyColorLighten1Default!important;
+    top: 61%;
+  }
+   .closeCircledIconColor {
+    position: absolute;
+    display: block;
+    padding: 5px;
+    right: 47%;
+    font-size: 35px;
+    color: @errorColor !important;
+    top: 61%;
+  }
+  .successIconColor {
+    position: absolute;
+    display: block;
+    padding: 5px;
+    right: 47%;
+    font-size: 35px;
+    color: #6ccbae !important;
+    top: 61%;
   }
   .titleClass {
-    font-size: 22px;
+    font-size: 26px;
+    color: @greyColorLighten1Default;
   }
   .infoClass {
-    font-size: 16px;
+    font-size: 18px;
     padding: 15px;
+    color: @grayDark;
+  }
+  .messageClass {
+    font-size: 16px;
+    color: @grayDark;
   }
   .progressCircularBlock {
     padding: 20px;
