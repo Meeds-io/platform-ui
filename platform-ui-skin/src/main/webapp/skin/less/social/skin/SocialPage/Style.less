@@ -50,20 +50,42 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     > #leftSocialPage, > .leftSocialPage {
       flex: 0 1 70%;
       max-width: 70%;
-      padding-right: 10px;
       box-sizing: border-box;
     }
 
     > #rightSocialPage, > .rightSocialPage {
       flex: 0 1 30%;
       max-width: 30%;
-      padding-left: 10px;
       box-sizing: border-box;
 
       /* Added for sticky container */
       .UIContainer, .NormalContainerBlock, .VIEW-CONTAINER, .UIIntermediateContainer, .UIRowContainer {
         display: inline;
       }
+    }
+  }
+}
+
+html[dir=rtl] * {
+  .UIMobileSwipeParentContainer {
+    > #leftSocialPage, > .leftSocialPage {
+      padding-left: 10px;
+    }
+
+    > #rightSocialPage, > .rightSocialPage {
+      padding-right: 10px;
+    }
+  }
+}
+
+html[dir=ltr] * {
+  .UIMobileSwipeParentContainer {
+    > #leftSocialPage, > .leftSocialPage {
+      padding-right: 10px;
+    }
+
+    > #rightSocialPage, > .rightSocialPage {
+      padding-left: 10px;
     }
   }
 }

@@ -94,12 +94,23 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 .OfficeRightTDContainer, .SpaceHomePortletsTDContainer {
   width: 285px !important;
-  padding-left: 20px;
+  padding: 0;
 
-  #SpaceHomePortletsChildren{
+  #SpaceHomePortletsChildren {
     #OnlineUsers{
       margin-bottom: 20px;
     }
+  }
+}
+
+html[dir=rtl] {
+  .OfficeRightTDContainer, .SpaceHomePortletsTDContainer #SpaceHomePortletsChildren {
+    padding-right: 20px;
+  }
+}
+html[dir=ltr] {
+  .OfficeRightTDContainer, .SpaceHomePortletsTDContainer #SpaceHomePortletsChildren {
+    padding-left: 20px;
   }
 }
 
