@@ -135,14 +135,16 @@ li {
 // Remove default list styles
 ul.unstyled,
 ol.unstyled {
-  margin-left: 0;
+  margin-left: 0 ~'; /** orientation=lt */ ';
+  margin-right: 0 ~'; /** orientation=rt */ ';
   list-style: none;
 }
 
 // Single-line list items
 ul.inline,
 ol.inline {
-  margin-left: 0;
+  margin-left: 0 ~'; /** orientation=lt */ ';
+  margin-right: 0 ~'; /** orientation=rt */ ';
   list-style: none;
   > li {
     display: inline-block;
@@ -164,20 +166,24 @@ dt {
   font-weight: bold;
 }
 dd {
-  margin-left: @baseLineHeight / 2;
+  margin-left: @baseLineHeight / 2 ~'; /** orientation=lt */ ';
+  margin-right: @baseLineHeight / 2 ~'; /** orientation=rt */ ';
 }
 // Horizontal layout (like forms)
 .dl-horizontal {
   .clearfix(); // Ensure dl clears floats if empty dd elements present
   dt {
-    float: left;
+    float: left ~'; /** orientation=lt */ ';
+    float: right ~'; /** orientation=rt */ ';
     width: @horizontalComponentOffset - 20;
-    clear: left;
-    text-align: right;
+    clear: left ~'; /** orientation=lt */ ';
+    clear: right ~'; /** orientation=rt */ ';
+    text-align: end;
     .text-overflow();
   }
   dd {
-    margin-left: @horizontalComponentOffset;
+    margin-left: @horizontalComponentOffset ~'; /** orientation=lt */ ';
+    margin-right: @horizontalComponentOffset ~'; /** orientation=rt */ ';
   }
 }
 
@@ -206,9 +212,11 @@ abbr.initialism {
 
 // Blockquotes
 blockquote {
-  padding: 0 0 0 15px;
+  padding: 0 0 0 15px ~'; /** orientation=lt */ ';
+  padding: 0 15px 0 0 ~'; /** orientation=rt */ ';
   margin: 0 0 @baseLineHeight;
-  border-left: 5px solid @grayLighter;
+  border-left: 5px solid @grayLighter ~'; /** orientation=lt */ ';
+  border-right: 5px solid @grayLighter ~'; /** orientation=rt */ ';
   p {
     margin-bottom: 0;
     font-size: @baseFontSize * 1.25;
@@ -226,14 +234,19 @@ blockquote {
 
   // Float right with text-align: right
   &.pull-right {
-    float: right;
-    padding-right: 15px;
-    padding-left: 0;
-    border-right: 5px solid @grayLighter;
-    border-left: 0;
+    float: right ~'; /** orientation=lt */ ';
+    float: left ~'; /** orientation=rt */ ';
+    padding-right: 15px ~'; /** orientation=lt */ ';
+    padding-left: 0 ~'; /** orientation=lt */ ';
+    padding-left: 15px ~'; /** orientation=rt */ ';
+    padding-right: 0 ~'; /** orientation=rt */ ';
+    border-right: 5px solid @grayLighter ~'; /** orientation=lt */ ';
+    border-left: 0 ~'; /** orientation=lt */ ';
+    border-left: 5px solid @grayLighter ~'; /** orientation=rt */ ';
+    border-right: 0 ~'; /** orientation=rt */ ';
     p,
     small {
-      text-align: right;
+      text-align: end;
     }
     small {
       &:before {

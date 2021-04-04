@@ -80,8 +80,10 @@
   display: flex;
 }
 .spaceActionMenu {
-  right: 21px;
-  left: auto !important;
+  right: 21px ~'; /** orientation=lt */ ';
+  left: auto ~'!important; /** orientation=lt */ ';
+  left: 21px ~'; /** orientation=rt */ ';
+  right: auto ~'!important; /** orientation=rt */ ';
   top: 42px !important;
 }
 .spaceCardFlipped {
@@ -98,7 +100,8 @@
   backface-visibility: hidden;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 0 ~'; /** orientation=lt */ ';
+  right: 0 ~'; /** orientation=rt */ ';
   height: @spaceCardMaxHeight;
   max-height: @spaceCardMaxHeight;
   width: 100%;
@@ -127,7 +130,8 @@
 .spaceCardActions {
   align-items: flex-end !important;
   button i {
-    margin-right: 10px;
+    margin-right: 10px ~'; /** orientation=lt */ ';
+    margin-left: 10px ~'; /** orientation=rt */ ';
   }
 }
 .joinSpaceDisabledLabel, .invitationButtons {
@@ -138,9 +142,12 @@
   .acceptToJoinSpaceButton {
     max-width: 85%;
     width: 85%;
-    border-right: 0;
-    border-bottom-right-radius: 0 !important;
-    border-top-right-radius: 0 !important;
+    border-right: 0 ~'; /** orientation=lt */ ';
+    border-bottom-right-radius: 0  ~'!important; /** orientation=lt */ ';
+    border-top-right-radius: 0 ~'!important; /** orientation=lt */ ';
+    border-left: 0 ~'; /** orientation=rt */ ';
+    border-bottom-left-radius: 0  ~'!important; /** orientation=rt */ ';
+    border-top-left-radius: 0 ~'!important; /** orientation=rt */ ';
 
     .v-btn__content {
       max-width: 100%;
@@ -159,10 +166,14 @@
     width: 15%;
     padding: 5px 20px;
     height: auto;
-    border-left: 0;
-    margin-left: -11px;
-    border-bottom-left-radius: 0 !important;
-    border-top-left-radius: 0 !important;
+    border-left: 0 ~'; /** orientation=lt */ ';
+    margin-left: -11px ~'; /** orientation=lt */ ';
+    border-bottom-left-radius: 0 ~'!important; /** orientation=lt */ ';
+    border-top-left-radius: 0 ~'!important; /** orientation=lt */ ';
+    border-right: 0 ~'; /** orientation=rt */ ';
+    margin-right: -11px ~'; /** orientation=rt */ ';
+    border-bottom-right-radius: 0 ~'!important; /** orientation=rt */ ';
+    border-top-right-radius: 0 ~'!important; /** orientation=rt */ ';
 
     i {
       margin: 0;

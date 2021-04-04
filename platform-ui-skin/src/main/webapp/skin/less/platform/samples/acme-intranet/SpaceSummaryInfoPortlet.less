@@ -61,7 +61,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 .UISpaceSummaryInfoPortlet .UIHeaderSection  h4{
 	margin:0;
 	background: url("@{images-path}/platform/skin/ToolbarContainer/BgToolbarContainer.gif") repeat-x scroll left top;
-	padding-left:30px;
+	padding-left: 30px ~'; /** orientation=lt */ ';
+	padding-right: 30px ~'; /** orientation=rt */ ';
 	height: 31px ;
 	line-height: 31px;
 	color: @textColor;
@@ -69,7 +70,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 }
 
 .ActivityStreamPortletTDContainer  .UITabPane {
-	margin-left: 14px;
+	margin-left: 14px ~'; /** orientation=lt */ ';
+	margin-right: 14px ~'; /** orientation=rt */ ';
 }
 
 .UISpaceSummaryInfoPortlet .UISpaceSummary {

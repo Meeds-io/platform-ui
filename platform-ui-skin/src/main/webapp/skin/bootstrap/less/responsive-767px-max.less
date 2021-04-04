@@ -46,10 +46,12 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       float: none;
       clear: none;
       width: auto;
-      text-align: left;
+      text-align: left ~'; /** orientation=lt */ ';
+      text-align: right ~'; /** orientation=rt */ ';
     }
     dd {
-      margin-left: 0;
+      margin-left: 0 ~'; /** orientation=lt */ ';
+      margin-right: 0 ~'; /** orientation=rt */ ';
     }
   }
 
@@ -66,11 +68,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   // Undo negative margin on rows and thumbnails
   .row,
   .thumbnails {
-    margin-left: 0;
+    margin-left: 0 ~'; /** orientation=lt */ ';
+    margin-right: 0 ~'; /** orientation=rt */ ';
   }
   .thumbnails > li {
     float: none;
-    margin-left: 0; // Reset the default margin for all li elements when no .span* classes are present
+    margin-left: 0 ~'; /** orientation=lt */ '; // Reset the default margin for all li elements when no .span* classes are present
+    margin-right: 0 ~'; /** orientation=rt */ '; // Reset the default margin for all li elements when no .span* classes are present
   }
   // Make all grid-sized elements block level again
   [class*="span"],
@@ -79,7 +83,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     float: none;
     display: block;
     width: 100%;
-    margin-left: 0;
+    margin-left: 0 ~'; /** orientation=lt */ ';
+    margin-right: 0 ~'; /** orientation=rt */ ';
     .box-sizing(border-box);
   }
   .span12,
@@ -88,7 +93,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     .box-sizing(border-box);
   }
   .row-fluid [class*="offset"]:first-child {
-    margin-left: 0;
+    margin-left: 0 ~'; /** orientation=lt */ ';
+    margin-right: 0 ~'; /** orientation=rt */ ';
   }
 
   // FORM FIELDS
@@ -112,7 +118,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     width: auto;
   }
   .controls-row [class*="span"] + [class*="span"] {
-    margin-left: 0;
+    margin-left: 0 ~'; /** orientation=lt */ ';
+    margin-right: 0 ~'; /** orientation=rt */ ';
   }
 
   // Modals
@@ -159,11 +166,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       float: none;
       width: auto;
       padding-top: 0;
-      text-align: left;
+      text-align: left ~'; /** orientation=lt */ ';
+      text-align: right ~'; /** orientation=rt */ ';
     }
     // Move over all input controls and content
     .controls {
-      margin-left: 0;
+      margin-left: 0 ~'; /** orientation=lt */ ';
+      margin-right: 0 ~'; /** orientation=rt */ ';
     }
     // Move the options list down to align with labels
     .control-list {

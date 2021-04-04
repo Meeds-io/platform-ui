@@ -27,6 +27,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 .dropdown-toggle {
   // The caret makes the toggle a bit too tall in IE7
   *margin-bottom: -3px;
+  float: right ~'; /** orientation=rt */ ';
 }
 .dropdown-toggle:active,
 .open .dropdown-toggle {
@@ -57,10 +58,12 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 .dropdown-menu {
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 0 ~'; /** orientation=lt */ ';
+  right: 0 ~'; /** orientation=rt */ ';
   z-index: @zindexDropdown;
   display: none; // none by default, but block on "open" of the menu
-  float: left;
+  float: left ~'; /** orientation=lt */ ';
+  float: right ~'; /** orientation=rt */ ';
   min-width: 160px;
   padding: 5px 0;
   margin: 2px 0 0; // override default ul
@@ -78,8 +81,10 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
   // Aligns the dropdown menu to right
   &.pull-right {
-    right: 0;
-    left: auto;
+    right: 0 ~'; /** orientation=lt */ ';
+    left: auto ~'; /** orientation=lt */ ';
+    left: 0 ~'; /** orientation=rt */ ';
+    right: auto ~'; /** orientation=rt */ ';
   }
 
   // Dividers (basically an hr) within the dropdown
@@ -165,8 +170,10 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 // Right aligned dropdowns
 // ---------------------------
 .pull-right > .dropdown-menu {
-  right: 0;
-  left: auto;
+  right: 0 ~'; /** orientation=lt */ ';
+  left: auto ~'; /** orientation=lt */ ';
+  left: 0 ~'; /** orientation=rt */ ';
+  right: auto ~'; /** orientation=rt */ ';
 }
 
 // Allow for dropdowns to go bottom up (aka, dropup-menu)
@@ -197,9 +204,11 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 // Default dropdowns
 .dropdown-submenu > .dropdown-menu {
   top: 0;
-  left: 100%;
+  left: 100% ~'; /** orientation=lt */ ';
+  right: 100% ~'; /** orientation=rt */ ';
   margin-top: -6px;
-  margin-left: -1px;
+  margin-left: -1px ~'; /** orientation=lt */ ';
+  margin-right: -1px ~'; /** orientation=rt */ ';
   .border-radius(0 6px 6px 6px);
 }
 .dropdown-submenu:hover > .dropdown-menu {
@@ -219,18 +228,22 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 .dropdown-submenu > a:after {
   display: block;
   content: " ";
-  float: right;
+  float: right ~'; /** orientation=lt */ ';
+  float: left ~'; /** orientation=rt */ ';
   width: 0;
   height: 0;
   border-color: transparent;
   border-style: solid;
   border-width: 5px 0 5px 5px;
-  border-left-color: @dropdownBorderLeft;
+  border-left-color: @dropdownBorderLeft ~'; /** orientation=lt */ ';
+  border-right-color: @dropdownBorderLeft ~'; /** orientation=rt */ ';
   margin-top: 5px;
-  margin-right: -10px;
+  margin-right: -10px ~'; /** orientation=lt */ ';
+  margin-left: -10px ~'; /** orientation=rt */ ';
 }
 .dropdown-submenu:hover > a:after {
-  border-left-color: @dropdownLinkColorHover;
+  border-left-color: @dropdownLinkColorHover ~'; /** orientation=lt */ ';
+  border-right-color: @dropdownLinkColorHover ~'; /** orientation=rt */ ';
 }
 
 // Left aligned submenus
@@ -241,8 +254,10 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
   // Positioning the submenu
   > .dropdown-menu {
-    left: -100%;
-    margin-left: 10px;
+    left: -100% ~'; /** orientation=lt */ ';
+    right: -100% ~'; /** orientation=rt */ ';
+    margin-left: 10px ~'; /** orientation=lt */ ';
+    margin-right: 10px ~'; /** orientation=rt */ ';
     .border-radius(6px 0 6px 6px);
   }
 }
