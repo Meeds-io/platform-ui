@@ -17,8 +17,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 /*================= Suggester =================*/
 .VuetifyApp .v-application {
   .identitySuggester {
-    border: 1px solid @inputBorder;
-    border-radius: 5px;
     padding: 0 !important;
     margin: 12px 0 !important;
     white-space: normal;
@@ -36,7 +34,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       max-height: 100%;
       display: block !important;
     }
-  
+
     .v-select__selections {
       display: block !important;
       max-width: 100%;
@@ -48,9 +46,31 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       border: 1px solid @primaryDarkerColorGradientEnd !important;
       color: @btnPrimaryColor !important;
     }
-  
   }
-  
+
+  .identitySuggesterInputStyle {
+    border: 1px solid @inputBorder;
+    border-radius: 5px;
+  }
+
+  .identitySuggesterFilterStyle {
+    border-radius: 0px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline: 0 !important;
+    border-bottom: 1px solid @borderColor;
+
+    input {
+      margin-top: 4px !important;
+    }
+  }
+
+  .v-input--is-focused {
+    &.identitySuggesterFilterStyle {
+      border: 0px !important;
+      border-bottom: 1px solid @primaryDarkerColorGradientEnd !important;
+    }
+  }
   .identitySuggestionMenuItemText {
     max-width: 300px;
   }
