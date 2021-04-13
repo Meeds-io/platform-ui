@@ -333,7 +333,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     }
 
     .dataInfor .actionLink {
-      float: right;
+      float: right ~'; /** orientation=lt */ ';
+      float: left ~'; /** orientation=rt */ ';
       position: relative;
       top: -36px;
 
@@ -342,13 +343,14 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         line-height: 0px;
       }
       .dropdown-menu {
-        right: 10px;
+        right: 10px ~'; /** orientation=lt */ ';
+        left: 10px ~'; /** orientation=rt */ ';
         top: 17px;
       }
 
       a {
-        margin: 5px;
-        margin-left: 0;
+        margin: 5px 5px 5px 0 ~'; /** orientation=lt */ ';
+        margin: 5px 0 5px 5px ~'; /** orientation=rt */ ';
       }
     }
   }
@@ -357,7 +359,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 @media (max-width: 480px) {
     .uiUserActivityDetail .activityStream {
       .commentList .commentItem .actLink {
-        right: -10px;
+        right: -10px ~'; /** orientation=lt */ ';
+        left: -10px ~'; /** orientation=rt */ ';
       }
       .blastInputPeople .uiAction button {
         margin: 0 5px !important;

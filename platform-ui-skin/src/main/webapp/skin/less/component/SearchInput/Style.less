@@ -25,7 +25,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 	input[type="text"] {
 		//background:@inputBackground  url("@{images-path}/SearchInput/Search.png") no-repeat right -1px;
 		margin: 0;
-		padding-right: 24px;
+		padding-right: 24px ~'; /** orientation=lt */ ';
+		padding-left: 24px ~'; /** orientation=rt */ ';
 	}
 	input[type="text"]:hover {
       background-position:   right -28px;
@@ -33,14 +34,16 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     .advancedSearch,.AdvancedSearch {
       display: block;
       position: absolute;
-      right: 5px; // right and top modified to align the search icon
-      top: 4px;
+      right: 5px ~'; /** orientation=lt */ ';
+      left: 5px ~'; /** orientation=rt */ ';
+      top: 9px;
       cursor: pointer;
     }
     &.searchWithIcon {
       display: inline-block;
       &.pull-right {
-        float: right;
+        float: right ~'; /** orientation=lt */ ';
+        float: left ~'; /** orientation=rt */ ';
       }
       input[type="text"] {
         //background-image: none;

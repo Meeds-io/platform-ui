@@ -18,8 +18,10 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 @import "../../../mixins.less";
 
 .uiBrandingPortlet {
-  margin-left: 13%;
-  margin-right: 10%;
+  margin-left: 13% ~'; /** orientation=lt */ ';
+  margin-right: 13% ~'; /** orientation=rt */ ';
+  margin-right: 10% ~'; /** orientation=lt */ ';
+  margin-left: 10% ~'; /** orientation=rt */ ';
   margin-top: 18px;
   border-radius: 66px;
   padding: 10px 10px;
@@ -39,7 +41,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
   .alert {
     display: none;
-    left: 57%;
+    left: 57% ~'; /** orientation=lt */ ';
+    right: 57% ~'; /** orientation=rt */ ';
     position: absolute;
     transform: translate(-50%);
     margin-top: 0;
@@ -51,7 +54,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
   .inputCompany {
     margin-top: 4px;
-    margin-left: -9px;
+    margin-left: -9px ~'; /** orientation=lt */ ';
+    margin-right: -9px ~'; /** orientation=rt */ ';
     width: 32%;
     border: 0px;
   }
@@ -73,7 +77,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   }
 
   .theme {
-    margin-left: -8px;
+    margin-left: -8px ~'; /** orientation=lt */ ';
+    margin-right: -8px ~'; /** orientation=rt */ ';
     margin-top: 40px;
   }
 
@@ -84,7 +89,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   }
 
   .colorsBlock {
-    margin-left: 5%;
+    margin-left: 5% ~'; /** orientation=lt */ ';
+    margin-right: 5% ~'; /** orientation=rt */ ';
   }
 
   #companyNameInput:focus {
@@ -99,11 +105,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   .logoForm {
     border-radius: 7px;
     background-color: @lightWhite;
-    padding: 1px 10px 0px 21px;
-
-    .logo {
-      argin-left: -10px;
-    }
+    padding: 1px 10px 0px 21px ~'; /** orientation=lt */ ';
+    padding: 1px 21px 0px 10px ~'; /** orientation=rt */ ';
 
     .styleSelectLogo {
       margin-top: -8px;
@@ -118,7 +121,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     .info {
       color: @baseColorLight;
       background-color: transparent !important;
-      padding-left: 2px;
+      padding-left: 2px ~'; /** orientation=lt */ ';
+      padding-right: 2px ~'; /** orientation=rt */ ';
       font-size: 12px;
       font-style: italic;
 
@@ -158,21 +162,25 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
       .btnAction {
         display: block;
-        float: right;
+        float: right ~'; /** orientation=lt */ ';
+        float: left ~'; /** orientation=rt */ ';
         margin-bottom: -12px;
         z-index: 999;
 
         .iconDelete {
           color: @primaryColorDefault;
           float: right;
-          margin-right: 6px;
+          margin-right: 6px ~'; /** orientation=lt */ ';
+          margin-left: 6px ~'; /** orientation=rt */ ';
           margin-top: 9px;
           cursor: pointer;
         }
 
         .iconEdit {
-          float: right;
-          margin-right: 6px;
+          float: right ~'; /** orientation=lt */ ';
+          float: left ~'; /** orientation=rt */ ';
+          margin-right: 6px ~'; /** orientation=lt */ ';
+          margin-left: 6px ~'; /** orientation=rt */ ';
           margin-top: 5px;
           cursor: pointer;
         }
@@ -194,17 +202,18 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     }
 
     #navigationStyle .uiRadio {
-      padding-right: 20px;
+      padding-right: 20px ~'; /** orientation=lt */ ';
+      padding-left: 20px ~'; /** orientation=rt */ ';
     }
 
     .uiAction {
       padding: 23px 15px;
-      text-align: right;
+      text-align: end;
     }
 
     #StylePreview {
       width: 90%;
-      padding: 30px 0px 30px;
+      padding: 30px 0px;
       margin: auto;
     }
 
@@ -253,7 +262,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
           .optionStyle {
             width: 15%;
-            margin-left: 15%;
+            margin-left: 15% ~'; /** orientation=lt */ ';
+            margin-right: 15% ~'; /** orientation=rt */ ';
           }
 
           .labelValue {
@@ -309,7 +319,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     width: 47px;
     height: 47px;
     margin-top: 5px;
-    margin-right: 10px;
+    margin-right: 10px ~'; /** orientation=lt */ ';
+    margin-left: 10px ~'; /** orientation=rt */ ';
     cursor: pointer;
     border: 1px solid @greyColor;
   }

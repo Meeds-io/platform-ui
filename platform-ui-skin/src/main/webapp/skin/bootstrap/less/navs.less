@@ -23,7 +23,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 // ----------
 
 .nav {
-  margin-left: 0;
+  margin-left: 0 ~'; /** orientation=lt */ ';
+  margin-right: 0 ~'; /** orientation=rt */ ';
   margin-bottom: @baseLineHeight;
   list-style: none;
 }
@@ -46,7 +47,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 // Redeclare pull classes because of specifity
 .nav > .pull-right {
-  float: right;
+  float: right ~'; /** orientation=lt */ ';
+  float: left ~'; /** orientation=rt */ ';
 }
 
 // Nav headers (for dropdowns and lists)
@@ -93,7 +95,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 }
 .nav-list [class^="icon-"],
 .nav-list [class*=" icon-"] {
-  margin-right: 2px;
+  margin-right: 2px ~'; /** orientation=lt */ ';
+  margin-left: 2px ~'; /** orientation=rt */ ';
 }
 // Dividers (basically an hr) within the dropdown
 .nav-list .divider {
@@ -112,13 +115,15 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 }
 .nav-tabs > li,
 .nav-pills > li {
-  float: left;
+  float: left ~'; /** orientation=lt */ ';
+  float: right ~'; /** orientation=rt */ ';
 }
 .nav-tabs > li > a,
 .nav-pills > li > a {
   padding-right: 12px;
   padding-left: 12px;
-  margin-right: 2px;
+  margin-right: 2px ~'; /** orientation=lt */ ';
+  margin-left: 2px ~'; /** orientation=rt */ ';
   line-height: 14px; // keeps the overall height an even number
 }
 
@@ -187,7 +192,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   float: none;
 }
 .nav-stacked > li > a {
-  margin-right: 0; // no need for the gap between nav items
+  margin-right: 0 ~'; /** orientation=lt */ ';
+  margin-left: 0 ~'; /** orientation=rt */ ';
 }
 
 // Tabs
@@ -361,18 +367,23 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 .tabs-left > .nav-tabs > li > a,
 .tabs-right > .nav-tabs > li > a {
   min-width: 74px;
-  margin-right: 0;
+  margin-right: 0 ~'; /** orientation=lt */ ';
+  margin-left: 0 ~'; /** orientation=rt */ ';
   margin-bottom: 3px;
 }
 
 // Tabs on the left
 .tabs-left > .nav-tabs {
-  float: left;
-  margin-right: 19px;
-  border-right: 1px solid #ddd;
+  float: left ~'; /** orientation=lt */ ';
+  float: right ~'; /** orientation=rt */ ';
+  margin-right: 19px ~'; /** orientation=lt */ ';
+  margin-left: 19px ~'; /** orientation=rt */ ';
+  border-right: 1px solid #ddd ~'; /** orientation=lt */ ';
+  border-left: 1px solid #ddd ~'; /** orientation=rt */ ';
 }
 .tabs-left > .nav-tabs > li > a {
-  margin-right: -1px;
+  margin-right: -1px ~'; /** orientation=lt */ ';
+  margin-left: -1px ~'; /** orientation=rt */ ';
   .border-radius(4px 0 0 4px);
 }
 .tabs-left > .nav-tabs > li > a:hover,
@@ -388,12 +399,16 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 // Tabs on the right
 .tabs-right > .nav-tabs {
-  float: right;
-  margin-left: 19px;
-  border-left: 1px solid #ddd;
+  float: right ~'; /** orientation=lt */ ';
+  float: left ~'; /** orientation=rt */ ';
+  margin-left: 19px ~'; /** orientation=lt */ ';
+  margin-right: 19px ~'; /** orientation=rt */ ';
+  border-left: 1px solid #ddd ~'; /** orientation=lt */ ';
+  border-right: 1px solid #ddd ~'; /** orientation=rt */ ';
 }
 .tabs-right > .nav-tabs > li > a {
-  margin-left: -1px;
+  margin-left: -1px ~'; /** orientation=lt */ ';
+  margin-right: -1px ~'; /** orientation=rt */ ';
   .border-radius(0 4px 4px 0);
 }
 .tabs-right > .nav-tabs > li > a:hover,
@@ -404,7 +419,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 .tabs-right > .nav-tabs .active > a:hover,
 .tabs-right > .nav-tabs .active > a:focus {
   border-color: #ddd #ddd #ddd transparent;
-  *border-left-color: @white;
+  *border-left-color: @white ~'; /** orientation=lt */ ';
+  *border-right-color: @white ~'; /** orientation=rt */ ';
 }
 
 

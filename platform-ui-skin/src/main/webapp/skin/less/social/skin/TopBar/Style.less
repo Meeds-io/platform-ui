@@ -61,12 +61,13 @@ body {
   }
 
   .uiDropdownWithIcon > a {
-    padding: 0 12px 0 12px;
+    padding: 0 12px;
   }
 
   .UITopBarContainerItemsParent {
     display: flex;
-    padding-right: 8px;
+    padding-right: 8px ~'; /** orientation=lt */ ';
+    padding-left: 8px ~'; /** orientation=rt */ ';
 
     .UITopBarContainerItem {
       margin: auto;
@@ -125,7 +126,8 @@ body {
     color: @toolbarLightLinkHoverColor;
     padding-top: 3px;
     padding-bottom: 3px;
-    border-left: Solid 1px @greyColor;
+    border-left: solid 1px @greyColor ~'; /** orientation=lt */ ';
+    border-right: solid 1px @greyColor ~'; /** orientation=rt */ ';
   }
   .logoTitle {
     max-width: 200px;
@@ -163,7 +165,8 @@ body.decrease-z-index-more #UITopBarContainer {
     }
     .v-badge__badge {
       position: absolute;
-      left: 21px;
+      left: 21px ~'; /** orientation=lt */ ';
+      right: 21px ~'; /** orientation=rt */ ';
       top: -9px;
       font-size: 12px;
       min-width: 20px;
@@ -193,7 +196,8 @@ body.decrease-z-index-more #UITopBarContainer {
       }
       .notifDrawerItems {
         .v-list-item {
-          padding-left: 0px;
+          padding-left: 0px ~'; /** orientation=lt */ ';
+          padding-right: 0px ~'; /** orientation=rt */ ';
         }
         .notifDrawerItem {
             li {
@@ -286,9 +290,9 @@ body.decrease-z-index-more #UITopBarContainer {
                           letter-spacing: .5px;
                           background-color: transparent!important;
                           background-image: none;
-                          padding: 0 5px !important;
+                          padding: 0 5px 0 25px ~'!important; /** orientation=lt */ ';
+                          padding: 0 25px 0 5px ~'!important; /** orientation=rt */ ';
                           position: relative;
-                          padding-left: 25px!important;
                           border-radius: 4px;
                           border:1px solid @primaryColor!important;
                           color: @primaryColor;
@@ -297,16 +301,19 @@ body.decrease-z-index-more #UITopBarContainer {
                             font-family: 'PLF-FONT-ICONS' !important;
                             position: absolute;
                             height: 100%;
-                            border-right: 1px solid white;
-                            padding-right: 3px;
-                            left:0;
+                            border-right: 1px solid white ~'; /** orientation=lt */ ';
+                            border-left: 1px solid white ~'; /** orientation=rt */ ';
+                            left:0 ~'; /** orientation=lt */ ';
+                            right:0 ~'; /** orientation=rt */ ';
                             padding-left: 3px;
+                            padding-right: 3px;
                           }
                           &:hover {
                             background-color: @primaryColor!important;
                             color:  white;
                             &:before {
-                              border-right: 1px solid white;
+                              border-right: 1px solid white ~'; /** orientation=lt */ ';
+                              border-left: 1px solid white ~'; /** orientation=rt */ ';
                             }
                           }
                         }
@@ -315,11 +322,12 @@ body.decrease-z-index-more #UITopBarContainer {
                           letter-spacing: .5px;
                           background-color: transparent !important;
                           background-image: none;
-                          padding: 0 5px !important;
+                          padding: 0 5px 0 25px ~'!important; /** orientation=lt */ ';
+                          padding: 0 25px 0 5px ~'!important; /** orientation=rt */ ';
                           position: relative;
-                          padding-left: 25px!important;
                           border-radius: 4px;
-                          margin-left:5px;
+                          margin-left: 5px ~'; /** orientation=lt */ ';
+                          margin-right: 5px ~'; /** orientation=rt */ ';
                           color: @toolbarLightIconColor;
                           border:1px solid @toolbarLightIconColor!important;
                           &:before {
@@ -330,8 +338,10 @@ body.decrease-z-index-more #UITopBarContainer {
                             border-right: 1px solid @toolbarLightIconColor;
                             padding-right: 3px;
                             padding-left: 3px;
-                            left: 0;
-                            border-radius: 5px 0 0 5px;
+                            left: 0 ~'; /** orientation=lt */ ';
+                            right: 0 ~'; /** orientation=rt */ ';
+                            border-radius: 5px 0 0 5px ~'; /** orientation=lt */ ';
+                            border-radius: 5px 5px 0 0 ~'; /** orientation=rt */ ';
                           }
                         }
                       }
@@ -341,13 +351,19 @@ body.decrease-z-index-more #UITopBarContainer {
                       color: @toolbarLightIconColor;
                       font-size: 12px;
                       i {
-                        margin-right: 10px;
+                        margin-right: 10px ~'; /** orientation=lt */ ';
+                        margin-left: 10px ~'; /** orientation=rt */ ';
                         color: #abc8e6;
+                        &:before {
+                          top: 3px;
+                          position: relative;
+                        }
                       }
                     }
 
                     .quoteContainer {
-                      padding-left: 5px;
+                      padding-left: 5px ~'; /** orientation=lt */ ';
+                      padding-right: 5px ~'; /** orientation=rt */ ';
                       margin: 5px 0;
                       max-height: 20px;
                       overflow: hidden;
@@ -356,8 +372,10 @@ body.decrease-z-index-more #UITopBarContainer {
                       font-size: 13px;
 
                       .comment {
-                        border-left: 6px solid #aacded;
-                        padding-left: 5px;
+                        border-left: 6px solid #aacded ~'; /** orientation=lt */ ';
+                        padding-left: 5px ~'; /** orientation=lt */ ';
+                        border-right: 6px solid #aacded ~'; /** orientation=rt */ ';
+                        padding-right: 5px ~'; /** orientation=rt */ ';
                         font-style: italic;
                       }
                     }
@@ -379,11 +397,13 @@ body.decrease-z-index-more #UITopBarContainer {
       .notifFooterActions {
         position: fixed;
         bottom: 0;
-        left:0;
+        left:0 ~'; /** orientation=lt */ ';
+        right:0 ~'; /** orientation=rt */ ';
         width: 100%;
         border-top: 1px solid rgba(13, 13, 13, 0.05);
         background: white;
-        padding-right: 12px;
+        padding-right: 12px ~'; /** orientation=lt */ ';
+        padding-left: 12px ~'; /** orientation=rt */ ';
         max-width: 100%;
         box-sizing: border-box;
         .seeAllNotif {
@@ -426,14 +446,5 @@ body.decrease-z-index-more #UITopBarContainer {
         }
       }
     }
-  }
-}
-
-@media (min-width: 768px) {
-  .hide-scroll.with-scroll #UITopBarContainer {
-    width: ~"calc(100% - 15px)";
-  }
-  .hide-scroll.with-scroll {
-    margin-right: 15px !important;
   }
 }
