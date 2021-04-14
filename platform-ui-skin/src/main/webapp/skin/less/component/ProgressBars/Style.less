@@ -33,27 +33,30 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 // upload files
 .progressBarFrame {
-	 margin: 0 0 25px 0;
+	 margin: 0 0 25px;
 	  line-height:20px;
 	& > div {
-		margin: 3px 0 0 0;
+		margin: 3px 0 0;
 	}
 	.fileNameLabel {
 		font-weight: bold;
 		width: 170px;
-		float: left;
+		float: left ~'; /** orientation=lt */ ';
+		float: right ~'; /** orientation=rt */ ';
 	}
 	.fileName  {
 		min-width: 148px;
-		padding-right: 2px;
+		padding-right: 2px ~'; /** orientation=lt */ ';
+		padding-left: 2px ~'; /** orientation=rt */ ';
 		font-weight: bold;
 	}
 	.percent {
-		padding:0 7px 0 7px;
+		padding:0 7px;
 		width: 30px;
 	}
 	.deleteFileLabel {
-		margin: 0 0 0 5px;
+		margin: 0 0 0 5px ~'; /** orientation=lt */ ';
+		margin: 0 5px 0 0 ~'; /** orientation=rt */ ';
 		padding: 0;
 		.actionIcon {
 			padding: 1px 5px;
@@ -68,12 +71,14 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 	.moreFiles {
 		display: inline-block;
 		color: @baseColorLight;
-		margin: 0 0 0 12px;
+		margin: 0 0 0 12px ~'; /** orientation=lt */ ';
+		margin: 0 12px 0 0 ~'; /** orientation=rt */ ';
 		cursor: pointer;
 	}
 	.noFile {
 	   display: inline-block;
-		margin-left: 5px;
+		margin-left: 5px ~'; /** orientation=lt */ ';
+		margin-right: 5px ~'; /** orientation=rt */ ';
 		color: @baseColorLight;
 		margin-bottom: 0;
 		vertical-align: middle;
@@ -87,16 +92,18 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 	}
 
 	.uploadContainer {
-		padding: 0 0 0 8px;
+		padding: 0 0 0 8px ~'; /** orientation=lt */ ';
+		padding: 0 8px 0 0 ~'; /** orientation=rt */ ';
 	}
 }
 
 .selectFileFrame  {
-	  margin: 0 0 10px 0;
+	  margin: 0 0 10px;
 	  line-height:24px;
 	.fileNameLabel  {
 		font-weight: bold;
-		float: left;
+		float: left ~'; /** orientation=lt */ ';
+		float: right ~'; /** orientation=rt */ ';
 	}
 }
 

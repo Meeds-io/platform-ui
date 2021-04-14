@@ -587,7 +587,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     .offsetX (0) {}
 
     .offset (@columns) {
-      margin-left: (@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns + 1));
+      margin-left: (@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns + 1)) ~'; /** orientation=lt */ ';
+      margin-right: (@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns + 1)) ~'; /** orientation=rt */ ';
     }
 
     .span (@columns) {
@@ -595,14 +596,17 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     }
 
     .row {
-      margin-left: @gridGutterWidth * -1;
+      margin-left: @gridGutterWidth * -1 ~'; /** orientation=lt */ ';
+      margin-right: @gridGutterWidth * -1 ~'; /** orientation=rt */ ';
       .clearfix();
     }
 
     [class*="span"] {
-      float: left;
+      float: left ~'; /** orientation=lt */ ';
+      float: right ~'; /** orientation=rt */ ';
       min-height: 1px; // prevent collapsing columns
-      margin-left: @gridGutterWidth;
+      margin-left: @gridGutterWidth ~'; /** orientation=lt */ ';
+      margin-right: @gridGutterWidth ~'; /** orientation=rt */ ';
     }
 
     // Set the container width, and override it for fixed navbars in media queries
@@ -633,12 +637,14 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     .offsetX (0) {}
 
     .offset (@columns) {
-      margin-left: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1)) + (@fluidGridGutterWidth*2);
+      margin-left: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1)) + (@fluidGridGutterWidth*2) ~'; /** orientation=lt */ ';
+      margin-right: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1)) + (@fluidGridGutterWidth*2) ~'; /** orientation=rt */ ';
   	  *margin-left: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1)) - (.5 / @gridRowWidth * 100 * 1%) + (@fluidGridGutterWidth*2) - (.5 / @gridRowWidth * 100 * 1%);
     }
 
     .offsetFirstChild (@columns) {
-      margin-left: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1)) + (@fluidGridGutterWidth);
+      margin-left: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1)) + (@fluidGridGutterWidth) ~'; /** orientation=lt */ ';
+      margin-right: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1)) + (@fluidGridGutterWidth) ~'; /** orientation=rt */ ';
       *margin-left: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1)) - (.5 / @gridRowWidth * 100 * 1%) + @fluidGridGutterWidth - (.5 / @gridRowWidth * 100 * 1%);
     }
 
@@ -652,17 +658,21 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       .clearfix();
       [class*="span"] {
         .input-block-level();
-        float: left;
-        margin-left: @fluidGridGutterWidth;
+        float: left ~'; /** orientation=lt */ ';
+        float: right ~'; /** orientation=rt */ ';
+        margin-left: @fluidGridGutterWidth ~'; /** orientation=lt */ ';
+        margin-right: @fluidGridGutterWidth ~'; /** orientation=rt */ ';
         *margin-left: @fluidGridGutterWidth - (.5 / @gridRowWidth * 100 * 1%);
       }
       [class*="span"]:first-child {
-        margin-left: 0;
+        margin-left: 0 ~'; /** orientation=lt */ ';
+        margin-right: 0 ~'; /** orientation=rt */ ';
       }
 
       // Space grid-sized controls properly if multiple per line
       .controls-row [class*="span"] + [class*="span"] {
-        margin-left: @fluidGridGutterWidth;
+        margin-left: @fluidGridGutterWidth ~'; /** orientation=lt */ ';
+        margin-right: @fluidGridGutterWidth ~'; /** orientation=rt */ ';
       }
 
       // generate .spanX and .offsetX
@@ -687,12 +697,14 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     input,
     textarea,
     .uneditable-input {
-      margin-left: 0; // override margin-left from core grid system
+      margin-left: 0 ~'; /** orientation=lt */ ';
+      margin-right: 0 ~'; /** orientation=rt */ ';
     }
 
     // Space grid-sized controls properly if multiple per line
     .controls-row [class*="span"] + [class*="span"] {
-      margin-left: @gridGutterWidth;
+      margin-left: @gridGutterWidth ~'; /** orientation=lt */ ';
+      margin-right: @gridGutterWidth ~'; /** orientation=rt */ ';
     }
 
     // generate .spanX

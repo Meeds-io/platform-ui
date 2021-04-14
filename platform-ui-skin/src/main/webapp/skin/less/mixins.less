@@ -399,16 +399,20 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     // Padding
     .pd@{index} {padding: ~"@{index}@{unit}";}
     .pdT@{index} {padding-top: ~"@{index}@{unit}";}
-    .pdR@{index} {padding-right: ~"@{index}@{unit}";}
     .pdB@{index} {padding-bottom: ~"@{index}@{unit}";}
-    .pdL@{index} {padding-left: ~"@{index}@{unit}";}
+    .pdR@{index} {padding-right: ~"@{index}@{unit}; /* orientation=lt */";}
+    .pdL@{index} {padding-left: ~"@{index}@{unit}; /* orientation=lt */";}
+    .pdR@{index} {padding-left: ~"@{index}@{unit}; /* orientation=rt */";}
+    .pdL@{index} {padding-right: ~"@{index}@{unit}; /* orientation=rt */";}
 
     // Padding Important
     .pd@{index}-ipt {padding: ~"@{index}@{unit}!important";}
     .pdT@{index}-ipt {padding-top: ~"@{index}@{unit}!important";}
-    .pdR@{index}-ipt {padding-right: ~"@{index}@{unit}!important";}
     .pdB@{index}-ipt {padding-bottom: ~"@{index}@{unit}!important";}
-    .pdL@{index}-ipt {padding-left: ~"@{index}@{unit}!important";}
+    .pdR@{index}-ipt {padding-right: ~"@{index}@{unit}!important; /* orientation=lt */";}
+    .pdL@{index}-ipt {padding-left: ~"@{index}@{unit}!important; /* orientation=lt */";}
+    .pdR@{index}-ipt {padding-left: ~"@{index}@{unit}!important; /* orientation=rt */";}
+    .pdL@{index}-ipt {padding-right: ~"@{index}@{unit}!important; /* orientation=rt */";}
 
     // Padding Horizatial
     .pd-0-@{index} {padding: 0 ~"@{index}@{unit}";}
@@ -422,16 +426,20 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       // Margin
     .mg@{index} {margin: ~"@{index}@{unit}";}
     .mgT@{index} {margin-top: ~"@{index}@{unit}";}
-    .mgR@{index} {margin-right: ~"@{index}@{unit}";}
     .mgB@{index} {margin-bottom: ~"@{index}@{unit}";}
-    .mgL@{index} {margin-left: ~"@{index}@{unit}";}
+    .mgR@{index} {margin-right: ~"@{index}@{unit}; /* orientation=lt */";}
+    .mgL@{index} {margin-left: ~"@{index}@{unit}; /* orientation=lt */";}
+    .mgR@{index} {margin-left: ~"@{index}@{unit}; /* orientation=rt */";}
+    .mgL@{index} {margin-right: ~"@{index}@{unit}; /* orientation=rt */";}
 
       // Margin Important
     .mg@{index}-ipt {margin: ~"@{index}@{unit}!important";}
     .mgT@{index}-ipt {margin-top: ~"@{index}@{unit}!important";}
-    .mgR@{index}-ipt {margin-right: ~"@{index}@{unit}!important";}
     .mgB@{index}-ipt {margin-bottom: ~"@{index}@{unit}!important";}
-    .mgL@{index}-ipt {margin-left: ~"@{index}@{unit}!important";}
+    .mgR@{index}-ipt {margin-right: ~"@{index}@{unit}!important; /* orientation=lt */";}
+    .mgL@{index}-ipt {margin-left: ~"@{index}@{unit}!important; /* orientation=lt */";}
+    .mgR@{index}-ipt {margin-left: ~"@{index}@{unit}!important; /* orientation=rt */";}
+    .mgL@{index}-ipt {margin-right: ~"@{index}@{unit}!important; /* orientation=rt */";}
 
       // margin Horizatial
     .mg-0-@{index} {margin: 0 ~"@{index}@{unit}";}

@@ -24,8 +24,10 @@
   }
   .v-menu__content {
     top: 30px !important;
-    right: 10px !important;
-    left: auto !important;
+    right: 10px ~'!important; /** orientation=lt */ ';
+    left: auto  ~'!important; /** orientation=lt */ ';
+    left: 10px ~'!important; /** orientation=rt */ ';
+    right: auto  ~'!important; /** orientation=rt */ ';
   }
 
   &.SpaceApplicationCardEmbedded {

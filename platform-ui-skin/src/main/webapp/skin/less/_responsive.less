@@ -168,7 +168,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     }
     .uiDocumentFormController .form-horizontal .controls > div.clearfix {
         width: 100%!important;
-        margin-right: 0!important;
+        margin-right: 0 ~'!important; /** orientation=lt */ ';
+        margin-left: 0 ~'!important; /** orientation=rt */ ';
         float: none!important;
     }
     .uiPopup {
@@ -1192,12 +1193,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         .form-horizontal .control-group .control-label {
             width: auto;
             float: none;
-            text-align: left;
+            text-align: start;
             margin-bottom: 10px;
         }
 
         .form-horizontal .control-group .controls {
-            margin-left: 0;
+            margin-left: 0 ~'; /** orientation=lt */ ';
+            margin-right: 0 ~'; /** orientation=rt */ ';
         }
     }
     .uiPopup, #UIMaskWorkspace  .UIMaskWorkspace {
@@ -1232,7 +1234,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         width: 140px;
     }
     .form-horizontal .control-group .controls {
-        margin-left: 160px;
+        margin-left: 160px ~'; /** orientation=lt */ ';
+        margin-right: 160px ~'; /** orientation=rt */ ';
     }
     select,
     textarea,

@@ -34,7 +34,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 	}
 	.accordion-toggle a{
 	  display: block;
-	  padding: 8px 8px 8px 15px;
+	  padding: 8px 8px 8px 15px ~'; /** orientation=lt */ ';
+	  padding: 8px 15px 8px 8px ~'; /** orientation=rt */ ';
         [class^="uiIconArrow"] {
             margin-top: 5px!important;
         }
@@ -56,7 +57,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 	}
 	.menuHeader {
 	  margin: 0px;
-	  padding: 7px 4px 7px 18px;
+	  padding: 7px 4px 7px 18px ~'; /** orientation=lt */ ';
+	  padding: 7px 18px 7px 4px ~'; /** orientation=rt */ ';
 	  background: @primaryBackground;
 	  border-bottom: 1px solid @borderColor;
 	   .border-radius(@baseBorderRadius @baseBorderRadius 0 0);
@@ -68,9 +70,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 		}
 		.functionItem{
 			display: block;
-			padding: 6px 4px 6px 16px;
+			padding: 6px 4px 6px 16px ~'; /** orientation=lt */ ';
+			padding: 6px 16px 6px 4px ~'; /** orientation=rt */ ';
 			font-size: @baseFontSize - 1;
-			i {margin: -2px 7px 0 0;}
+			i {
+			 margin: -2px 7px 0 0 ~'; /** orientation=lt */ ';
+			 margin: -2px 0 0 7px ~'; /** orientation=rt */ ';
+			}
 			&:hover{
 				background: @primaryBackgroundLight;
 			}
@@ -108,7 +114,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 		  display: block;
 		}
 		.uiIconSelected:before {
-		  content: "\e75c";
+		  content: "\e75c" ~'; /** orientation=lt */ ';
+		  content: "\e75b" ~'; /** orientation=rt */ ';
 		  font-size: 9px;
 		}
 	}
@@ -126,7 +133,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 		}
 	}
 	.icon-chevron-right{
-		float: right;
+		float: right ~'; /** orientation=lt */ ';
+		float: left ~'; /** orientation=rt */ ';
 	}
 }
 
@@ -138,7 +146,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 		}
 	}
 	.accordion-inner .txtLeft{
-			margin: 19px 0px 0px 83px;
+			margin: 19px 0px 0px 83px ~'; /** orientation=lt */ ';
+			margin: 19px 83px 0px 0px ~'; /** orientation=rt */ ';
 			word-wrap: break-word;
 	}
 }
