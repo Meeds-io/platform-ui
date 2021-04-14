@@ -1181,8 +1181,29 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 .uiIconAdjustSize:before {
     content: "\e74e";
 }
-.uiIconBack:before {
-    content: "\e74f";
+
+[class^="uiIcon"].uiIconBack {
+  background: #333;
+  opacity: 0.6;
+  border-radius: 50%;
+  padding: 12px;
+  float: left ~'; /** orientation=lt */ ';
+  float: right ~'; /** orientation=rt */ ';
+  transform: rotate(180deg) ~'; /** orientation=rt */ ';
+  font-size: 15px;
+  margin: 1.5rem;
+  font-family: 'PLF-FONT-ICONS';
+  font-style: normal;
+  color: #f8f8f8;
+  cursor: pointer;
+
+  &:before {
+    content: "\e760";
+  }
+
+  &:hover {
+    color: #f8f8f8;
+  }
 }
 .uiIconDottedArrow:before {
     content: "\e750";
@@ -1218,10 +1239,12 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     content: "\e75a";
 }
 .uiIconArrowLeft:before {
-    content: "\e75b";
+    content: "\e75b" ~'; /** orientation=lt */ ';
+    content: "\e75c" ~'; /** orientation=rt */ ';
 }
 .uiIconArrowRight:before {
-    content: "\e75c";
+    content: "\e75c" ~'; /** orientation=lt */ ';
+    content: "\e75b" ~'; /** orientation=rt */ ';
 }
 .uiIconArrowUp:before {
     content: "\e75d";
@@ -1396,6 +1419,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 }
 .uiIconLock:before {
     content: "\e794";
+}
+.uiIconSuccess:before {
+    content: "\ea43";
 }
 .uiIconMove:before {
     content: "\e795";

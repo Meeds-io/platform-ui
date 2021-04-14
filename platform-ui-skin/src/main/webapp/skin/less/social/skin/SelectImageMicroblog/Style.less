@@ -41,15 +41,17 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       
       span {
         white-space: nowrap;
-        margin-left: 10px;
+        margin-left: 10px ~'; /** orientation=lt */ ';
+        margin-right: 10px ~'; /** orientation=rt */ ';
       }
-      
+
       > .selectImageLinks {
         line-height: 25px;
         padding: 10px 20px;
 
         > span {
-          margin-left: 8px;
+          margin-left: 8px ~'; /** orientation=lt */ ';
+          margin-right: 8px ~'; /** orientation=rt */ ';
           a {
             text-decoration: underline;
           }
@@ -59,7 +61,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       > .imageURLContainer {
         white-space: nowrap;
         line-height: 40px;
-        text-align: left;
+        text-align: left ~'; /** orientation=lt */ ';
+        text-align: right ~'; /** orientation=rt */ ';
         margin: auto 28px;
         flex: 2;
 
@@ -83,10 +86,12 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       }
       
       > .backButton {
-        margin: 10px 0 0 28px;
+        margin: 10px 0 0 28px ~'; /** orientation=lt */ ';
+        margin: 10px 28px 0 0 ~'; /** orientation=rt */ ';
         position: relative;
         left: 0;
-        text-align: left;
+        text-align: left ~'; /** orientation=lt */ ';
+        text-align: right ~'; /** orientation=rt */ ';
         text-decoration: underline;
         height: 40px;
         line-height: 40px;
@@ -122,15 +127,17 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
           max-height: 100%;
           max-width: 100%;
           top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
+          left: 50% ~'; /** orientation=lt */ ';
+          right: 50% ~'; /** orientation=rt */ ';
+          transform: translate(50%, -50%);
         }
       }
     }
     
     > .removeFile {
       margin: 10px 0 0;
-      text-align: right;
+      text-align: right ~'; /** orientation=lt */ ';
+      text-align: left ~'; /** orientation=rt */ ';
       a {
         font-size: 0.8em;
       }
@@ -193,7 +200,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   .dropFileWindow[role=dialog]>.cke_dialog {
     position: fixed !important;
     top: 0 !important;
-    left: 0 !important;
+    left: 0 ~'!important; /** orientation=lt */ ';
+    right: 0 ~'!important; /** orientation=rt */ ';
+    left: auto ~'!important; /** orientation=rt */ ';
     height: 100vh !important;
     width: 100vw !important;
 
@@ -215,7 +224,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     line-height: normal;
   }
   .selectImageBox > .dropFileArea > .backButton {
-    margin: 0 0 0 28px;
+    margin: 0 0 0 28px ~'; /** orientation=lt */ ';
+    margin: 0 28px 0 0 ~'; /** orientation=rt */ ';
   }
 }
 @media (max-height: 380px) {

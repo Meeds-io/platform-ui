@@ -38,14 +38,16 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 		    border-right:  9px solid transparent;
 		    border-bottom: 9px solid @dropdownBorder;
 		    top: -9px;
-		    left: 29px;
+		    left: 29px ~'; /** orientation=lt */ ';
+		    right: 29px ~'; /** orientation=rt */ ';
 		  }
 		  &:after {
 		    border-left:   8px solid transparent;
 		    border-right:  8px solid transparent;
 		    border-bottom: 8px solid @dropdownBackground;
 		    top: -8px;
-		    left: 30px;
+		    left: 30px ~'; /** orientation=lt */ ';
+		    right: 30px ~'; /** orientation=rt */ ';
 		  }
 	}
 }
@@ -53,9 +55,11 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 .uiDropdownWithIcon{
 	.dropdown-menu {
 	  li > a {
-		padding: 5px 20px 5px 10px;
+		padding: 5px 20px 5px 10px ~'; /** orientation=lt */ ';
+		padding: 5px 10px 5px 20px ~'; /** orientation=rt */ ';
 		i{
-			margin-right: 9px;
+			margin-right: 9px ~'; /** orientation=lt */ ';
+			margin-left: 9px ~'; /** orientation=rt */ ';
 		}
 	  }
 	}
@@ -92,7 +96,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #ThemeDropDown .btn.dropdown-toggle > span:first-child {
 	width: 150px;
 	display: inline-block;
-	text-align: left;
+	text-align: start;
 }
 
 .dropdown-menu{
@@ -117,14 +121,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 			}
 		}
         .actionIcon {
-            text-align: left;
-        }
-        &.back-item {
-        	a:hover {
-        		.uiIconArrowLeft {
-
-        		}
-        	}
+            text-align: start;
         }
 	}
 }
@@ -161,15 +158,19 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 	}
 	.arrowLeft{
 		top: 50%; 
-		left: -9px;
+		left: -9px ~'; /** orientation=lt */ ';
+		right: -9px ~'; /** orientation=rt */ ';
 		margin-top: -@popoverArrowWidth; 
-		border-width: 9px  9px 9px 0;
+		border-width: 9px  9px 9px 0 ~'; /** orientation=lt */ ';
+		border-width: 9px  0 9px 9px ~'; /** orientation=rt */ ';
 		border-right-color: @dropdownBackground;
 		&:after {
-		  border-width: 10px 10px 10px 0;
+		  border-width: 10px 10px 10px 0 ~'; /** orientation=lt */ ';
+		  border-width: 10px 0 10px 10px ~'; /** orientation=rt */ ';
 		  border-right-color: @dropdownBorder;
 		  bottom: -10px;
-		  left: -1px;
+		  left: -1px ~'; /** orientation=lt */ ';
+		  right: -1px ~'; /** orientation=rt */ ';
 		}
 	}
 }
@@ -194,7 +195,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 	  li > a {
 		padding: 6px 19px;
 		i{
-			margin-right: 5px;
+			margin-right: 5px ~'; /** orientation=lt */ ';
+			margin-left: 5px ~'; /** orientation=rt */ ';
 		}
 	  }
 	}
@@ -207,7 +209,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 		border: none;
 		.font-icon;
 		font-size:  @sizeIcon12x12 - 1;
-		margin-right: -5px;
+		margin-right: -5px ~'; /** orientation=lt */ ';
+		margin-left: -5px ~'; /** orientation=rt */ ';
 		color: @colorIconDefault;
 	}
 	&:hover {

@@ -597,7 +597,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 .uiPageIterator ul > li.disabled > a,
 .uiPageIterator ul > li.disabled > a:hover {
   color: @uiPageIteratorColor;
-  margin-right: 4px;
+  margin-right: 4px ~'; /** orientation=lt */ ';
+  margin-left: 4px ~'; /** orientation=rt */ ';
   background-image: none;
   .box-shadow(none);
   border: 2px solid @greyColor;
@@ -615,7 +616,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 }
 
 .uiPageIterator p {
-  margin: 0 10px 0 0;
+  margin: 0 10px 0 0 ~'; /** orientation=lt */ ';
+  margin: 0 0 0 10px ~'; /** orientation=rt */ ';
   line-height: 40px;
 }
 .uiIconPrevArrow:before {
@@ -779,7 +781,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     top: -1px;
     &:before {
       color: inherit;
-      margin-left: 5px;
+      margin-left: 5px ~'; /** orientation=lt */ ';
+      margin-right: 5px ~'; /** orientation=rt */ ';
     }
   }
 }
@@ -827,33 +830,53 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 .input-append {
   .btn {
     color: @inputAppendColor;
-    margin-left: -8px;
+    margin-left: -8px ~'; /** orientation=lt */ ';
+    margin-right: -8px ~'; /** orientation=rt */ ';
     border: 2px solid @primaryColor;
     position: relative;
     z-index: 2;
   }
   .add-on {
-    border-left-width: 0;
+    border-left-width: 0 ~'; /** orientation=lt */ ';
+    border-right-width: 0 ~'; /** orientation=rt */ ';
   }
   input[type="text"]{
-    border-right-width: 1px;
-    border-radius: 5px 0 0 5px;
+    border-right-width: 1px ~'; /** orientation=lt */ ';
+    border-left-width: 1px ~'; /** orientation=rt */ ';
+    border-radius: 5px 0 0 5px ~'; /** orientation=lt */ ';
+    border-radius: 5px 5px 0 0 ~'; /** orientation=rt */ ';
   }
 }
 .input-prepend {
   .add-on {
-    border-right-width: 0;
+    border-right-width: 0 ~'; /** orientation=lt */ ';
+    border-left-width: 0 ~'; /** orientation=rt */ ';
   }
   input[type="text"]{
-    border-left-width: 1px;
-    border-radius: 0 5px 5px 0;
+    border-left-width: 1px ~'; /** orientation=lt */ ';
+    border-right-width: 1px ~'; /** orientation=rt */ ';
+    border-radius: 0 5px 5px 0 ~'; /** orientation=lt */ ';
+    border-radius: 0 0 5px 5px ~'; /** orientation=rt */ ';
   }
 }
 
+select,
+textarea,
 input[type="text"],
 input[type="password"],
+input[type="number"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
 input[type="email"],
+input[type="url"],
+input[type="search"],
 input[type="tel"],
+input[type="color"],
 input[disabled],
 .form-horizontal select,
 .uiPassword input[type="password"],
@@ -887,7 +910,8 @@ input[disabled],
 .selectboxMedium .uiSelectbox .selectbox,
 .UIToolbarContainer .uiCreateToolBarPortlet .uiQuickAddEvent .selectboxMini .uiSelectbox .selectbox,
 .UIToolbarContainer .uiCreateToolBarPortlet .uiQuickAddEvent .selectboxMedium .uiSelectbox .selectbox {
-  padding: 0 0 0 10px;
+  padding: 0 0 0 10px ~'; /** orientation=lt */ ';
+  padding: 0 10px 0 0 ~'; /** orientation=rt */ ';
 }
 @media(max-width: @maxMobileWidth) {
   .uiSpaceSearch {
@@ -918,7 +942,8 @@ select:active {
   border-radius: 4px;
 }
 .form-horizontal .control-group .controls .uiRadio {
-  margin: 8px 25px 0px 0;
+  margin: 8px 25px 0px 0 ~'; /** orientation=lt */ ';
+  margin: 8px 0 0px 25px ~'; /** orientation=rt */ ';
 }
 
 //success
@@ -984,7 +1009,8 @@ textarea[disabled] {
   width: 4px;
   height: 2px;
   box-shadow: none;
-  left: 5px;
+  left: 5px ~'; /** orientation=lt */ ';
+  right: 5px ~'; /** orientation=rt */ ';
   top: 9px;
 }
 .uiCheckbox input[type="checkbox"]:disabled + span:before {
@@ -993,7 +1019,8 @@ textarea[disabled] {
 }
 .uiCheckbox input[type="checkbox"]:disabled + span:after {
   border-bottom: 2px solid @uiCheckboxCheckedBorder;
-  border-left: 2px solid @uiCheckboxCheckedBorder;
+  border-left: 2px solid @uiCheckboxCheckedBorder ~'; /** orientation=lt */ ';
+  border-right: 2px solid @uiCheckboxCheckedBorder ~'; /** orientation=rt */ ';
 }
 .uiCheckbox input[type="checkbox"] + span:before {
   background: @uiCheckboxBackground;
@@ -1006,7 +1033,8 @@ textarea[disabled] {
   width: 6px;
   height: 6px;
   box-shadow: none;
-  left: 4px;
+  left: 4px ~'; /** orientation=lt */ ';
+  right: 4px ~'; /** orientation=rt */ ';
   top: 7px;
   background: @primaryColor;
 }
@@ -1115,10 +1143,12 @@ p, .postContent, .uiWikiContentDisplay{
   border-radius: 7px;
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
   &.right .arrow {
-    left: -10px;
+    left: -10px ~'; /** orientation=lt */ ';
+    right: -10px ~'; /** orientation=rt */ ';
   }
   &.left .arrow {
-    right: -10px;
+    right: -10px ~'; /** orientation=lt */ ';
+    left: -10px ~'; /** orientation=rt */ ';
   }
 }
 
@@ -1236,12 +1266,14 @@ p, .postContent, .uiWikiContentDisplay{
 }
 
 .uiIconArrowLeftMini:before, .uiIconMiniArrowLeft:before {
-  content: "\f124";
+  content: "\f124" ~'; /** orientation=lt */ ';
+  content: "\f125" ~'; /** orientation=rt */ ';
   color: @blackColor;
   font-family: IONIC-FONT;
 }
 .uiIconArrowRightMini:before, .uiIconMiniArrowRight:before {
-  content: "\f125";
+  content: "\f125" ~'; /** orientation=lt */ ';
+  content: "\f124" ~'; /** orientation=rt */ ';
   color: @blackColor;
   font-family: IONIC-FONT;
   margin-left: 5px;
@@ -1377,7 +1409,8 @@ p, .postContent, .uiWikiContentDisplay{
 }
 
 .alert i {
-  margin-right: 15px;
+  margin-right: 15px ~'; /** orientation=lt */ ';
+  margin-left: 15px ~'; /** orientation=rt */ ';
   top: 1px;
   vertical-align: baseline;
 }
@@ -1545,7 +1578,8 @@ p, .postContent, .uiWikiContentDisplay{
       margin-bottom: -2px;
       > a, a:hover {
         border: 2px solid @borderColor;
-        border-right-color: transparent;
+        border-right-color: transparent ~'; /** orientation=lt */ ';
+        border-left-color: transparent ~'; /** orientation=rt */ ';
         /*border-bottom: none;*/
       }
       > a {
@@ -1558,7 +1592,8 @@ p, .postContent, .uiWikiContentDisplay{
           /*border-bottom: none;*/
         }
         + li a {
-          border-left-color: transparent;
+          border-left-color: transparent ~'; /** orientation=lt */ ';
+          border-right-color: transparent ~'; /** orientation=rt */ ';
         }
         &:first-child:before {
           display: none;
@@ -1568,7 +1603,8 @@ p, .postContent, .uiWikiContentDisplay{
         color: @lightWhite;
       }
       &:not(.active):last-child a {
-        border-right: 2px solid @borderColor;
+        border-right: 2px solid @borderColor ~'; /** orientation=lt */ ';
+        border-left: 2px solid @borderColor ~'; /** orientation=rt */ ';
       }
     }
   }
@@ -1653,7 +1689,7 @@ p, .postContent, .uiWikiContentDisplay{
   color: @tableColor;
   font-size: 16px;
   padding: 16px 15px;
-  text-align: left;
+  text-align: start;
 }
 /* Enterprise skin-raiting */
 .uiVote .avgRatingImages .voted:before
@@ -1946,7 +1982,8 @@ p, .postContent, .uiWikiContentDisplay{
   font-family: "IONIC-FONT";
   font-size: 22px;
   color: @lightWhite;
-  margin-right: 5px;
+  margin-right: 5px ~'; /** orientation=lt */ ';
+  margin-left: 5px ~'; /** orientation=rt */ ';
   position: relative;
   top: 4px;
 }
@@ -1992,7 +2029,8 @@ p, .postContent, .uiWikiContentDisplay{
     border-radius: 5px;
     padding: 0;
     margin-bottom: 25px;
-    box-shadow: 0 3px 2px -2px rgba(0,0,0,.1);
+    box-shadow: 0 3px 2px -2px rgba(0,0,0,.1) ~'; /** orientation=lt */ ';
+    box-shadow: 0 -2px 2px 3px rgba(0,0,0,.1) ~'; /** orientation=rt */ ';
     .boxContainer {
       border: 1px solid @greyColor;
     }
@@ -2003,25 +2041,29 @@ p, .postContent, .uiWikiContentDisplay{
   }
 
   .activityStream .heading {
-    margin-left: 70px;
+    margin-left: 70px ~'; /** orientation=lt */ ';
+    margin-right: 70px ~'; /** orientation=rt */ ';
     color: #999999;
     .actionLink {
       position: absolute;
       top: 0;
-      right: 5px;
+      right: 5px ~'; /** orientation=lt */ ';
+      left: 5px ~'; /** orientation=rt */ ';
       a[class^="uiIcon"] {
         font-size: 17px;
         padding: 5px 7px;
       }
       @media (max-width: @maxMobileWidth) {
         position: relative;
-        right: -10px;
+        right: -10px ~'; /** orientation=lt */ ';
+        left: -10px ~'; /** orientation=rt */ ';
       }
     }
   }
 
   .activityStream .calendarShare .heading {
-    margin-left: 0;
+    margin-left: 0 ~'; /** orientation=lt */ ';
+    margin-right: 0 ~'; /** orientation=rt */ ';
     color: @lightWhite;
     background-color: @primaryColor;
     background-image: none;
@@ -2061,13 +2103,15 @@ p, .postContent, .uiWikiContentDisplay{
   }
 
   .activityStream .contentBox .listLikedBox {
-    padding: 16px 0px 0 16px;
+    padding: 16px 0 0 16px ~'; /** orientation=lt */ ';
+    padding: 16px 16px 0 0 ~'; /** orientation=rt */ ';
   }
 
   .activityStream .author a + span {
     float: none;
     font-size: 12px;
-    margin-left: 10px;
+    margin-left: 10px ~'; /** orientation=lt */ ';
+    margin-right: 10px ~'; /** orientation=rt */ ';
   }
   .uiBox.roundedBottom.introBox.linkShare {
     margin: 0px;
@@ -2151,10 +2195,12 @@ p, .postContent, .uiWikiContentDisplay{
   .uiSocApplication.uiRecentActivitiesPortlet,
   .uiDisplaySpaceActivities.uiActivitiesDisplay {
     .activityStream .heading {
-      margin-left: inherit!important;
+      margin-left:  ~'inherit!important; /** orientation=lt */ ';
+      margin-right:  ~'inherit!important; /** orientation=rt */ ';
     }
     .activityStream .author a + span {
-      margin-right: inherit!important;
+      margin-right:  ~'inherit!important; /** orientation=lt */ ';
+      margin-left:  ~'inherit!important; /** orientation=rt */ ';
     }
   }
   .activityStream .author {
@@ -2265,16 +2311,21 @@ p, .postContent, .uiWikiContentDisplay{
   border: 1px solid @greyColor;
   max-width: 5px;
   max-height: 15px;
-  float: right;
-  padding: 3px 19px 11px 11px;
-  margin-right: 10px;
+  float: right ~'; /** orientation=lt */ ';
+  float: left ~'; /** orientation=rt */ ';
+  padding: 3px 19px 11px 11px ~'; /** orientation=lt */ ';
+  padding: 3px 11px 11px 19px ~'; /** orientation=rt */ ';
+  margin-right: 10px ~'; /** orientation=lt */ ';
+  margin-left: 10px ~'; /** orientation=rt */ ';
   @media (max-width: 767px) {
-    margin-right: 0;
+    margin-right: 0 ~'; /** orientation=lt */ ';
+    margin-left: 0 ~'; /** orientation=rt */ ';
   }
 }
 @media (max-width: @maxLargeTabletWidth) and (min-width: @minTabletWidth){
   .open-right-bar .activityStreamStatus {
-    float: right;
+    float: right ~'; /** orientation=lt */ ';
+    float: left ~'; /** orientation=rt */ ';
   }
 }
 
@@ -2287,7 +2338,8 @@ p, .postContent, .uiWikiContentDisplay{
 }
 
 .uiGettingStarted .gsList li:after {
-  left: 4px;
+  left: 4px ~'; /** orientation=lt */ ';
+  right: 4px ~'; /** orientation=rt */ ';
   top: 7px;
   width: 4px;
   height: 2px;
@@ -2641,6 +2693,7 @@ p, .postContent, .uiWikiContentDisplay{
   }
   .uiIconArrowRightMini:before {
     margin: 0;
+    content: "\f124" ~'; /** orientation=rt */ ';
   }
 }
 
@@ -3006,7 +3059,8 @@ p, .postContent, .uiWikiContentDisplay{
 
 .uiTreeExplorer , .uiTrees .treeContainer .node {
   .emptyIcon, .expandIcon, .collapseIcon {
-    padding-left: 30px;
+    padding-left: 30px ~'; /** orientation=lt */ ';
+    padding-right: 30px ~'; /** orientation=rt */ ';
   }
 }
 
@@ -3704,9 +3758,11 @@ li > a > .uiIconRefresh:before {
 }
 /* Wiki */
 .uiWikiPortlet {
-  padding-left: 10px;
+  padding-left: 10px ~'; /** orientation=lt */ ';
+  padding-right: 10px ~'; /** orientation=rt */ ';
   .uiWikiUpperArea {
-    padding: 14px 20px 14px 0;
+    padding: 14px 20px 14px 0 ~'; /** orientation=lt */ ';
+    padding: 14px 0 14px 20px ~'; /** orientation=rt */ ';
     .uiGrayLightBox {
       border: none;
       box-shadow: none;
@@ -3724,14 +3780,18 @@ li > a > .uiIconRefresh:before {
     .uiWikiBreadCrumb {
       padding-top: 7px;
       .uiSpaceSwitcher_BreadCrumb {
-        margin: -8px 8px 0 0;
+        margin: -8px 8px 0 0 ~'; /** orientation=lt */ ';
+        margin: -8px 0 0 8px ~'; /** orientation=rt */ ';
       }
       .breadcrumb > .uiIconMiniArrowRight {
         margin: 3px 0 0;
+        float: right ~'; /** orientation=rt */ ';
       }
       .uiIconMiniArrowRight {
-        margin: 0 0 0 5px;
+        margin: 0 0 0 5px ~'; /** orientation=lt */ ';
+        margin: 0 5px 0 0 ~'; /** orientation=rt */ ';
         line-height: 20px;
+        float: right ~'; /** orientation=rt */ ';
       }
       .breadcrumb .active > a {
         padding-bottom: 1px;
@@ -3741,7 +3801,8 @@ li > a > .uiIconRefresh:before {
       }
     }
     .uiWikiSearchBox {
-      padding-left: 20px;
+      padding-left: 20px ~'; /** orientation=lt */ ';
+      padding-right: 20px ~'; /** orientation=rt */ ';
 
       .uiIconSearch {
         padding-top: 1px;
@@ -3751,8 +3812,10 @@ li > a > .uiIconRefresh:before {
   }
 
   .uiWikiMiddleArea {
-    padding-left: 0;
-    margin: 0 21px 0 0;
+    padding-left: 0 ~'; /** orientation=lt */ ';
+    padding-right: 0 ~'; /** orientation=rt */ ';
+    margin: 0 21px 0 0 ~'; /** orientation=lt */ ';
+    margin: 0 0 0 21px ~'; /** orientation=rt */ ';
 
     .uiLeftContainerArea {
       padding: 0px;
@@ -3771,10 +3834,12 @@ li > a > .uiIconRefresh:before {
         }
         .uiTreeExplorer {
           .node .node {
-            padding-left: 12px;
+            padding-left: 12px ~'; /** orientation=lt */ ';
+            padding-right: 12px ~'; /** orientation=rt */ ';
           }
           .emptyIcon, .expandIcon, .collapseIcon {
-            padding-left: 23px;
+            padding-left: 23px ~'; /** orientation=lt */ ';
+            padding-right: 23px ~'; /** orientation=rt */ ';
           }
           .emptyIcon:before, .expandIcon:before, .collapseIcon:before {
             width: 16px;
@@ -3838,7 +3903,8 @@ li > a > .uiIconRefresh:before {
     border-radius: 2px;
     border: 1px solid @greyColor;
     padding: 9px 10px;
-    margin-left: 5px;
+    margin-left: 5px ~'; /** orientation=lt */ ';
+    margin-right: 5px ~'; /** orientation=rt */ ';
     background-color: #FFFFFF;
 
     &:hover {
@@ -3853,7 +3919,8 @@ li > a > .uiIconRefresh:before {
       font-size: 1rem;
     }
     .uiIconMiniArrowDown {
-      padding-left: 10px;
+      padding-left: 10px ~'; /** orientation=lt */ ';
+      padding-right: 10px ~'; /** orientation=rt */ ';
     }
   }
   .uiPopupWrapper {
@@ -3870,7 +3937,8 @@ li > a > .uiIconRefresh:before {
   }
   .spaceOption {
     [class^="uiIcon"] {
-      margin-right: 4px;
+      margin-right: 4px ~'; /** orientation=lt */ ';
+      margin-left: 4px ~'; /** orientation=rt */ ';
     }
     [class^="uiIcon"], &:hover [class^="uiIcon"] {
       color: inherit;
@@ -3879,12 +3947,14 @@ li > a > .uiIconRefresh:before {
 }
 @media(max-width: 767px) {
   .uiWikiPortlet .uiWikiUpperArea .uiWikiSearchBox {
-    padding-left: 0;
+    padding-left: 0 ~'; /** orientation=lt */ ';
+    padding-right: 0 ~'; /** orientation=rt */ ';
   }
 }
 @media(max-width: @maxLargeTabletWidth) {
   .uiWikiPortlet {
-    padding-left: 20px;
+    padding-left: 20px ~'; /** orientation=lt */ ';
+    padding-right: 20px ~'; /** orientation=rt */ ';
     .xToolbar .gwt-ListBox {
       height: 25px;
     }
@@ -3919,7 +3989,8 @@ li > a > .uiIconRefresh:before {
       }
     }
     li:first-child .uiActionWithLabel {
-      margin-left: 0;
+      margin-left: 0 ~'; /** orientation=lt */ ';
+      margin-right: 0 ~'; /** orientation=rt */ ';
     }
   }
 }
@@ -3946,23 +4017,28 @@ li > a > .uiIconRefresh:before {
     width: 140px;
     margin-right: -12px;
     .uiIconSortDown:before {
-      margin-left: 24px;
+      margin-left: 24px ~'; /** orientation=lt */ ';
+      margin-right: 24px ~'; /** orientation=rt */ ';
       font-size: 16px;
       color: @darkGrey;
     }
     .uiIconSortUp:before {
-      margin-left: 24px;
+      margin-left: 24px ~'; /** orientation=lt */ ';
+      margin-right: 24px ~'; /** orientation=rt */ ';
       font-size: 16px;
       color: @darkGrey;
     }
   }
 }
 #txtQuery {
-  margin-right: -5px;
-  border-radius: 5px 0 0 5px;
+  margin-right: -5px ~'; /** orientation=lt */ ';
+  margin-left: -5px ~'; /** orientation=rt */ ';
+  border-radius: 5px 0 0 5px ~'; /** orientation=lt */ ';
+  border-radius: 5px 5px 0 0 ~'; /** orientation=rt */ ';
 }
 #btnSearch {
-  border-radius: 0 5px 5px 0;
+  border-radius: 0 5px 5px 0 ~'; /** orientation=lt */ ';
+  border-radius: 0 0 5px 5px ~'; /** orientation=rt */ ';
   height: 39px;
 }
 @media (max-width: @maxLargeTabletWidth) and (min-width: 481px) {
@@ -3985,12 +4061,14 @@ li > a > .uiIconRefresh:before {
   .uiShareDocuments .sharePermission {
     .dropdown-menu {
       width: 191%!important;
-      left: 0px !important;
+      left: ~'0px !important; /** orientation=lt */ ';
+      right: ~'0px !important; /** orientation=rt */ ';
     }
   }
   .uiShareDocuments #whoHasAccess #AccessEntry .btn-toolbar {
     width: 86px!important;
-    margin-right: -3%!important;
+    margin-right: ~'-3%!important; /** orientation=lt */ ';
+    margin-left: ~'-3%!important; /** orientation=rt */ ';
   }
 }
 
@@ -4007,7 +4085,8 @@ li > a > .uiIconRefresh:before {
   }
 }
 .boxLoadMore {
-  padding-left: 0;
+  padding-left: 0 ~'; /** orientation=lt */ ';
+  padding-right: 0 ~'; /** orientation=rt */ ';
 }
 #spaceManagerListBox .itemContainer .spaceBox {
   background: @baseBackground;
@@ -4154,12 +4233,14 @@ li > a > .uiIconRefresh:before {
   }
   .title {
     .uiIconArrowLeftMini:before, .uiIconMiniArrowLeft:before {
-      content: "\f361";
+      content: "\f361" ~'; /** orientation=lt */ ';
+      content: "\f363" ~'; /** orientation=rt */ ';
       font-size: 18px;
       color: @lightWhite;
     }
     .uiIconArrowRightMini:before, .uiIconMiniArrowRight:before {
-      content: "\f363";
+      content: "\f363" ~'; /** orientation=lt */ ';
+      content: "\f361" ~'; /** orientation=rt */ ';
       font-size: 18px;
       color: @lightWhite;
     }

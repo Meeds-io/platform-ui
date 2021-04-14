@@ -28,7 +28,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
           flex-shrink: 0;
           flex-basis: ~"calc(100% - 320px)";
           max-width: ~"calc(100% - 320px)";
-          padding-right: 10px;
+          padding-right: 10px ~'; /** orientation=lt */ ';
+          padding-left: 10px ~'; /** orientation=rt */ ';
           box-sizing: border-box;
           .uiSocApplication {
             padding-left: 0;
@@ -38,8 +39,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         .StreamRightContainer {
           flex: 0 1 320px;
           max-width: 320px;
-          padding-left: 10px;
           box-sizing: border-box;
+          padding-left: 10px ~'; /** orientation=lt */ ';
+          padding-right: 10px ~'; /** orientation=rt */ ';
 
           #tasks{
             background-color: @streamWidgetsBgColor !important;
@@ -69,12 +71,14 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                     #PerkstoreWidgetContainer {
                       flex: 1 1 50%;
                       box-sizing: border-box;
-                      padding-right: 5px;
+                      padding-right: 5px ~'; /** orientation=lt */ ';
+                      padding-left: 5px ~'; /** orientation=rt */ ';
                     }
                     #WalletWidgetContainer {
                       flex: 1 1 50%;
                       box-sizing: border-box;
-                      padding-left: 5px;
+                      padding-left: 5px ~'; /** orientation=lt */ ';
+                      padding-right: 5px ~'; /** orientation=rt */ ';
                     }
                   }
                 }
