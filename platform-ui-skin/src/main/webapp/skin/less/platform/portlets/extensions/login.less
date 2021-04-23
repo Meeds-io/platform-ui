@@ -55,6 +55,7 @@ body {
     text-align: center;
     padding: 6px;
 }
+
 .brandingImageContent {
     img.brandingImage {
         width: 150px;
@@ -72,6 +73,11 @@ input[type="checkbox"]{
     z-index: 100;
     height: 17px!important;
     margin-right: 10px;
+}
+@media (max-height:@MediaLogoDisplayedMobile ) {
+.brandingImageContent img.brandingImage {
+  display: none;
+  }  
 }
 .uiCheckbox > span {
     display: inline-block;
