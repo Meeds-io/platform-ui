@@ -110,6 +110,10 @@
 }
 .peopleCardFront, .peopleCardBack {
   backface-visibility: hidden;
+  /* Firefox */
+  -moz-backface-visibility: hidden;
+  /* Safari and Chrome */
+  -webkit-backface-visibility: hidden;
   position: absolute;
   top: 0;
   left: 0 ~'; /** orientation=lt */ ';
