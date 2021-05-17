@@ -1640,6 +1640,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       border-top: none!important;
     }
 
+    .shareActivityContainer {
+      margin-left:16px;
+      margin-right: 23px;
+      margin-bottom: 10px;
+      border: 1px solid @greyColorDefault;
+    }
+
     .actionBarMobile {
       padding: 0 15px 10px 15px;
       a {
@@ -2868,4 +2875,42 @@ html:lang(ar) .activityStream .description, html:lang(ar) .activityStream .conte
 
 .paddingAction {
   padding-bottom: 30px;
+}
+
+// share Activity style
+.VuetifyApp {
+  .share-link {
+    display: inline-block;
+    .shareActivity {
+      .share-text {
+        font-size: 13px;
+      }
+      .share-text:hover{
+        color: @primaryColorDefault;
+        cursor: pointer;
+      }
+      .uiIconShare:hover {
+        cursor: pointer;
+      }
+      .activityDrawer {
+        .share-activity {
+          .activityInformationCard {
+            max-width: ~"calc(100% - 20px)";
+          }
+
+          .activityShareDescription {
+            min-width: ~"calc(100% - 28px)";
+            border-radius: 5px;
+            box-shadow: none;
+            resize: none;
+          }
+
+          .activitySpaceSuggester {
+            max-width: ~"calc(100% - 20px)";
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
 }
