@@ -684,7 +684,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         list-style: none;
         margin: 0;
         li {
-          display: inline;
+          display: inline-block;
           margin: 0 5px;
           a:hover {
             color: @linkColorHover;
@@ -2878,41 +2878,36 @@ html:lang(ar) .activityStream .description, html:lang(ar) .activityStream .conte
 }
 
 // share Activity style
+.share-link {
+  .share-text {
+    font-size: 13px;
+  }
+  .share-text:hover{
+    color: @primaryColorDefault;
+    cursor: pointer;
+  }
+  .uiIconShare:hover {
+    cursor: pointer;
+  }
+  .uiIconShare {
+    color: @likeButtonColor;
+  }
+}
 .VuetifyApp {
-  .share-link {
-    display: inline-block;
-    .shareActivity {
-      .share-text {
-        font-size: 13px;
+  .activityDrawer {
+    .share-activity {
+      .activityInformationCard {
+        max-width: ~"calc(100% - 20px)";
       }
-      .share-text:hover{
-        color: @primaryColorDefault;
-        cursor: pointer;
+      .activityShareDescription {
+        min-width: ~"calc(100% - 28px)";
+        border-radius: 5px;
+        box-shadow: none;
+        resize: none;
       }
-      .uiIconShare:hover {
-        cursor: pointer;
-      }
-      .uiIconShare {
-        color: @likeButtonColor;
-      }
-      .activityDrawer {
-        .share-activity {
-          .activityInformationCard {
-            max-width: ~"calc(100% - 20px)";
-          }
-
-          .activityShareDescription {
-            min-width: ~"calc(100% - 28px)";
-            border-radius: 5px;
-            box-shadow: none;
-            resize: none;
-          }
-
-          .activitySpaceSuggester {
-            max-width: ~"calc(100% - 20px)";
-            border-radius: 5px;
-          }
-        }
+      .activitySpaceSuggester {
+        max-width: ~"calc(100% - 20px)";
+        border-radius: 5px;
       }
     }
   }
