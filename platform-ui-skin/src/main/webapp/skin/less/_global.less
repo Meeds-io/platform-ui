@@ -1208,6 +1208,9 @@ hr {
 .text-sub-title {
   color: @greyColorLighten1 !important;
 }
+.text-light-color {
+  color: @textLightColor !important;
+}
 .light-grey-background {
   background-color: @greyColorOpacity1 !important;
 }
@@ -1287,6 +1290,14 @@ hr {
 }
 .transparent {
   background: transparent;
+}
+.hover-underline:hover {
+  -webkit-text-decoration: underline dotted !important;
+          text-decoration: underline dotted !important;
+  text-decoration: underline !important;
+}
+.text-capitalize-first-letter:first-letter {
+  text-transform: uppercase;
 }
 .skeleton-text {
   color: @skeletonColor !important;
