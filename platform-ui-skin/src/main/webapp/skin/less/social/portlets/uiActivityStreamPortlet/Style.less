@@ -1331,79 +1331,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     top: 60px;
   }
 
-  .drawer .content .activityRichEditor {
-    position: relative;
-  }
-
-  .drawer .content .activityRichEditor textarea {
-    width: 100%;
-    border-radius: 10px;
-    resize: none;
-  }
-
-  .drawer .content .activityRichEditor .cke_bottom {
-    box-sizing: border-box;
-    border-top: none;
-    background-color: transparent;
-    padding-left: 2px ~'; /** orientation=lt */ ';
-    padding-right: 2px ~'; /** orientation=rt */ ';
-    height: 30px;
-
-    .cke_button_icon {
-      filter: opacity(0.2);
-    }
-
-    .cke_button__bulletedlist_icon {
-      background-image: none!important;
-      font-family: "PLF-FONT-ICONS";
-
-      &:before {
-        content: "\e69b";
-      }
-    }
-  }
-
-  .drawer .content .activityRichEditor .cke_focus .cke_button_icon {
-    filter: opacity(0.4);
-  }
-
-  .drawer .content .activityRichEditor .activityCharsCount {
-    position: absolute;
-    bottom: 8px;
-    right: 10px ~'; /** orientation=lt */ ';
-    left: 10px ~'; /** orientation=rt */ ';
-    color: #adadad;
-  }
-
-  .drawer .content .activityRichEditor .uiIconMessageLength {
-    font-size: 14px;
-    color: #2eb58c;
-  }
-
-  .drawer .content .activityRichEditor .uiIconMessageLength:before {
-    content: "\e910";
-  }
-
-  .drawer .content .activityRichEditor .tooManyChars {
-    color: #bc4343;
-  }
-
-  .drawer .content .activityRichEditor .tooManyChars .uiIconMessageLength {
-    color: #bc4343;
-  }
-
-  .drawer .content .activityRichEditor .loadingRing {
-    position: absolute;
-    display: block;
-    width: 30px;
-    height: 30px;
-    top: 50%;
-    left: 50% ~'; /** orientation=lt */ ';
-    right: 50% ~'; /** orientation=rt */ ';
-    transform: translate(-50%, -50%);
-    color: @primaryColor;
-  }
-
   .drawer .content .composerButtons {
     display: flex;
     padding-top: 10px;
@@ -1477,6 +1404,69 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     }
   }
 }
+
+.activityRichEditor {
+  position: relative;
+  textarea {
+    width: 100%;
+    border-radius: 10px;
+    resize: none;
+  }
+  .cke_bottom {
+    box-sizing: border-box;
+    border-top: none;
+    background-color: transparent;
+    padding-left: 2px ~'; /** orientation=lt */ ';
+    padding-right: 2px ~'; /** orientation=rt */ ';
+    height: 30px;
+    .cke_button_icon {
+      filter: opacity(0.2);
+    }
+    .cke_button__bulletedlist_icon {
+      background-image: none!important;
+      font-family: "PLF-FONT-ICONS";
+  
+      &:before {
+        content: "\e69b";
+      }
+    }
+  }
+  .cke_focus .cke_button_icon {
+    filter: opacity(0.4);
+  }
+  .activityCharsCount {
+    position: absolute;
+    bottom: 8px;
+    right: 10px ~'; /** orientation=lt */ ';
+    left: 10px ~'; /** orientation=rt */ ';
+    color: #adadad;
+  }
+  .uiIconMessageLength {
+    font-size: 14px;
+    color: #2eb58c;
+  }
+  .uiIconMessageLength:before {
+    content: "\e910";
+  }
+  .tooManyChars {
+    color: #bc4343;
+  }
+  .tooManyChars .uiIconMessageLength {
+    color: #bc4343;
+  }
+  .loadingRing {
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    left: 50% ~'; /** orientation=lt */ ';
+    right: 50% ~'; /** orientation=rt */ ';
+    transform: translate(-50%, -50%);
+    color: @primaryColor;
+  }
+}
+
 
 .box {
   .border-radius(3px 3px 3px 3px);
