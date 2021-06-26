@@ -1316,8 +1316,12 @@ hr {
 .hover-underline:hover {
   text-decoration: underline !important;
 }
-.text-capitalize-first-letter:first-letter {
-  text-transform: uppercase;
+.text-capitalize-first-letter {
+  text-transform: lowercase;
+
+  &:first-letter {
+    text-transform: uppercase;
+  }
 }
 .baseline-vertical-align {
   vertical-align: baseline !important;
