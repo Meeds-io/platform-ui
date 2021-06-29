@@ -1301,6 +1301,24 @@ hr {
   width: auto !important;
   min-width: 0 !important;
 }
+.width-max-content {
+  width: max-content !important;
+  max-width: 100% !important;
+}
+.width-fit-content {
+  width: fit-content !important;
+  max-width: 100% !important;
+}
+.width-min-content {
+  width: min-content !important;
+  max-width: 100% !important;
+}
+.no-min-width {
+  min-width: 0 !important;
+}
+.no-max-width {
+  max-width: none !important;
+}
 .clickable {
   cursor: pointer;
 }
@@ -1316,8 +1334,12 @@ hr {
 .hover-underline:hover {
   text-decoration: underline !important;
 }
-.text-capitalize-first-letter:first-letter {
-  text-transform: uppercase;
+.text-capitalize-first-letter {
+  text-transform: lowercase;
+
+  &:first-letter {
+    text-transform: uppercase;
+  }
 }
 .baseline-vertical-align {
   vertical-align: baseline !important;
