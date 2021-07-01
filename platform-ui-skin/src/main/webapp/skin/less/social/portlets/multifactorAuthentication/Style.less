@@ -55,6 +55,17 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   .v-text-field.v-text-field--solo:not(.v-text-field--solo-flat) > .v-input__control > .v-input__slot {
     box-shadow :none;
   }
+  .inputGroups {
+    border: 1px solid @greyColorLighten1Default;
+  }
+  .v-chip.v-chip--outlined.v-chip.v-chip {
+    background-color: lighten(@primaryColorDefault, 18.5%)!important;
+    color: @primaryDarkerColorGradientEnd;
+    border-color: @primaryDarkerColorGradientEnd;
+    font-size: 12px;
+    height: 25px;
+    cursor: default;
+  }
   /* switch  button*/
   label.uiSwitchBtn {
     height: 30px;
