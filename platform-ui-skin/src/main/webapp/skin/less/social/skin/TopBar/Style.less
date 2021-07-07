@@ -20,6 +20,12 @@ body {
   background: @lightGrey;
 }
 
+.body-scrolled {
+  #UITopBarContainerParent, #UITopBarContainer {
+    box-shadow: 0 6px 4px -4px rgba(0, 0, 0, .3);
+  }
+}
+
 #ParentSiteContainer {
   height: 100%;
   min-height: 100vh;
@@ -38,10 +44,6 @@ body {
   width: 100%;
   max-width: 100%;
   z-index: @zindexFixedNavbar;
-
-  &.top-bar-scrolled {
-    box-shadow: 0 6px 4px -4px rgba(0, 0, 0, .3);
-  }
 
   .uiDropdownWithIcon > a {
     color: @toolbarLightIconColor;
