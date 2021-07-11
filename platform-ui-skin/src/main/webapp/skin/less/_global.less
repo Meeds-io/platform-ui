@@ -1194,6 +1194,39 @@ hr {
 .overflow-hidden {
   overflow: hidden !important;
 }
+.overflow-scroll {
+  overflow: scroll !important;
+}
+.overflow-x-auto {
+  overflow-x: auto !important;
+}
+.overflow-x-hidden {
+  overflow-x: hidden !important;
+}
+.overflow-x-scroll {
+  overflow-x: scroll !important;
+}
+.overflow-y-auto {
+  overflow-y: auto !important;
+}
+.overflow-y-hidden {
+  overflow-y: hidden !important;
+}
+.overflow-y-scroll {
+  overflow-y: scroll !important;
+}
+.position-relative {
+  position: relative !important;
+}
+.position-absolute {
+  position: absolute !important;
+}
+.position-sticky {
+  position: sticky !important;
+}
+.position-static {
+  position: static !important;
+}
 .text-color {
   color: @textColor !important;
 }
@@ -1347,6 +1380,22 @@ hr {
 .text-break-all {
   overflow-wrap: break-all !important;
   word-break: break-all !important;
+}
+.absolute-vertical-center {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+.sticky-vertical-center {
+  position: sticky !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+.scrollbar-width-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 .skeleton-text {
   color: @skeletonColor !important;
