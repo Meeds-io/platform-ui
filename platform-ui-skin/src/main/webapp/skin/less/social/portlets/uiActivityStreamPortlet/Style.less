@@ -1301,104 +1301,67 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     font-size: 16px;
   }
 
-  .drawer-backdrop {
-    z-index: 1031;
-  }
-
-  .drawer .header {
-    height: 30px;
-    font-weight: bold;
-  }
-
-  .drawer .header img {
-    width: 38px;
-    padding-right: 10px ~'; /** orientation=lt */ ';
-    padding-left: 10px ~'; /** orientation=rt */ ';
-  }
-
-  .drawer .uiIconCloseComposer {
-    cursor: pointer;
-    color: @greyColorLighten1;
-    font-size: 26px;
-  }
-
-  .drawer .uiIconCloseComposer:before {
-    content: "\e937";
-  }
-
-  .drawer .content {
-    padding: 30px;
+  .drawerParent .drawerContent {
+    padding: 16px 24px;
     top: 60px;
-  }
 
-  .drawer .content .composerButtons {
-    display: flex;
-    padding-top: 10px;
-    .emptyMessage{
-      width: 100%;
-    }
-    .btnStyle{
-      text-transform: uppercase;
-    }
-    .action{
-      width: 100%;
-      margin-top: 10px;
-      .message{
-        color: #578dc9;
-        border-bottom: 1px solid #578dc9;
-        cursor: pointer;
-        font-family: Helvetica;
-        font-size: 16px;
-        line-height: 20px;
+    .composerButtons {
+      display: flex;
+      padding-top: 10px;
+      .emptyMessage{
+        width: 100%;
       }
-      .colorIcon{
-        color: #578dc9;
-        cursor: pointer;
+      .btnStyle{
+        text-transform: uppercase;
       }
-    }
-
-  }
-
-  .activityComposerApp {
-    .drawer {
-      .content {
-        .v-navigation-drawer {
-          z-index: 20;
+      .action{
+        width: 100%;
+        margin-top: 10px;
+        .message{
+          color: #578dc9;
+          border-bottom: 1px solid #578dc9;
+          cursor: pointer;
+          font-family: Helvetica;
+          font-size: 16px;
+          line-height: 20px;
+        }
+        .colorIcon{
+          color: #578dc9;
+          cursor: pointer;
         }
       }
-
-      .composerActions {
-        margin-top: 8%;
-        padding-top: 8%;
-        border-top: 1px solid #efefef;
-
-        .actionItem {
-          display: flex;
-          align-items: center;
-          padding: 10px 10px 0 10px;
-          border: 1px solid #E1E8EE;
-          margin: 10px 0;
-          border-radius: 5px;
-
-          .actionItemDescription {
-            padding: 9px 10px;
-
-            .actionLabel {
-              font-weight: bold;
-              color: @textColor;
-              font-size: 16px;
-            }
-
-            .actionDescription > p {
-              color: #A8B3C5;
-              font-size: 12px;
-            }
+    }
+    .composerActions {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid #efefef;
+  
+      .actionItem {
+        display: flex;
+        align-items: center;
+        padding: 10px 10px 0 10px;
+        border: 1px solid #E1E8EE;
+        margin: 10px 0;
+        border-radius: 5px;
+  
+        .actionItemDescription {
+          padding: 9px 10px;
+  
+          .actionLabel {
+            font-weight: bold;
+            color: @textColor;
+            font-size: 16px;
           }
-
-          &:hover {
-            box-shadow: 0 0 8px #888888;
-            cursor: pointer;
+  
+          .actionDescription > p {
+            color: #A8B3C5;
+            font-size: 12px;
           }
+        }
+  
+        &:hover {
+          box-shadow: 0 0 8px #888888;
+          cursor: pointer;
         }
       }
     }
