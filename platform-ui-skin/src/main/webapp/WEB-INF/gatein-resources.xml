@@ -641,7 +641,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
   <!--- platform: branding -->
   <portlet-skin>
-    <application-name>exoadmin</application-name>
+    <application-name>social-portlet</application-name>
     <portlet-name>Branding</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/platform/portlets/branding/branding.css</css-path>
