@@ -515,7 +515,14 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 .uiTableProfileUserSearchInput {
     width: 100%;
 }
-
+#SpacePageChildren .UITableColumn {
+  &, table, tbody, tr {
+    overflow: hidden;
+  }
+  tbody tr td {
+    max-width: 100%;
+  }
+}
 .uiNotFoundActivity {
 	text-align: center;
 	margin: 200px auto auto;
