@@ -48,6 +48,9 @@
   font-weight: bold !important;
   color: @toolbarLightLinkHoverColor !important;
 }
+.text-font-size {
+  font-size: @fontSizeLarge !important;
+}
 .text-sub-title {
   color: @greyColorLighten1 !important;
 }
@@ -104,6 +107,9 @@
 }
 .no-border-radius {
   border-radius: 0 !important;
+}
+.border-light-color {
+  border-color: @greyColorLighten1Opacity1 !important;
 }
 .disabled-background {
   background-color: @disableBackground !important;
@@ -270,4 +276,105 @@
   line-clamp: 5;
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
+}
+
+.reset-style-box {
+  div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol,
+    ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary,
+    time, mark, audio, video {
+
+    margin: revert;
+    padding: revert;
+    border: revert;
+    outline: revert;
+    font-size: revert;
+    vertical-align: revert;
+    background: revert;
+    color: revert;
+  }
+
+  * {
+    line-height:revert;
+  }
+
+  article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: revert;
+  }
+
+  nav ul {
+    list-style: revert;
+  }
+
+  a {
+    margin: revert;
+    padding: revert;
+    font-size: revert;
+    vertical-align: revert;
+    background: revert;
+  }
+
+  ins {
+    text-decoration: revert;
+  }
+
+  mark {
+    font-style: revert;
+    font-weight: revert;
+  }
+
+  del {
+    text-decoration: revert;
+  }
+
+  abbr[title], dfn[title] {
+    border-bottom: revert;
+    cursor: revert;
+  }
+
+  table {
+    border-collapse: revert;
+    border-spacing: revert;
+  }
+
+  hr {
+    display: revert;
+    height: revert;
+    border: revert;
+    margin: revert;
+    padding: revert;
+  }
+
+  input, select {
+    vertical-align: revert;
+  }
+}
+.rich-editor-content {
+  ul, ol {
+    margin: 0 0 10px 25px ~'; /** orientation=lt */ ';
+    margin: 0 25px 10px 0 ~'; /** orientation=rt */ ';
+    padding: 0 !important;
+    li {
+      list-style-position: inside;
+    }
+  }
+  ul li {
+    list-style-type: disc;
+  }
+  blockquote {
+    margin: 20px 0 7px 20px ~'; /** orientation=lt */ ';
+    margin: 20px 20px 7px 0 ~'; /** orientation=rt */ ';
+    background: @baseBackground;
+    border-left: 5px solid @primaryColor ~'!important; /** orientation=lt */ ';
+    border-right: 5px solid @primaryColor ~'!important; /** orientation=rt */ ';
+    padding: 10px 0 10px 10px ~'!important; /** orientation=lt */ ';
+    padding: 10px 10px 10px 0 ~'!important; /** orientation=rt */ ';
+    p {
+      margin-bottom: 0;
+      font-size: 14px!important;
+      font-weight: 300;
+      line-height: 1.25;
+      font-style: italic;
+      color: @textColor!important;
+    }
+  }
 }

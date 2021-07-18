@@ -18,6 +18,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 /*================= Stream page =================*/
 @import "../../../variables.less";
 #StreamPage {
+  padding: 20px;
+
   > div{
     > div {
       > .UIRowContainer:first-of-type {
@@ -130,12 +132,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   }
 }
 
-@media (max-width: @maxTabletWidth) {
-  #StreamPage {
-    padding: 20px 0 !important;
-  }
-}
-
 @media (max-width: 767px) {
   #StreamPage {
   > div {
@@ -143,17 +139,16 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     > .UIRowContainer:first-of-type {
         .StreamMainContainer {
           flex: 0 1 100%;
-          padding-right: 10px;
           box-sizing: border-box;
           max-width: 100%!important;
           width: 100%!important;
-          padding: 10px 20px 20px !important;
+          padding: 10px 10px 20px !important;
         }
         .StreamRightContainer {
           box-sizing: border-box;
           max-width: 100%!important;
           width: 100%!important;
-          padding: 0 20px 20px !important;
+          padding: 0 10px 20px !important;
         }
       }
     }
