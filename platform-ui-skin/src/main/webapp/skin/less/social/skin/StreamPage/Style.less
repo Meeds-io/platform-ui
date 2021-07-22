@@ -17,8 +17,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 /*================= Stream page =================*/
 @import "../../../variables.less";
-#StreamPage {
-  padding: 20px;
+#StreamPage, .SpaceActivityStreamPortletPage {
+  box-sizing: border-box;
+  max-width: 100%;
 
   > div{
     > div {
@@ -104,13 +105,19 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 }
 
 /*media queries*/
-@media (min-width: @minLargeDesktop) {
-  #StreamPage {
+@media (min-width: 1320px) {
+  #StreamPage, .SpaceActivityStreamPortletPage {
     padding: 20px 14%;
   }
 }
+@media (max-width: 1319px) {
+  #StreamPage, .SpaceActivityStreamPortletPage {
+    min-width: 100%;
+    padding: 20px;
+  }
+}
 @media (min-width: @minTabletWidth) {
-  #StreamPage {
+  #StreamPage, .SpaceActivityStreamPortletPage {
     .UIRowContainer:first-of-type {
       > #StreamRightContainer, > .StreamRightContainer {
         #stickyBlockDesktop, .stickyBlockDesktop, &.stickyBlockDesktop {
@@ -132,8 +139,14 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   }
 }
 
+@media (max-width: @maxTabletWidth) {
+  #StreamPage, .SpaceActivityStreamPortletPage {
+    padding: 20px 0;
+  }
+}
+
 @media (max-width: 767px) {
-  #StreamPage {
+  #StreamPage, .SpaceActivityStreamPortletPage {
   > div {
    > div {
     > .UIRowContainer:first-of-type {
@@ -142,13 +155,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
           box-sizing: border-box;
           max-width: 100%!important;
           width: 100%!important;
-          padding: 10px 10px 20px !important;
+          padding: 10px 20px 20px !important;
         }
         .StreamRightContainer {
           box-sizing: border-box;
           max-width: 100%!important;
           width: 100%!important;
-          padding: 0 10px 20px !important;
+          padding: 0 20px 20px !important;
         }
       }
     }
