@@ -231,6 +231,7 @@ body {
               }
 
               .media {
+                display: flex;
                 max-width: 360px;
                 .avatarXSmall {
                   max-height: 45px;
@@ -264,7 +265,7 @@ body {
                         font-weight: bold;
                       }
 
-                      p {
+                      div, p {
                         margin-bottom: 8px;
                         font-size: 13px;
                         font-style: italic;
@@ -275,7 +276,10 @@ body {
                       }
 
                       blockquote {
-                        p {
+                        border-left: 6px solid #aacded ~'; /** orientation=lt */ ';
+                        border-right: 6px solid #aacded ~'; /** orientation=rt */ ';
+                        margin-bottom: 10px;
+                        div, p {
                           padding: 10px 0 !important;
                         }
                       }
@@ -378,8 +382,8 @@ body {
 
                       .comment {
                         border-left: 6px solid #aacded ~'; /** orientation=lt */ ';
-                        padding-left: 5px ~'; /** orientation=lt */ ';
                         border-right: 6px solid #aacded ~'; /** orientation=rt */ ';
+                        padding-left: 5px ~'; /** orientation=lt */ ';
                         padding-right: 5px ~'; /** orientation=rt */ ';
                         font-style: italic;
                       }
