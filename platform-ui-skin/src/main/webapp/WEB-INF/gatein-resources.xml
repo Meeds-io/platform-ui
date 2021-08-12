@@ -572,23 +572,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   </portlet-skin>
   <portlet-skin>
     <application-name>social-portlet</application-name>
-    <portlet-name>multifactorAuthentication</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/social/portlets/multifactorAuthentication/Style.css</css-path>
-    <css-priority>1</css-priority>
-  </portlet-skin>
-  <portlet-skin>
-    <application-name>social-portlet</application-name>
     <portlet-name>dlpQuarantine</portlet-name>
     <skin-name>${exo.skin.name}</skin-name>
     <css-path>/skin/css/social/portlets/DlpQuarantinePortlet/Style.css</css-path>
-    <css-priority>1</css-priority>
-  </portlet-skin>
-  <portlet-skin>
-    <application-name>social-portlet</application-name>
-    <portlet-name>mfaAccess</portlet-name>
-    <skin-name>${exo.skin.name}</skin-name>
-    <css-path>/skin/css/social/portlets/mfaAccess/Style.css</css-path>
     <css-priority>1</css-priority>
   </portlet-skin>
   <portlet-skin>
