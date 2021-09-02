@@ -26,7 +26,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   </parent>
   <groupId>org.exoplatform.platform-ui</groupId>
   <artifactId>platform-ui</artifactId>
-  <version>6.2.0-20210901</version>
+  <version>6.2.x-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>eXo PLF:: Platform-UI</name>
   <modules>
@@ -36,7 +36,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <scm>
     <connection>scm:git:git://github.com/exoplatform/platform-ui.git</connection>
     <developerConnection>scm:git:git@github.com:exoplatform/platform-ui.git</developerConnection>
-    <tag>6.2.0-20210901</tag>
+    <tag>HEAD</tag>
     <url>https://github.com/exoplatform/platform-ui</url>
   </scm>
   <properties>
@@ -52,7 +52,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <!-- **************************************** -->
     <!-- Dependencies versions                    -->
     <!-- **************************************** -->
-    <org.exoplatform.depmgt.version>19.0-20210901</org.exoplatform.depmgt.version>
+    <org.exoplatform.depmgt.version>19.x-SNAPSHOT</org.exoplatform.depmgt.version>
   
     <!-- Sonar properties -->
     <sonar.organization>meeds-io</sonar.organization>
