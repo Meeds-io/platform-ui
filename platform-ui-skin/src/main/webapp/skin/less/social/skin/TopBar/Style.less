@@ -272,6 +272,8 @@ body {
                       white-space: nowrap;
                       font-weight: bold;
                       max-height: 30px;
+                      display: flex;
+                      align-items: center;
 
                       .user-name {
                         color: @primaryColor;
@@ -290,6 +292,14 @@ body {
                         text-overflow: ellipsis;
                         white-space: nowrap;
                         display: inline;
+                      }
+
+                      ol {
+                        padding-left: 0;
+                        margin-left: 0;
+                        margin-bottom: 0;
+                        display: flex;
+                        flex-wrap: wrap;
                       }
 
                       blockquote {
