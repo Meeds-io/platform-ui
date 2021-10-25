@@ -21,7 +21,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <parent>
         <artifactId>platform-ui</artifactId>
         <groupId>org.exoplatform.platform-ui</groupId>
-        <version>6.3.x-SNAPSHOT</version>
+        <version>6.3.0-20211025</version>
     </parent>
 
     <artifactId>platform-ui-skin</artifactId>
