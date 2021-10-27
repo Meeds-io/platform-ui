@@ -271,8 +271,8 @@ body {
                       text-overflow: ellipsis;
                       white-space: nowrap;
                       font-weight: bold;
-                      max-height: 30px;
-                      display: flex;
+                      max-height: 20px;
+                      display: block !important;
                       align-items: center;
 
                       .user-name {
@@ -294,12 +294,15 @@ body {
                         display: inline;
                       }
 
-                      ol {
-                        padding-left: 0;
+                      ol, ul {
                         margin-left: 0;
                         margin-bottom: 0;
-                        display: flex;
-                        flex-wrap: wrap;
+                        display: inline;
+                        padding: 0;
+                        li {
+                          display: inline;
+                          padding: 5px;
+                        }
                       }
 
                       blockquote {
@@ -416,12 +419,6 @@ body {
                       }
                     }
                   }
-                }
-              }
-
-              .kudosWebNotifContent {
-                .content {
-                  display: block !important;
                 }
               }
             }
