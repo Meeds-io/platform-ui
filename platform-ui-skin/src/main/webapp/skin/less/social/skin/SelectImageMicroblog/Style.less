@@ -34,11 +34,11 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       flex-direction: column;
       justify-content: center;
       height: 222px;
-      
+
       &.dragEntered {
         background: #ccc;
       }
-      
+
       span {
         white-space: nowrap;
         margin-left: 10px ~'; /** orientation=lt */ ';
@@ -57,7 +57,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
           }
         }
       }
-      
+
       > .imageURLContainer {
         white-space: nowrap;
         line-height: 40px;
@@ -74,17 +74,17 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
           line-height: 30px;
           margin: 0;
         }
-        
+
         a.btn.actionIcon {
           border: 1px solid #ccc;
           border-radius: 3px;
         }
-        
+
         a.btn.actionIcon i {
           font-size: 25px;
         }
       }
-      
+
       > .backButton {
         margin: 10px 0 0 28px ~'; /** orientation=lt */ ';
         margin: 10px 28px 0 0 ~'; /** orientation=rt */ ';
@@ -126,7 +126,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         }
       }
     }
-    
+
     > .removeFile {
       margin: 10px 0 0;
       text-align: right ~'; /** orientation=lt */ ';
@@ -135,13 +135,51 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         font-size: 0.8em;
       }
     }
-    
+
+    > .altArea {
+      margin-top: 16px;
+      .altLabelInput {
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
+        label {
+          margin-bottom: 0!important;
+          margin-right: 12px!important;
+          white-space: nowrap;
+          margin-top: 10px;
+        }
+        .inputAlt  {
+          flex: 1 1 auto;
+          .imageAlt {
+            margin-bottom: 10px!important;
+            width: 100%;
+          }
+          .alt-description {
+            .mdi-human {
+              color: white;
+              background: @primaryColor;
+              border-radius: 50%;
+              padding: 1px 2px;
+              margin-right: 8px;
+            }
+            .caption.text-light-color {
+              font-size: 0.75rem !important;
+              font-weight: 400;
+              letter-spacing: 0.0333333333em !important;
+              line-height: 1.25rem;
+              font-style: italic !important;
+            }
+          }
+        }
+      }
+    }
+
     > .selectImageAlign {
       padding: 10px 0;
       line-height: 40px;
       height: auto;
       margin-top: 15px;
-    
+
       > .btn-group {
         padding: 0 10px;
 
@@ -182,7 +220,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
           height: 100%;
         }
       }
-      
+
       .uiActionBorder {
         height: 36px;
       }
@@ -206,7 +244,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       .cke_dialog_contents {
         height: ~"calc( 100vh - 35px )";
       }
-    }  
+    }
   }
 }
 @media ( max-height : 480px) {
