@@ -36,6 +36,15 @@
 }
 .refuseToConnectButton {
   margin-top: 2px;
+  width: 100%;
+  .v-btn__content {
+    max-width: 100%;
+    span {
+      display: inline-block !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+    }
+  }
 }
 .externalFlagClass {
   color: @baseColorLight;
