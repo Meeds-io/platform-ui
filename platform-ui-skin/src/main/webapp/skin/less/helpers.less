@@ -234,10 +234,12 @@
     text-overflow: clip !important;
 }
 .ellipsis-reverse-content {
-    flex: 0 12px;
-    height: 20px;
+    flex: 0 31px;
+    height: 46px;
+    font-size: 25px;
     padding-right: 5px;
     margin: auto;
+    color: @primaryColor;
     display: inline-flex;
 
     &.hidden {
@@ -252,8 +254,10 @@
     position: relative;
     flex: 1 auto;
     height: 20px;
-    width: 100%;
-    direction:rtl;
+    text-align: left;
+    white-space: nowrap;
+    width: 500px;
+    direction: rtl;
     max-width: 100%;
     margin: auto;
 }
