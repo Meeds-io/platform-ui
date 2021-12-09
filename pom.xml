@@ -52,7 +52,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <!-- **************************************** -->
     <!-- Dependencies versions                    -->
     <!-- **************************************** -->
-    <org.exoplatform.depmgt.version>20.x-SNAPSHOT</org.exoplatform.depmgt.version>
+    <org.exoplatform.depmgt.version>20.0-20211209</org.exoplatform.depmgt.version>
   
     <!-- Sonar properties -->
     <sonar.organization>meeds-io</sonar.organization>
