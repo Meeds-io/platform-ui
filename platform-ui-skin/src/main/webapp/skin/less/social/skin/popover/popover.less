@@ -16,37 +16,40 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 @import "../../../variables.less";
 
-.profile-popover {
-  .popover-menu  {
-    .call-button-container.single {
-      .jitsiCallAction {
-        width: 36px !important;
-        height: 36px !important;
-        border:none !important;
+.profile-popover-menu  {
+  .call-button-container.single {
+    .jitsiCallAction {
+      width: 36px !important;
+      height: 36px !important;
+      border:none !important;
+      color: @primaryColor !important;
+      caret-color: @primaryColor !important;
+      border-radius: 50% !important;
+      &:hover {
+        &::before {
+          opacity: 0.08!important;
+        }
+      }
+      &:focus {
+        &::before {
+          opacity: 0.24!important;
+        }
+      }
+      .uiIconCallStart {
+        font-size: 19px!important;
+        height: 18px;
+        width: 18px;
+      }
+    }
+  }
+  &:hover {
+    .jitsiCallAction {
+      .uiIconCallStart {
         color: @primaryColor !important;
-        caret-color: @primaryColor !important;
-        border-radius: 50% !important;
-        &:hover {
-          &::before {
-            opacity: 0.08;
-          }
-        }
-        .uiIconCallStart {
-          font-size: 19px!important;
-          height: 18px;
-          width: 18px;
-        }
       }
     }
-    &:hover {
-      .jitsiCallAction {
-        .uiIconCallStart {
-          color: @primaryColor !important;
-        }
-      }
-    }
-    p {
-      max-width: inherit !important;
-    }
+  }
+  p {
+    max-width: inherit !important;
   }
 }
