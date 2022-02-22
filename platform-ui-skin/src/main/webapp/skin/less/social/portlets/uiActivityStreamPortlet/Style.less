@@ -1263,18 +1263,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   }
 }
 
-/******** New Activity Composer **********/
-
+/******** Activity Composer **********/
 .activityComposer {
   padding: 0 0 10px 0;
-
-  .fade-leave-active {
-    transition: opacity .6s;
-  }
-
-  .fade-leave-to {
-    opacity: 0;
-  }
 
   .openLink {
     padding: 15px;
@@ -1301,100 +1292,34 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     font-size: 16px;
   }
 
-  .drawer-backdrop {
-    z-index: 1031;
-  }
+  .composerActions {
 
-  .drawer .header {
-    height: 30px;
-    font-weight: bold;
-  }
+    .actionItem {
+      display: flex;
+      align-items: center;
+      padding: 10px 10px 0 10px;
+      border: 1px solid #E1E8EE;
+      margin: 10px 0;
+      border-radius: 5px;
 
-  .drawer .header img {
-    width: 38px;
-    padding-right: 10px ~'; /** orientation=lt */ ';
-    padding-left: 10px ~'; /** orientation=rt */ ';
-  }
+      .actionItemDescription {
+        padding: 9px 10px;
 
-  .drawer .uiIconCloseComposer {
-    cursor: pointer;
-    color: @greyColorLighten1;
-    font-size: 26px;
-  }
-
-  .drawer .uiIconCloseComposer:before {
-    content: "\e937";
-  }
-
-  .drawer .content {
-    padding: 30px;
-    top: 60px;
-  }
-
-  .drawerContent .composerButtons {
-    display: flex;
-    padding-top: 10px;
-    .emptyMessage{
-      width: 100%;
-    }
-    .btnStyle{
-      text-transform: uppercase;
-    }
-    .action{
-      width: 100%;
-      margin-top: 10px;
-      .message{
-        color: #578dc9;
-        border-bottom: 1px solid #578dc9;
-        cursor: pointer;
-        font-family: Helvetica;
-        font-size: 16px;
-        line-height: 20px;
-      }
-      .colorIcon{
-        color: #578dc9;
-        cursor: pointer;
-      }
-    }
-
-  }
-
-  .activityComposerApp {
-    .drawerContent {
-
-      .composerActions {
-        margin-top: 8%;
-        padding-top: 8%;
-        border-top: 1px solid #efefef;
-
-        .actionItem {
-          display: flex;
-          align-items: center;
-          padding: 10px 10px 0 10px;
-          border: 1px solid #E1E8EE;
-          margin: 10px 0;
-          border-radius: 5px;
-
-          .actionItemDescription {
-            padding: 9px 10px;
-
-            .actionLabel {
-              font-weight: bold;
-              color: @textColor;
-              font-size: 16px;
-            }
-
-            .actionDescription > p {
-              color: #A8B3C5;
-              font-size: 12px;
-            }
-          }
-
-          &:hover {
-            box-shadow: 0 0 8px #888888;
-            cursor: pointer;
-          }
+        .actionLabel {
+          font-weight: bold;
+          color: @textColor;
+          font-size: 16px;
         }
+
+        .actionDescription > p {
+          color: #A8B3C5;
+          font-size: 12px;
+        }
+      }
+
+      &:hover {
+        box-shadow: 0 0 8px #888888;
+        cursor: pointer;
       }
     }
   }
