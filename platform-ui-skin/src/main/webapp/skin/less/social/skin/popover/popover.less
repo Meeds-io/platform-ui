@@ -1,6 +1,6 @@
 /*
 This file is part of the Meeds project (https://meeds.io/).
-Copyright (C) 2020 Meeds Association
+Copyright (C) 2022 Meeds Association
 contact@meeds.io
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -15,37 +15,41 @@ along with this program; if not, write to the Free Software Foundation,
 Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 @import "../../../variables.less";
-@import "../../../mixins.less";
 
-#spaceInfosApp {
-  padding: 8px 15px 8px 15px;
-  background-color: white!important;
-  border-color: white;
-
-  #spaceDescription {
-    padding-left: 0;
-    overflow-wrap: break-word;
-  }
-  h5 {
-    font-weight: bold;
-    color: @globalLoadingBorder;
-    line-height: 20px;
-    margin: 0;
-  }
-  #spaceManagersList, #spaceRedactorsList {
-    h5 {
-      margin-bottom: 8px;
-    }
-	.entry {
-      margin: 8px 0px;
-	  img {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
+.profile-popover-menu  {
+  .call-button-container.single {
+    .jitsiCallAction {
+      width: 36px !important;
+      height: 36px !important;
+      border:none !important;
+      color: @primaryColor !important;
+      caret-color: @primaryColor !important;
+      border-radius: 50% !important;
+      &:hover {
+        &::before {
+          opacity: 0.08!important;
+        }
+      }
+      &:focus {
+        &::before {
+          opacity: 0.24!important;
+        }
+      }
+      .uiIconCallStart {
+        font-size: 19px!important;
+        height: 18px;
+        width: 18px;
       }
     }
   }
-  #spaceRedactors > li > a, #spaceManagers > li > a {
-    color: @textColor;
+  &:hover {
+    .jitsiCallAction {
+      .uiIconCallStart {
+        color: @primaryColor !important;
+      }
+    }
+  }
+  p {
+    max-width: inherit !important;
   }
 }
