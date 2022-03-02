@@ -90,7 +90,7 @@ input[type="checkbox"]{
 	display: block;
 	left: 50%;
 	.translate(-50%, -50%);
-	position: absolute;
+	position: fixed;
 	top: 50%;
 	width: 420px;
 	.loginContainer {
@@ -187,7 +187,7 @@ input[type="checkbox"]{
 		}
 		.loginButton {
 			padding: 5px 0 0 0;
-			.button {
+			button, .button {
 				.border-radius(4px);
 				text-align: center;
 				width: 313px;
@@ -216,7 +216,7 @@ input[type="checkbox"]{
 					text-decoration: none;
 					.uiIconOauth {
 						background-image: url("@{images-path}/platform/portlets/extensions/oauthIcon.png");
-						.size(35px, 37px);
+						.size(34px, 37px);
 						display: block;
 						background-repeat: no-repeat;
 					}
