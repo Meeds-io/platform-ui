@@ -422,18 +422,20 @@
 [data-title] {
   position: relative;
 }
+
 [data-title]:hover::before {
   content: attr(data-title);
   position: absolute;
-  top:40px;
+  top: 40px;
+  width: 500;
   display: inline-block;
-  padding: 3px 6px;
+  padding: 12px 24px;
   border-radius: 6px;
-  background: #000;
   background-color: grey;
   color: #fff;
-  font-size: 16px;
+  font-size: 12px;
   font-family: sans-serif;
+  white-space: nowrap;
 }
 [data-title]:hover::after {
   content: '';
@@ -442,5 +444,5 @@
   left: 8px;
   display: inline-block;
   color: #fff;
-  border: 10px solid transparent;
+  border: 8px solid transparent;
 }
