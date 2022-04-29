@@ -84,6 +84,14 @@ body {
         margin: auto;
       }
 
+      #middle-topNavigation-container {
+        .UIIntermediateContainer {
+          > .UIRowContainer {
+            display: flex !important;
+          }
+        }
+      }
+
       &.MiddleToolBarTDContainer {
         flex-grow: 1;
         flex-shrink: 1;
@@ -170,7 +178,7 @@ body {
   }
 }
 
-.NotificationTopBarTDContainer {
+.middle-topNavigation-container {
   #NotificationPopoverPortlet {
     .container.white{
       width: auto!important;
