@@ -143,7 +143,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 @textColorDefault: #333333;
 @textColor: var(--allPagesBaseTextColor, @textColorDefault);       // #333333
 @textMediumColor: @baseColorMedium;           // #808080
-@textLightColor: @baseColorLight;       // #999999
+@textLightColor: @baseColorLight;       // #707070
 
 
 // Links
@@ -596,7 +596,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 .setColor (@a) when (lightness(@a) < 50%) {
   @baseColorDark:       var(--allPagesBaseColorDark, lighten(@baseColorDefault, 20%)); // #333333 Default color for all title, text, text input, label
   @baseColorMedium:         var(--allPagesBaseColorMedium, lighten(@baseColorDefault, 50%)); // #808080 Navigation text color, special purpose in use
-  @baseColorLight:        var(--allPagesBaseColorLight, lighten(@baseColorDefault, 60%)); // #999999 Default @baseColorMedium color for small text, sub title, text field explanation
+  @baseColorLight:        var(--allPagesBaseColorLight, lighten(@baseColorDefault, 44%)); // #707070 Default @baseColorLight color for small text, sub title, text field explanation
   @primaryBackgroundHover:  var(--allPagesPrimaryBackgroundHover, darken(@primaryBackgroundDefault, 4%));
   @primaryBackgroundLight:  var(--allPagesPrimaryBackgroundLight, lighten(@primaryBackgroundDefault, 3%));
   @primaryBackgroundLighter:  var(--allPagesPrimaryBackgroundLighter, lighten(@primaryBackgroundDefault, 13%));
@@ -835,7 +835,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 @rightBodyContainerBackground: @lightGrey;
 @activityStreamBackground: @baseBackground;
 @toggeleInvisibleColor: @greyColor;
-@likeButtonColor: var(--allPagesLikeButtonColor, #c6c6c6);
+@likeButtonColor: @baseColorLight;
 @controlGroupErrorColor: var(--allPagesControlGroupErrorColor, #bc4343);
 @controlGroupSuccessColor: var(--allPagesControlGroupSuccessColor, @successColor);
 @calendarColor: var(--allPagesCalendarColor, #333333);
