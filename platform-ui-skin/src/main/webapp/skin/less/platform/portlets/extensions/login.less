@@ -126,8 +126,10 @@ input[type="checkbox"]{
 		.userCredentials {
 			position: relative;
 			margin-top: 12px;
+			margin-left: -7px;
 			& + .userCredentials {
 				margin-top: 0;
+				margin-left: -7px;
 			}
 			.iconUser, .iconPswrd {
 				border-right: solid 1px @greyColor;
@@ -137,6 +139,13 @@ input[type="checkbox"]{
 				left: 2px;
 				top: 2px;
 				bottom: 16px;
+			}
+			.PswdToggleShow {
+				position : absolute;
+				transform :translate(0,-50%); 
+				top :40%;
+				right: -5px;
+				cursor: pointer;
 			}
 		}
 		input {
@@ -160,6 +169,7 @@ input[type="checkbox"]{
 			border-radius: 7px;
 			font-family: @sansFontFamily;
 			font-size: 15px;
+			padding-right: 24px;
 		}
 		input::-webkit-input-placeholder {
 			color: @placeholderText;
