@@ -141,7 +141,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       color: white!important;
       background: @secondaryColor;
       .v-list-item__icon {
-        i {
+        i, span {
           color: @toolbarDarkLinkHoverColor !important;
         }
         .spaceThreeDotsMenu {
@@ -151,7 +151,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     }
   }
   .administrationTitle {
-   cursor: pointer;
    .uiAdministrationIcon {
      color: @toolbarLightIconColor;
      font-size: 22px;
@@ -244,8 +243,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 }
 
 .UserPageLink:hover .UserPageHome:before, .UserPageLinkHome .UserPageHome:before {
-  content: "\e6bf";
-  font-family: "PLF-FONT-ICONS";
+  content: "\e065";
 }
 
 .UserPageLink:hover .spaceThreeDotsMenu:before,
