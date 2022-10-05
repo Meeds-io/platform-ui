@@ -1,0 +1,99 @@
+/*
+This file is part of the Meeds project (https://meeds.io/).
+Copyright (C) 2022 Meeds Association
+contact@meeds.io
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 3 of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+You should have received a copy of the GNU Lesser General Public License
+along with this program; if not, write to the Free Software Foundation,
+Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+@import "../../../variables.less";
+
+.VuetifyApp .v-application {
+  .versionHistoryDrawer {
+    .drawerContent {
+      .current_version {
+        background-color: @lightGrey;
+      }
+
+      .item-version-description {
+        width: 100%;
+
+        .descriptionContent {
+          width: 60%;
+          color: @darkGrey !important;
+          font: oblique normal normal 14px/16px Helvetica, sans-serif;
+          position: relative;
+          top: 3px;
+        }
+
+        .description {
+          width: 380px;
+
+          .v-input__append-inner {
+            margin-top: 2px !important;
+          }
+
+          .v-input__slot {
+            height: 26px !important;
+          }
+
+          .v-input__control > .v-input__slot {
+            height: 26px !important;
+            min-height: 26px !important;
+          }
+
+          input {
+            color: @darkGrey;
+            font: oblique normal normal 14px/16px Helvetica, sans-serif;
+          }
+        }
+      }
+
+      .history-line {
+        &:after {
+          display: none !important;
+        }
+
+        &:hover {
+          background-color: @tableBackgroundAccent;
+        }
+
+        .item-version {
+          font-size: 0.65rem !important;
+          padding-top: 2px;
+          padding-bottom: 2px;
+        }
+      }
+
+      .v-list-item--active {
+        background-color: @tableBackgroundAccent !important;
+
+        &:before {
+          background-color: @tableBackgroundAccent !important;
+          opacity: 0 !important;
+        }
+      }
+    }
+
+    .v-text-field--outlined.v-input--has-state fieldset {
+      border: 1px solid !important;
+    }
+
+    .v-text-field--outlined.v-input--is-focused fieldset {
+      border: 1px solid !important;
+    }
+  }
+
+  .tooltip-version {
+    max-width: 300px;
+    word-break: break-word;
+  }
+}
