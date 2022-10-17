@@ -658,11 +658,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       .clearfix();
       [class*="span"] {
         .input-block-level();
-        float: left ~'; /** orientation=lt */ ';
-        float: right ~'; /** orientation=rt */ ';
-        margin-left: @fluidGridGutterWidth ~'; /** orientation=lt */ ';
-        margin-right: @fluidGridGutterWidth ~'; /** orientation=rt */ ';
-        *margin-left: @fluidGridGutterWidth - (.5 / @gridRowWidth * 100 * 1%);
+        float: left ~'; /** orientation=rt */ ';
+        margin-right: 0 ~'; /** orientation=rt */ ';
       }
       [class*="span"]:first-child {
         margin-left: 0 ~'; /** orientation=lt */ ';
