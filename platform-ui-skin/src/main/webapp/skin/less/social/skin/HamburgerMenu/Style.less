@@ -75,13 +75,18 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     min-width:310px;
     left: 0;
   }
-  .HamburgerMenuSecondLevelParent {
+  .HamburgerMenuSecondLevelParent, .HamburgerMenuThirdLevelParent {
     max-height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
     min-height:100%;
     max-width:310px;
     min-width:310px;
+    .space-panel-action {
+      .v-btn.v-btn--icon, .uiIconCallStart {
+        color: @greyColorLighten1 !important;
+      }
+    }
   }
   .HamburgerNavigationMenuLink  {
     border-right: 1px solid @greyColorLighten1Opacity1 ~'; /** orientation=lt */ ';
@@ -140,13 +145,17 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     .v-list-item--active {
       color: white!important;
       background: @secondaryColor;
-      .v-list-item__icon i {
-        color: @toolbarDarkLinkHoverColor !important;
+      .v-list-item__icon {
+        i, span {
+          color: @toolbarDarkLinkHoverColor !important;
+        }
+        .spaceRightArrow {
+          color: @toolbarDarkLinkHoverColor !important;
+        }
       }
     }
   }
   .administrationTitle {
-   cursor: pointer;
    .uiAdministrationIcon {
      color: @toolbarLightIconColor;
      font-size: 22px;
@@ -186,6 +195,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       }
       .recentSpacesTitleLabel {
         color: @toolbarLightLinkHoverColor!important;
+        font-size: 15px !important;
       }
       .recentSpacesTitleIcon {
         .uiSearchIcon {
@@ -240,4 +250,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 .UserPageLink:hover .UserPageHome:before, .UserPageLinkHome .UserPageHome:before {
   content: "\e6bf";
   font-family: "PLF-FONT-ICONS";
+}
+
+.UserPageLink .homePage{
+  display: none;
+}
+
+
+.UserPageLink:hover .homePage{
+  display: flex;
 }
