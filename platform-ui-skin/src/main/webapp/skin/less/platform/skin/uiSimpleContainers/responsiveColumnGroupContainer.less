@@ -1,10 +1,15 @@
-.UIContainer.UIResponsiveColumnGroupContainer .UIRowContainer.flexColumnContainer {
+.UIContainer.UIResponsiveColumnGroupContainer {
+  .UIRowContainer.flexColumnContainer {
     display: flex;
     flex-direction: row;
+  }
+
 }
 @media (max-width: 979px) {
-    .UIContainer.UIResponsiveColumnGroupContainer .UIRowContainer.flexColumnContainer {
-        display: flex;
-        flex-direction: column;
-      }
+  .UIContainer.UIResponsiveColumnGroupContainer {
+    .UIRowContainer.flexColumnContainer {
+      display: flex;
+      flex-direction: column;
+    }
+  } 
 }
