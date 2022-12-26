@@ -18,12 +18,24 @@
 
 }
 
-.topBar-navigation-sub-menu {
+.topBar-navigation-drop-sub-menu {
   margin-left: 6px ~'; /** orientation=lt */ ';
-  margin-right: 6px ~'; /** orientation=rt */ ';
+  margin-left: -6px ~'; /** orientation=rt */ ';
+
+  .v-list-item__icon {
+    min-width: 33px;
+  }
+}
+
+.topBar-navigation-drop-menu {
 
   .v-list-item__icon {
     width: 35px;
     min-width: 33px;
   }
+}
+
+.topBar-navigation-bottom-drop-menu {
+  margin-bottom: 62px !important;
+  box-shadow: 0px -10px 16px -2px rgba(0, 0, 0, 0.2) !important;
 }
