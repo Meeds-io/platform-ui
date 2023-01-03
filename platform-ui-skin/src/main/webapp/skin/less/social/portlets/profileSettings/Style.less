@@ -1,0 +1,76 @@
+/*
+This file is part of the Meeds project (https://meeds.io/).
+Copyright (C) 2022 Meeds Association
+contact@meeds.io
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 3 of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+You should have received a copy of the GNU Lesser General Public License
+along with this program; if not, write to the Free Software Foundation,
+Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+@import "../../../variables.less";
+@import "../../../mixins.less";
+#profileSettings {
+    background: @baseBackground!important;
+    #settingsHeader {
+        background: @baseBackground;
+       #filterSettingsSelect {
+          height: 40px;
+          width: -moz-fit-content;
+          width: fit-content;
+        }
+    }
+   .settings-table {
+     tbody {
+       tr:hover button.v-icon.mdi-dots-vertical.button-settings-action {
+         display: flex !important;
+       }
+       tr{
+          th {
+            color: @blackColorDefault !important;
+          }
+       }
+       td {
+         color: @blackColorDefault !important;
+         height: 54px !important;
+         .settingsActionMenu {
+           top: auto !important;
+           left: auto !important;
+           right: 2vw;
+           transform-origin: left top;
+           min-width: 130px !important;
+           .menu-list{
+             font-size: 13px;
+             color: @darkGrey !important;
+             .iconStyle {
+               color: @darkGrey !important;
+             }
+             .dividerStyle {
+               color: @greyColorDefault !important;
+             }
+           }
+         }
+
+         .settingsActionMenuMobile {
+           top: 2vh !important;
+           left: auto !important;
+           right: 4vw;
+           max-width: none;
+           min-width: 187px !important;
+
+           .v-list-item__title {
+             flex: initial;
+           }
+         }
+         }
+       }
+     }
+ }
+
