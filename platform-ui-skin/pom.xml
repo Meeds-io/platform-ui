@@ -159,6 +159,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                                 <include>vuetify/vuetify-all.less</include>
                                 <include>social/skin/VersionHistoryDrawer/style.less</include>
                                 <include>social/portlets/topBarMenu/Style.less</include>
+                                <include>social/portlets/profileSettings/Style.less</include>
                             </includes>
                         </configuration>
                         <goals>
