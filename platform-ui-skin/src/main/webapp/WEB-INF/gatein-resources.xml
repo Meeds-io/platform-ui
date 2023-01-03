@@ -674,6 +674,15 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <css-priority>2</css-priority>
   </portlet-skin>
 
+  <!-- Profile Settings - Profile Settings  skin -->
+  <portlet-skin>
+    <application-name>social-portlet</application-name>
+    <portlet-name>ProfileSettingsPortlet</portlet-name>
+    <skin-name>${exo.skin.name}</skin-name>
+    <css-path>/skin/css/social/portlets/profileSettings/Style.css</css-path>
+    <css-priority>2</css-priority>
+  </portlet-skin>
+
   <!-- Simple window style -->
   <window-style>
     <style-name>Simple</style-name>
