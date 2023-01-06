@@ -666,6 +666,15 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <css-path>/skin/css/platform/portlets/welcome-screens/unlockTrial.css</css-path>
   </portlet-skin>
 
+  <!-- TopBar Menu - TopBar navigation menu skin -->
+  <portlet-skin>
+    <application-name>social-portlet</application-name>
+    <portlet-name>TopBarMenu</portlet-name>
+    <skin-name>${exo.skin.name}</skin-name>
+    <css-path>/skin/css/social/portlets/topBarMenu/Style.css</css-path>
+    <css-priority>2</css-priority>
+  </portlet-skin>
+
   <!-- Simple window style -->
   <window-style>
     <style-name>Simple</style-name>
