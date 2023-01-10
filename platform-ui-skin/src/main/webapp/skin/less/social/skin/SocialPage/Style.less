@@ -18,16 +18,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 /*================= Stream page =================*/
 
 #parentSocialPage {
-  width: 100%;
-  min-width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  display: inline;
-
-  > div {
-    padding: 25px 25px 0;
-  }
-
   .v-application {
     &:not(.hiddenable-widget) {
       margin-bottom: 22px;
@@ -103,24 +93,16 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   }
 }
 
-#singlePageApplicationContainer, .singlePageApplication {
-  max-width: 100%;
+#singlePageApplicationContainer, .singlePageApplication, #SpacePage, #StreamPage, .SpaceActivityStreamPortletPage, #parentSocialPage {
+  max-width: 100% !important;
+  width: @singlePageApplicationWidth !important;
+  box-sizing: border-box !important;
+  padding: 24px 20px !important;
+  margin: 0 auto !important;
 }
 
-@media (min-width: @minLargeDesktop) {
-  #singlePageApplicationContainer, .singlePageApplication {
-    padding: 20px 14%;
-  }
-}
-
-@media (max-width: @maxDesktop) {
-  #singlePageApplicationContainer, .singlePageApplication {
-    margin: 22px auto 10px;
-  }
-  #SpacePage {
-    margin: auto;
-    max-width: ~"calc(100% - 22px)";
-  }
+.SpaceActivityStreamPortletPage #SpacePage {
+  padding: 0 !important;
 }
 
 @media (max-width: @maxDesktop) {
