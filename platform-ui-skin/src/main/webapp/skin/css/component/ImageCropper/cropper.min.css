@@ -14,6 +14,10 @@
   border-radius: 50%;
 }
 
+.cropper-rounded .cropper-view-box, .cropper-rounded .cropper-face {
+  border-radius: 5px;
+}
+
 /* The css styles for `outline` do not follow `border-radius` on iOS/Safari (#979). */
 .cropper-circle .cropper-view-box {
     outline: 0;
