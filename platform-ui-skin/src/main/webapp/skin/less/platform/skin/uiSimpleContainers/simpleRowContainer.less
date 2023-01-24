@@ -1,24 +1,18 @@
 .UIContainer.SimpleRowContainer {
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 20px;
-}
-@media (max-width: 1319px) {
-  .UIContainer.SimpleRowContainer {
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-  }
-}
-@media (max-width: 979px) {
-  .UIContainer.SimpleRowContainer {
-    margin-left: 11px;
-    margin-right: 11px;
-    margin-bottom: 20px;
-  }
+  width: var(--allPagesSinglePageApplicationWidth,1320px) !important;   
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
 }
 .UIContainer.SimpleRowContainer.EdittingContainer { //edit mode container 
   margin-left: 0px;
   margin-right: 0px;
   margin-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 100% !important;   
 }
