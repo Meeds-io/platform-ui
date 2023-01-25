@@ -84,7 +84,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                                 <include>platform/portlets/homepage/invitations.less</include>
                                 <include>platform/portlets/homepage/suggestions.less</include>
                                 <include>platform/portlets/homepage/whoisonline.less</include>
-                                <include>platform/portlets/branding/branding.less</include>
                                 <include>platform/portlets/welcome-screens/termsAndConditions/style.less</include>
                                 <include>platform/portlets/welcome-screens/unlockTrial.less</include>
                                 <include>platform/portlets/extensions/login.less</include>
@@ -94,6 +93,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                                 <include>platform/samples/acme-intranet/SpaceSummaryInfoPortlet.less</include>
                                 <include>social/skin/social.less</include>
                                 <include>social/juzu-portlet/notification.less</include>
+                                <include>social/portlets/GeneralSettings/Style.less</include>
                                 <include>social/portlets/uiAllPeoplePortlet/Style.less</include>
                                 <include>social/portlets/uiAllSpacesPortlet/Style.less</include>
                                 <include>social/portlets/uiBannerPortlet/Style.less</include>
