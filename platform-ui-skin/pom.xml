@@ -25,7 +25,6 @@
     <groupId>io.meeds.platform-ui</groupId>
     <version>7.0.x-maintenance-SNAPSHOT</version>
   </parent>
-
   <artifactId>platform-ui-skin</artifactId>
   <packaging>war</packaging>
   <name>Meeds:: PLF:: Platform UI - Skin</name>
