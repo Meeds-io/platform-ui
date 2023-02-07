@@ -21,12 +21,12 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <parent>
     <artifactId>maven-parent-pom</artifactId>
     <groupId>io.meeds</groupId>
-    <version>27-M06</version>
+    <version>27-devx-SNAPSHOT</version>
     <relativePath />
   </parent>
   <groupId>io.meeds.platform-ui</groupId>
   <artifactId>platform-ui</artifactId>
-  <version>7.0.x-exo-SNAPSHOT</version>
+  <version>7.0.x-devx-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Meeds:: PLF:: Platform-UI</name>
   <modules>
@@ -50,7 +50,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <!-- **************************************** -->
     <!-- Dependencies versions                    -->
     <!-- **************************************** -->
-    <io.meeds.depmgt.version>23.x-exo-SNAPSHOT</io.meeds.depmgt.version>
+    <io.meeds.depmgt.version>23.x-devx-SNAPSHOT</io.meeds.depmgt.version>
   
     <!-- Sonar properties -->
     <sonar.organization>meeds-io</sonar.organization>
