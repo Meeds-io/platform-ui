@@ -23,9 +23,8 @@
   <parent>
     <artifactId>platform-ui</artifactId>
     <groupId>org.exoplatform.platform-ui</groupId>
-    <version>6.6.x-exo-SNAPSHOT</version>
+    <version>6.6.x-security-fix-SNAPSHOT</version>
   </parent>
-
   <artifactId>platform-ui-skin</artifactId>
   <packaging>war</packaging>
   <name>eXo PLF:: Platform UI - Skin</name>
