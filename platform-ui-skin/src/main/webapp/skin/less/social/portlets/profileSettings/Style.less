@@ -18,31 +18,10 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 @import "../../../variables.less";
 @import "../../../mixins.less";
 #profileSettings {
-    background: @baseBackground!important;
-    #settingsHeader {
-        background: @baseBackground;
-       #filterSettingsSelect {
-          height: 40px;
-          width: 150px;
-        }
-    }
-
     #profileSettingFormDrawer{
-        .selectLanguageFilter {
-          height: 40px!important;
-          width: -moz-fit-content!important;
-          width: fit-content!important;
-        }
-        .removeIcon{
-          color: @errorColor;
-        }
         .addLabelBtn{
-          color: @primaryColor;
   		  font-size: 16px;
  		  cursor: pointer;
- 		  .addLabelIcon{
-            color: @primaryColor;
-          }
         }
         .v-autocomplete.v-input--is-focused{
            border: none !important;
@@ -54,49 +33,14 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
          }
     }
 
-
    .settings-table {
      tbody {
-       tr:hover button.v-icon.mdi-dots-vertical.button-settings-action {
-         display: flex !important;
-       }
-       tr{
-          th {
-            color: @blackColorDefault !important;
-          }
-       }
-       td {
-         color: @blackColorDefault !important;
-         height: 54px !important;
          .settingsActionMenu {
            top: auto !important;
            left: auto !important;
            right: 2vw;
            transform-origin: left top;
            min-width: 130px !important;
-           .menu-list{
-             font-size: 13px;
-             color: @darkGrey !important;
-             .iconStyle {
-               color: @darkGrey !important;
-             }
-             .dividerStyle {
-               color: @greyColorDefault !important;
-             }
-           }
-         }
-
-         .settingsActionMenuMobile {
-           top: 2vh !important;
-           left: auto !important;
-           right: 4vw;
-           max-width: none;
-           min-width: 187px !important;
-
-           .v-list-item__title {
-             flex: initial;
-           }
-         }
          }
        }
      }
