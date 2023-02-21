@@ -59,8 +59,12 @@ body {
     }
     /* added for page loading phase */
     #ParentSiteLeftContainer {
-      min-width: 310px;
       background-color: @lightWhite;
+      min-width: 88px;
+
+      &.expand {
+        min-width: 310px;
+      }
     }
 
   }
@@ -86,6 +90,8 @@ body {
 
     #ParentSiteStickyMenu {
       min-height: 100vh;
+      position: absolute;
+      z-index: @zindexDrawer;
     }
   }
   #ParentSiteRightContainer {
