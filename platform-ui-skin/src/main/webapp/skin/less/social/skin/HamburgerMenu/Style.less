@@ -65,46 +65,12 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 }
 
 .HamburgerNavigationMenu {
-  .HamburgerMenuLevelsParent {
-    flex-direction: column;
-    min-height: 100vh;
-    max-height: 100vh;
-  }
-  .HamburgerMenuFirstLevelParent {
-    max-height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    min-height:100%;
-    max-width:310px;
-    min-width:310px;
-    left: 0;
-  }
-  .HamburgerMenuSecondLevelParent, .HamburgerMenuThirdLevelParent {
-    max-height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    min-height:100%;
-    max-width:310px;
-    min-width:310px;
-    .space-panel-action {
-      .v-btn.v-btn--icon, .uiIconCallStart {
-        color: @greyColorLighten1 !important;
-      }
-    }
-  }
   .HamburgerNavigationMenuLink  {
     border-right: 1px solid @greyColorLighten1Opacity1 ~'; /** orientation=lt */ ';
     border-left: 1px solid @greyColorLighten1Opacity1 ~'; /** orientation=rt */ ';
 
     i {
       color: @toolbarLightIconColor !important;
-    }
-  }
-  .uiArrowRightIcon {
-    font-size: 18px;
-    color: @toolbarLightLinkHoverColor;
-    &:before {
-     content: '\e91a';
     }
   }
   .uiIcon.uiIconToolbarNavItem {
@@ -169,13 +135,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     }
   }
   .administrationTitle {
-   .uiAdministrationIcon {
-     color: @toolbarLightIconColor;
-     font-size: 22px;
-     &:before {
-       content: '\e97a';
-     }
-   }
    .titleLabel {
      color: @toolbarLightLinkHoverColor !important;
    }
