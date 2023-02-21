@@ -50,10 +50,19 @@ body {
 }
 
 @media (min-width: @minLargeDesktop) {
-  .HamburgerMenuSticky #UITopBarContainerParent {
-    margin-left: 20px ~'; /** orientation=lt */ ';
-    margin-right: 20px ~'; /** orientation=rt */ ';
-    position: relative;
+  .HamburgerMenuSticky {
+  
+    #UITopBarContainerParent {
+      margin-left: 20px ~'; /** orientation=lt */ ';
+      margin-right: 20px ~'; /** orientation=rt */ ';
+      position: relative;
+    }
+    /* added for page loading phase */
+    #ParentSiteLeftContainer {
+      min-width: 310px;
+      background-color: @lightWhite;
+    }
+
   }
 }
 
