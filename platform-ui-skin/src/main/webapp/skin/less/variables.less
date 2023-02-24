@@ -1,27 +1,23 @@
-/*
-This file is part of the Meeds project (https://meeds.io/).
-Copyright (C) 2020 Meeds Association
-contact@meeds.io
-This program is free software; you can redistribute it and/or
-modify it under the terms of the GNU Lesser General Public
-License as published by the Free Software Foundation; either
-version 3 of the License, or (at your option) any later version.
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-Lesser General Public License for more details.
-You should have received a copy of the GNU Lesser General Public License
-along with this program; if not, write to the Free Software Foundation,
-Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
-*/
-@import "../bootstrap/less/variables.less";
+/**
 
-//======================================================//
-//                 VARIABLES EXO PLATFORM               //
-//======================================================//
+  This file is part of the Meeds project (https://meeds.io/).
+
+  Copyright (C) 2020 - 2023 Meeds Association contact@meeds.io
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 3 of the License, or (at your option) any later version.
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+  You should have received a copy of the GNU Lesser General Public License
+  along with this program; if not, write to the Free Software Foundation,
+  Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
 
 // Base color
-
 @baseColorDefault:          #000000;
 @baseColor:                 var(--allPagesBaseColor, @baseColorDefault); // text color , border color, and other UI elements..
 
@@ -126,11 +122,11 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 // Image Patch
 // -------------------------
-@base-images-path:      "/eXoSkin/skin/images";
+@base-images-path:      "/platform-ui/skin/images";
 @images-path:       "@{base-images-path}/themes/default";
 
 // Font icon path
-@font-path:       "/eXoSkin/skin/fonts";
+@font-path:       "/platform-ui/skin/fonts";
 
 @header-popup-bg: var(--allPagesHeader-popup-bg, #484848);
 @header-popup-title: var(--allPagesHeader-popup-title, #c1c1c1);
@@ -867,5 +863,3 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 @chatBubbleBackground: var(--allPagesChatBubbleBackground, #edf3ff);
 @chatBubbleOddBackground: var(--allPagesChatBubbleOddBackground, #dceaf9);
 @chatFileUploadPopOverBackground: var(--allPagesChatFileUploadPopOverBackground, #88b3d8);
-
-@import "customVariables.less";

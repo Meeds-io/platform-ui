@@ -1,0 +1,215 @@
+/*
+This file is part of the Meeds project (https://meeds.io/).
+Copyright (C) 2020 Meeds Association
+contact@meeds.io
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 3 of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+You should have received a copy of the GNU Lesser General Public License
+along with this program; if not, write to the Free Software Foundation,
+Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+@import "../../variables.less";
+@import "../../mixins.less";
+
+body {
+  background: @lightGrey;
+}
+
+/* ============= Shared Layout - Main Page Structure  ============= */
+#ParentSiteContainer {
+  height: 100%;
+  min-height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: row;
+
+  #ParentSiteLeftContainer {
+    position: relative;
+    flex-shrink: 0;
+    flex-grow: 0;
+
+    #ParentSiteStickyMenu {
+      min-height: 100vh;
+    }
+  }
+
+  #ParentSiteRightContainer {
+    position: relative;
+    flex-shrink: 1;
+    flex-grow: 1;
+
+    #ParentSiteContainerChildren {
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      height: 100%;
+      max-height: 100%;
+      min-width: 100%;
+      width: 100%;
+      max-width: 100%;
+      flex: 1 1 auto;
+    }
+  }
+}
+
+/* ============= Shared Layout - TopBar Display  ============= */
+#UITopBarContainerParent, #UITopBarContainer {
+  min-height: @topbarHeight;
+  height: calc(@topbarHeight - 1);
+  box-sizing: border-box;
+
+  #brandingTopBar {
+    .logoContainer {
+      position: relative;
+      min-width: 30px;
+      width: auto;
+      box-sizing: content-box;
+      img {
+        max-width: 200px;
+        max-height: 30px;
+        min-height: 30px;
+      }
+    }
+    .brandingContainer {
+      color: @toolbarLightLinkHoverColor;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      border-left: solid 1px @greyColor ~'; /** orientation=lt */ ';
+      border-right: solid 1px @greyColor ~'; /** orientation=rt */ ';
+    }
+    .logoTitle {
+      max-width: 200px;
+    }
+  }
+}
+/* Make TopBar under drawers and other modals when opened */
+.decrease-z-index #UITopBarContainer {
+  z-index: @zindexFixedNavbarUnder;
+}
+.decrease-z-index-more #UITopBarContainer {
+  z-index: @zindexFixedNavbarUnderMore;
+}
+
+@media (max-width: @maxMobileWidth) {
+  #brandingTopBar {
+    .logoContainer {
+      &:after {
+        display: none;
+      }
+    }
+    .brandingContainer.company {
+      display: none;
+    }
+    .brandingContainer.space {
+      max-width: 100px;
+    }
+  }
+}
+/* ============= End - Shared Layout  ============= */
+
+/* ============= Site Layout - Display  ============= */
+#UISiteBody {
+  position: relative;
+  max-width: 100%;
+  overflow: auto;
+  flex: 1 1 auto;
+}
+
+@media (min-width: @minTabletWidth) {
+  #UISiteBody {
+    .specific-scrollbar()
+  }
+}
+/* ============= End - Site Layout  ============= */
+
+/* ============= Page Layout - Social Pages  ============= */
+#parentSocialPage {
+  .v-application {
+    &:not(.hiddenable-widget) {
+      margin-bottom: 22px;
+    }
+    &.hiddenable-widget > .v-application--wrap > div {
+      margin-bottom: 22px;
+    }
+  }
+
+  .UIMobileSwipeParentContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width:100%;
+
+    > div {
+      width:100%;
+    }
+
+    > #leftSocialPage, > .leftSocialPage {
+      flex: 0 1 70%;
+      max-width: 70%;
+      box-sizing: border-box;
+      padding-right: 10px ~'; /** orientation=lt */ ';
+      padding-left: 10px ~'; /** orientation=rt */ ';
+    }
+
+    > #rightSocialPage, > .rightSocialPage {
+      flex: 0 1 30%;
+      max-width: 30%;
+      box-sizing: border-box;
+      padding-left: 10px ~'; /** orientation=lt */ ';
+      padding-right: 10px ~'; /** orientation=rt */ ';
+
+      /* Added for sticky container */
+      .UIContainer, .NormalContainerBlock, .VIEW-CONTAINER, .UIIntermediateContainer, .UIRowContainer {
+        display: inline;
+      }
+    }
+  }
+}
+
+#singlePageApplicationContainer, .singlePageApplication, #SpacePage, #StreamPage, .SpaceActivityStreamPortletPage, #parentSocialPage {
+  max-width: 100% !important;
+  width: @singlePageApplicationWidth !important;
+  box-sizing: border-box !important;
+  padding: 24px 20px !important;
+  margin: 0 auto !important;
+}
+
+.SpaceActivityStreamPortletPage {
+  #SpacePage, #StreamPage {
+    padding: 0 !important;
+  }
+}
+
+@media (min-width: @minTabletWidth) {
+  #parentSocialPage {
+    .UIRowContainer:first-of-type {
+      > #rightSocialPage, > .rightSocialPage {
+        #stickyBlockDesktop, .stickyBlockDesktop, &.stickyBlockDesktop {
+          position: sticky;
+          top: 13px;
+          height: auto;
+          display: block;
+          z-index: @zindexStickyContainer;
+        }
+      }
+    }
+  }
+  .decrease-z-index #parentSocialPage .UIRowContainer:first-of-type {
+    > #rightSocialPage, > .rightSocialPage {
+      #stickyBlockDesktop, .stickyBlockDesktop, &.stickyBlockDesktop {
+        z-index: 1;
+      }
+    }
+  }
+}
+/* ============= End - Page Layout  ============= */
