@@ -312,49 +312,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   }
 }
 
-.uiSearchPlatformToolBarPortlet {
-  outline: none!important;
-  > * {
-    margin: auto 0 !important;
-  }
-  > a {
-    cursor: pointer;  
-    .uiIconCloseSearchBox:before {
-      /*content: "\e75e";*/
-      font-family: IONIC-FONT;
-      content: "\f129";
-      font-size: 16px;
-    }
-  }
-  > input.loadding[type=text] {
-    + a {
-      &:after {
-        top:18px;
-      }
-    }
-  }
-  > input[type=text] {
-    padding-right: 30px;
-	&.loadding {
-      + a {
-        &:after {
-          display: block;
-          background-image: url("@{images-path}/Loading/loading24x24Light.png");
-          background-position: right center;
-          background-repeat: no-repeat;
-          .loading-action;
-          position: absolute;
-          .square(24px);
-          left: -30px;
-          top:9px;
-          content: "";
-        }
-        position: relative;
-      }
-    }
-  }
-}
-
 /*=====================================*/
 /*            TOOLBAR                  */
 
