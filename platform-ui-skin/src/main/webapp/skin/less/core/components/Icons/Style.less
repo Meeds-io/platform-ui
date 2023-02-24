@@ -1,0 +1,225 @@
+[class^="uiIcon"] {
+  &:extend(.fas);
+  font-size: 18px;
+  text-transform: none;
+  color: @primaryColor;
+}
+.btn-primary [class^="uiIcon"] {
+  color: @white;
+}
+[class^="uiIconMini"] {
+  font-size: 12px;
+  color: @white;
+}
+[class*="24x24"] {
+  font-size: 22px;
+}
+[class^="uiIconApp"], .uiIconDefaultApp {
+  font-size: 35px;
+}
+[class^="uiIconSoc"] {
+  color: @white;
+}
+.btn [class^="uiIconSoc"], [class^="uiIconPLF"] {
+  color: @primaryColor;
+}
+.btn-primary [class^="uiIconSoc"] {
+  color: @white;
+}
+.uiIconLightGray {
+  color: @greyColorLighten1;
+}
+.uiIconWhite {
+  color: @white;
+}
+.uiIconClose:before, .uiIconCloseLight:before {
+  &:extend(.fa-times:before);
+}
+.uiIconCloseCircled:before {
+  &:extend(.fa-times-circle:before);
+}
+.uiIconTrash:before, .uiIconDeleteUser:before {
+  &:extend(.fa-trash:before);
+}
+.uiIconSave:before {
+  &:extend(.fa-save:before);
+}
+.uiIconEdit:before {
+  &:extend(.fa-edit:before);
+}
+.uiIconGroup:before {
+  &:extend(.fa-users:before);
+}
+.uiIconAddUser:before {
+  &:extend(.fa-user-plus:before);
+}
+.uiIconValidateUser:before, .uiIconUserCheck:before {
+  &:extend(.fa-user-check:before);
+}
+.uiIconInviteUser:before {
+  &:extend(.fa-user-plus:before);
+}
+.uiIconRejectUser:before, .uiIconSocCancelConnectUser:before {
+  &:extend(.fa-user-minus:before);
+}
+.uiIconImport:before, .uiIconUpload:before {
+  &:extend(.fa-upload:before);
+}
+.uiIconDownload:before {
+  &:extend(.fa-download:before);
+}
+.uiIconPoll:before {
+  &:extend(.fa-poll:before);
+}
+.uiIconSoupCan:before {
+  &:extend(.fa-database:before);
+}
+.uiIconPLF24x24Search:before, .uiIconSearchLight:before {
+  &:extend(.fa-search:before);
+}
+.uiIconSocUserProfile:before {
+  &:extend(.fa-user:before);
+}
+.uiIconSocConnectUser:before {
+  &:extend(.fa-user-friends:before);
+}
+.uiIconMiniArrowDown:before, .uiIconArrowDown:before {
+  &:extend(.fa-angle-down:before);
+}
+.uiIconArrowLeftMini:before, .uiIconArrowLeft:before, .uiIconPrevArrow:before {
+  &:extend(.fa-angle-right:before);
+}
+.uiIconArrowRightMini:before, .uiIconArrowRight:before, .uiIconNextArrow:before {
+  &:extend(.fa-angle-right:before);
+}
+.uiIconDatePicker:before {
+  &:extend(.fa-calendar-alt:before);
+}
+.uiIconDefaultApp, .uiIconAppApplicationRegistryPortlet {
+  .fa-sticky-note();
+}
+.uiIconAppSpaceSettingPortlet {
+  .fa-cog()
+}
+.uiIconAppNotes, .uiIconAppnotes {
+  .fa-clipboard()
+}
+.uiIconAppTasksManagement, .uiIconApptasks {
+  .fa-tasks();
+}
+.uiIconAppMembersPortlet {
+  .fa-users();
+}
+.uiIconAppSpaceWallet {
+  .fa-wallet();
+}
+.uiIconWatch:before {
+  &:extend(.fa-eye:before);
+}
+.uiIconError:before, .uiIconColorError:before ,.uiIconColorErrorGray:before {
+  &:extend(.fa-times:before);
+  color: @errorColor;
+}
+.uiIconColorErrorGray:before{
+  color: @colorIconDefault;
+}
+.uiIconWarning:before, .uiIconColorWarning:before {
+  &:extend(.fa-exclamation-triangle:before);
+  color: @warningColor;
+}
+.uiIconInfo:before, .uiIconColorInfo:before {
+  &:extend(.fa-info:before);
+  color: @infoColor;
+}
+.uiIconInformation:before {
+  &:extend(.fa-info-circle:before);
+}
+.uiIconManageApplication:before {
+  &:extend(.fa-network-wired:before);
+}
+.uiIconPlus:before, .uiIconSocSimplePlus:before, .uiIconPlusLight:before {
+  &:extend(.fa-plus:before);
+}
+.uiIconMemberAdmin:before {
+  &:extend(.fa-user-cog:before);
+}
+.uiIconEditMembership:before {
+  &:extend(.fa-user-edit:before);
+}
+.uiIconMessageLength:before {
+  &:extend(.fa);
+  &:extend(.fa-exclamation-circle:before);
+}
+.uiIconFile:before {
+  &:extend(.fa);
+  &:extend(.fa-file:before);
+}
+.uiIconActivity {
+  .far();
+  .fa-file-alt();
+}
+.uiTreeviewIcon:before {
+  &:extend(.fa);
+  &:extend(.fa-stream:before);
+}
+.uiIconPLFMail:before {
+  &:extend(.fa);
+  &:extend(.fa-envelope:before);
+}
+.uiIconPLFWeb:before {
+  &:extend(.fa);
+  &:extend(.fa-bell:before);
+}
+.uiIconPLFSpace_web:before {
+  &:extend(.fa);
+  &:extend(.fa-circle:before);
+}
+.uiIconPLFPush:before {
+  &:extend(.fa);
+  &:extend(.fa-mobile-alt:before);
+}
+.uiArrowBackIcon, .uiArrowBAckIcon, .uiIconArrowBack, .uiBackIcon {
+  &:extend(.fa);
+  &:before {
+    &:extend(.fa-arrow-left:before);
+  }
+}
+.uiThreeDotsIcon {
+  .fas();
+  .fa-ellipsis-v();
+}
+.uiIconStartDate {
+  .fas();
+  .fa-calendar-plus();
+}
+.uiIconEndDate, .uiIconDueDate {
+  .fas();
+  .fa-calendar-check();
+}
+.uiIconValidate{
+  .fas();
+  .fa-check-circle();
+}
+.uiIconCircle{
+  .far();
+  .fa-circle();
+}
+
+.caret {
+  &:extend(.fa);
+  &:before {
+    &:extend(.fa-caret-down:before);
+  }
+}
+.uiDownloadIcon {
+  &:extend(.fa);
+  &:before {
+    &:extend(.fa-download:before);
+  }
+}
+.uiSettingsIcon, .uiIconSetting {
+  &:extend(.fa);
+  &:before {
+    &:extend(.fa-cog:before);
+  }
+}

@@ -1,27 +1,22 @@
-/*
-This file is part of the Meeds project (https://meeds.io/).
-Copyright (C) 2020 Meeds Association
-contact@meeds.io
-This program is free software; you can redistribute it and/or
-modify it under the terms of the GNU Lesser General Public
-License as published by the Free Software Foundation; either
-version 3 of the License, or (at your option) any later version.
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-Lesser General Public License for more details.
-You should have received a copy of the GNU Lesser General Public License
-along with this program; if not, write to the Free Software Foundation,
-Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+/**
+
+  This file is part of the Meeds project (https://meeds.io/).
+
+  Copyright (C) 2020 - 2023 Meeds Association contact@meeds.io
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 3 of the License, or (at your option) any later version.
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+  You should have received a copy of the GNU Lesser General Public License
+  along with this program; if not, write to the Free Software Foundation,
+  Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
-@import "../bootstrap/less/variables.less";
-
-//======================================================//
-//                 VARIABLES EXO PLATFORM               //
-//======================================================//
-
 // Base color
-
 @baseColorDefault:          #000000;
 @baseColor:                 var(--allPagesBaseColor, @baseColorDefault); // text color , border color, and other UI elements..
 
@@ -69,6 +64,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 @colorIconWarning: #f8b441;
 @colorIconNoContent: #6d7d98;
 @colorNoContentIcon: var(--allPagesColorNoContentIcon, @colorIconNoContent);
+@orange: @orangeColor;
 
 // Other base colors
 
@@ -81,7 +77,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 @greyColorLighten1Opacity2: var(--allPagesGreyColorLighten1Opacity2, fade(@greyColorLighten1Default, 8%));
 @greyColorOpacity1: var(--allPagesGreyColorOpacity1, fade(@greyColorDefault, 35%));
 
-@lightWhite: var(--allPagesLightWhite, #ffffff);
+@whiteColorDefault: #ffffff;
+@lightWhite: var(--allPagesLightWhite, @whiteColorDefault);
 @darkGrey: var(--allPagesDarkGrey, #4d5466);
 @lightGrey: var(--allPagesLightGrey, #f2f2f2);
 @mediumGrey: #5f708a;
@@ -94,6 +91,11 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 @blackColorDefault: #000000;
 @blackColor: var(--allPagesBlackColor, @blackColorDefault);
 @blackColorDark: var(--allPagesBlackColorDark, darken(@blackColorDefault, 15%));
+
+@white: @whiteColorDefault;
+@black: @blackColorDefault;
+@grayLight: #999;
+@grayLighter: #eee;
 
 // Accent colors
 // -------------------------
@@ -126,11 +128,11 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 // Image Patch
 // -------------------------
-@base-images-path:      "/eXoSkin/skin/images";
+@base-images-path:      "/platform-ui/skin/images";
 @images-path:       "@{base-images-path}/themes/default";
 
 // Font icon path
-@font-path:       "/eXoSkin/skin/fonts";
+@font-path:       "/platform-ui/skin/fonts";
 
 @header-popup-bg: var(--allPagesHeader-popup-bg, #484848);
 @header-popup-title: var(--allPagesHeader-popup-title, #c1c1c1);
@@ -206,7 +208,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 @inputFocusBorder:                var(--allPagesInputFocusBorder, lighten(@secondaryColorDefault, 30%));
 @inputFocusShadow:                var(--allPagesInputFocusShadow, lighten(@secondaryColorDefault, 40%));
 
-@inputHeight:                     @baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
+@inputHeight:                     @baseLineHeight + 20px;
 
 @uiCheckboxCheckedBorder: @baseBackground;
 @uiCheckboxBackground: @primaryColor;
@@ -244,27 +246,27 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 @sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
 @sansBoldFontFamily :   "Helvetica Neue Bold" , Helvetica, Lucida, Arial, sans-serif;
 @serifFontFamily:       Georgia, "Times New Roman", Times, serif;
-@monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
 
 @baseFontSize:          14px;
+@inputFontSize:         15px;
 @baseFontFamily:        @fontFamily;
 @baseLineHeight:        20px;
-@altFontFamily:         @serifFontFamily;
 
+@headingsFontFamily:    inherit;
 @headingsFontWeight:    bold;
-
-
+@headingsColor:         inherit;
 
 // Component sizing
 // -------------------------
-// Based on 14px font-size and 20px line-height
-@fontsizeXlarge:        var(--allPagesFontsizeXlarge, 16px);
-@fontSizeLarge:         var(--allPagesFontSizeLarge, 14px);
-@fontSizeSmall:         var(--allPagesFontSizeSmall, 12px);
+@fontSize:              var(--allPagesFontSize4 @baseFontSize);
 @fontSizeMini:          var(--allPagesFontSizeMini, 11px);
+@fontSizeSmall:         var(--allPagesFontSizeSmall, 12px);
+@fontSizeLarge:         var(--allPagesFontSizeLarge, 14px);
+@fontSizeXlarge:        var(--allPagesFontSizeXlarge, 16px);
+@fontsizeXlarge:        @fontSizeXlarge;
 
-@baseBorderRadius:      3px;
-@borderRadiusLarge:     3px;
+@baseBorderRadius:      5px;
+@borderRadiusLarge:     5px;
 @borderRadiusSmall:     3px;
 
 
@@ -759,12 +761,10 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 @tableRadius: 0px;
 
 /*  popup   */
-@uiIconCloseFontSize: 12px;
 @uiPopupHeaderBoxShadow: none;
 @popupTitleFontSize: 18px;
 @uiActionBorderBorderTop: none;
 @uiActionBorderMarginTop: 30px;
-@uiIconCloseColor: #333333;
 @uiPopupHeaderMarginBottom: 7px;
 
 /* pagination */
@@ -814,7 +814,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 // Other variables
 @commentBackgroundColor: var(--allPagesCommentBackgroundColor, #f2f5f8);
 @uiTreeEmptyColor: @lightWhite;
-@uiIconRefreshColor: @primaryColor;
 @toolbarContainerDarkColor: @lightWhite;
 @uiPageIteratorActiveColor: @lightWhite;
 @btnGroupColor: @lightWhite;
@@ -863,9 +862,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 @lineHeightBadgeDefault-mini : var(--allPagesLineHeightBadgeDefault-mini , 20px);
 @btnPrimaryDropdownBackgroundImage: none;
 @btnGroupDropdownToggeleBackground: @greyColor;
-@uiCheckboxDisabledBackground: var(--allPagesUiCheckboxDisabledBackground, #999);
+@uiCheckboxDisabledBackground: var(--allPagesUiCheckboxDisabledBackground, @grayLight);
 @chatBubbleBackground: var(--allPagesChatBubbleBackground, #edf3ff);
 @chatBubbleOddBackground: var(--allPagesChatBubbleOddBackground, #dceaf9);
 @chatFileUploadPopOverBackground: var(--allPagesChatFileUploadPopOverBackground, #88b3d8);
-
-@import "customVariables.less";
