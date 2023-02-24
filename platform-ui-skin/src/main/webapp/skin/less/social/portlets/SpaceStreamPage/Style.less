@@ -1,0 +1,129 @@
+/*
+This file is part of the Meeds project (https://meeds.io/).
+Copyright (C) 2020 Meeds Association
+contact@meeds.io
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 3 of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+You should have received a copy of the GNU Lesser General Public License
+along with this program; if not, write to the Free Software Foundation,
+Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+/*================= Stream page =================*/
+@import "../../../variables.less";
+
+#StreamPage, .SpaceActivityStreamPortletPage {
+  > div{
+    > div {
+      > .UIRowContainer:first-of-type {
+        display: flex;
+
+        .StreamMainContainer {
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: ~"calc(100% - 320px)";
+          max-width: ~"calc(100% - 320px)";
+          padding-right: 10px ~'; /** orientation=lt */ ';
+          padding-left: 10px ~'; /** orientation=rt */ ';
+          box-sizing: border-box;
+          .uiSocApplication {
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+        .StreamRightContainer {
+          flex: 0 1 320px;
+          max-width: 320px;
+          box-sizing: border-box;
+          padding-left: 10px ~'; /** orientation=lt */ ';
+          padding-right: 10px ~'; /** orientation=rt */ ';
+
+          #tasks{
+            background-color: @streamWidgetsBgColor !important;
+          }
+          .v-application {
+            &:not(.hiddenable-widget) {
+              margin-bottom: 20px;
+            }
+            &.hiddenable-widget > .v-application--wrap > div {
+              margin-bottom: 20px;
+            }
+          }
+
+           /* Added for sticky container */
+            .UIContainer, .NormalContainerBlock, .VIEW-CONTAINER, .UIIntermediateContainer, .UIRowContainer {
+              display: inline;
+            }
+
+          #PerkstoreWalletContainer {
+
+            > div{
+              > div {
+                > div {
+                  > .UIRowContainer:first-of-type {
+                    display: flex;
+
+                    #PerkstoreWidgetContainer {
+                      flex: 1 1 50%;
+                      max-width: 50%;
+                      box-sizing: border-box;
+                      padding-right: 5px ~'; /** orientation=lt */ ';
+                      padding-left: 5px ~'; /** orientation=rt */ ';
+                    }
+                    #WalletWidgetContainer {
+                      flex: 1 1 50%;
+                      max-width: 50%;
+                      box-sizing: border-box;
+                      padding-left: 5px ~'; /** orientation=lt */ ';
+                      padding-right: 5px ~'; /** orientation=rt */ ';
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .UIMobileSwipeParentContainer {
+  display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      width:100%;
+
+      > div {
+        width:100%;
+      }
+  }
+}
+
+@media (min-width: @minTabletWidth) {
+  #StreamPage, .SpaceActivityStreamPortletPage {
+    .UIRowContainer:first-of-type {
+      > #StreamRightContainer, > .StreamRightContainer {
+        #stickyBlockDesktop, .stickyBlockDesktop, &.stickyBlockDesktop {
+          position: sticky;
+          top: 13px;
+          height: auto;
+          display: block;
+          z-index: @zindexStickyContainer;
+        }
+      }
+    }
+  }
+  .decrease-z-index #StreamPage .UIRowContainer:first-of-type {
+    > #StreamRightContainer, > .StreamRightContainer {
+      #stickyBlockDesktop, .stickyBlockDesktop, &.stickyBlockDesktop {
+        z-index: 1;
+      }
+    }
+  }
+}
+

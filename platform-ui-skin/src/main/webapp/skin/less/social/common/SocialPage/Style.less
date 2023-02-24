@@ -1,0 +1,97 @@
+/*
+This file is part of the Meeds project (https://meeds.io/).
+Copyright (C) 2020 Meeds Association
+contact@meeds.io
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 3 of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+You should have received a copy of the GNU Lesser General Public License
+along with this program; if not, write to the Free Software Foundation,
+Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+/*================= Stream page =================*/
+#parentSocialPage {
+  .v-application {
+    &:not(.hiddenable-widget) {
+      margin-bottom: 22px;
+    }
+    &.hiddenable-widget > .v-application--wrap > div {
+      margin-bottom: 22px;
+    }
+  }
+
+  .UIMobileSwipeParentContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width:100%;
+
+    > div {
+      width:100%;
+    }
+
+    > #leftSocialPage, > .leftSocialPage {
+      flex: 0 1 70%;
+      max-width: 70%;
+      box-sizing: border-box;
+      padding-right: 10px ~'; /** orientation=lt */ ';
+      padding-left: 10px ~'; /** orientation=rt */ ';
+    }
+
+    > #rightSocialPage, > .rightSocialPage {
+      flex: 0 1 30%;
+      max-width: 30%;
+      box-sizing: border-box;
+      padding-left: 10px ~'; /** orientation=lt */ ';
+      padding-right: 10px ~'; /** orientation=rt */ ';
+
+      /* Added for sticky container */
+      .UIContainer, .NormalContainerBlock, .VIEW-CONTAINER, .UIIntermediateContainer, .UIRowContainer {
+        display: inline;
+      }
+    }
+  }
+}
+
+#singlePageApplicationContainer, .singlePageApplication, #SpacePage, #StreamPage, .SpaceActivityStreamPortletPage, #parentSocialPage {
+  max-width: 100% !important;
+  width: @singlePageApplicationWidth !important;
+  box-sizing: border-box !important;
+  padding: 24px 20px !important;
+  margin: 0 auto !important;
+}
+
+.SpaceActivityStreamPortletPage {
+  #SpacePage, #StreamPage {
+    padding: 0 !important;
+  }
+}
+
+@media (min-width: @minTabletWidth) {
+  #parentSocialPage {
+    .UIRowContainer:first-of-type {
+      > #rightSocialPage, > .rightSocialPage {
+        #stickyBlockDesktop, .stickyBlockDesktop, &.stickyBlockDesktop {
+          position: sticky;
+          top: 13px;
+          height: auto;
+          display: block;
+          z-index: @zindexStickyContainer;
+        }
+      }
+    }
+  }
+  .decrease-z-index #parentSocialPage .UIRowContainer:first-of-type {
+    > #rightSocialPage, > .rightSocialPage {
+      #stickyBlockDesktop, .stickyBlockDesktop, &.stickyBlockDesktop {
+        z-index: 1;
+      }
+    }
+  }
+}
