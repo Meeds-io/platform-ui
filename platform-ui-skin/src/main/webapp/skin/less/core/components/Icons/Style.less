@@ -1,0 +1,87 @@
+[class^="uiIcon"] {
+  &:extend(.fas);
+}
+[class^="uiIcon"] {
+  font-size: 16px;
+  color: @primaryColor;
+}
+[class^="uiIconMini"] {
+  font-size: 12px;
+  color: @lightWhite;
+}
+[class*="24x24"] {
+  font-size: 22px;
+}
+[class^="uiIconApp"], .uiIconDefaultApp {
+  font-size: 35px;
+}
+.uiIconClose:before {
+  &:extend(.fa-times:before);
+}
+.uiIconTrash:before, .uiIconDeleteUser:before {
+  &:extend(.fa-trash:before);
+}
+.uiIconEdit:before {
+  &:extend(.fa-edit:before);
+}
+.uiIconGroup:before {
+  &:extend(.fa-users:before);
+}
+.uiIconAddUser:before {
+  &:extend(.fa-user-plus:before);
+}
+.uiIconValidateUser:before {
+  &:extend(.fa-user-check:before);
+}
+.uiIconInviteUser:before {
+  &:extend(.fa-user-plus:before);
+}
+.uiIconRejectUser:before {
+  &:extend(.fa-user-minus:before);
+}
+.uiIconImport:before {
+  &:extend(.fa-upload:before);
+}
+.uiIconSoupCan:before {
+  &:extend(.fa-database:before);
+}
+.uiIconPLF24x24Search:before {
+  &:extend(.fa-search:before);
+}
+.uiIconSocConnectUser:before {
+  &:extend(.fa-user-friends:before);
+}
+.uiIconMiniArrowDown:before, .uiIconArrowDown:before {
+  &:extend(.fa-angle-down:before);
+}
+.uiIconDefaultApp, .uiIconAppApplicationRegistryPortlet {
+  /* Force order definitions */
+  .fa-wpforms();
+}
+.uiIconAppSpaceSettingPortlet {
+  .fa-cog()
+}
+.uiIconAppNotes {
+  .fa-clipboard()
+}
+.uiIconAppTasksManagement {
+  .fa-tasks();
+}
+.uiIconAppMembersPortlet {
+  .fa-users();
+}
+.uiIconWatch:before {
+  &:extend(.fa-eye:before);
+}
+.caret {
+  &:extend(.fa);
+  &:before {
+    &:extend(.fa-caret-down:before);
+  }
+}
+.uiSettingsIcon {
+  &:extend(.fa);
+  &:before {
+    &:extend(.fa-sliders-h:before);
+  }
+}

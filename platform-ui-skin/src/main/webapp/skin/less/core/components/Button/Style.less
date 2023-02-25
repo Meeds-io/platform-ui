@@ -1,9 +1,8 @@
 /**
-
   This file is part of the Meeds project (https://meeds.io/).
-
-  Copyright (C) 2020 - 2023 Meeds Association contact@meeds.io
-
+  
+  Copyright (C) 2023 Meeds Association contact@meeds.io
+  
   This program is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
   License as published by the Free Software Foundation; either
@@ -16,28 +15,11 @@
   along with this program; if not, write to the Free Software Foundation,
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
-@import "legacy/mixins-bootstrap.less";
-@import "legacy/mixins-legacy.less";
-@import "core/lib/mixins-fontawesome.less";
-
-.specific-scrollbar(){
-  scrollbar-color: transparent;
-
-  &::-webkit-scrollbar, &::-webkit-scrollbar-thumb {
-    scroll-margin-left: 10px ~'!important; /** orientation=lt */ ';
-    scroll-margin-right: 10px ~'!important; /** orientation=rt */ ';
-    background-color: transparent;
-    border-radius: 10px;
-    width: 5px;
-  }
-  &:hover {
-    scrollbar-color: @greyColorLighten1;
-
-    &::-webkit-scrollbar-thumb {
-      background-color: @greyColorLighten1;
-    }
-  }
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: @primaryColor;
-  }
+.btn {
+  font-family: Helvetica,arial,sans-serif;
+  font-size: 15px;
+  padding: 9px 20px;
+  box-sizing: border-box;
+  color: @btnColor;
+  border-radius: @borderRadiusSmall;
 }

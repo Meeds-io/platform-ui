@@ -14,17 +14,6 @@ You should have received a copy of the GNU Lesser General Public License
 along with this program; if not, write to the Free Software Foundation,
 Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
-//
-// Mixins
-// --------------------------------------------------
-
-
-// UTILITY MIXINS
-// --------------------------------------------------
-
-// Clearfix
-// --------
-// For clearing floats like a boss h5bp.com/q
 .clearfix() {
  *zoom: 1;
  &:before,
@@ -40,8 +29,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  }
 }
 
-// Webkit-style focus
-// ------------------
 .tab-focus() {
   // Default
   outline: thin dotted #333;
@@ -50,41 +37,12 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   outline-offset: -2px;
 }
 
-// Center-align a block level element
-// ----------------------------------
 .center-block() {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-// IE7 inline-block
-// ----------------
-.ie7-inline-block() {
-  *display: inline; /* IE7 inline-block hack */
-  *zoom: 1;
-}
-
-// IE7 likes to collapse whitespace on either side of the inline-block elements.
-// Ems because we're attempting to match the width of a space character. Left
-// version is for form buttons, which typically come after other elements, and
-// right version is for icons, which come before. Applying both is ok, but it will
-// mean that space between those elements will be .6em (~2 space characters) in IE7,
-// instead of the 1 space in other browsers.
-.ie7-restore-left-whitespace() {
-  *margin-left: .3em;
-
-  &:first-child {
-    *margin-left: 0;
-  }
-}
-
-.ie7-restore-right-whitespace() {
-  *margin-right: .3em;
-}
-
-// Sizing shortcuts
-// -------------------------
 .size(@height, @width) {
   width: @width;
   height: @height;
@@ -93,8 +51,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   .size(@size, @size);
 }
 
-// Placeholder text
-// -------------------------
 .placeholder(@color: @placeholderText) {
   &:-moz-placeholder {
     color: @color;
@@ -107,29 +63,11 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   }
 }
 
-// Text overflow
-// -------------------------
-// Requires inline-block or block for proper styling
 .text-overflow() {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
-// CSS image replacement
-// -------------------------
-// Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
-.hide-text {
-  font: 0/0 a;
-  color: transparent;
-  text-shadow: none;
-  background-color: transparent;
-  border: 0;
-}
-
-
-// FONTS
-// --------------------------------------------------
 
 #font {
   #family {
@@ -162,21 +100,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   }
 }
 
-
-// FORMS
-// --------------------------------------------------
-
-// Block level inputs
-.input-block-level {
-  display: block;
-  width: 100%;
-  min-height: @inputHeight; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
-  .box-sizing(border-box); // Makes inputs behave like true block-level elements
-}
-
-
-
-// Mixin for form field states
 .formFieldState(@textColor: #555, @borderColor: #ccc, @borderColorFocus: @borderColorDark, @borderColorShadow: lighten(#ccc, 20%), @backgroundColor: #f5f5f5) {
   // Set the text color
   .control-label,
@@ -213,18 +136,12 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 }
 
 
-
-// CSS3 PROPERTIES
-// --------------------------------------------------
-
-// Border Radius
 .border-radius(@radius) {
   -webkit-border-radius: @radius;
      -moz-border-radius: @radius;
           border-radius: @radius;
 }
 
-// Single Corner Border Radius
 .border-top-left-radius(@radius) {
   -webkit-border-top-left-radius: @radius;
       -moz-border-radius-topleft: @radius;
@@ -246,7 +163,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
           border-bottom-left-radius: @radius;
 }
 
-// Single Side Border Radius
 .border-top-radius(@radius) {
   .border-top-right-radius(@radius);
   .border-top-left-radius(@radius);
@@ -264,14 +180,12 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   .border-bottom-left-radius(@radius);
 }
 
-// Drop shadows
 .box-shadow(@shadow) {
   -webkit-box-shadow: @shadow;
      -moz-box-shadow: @shadow;
           box-shadow: @shadow;
 }
 
-// Transitions
 .transition(@transition) {
   -webkit-transition: @transition;
      -moz-transition: @transition;
@@ -291,7 +205,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
           transition-duration: @transition-duration;
 }
 
-// Transformations
 .rotate(@degrees) {
   -webkit-transform: rotate(@degrees);
      -moz-transform: rotate(@degrees);
@@ -328,25 +241,18 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
           transform: translate3d(@x, @y, @z);
 }
 
-// Backface visibility
-// Prevent browsers from flickering when using CSS 3D transforms.
-// Default value is `visible`, but can be changed to `hidden
-// See git pull https://github.com/dannykeane/bootstrap.git backface-visibility for examples
 .backface-visibility(@visibility){
 	-webkit-backface-visibility: @visibility;
 	   -moz-backface-visibility: @visibility;
 	        backface-visibility: @visibility;
 }
 
-// Background clipping
-// Heads up: FF 3.6 and under need "padding" instead of "padding-box"
 .background-clip(@clip) {
   -webkit-background-clip: @clip;
      -moz-background-clip: @clip;
           background-clip: @clip;
 }
 
-// Background sizing
 .background-size(@size) {
   -webkit-background-size: @size;
      -moz-background-size: @size;
@@ -355,15 +261,12 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 }
 
 
-// Box sizing
 .box-sizing(@boxmodel) {
   -webkit-box-sizing: @boxmodel;
      -moz-box-sizing: @boxmodel;
           box-sizing: @boxmodel;
 }
 
-// User select
-// For selecting text on the page
 .user-select(@select) {
   -webkit-user-select: @select;
      -moz-user-select: @select;
@@ -372,13 +275,11 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
           user-select: @select;
 }
 
-// Resize anything
 .resizable(@direction) {
   resize: @direction; // Options: horizontal, vertical, both
   overflow: auto; // Safari fix
 }
 
-// CSS3 Content Columns
 .content-columns(@columnCount, @columnGap: @gridGutterWidth) {
   -webkit-column-count: @columnCount;
      -moz-column-count: @columnCount;
@@ -388,7 +289,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
           column-gap: @columnGap;
 }
 
-// Optional hyphenation
 .hyphens(@mode: auto) {
   word-wrap: break-word;
   -webkit-hyphens: @mode;
@@ -398,18 +298,11 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
           hyphens: @mode;
 }
 
-// Opacity
 .opacity(@opacity) {
   opacity: @opacity / 100;
   filter: ~"alpha(opacity=@{opacity})";
 }
 
-
-
-// BACKGROUNDS
-// --------------------------------------------------
-
-// Add an alphatransparency value to any background or border color (via Elyse Holladay)
 #translucent {
   .background(@color: @white, @alpha: 1) {
     background-color: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
@@ -420,7 +313,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   }
 }
 
-// Gradient Bar Colors for buttons and alerts
 .gradientBar(@primaryColor, @blackColor, @textColor: #fff, @textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
   color: @textColor;
   text-shadow: @textShadow;
@@ -428,7 +320,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);
 }
 
-// Gradients
 #gradient {
   .horizontal(@startColor: #555, @endColor: #333) {
     background-color: @endColor;
@@ -494,30 +385,14 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
 }
 
-
-
-// COMPONENT MIXINS
-// --------------------------------------------------
-
-// Horizontal dividers
-// -------------------------
-// Dividers (basically an hr) within dropdowns and nav lists
 .nav-divider(@top: #e5e5e5, @bottom: @white) {
-  // IE7 needs a set width since we gave a height. Restricting just
-  // to IE7 to keep the 1px left/right space in other browsers.
-  // It is unclear where IE is getting the extra space that we need
-  // to negative-margin away, but so it goes.
-  *width: 100%;
   height: 1px;
   margin: ((@baseLineHeight / 2) - 1) 1px; // 8px 1px
-  *margin: -5px 0 5px;
   overflow: hidden;
   background-color: @top;
   border-bottom: 1px solid @bottom;
 }
 
-// Button backgrounds
-// ------------------
 .buttonBackground(@startColor, @endColor, @textColor: #fff, @textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
   // gradientBar will set the background to a pleasing blend of these, to support IE<=9
   .gradientBar(@startColor, @endColor, @textColor, @textShadow);
@@ -530,35 +405,22 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   }
 }
 
-// Navbar vertical align
-// -------------------------
-// Vertically center elements in the navbar.
-// Example: an element has a height of 30px, so write out `.navbarVerticalAlign(30px);` to calculate the appropriate top margin.
 .navbarVerticalAlign(@elementHeight) {
   margin-top: (@navbarHeight - @elementHeight) / 2;
 }
 
-
-
-// Grid System
-// -----------
-
-// Centered container element
 .container-fixed() {
   margin-right: auto;
   margin-left: auto;
   .clearfix();
 }
 
-// Table columns
 .tableColumns(@columnSpan: 1) {
   float: none; // undo default grid column styles
   width: ((@gridColumnWidth) * @columnSpan) + (@gridGutterWidth * (@columnSpan - 1)) - 16; // 16 is total padding on left and right of table cells
   margin-left: 0; // undo default grid column styles
 }
 
-// Make a Grid
-// Use .makeRow and .makeColumn to assign semantic layouts grid system behavior
 .makeRow() {
   margin-left: @gridGutterWidth * -1;
   .clearfix();
@@ -569,11 +431,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   width: (@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns - 1));
 }
 
-// The Grid
 #grid {
-
   .core (@gridColumnWidth, @gridGutterWidth) {
-
     .spanX (@index) when (@index > 0) {
       .span@{index} { .span(@index); }
       .spanX(@index - 1);

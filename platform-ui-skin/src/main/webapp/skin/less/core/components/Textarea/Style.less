@@ -35,8 +35,8 @@
     display: flex !important;
     .v-counter {
       &:after {
-        content: "\e769";
-        font-family: "PLF-FONT-ICONS";
+        &:extend(.fa);
+        &:extend(.fa-exclamation-circle:before);
         color: @successColor;
         padding-left: 5px;
         top: 1px;

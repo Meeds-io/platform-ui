@@ -1,0 +1,65 @@
+/**
+  This file is part of the Meeds project (https://meeds.io/).
+  
+  Copyright (C) 2023 Meeds Association contact@meeds.io
+  
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 3 of the License, or (at your option) any later version.
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+  You should have received a copy of the GNU Lesser General Public License
+  along with this program; if not, write to the Free Software Foundation,
+  Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+.uiPopup {
+  .popupHeader {
+    background-color: @uiPopupHeaderBackground;
+    border-bottom: @uiPopupHeaderBorder;
+    margin-bottom: @uiPopupHeaderMarginBottom;
+    padding: 8px 10px 8px 15px ~'; /** orientation=lt */ ';
+    padding: 8px 15px 8px 10px ~'; /** orientation=rt */ ';
+    font-size: @popupTitleFontSize;
+    font-weight: bold;
+    color: @uiPopupTitleColor;
+    .box-shadow(@uiPopupHeaderBoxShadow);
+    .border-radius(4px 4px 0 0 );
+
+    .popupTitle {
+      margin: 0;
+      color: @uiPopupTitleColor;
+      display: block;
+      cursor: move;
+      font-size: @popupTitleFontSize;
+      font-weight: bold;
+    }
+    .uiIconClose {
+      .fas();
+      .fa-times();
+
+      height: 16px;
+      line-height: 12px;
+      text-align: center;
+      width: 16px;
+      color: @greyColorLighten1;
+      position: absolute;
+      right: 11px ~'; /** orientation=lt */ ';
+      left: 11px ~'; /** orientation=rt */ ';
+      top: 15px; 
+      z-index: 9;
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: @maxLargeTabletWidth) {
+  .uiPopup .popupHeader {
+    .uiIconClose::before, .uiIconClose {
+      margin: 3px 2px 0 0 ~'; /** orientation=lt */ ';
+      margin: 3px 0 0 2px ~'; /** orientation=rt */ ';
+    }
+  }
+}

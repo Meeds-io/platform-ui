@@ -77,6 +77,10 @@ input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
 }
+label {
+  display: block;
+  margin-bottom: 5px;
+}
 label,
 select,
 button,
@@ -94,9 +98,123 @@ input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
 }
+input,
+button,
+select,
 textarea {
+  font-family: @baseFontFamily;
+}
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+  display: inline-block;
+  color: @inputColor;
+  background-color: @inputBackground;
+  border: 1px solid @inputBorder;
+  padding: 4px 6px;
+  padding: 0 10px;
+  margin-bottom: @baseLineHeight / 2;
+  font-size: @inputFontSize;
+  text-overflow: ellipsis;
+  line-height: @baseLineHeight;
+  min-height: 40px;
+  height: @baseLineHeight;
+  max-height: 115px;
+  vertical-align: middle;
+  border: Solid 1px @inputBorder;
+  box-shadow: none;
+  .border-radius(@inputBorderRadius);
+  .box-sizing(border-box);
+  .transition(~"border linear .2s, box-shadow linear .2s");
+  &:focus {
+    color: @inputFocusColor;
+    border-color: @inputFocusBorder;
+    outline: 0;
+    .box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 5px @{inputFocusShadow}");
+  }
+}
+input,
+textarea {
+  width: 206px;
+  .placeholder();
+}
+textarea {
+  height: auto;
   overflow: auto;
   vertical-align: top;
+}
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 4px 0 0;
+  line-height: normal;
+}
+input[type="file"],
+input[type="image"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+}
+
+select,
+input[type="file"] {
+  height: @inputHeight;
+  line-height: @inputHeight;
+}
+select {
+  width: 220px;
+  border: 1px solid @inputBorder;
+  background-color: @inputBackground;
+}
+select[multiple],
+select[size] {
+  height: auto;
+}
+select:focus,
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  .tab-focus();
+}
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+  cursor: not-allowed;
+  background-color: @inputDisabledBackground;
+}
+input[type="radio"][disabled],
+input[type="checkbox"][disabled],
+input[type="radio"][readonly],
+input[type="checkbox"][readonly] {
+  background-color: transparent;
+}
+input:invalid,
+textarea:invalid,
+select:invalid {
+  border-color: @errorColor;
+  &:focus {
+    border-color: darken(@errorColor, 10%);
+    @shadow: 0 0 6px lighten(@errorColor, 20%);
+    .box-shadow(@shadow);
+  }
 }
 article,
 aside,
@@ -188,7 +306,6 @@ h3, h4, h5 {
 
 textarea {
   border: Solid 2px @greyColor;
-  box-shadow: none;
 }
 ul, ol {
   padding: 0;
@@ -218,7 +335,6 @@ ol.inline {
   list-style: none;
   > li {
     display: inline-block;
-    .ie7-inline-block();
     padding-left: 5px;
     padding-right: 5px;
   }
@@ -314,4 +430,7 @@ address {
   margin-bottom: @baseLineHeight;
   font-style: normal;
   line-height: @baseLineHeight;
+}
+.btn.disabled, .btn[disabled] {
+  opacity: .65;
 }

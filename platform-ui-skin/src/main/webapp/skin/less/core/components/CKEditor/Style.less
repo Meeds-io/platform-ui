@@ -73,17 +73,18 @@
     color: #adadad;
   }
   .uiIconMessageLength {
-    font-size: 14px;
-    color: #2eb58c;
+    font-size: 12px;
+    color: @successColor;
   }
   .uiIconMessageLength:before {
-    content: "\e910";
+    &:extend(.fa);
+    &:extend(.fa-exclamation-circle:before);
+    color: @successColor;
   }
   .tooManyChars {
-    color: #bc4343;
-  }
-  .tooManyChars .uiIconMessageLength {
-    color: #bc4343;
+    &, .uiIconMessageLength, .uiIconMessageLength:before {
+      color: @errorColor;
+    }
   }
   .loadingRing {
     position: absolute;
