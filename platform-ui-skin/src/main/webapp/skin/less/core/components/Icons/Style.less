@@ -15,6 +15,9 @@
 [class^="uiIconApp"], .uiIconDefaultApp {
   font-size: 35px;
 }
+.uiIconLightGray {
+  color: @greyColorLighten1;
+}
 .uiIconClose:before {
   &:extend(.fa-times:before);
 }
@@ -72,6 +75,24 @@
 }
 .uiIconWatch:before {
   &:extend(.fa-eye:before);
+}
+.uiIconError:before {
+  &:extend(.fa-times:before);
+  color: @errorColor;
+}
+.uiIconWarning:before {
+  &:extend(.fa-exclamation-triangle:before);
+  color: @warningColor;
+}
+.uiIconInfo:before, .uiIconInformation:before {
+  &:extend(.fa-info:before);
+  color: @infoColor;
+}
+.uiArrowBackIcon {
+  &:extend(.fa);
+  &:before {
+    &:extend(.fa-long-arrow-alt-left:before);
+  }
 }
 .caret {
   &:extend(.fa);
