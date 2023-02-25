@@ -17,12 +17,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 @import "../../variables.less";
 @import "../../mixins.less";
 
-body {
-  background: @lightGrey;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-}
+@import "reset.less";
 
 /* ============= Shared Layout - Main Page Structure  ============= */
 #ParentSiteContainer {
@@ -70,6 +65,73 @@ body {
   min-height: @topbarHeight;
   height: calc(@topbarHeight - 1);
   box-sizing: border-box;
+}
+
+#UITopBarContainer {
+  box-shadow: none;
+  background-image: linear-gradient(to bottom, white, white);
+  border-bottom: 1px solid white;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  max-width: 100%;
+  z-index: @zindexFixedNavbar;
+
+  .UITopBarContainerItemsParent {
+    display: flex;
+    padding-right: 8px ~'; /** orientation=lt */ ';
+    padding-left: 8px ~'; /** orientation=rt */ ';
+
+    .UITopBarContainerItem {
+      margin: auto;
+      height: @topbarHeight;
+      min-height: @topbarHeight;
+      max-height: @topbarHeight;
+      display: flex;
+      flex-grow: 0;
+      flex-shrink: 0;
+
+      > * {
+        margin: auto;
+      }
+
+      #middle-topNavigation-container {
+        .UIIntermediateContainer {
+          > .UIRowContainer {
+            display: flex !important;
+          }
+        }
+      }
+
+      &.MiddleToolBarTDContainer {
+        flex-grow: 1;
+        flex-shrink: 1;
+        overflow: hidden;
+        justify-content: center;
+
+        > .MiddleToolBar {
+          max-width: 70%;
+          margin: 0 15%;
+          display: flex;
+          box-sizing: border-box;
+
+          > div {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+
+    .TopbarLoadingContainerTDContainer {
+      display: block;
+      position: fixed;
+      top: 53px;
+      width: 100%;
+      height: 7px;
+      min-height: 7px;
+      max-height: 7px;
+    }
+  }
 
   #brandingTopBar {
     .logoContainer {
