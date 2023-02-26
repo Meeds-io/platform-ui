@@ -1,0 +1,111 @@
+/*
+This file is part of the Meeds project (https://meeds.io/).
+Copyright (C) 2020 Meeds Association
+contact@meeds.io
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 3 of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+You should have received a copy of the GNU Lesser General Public License
+along with this program; if not, write to the Free Software Foundation,
+Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+//
+// Porlet - Site Navigation Portlet
+// --------------------------------------------------
+@import "../../variables.less";
+@import "../../mixins.less";
+.UIPage .UIGroupNavigationPortlet {
+	padding: 20px 10px;
+	.UIVirtualList {
+		height: 290px;
+	}
+}
+/*.uiBox .uiGroupNavigationManagement .uiPopup .uiActionBorder {
+	  margin: 0 -15px 0;
+}*/
+.uiPopup {
+		.uiPageBrowser .uiPageContainer {
+			padding: 0;
+		}
+		.uiPageSearch {
+			margin: 0 0 10px 0;
+			padding-left: 20px;
+			input[type="text"] {
+				width: 216px;
+			}
+		}
+}
+.uiManagementSite  {
+	.uiPopup {
+		 .uiNavigationManagement.resizable {
+		 	padding-top: 15px;
+		 	margin-bottom: -15px;
+		 }
+	}
+	padding: 20px 10px;
+	.managementBlock  {
+		margin-bottom: 10px;
+		a {
+			color: @textColor;
+			[class^="uiIcon"] {
+				margin-right: 5px;
+			}
+		}
+		td {
+			padding: 10px;
+			&.content {
+				width: 430px;
+				.siteName {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}
+.uiPopup {
+	#UINavigationNodeSelector {
+		margin-bottom: 15px;
+		.UIContainerConfigOptions{
+			.uiTrees .treeContainer .node .uiIconNode i{
+				top: 2px;
+			}
+		}
+	}
+}
+
+.uiAddGroupNavigation {
+	.uiGrid.table {
+		border: none;
+	}
+	.uiGrid.table td, .uiGrid.table th {
+		padding: 8px;
+		a {
+			cursor: pointer;
+		}
+	}
+}
+.uiBox {
+	.uiGroupNavigationManagement {
+		.popupContent > .resizable {
+			padding-top: 15px;
+			margin-bottom: 0;
+		}
+		#UIPageNavigationForm .uiContentBox .form-horizontal {
+			margin-bottom: 15px;
+		}
+	}
+}
+
+.uiManagementSite .nothingEditable  {
+  font-weight: bold;
+  color: @grayLight;
+  &+ .uiAction  {
+    margin-top: 20px;
+  }
+}

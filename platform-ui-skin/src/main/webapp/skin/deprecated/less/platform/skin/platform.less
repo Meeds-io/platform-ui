@@ -1,0 +1,53 @@
+/*
+This file is part of the Meeds project (https://meeds.io/).
+Copyright (C) 2020 Meeds Association
+contact@meeds.io
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 3 of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+You should have received a copy of the GNU Lesser General Public License
+along with this program; if not, write to the Free Software Foundation,
+Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+.rounded-corners (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+#header {
+  .rounded-corners;
+}
+
+#footer {
+  .rounded-corners(10px);
+}
+
+.QuickEditUnchecked {
+  background: url("@{images-path}/platform/skin/ToolbarContainer/ToolbarContainer.png") no-repeat scroll left -48px transparent;
+}
+
+.QuickEditChecked {
+  background: url("@{images-path}/platform/skin/ToolbarContainer/ToolbarContainer.png") no-repeat scroll left -69px transparent;
+  padding-left: 24px !important;
+}
+
+@keyframes anim-effect-boris {
+  0% {
+    transform: scale3d(0.3, 0.3, 1);
+  }
+  25%, 50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale3d(1.2, 1.2, 1);
+  }
+}

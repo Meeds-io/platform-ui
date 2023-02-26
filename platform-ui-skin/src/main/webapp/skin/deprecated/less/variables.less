@@ -1,22 +1,27 @@
-/**
-
-  This file is part of the Meeds project (https://meeds.io/).
-
-  Copyright (C) 2020 - 2023 Meeds Association contact@meeds.io
-
-  This program is free software; you can redistribute it and/or
-  modify it under the terms of the GNU Lesser General Public
-  License as published by the Free Software Foundation; either
-  version 3 of the License, or (at your option) any later version.
-  This program is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-  Lesser General Public License for more details.
-  You should have received a copy of the GNU Lesser General Public License
-  along with this program; if not, write to the Free Software Foundation,
-  Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+/*
+This file is part of the Meeds project (https://meeds.io/).
+Copyright (C) 2020 Meeds Association
+contact@meeds.io
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 3 of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+You should have received a copy of the GNU Lesser General Public License
+along with this program; if not, write to the Free Software Foundation,
+Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
+@import "../bootstrap/less/variables.less";
+
+//======================================================//
+//                 VARIABLES EXO PLATFORM               //
+//======================================================//
+
 // Base color
+
 @baseColorDefault:          #000000;
 @baseColor:                 var(--allPagesBaseColor, @baseColorDefault); // text color , border color, and other UI elements..
 
@@ -64,7 +69,6 @@
 @colorIconWarning: #f8b441;
 @colorIconNoContent: #6d7d98;
 @colorNoContentIcon: var(--allPagesColorNoContentIcon, @colorIconNoContent);
-@orange: @orangeColor;
 
 // Other base colors
 
@@ -77,8 +81,7 @@
 @greyColorLighten1Opacity2: var(--allPagesGreyColorLighten1Opacity2, fade(@greyColorLighten1Default, 8%));
 @greyColorOpacity1: var(--allPagesGreyColorOpacity1, fade(@greyColorDefault, 35%));
 
-@whiteColorDefault: #ffffff;
-@lightWhite: var(--allPagesLightWhite, @whiteColorDefault);
+@lightWhite: var(--allPagesLightWhite, #ffffff);
 @darkGrey: var(--allPagesDarkGrey, #4d5466);
 @lightGrey: var(--allPagesLightGrey, #f2f2f2);
 @mediumGrey: #5f708a;
@@ -91,11 +94,6 @@
 @blackColorDefault: #000000;
 @blackColor: var(--allPagesBlackColor, @blackColorDefault);
 @blackColorDark: var(--allPagesBlackColorDark, darken(@blackColorDefault, 15%));
-
-@white: @whiteColorDefault;
-@black: @blackColorDefault;
-@grayLight: #999;
-@grayLighter: #eee;
 
 // Accent colors
 // -------------------------
@@ -128,11 +126,11 @@
 
 // Image Patch
 // -------------------------
-@base-images-path:      "/platform-ui/skin/images";
+@base-images-path:      "/platform-skin/deprecated/skin/images";
 @images-path:       "@{base-images-path}/themes/default";
 
 // Font icon path
-@font-path:       "/platform-ui/skin/fonts";
+@font-path:       "/platform-skin/deprecated/skin/fonts";
 
 @header-popup-bg: var(--allPagesHeader-popup-bg, #484848);
 @header-popup-title: var(--allPagesHeader-popup-title, #c1c1c1);
@@ -208,7 +206,7 @@
 @inputFocusBorder:                var(--allPagesInputFocusBorder, lighten(@secondaryColorDefault, 30%));
 @inputFocusShadow:                var(--allPagesInputFocusShadow, lighten(@secondaryColorDefault, 40%));
 
-@inputHeight:                     @baseLineHeight + 20px;
+@inputHeight:                     @baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
 
 @uiCheckboxCheckedBorder: @baseBackground;
 @uiCheckboxBackground: @primaryColor;
@@ -246,27 +244,27 @@
 @sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
 @sansBoldFontFamily :   "Helvetica Neue Bold" , Helvetica, Lucida, Arial, sans-serif;
 @serifFontFamily:       Georgia, "Times New Roman", Times, serif;
+@monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
 
 @baseFontSize:          14px;
-@inputFontSize:         15px;
 @baseFontFamily:        @fontFamily;
 @baseLineHeight:        20px;
+@altFontFamily:         @serifFontFamily;
 
-@headingsFontFamily:    inherit;
 @headingsFontWeight:    bold;
-@headingsColor:         inherit;
+
+
 
 // Component sizing
 // -------------------------
-@fontSize:              var(--allPagesFontSize4 @baseFontSize);
-@fontSizeMini:          var(--allPagesFontSizeMini, 11px);
-@fontSizeSmall:         var(--allPagesFontSizeSmall, 12px);
+// Based on 14px font-size and 20px line-height
+@fontsizeXlarge:        var(--allPagesFontsizeXlarge, 16px);
 @fontSizeLarge:         var(--allPagesFontSizeLarge, 14px);
-@fontSizeXlarge:        var(--allPagesFontSizeXlarge, 16px);
-@fontsizeXlarge:        @fontSizeXlarge;
+@fontSizeSmall:         var(--allPagesFontSizeSmall, 12px);
+@fontSizeMini:          var(--allPagesFontSizeMini, 11px);
 
-@baseBorderRadius:      5px;
-@borderRadiusLarge:     5px;
+@baseBorderRadius:      3px;
+@borderRadiusLarge:     3px;
 @borderRadiusSmall:     3px;
 
 
@@ -761,10 +759,12 @@
 @tableRadius: 0px;
 
 /*  popup   */
+@uiIconCloseFontSize: 12px;
 @uiPopupHeaderBoxShadow: none;
 @popupTitleFontSize: 18px;
 @uiActionBorderBorderTop: none;
 @uiActionBorderMarginTop: 30px;
+@uiIconCloseColor: #333333;
 @uiPopupHeaderMarginBottom: 7px;
 
 /* pagination */
@@ -814,6 +814,7 @@
 // Other variables
 @commentBackgroundColor: var(--allPagesCommentBackgroundColor, #f2f5f8);
 @uiTreeEmptyColor: @lightWhite;
+@uiIconRefreshColor: @primaryColor;
 @toolbarContainerDarkColor: @lightWhite;
 @uiPageIteratorActiveColor: @lightWhite;
 @btnGroupColor: @lightWhite;
@@ -862,7 +863,9 @@
 @lineHeightBadgeDefault-mini : var(--allPagesLineHeightBadgeDefault-mini , 20px);
 @btnPrimaryDropdownBackgroundImage: none;
 @btnGroupDropdownToggeleBackground: @greyColor;
-@uiCheckboxDisabledBackground: var(--allPagesUiCheckboxDisabledBackground, @grayLight);
+@uiCheckboxDisabledBackground: var(--allPagesUiCheckboxDisabledBackground, #999);
 @chatBubbleBackground: var(--allPagesChatBubbleBackground, #edf3ff);
 @chatBubbleOddBackground: var(--allPagesChatBubbleOddBackground, #dceaf9);
 @chatFileUploadPopOverBackground: var(--allPagesChatFileUploadPopOverBackground, #88b3d8);
+
+@import "customVariables.less";

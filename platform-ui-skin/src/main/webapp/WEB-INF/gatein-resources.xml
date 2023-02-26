@@ -24,16 +24,16 @@
 
   <portal-skin>
     <skin-name>Enterprise</skin-name>
-    <skin-module>vuetify</skin-module>
-    <css-path>/skin/css/vuetify/vuetify-all.css</css-path>
-    <css-priority>100</css-priority>
+    <skin-module>commons</skin-module>
+    <css-path>/skin/css/core.css</css-path>
+    <css-priority>1</css-priority>
   </portal-skin>
 
   <portal-skin>
     <skin-name>Enterprise</skin-name>
-    <skin-module>commons</skin-module>
-    <css-path>/skin/css/core/Core.css</css-path>
-    <css-priority>1</css-priority>
+    <skin-module>vuetify</skin-module>
+    <css-path>/skin/css/vuetify-all.css</css-path>
+    <css-priority>100</css-priority>
   </portal-skin>
 
   <!-- Simple window style -->

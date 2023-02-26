@@ -51,11 +51,8 @@
     }
     .cke_button__bulletedlist_icon {
       background-image: none!important;
-      font-family: "PLF-FONT-ICONS";
-  
-      &:before {
-        content: "\e69b";
-      }
+      &:extend(.fa);
+      &:extend(.fa-list:before);
     }
     .cke_button__attachfile_icon {
       background-position: 2px 2px!important;
@@ -72,13 +69,8 @@
     left: 10px ~'; /** orientation=rt */ ';
     color: #adadad;
   }
-  .uiIconMessageLength {
+  .uiIconMessageLength, .uiIconMessageLength:before {
     font-size: 12px;
-    color: @successColor;
-  }
-  .uiIconMessageLength:before {
-    &:extend(.fa);
-    &:extend(.fa-exclamation-circle:before);
     color: @successColor;
   }
   .tooManyChars {

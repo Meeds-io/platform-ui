@@ -1,0 +1,106 @@
+/*
+This file is part of the Meeds project (https://meeds.io/).
+Copyright (C) 2020 Meeds Association
+contact@meeds.io
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 3 of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+You should have received a copy of the GNU Lesser General Public License
+along with this program; if not, write to the Free Software Foundation,
+Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+//
+// Sprites
+// --------------------------------------------------
+
+
+// ICONS
+// -----
+
+// All icons receive the styles of the <i> tag with a base class
+// of .i and are then given a unique class to add width, height,
+// and background-position. Your resulting HTML will look like
+// <i class="iconinbox"></i>.
+
+// For the white version of the icons, just add the .iconwhite class: 
+// <i class="iconinbox iconwhite"></i>
+
+.uiDropdownWithIcon .dropdown-menu > li > a > [class^="uiIconPLF"] {
+  color: @colorIconDefault;
+}
+
+/* Blue icons with optional class, or on hover/active states of certain elements */
+a:hover [class^="uiIconPLF"],
+[class^="uiIconPLF"]:hover,
+.uiIconPLFBlue
+{
+  color: @colorIconPrimary;
+
+}
+
+.uiDropdownWithIcon .dropdown-menu > li > a:hover > [class^="uiIconPLF"],
+.uiDropdownWithIcon .dropdown-menu > .active > a > [class^="uiIconPLF"],
+.uiDropdownWithIcon .dropdown-submenu:hover > a > [class^="uiIconPLF"],
+.uiIconPLFWhite {
+	color: @colorIconSecondary
+}
+
+/* light grey icons with optional class, or on  */
+
+.uiIconPLFLightGray {
+  color: @colorIconDefault;
+}
+
+.uiIconPLFDarkGray,
+.uiIconPLFExtra {
+ color: @colorIconExtra;
+}
+
+[class^="uiIconPLF24x24"]  {
+  vertical-align: middle;
+}
+
+.uiIconPLF24x24Setting:before,
+.uiIconPLF24x24Setup:before {
+	content: "\e78b";
+}
+
+.uiIconPLF24x24Add:before {
+	content: "\e739";
+}
+
+.uiIconPLF24x24Search:before {
+  content: "\e74a";
+}
+
+[class^="uiIconPLF24x24"]{
+font-size: 22px;
+}
+
+.uiIconPLFCalendar:before {
+  content: "\e68c";
+}
+
+.uiIconPLFDocuments:before {
+  content: "\e68e";
+}
+
+.uiIconPLFNotifications:before {
+  content: "\e73a";
+}
+.uiIconPLF24x24Add:before {
+  content: "\e739";
+}
+
+.uiIconPLF24x24Edit:before {
+  content: "\e73b";
+}
+
+.uiIconPLFMenu:before {
+  content: "\e73c";
+}
