@@ -23,9 +23,9 @@
   border: 1px solid @borderColor;
   background-image: linear-gradient(to bottom, @startColor, @endColor);
   background-repeat: repeat-x;
+	color: @btnColor;
 
   &:hover, &:focus, &:active, &.active, &.disabled, &[disabled] {
-  	color: @btnColor;
   	background-color: @endColor;
   }
   &.disabled, &[disabled] {
