@@ -96,26 +96,6 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.lesscss</groupId>
-        <artifactId>lesscss-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>deprecated</id>
-            <configuration>
-              <sourceDirectory>${project.basedir}/src/main/webapp/skin/deprecated/less</sourceDirectory>
-              <outputDirectory>${project.build.directory}/${project.build.finalName}/skin/css</outputDirectory>
-              <compress>false</compress>
-              <includes>
-                <include>depracated.less</include>
-              </includes>
-            </configuration>
-            <goals>
-              <goal>compile</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
         <artifactId>maven-war-plugin</artifactId>
         <configuration>
           <packagingExcludes>**/less/**,**/PSD/**</packagingExcludes>

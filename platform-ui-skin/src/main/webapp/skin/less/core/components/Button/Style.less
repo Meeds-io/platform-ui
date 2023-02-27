@@ -23,6 +23,23 @@
   color: @btnColor;
   border-radius: @borderRadiusSmall;
 }
+/* Enterprise skin-btn primary */
+.btn.btn-primary,
+.btn-primary {
+  font-family: @baseFontFamily;
+  font-weight: normal;
+  color: @btnPrimaryColor;
+  border: none;
+  box-shadow: none;
+  padding: 10px 20px;
+  &[disabled], &.disabled {
+    border-color: @btnPrimaryDisableBackground;
+    color: @lightWhite;
+    &:hover {
+      background: @btnPrimaryDisableBackground; 
+    }
+  }
+}
 .btn.btn-mini {
   font-size: 11px;
   padding: 0 10px;

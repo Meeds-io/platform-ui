@@ -98,8 +98,7 @@
   &:extend(.fa-calendar-alt:before);
 }
 .uiIconDefaultApp, .uiIconAppApplicationRegistryPortlet {
-  /* Force order definitions */
-  .fa-wpforms();
+  .fa-sticky-note();
 }
 .uiIconAppSpaceSettingPortlet {
   .fa-cog()
@@ -161,16 +160,63 @@
   .far();
   .fa-file-alt();
 }
-.uiArrowBackIcon {
+.uiTreeviewIcon:before {
+  &:extend(.fa);
+  &:extend(.fa-stream:before);
+}
+.uiIconPLFMail:before {
+  &:extend(.fa);
+  &:extend(.fa-envelope:before);
+}
+.uiIconPLFWeb:before {
+  &:extend(.fa);
+  &:extend(.fa-bell:before);
+}
+.uiIconPLFSpace_web:before {
+  &:extend(.fa);
+  &:extend(.fa-circle:before);
+}
+.uiIconPLFPush:before {
+  &:extend(.fa);
+  &:extend(.fa-mobile-alt:before);
+}
+.uiArrowBackIcon, .uiArrowBAckIcon, .uiIconArrowBack, .uiBackIcon {
   &:extend(.fa);
   &:before {
-    &:extend(.fa-long-arrow-alt-left:before);
+    &:extend(.fa-arrow-left:before);
   }
 }
+.uiThreeDotsIcon {
+  .fas();
+  .fa-ellipsis-v();
+}
+.uiIconStartDate {
+  .fas();
+  .fa-calendar-plus();
+}
+.uiIconEndDate, .uiIconDueDate {
+  .fas();
+  .fa-calendar-check();
+}
+.uiIconValidate{
+  .fas();
+  .fa-check-circle();
+}
+.uiIconCircle{
+  .far();
+  .fa-circle();
+}
+
 .caret {
   &:extend(.fa);
   &:before {
     &:extend(.fa-caret-down:before);
+  }
+}
+.uiDownloadIcon {
+  &:extend(.fa);
+  &:before {
+    &:extend(.fa-download:before);
   }
 }
 .uiSettingsIcon, .uiIconSetting {
