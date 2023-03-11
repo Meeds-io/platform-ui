@@ -1,0 +1,69 @@
+/**
+  This file is part of the Meeds project (https://meeds.io/).
+  
+  Copyright (C) 2023 Meeds Association contact@meeds.io
+  
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 3 of the License, or (at your option) any later version.
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+  You should have received a copy of the GNU Lesser General Public License
+  along with this program; if not, write to the Free Software Foundation,
+  Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+.btn {
+  font-family: Helvetica,arial,sans-serif;
+  font-size: 15px;
+  padding: 9px 20px;
+  box-sizing: border-box;
+  color: @btnColor;
+  border-radius: @borderRadiusSmall;
+}
+/* Enterprise skin-btn primary */
+.btn.btn-primary,
+.btn-primary {
+  font-family: @baseFontFamily;
+  font-weight: normal;
+  color: @btnPrimaryColor;
+  border: none;
+  box-shadow: none;
+  padding: 10px 20px;
+  &[disabled], &.disabled {
+    border-color: @btnPrimaryDisableBackground;
+    color: @lightWhite;
+    &:hover {
+      background: @btnPrimaryDisableBackground; 
+    }
+  }
+}
+.btn:not(.v-btn) {
+  color: @btnColor;
+  background-color: @btnBackgroundColor;
+  border: 1px solid @btnBorder;
+  border-radius: @borderRadiusSmall;
+}
+.input-append .btn:not(.v-btn) {
+  background-color: @primaryColor;
+  color: @btnPrimaryColor;
+}
+
+.btn-primary:not(.v-btn) {
+  background-color: @primaryColor;
+  background-image: linear-gradient(to bottom, @primaryColor, @primaryColor);
+  background-repeat: repeat-x;
+  color: @btnPrimaryColor;
+  border-radius: @borderRadiusSmall;
+  border: none;
+
+  &.disabled, &[disabled] {
+    color: @btnDisableColor;
+  }
+}
+.btn.btn-mini {
+  font-size: 11px;
+  padding: 0 10px;
+}

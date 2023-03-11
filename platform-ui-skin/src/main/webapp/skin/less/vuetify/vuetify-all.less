@@ -17,9 +17,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 @import "../variables.less";
 @import "../mixins.less";
 
-@import './lib/fontawesome.less';
-@import './lib/materialdesign-icons.less';
-
 .VuetifyApp {
   @import './lib/vuetify.less';
   @import './lib/Chart.min.less';
@@ -247,13 +244,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
       &:not(.v-btn--outlined) {
         font-weight: bold !important;
-        .buttonBackgroundEXO(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder, @btnPrimaryColor) !important;
+        .buttonBackground(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBorder, @btnPrimaryColor) !important;
       }
 
       &.v-btn--outlined {
         border: thin solid @primaryColor !important;
         font-weight: normal;
-        .buttonBackgroundEXO(@btnPrimaryColor, @btnPrimaryColor, @btnPrimaryBorder, @btnPrimaryBackground) !important;
+        .buttonBackground(@btnPrimaryColor, @btnPrimaryColor, @btnPrimaryBorder, @btnPrimaryBackground) !important;
       }
 
       &:hover {
@@ -358,10 +355,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       i:before {
         color: @errorColor !important;
       }
-      .v-alert__icon:before {
-        font-family: "PLF-FONT-ICONS";
-        content: "\e76d";
-      }
     }
     .success {
       background: @successBackground !important;
@@ -371,10 +364,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       i:before {
         color: @successColor !important;
       }
-      .v-alert__icon:before {
-        font-family: "PLF-FONT-ICONS";
-        content: "\e770";
-      }
     }
     .info {
       background: @infoBackground !important;
@@ -383,10 +372,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
       i:before {
         color: @infoColor !important;
-      }
-      .v-alert__icon:before {
-        font-family: "PLF-FONT-ICONS";
-        content: "\e767";
       }
     }
     .error--text {
@@ -422,6 +407,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     }
 
     .btn-group {
+      display: flex;
+      position: relative;
+
       > .btn:first-child {
         border-radius: 4px 0 0 4px;
       }
@@ -430,6 +418,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         margin-left: 1px;
       }
       .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        display: none;
         padding: 0;
         margin: 0;
         width: 100%;
@@ -442,6 +433,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         box-sizing: border-box;
         padding-left: 0;
       }
+      &.open .dropdown-menu {
+        display: inline-block;
+      }
     }
     .v-treeview-node__toggle {
       padding: 0;
@@ -452,7 +446,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     }
 
     .v-autocomplete.v-input--is-focused {
-      .box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6)");
+      box-shadow: ~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6)";
       box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.11);
       outline: 0;
       border: Solid 1px @inputFocusBorder;

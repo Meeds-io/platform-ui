@@ -31,7 +31,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <name>eXo PLF:: Platform-UI</name>
   <modules>
     <module>platform-ui-skin</module>
-    <module>packaging</module>
   </modules>
   <scm>
     <connection>scm:git:git://github.com/exoplatform/platform-ui.git</connection>
@@ -40,7 +39,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <url>https://github.com/exoplatform/platform-ui</url>
   </scm>
   <properties>
-    <platform-ui-skin-final-name>eXoSkin</platform-ui-skin-final-name>
     <!-- **************************************** -->
     <!-- Jira Settings                            -->
     <!-- **************************************** -->
@@ -81,13 +79,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       </dependency>
       <dependency>
         <groupId>org.exoplatform.platform-ui</groupId>
-        <artifactId>platform-ui</artifactId>
-        <version>${project.version}</version>
-        <classifier>source-release</classifier>
-        <type>zip</type>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.platform-ui</groupId>
         <artifactId>platform-ui-skin</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
@@ -97,6 +88,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <artifactId>platform-ui-skin</artifactId>
         <version>${project.version}</version>
         <type>war</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform-ui</groupId>
+        <artifactId>platform-ui</artifactId>
+        <type>zip</type>
+        <classifier>source-release</classifier>
+        <version>${project.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
