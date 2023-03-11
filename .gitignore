@@ -18,6 +18,7 @@
 
 # Maven 
 target/
+bin/
 
 # IntelliJ project files 
 *.iml

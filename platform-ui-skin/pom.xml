@@ -1,190 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-This file is part of the Meeds project (https://meeds.io/).
-Copyright (C) 2020 Meeds Association
-contact@meeds.io
-This program is free software; you can redistribute it and/or
-modify it under the terms of the GNU Lesser General Public
-License as published by the Free Software Foundation; either
-version 3 of the License, or (at your option) any later version.
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-Lesser General Public License for more details.
-You should have received a copy of the GNU Lesser General Public License
-along with this program; if not, write to the Free Software Foundation,
-Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+  This file is part of the Meeds project (https://meeds.io/).
+
+  Copyright (C) 2020 - 2023 Meeds Association contact@meeds.io
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 3 of the License, or (at your option) any later version.
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+  You should have received a copy of the GNU Lesser General Public License
+  along with this program; if not, write to the Free Software Foundation,
+  Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <artifactId>platform-ui</artifactId>
-        <groupId>org.exoplatform.platform-ui</groupId>
-        <version>6.5.x-SNAPSHOT</version>
-    </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>platform-ui</artifactId>
+    <groupId>org.exoplatform.platform-ui</groupId>
+    <version>6.5.x-SNAPSHOT</version>
+  </parent>
 
-    <artifactId>platform-ui-skin</artifactId>
-    <packaging>war</packaging>
-    <name>eXo PLF:: Platform UI - Skin</name>
+  <artifactId>platform-ui-skin</artifactId>
+  <packaging>war</packaging>
+  <name>eXo PLF:: Platform UI - Skin</name>
 
-    <!-- set the skin name -->
-    <properties>
-        <exo.skin.name>Enterprise</exo.skin.name>
-        <exo.skin.display.name>eXoSkin</exo.skin.display.name>
-        <!-- Force Sonar sources folder to avoid failure of Sonar analysis -->
-        <sonar.sources>src</sonar.sources>
-    </properties>
-    <build>
-        <finalName>${platform-ui-skin-final-name}</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>build-helper-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>add-source</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>add-source</goal>
-                        </goals>
-                        <configuration>
-                            <sources>
-                                <source>${project.basedir}/src/main/webapp</source>
-                            </sources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.lesscss</groupId>
-                <artifactId>lesscss-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>core</id>
-                        <configuration>
-                            <!-- SourceDirectory shouldn't exist and we should have as default the lesss folder in /src/main/less     -->
-                            <sourceDirectory>${project.basedir}/src/main/webapp/skin/less</sourceDirectory>
-                            <outputDirectory>${project.build.directory}/${project.build.finalName}/skin/css</outputDirectory>
-                            <compress>false</compress>
-                            <includes>
-                                <include>Core.less</include>
-                                <include>customStyle.less</include>
-                                <include>Portlets/UIOrganizationPortlet/Style.less</include>
-                                <include>Portlets/UITabbedDashboardPortlet/Style.less</include>
-                                <include>Portlets/UIGadgetPortlet/Style.less</include>
-                                <include>Portlets/UIAccountPortlet/Style.less</include>
-                                <include>Portlets/UIApplicationRegistryPortlet/Style.less</include>
-                                <include>platform/skin/platform.less</include>
-                                <include>platform/skin/enterprise.less</include>
-                                <include>platform/portlets/platformNavigation/UIHelpPlatformToolbarPortlet/Style.less</include>
-                                <include>platform/portlets/platformNavigation/UISpaceNavigationPortlet/Style.less</include>
-                                <include>platform/portlets/platformNavigation/UIUserNavigationPortlet/Style.less</include>
-                                <include>platform/portlets/notification/notificationsAdmin.less</include>
-                                <include>platform/portlets/homepage/invitations.less</include>
-                                <include>platform/portlets/homepage/suggestions.less</include>
-                                <include>platform/portlets/homepage/whoisonline.less</include>
-                                <include>platform/portlets/welcome-screens/termsAndConditions/style.less</include>
-                                <include>platform/portlets/welcome-screens/unlockTrial.less</include>
-                                <include>platform/portlets/extensions/login.less</include>
-                                <include>platform/portlets/extensions/welcome-screens.less</include>
-                                <include>platform/portlets/extensions/registration.less</include>
-                                <include>platform/samples/acme-website/Style.less</include>
-                                <include>platform/samples/acme-intranet/SpaceSummaryInfoPortlet.less</include>
-                                <include>social/skin/social.less</include>
-                                <include>social/juzu-portlet/notification.less</include>
-                                <include>social/portlets/GeneralSettings/Style.less</include>
-                                <include>social/portlets/uiAllPeoplePortlet/Style.less</include>
-                                <include>social/portlets/uiAllSpacesPortlet/Style.less</include>
-                                <include>social/portlets/uiBannerPortlet/Style.less</include>
-                                <include>social/portlets/uiConnectionsNavigationPortlet/Style.less</include>
-                                <include>social/portlets/uiConnectionsPortlet/Style.less</include>
-                                <include>social/portlets/uiFooterPortlet/Style.less</include>
-                                <include>social/portlets/uiGettingStartedPortlet/Style.less</include>
-                                <include>social/portlets/ExternalSpacesListPortlet/Style.less</include>
-                                <include>social/portlets/uiSuggestionsPortlet/Style.less</include>
-                                <include>social/portlets/uiInvitationSpacesPortlet/Style.less</include>
-                                <include>social/portlets/uiInvitationsPortlet/Style.less</include>
-                                <include>social/portlets/uiMembersPortlet/Style.less</include>
-                                <include>social/portlets/uiMyConnectionsNavigationPortlet/Style.less</include>
-                                <include>social/portlets/uiConnectionsNavigationPortlet/Style.less</include>
-                                <include>social/portlets/uiMySpacesPortlet/Style.less</include>
-                                <include>social/portlets/uiPendingSpacesPortlet/Style.less</include>
-                                <include>social/portlets/uiPeoplePortlet/Style.less</include>
-                                <include>social/portlets/uiPeopleToolbarPortlet/Style.less</include>
-                                <include>social/portlets/uiProfileNavigatonPortlet/Style.less</include>
-                                <include>social/portlets/uiProfilePortlet/Style.less</include>
-                                <include>social/portlets/uiPublicSpacesPortlet/Style.less</include>
-                                <include>social/portlets/uiRequestsPortlet/Style.less</include>
-                                <include>social/portlets/uiSocialDemoHomePagePortlet/Style.less</include>
-                                <include>social/portlets/uiSocialDemoNavigationPortlet/Style.less</include>
-                                <include>social/portlets/uiSocialExtensionHomePagePortlet/Style.less</include>
-                                <include>social/portlets/uiSocialExtensionLogoPortlet/Style.less</include>
-                                <include>social/portlets/uiSocialNavigationPortlet/Style.less</include>
-                                <include>social/portlets/uiSpaceAccessPortlet/Style.less</include>
-                                <include>social/portlets/uiActivityStreamPortlet/Style.less</include>
-                                <include>social/portlets/uiSpaceMenuPortlet/Style.less</include>
-                                <include>social/portlets/uiSpaceNavigationPortlet/Style.less</include>
-                                <include>social/portlets/uiSpaceSettingPortlet/Style.less</include>
-                                <include>social/portlets/uiSpaceToolbarPortlet/Style.less</include>
-                                <include>social/portlets/uiUserActivityStreamPortlet/Style.less</include>
-                                <include>social/portlets/uiWarningPortlet/Style.less</include>
-                                <include>social/portlets/uiIntranetNotification/Style.less</include>
-                                <include>social/portlets/uiUserPortlet/Style.less</include>
-                                <include>social/portlets/uiSpacesAdministrationPortlet/Style.less</include>
-                                <include>social/portlets/uiSpaceTemplatesPortlet/Style.less</include>
-                                <include>social/portlets/uiSpaceInfosPortlet/Style.less</include>                        
-                                <include>social/portlets/SpacesList/Style.less</include>                        
-                                <include>social/portlets/SpacesOverview/Style.less</include>
-                                <include>social/portlets/SpaceHeader/Style.less</include>
-                                <include>social/portlets/SpaceMembers/Style.less</include>
-                                <include>social/portlets/SpaceSettings/Style.less</include>
-                                <include>social/portlets/SpaceSearch/Style.less</include>
-                                <include>social/portlets/ActivitySearch/Style.less</include>
-                                <include>social/portlets/PeopleList/Style.less</include>                        
-                                <include>social/portlets/PeopleOverview/Style.less</include>
-                                <include>social/portlets/ProfileHeader/Style.less</include>
-                                <include>social/portlets/ProfileAboutMe/Style.less</include>
-                                <include>social/portlets/ProfileContactInformation/Style.less</include>
-                                <include>social/portlets/ProfileWorkExperience/Style.less</include>
-                                <include>social/portlets/ProfileSearch/Style.less</include>
-                                <include>social/portlets/IDMUsersManagement/Style.less</include>
-                                <include>social/portlets/IDMGroupsManagement/Style.less</include>
-                                <include>social/portlets/IDMMembershipTypesManagement/Style.less</include>
-                                <include>commons/skin/commons.less</include>
-                                <include>commons/skin/CkeditorSuggester/Style.less</include>
-                                <include>integration/skin/quicksearchpage.less</include>
-                                <include>integration/skin/searchAdmin.less</include>
-                                <include>integration/skin/searchpage.less</include>
-                                <include>vuetify/vuetify-all.less</include>
-                                <include>social/skin/VersionHistoryDrawer/style.less</include>
-                                <include>social/portlets/topBarMenu/Style.less</include>
-                                <include>social/portlets/profileSettings/Style.less</include>
-                            </includes>
-                        </configuration>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <artifactId>maven-war-plugin</artifactId>
-                <configuration>
-                    <webResources>
-                        <resource>
-                            <directory>${project.basedir}/src/main/webapp/WEB-INF</directory>
-                            <targetPath>WEB-INF</targetPath>
-                            <includes>
-                                <include>gatein-resources.xml</include>
-                                <include>web.xml</include>
-                            </includes>
-                            <filtering>true</filtering>
-                        </resource>
-                    </webResources>
-                    <packagingExcludes>skin/images/PSD/,skin/images/themes/blue/,skin/images/themes/green/,skin/images/themes/orange/,skin/images/themes/pink/,skin/images/themes/red/</packagingExcludes>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+  <properties>
+    <!-- Force Sonar sources folder to avoid failure of Sonar analysis -->
+    <sonar.sources>src</sonar.sources>
+  </properties>
+  <build>
+    <finalName>platform-ui</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>add-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>${project.basedir}/src/main/webapp</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.lesscss</groupId>
+        <artifactId>lesscss-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>core</id>
+            <configuration>
+              <sourceDirectory>${project.basedir}/src/main/webapp/skin/less/core/</sourceDirectory>
+              <outputDirectory>${project.build.directory}/${project.build.finalName}/skin/css</outputDirectory>
+              <compress>false</compress>
+              <includes>
+                <include>core.less</include>
+              </includes>
+            </configuration>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.lesscss</groupId>
+        <artifactId>lesscss-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>vuetify</id>
+            <configuration>
+              <sourceDirectory>${project.basedir}/src/main/webapp/skin/less/vuetify/</sourceDirectory>
+              <outputDirectory>${project.build.directory}/${project.build.finalName}/skin/css</outputDirectory>
+              <compress>false</compress>
+              <includes>
+                <include>vuetify-all.less</include>
+              </includes>
+            </configuration>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <configuration>
+          <packagingExcludes>**/less/**,**/PSD/**</packagingExcludes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

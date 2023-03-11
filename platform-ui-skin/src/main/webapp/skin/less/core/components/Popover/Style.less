@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<!--
+/**
 
   This file is part of the Meeds project (https://meeds.io/).
-  
+
   Copyright (C) 2020 - 2023 Meeds Association contact@meeds.io
-  
+
   This program is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
   License as published by the Free Software Foundation; either
@@ -17,27 +16,34 @@
   along with this program; if not, write to the Free Software Foundation,
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
--->
-<web-app version="3.0"
-         metadata-complete="true"
-         xmlns="http://java.sun.com/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+*/
 
-  <display-name>platform-ui</display-name>
-  <absolute-ordering/>
-
-  <listener>
-    <listener-class>org.exoplatform.container.web.PortalContainerConfigOwner</listener-class>
-  </listener>
-
-  <filter>
-    <filter-name>ResourceRequestFilter</filter-name>
-    <filter-class>org.exoplatform.portal.application.ResourceRequestFilter</filter-class>
-  </filter>
-  <filter-mapping>
-    <filter-name>ResourceRequestFilter</filter-name>
-    <url-pattern>/*</url-pattern>
-  </filter-mapping>
-</web-app>
-
+.profile-popover-menu, .space-logo-popover  {
+  .call-button-container.single {
+    height: auto !important;
+    .jitsiCallAction {
+      width: 36px !important;
+      height: 36px !important;
+      border:none !important;
+      color: @primaryColor !important;
+      caret-color: @primaryColor !important;
+      border-radius: 50% !important;
+      &:hover {
+        &::before {
+          opacity: 0.08!important;
+        }
+      }
+      &:focus {
+        &::before {
+          opacity: 0.24!important;
+        }
+      }
+    }
+  }
+  p {
+    max-width: inherit !important;
+  }
+}
+.profile-popover-menu {
+  box-shadow: none!important;
+}
