@@ -29,7 +29,6 @@
   <artifactId>platform-ui-skin</artifactId>
   <packaging>war</packaging>
   <name>eXo PLF:: Platform UI - Skin</name>
-
   <properties>
     <!-- Force Sonar sources folder to avoid failure of Sonar analysis -->
     <sonar.sources>src</sonar.sources>
