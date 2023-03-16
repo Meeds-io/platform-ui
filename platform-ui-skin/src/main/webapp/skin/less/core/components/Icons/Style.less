@@ -1,0 +1,316 @@
+[class^="uiIcon"] {
+  font-size: 18px;
+  text-transform: none;
+  color: @primaryColor;
+}
+[class*="24x24"] {
+  font-size: 22px;
+}
+[class*="32x32"] {
+  font-size: 30px;
+}
+[class*="64x64"] {
+  font-size: 60px;
+}
+.btn-primary [class^="uiIcon"] {
+  color: @white;
+}
+[class^="uiIconMini"] {
+  font-size: 12px;
+  color: @white;
+}
+[class^="uiIconApp"], .uiIconDefaultApp {
+  font-size: 35px;
+}
+[class^="uiIconSoc"] {
+  color: @white;
+}
+.btn [class^="uiIconSoc"], [class^="uiIconPLF"] {
+  color: @primaryColor;
+}
+.btn-primary [class^="uiIconSoc"] {
+  color: @white;
+}
+.uiIconLightGray {
+  color: @greyColorLighten1;
+}
+.uiIconWhite {
+  color: @white;
+}
+.uiIconFile:before {
+  &:extend(.fa);
+  &:extend(.fa-file:before);
+}
+.uiIconDefaultApp:before, .uiIconAppApplicationRegistryPortlet:before {
+  &:extend(.fas);
+  &:extend(.fa-sticky-note:before);
+}
+.uiIconActivity:before {
+  &:extend(.far);
+  &:extend(.fa-file-alt:before);
+}
+.uiIconClose:before, .uiIconCloseLight:before {
+  &:extend(.fas);
+  &:extend(.fa-times:before);
+}
+.uiIconCloseCircled:before {
+  &:extend(.fas);
+  &:extend(.fa-times-circle:before);
+}
+.uiIconTrash:before, .uiIconDelete:before, .uiIconDeleteUser:before {
+  &:extend(.fas);
+  &:extend(.fa-trash:before);
+}
+.uiIconSave:before {
+  &:extend(.fas);
+  &:extend(.fa-save:before);
+}
+.uiIconEdit:before {
+  &:extend(.fas);
+  &:extend(.fa-edit:before);
+}
+.uiIconGroup:before {
+  &:extend(.fas);
+  &:extend(.fa-users:before);
+}
+.uiIconAddUser:before {
+  &:extend(.fas);
+  &:extend(.fa-user-plus:before);
+}
+.uiIconValidateUser:before, .uiIconUserCheck:before {
+  &:extend(.fas);
+  &:extend(.fa-user-check:before);
+}
+.uiIconInviteUser:before {
+  &:extend(.fas);
+  &:extend(.fa-user-plus:before);
+}
+.uiIconClock:before {
+  &:extend(.far);
+  &:extend(.fa-clock:before);
+}
+.uiIconCloneNode:before {
+  &:extend(.far);
+  &:extend(.fa-clone:before);
+}
+.uiIconRejectUser:before, .uiIconSocCancelConnectUser:before {
+  &:extend(.fas);
+  &:extend(.fa-user-minus:before);
+}
+.uiIconImport:before, .uiIconUpload:before {
+  &:extend(.fas);
+  &:extend(.fa-upload:before);
+}
+.uiIconDownload:before {
+  &:extend(.fas);
+  &:extend(.fa-download:before);
+}
+.uiIconActivity.uiIconPoll:before, .uiIconPoll:before {
+  &:extend(.fas);
+  &:extend(.fa-poll:before);
+}
+.uiIconSoupCan:before {
+  &:extend(.fas);
+  &:extend(.fa-database:before);
+}
+.uiIconPLF24x24Search:before, .uiIconSearchLight:before {
+  &:extend(.fas);
+  &:extend(.fa-search:before);
+}
+.uiIconSocUserProfile:before {
+  &:extend(.fas);
+  &:extend(.fa-user:before);
+}
+.uiIconRotateLeft:before, .uiIconRotateRight:before {
+  &:extend(.fas);
+  &:extend(.fa-undo:before);
+}
+.uiIconRotateRight {
+  &:extend(.fas);
+  .fa-flip-horizontal();
+}
+.uiIconSocConnectUser:before {
+  &:extend(.fas);
+  &:extend(.fa-user-plus:before);
+}
+.uiIconArrowDownMini:before, .uiIconMiniArrowDown:before, .uiIconArrowDown:before {
+  &:extend(.fas);
+  &:extend(.fa-angle-down:before);
+}
+.uiIconArrowLeftMini:before, .uiIconMiniArrowLeft:before, .uiIconArrowLeft:before, .uiIconPrevArrow:before {
+  &:extend(.fas);
+  &:extend(.fa-angle-left:before);
+}
+.uiIconArrowRightMini:before, .uiIconArrowRight:before, .uiIconNextArrow:before {
+  &:extend(.fas);
+  &:extend(.fa-angle-right:before);
+}
+.uiIconDatePicker:before {
+  &:extend(.fas);
+  &:extend(.fa-calendar-alt:before);
+}
+.uiIconAppSpaceSettingPortlet {
+  &:extend(.fas);
+  .fa-cog()
+}
+.uiIconAppNotes, .uiIconAppnotes {
+  &:extend(.fas);
+  .fa-clipboard()
+}
+.uiIconAppTasksManagement, .uiIconApptasks {
+  &:extend(.fas);
+  .fa-tasks();
+}
+.uiIconAppMembersPortlet {
+  &:extend(.fas);
+  .fa-users();
+}
+.uiIconAppSpaceWallet {
+  &:extend(.fas);
+  .fa-wallet();
+}
+.uiIconWatch:before {
+  &:extend(.fas);
+  &:extend(.fa-eye:before);
+}
+.uiIconError:before, .uiIconColorError:before ,.uiIconColorErrorGray:before {
+  &:extend(.fas);
+  &:extend(.fa-times:before);
+  color: @errorColor;
+}
+.uiIconColorErrorGray:before{
+  color: @colorIconDefault;
+}
+.uiIconWarning:before, .uiIconColorWarning:before {
+  &:extend(.fas);
+  &:extend(.fa-exclamation-triangle:before);
+  color: @warningColor;
+}
+.uiIconInfo:before, .uiIconColorInfo:before {
+  &:extend(.fas);
+  &:extend(.fa-info:before);
+  color: @infoColor;
+}
+.uiIconInformation:before {
+  &:extend(.fas);
+  &:extend(.fa-info-circle:before);
+}
+.uiIconManageApplication:before {
+  &:extend(.fas);
+  &:extend(.fa-network-wired:before);
+}
+.uiIconPlus:before, .uiIconSocSimplePlus:before, .uiIconPlusLight:before {
+  &:extend(.fas);
+  &:extend(.fa-plus:before);
+}
+.uiIconMemberAdmin:before {
+  &:extend(.fas);
+  &:extend(.fa-user-cog:before);
+}
+.uiIconEditMembership:before {
+  &:extend(.fas);
+  &:extend(.fa-user-edit:before);
+}
+.uiIconMessageLength:before {
+  &:extend(.fa);
+  &:extend(.fa-exclamation-circle:before);
+}
+.uiTreeviewIcon:before {
+  &:extend(.fa);
+  &:extend(.fa-sitemap:before);
+}
+.uiIconPLFMail:before {
+  &:extend(.fa);
+  &:extend(.fa-envelope:before);
+}
+.uiIconPLFWeb:before {
+  &:extend(.fa);
+  &:extend(.fa-bell:before);
+}
+.uiIconPLFSpace_web:before {
+  &:extend(.fa);
+  &:extend(.fa-circle:before);
+}
+.uiIconPLFPush:before {
+  &:extend(.fa);
+  &:extend(.fa-mobile-alt:before);
+}
+.uiArrowBackIcon, .uiArrowBAckIcon, .uiIconArrowBack, .uiBackIcon {
+  &:extend(.fa);
+  &:before {
+    &:extend(.fa-arrow-left:before);
+  }
+}
+.uiIconTick:before {
+  &:extend(.fa);
+  &:extend(.fa-check:before);
+}
+.uiIconComment:before {
+  &:extend(.fa);
+  &:extend(.fa-comment:before);
+}
+.uiIconThumbUp:before {
+  &:extend(.far);
+  &:extend(.fa-thumbs-up:before);
+}
+.uiCommentIcon:before {
+  &:extend(.fa);
+  &:extend(.fa-comment:before);
+}
+.uiThreeDotsIcon, .uiIconVerticalDots {
+  .fas();
+  .fa-ellipsis-v();
+}
+.uiIconStartDate {
+  .fas();
+  .fa-calendar-plus();
+}
+.uiIconEndDate, .uiIconDueDate {
+  .fas();
+  .fa-calendar-check();
+}
+.uiIconValidate {
+  .fas();
+  .fa-check-circle();
+}
+.uiIconCircle {
+  .far();
+  .fa-circle();
+}
+.uiIconHandbag {
+  .fa-shopping-bag();
+  &:before {
+    .fas();
+  }
+}
+.uiIconCalTask {
+  .fa-clipboard-list();
+  &:before {
+    .fas();
+  }
+}
+.uiIconWiki {
+  .fa-book-open();
+  &:before {
+    .fas();
+  }
+}
+.btn .caret {
+  &:extend(.fa);
+  &:before {
+    &:extend(.fa-caret-down:before);
+  }
+}
+
+.uiDownloadIcon {
+  &:extend(.fa);
+  &:before {
+    &:extend(.fa-download:before);
+  }
+}
+.uiSettingsIcon, .uiIconSetting {
+  &:extend(.fa);
+  &:before {
+    &:extend(.fa-cog:before);
+  }
+}
