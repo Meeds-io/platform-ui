@@ -53,6 +53,15 @@
 .overflow-y-overlay {
   overflow-y: overlay !important;
 }
+.overflow-initial {
+  overflow: initial !important;
+}
+.overflow-x-initial {
+  overflow-x: initial !important;
+}
+.overflow-y-initial {
+  overflow-y: initial !important;
+}
 .position-relative {
   position: relative !important;
 }
@@ -94,6 +103,9 @@
 .text-light-color {
   color: @textLightColor !important;
 }
+.mask-color {
+  background-color: @maskColor !important;
+}
 .error-color-background {
   background-color: @errorColor !important;
 }
@@ -114,6 +126,12 @@
 }
 .border-color {
   border: 1px solid @btnBorder !important;
+}
+.secondary-border-color {
+  border: 1px solid @secondaryColor !important;
+}
+.primary-border-color {
+  border: 1px solid @primaryColor !important;
 }
 .border-top-color {
   border-top: 1px solid @btnBorder !important;
@@ -366,9 +384,17 @@
   padding-top: 6px!important;
   padding-bottom: 6px!important;
 }
+.px-1px {
+  padding-left: 1px!important;
+  padding-right: 1px!important;
+}
 
 .r-3 {
   right: 12px!important;
+}
+
+.r-0 {
+  right: 0px!important;
 }
 
 .t-0 {
@@ -454,8 +480,14 @@
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
 }
+.medium-grey-color {
+  color: @mediumGrey !important;
+}
+.medium-grey {
+  background-color: @mediumGrey !important;
+}
 .hidden-space {
-  color: @mediumGrey!important;
+  color: @mediumGrey !important;
 }
 
 .z-index-modal {
@@ -523,6 +555,22 @@
 }
 .invisible {
   visibility: hidden;
+}
+.opacity-8 {
+  opacity: 0.8 !important;
+}
+
+.filter-blur-1 {
+  -webkit-filter: blur(1px) !important;
+  filter: blur(1px) !important;
+}
+.filter-blur-2 {
+  -webkit-filter: blur(2px) !important;
+  filter: blur(2px) !important;
+}
+.filter-blur-3 {
+  -webkit-filter: blur(3px) !important;
+  filter: blur(3px) !important;
 }
 .avatarXSmall {
   max-height: 36px;
