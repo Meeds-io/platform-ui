@@ -584,7 +584,7 @@
   max-height: 36px;
   max-width: 36px;
 }
-.reset-style-box {
+.VuetifyApp .v-application .reset-style-box {
   div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol,
     ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary,
     time, mark, audio, video {
@@ -620,6 +620,7 @@
     font-size: revert;
     vertical-align: revert;
     background: revert;
+    color: revert;
   }
 
   ins {
@@ -657,7 +658,10 @@
     vertical-align: revert;
   }
 }
-.rich-editor-content {
+.VuetifyApp .v-application .rich-editor-content {
+  a {
+    color: revert;
+  }
   ul, ol {
     margin: 0 0 10px 25px ~'; /** orientation=lt */ ';
     margin: 0 25px 10px 0 ~'; /** orientation=rt */ ';
@@ -683,5 +687,8 @@
       font-style: italic;
       color: @textColor!important;
     }
+  }
+  .metadata-tag {
+    color: @primaryColor;
   }
 }
