@@ -23,7 +23,7 @@
   <parent>
     <artifactId>platform-ui</artifactId>
     <groupId>org.exoplatform.platform-ui</groupId>
-    <version>6.5.x-SNAPSHOT</version>
+    <version>6.5.0-M13</version>
   </parent>
 
   <artifactId>platform-ui-skin</artifactId>
