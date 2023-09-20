@@ -620,7 +620,10 @@
     font-size: revert;
     vertical-align: revert;
     background: revert;
-    color: revert;
+    color: #0782c1;
+    &:visited {
+      color: purple;
+    }
   }
 
   ins {
@@ -659,9 +662,6 @@
   }
 }
 .VuetifyApp .v-application .rich-editor-content {
-  a {
-    color: revert;
-  }
   ul, ol {
     margin: 0 0 10px 25px ~'; /** orientation=lt */ ';
     margin: 0 25px 10px 0 ~'; /** orientation=rt */ ';
@@ -686,8 +686,5 @@
       font-style: italic;
       color: @textColor!important;
     }
-  }
-  .metadata-tag {
-    color: @primaryColor;
   }
 }
