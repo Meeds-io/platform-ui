@@ -39,13 +39,19 @@
       display: none!important;
     }
   }
-  .cke_bottom {
+  .cke_bottom, .cke_top {
     box-sizing: border-box;
     border-top: none;
-    background-color: transparent;
+    border-bottom: none;
+    background: transparent;
     padding-left: 2px ~'; /** orientation=lt */ ';
     padding-right: 2px ~'; /** orientation=rt */ ';
     height: 30px;
+    & > .cke_toolbox {
+      background: transparent;
+      border-top: none;
+      border-bottom: none;
+    }
     .cke_button_icon {
       filter: opacity(0.2);
     }
