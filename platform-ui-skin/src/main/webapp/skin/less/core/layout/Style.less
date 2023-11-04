@@ -22,8 +22,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 /* ============= Shared Layout - Main Page Structure  ============= */
 #ParentSiteContainer {
   height: 100%;
-  min-height: 100vh;
-  max-height: 100vh;
+  min-height: ~"var(--100vh, 100vh)";
+  max-height: ~"var(--100vh, 100vh)";
   display: flex;
   flex-direction: row;
 
@@ -33,7 +33,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     flex-grow: 0;
 
     #ParentSiteStickyMenu {
-      min-height: 100vh;
+      min-height: ~"var(--100vh, 100vh)";
     }
   }
 
