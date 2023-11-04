@@ -41,7 +41,7 @@
           backface-visibility: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: ~"var(--100vh, 100vh)";
   max-width: 100%;
   position: relative;
 }
@@ -27353,7 +27353,7 @@ html.overflow-y-hidden {
   width: 100%;
 }
 .v-snack:not(.v-snack--absolute) {
-  height: 100vh;
+  height: ~"var(--100vh, 100vh)";
   position: fixed;
   z-index: 1000;
 }
