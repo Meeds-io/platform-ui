@@ -6507,7 +6507,7 @@ html.overflow-y-hidden {
 }
 
 .v-application .rounded {
-  border-radius: 4px !important;
+  border-radius: @baseBorderRadius !important;
 }
 
 .v-application .rounded-lg {
@@ -18075,7 +18075,7 @@ html.overflow-y-hidden {
 
 .v-btn {
   align-items: center;
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
   display: inline-flex;
   flex: 0 0 auto;
   font-weight: 500;
@@ -18518,7 +18518,7 @@ html.overflow-y-hidden {
 }
 
 .v-sheet.v-alert {
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
 }
 .v-sheet.v-alert:not(.v-sheet--outlined) {
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);
@@ -18536,7 +18536,7 @@ html.overflow-y-hidden {
   transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
 }
 .v-alert:not(.v-sheet--tile) {
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
 }
 .v-application--is-ltr .v-alert > .v-icon,
 .v-application--is-ltr .v-alert > .v-alert__content {
@@ -19028,7 +19028,7 @@ html.overflow-y-hidden {
   min-height: 40px;
 }
 .v-text-field--outlined {
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
 }
 .v-text-field--full-width .v-input__prepend-outer,
 .v-text-field--full-width .v-input__prepend-inner,
@@ -19082,7 +19082,7 @@ html.overflow-y-hidden {
   top: 11px;
 }
 .v-text-field--filled {
-  border-radius: 4px 4px 0 0;
+  border-radius: @baseBorderRadius @baseBorderRadius 0 0;
 }
 .v-text-field--filled:not(.v-text-field--single-line) input {
   margin-top: 22px;
@@ -19139,7 +19139,7 @@ html.overflow-y-hidden {
   display: none;
 }
 .v-text-field--outlined, .v-text-field--solo {
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
 }
 .v-text-field--outlined {
   margin-bottom: 16px;
@@ -19601,7 +19601,7 @@ html.overflow-y-hidden {
 }
 
 .v-chip--label {
-  border-radius: 4px !important;
+  border-radius: @baseBorderRadius !important;
 }
 
 .v-chip.v-chip--outlined {
@@ -19665,7 +19665,7 @@ html.overflow-y-hidden {
   contain: content;
   will-change: transform;
   box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
 }
 .v-menu__content--active {
   pointer-events: none;
@@ -19872,7 +19872,7 @@ html.overflow-y-hidden {
 }
 .v-list--nav .v-list-item,
 .v-list--nav .v-list-item:before {
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
 }
 
 .v-application--is-ltr .v-list.v-sheet--shaped .v-list-item, .v-application--is-ltr .v-list.v-sheet--shaped .v-list-item::before,
@@ -21438,7 +21438,7 @@ html.overflow-y-hidden {
   }
 }
 .v-dialog {
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
   margin: 24px;
   overflow-y: auto;
   pointer-events: auto;
@@ -21682,7 +21682,7 @@ html.overflow-y-hidden {
 }
 
 .v-btn-toggle {
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
   display: inline-flex;
   max-width: 100%;
 }
@@ -21789,7 +21789,7 @@ html.overflow-y-hidden {
   line-height: 20px;
   margin-right: -1px;
   z-index: 1;
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
 }
 .v-calendar .v-event-more {
   overflow: hidden;
@@ -21817,7 +21817,7 @@ html.overflow-y-hidden {
   text-overflow: ellipsis;
   font-size: 12px;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
   pointer-events: all;
 }
 .v-calendar.v-calendar-events .v-calendar-weekly__head-weekday {
@@ -22243,7 +22243,7 @@ html.overflow-y-hidden {
 }
 
 .v-sheet.v-card {
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
 }
 .v-sheet.v-card:not(.v-sheet--outlined) {
   box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
@@ -22760,7 +22760,7 @@ html.overflow-y-hidden {
 
 .v-color-picker {
   align-self: flex-start;
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
   contain: content;
   box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }
@@ -23177,7 +23177,7 @@ html.overflow-y-hidden {
   margin-left: 8px;
 }
 .v-color-picker__input input {
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
   margin-bottom: 8px;
   min-width: 0;
   outline: none;
@@ -23341,7 +23341,7 @@ html.overflow-y-hidden {
 }
 
 .v-data-table {
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
 }
 .v-data-table tbody tr.v-data-table__expanded {
   border-bottom: 0;
@@ -23899,7 +23899,7 @@ html.overflow-y-hidden {
 }
 
 .v-picker {
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
   contain: layout style;
   display: inline-flex;
   flex-direction: column;
@@ -24066,7 +24066,7 @@ html.overflow-y-hidden {
 }
 
 .v-expansion-panels {
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -24087,15 +24087,15 @@ html.overflow-y-hidden {
   border-bottom-right-radius: inherit;
 }
 .v-expansion-panels:not(.v-expansion-panels--accordion):not(.v-expansion-panels--tile) > .v-expansion-panel--active {
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
 }
 .v-expansion-panels:not(.v-expansion-panels--accordion):not(.v-expansion-panels--tile) > .v-expansion-panel--active + .v-expansion-panel {
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  border-top-left-radius: @baseBorderRadius;
+  border-top-right-radius: @baseBorderRadius;
 }
 .v-expansion-panels:not(.v-expansion-panels--accordion):not(.v-expansion-panels--tile) > .v-expansion-panel--next-active {
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: @baseBorderRadius;
+  border-bottom-right-radius: @baseBorderRadius;
 }
 .v-expansion-panels:not(.v-expansion-panels--accordion):not(.v-expansion-panels--tile) > .v-expansion-panel--next-active .v-expansion-panel-header {
   border-bottom-left-radius: inherit;
@@ -26669,10 +26669,10 @@ html.overflow-y-hidden {
   box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
 }
 .v-overflow-btn.v-input--is-focused .v-input__slot {
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
 }
 .v-overflow-btn.v-select--is-menu-active .v-input__slot {
-  border-radius: 4px 4px 0 0;
+  border-radius: @baseBorderRadius @baseBorderRadius 0 0;
 }
 .v-overflow-btn .v-select__selections {
   width: 0px;
@@ -26758,7 +26758,7 @@ html.overflow-y-hidden {
 }
 .v-pagination__item {
   background: transparent;
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
   font-size: 1rem;
   height: 34px;
   margin: 0.3rem;
@@ -26774,7 +26774,7 @@ html.overflow-y-hidden {
 }
 .v-pagination__navigation {
   box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -26993,7 +26993,7 @@ html.overflow-y-hidden {
 }
 
 .v-skeleton-loader {
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
   position: relative;
   vertical-align: top;
 }
@@ -27017,7 +27017,7 @@ html.overflow-y-hidden {
 .v-skeleton-loader .v-skeleton-loader__list-item-avatar-two-line,
 .v-skeleton-loader .v-skeleton-loader__list-item-three-line,
 .v-skeleton-loader .v-skeleton-loader__list-item-avatar-three-line {
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
 }
 .v-skeleton-loader .v-skeleton-loader__actions::after,
 .v-skeleton-loader .v-skeleton-loader__article::after,
@@ -27079,7 +27079,7 @@ html.overflow-y-hidden {
   width: 48px;
 }
 .v-skeleton-loader__button {
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
   height: 36px;
   width: 64px;
 }
@@ -27115,7 +27115,7 @@ html.overflow-y-hidden {
   margin: 0 auto;
 }
 .v-skeleton-loader__date-picker-days .v-skeleton-loader__avatar {
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
   flex: 1 1 auto;
   margin: 4px;
   height: 40px;
@@ -27332,7 +27332,7 @@ html.overflow-y-hidden {
 }
 
 .v-sheet.v-snack__wrapper {
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
 }
 .v-sheet.v-snack__wrapper:not(.v-sheet--outlined) {
   box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
@@ -27624,7 +27624,7 @@ html.overflow-y-hidden {
 }
 
 .v-stepper {
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
   overflow: hidden;
   position: relative;
   box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
@@ -28847,7 +28847,7 @@ html.overflow-y-hidden {
 .v-tooltip__content {
   background: rgba(97, 97, 97, 0.9);
   color: #FFFFFF;
-  border-radius: 4px;
+  border-radius: @baseBorderRadius;
   font-size: 14px;
   line-height: 22px;
   display: inline-block;

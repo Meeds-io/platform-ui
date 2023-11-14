@@ -17,3 +17,4 @@ Modifications applied on imported libraries:
   - .v-tabs--centered > .v-tabs-bar .v-tabs-slider-wrapper (centered tabs) doesn't use centered tabs because of bad usage of CSS priorities, thus !important is added to effectively center tabs
   - delete '!important' from .v-card-flat:@box-shadow (line 22363) to avoid force disabling box-shadow on cards when using flat attribute on v-card
   - Add fix on v-alert.prominent.dense icon size introduced in 2.4
+  - Add @baseBorderRadius variable to use centralized border radius for Vuetify components
