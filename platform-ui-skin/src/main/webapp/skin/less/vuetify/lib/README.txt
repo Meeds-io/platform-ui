@@ -18,3 +18,4 @@ Modifications applied on imported libraries:
   - delete '!important' from .v-card-flat:@box-shadow (line 22363) to avoid force disabling box-shadow on cards when using flat attribute on v-card
   - Add fix on v-alert.prominent.dense icon size introduced in 2.4
   - Add @borderRadius with 5px instead of using 4px for defaut border radius
+  - Add @applicationMarginBottom with 20px to add a margin bottom for all portlets
