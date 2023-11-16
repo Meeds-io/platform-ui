@@ -62,7 +62,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 .UIPage {
   .PORTLET-FRAGMENT {
-    margin-bottom: @applicationMarginBottom;
+    padding-bottom: @applicationSpaceBottom;
   }
 }
 
@@ -257,7 +257,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   max-width: 100% !important;
   width: @singlePageApplicationWidth !important;
   box-sizing: border-box !important;
-  padding: 24px 20px !important;
+  padding: 24px 20px 0 !important;
   margin: 0 auto !important;
 }
 
@@ -277,9 +277,10 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       > #rightSocialPage, > .rightSocialPage {
         #stickyBlockDesktop, .stickyBlockDesktop, &.stickyBlockDesktop {
           position: sticky;
-          top: 13px;
+          top: 0;
           height: auto;
           display: block;
+          padding-bottom: @applicationSpaceBottom !important;
           z-index: @zindexStickyContainer;
         }
       }
