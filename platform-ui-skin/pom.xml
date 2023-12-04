@@ -19,13 +19,13 @@
 
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <artifactId>platform-ui</artifactId>
-        <groupId>org.exoplatform.platform-ui</groupId>
-        <version>6.6.x-exo-SNAPSHOT</version>
-    </parent>
-    
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>platform-ui</artifactId>
+    <groupId>org.exoplatform.platform-ui</groupId>
+    <version>6.6.x-exo-SNAPSHOT</version>
+  </parent>
+
   <artifactId>platform-ui-skin</artifactId>
   <packaging>war</packaging>
   <name>eXo PLF:: Platform UI - Skin</name>
