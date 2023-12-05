@@ -50,11 +50,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <!-- **************************************** -->
     <!-- Dependencies versions                    -->
     <!-- **************************************** -->
-<<<<<<< HEAD
     <org.exoplatform.depmgt.version>23.x-exo-SNAPSHOT</org.exoplatform.depmgt.version>
-=======
-    <org.exoplatform.depmgt.version>23.x-SNAPSHOT</org.exoplatform.depmgt.version>
->>>>>>> d22a0f20 (Update Project version and Dependencies to 6.6.x-SNAPSHOT)
   
     <!-- Sonar properties -->
     <sonar.organization>meeds-io</sonar.organization>
