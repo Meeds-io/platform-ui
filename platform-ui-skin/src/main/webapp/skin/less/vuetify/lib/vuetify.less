@@ -3790,27 +3790,27 @@ html.overflow-y-hidden {
     display: none !important;
   }
 }
-@media only screen and (min-width: @minTabletWidth) and (max-width: 1263px) {
+@media only screen and (min-width: @minLargeTabletWidth) and (max-width: @maxLargeTabletWidth) {
   .v-application .hidden-md-only {
     display: none !important;
   }
 }
-@media only screen and (max-width: 1263px) {
+@media only screen and (max-width: @maxLargeTabletWidth) {
   .v-application .hidden-md-and-down {
     display: none !important;
   }
 }
-@media only screen and (min-width: @minTabletWidth) {
+@media only screen and (min-width: @minLargeTabletWidth) {
   .v-application .hidden-md-and-up {
     display: none !important;
   }
 }
-@media only screen and (min-width: @minDesktop) and (max-width: 1903px) {
+@media only screen and (min-width: @minDesktop) and (max-width: @maxDesktop) {
   .v-application .hidden-lg-only {
     display: none !important;
   }
 }
-@media only screen and (max-width: 1903px) {
+@media only screen and (max-width: @maxDesktop) {
   .v-application .hidden-lg-and-down {
     display: none !important;
   }
@@ -21432,7 +21432,7 @@ html.overflow-y-hidden {
 .v-bottom-sheet.v-dialog.v-bottom-sheet--inset {
   max-width: 70%;
 }
-@media only screen and (max-width: 599px) {
+@media only screen and (max-width: @maxMobileWidth) {
   .v-bottom-sheet.v-dialog.v-bottom-sheet--inset {
     max-width: none;
   }
@@ -24910,7 +24910,7 @@ html.overflow-y-hidden {
     margin-right: 0%;
   }
 }
-@media all and (min-width: @minTabletWidth) {
+@media all and (min-width: @minLargeTabletWidth) {
   .flex.md12 {
     flex-basis: 100%;
     flex-grow: 0;
@@ -25580,7 +25580,7 @@ html.overflow-y-hidden {
   margin-right: auto;
   margin-left: auto;
 }
-@media (min-width: @minTabletWidth) {
+@media (min-width: @minLargeTabletWidth) {
   .container {
     max-width: 900px;
   }
@@ -25940,7 +25940,7 @@ html.overflow-y-hidden {
     margin-right: 91.6666666667%;
   }
 }
-@media (min-width: @minTabletWidth) {
+@media (min-width: @minLargeTabletWidth) {
   .col-md {
     flex-basis: 0;
     flex-grow: 1;
