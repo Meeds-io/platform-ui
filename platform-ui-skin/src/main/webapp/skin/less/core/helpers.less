@@ -231,6 +231,45 @@
 .no-border-radius {
   border-radius: 0 !important;
 }
+.border-radius-descendant-0 {
+  --allPagesBorderRadius: 0px;
+}
+.border-radius-descendant-1 {
+  --allPagesBorderRadius: 4px;
+}
+.border-radius-descendant-2 {
+  --allPagesBorderRadius: 8px;
+}
+.border-radius-descendant-3 {
+  --allPagesBorderRadius: 16px;
+}
+.border-radius-descendant-4 {
+  --allPagesBorderRadius: 16px;
+}
+.border-radius-descendant-5 {
+  --allPagesBorderRadius: 20px;
+}
+.no-top-right-border-radius {
+  .application-border-radius, .card-border-radius {
+    border-top-right-radius: 0;
+  }
+}
+.no-bottom-right-border-radius {
+  .application-border-radius, .card-border-radius {
+    border-bottom-right-radius: 0;
+  }
+}
+.no-bottom-left-border-radius {
+  .application-border-radius, .card-border-radius {
+    border-bottom-left-radius: 0;
+  }
+}
+.no-top-top-left-radius {
+  .application-border-radius, .card-border-radius {
+    border-top-left-radius: 0;
+  }
+}
+
 .icon-lighten-opacity {
   color: @greyColorLighten1Opacity1 !important;
 }
