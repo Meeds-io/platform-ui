@@ -1,0 +1,360 @@
+/**
+ * This file is part of the Meeds project (https://meeds.io/).
+ *
+ * Copyright (C) 2020 - 2024 Meeds Association contact@meeds.io
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3 of the License, or (at your option) any later version.
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ */
+@import "uiSimpleContainers/responsiveColumnGroupContainer.less";
+@import "uiSimpleContainers/simpleColumnContainer.less";
+@import "uiSimpleContainers/simpleRowContainer.less";
+@import "uiSimpleContainers/simpleTableContainer.less";
+
+/* ============= Shared Layout - Main Page Structure  ============= */
+#ParentSiteContainer {
+  height: 100%;
+  min-height: ~"var(--100vh, 100vh)";
+  max-height: ~"var(--100vh, 100vh)";
+  display: flex;
+  flex-direction: row;
+
+  #ParentSiteLeftContainer {
+    position: relative;
+    flex-shrink: 0;
+    flex-grow: 0;
+
+    #ParentSiteStickyMenu {
+      min-height: ~"var(--100vh, 100vh)";
+    }
+  }
+
+  #ParentSiteRightContainer {
+    position: relative;
+    flex-shrink: 1;
+    flex-grow: 1;
+
+    #ParentSiteContainerChildren {
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      height: 100%;
+      max-height: 100%;
+      min-width: 100%;
+      width: 100%;
+      max-width: 100%;
+      flex: 1 1 auto;
+    }
+  }
+}
+
+.UIPage {
+  .PORTLET-FRAGMENT {
+    padding-bottom: @applicationSpaceBottom;
+  }
+
+  .no-applications-spacing .PORTLET-FRAGMENT {
+    padding-bottom: 0px;
+  }
+}
+
+/* ============= Shared Layout - TopBar Display  ============= */
+#UITopBarContainerParent, #UITopBarContainer {
+  min-height: @topbarHeight;
+  height: calc(@topbarHeight - 1);
+  box-sizing: border-box;
+}
+
+#UITopBarContainer {
+  box-shadow: none;
+  background-image: linear-gradient(to bottom, white, white);
+  border-bottom: 1px solid white;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  max-width: 100%;
+  z-index: @zindexFixedNavbar;
+
+  .UITopBarContainerItemsParent {
+    display: flex;
+    padding-right: 8px ~'; /** orientation=lt */ ';
+    padding-left: 8px ~'; /** orientation=rt */ ';
+
+    .UITopBarContainerItem {
+      margin: auto;
+      height: @topbarHeight;
+      min-height: @topbarHeight;
+      max-height: @topbarHeight;
+      display: flex;
+      flex-grow: 0;
+      flex-shrink: 0;
+
+      > * {
+        margin: auto;
+      }
+
+      #middle-topNavigation-container {
+        .UIIntermediateContainer {
+          > .UIRowContainer {
+            display: flex !important;
+          }
+        }
+      }
+
+      &.MiddleToolBarTDContainer {
+        flex-grow: 1;
+        flex-shrink: 1;
+        overflow: hidden;
+        justify-content: center;
+
+        > .MiddleToolBar {
+          max-width: 70%;
+          margin: 0 15%;
+          display: flex;
+          box-sizing: border-box;
+
+          > div {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+
+    .TopbarLoadingContainerTDContainer {
+      display: block;
+      position: fixed;
+      top: 53px;
+      width: 100%;
+      height: 7px;
+      min-height: 7px;
+      max-height: 7px;
+    }
+  }
+
+  #brandingTopBar {
+    .logoContainer {
+      position: relative;
+      min-width: 30px;
+      width: auto;
+      box-sizing: content-box;
+      img {
+        max-width: 200px;
+        max-height: 30px;
+        min-height: 30px;
+      }
+    }
+    .brandingContainer {
+      color: @toolbarLightLinkHoverColor;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      border-left: solid 1px @greyColor ~'; /** orientation=lt */ ';
+      border-right: solid 1px @greyColor ~'; /** orientation=rt */ ';
+    }
+    .logoTitle {
+      max-width: 200px;
+    }
+  }
+}
+/* Make TopBar under drawers and other modals when opened */
+.decrease-z-index #UITopBarContainer {
+  z-index: @zindexFixedNavbarUnder;
+}
+.decrease-z-index-more #UITopBarContainer {
+  z-index: @zindexFixedNavbarUnderMore;
+}
+.mobile-visible {
+  display: none;
+}
+
+@media (max-width: @maxMobileWidth) {
+  .mobile-visible {
+    display: block;
+  }
+
+  #ParentSiteContainer {
+    #ParentSiteRightContainer {
+      #ParentSiteContainerChildren {
+        position: fixed;
+      }
+    }
+  }
+
+  #brandingTopBar {
+    .logoContainer {
+      &:after {
+        display: none;
+      }
+    }
+    .brandingContainer.company {
+      display: none;
+    }
+    .brandingContainer.space {
+      display: none;
+    }
+  }
+}
+/* ============= End - Shared Layout  ============= */
+
+/* ============= Site Layout - Display  ============= */
+.site-scroll-parent {
+  position: relative;
+  max-width: 100%;
+  overflow: auto;
+  flex: 1 1 auto;
+}
+
+@media (min-width: @minTabletWidth) {
+  .site-scroll-parent {
+    .specific-scrollbar()
+  }
+}
+/* ============= End - Site Layout  ============= */
+
+/* ============= Page Layout - Social Pages  ============= */
+#parentSocialPage {
+  .UIMobileSwipeParentContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width:100%;
+
+    > div {
+      width:100%;
+    }
+
+    > #leftSocialPage, > .leftSocialPage {
+      flex: 0 1 70%;
+      max-width: 70%;
+      box-sizing: border-box;
+      padding-right: 10px ~'; /** orientation=lt */ ';
+      padding-left: 10px ~'; /** orientation=rt */ ';
+    }
+
+    > #rightSocialPage, > .rightSocialPage {
+      flex: 0 1 30%;
+      max-width: 30%;
+      box-sizing: border-box;
+      padding-left: 10px ~'; /** orientation=lt */ ';
+      padding-right: 10px ~'; /** orientation=rt */ ';
+
+      /* Added for sticky container */
+      .UIContainer, .NormalContainerBlock, .VIEW-CONTAINER, .UIIntermediateContainer, .UIRowContainer {
+        display: inline;
+      }
+    }
+  }
+}
+
+#singlePageApplicationContainer, .singlePageApplication, #SpacePage, #StreamPage, .SpaceActivityStreamPortletPage, #parentSocialPage {
+  max-width: 100% !important;
+  width: @singlePageApplicationWidth !important;
+  box-sizing: border-box !important;
+  padding: 24px 20px 0 !important;
+  margin: 0 auto !important;
+
+  .singlePageApplication {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+.SpaceActivityStreamPortletPage {
+  #SpacePage, #StreamPage {
+    padding: 0 !important;
+  }
+}
+
+.TDContainer {
+  vertical-align: top;
+}
+
+@media (min-width: @minTabletWidth) {
+  #parentSocialPage {
+    .UIRowContainer:first-of-type {
+      > #rightSocialPage, > .rightSocialPage {
+        #stickyBlockDesktop, .stickyBlockDesktop, &.stickyBlockDesktop {
+          position: sticky;
+          top: 13px;
+          height: auto;
+          display: block;
+          padding-bottom: @applicationSpaceBottom !important;
+          z-index: @zindexStickyContainer;
+        }
+      }
+    }
+  }
+  .decrease-z-index #parentSocialPage .UIRowContainer:first-of-type {
+    > #rightSocialPage, > .rightSocialPage {
+      #stickyBlockDesktop, .stickyBlockDesktop, &.stickyBlockDesktop {
+        z-index: 1;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .UIMobileSwipeContainer {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    .UIMobileSwipeParentContainer {
+      transition: ~"width 0.6s";
+
+      .UIMobileSwipeChildContainer {
+        position: absolute;
+        width: ~"calc(100% - 40px)" !important;
+        max-width: ~"calc(100% - 40px)" !important;
+        margin: 0 !important;
+        padding: 0 !important;
+
+        &:not(.active) {
+          right: 100vw;
+        }
+      }
+    }
+
+    .UIMobileSwipe {
+      position: fixed !important;
+      top: 60vh !important;
+      height: 60px !important;
+      width: 60px !important;
+      background-color: #fff !important;
+      z-index: 1010;
+      display: flex !important;
+      box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12) !important;
+
+      &.left {
+        left: 0;
+        border-bottom-right-radius: 7px;
+        border-top-right-radius: 7px;
+      }
+
+      &.right {
+        right: 0;
+        border-bottom-left-radius: 7px;
+        border-top-left-radius: 7px;
+      }
+
+      i {
+        margin: auto;
+        color: @textColor !important;
+      }
+    }
+  }
+}
+
+/* ============= End - Page Layout  ============= */
