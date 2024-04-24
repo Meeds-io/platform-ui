@@ -1,0 +1,88 @@
+/**
+ * This file is part of the Meeds project (https://meeds.io/).
+ *
+ * Copyright (C) 2020 - 2024 Meeds Association contact@meeds.io
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3 of the License, or (at your option) any later version.
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ */
+
+.grid-cols-mixin(){
+  --gap-col-count: ~"calc(var(--grid-col-count) - 1)";
+  --total-gap-width: ~"calc(var(--gap-col-count)* var(--grid-layout-gap, 20px))";
+  --grid-cell--max-width: ~"calc((100% - var(--total-gap-width)) / var(--grid-col-count))";
+  --grid-cell--min-width: ~"var(--grid-cell--max-width)";
+  grid-template-columns: ~"repeat(auto-fill, minmax(max(var(--grid-cell--min-width), var(--grid-cell--max-width)), 1fr))";
+  grid-gap: ~"var(--grid-layout-gap, 20px)";
+  padding-bottom: ~"var(--grid-layout-gap, 20px)";
+}
+
+.grid-rows-mixin(){
+  --gap-row-count: ~"calc(var(--grid-row-count) - 1)";
+  --total-gap-height: ~"calc(var(--gap-row-count) * var(--grid-layout-gap, 20px))";
+  --grid-cell--max-height: ~"calc((100% - var(--total-gap-height)) / var(--grid-row-count))";
+  --grid-cell--min-height: ~"var(--grid-cell--max-height)";
+  grid-template-rows: ~"repeat(auto-fill, minmax(max(var(--grid-cell--min-height), var(--grid-cell--max-height)), 1fr))";
+  aspect-ratio: ~"calc(var(--grid-col-count) / var(--grid-row-count))";
+  overflow: hidden;
+}
+
+.grid-cell-rowspan-mixin(){
+  grid-row-end: span ~"var(--grid-cell-rows)";
+}
+
+.grid-cols(@breakpoint, @count) when (@count > 0) {
+   .grid-cols(@breakpoint, (@count - 1));
+    .grid-cols-@{breakpoint}-@{count} {
+      --grid-col-count: @count;
+    }
+}
+.grid-rows(@breakpoint, @count) when (@count > 0) {
+   .grid-rows(@breakpoint, (@count - 1));
+    .grid-rows-@{breakpoint}-@{count} {
+      --grid-row-count: @count;
+    }
+}
+.grid-cell-colspan(@breakpoint, @count) when (@count > 0) {
+   .grid-cell-colspan(@breakpoint, (@count - 1));
+    .grid-cell-colspan-@{breakpoint}-@{count} {
+      grid-column-end: span @count;
+    }
+}
+.grid-cell-rowspan(@breakpoint, @count) when (@count > 0) {
+   .grid-cell-rowspan(@breakpoint, (@count - 1));
+    .grid-cell-rowspan-@{breakpoint}-@{count} {
+      grid-row-end: span @count;
+    }
+}
+
+.mobile-column-display-mixin(@count) when (@count > 0) {
+   .mobile-column-display-mixin(@count - 1);
+   &.mobile-column-display-@{count} {
+     transform: translateX(calc(~'(@{count} * -100% - @{count} * 20px)'));
+   }
+}
+
+.layout-mobile-columns() {
+  .grid-cols.layout-mobile-columns {
+    flex-direction: row !important;
+    column-gap: 20px;
+
+    .flex-cell {
+      min-width: 100%;
+      max-width: 100%;
+    }
+
+    .mobile-column-display-mixin(12);
+  }  
+}

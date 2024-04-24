@@ -1,0 +1,297 @@
+/**
+ * This file is part of the Meeds project (https://meeds.io/).
+ *
+ * Copyright (C) 2020 - 2024 Meeds Association contact@meeds.io
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3 of the License, or (at your option) any later version.
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ */
+
+@import 'mixins.less';
+
+/* Grid Style */
+.layout-application {
+  width: 100%;
+}
+
+.layout-sections-parent {
+  .PORTLET-FRAGMENT {
+    /* Scrollbar style */
+    .specific-scrollbar();
+    border-top-right-radius: ~"var(--appBorderRadiusTopRight, var(--allPagesBorderRadius, 4px)) !important;";
+    border-top-left-radius: ~"var(--appBorderRadiusTopLeft, var(--allPagesBorderRadius, 4px)) !important;";
+    border-bottom-right-radius: ~"var(--appBorderRadiusBottomRight, var(--allPagesBorderRadius, 4px)) !important;";
+    border-bottom-left-radius: ~"var(--appBorderRadiusBottomLeft, var(--allPagesBorderRadius, 4px)) !important;";
+    border: ~"1px solid var(--appBorderColor, transparent) !important";
+    height: ~"var(--appHeight, auto) !important";
+    max-height: ~"var(--appHeight, 100%) !important";
+    width: ~"var(--appWidth, auto) !important";
+    max-width: ~"var(--appWidth, unset) !important";
+    overflow-y: ~"var(--appHeightScroll, unset) !important";
+    overflow-x: ~"var(--appWidthScroll, unset) !important";
+    padding-bottom: 0;
+  }
+}
+
+.grid-cell {
+  display: flex;
+  float: unset; // FIXME: WebUI Workaround until cleanup made
+  min-height: unset; // FIXME: WebUI Workaround until cleanup made
+  margin-left: unset; // FIXME: WebUI Workaround until cleanup made
+
+  .PORTLET-FRAGMENT {
+    --appHeightScroll: auto;
+    --appWidthScroll: hidden;
+  }
+  .layout-application {
+    max-height: 100%;
+  }
+}
+
+.flex-cell {
+  display: flex;
+  flex-direction: column;
+  float: unset; // FIXME: WebUI Workaround until cleanup made
+  min-height: unset; // FIXME: WebUI Workaround until cleanup made
+  margin-left: unset; // FIXME: WebUI Workaround until cleanup made
+  row-gap: ~"var(--grid-layout-gap, 20px)";
+}
+
+.container-border-color {
+  border: ~"1px solid var(--container-border-color, #FFFFFF)";
+}
+
+@media (max-width: @maxTabletWidth) {
+  .layout-sections-parent {
+    .PORTLET-FRAGMENT {
+      margin-bottom: ~"var(--grid-layout-gap, 20px)";
+    }
+    .flex-cell {
+      row-gap: 0;
+    }
+    .layout-mobile-columns();
+  }
+}
+
+@media (min-width: @minTabletWidth) {
+  .layout-sticky-application .flex-cell > :last-of-type {
+    position: sticky;
+    top: 13px;
+  }
+  .grid-cols-sm-1,
+  .grid-cols-sm-2,
+  .grid-cols-sm-3,
+  .grid-cols-sm-4,
+  .grid-cols-sm-5,
+  .grid-cols-sm-6,
+  .grid-cols-sm-7,
+  .grid-cols-sm-8,
+  .grid-cols-sm-9,
+  .grid-cols-sm-10,
+  .grid-cols-sm-11,
+  .grid-cols-sm-12 {
+    .grid-cols-mixin();
+  }
+  .grid-rows-sm-1,
+  .grid-rows-sm-2,
+  .grid-rows-sm-3,
+  .grid-rows-sm-4,
+  .grid-rows-sm-5,
+  .grid-rows-sm-6,
+  .grid-rows-sm-7,
+  .grid-rows-sm-8,
+  .grid-rows-sm-9,
+  .grid-rows-sm-10,
+  .grid-rows-sm-11,
+  .grid-rows-sm-12 {
+    .grid-rows-mixin();
+  }
+  .grid-cell-rowspan-sm-1,
+  .grid-cell-rowspan-sm-2,
+  .grid-cell-rowspan-sm-3,
+  .grid-cell-rowspan-sm-4,
+  .grid-cell-rowspan-sm-5,
+  .grid-cell-rowspan-sm-6,
+  .grid-cell-rowspan-sm-7,
+  .grid-cell-rowspan-sm-8,
+  .grid-cell-rowspan-sm-9,
+  .grid-cell-rowspan-sm-10,
+  .grid-cell-rowspan-sm-11,
+  .grid-cell-rowspan-sm-12 {
+    .grid-cell-rowspan-mixin();
+  }
+  .grid-cols(sm, 12);
+  .grid-rows(sm, 12);
+  .grid-cell-rowspan(sm, 12);
+  .grid-cell-colspan(sm, 12);
+}
+
+@media (min-width: @minLargeTabletWidth) {
+  .grid-cols-md-1,
+  .grid-cols-md-2,
+  .grid-cols-md-3,
+  .grid-cols-md-4,
+  .grid-cols-md-5,
+  .grid-cols-md-6,
+  .grid-cols-md-7,
+  .grid-cols-md-8,
+  .grid-cols-md-9,
+  .grid-cols-md-10,
+  .grid-cols-md-11,
+  .grid-cols-md-12 {
+    .grid-cols-mixin();
+  }
+  .grid-rows-md-1,
+  .grid-rows-md-2,
+  .grid-rows-md-3,
+  .grid-rows-md-4,
+  .grid-rows-md-5,
+  .grid-rows-md-6,
+  .grid-rows-md-7,
+  .grid-rows-md-8,
+  .grid-rows-md-9,
+  .grid-rows-md-10,
+  .grid-rows-md-11,
+  .grid-rows-md-12 {
+    .grid-rows-mixin();
+  }
+  .grid-cell-rowspan-md-1,
+  .grid-cell-rowspan-md-2,
+  .grid-cell-rowspan-md-3,
+  .grid-cell-rowspan-md-4,
+  .grid-cell-rowspan-md-5,
+  .grid-cell-rowspan-md-6,
+  .grid-cell-rowspan-md-7,
+  .grid-cell-rowspan-md-8,
+  .grid-cell-rowspan-md-9,
+  .grid-cell-rowspan-md-10,
+  .grid-cell-rowspan-md-11,
+  .grid-cell-rowspan-md-12 {
+    .grid-cell-rowspan-mixin();
+  }
+  .grid-cols(md, 12);
+  .grid-rows(md, 12);
+  .grid-cell-rowspan(md, 12);
+  .grid-cell-colspan(md, 12);
+}
+
+@media (min-width: @minDesktop) {
+  .grid-cols-lg-1,
+  .grid-cols-lg-2,
+  .grid-cols-lg-3,
+  .grid-cols-lg-4,
+  .grid-cols-lg-5,
+  .grid-cols-lg-6,
+  .grid-cols-lg-7,
+  .grid-cols-lg-8,
+  .grid-cols-lg-9,
+  .grid-cols-lg-10,
+  .grid-cols-lg-11,
+  .grid-cols-lg-12 {
+    .grid-cols-mixin();
+  }
+  .grid-rows-lg-1,
+  .grid-rows-lg-2,
+  .grid-rows-lg-3,
+  .grid-rows-lg-4,
+  .grid-rows-lg-5,
+  .grid-rows-lg-6,
+  .grid-rows-lg-7,
+  .grid-rows-lg-8,
+  .grid-rows-lg-9,
+  .grid-rows-lg-10,
+  .grid-rows-lg-11,
+  .grid-rows-lg-12 {
+    .grid-rows-mixin();
+  }
+  .grid-cell-rowspan-lg-1,
+  .grid-cell-rowspan-lg-2,
+  .grid-cell-rowspan-lg-3,
+  .grid-cell-rowspan-lg-4,
+  .grid-cell-rowspan-lg-5,
+  .grid-cell-rowspan-lg-6,
+  .grid-cell-rowspan-lg-7,
+  .grid-cell-rowspan-lg-8,
+  .grid-cell-rowspan-lg-9,
+  .grid-cell-rowspan-lg-10,
+  .grid-cell-rowspan-lg-11,
+  .grid-cell-rowspan-lg-12 {
+    .grid-cell-rowspan-mixin();
+  }
+  .grid-cols(lg, 12);
+  .grid-rows(lg, 12);
+  .grid-cell-rowspan(lg, 12);
+  .grid-cell-colspan(lg, 12);
+}
+
+@media (min-width: @minLargeDesktop) {
+  .grid-cols-xl-1,
+  .grid-cols-xl-2,
+  .grid-cols-xl-3,
+  .grid-cols-xl-4,
+  .grid-cols-xl-5,
+  .grid-cols-xl-6,
+  .grid-cols-xl-7,
+  .grid-cols-xl-8,
+  .grid-cols-xl-9,
+  .grid-cols-xl-10,
+  .grid-cols-xl-11,
+  .grid-cols-xl-12 {
+    .grid-cols-mixin();
+  }
+  .grid-rows-xl-1,
+  .grid-rows-xl-2,
+  .grid-rows-xl-3,
+  .grid-rows-xl-4,
+  .grid-rows-xl-5,
+  .grid-rows-xl-6,
+  .grid-rows-xl-7,
+  .grid-rows-xl-8,
+  .grid-rows-xl-9,
+  .grid-rows-xl-10,
+  .grid-rows-xl-11,
+  .grid-rows-xl-12 {
+    .grid-rows-mixin();
+  }
+  .grid-cell-rowspan-xl-1,
+  .grid-cell-rowspan-xl-2,
+  .grid-cell-rowspan-xl-3,
+  .grid-cell-rowspan-xl-4,
+  .grid-cell-rowspan-xl-5,
+  .grid-cell-rowspan-xl-6,
+  .grid-cell-rowspan-xl-7,
+  .grid-cell-rowspan-xl-8,
+  .grid-cell-rowspan-xl-9,
+  .grid-cell-rowspan-xl-10,
+  .grid-cell-rowspan-xl-11,
+  .grid-cell-rowspan-xl-12 {
+    .grid-cell-rowspan-mixin();
+  }
+  .grid-cols(xl, 12);
+  .grid-rows(xl, 12);
+  .grid-cell-rowspan(xl, 12);
+  .grid-cell-colspan(xl, 12);
+}
+
+.grid-gap-1 {
+  --grid-layout-gap: 4px;
+}
+.row-gap-5 {
+  row-gap: 20px;
+}
+.t-quarter {
+  top: 25%;
+}
+.b-quarter {
+  bottom: 25%;
+}
