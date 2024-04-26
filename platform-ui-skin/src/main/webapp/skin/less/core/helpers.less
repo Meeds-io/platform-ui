@@ -141,6 +141,21 @@
 .grey-text {
   color: @greyColor !important;
 }
+.border-color-transparent {
+  border: 1px solid transparent !important;
+}
+.border-color-grey {
+  border: 1px solid @greyColor !important;
+}
+.border-color-grey-lighten {
+  border: 1px solid @greyColorLighten1 !important;
+}
+.border-color-thin-grey-opacity1 {
+  border: thin solid @greyColorOpacity1 !important;
+}
+.border-color-thin-grey-opacity2 {
+  border: thin solid @greyColorOpacity2 !important;
+}
 .border-color {
   border: 1px solid @btnBorder !important;
 }
@@ -155,6 +170,15 @@
 }
 .border-primary-dashed {
   border: 2px dashed @primaryColor !important;
+}
+.border-grey-dashed {
+  border: 1px dashed @greyColorLighten1 !important;
+}
+.border-error-dashed-1 {
+  border: 1px dashed @errorColor !important;
+}
+.border-error-dashed-2 {
+  border: 2px dashed @errorColor !important;
 }
 .border-top-color {
   border-top: 1px solid @btnBorder !important;
@@ -196,13 +220,88 @@
   border-radius: @inputBorderRadius !important;
 }
 .application-border-radius, .card-border-radius {
-  border-radius: @borderRadius !important;
+  border-top-right-radius: ~"var(--appBorderRadiusTopRight, var(--allPagesBorderRadius, 4px)) !important;";
+  border-top-left-radius: ~"var(--appBorderRadiusTopLeft, var(--allPagesBorderRadius, 4px)) !important;";
+  border-bottom-right-radius: ~"var(--appBorderRadiusBottomRight, var(--allPagesBorderRadius, 4px)) !important;";
+  border-bottom-left-radius: ~"var(--appBorderRadiusBottomLeft, var(--allPagesBorderRadius, 4px)) !important;";
 }
 .application-background {
   background: @baseBackground !important;
 }
 .application-min-height {
   min-height: ~"calc(var(--100vh, 100vh) - 120px)";
+}
+.brtr-0 {
+  --appBorderRadiusTopRight: 0px;
+}
+.brtr-1 {
+  --appBorderRadiusTopRight: 4px;
+}
+.brtr-2 {
+  --appBorderRadiusTopRight: 8px;
+}
+.brtr-3 {
+  --appBorderRadiusTopRight: 12px;
+}
+.brtr-4 {
+  --appBorderRadiusTopRight: 16px;
+}
+.brtr-5 {
+  --appBorderRadiusTopRight: 20px;
+}
+.brtl-0 {
+  --appBorderRadiusTopLeft: 0px;
+}
+.brtl-1 {
+  --appBorderRadiusTopLeft: 4px;
+}
+.brtl-2 {
+  --appBorderRadiusTopLeft: 8px;
+}
+.brtl-3 {
+  --appBorderRadiusTopLeft: 12px;
+}
+.brtl-4 {
+  --appBorderRadiusTopLeft: 16px;
+}
+.brtl-5 {
+  --appBorderRadiusTopLeft: 20px;
+}
+.brbr-0 {
+  --appBorderRadiusBottomRight: 0px;
+}
+.brbr-1 {
+  --appBorderRadiusBottomRight: 4px;
+}
+.brbr-2 {
+  --appBorderRadiusBottomRight: 8px;
+}
+.brbr-3 {
+  --appBorderRadiusBottomRight: 12px;
+}
+.brbr-4 {
+  --appBorderRadiusBottomRight: 16px;
+}
+.brbr-5 {
+  --appBorderRadiusBottomRight: 20px;
+}
+.brbl-0 {
+  --appBorderRadiusBottomLeft: 0px;
+}
+.brbl-1 {
+  --appBorderRadiusBottomLeft: 4px;
+}
+.brbl-2 {
+  --appBorderRadiusBottomLeft: 8px;
+}
+.brbl-3 {
+  --appBorderRadiusBottomLeft: 12px;
+}
+.brbl-4 {
+  --appBorderRadiusBottomLeft: 16px;
+}
+.brbl-5 {
+  --appBorderRadiusBottomLeft: 20px;
 }
 .no-border-radius {
   border-radius: 0 !important;
@@ -305,6 +404,12 @@
 }
 .not-allowed {
   cursor: not-allowed !important;
+}
+.col-resize-cursor {
+  cursor: col-resize !important;
+}
+.crosshair-cursor {
+  cursor: crosshair !important;
 }
 .transparent {
   background: transparent;
@@ -535,6 +640,11 @@
 .medium-grey {
   background-color: @mediumGrey !important;
 }
+.linear-gradient-grey-background {
+  background: linear-gradient(45deg, #707070 1%, #fff 1%, #fff 49%, #707070 49%, #707070 51%, #fff 51%, #fff 99%, #707070 99%) !important;
+  background-size: 9px 9px !important;
+  background-repeat: repeat !important;
+}
 .hidden-space {
   color: @mediumGrey !important;
 }
@@ -549,6 +659,9 @@
 }
 .z-index-drawer {
   z-index: @zindexDrawer !important;
+}
+.z-index-floating-button {
+  z-index: @zindexFloadingButton !important;
 }
 .z-index-zero {
   z-index: 0!important;
@@ -613,7 +726,12 @@
 .opacity-8 {
   opacity: 0.8 !important;
 }
-
+.opacity-5 {
+  opacity: 0.5 !important;
+}
+.aspect-ratio-1 {
+  aspect-ratio: 1 !important;
+}
 .filter-blur-1 {
   -webkit-filter: blur(1px) !important;
   filter: blur(1px) !important;
