@@ -20,11 +20,11 @@
 @import 'mixins.less';
 
 /* Grid Style */
-.layout-application {
-  width: 100%;
-}
+.VuetifyApp .layout-sections-parent {
+  .layout-application {
+    width: 100%;
+  }
 
-.layout-sections-parent {
   .PORTLET-FRAGMENT {
     /* Scrollbar style */
     .specific-scrollbar();
@@ -41,53 +41,74 @@
     overflow-x: ~"var(--appWidthScroll, unset) !important";
     padding-bottom: 0;
   }
-}
 
-.grid-cell {
-  display: flex;
-  float: unset; // FIXME: WebUI Workaround until cleanup made
-  min-height: unset; // FIXME: WebUI Workaround until cleanup made
-  margin-left: unset; // FIXME: WebUI Workaround until cleanup made
+  .grid-cell {
+    display: flex;
+    float: unset; // FIXME: WebUI Workaround until cleanup made
+    min-height: unset; // FIXME: WebUI Workaround until cleanup made
+    margin-left: unset; // FIXME: WebUI Workaround until cleanup made
 
-  .PORTLET-FRAGMENT {
-    --appHeightScroll: auto;
-    --appWidthScroll: hidden;
+    .PORTLET-FRAGMENT {
+      --appHeightScroll: auto;
+      --appWidthScroll: hidden;
+    }
+    .layout-application {
+      max-height: 100%;
+    }
   }
-  .layout-application {
-    max-height: 100%;
+
+  .flex-cell {
+    display: flex;
+    flex-direction: column;
+    float: unset; // FIXME: WebUI Workaround until cleanup made
+    min-height: unset; // FIXME: WebUI Workaround until cleanup made
+    margin-left: unset; // FIXME: WebUI Workaround until cleanup made
+    .layout-application {
+      padding-bottom: ~"var(--grid-layout-gap, 20px)";
+    }
   }
-}
 
-.flex-cell {
-  display: flex;
-  flex-direction: column;
-  float: unset; // FIXME: WebUI Workaround until cleanup made
-  min-height: unset; // FIXME: WebUI Workaround until cleanup made
-  margin-left: unset; // FIXME: WebUI Workaround until cleanup made
-  row-gap: ~"var(--grid-layout-gap, 20px)";
-}
+  .container-border-color {
+    border: ~"1px solid var(--container-border-color, #FFFFFF)";
+  }
 
-.container-border-color {
-  border: ~"1px solid var(--container-border-color, #FFFFFF)";
+  .grid-gap-1 {
+    --grid-layout-gap: 4px;
+  }
+  .row-gap-5 {
+    row-gap: 20px;
+  }
+  .t-quarter {
+    top: 25%;
+  }
+  .b-quarter {
+    bottom: 25%;
+  }
 }
 
 @media (max-width: @maxTabletWidth) {
-  .layout-sections-parent {
+  .VuetifyApp .layout-sections-parent {
     .PORTLET-FRAGMENT {
       margin-bottom: ~"var(--grid-layout-gap, 20px)";
     }
     .flex-cell {
       row-gap: 0;
+      .layout-application {
+        padding-bottom: 0 !important;
+      }
     }
     .layout-mobile-columns();
   }
 }
 
 @media (min-width: @minTabletWidth) {
-  .layout-sticky-application .flex-cell > :last-of-type {
+  .VuetifyApp .v-application .layout-sticky-application .flex-cell > :last-of-type {
     position: sticky;
     top: 13px;
   }
+}
+
+@media (min-width: @minTabletWidth) {
   .grid-cols-sm-1,
   .grid-cols-sm-2,
   .grid-cols-sm-3,
@@ -281,17 +302,4 @@
   .grid-rows(xl, 12);
   .grid-cell-rowspan(xl, 12);
   .grid-cell-colspan(xl, 12);
-}
-
-.grid-gap-1 {
-  --grid-layout-gap: 4px;
-}
-.row-gap-5 {
-  row-gap: 20px;
-}
-.t-quarter {
-  top: 25%;
-}
-.b-quarter {
-  bottom: 25%;
 }
