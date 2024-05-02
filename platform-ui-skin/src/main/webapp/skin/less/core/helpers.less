@@ -17,6 +17,12 @@
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
+@font-face {
+  font-family: "ellipsis-font";
+  src: local('DejaVu Sans');
+  unicode-range: U+2026;
+  size-adjust: 0%;
+}
 .overflow-auto {
   overflow: auto !important;
 }
@@ -625,12 +631,9 @@
   line-clamp: 4;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
-}
-.text-truncate-4-no-ellipsis {
-  display: block;
-  line-height: 1.25rem;
-  max-height: 5rem;
-  overflow: hidden;
+  &.has-overflow {
+    font-family: ellipsis-font, @fontFamily;
+  }
 }
 .text-truncate-5 {
   display: -webkit-box;
