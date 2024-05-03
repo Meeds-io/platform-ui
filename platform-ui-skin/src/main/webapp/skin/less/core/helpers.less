@@ -18,11 +18,36 @@
 */
 
 @font-face {
-  font-family: "ellipsis-font";
-  src: local('DejaVu Sans');
+  font-family: NoLineClamp;
+  src: local('system-ui');
   unicode-range: U+2026;
   size-adjust: 0%;
 }
+@font-face {
+  font-family: NoLineClampHelvetica;
+  src: local('Helvetica');
+  unicode-range: U+2026;
+  size-adjust: 0%;
+}
+@font-face {
+  font-family: NoLineClampArial;
+  src: local('Arial');
+  unicode-range: U+2026;
+  size-adjust: 0%;
+}
+@font-face {
+  font-family: NoLineClampSansSerif;
+  src: local('sans-serif');
+  unicode-range: U+2026;
+  size-adjust: 0%;
+}
+@font-face {
+  font-family: NoLineClampRoboto;
+  src: local('Roboto');
+  unicode-range: U+2026;
+  size-adjust: 0%;
+}
+
 .overflow-auto {
   overflow: auto !important;
 }
@@ -631,9 +656,6 @@
   line-clamp: 4;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
-  &.has-overflow {
-    font-family: ellipsis-font, @fontFamily;
-  }
 }
 .text-truncate-5 {
   display: -webkit-box;
@@ -654,6 +676,10 @@
   background-size: 9px 9px !important;
   background-repeat: repeat !important;
 }
+.linear-gradient-white-background {
+  background: linear-gradient(to left, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 0) 100%);
+}
+
 .hidden-space {
   color: @mediumGrey !important;
 }
