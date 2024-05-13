@@ -262,14 +262,22 @@
 #singlePageApplicationContainer, .singlePageApplication, #SpacePage, #StreamPage, .SpaceActivityStreamPortletPage, #parentSocialPage {
   max-width: 100% !important;
   width: @singlePageApplicationWidth !important;
-  box-sizing: border-box !important;
   padding: 24px 20px 0 !important;
   margin: 0 auto !important;
+
+  /* Start: box-sizing inheritence fix: Important to not influence original box-sizing inherited in child contents */
+  box-sizing: border-box !important;
+  > * {
+    /* Set back to default CSS value: content-box */
+    box-sizing: content-box !important;
+  }
+  /* End: box-sizing inheritence fix */
 
   .singlePageApplication {
     padding: 0 !important;
     margin: 0 !important;
   }
+
 }
 
 .SpaceActivityStreamPortletPage {
