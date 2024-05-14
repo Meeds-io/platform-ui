@@ -180,6 +180,15 @@
   display: none;
 }
 
+#vuetify-apps {
+  .v-overlay--active {
+    z-index: @zindexModalBackdrop !important;
+  }
+  .v-dialog__content--active {
+    z-index: @zindexModal !important;
+  }
+}
+
 @media (max-width: @maxMobileWidth) {
   .mobile-visible {
     display: block;
