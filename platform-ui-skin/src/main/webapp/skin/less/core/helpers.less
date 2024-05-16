@@ -256,6 +256,18 @@
   border-bottom-right-radius: ~"var(--appBorderRadiusBottomRight, var(--allPagesBorderRadius, 4px)) !important;";
   border-bottom-left-radius: ~"var(--appBorderRadiusBottomLeft, var(--allPagesBorderRadius, 4px)) !important;";
 }
+.border-top-left-radius {
+  border-top-left-radius: ~"var(--appBorderRadiusTopLeft, var(--allPagesBorderRadius, 4px)) !important;";
+}
+.border-top-right-radius {
+  border-top-right-radius: ~"var(--appBorderRadiusTopRight, var(--allPagesBorderRadius, 4px)) !important;";
+}
+.border-bottom-left-radius {
+  border-bottom-left-radius: ~"var(--appBorderRadiusBottomLeft, var(--allPagesBorderRadius, 4px)) !important;";
+}
+.border-bottom-right-radius {
+  border-bottom-right-radius: ~"var(--appBorderRadiusBottomRight, var(--allPagesBorderRadius, 4px)) !important;";
+}
 .application-background {
   background: @baseBackground !important;
 }
@@ -447,6 +459,9 @@
 }
 .hover-underline:hover {
   text-decoration: underline !important;
+}
+.hover-background:hover {
+  background-color: @lightGrey !important;
 }
 .text-capitalize-first-letter {
   text-transform: lowercase;
