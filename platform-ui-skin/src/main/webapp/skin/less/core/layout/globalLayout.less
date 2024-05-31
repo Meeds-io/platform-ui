@@ -289,6 +289,10 @@
 
 }
 
+.singlePageApplication.no-applications-spacing {
+  min-height: ~"calc(100vh - @{topbarHeight} - @{applicationSpaceBottom})";
+}
+
 .SpaceActivityStreamPortletPage {
   #SpacePage, #StreamPage {
     padding: 0 !important;
@@ -300,6 +304,7 @@
 }
 
 @media (min-width: @minTabletWidth) {
+
   #parentSocialPage {
     .UIRowContainer:first-of-type {
       > #rightSocialPage, > .rightSocialPage {
