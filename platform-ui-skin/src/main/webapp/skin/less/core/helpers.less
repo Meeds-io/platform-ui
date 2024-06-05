@@ -17,6 +17,37 @@
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
+@font-face {
+  font-family: NoLineClamp;
+  src: local('system-ui');
+  unicode-range: U+2026;
+  size-adjust: 0%;
+}
+@font-face {
+  font-family: NoLineClampHelvetica;
+  src: local('Helvetica');
+  unicode-range: U+2026;
+  size-adjust: 0%;
+}
+@font-face {
+  font-family: NoLineClampArial;
+  src: local('Arial');
+  unicode-range: U+2026;
+  size-adjust: 0%;
+}
+@font-face {
+  font-family: NoLineClampSansSerif;
+  src: local('sans-serif');
+  unicode-range: U+2026;
+  size-adjust: 0%;
+}
+@font-face {
+  font-family: NoLineClampRoboto;
+  src: local('Roboto');
+  unicode-range: U+2026;
+  size-adjust: 0%;
+}
+
 .overflow-auto {
   overflow: auto !important;
 }
@@ -225,6 +256,18 @@
   border-bottom-right-radius: ~"var(--appBorderRadiusBottomRight, var(--allPagesBorderRadius, 4px)) !important;";
   border-bottom-left-radius: ~"var(--appBorderRadiusBottomLeft, var(--allPagesBorderRadius, 4px)) !important;";
 }
+.border-top-left-radius {
+  border-top-left-radius: ~"var(--appBorderRadiusTopLeft, var(--allPagesBorderRadius, 4px)) !important;";
+}
+.border-top-right-radius {
+  border-top-right-radius: ~"var(--appBorderRadiusTopRight, var(--allPagesBorderRadius, 4px)) !important;";
+}
+.border-bottom-left-radius {
+  border-bottom-left-radius: ~"var(--appBorderRadiusBottomLeft, var(--allPagesBorderRadius, 4px)) !important;";
+}
+.border-bottom-right-radius {
+  border-bottom-right-radius: ~"var(--appBorderRadiusBottomRight, var(--allPagesBorderRadius, 4px)) !important;";
+}
 .application-background {
   background: @baseBackground !important;
 }
@@ -416,6 +459,9 @@
 }
 .hover-underline:hover {
   text-decoration: underline !important;
+}
+.hover-elevation:hover {
+  box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12) !important;
 }
 .text-capitalize-first-letter {
   text-transform: lowercase;
@@ -614,8 +660,8 @@
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-clamp: 3;
-  -webkit-line-clamp: 3;
+  line-clamp: 3 !important;
+  -webkit-line-clamp: 3 !important;
   -webkit-box-orient: vertical;
 }
 .text-truncate-4 {
@@ -645,6 +691,10 @@
   background-size: 9px 9px !important;
   background-repeat: repeat !important;
 }
+.linear-gradient-white-background {
+  background: linear-gradient(to left, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 0) 100%);
+}
+
 .hidden-space {
   color: @mediumGrey !important;
 }
