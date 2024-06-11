@@ -32,7 +32,8 @@
     border-top-left-radius: ~"var(--appBorderRadiusTopLeft, var(--allPagesBorderRadius, 4px)) !important;";
     border-bottom-right-radius: ~"var(--appBorderRadiusBottomRight, var(--allPagesBorderRadius, 4px)) !important;";
     border-bottom-left-radius: ~"var(--appBorderRadiusBottomLeft, var(--allPagesBorderRadius, 4px)) !important;";
-    border: ~"1px solid var(--appBorderColor, transparent) !important";
+    border: ~"var(--appBorderSize, 1px) solid var(--appBorderColor, transparent) !important";
+    box-shadow: ~"var(--appBoxShadow, none) !important";
     height: ~"var(--appHeight, auto) !important";
     max-height: ~"var(--appHeight, 100%) !important";
     width: ~"var(--appWidth, auto) !important";
@@ -83,6 +84,25 @@
   }
   .b-quarter {
     bottom: 25%;
+  }
+
+  &.singlePageApplication {
+    width: 100%;
+    padding: 0;
+    .layout-section {
+      width: 100%;
+      &:first-of-type {
+        padding-top: 20px;
+      }
+      &:last-of-type {
+        padding-bottom: 20px;
+      }
+      .layout-section-content {
+        width: @singlePageApplicationWidth;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
   }
 }
 
