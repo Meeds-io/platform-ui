@@ -70,6 +70,9 @@
   .no-applications-spacing .PORTLET-FRAGMENT {
     padding-bottom: 0px;
   }
+  .no-applications-spacing .layout-application {
+    padding-bottom: 0px !important;
+  }
 }
 
 /* ============= Shared Layout - TopBar Display  ============= */
@@ -291,6 +294,10 @@
 
 .singlePageApplication.no-applications-spacing {
   min-height: ~"calc(100vh - @{topbarHeight} - @{applicationSpaceBottom})";
+}
+
+.layout-page-body {
+  min-height: ~"calc(100vh - @{topbarHeight})";
 }
 
 .SpaceActivityStreamPortletPage {
