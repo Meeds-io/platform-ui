@@ -43,6 +43,21 @@
     padding-bottom: 0;
   }
 
+  .layout-application {
+    .VuetifyApp {
+      display: unset;
+    }
+    .VuetifyApp, .v-application, .v-application--wrap {
+      min-height: ~"var(--appHeight, auto) !important";
+    }
+  }
+
+  .grid-cell {
+    .layout-application {
+      --appHeight: 100%;
+    }
+  }
+
   .layout-section {
     padding-bottom: ~"var(--grid-layout-gap, 20px)";
   }
