@@ -28,11 +28,12 @@
   .PORTLET-FRAGMENT {
     /* Scrollbar style */
     .specific-scrollbar();
-    border-top-right-radius: ~"var(--appBorderRadiusTopRight, var(--allPagesBorderRadius, 4px)) !important;";
-    border-top-left-radius: ~"var(--appBorderRadiusTopLeft, var(--allPagesBorderRadius, 4px)) !important;";
-    border-bottom-right-radius: ~"var(--appBorderRadiusBottomRight, var(--allPagesBorderRadius, 4px)) !important;";
-    border-bottom-left-radius: ~"var(--appBorderRadiusBottomLeft, var(--allPagesBorderRadius, 4px)) !important;";
-    border: ~"1px solid var(--appBorderColor, transparent) !important";
+    border-top-right-radius: ~"var(--appBorderRadiusTopRight, var(--allPagesBorderRadius, 4px)) !important";
+    border-top-left-radius: ~"var(--appBorderRadiusTopLeft, var(--allPagesBorderRadius, 4px)) !important";
+    border-bottom-right-radius: ~"var(--appBorderRadiusBottomRight, var(--allPagesBorderRadius, 4px)) !important";
+    border-bottom-left-radius: ~"var(--appBorderRadiusBottomLeft, var(--allPagesBorderRadius, 4px)) !important";
+    border: ~"var(--appBorderSize, 0) solid var(--appBorderColor, transparent) !important";
+    box-shadow: ~"var(--appBoxShadow, none) !important";
     height: ~"var(--appHeight, auto) !important";
     max-height: ~"var(--appHeight, 100%) !important";
     width: ~"var(--appWidth, auto) !important";
@@ -40,6 +41,10 @@
     overflow-y: ~"var(--appHeightScroll, unset) !important";
     overflow-x: ~"var(--appWidthScroll, unset) !important";
     padding-bottom: 0;
+  }
+
+  .layout-section {
+    padding-bottom: ~"var(--grid-layout-gap, 20px)";
   }
 
   .grid-cell {
@@ -66,6 +71,9 @@
     .layout-application {
       padding-bottom: ~"var(--grid-layout-gap, 20px)";
     }
+    > .layout-application:last-child {
+        padding-bottom: 0;
+    }
   }
 
   .container-border-color {
@@ -84,6 +92,28 @@
   .b-quarter {
     bottom: 25%;
   }
+
+  &.singlePageApplication {
+    width: 100%;
+    padding: 0;
+    .layout-section {
+      width: 100%;
+      &:first-of-type {
+        padding-top: 10px;
+      }
+      &:last-of-type {
+        padding-bottom: 20px;
+      }
+      .layout-section-content {
+        width: @singlePageApplicationWidth;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: var(--allPagesSinglePageApplicationPadding, 0 20px);
+        margin: var(--allPagesSinglePageApplicationMargin, 0 auto);
+        transform: translateY(10px);
+      }
+    }
+  }
 }
 
 @media (max-width: @maxTabletWidth) {
@@ -96,6 +126,9 @@
       .layout-application {
         padding-bottom: 0 !important;
       }
+    }
+    .layout-section-mobile-pages {
+      position: relative;
     }
     .layout-mobile-columns();
   }

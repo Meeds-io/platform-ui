@@ -70,6 +70,9 @@
   .no-applications-spacing .PORTLET-FRAGMENT {
     padding-bottom: 0px;
   }
+  .no-applications-spacing .layout-application {
+    padding-bottom: 0px !important;
+  }
 }
 
 /* ============= Shared Layout - TopBar Display  ============= */
@@ -269,10 +272,10 @@
 }
 
 #singlePageApplicationContainer, .singlePageApplication, #SpacePage, #StreamPage, .SpaceActivityStreamPortletPage, #parentSocialPage {
-  max-width: 100% !important;
-  width: @singlePageApplicationWidth !important;
-  padding: 24px 20px 0 !important;
-  margin: 0 auto !important;
+  max-width: 100%;
+  width: @singlePageApplicationWidth;
+  padding: 24px 20px 0;
+  margin: 0 auto;
 
   /* Start: box-sizing inheritence fix: Important to not influence original box-sizing inherited in child contents */
   box-sizing: border-box !important;
@@ -291,6 +294,10 @@
 
 .singlePageApplication.no-applications-spacing {
   min-height: ~"calc(100vh - @{topbarHeight} - @{applicationSpaceBottom})";
+}
+
+.layout-page-body {
+  min-height: ~"calc(100vh - @{topbarHeight})";
 }
 
 .SpaceActivityStreamPortletPage {

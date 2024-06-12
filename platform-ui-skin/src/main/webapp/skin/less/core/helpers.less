@@ -128,6 +128,9 @@
   font-weight: bold !important;
   color: @toolbarLightLinkHoverColor !important;
 }
+.text-font-small-size {
+  font-size: @fontSizeSmall !important;
+}
 .text-font-size {
   font-size: @fontSizeLarge !important;
 }
@@ -250,23 +253,30 @@
 .border-radius {
   border-radius: @inputBorderRadius !important;
 }
+.app-background-color {
+  background-color: ~"var(--appBackgroundColor, #FFFFFF) !important";
+  background-image: ~"var(--appBackgroundImage, unset) !important";
+  background-repeat: ~"var(--appBackgroundRepeat, no-repeat) !important";
+  background-size: ~"var(--appBackgroundSize, unset) !important";
+  background-position: ~"var(--appBackgroundPosition, unset) !important";
+}
 .application-border-radius, .card-border-radius {
-  border-top-right-radius: ~"var(--appBorderRadiusTopRight, var(--allPagesBorderRadius, 4px)) !important;";
-  border-top-left-radius: ~"var(--appBorderRadiusTopLeft, var(--allPagesBorderRadius, 4px)) !important;";
-  border-bottom-right-radius: ~"var(--appBorderRadiusBottomRight, var(--allPagesBorderRadius, 4px)) !important;";
-  border-bottom-left-radius: ~"var(--appBorderRadiusBottomLeft, var(--allPagesBorderRadius, 4px)) !important;";
+  border-top-right-radius: ~"var(--appBorderRadiusTopRight, var(--allPagesBorderRadius, 4px)) !important";
+  border-top-left-radius: ~"var(--appBorderRadiusTopLeft, var(--allPagesBorderRadius, 4px)) !important";
+  border-bottom-right-radius: ~"var(--appBorderRadiusBottomRight, var(--allPagesBorderRadius, 4px)) !important";
+  border-bottom-left-radius: ~"var(--appBorderRadiusBottomLeft, var(--allPagesBorderRadius, 4px)) !important";
 }
 .border-top-left-radius {
-  border-top-left-radius: ~"var(--appBorderRadiusTopLeft, var(--allPagesBorderRadius, 4px)) !important;";
+  border-top-left-radius: ~"var(--appBorderRadiusTopLeft, var(--allPagesBorderRadius, 4px)) !important";
 }
 .border-top-right-radius {
-  border-top-right-radius: ~"var(--appBorderRadiusTopRight, var(--allPagesBorderRadius, 4px)) !important;";
+  border-top-right-radius: ~"var(--appBorderRadiusTopRight, var(--allPagesBorderRadius, 4px)) !important";
 }
 .border-bottom-left-radius {
-  border-bottom-left-radius: ~"var(--appBorderRadiusBottomLeft, var(--allPagesBorderRadius, 4px)) !important;";
+  border-bottom-left-radius: ~"var(--appBorderRadiusBottomLeft, var(--allPagesBorderRadius, 4px)) !important";
 }
 .border-bottom-right-radius {
-  border-bottom-right-radius: ~"var(--appBorderRadiusBottomRight, var(--allPagesBorderRadius, 4px)) !important;";
+  border-bottom-right-radius: ~"var(--appBorderRadiusBottomRight, var(--allPagesBorderRadius, 4px)) !important";
 }
 .application-background {
   background: @baseBackground !important;
@@ -412,6 +422,10 @@
 }
 .width-min-content {
   width: min-content !important;
+  max-width: 100% !important;
+}
+.width-page-content {
+  width: @singlePageApplicationWidth !important;
   max-width: 100% !important;
 }
 .max-width-fit {
