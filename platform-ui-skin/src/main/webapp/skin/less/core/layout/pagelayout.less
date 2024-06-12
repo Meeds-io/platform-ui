@@ -43,6 +43,10 @@
     padding-bottom: 0;
   }
 
+  .layout-section {
+    padding-bottom: ~"var(--grid-layout-gap, 20px)";
+  }
+
   .grid-cell {
     display: flex;
     float: unset; // FIXME: WebUI Workaround until cleanup made
@@ -66,6 +70,9 @@
     margin-left: unset; // FIXME: WebUI Workaround until cleanup made
     .layout-application {
       padding-bottom: ~"var(--grid-layout-gap, 20px)";
+    }
+    > .layout-application:last-child {
+        padding-bottom: 0;
     }
   }
 
@@ -95,7 +102,7 @@
         padding-top: 10px;
       }
       &:last-of-type {
-        padding-bottom: 10px;
+        padding-bottom: 20px;
       }
       .layout-section-content {
         width: @singlePageApplicationWidth;
