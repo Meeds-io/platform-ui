@@ -132,10 +132,14 @@
     .PORTLET-FRAGMENT {
       margin-bottom: ~"var(--grid-layout-gap, 20px)";
     }
+
     .flex-cell {
       row-gap: 0;
       .layout-application {
         padding-bottom: 0 !important;
+      }
+      > :last-of-type .PORTLET-FRAGMENT {
+        margin-bottom: 0;
       }
     }
     .layout-section-mobile-pages {
