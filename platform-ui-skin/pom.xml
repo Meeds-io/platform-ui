@@ -22,13 +22,13 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <artifactId>platform-ui</artifactId>
-    <groupId>org.exoplatform.platform-ui</groupId>
+    <groupId>io.meeds.platform-ui</groupId>
     <version>7.0.x-SNAPSHOT</version>
   </parent>
 
   <artifactId>platform-ui-skin</artifactId>
   <packaging>war</packaging>
-  <name>eXo PLF:: Platform UI - Skin</name>
+  <name>Meeds:: PLF:: Platform UI - Skin</name>
 
   <properties>
     <!-- Force Sonar sources folder to avoid failure of Sonar analysis -->
