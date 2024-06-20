@@ -19,7 +19,101 @@
 
 @import 'mixins.less';
 
-/* Grid Style */
+.application-background-color, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-background-color) {
+  background-color: ~"var(--appBackgroundColor, #FFFFFF) !important";
+
+  /* Override Vuetify predefined background for some elements to simplify development with Meeds branding */
+  .application-body {
+    &.v-card,
+    .v-card,
+    .theme--light.v-card,
+    &.v-sheet,
+    .v-sheet,
+    .theme--light.v-sheet,
+    &.v-toolbar,
+    .v-toolbar,
+    .v-toolbar.theme--light,
+    .v-toolbar.theme--light.v-sheet,
+    &.v-list,
+    .v-list,
+    .v-list.theme--light,
+    &.v-tabs-bar,
+    .v-tabs-bar,
+    &.v-tabs.theme--light > .v-tabs-bar,
+    .v-tabs.theme--light > .v-tabs-bar,
+    &.v-tabs-items,
+    .v-tabs-items,
+    .v-tabs-item.theme--light,
+    .v-data-table,
+    .v-data-table.theme--light {
+      background-color: transparent; /* NEVER make this !important to allow defining specific colors when needed using CSS helpers */
+    }
+  }
+}
+
+.application-body .application-background-color, .application-body .application-layout-style {
+  /* Override Vuetify predefined background for some elements to simplify development with Meeds branding */
+  &.v-card,
+  .v-card,
+  .theme--light.v-card,
+  &.v-sheet,
+  .v-sheet,
+  .theme--light.v-sheet,
+  &.v-toolbar,
+  .v-toolbar,
+  .v-toolbar.theme--light,
+  .v-toolbar.theme--light.v-sheet,
+  &.v-list,
+  .v-list,
+  .v-list.theme--light,
+  &.v-tabs-bar,
+  .v-tabs-bar,
+  &.v-tabs.theme--light > .v-tabs-bar,
+  .v-tabs.theme--light > .v-tabs-bar,
+  &.v-tabs-items,
+  .v-tabs-items,
+  .v-tabs-item.theme--light,
+  .v-data-table,
+  .v-data-table.theme--light {
+    background-color: transparent; /* NEVER make this !important to allow defining specific colors when needed using CSS helpers */
+  }
+}
+
+.application-background-image, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-background-image) {
+  background-image: ~"var(--appBackgroundImage, unset) !important";
+  background-repeat: ~"var(--appBackgroundRepeat, no-repeat) !important";
+  background-size: ~"var(--appBackgroundSize, unset) !important";
+  background-position: ~"var(--appBackgroundPosition, unset) !important";
+}
+
+.application-border, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-border) {
+  border: ~"var(--appBorderSize, 0) solid var(--appBorderColor, transparent) !important";
+}
+
+.application-border-radius, .application-border-radius-top, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-border-radius) {
+  border-top-right-radius: ~"var(--appBorderRadiusTopRight, var(--allPagesBorderRadius, 4px)) !important";
+  border-top-left-radius: ~"var(--appBorderRadiusTopLeft, var(--allPagesBorderRadius, 4px)) !important";
+}
+
+.application-border-radius, .application-border-radius-bottom, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-border-radius) {
+  border-bottom-right-radius: ~"var(--appBorderRadiusBottomRight, var(--allPagesBorderRadius, 4px)) !important";
+  border-bottom-left-radius: ~"var(--appBorderRadiusBottomLeft, var(--allPagesBorderRadius, 4px)) !important";
+}
+
+.application-box-shadow, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-box-shadow) {
+  box-shadow: ~"var(--appBoxShadow, none) !important";
+}
+
+.application-dimension, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-dimension) {
+  min-height: ~"var(--appMinHeight, unset) !important";
+  height: ~"var(--appHeight, unset) !important";
+  max-height: ~"var(--appMaxHeight, unset) !important";
+  width: ~"var(--appWidth, auto) !important";
+  max-width: ~"var(--appWidth, unset) !important";
+  overflow-y: ~"var(--appHeightScroll, unset) !important";
+  overflow-x: ~"var(--appWidthScroll, unset) !important";
+}
+
 .VuetifyApp .layout-sections-parent {
 
   &.singlePageApplication {
@@ -43,18 +137,6 @@
   .PORTLET-FRAGMENT {
     /* Scrollbar style */
     .specific-scrollbar();
-    border-top-right-radius: ~"var(--appBorderRadiusTopRight, var(--allPagesBorderRadius, 4px)) !important";
-    border-top-left-radius: ~"var(--appBorderRadiusTopLeft, var(--allPagesBorderRadius, 4px)) !important";
-    border-bottom-right-radius: ~"var(--appBorderRadiusBottomRight, var(--allPagesBorderRadius, 4px)) !important";
-    border-bottom-left-radius: ~"var(--appBorderRadiusBottomLeft, var(--allPagesBorderRadius, 4px)) !important";
-    border: ~"var(--appBorderSize, 0) solid var(--appBorderColor, transparent) !important";
-    box-shadow: ~"var(--appBoxShadow, none) !important";
-    height: ~"var(--appHeight, auto) !important";
-    max-height: ~"var(--appHeight, 100%) !important";
-    width: ~"var(--appWidth, auto) !important";
-    max-width: ~"var(--appWidth, unset) !important";
-    overflow-y: ~"var(--appHeightScroll, unset) !important";
-    overflow-x: ~"var(--appWidthScroll, unset) !important";
     padding-bottom: 0;
     margin-bottom: 0;
 
