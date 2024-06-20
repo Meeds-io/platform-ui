@@ -253,19 +253,8 @@
 .border-radius {
   border-radius: @inputBorderRadius !important;
 }
-.app-background-color {
-  background-color: ~"var(--appBackgroundColor, #FFFFFF) !important";
-  background-image: ~"var(--appBackgroundImage, unset) !important";
-  background-repeat: ~"var(--appBackgroundRepeat, no-repeat) !important";
-  background-size: ~"var(--appBackgroundSize, unset) !important";
-  background-position: ~"var(--appBackgroundPosition, unset) !important";
-  min-height: ~"var(--appHeight, auto) !important";
-}
-.application-border-radius, .card-border-radius {
-  border-top-right-radius: ~"var(--appBorderRadiusTopRight, var(--allPagesBorderRadius, 4px)) !important";
-  border-top-left-radius: ~"var(--appBorderRadiusTopLeft, var(--allPagesBorderRadius, 4px)) !important";
-  border-bottom-right-radius: ~"var(--appBorderRadiusBottomRight, var(--allPagesBorderRadius, 4px)) !important";
-  border-bottom-left-radius: ~"var(--appBorderRadiusBottomLeft, var(--allPagesBorderRadius, 4px)) !important";
+.card-border-radius {
+  border-radius: @borderRadius !important;
 }
 .border-top-left-radius {
   border-top-left-radius: ~"var(--appBorderRadiusTopLeft, var(--allPagesBorderRadius, 4px)) !important";

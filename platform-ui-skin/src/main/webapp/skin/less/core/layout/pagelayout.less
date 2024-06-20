@@ -19,76 +19,194 @@
 
 @import 'mixins.less';
 
-/* Grid Style */
+.application-background-color, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-background-color) {
+  background-color: ~"var(--appBackgroundColor, #FFFFFF) !important";
+
+  /* Override Vuetify predefined background for some elements to simplify development with Meeds branding */
+  .application-body {
+    &.v-card,
+    .v-card,
+    .theme--light.v-card,
+    &.v-sheet,
+    .v-sheet,
+    .theme--light.v-sheet,
+    &.v-toolbar,
+    .v-toolbar,
+    .v-toolbar.theme--light,
+    .v-toolbar.theme--light.v-sheet,
+    &.v-list,
+    .v-list,
+    .v-list.theme--light,
+    &.v-tabs-bar,
+    .v-tabs-bar,
+    &.v-tabs.theme--light > .v-tabs-bar,
+    .v-tabs.theme--light > .v-tabs-bar,
+    &.v-tabs-items,
+    .v-tabs-items,
+    .v-tabs-item.theme--light,
+    .v-data-table,
+    .v-data-table.theme--light {
+      background-color: transparent; /* NEVER make this !important to allow defining specific colors when needed using CSS helpers */
+    }
+  }
+}
+
+.application-body .application-background-color, .application-body .application-layout-style {
+  /* Override Vuetify predefined background for some elements to simplify development with Meeds branding */
+  &.v-card,
+  .v-card,
+  .theme--light.v-card,
+  &.v-sheet,
+  .v-sheet,
+  .theme--light.v-sheet,
+  &.v-toolbar,
+  .v-toolbar,
+  .v-toolbar.theme--light,
+  .v-toolbar.theme--light.v-sheet,
+  &.v-list,
+  .v-list,
+  .v-list.theme--light,
+  &.v-tabs-bar,
+  .v-tabs-bar,
+  &.v-tabs.theme--light > .v-tabs-bar,
+  .v-tabs.theme--light > .v-tabs-bar,
+  &.v-tabs-items,
+  .v-tabs-items,
+  .v-tabs-item.theme--light,
+  .v-data-table,
+  .v-data-table.theme--light {
+    background-color: transparent; /* NEVER make this !important to allow defining specific colors when needed using CSS helpers */
+  }
+}
+
+.application-background-image, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-background-image) {
+  background-image: ~"var(--appBackgroundImage, unset) !important";
+  background-repeat: ~"var(--appBackgroundRepeat, no-repeat) !important";
+  background-size: ~"var(--appBackgroundSize, unset) !important";
+  background-position: ~"var(--appBackgroundPosition, unset) !important";
+}
+
+.application-border, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-border) {
+  border: ~"var(--appBorderSize, 0) solid var(--appBorderColor, transparent) !important";
+}
+
+.application-border-radius, .application-border-radius-top, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-border-radius) {
+  border-top-right-radius: ~"var(--appBorderRadiusTopRight, var(--allPagesBorderRadius, 4px)) !important";
+  border-top-left-radius: ~"var(--appBorderRadiusTopLeft, var(--allPagesBorderRadius, 4px)) !important";
+}
+
+.application-border-radius, .application-border-radius-bottom, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-border-radius) {
+  border-bottom-right-radius: ~"var(--appBorderRadiusBottomRight, var(--allPagesBorderRadius, 4px)) !important";
+  border-bottom-left-radius: ~"var(--appBorderRadiusBottomLeft, var(--allPagesBorderRadius, 4px)) !important";
+}
+
+.application-box-shadow, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-box-shadow) {
+  box-shadow: ~"var(--appBoxShadow, none) !important";
+}
+
+.application-dimension, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-dimension) {
+  min-height: ~"var(--appMinHeight, unset) !important";
+  height: ~"var(--appHeight, unset) !important";
+  max-height: ~"var(--appMaxHeight, unset) !important";
+  width: ~"var(--appWidth, auto) !important";
+  max-width: ~"var(--appWidth, unset) !important";
+  overflow-y: ~"var(--appHeightScroll, unset) !important";
+  overflow-x: ~"var(--appWidthScroll, unset) !important";
+}
+
 .VuetifyApp .layout-sections-parent {
-  .layout-application {
+
+  &.singlePageApplication {
     width: 100%;
+    padding: 0;
+    .layout-section {
+      width: 100%;
+      &:first-of-type {
+        padding-top: 10px;
+      }
+      &:last-of-type {
+        padding-bottom: 10px;
+      }
+      .layout-section-content {
+        width: @singlePageApplicationWidth;
+        max-width: 100%;
+      }
+    }
   }
 
   .PORTLET-FRAGMENT {
     /* Scrollbar style */
     .specific-scrollbar();
-    border-top-right-radius: ~"var(--appBorderRadiusTopRight, var(--allPagesBorderRadius, 4px)) !important";
-    border-top-left-radius: ~"var(--appBorderRadiusTopLeft, var(--allPagesBorderRadius, 4px)) !important";
-    border-bottom-right-radius: ~"var(--appBorderRadiusBottomRight, var(--allPagesBorderRadius, 4px)) !important";
-    border-bottom-left-radius: ~"var(--appBorderRadiusBottomLeft, var(--allPagesBorderRadius, 4px)) !important";
-    border: ~"var(--appBorderSize, 0) solid var(--appBorderColor, transparent) !important";
-    box-shadow: ~"var(--appBoxShadow, none) !important";
-    height: ~"var(--appHeight, auto) !important";
-    max-height: ~"var(--appHeight, 100%) !important";
-    width: ~"var(--appWidth, auto) !important";
-    max-width: ~"var(--appWidth, unset) !important";
-    overflow-y: ~"var(--appHeightScroll, unset) !important";
-    overflow-x: ~"var(--appWidthScroll, unset) !important";
     padding-bottom: 0;
-  }
+    margin-bottom: 0;
 
-  .layout-application {
+    > * {
+      box-sizing: content-box;
+    }
     .VuetifyApp {
       display: unset;
     }
-    .VuetifyApp, .v-application, .v-application--wrap {
-      min-height: ~"var(--appHeight, auto) !important";
+    .VuetifyApp, .VuetifyApp > .v-application, .VuetifyApp > .v-application > .v-application--wrap, .application-body {
+      min-height: 100%;
     }
   }
 
   .layout-section {
-    padding-bottom: ~"var(--grid-layout-gap, 20px)";
-  }
 
-  .grid-cell {
-    display: flex;
-    float: unset; // FIXME: WebUI Workaround until cleanup made
-    min-height: unset; // FIXME: WebUI Workaround until cleanup made
-    margin-left: unset; // FIXME: WebUI Workaround until cleanup made
+    &:first-of-type {
+      padding-top: 10px;
+    }
+    &:last-of-type {
+      padding-bottom: 10px;
+    }
+    .layout-section-content {
+      box-sizing: border-box;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: var(--allPagesSinglePageApplicationPadding, 20px);
+      padding-right: var(--allPagesSinglePageApplicationPadding, 20px);
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: var(--allPagesSinglePageApplicationMargin, auto);
+      margin-right: var(--allPagesSinglePageApplicationMargin, auto);
+    }
 
-    .PORTLET-FRAGMENT {
-      --appHeightScroll: auto;
-      --appWidthScroll: hidden;
-    }
-    .layout-application {
-      height: 100%;
-      max-height: 100%;
-      --appHeight: 100%;
-    }
-  }
+    .grid-cell {
+      display: flex;
+      float: unset; // FIXME: WebUI Workaround until cleanup made
+      min-height: unset; // FIXME: WebUI Workaround until cleanup made
+      margin-left: unset; // FIXME: WebUI Workaround until cleanup made
 
-  .flex-cell {
-    display: flex;
-    flex-direction: column;
-    float: unset; // FIXME: WebUI Workaround until cleanup made
-    min-height: unset; // FIXME: WebUI Workaround until cleanup made
-    margin-left: unset; // FIXME: WebUI Workaround until cleanup made
-    .layout-application {
-      padding-bottom: ~"var(--grid-layout-gap, 20px)";
+      .PORTLET-FRAGMENT {
+        --appHeightScroll: auto;
+        --appWidthScroll: hidden;
+        --appMaxHeight: 100%;
+        --appHeight: 100%;
+      }
+
+      .layout-application {
+        height: 100%;
+        max-height: 100%;
+      }
     }
-    > .layout-application:last-child {
+
+    .flex-cell {
+      display: flex;
+      flex-direction: column;
+      float: unset; // FIXME: WebUI Workaround until cleanup made
+      min-height: unset; // FIXME: WebUI Workaround until cleanup made
+      margin-left: unset; // FIXME: WebUI Workaround until cleanup made
+      .layout-application {
+        padding-bottom: ~"var(--grid-layout-gap, 20px)";
+      }
+      > .layout-application:last-child {
         padding-bottom: 0;
+      }
     }
-  }
 
-  .container-border-color {
-    border: ~"1px solid var(--container-border-color, #FFFFFF)";
+    .layout-application {
+      width: 100%;
+    }
   }
 
   .grid-gap-1 {
@@ -103,56 +221,29 @@
   .b-quarter {
     bottom: 25%;
   }
-
-  &.singlePageApplication {
-    width: 100%;
-    padding: 0;
-    .layout-section {
-      width: 100%;
-      &:first-of-type {
-        padding-top: 10px;
-      }
-      &:last-of-type {
-        padding-bottom: 20px;
-      }
-      .layout-section-content {
-        width: @singlePageApplicationWidth;
-        max-width: 100%;
-        box-sizing: border-box;
-        padding: var(--allPagesSinglePageApplicationPadding, 0 20px);
-        margin: var(--allPagesSinglePageApplicationMargin, 0 auto);
-        transform: translateY(10px);
-      }
-    }
-  }
-}
-
-@media (max-width: @maxTabletWidth) {
-  .VuetifyApp .layout-sections-parent {
-    .PORTLET-FRAGMENT {
-      margin-bottom: ~"var(--grid-layout-gap, 20px)";
-    }
-
-    .flex-cell {
-      row-gap: 0;
-      .layout-application {
-        padding-bottom: 0 !important;
-      }
-      > :last-of-type .PORTLET-FRAGMENT {
-        margin-bottom: 0;
-      }
-    }
-    .layout-section-mobile-pages {
-      position: relative;
-    }
-    .layout-mobile-columns();
-  }
 }
 
 @media (min-width: @minTabletWidth) {
   .VuetifyApp .v-application .layout-sticky-application .flex-cell > :last-of-type {
     position: sticky;
     top: 13px;
+  }
+}
+
+@media (max-width: @maxTabletWidth) {
+  .VuetifyApp .layout-sections-parent {
+    .flex-cell:has(.layout-application), .grid-cell:has(.layout-application) {
+      padding-bottom: ~"var(--grid-layout-gap, 20px)";
+    }
+    .layout-section-content {
+      > :last-child {
+        padding-bottom: 0;
+      }
+    }
+    .layout-section-mobile-pages {
+      position: relative;
+    }
+    .layout-mobile-columns();
   }
 }
 
