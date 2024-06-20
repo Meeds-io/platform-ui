@@ -18,3 +18,4 @@ Modifications applied on imported libraries:
   - delete '!important' from .v-card-flat:@box-shadow (line 22363) to avoid force disabling box-shadow on cards when using flat attribute on v-card
   - Add fix on v-alert.prominent.dense icon size introduced in 2.4
   - Add @baseBorderRadius variable to use centralized border radius for Vuetify components
+  - Change .theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) from <<background-color: #f5f5f5;>> to <<background-color: #ffffff;>> in order to avoid using <<!important>> on .btn class to change default buttons color
