@@ -145,13 +145,13 @@
 @sidebarBackground: @secondaryColor;
 @contentBackground:  @baseBackground  url("@{images-path}/ShareImages/Background/texture.png") repeat left top;
 @textColorDefault: #20282c;
-@textDisabledColorDefault: #c6c6c6;
-@textColor: var(--allPagesBaseTextColor, @textColorDefault);       // #333333
 @textMediumColor: @baseColorMedium;           // #808080
 @textLightColor: @baseColorLight;       // #707070
-@textHeaderColor: var(--allPagesBaseTextHeaderColor, @greyColorLighten1);       // #707070
-@textSubtitleColor: var(--allPagesBaseTextSubtitleColor, @textColorDefault);       // #707070
-@textDisabledColor: var(--allPagesBaseTextDisabedColor, @textDisabledColorDefault);
+@textDisabledColorDefault: #c6c6c6;
+@textColor: ~"var(--appTextColor, var(--allPagesBaseTextColor, @{textColorDefault}))";       // #333333
+@textHeaderColor: ~"var(--appTextHeaderColor, var(--allPagesBaseTextHeaderColor, @{greyColorLighten1}))";       // #707070
+@textSubtitleColor: ~"var(--appTextSubtitleColor, var(--allPagesBaseTextSubtitleColor, @{greyColorLighten1}))";       // #707070
+@textDisabledColor: ~"var(--appTextDisabledColor, var(--allPagesBaseTextDisabedColor, @{textDisabledColorDefault}))";       // #707070
 
 // Links
 // -------------------------

@@ -340,6 +340,14 @@
       display: none !important;
     }
 
+    /* Added to use different Text Color for buttons defined in Menus different from Application Body */
+    .v-menu__content .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
+      color: @btnColor !important;
+    }
+    .v-menu__content .theme--dark.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
+      color: @btnColor !important;
+    }
+
     .warning {
       background: @warningBackground !important;
       border-color: @warningBorder !important;
