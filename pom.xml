@@ -20,8 +20,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <artifactId>maven-parent-pom</artifactId>
-    <groupId>org.exoplatform</groupId>
-    <version>27-M03</version>
+    <groupId>io.meeds</groupId>
+    <version>27-M04</version>
     <relativePath />
   </parent>
   <groupId>io.meeds.platform-ui</groupId>
@@ -54,7 +54,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   
     <!-- Sonar properties -->
     <sonar.organization>meeds-io</sonar.organization>
-    <exo.snapshots.repo.url>https://repository.exoplatform.org/content/repositories/meeds-snapshots</exo.snapshots.repo.url>
+    
   </properties>
   <dependencyManagement>
     <!-- ### NEVER CHANGE THIS ORDER OF DEPMGT ### -->
@@ -65,7 +65,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <dependencies>
       <!-- Import versions of external dependencies to use -->
       <dependency>
-        <groupId>org.exoplatform</groupId>
+        <groupId>io.meeds</groupId>
         <artifactId>maven-depmgt-pom</artifactId>
         <version>${org.exoplatform.depmgt.version}</version>
         <type>pom</type>
