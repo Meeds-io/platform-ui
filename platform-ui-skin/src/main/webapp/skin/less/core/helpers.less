@@ -105,11 +105,38 @@
 .position-static {
   position: static !important;
 }
-.text-color {
+.text-title {
+  font-size: @textTitleFontSize !important;
+  font-weight: @textTitleFontWeight !important;
+  font-style: @textTitleFontStyle !important;
+  color: @textTitleColor !important;
+}
+.text-header {
+  font-size: @textHeaderFontSize !important;
+  font-weight: @textHeaderFontWeight !important;
+  font-style: @textHeaderFontStyle !important;
+  color: @textHeaderColor !important;
+}
+.text-body {
+  font-size: @textFontSize !important;
+  font-weight: @textFontWeight !important;
+  font-style: @textFontStyle !important;
   color: @textColor !important;
+}
+.text-subtitle {
+  font-size: @textSubtitleFontSize !important;
+  font-weight: @textSubtitleFontWeight !important;
+  font-style: @textSubtitleFontStyle !important;
+  color: @textSubtitleColor !important;
+}
+.text-title-color {
+  color: @textTitleColor !important;
 }
 .text-header-color {
   color: @textHeaderColor !important;
+}
+.text-color {
+  color: @textColor !important;
 }
 .text-subtitle-color {
   color: @textSubtitleColor !important;
@@ -133,9 +160,10 @@
   color: @darkYellow !important;
 }
 .text-header-title {
-  font-size: 18px !important;
-  font-weight: bold !important;
-  color: @textHeaderColor !important;
+  font-size: @textTitleFontSize !important;
+  font-weight: @textTitleFontWeight !important;
+  font-style: @textTitleFontStyle !important;
+  color: @textTitleColor !important;
 }
 .text-font-small-size {
   font-size: @fontSizeSmall !important;
@@ -145,8 +173,9 @@
 }
 .widget-text-header{
   font-size: @textHeaderFontSize !important;
+  font-weight: @textHeaderFontWeight !important;
+  font-style: @textHeaderFontStyle !important;
   color: @textHeaderColor !important;
-  font-weight: normal !important;
 }
 .text-sub-title {
   color: @greyColorLighten1 !important;

@@ -1,6 +1,8 @@
 .theme--light.v-application {
-  background: #FFFFFF;
   color: @textColor;
+  font-size: @textFontSize;
+  font-weight: @textFontWeight;
+  font-style: @textFontStyle;
 }
 .theme--light.v-application .text--primary {
   color: @textColor !important;
@@ -13,7 +15,6 @@
 }
 
 .theme--dark.v-application {
-  background: #121212;
   color: #FFFFFF;
 }
 .theme--dark.v-application .text--primary {
@@ -228,7 +229,7 @@
 }
 
 .v-toolbar__title {
-  font-size: 1.25rem;
+  font-size: @textHeaderFontSize;
   line-height: 1.5;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -283,7 +284,7 @@
   align-items: flex-start;
 }
 .v-toolbar--prominent .v-toolbar__title {
-  font-size: 1.5rem;
+  font-size: @textTitleFontSize;
   padding-top: 6px;
 }
 .v-toolbar--prominent:not(.v-toolbar--bottom) .v-toolbar__title {
@@ -3651,7 +3652,10 @@ progress:not(.ignore-vuetify-classes) {
 }
 
 html {
-  font-size: 16px;
+  font-size: @textFontSize;
+  font-weight: @textFontWeight;
+  font-style: @textFontStyle;
+  color: @textColor;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -18529,7 +18533,7 @@ html.overflow-y-hidden {
 
 .v-alert {
   display: block;
-  font-size: 16px;
+  font-size: @textFontSize;
   margin-bottom: 16px;
   padding: 16px;
   position: relative;
@@ -19774,7 +19778,7 @@ html.overflow-y-hidden {
   max-height: ~"calc(100% - 16px)";
 }
 .theme--light.v-subheader {
-  color: @textHeaderColor;
+  color: @textSubtitleColor;
 }
 
 .theme--dark.v-subheader {
@@ -19785,8 +19789,9 @@ html.overflow-y-hidden {
   align-items: center;
   display: flex;
   height: 48px;
-  font-size: 0.875rem;
-  font-weight: 400;
+  font-size: @textSubtitleFontSize;
+  font-weight: @textSubtitleFontWeight;
+  font-style: @textSubtitleFontStyle;
   padding: 0 16px 0 16px;
 }
 .v-subheader--inset {
@@ -19847,7 +19852,7 @@ html.overflow-y-hidden {
 }
 
 .v-list--dense .v-subheader {
-  font-size: 0.75rem;
+  font-size: @textSubtitleFontSize;
   height: 40px;
   padding: 0 8px;
 }
@@ -20226,14 +20231,20 @@ html.overflow-y-hidden {
 
 .v-list-item__title {
   align-self: center;
-  font-size: 1rem;
+  font-size: @textFontSize;
+  font-weight: @textFontWeight;
+  font-style: @textFontStyle;
+  color: @textColor;
 }
 .v-list-item__title > .v-badge {
   margin-top: 16px;
 }
 
 .v-list-item__subtitle {
-  font-size: 0.875rem;
+  font-size: @textSubtitleFontSize;
+  font-weight: @textSubtitleFontWeight;
+  font-style: @textSubtitleFontStyle;
+  color: @textSubtitleColor;
 }
 
 .v-list-item--dense,
@@ -20254,8 +20265,6 @@ html.overflow-y-hidden {
 .v-list-item--dense .v-list-item__subtitle,
 .v-list--dense .v-list-item .v-list-item__title,
 .v-list--dense .v-list-item .v-list-item__subtitle {
-  font-size: 0.8125rem;
-  font-weight: 500;
   line-height: 1rem;
 }
 .v-list-item--dense.v-list-item--two-line,
@@ -20451,7 +20460,7 @@ html.overflow-y-hidden {
   align-items: flex-start;
   display: flex;
   flex: 1 1 auto;
-  font-size: 16px;
+  font-size: @textFontSize;
   letter-spacing: normal;
   max-width: 100%;
   text-align: left;
@@ -20565,7 +20574,7 @@ html.overflow-y-hidden {
 }
 
 .v-label {
-  font-size: 16px;
+  font-size: @textFontSize;
   line-height: 1;
   min-height: 8px;
   transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
@@ -20581,7 +20590,7 @@ html.overflow-y-hidden {
 
 .v-messages {
   flex: 1 1 auto;
-  font-size: 12px;
+  font-size: @textSubtitleFontSize;
   min-height: 14px;
   min-width: 1px;
   position: relative;
@@ -20612,7 +20621,7 @@ html.overflow-y-hidden {
 
 .v-counter {
   flex: 0 1 auto;
-  font-size: 12px;
+  font-size: @textSubtitleFontSize;
   min-height: 12px;
   line-height: 12px;
 }
@@ -21073,7 +21082,7 @@ html.overflow-y-hidden {
   border-radius: 10px;
   color: #FFFFFF;
   display: inline-block;
-  font-size: 12px;
+  font-size: @textSubtitleFontSize;
   height: 20px;
   letter-spacing: 0;
   line-height: 1;
@@ -21454,8 +21463,10 @@ html.overflow-y-hidden {
   width: 100%;
 }
 .v-dialog > .v-card > .v-card__title {
-  font-size: 1.25rem;
-  font-weight: 500;
+  font-size: @textHeaderFontSize;
+  font-weight: @textHeaderFontWeight;
+  font-style: @textHeaderFontStyle;
+  color: @textHeaderColor;
   letter-spacing: 0.0125em;
   padding: 16px 24px 10px;
 }
@@ -21628,7 +21639,7 @@ html.overflow-y-hidden {
 .v-breadcrumbs li {
   align-items: center;
   display: inline-flex;
-  font-size: 14px;
+  font-size: @textFontSize;
 }
 .v-breadcrumbs li .v-icon {
   font-size: 16px;
@@ -22286,10 +22297,21 @@ html.overflow-y-hidden {
 
 .v-card__subtitle,
 .v-card__text {
-  font-size: 0.875rem;
-  font-weight: 400;
   line-height: 1.375rem;
   letter-spacing: 0.0071428571em;
+}
+
+.v-card__text {
+  font-size: @textFontSize;
+  font-weight: @textFontWeight;
+  font-style: @textFontStyle;
+  color: @textColor;
+}
+.v-card__subtitle {
+  font-size: @textSubtitleFontSize;
+  font-weight: @textSubtitleFontWeight;
+  font-style: @textSubtitleFontStyle;
+  color: @textSubtitleColor;
 }
 
 .v-card__subtitle,
@@ -22302,8 +22324,10 @@ html.overflow-y-hidden {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  font-size: 1.25rem;
-  font-weight: 500;
+  font-size: @textHeaderFontSize;
+  font-weight: @textHeaderFontWeight;
+  font-style: @textHeaderFontStyle;
+  color: @textHeaderColor;
   letter-spacing: 0.0125em;
   line-height: 2rem;
   word-break: break-all;
@@ -23367,7 +23391,7 @@ html.overflow-y-hidden {
   justify-content: space-between;
 }
 .v-data-table__mobile-row__header {
-  font-weight: 600;
+  font-weight: @textHeaderFontWeight;
 }
 .v-application--is-ltr .v-data-table__mobile-row__cell {
   text-align: right;
@@ -23560,7 +23584,7 @@ html.overflow-y-hidden {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  font-size: 0.75rem;
+  font-size: @textHeaderFontSize;
   height: 48px;
 }
 .v-application--is-ltr .v-data-table > .v-data-table__wrapper > table > tbody > tr > th,
@@ -23576,7 +23600,7 @@ html.overflow-y-hidden {
 .v-data-table > .v-data-table__wrapper > table > tbody > tr > td,
 .v-data-table > .v-data-table__wrapper > table > thead > tr > td,
 .v-data-table > .v-data-table__wrapper > table > tfoot > tr > td {
-  font-size: 0.875rem;
+  font-size: @textFontSize;
   height: 48px;
 }
 
@@ -24169,7 +24193,7 @@ html.overflow-y-hidden {
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
   display: flex;
-  font-size: 0.9375rem;
+  font-size: @textFontSize;
   line-height: 1;
   min-height: 48px;
   outline: none;
@@ -26759,7 +26783,7 @@ html.overflow-y-hidden {
 .v-pagination__item {
   background: transparent;
   border-radius: @baseBorderRadius;
-  font-size: 1rem;
+  font-size: @textFontSize;
   height: 34px;
   margin: 0.3rem;
   min-width: 34px;
