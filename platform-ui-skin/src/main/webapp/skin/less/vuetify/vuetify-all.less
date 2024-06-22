@@ -342,10 +342,20 @@
 
     /* Added to use different Text Color for buttons defined in Menus different from Application Body */
     .v-menu__content .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
-      color: @btnColor !important;
+      &, .v-list-item__title, .v-list-item__subtitle {
+        color: @btnColor !important;
+        font-size: @btnFontSize !important;
+        font-weight: normal !important;
+        font-style: normal !important;
+      }
     }
     .v-menu__content .theme--dark.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
-      color: @btnColor !important;
+      &, .v-list-item__title, .v-list-item__subtitle {
+        color: @btnColor !important;
+        font-size: @btnFontSize !important;
+        font-weight: normal !important;
+        font-style: normal !important;
+      }
     }
 
     .warning {
