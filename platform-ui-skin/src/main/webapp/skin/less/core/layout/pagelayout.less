@@ -48,6 +48,13 @@
     .v-data-table.theme--light {
       background-color: transparent; /* NEVER make this !important to allow defining specific colors when needed using CSS helpers */
     }
+    .v-menu__content {
+      background-color: @baseBackground;
+      color: @btnColor !important;
+      font-size: @btnFontSize !important;
+      font-weight: normal !important;
+      font-style: normal !important;
+    }
   }
 }
 
@@ -76,6 +83,13 @@
   .v-data-table,
   .v-data-table.theme--light {
     background-color: transparent; /* NEVER make this !important to allow defining specific colors when needed using CSS helpers */
+  }
+  .v-menu__content {
+    background-color: @baseBackground;
+    color: @btnColor !important;
+    font-size: @btnFontSize !important;
+    font-weight: normal !important;
+    font-style: normal !important;
   }
 }
 
