@@ -365,8 +365,9 @@
 
 // Single Page Applicationœ Layout
 // -----------------------------------
-@singlePageApplicationWidthDefault: 1320px; // = 1280px + 20px * 2 as margins for mobile
-@singlePageApplicationWidth: var(--allPagesSinglePageApplicationWidth, @singlePageApplicationWidthDefault);
+@pageWidthDefault: 1320px; // = 1280px + 20px * 2 as margins for mobile
+@pageWidth: var(--allPagesWidth, @pageWidthDefault);
+@singlePageApplicationWidth: @pageWidth; // Deprecated in favor of @pageWidth
 
 // Navbar
 // -------------------------
