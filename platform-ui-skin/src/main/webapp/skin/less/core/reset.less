@@ -21,7 +21,11 @@ html {
 }
 
 body {
-  background: @lightGrey;
+  background-color: ~"var(--allPagesBackgroundColor, @{lightGrey})";
+  background-image: ~"var(--allPagesBackgroundImage, none)";
+  background-repeat: ~"var(--allPagesBackgroundRepeat, no-repeat)";
+  background-size: ~"var(--allPagesBackgroundSize, unset)";
+  background-position: ~"var(--allPagesBackgroundPosition, unset)";
   overflow: hidden;
   padding: 0;
   margin: 0;
