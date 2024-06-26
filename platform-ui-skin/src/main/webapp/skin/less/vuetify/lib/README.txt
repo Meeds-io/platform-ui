@@ -21,3 +21,8 @@ Modifications applied on imported libraries:
   - Change all rgba(0, 0, 0, 0.6) to use @textHeaderColor or @textSubtitleColor
   - Change all rgba(0, 0, 0, 0.87) to use @textColor
   - Change all rgba(0, 0, 0, 0.38) to use @textDisabledColor
+  - Change text-transform: capitalize; on .v-btn
+  - Change letter-spacing on .v-tab
+  - Delete text-transform on .v-tab
+  - Delete font-size on .v-tab
+  - Change color to use @menuTextColor on .v-tab
