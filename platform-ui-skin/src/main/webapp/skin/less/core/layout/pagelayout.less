@@ -175,14 +175,14 @@
     }
     .layout-section-content {
       box-sizing: border-box;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      padding-left: var(--allPagesSinglePageApplicationPadding, 20px);
-      padding-right: var(--allPagesSinglePageApplicationPadding, 20px);
+      padding-top: var(--sectionMarginTop, 10px);
+      padding-bottom: var(--sectionMarginBottom, 10px);
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-left: auto;
+      margin-right: auto;
       margin-top: 0;
       margin-bottom: 0;
-      margin-left: var(--allPagesSinglePageApplicationMargin, auto);
-      margin-right: var(--allPagesSinglePageApplicationMargin, auto);
     }
 
     .grid-cell {
@@ -210,6 +210,7 @@
       float: unset; // FIXME: WebUI Workaround until cleanup made
       min-height: unset; // FIXME: WebUI Workaround until cleanup made
       margin-left: unset; // FIXME: WebUI Workaround until cleanup made
+
       .layout-application {
         padding-bottom: ~"var(--grid-layout-gap, 20px)";
       }
