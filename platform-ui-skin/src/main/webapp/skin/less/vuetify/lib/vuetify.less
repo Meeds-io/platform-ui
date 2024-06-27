@@ -18008,7 +18008,7 @@ html.overflow-y-hidden {
 }
 
 .theme--light.v-btn {
-  color: @textColor;
+  color: @btnColor;
 }
 .theme--light.v-btn.v-btn--disabled {
   color: rgba(0, 0, 0, 0.26) !important;
@@ -18083,13 +18083,13 @@ html.overflow-y-hidden {
   display: inline-flex;
   flex: 0 0 auto;
   font-weight: 500;
-  letter-spacing: 0.0892857143em;
+  letter-spacing: normal;
   justify-content: center;
   outline: 0;
   position: relative;
   text-decoration: none;
   text-indent: 0.0892857143em;
-  text-transform: uppercase;
+  text-transform: capitalize;
   transition-duration: 0.28s;
   transition-property: box-shadow, transform, opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -18101,19 +18101,19 @@ html.overflow-y-hidden {
   white-space: nowrap;
 }
 .v-btn.v-size--x-small {
-  font-size: 0.625rem;
+  font-size: @textSubtitleFontSize;
 }
 .v-btn.v-size--small {
-  font-size: 0.75rem;
+  font-size: @textSubtitleFontSize;
 }
 .v-btn.v-size--default {
-  font-size: 0.875rem;
+  font-size: @textFontSize;
 }
 .v-btn.v-size--large {
-  font-size: 0.875rem;
+  font-size: @textHeaderFontSize;
 }
 .v-btn.v-size--x-large {
-  font-size: 1rem;
+  font-size: @textTitleFontSize;
 }
 .v-btn:before {
   border-radius: inherit;
@@ -22239,7 +22239,9 @@ html.overflow-y-hidden {
   background-color: #FFFFFF;
   color: @textColor;
 }
-.theme--light.v-card > .v-card__text,
+.theme--light.v-card .v-card__text {
+  color: @textColor;
+}
 .theme--light.v-card .v-card__subtitle {
   color: @textSubtitleColor;
 }
@@ -27989,11 +27991,12 @@ html.overflow-y-hidden {
 .theme--light.v-tabs > .v-tabs-bar {
   background-color: #FFFFFF;
 }
-.theme--light.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active),
-.theme--light.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active) > .v-icon,
-.theme--light.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active) > .v-btn,
 .theme--light.v-tabs > .v-tabs-bar .v-tab--disabled {
-  color: rgba(0, 0, 0, 0.54);
+  color: @textDisabledColor;
+}
+.theme--light.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active) > .v-icon,
+.theme--light.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active) > .v-btn {
+  color: @greyColorLighten1;
 }
 .theme--light.v-tabs .v-tab:hover::before {
   opacity: 0.04;
@@ -28080,10 +28083,9 @@ html.overflow-y-hidden {
   align-items: center;
   display: flex;
   flex: 0 1 auto;
-  font-size: 0.875rem;
   font-weight: 500;
   justify-content: center;
-  letter-spacing: 0.0892857143em;
+  letter-spacing: normal;
   line-height: normal;
   min-width: 90px;
   max-width: 360px;
@@ -28092,15 +28094,12 @@ html.overflow-y-hidden {
   position: relative;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
   transition: none;
+  color: @menuTextColor;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-}
-.v-tab.v-tab {
-  color: inherit;
 }
 .v-tab:before {
   background-color: currentColor;

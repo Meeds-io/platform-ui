@@ -73,6 +73,15 @@
 
     a {
       color: @primaryColor;
+      text-decoration: none;
+    }
+
+    a.v-tab {
+      color: @menuTextColor;
+    }
+
+    a.v-btn {
+      color: @btnColor;
     }
 
     p {
@@ -300,18 +309,15 @@
       color: @primaryColor !important;
       caret-color: @primaryColor !important;
     }
-    .v-tab {
-      color: @greyColorLighten1 !important;
-    }
     .v-tab--active {
-      color: @tertiaryColor !important;
+      color: @secondaryColor !important;
     }
     .v-tabs-slider-wrapper {
       .v-tabs-slider.primary {
-        background-color: @tertiaryColor !important;
+        background-color: @secondaryColor !important;
       }
       .v-tabs-slider {
-        color: @tertiaryColor !important;
+        color: @secondaryColor !important;
       }
     }
     .row {
@@ -328,7 +334,7 @@
       box-shadow: none;
 
       .v-stepper__step:not(.v-stepper__step--inactive) .v-stepper__step__step {
-        background-color: @tertiaryColor !important;
+        background-color: @secondaryColor !important;
       }
     }
     .v-stepper--vertical {
@@ -341,7 +347,7 @@
     }
 
     /* Added to use different Text Color for buttons defined in Menus different from Application Body */
-    .v-menu__content .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
+    .v-menu__content:not(.application-menu) .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
       &, .v-list-item__title, .v-list-item__subtitle {
         color: @btnColor !important;
         font-size: @btnFontSize !important;
