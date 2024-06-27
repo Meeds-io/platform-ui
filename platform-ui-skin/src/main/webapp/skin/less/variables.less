@@ -80,7 +80,7 @@
 
 @whiteColorDefault: #ffffff;
 @lightWhite: var(--allPagesLightWhite, @whiteColorDefault);
-@darkGrey: var(--allPagesDarkGrey, #4d5466);
+@darkGrey: ~"var(--allPagesDarkGrey, rgb(0 0 0 / 87%))";
 @lightGrey: var(--allPagesLightGrey, #f2f2f2);
 @mediumGrey: #5f708a;
 @disableBackground: @lightGrey;
@@ -98,6 +98,8 @@
 @black: @blackColorDefault;
 @grayLight: #999;
 @grayLighter: #eee;
+
+@menuTextColor: ~"var(--allPagesMenuTextColor, @{darkGrey})";
 
 // Accent colors
 // -------------------------
@@ -149,7 +151,7 @@
 
 @textTitleColorDefault: #20282C;
 @textTitleColor: ~"var(--appTextTitleColor, var(--allPagesBaseTextTitleColor, @{textTitleColorDefault}))";
-@textTitleFontSizeDefault: 18px;
+@textTitleFontSizeDefault: 20px;
 @textTitleFontSize: ~"var(--appTextTitleFontSize, var(--allPagesBaseTextTitleFontSize, @{textTitleFontSizeDefault}))";
 @textTitleFontWeightDefault: bold;
 @textTitleFontWeight: ~"var(--appTextTitleFontWeight, var(--allPagesBaseTextTitleFontWeight, @{textTitleFontWeightDefault}))";
@@ -167,7 +169,7 @@
 
 @textColorDefault: #20282c;
 @textColor: ~"var(--appTextColor, var(--allPagesBaseTextColor, @{textColorDefault}))";
-@textFontSizeDefault: 14px;
+@textFontSizeDefault: 16px;
 @textFontSize: ~"var(--appTextFontSize, var(--allPagesBaseTextFontSize, @{textFontSizeDefault}))";
 @textFontWeightDefault: normal;
 @textFontWeight: ~"var(--appTextFontWeight, var(--allPagesBaseTextFontWeight, @{textFontWeightDefault}))";
@@ -290,8 +292,8 @@
 @sansBoldFontFamily :   "Helvetica Neue Bold" , Helvetica, Lucida, Arial, sans-serif;
 @serifFontFamily:       Georgia, "Times New Roman", Times, serif;
 
-@baseFontSize:          14px;
-@inputFontSize:         15px;
+@baseFontSize:          16px;
+@inputFontSize:         16px;
 @baseFontFamily:        @fontFamily;
 @baseLineHeight:        20px;
 
@@ -304,8 +306,8 @@
 @fontSize:              var(--allPagesFontSize4, @baseFontSize);
 @fontSizeMini:          var(--allPagesFontSizeMini, 11px);
 @fontSizeSmall:         var(--allPagesFontSizeSmall, 12px);
-@fontSizeLarge:         var(--allPagesFontSizeLarge, 14px);
-@fontSizeXlarge:        var(--allPagesFontSizeXlarge, 16px);
+@fontSizeLarge:         var(--allPagesFontSizeLarge, 16px);
+@fontSizeXlarge:        var(--allPagesFontSizeXlarge, 18px);
 @fontsizeXlarge:        @fontSizeXlarge;
 @h1FontSize:            1.75em;
 @h2FontSize:            1.4375em;
@@ -600,7 +602,7 @@
 @toolbarLightEndBackground:       @baseBackground;
 @toolbarLightBorder:          @baseBackground;
 @toolbarLightLinkColor:         @primaryColor;
-@toolbarLightLinkHoverColor:      var(--allPagesToolbarLightLinkHoverColor, #4d5466);
+@toolbarLightLinkHoverColor:      var(--allPagesToolbarLightLinkHoverColor, #707070);
 @toolbarLightBackgroundHover:           @baseBackground;
 
 //UIBox
@@ -905,7 +907,7 @@
 @toolbarLightIconHoverColor:      @primaryColor;
 @colorIconSecondaryHover:@primaryColor;
 @sizeSideBarIcon: var(--allPagesSizeSideBarIcon, 20px);
-@headingColor: var(--allPagesHeadingColor, #4d5466);
+@headingColor: var(--allPagesHeadingColor, #707070);
 @plfNavigationBgBorderLeft: @lightWhite;
 @badgePrimaryColor : var(--allPagesBadgePrimaryColor , #d32a2a);
 @paddingBadgeDefault-mini : var(--allPagesPaddingBadgeDefault-mini , 0);
