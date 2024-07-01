@@ -20,15 +20,15 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <artifactId>maven-parent-pom</artifactId>
-    <groupId>org.exoplatform</groupId>
-    <version>27-M03</version>
+    <groupId>io.meeds</groupId>
+    <version>27-M04</version>
     <relativePath />
   </parent>
-  <groupId>org.exoplatform.platform-ui</groupId>
+  <groupId>io.meeds.platform-ui</groupId>
   <artifactId>platform-ui</artifactId>
   <version>7.0.x-exo-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>eXo PLF:: Platform-UI</name>
+  <name>Meeds:: PLF:: Platform-UI</name>
   <modules>
     <module>platform-ui-skin</module>
   </modules>
@@ -54,6 +54,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   
     <!-- Sonar properties -->
     <sonar.organization>meeds-io</sonar.organization>
+    
   </properties>
   <dependencyManagement>
     <!-- ### NEVER CHANGE THIS ORDER OF DEPMGT ### -->
@@ -64,7 +65,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <dependencies>
       <!-- Import versions of external dependencies to use -->
       <dependency>
-        <groupId>org.exoplatform</groupId>
+        <groupId>io.meeds</groupId>
         <artifactId>maven-depmgt-pom</artifactId>
         <version>${org.exoplatform.depmgt.version}</version>
         <type>pom</type>
@@ -72,25 +73,25 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       </dependency>
       <!-- Declare our own artifacts -->
       <dependency>
-        <groupId>org.exoplatform.platform-ui</groupId>
+        <groupId>io.meeds.platform-ui</groupId>
         <artifactId>platform-ui-skin</artifactId>
         <version>${project.version}</version>
         <classifier>sources</classifier>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform-ui</groupId>
+        <groupId>io.meeds.platform-ui</groupId>
         <artifactId>platform-ui-skin</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform-ui</groupId>
+        <groupId>io.meeds.platform-ui</groupId>
         <artifactId>platform-ui-skin</artifactId>
         <version>${project.version}</version>
         <type>war</type>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform-ui</groupId>
+        <groupId>io.meeds.platform-ui</groupId>
         <artifactId>platform-ui</artifactId>
         <type>zip</type>
         <classifier>source-release</classifier>
