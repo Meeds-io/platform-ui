@@ -105,8 +105,44 @@
 .position-static {
   position: static !important;
 }
+.text-title {
+  font-size: @textTitleFontSize !important;
+  font-weight: @textTitleFontWeight !important;
+  font-style: @textTitleFontStyle !important;
+  color: @textTitleColor !important;
+}
+.text-header {
+  font-size: @textHeaderFontSize !important;
+  font-weight: @textHeaderFontWeight !important;
+  font-style: @textHeaderFontStyle !important;
+  color: @textHeaderColor !important;
+}
+.text-body {
+  font-size: @textFontSize !important;
+  font-weight: @textFontWeight !important;
+  font-style: @textFontStyle !important;
+  color: @textColor !important;
+}
+.text-subtitle {
+  font-size: @textSubtitleFontSize !important;
+  font-weight: @textSubtitleFontWeight !important;
+  font-style: @textSubtitleFontStyle !important;
+  color: @textSubtitleColor !important;
+}
+.text-title-color {
+  color: @textTitleColor !important;
+}
+.text-header-color {
+  color: @textHeaderColor !important;
+}
 .text-color {
   color: @textColor !important;
+}
+.text-subtitle-color {
+  color: @textSubtitleColor !important;
+}
+.text-disabled-color {
+  color: @textDisabledColor !important;
 }
 .header-color {
   color: @headingColor !important;
@@ -124,20 +160,25 @@
   color: @darkYellow !important;
 }
 .text-header-title {
-  font-size: 18px !important;
-  font-weight: bold !important;
-  color: @toolbarLightLinkHoverColor !important;
+  font-size: @textTitleFontSize !important;
+  font-weight: @textTitleFontWeight !important;
+  font-style: @textTitleFontStyle !important;
+  color: @textTitleColor !important;
 }
 .text-font-small-size {
-  font-size: @fontSizeSmall !important;
+  font-size: @textSubtitleFontSize !important;
+}
+.text-subtitle-font-size {
+  font-size: @textSubtitleFontSize !important;
 }
 .text-font-size {
-  font-size: @fontSizeLarge !important;
+  font-size: @textFontSize !important;
 }
 .widget-text-header{
   font-size: @textHeaderFontSize !important;
-  color: @greyColorLighten1 !important;
-  font-weight: normal !important;
+  font-weight: @textHeaderFontWeight !important;
+  font-style: @textHeaderFontStyle !important;
+  color: @textHeaderColor !important;
 }
 .text-sub-title {
   color: @greyColorLighten1 !important;
@@ -253,19 +294,8 @@
 .border-radius {
   border-radius: @inputBorderRadius !important;
 }
-.app-background-color {
-  background-color: ~"var(--appBackgroundColor, #FFFFFF) !important";
-  background-image: ~"var(--appBackgroundImage, unset) !important";
-  background-repeat: ~"var(--appBackgroundRepeat, no-repeat) !important";
-  background-size: ~"var(--appBackgroundSize, unset) !important";
-  background-position: ~"var(--appBackgroundPosition, unset) !important";
-  min-height: ~"var(--appHeight, auto) !important";
-}
-.application-border-radius, .card-border-radius {
-  border-top-right-radius: ~"var(--appBorderRadiusTopRight, var(--allPagesBorderRadius, 4px)) !important";
-  border-top-left-radius: ~"var(--appBorderRadiusTopLeft, var(--allPagesBorderRadius, 4px)) !important";
-  border-bottom-right-radius: ~"var(--appBorderRadiusBottomRight, var(--allPagesBorderRadius, 4px)) !important";
-  border-bottom-left-radius: ~"var(--appBorderRadiusBottomLeft, var(--allPagesBorderRadius, 4px)) !important";
+.card-border-radius {
+  border-radius: @borderRadius !important;
 }
 .border-top-left-radius {
   border-top-left-radius: ~"var(--appBorderRadiusTopLeft, var(--allPagesBorderRadius, 4px)) !important";
@@ -709,6 +739,9 @@
   background-size: 9px 9px !important;
   background-repeat: repeat !important;
 }
+.menu-text-color {
+  color: @menuTextColor !important;
+}
 .linear-gradient-white-background {
   background: linear-gradient(to left, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 0) 100%);
 }
@@ -910,12 +943,12 @@
     padding: 10px 0 10px 10px ~'!important; /** orientation=lt */ ';
     padding: 10px 10px 10px 0 ~'!important; /** orientation=rt */ ';
     p, div, ul li, ol li {
-      margin-bottom: 0;
-      font-size: 14px!important;
-      font-weight: 300;
+      font-size: @textFontSize;
+      font-weight: @textFontWeight;
+      font-style: @textFontStyle;
+      color: @textColor;
       line-height: 1.25;
-      font-style: italic;
-      color: @textColor!important;
+      margin-bottom: 0;
     }
   }
   a {

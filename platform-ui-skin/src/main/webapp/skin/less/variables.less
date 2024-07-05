@@ -80,7 +80,7 @@
 
 @whiteColorDefault: #ffffff;
 @lightWhite: var(--allPagesLightWhite, @whiteColorDefault);
-@darkGrey: var(--allPagesDarkGrey, #4d5466);
+@darkGrey: ~"var(--allPagesDarkGrey, rgb(0 0 0 / 87%))";
 @lightGrey: var(--allPagesLightGrey, #f2f2f2);
 @mediumGrey: #5f708a;
 @disableBackground: @lightGrey;
@@ -98,6 +98,8 @@
 @black: @blackColorDefault;
 @grayLight: #999;
 @grayLighter: #eee;
+
+@menuTextColor: ~"var(--allPagesMenuTextColor, @{darkGrey})";
 
 // Accent colors
 // -------------------------
@@ -144,11 +146,47 @@
 @bodyBackground: @baseBackground;
 @sidebarBackground: @secondaryColor;
 @contentBackground:  @baseBackground  url("@{images-path}/ShareImages/Background/texture.png") repeat left top;
-@textColorDefault: #20282c;
-@textColor: var(--allPagesBaseTextColor, @textColorDefault);       // #333333
 @textMediumColor: @baseColorMedium;           // #808080
 @textLightColor: @baseColorLight;       // #707070
 
+@textTitleColorDefault: #20282C;
+@textTitleColor: ~"var(--appTextTitleColor, var(--allPagesBaseTextTitleColor, @{textTitleColorDefault}))";
+@textTitleFontSizeDefault: 20px;
+@textTitleFontSize: ~"var(--appTextTitleFontSize, var(--allPagesBaseTextTitleFontSize, @{textTitleFontSizeDefault}))";
+@textTitleFontWeightDefault: bold;
+@textTitleFontWeight: ~"var(--appTextTitleFontWeight, var(--allPagesBaseTextTitleFontWeight, @{textTitleFontWeightDefault}))";
+@textTitleFontStyleDefault: normal;
+@textTitleFontStyle: ~"var(--appTextTitleFontStyle, var(--allPagesBaseTextTitleFontStyle, @{textTitleFontStyleDefault}))";
+
+@textHeaderColorDefault: #707070;
+@textHeaderColor: ~"var(--appTextHeaderColor, var(--allPagesBaseTextHeaderColor, @{textHeaderColorDefault}))";
+@textHeaderFontSizeDefault: 18px;
+@textHeaderFontSize: ~"var(--appTextHeaderFontSize, var(--allPagesBaseTextHeaderFontSize, @{textHeaderFontSizeDefault}))";
+@textHeaderFontWeightDefault: normal;
+@textHeaderFontWeight: ~"var(--appTextHeaderFontWeight, var(--allPagesBaseTextHeaderFontWeight, @{textHeaderFontWeightDefault}))";
+@textHeaderFontStyleDefault: normal;
+@textHeaderFontStyle: ~"var(--appTextHeaderFontStyle, var(--allPagesBaseTextHeaderFontStyle, @{textHeaderFontStyleDefault}))";
+
+@textColorDefault: #20282c;
+@textColor: ~"var(--appTextColor, var(--allPagesBaseTextColor, @{textColorDefault}))";
+@textFontSizeDefault: 16px;
+@textFontSize: ~"var(--appTextFontSize, var(--allPagesBaseTextFontSize, @{textFontSizeDefault}))";
+@textFontWeightDefault: normal;
+@textFontWeight: ~"var(--appTextFontWeight, var(--allPagesBaseTextFontWeight, @{textFontWeightDefault}))";
+@textFontStyleDefault: normal;
+@textFontStyle: ~"var(--appTextFontStyle, var(--allPagesBaseTextFontStyle, @{textFontStyleDefault}))";
+
+@textSubtitleColorDefault: #707070;
+@textSubtitleColor: ~"var(--appTextSubtitleColor, var(--allPagesBaseTextSubtitleColor, @{textSubtitleColorDefault}))";
+@textSubtitleFontSizeDefault: 12px;
+@textSubtitleFontSize: ~"var(--appTextSubtitleFontSize, var(--allPagesBaseTextSubtitleFontSize, @{textSubtitleFontSizeDefault}))";
+@textSubtitleFontWeightDefault: normal;
+@textSubtitleFontWeight: ~"var(--appTextSubtitleFontWeight, var(--allPagesBaseTextSubtitleFontWeight, @{textSubtitleFontWeightDefault}))";
+@textSubtitleFontStyleDefault: normal;
+@textSubtitleFontStyle: ~"var(--appTextSubtitleFontStyle, var(--allPagesBaseTextSubtitleFontStyle, @{textSubtitleFontStyleDefault}))";
+
+@textDisabledColorDefault: #c6c6c6;
+@textDisabledColor: ~"var(--appTextDisabledColor, var(--allPagesBaseTextDisabledColor, @{textDisabledColorDefault}))";
 
 // Links
 // -------------------------
@@ -180,6 +218,7 @@
 
 // Buttons
 // -------------------------
+@btnFontSize: ~"var(--allPagesBaseTextFontSize, @{textFontSizeDefault})";
 @btnColor: @darkGrey;
 @btnBorder: var(--allPagesBtnBorder, @greyColor);
 @btnBorderBottom: var(--allPagesBtnBorderBottom, darken(@greyColorDefault, 10%));
@@ -253,9 +292,8 @@
 @sansBoldFontFamily :   "Helvetica Neue Bold" , Helvetica, Lucida, Arial, sans-serif;
 @serifFontFamily:       Georgia, "Times New Roman", Times, serif;
 
-@baseFontSize:          14px;
-@inputFontSize:         15px;
-@textHeaderFontSize:    18px;
+@baseFontSize:          16px;
+@inputFontSize:         16px;
 @baseFontFamily:        @fontFamily;
 @baseLineHeight:        20px;
 
@@ -268,9 +306,15 @@
 @fontSize:              var(--allPagesFontSize4, @baseFontSize);
 @fontSizeMini:          var(--allPagesFontSizeMini, 11px);
 @fontSizeSmall:         var(--allPagesFontSizeSmall, 12px);
-@fontSizeLarge:         var(--allPagesFontSizeLarge, 14px);
-@fontSizeXlarge:        var(--allPagesFontSizeXlarge, 16px);
+@fontSizeLarge:         var(--allPagesFontSizeLarge, 16px);
+@fontSizeXlarge:        var(--allPagesFontSizeXlarge, 18px);
 @fontsizeXlarge:        @fontSizeXlarge;
+@h1FontSize:            1.75em;
+@h2FontSize:            1.4375em;
+@h3FontSize:            1.125em;
+@h4FontSize:            1em;
+@h5FontSize:            1em;
+@h6FontSize:            1em;
 
 @baseBorderRadius:      4px;
 @borderRadiusLarge:     5px;
@@ -323,8 +367,9 @@
 
 // Single Page Applicationœ Layout
 // -----------------------------------
-@singlePageApplicationWidthDefault: 1320px; // = 1280px + 20px * 2 as margins for mobile
-@singlePageApplicationWidth: var(--allPagesSinglePageApplicationWidth, @singlePageApplicationWidthDefault);
+@pageWidthDefault: 1320px; // = 1280px + 20px * 2 as margins for mobile
+@pageWidth: var(--allPagesWidth, @pageWidthDefault);
+@singlePageApplicationWidth: @pageWidth; // Deprecated in favor of @pageWidth
 
 // Navbar
 // -------------------------
@@ -557,7 +602,7 @@
 @toolbarLightEndBackground:       @baseBackground;
 @toolbarLightBorder:          @baseBackground;
 @toolbarLightLinkColor:         @primaryColor;
-@toolbarLightLinkHoverColor:      var(--allPagesToolbarLightLinkHoverColor, #4d5466);
+@toolbarLightLinkHoverColor:      var(--allPagesToolbarLightLinkHoverColor, #707070);
 @toolbarLightBackgroundHover:           @baseBackground;
 
 //UIBox
@@ -862,7 +907,7 @@
 @toolbarLightIconHoverColor:      @primaryColor;
 @colorIconSecondaryHover:@primaryColor;
 @sizeSideBarIcon: var(--allPagesSizeSideBarIcon, 20px);
-@headingColor: var(--allPagesHeadingColor, #4d5466);
+@headingColor: var(--allPagesHeadingColor, #707070);
 @plfNavigationBgBorderLeft: @lightWhite;
 @badgePrimaryColor : var(--allPagesBadgePrimaryColor , #d32a2a);
 @paddingBadgeDefault-mini : var(--allPagesPaddingBadgeDefault-mini , 0);

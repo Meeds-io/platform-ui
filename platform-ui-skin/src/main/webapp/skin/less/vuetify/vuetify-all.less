@@ -73,6 +73,23 @@
 
     a {
       color: @primaryColor;
+      text-decoration: none;
+    }
+
+    a.v-tab {
+      color: @menuTextColor;
+    }
+
+    a.v-btn {
+      color: @btnColor;
+    }
+
+    a.v-card {
+      color: @textColor;
+    }
+
+    a.v-list-item {
+      color: @textColor;
     }
 
     p {
@@ -235,16 +252,16 @@
       caret-color: @primaryColor !important;
     }
     .btn {
-      border: 1px solid @btnBorder !important;
-      color: @btnColor !important;
-      background-color: @btnBackgroundColor !important;
-      background-image: @btnBackgroundImage !important;
-      text-shadow: none !important;
-      box-shadow: none !important;
+      border: 1px solid @btnBorder;
+      color: @btnColor;
+      background-color: @btnBackgroundColor;
+      background-image: @btnBackgroundImage;
+      text-shadow: none;
+      box-shadow: none;
+      font-weight: normal;
       &:hover, &:focus {
         color: @btnColor !important;
       }
-      font-weight: normal;
     }
 
     .v-btn.primary:not(.v-btn--text), .btn-primary:not(.v-btn--text) {
@@ -300,18 +317,15 @@
       color: @primaryColor !important;
       caret-color: @primaryColor !important;
     }
-    .v-tab {
-      color: @greyColorLighten1 !important;
-    }
     .v-tab--active {
-      color: @tertiaryColor !important;
+      color: @secondaryColor !important;
     }
     .v-tabs-slider-wrapper {
       .v-tabs-slider.primary {
-        background-color: @tertiaryColor !important;
+        background-color: @secondaryColor !important;
       }
       .v-tabs-slider {
-        color: @tertiaryColor !important;
+        color: @secondaryColor !important;
       }
     }
     .row {
@@ -328,7 +342,7 @@
       box-shadow: none;
 
       .v-stepper__step:not(.v-stepper__step--inactive) .v-stepper__step__step {
-        background-color: @tertiaryColor !important;
+        background-color: @secondaryColor !important;
       }
     }
     .v-stepper--vertical {
@@ -338,6 +352,16 @@
     .v-slide-group__next--disabled,
     .v-slide-group__prev--disabled {
       display: none !important;
+    }
+
+    /* Added to use different Text Color for buttons defined in Menus different from Application Body */
+    .v-menu__content:not(.application-menu) .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
+      &, .v-list-item__title, .v-list-item__subtitle {
+        color: @btnColor !important;
+        font-size: @btnFontSize !important;
+        font-weight: normal !important;
+        font-style: normal !important;
+      }
     }
 
     .warning {

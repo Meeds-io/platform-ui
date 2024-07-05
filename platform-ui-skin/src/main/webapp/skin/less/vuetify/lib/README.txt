@@ -18,3 +18,11 @@ Modifications applied on imported libraries:
   - delete '!important' from .v-card-flat:@box-shadow (line 22363) to avoid force disabling box-shadow on cards when using flat attribute on v-card
   - Add fix on v-alert.prominent.dense icon size introduced in 2.4
   - Add @baseBorderRadius variable to use centralized border radius for Vuetify components
+  - Change all rgba(0, 0, 0, 0.6) to use @textHeaderColor or @textSubtitleColor
+  - Change all rgba(0, 0, 0, 0.87) to use @textColor
+  - Change all rgba(0, 0, 0, 0.38) to use @textDisabledColor
+  - Change text-transform: capitalize; on .v-btn
+  - Change letter-spacing on .v-tab
+  - Delete text-transform on .v-tab
+  - Delete font-size on .v-tab
+  - Change color to use @menuTextColor on .v-tab
