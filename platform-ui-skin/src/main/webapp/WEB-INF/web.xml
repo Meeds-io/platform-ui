@@ -37,7 +37,7 @@
   </filter>
   <filter-mapping>
     <filter-name>ResourceRequestFilter</filter-name>
-    <url-pattern>/*</url-pattern>
+    <url-pattern>/skin/*</url-pattern>
   </filter-mapping>
 </web-app>
 
