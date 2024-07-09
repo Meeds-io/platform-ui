@@ -36,6 +36,14 @@
     <css-priority>100</css-priority>
   </portal-skin>
 
+  <portal-skin>
+    <skin-name>Enterprise</skin-name>
+    <skin-module>ImageCropper</skin-module>
+    <css-path>/skin/css/component/ImageCropper/cropper.min.css</css-path>
+    <css-priority>500</css-priority>
+    <filtered>true</filtered>
+  </portal-skin>
+
   <!-- Simple window style -->
   <window-style>
     <style-name>Simple</style-name>
