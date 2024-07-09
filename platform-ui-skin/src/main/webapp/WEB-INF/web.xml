@@ -35,6 +35,7 @@
     <filter-name>ResourceRequestFilter</filter-name>
     <filter-class>org.exoplatform.portal.application.ResourceRequestFilter</filter-class>
   </filter>
+
   <filter-mapping>
     <filter-name>ResourceRequestFilter</filter-name>
     <url-pattern>/skin/*</url-pattern>
