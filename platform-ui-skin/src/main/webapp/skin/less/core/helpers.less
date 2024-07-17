@@ -785,15 +785,9 @@
   max-height: @topbarHeight;
 }
 .card-selection {
-  > div {
-    &:first-of-type {
-      border: 1px solid @btnBorder !important;
-    }
-  }
-  &.active-card {
-    .selected {
-      border-color: @primaryColor !important;
-    }
+  border: 1px solid @borderColor !important;
+  &.selected {
+     border-color: @primaryColor !important;
   }
 }
 .snippet-mobile-menu {
