@@ -246,6 +246,13 @@
 }
 
 @media (max-width: @maxTabletWidth) {
+  .VuetifyApp .layout-sections-parent .layout-section .layout-section-content {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+@media (max-width: @maxTabletWidth) {
   .VuetifyApp .layout-sections-parent {
     .flex-cell:has(.layout-application), .grid-cell:has(.layout-application) {
       padding-bottom: ~"var(--grid-layout-gap, 20px)";
