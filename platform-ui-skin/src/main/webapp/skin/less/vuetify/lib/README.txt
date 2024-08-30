@@ -26,3 +26,4 @@ Modifications applied on imported libraries:
   - Delete text-transform on .v-tab
   - Delete font-size on .v-tab
   - Change color to use @menuTextColor on .v-tab
+  - Delete .v-card--link focus background to not have grey background once clicked
