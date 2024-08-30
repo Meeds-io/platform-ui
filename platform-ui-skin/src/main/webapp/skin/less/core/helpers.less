@@ -784,6 +784,12 @@
   min-height: @topbarHeight;
   max-height: @topbarHeight;
 }
+.card-selection {
+  border: 1px solid @borderColor !important;
+  &.selected {
+     border-color: @primaryColor !important;
+  }
+}
 .snippet-mobile-menu {
   &::before {
     content: '';
