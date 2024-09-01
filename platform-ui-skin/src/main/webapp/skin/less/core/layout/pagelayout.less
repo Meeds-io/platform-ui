@@ -464,3 +464,9 @@
   .grid-cell-rowspan(xl, 12);
   .grid-cell-colspan(xl, 12);
 }
+
+@media (max-width: @maxMobileWidth) {
+  .VuetifyApp .layout-sections-parent .layout-mobile-columns .flex-cell:has(.layout-application) {
+    padding-bottom: 0;
+  }
+}
