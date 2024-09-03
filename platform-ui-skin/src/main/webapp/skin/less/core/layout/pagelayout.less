@@ -58,38 +58,40 @@
   }
 }
 
-.application-body .application-background-color, .application-body .application-layout-style {
-  /* Override Vuetify predefined background for some elements to simplify development with Meeds branding */
-  &.v-card,
-  .v-card,
-  .theme--light.v-card,
-  &.v-sheet,
-  .v-sheet,
-  .theme--light.v-sheet,
-  &.v-toolbar,
-  .v-toolbar,
-  .v-toolbar.theme--light,
-  .v-toolbar.theme--light.v-sheet,
-  &.v-list,
-  .v-list,
-  .v-list.theme--light,
-  &.v-tabs-bar,
-  .v-tabs-bar,
-  &.v-tabs.theme--light > .v-tabs-bar,
-  .v-tabs.theme--light > .v-tabs-bar,
-  &.v-tabs-items,
-  .v-tabs-items,
-  .v-tabs-item.theme--light,
-  .v-data-table,
-  .v-data-table.theme--light {
-    background-color: transparent; /* NEVER make this !important to allow defining specific colors when needed using CSS helpers */
-  }
-  .v-menu__content {
-    background-color: @baseBackground;
-    color: @btnColor !important;
-    font-size: @btnFontSize !important;
-    font-weight: normal !important;
-    font-style: normal !important;
+.VuetifyApp {
+  .application-body .application-background-color, .application-body .application-layout-style {
+    /* Override Vuetify predefined background for some elements to simplify development with Meeds branding */
+    &.v-card,
+    .v-card,
+    .theme--light.v-card,
+    &.v-sheet,
+    .v-sheet,
+    .theme--light.v-sheet,
+    &.v-toolbar,
+    .v-toolbar,
+    .v-toolbar.theme--light,
+    .v-toolbar.theme--light.v-sheet,
+    &.v-list,
+    .v-list,
+    .v-list.theme--light,
+    &.v-tabs-bar,
+    .v-tabs-bar,
+    &.v-tabs.theme--light > .v-tabs-bar,
+    .v-tabs.theme--light > .v-tabs-bar,
+    &.v-tabs-items,
+    .v-tabs-items,
+    .v-tabs-item.theme--light,
+    .v-data-table,
+    .v-data-table.theme--light {
+      background-color: transparent; /* NEVER make this !important to allow defining specific colors when needed using CSS helpers */
+    }
+    .v-menu__content {
+      background-color: @baseBackground;
+      color: @btnColor !important;
+      font-size: @btnFontSize !important;
+      font-weight: normal !important;
+      font-style: normal !important;
+    }
   }
 }
 
