@@ -137,12 +137,6 @@
     padding: 0;
     .layout-section {
       width: 100%;
-      &:first-of-type {
-        padding-top: 10px;
-      }
-      &:last-of-type {
-        padding-bottom: 10px;
-      }
       .layout-section-content {
         width: @pageWidth;
         max-width: 100%;
@@ -256,6 +250,13 @@
 
 @media (max-width: @maxTabletWidth) {
   .VuetifyApp .layout-sections-parent {
+    .layout-section:not(.hidden-sm-and-down) {
+      padding-top: 10px;
+    }
+    .layout-section:not(.hidden-sm-and-down) ~ .layout-section:not(.hidden-sm-and-down) {
+      padding-top: 0;
+    }
+
     .flex-cell:has(.layout-application), .grid-cell:has(.layout-application) {
       padding-bottom: ~"var(--grid-layout-gap, 20px)";
     }
