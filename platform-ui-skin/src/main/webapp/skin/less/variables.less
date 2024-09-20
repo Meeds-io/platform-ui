@@ -188,6 +188,8 @@
 @textDisabledColorDefault: #c6c6c6;
 @textDisabledColor: ~"var(--appTextDisabledColor, var(--allPagesBaseTextDisabledColor, @{textDisabledColorDefault}))";
 
+@placeholderText:       rgba(0, 0, 0, 0.38);
+
 // Links
 // -------------------------
 @linkColor:             @primaryColor;      // Special title, text, hover, press, hyper-link or selected link
@@ -245,9 +247,6 @@
 @inputBorderRadius:               @baseBorderRadius;
 @inputDisabledBackground: @primaryBackgroundHover;
 @formActionsBackground: @primaryBackground;
-// Input placeholder text color
-// -------------------------
-@placeholderText:         @textLightColor;
 
 @inputFocusColor:                 @inputColor;
 @inputFocusBorder:                var(--allPagesInputFocusBorder, lighten(@secondaryColorDefault, 30%));
