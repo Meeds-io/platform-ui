@@ -28,3 +28,4 @@ Modifications applied on imported libraries:
   - Change color to use @menuTextColor on .v-tab
   - Delete .v-card--link focus background to not have grey background once clicked
   - Fix .v-list-item__title & .v-list-item__subtitle line-height in dense configuration
+  - Change rgba(0, 0, 0, 0.38) by @placeholderText variable in :placeholder style
