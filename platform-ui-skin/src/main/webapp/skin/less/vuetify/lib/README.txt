@@ -27,3 +27,4 @@ Modifications applied on imported libraries:
   - Delete font-size on .v-tab
   - Change color to use @menuTextColor on .v-tab
   - Delete .v-card--link focus background to not have grey background once clicked
+  - Fix .v-list-item__title & .v-list-item__subtitle line-height in dense configuration
