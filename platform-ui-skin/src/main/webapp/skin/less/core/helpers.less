@@ -871,6 +871,15 @@
   max-height: 36px;
   max-width: 36px;
 }
+.input-placeholder {
+  &[placeholder]:empty::before {
+    color: @placeholderText;
+    content: attr(placeholder);
+  }
+  &[placeholder]:empty:focus::before {
+    content: "";
+  }
+}
 .table-layout-auto {
   &, table {
     table-layout: auto !important;
