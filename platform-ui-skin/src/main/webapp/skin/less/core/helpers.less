@@ -156,6 +156,15 @@
 .dark-grey-color{
   color: @darkGrey!important;
 }
+.line-height-normal {
+  line-height: normal !important;
+}
+.line-height-revert {
+  line-height: revert !important;
+}
+.line-height-1 {
+  line-height: 1 !important;
+}
 .dark-yellow--color {
   color: @darkYellow !important;
 }
@@ -861,6 +870,20 @@
 .avatarXSmall {
   max-height: 36px;
   max-width: 36px;
+}
+.input-placeholder {
+  &[placeholder]:empty::before {
+    color: @placeholderText;
+    content: attr(placeholder);
+  }
+  &[placeholder]:empty:focus::before {
+    content: "";
+  }
+}
+.table-layout-auto {
+  &, table {
+    table-layout: auto !important;
+  }
 }
 .VuetifyApp .v-application .reset-style-box {
   div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol,

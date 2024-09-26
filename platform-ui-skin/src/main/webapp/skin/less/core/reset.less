@@ -116,6 +116,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 select,
 textarea,
+input:not([type]),
 input[type="text"],
 input[type="password"],
 input[type="datetime"],
@@ -134,7 +135,6 @@ input[type="color"] {
   color: @inputColor;
   background-color: @inputBackground;
   border: 1px solid @inputBorder;
-  padding: 4px 6px;
   padding: 0 10px;
   margin-bottom: @baseLineHeight / 2;
   font-size: @inputFontSize;
