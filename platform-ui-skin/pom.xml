@@ -23,7 +23,7 @@
   <parent>
     <artifactId>platform-ui</artifactId>
     <groupId>io.meeds.platform-ui</groupId>
-    <version>7.0.x-exo-SNAPSHOT</version>
+    <version>7.0.0-exo-20241001</version>
   </parent>
 
   <artifactId>platform-ui-skin</artifactId>
