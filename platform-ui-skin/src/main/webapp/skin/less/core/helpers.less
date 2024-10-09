@@ -180,7 +180,7 @@
 .text-subtitle-font-size {
   font-size: @textSubtitleFontSize !important;
 }
-.text-font-size {
+.text-font-size, .text-body-font-size {
   font-size: @textFontSize !important;
 }
 .widget-text-header{
@@ -300,6 +300,9 @@
 .no-box-shadow {
   box-shadow: none !important;
 }
+.border-radius-circle {
+  border-radius: 50% !important;
+}
 .border-radius {
   border-radius: @inputBorderRadius !important;
 }
@@ -317,6 +320,18 @@
 }
 .border-bottom-right-radius {
   border-bottom-right-radius: @baseBorderRadius !important;
+}
+.no-border-top-left-radius {
+  border-top-left-radius: 0 !important;
+}
+.no-border-top-right-radius {
+  border-top-right-radius: 0 !important;
+}
+.no-border-bottom-left-radius {
+  border-bottom-left-radius: 0 !important;
+}
+.no-border-bottom-right-radius {
+  border-bottom-right-radius: 0 !important;
 }
 .application-background {
   background: @baseBackground !important;
@@ -717,6 +732,10 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+/* 2 x line-height max.. To not use padding with this */
+.max-height-2lh {
+  max-height: 2lh;
+}
 .text-truncate-3 {
   display: -webkit-box;
   overflow: hidden;
@@ -724,6 +743,10 @@
   line-clamp: 3 !important;
   -webkit-line-clamp: 3 !important;
   -webkit-box-orient: vertical;
+}
+/* 3 x line-height max. To not use padding with this */
+.max-height-3lh {
+  max-height: 3lh;
 }
 .text-truncate-4 {
   display: -webkit-box;
@@ -733,6 +756,10 @@
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 }
+/* 4 x line-height max. To not use padding with this */
+.max-height-4lh {
+  max-height: 4lh;
+}
 .text-truncate-5 {
   display: -webkit-box;
   overflow: hidden;
@@ -740,6 +767,10 @@
   line-clamp: 5;
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
+}
+/* 5 x line-height max. To not use padding with this */
+.max-height-5lh {
+  max-height: 5lh;
 }
 .medium-grey-color {
   color: @mediumGrey !important;
