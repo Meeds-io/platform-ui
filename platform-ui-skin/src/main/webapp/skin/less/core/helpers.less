@@ -16,6 +16,8 @@
   along with this program; if not, write to the Free Software Foundation,
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
+@import "../variables.less";
+@import "../mixins.less";
 
 @font-face {
   font-family: NoLineClamp;
@@ -915,6 +917,9 @@
   &, table {
     table-layout: auto !important;
   }
+}
+.specific-scrollbar {
+  .specific-scrollbar()
 }
 .VuetifyApp .v-application .reset-style-box {
   div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol,
