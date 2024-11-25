@@ -147,28 +147,27 @@
       max-height: 7px;
     }
   }
+}
 
-  #brandingTopBar {
-    .logoContainer {
-      position: relative;
-      min-width: 30px;
-      width: auto;
-      box-sizing: content-box;
-      img {
-        max-width: 200px;
-        max-height: 36px;
-        min-height: 36px;
-      }
-    }
-    .brandingContainer {
-      padding-top: 3px;
-      padding-bottom: 3px;
-    }
-    .logoTitle {
-      max-width: 200px;
-    }
+.logoContainer {
+  position: relative;
+  min-width: 30px;
+  width: auto;
+  box-sizing: content-box;
+  img {
+    max-width: 200px;
+    max-height: 36px;
+    min-height: 36px;
   }
 }
+.brandingContainer {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.logoTitle {
+  max-width: 200px;
+}
+
 /* Make TopBar under drawers and other modals when opened */
 .decrease-z-index #UITopBarContainer {
   z-index: @zindexFixedNavbarUnder;
