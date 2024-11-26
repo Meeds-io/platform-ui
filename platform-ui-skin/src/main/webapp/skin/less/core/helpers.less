@@ -913,6 +913,19 @@
     content: "";
   }
 }
+
+.list-border-active {
+  .v-list-item--active:before {
+    content: '' !important;
+    width: 8px !important;
+    background:@secondaryColor !important;
+    position: absolute !important;
+    left: 0 ~' !important; /** orientation=lt */ ';
+    right: 0 ~' !important; /** orientation=rt */ ';
+    opacity: 1 !important;
+  }
+}
+
 .table-layout-auto {
   &, table {
     table-layout: auto !important;
