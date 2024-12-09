@@ -36,6 +36,7 @@
 
     #ParentSiteStickyMenu {
       min-height: ~"var(--100vh, 100vh)";
+      max-width: 311px;
     }
   }
 
@@ -147,30 +148,12 @@
       max-height: 7px;
     }
   }
-
-  #brandingTopBar {
-    .logoContainer {
-      position: relative;
-      min-width: 30px;
-      width: auto;
-      box-sizing: content-box;
-      img {
-        max-width: 200px;
-        max-height: 36px;
-        min-height: 36px;
-      }
-    }
-    .brandingContainer {
-      padding-top: 3px;
-      padding-bottom: 3px;
-      border-left: solid 1px @greyColor ~'; /** orientation=lt */ ';
-      border-right: solid 1px @greyColor ~'; /** orientation=rt */ ';
-    }
-    .logoTitle {
-      max-width: 200px;
-    }
-  }
 }
+
+.logoTitle {
+  max-width: 200px;
+}
+
 /* Make TopBar under drawers and other modals when opened */
 .decrease-z-index #UITopBarContainer {
   z-index: @zindexFixedNavbarUnder;

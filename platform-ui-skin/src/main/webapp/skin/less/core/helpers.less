@@ -16,6 +16,8 @@
   along with this program; if not, write to the Free Software Foundation,
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
+@import "../variables.less";
+@import "../mixins.less";
 
 @font-face {
   font-family: NoLineClamp;
@@ -644,7 +646,18 @@
 }
 
 .ml-n2px {
+  margin-left: -2px !important;
+}
+.ma-n2px {
   margin: -2px !important;
+}
+.ms-n2px {
+  margin-left: -2px ~'!important; /** orientation=lt */ ';
+  margin-right: -2px ~'!important; /** orientation=rt */ ';
+}
+.me-n2px {
+  margin-right: -2px ~'!important; /** orientation=lt */ ';
+  margin-left: -2px ~'!important; /** orientation=rt */ ';
 }
 
 .py-6px {
@@ -911,10 +924,26 @@
     content: "";
   }
 }
+
+.list-border-active {
+  .v-list-item--active:before {
+    content: '' !important;
+    width: 8px !important;
+    background:@secondaryColor !important;
+    position: absolute !important;
+    left: 0 ~' !important; /** orientation=lt */ ';
+    right: 0 ~' !important; /** orientation=rt */ ';
+    opacity: 1 !important;
+  }
+}
+
 .table-layout-auto {
   &, table {
     table-layout: auto !important;
   }
+}
+.specific-scrollbar {
+  .specific-scrollbar()
 }
 .VuetifyApp .v-application .reset-style-box {
   div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol,
