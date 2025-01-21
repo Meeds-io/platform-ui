@@ -86,13 +86,23 @@
 
 #UITopBarContainer {
   box-shadow: none;
-  background-image: linear-gradient(to bottom, white, white);
+  background-color: @topBarBackgroundColor;
+  background-image: @topBarBackgroundImage;
+  background-repeat: @topBarBackgroundRepeat;
+  background-position: @topBarBackgroundPosition;
+  background-size: @topBarBackgroundSize;
   border-bottom: 1px solid white;
   position: absolute;
   top: 0;
   width: 100%;
   max-width: 100%;
   z-index: @zindexFixedNavbar;
+  #brandingTopBar .text-body {
+    font-size: @topBarTextFontSize !important;
+    font-weight: @topBarTextFontWeight !important;
+    font-style: @topBarTextFontStyle !important;
+    color: @topBarTextColor !important;
+  }
 
   .UITopBarContainerItemsParent {
     display: flex;
