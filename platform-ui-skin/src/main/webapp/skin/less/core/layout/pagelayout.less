@@ -170,8 +170,15 @@
       padding-bottom: var(--sectionMarginBottom, 0);
       padding-left: var(--sectionMarginLeft, 0);
     }
-
   }
+
+  .layout-banner-top-section {
+    &.layout-sticky-section {
+      position: sticky !important;
+      top: var(--sectionStickyTop, 0);
+    }
+  }
+
   .layout-section {
 
     &:first-of-type {
