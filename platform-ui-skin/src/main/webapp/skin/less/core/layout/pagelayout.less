@@ -256,21 +256,26 @@
   box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.3);
 }
 
-.application-align-v-end {
-  display: flex;
-  align-items: end;
-}
-.application-align-v-center {
-  display: flex;
-  align-items: center;
-}
-.application-align-h-end {
-  display: flex;
-  justify-content: end;
-}
+
+.application-align-v-end,
+.application-align-v-center,
+.application-align-h-end,
 .application-align-h-center {
   display: flex;
+  flex-direction: column;
+}
+
+.application-align-v-end {
+  justify-content: end;
+}
+.application-align-v-center {
   justify-content: center;
+}
+.application-align-h-end {
+  align-items: end;
+}
+.application-align-h-center {
+  align-items: center;
 }
 
 @media (min-width: @minTabletWidth) {
