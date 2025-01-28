@@ -96,11 +96,16 @@
   width: 100%;
   max-width: 100%;
   z-index: @zindexFixedNavbar;
-  #brandingTopBar .text-body {
-    font-size: @topBarTextFontSize !important;
-    font-weight: @topBarTextFontWeight !important;
-    font-style: @topBarTextFontStyle !important;
-    color: @topBarTextColor !important;
+  #brandingTopBar {
+    .siteTitle.text-body {
+      font-weight: 700 !important;
+    }
+    .text-body {
+      font-size: @topBarTextFontSize !important;
+      font-weight: @topBarTextFontWeight !important;
+      font-style: @topBarTextFontStyle !important;
+      color: @topBarTextColor !important;
+    }
   }
 
   .UITopBarContainerItemsParent {
@@ -147,6 +152,15 @@
 
           > div {
             max-width: 100%;
+          }
+          .v-tab--active.text-body {
+            color: @secondaryColor !important;
+          }
+          .text-body {
+            font-size: @topBarTextFontSize !important;
+            font-weight: @topBarTextFontWeight !important;
+            font-style: @topBarTextFontStyle !important;
+            color: @topBarTextColor !important;
           }
         }
       }
