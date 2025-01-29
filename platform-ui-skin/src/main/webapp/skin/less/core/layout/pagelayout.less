@@ -132,7 +132,7 @@
 
 .VuetifyApp .layout-sections-parent {
 
-  &.singlePageApplication {
+  &.layout-page-parent, .layout-page-parent {
     width: 100%;
     padding: 0;
     .layout-section {
@@ -172,10 +172,11 @@
 
   .layout-banner-top-section {
     z-index: 1;
+  }
 
-    &.layout-sticky-section {
-      position: sticky !important;
-      top: var(--sectionStickyTop, 0);
+  .layout-banner-cell {
+    .layout-application {
+      max-width: 100%;
     }
   }
 
@@ -252,11 +253,23 @@
   }
 }
 
-.site-scroll-top .layout-banner-top-section.layout-sticky-section {
-  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.3);
-  z-index: 3;
+.layout-sticky-top-bar, // Used in Shared Layout Topbar
+.layout-banner-top-section.layout-sticky-section {
+  position: sticky !important;
+  top: var(--sectionStickyTop, 0);
+  z-index: 1;
 }
 
+.scroll-top .layout-sticky-top-bar, // Used in Shared Layout Topbar
+.site-scroll-top .layout-banner-top-section.layout-sticky-section {
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.3) !important;
+}
+.site-scroll-top .layout-banner-top-section.layout-sticky-section {
+  z-index: 5;
+}
+.scroll-top .layout-sticky-top-bar {
+  z-index: 10;
+}
 
 .application-align-v-end,
 .application-align-v-center,
