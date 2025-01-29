@@ -81,6 +81,7 @@
   min-height: @topbarHeight;
   height: calc(@topbarHeight - 1);
   box-sizing: border-box;
+  z-index: 3;
 }
 
 #UITopBarContainer {
@@ -108,6 +109,7 @@
 
       > * {
         margin: auto;
+        max-width: 100%;
       }
 
       #top-bar-logo-containerChildren {
@@ -123,6 +125,8 @@
       }
 
       &.menu-topNavigation-container {
+        max-width: 70%;
+        margin: 0 15%;
         flex-grow: 1;
         flex-shrink: 1;
         overflow: hidden;
@@ -235,10 +239,13 @@
   }
 }
 
-#singlePageApplicationContainer, .singlePageApplication, #SpacePage, #StreamPage, .SpaceActivityStreamPortletPage, #parentSocialPage {
-  max-width: 100%;
-  width: @singlePageApplicationWidth;
-  padding: 24px 20px 0;
+.width-page-content, #singlePageApplicationContainer, .singlePageApplication, #SpacePage, #StreamPage, .SpaceActivityStreamPortletPage, #parentSocialPage {
+  width: @singlePageApplicationWidth !important;
+  max-width: 100% !important;
+  padding-top: var(--allPagesMarginTop, 24px);
+  padding-right: var(--allPagesMarginRight, 20px);
+  padding-bottom: var(--allPagesMarginBottom, 0);
+  padding-left: var(--allPagesMarginLeft, 20px);
   margin: 0 auto;
 
   /* Start: box-sizing inheritence fix: Important to not influence original box-sizing inherited in child contents */
