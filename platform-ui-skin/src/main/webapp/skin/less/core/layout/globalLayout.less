@@ -85,25 +85,12 @@
 
 #UITopBarContainer {
   box-shadow: none;
-  background-color: @topBarBackgroundColor;
-  background-image: @topBarBackgroundImage;
-  background-repeat: @topBarBackgroundRepeat;
-  background-position: @topBarBackgroundPosition;
-  background-size: @topBarBackgroundSize;
   border-bottom: 1px solid white;
   position: absolute;
   top: 0;
   width: 100%;
   max-width: 100%;
   z-index: @zindexFixedNavbar;
-  #brandingTopBar {
-    .siteTitle.top-bar-text-body {
-      font-weight: 700 !important;
-    }
-    .logoTitle.top-bar-text-body {
-      font-weight: 700 !important;
-    }
-  }
 
   .UITopBarContainerItemsParent {
     display: flex;
@@ -168,6 +155,19 @@
 
 .logoTitle {
   max-width: 200px;
+}
+
+.layout-top-bar {
+  --allPagesBaseTextColor: var(--allPagesTopBarTextColor) !important;
+  --allPagesMenuTextColor: var(--allPagesTopBarTextColor) !important;
+  --allPagesBaseTextFontSize: var(--allPagesTopBarTextFontSize) !important;
+  --allPagesBaseTextFontWeight: var(--allPagesTopBarTextFontWeight) !important;
+  --allPagesBaseTextFontStyle: var(--allPagesTopBarTextFontStyle) !important;
+  background-color: @topBarBackgroundColor !important;
+  background-image: @topBarBackgroundImage !important;
+  background-repeat: @topBarBackgroundRepeat !important;
+  background-position: @topBarBackgroundPosition !important;
+  background-size: @topBarBackgroundSize !important;
 }
 
 /* Make TopBar under drawers and other modals when opened */
