@@ -152,6 +152,23 @@
   background-size: @topBarBackgroundSize !important;
 }
 
+.layout-side-bar {
+  --allPagesBaseTextColor: var(--allPagesSideBarTextColor) !important;
+  --allPagesMenuTextColor: var(--allPagesSideBarTextColor) !important;
+  --allPagesBaseTextFontSize: var(--allPagesSideBarTextFontSize) !important;
+  --allPagesBaseTextFontWeight: var(--allPagesSideBarTextFontWeight) !important;
+  --allPagesBaseTextFontStyle: var(--allPagesSideBarTextFontStyle) !important;
+  --allPagesBaseTextSubtitleColor: var(--allPagesSideBarTextSubtitleColor) !important;
+  --allPagesBaseTextSubtitleFontSize: var(--allPagesSideBarTextSubtitleFontSize) !important;
+  --allPagesBaseTextSubtitleFontWeight: var(--allPagesSideBarTextSubtitleFontWeight) !important;
+  --allPagesBaseTextSubtitleFontStyle: var(--allPagesSideBarTextSubtitleFontStyle) !important;
+  background-color: @sideBarBackgroundColor !important;
+  background-image: @sideBarBackgroundImage !important;
+  background-repeat: @sideBarBackgroundRepeat !important;
+  background-position: @sideBarBackgroundPosition !important;
+  background-size: @sideBarBackgroundSize !important;
+}
+
 /* Make TopBar under drawers and other modals when opened */
 .decrease-z-index #UITopBarContainer {
   z-index: @zindexFixedNavbarUnder;
