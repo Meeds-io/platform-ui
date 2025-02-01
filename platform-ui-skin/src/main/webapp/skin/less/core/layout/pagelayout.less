@@ -138,7 +138,7 @@
     .layout-section {
       width: 100%;
       .layout-section-content {
-        width: @pageWidth;
+        width: ~"min(100%, @{pageWidth})";
         max-width: 100%;
       }
     }
@@ -254,10 +254,17 @@
 }
 
 .layout-sticky-top-bar, // Used in Shared Layout Topbar
-.layout-banner-top-section.layout-sticky-section {
+.layout-banner-top-section.layout-sticky-section,
+.layout-sidebar-section.layout-sticky-section {
   position: sticky !important;
   top: var(--sectionStickyTop, 0);
   z-index: 1;
+}
+
+.layout-sidebar-section.layout-sticky-section {
+  max-height: ~"calc(var(--100vh, 100vh) - var(--layoutSectionTop, 0px) - var(--layoutSectionBottom, 0px))";
+  overflow-y: auto;
+  .specific-scrollbar();
 }
 
 .scroll-top .layout-sticky-top-bar, // Used in Shared Layout Topbar
