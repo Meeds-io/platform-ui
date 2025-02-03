@@ -137,6 +137,14 @@
     overflow-x: hidden;
   }
 
+  .layout-page-parent {
+    background-image: ~"var(--pageBackgroundImage, none) !important";
+    background-color: ~"var(--pageBackgroundColor, unset) !important";
+    background-repeat: ~"var(--pageBackgroundRepeat, no-repeat) !important";
+    background-size: ~"var(--pageBackgroundSize, unset) !important";
+    background-position: ~"var(--pageBackgroundPosition, unset) !important";
+  }
+
   &.layout-page-parent, .layout-page-parent {
     width: 100%;
     padding: 0;
