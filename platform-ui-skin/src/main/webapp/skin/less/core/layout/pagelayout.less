@@ -134,6 +134,7 @@
 
   &, .layout-site-container, .layout-site-middle-container, .layout-section-content {
     max-width: 100%;
+    overflow-x: hidden;
   }
 
   &.layout-page-parent, .layout-page-parent {
@@ -274,10 +275,14 @@
 }
 
 .scroll-top .layout-sticky-top-bar, // Used in Shared Layout Topbar
-.site-scroll-top .layout-banner-top-section.layout-sticky-section {
+.scroll-top .layout-banner-top-section.layout-sticky-section {
   box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.3) !important;
 }
-.site-scroll-top .layout-banner-top-section.layout-sticky-section {
+.scroll-top .layout-banner-top-section.layout-sticky-section,
+.scroll-top .layout-sidebar-section.layout-sticky-section .layout-sidebar-cell {
+  background-color: var(--sectionBackgroundColorScroll) !important;
+}
+.scroll-top .layout-banner-top-section.layout-sticky-section {
   z-index: 5;
 }
 .scroll-top .layout-sticky-top-bar {
