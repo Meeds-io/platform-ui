@@ -196,21 +196,21 @@
     &:first-of-type {
       padding-top: var(--allPagesMarginTop, 10px);
       .layout-section-content {
-        padding-top: var(--allPagesNoMarginTop, 10px);
+        padding-top: var(--sectionMarginTop, var(--allPagesNoMarginTop, 10px));
       }
     }
     &:last-of-type {
       padding-bottom: var(--allPagesMarginBottom, 10px);
       .layout-section-content {
-        padding-bottom: var(--allPagesNoMarginBottom, 10px);
+        padding-bottom: var(--sectionMarginBottom, var(--allPagesNoMarginBottom, 10px));
       }
     }
     .layout-section-content {
       box-sizing: border-box;
-      padding-top: 10px;
+      padding-top: var(--sectionMarginTop, 10px);
       padding-right: var(--sectionMarginRight, var(--allPagesMarginRight, 20px));
-      padding-bottom: 10px;
       padding-left: var(--sectionMarginLeft, var(--allPagesMarginLeft, 20px));
+      padding-bottom: var(--sectionMarginBottom, 10px);
       margin: 0 auto;
     }
 
@@ -326,8 +326,8 @@
 
 @media (max-width: @maxTabletWidth) {
   .VuetifyApp .layout-sections-parent .layout-section .layout-section-content {
-    padding-right: var(--sectionMarginRight, var(--allPagesMarginRight, 8px));
-    padding-left: var(--sectionMarginLeft, var(--allPagesMarginLeft, 8px));
+    --sectionMarginRight: 8px;
+    --sectionMarginLeft: 8px;
   }
 }
 
