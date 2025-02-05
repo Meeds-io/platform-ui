@@ -192,13 +192,42 @@
   --allPagesBaseTextSubtitleFontWeight: var(--allPagesDrawerTextSubtitleFontWeight);
   --allPagesBaseTextSubtitleFontStyle: var(--allPagesDrawerTextSubtitleFontStyle);
 
-  .v-navigation-drawer__content .theme--light.v-sheet,
-  .v-navigation-drawer__content .theme--light.v-card,
-  .v-navigation-drawer__content .theme--light.v-stepper,
-  .v-navigation-drawer__content .theme--light.v-window,
-  .v-navigation-drawer__content .theme--light.v-tabs > .v-tabs-bar,
-  .v-navigation-drawer__content .cke_wysiwyg_frame {
-    background: inherit;
+  &.v-card,
+  .v-card,
+  .theme--light.v-card,
+  &.v-sheet,
+  .v-sheet,
+  .theme--light.v-sheet,
+  &.v-toolbar,
+  .v-toolbar,
+  .v-toolbar.theme--light,
+  .v-toolbar.theme--light.v-sheet,
+  &.v-list,
+  .v-list,
+  .v-list.theme--light,
+  &.v-tabs-bar,
+  .v-tabs-bar,
+  &.v-tabs.theme--light > .v-tabs-bar,
+  .v-tabs.theme--light > .v-tabs-bar,
+  &.v-tabs-items,
+  .v-tabs-items,
+  .v-tabs-item.theme--light,
+  .v-data-table,
+  .v-data-table.theme--light,
+  .v-input__slot,
+  .cke_wysiwyg_frame {
+    background-color: transparent !important;
+  }
+  .v-menu__content {
+    color: @btnColor !important;
+    font-size: @btnFontSize !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    background-color: @drawerBackgroundColor !important;
+    background-image: @drawerBackgroundImage !important;
+    background-repeat: @drawerBackgroundRepeat !important;
+    background-position: @drawerBackgroundPosition!important;
+    background-size: @drawerBackgroundSize!important;
   }
 
   color: @drawerTextColor;
