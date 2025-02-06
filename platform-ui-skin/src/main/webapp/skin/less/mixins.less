@@ -41,3 +41,67 @@
     background-color: @primaryColor;
   }
 }
+
+.layout-drawer() {
+  --allPagesBaseTextTitleColor: var(--allPagesDrawerTextTitleColor);
+  --allPagesBaseTextTitleFontSize: var(--allPagesDrawerTextTitleFontSize);
+  --allPagesBaseTextTitleFontWeight: var(--allPagesDrawerTextTitleFontWeight);
+  --allPagesBaseTextTitleFontStyle: var(--allPagesDrawerTextTitleFontStyle);
+
+  --allPagesBaseTextHeaderColor: var(--allPagesDrawerTextHeaderColor);
+  --allPagesBaseTextHeaderFontSize: var(--allPagesDrawerTextHeaderFontSize);
+  --allPagesBaseTextHeaderFontWeight: var(--allPagesDrawerTextHeaderFontStyle);
+  --allPagesBaseTextHeaderFontStyle: var(--allPagesDrawerTextHeaderFontWeight);
+
+  --allPagesBaseTextColor: var(--allPagesDrawerTextColor);
+  --allPagesBaseTextFontSize: var(--allPagesDrawerTextFontSize);
+  --allPagesBaseTextFontStyle: var(--allPagesDrawerTextFontStyle);
+  --allPagesBaseTextFontWeight: var(--allPagesDrawerTextFontWeight);
+
+  --allPagesBaseTextSubtitleColor: var(--allPagesDrawerTextSubtitleColor);
+  --allPagesBaseTextSubtitleFontSize: var(--allPagesDrawerTextSubtitleFontSize);
+  --allPagesBaseTextSubtitleFontWeight: var(--allPagesDrawerTextSubtitleFontWeight);
+  --allPagesBaseTextSubtitleFontStyle: var(--allPagesDrawerTextSubtitleFontStyle);
+
+  .v-card:not(.v-card--link.v-sheet.theme--light),
+  .theme--light.v-card:not(.v-card--link.v-sheet.theme--light),
+  .v-sheet:not(.v-card--link.theme--light):not(.v-alert),
+  .theme--light.v-sheet:not(.v-card--link),
+  .v-toolbar,
+  .v-toolbar.theme--light,
+  .v-toolbar.theme--light.v-sheet,
+  .v-list,
+  .v-list.theme--light,
+  .v-tabs-bar,
+  .v-tabs.theme--light > .v-tabs-bar,
+  .v-tabs-items,
+  .v-tabs-item.theme--light,
+  .v-data-table,
+  .v-data-table.theme--light,
+  .v-input__slot,
+  .cke_wysiwyg_frame {
+    background-color: transparent !important;
+  }
+  .v-menu__content {
+    color: @btnColor !important;
+    font-size: @btnFontSize !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    background-color: @drawerBackgroundColor !important;
+    background-image: @drawerBackgroundImage !important;
+    background-repeat: @drawerBackgroundRepeat !important;
+    background-position: @drawerBackgroundPosition!important;
+    background-size: @drawerBackgroundSize!important;
+  }
+
+  color: @drawerTextColor;
+  font-size: @drawerTextFontSize;
+  font-style: @drawerTextFontStyle;
+  font-weight: @drawerTextFontWeight;
+
+  background-color: @drawerBackgroundColor !important;
+  background-image: @drawerBackgroundImage !important;
+  background-repeat: @drawerBackgroundRepeat !important;
+  background-position: @drawerBackgroundPosition!important;
+  background-size: @drawerBackgroundSize!important;
+}
