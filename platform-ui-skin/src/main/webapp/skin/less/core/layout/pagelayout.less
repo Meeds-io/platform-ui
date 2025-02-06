@@ -132,14 +132,25 @@
 
 .VuetifyApp .layout-sections-parent {
 
-  &.singlePageApplication {
+  &, .layout-site-container, .layout-site-middle-container, .layout-section-content {
+    max-width: 100%;
+  }
+
+  .layout-page-parent {
+    background-image: ~"var(--pageBodyBackgroundImage, none) !important";
+    background-color: ~"var(--pageBodyBackgroundColor, unset) !important";
+    background-repeat: ~"var(--pageBodyBackgroundRepeat, no-repeat) !important";
+    background-size: ~"var(--pageBodyBackgroundSize, unset) !important";
+    background-position: ~"var(--pageBodyBackgroundPosition, unset) !important";
+  }
+
+  &.layout-page-parent, .layout-page-parent {
     width: 100%;
     padding: 0;
     .layout-section {
       width: 100%;
       .layout-section-content {
-        width: @pageWidth;
-        max-width: 100%;
+        width: ~"min(100%, @{pageWidth})";
       }
     }
   }
@@ -161,24 +172,46 @@
     }
   }
 
+  .layout-banner-section {
+    &.layout-section-content, .layout-section-content {
+      padding-top: var(--sectionMarginTop, 0);
+      padding-right: var(--sectionMarginRight, 0);
+      padding-bottom: var(--sectionMarginBottom, 0);
+      padding-left: var(--sectionMarginLeft, 0);
+    }
+  }
+
+  .layout-banner-top-section {
+    z-index: 1;
+  }
+
+  .layout-banner-cell {
+    .layout-application {
+      max-width: 100%;
+    }
+  }
+
   .layout-section {
 
     &:first-of-type {
-      padding-top: 10px;
+      padding-top: var(--allPagesMarginTop, 10px);
+      .layout-section-content {
+        padding-top: var(--sectionMarginTop, var(--allPagesNoMarginTop, 10px));
+      }
     }
     &:last-of-type {
-      padding-bottom: 10px;
+      padding-bottom: var(--allPagesMarginBottom, 10px);
+      .layout-section-content {
+        padding-bottom: var(--sectionMarginBottom, var(--allPagesNoMarginBottom, 10px));
+      }
     }
     .layout-section-content {
       box-sizing: border-box;
       padding-top: var(--sectionMarginTop, 10px);
+      padding-right: var(--sectionMarginRight, var(--allPagesMarginRight, 20px));
+      padding-left: var(--sectionMarginLeft, var(--allPagesMarginLeft, 20px));
       padding-bottom: var(--sectionMarginBottom, 10px);
-      padding-left: 20px;
-      padding-right: 20px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 0;
-      margin-bottom: 0;
+      margin: 0 auto;
     }
 
     .grid-cell {
@@ -234,6 +267,56 @@
   }
 }
 
+.layout-sticky-top-bar, // Used in Shared Layout Topbar
+.layout-banner-top-section.layout-sticky-section,
+.layout-sidebar-section.layout-sticky-section {
+  position: sticky !important;
+  top: var(--sectionStickyTop, 0);
+  z-index: 1;
+}
+
+.layout-sidebar-section.layout-sticky-section {
+  max-height: ~"calc(var(--100vh, 100vh) - var(--layoutSectionTop, 0px) - var(--layoutSectionBottom, 0px))";
+  overflow-y: auto;
+  .specific-scrollbar();
+}
+
+.scroll-top .layout-sticky-top-bar, // Used in Shared Layout Topbar
+.scroll-top .layout-banner-top-section.layout-sticky-section {
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.3) !important;
+}
+.scroll-top .layout-banner-top-section.layout-sticky-section,
+.scroll-top .layout-sidebar-section.layout-sticky-section .layout-sidebar-cell {
+  background-color: var(--sectionBackgroundColorScroll) !important;
+}
+.scroll-top .layout-banner-top-section.layout-sticky-section {
+  z-index: 5;
+}
+.scroll-top .layout-sticky-top-bar {
+  z-index: 10;
+}
+
+.application-align-v-end,
+.application-align-v-center,
+.application-align-h-end,
+.application-align-h-center {
+  display: flex;
+  flex-direction: column;
+}
+
+.application-align-v-end {
+  justify-content: end;
+}
+.application-align-v-center {
+  justify-content: center;
+}
+.application-align-h-end {
+  align-items: end;
+}
+.application-align-h-center {
+  align-items: center;
+}
+
 @media (min-width: @minTabletWidth) {
   .VuetifyApp .v-application .layout-sticky-application .flex-cell > :last-of-type {
     position: sticky;
@@ -243,8 +326,8 @@
 
 @media (max-width: @maxTabletWidth) {
   .VuetifyApp .layout-sections-parent .layout-section .layout-section-content {
-    padding-left: 8px;
-    padding-right: 8px;
+    --sectionMarginRight: 8px;
+    --sectionMarginLeft: 8px;
   }
 }
 
