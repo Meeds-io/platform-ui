@@ -86,7 +86,6 @@
 
 #UITopBarContainer {
   box-shadow: none;
-  background-image: linear-gradient(to bottom, white, white);
   border-bottom: 1px solid white;
   position: absolute;
   top: 0;
@@ -138,6 +137,42 @@
 
 .logoTitle {
   max-width: 200px;
+}
+
+.layout-top-bar {
+  --allPagesBaseTextColor: var(--allPagesTopBarTextColor);
+  --allPagesMenuTextColor: var(--allPagesTopBarTextColor);
+  --allPagesBaseTextFontSize: var(--allPagesTopBarTextFontSize);
+  --allPagesBaseTextFontWeight: var(--allPagesTopBarTextFontWeight);
+  --allPagesBaseTextFontStyle: var(--allPagesTopBarTextFontStyle);
+
+  background-color: @topBarBackgroundColor !important;
+  background-image: @topBarBackgroundImage !important;
+  background-repeat: @topBarBackgroundRepeat !important;
+  background-position: @topBarBackgroundPosition !important;
+  background-size: @topBarBackgroundSize !important;
+}
+
+.layout-side-bar {
+  --allPagesBaseTextColor: var(--allPagesSideBarTextColor);
+  --allPagesMenuTextColor: var(--allPagesSideBarTextColor);
+  --allPagesBaseTextFontSize: var(--allPagesSideBarTextFontSize);
+  --allPagesBaseTextFontWeight: var(--allPagesSideBarTextFontWeight);
+  --allPagesBaseTextFontStyle: var(--allPagesSideBarTextTitleFontWeight);
+
+  --allPagesBaseTextSubtitleColor: var(--allPagesSideBarTextSubtitleColor);
+  --allPagesBaseTextSubtitleFontSize: var(--allPagesSideBarTextSubtitleFontSize);
+  --allPagesBaseTextSubtitleFontWeight: var(--allPagesSideBarTextSubtitleFontWeight);
+  --allPagesBaseTextSubtitleFontStyle: var(--allPagesSideBarTextSubtitleFontStyle);
+
+  background-color: @sideBarBackgroundColor !important;
+  background-image: @sideBarBackgroundImage !important;
+  background-repeat: @sideBarBackgroundRepeat !important;
+  background-position: @sideBarBackgroundPosition !important;
+  background-size: @sideBarBackgroundSize !important;
+}
+.layout-drawer {
+  .layout-drawer();
 }
 
 /* Make TopBar under drawers and other modals when opened */
