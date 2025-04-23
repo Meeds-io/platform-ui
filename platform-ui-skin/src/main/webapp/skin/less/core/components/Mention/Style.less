@@ -134,10 +134,22 @@
   }
   
   .identitySuggesterInputStyle {
-    border: 1px solid @inputBorder;
+    border: 1px solid @inputBorder !important;
     border-radius: 5px;
+    box-shadow: none  !important;
+    box-sizing: border-box;
+    height: 40px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    &.v-input--is-focused {
+      border: 2px solid @inputBorder !important;
+    }
+    .v-input__slot {
+      margin-bottom: 0 !important;
+    }
   }
-  
+
   .identitySuggestionMenuItemText {
     max-width: 300px;
   }
