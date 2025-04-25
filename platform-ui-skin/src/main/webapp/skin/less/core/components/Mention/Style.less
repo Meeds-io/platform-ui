@@ -112,6 +112,7 @@
       background-color: @primaryColorLight !important;
       border: 1px solid @primaryDarkerColorGradientEnd !important;
       color: @btnPrimaryColor !important;
+      margin: 2px 4px !important;
     }
   }
   
@@ -134,10 +135,29 @@
   }
   
   .identitySuggesterInputStyle {
-    border: 1px solid @inputBorder;
+    border: 1px solid @inputBorder !important;
     border-radius: 5px;
+    box-shadow: none  !important;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    .v-select__selections {
+      min-height: 38px;
+    }
+    &.v-input--is-focused {
+      border: 2px solid @inputBorder !important;
+      .v-select__selections {
+        margin: -1px !important;
+      }
+      .v-select__slot {
+        overflow: hidden !important;
+      }
+    }
+    .v-input__slot {
+      margin-bottom: 0 !important;
+    }
   }
-  
+
   .identitySuggestionMenuItemText {
     max-width: 300px;
   }
