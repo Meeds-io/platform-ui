@@ -1104,9 +1104,12 @@
     }
   }
   a {
-    color: @blueLinkColor;
+    color: @linkColorUnvisited;
+    &:hover, &:focus { 
+      text-decoration: underline;
+    } 
     &:visited {
-      color: purple;
+      color: @linkColorVisited;
     }
   }
 }
