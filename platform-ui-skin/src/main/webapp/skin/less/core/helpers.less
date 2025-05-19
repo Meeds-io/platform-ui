@@ -1105,8 +1105,11 @@
   }
   a {
     color: @blueLinkColor;
+    &:hover, &:focus { 
+      text-decoration: underline;
+    } 
     &:visited {
-      color: purple;
+      color: @linkColorVisited;
     }
   }
 }
