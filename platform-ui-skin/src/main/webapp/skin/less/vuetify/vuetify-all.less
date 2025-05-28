@@ -65,6 +65,24 @@
     .grid-list-md {
       box-sizing: border-box;
     }
+    
+    [class^="v-"]:focus:not(button[class^="v-icon"]),
+    [class^="v-"] *:focus:not(button[class^="v-icon"]),
+    [class*=" v-"]:focus:not(button[class^="v-icon"]),
+    [class*=" v-"] *:focus:not(button[class^="v-icon"]) {
+      box-shadow: 0 0 0 2px #000 inset;
+    }
+    
+    [class^="v-"]:focus:not(:active)::before,
+    [class^="v-"] *:focus:not(:active)::before,
+    [class*=" v-"]:focus:not(:active)::before,
+    [class*=" v-"] *:focus:not(:active)::before {
+      opacity: 0 !important;
+    }
+    
+    button[class^="v-icon"]:focus:not(:active)::before {
+      opacity: 1 !important;
+    }
 
     .v-tooltip__content {
       z-index: @zindexTooltip !important;
@@ -264,7 +282,7 @@
       text-shadow: none;
       box-shadow: none;
       font-weight: normal;
-      &:hover, &:focus {
+      &:hover {
         color: @btnColor !important;
       }
     }
