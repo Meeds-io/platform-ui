@@ -1204,6 +1204,21 @@
   animation-delay: 0.6s;
 }
 
+.space-avatar-parent {
+  img[src*="/spaces/"] {
+    border-radius: 5px !important;
+    max-width: 36px;
+    max-height: 36px;
+  }
+}
+.user-avatar-parent {
+  img[src*="/users/"] {
+    border-radius: 50% !important;
+    max-width: 36px;
+    max-height: 36px;
+  }
+}
+
 @keyframes fadePulseScale {
   0%, 100% {
     opacity: 0.3;
