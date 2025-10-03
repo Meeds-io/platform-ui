@@ -1218,6 +1218,39 @@
     max-height: 36px;
   }
 }
+.content-link-parent {
+  a[href*="/contributions/actions/"],
+  a[href*="/taskDetail/"],
+  a[href*="/news-detail?"],
+  a[href*="/activity?"],
+  a[href*="/portal/s/"],
+  a[href*="/notes/"] {
+    &:before{
+      .fa();
+      color: @greyColorLighten1;
+      margin-right: 4px ~'!important; /** orientation=lt */ ';
+      margin-left: 4px ~'!important; /** orientation=rt */ ';
+    }
+  }
+  a[href*="/activity?"] {
+    .fa-stream();
+  }
+  a[href*="/news-detail?"] {
+    .fa-newspaper();
+  }
+  a[href*="/portal/s/"] {
+    .fa-users();
+  }
+  a[href*="/notes/"] {
+    .fa-clipboard();
+  }
+  a[href*="/taskDetail/"] {
+    .fa-tasks();
+  }
+  a[href*="/contributions/actions/"] {
+    .fa-trophy();
+  }
+}
 
 @keyframes fadePulseScale {
   0%, 100% {
