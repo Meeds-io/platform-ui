@@ -1174,3 +1174,36 @@
   background-color: #FFFFFF !important;
 }
 
+.loading-dot {
+  background-color: @greyColorLighten1 !important;
+  border-radius: 50% !important;
+  width: 5px;
+  height: 5px;
+  animation-name: fadePulseScale;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.loading-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.loading-dot:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.loading-dot:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadePulseScale {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+}
