@@ -1155,3 +1155,35 @@
 .border-color-primary-grey {
   border: 1px solid @primaryBackground !important;
 }
+
+
+.loading-dot {
+  animation-name: fadePulseScale;
+  animation-duration: 1.5s;
+  margin: 0 2;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.loading-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.loading-dot:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.loading-dot:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadePulseScale {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+}
