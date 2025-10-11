@@ -356,6 +356,9 @@
 .application-min-height {
   min-height: ~"calc(var(--100vh, 100vh) - 120px)";
 }
+.field-sizing-content {
+  field-sizing: content !important;
+}
 .brtr-0 {
   --appBorderRadiusTopRight: 0px;
 }
@@ -492,6 +495,25 @@
   height: auto !important;
   min-height: 0 !important;
 }
+.header-height {
+  height: 36px !important;
+  min-height: 36px !important;
+}
+.max-height-fit {
+  max-height: 100% !important;
+}
+.max-height-none {
+  max-height: none !important;
+}
+.min-height-1rem {
+  min-height: 1rem !important;
+}
+.min-height-2rem {
+  min-height: 2rem !important;
+}
+.min-height-3rem {
+  min-height: 3rem !important;
+}
 .width-auto {
   width: auto !important;
   min-width: 0 !important;
@@ -528,13 +550,6 @@
 }
 .no-max-width {
   max-width: none !important;
-}
-.header-height {
-  height: 36px !important;
-  min-height: 36px !important;
-}
-.max-height-fit {
-  max-height: 100%;
 }
 .clickable {
   cursor: pointer;
