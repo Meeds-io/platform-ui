@@ -453,6 +453,12 @@
 .border-light-color {
   border-color: @greyColorLighten1Opacity1 !important;
 }
+.no-background {
+  background-color: revert !important;
+  &:before {
+    background-color: revert !important;
+  }
+}
 .disabled-background {
   background-color: @disableBackground !important;
 }
