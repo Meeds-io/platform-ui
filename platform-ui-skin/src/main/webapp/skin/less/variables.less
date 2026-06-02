@@ -35,7 +35,8 @@
 // Background primary color
 @primaryBackgroundDefault:   #f0f0f0;
 @primaryBackground:   var(--allPagesPrimaryBackground, @primaryBackgroundDefault); // main background such as , header popup background, tab items...
-
+@primaryBackgroundOpacity8Default: fade(@primaryColorDefault, 80%);
+@primaryBackgroundOpacity8: var(--allPagesPrimaryBackgroundOpacity8, @primaryBackgroundOpacity8Default);
 // Background Disable Color
 @disabledBackgroundButtonDefault: #e0e0e0;
 @disabledBackgroundButton: var(--allPagesDisabledBackgroundButton, @disabledBackgroundButtonDefault);
