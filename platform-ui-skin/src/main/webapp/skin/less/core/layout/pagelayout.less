@@ -321,6 +321,15 @@
   .VuetifyApp .v-application .layout-sticky-application .flex-cell > :last-of-type {
     position: sticky;
     top: 0.1px;
+
+    /* Sticky applications are stacking contexts painted in DOM order, thus
+       an open menu attached inside an application (date picker, select...)
+       is displayed under the applications of the sections below whatever
+       its own z-index is. Raise the application holding the open menu so
+       the menu is fully displayed above the applications below */
+    &:has(.menuable__content__active) {
+      z-index: 2;
+    }
   }
 }
 
