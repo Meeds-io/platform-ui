@@ -321,6 +321,10 @@
   .VuetifyApp .v-application .layout-sticky-application .flex-cell > :last-of-type {
     position: sticky;
     top: 0.1px;
+
+    &:has(.menuable__content__active) {
+      z-index: 2;
+    }
   }
 }
 
