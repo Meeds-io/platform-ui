@@ -242,6 +242,24 @@
   position: relative;
   z-index: 0;
 }
+// Shrink-wraps text labels to their own content so a Text Background paints
+// just the text, not the whole row (EXIP-88493). :where() (zero specificity)
+// with no !important so it only kicks in where nothing else already governs
+// display/width/flex on the element - :not(.d-flex) skips row containers
+// that redundantly carry this class alongside a spacer + action button, and
+// requiring .text-truncate excludes non-constrained full-width headings.
+:where(.text-title.text-truncate, .text-header.text-truncate,
+       .text-body.text-truncate, .text-subtitle.text-truncate,
+       .text-header-title.text-truncate,
+       .widget-text-header.text-truncate):not(.d-flex) {
+  display: inline-block;
+  // width: auto does not opt out of a flex-column ancestor's default
+  // align-items: stretch; fit-content does.
+  width: fit-content;
+  max-width: 100%;
+  flex: 0 1 auto;
+  align-self: flex-start;
+}
 .text-disabled-color {
   color: @textDisabledColor !important;
 }
