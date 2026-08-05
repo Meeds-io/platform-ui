@@ -260,6 +260,31 @@
   flex: 0 1 auto;
   align-self: flex-start;
 }
+// Vuetify's .text-truncate above also sets overflow: hidden !important on
+// this very same element, which clips the Text Background ::before layer
+// whenever a margin pushes it outside this box - even with no ancestor
+// involved (EXIP-88488 feedback). overflow: clip paired with
+// overflow-clip-margin (the only overflow value that property applies to)
+// grows the clip boundary by the largest configured margin so the ::before
+// is no longer cut off, while text that genuinely overflows still gets
+// ellipsized. Needs real specificity + !important (unlike the :where()
+// rule above) to outrank Vuetify's own .text-truncate !important rule.
+.text-title.text-truncate, .text-header-title.text-truncate {
+  overflow: clip !important;
+  overflow-clip-margin: max(0px, var(--appTextTitleBackgroundPaddingTop, 0px), var(--appTextTitleBackgroundPaddingRight, 0px), var(--appTextTitleBackgroundPaddingBottom, 0px), var(--appTextTitleBackgroundPaddingLeft, 0px));
+}
+.text-header.text-truncate, .widget-text-header.text-truncate {
+  overflow: clip !important;
+  overflow-clip-margin: max(0px, var(--appTextHeaderBackgroundPaddingTop, 0px), var(--appTextHeaderBackgroundPaddingRight, 0px), var(--appTextHeaderBackgroundPaddingBottom, 0px), var(--appTextHeaderBackgroundPaddingLeft, 0px));
+}
+.text-body.text-truncate {
+  overflow: clip !important;
+  overflow-clip-margin: max(0px, var(--appTextBackgroundPaddingTop, 0px), var(--appTextBackgroundPaddingRight, 0px), var(--appTextBackgroundPaddingBottom, 0px), var(--appTextBackgroundPaddingLeft, 0px));
+}
+.text-subtitle.text-truncate {
+  overflow: clip !important;
+  overflow-clip-margin: max(0px, var(--appTextSubtitleBackgroundPaddingTop, 0px), var(--appTextSubtitleBackgroundPaddingRight, 0px), var(--appTextSubtitleBackgroundPaddingBottom, 0px), var(--appTextSubtitleBackgroundPaddingLeft, 0px));
+}
 .text-disabled-color {
   color: @textDisabledColor !important;
 }
