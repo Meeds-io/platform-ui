@@ -152,6 +152,96 @@
 .text-subtitle-color {
   color: @textSubtitleColor !important;
 }
+// The Text Background "Margin" option insets the background away from the
+// text edges WITHOUT moving the text itself (same intent as the dedicated
+// app/section background layer added in EXIP-88427). Padding on the text
+// element itself would shift the text and, since these classes are used
+// all over the platform (menu items, list tiles...) that already rely on
+// their own real padding, forcing any padding/background there whenever
+// this feature is left unconfigured previously broke unrelated spacing
+// (EXIP-88488). So the background/margin/radius live entirely on a ::before
+// positioned behind the text via negative insets - :where() keeps its
+// specificity at (0,0,1), lower than any component's own ::before (e.g.
+// Vuetify's hover/ripple overlays), so this only paints where nothing else
+// already claims that pseudo-element, and never touches the text's own box.
+:where(.text-title, .text-header-title, .text-title-color)::before {
+  content: "";
+  position: absolute;
+  top: @textTitleBackgroundInsetTop;
+  right: @textTitleBackgroundInsetRight;
+  bottom: @textTitleBackgroundInsetBottom;
+  left: @textTitleBackgroundInsetLeft;
+  z-index: -1;
+  pointer-events: none;
+  background-color: @textTitleBackgroundColor;
+  background-image: @textTitleBackgroundImage;
+  background-position: @textTitleBackgroundPosition;
+  background-size: @textTitleBackgroundSize;
+  background-repeat: @textTitleBackgroundRepeat;
+  border-radius: @textTitleBackgroundRadius;
+}
+:where(.text-header, .widget-text-header, .text-header-color)::before {
+  content: "";
+  position: absolute;
+  top: @textHeaderBackgroundInsetTop;
+  right: @textHeaderBackgroundInsetRight;
+  bottom: @textHeaderBackgroundInsetBottom;
+  left: @textHeaderBackgroundInsetLeft;
+  z-index: -1;
+  pointer-events: none;
+  background-color: @textHeaderBackgroundColor;
+  background-image: @textHeaderBackgroundImage;
+  background-position: @textHeaderBackgroundPosition;
+  background-size: @textHeaderBackgroundSize;
+  background-repeat: @textHeaderBackgroundRepeat;
+  border-radius: @textHeaderBackgroundRadius;
+}
+:where(.text-body, .text-color)::before {
+  content: "";
+  position: absolute;
+  top: @textBackgroundInsetTop;
+  right: @textBackgroundInsetRight;
+  bottom: @textBackgroundInsetBottom;
+  left: @textBackgroundInsetLeft;
+  z-index: -1;
+  pointer-events: none;
+  background-color: @textBackgroundColor;
+  background-image: @textBackgroundImage;
+  background-position: @textBackgroundPosition;
+  background-size: @textBackgroundSize;
+  background-repeat: @textBackgroundRepeat;
+  border-radius: @textBackgroundRadius;
+}
+:where(.text-subtitle, .text-subtitle-color)::before {
+  content: "";
+  position: absolute;
+  top: @textSubtitleBackgroundInsetTop;
+  right: @textSubtitleBackgroundInsetRight;
+  bottom: @textSubtitleBackgroundInsetBottom;
+  left: @textSubtitleBackgroundInsetLeft;
+  z-index: -1;
+  pointer-events: none;
+  background-color: @textSubtitleBackgroundColor;
+  background-image: @textSubtitleBackgroundImage;
+  background-position: @textSubtitleBackgroundPosition;
+  background-size: @textSubtitleBackgroundSize;
+  background-repeat: @textSubtitleBackgroundRepeat;
+  border-radius: @textSubtitleBackgroundRadius;
+}
+// Establishes the positioning AND stacking context the ::before layers above
+// anchor to and render behind. z-index needs an explicit value (not auto) or
+// this element doesn't form its own stacking context, and the ::before's
+// z-index: -1 escapes to whatever ancestor DOES form one instead - painting
+// behind that far-away ancestor's own descendants rather than just this
+// element's own text, which can land it behind an unrelated opaque
+// background several levels up and make it invisible. :where() so this only
+// kicks in where nothing else already manages this element's position/stack.
+:where(.text-title, .text-header, .text-body, .text-subtitle,
+       .text-header-title, .widget-text-header,
+       .text-title-color, .text-header-color, .text-color, .text-subtitle-color) {
+  position: relative;
+  z-index: 0;
+}
 .text-disabled-color {
   color: @textDisabledColor !important;
 }
