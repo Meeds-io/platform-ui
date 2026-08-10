@@ -116,6 +116,9 @@
 .position-fixed {
   position: fixed !important;
 }
+.min-width-0 {
+  min-width: 0 !important;
+}
 .text-title {
   font-size: @textTitleFontSize !important;
   font-weight: @textTitleFontWeight !important;
@@ -152,19 +155,9 @@
 .text-subtitle-color {
   color: @textSubtitleColor !important;
 }
-// The Text Background "Margin" option insets the background away from the
-// text edges WITHOUT moving the text itself (same intent as the dedicated
-// app/section background layer added in EXIP-88427). Padding on the text
-// element itself would shift the text and, since these classes are used
-// all over the platform (menu items, list tiles...) that already rely on
-// their own real padding, forcing any padding/background there whenever
-// this feature is left unconfigured previously broke unrelated spacing
-// (EXIP-88488). So the background/margin/radius live entirely on a ::before
-// positioned behind the text via negative insets - :where() keeps its
-// specificity at (0,0,1), lower than any component's own ::before (e.g.
-// Vuetify's hover/ripple overlays), so this only paints where nothing else
-// already claims that pseudo-element, and never touches the text's own box.
-:where(.text-title, .text-header-title, .text-title-color)::before {
+// ::before, not real padding, so the margin/radius don't shift the text or
+// reflow these shared classes' own padding elsewhere on the platform.
+:where(.text-title, .text-title-color)::before {
   content: "";
   position: absolute;
   top: @textTitleBackgroundInsetTop;
@@ -180,7 +173,7 @@
   background-repeat: @textTitleBackgroundRepeat;
   border-radius: @textTitleBackgroundRadius;
 }
-:where(.text-header, .widget-text-header, .text-header-color)::before {
+:where(.text-header, .text-header-color)::before {
   content: "";
   position: absolute;
   top: @textHeaderBackgroundInsetTop;
@@ -228,95 +221,33 @@
   background-repeat: @textSubtitleBackgroundRepeat;
   border-radius: @textSubtitleBackgroundRadius;
 }
-// Establishes the positioning AND stacking context the ::before layers above
-// anchor to and render behind. z-index needs an explicit value (not auto) or
-// this element doesn't form its own stacking context, and the ::before's
-// z-index: -1 escapes to whatever ancestor DOES form one instead - painting
-// behind that far-away ancestor's own descendants rather than just this
-// element's own text, which can land it behind an unrelated opaque
-// background several levels up and make it invisible. :where() so this only
-// kicks in where nothing else already manages this element's position/stack.
+// Gives the ::before layers above a stacking context so z-index: -1 puts
+// them behind this element's own text, not some unrelated ancestor's.
 :where(.text-title, .text-header, .text-body, .text-subtitle,
-       .text-header-title, .widget-text-header,
        .text-title-color, .text-header-color, .text-color, .text-subtitle-color) {
   position: relative;
   z-index: 0;
 }
-// Shrink-wraps text labels to their own content so a Text Background paints
-// just the text, not the whole row (EXIP-88493). :where() (zero specificity)
-// with no !important so it only kicks in where nothing else already governs
-// display/width/flex on the element - :not(.d-flex) skips row containers
-// that redundantly carry this class alongside a spacer + action button, and
-// requiring .text-truncate excludes non-constrained full-width headings.
-:where(.text-title.text-truncate, .text-header.text-truncate,
-       .text-body.text-truncate, .text-subtitle.text-truncate,
-       .text-header-title.text-truncate,
-       .widget-text-header.text-truncate):not(.d-flex) {
+// Shrink-wraps the label to its content so the background paints just the
+// text, not the row (EXIP-88493). Truncation lives on the inner
+// .text-truncate child (below), not this element - overflow: hidden here
+// would also clip this element's own ::before background.
+:where(.text-title, .text-header, .text-body, .text-subtitle):has(> .text-truncate):not(.d-flex) {
   display: inline-block;
   // width: auto does not opt out of a flex-column ancestor's default
   // align-items: stretch; fit-content does.
   width: fit-content;
   max-width: 100%;
+  // Overrides a flex item's default min-width: auto, which alone prevents shrinking below content size.
+  min-width: 0;
   flex: 0 1 auto;
   align-self: flex-start;
 }
-// Vuetify's real compiled rule is `.VuetifyApp .v-application .text-truncate
-// { overflow: hidden !important; ... }` - vuetify-all.less LESS-nests the
-// whole vendor file inside a `.VuetifyApp { ... }` wrapper for per-app CSS
-// scoping, so `.v-application .text-truncate` in vuetify.less compiles with
-// that extra ancestor. It also clips the Text Background ::before layer
-// whenever a margin pushes it outside this box, even with no other ancestor
-// involved (EXIP-88488 feedback). overflow: clip paired with
-// overflow-clip-margin (the only overflow value that property applies to)
-// grows the clip boundary by the largest configured margin so the ::before
-// is no longer cut off, while text that genuinely overflows still gets
-// ellipsized. Matching Vuetify's compiled selector shape here - including
-// the .VuetifyApp wrapper - pushes specificity to (0,4,0), strictly above
-// its (0,3,0), so this wins regardless of load order between the two
-// separately-compiled stylesheets instead of relying on a specificity tie.
-// ApplicationUtils.js pre-computes ...ClipMargin as the max of the 4 sides
-// in JS and writes it as its own custom property - overflow-clip-margin
-// doesn't reliably resolve a max() of multiple var()s composed in CSS
-// across browsers, so this only ever does a single plain var() substitution.
-.VuetifyApp .v-application .text-title.text-truncate, .VuetifyApp .v-application .text-header-title.text-truncate {
-  overflow: clip !important;
-  overflow-clip-margin: var(--appTextTitleBackgroundPaddingClipMargin, 0px);
-}
-.VuetifyApp .v-application .text-header.text-truncate, .VuetifyApp .v-application .widget-text-header.text-truncate {
-  overflow: clip !important;
-  overflow-clip-margin: var(--appTextHeaderBackgroundPaddingClipMargin, 0px);
-}
-.VuetifyApp .v-application .text-body.text-truncate {
-  overflow: clip !important;
-  overflow-clip-margin: var(--appTextBackgroundPaddingClipMargin, 0px);
-}
-.VuetifyApp .v-application .text-subtitle.text-truncate {
-  overflow: clip !important;
-  overflow-clip-margin: var(--appTextSubtitleBackgroundPaddingClipMargin, 0px);
-}
-// Some layouts (e.g. the news-list widget's title row) wrap the text-style
-// element in another plain .text-truncate div for their own row-truncation
-// needs, unrelated to any addon-specific class name we'd otherwise have to
-// hardcode here - that wrapper's own overflow: hidden clips the ::before
-// layer one level up from the fix above. :has() targets any such immediate
-// ancestor generically instead of naming every addon's wrapper class.
-.VuetifyApp .v-application .text-truncate:has(> .text-title.text-truncate),
-.VuetifyApp .v-application .text-truncate:has(> .text-header-title.text-truncate) {
-  overflow: clip !important;
-  overflow-clip-margin: var(--appTextTitleBackgroundPaddingClipMargin, 0px);
-}
-.VuetifyApp .v-application .text-truncate:has(> .text-header.text-truncate),
-.VuetifyApp .v-application .text-truncate:has(> .widget-text-header.text-truncate) {
-  overflow: clip !important;
-  overflow-clip-margin: var(--appTextHeaderBackgroundPaddingClipMargin, 0px);
-}
-.VuetifyApp .v-application .text-truncate:has(> .text-body.text-truncate) {
-  overflow: clip !important;
-  overflow-clip-margin: var(--appTextBackgroundPaddingClipMargin, 0px);
-}
-.VuetifyApp .v-application .text-truncate:has(> .text-subtitle.text-truncate) {
-  overflow: clip !important;
-  overflow-clip-margin: var(--appTextSubtitleBackgroundPaddingClipMargin, 0px);
+// Vuetify's .text-truncate assumes a pre-bounded width; give the inner
+// child one (100% of the outer's already fit-content/capped width above).
+:where(.text-title, .text-header, .text-body, .text-subtitle) > .text-truncate {
+  display: block;
+  width: 100%;
 }
 .text-disabled-color {
   color: @textDisabledColor !important;
@@ -345,12 +276,6 @@
 .dark-yellow--color {
   color: @darkYellow !important;
 }
-.text-header-title {
-  font-size: @textTitleFontSize !important;
-  font-weight: @textTitleFontWeight !important;
-  font-style: @textTitleFontStyle !important;
-  color: @textTitleColor !important;
-}
 .text-font-small-size {
   font-size: @textSubtitleFontSize !important;
 }
@@ -359,12 +284,6 @@
 }
 .text-font-size, .text-body-font-size {
   font-size: @textFontSize !important;
-}
-.widget-text-header{
-  font-size: @textHeaderFontSize !important;
-  font-weight: @textHeaderFontWeight !important;
-  font-style: @textHeaderFontStyle !important;
-  color: @textHeaderColor !important;
 }
 .text-sub-title {
   color: @greyColorLighten1 !important;
