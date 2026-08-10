@@ -564,6 +564,26 @@
       outline: dashed 2px var(--allPagesPrimaryColor, @primaryColor);
       outline-offset: 2px;
     }
+
+    .badge-display {
+      .v-badge__badge {
+        position: absolute;
+        left: var(--badge-x-spacing, 21px) ~' !important; /** orientation=lt */ ';
+        right: var(--badge-x-spacing, 21px) ~' !important; /** orientation=rt */ ';
+        top: var(--badge-top-spacing, -9px) !important;
+        font-size: var(--badge-font-size, 12px) !important;
+        min-width: var(--badge-min-width, 20px) !important;
+        height: var(--badge-height, 20px) !important;
+        line-height: var(--badge-height, 20px) !important;
+        background-color: var(--badge-background-color, @badgePrimaryColor) !important;
+        padding: 0;
+        text-indent: 0;
+        letter-spacing: 0;
+        text-align: center;
+        white-space: nowrap;
+        font-weight: normal;
+      }
+    }
   }
 }
 
