@@ -63,6 +63,38 @@
     color: @btnDisableColor;
   }
 }
+.btn-danger:not(.v-btn) {
+  background-color: @errorColor;
+  background-image: linear-gradient(to bottom, @errorColor, @errorColor);
+  background-repeat: repeat-x;
+  color: @btnPrimaryColor;
+  border-radius: @borderRadiusSmall;
+  border: none;
+
+  &.disabled, &[disabled] {
+    color: @btnDisableColor;
+  }
+}
+.v-btn.btn.btn-danger:not(.v-btn--text):not(.v-btn--outlined) {
+  font-weight: bold !important;
+  background-color: @errorColor !important;
+  background-image: linear-gradient(to bottom, @errorColor, @errorColor) !important;
+  background-repeat: repeat-x !important;
+  border: 1px solid @errorColor !important;
+  color: @btnPrimaryColor !important;
+
+  &:hover, &:focus {
+    color: @btnPrimaryColor !important;
+    background-color: darken(@errorColor, 6%) !important;
+    background-image: linear-gradient(to bottom, darken(@errorColor, 6%), darken(@errorColor, 6%)) !important;
+  }
+
+  &.v-btn--disabled, &[disabled] {
+    background-color: @btnPrimaryDisableBackground !important;
+    background-image: none !important;
+    border-color: @btnPrimaryDisableBackground !important;
+  }
+}
 .btn.btn-mini {
   font-size: 11px;
   padding: 0 10px;
