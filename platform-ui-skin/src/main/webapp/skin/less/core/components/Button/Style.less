@@ -90,9 +90,10 @@
   }
 
   &.v-btn--disabled, &[disabled] {
-    background-color: @btnPrimaryDisableBackground !important;
-    background-image: none !important;
-    border-color: @btnPrimaryDisableBackground !important;
+    background-color: lighten(@errorColor, 20%) !important;
+    background-image: linear-gradient(to bottom, lighten(@errorColor, 20%), lighten(@errorColor, 20%)) !important;
+    border-color: lighten(@errorColor, 20%) !important;
+    color: @btnPrimaryColor !important;
   }
 }
 .btn.btn-mini {
