@@ -116,20 +116,20 @@
 .position-fixed {
   position: fixed !important;
 }
-.min-width-0 {
-  min-width: 0 !important;
-}
 .text-title {
   font-size: @textTitleFontSize !important;
   font-weight: @textTitleFontWeight !important;
   font-style: @textTitleFontStyle !important;
   color: @textTitleColor !important;
+  .text-background(Title);
 }
+
 .text-header {
   font-size: @textHeaderFontSize !important;
   font-weight: @textHeaderFontWeight !important;
   font-style: @textHeaderFontStyle !important;
   color: @textHeaderColor !important;
+  .text-background(Header);
 }
 .text-body {
   font-size: @textFontSize !important;
@@ -154,100 +154,6 @@
 }
 .text-subtitle-color {
   color: @textSubtitleColor !important;
-}
-// ::before, not real padding, so the margin/radius don't shift the text or
-// reflow these shared classes' own padding elsewhere on the platform.
-:where(.text-title, .text-title-color)::before {
-  content: "";
-  position: absolute;
-  top: @textTitleBackgroundInsetTop;
-  right: @textTitleBackgroundInsetRight;
-  bottom: @textTitleBackgroundInsetBottom;
-  left: @textTitleBackgroundInsetLeft;
-  z-index: -1;
-  pointer-events: none;
-  background-color: @textTitleBackgroundColor;
-  background-image: @textTitleBackgroundImage;
-  background-position: @textTitleBackgroundPosition;
-  background-size: @textTitleBackgroundSize;
-  background-repeat: @textTitleBackgroundRepeat;
-  border-radius: @textTitleBackgroundRadius;
-}
-:where(.text-header, .text-header-color)::before {
-  content: "";
-  position: absolute;
-  top: @textHeaderBackgroundInsetTop;
-  right: @textHeaderBackgroundInsetRight;
-  bottom: @textHeaderBackgroundInsetBottom;
-  left: @textHeaderBackgroundInsetLeft;
-  z-index: -1;
-  pointer-events: none;
-  background-color: @textHeaderBackgroundColor;
-  background-image: @textHeaderBackgroundImage;
-  background-position: @textHeaderBackgroundPosition;
-  background-size: @textHeaderBackgroundSize;
-  background-repeat: @textHeaderBackgroundRepeat;
-  border-radius: @textHeaderBackgroundRadius;
-}
-:where(.text-body, .text-color)::before {
-  content: "";
-  position: absolute;
-  top: @textBackgroundInsetTop;
-  right: @textBackgroundInsetRight;
-  bottom: @textBackgroundInsetBottom;
-  left: @textBackgroundInsetLeft;
-  z-index: -1;
-  pointer-events: none;
-  background-color: @textBackgroundColor;
-  background-image: @textBackgroundImage;
-  background-position: @textBackgroundPosition;
-  background-size: @textBackgroundSize;
-  background-repeat: @textBackgroundRepeat;
-  border-radius: @textBackgroundRadius;
-}
-:where(.text-subtitle, .text-subtitle-color)::before {
-  content: "";
-  position: absolute;
-  top: @textSubtitleBackgroundInsetTop;
-  right: @textSubtitleBackgroundInsetRight;
-  bottom: @textSubtitleBackgroundInsetBottom;
-  left: @textSubtitleBackgroundInsetLeft;
-  z-index: -1;
-  pointer-events: none;
-  background-color: @textSubtitleBackgroundColor;
-  background-image: @textSubtitleBackgroundImage;
-  background-position: @textSubtitleBackgroundPosition;
-  background-size: @textSubtitleBackgroundSize;
-  background-repeat: @textSubtitleBackgroundRepeat;
-  border-radius: @textSubtitleBackgroundRadius;
-}
-// Gives the ::before layers above a stacking context so z-index: -1 puts
-// them behind this element's own text, not some unrelated ancestor's.
-:where(.text-title, .text-header, .text-body, .text-subtitle,
-       .text-title-color, .text-header-color, .text-color, .text-subtitle-color) {
-  position: relative;
-  z-index: 0;
-}
-// Shrink-wraps the label to its content so the background paints just the
-// text, not the row (EXIP-88493). Truncation lives on the inner
-// .text-truncate child (below), not this element - overflow: hidden here
-// would also clip this element's own ::before background.
-:where(.text-title, .text-header, .text-body, .text-subtitle):has(> .text-truncate):not(.d-flex) {
-  display: inline-block;
-  // width: auto does not opt out of a flex-column ancestor's default
-  // align-items: stretch; fit-content does.
-  width: fit-content;
-  max-width: 100%;
-  // Overrides a flex item's default min-width: auto, which alone prevents shrinking below content size.
-  min-width: 0;
-  flex: 0 1 auto;
-  align-self: flex-start;
-}
-// Vuetify's .text-truncate assumes a pre-bounded width; give the inner
-// child one (100% of the outer's already fit-content/capped width above).
-:where(.text-title, .text-header, .text-body, .text-subtitle) > .text-truncate {
-  display: block;
-  width: 100%;
 }
 .text-disabled-color {
   color: @textDisabledColor !important;
@@ -276,6 +182,14 @@
 .dark-yellow--color {
   color: @darkYellow !important;
 }
+// Start: Deprecated use 'text-title' instead !
+.text-header-title {
+  font-size: @textTitleFontSize !important;
+  font-weight: @textTitleFontWeight !important;
+  font-style: @textTitleFontStyle !important;
+  color: @textTitleColor !important;
+}
+// End: Deprecated
 .text-font-small-size {
   font-size: @textSubtitleFontSize !important;
 }
@@ -590,6 +504,9 @@
 .full-window-width {
   width: 100vw !important;
   min-width: 100vw !important;
+}
+.min-width-0 {
+  min-width: 0 !important;
 }
 .height-auto {
   height: auto !important;
