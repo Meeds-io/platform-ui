@@ -105,3 +105,63 @@
   background-position: @drawerBackgroundPosition!important;
   background-size: @drawerBackgroundSize!important;
 }
+
+// Shared background/shrink-wrap behaviour of the text helper classes.
+// Typography (font-size, font-weight, font-style, color) stays on each class.
+// @prefix selects the variable family: .text-background(Title) reads
+// @textTitleBackground* variables, .text-background(Header) reads @textHeaderBackground*.
+.text-background(@prefix) {
+  @bgColor: ~"text@{prefix}BackgroundColor";
+  @bgImage: ~"text@{prefix}BackgroundImage";
+  @bgPosition: ~"text@{prefix}BackgroundPosition";
+  @bgSize: ~"text@{prefix}BackgroundSize";
+  @bgRepeat: ~"text@{prefix}BackgroundRepeat";
+  @bgRadius: ~"text@{prefix}BackgroundRadius";
+  @insetTop: ~"text@{prefix}BackgroundInsetTop";
+  @insetRight: ~"text@{prefix}BackgroundInsetRight";
+  @insetBottom: ~"text@{prefix}BackgroundInsetBottom";
+  @insetLeft: ~"text@{prefix}BackgroundInsetLeft";
+  // Gives the ::before layers above a stacking context so z-index: -1 puts
+  // them behind this element's own text, not some unrelated ancestor's.
+  position: relative;
+  z-index: 0;
+  // ::before, not real padding, so the margin/radius don't shift the text or
+  // reflow these shared classes' own padding elsewhere on the platform.
+  &::before {
+    content: "";
+    position: absolute;
+    top: @@insetTop;
+    right: @@insetRight;
+    bottom: @@insetBottom;
+    left: @@insetLeft;
+    z-index: -1;
+    pointer-events: none;
+    background-color: @@bgColor;
+    background-image: @@bgImage;
+    background-position: @@bgPosition;
+    background-size: @@bgSize;
+    background-repeat: @@bgRepeat;
+    border-radius: @@bgRadius;
+  }
+  // Shrink-wraps the label to its content so the background paints just the
+  // text, not the row (EXIP-88493). Truncation lives on the inner
+  // .text-truncate child (below), not this element - overflow: hidden here
+  // would also clip this element's own ::before background.
+  &:has(> .text-truncate):not(.d-flex) {
+    display: inline-block;
+    // width: auto does not opt out of a flex-column ancestor's default
+    // align-items: stretch; fit-content does.
+    width: fit-content;
+    max-width: 100%;
+    // Overrides a flex item's default min-width: auto, which alone prevents shrinking below content size.
+    min-width: 0;
+    flex: 0 1 auto;
+    align-self: flex-start;
+  }
+  // Vuetify's .text-truncate assumes a pre-bounded width; give the inner
+  // child one (100% of the outer's already fit-content/capped width above).
+  > .text-truncate {
+    display: block;
+    width: 100%;
+  }
+}

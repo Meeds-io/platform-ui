@@ -122,11 +122,18 @@
   font-style: @textTitleFontStyle !important;
   color: @textTitleColor !important;
 }
+:where(.text-title) {
+  .text-background(Title);
+}
+
 .text-header {
   font-size: @textHeaderFontSize !important;
   font-weight: @textHeaderFontWeight !important;
   font-style: @textHeaderFontStyle !important;
   color: @textHeaderColor !important;
+}
+:where(.text-header) {
+  .text-background(Header);
 }
 .text-body {
   font-size: @textFontSize !important;
@@ -179,12 +186,14 @@
 .dark-yellow--color {
   color: @darkYellow !important;
 }
+// Start: Deprecated use 'text-title' instead !
 .text-header-title {
   font-size: @textTitleFontSize !important;
   font-weight: @textTitleFontWeight !important;
   font-style: @textTitleFontStyle !important;
   color: @textTitleColor !important;
 }
+// End: Deprecated
 .text-font-small-size {
   font-size: @textSubtitleFontSize !important;
 }
@@ -193,12 +202,6 @@
 }
 .text-font-size, .text-body-font-size {
   font-size: @textFontSize !important;
-}
-.widget-text-header{
-  font-size: @textHeaderFontSize !important;
-  font-weight: @textHeaderFontWeight !important;
-  font-style: @textHeaderFontStyle !important;
-  color: @textHeaderColor !important;
 }
 .text-sub-title {
   color: @greyColorLighten1 !important;
@@ -505,6 +508,9 @@
 .full-window-width {
   width: 100vw !important;
   min-width: 100vw !important;
+}
+.min-width-0 {
+  min-width: 0 !important;
 }
 .height-auto {
   height: auto !important;
