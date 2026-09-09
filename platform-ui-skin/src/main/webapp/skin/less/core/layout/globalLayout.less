@@ -234,6 +234,28 @@
   max-width: 100%;
   overflow: auto;
   flex: 1 1 auto;
+
+  /*
+   * The site-wide background image layer paints here rather than on body: body
+   * is overflow: hidden and BodyScrollListener.js makes this element (one of
+   * .page-scroll-content / #UIPageBody / #UISiteBody) the real scroller. On
+   * body the "Scrolling" option could never have an effect, since fixed and
+   * scroll are indistinguishable on a box that never scrolls.
+   * The custom properties are still written on body by their producers (the
+   * branding gtmpl, the branding admin preview, the site layout editor) and
+   * reach this rule by inheritance, so no producer had to move.
+   * The default stays "scroll" - fixed with regard to this box - which is how a
+   * site background already renders today, so untouched sites are unaffected.
+   * Here "scrolls with page" is background-attachment: local, and the producers
+   * translate the stored value accordingly.
+   * background-color stays on body on purpose, so it keeps covering the areas
+   * outside this scroller such as the top bar.
+   */
+  background-image: ~"var(--allPagesBackgroundImage, none)";
+  background-repeat: ~"var(--allPagesBackgroundRepeat, no-repeat)";
+  background-size: ~"var(--allPagesBackgroundSize, unset)";
+  background-position: ~"var(--allPagesBackgroundPosition, unset)";
+  background-attachment: ~"var(--allPagesBackgroundAttachment, scroll)";
 }
 
 @media (min-width: @minTabletWidth) {
