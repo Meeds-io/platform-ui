@@ -18,29 +18,79 @@
 
 */
 
+// Shared <date-picker> field (social common DatePicker.vue): a raw
+// <input class="datePickerText"> inside a .datePickerComponent wrapper whose
+// ::after carries the calendar glyph. The field shares the TimePicker's box
+// (TimePicker/Style.less): @inputHeight high, no vertical margin, the reset's
+// border / radius / font, so both line up in a row whatever the row's
+// alignment. The wrapper shrinks to the field, so the glyph sits inside the
+// field's end side instead of at the far end of a wider container.
+// Consumers that don't want the glyph keep hiding ::after (agenda, task).
+
+// Focus of the date and time picker fields: the reset's input focus (border
+// colour + shadow), restated here because the fields' own border
+// declaration outranks the reset's :focus rule, and without the native
+// select:focus ring so both fields show the same indicator.
+.pickerFieldFocus() {
+  color: @inputFocusColor;
+  border-color: @inputFocusBorder;
+  outline: 0;
+  box-shadow: ~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 5px @{inputFocusShadow}";
+}
+
 .VuetifyApp .v-application {
 
   .datePickerComponent {
     position: relative;
+    width: fit-content;
+    max-width: 100%;
 
     &:after {
       &:extend(.fa);
       &:extend(.fa-calendar-alt:before);
-      color: @greyColor;
-      font-size: 18px;
+      color: @greyColorLighten1;
+      font-size: @pickerFieldIconSize;
+      line-height: @inputHeight;
+      height: @inputHeight;
       position: absolute;
-      right: 3px;
-      top: 9px;
+      top: 0;
+      right: @pickerFieldIconInset ~'; /** orientation=lt */ ';
+      left: @pickerFieldIconInset ~'; /** orientation=rt */ ';
+      // decorative: a click on the glyph reaches the field, which opens the menu
+      pointer-events: none;
     }
 
     input {
       max-width: 100%;
-      padding-right: 18px;
+      height: @inputHeight;
+      min-height: @inputHeight;
+      line-height: @baseLineHeight;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 10px ~'; /** orientation=lt */ ';
+      padding-right: @pickerFieldIconReserve ~'; /** orientation=lt */ ';
+      padding-right: 10px ~'; /** orientation=rt */ ';
+      padding-left: @pickerFieldIconReserve ~'; /** orientation=rt */ ';
+      font-size: @inputFontSize;
+      border: 1px solid @inputBorder;
+      border-radius: @inputBorderRadius;
+      vertical-align: middle;
+
+      &:focus {
+        .pickerFieldFocus();
+      }
     }
 
     input[readonly] {
       cursor: pointer;
-      background: #fff;
+      background: @inputBackground;
+    }
+
+    input[disabled] {
+      cursor: not-allowed;
+      background: @inputDisabledBackground;
     }
   }
 }

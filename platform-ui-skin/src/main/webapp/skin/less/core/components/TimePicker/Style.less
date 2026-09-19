@@ -1,0 +1,71 @@
+/**
+
+  This file is part of the Meeds project (https://meeds.io/).
+
+  Copyright (C) 2026 Meeds Association contact@meeds.io
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public License
+  as published by the Free Software Foundation; either
+  version 3 of the License, or (at your option) any later version.
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+  You should have received a copy of the GNU Lesser General Public License
+  along with this program; if not, write to the Free Software Foundation,
+  Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+*/
+
+// Shared <time-picker> field (social common TimePicker.vue): a native
+// <select class="timePickerSelect">, kept native for keyboard and screen
+// reader support, drawn like the DatePicker field (DatePicker/Style.less):
+// same height, border, radius, padding and font, a chevron on the end side
+// instead of the browser arrow, and the reset's input focus (border +
+// shadow, .pickerFieldFocus in DatePicker/Style.less) instead of the native
+// focus ring.
+// The chevron is an inline SVG in #707070 (@greyColorLighten1Default, the
+// DatePicker glyph's colour): a data URI can't read the theme's CSS variable.
+.VuetifyApp .v-application {
+
+  select.timePickerSelect {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: @inputHeight;
+    min-height: @inputHeight;
+    line-height: @baseLineHeight;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 10px ~'; /** orientation=lt */ ';
+    padding-right: @pickerFieldIconReserve ~'; /** orientation=lt */ ';
+    padding-right: 10px ~'; /** orientation=rt */ ';
+    padding-left: @pickerFieldIconReserve ~'; /** orientation=rt */ ';
+    font-size: @inputFontSize;
+    color: @inputColor;
+    border: 1px solid @inputBorder;
+    border-radius: @inputBorderRadius;
+    background-color: @inputBackground;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1.5 1.5l4.5 4.5 4.5-4.5' fill='none' stroke='%23707070' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: @pickerFieldIconSize - 4px;
+    background-position: right @pickerFieldIconInset center ~'; /** orientation=lt */ ';
+    background-position: left @pickerFieldIconInset center ~'; /** orientation=rt */ ';
+    vertical-align: middle;
+    cursor: pointer;
+
+    &::-ms-expand {
+      display: none;
+    }
+
+    &:focus {
+      .pickerFieldFocus();
+    }
+
+    &[disabled] {
+      cursor: not-allowed;
+      background-color: @inputDisabledBackground;
+    }
+  }
+}
