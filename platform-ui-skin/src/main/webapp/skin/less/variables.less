@@ -303,6 +303,13 @@
 
 @inputHeight:                     @baseLineHeight + 20px;
 
+// Shared date / time picker fields (DatePicker, TimePicker components):
+// size of the end-side icon (calendar glyph, chevron), its inset from the
+// field's end border, and the end padding reserved so text never runs under it
+@pickerFieldIconSize:             16px;
+@pickerFieldIconInset:            12px;
+@pickerFieldIconReserve:          @pickerFieldIconSize + @pickerFieldIconInset + 8px;
+
 @uiCheckboxCheckedBorder: @baseBackground;
 @uiCheckboxBackground: @primaryColor;
 
