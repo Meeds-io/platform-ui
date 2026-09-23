@@ -161,16 +161,16 @@
 @textTitleFontWeight: ~"var(--appTextTitleFontWeight, var(--allPagesBaseTextTitleFontWeight, @{textTitleFontWeightDefault}))";
 @textTitleFontStyleDefault: normal;
 @textTitleFontStyle: ~"var(--appTextTitleFontStyle, var(--allPagesBaseTextTitleFontStyle, @{textTitleFontStyleDefault}))";
-@textTitleBackgroundColor: ~"var(--appTextTitleBackgroundColor, transparent)";
-@textTitleBackgroundImage: ~"var(--appTextTitleBackgroundImage, none)";
-@textTitleBackgroundPosition: ~"var(--appTextTitleBackgroundPosition, unset)";
-@textTitleBackgroundSize: ~"var(--appTextTitleBackgroundSize, unset)";
-@textTitleBackgroundRepeat: ~"var(--appTextTitleBackgroundRepeat, no-repeat)";
-@textTitleBackgroundInsetTop: ~"calc(-1 * var(--appTextTitleBackgroundPaddingTop, 0px))";
-@textTitleBackgroundInsetRight: ~"calc(-1 * var(--appTextTitleBackgroundPaddingRight, 0px))";
-@textTitleBackgroundInsetBottom: ~"calc(-1 * var(--appTextTitleBackgroundPaddingBottom, 0px))";
-@textTitleBackgroundInsetLeft: ~"calc(-1 * var(--appTextTitleBackgroundPaddingLeft, 0px))";
-@textTitleBackgroundRadius: ~"var(--appTextTitleBackgroundRadius, 0)";
+@textTitleBackgroundColor: ~"var(--appTextTitleBackgroundColor, var(--allPagesAppTextTitleBackgroundColor, transparent))";
+@textTitleBackgroundImage: ~"var(--appTextTitleBackgroundImage, var(--allPagesAppTextTitleBackgroundImage, none))";
+@textTitleBackgroundPosition: ~"var(--appTextTitleBackgroundPosition, var(--allPagesAppTextTitleBackgroundPosition, unset))";
+@textTitleBackgroundSize: ~"var(--appTextTitleBackgroundSize, var(--allPagesAppTextTitleBackgroundSize, unset))";
+@textTitleBackgroundRepeat: ~"var(--appTextTitleBackgroundRepeat, var(--allPagesAppTextTitleBackgroundRepeat, no-repeat))";
+@textTitleBackgroundInsetTop: ~"calc(-1 * var(--appTextTitleBackgroundPaddingTop, var(--allPagesAppTextTitleBackgroundPaddingTop, 0px)))";
+@textTitleBackgroundInsetRight: ~"calc(-1 * var(--appTextTitleBackgroundPaddingRight, var(--allPagesAppTextTitleBackgroundPaddingRight, 0px)))";
+@textTitleBackgroundInsetBottom: ~"calc(-1 * var(--appTextTitleBackgroundPaddingBottom, var(--allPagesAppTextTitleBackgroundPaddingBottom, 0px)))";
+@textTitleBackgroundInsetLeft: ~"calc(-1 * var(--appTextTitleBackgroundPaddingLeft, var(--allPagesAppTextTitleBackgroundPaddingLeft, 0px)))";
+@textTitleBackgroundRadius: ~"var(--appTextTitleBackgroundRadius, var(--allPagesAppTextTitleBackgroundRadius, 0))";
 
 @textHeaderColorDefault: #707070;
 @textHeaderColor: ~"var(--appTextHeaderColor, var(--allPagesBaseTextHeaderColor, @{textHeaderColorDefault}))";
@@ -180,16 +180,16 @@
 @textHeaderFontWeight: ~"var(--appTextHeaderFontWeight, var(--allPagesBaseTextHeaderFontWeight, @{textHeaderFontWeightDefault}))";
 @textHeaderFontStyleDefault: normal;
 @textHeaderFontStyle: ~"var(--appTextHeaderFontStyle, var(--allPagesBaseTextHeaderFontStyle, @{textHeaderFontStyleDefault}))";
-@textHeaderBackgroundColor: ~"var(--appTextHeaderBackgroundColor, transparent)";
-@textHeaderBackgroundImage: ~"var(--appTextHeaderBackgroundImage, none)";
-@textHeaderBackgroundPosition: ~"var(--appTextHeaderBackgroundPosition, unset)";
-@textHeaderBackgroundSize: ~"var(--appTextHeaderBackgroundSize, unset)";
-@textHeaderBackgroundRepeat: ~"var(--appTextHeaderBackgroundRepeat, no-repeat)";
-@textHeaderBackgroundInsetTop: ~"calc(-1 * var(--appTextHeaderBackgroundPaddingTop, 0px))";
-@textHeaderBackgroundInsetRight: ~"calc(-1 * var(--appTextHeaderBackgroundPaddingRight, 0px))";
-@textHeaderBackgroundInsetBottom: ~"calc(-1 * var(--appTextHeaderBackgroundPaddingBottom, 0px))";
-@textHeaderBackgroundInsetLeft: ~"calc(-1 * var(--appTextHeaderBackgroundPaddingLeft, 0px))";
-@textHeaderBackgroundRadius: ~"var(--appTextHeaderBackgroundRadius, 0)";
+@textHeaderBackgroundColor: ~"var(--appTextHeaderBackgroundColor, var(--allPagesAppTextHeaderBackgroundColor, transparent))";
+@textHeaderBackgroundImage: ~"var(--appTextHeaderBackgroundImage, var(--allPagesAppTextHeaderBackgroundImage, none))";
+@textHeaderBackgroundPosition: ~"var(--appTextHeaderBackgroundPosition, var(--allPagesAppTextHeaderBackgroundPosition, unset))";
+@textHeaderBackgroundSize: ~"var(--appTextHeaderBackgroundSize, var(--allPagesAppTextHeaderBackgroundSize, unset))";
+@textHeaderBackgroundRepeat: ~"var(--appTextHeaderBackgroundRepeat, var(--allPagesAppTextHeaderBackgroundRepeat, no-repeat))";
+@textHeaderBackgroundInsetTop: ~"calc(-1 * var(--appTextHeaderBackgroundPaddingTop, var(--allPagesAppTextHeaderBackgroundPaddingTop, 0px)))";
+@textHeaderBackgroundInsetRight: ~"calc(-1 * var(--appTextHeaderBackgroundPaddingRight, var(--allPagesAppTextHeaderBackgroundPaddingRight, 0px)))";
+@textHeaderBackgroundInsetBottom: ~"calc(-1 * var(--appTextHeaderBackgroundPaddingBottom, var(--allPagesAppTextHeaderBackgroundPaddingBottom, 0px)))";
+@textHeaderBackgroundInsetLeft: ~"calc(-1 * var(--appTextHeaderBackgroundPaddingLeft, var(--allPagesAppTextHeaderBackgroundPaddingLeft, 0px)))";
+@textHeaderBackgroundRadius: ~"var(--appTextHeaderBackgroundRadius, var(--allPagesAppTextHeaderBackgroundRadius, 0))";
 
 @textColorDefault: #20282c;
 @textColor: ~"var(--appTextColor, var(--allPagesBaseTextColor, @{textColorDefault}))";
@@ -989,6 +989,27 @@
 @topBarBackgroundSize: var(--allPagesTopBarBackgroundSize, unset);
 @topBarBackgroundRepeat: var(--allPagesTopBarBackgroundRepeat, unset);
 @topBarBackgroundImage: var(--allPagesTopBarBackgroundImage, none);
+@topBarBackgroundScrollColor: var(--allPagesTopBarBackgroundScrollColor, @topBarBackgroundColor);
+
+/* Application styling, resolved as a cascade: application (--app*) > page (--app* inherited from the page container) > platform (--allPagesApp*, emitted by the branding stylesheet) > built-in default */
+/* Margins carry the editors' value at every level (20 = no extra margin): one rule, one scale */
+@appMarginTop: ~"calc(var(--appMarginTop, var(--allPagesAppMarginTop, 20px)) - 20px)";
+@appMarginRight: ~"calc(var(--appMarginRight, var(--allPagesAppMarginRight, 20px)) - 20px)";
+@appMarginBottom: ~"calc(var(--appMarginBottom, var(--allPagesAppMarginBottom, 20px)) - 20px)";
+@appMarginLeft: ~"calc(var(--appMarginLeft, var(--allPagesAppMarginLeft, 20px)) - 20px)";
+@appBorderSize: ~"var(--appBorderSize, var(--allPagesAppBorderSize, 0))";
+@appBorderColor: ~"var(--appBorderColor, var(--allPagesAppBorderColor, transparent))";
+@appBoxShadow: ~"var(--appBoxShadow, var(--allPagesAppBoxShadow, none))";
+@appBorderRadiusTopRight: ~"var(--appBorderRadiusTopRight, var(--allPagesAppBorderRadiusTopRight, var(--allPagesBorderRadius, 4px)))";
+@appBorderRadiusTopLeft: ~"var(--appBorderRadiusTopLeft, var(--allPagesAppBorderRadiusTopLeft, var(--allPagesBorderRadius, 4px)))";
+@appBorderRadiusBottomRight: ~"var(--appBorderRadiusBottomRight, var(--allPagesAppBorderRadiusBottomRight, var(--allPagesBorderRadius, 4px)))";
+@appBorderRadiusBottomLeft: ~"var(--appBorderRadiusBottomLeft, var(--allPagesAppBorderRadiusBottomLeft, var(--allPagesBorderRadius, 4px)))";
+@appBackgroundColor: ~"var(--appBackgroundColor, var(--allPagesAppBackgroundColor, #FFFFFF))";
+@appBackgroundImage: ~"var(--appBackgroundImage, var(--allPagesAppBackgroundImage, none))";
+@appBackgroundRepeat: ~"var(--appBackgroundRepeat, var(--allPagesAppBackgroundRepeat, no-repeat))";
+@appBackgroundSize: ~"var(--appBackgroundSize, var(--allPagesAppBackgroundSize, unset))";
+@appBackgroundPosition: ~"var(--appBackgroundPosition, var(--allPagesAppBackgroundPosition, unset))";
+@appBackgroundAttachment: ~"var(--appBackgroundAttachment, var(--allPagesAppBackgroundAttachment, scroll))";
 
 @sideBarTextColor: var(--allPagesSideBarTextColor, @textColor);
 @sideBarTextFontSize: var(--allPagesSideBarTextFontSize, @textFontSize);
