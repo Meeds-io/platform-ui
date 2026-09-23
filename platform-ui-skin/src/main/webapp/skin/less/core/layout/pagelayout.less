@@ -148,22 +148,22 @@
     /* Platform-wide application text defaults (Branding and Theme > Pages & Apps style), scoped to page content only.
        Every --allPagesAppText* is emitted by the branding stylesheet with a default equal to the skin's built-in one
        (body text chained to the global text colour), so the remapped variables always resolve. */
-    --allPagesBaseTextTitleColor: var(--allPagesAppTextTitleColor);
-    --allPagesBaseTextTitleFontSize: var(--allPagesAppTextTitleFontSize);
-    --allPagesBaseTextTitleFontWeight: var(--allPagesAppTextTitleFontWeight);
-    --allPagesBaseTextTitleFontStyle: var(--allPagesAppTextTitleFontStyle);
-    --allPagesBaseTextHeaderColor: var(--allPagesAppTextHeaderColor);
-    --allPagesBaseTextHeaderFontSize: var(--allPagesAppTextHeaderFontSize);
-    --allPagesBaseTextHeaderFontWeight: var(--allPagesAppTextHeaderFontWeight);
-    --allPagesBaseTextHeaderFontStyle: var(--allPagesAppTextHeaderFontStyle);
-    --allPagesBaseTextColor: var(--allPagesAppTextColor);
-    --allPagesBaseTextFontSize: var(--allPagesAppTextFontSize);
-    --allPagesBaseTextFontWeight: var(--allPagesAppTextFontWeight);
-    --allPagesBaseTextFontStyle: var(--allPagesAppTextFontStyle);
-    --allPagesBaseTextSubtitleColor: var(--allPagesAppTextSubtitleColor);
-    --allPagesBaseTextSubtitleFontSize: var(--allPagesAppTextSubtitleFontSize);
-    --allPagesBaseTextSubtitleFontWeight: var(--allPagesAppTextSubtitleFontWeight);
-    --allPagesBaseTextSubtitleFontStyle: var(--allPagesAppTextSubtitleFontStyle);
+    --allPagesBaseTextTitleColor: ~"var(--allPagesAppTextTitleColor, @{textTitleColorDefault})";
+    --allPagesBaseTextTitleFontSize: ~"var(--allPagesAppTextTitleFontSize, @{textTitleFontSizeDefault})";
+    --allPagesBaseTextTitleFontWeight: ~"var(--allPagesAppTextTitleFontWeight, @{textTitleFontWeightDefault})";
+    --allPagesBaseTextTitleFontStyle: ~"var(--allPagesAppTextTitleFontStyle, @{textTitleFontStyleDefault})";
+    --allPagesBaseTextHeaderColor: ~"var(--allPagesAppTextHeaderColor, @{textHeaderColorDefault})";
+    --allPagesBaseTextHeaderFontSize: ~"var(--allPagesAppTextHeaderFontSize, @{textHeaderFontSizeDefault})";
+    --allPagesBaseTextHeaderFontWeight: ~"var(--allPagesAppTextHeaderFontWeight, @{textHeaderFontWeightDefault})";
+    --allPagesBaseTextHeaderFontStyle: ~"var(--allPagesAppTextHeaderFontStyle, @{textHeaderFontStyleDefault})";
+    --allPagesBaseTextColor: ~"var(--allPagesAppTextColor, @{textColorDefault})";
+    --allPagesBaseTextFontSize: ~"var(--allPagesAppTextFontSize, @{textFontSizeDefault})";
+    --allPagesBaseTextFontWeight: ~"var(--allPagesAppTextFontWeight, @{textFontWeightDefault})";
+    --allPagesBaseTextFontStyle: ~"var(--allPagesAppTextFontStyle, @{textFontStyleDefault})";
+    --allPagesBaseTextSubtitleColor: ~"var(--allPagesAppTextSubtitleColor, @{textSubtitleColorDefault})";
+    --allPagesBaseTextSubtitleFontSize: ~"var(--allPagesAppTextSubtitleFontSize, @{textSubtitleFontSizeDefault})";
+    --allPagesBaseTextSubtitleFontWeight: ~"var(--allPagesAppTextSubtitleFontWeight, @{textSubtitleFontWeightDefault})";
+    --allPagesBaseTextSubtitleFontStyle: ~"var(--allPagesAppTextSubtitleFontStyle, @{textSubtitleFontStyleDefault})";
   }
 
   &.layout-page-parent, .layout-page-parent {
