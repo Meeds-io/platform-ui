@@ -20,7 +20,7 @@
 @import 'mixins.less';
 
 .application-background-color, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-background-color) {
-  background-color: ~"var(--appBackgroundColor, #FFFFFF) !important";
+  background-color: ~"@{appBackgroundColor} !important";
 
   /* Override Vuetify predefined background for some elements to simplify development with Meeds branding */
   .application-body {
@@ -96,29 +96,29 @@
 }
 
 .application-background-image, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-background-image) {
-  background-image: ~"var(--appBackgroundImage, none) !important";
-  background-repeat: ~"var(--appBackgroundRepeat, no-repeat) !important";
-  background-size: ~"var(--appBackgroundSize, unset) !important";
-  background-position: ~"var(--appBackgroundPosition, unset) !important";
-  background-attachment: ~"var(--appBackgroundAttachment, scroll) !important";
+  background-image: ~"@{appBackgroundImage} !important";
+  background-repeat: ~"@{appBackgroundRepeat} !important";
+  background-size: ~"@{appBackgroundSize} !important";
+  background-position: ~"@{appBackgroundPosition} !important";
+  background-attachment: ~"@{appBackgroundAttachment} !important";
 }
 
 .application-border, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-border) {
-  border: ~"var(--appBorderSize, 0) solid var(--appBorderColor, transparent) !important";
+  border: ~"@{appBorderSize} solid @{appBorderColor} !important";
 }
 
 .application-border-radius, .application-border-radius-top, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-border-radius) {
-  border-top-right-radius: ~"var(--appBorderRadiusTopRight, var(--allPagesBorderRadius, 4px)) !important";
-  border-top-left-radius: ~"var(--appBorderRadiusTopLeft, var(--allPagesBorderRadius, 4px)) !important";
+  border-top-right-radius: ~"@{appBorderRadiusTopRight} !important";
+  border-top-left-radius: ~"@{appBorderRadiusTopLeft} !important";
 }
 
 .application-border-radius, .application-border-radius-bottom, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-border-radius) {
-  border-bottom-right-radius: ~"var(--appBorderRadiusBottomRight, var(--allPagesBorderRadius, 4px)) !important";
-  border-bottom-left-radius: ~"var(--appBorderRadiusBottomLeft, var(--allPagesBorderRadius, 4px)) !important";
+  border-bottom-right-radius: ~"@{appBorderRadiusBottomRight} !important";
+  border-bottom-left-radius: ~"@{appBorderRadiusBottomLeft} !important";
 }
 
 .application-box-shadow, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-box-shadow) {
-  box-shadow: ~"var(--appBoxShadow, none) !important";
+  box-shadow: ~"@{appBoxShadow} !important";
 }
 
 .application-dimension, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-dimension) {
@@ -144,6 +144,26 @@
     background-size: ~"var(--pageBodyBackgroundSize, unset) !important";
     background-position: ~"var(--pageBodyBackgroundPosition, unset) !important";
     background-attachment: ~"var(--pageBodyBackgroundAttachment, scroll) !important";
+
+    /* Platform-wide application text defaults (Branding and Theme > Pages & Apps style), scoped to page content only.
+       Every --allPagesAppText* is emitted by the branding stylesheet with a default equal to the skin's built-in one
+       (body text chained to the global text colour), so the remapped variables always resolve. */
+    --allPagesBaseTextTitleColor: var(--allPagesAppTextTitleColor);
+    --allPagesBaseTextTitleFontSize: var(--allPagesAppTextTitleFontSize);
+    --allPagesBaseTextTitleFontWeight: var(--allPagesAppTextTitleFontWeight);
+    --allPagesBaseTextTitleFontStyle: var(--allPagesAppTextTitleFontStyle);
+    --allPagesBaseTextHeaderColor: var(--allPagesAppTextHeaderColor);
+    --allPagesBaseTextHeaderFontSize: var(--allPagesAppTextHeaderFontSize);
+    --allPagesBaseTextHeaderFontWeight: var(--allPagesAppTextHeaderFontWeight);
+    --allPagesBaseTextHeaderFontStyle: var(--allPagesAppTextHeaderFontStyle);
+    --allPagesBaseTextColor: var(--allPagesAppTextColor);
+    --allPagesBaseTextFontSize: var(--allPagesAppTextFontSize);
+    --allPagesBaseTextFontWeight: var(--allPagesAppTextFontWeight);
+    --allPagesBaseTextFontStyle: var(--allPagesAppTextFontStyle);
+    --allPagesBaseTextSubtitleColor: var(--allPagesAppTextSubtitleColor);
+    --allPagesBaseTextSubtitleFontSize: var(--allPagesAppTextSubtitleFontSize);
+    --allPagesBaseTextSubtitleFontWeight: var(--allPagesAppTextSubtitleFontWeight);
+    --allPagesBaseTextSubtitleFontStyle: var(--allPagesAppTextSubtitleFontStyle);
   }
 
   &.layout-page-parent, .layout-page-parent {
@@ -185,6 +205,14 @@
 
   .layout-banner-top-section {
     z-index: 1;
+    /* Topbar of a site with its own layout: the Branding Topbar colour and text are its defaults (PO decision,
+       eXIP 7.3.0.30). No !important, so a banner styled from the site layout editor (inline values) keeps its own. */
+    --allPagesBaseTextColor: var(--allPagesTopBarTextColor);
+    --allPagesMenuTextColor: var(--allPagesTopBarTextColor);
+    --allPagesBaseTextFontSize: var(--allPagesTopBarTextFontSize);
+    --allPagesBaseTextFontWeight: var(--allPagesTopBarTextFontWeight);
+    --allPagesBaseTextFontStyle: var(--allPagesTopBarTextFontStyle);
+    background-color: @topBarBackgroundColor;
   }
 
   .layout-banner-cell {
@@ -252,6 +280,10 @@
 
     .layout-application {
       width: 100%;
+      margin-top: @appMarginTop;
+      margin-right: @appMarginRight;
+      margin-bottom: @appMarginBottom;
+      margin-left: @appMarginLeft;
     }
   }
 
@@ -287,15 +319,33 @@
 .scroll-top .layout-banner-top-section.layout-sticky-section {
   box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.3) !important;
 }
-.scroll-top .layout-banner-top-section.layout-sticky-section,
 .scroll-top .layout-sidebar-section.layout-sticky-section .layout-sidebar-cell {
   background-color: var(--sectionBackgroundColorScroll) !important;
 }
 .scroll-top .layout-banner-top-section.layout-sticky-section {
+  background-color: ~"var(--sectionBackgroundColorScroll, @{topBarBackgroundScrollColor}) !important";
   z-index: 5;
 }
 .scroll-top .layout-sticky-top-bar {
   z-index: 10;
+}
+
+/* Platform-wide "Fix Position when Scrolling" default (Branding and Theme > Topbar): body.topbar-sticky is emitted
+   by the portal page template. The site's own layout-sticky-section class keeps forcing the sticky position. */
+.topbar-sticky .layout-banner-top-section {
+  position: sticky !important;
+  top: var(--sectionStickyTop, 0);
+  z-index: 1;
+}
+.scroll-top.topbar-sticky .layout-banner-top-section {
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.3) !important;
+  background-color: ~"var(--sectionBackgroundColorScroll, @{topBarBackgroundScrollColor}) !important";
+  z-index: 5;
+}
+/* Shared-layout Topbar: On Scroll colour once the page is scrolled (the topbar is always sticky there).
+   .layout-top-bar is every element painted with the Topbar branding colour, the detached drop-down menus included. */
+.scroll-top .layout-top-bar {
+  background-color: ~"@{topBarBackgroundScrollColor} !important";
 }
 
 .application-align-v-end,
