@@ -179,6 +179,13 @@
   .layout-drawer();
 }
 
+/* Topbar sub-menus (site navigation drop-downs, desktop and mobile) are overlays of the drawers and popups family:
+   they take the platform menu surface and text, never the Topbar's On Top or On Scroll colours (eXIP 7.3.0.30, US09).
+   Applies to the standard Topbar and to site-layout Topbars alike, the menu content being detached from both. */
+.v-menu__content.topBar-navigation-drop-menu {
+  .layout-drawer();
+}
+
 /* Make TopBar under drawers and other modals when opened */
 .decrease-z-index #UITopBarContainer {
   z-index: @zindexFixedNavbarUnder;
