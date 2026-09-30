@@ -342,9 +342,9 @@
 
 // Typography
 // -------------------------
-@fontFamily: Helvetica, arial, sans-serif;
-@sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
-@sansBoldFontFamily :   "Helvetica Neue Bold" , Helvetica, Lucida, Arial, sans-serif;
+@fontFamily: ~"var(--allPagesFontFamily, Arimo)", Helvetica, Arial, sans-serif;
+@sansFontFamily:        @fontFamily;
+@sansBoldFontFamily :   @fontFamily;
 @serifFontFamily:       Georgia, "Times New Roman", Times, serif;
 
 @baseFontSize:          16px;
