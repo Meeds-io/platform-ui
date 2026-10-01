@@ -1,7 +1,8 @@
 [class^="uiIcon"] {
   font-size: 18px;
   text-transform: none;
-  color: @primaryColor;
+  // The legacy icon family keeps the primary colour as its built-in default, at the end of the icon colour cascade
+  color: ~"var(--appIconColor, var(--allPagesBaseIconColor, var(--allPagesPrimaryColor, @{primaryColorDefault})))";
 }
 [class*="24x24"] {
   font-size: 22px;

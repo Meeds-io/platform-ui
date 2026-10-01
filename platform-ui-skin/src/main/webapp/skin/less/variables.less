@@ -959,6 +959,12 @@
 @btnAllActivitiesColor: @secondaryColor;
 @offlineColor: var(--allPagesOfflineColor, @greyColorLighten1Default);
 @toolbarLightIconColor:           var(--allPagesToolbarLightIconColor, @greyColorLighten1Default);
+// Icon colour cascade: app > page > container or platform (the --allPagesBase remap) > the family's built-in default.
+// The base property is never emitted at :root, so an unset container keeps its built-in colour per icon family.
+@iconColorDefault:                @greyColorLighten1;
+@iconColor:                       ~"var(--appIconColor, var(--allPagesBaseIconColor, @{iconColorDefault}))";
+// Sidebar navigation icons: the toolbar icon variable stays the innermost fallback for a deployment that overrode it.
+@sideBarIconColor:                ~"var(--appIconColor, var(--allPagesBaseIconColor, var(--allPagesToolbarLightIconColor, @{greyColorLighten1Default})))";
 @toolbarLightIconHoverColor:      @primaryColor;
 @colorIconSecondaryHover:@primaryColor;
 @sizeSideBarIcon: var(--allPagesSizeSideBarIcon, 20px);
