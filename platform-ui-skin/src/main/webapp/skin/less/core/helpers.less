@@ -727,6 +727,21 @@
   color: @iconColor !important;
 }
 
+/* An SVG file used as an icon: painted with the current colour through a mask,
+   so it follows the icon colour like a font icon (an <img> cannot). */
+.icon-sidebar {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: currentColor;
+  -webkit-mask: url(/social/images/sidebar.svg) center / contain no-repeat;
+  mask: url(/social/images/sidebar.svg) center / contain no-repeat;
+  -webkit-mask-origin: content-box;
+  mask-origin: content-box;
+  -webkit-mask-clip: content-box;
+  mask-clip: content-box;
+}
+
 .ma-1px {
   margin: 1px !important;
 }
