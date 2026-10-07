@@ -965,6 +965,11 @@
 @iconColor:                       ~"var(--appIconColor, var(--allPagesBaseIconColor, @{iconColorDefault}))";
 // Sidebar navigation icons: the toolbar icon variable stays the innermost fallback for a deployment that overrode it.
 @sideBarIconColor:                ~"var(--appIconColor, var(--allPagesBaseIconColor, var(--allPagesToolbarLightIconColor, @{greyColorLighten1Default})))";
+// Disabled icon: the effective icon colour at 40% over white, a plain colour derived by the browser from the same cascade.
+// The built-in grey gives #c6c6c6. A value holding var() is accepted at parse time whatever function wraps it, so it cannot sit
+// under a legacy declaration as a fallback: the rules that use it live in an @supports block, and the legacy value stays outside
+// for a browser without color-mix().
+@iconDisabledColor:               ~"color-mix(in srgb, var(--appIconColor, var(--allPagesBaseIconColor, @{iconColorDefault})) 40%, white)";
 @toolbarLightIconHoverColor:      @primaryColor;
 @colorIconSecondaryHover:@primaryColor;
 @sizeSideBarIcon: var(--allPagesSizeSideBarIcon, 20px);
