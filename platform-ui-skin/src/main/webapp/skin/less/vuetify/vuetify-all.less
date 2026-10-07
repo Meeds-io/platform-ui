@@ -648,3 +648,17 @@
     display: grid !important;
   }
 }
+
+/* Disabled icons: the colour derived from the effective icon colour (@iconDisabledColor). Outside the .VuetifyApp block on
+   purpose: Less 1.7 bubbles an @supports out of its parent without carrying the parent selector. The legacy declarations in
+   lib/vuetify.less stay in place for a browser without color-mix(); same selectors, later in the stylesheet, so these win;
+   the icon-button rule adds .v-btn--icon, so a labelled disabled button's icon keeps the legacy rgba (D5).
+   The condition only probes color-mix() support; the literal grey is never painted. */
+@supports (color: color-mix(in srgb, #707070 40%, white)) {
+  .VuetifyApp .theme--light.v-icon.v-icon.v-icon--disabled,
+  .VuetifyApp .theme--light.v-btn.v-btn--icon.v-btn--disabled .v-icon,
+  .VuetifyApp .theme--light.v-input--selection-controls.v-input--is-disabled:not(.v-input--indeterminate) .v-icon,
+  .VuetifyApp .theme--light.v-radio--is-disabled .v-icon {
+    color: @iconDisabledColor !important;
+  }
+}

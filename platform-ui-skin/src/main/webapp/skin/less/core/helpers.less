@@ -727,6 +727,16 @@
   color: @iconColor !important;
 }
 
+.icon-disabled-color {
+  color: @textDisabledColor !important;
+}
+/* The condition only probes color-mix() support; the literal grey is never painted. */
+@supports (color: color-mix(in srgb, #707070 40%, white)) {
+  .icon-disabled-color {
+    color: @iconDisabledColor !important;
+  }
+}
+
 /* An SVG file used as an icon: painted with the current colour through a mask,
    so it follows the icon colour like a font icon (an <img> cannot). */
 .icon-sidebar {
