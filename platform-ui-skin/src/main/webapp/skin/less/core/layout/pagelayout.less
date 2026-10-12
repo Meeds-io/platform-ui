@@ -164,6 +164,9 @@
     --allPagesBaseTextSubtitleFontSize: ~"var(--allPagesAppTextSubtitleFontSize, @{textSubtitleFontSizeDefault})";
     --allPagesBaseTextSubtitleFontWeight: ~"var(--allPagesAppTextSubtitleFontWeight, @{textSubtitleFontWeightDefault})";
     --allPagesBaseTextSubtitleFontStyle: ~"var(--allPagesAppTextSubtitleFontStyle, @{textSubtitleFontStyleDefault})";
+    /* Platform-wide icon colour of page content: no fallback on purpose, the branding stylesheet emits 'initial' when
+       the key is unset, so the remapped property is invalid and every icon family keeps its own built-in colour. */
+    --allPagesBaseIconColor: var(--allPagesAppIconColor);
   }
 
   &.layout-page-parent, .layout-page-parent {
@@ -212,6 +215,7 @@
     --allPagesBaseTextFontSize: var(--allPagesTopBarTextFontSize);
     --allPagesBaseTextFontWeight: var(--allPagesTopBarTextFontWeight);
     --allPagesBaseTextFontStyle: var(--allPagesTopBarTextFontStyle);
+    --allPagesBaseIconColor: var(--allPagesTopBarIconColor);
     background-color: @topBarBackgroundColor;
   }
 

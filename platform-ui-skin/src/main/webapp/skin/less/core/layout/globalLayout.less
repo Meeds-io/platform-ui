@@ -149,6 +149,7 @@
   --allPagesBaseTextFontSize: var(--allPagesTopBarTextFontSize);
   --allPagesBaseTextFontWeight: var(--allPagesTopBarTextFontWeight);
   --allPagesBaseTextFontStyle: var(--allPagesTopBarTextFontStyle);
+  --allPagesBaseIconColor: var(--allPagesTopBarIconColor);
 
   background-color: @topBarBackgroundColor !important;
   background-image: @topBarBackgroundImage !important;
@@ -168,6 +169,7 @@
   --allPagesBaseTextSubtitleFontSize: var(--allPagesSideBarTextSubtitleFontSize);
   --allPagesBaseTextSubtitleFontWeight: var(--allPagesSideBarTextSubtitleFontWeight);
   --allPagesBaseTextSubtitleFontStyle: var(--allPagesSideBarTextSubtitleFontStyle);
+  --allPagesBaseIconColor: var(--allPagesSideBarIconColor);
 
   background-color: @sideBarBackgroundColor !important;
   background-image: @sideBarBackgroundImage !important;
@@ -186,6 +188,14 @@
    mobile v-bottom-sheet, so the selector does not depend on the host element. */
 .topBar-navigation-drop-menu {
   .layout-drawer();
+}
+
+/* Menus and dialogs Vuetify detaches to the first [data-app] element (#vuetify-apps) sit outside every page, app and
+   container remap: their icons follow the Drawers & Popup icon colour, like the Topbar sub-menus above. Only the icon
+   remap is generalised, the menu's text and surface are not. A menu an app attaches in place keeps following its app. */
+#vuetify-apps > .v-menu__content,
+#vuetify-apps > .v-dialog__content {
+  --allPagesBaseIconColor: var(--allPagesDrawerIconColor);
 }
 
 /* Make TopBar under drawers and other modals when opened */
