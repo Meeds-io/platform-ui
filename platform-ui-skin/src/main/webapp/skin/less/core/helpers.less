@@ -239,6 +239,19 @@
 .light-grey-background-color {
   background-color: @lightGrey !important;
 }
+/* The Branding page background (written on body as --allPagesBackground* and inherited from there), for a surface
+   that stands for a page outside the page body, such as the content of an expanded drawer. Same chain and defaults
+   as body and .site-scroll-parent. Inside a drawer, a fixed attachment scrolls with the drawer's
+   content: the drawer is positioned with a transform, and browsers render a fixed background under a transformed
+   ancestor as scroll. */
+.page-background {
+  background-color: ~"var(--allPagesBackgroundColor, @{lightGrey}) !important";
+  background-image: ~"var(--allPagesBackgroundImage, none) !important";
+  background-repeat: ~"var(--allPagesBackgroundRepeat, no-repeat) !important";
+  background-size: ~"var(--allPagesBackgroundSize, unset) !important";
+  background-position: ~"var(--allPagesBackgroundPosition, unset) !important";
+  background-attachment: ~"var(--allPagesBackgroundAttachment, scroll) !important";
+}
 .light-black-background {
   background-color: @baseColorLight !important;
 }
