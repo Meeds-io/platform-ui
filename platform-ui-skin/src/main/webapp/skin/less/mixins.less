@@ -65,6 +65,10 @@
 
   --allPagesBaseIconColor: var(--allPagesDrawerIconColor);
 
+  // portal's branding.less emits the drawer variant only for a coloured drawer background: unset, the bubble keeps
+  // its default colour, never the application variant
+  --allPagesCommentBackgroundColor: var(--allPagesDrawerCommentBackgroundColor, @commentDefaultBackgroundColor);
+
   /* The tabs bar, the tabs items and the data table are not v-sheets: in core.css their selectors below
      must outrank Vuetify's theme rules, which vuetify-all.css (loaded after core.css) compiles under .VuetifyApp */
   .v-card:not(.v-card--link.v-sheet.theme--light),
