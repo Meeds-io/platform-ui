@@ -84,6 +84,12 @@
   .cke_wysiwyg_frame {
     background-color: @drawerBackgroundColor;
   }
+
+  /* A stepper is not a v-sheet: it shows the surface it sits on, colour or image. The repeated class outranks
+     Vuetify's .VuetifyApp .theme--light.v-stepper, which vuetify-all.css (loaded after core.css) paints white */
+  .v-stepper.theme--light.v-stepper {
+    background-color: transparent;
+  }
   .v-menu__content {
     color: @btnColor !important;
     font-size: @btnFontSize !important;
