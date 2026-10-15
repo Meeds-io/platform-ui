@@ -42,6 +42,41 @@
   }
 }
 
+/* The surfaces inside a drawer take @background: transparent by default, so the drawer's own Drawers & Popup colour
+   and image show across its whole body. The tabs bar, the tabs items and the data table are not v-sheets: in core.css
+   their selectors below must outrank Vuetify's theme rules, which vuetify-all.css (loaded after core.css) compiles
+   under .VuetifyApp */
+.layout-drawer-surfaces(@background: transparent) {
+  .v-card:not(.v-card--link.v-sheet.theme--light),
+  .theme--light.v-card:not(.v-card--link.v-sheet.theme--light),
+  .v-sheet:not(.v-card--link.theme--light):not(.v-alert),
+  .theme--light.v-sheet:not(.v-card--link),
+  .v-toolbar,
+  .v-toolbar.theme--light,
+  .v-toolbar.theme--light.v-sheet,
+  .v-list,
+  .v-list.theme--light,
+  .v-tabs-bar,
+  .v-tabs.theme--light > .v-tabs-bar,
+  .v-tabs-items,
+  .v-tabs.theme--light > .v-tabs-bar.theme--light,
+  .v-window.theme--light.v-tabs-items,
+  .v-tabs-item.theme--light,
+  .v-data-table,
+  .v-data-table.theme--light,
+  .v-data-table.v-data-table.theme--light,
+  .v-input__slot {
+    background-color: @background;
+  }
+
+  /* On the Drawers & Popup colour: the editor frame stays legible over a background image, and a fixed table header
+     hides the rows that scroll under it */
+  .cke_wysiwyg_frame,
+  .v-data-table.theme--light.v-data-table--fixed-header > .v-data-table__wrapper > table > thead th {
+    background-color: @drawerBackgroundColor;
+  }
+}
+
 .layout-drawer() {
   --allPagesBaseTextTitleColor: var(--allPagesDrawerTextTitleColor);
   --allPagesBaseTextTitleFontSize: var(--allPagesDrawerTextTitleFontSize);
@@ -70,30 +105,18 @@
   // its default colour, never the application variant
   --allPagesCommentBackgroundColor: var(--allPagesDrawerCommentBackgroundColor, @commentDefaultBackgroundColor);
 
-  /* The tabs bar, the tabs items and the data table are not v-sheets: in core.css their selectors below
-     must outrank Vuetify's theme rules, which vuetify-all.css (loaded after core.css) compiles under .VuetifyApp */
-  .v-card:not(.v-card--link.v-sheet.theme--light),
-  .theme--light.v-card:not(.v-card--link.v-sheet.theme--light),
-  .v-sheet:not(.v-card--link.theme--light):not(.v-alert),
-  .theme--light.v-sheet:not(.v-card--link),
-  .v-toolbar,
-  .v-toolbar.theme--light,
-  .v-toolbar.theme--light.v-sheet,
-  .v-list,
-  .v-list.theme--light,
-  .v-tabs-bar,
-  .v-tabs.theme--light > .v-tabs-bar,
-  .v-tabs-items,
-  .v-tabs.theme--light > .v-tabs-bar.theme--light,
-  .v-window.theme--light.v-tabs-items,
-  .v-tabs-item.theme--light,
-  .v-data-table,
-  .v-data-table.theme--light,
-  .v-data-table.v-data-table.theme--light,
-  .v-data-table.theme--light.v-data-table--fixed-header > .v-data-table__wrapper > table > thead th,
-  .v-input__slot,
-  .cke_wysiwyg_frame {
-    background-color: @drawerBackgroundColor;
+  .layout-drawer-surfaces();
+
+  /* An expanded drawer lays its content out as a page: on a .page-background frame, its surfaces keep the
+     Drawers & Popup colour, as application cards do on a page */
+  .page-background {
+    .layout-drawer-surfaces(@drawerBackgroundColor);
+  }
+
+  /* A card that carries .layout-drawer itself paints the Drawers & Popup colour and image, on a .page-background frame
+     too: the surfaces inside it are its own drawer surfaces. Written after the frame rule, which it ties */
+  .layout-drawer {
+    .layout-drawer-surfaces();
   }
 
   // A stepper is not a v-sheet: it shows the surface it sits on, colour or image. The repeated class outranks
@@ -101,6 +124,7 @@
   .v-stepper.theme--light.v-stepper {
     background-color: transparent;
   }
+
   .v-menu__content {
     color: @btnColor !important;
     font-size: @btnFontSize !important;
