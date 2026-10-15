@@ -42,10 +42,10 @@
   }
 }
 
-/* The surfaces inside a drawer take @background: transparent by default, so the drawer's own Drawers & Popup colour
-   and image show across its whole body. The tabs bar, the tabs items and the data table are not v-sheets: in core.css
-   their selectors below must outrank Vuetify's theme rules, which vuetify-all.css (loaded after core.css) compiles
-   under .VuetifyApp */
+// The surfaces inside a drawer take @background: transparent by default, so the drawer's own Drawers & Popup colour
+// and image show across its whole body. The tabs bar, the tabs items and the data table are not v-sheets: in core.css
+// their selectors below must outrank Vuetify's theme rules, which vuetify-all.css (loaded after core.css) compiles
+// under .VuetifyApp
 .layout-drawer-surfaces(@background: transparent) {
   .v-card:not(.v-card--link.v-sheet.theme--light),
   .theme--light.v-card:not(.v-card--link.v-sheet.theme--light),
@@ -69,8 +69,8 @@
     background-color: @background;
   }
 
-  /* On the Drawers & Popup colour: the editor frame stays legible over a background image, and a fixed table header
-     hides the rows that scroll under it */
+  // On the Drawers & Popup colour: the editor frame stays legible over a background image, and a fixed table header
+  // hides the rows that scroll under it
   .cke_wysiwyg_frame,
   .v-data-table.theme--light.v-data-table--fixed-header > .v-data-table__wrapper > table > thead th {
     background-color: @drawerBackgroundColor;
@@ -107,14 +107,14 @@
 
   .layout-drawer-surfaces();
 
-  /* An expanded drawer lays its content out as a page: on a .page-background frame, its surfaces keep the
-     Drawers & Popup colour, as application cards do on a page */
+  // An expanded drawer lays its content out as a page: on a .page-background frame, its surfaces keep the
+  // Drawers & Popup colour, as application cards do on a page
   .page-background {
     .layout-drawer-surfaces(@drawerBackgroundColor);
   }
 
-  /* A card that carries .layout-drawer itself paints the Drawers & Popup colour and image, on a .page-background frame
-     too: the surfaces inside it are its own drawer surfaces. Written after the frame rule, which it ties */
+  // A card that carries .layout-drawer itself paints the Drawers & Popup colour and image, on a .page-background frame
+  // too: the surfaces inside it are its own drawer surfaces. Written after the frame rule, which it ties
   .layout-drawer {
     .layout-drawer-surfaces();
   }
