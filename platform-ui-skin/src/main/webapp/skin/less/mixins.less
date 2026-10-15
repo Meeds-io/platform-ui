@@ -111,6 +111,12 @@
     background-position: @drawerBackgroundPosition!important;
     background-size: @drawerBackgroundSize!important;
   }
+  // A solo field shows the surface it sits on, colour or image, as an outlined one does. Vuetify's
+  // .VuetifyApp .theme--light.v-text-field--solo > .v-input__control > .v-input__slot paints it white from
+  // vuetify-all.css, loaded after core.css: the repeated class outranks it. A solo-inverted field keeps its tint
+  .theme--light.v-text-field--solo.v-text-field--solo:not(.v-text-field--solo-inverted) > .v-input__control > .v-input__slot {
+    background-color: transparent;
+  }
 
   color: @drawerTextColor;
   font-size: @drawerTextFontSize;
