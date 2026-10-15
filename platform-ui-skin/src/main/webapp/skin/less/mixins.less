@@ -65,6 +65,8 @@
 
   --allPagesBaseIconColor: var(--allPagesDrawerIconColor);
 
+  /* The tabs bar, the tabs items and the data table are not v-sheets: in core.css their selectors below
+     must outrank Vuetify's theme rules, which vuetify-all.css (loaded after core.css) compiles under .VuetifyApp */
   .v-card:not(.v-card--link.v-sheet.theme--light),
   .theme--light.v-card:not(.v-card--link.v-sheet.theme--light),
   .v-sheet:not(.v-card--link.theme--light):not(.v-alert),
@@ -77,9 +79,13 @@
   .v-tabs-bar,
   .v-tabs.theme--light > .v-tabs-bar,
   .v-tabs-items,
+  .v-tabs.theme--light > .v-tabs-bar.theme--light,
+  .v-window.theme--light.v-tabs-items,
   .v-tabs-item.theme--light,
   .v-data-table,
   .v-data-table.theme--light,
+  .v-data-table.v-data-table.theme--light,
+  .v-data-table.theme--light.v-data-table--fixed-header > .v-data-table__wrapper > table > thead th,
   .v-input__slot,
   .cke_wysiwyg_frame {
     background-color: @drawerBackgroundColor;
