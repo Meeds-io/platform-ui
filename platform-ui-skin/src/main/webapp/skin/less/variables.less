@@ -923,7 +923,10 @@
 @dropFileAreaBackgroundOnDragEnter: var(--allPagesDropFileAreaBackgroundOnDragEnter, #e6e6e6);
 
 // Other variables
-@commentBackgroundColor: var(--allPagesCommentBackgroundColor, #f2f5f8);
+// Comment bubbles: portal's branding.less sets --allPagesCommentBackgroundColor only for a coloured application
+// background, and the .layout-drawer() mixin remaps it to the drawer variant inside drawers
+@commentDefaultBackgroundColor: #f2f5f8;
+@commentBackgroundColor: var(--allPagesCommentBackgroundColor, @commentDefaultBackgroundColor);
 @uiTreeEmptyColor: @lightWhite;
 @toolbarContainerDarkColor: @lightWhite;
 @uiPageIteratorActiveColor: @lightWhite;
