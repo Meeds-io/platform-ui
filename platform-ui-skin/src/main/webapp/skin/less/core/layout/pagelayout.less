@@ -145,28 +145,8 @@
     background-position: ~"var(--pageBodyBackgroundPosition, unset) !important";
     background-attachment: ~"var(--pageBodyBackgroundAttachment, scroll) !important";
 
-    /* Platform-wide application text defaults (Branding and Theme > Pages & Apps style), scoped to page content only.
-       Every --allPagesAppText* is emitted by the branding stylesheet with a default equal to the skin's built-in one
-       (body text chained to the global text colour), so the remapped variables always resolve. */
-    --allPagesBaseTextTitleColor: ~"var(--allPagesAppTextTitleColor, @{textTitleColorDefault})";
-    --allPagesBaseTextTitleFontSize: ~"var(--allPagesAppTextTitleFontSize, @{textTitleFontSizeDefault})";
-    --allPagesBaseTextTitleFontWeight: ~"var(--allPagesAppTextTitleFontWeight, @{textTitleFontWeightDefault})";
-    --allPagesBaseTextTitleFontStyle: ~"var(--allPagesAppTextTitleFontStyle, @{textTitleFontStyleDefault})";
-    --allPagesBaseTextHeaderColor: ~"var(--allPagesAppTextHeaderColor, @{textHeaderColorDefault})";
-    --allPagesBaseTextHeaderFontSize: ~"var(--allPagesAppTextHeaderFontSize, @{textHeaderFontSizeDefault})";
-    --allPagesBaseTextHeaderFontWeight: ~"var(--allPagesAppTextHeaderFontWeight, @{textHeaderFontWeightDefault})";
-    --allPagesBaseTextHeaderFontStyle: ~"var(--allPagesAppTextHeaderFontStyle, @{textHeaderFontStyleDefault})";
-    --allPagesBaseTextColor: ~"var(--allPagesAppTextColor, @{textColorDefault})";
-    --allPagesBaseTextFontSize: ~"var(--allPagesAppTextFontSize, @{textFontSizeDefault})";
-    --allPagesBaseTextFontWeight: ~"var(--allPagesAppTextFontWeight, @{textFontWeightDefault})";
-    --allPagesBaseTextFontStyle: ~"var(--allPagesAppTextFontStyle, @{textFontStyleDefault})";
-    --allPagesBaseTextSubtitleColor: ~"var(--allPagesAppTextSubtitleColor, @{textSubtitleColorDefault})";
-    --allPagesBaseTextSubtitleFontSize: ~"var(--allPagesAppTextSubtitleFontSize, @{textSubtitleFontSizeDefault})";
-    --allPagesBaseTextSubtitleFontWeight: ~"var(--allPagesAppTextSubtitleFontWeight, @{textSubtitleFontWeightDefault})";
-    --allPagesBaseTextSubtitleFontStyle: ~"var(--allPagesAppTextSubtitleFontStyle, @{textSubtitleFontStyleDefault})";
-    /* Platform-wide icon colour of page content: no fallback on purpose, the branding stylesheet emits 'initial' when
-       the key is unset, so the remapped property is invalid and every icon family keeps its own built-in colour. */
-    --allPagesBaseIconColor: var(--allPagesAppIconColor);
+    // Platform-wide application text defaults (Branding and Theme > Pages & Apps style), scoped to page content only
+    .layout-application-text();
   }
 
   &.layout-page-parent, .layout-page-parent {
