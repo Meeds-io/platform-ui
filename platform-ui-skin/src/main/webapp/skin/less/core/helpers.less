@@ -239,6 +239,12 @@
 .light-grey-background-color {
   background-color: @lightGrey !important;
 }
+/* The comment bubble colour, for a card that stands out from the surface it sits on: derived from the application
+   background on a page and, through the .layout-drawer() remap, from the Drawers & Popup background in a drawer;
+   the default bubble colour when Branding sets no colour */
+.comment-background-color {
+  background-color: @commentBackgroundColor !important;
+}
 /* The Branding page background (written on body as --allPagesBackground* and inherited from there), for a surface
    that stands for a page outside the page body, such as the content of an expanded drawer. Same chain and defaults
    as body and .site-scroll-parent. Inside a drawer, a fixed attachment scrolls with the drawer's
