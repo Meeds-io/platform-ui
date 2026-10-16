@@ -146,14 +146,21 @@
 
   // A page opened in place in an expanded drawer (an application's detail page, such as a campaign) carries
   // .layout-drawer-application: as an application on a page, it paints the application background colour and image
-  // and takes the application text styles and icon colour, and the surfaces inside it are transparent; a comment bubble
-  // keeps the drawer variant, the only one Branding emits under that name. Written after the frame rule, which it ties
+  // and takes the application text styles and icon colour, the surfaces inside it are transparent, and a menu attached
+  // in it takes the base background, as in an application on a page. A comment bubble keeps the drawer colour: Branding
+  // emits the application one under the same property, which the drawer has overridden. Written after the frame rule,
+  // which it ties
   .layout-drawer-application {
     .layout-application-text();
     .layout-drawer-surfaces();
 
     // Page content sets no menu text colour: unset again, tabs and menu labels fall back to their default as on a page
     --allPagesMenuTextColor: initial;
+
+    .v-menu__content {
+      background-color: @baseBackground !important;
+      background-image: none !important;
+    }
 
     // The editor frame and a fixed table header keep a solid surface, the application's colour here
     .cke_wysiwyg_frame,
