@@ -77,6 +77,31 @@
   }
 }
 
+// The application text styles and icon colour (Branding and Theme > Pages & Apps style) remapped onto the base
+// variables. Every --allPagesAppText* is emitted by the branding stylesheet with a default equal to the skin's built-in
+// one (body text chained to the global text colour), so the remapped variables always resolve
+.layout-application-text() {
+  --allPagesBaseTextTitleColor: ~"var(--allPagesAppTextTitleColor, @{textTitleColorDefault})";
+  --allPagesBaseTextTitleFontSize: ~"var(--allPagesAppTextTitleFontSize, @{textTitleFontSizeDefault})";
+  --allPagesBaseTextTitleFontWeight: ~"var(--allPagesAppTextTitleFontWeight, @{textTitleFontWeightDefault})";
+  --allPagesBaseTextTitleFontStyle: ~"var(--allPagesAppTextTitleFontStyle, @{textTitleFontStyleDefault})";
+  --allPagesBaseTextHeaderColor: ~"var(--allPagesAppTextHeaderColor, @{textHeaderColorDefault})";
+  --allPagesBaseTextHeaderFontSize: ~"var(--allPagesAppTextHeaderFontSize, @{textHeaderFontSizeDefault})";
+  --allPagesBaseTextHeaderFontWeight: ~"var(--allPagesAppTextHeaderFontWeight, @{textHeaderFontWeightDefault})";
+  --allPagesBaseTextHeaderFontStyle: ~"var(--allPagesAppTextHeaderFontStyle, @{textHeaderFontStyleDefault})";
+  --allPagesBaseTextColor: ~"var(--allPagesAppTextColor, @{textColorDefault})";
+  --allPagesBaseTextFontSize: ~"var(--allPagesAppTextFontSize, @{textFontSizeDefault})";
+  --allPagesBaseTextFontWeight: ~"var(--allPagesAppTextFontWeight, @{textFontWeightDefault})";
+  --allPagesBaseTextFontStyle: ~"var(--allPagesAppTextFontStyle, @{textFontStyleDefault})";
+  --allPagesBaseTextSubtitleColor: ~"var(--allPagesAppTextSubtitleColor, @{textSubtitleColorDefault})";
+  --allPagesBaseTextSubtitleFontSize: ~"var(--allPagesAppTextSubtitleFontSize, @{textSubtitleFontSizeDefault})";
+  --allPagesBaseTextSubtitleFontWeight: ~"var(--allPagesAppTextSubtitleFontWeight, @{textSubtitleFontWeightDefault})";
+  --allPagesBaseTextSubtitleFontStyle: ~"var(--allPagesAppTextSubtitleFontStyle, @{textSubtitleFontStyleDefault})";
+  // No fallback on purpose: the branding stylesheet emits 'initial' when the key is unset, so the remapped property is
+  // invalid and every icon family keeps its own built-in colour
+  --allPagesBaseIconColor: var(--allPagesAppIconColor);
+}
+
 .layout-drawer() {
   --allPagesBaseTextTitleColor: var(--allPagesDrawerTextTitleColor);
   --allPagesBaseTextTitleFontSize: var(--allPagesDrawerTextTitleFontSize);
@@ -117,6 +142,33 @@
   // too: the surfaces inside it are its own drawer surfaces. Written after the frame rule, which it ties
   .layout-drawer {
     .layout-drawer-surfaces();
+  }
+
+  // A page opened in place in an expanded drawer (an application's detail page, such as a campaign) carries
+  // .layout-drawer-application: as an application on a page, it paints the application background colour and image
+  // and takes the application text styles and icon colour, and the surfaces inside it are transparent. Written after
+  // the frame rule, which it ties
+  .layout-drawer-application {
+    .layout-application-text();
+    .layout-drawer-surfaces();
+
+    // The editor frame and a fixed table header keep a solid surface, the application's colour here
+    .cke_wysiwyg_frame,
+    .v-data-table.theme--light.v-data-table--fixed-header > .v-data-table__wrapper > table > thead th {
+      background-color: @appBackgroundColor;
+    }
+
+    color: @textColor;
+    font-size: @textFontSize;
+    font-style: @textFontStyle;
+    font-weight: @textFontWeight;
+
+    background-color: ~"@{appBackgroundColor} !important";
+    background-image: ~"@{appBackgroundImage} !important";
+    background-repeat: ~"@{appBackgroundRepeat} !important";
+    background-size: ~"@{appBackgroundSize} !important";
+    background-position: ~"@{appBackgroundPosition} !important";
+    background-attachment: ~"@{appBackgroundAttachment} !important";
   }
 
   // A stepper is not a v-sheet: it shows the surface it sits on, colour or image. The repeated class outranks
