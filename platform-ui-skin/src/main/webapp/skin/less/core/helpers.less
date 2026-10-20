@@ -1393,3 +1393,14 @@
 .height-fit-content {
   height: fit-content !important;
 }
+
+/* The checkerboard behind a color picker swatch, which shows through a translucent or empty color */
+.color-picker-swatch {
+  background-image:
+    linear-gradient(45deg, #bbb 25%, transparent 25%),
+    linear-gradient(-45deg, #bbb 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #bbb 75%),
+    linear-gradient(-45deg, transparent 75%, #bbb 75%);
+  background-size: 10px 10px;
+  background-position: 0 0, 0 5px, 5px -5px, -5px 0;
+}
