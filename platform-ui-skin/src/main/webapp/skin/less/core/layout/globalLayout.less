@@ -181,6 +181,26 @@
   .layout-drawer();
 }
 
+/* A stepper's marks (divider, vertical connector, inactive step circle, hovered step) are black alpha made for a white
+   surface: inside a drawer they derive from the text colour instead, so they stay visible on any Drawers & Popup colour.
+   Each selector outranks its Vuetify theme rule, compiled under .VuetifyApp in vuetify-all.css, which loads after core.css.
+   The circle cannot use currentColor, which the theme sets to white on it. */
+@supports (color: color-mix(in srgb, #707070 40%, white)) {
+  .layout-drawer .v-stepper.v-stepper.theme--light .v-stepper__header .v-divider,
+  .layout-drawer .v-stepper.v-stepper.theme--light.v-stepper--vertical.v-stepper--vertical .v-stepper__content:not(:last-child) {
+    border-color: ~"color-mix(in srgb, @{textColor} 12%, transparent)";
+  }
+  .layout-drawer .v-stepper.v-stepper.theme--light .v-stepper__step--editable:hover {
+    background: ~"color-mix(in srgb, @{textColor} 6%, transparent)";
+  }
+  .layout-drawer .v-stepper.v-stepper.theme--light .v-stepper__step:not(.v-stepper__step--active):not(.v-stepper__step--complete):not(.v-stepper__step--error) .v-stepper__step__step {
+    background: ~"color-mix(in srgb, @{textColor} 38%, transparent)";
+  }
+  .layout-drawer .v-stepper.v-stepper.theme--light .v-stepper__step--inactive.v-stepper__step--editable:not(.v-stepper__step--error):hover .v-stepper__step__step {
+    background: ~"color-mix(in srgb, @{textColor} 54%, transparent)";
+  }
+}
+
 /* Topbar sub-menus (site navigation drop-downs, desktop and mobile) are overlays of the drawers and popups family:
    they take the platform menu surface and text, never the Topbar's On Top or On Scroll colours.
    Applies to the standard Topbar and to site-layout Topbars alike, the menu content being detached from both.
