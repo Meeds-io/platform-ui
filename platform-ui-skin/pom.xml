@@ -73,12 +73,6 @@
               <goal>compile</goal>
             </goals>
           </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.lesscss</groupId>
-        <artifactId>lesscss-maven-plugin</artifactId>
-        <executions>
           <execution>
             <id>vuetify</id>
             <configuration>
