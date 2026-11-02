@@ -19,6 +19,35 @@
 
 @import 'mixins.less';
 
+// The fields of application content, on either path the application background reaches them by
+.application-content-fields() {
+  // A plain text field shows the application background, colour or image, as an outlined field does. Vuetify's reset
+  // already clears it, except on a field carrying .ignore-vuetify-classes, which reset.less paints with the base
+  // background. A disabled or read-only field keeps its own background
+  select,
+  textarea,
+  input:not([type]),
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="number"] {
+    &:not([disabled]):not([readonly]) {
+      background-color: transparent;
+    }
+  }
+  // The editor frame keeps a solid surface, the application's colour, as in a drawer: the editor skin paints it white
+  .cke_wysiwyg_frame {
+    background-color: @appBackgroundColor;
+  }
+  // A card that carries .layout-drawer in the application keeps the Drawers & Popup colour on its editor frame
+  .layout-drawer .cke_wysiwyg_frame {
+    background-color: @drawerBackgroundColor;
+  }
+}
+
 .application-background-color, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-background-color) {
   background-color: ~"@{appBackgroundColor} !important";
 
@@ -48,6 +77,7 @@
     .v-data-table.theme--light {
       background-color: transparent; /* NEVER make this !important to allow defining specific colors when needed using CSS helpers */
     }
+    .application-content-fields();
     .v-menu__content {
       background-color: @baseBackground;
       color: @btnColor !important;
@@ -85,6 +115,7 @@
     .v-data-table.theme--light {
       background-color: transparent; /* NEVER make this !important to allow defining specific colors when needed using CSS helpers */
     }
+    .application-content-fields();
     .v-menu__content {
       background-color: @baseBackground;
       color: @btnColor !important;
