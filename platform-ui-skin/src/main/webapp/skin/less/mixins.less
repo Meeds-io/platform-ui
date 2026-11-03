@@ -161,17 +161,21 @@
   --tintedSurfaceBackgroundColor: var(--allPagesDrawerCommentBackgroundColor);
 }
 
-// The Drawers & Popup surface of a menu, and its text colour, legible on any Drawers & Popup colour
+// The Drawers & Popup surface of a menu, and its text colour, legible on any Drawers & Popup colour. A transparent
+// menu is a wrapper around a card of its own (a user or space popover): it keeps no surface, neither the colour, which
+// the helper's background-color alone would keep, nor the image
 .layout-drawer-menu-surface() {
-  color: @drawerTextColor !important;
-  font-size: @btnFontSize !important;
-  font-weight: normal !important;
-  font-style: normal !important;
-  background-color: @drawerBackgroundColor !important;
-  background-image: @drawerBackgroundImage !important;
-  background-repeat: @drawerBackgroundRepeat !important;
-  background-position: @drawerBackgroundPosition!important;
-  background-size: @drawerBackgroundSize!important;
+  &:not(.transparent) {
+    color: @drawerTextColor !important;
+    font-size: @btnFontSize !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    background-color: @drawerBackgroundColor !important;
+    background-image: @drawerBackgroundImage !important;
+    background-repeat: @drawerBackgroundRepeat !important;
+    background-position: @drawerBackgroundPosition!important;
+    background-size: @drawerBackgroundSize!important;
+  }
 }
 
 // A menu outside a drawer, attached in an application or detached by Vuetify, is a popup: it takes the Drawers & Popup
