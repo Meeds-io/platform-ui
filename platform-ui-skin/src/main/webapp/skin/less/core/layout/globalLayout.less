@@ -219,6 +219,20 @@
 :where(#vuetify-apps) > .v-menu__content.v-menu__content:not(:where(.white)) {
   .layout-drawer-menu();
 }
+/* A white menu, or a white list in a menu, keeps its white wherever it sits (an application, a drawer, detached): its
+   text, fields, controls and icons take the skin's default colours, legible on white whatever the surrounding text
+   colours. The repeated classes outrank the page-in-a-drawer menu rule (.layout-drawer .layout-drawer-application
+   .v-menu__content), which this rule follows */
+.v-menu__content.v-menu__content.white,
+.v-menu__content .v-list.v-list.white {
+  --appTextColor: @textColorDefault;
+  --appTextTitleColor: @textTitleColorDefault;
+  --appTextHeaderColor: @textHeaderColorDefault;
+  --appTextSubtitleColor: @textSubtitleColorDefault;
+  --appIconColor: initial;
+  --allPagesBaseIconColor: initial;
+  color: @btnColor;
+}
 #vuetify-apps > .v-dialog__content {
   --allPagesBaseIconColor: var(--allPagesDrawerIconColor);
 }
