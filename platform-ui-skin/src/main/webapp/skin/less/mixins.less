@@ -133,6 +133,20 @@
       color: @textColor !important;
     }
   }
+  // An outlined primary button, which vuetify-all.less paints white (gradient and hover colour, !important), keeps its
+  // primary border and label on the surface. The repeated classes outrank .VuetifyApp .v-application
+  // .v-btn.primary:not(.v-btn--text).v-btn--outlined and its :hover/:focus/:active (0,7,0)
+  .v-btn.v-btn.primary.primary.v-btn--outlined:not(.v-btn--text) {
+    &, &:hover, &:focus, &:active, &.active {
+      background-color: transparent !important;
+      background-image: none !important;
+    }
+  }
+  // A native select's option list cannot show an image: it takes the surface's solid colour and text colour
+  select option {
+    color: @textColor;
+    background-color: @surfaceSolidBackgroundColor;
+  }
   // A button toggle; its active button keeps Vuetify's tint over the surface. Its buttons' icons follow the icon
   // colour, outranking .VuetifyApp .theme--light.v-btn-toggle:not(.v-btn-toggle--group) .v-btn.v-btn .v-icon (black);
   // an icon carrying a colour helper keeps it
@@ -175,6 +189,8 @@
   // The same tint for chips and preview frames. No fallback on purpose: unset, the remap is invalid at computed-value
   // time and each consumer keeps its own default (@chipBackgroundColor, @tintedSurfaceBackgroundColor)
   --tintedSurfaceBackgroundColor: var(--allPagesDrawerCommentBackgroundColor);
+  // The solid colour of the surface, for what cannot show its image (a native select's option list)
+  --surfaceSolidBackgroundColor: @drawerBackgroundColor;
 }
 
 // The Drawers & Popup surface of a menu, and its text colour, legible on any Drawers & Popup colour. A transparent
@@ -299,6 +315,7 @@
     // Page content sets no menu text colour: unset again, tabs and menu labels fall back to their default as on a page
     --allPagesMenuTextColor: initial;
     --tintedSurfaceBackgroundColor: var(--tintedAppSurfaceBackgroundColor);
+    --surfaceSolidBackgroundColor: ~"@{appBackgroundColor}";
 
     // Its surfaces and controls already follow the drawer rules above
     .v-menu__content {
@@ -323,6 +340,13 @@
     background-size: ~"@{appBackgroundSize} !important";
     background-position: ~"@{appBackgroundPosition} !important";
     background-attachment: ~"@{appBackgroundAttachment} !important";
+  }
+
+  // A clickable card (an item to pick, such as a space template) is left out of the drawer surfaces: it stands out
+  // from the drawer as a comment bubble does, tinted on a coloured Drawers & Popup background and white otherwise.
+  // Outranks .VuetifyApp .theme--light.v-card and .theme--light.v-sheet (0,3,0)
+  .v-card--link.v-sheet.theme--light {
+    background-color: @tintedCardBackgroundColor;
   }
 
   // A stepper is not a v-sheet: it shows the surface it sits on, colour or image. The repeated class outranks
