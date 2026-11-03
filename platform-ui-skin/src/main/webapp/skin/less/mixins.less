@@ -122,9 +122,25 @@
   .theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined):not(.btn-primary):not(.primary) {
     background-color: transparent;
   }
-  // A button toggle; its active button keeps Vuetify's tint over the surface
+  // Its label takes the surface's text colour, legible on any background, as a field's text does. An uncoloured v-btn
+  // outranks .VuetifyApp .theme--light.v-btn; a .btn needs !important against .VuetifyApp .v-application .v-btn.btn
+  // :hover/:focus, and leaves a button carrying a <colour>--text class its colour
+  .theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined):not(.btn-primary):not(.primary) {
+    color: @textColor;
+  }
+  .btn.btn:not(.btn-primary):not(.primary):not([class*="--text"]) {
+    &, &:hover, &:focus {
+      color: @textColor !important;
+    }
+  }
+  // A button toggle; its active button keeps Vuetify's tint over the surface. Its buttons' icons follow the icon
+  // colour, outranking .VuetifyApp .theme--light.v-btn-toggle:not(.v-btn-toggle--group) .v-btn.v-btn .v-icon (black);
+  // an icon carrying a colour helper keeps it
   .theme--light.v-btn-toggle.v-btn-toggle:not(.v-btn-toggle--group) {
     background-color: transparent;
+    .v-btn.v-btn .v-icon {
+      color: @iconColor;
+    }
   }
 }
 
@@ -183,6 +199,25 @@
 // text, surface and controls, as a menu inside a drawer does
 .layout-drawer-menu() {
   .layout-drawer-text();
+  // An application's own text and icon styles (written on it by the layout, inherited by a menu attached in it) are
+  // unset again: each chain falls through to the Drawers & Popup values remapped above
+  --appTextColor: initial;
+  --appTextFontSize: initial;
+  --appTextFontStyle: initial;
+  --appTextFontWeight: initial;
+  --appTextTitleColor: initial;
+  --appTextTitleFontSize: initial;
+  --appTextTitleFontStyle: initial;
+  --appTextTitleFontWeight: initial;
+  --appTextHeaderColor: initial;
+  --appTextHeaderFontSize: initial;
+  --appTextHeaderFontStyle: initial;
+  --appTextHeaderFontWeight: initial;
+  --appTextSubtitleColor: initial;
+  --appTextSubtitleFontSize: initial;
+  --appTextSubtitleFontStyle: initial;
+  --appTextSubtitleFontWeight: initial;
+  --appIconColor: initial;
   .layout-drawer-surfaces();
   .surface-controls();
   .layout-drawer-menu-surface();
