@@ -23,7 +23,8 @@
 .application-content-fields() {
   // A plain text field shows the application background, colour or image, as an outlined field does. Vuetify's reset
   // already clears it, except on a field carrying .ignore-vuetify-classes, which reset.less paints with the base
-  // background. A disabled or read-only field keeps its own background
+  // background. Its text and border, drawn with currentColor, take the application text colour, as an outlined field's
+  // text does. A disabled or read-only field keeps its own background
   select,
   textarea,
   input:not([type]),
@@ -35,6 +36,7 @@
   input[type="tel"],
   input[type="number"] {
     &:not([disabled]):not([readonly]) {
+      color: @textColor;
       background-color: transparent;
     }
   }
@@ -45,6 +47,10 @@
   // A card that carries .layout-drawer in the application keeps the Drawers & Popup colour on its editor frame
   .layout-drawer .cke_wysiwyg_frame {
     background-color: @drawerBackgroundColor;
+  }
+  // A page opened in place in such a drawer is application content again
+  .layout-drawer .layout-drawer-application .cke_wysiwyg_frame {
+    background-color: @appBackgroundColor;
   }
 }
 
