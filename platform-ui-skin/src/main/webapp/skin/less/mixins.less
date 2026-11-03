@@ -214,7 +214,8 @@
 .layout-drawer-menu() {
   .layout-drawer-text();
   // An application's own text, text background and icon styles (written on it by the layout, inherited by a menu
-  // attached in it) are unset again: each chain falls through to the Drawers & Popup values remapped above
+  // attached in it) are unset again: each text and icon chain falls through to the Drawers & Popup values remapped
+  // above, and each text background chain to the platform-wide one, as in a drawer
   --appTextColor: initial;
   --appTextFontSize: initial;
   --appTextFontStyle: initial;
