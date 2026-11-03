@@ -163,13 +163,14 @@
 
 // The Drawers & Popup surface of a menu, and its text colour, legible on any Drawers & Popup colour. A transparent
 // menu is a wrapper around a card of its own (a user or space popover): it keeps no surface, neither the colour, which
-// the helper's background-color alone would keep, nor the image
+// the helper's background-color alone would keep, nor the image. The guard adds no specificity (:where), so a white
+// helper still wins its tie with the surface wherever it did
 .layout-drawer-menu-surface() {
-  &:not(.transparent) {
-    color: @drawerTextColor !important;
-    font-size: @btnFontSize !important;
-    font-weight: normal !important;
-    font-style: normal !important;
+  color: @drawerTextColor !important;
+  font-size: @btnFontSize !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  &:not(:where(.transparent)) {
     background-color: @drawerBackgroundColor !important;
     background-image: @drawerBackgroundImage !important;
     background-repeat: @drawerBackgroundRepeat !important;
