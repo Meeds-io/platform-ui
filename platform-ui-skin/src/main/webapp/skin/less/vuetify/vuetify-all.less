@@ -395,10 +395,11 @@
         font-style: normal !important;
       }
     }
-    // A white menu, or a white list in a menu, keeps its white: its items keep the button text colour, legible on it.
-    // Written after the rule above, which the first selector ties and the second outranks
+    // A white menu, or a white list or card in a menu, keeps its white: its items keep the button text colour, legible
+    // on it. Written after the rule above, which the first selector ties and the others outrank
     .v-menu__content.white .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled),
-    .v-menu__content .v-list.white .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
+    .v-menu__content .v-list.white .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled),
+    .v-menu__content .v-card.white .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
       &, .v-list-item__title, .v-list-item__subtitle {
         color: @btnColor !important;
       }
