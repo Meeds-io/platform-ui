@@ -212,12 +212,11 @@
 
 /* Menus Vuetify detaches to the first [data-app] element (#vuetify-apps) sit outside every page, app and container
    remap: they are popups and take the Drawers & Popup text, icon colour, surface and controls, like the Topbar sub-menus
-   above and a menu attached in an application. The id adds no specificity (:where), so a menu whose content class
-   carries an !important background helper (a white menu) keeps it, as an attached menu does, and a transparent one
-   keeps no surface (.layout-drawer-menu-surface()); the repeated class lets the surfaces inside outrank Vuetify's
-   .VuetifyApp .theme--light.v-list, loaded later.
+   above and a menu attached in an application. A white menu is left as it is, legible with its own dark text, and a
+   transparent one keeps no surface (.layout-drawer-menu-surface()). The id and the guard add no specificity (:where);
+   the repeated class lets the surfaces inside outrank Vuetify's .VuetifyApp .theme--light.v-list, loaded later.
    Dialogs only follow the Drawers & Popup icon colour. */
-:where(#vuetify-apps) > .v-menu__content.v-menu__content {
+:where(#vuetify-apps) > .v-menu__content.v-menu__content:not(:where(.white)) {
   .layout-drawer-menu();
 }
 #vuetify-apps > .v-dialog__content {

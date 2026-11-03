@@ -76,6 +76,34 @@
   .v-data-table.theme--light.v-data-table--fixed-header > .v-data-table__wrapper > table > thead th {
     background-color: @drawerBackgroundColor;
   }
+
+  // A date picker on the surface: its weekday headers, week numbers, days and arrows take the surface's text and icon
+  // colours instead of Vuetify's black alpha, made for its white body. The repeated classes outrank
+  // .VuetifyApp .theme--light.v-date-picker-table th (0,3,1), its week numbers (0,4,0) and .theme--light.v-btn (0,3,0);
+  // the selected and today's days keep their !important colour classes
+  .theme--light.v-date-picker-table.v-date-picker-table {
+    th {
+      color: @textSubtitleColor;
+    }
+    .v-date-picker-table--date__week {
+      color: @textSubtitleColor;
+    }
+    .v-btn.theme--light:not(.v-btn--active):not(.v-btn--disabled) {
+      color: @textColor;
+    }
+  }
+  .v-date-picker-header .v-btn .v-icon {
+    color: @iconColor;
+  }
+}
+
+// A clickable card (an item to pick, such as a space template) is left out of the surfaces above: it stands out from
+// the Drawers & Popup surface as a comment bubble does, tinted on a coloured background and white otherwise.
+// Outranks .VuetifyApp .theme--light.v-card and .theme--light.v-sheet (0,3,0)
+.layout-drawer-link-cards() {
+  .v-card--link.v-sheet.theme--light {
+    background-color: @tintedCardBackgroundColor;
+  }
 }
 
 // The controls of an application, a drawer or a menu show the surface they sit on, colour or image, instead of the
@@ -124,20 +152,23 @@
   }
   // Its label takes the surface's text colour, legible on any background, as a field's text does. An uncoloured v-btn
   // outranks .VuetifyApp .theme--light.v-btn; a .btn needs !important against .VuetifyApp .v-application .v-btn.btn
-  // :hover/:focus, and leaves a button carrying a <colour>--text class its colour
-  .theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined):not(.btn-primary):not(.primary) {
+  // :hover/:focus, and leaves a button carrying a <colour>--text class its colour. A button filled with a named colour
+  // keeps Vuetify's label
+  .theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined):not(.btn-primary):not(.primary):not(.secondary):not(.accent):not(.tertiary):not(.white) {
     color: @textColor;
   }
-  .btn.btn:not(.btn-primary):not(.primary):not([class*="--text"]):not([disabled]):not(.v-btn--disabled) {
+  .btn.btn:not(.btn-primary):not(.primary):not(.secondary):not(.accent):not(.tertiary):not(.white):not([class*="--text"]):not([disabled]):not(.v-btn--disabled) {
     &, &:hover, &:focus {
       color: @textColor !important;
     }
   }
-  // An outlined primary button, which vuetify-all.less paints white (gradient and hover colour, !important), keeps its
-  // primary border and label on the surface. The repeated classes outrank .VuetifyApp .v-application
-  // .v-btn.primary:not(.v-btn--text).v-btn--outlined and its :hover/:focus/:active (0,7,0)
-  .v-btn.v-btn.primary.primary.v-btn--outlined:not(.v-btn--text) {
-    &, &:hover, &:focus, &:active, &.active {
+  // An outlined primary button (.primary or .btn-primary), which vuetify-all.less paints white (gradient, and the
+  // colour of its hover, focus, active and disabled states, !important), keeps its primary border and label on the
+  // surface. The repeated classes outrank .VuetifyApp .v-application .v-btn.primary:not(.v-btn--text).v-btn--outlined
+  // (0,6,0), .btn-primary:not(.v-btn--text).v-btn--outlined (0,5,0) and their states, one class more
+  .v-btn.v-btn.primary.primary.v-btn--outlined:not(.v-btn--text),
+  .btn-primary.btn-primary.btn-primary.v-btn--outlined:not(.v-btn--text) {
+    &, &:hover, &:focus, &:active, &.active, &.disabled, &[disabled] {
       background-color: transparent !important;
       background-image: none !important;
     }
@@ -195,14 +226,17 @@
 
 // The Drawers & Popup surface of a menu, and its text colour, legible on any Drawers & Popup colour. A transparent
 // menu is a wrapper around a card of its own (a user or space popover): it keeps no surface, neither the colour, which
-// the helper's background-color alone would keep, nor the image. The guard adds no specificity (:where), so a white
-// helper still wins its tie with the surface wherever it did
+// the helper's background-color alone would keep, nor the image. A white menu keeps its white with its dark text and
+// no image, legible whatever the Drawers & Popup colours. The guards add no specificity (:where), so a white helper
+// still wins its tie with the surface wherever it did
 .layout-drawer-menu-surface() {
-  color: @drawerTextColor !important;
   font-size: @btnFontSize !important;
   font-weight: normal !important;
   font-style: normal !important;
-  &:not(:where(.transparent)) {
+  &:not(:where(.white)) {
+    color: @drawerTextColor !important;
+  }
+  &:not(:where(.transparent)):not(:where(.white)) {
     background-color: @drawerBackgroundColor !important;
     background-image: @drawerBackgroundImage !important;
     background-repeat: @drawerBackgroundRepeat !important;
@@ -255,6 +289,7 @@
   .unset-app-text-background(TextHeader);
   .unset-app-text-background(TextSubtitle);
   .layout-drawer-surfaces();
+  .layout-drawer-link-cards();
   .surface-controls();
   .layout-drawer-menu-surface();
 }
@@ -315,6 +350,11 @@
     // Page content sets no menu text colour: unset again, tabs and menu labels fall back to their default as on a page
     --allPagesMenuTextColor: initial;
     --tintedSurfaceBackgroundColor: var(--tintedAppSurfaceBackgroundColor);
+
+    // A clickable card is transparent, as in an application on a page
+    .v-card--link.v-sheet.theme--light {
+      background-color: transparent;
+    }
     --surfaceSolidBackgroundColor: ~"@{appBackgroundColor}";
 
     // Its surfaces and controls already follow the drawer rules above
@@ -342,12 +382,7 @@
     background-attachment: ~"@{appBackgroundAttachment} !important";
   }
 
-  // A clickable card (an item to pick, such as a space template) is left out of the drawer surfaces: it stands out
-  // from the drawer as a comment bubble does, tinted on a coloured Drawers & Popup background and white otherwise.
-  // Outranks .VuetifyApp .theme--light.v-card and .theme--light.v-sheet (0,3,0)
-  .v-card--link.v-sheet.theme--light {
-    background-color: @tintedCardBackgroundColor;
-  }
+  .layout-drawer-link-cards();
 
   // A stepper is not a v-sheet: it shows the surface it sits on, colour or image. The repeated class outranks
   // Vuetify's .VuetifyApp .theme--light.v-stepper, which vuetify-all.css (loaded after core.css) paints white

@@ -52,6 +52,10 @@
   --tintedSurfaceBackgroundColor: var(--tintedAppSurfaceBackgroundColor);
   --surfaceSolidBackgroundColor: ~"@{appBackgroundColor}";
 
+  // Every field and control of the application sits on its background, whether its root carries .application-body
+  // or not (an empty state mounted in its own v-app)
+  .application-content-fields();
+
   /* Override Vuetify predefined background for some elements to simplify development with Meeds branding */
   .application-body {
     &.v-card,
@@ -78,13 +82,12 @@
     .v-data-table.theme--light {
       background-color: transparent; /* NEVER make this !important to allow defining specific colors when needed using CSS helpers */
     }
-    .application-content-fields();
   }
 }
 
 // A menu attached in an application is a popup, as a detached one is: written once, outside the application container
 // selectors, which would multiply its surface and control rules
-.application-body .v-menu__content {
+.application-body .v-menu__content:not(:where(.white)) {
   .layout-drawer-menu();
 }
 
