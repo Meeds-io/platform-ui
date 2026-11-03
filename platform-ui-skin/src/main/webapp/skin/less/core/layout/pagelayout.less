@@ -21,9 +21,10 @@
 
 // The application tint (portal's branding.less emits the comment bubble colour only for a coloured application
 // background), kept under its own name: a drawer overrides --allPagesCommentBackgroundColor for its subtree, and a page
-// opened in place in it still needs the application one. Unset, 'initial' lets each consumer keep its own default
+// opened in place in it still needs the application one. No fallback on purpose: unset, the property is invalid at
+// computed-value time and each consumer keeps its own default
 :root {
-  --tintedAppSurfaceBackgroundColor: var(--allPagesCommentBackgroundColor, initial);
+  --tintedAppSurfaceBackgroundColor: var(--allPagesCommentBackgroundColor);
 }
 
 // The fields and controls of application content, on either path the application background reaches them by
