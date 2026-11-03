@@ -210,10 +210,12 @@
   .layout-drawer();
 }
 
-/* Menus and dialogs Vuetify detaches to the first [data-app] element (#vuetify-apps) sit outside every page, app and
-   container remap: their icons follow the Drawers & Popup icon colour, like the Topbar sub-menus above. Only the icon
-   remap is generalised, the menu's text and surface are not. A menu an app attaches in place keeps following its app. */
-#vuetify-apps > .v-menu__content,
+/* Menus Vuetify detaches to the first [data-app] element (#vuetify-apps) sit outside every page, app and container
+   remap: they are popups and take the Drawers & Popup text, icon colour, surface and controls, like the Topbar sub-menus
+   above and a menu attached in an application. Dialogs only follow the Drawers & Popup icon colour. */
+#vuetify-apps > .v-menu__content {
+  .layout-drawer-menu();
+}
 #vuetify-apps > .v-dialog__content {
   --allPagesBaseIconColor: var(--allPagesDrawerIconColor);
 }

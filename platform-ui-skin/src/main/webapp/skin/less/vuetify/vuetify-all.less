@@ -282,6 +282,13 @@
       }
     }
 
+    // A chip takes the tint of the application or Drawers & Popup background it sits on, as a comment bubble does, and
+    // its light grey on a white one. Outranks .VuetifyApp .theme--light.v-chip:not(.v-chip--active); a coloured chip
+    // keeps its !important colour class, an outlined or selected one stays transparent
+    .theme--light.v-chip:not(.v-chip--active):not(.v-chip--selected):not(.v-chip--outlined) {
+      background-color: @chipBackgroundColor;
+    }
+
     .v-btn.mutliple-lines {
       .v-btn__content {
         max-width: 100%;
