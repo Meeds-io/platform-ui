@@ -48,9 +48,8 @@
 
 .application-background-color, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-background-color) {
   background-color: ~"@{appBackgroundColor} !important";
-  // Chips and preview frames take the application tint, an option list its solid colour
+  // Chips and preview frames take the application tint
   --tintedSurfaceBackgroundColor: var(--tintedAppSurfaceBackgroundColor);
-  --surfaceSolidBackgroundColor: ~"@{appBackgroundColor}";
 
   // Every field and control of the application sits on its background, whether its root carries .application-body
   // or not (an empty state mounted in its own v-app)
@@ -94,7 +93,6 @@
 .VuetifyApp {
   .application-body .application-background-color, .application-body .application-layout-style {
     --tintedSurfaceBackgroundColor: var(--tintedAppSurfaceBackgroundColor);
-    --surfaceSolidBackgroundColor: ~"@{appBackgroundColor}";
 
     /* Override Vuetify predefined background for some elements to simplify development with Meeds branding */
     &.v-card,

@@ -153,11 +153,12 @@
   // Its label takes the surface's text colour, legible on any background, as a field's text does. An uncoloured v-btn
   // outranks .VuetifyApp .theme--light.v-btn; a .btn needs !important against .VuetifyApp .v-application .v-btn.btn
   // :hover/:focus, and leaves a button carrying a <colour>--text class its colour. A button filled with a named colour
-  // keeps Vuetify's label
+  // keeps Vuetify's label, and one carrying a status class (error, success, warning, info) the fixed text of the fixed
+  // surface vuetify-all.less paints it with
   .theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined):not(.btn-primary):not(.primary):not(.secondary):not(.accent):not(.tertiary):not(.white) {
     color: @textColor;
   }
-  .btn.btn:not(.btn-primary):not(.primary):not(.secondary):not(.accent):not(.tertiary):not(.white):not([class*="--text"]):not([disabled]):not(.v-btn--disabled) {
+  .btn.btn:not(.btn-primary):not(.primary):not(.secondary):not(.accent):not(.tertiary):not(.white):not(.error):not(.success):not(.warning):not(.info):not([class*="--text"]):not([disabled]):not(.v-btn--disabled) {
     &, &:hover, &:focus {
       color: @textColor !important;
     }
@@ -173,10 +174,11 @@
       background-image: none !important;
     }
   }
-  // A native select's option list cannot show an image: it takes the surface's solid colour and text colour
+  // A native select's option list is a popup, as a menu is, and cannot show an image: it takes the Drawers & Popup
+  // colour and text colour, solid whatever the background of the surface the select sits on
   select option {
-    color: @textColor;
-    background-color: @surfaceSolidBackgroundColor;
+    color: @drawerTextColor;
+    background-color: @drawerBackgroundColor;
   }
   // A button toggle; its active button keeps Vuetify's tint over the surface. Its buttons' icons follow the icon
   // colour, outranking .VuetifyApp .theme--light.v-btn-toggle:not(.v-btn-toggle--group) .v-btn.v-btn .v-icon (black);
@@ -220,8 +222,6 @@
   // The same tint for chips and preview frames. No fallback on purpose: unset, the remap is invalid at computed-value
   // time and each consumer keeps its own default (@chipBackgroundColor, @tintedSurfaceBackgroundColor)
   --tintedSurfaceBackgroundColor: var(--allPagesDrawerCommentBackgroundColor);
-  // The solid colour of the surface, for what cannot show its image (a native select's option list)
-  --surfaceSolidBackgroundColor: @drawerBackgroundColor;
 }
 
 // The Drawers & Popup surface of a menu, and its text colour, legible on any Drawers & Popup colour. A transparent
@@ -355,7 +355,6 @@
     .v-card--link.v-sheet.theme--light {
       background-color: transparent;
     }
-    --surfaceSolidBackgroundColor: ~"@{appBackgroundColor}";
 
     // Its surfaces and controls already follow the drawer rules above
     .v-menu__content {
