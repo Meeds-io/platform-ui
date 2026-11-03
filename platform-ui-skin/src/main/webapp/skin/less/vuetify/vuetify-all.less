@@ -284,8 +284,8 @@
 
     // A chip takes the tint of the application or Drawers & Popup background it sits on, as a comment bubble does, and
     // its light grey on a white one. Outranks .VuetifyApp .theme--light.v-chip:not(.v-chip--active); a coloured chip
-    // keeps its !important colour class, an outlined or selected one stays transparent
-    .theme--light.v-chip:not(.v-chip--active):not(.v-chip--selected):not(.v-chip--outlined) {
+    // keeps its !important colour class, an active or outlined one its own background
+    .theme--light.v-chip:not(.v-chip--active):not(.v-chip--outlined) {
       background-color: @chipBackgroundColor;
     }
 
@@ -385,10 +385,11 @@
       display: none !important;
     }
 
-    /* Added to use different Text Color for buttons defined in Menus different from Application Body */
+    /* Added to use different Text Color for buttons defined in Menus different from Application Body: every menu is a
+       popup on the Drawers & Popup surface, so its items take the Drawers & Popup text colour */
     .v-menu__content:not(.application-menu) .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
       &, .v-list-item__title, .v-list-item__subtitle {
-        color: @btnColor !important;
+        color: @drawerTextColor !important;
         font-size: @btnFontSize !important;
         font-weight: normal !important;
         font-style: normal !important;

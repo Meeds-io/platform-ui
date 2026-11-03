@@ -107,8 +107,8 @@
     background-color: transparent;
   }
   // The shared time picker's select, which sits beside it: the repeated class outranks .VuetifyApp .v-application
-  // select.timePickerSelect, loaded later in core.css. Its chevron, a background image, stays
-  select.timePickerSelect.timePickerSelect:not([disabled]) {
+  // select.timePickerSelect and its :focus rule, loaded later in core.css. Its chevron, a background image, stays
+  select.timePickerSelect.timePickerSelect.timePickerSelect:not([disabled]) {
     color: @textColor;
     background-color: transparent;
   }
@@ -161,9 +161,9 @@
   --tintedSurfaceBackgroundColor: var(--allPagesDrawerCommentBackgroundColor);
 }
 
-// The Drawers & Popup surface of a menu
+// The Drawers & Popup surface of a menu, and its text colour, legible on any Drawers & Popup colour
 .layout-drawer-menu-surface() {
-  color: @btnColor !important;
+  color: @drawerTextColor !important;
   font-size: @btnFontSize !important;
   font-weight: normal !important;
   font-style: normal !important;
