@@ -229,8 +229,13 @@
   --appTextTitleColor: @textTitleColorDefault;
   --appTextHeaderColor: @textHeaderColorDefault;
   --appTextSubtitleColor: @textSubtitleColorDefault;
+  --allPagesMenuTextColor: initial;
   --appIconColor: initial;
   --allPagesBaseIconColor: initial;
+  .unset-app-text-background(Text);
+  .unset-app-text-background(TextTitle);
+  .unset-app-text-background(TextHeader);
+  .unset-app-text-background(TextSubtitle);
   color: @btnColor;
 }
 #vuetify-apps > .v-dialog__content {
