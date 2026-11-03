@@ -128,7 +128,7 @@
   .theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined):not(.btn-primary):not(.primary) {
     color: @textColor;
   }
-  .btn.btn:not(.btn-primary):not(.primary):not([class*="--text"]) {
+  .btn.btn:not(.btn-primary):not(.primary):not([class*="--text"]):not([disabled]):not(.v-btn--disabled) {
     &, &:hover, &:focus {
       color: @textColor !important;
     }
@@ -195,12 +195,26 @@
   }
 }
 
+// Unsets an application's own text background family (--app<@family>Background*, written by the layout)
+.unset-app-text-background(@family) {
+  --app@{family}BackgroundColor: initial;
+  --app@{family}BackgroundImage: initial;
+  --app@{family}BackgroundPosition: initial;
+  --app@{family}BackgroundSize: initial;
+  --app@{family}BackgroundRepeat: initial;
+  --app@{family}BackgroundRadius: initial;
+  --app@{family}BackgroundPaddingTop: initial;
+  --app@{family}BackgroundPaddingRight: initial;
+  --app@{family}BackgroundPaddingBottom: initial;
+  --app@{family}BackgroundPaddingLeft: initial;
+}
+
 // A menu outside a drawer, attached in an application or detached by Vuetify, is a popup: it takes the Drawers & Popup
 // text, surface and controls, as a menu inside a drawer does
 .layout-drawer-menu() {
   .layout-drawer-text();
-  // An application's own text and icon styles (written on it by the layout, inherited by a menu attached in it) are
-  // unset again: each chain falls through to the Drawers & Popup values remapped above
+  // An application's own text, text background and icon styles (written on it by the layout, inherited by a menu
+  // attached in it) are unset again: each chain falls through to the Drawers & Popup values remapped above
   --appTextColor: initial;
   --appTextFontSize: initial;
   --appTextFontStyle: initial;
@@ -218,6 +232,10 @@
   --appTextSubtitleFontStyle: initial;
   --appTextSubtitleFontWeight: initial;
   --appIconColor: initial;
+  .unset-app-text-background(Text);
+  .unset-app-text-background(TextTitle);
+  .unset-app-text-background(TextHeader);
+  .unset-app-text-background(TextSubtitle);
   .layout-drawer-surfaces();
   .surface-controls();
   .layout-drawer-menu-surface();
