@@ -40,7 +40,8 @@
       background-color: transparent;
     }
   }
-  // The editor frame keeps a solid surface, the application's colour, as in a drawer: the editor skin paints it white
+  // The editor frame takes the application's colour, as in a drawer: the editor skin paints it white. For an application
+  // with only a background image, that colour is transparent and the image shows through the frame
   .cke_wysiwyg_frame {
     background-color: @appBackgroundColor;
   }
