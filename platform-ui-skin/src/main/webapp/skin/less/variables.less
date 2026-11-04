@@ -928,6 +928,13 @@
 // background, and the .layout-drawer() mixin remaps it to the drawer variant inside drawers
 @commentDefaultBackgroundColor: #f2f5f8;
 @commentBackgroundColor: var(--allPagesCommentBackgroundColor, @commentDefaultBackgroundColor);
+// Chips and preview frames, which stand out from the surface they sit on: the comment bubble colour of the application
+// or of the Drawers & Popup background they sit in (--tintedSurfaceBackgroundColor, set by the application container,
+// the .layout-drawer() mixin and menus), their own light grey when that background is white or unset
+@chipBackgroundColor: var(--tintedSurfaceBackgroundColor, #e0e0e0);
+@tintedSurfaceBackgroundColor: var(--tintedSurfaceBackgroundColor, @greyColor);
+@tintedLightGreyBackgroundColor: var(--tintedSurfaceBackgroundColor, @lightGrey);
+@tintedCardBackgroundColor: var(--tintedSurfaceBackgroundColor, @baseBackground);
 @uiTreeEmptyColor: @lightWhite;
 @toolbarContainerDarkColor: @lightWhite;
 @uiPageIteratorActiveColor: @lightWhite;

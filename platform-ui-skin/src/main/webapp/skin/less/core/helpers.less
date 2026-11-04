@@ -16,9 +16,6 @@
   along with this program; if not, write to the Free Software Foundation,
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
-@import "../variables.less";
-@import "../mixins.less";
-
 @font-face {
   font-family: NoLineClamp;
   src: local('system-ui');
@@ -244,6 +241,15 @@
    the default bubble colour when Branding sets no colour */
 .comment-background-color {
   background-color: @commentBackgroundColor !important;
+}
+/* A light grey frame, such as a display preview, on the surface it sits on: the comment bubble colour of a coloured
+   application or Drawers & Popup background, the grey (@greyColor) otherwise */
+.tinted-surface-background-color {
+  background-color: @tintedSurfaceBackgroundColor !important;
+}
+/* The same tint for a surface marked in the lighter grey (.light-grey-background-color), such as a disabled card */
+.tinted-light-grey-background-color {
+  background-color: @tintedLightGreyBackgroundColor !important;
 }
 /* The Branding page background (written on body as --allPagesBackground* and inherited from there), for a surface
    that stands for a page outside the page body, such as the content of an expanded drawer. Same chain and defaults
