@@ -65,7 +65,8 @@
   .v-data-table,
   .v-data-table.theme--light,
   .v-data-table.v-data-table.theme--light,
-  .v-input__slot {
+  .v-input__slot,
+  .theme--light.v-picker__body.v-picker__body {
     background-color: @background;
   }
 
@@ -75,6 +76,222 @@
   .v-data-table.theme--light.v-data-table--fixed-header > .v-data-table__wrapper > table > thead th {
     background-color: @drawerBackgroundColor;
   }
+
+  // A date picker on the surface: its weekday headers, week numbers, days and arrows take the surface's text and icon
+  // colours instead of Vuetify's black alpha, made for its white body. The repeated classes outrank
+  // .VuetifyApp .theme--light.v-date-picker-table th (0,3,1), its week numbers (0,4,0) and .theme--light.v-btn (0,3,0);
+  // the selected and today's days keep their !important colour classes
+  .theme--light.v-date-picker-table.v-date-picker-table {
+    th {
+      color: @textSubtitleColor;
+    }
+    .v-date-picker-table--date__week {
+      color: @textSubtitleColor;
+    }
+    .v-btn.theme--light:not(.v-btn--active):not(.v-btn--disabled) {
+      color: @textColor;
+    }
+  }
+  .v-date-picker-header .v-btn .v-icon {
+    color: @iconColor;
+  }
+}
+
+// A clickable card (an item to pick, such as a space template) is left out of the surfaces above: it stands out from
+// the Drawers & Popup surface as a comment bubble does, tinted on a coloured background and white otherwise.
+// Outranks .VuetifyApp .theme--light.v-card and .theme--light.v-sheet (0,3,0)
+.layout-drawer-link-cards() {
+  .v-card--link.v-sheet.theme--light {
+    background-color: @tintedCardBackgroundColor;
+  }
+}
+
+// The controls of an application, a drawer or a menu show the surface they sit on, colour or image, instead of the
+// white Vuetify and the reset paint them. Each selector outranks its Vuetify theme rule, compiled under .VuetifyApp in
+// vuetify-all.css, loaded after core.css. A disabled control keeps its own background, a primary or coloured one too
+.surface-controls() {
+  // A plain text field: Vuetify's reset already clears it, except on a field carrying .ignore-vuetify-classes, which
+  // reset.less paints with the base background. Its text and border, drawn with currentColor, take the surface's text
+  // colour, as an outlined field's text does. A read-only field keeps its own background
+  select,
+  textarea,
+  input:not([type]),
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="number"] {
+    &:not([disabled]):not([readonly]) {
+      color: @textColor;
+      background-color: transparent;
+    }
+  }
+  // The shared date picker's field is read-only only to open its calendar on click: it is a field like the others.
+  // The repeated class outranks .VuetifyApp .v-application .datePickerComponent input[readonly]
+  .datePickerComponent.datePickerComponent input[readonly]:not([disabled]) {
+    color: @textColor;
+    background-color: transparent;
+  }
+  // The shared time picker's select, which sits beside it: the repeated class outranks .VuetifyApp .v-application
+  // select.timePickerSelect and its :focus rule, loaded later in core.css. Its chevron, a background image, stays
+  select.timePickerSelect.timePickerSelect.timePickerSelect:not([disabled]) {
+    color: @textColor;
+    background-color: transparent;
+  }
+  // A solo field, as an outlined one does. A solo-inverted field keeps its tint
+  .theme--light.v-text-field--solo.v-text-field--solo:not(.v-text-field--solo-inverted) > .v-input__control > .v-input__slot {
+    background-color: transparent;
+  }
+  // A default button (.btn, an uncoloured v-btn) keeps its border and text. Outranks .VuetifyApp .v-application
+  // .v-btn.btn and .VuetifyApp .theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined)
+  .btn.btn:not(.btn-primary):not(.primary),
+  .theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined):not(.btn-primary):not(.primary) {
+    background-color: transparent;
+  }
+  // Its label takes the surface's text colour, legible on any background, as a field's text does. An uncoloured v-btn
+  // outranks .VuetifyApp .theme--light.v-btn; a .btn needs !important against .VuetifyApp .v-application .v-btn.btn
+  // :hover/:focus, and leaves a button carrying a <colour>--text class its colour. A button filled with a named colour
+  // keeps Vuetify's label, and one carrying a status class (error, success, warning, info) the fixed text of the fixed
+  // surface vuetify-all.less paints it with
+  .theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined):not(.btn-primary):not(.primary):not(.secondary):not(.accent):not(.tertiary):not(.white) {
+    color: @textColor;
+  }
+  .btn.btn:not(.btn-primary):not(.primary):not(.secondary):not(.accent):not(.tertiary):not(.white):not(.error):not(.success):not(.warning):not(.info):not([class*="--text"]):not([disabled]):not(.v-btn--disabled) {
+    &, &:hover, &:focus {
+      color: @textColor !important;
+    }
+  }
+  // An outlined primary button (.primary or .btn-primary), which vuetify-all.less paints white (gradient, and the
+  // colour of its hover, focus, active and disabled states, !important), keeps its primary border and label on the
+  // surface. The repeated classes outrank .VuetifyApp .v-application .v-btn.primary:not(.v-btn--text).v-btn--outlined
+  // (0,6,0), .btn-primary:not(.v-btn--text).v-btn--outlined (0,5,0) and their states, one class more
+  .v-btn.v-btn.primary.primary.v-btn--outlined:not(.v-btn--text),
+  .btn-primary.btn-primary.btn-primary.v-btn--outlined:not(.v-btn--text) {
+    &, &:hover, &:focus, &:active, &.active, &.disabled, &[disabled] {
+      background-color: transparent !important;
+      background-image: none !important;
+    }
+  }
+  // A native select's option list is a popup, as a menu is, and cannot show an image: it takes the Drawers & Popup
+  // colour and text colour, solid whatever the background of the surface the select sits on
+  select option {
+    color: @drawerTextColor;
+    background-color: @drawerBackgroundColor;
+  }
+  // A button toggle; its active button keeps Vuetify's tint over the surface. Its buttons' icons follow the icon
+  // colour, outranking .VuetifyApp .theme--light.v-btn-toggle:not(.v-btn-toggle--group) .v-btn.v-btn .v-icon (black);
+  // an icon carrying a colour helper keeps it
+  .theme--light.v-btn-toggle.v-btn-toggle:not(.v-btn-toggle--group) {
+    background-color: transparent;
+    .v-btn.v-btn .v-icon {
+      color: @iconColor;
+    }
+  }
+}
+
+// The Drawers & Popup text styles, icon colour and surface tint remapped onto the base variables
+.layout-drawer-text() {
+  --allPagesBaseTextTitleColor: var(--allPagesDrawerTextTitleColor);
+  --allPagesBaseTextTitleFontSize: var(--allPagesDrawerTextTitleFontSize);
+  --allPagesBaseTextTitleFontWeight: var(--allPagesDrawerTextTitleFontWeight);
+  --allPagesBaseTextTitleFontStyle: var(--allPagesDrawerTextTitleFontStyle);
+
+  --allPagesBaseTextHeaderColor: var(--allPagesDrawerTextHeaderColor);
+  --allPagesBaseTextHeaderFontSize: var(--allPagesDrawerTextHeaderFontSize);
+  --allPagesBaseTextHeaderFontWeight: var(--allPagesDrawerTextHeaderFontWeight);
+  --allPagesBaseTextHeaderFontStyle: var(--allPagesDrawerTextHeaderFontStyle);
+
+  --allPagesBaseTextColor: var(--allPagesDrawerTextColor);
+  --allPagesMenuTextColor: var(--allPagesDrawerTextColor);
+  --allPagesBaseTextFontSize: var(--allPagesDrawerTextFontSize);
+  --allPagesBaseTextFontStyle: var(--allPagesDrawerTextFontStyle);
+  --allPagesBaseTextFontWeight: var(--allPagesDrawerTextFontWeight);
+
+  --allPagesBaseTextSubtitleColor: var(--allPagesDrawerTextSubtitleColor);
+  --allPagesBaseTextSubtitleFontSize: var(--allPagesDrawerTextSubtitleFontSize);
+  --allPagesBaseTextSubtitleFontWeight: var(--allPagesDrawerTextSubtitleFontWeight);
+  --allPagesBaseTextSubtitleFontStyle: var(--allPagesDrawerTextSubtitleFontStyle);
+
+  --allPagesBaseIconColor: var(--allPagesDrawerIconColor);
+
+  // portal's branding.less emits the drawer variant only for a coloured drawer background: unset, the bubble keeps
+  // its default colour, never the application variant
+  --allPagesCommentBackgroundColor: var(--allPagesDrawerCommentBackgroundColor, @commentDefaultBackgroundColor);
+  // The same tint for chips and preview frames. No fallback on purpose: unset, the remap is invalid at computed-value
+  // time and each consumer keeps its own default (@chipBackgroundColor, @tintedSurfaceBackgroundColor)
+  --tintedSurfaceBackgroundColor: var(--allPagesDrawerCommentBackgroundColor);
+}
+
+// The Drawers & Popup surface of a menu, and its text colour, legible on any Drawers & Popup colour. A transparent
+// menu is a wrapper around a card of its own (a user or space popover): it keeps no surface, neither the colour, which
+// the helper's background-color alone would keep, nor the image. A white menu keeps its white with its dark text and
+// no image, legible whatever the Drawers & Popup colours. The guards add no specificity (:where), so a white helper
+// still wins its tie with the surface wherever it did
+.layout-drawer-menu-surface() {
+  font-size: @btnFontSize !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  &:not(:where(.white)) {
+    color: @drawerTextColor !important;
+  }
+  &:not(:where(.transparent)):not(:where(.white)) {
+    background-color: @drawerBackgroundColor !important;
+    background-image: @drawerBackgroundImage !important;
+    background-repeat: @drawerBackgroundRepeat !important;
+    background-position: @drawerBackgroundPosition!important;
+    background-size: @drawerBackgroundSize!important;
+  }
+}
+
+// Unsets an application's own text background family (--app<@family>Background*, written by the layout)
+.unset-app-text-background(@family) {
+  --app@{family}BackgroundColor: initial;
+  --app@{family}BackgroundImage: initial;
+  --app@{family}BackgroundPosition: initial;
+  --app@{family}BackgroundSize: initial;
+  --app@{family}BackgroundRepeat: initial;
+  --app@{family}BackgroundRadius: initial;
+  --app@{family}BackgroundPaddingTop: initial;
+  --app@{family}BackgroundPaddingRight: initial;
+  --app@{family}BackgroundPaddingBottom: initial;
+  --app@{family}BackgroundPaddingLeft: initial;
+}
+
+// A menu outside a drawer, attached in an application or detached by Vuetify, is a popup: it takes the Drawers & Popup
+// text, surface and controls, as a menu inside a drawer does
+.layout-drawer-menu() {
+  .layout-drawer-text();
+  // An application's own text, text background and icon styles (written on it by the layout, inherited by a menu
+  // attached in it) are unset again, so each chain falls back as in a drawer: text and icon to the Drawers & Popup
+  // values remapped above, a title or header background to its platform-wide value, a text or subtitle background to
+  // the skin default
+  --appTextColor: initial;
+  --appTextFontSize: initial;
+  --appTextFontStyle: initial;
+  --appTextFontWeight: initial;
+  --appTextTitleColor: initial;
+  --appTextTitleFontSize: initial;
+  --appTextTitleFontStyle: initial;
+  --appTextTitleFontWeight: initial;
+  --appTextHeaderColor: initial;
+  --appTextHeaderFontSize: initial;
+  --appTextHeaderFontStyle: initial;
+  --appTextHeaderFontWeight: initial;
+  --appTextSubtitleColor: initial;
+  --appTextSubtitleFontSize: initial;
+  --appTextSubtitleFontStyle: initial;
+  --appTextSubtitleFontWeight: initial;
+  --appIconColor: initial;
+  .unset-app-text-background(Text);
+  .unset-app-text-background(TextTitle);
+  .unset-app-text-background(TextHeader);
+  .unset-app-text-background(TextSubtitle);
+  .layout-drawer-surfaces();
+  .layout-drawer-link-cards();
+  .surface-controls();
+  .layout-drawer-menu-surface();
 }
 
 // The application text styles and icon colour (Branding and Theme > Pages & Apps style) remapped onto the base
@@ -103,34 +320,10 @@
 }
 
 .layout-drawer() {
-  --allPagesBaseTextTitleColor: var(--allPagesDrawerTextTitleColor);
-  --allPagesBaseTextTitleFontSize: var(--allPagesDrawerTextTitleFontSize);
-  --allPagesBaseTextTitleFontWeight: var(--allPagesDrawerTextTitleFontWeight);
-  --allPagesBaseTextTitleFontStyle: var(--allPagesDrawerTextTitleFontStyle);
-
-  --allPagesBaseTextHeaderColor: var(--allPagesDrawerTextHeaderColor);
-  --allPagesBaseTextHeaderFontSize: var(--allPagesDrawerTextHeaderFontSize);
-  --allPagesBaseTextHeaderFontWeight: var(--allPagesDrawerTextHeaderFontWeight);
-  --allPagesBaseTextHeaderFontStyle: var(--allPagesDrawerTextHeaderFontStyle);
-
-  --allPagesBaseTextColor: var(--allPagesDrawerTextColor);
-  --allPagesMenuTextColor: var(--allPagesDrawerTextColor);
-  --allPagesBaseTextFontSize: var(--allPagesDrawerTextFontSize);
-  --allPagesBaseTextFontStyle: var(--allPagesDrawerTextFontStyle);
-  --allPagesBaseTextFontWeight: var(--allPagesDrawerTextFontWeight);
-
-  --allPagesBaseTextSubtitleColor: var(--allPagesDrawerTextSubtitleColor);
-  --allPagesBaseTextSubtitleFontSize: var(--allPagesDrawerTextSubtitleFontSize);
-  --allPagesBaseTextSubtitleFontWeight: var(--allPagesDrawerTextSubtitleFontWeight);
-  --allPagesBaseTextSubtitleFontStyle: var(--allPagesDrawerTextSubtitleFontStyle);
-
-  --allPagesBaseIconColor: var(--allPagesDrawerIconColor);
-
-  // portal's branding.less emits the drawer variant only for a coloured drawer background: unset, the bubble keeps
-  // its default colour, never the application variant
-  --allPagesCommentBackgroundColor: var(--allPagesDrawerCommentBackgroundColor, @commentDefaultBackgroundColor);
+  .layout-drawer-text();
 
   .layout-drawer-surfaces();
+  .surface-controls();
 
   // An expanded drawer lays its content out as a page: on a .page-background frame, its surfaces keep the
   // Drawers & Popup colour, as application cards do on a page
@@ -147,19 +340,26 @@
   // A page opened in place in an expanded drawer (an application's detail page, such as a campaign) carries
   // .layout-drawer-application: as an application on a page, it paints the application background colour and image
   // and takes the application text styles and icon colour, the surfaces inside it are transparent, and a menu attached
-  // in it takes the base background, as in an application on a page. A comment bubble keeps the drawer colour: Branding
-  // emits the application one under the same property, which the drawer has overridden. Written after the frame rule,
-  // which it ties
+  // in it is a popup, as in an application on a page. A comment bubble keeps the drawer colour: Branding emits the
+  // application one under the same property, which the drawer has overridden. Chips and preview frames take the
+  // application tint, kept on :root under its own name. Written after the frame rule, which it ties
   .layout-drawer-application {
     .layout-application-text();
     .layout-drawer-surfaces();
 
     // Page content sets no menu text colour: unset again, tabs and menu labels fall back to their default as on a page
     --allPagesMenuTextColor: initial;
+    --tintedSurfaceBackgroundColor: var(--tintedAppSurfaceBackgroundColor);
 
+    // A clickable card is transparent, as in an application on a page
+    .v-card--link.v-sheet.theme--light {
+      background-color: transparent;
+    }
+
+    // Its surfaces and controls already follow the drawer rules above
     .v-menu__content {
-      background-color: @baseBackground !important;
-      background-image: none !important;
+      .layout-drawer-text();
+      .layout-drawer-menu-surface();
     }
 
     // The editor frame and a fixed table header keep a solid surface, the application's colour here
@@ -181,6 +381,8 @@
     background-attachment: ~"@{appBackgroundAttachment} !important";
   }
 
+  .layout-drawer-link-cards();
+
   // A stepper is not a v-sheet: it shows the surface it sits on, colour or image. The repeated class outranks
   // Vuetify's .VuetifyApp .theme--light.v-stepper, which vuetify-all.css (loaded after core.css) paints white
   .v-stepper.theme--light.v-stepper {
@@ -188,21 +390,7 @@
   }
 
   .v-menu__content {
-    color: @btnColor !important;
-    font-size: @btnFontSize !important;
-    font-weight: normal !important;
-    font-style: normal !important;
-    background-color: @drawerBackgroundColor !important;
-    background-image: @drawerBackgroundImage !important;
-    background-repeat: @drawerBackgroundRepeat !important;
-    background-position: @drawerBackgroundPosition!important;
-    background-size: @drawerBackgroundSize!important;
-  }
-  // A solo field shows the surface it sits on, colour or image, as an outlined one does. Vuetify's
-  // .VuetifyApp .theme--light.v-text-field--solo > .v-input__control > .v-input__slot paints it white from
-  // vuetify-all.css, loaded after core.css: the repeated class outranks it. A solo-inverted field keeps its tint
-  .theme--light.v-text-field--solo.v-text-field--solo:not(.v-text-field--solo-inverted) > .v-input__control > .v-input__slot {
-    background-color: transparent;
+    .layout-drawer-menu-surface();
   }
 
   color: @drawerTextColor;
