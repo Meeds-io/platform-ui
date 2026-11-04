@@ -19,27 +19,18 @@
 
 @import 'mixins.less';
 
-// The fields of application content, on either path the application background reaches them by
+// The application tint (portal's branding.less emits the comment bubble colour only for a coloured application
+// background), kept under its own name: a drawer overrides --allPagesCommentBackgroundColor for its subtree, and a page
+// opened in place in it still needs the application one. No fallback on purpose: unset, the property is invalid at
+// computed-value time and each consumer keeps its own default
+:root {
+  --tintedAppSurfaceBackgroundColor: var(--allPagesCommentBackgroundColor);
+}
+
+// The fields and controls of application content, on either path the application background reaches them by
 .application-content-fields() {
-  // A plain text field shows the application background, colour or image, as an outlined field does. Vuetify's reset
-  // already clears it, except on a field carrying .ignore-vuetify-classes, which reset.less paints with the base
-  // background. Its text and border, drawn with currentColor, take the application text colour, as an outlined field's
-  // text does. A disabled or read-only field keeps its own background
-  select,
-  textarea,
-  input:not([type]),
-  input[type="text"],
-  input[type="password"],
-  input[type="email"],
-  input[type="url"],
-  input[type="search"],
-  input[type="tel"],
-  input[type="number"] {
-    &:not([disabled]):not([readonly]) {
-      color: @textColor;
-      background-color: transparent;
-    }
-  }
+  // Fields, buttons and toggles show the application background, colour or image, and take its text colour
+  .surface-controls();
   // The editor frame takes the application's colour, as in a drawer: the editor skin paints it white. For an application
   // with only a background image, that colour is transparent and the image shows through the frame
   .cke_wysiwyg_frame {
@@ -57,6 +48,12 @@
 
 .application-background-color, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-background-color) {
   background-color: ~"@{appBackgroundColor} !important";
+  // Chips and preview frames take the application tint
+  --tintedSurfaceBackgroundColor: var(--tintedAppSurfaceBackgroundColor);
+
+  // Every field and control of the application sits on its background, whether its root carries .application-body
+  // or not (an empty state mounted in its own v-app)
+  .application-content-fields();
 
   /* Override Vuetify predefined background for some elements to simplify development with Meeds branding */
   .application-body {
@@ -84,19 +81,19 @@
     .v-data-table.theme--light {
       background-color: transparent; /* NEVER make this !important to allow defining specific colors when needed using CSS helpers */
     }
-    .application-content-fields();
-    .v-menu__content {
-      background-color: @baseBackground;
-      color: @btnColor !important;
-      font-size: @btnFontSize !important;
-      font-weight: normal !important;
-      font-style: normal !important;
-    }
   }
+}
+
+// A menu attached in an application is a popup, as a detached one is: written once, outside the application container
+// selectors, which would multiply its surface and control rules
+.application-body .v-menu__content:not(:where(.white)) {
+  .layout-drawer-menu();
 }
 
 .VuetifyApp {
   .application-body .application-background-color, .application-body .application-layout-style {
+    --tintedSurfaceBackgroundColor: var(--tintedAppSurfaceBackgroundColor);
+
     /* Override Vuetify predefined background for some elements to simplify development with Meeds branding */
     &.v-card,
     .v-card,
@@ -123,13 +120,6 @@
       background-color: transparent; /* NEVER make this !important to allow defining specific colors when needed using CSS helpers */
     }
     .application-content-fields();
-    .v-menu__content {
-      background-color: @baseBackground;
-      color: @btnColor !important;
-      font-size: @btnFontSize !important;
-      font-weight: normal !important;
-      font-style: normal !important;
-    }
   }
 }
 

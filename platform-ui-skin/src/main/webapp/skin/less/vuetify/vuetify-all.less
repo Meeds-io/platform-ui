@@ -282,6 +282,13 @@
       }
     }
 
+    // A chip takes the tint of the application or Drawers & Popup background it sits on, as a comment bubble does, and
+    // its light grey on a white one. Outranks .VuetifyApp .theme--light.v-chip:not(.v-chip--active); a coloured chip
+    // keeps its !important colour class, an active or outlined one its own background
+    .theme--light.v-chip:not(.v-chip--active):not(.v-chip--outlined) {
+      background-color: @chipBackgroundColor;
+    }
+
     .v-btn.mutliple-lines {
       .v-btn__content {
         max-width: 100%;
@@ -378,13 +385,23 @@
       display: none !important;
     }
 
-    /* Added to use different Text Color for buttons defined in Menus different from Application Body */
+    /* Added to use different Text Color for buttons defined in Menus different from Application Body: every menu is a
+       popup on the Drawers & Popup surface, so its items take the Drawers & Popup text colour */
     .v-menu__content:not(.application-menu) .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
       &, .v-list-item__title, .v-list-item__subtitle {
-        color: @btnColor !important;
+        color: @drawerTextColor !important;
         font-size: @btnFontSize !important;
         font-weight: normal !important;
         font-style: normal !important;
+      }
+    }
+    // A white menu, or a white list or card in a menu, keeps its white: its items keep the button text colour, legible
+    // on it. Written after the rule above, which the first selector ties and the others outrank
+    .v-menu__content.white .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled),
+    .v-menu__content .v-list.white .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled),
+    .v-menu__content .v-card.white .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
+      &, .v-list-item__title, .v-list-item__subtitle {
+        color: @btnColor !important;
       }
     }
 
