@@ -95,6 +95,13 @@
   }
 }
 
+// A fixed table header shows the application background, colour or image, as the rows do, instead of Vuetify's white.
+// The selector outranks .VuetifyApp .theme--light.v-data-table.v-data-table--fixed-header thead th (0,4,2) and stays
+// below the drawer surfaces rule (0,5,3), so a drawer's table keeps the Drawers & Popup colour
+.application-body .v-data-table--fixed-header.theme--light > .v-data-table__wrapper > table > thead th {
+  background-color: transparent;
+}
+
 .application-background-image, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-background-image) {
   background-image: ~"@{appBackgroundImage} !important";
   background-repeat: ~"@{appBackgroundRepeat} !important";
