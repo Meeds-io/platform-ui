@@ -1,0 +1,41 @@
+/*
+ * This file is part of the Meeds project (https://meeds.io/).
+ *
+ * Copyright (C) 2026 Meeds Association contact@meeds.io
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3 of the License, or (at your option) any later version.
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
+/* One keyboard focus indicator for every focusable element of every page.
+   The repeated pseudo-class and the html/body prefix raise the specificity above
+   the `outline: none` rules of the Vuetify skin (nested under .VuetifyApp) and of
+   the core reset, so that no component hides the focus, without !important. */
+@focusOutlineColor: @primaryColor;
+
+html:root body :focus-visible:focus-visible {
+  outline: dashed 2px @focusOutlineColor;
+  outline-offset: 2px;
+}
+
+/* Vuetify selection controls (checkbox, radio, switch): the real input is
+   transparent, so the indicator is drawn on the control that follows it in the DOM. */
+html:root body .v-input--selection-controls__input input:focus-visible {
+  outline: none;
+
+  + .v-input--selection-controls__ripple,
+  ~ .v-input--switch__track {
+    outline: dashed 2px @focusOutlineColor;
+    outline-offset: 2px;
+  }
+}
