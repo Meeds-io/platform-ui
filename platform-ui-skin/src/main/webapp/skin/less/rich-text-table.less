@@ -148,8 +148,11 @@
   }
 
   @media (max-width: 599px) {
+    // as a block, the table takes its content's width, up to the screen's:
+    // at 100% its frame would span the screen while its cells keep their width
     table:not(.rich-table__table) {
       display: block;
+      width: max-content;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
 
