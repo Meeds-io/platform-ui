@@ -109,8 +109,10 @@
       }
     }
 
-    // a table its writer set to border 0, often a layout table: no lines, no header tint
-    &[border="0"] {
+    // a table its writer set to border 0, often a layout table: no lines, no
+    // header tint, unless it carries the Bordered style, which wins whatever
+    // the order the two were set in
+    &[border="0"]:not(.table-bordered) {
       border-width: 0;
 
       th, td {
