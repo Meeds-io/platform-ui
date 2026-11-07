@@ -70,8 +70,14 @@
     }
 
     // the header row: a thead, or a first row made of header cells only
-    // (a table whose header is its first column keeps one untinted)
-    thead th, > tbody:first-child > tr:first-child:not(:has(td)) > th, caption + tbody > tr:first-child:not(:has(td)) > th {
+    // (a table whose header is its first column keeps it untinted)
+    thead th {
+      background: @richTableHeaderBackground;
+      color: @primaryColor;
+      border-bottom-width: 2px;
+    }
+    // a browser without :has() drops this rule only, never the thead one
+    > tbody:first-child > tr:first-child:not(:has(td)) > th, caption + tbody > tr:first-child:not(:has(td)) > th {
       background: @richTableHeaderBackground;
       color: @primaryColor;
       border-bottom-width: 2px;
@@ -92,7 +98,12 @@
         border-right-width: 0;
       }
 
-      thead th, > tbody:first-child > tr:first-child:not(:has(td)) > th, caption + tbody > tr:first-child:not(:has(td)) > th {
+      thead th {
+        background: transparent;
+        border-bottom-color: @richTableGridStrong;
+      }
+      // a browser without :has() drops this rule only, never the thead one
+      > tbody:first-child > tr:first-child:not(:has(td)) > th, caption + tbody > tr:first-child:not(:has(td)) > th {
         background: transparent;
         border-bottom-color: @richTableGridStrong;
       }
@@ -106,7 +117,12 @@
         border-width: 0;
       }
 
-      thead th, > tbody:first-child > tr:first-child:not(:has(td)) > th, caption + tbody > tr:first-child:not(:has(td)) > th {
+      thead th {
+        background: transparent;
+        color: inherit;
+      }
+      // a browser without :has() drops this rule only, never the thead one
+      > tbody:first-child > tr:first-child:not(:has(td)) > th, caption + tbody > tr:first-child:not(:has(td)) > th {
         background: transparent;
         color: inherit;
       }
