@@ -110,9 +110,9 @@
     }
 
     // a table its writer set to border 0, often a layout table: no lines, no
-    // header tint, unless it carries the Bordered style, which wins whatever
-    // the order the two were set in
-    &[border="0"]:not(.table-bordered) {
+    // header tint, unless it carries a style that draws lines, Simple or
+    // Bordered, which wins whatever the order the two were set in
+    &[border="0"]:not(.table-bordered):not(.table-simple) {
       border-width: 0;
 
       th, td {
