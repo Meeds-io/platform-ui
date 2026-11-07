@@ -1,0 +1,282 @@
+/**
+
+  This file is part of the Meeds project (https://meeds.io/).
+
+  Copyright (C) 2026 Meeds Association contact@meeds.io
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 3 of the License, or (at your option) any later version.
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+  You should have received a copy of the GNU Lesser General Public License
+  along with this program; if not, write to the Free Software Foundation,
+  Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+// Rich-text tables: the one look of a table written in a rich editor (notes,
+// news, activity bodies, assistant answers), shared by the published view
+// (core/helpers.less, under .rich-editor-content) and by the CKEditor frame
+// (commons ckeditorCustom/contents.less), so editing matches viewing.
+// Parametric mixins only: importing this file outputs no CSS.
+// The colours are translucent greys and the branded primary colour, so a
+// theme or a dark background recolours them.
+
+@richTableGrid: @greyColorLighten1Opacity1;
+@richTableGridStrong: @greyColorLighten1Opacity4;
+@richTableHeaderBackground: @greyColorLighten1Opacity2;
+@richTableStripe: fade(@greyColorLighten1Default, 4%);
+@richTableHover: fade(@greyColorLighten1Default, 6%);
+
+// The base table look, applied inside a rich-content container.
+// border-collapse and border-spacing are !important to beat the CKEditor 4
+// presentational attributes (cellspacing, border) and the reset-style-box revert.
+.rich-text-table() {
+  table {
+    width: 100%;
+    max-width: 100%;
+    margin: 4px 0 16px;
+    border: 1px solid @richTableGrid;
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+    background: transparent;
+
+    caption {
+      caption-side: top;
+      padding: 0 0 8px;
+      text-align: left ~'; /** orientation=lt */ ';
+      text-align: right ~'; /** orientation=rt */ ';
+      font-size: 13px;
+      color: @greyColorLighten1;
+    }
+
+    th, td {
+      padding: 10px 12px;
+      border: 1px solid @richTableGrid;
+      text-align: left ~'; /** orientation=lt */ ';
+      text-align: right ~'; /** orientation=rt */ ';
+      vertical-align: top;
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    th {
+      font-weight: 600;
+    }
+
+    thead th, > tbody:first-child > tr:first-child > th, caption + tbody > tr:first-child > th {
+      background: @richTableHeaderBackground;
+      color: @primaryColor;
+      border-bottom-width: 2px;
+    }
+
+    .num {
+      text-align: right ~'; /** orientation=lt */ ';
+      text-align: left ~'; /** orientation=rt */ ';
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    // Styles a writer picks: one class on the table
+    &.table-simple, &[border="0"] {
+      border-width: 0;
+
+      th, td {
+        border-left-width: 0;
+        border-right-width: 0;
+      }
+    }
+
+    &.table-simple {
+      thead th, > tbody:first-child > tr:first-child > th, caption + tbody > tr:first-child > th {
+        background: transparent;
+        border-bottom-color: @richTableGridStrong;
+      }
+    }
+
+    &.table-striped > tbody > tr:nth-child(even) > td {
+      background: @richTableStripe;
+    }
+
+    &.table-bordered, &.table-bordered th, &.table-bordered td {
+      border-color: @richTableGridStrong;
+    }
+  }
+}
+
+// What only the published view gets: the hovered row and the phone scroll.
+// A table the assistant wraps (.rich-table__table) scrolls in its own card instead.
+.rich-text-table-view() {
+  table > tbody > tr:hover > td {
+    background: @richTableHover;
+  }
+
+  @media (max-width: 599px) {
+    table:not(.rich-table__table) {
+      display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+
+      th, td {
+        min-width: 7.5rem;
+      }
+    }
+  }
+}
+
+// The editor frame: the cells tabletools selects.
+.rich-text-table-editor() {
+  table {
+    td.cke_table-faked-selection, th.cke_table-faked-selection {
+      background: @richTableHeaderBackground !important;
+      outline: 2px solid @primaryColor;
+      outline-offset: -2px;
+    }
+  }
+}
+
+// A table in a card: horizontal scroll, sticky first column,
+// rows past a cap hidden until expanded, and a footer with its row count,
+// source and actions. The markup is written by the consumer (the assistant).
+.rich-text-table-card() {
+  // the card hugs its table, at most the content's width, and scrolls past it
+  .rich-table {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    vertical-align: top;
+    margin: 6px 0 4px;
+    border: 1px solid @richTableGrid;
+    border-radius: 8px;
+    overflow: hidden;
+
+    .rich-table__scroll {
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table.rich-table__table {
+      width: auto;
+      margin: 0;
+      border: 0;
+
+      tr > th, tr > td {
+        border-width: 0 0 1px;
+        overflow-wrap: break-word;
+      }
+
+      th, .rich-table__nowrap {
+        white-space: nowrap;
+      }
+
+      // a column of long texts wraps instead of squeezing to a word per line
+      .rich-table__text {
+        min-width: 14rem;
+      }
+
+      > tbody > tr:last-child > td {
+        border-bottom-width: 0;
+      }
+    }
+
+    .rich-table__empty {
+      color: @greyColorLighten1;
+    }
+
+    .rich-table__more {
+      display: none;
+    }
+
+    &.rich-table--expanded .rich-table__more {
+      display: table-row;
+    }
+
+    // the first column stays in view while the table scrolls sideways
+    table.rich-table__table {
+      tr > th:first-child, tr > td:first-child {
+        position: sticky;
+        left: 0 ~'; /** orientation=lt */ ';
+        right: 0 ~'; /** orientation=rt */ ';
+        z-index: 1;
+        background: @baseBackground;
+        box-shadow: 1px 0 0 @richTableGrid;
+      }
+
+      > tbody > tr:hover > td:first-child {
+        background: linear-gradient(@richTableHover, @richTableHover), @baseBackground;
+      }
+
+      thead th:first-child {
+        z-index: 2;
+        background: linear-gradient(@richTableHeaderBackground, @richTableHeaderBackground), @baseBackground;
+      }
+    }
+  }
+
+  .rich-table__footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 14px;
+    padding: 3px 2px 0;
+    font-size: 12.5px;
+    color: @greyColorLighten1;
+
+    .rich-table__count {
+      margin-right: auto ~'; /** orientation=lt */ ';
+      margin-left: auto ~'; /** orientation=rt */ ';
+    }
+
+    .rich-table__action, a {
+      padding: 0;
+      border: 0;
+      background: none;
+      font: inherit;
+      font-weight: 600;
+      color: @primaryColor;
+      cursor: pointer;
+      text-decoration: none;
+
+      &:hover, &:focus {
+        text-decoration: underline;
+      }
+    }
+
+    .rich-table__show-less {
+      display: none;
+    }
+  }
+
+  .rich-table--expanded + .rich-table__footer {
+    .rich-table__show-all {
+      display: none;
+    }
+
+    .rich-table__show-less {
+      display: inline;
+    }
+  }
+}
+
+// Denser cells for narrow surfaces (the assistant's drawer).
+.rich-text-table-compact() {
+  table {
+    font-size: 13.5px;
+    line-height: 1.4;
+
+    th, td {
+      padding: 6px 12px;
+    }
+
+    thead th {
+      padding-top: 7px;
+      padding-bottom: 7px;
+    }
+  }
+}
