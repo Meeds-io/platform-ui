@@ -1280,6 +1280,13 @@
       color: @linkColorVisited;
     }
   }
+  // after the .reset-style-box block, at equal specificity: wins by order
+  .rich-text-table();
+  .rich-text-table-view();
+  .rich-text-table-card();
+  &.rich-editor-content--compact {
+    .rich-text-table-compact();
+  }
 }
 
 .background-grey-primary {
