@@ -34,6 +34,8 @@
 // The base table look, applied inside a rich-content container.
 // border-collapse and border-spacing are !important to beat the CKEditor 4
 // presentational attributes (cellspacing, border) and the reset-style-box revert.
+// Alignments are logical (start, end): the editor frame's sheet is served as a
+// static file, which the skin service's orientation rewrite never reaches.
 .rich-text-table() {
   table {
     width: 100%;
@@ -47,8 +49,7 @@
     caption {
       caption-side: top;
       padding: 0 0 8px;
-      text-align: left ~'; /** orientation=lt */ ';
-      text-align: right ~'; /** orientation=rt */ ';
+      text-align: start;
       font-size: 13px;
       color: @greyColorLighten1;
     }
@@ -56,8 +57,7 @@
     th, td {
       padding: 10px 12px;
       border: 1px solid @richTableGrid;
-      text-align: left ~'; /** orientation=lt */ ';
-      text-align: right ~'; /** orientation=rt */ ';
+      text-align: start;
       vertical-align: top;
 
       p:last-child {
@@ -69,33 +69,46 @@
       font-weight: 600;
     }
 
-    thead th, > tbody:first-child > tr:first-child > th, caption + tbody > tr:first-child > th {
+    // the header row: a thead, or a first row made of header cells only
+    // (a table whose header is its first column keeps one untinted)
+    thead th, > tbody:first-child > tr:first-child:not(:has(td)) > th, caption + tbody > tr:first-child:not(:has(td)) > th {
       background: @richTableHeaderBackground;
       color: @primaryColor;
       border-bottom-width: 2px;
     }
 
     .num {
-      text-align: right ~'; /** orientation=lt */ ';
-      text-align: left ~'; /** orientation=rt */ ';
+      text-align: end;
       font-variant-numeric: tabular-nums;
       white-space: nowrap;
     }
 
     // Styles a writer picks: one class on the table
-    &.table-simple, &[border="0"] {
+    &.table-simple {
       border-width: 0;
 
       th, td {
         border-left-width: 0;
         border-right-width: 0;
       }
-    }
 
-    &.table-simple {
-      thead th, > tbody:first-child > tr:first-child > th, caption + tbody > tr:first-child > th {
+      thead th, > tbody:first-child > tr:first-child:not(:has(td)) > th, caption + tbody > tr:first-child:not(:has(td)) > th {
         background: transparent;
         border-bottom-color: @richTableGridStrong;
+      }
+    }
+
+    // a table its writer set to border 0, often a layout table: no lines, no header tint
+    &[border="0"] {
+      border-width: 0;
+
+      th, td {
+        border-width: 0;
+      }
+
+      thead th, > tbody:first-child > tr:first-child:not(:has(td)) > th, caption + tbody > tr:first-child:not(:has(td)) > th {
+        background: transparent;
+        color: inherit;
       }
     }
 
@@ -201,11 +214,11 @@
     table.rich-table__table {
       tr > th:first-child, tr > td:first-child {
         position: sticky;
-        left: 0 ~'; /** orientation=lt */ ';
-        right: 0 ~'; /** orientation=rt */ ';
+        inset-inline-start: 0;
         z-index: 1;
         background: @baseBackground;
-        box-shadow: 1px 0 0 @richTableGrid;
+        box-shadow: 1px 0 0 @richTableGrid ~'; /** orientation=lt */ ';
+        box-shadow: -1px 0 0 @richTableGrid ~'; /** orientation=rt */ ';
       }
 
       > tbody > tr:hover > td:first-child {
@@ -229,8 +242,7 @@
     color: @greyColorLighten1;
 
     .rich-table__count {
-      margin-right: auto ~'; /** orientation=lt */ ';
-      margin-left: auto ~'; /** orientation=rt */ ';
+      margin-inline-end: auto;
     }
 
     .rich-table__action, a {
@@ -248,17 +260,17 @@
       }
     }
 
-    .rich-table__show-less {
+    .rich-table__show-less, .rich-table__count-all {
       display: none;
     }
   }
 
   .rich-table--expanded + .rich-table__footer {
-    .rich-table__show-all {
+    .rich-table__show-all, .rich-table__count-collapsed {
       display: none;
     }
 
-    .rich-table__show-less {
+    .rich-table__show-less, .rich-table__count-all {
       display: inline;
     }
   }
