@@ -160,13 +160,29 @@
   }
 }
 
-// The editor frame: the cells tabletools selects.
+// The editor frame: the cells tabletools selects, and CKEditor 4's show-borders
+// aid. That aid marks every table without a border attribute (cke_show_border)
+// and draws a dotted guide on its cells at specificity (0,2,4), over the table's
+// own lines: a Default, Striped or Bordered table made by markup showed dotted
+// guides while editing. The same rules again, scoped high enough to win only
+// while the aid is on, give each table the lines it shows when published; a
+// border-0 table, line-free when published, keeps a guide so its cells can be found.
 .rich-text-table-editor() {
   table {
     td.cke_table-faked-selection, th.cke_table-faked-selection {
       background: @richTableHeaderBackground !important;
       outline: 2px solid @primaryColor;
       outline-offset: -2px;
+    }
+  }
+
+  :root .cke_editable.cke_show_borders {
+    .rich-text-table();
+
+    table[border="0"]:not(.table-bordered):not(.table-simple) {
+      th, td {
+        border: 1px dotted @richTableGridStrong;
+      }
     }
   }
 }
