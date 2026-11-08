@@ -17,7 +17,9 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-/* One keyboard focus indicator for every focusable element of every page.
+/* One keyboard focus indicator for every focusable element of every page, drawn
+   inside the element: many containers hide their overflow (truncated text, tabs,
+   chips, trees, cards), which would clip an indicator drawn outside.
    The repeated pseudo-class and the html/body prefix raise the specificity above
    the `outline: none` rules of the Vuetify skin (nested under .VuetifyApp) and of
    the core reset, so that no component hides the focus, without !important. */
@@ -25,7 +27,7 @@
 
 html:root body :focus-visible:focus-visible {
   outline: dashed 2px @focusOutlineColor;
-  outline-offset: 2px;
+  outline-offset: -2px;
 }
 
 /* Vuetify selection controls (checkbox, radio, switch): the real input is
@@ -36,7 +38,7 @@ html:root body .v-input--selection-controls__input input:focus-visible {
   + .v-input--selection-controls__ripple,
   ~ .v-input--switch__track {
     outline: dashed 2px @focusOutlineColor;
-    outline-offset: 2px;
+    outline-offset: -2px;
   }
 }
 
@@ -45,5 +47,5 @@ html:root body .v-input--selection-controls__input input:focus-visible {
    outranks the rule above. */
 html:root body .v-icon.v-icon.v-icon--link:focus-visible {
   outline: dashed 2px @focusOutlineColor;
-  outline-offset: 2px;
+  outline-offset: -2px;
 }
