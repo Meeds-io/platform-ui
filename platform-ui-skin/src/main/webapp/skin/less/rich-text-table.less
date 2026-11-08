@@ -24,12 +24,27 @@
 // Parametric mixins only: importing this file outputs no CSS.
 // The colours are translucent greys and the branded primary colour, so a
 // theme or a dark background recolours them.
+// The same file holds the card of a chart or a diagram (.rich-visual-card()),
+// which shares the table card's frame and footer.
 
 @richTableGrid: @greyColorLighten1Opacity1;
 @richTableGridStrong: @greyColorLighten1Opacity4;
 @richTableHeaderBackground: @greyColorLighten1Opacity2;
 @richTableStripe: fade(@greyColorLighten1Default, 4%);
 @richTableHover: fade(@greyColorLighten1Default, 6%);
+
+// Chart series colours: series 1 is the branded primary colour, the next ones
+// come in order from a fixed categorical palette, skipping a colour whose hue
+// is too close to the branded one. Each one has a contrast of at least 3:1 (WCAG
+// 1.4.11, graphical objects) against a white card and against #121212:
+// 5.28/3.55, 4.29/4.37, 5.60/3.34, 5.56/3.37, 4.23/4.42, 4.77/3.92, 5.46/3.43.
+@chartSeries2: #2f6db5;
+@chartSeries3: #c25e0c;
+@chartSeries4: #7b52b9;
+@chartSeries5: #b8395c;
+@chartSeries6: #4a8a2a;
+@chartSeries7: #8f6e00;
+@chartSeries8: #5d6b7a;
 
 // The base table look, applied inside a rich-content container.
 // border-collapse and border-spacing are !important to beat the CKEditor 4
@@ -270,32 +285,7 @@
   }
 
   .rich-table__footer {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 4px 14px;
-    padding: 3px 2px 0;
-    font-size: 12.5px;
-    color: @greyColorLighten1;
-
-    .rich-table__count {
-      margin-inline-end: auto;
-    }
-
-    .rich-table__action, a {
-      padding: 0;
-      border: 0;
-      background: none;
-      font: inherit;
-      font-weight: 600;
-      color: @primaryColor;
-      cursor: pointer;
-      text-decoration: none;
-
-      &:hover, &:focus {
-        text-decoration: underline;
-      }
-    }
+    .rich-card-footer(~".rich-table__count"; ~".rich-table__action");
 
     .rich-table__show-less, .rich-table__count-all {
       display: none;
@@ -309,6 +299,292 @@
 
     .rich-table__show-less, .rich-table__count-all {
       display: inline;
+    }
+  }
+}
+
+// The footer line of a table or a visual card: a count pushed to the start,
+// then text-like action buttons in the primary colour.
+// @count and @action are each one simple selector: LESS 1.7 interpolates a
+// comma list as one string, so only its first item would be scoped.
+.rich-card-footer(@count; @action) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 14px;
+  padding: 3px 2px 0;
+  font-size: 12.5px;
+  color: @greyColorLighten1;
+
+  @{count} {
+    margin-inline-end: auto;
+  }
+
+  @{action}, a {
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    font-weight: 600;
+    color: @primaryColor;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover, &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+// A chart or a diagram in a card, written by the consumer (the assistant):
+//   figure.rich-visual.rich-chart|rich-diagram
+//     .rich-visual__head (title, source) · .rich-visual__notice
+//     .rich-visual__body (the SVG) · .rich-visual__alt (its table or outline)
+//     pre.rich-visual__source (diagram) · figcaption.rich-visual__footer
+// The picture view is the default. .rich-visual--table (chart) and
+// .rich-visual--source (diagram) show the text instead of the picture;
+// .rich-visual--loading holds the place until the picture is drawn.
+// In the picture view the text stays in the page, visually hidden, for
+// assistive technologies and the copied text: never display: none.
+// The series colours are custom properties, read by the drawing code from the
+// container's computed style: Less variables do not reach the browser.
+.rich-visual-card() {
+  --chartSeries1: @primaryColor;
+  --chartSeries2: @chartSeries2;
+  --chartSeries3: @chartSeries3;
+  --chartSeries4: @chartSeries4;
+  --chartSeries5: @chartSeries5;
+  --chartSeries6: @chartSeries6;
+  --chartSeries7: @chartSeries7;
+  --chartSeries8: @chartSeries8;
+
+  // the margin beats the reset-style-box revert by specificity
+  .rich-visual {
+    position: relative;
+    display: block;
+    max-width: 100%;
+    margin: 6px 0 4px;
+    padding: 0;
+
+    .rich-visual__head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0 8px;
+      margin: 0 0 6px;
+      padding: 0 2px;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .rich-visual__notice {
+      margin: 0 0 6px;
+      padding: 0 2px;
+      font-size: 12.5px;
+      color: @greyColorLighten1;
+    }
+
+    .rich-visual__body {
+      padding: 8px;
+      border: 1px solid @richTableGrid;
+      border-radius: 8px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+
+      // the SVG keeps its viewBox and takes the card's width; a diagram's own
+      // inline max-width still wins, so a small diagram is not blown up, and a
+      // wide one carries an inline min-width (its readable floor, written by
+      // the drawing code), past which the body scrolls sideways
+      svg {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+      }
+    }
+
+    .rich-visual__alt {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    pre.rich-visual__source {
+      display: none;
+      max-height: 20rem;
+      margin: 0 0 8px;
+      padding: 8px 10px;
+      overflow: auto;
+      border: 1px solid @richTableGrid;
+      border-radius: 8px;
+      background: @richTableHeaderBackground;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12.5px;
+      line-height: 1.45;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      color: inherit;
+    }
+
+    // the text views: the picture leaves, its text takes its place
+    &.rich-visual--table, &.rich-visual--source {
+      .rich-visual__body {
+        display: none;
+      }
+
+      .rich-visual__alt {
+        position: static;
+        width: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        clip-path: none;
+        white-space: normal;
+      }
+    }
+
+    &.rich-visual--table .rich-visual__alt table {
+      margin: 0 0 4px;
+    }
+
+    &.rich-visual--source pre.rich-visual__source {
+      display: block;
+    }
+
+    &.rich-visual--loading .rich-visual__body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 6rem;
+      font-size: 12.5px;
+      color: @greyColorLighten1;
+    }
+  }
+
+  .rich-visual__footer {
+    // every button of this footer is an action (view switch, Copy); a comma
+    // list passed as @action would not be split by LESS 1.7's interpolation
+    .rich-card-footer(~".rich-visual__count"; ~"button");
+  }
+
+  .rich-diagram-fallback();
+}
+
+// The look of a diagram whose Mermaid <style> the assistant removed (nothing
+// safe was left of it), per Mermaid 11 kind: flowchart and tree, state,
+// sequence, timeline, gantt, mind map. It applies only to an SVG that holds no
+// <style>: a kept style themes elements through their groups and inheritance,
+// which a rule on the element itself would override whatever its specificity.
+// A browser without :has() drops the block and draws such a diagram in SVG's
+// defaults, as the table header rule above degrades.
+.rich-diagram-fallback() {
+  .rich-diagram .rich-visual__body svg:not(:has(style)) {
+    text {
+      fill: currentColor;
+    }
+
+    // Mermaid centres a node's label from its <style> only; a state's label
+    // is placed from its start, as Mermaid's state style leaves it
+    .node text, .label text, text.taskText {
+      text-anchor: middle;
+    }
+
+    .statediagram-state .label text {
+      text-anchor: start;
+    }
+
+    // a gantt label too wide for its bar is drawn before it, ending at its x
+    text.taskTextOutsideLeft {
+      text-anchor: end;
+    }
+
+    // node shapes: flowchart (a stadium node is a path), tree, state, mind map,
+    // timeline, sequence actors
+    .node rect, .node polygon, .node circle, .node ellipse,
+    .node .outer-path.label-container path, .label-container, .node-bkg, rect.actor {
+      fill: @richTableHeaderBackground;
+      stroke: @primaryColor;
+      stroke-width: 1px;
+    }
+
+    // edges and lifelines
+    .edgePaths path, .flowchart-link, .transition, .actor-line,
+    .messageLine0, .messageLine1, line[class^="node-line"] {
+      fill: none;
+      stroke: @greyColorLighten1;
+      stroke-width: 1px;
+    }
+
+    .arrowMarkerPath, marker path {
+      fill: @greyColorLighten1;
+      stroke: @greyColorLighten1;
+    }
+
+    // an edge label sits on the card, not on the line
+    .edgeLabel rect, rect.background {
+      fill: @baseBackground;
+      stroke: none;
+    }
+
+    // state start and end dots
+    .node .state-start, .node .state-end, .node circle.end-state-inner {
+      fill: currentColor;
+      stroke: currentColor;
+    }
+
+    // a mind map's edges run from centre to centre, under its nodes: an
+    // opaque node keeps them off its label
+    .mindmap-node .label-container, .mindmap-node rect {
+      fill: @baseBackground;
+    }
+
+    // mind map and timeline branches take the series colours, in order
+    .section-0 .label-container, .section-0 .node-bkg, .edgePaths .section-edge-0 { stroke: @chartSeries2; }
+    .section-1 .label-container, .section-1 .node-bkg, .edgePaths .section-edge-1 { stroke: @chartSeries3; }
+    .section-2 .label-container, .section-2 .node-bkg, .edgePaths .section-edge-2 { stroke: @chartSeries4; }
+    .section-3 .label-container, .section-3 .node-bkg, .edgePaths .section-edge-3 { stroke: @chartSeries5; }
+    .section-4 .label-container, .section-4 .node-bkg, .edgePaths .section-edge-4 { stroke: @chartSeries6; }
+    .section-5 .label-container, .section-5 .node-bkg, .edgePaths .section-edge-5 { stroke: @chartSeries7; }
+    .section-6 .label-container, .section-6 .node-bkg, .edgePaths .section-edge-6 { stroke: @chartSeries8; }
+
+    // gantt: striped sections, bars and milestones in the primary colour
+    rect.section0, rect.section2 {
+      fill: @richTableHeaderBackground;
+      stroke: none;
+    }
+
+    rect.section1, rect.section3 {
+      fill: transparent;
+      stroke: none;
+    }
+
+    rect.task, rect.milestone {
+      fill: @primaryColor;
+      stroke: @primaryColor;
+    }
+
+    text.taskText {
+      fill: @baseBackground;
+    }
+
+    .grid .tick line {
+      stroke: @richTableGrid;
+    }
+
+    .grid path.domain {
+      stroke: none;
+    }
+
+    line.today {
+      stroke: @primaryColor;
     }
   }
 }
