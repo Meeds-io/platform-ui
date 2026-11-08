@@ -39,3 +39,11 @@ html:root body .v-input--selection-controls__input input:focus-visible {
     outline-offset: 2px;
   }
 }
+
+/* Vuetify's clickable icon (a v-icon with a click listener renders a button)
+   removes the outline with `.VuetifyApp .v-icon.v-icon.v-icon--link`, which
+   outranks the rule above. */
+html:root body .v-icon.v-icon.v-icon--link:focus-visible {
+  outline: dashed 2px @focusOutlineColor;
+  outline-offset: 2px;
+}
