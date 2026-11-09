@@ -43,8 +43,13 @@
     font-weight: bold;
     line-height: 1.5;
     text-decoration: underline;
-    outline: 2px dashed #000;
-    outline-offset: 2px;
     box-shadow: 0 0 0 4px #fff;
   }
+}
+
+/* The link shows over any content of the page: its indicator stays black on its white
+   box, above the common focus indicator (html:root body :focus-visible:focus-visible). */
+html:root body .skip-to-content-link:focus-visible:focus-visible {
+  outline: 2px dashed #000;
+  outline-offset: 2px;
 }
