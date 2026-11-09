@@ -702,6 +702,13 @@ html:root body :focus-visible:focus-visible {
   outline-offset: -2px;
 }
 
+/* A button filled with the primary colour takes the indicator in its text colour:
+   drawn in the primary colour over its own background, it would not show. */
+html:root body .v-btn.primary:not(.v-btn--outlined):not(.v-btn--text):focus-visible,
+html:root body .btn-primary:not(.v-btn--outlined):not(.v-btn--text):focus-visible {
+  outline-color: @btnPrimaryColor;
+}
+
 /* Vuetify selection controls (checkbox, radio, switch): the real input is
    transparent, so the indicator is drawn on the control that follows it in the DOM. */
 html:root body .v-input--selection-controls__input input:focus-visible {
