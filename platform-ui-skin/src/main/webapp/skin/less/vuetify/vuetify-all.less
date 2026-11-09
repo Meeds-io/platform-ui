@@ -689,4 +689,35 @@
   }
 }
 
-@import "./vuetify-focus.less";
+/* One keyboard focus indicator for every focusable element of every page, drawn
+   inside the element: many containers hide their overflow (truncated text, tabs,
+   chips, trees, cards), which would clip an indicator drawn outside.
+   The repeated pseudo-class and the html/body prefix raise the specificity above
+   the `outline: none` rules of the Vuetify skin (nested under .VuetifyApp) and of
+   the core reset, so that no component hides the focus, without !important. */
+@focusOutlineColor: @primaryColor;
+
+html:root body :focus-visible:focus-visible {
+  outline: dashed 2px @focusOutlineColor;
+  outline-offset: -2px;
+}
+
+/* Vuetify selection controls (checkbox, radio, switch): the real input is
+   transparent, so the indicator is drawn on the control that follows it in the DOM. */
+html:root body .v-input--selection-controls__input input:focus-visible {
+  outline: none;
+
+  + .v-input--selection-controls__ripple,
+  ~ .v-input--switch__track {
+    outline: dashed 2px @focusOutlineColor;
+    outline-offset: -2px;
+  }
+}
+
+/* Vuetify's clickable icon (a v-icon with a click listener renders a button)
+   removes the outline with `.VuetifyApp .v-icon.v-icon.v-icon--link`, which
+   outranks the rule above. */
+html:root body .v-icon.v-icon.v-icon--link:focus-visible {
+  outline: dashed 2px @focusOutlineColor;
+  outline-offset: -2px;
+}
