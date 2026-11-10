@@ -1486,10 +1486,11 @@
     inset: 0;
     border-radius: inherit;
   }
-  html:root body &:focus-visible:focus-visible {
+  // above the common focus indicator of the Vuetify apps, which the card's ring replaces
+  .VuetifyApp .v-application &:focus-visible:focus-visible {
     outline: none;
   }
-  html:root body &:focus-visible::after {
+  .VuetifyApp .v-application &:focus-visible::after {
     outline: dashed 2px @primaryColor;
     outline-offset: -2px;
   }
