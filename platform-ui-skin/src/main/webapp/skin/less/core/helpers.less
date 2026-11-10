@@ -1452,7 +1452,8 @@
 
 /* Hover swap: in a .hover-swap-parent, the .hover-swap-alt content replaces the .hover-swap-default one on the
    parent's hover and while the keyboard focus is inside it; hidden with opacity, the alternative content keeps
-   its place in the tab order */
+   its place in the tab order. The default content is never hidden while it holds the focus itself, which
+   would drop the focus to the page: a focusable default stays shown beside the alternative content */
 .hover-swap-parent {
   position: relative;
   .hover-swap-alt {
@@ -1465,7 +1466,7 @@
   }
   &:hover,
   &:focus-within {
-    .hover-swap-default {
+    .hover-swap-default:not(:focus-within) {
       display: none;
     }
     .hover-swap-alt {
@@ -1477,8 +1478,9 @@
 }
 
 /* Stretched link: a .stretched-link covers its nearest positioned ancestor (.position-relative), so the whole
-   card is clickable through one tab stop, and its focus ring is drawn around the card; the card's other
-   controls take .stretched-link-above to stay reachable over it */
+   card is clickable through one tab stop, and its focus ring is drawn around the card, with the link's own
+   corner radius (give the link the card's rounded class to match it); the card's other controls take
+   .stretched-link-above to stay reachable over it */
 .stretched-link {
   &::after {
     content: '';
