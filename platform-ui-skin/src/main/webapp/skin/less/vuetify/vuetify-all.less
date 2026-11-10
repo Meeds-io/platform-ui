@@ -19,6 +19,8 @@
 @import "../variables.less";
 @import "../mixins.less";
 
+@focusOutlineColor: @primaryColor;
+
 .v-application {
   @import './lib/vuetify-reset.less';
 }
@@ -590,10 +592,6 @@
     .v-alert {
       .layout-drawer();
     }
-    .v-btn:focus-visible {
-      outline: dashed 2px var(--allPagesPrimaryColor, @primaryColor);
-      outline-offset: 2px;
-    }
 
     .badge-display {
       .v-badge__badge {
@@ -612,6 +610,36 @@
         text-align: center;
         white-space: nowrap;
         font-weight: normal;
+      }
+    }
+
+    /* One keyboard focus indicator for every focusable element of the Vuetify apps, drawn inside the
+       element: many containers hide their overflow (truncated text, tabs, chips, trees, cards), which
+       would clip an indicator drawn outside. The repeated pseudo-class and its place, after the
+       imported Vuetify skin, raise it above the skin's and the reset's `outline: none` rules, so that
+       no component hides the focus, without !important. Markup outside the Vuetify apps keeps its own. */
+    :focus-visible:focus-visible {
+      outline: dashed 2px @focusOutlineColor;
+      outline-offset: -2px;
+    }
+
+    /* A button or a chip filled with the primary colour takes the indicator in its text colour:
+       drawn in the primary colour over its own background, it would not show. */
+    .v-btn.primary:not(.v-btn--outlined):not(.v-btn--text):focus-visible,
+    .btn-primary:not(.v-btn--outlined):not(.v-btn--text):focus-visible,
+    .v-chip.primary:not(.v-chip--outlined):focus-visible {
+      outline-color: @btnPrimaryColor;
+    }
+
+    /* Vuetify selection controls (checkbox, radio, switch): the real input is
+       transparent, so the indicator is drawn on the control that follows it in the DOM. */
+    .v-input--selection-controls__input input:focus-visible {
+      outline: none;
+
+      + .v-input--selection-controls__ripple,
+      ~ .v-input--switch__track {
+        outline: dashed 2px @focusOutlineColor;
+        outline-offset: -2px;
       }
     }
   }
