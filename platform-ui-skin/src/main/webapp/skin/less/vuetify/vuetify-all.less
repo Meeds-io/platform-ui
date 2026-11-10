@@ -19,6 +19,8 @@
 @import "../variables.less";
 @import "../mixins.less";
 
+@focusOutlineColor: @primaryColor;
+
 .v-application {
   @import './lib/vuetify-reset.less';
 }
@@ -610,6 +612,36 @@
         font-weight: normal;
       }
     }
+
+    /* One keyboard focus indicator for every focusable element of the Vuetify apps, drawn inside the
+       element: many containers hide their overflow (truncated text, tabs, chips, trees, cards), which
+       would clip an indicator drawn outside. The repeated pseudo-class and its place, after the
+       imported Vuetify skin, raise it above the skin's and the reset's `outline: none` rules, so that
+       no component hides the focus, without !important. Markup outside the Vuetify apps keeps its own. */
+    :focus-visible:focus-visible {
+      outline: dashed 2px @focusOutlineColor;
+      outline-offset: -2px;
+    }
+
+    /* A button or a chip filled with the primary colour takes the indicator in its text colour:
+       drawn in the primary colour over its own background, it would not show. */
+    .v-btn.primary:not(.v-btn--outlined):not(.v-btn--text):focus-visible,
+    .btn-primary:not(.v-btn--outlined):not(.v-btn--text):focus-visible,
+    .v-chip.primary:not(.v-chip--outlined):focus-visible {
+      outline-color: @btnPrimaryColor;
+    }
+
+    /* Vuetify selection controls (checkbox, radio, switch): the real input is
+       transparent, so the indicator is drawn on the control that follows it in the DOM. */
+    .v-input--selection-controls__input input:focus-visible {
+      outline: none;
+
+      + .v-input--selection-controls__ripple,
+      ~ .v-input--switch__track {
+        outline: dashed 2px @focusOutlineColor;
+        outline-offset: -2px;
+      }
+    }
   }
 }
 
@@ -687,45 +719,4 @@
   .VuetifyApp .theme--light.v-radio--is-disabled .v-icon {
     color: @iconDisabledColor !important;
   }
-}
-
-/* One keyboard focus indicator for every focusable element of every page, drawn
-   inside the element: many containers hide their overflow (truncated text, tabs,
-   chips, trees, cards), which would clip an indicator drawn outside.
-   The repeated pseudo-class and the html/body prefix raise the specificity above
-   the `outline: none` rules of the Vuetify skin (nested under .VuetifyApp) and of
-   the core reset, so that no component hides the focus, without !important. */
-@focusOutlineColor: @primaryColor;
-
-html:root body :focus-visible:focus-visible {
-  outline: dashed 2px @focusOutlineColor;
-  outline-offset: -2px;
-}
-
-/* A button or a chip filled with the primary colour takes the indicator in its text colour:
-   drawn in the primary colour over its own background, it would not show. */
-html:root body .v-btn.primary:not(.v-btn--outlined):not(.v-btn--text):focus-visible,
-html:root body .btn-primary:not(.v-btn--outlined):not(.v-btn--text):focus-visible,
-html:root body .v-chip.primary:not(.v-chip--outlined):focus-visible {
-  outline-color: @btnPrimaryColor;
-}
-
-/* Vuetify selection controls (checkbox, radio, switch): the real input is
-   transparent, so the indicator is drawn on the control that follows it in the DOM. */
-html:root body .v-input--selection-controls__input input:focus-visible {
-  outline: none;
-
-  + .v-input--selection-controls__ripple,
-  ~ .v-input--switch__track {
-    outline: dashed 2px @focusOutlineColor;
-    outline-offset: -2px;
-  }
-}
-
-/* Vuetify's clickable icon (a v-icon with a click listener renders a button)
-   removes the outline with `.VuetifyApp .v-icon.v-icon.v-icon--link`, which
-   outranks the rule above. */
-html:root body .v-icon.v-icon.v-icon--link:focus-visible {
-  outline: dashed 2px @focusOutlineColor;
-  outline-offset: -2px;
 }
