@@ -631,11 +631,10 @@
       outline-color: @btnPrimaryColor;
     }
 
-    /* So does a transparent button drawn over a primary fill: inside a primary bar, or laid over a primary
-       button (.focus-ring-on-primary). */
+    /* So does a transparent button drawn inside a primary bar; one laid over a primary fill it is not inside
+       takes the .focus-ring-on-primary helper (core/helpers.less). */
     .primary:not(.v-btn--outlined):not(.v-btn--text):not(.v-chip--outlined) .v-btn--icon:focus-visible,
-    .primary:not(.v-btn--outlined):not(.v-btn--text):not(.v-chip--outlined) .v-btn--text:focus-visible,
-    .focus-ring-on-primary:focus-visible {
+    .primary:not(.v-btn--outlined):not(.v-btn--text):not(.v-chip--outlined) .v-btn--text:focus-visible {
       outline-color: @btnPrimaryColor;
     }
 
