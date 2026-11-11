@@ -624,8 +624,10 @@
   pointer-events: none;
   cursor: default !important;
 }
+/* Takes the pointer back inside a .not-clickable-link element: auto, since `revert` falls back to the inherited none
+   (the browser's stylesheet sets no pointer-events) */
 .pointer-events-revert {
-  pointer-events: revert !important;
+  pointer-events: auto !important;
 }
 .not-allowed {
   cursor: not-allowed !important;
