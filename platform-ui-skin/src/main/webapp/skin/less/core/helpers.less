@@ -1490,7 +1490,9 @@
 /* Hover swap: in a .hover-swap-parent, the .hover-swap-alt content replaces the .hover-swap-default one on the
    parent's hover and while the keyboard focus is inside it; hidden with opacity, the alternative content keeps
    its place in the tab order. The default content is never hidden while it holds the focus itself, which
-   would drop the focus to the page: a focusable default stays shown beside the alternative content */
+   would drop the focus to the page: a focusable default stays shown beside the alternative content. A
+   .hover-swap-trigger ancestor, a whole widget for instance, makes its own hover swap the content too, while the
+   .hover-swap-parent stays the small container the alternative content is laid over */
 .hover-swap-parent {
   position: relative;
   .hover-swap-alt {
@@ -1502,7 +1504,8 @@
     pointer-events: none;
   }
   &:hover,
-  &:focus-within {
+  &:focus-within,
+  .hover-swap-trigger:hover & {
     .hover-swap-default:not(:focus-within) {
       display: none;
     }
