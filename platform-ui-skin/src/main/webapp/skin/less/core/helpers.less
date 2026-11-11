@@ -1544,6 +1544,14 @@
   z-index: 1;
 }
 
+/* A transparent button laid over a primary fill (a settings button over a primary button) takes the focus indicator in
+   the primary button's text colour, above the Vuetify apps' common indicator whatever the stylesheets' order */
+.focus-ring-on-primary {
+  .VuetifyApp .v-application &:focus-visible:focus-visible {
+    outline-color: @btnPrimaryColor;
+  }
+}
+
 /* Button reset: a <button> that looks like the text it holds, for a control that must be a button */
 .btn-reset {
   background: none;
