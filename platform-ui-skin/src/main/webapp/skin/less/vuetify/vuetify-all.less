@@ -631,6 +631,13 @@
       outline-color: @btnPrimaryColor;
     }
 
+    /* So does a transparent button drawn inside a primary bar; one laid over a primary fill it is not inside
+       takes the .focus-ring-on-primary helper (core/helpers.less). */
+    .primary:not(.v-btn--outlined):not(.v-btn--text):not(.v-chip--outlined) .v-btn--icon:focus-visible,
+    .primary:not(.v-btn--outlined):not(.v-btn--text):not(.v-chip--outlined) .v-btn--text:focus-visible {
+      outline-color: @btnPrimaryColor;
+    }
+
     /* Vuetify selection controls (checkbox, radio, switch): the real input is
        transparent, so the indicator is drawn on the control that follows it in the DOM. */
     .v-input--selection-controls__input input:focus-visible {
