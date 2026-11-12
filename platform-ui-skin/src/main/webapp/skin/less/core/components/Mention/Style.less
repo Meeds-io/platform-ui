@@ -129,7 +129,7 @@
   
     &.v-input--is-focused {
       border: 0px !important;
-      border-bottom: 1px solid @primaryDarkerColorGradientEnd !important;
+      border-bottom: 1px solid @inputFocusRingColor !important;
     }
   
   }
@@ -144,8 +144,9 @@
     .v-select__selections {
       min-height: 38px;
     }
+    // its own border is the field's focus border (core/helpers.less draws none inside it)
     &.v-input--is-focused {
-      border: 2px solid @inputBorder !important;
+      border: 2px solid @inputFocusRingColor !important;
       .v-select__selections {
         margin: -1px !important;
       }

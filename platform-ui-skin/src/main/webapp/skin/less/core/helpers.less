@@ -1591,9 +1591,12 @@
   }
 
   // Any other field (solo, filled, underlined) has no border around it: a 2px one is drawn inside the field's box,
-  // where an ancestor hiding its overflow cannot clip it, and its underline turns black
-  .v-text-field:not(.v-text-field--outlined).v-input--is-focused:not(.v-input--has-state) > .v-input__control > .v-input__slot {
-    box-shadow: inset 0 0 0 2px @inputFocusRingColor;
+  // where an ancestor hiding its overflow cannot clip it, and its underline turns black. An outline, which the
+  // applications' `box-shadow: none !important` on a field's box leaves in place. The identity suggester's input
+  // style draws its own focus border around the field (core/components/Mention/Style.less)
+  .v-text-field:not(.v-text-field--outlined):not(.identitySuggesterInputStyle).v-input--is-focused:not(.v-input--has-state) > .v-input__control > .v-input__slot {
+    outline: 2px solid @inputFocusRingColor;
+    outline-offset: -2px;
 
     &::before,
     &::after {
