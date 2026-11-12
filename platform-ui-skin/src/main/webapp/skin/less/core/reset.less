@@ -228,15 +228,6 @@ input[type="radio"][readonly],
 input[type="checkbox"][readonly] {
   background-color: transparent;
 }
-input:invalid,
-textarea:invalid,
-select:invalid {
-  &:focus {
-    border-color: @errorColor;
-    border-color: darken(@errorColor, 10%);
-    box-shadow: 0 0 6px lighten(@errorColor, 20%);
-  }
-}
 article,
 aside,
 details,

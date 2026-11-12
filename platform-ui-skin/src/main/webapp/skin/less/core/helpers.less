@@ -1585,8 +1585,9 @@
     box-shadow: none;
   }
 
-  // An outlined field: its border, 2px when focused, turns black; a field in error or success keeps that colour
-  .v-text-field--outlined.v-input--is-focused:not(.v-input--has-state) fieldset {
+  // An outlined field: its border, 2px when focused, turns black, in error or success too: the focus shows over the
+  // state, which its label and message keep showing, and its border takes back on blur
+  .v-text-field--outlined.v-input--is-focused fieldset {
     border-color: @inputFocusRingColor;
   }
 
@@ -1594,7 +1595,7 @@
   // where an ancestor hiding its overflow cannot clip it, and its underline turns black. An outline, which the
   // applications' `box-shadow: none !important` on a field's box leaves in place. The identity suggester's input
   // style draws its own focus border around the field (core/components/Mention/Style.less)
-  .v-text-field:not(.v-text-field--outlined):not(.identitySuggesterInputStyle).v-input--is-focused:not(.v-input--has-state) > .v-input__control > .v-input__slot {
+  .v-text-field:not(.v-text-field--outlined):not(.identitySuggesterInputStyle).v-input--is-focused > .v-input__control > .v-input__slot {
     outline: 2px solid @inputFocusRingColor;
     outline-offset: -2px;
 
