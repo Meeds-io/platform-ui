@@ -1555,9 +1555,12 @@
 /* Text fields' focus in the Vuetify apps: no dashed frame, a black border around the whole field instead, icons
    included, however the field got the focus. A browser counts a text field as keyboard-focused after a click or an
    autofocus too, so the apps' common dashed indicator (vuetify/vuetify-all.less) would show on every field clicked.
-   A plain field shows the reset's input focus (core/reset.less); the rules below draw it on a Vuetify field. Each
-   outranks the rule it replaces whatever the stylesheets' order, this file being loaded before vuetify-all.css */
+   The rules below draw it on a plain field and on a Vuetify field. Each outranks the rule it replaces whatever the
+   stylesheets' order, this file being loaded before vuetify-all.css */
 .VuetifyApp .v-application {
+  // A plain field: a 2px black outline over its edge, where the reset's black border and inset shadow are
+  // (core/reset.less), so that it shows the same, and shows on a field the Vuetify reset left without a border
+  // whose application clears its focus shadow with `!important` (the notes editor's title)
   select,
   textarea,
   input:not([type]),
@@ -1575,14 +1578,21 @@
   input[type="search"],
   input[type="tel"] {
     &:focus-visible:focus-visible {
-      outline: none;
+      outline: 2px solid @inputFocusRingColor;
+      outline-offset: -2px;
     }
   }
 
-  // The input inside a Vuetify field draws no border of its own: the reset's focus shadow is cleared from it
-  .v-text-field input:focus,
-  .v-text-field textarea:focus {
-    box-shadow: none;
+  // The input inside a Vuetify field draws no border of its own, the field draws it (below): no outline, and the
+  // reset's focus shadow cleared; one class more than the plain field's rule, above it whatever the order
+  .v-input.v-text-field input,
+  .v-input.v-text-field textarea {
+    &:focus-visible:focus-visible {
+      outline: none;
+    }
+    &:focus {
+      box-shadow: none;
+    }
   }
 
   // An outlined field: its border, 2px when focused, turns black, in error or success too: the focus shows over the
