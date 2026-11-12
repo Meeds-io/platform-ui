@@ -127,9 +127,11 @@
       margin-top: 4px !important;
     }
   
+    // focused, the field shows the text fields' focus border around it (core/helpers.less) instead of its underline,
+    // which keeps its place
     &.v-input--is-focused {
       border: 0px !important;
-      border-bottom: 1px solid @inputFocusRingColor !important;
+      border-bottom: 1px solid transparent !important;
     }
   
   }
