@@ -145,11 +145,12 @@ input[type="color"] {
   border-radius: @inputBorderRadius;
   transition: ~"border linear .2s, box-shadow linear .2s";
 
+  // A focused field: its border in black, thickened inwards by the inset shadow, so that the field keeps its size
   &:focus {
     color: @inputFocusColor;
-    border-color: @inputFocusBorder;
+    border-color: @inputFocusRingColor;
     outline: 0;
-    box-shadow: ~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 5px @{inputFocusShadow}";
+    box-shadow: inset 0 0 0 1px @inputFocusRingColor;
   }
 }
 input,

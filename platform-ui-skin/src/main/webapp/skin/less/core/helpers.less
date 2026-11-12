@@ -1552,6 +1552,56 @@
   }
 }
 
+/* Text fields' focus in the Vuetify apps: no dashed frame, a black border around the whole field instead, icons
+   included, however the field got the focus. A browser counts a text field as keyboard-focused after a click or an
+   autofocus too, so the apps' common dashed indicator (vuetify/vuetify-all.less) would show on every field clicked.
+   A plain field shows the reset's input focus (core/reset.less); the rules below draw it on a Vuetify field. Each
+   outranks the rule it replaces whatever the stylesheets' order, this file being loaded before vuetify-all.css */
+.VuetifyApp .v-application {
+  select,
+  textarea,
+  input:not([type]),
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"] {
+    &:focus-visible:focus-visible {
+      outline: none;
+    }
+  }
+
+  // The input inside a Vuetify field draws no border of its own: the reset's focus shadow is cleared from it
+  .v-text-field input:focus,
+  .v-text-field textarea:focus {
+    box-shadow: none;
+  }
+
+  // An outlined field: its border, 2px when focused, turns black; a field in error or success keeps that colour
+  .v-text-field--outlined.v-input--is-focused:not(.v-input--has-state) fieldset {
+    border-color: @inputFocusRingColor;
+  }
+
+  // Any other field (solo, filled, underlined) has no border around it: a 2px one is drawn inside the field's box,
+  // where an ancestor hiding its overflow cannot clip it, and its underline turns black
+  .v-text-field:not(.v-text-field--outlined).v-input--is-focused:not(.v-input--has-state) > .v-input__control > .v-input__slot {
+    box-shadow: inset 0 0 0 2px @inputFocusRingColor;
+
+    &::before,
+    &::after {
+      border-color: @inputFocusRingColor;
+    }
+  }
+}
+
 /* Button reset: a <button> that looks like the text it holds, for a control that must be a button */
 .btn-reset {
   background: none;

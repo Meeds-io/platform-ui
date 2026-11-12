@@ -27,15 +27,15 @@
 // field's end side instead of at the far end of a wider container.
 // Consumers that don't want the glyph keep hiding ::after (agenda, task).
 
-// Focus of the date and time picker fields: the reset's input focus (border
-// colour + shadow), restated here because the fields' own border
+// Focus of the date and time picker fields: the reset's input focus (black
+// border, thickened inwards), restated here because the fields' own border
 // declaration outranks the reset's :focus rule, and without the native
 // select:focus ring so both fields show the same indicator.
 .pickerFieldFocus() {
   color: @inputFocusColor;
-  border-color: @inputFocusBorder;
+  border-color: @inputFocusRingColor;
   outline: 0;
-  box-shadow: ~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 5px @{inputFocusShadow}";
+  box-shadow: inset 0 0 0 1px @inputFocusRingColor;
 }
 
 .VuetifyApp .v-application {
