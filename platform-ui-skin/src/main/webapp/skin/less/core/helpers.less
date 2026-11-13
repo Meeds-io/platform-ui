@@ -1558,9 +1558,10 @@
    The rules below draw it on a plain field and on a Vuetify field. Each outranks the rule it replaces whatever the
    stylesheets' order, this file being loaded before vuetify-all.css */
 .VuetifyApp .v-application {
-  // A plain field: a 2px black outline over its edge, where the reset's black border and inset shadow are
-  // (core/reset.less), so that it shows the same, and shows on a field the Vuetify reset left without a border
-  // whose application clears its focus shadow with `!important` (the notes editor's title)
+  // A plain field, an editable element included (an e-mail field built as a contenteditable card, but not a rich
+  // text editor's editable area, `.cke_editable`): a 2px black outline over its edge, where the reset's black border
+  // and inset shadow are (core/reset.less), so that it shows the same, and shows on a field the Vuetify reset left
+  // without a border whose application clears its focus shadow with `!important` (the notes editor's title)
   select,
   textarea,
   input:not([type]),
@@ -1576,7 +1577,8 @@
   input[type="email"],
   input[type="url"],
   input[type="search"],
-  input[type="tel"] {
+  input[type="tel"],
+  [contenteditable="true"]:not(.cke_editable) {
     &:focus-visible:focus-visible {
       outline: 2px solid @inputFocusRingColor;
       outline-offset: -2px;
