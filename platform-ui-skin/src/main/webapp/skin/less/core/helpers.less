@@ -1552,6 +1552,72 @@
   }
 }
 
+/* Text fields' focus in the Vuetify apps: no dashed frame, a black border around the whole field instead, icons
+   included, however the field got the focus. A browser counts a text field as keyboard-focused after a click or an
+   autofocus too, so the apps' common dashed indicator (vuetify/vuetify-all.less) would show on every field clicked.
+   The rules below draw it on a plain field and on a Vuetify field. Each outranks the rule it replaces whatever the
+   stylesheets' order, this file being loaded before vuetify-all.css */
+.VuetifyApp .v-application {
+  // A plain field, an editable element included (an e-mail field built as a contenteditable card, but not a rich
+  // text editor's editable area, `.cke_editable`): a 2px black outline over its edge, where the reset's black border
+  // and inset shadow are (core/reset.less), so that it shows the same, and shows on a field the Vuetify reset left
+  // without a border whose application clears its focus shadow with `!important` (the notes editor's title)
+  select,
+  textarea,
+  input:not([type]),
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  [contenteditable="true"]:not(.cke_editable) {
+    &:focus-visible:focus-visible {
+      outline: 2px solid @inputFocusRingColor;
+      outline-offset: -2px;
+    }
+  }
+
+  // The input inside a Vuetify field draws no border of its own, the field draws it (below): no outline, and the
+  // reset's focus shadow cleared; one class more than the plain field's rule, above it whatever the order
+  .v-input.v-text-field input,
+  .v-input.v-text-field textarea {
+    &:focus-visible:focus-visible {
+      outline: none;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  // An outlined field: its border, 2px when focused, turns black, in error or success too: the focus shows over the
+  // state, which its label and message keep showing, and its border takes the state's colour back on blur
+  .v-text-field--outlined.v-input--is-focused fieldset {
+    border-color: @inputFocusRingColor;
+  }
+
+  // Any other field (solo, filled, underlined) has no border around it: a 2px one is drawn inside the field's box,
+  // where an ancestor hiding its overflow cannot clip it, and its underline turns black. An outline, which the
+  // applications' `box-shadow: none !important` on a field's box leaves in place. The identity suggester's input
+  // style draws its own focus border around the field (core/components/Mention/Style.less)
+  .v-text-field:not(.v-text-field--outlined):not(.identitySuggesterInputStyle).v-input--is-focused > .v-input__control > .v-input__slot {
+    outline: 2px solid @inputFocusRingColor;
+    outline-offset: -2px;
+
+    &::before,
+    &::after {
+      border-color: @inputFocusRingColor;
+    }
+  }
+}
+
 /* Button reset: a <button> that looks like the text it holds, for a control that must be a button */
 .btn-reset {
   background: none;
