@@ -284,6 +284,11 @@
 .grey-lighten1-background-opacity-5 {
   background-color: @greyColorLighten1Opacity5 !important;
 }
+/* The second panel of an application (a conversations or mails list beside the content, when expanded): the Grey
+   text color at 10% over the application background, computed per version by the branding stylesheet */
+.second-panel-background {
+  background-color: ~"var(--allPagesSecondPanelBackground, #6B6B6B1A)" !important;
+}
 .grey-text {
   color: @greyColor !important;
 }
@@ -505,10 +510,10 @@
   color: @btnDisableColor !important;
 }
 .primary--text {
-  color: @primaryColor !important;
+  color: @primaryColorText !important;
 }
 .secondary--text {
-  color: @secondaryColor !important;
+  color: @secondaryColorText !important;
 }
 .primary {
   background-color: @primaryColor !important;
@@ -516,11 +521,12 @@
 .secondary {
   background-color: @secondaryColor !important;
 }
+// The .tertiary* classes take Secondary
 .tertiary-color {
-  color: @tertiaryColor!important;
+  color: @secondaryColorText !important;
 }
 .tertiary {
-  background-color: @tertiaryColor!important;
+  background-color: @secondaryColor!important;
   color: @lightWhite;
 }
 .border-box-sizing {
