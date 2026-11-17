@@ -24,7 +24,7 @@
 // opened in place in it still needs the application one. No fallback on purpose: unset, the property is invalid at
 // computed-value time and each consumer keeps its own default
 :root {
-  --tintedAppSurfaceBackgroundColor: var(--allPagesCommentBackgroundColor);
+  .layout-theme-tint();
 }
 
 // The fields and controls of application content, on either path the application background reaches them by
@@ -49,7 +49,7 @@
 .application-background-color, .application-layout-style, .PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-background-color) {
   background-color: ~"@{appBackgroundColor} !important";
   // Chips and preview frames take the application tint
-  --tintedSurfaceBackgroundColor: var(--tintedAppSurfaceBackgroundColor);
+  .layout-application-tint();
 
   // Every field and control of the application sits on its background, whether its root carries .application-body
   // or not (an empty state mounted in its own v-app)
@@ -92,7 +92,7 @@
 
 .VuetifyApp {
   .application-body .application-background-color, .application-body .application-layout-style {
-    --tintedSurfaceBackgroundColor: var(--tintedAppSurfaceBackgroundColor);
+    .layout-application-tint();
 
     /* Override Vuetify predefined background for some elements to simplify development with Meeds branding */
     &.v-card,
@@ -225,12 +225,7 @@
     z-index: 1;
     /* Topbar of a site with its own layout: the Branding Topbar colour and text are its defaults.
        No !important, so a banner styled from the site layout editor (inline values) keeps its own. */
-    --allPagesBaseTextColor: var(--allPagesTopBarTextColor);
-    --allPagesMenuTextColor: var(--allPagesTopBarTextColor);
-    --allPagesBaseTextFontSize: var(--allPagesTopBarTextFontSize);
-    --allPagesBaseTextFontWeight: var(--allPagesTopBarTextFontWeight);
-    --allPagesBaseTextFontStyle: var(--allPagesTopBarTextFontStyle);
-    --allPagesBaseIconColor: var(--allPagesTopBarIconColor);
+    .layout-top-bar-text();
     background-color: @topBarBackgroundColor;
   }
 
