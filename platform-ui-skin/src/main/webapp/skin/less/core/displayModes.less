@@ -1,0 +1,98 @@
+/**
+ * This file is part of the Meeds project (https://meeds.io/).
+ *
+ * Copyright (C) 2026 Meeds Association contact@meeds.io
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3 of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ */
+
+// The skin's own colours in dark: the neutral surfaces, greys, borders and ink that no theme sets. Each rule reads
+// them as var(--x, <its light literal>): unset in light, so every rule keeps exactly its light value, declared here
+// for the dark and automatic versions, and unset again on a light scope (an application that keeps its light display),
+// so the literal applies there too. The theme's own properties, and the shades derived from a theme or template
+// colour, come from the branding stylesheet (portal), per version.
+.skin-dark-colors() {
+  --allPagesBaseBackground: #1E2328;
+  --allPagesBaseBackgroundDark: #2A3036;
+  --allPagesBaseColor: #FFFFFF;
+  --allPagesBaseColorDark: #E6E9EB;
+  --allPagesBaseColorMedium: #9BA3A8;
+  --allPagesBaseColorLight: #9BA3A8;
+  --allPagesLightGrey: #2A3036;
+  --allPagesDarkGrey: #E6E9EB;
+  --allPagesRevealBackgroundHover: #2A3036;
+  --allPagesBorderColorLight: #9BA3A8;
+  --allPagesBorderColorDark: #3A424A;
+  --allPagesHeadingColor: #9BA3A8;
+  --allPagesToolbarLightLinkHoverColor: #9BA3A8;
+  --allPagesDropdownArrowRight: #4A535B;
+  // white at 12 %, written rgba: the portal skin minifier shortens #FFFFFF1F to the invalid #fff1F
+  --allPagesGreyColorOpacity2: rgba(255, 255, 255, 0.12);
+  // black ink of the Vuetify light theme (rgb(0 0 0 / alpha)) becomes white ink of the same alpha
+  --skinInk: 255 255 255;
+  --skinGreyLighten1: #4A535B;
+  --skinGreyLighten2: #3A424A;
+  --skinGreyLighten3: #31383F;
+  --skinGreyLighten4: #2A3036;
+  --skinGreyDarken3: #C9CED2;
+}
+
+.skin-light-scope-colors() {
+  --allPagesBaseBackground: initial;
+  --allPagesBaseBackgroundDark: initial;
+  --allPagesBaseColor: initial;
+  --allPagesBaseColorDark: initial;
+  --allPagesBaseColorMedium: initial;
+  --allPagesBaseColorLight: initial;
+  --allPagesLightGrey: initial;
+  --allPagesDarkGrey: initial;
+  --allPagesRevealBackgroundHover: initial;
+  --allPagesBorderColorLight: initial;
+  --allPagesBorderColorDark: initial;
+  --allPagesHeadingColor: initial;
+  --allPagesToolbarLightLinkHoverColor: initial;
+  --allPagesDropdownArrowRight: initial;
+  --allPagesGreyColorOpacity2: initial;
+  --skinInk: initial;
+  --skinGreyLighten1: initial;
+  --skinGreyLighten2: initial;
+  --skinGreyLighten3: initial;
+  --skinGreyLighten4: initial;
+  --skinGreyDarken3: initial;
+}
+
+// Rich text in dark: an inline colour equal to black or white (marked rt-color-black / rt-color-white when the content
+// is rendered, by social's rich-text helper) takes the Auto text colour; any other colour stays as set. A rule keyed
+// on the document's mode, written so it never reaches a light scope
+.skin-dark-rich-text() {
+  .rt-color-black:not([data-display-mode="light"] .rt-color-black),
+  .rt-color-white:not([data-display-mode="light"] .rt-color-white) {
+    color: @textColor !important;
+  }
+}
+
+:root[data-display-mode="dark"] {
+  .skin-dark-colors();
+  .skin-dark-rich-text();
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-display-mode="auto"] {
+    .skin-dark-colors();
+    .skin-dark-rich-text();
+  }
+}
+[data-display-mode="light"]:not(:root) {
+  .skin-light-scope-colors();
+}

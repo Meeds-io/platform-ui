@@ -191,6 +191,60 @@
   }
 }
 
+// The remaps: custom properties a context declares from a theme property. Each one is resolved on the element that
+// declares it, in the mode of that element, and inherited resolved: a light scope inside a context declares them again
+// (core/layout/lightScope.less, generated from these same mixins), so they resolve on its light values
+
+// The theme's application tint, captured under a name no context overrides: a drawer redeclares
+// --allPagesCommentBackgroundColor, and a page opened in place in it still needs the application one. No fallback on
+// purpose: unset, the property is invalid at computed-value time and each consumer keeps its own default
+.layout-theme-tint() {
+  --tintedAppSurfaceBackgroundColor: var(--themeCommentBackgroundColor);
+}
+
+// Chips and preview frames of application content take the application tint
+.layout-application-tint() {
+  --tintedSurfaceBackgroundColor: var(--tintedAppSurfaceBackgroundColor);
+}
+
+// The Topbar text styles and icon colour, in the Topbar and in a site's own banner
+.layout-top-bar-text() {
+  --allPagesBaseTextColor: var(--allPagesTopBarTextColor);
+  --allPagesMenuTextColor: var(--allPagesTopBarTextColor);
+  --allPagesBaseTextFontSize: var(--allPagesTopBarTextFontSize);
+  --allPagesBaseTextFontWeight: var(--allPagesTopBarTextFontWeight);
+  --allPagesBaseTextFontStyle: var(--allPagesTopBarTextFontStyle);
+  --allPagesBaseIconColor: var(--allPagesTopBarIconColor);
+}
+
+// The Sidebar text styles and icon colour
+.layout-side-bar-text() {
+  --allPagesBaseTextColor: var(--allPagesSideBarTextColor);
+  --allPagesMenuTextColor: var(--allPagesSideBarTextColor);
+  --allPagesBaseTextFontSize: var(--allPagesSideBarTextFontSize);
+  --allPagesBaseTextFontWeight: var(--allPagesSideBarTextFontWeight);
+  --allPagesBaseTextFontStyle: var(--allPagesSideBarTextFontStyle);
+
+  --allPagesBaseTextSubtitleColor: var(--allPagesSideBarTextSubtitleColor);
+  --allPagesBaseTextSubtitleFontSize: var(--allPagesSideBarTextSubtitleFontSize);
+  --allPagesBaseTextSubtitleFontWeight: var(--allPagesSideBarTextSubtitleFontWeight);
+  --allPagesBaseTextSubtitleFontStyle: var(--allPagesSideBarTextSubtitleFontStyle);
+  --allPagesBaseIconColor: var(--allPagesSideBarIconColor);
+}
+
+// A detached dialog follows the Drawers & Popup icon colour only
+.layout-dialog-text() {
+  --allPagesBaseIconColor: var(--allPagesDrawerIconColor);
+}
+
+// A page opened in place in a drawer: the application text styles and tint. Page content sets no menu text colour:
+// unset again, tabs and menu labels fall back to their default as on a page
+.layout-drawer-application-text() {
+  .layout-application-text();
+  --allPagesMenuTextColor: initial;
+  .layout-application-tint();
+}
+
 // The Drawers & Popup text styles, icon colour and surface tint remapped onto the base variables
 .layout-drawer-text() {
   --allPagesBaseTextTitleColor: var(--allPagesDrawerTextTitleColor);
@@ -218,7 +272,8 @@
 
   // portal's branding.less emits the drawer variant only for a coloured drawer background: unset, the bubble keeps
   // its default colour, never the application variant
-  --allPagesCommentBackgroundColor: var(--allPagesDrawerCommentBackgroundColor, @commentDefaultBackgroundColor);
+  // (the default bubble of a drawer has its own value per version, computed on the drawer background)
+  --allPagesCommentBackgroundColor: var(--allPagesDrawerCommentBackgroundColor, @commentDefaultDrawerBackgroundColor);
   // The same tint for chips and preview frames. No fallback on purpose: unset, the remap is invalid at computed-value
   // time and each consumer keeps its own default (@chipBackgroundColor, @tintedSurfaceBackgroundColor)
   --tintedSurfaceBackgroundColor: var(--allPagesDrawerCommentBackgroundColor);
@@ -344,12 +399,8 @@
   // application one under the same property, which the drawer has overridden. Chips and preview frames take the
   // application tint, kept on :root under its own name. Written after the frame rule, which it ties
   .layout-drawer-application {
-    .layout-application-text();
+    .layout-drawer-application-text();
     .layout-drawer-surfaces();
-
-    // Page content sets no menu text colour: unset again, tabs and menu labels fall back to their default as on a page
-    --allPagesMenuTextColor: initial;
-    --tintedSurfaceBackgroundColor: var(--tintedAppSurfaceBackgroundColor);
 
     // A clickable card is transparent, as in an application on a page
     .v-card--link.v-sheet.theme--light {
