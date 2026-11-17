@@ -28,6 +28,8 @@
 // Primary Color
 @primaryColorDefault: #3f8487;
 @primaryColor: var(--allPagesPrimaryColor, @primaryColorDefault);
+// Primary as text: the readable (adjusted) value the server computes, the raw Primary when a page has none
+@primaryColorText: var(--allPagesPrimaryTextColor, @primaryColor);
 @primaryColorLight: var(--allPagesPrimaryColorLight, lighten(@primaryColorDefault, 10%));
 @primaryDarkColorGradientEnd: var(--allPagesPrimaryDarkColorGradientEnd, darken(@primaryColorDefault, 5%));
 @primaryDarkerColorGradientEnd: var(--allPagesPrimaryDarkerColorGradientEnd, darken(@primaryColorDefault, 15%));
@@ -44,10 +46,12 @@
 // Secondary Color
 @secondaryColorDefault: #e25d5d;
 @secondaryColor: var(--allPagesSecondaryColor, @secondaryColorDefault);
+// Secondary as text: the readable (adjusted) value the server computes, the raw Secondary when a page has none
+@secondaryColorText: var(--allPagesSecondaryTextColor, @secondaryColor);
 @secondaryColorDarken1: darken(@secondaryColorDefault, 15%);;
 
-@tertiaryColorDefault: #e25d5d;
-@tertiaryColor: var(--allPagesTertiaryColor, @tertiaryColorDefault);
+// Tertiary is Secondary; the variable is kept for the add-ons compiled against this file
+@tertiaryColor: @secondaryColor;
 
 // Icon color
 @orangeColor: #ff9916;
@@ -72,7 +76,7 @@
 @darkBlue: var(--allPagesDarkBlue, #295f9b);
 @greyColorDefault: #e1e8ee;
 @greyColor: var(--allPagesGreyColor, @greyColorDefault);
-@greyColorLighten1Default: #707070;
+@greyColorLighten1Default: #6B6B6B;
 @greyColorLighten1: var(--allPagesGreyColorLighten1, @greyColorLighten1Default);
 @greyColorLighten1Opacity1: var(--allPagesGreyColorLighten1Opacity1, fade(@greyColorLighten1Default, 13%));
 @greyColorLighten1Opacity2: var(--allPagesGreyColorLighten1Opacity2, fade(@greyColorLighten1Default, 8%));
@@ -81,7 +85,7 @@
 @greyColorLighten1Opacity5: var(--allPagesGreyColorLighten1Opacity5, fade(@greyColorLighten1Default, 10%));
 @greyColorOpacity1: var(--allPagesGreyColorOpacity1, fade(@greyColorDefault, 35%));
 @greyColorOpacity2: var(--allPagesGreyColorOpacity2, fade(@baseColorDefault, 12%));
-@greyColorOpacity3: var(--allPagesGreyColorOpacity1, fade(@greyColorDefault, 20%));
+@greyColorOpacity3: var(--allPagesGreyColorOpacity3, fade(@greyColorDefault, 20%));
 
 @whiteColorDefault: #ffffff;
 @lightWhite: var(--allPagesLightWhite, @whiteColorDefault);
@@ -127,8 +131,8 @@
 @backgroundErrorNotification: var(--allPagesBackgroundErrorNotification, @errorColorLight);
 
 @borderColor: var(--allPagesBorderColor, @greyColorDefault);
-@borderColorLight: #666666;
-@borderColorDark:  darken(@greyColorDefault, 10%);
+@borderColorLight: var(--allPagesBorderColorLight, #666666);
+@borderColorDark:  var(--allPagesBorderColorDark, darken(@greyColorDefault, 10%));
 @borderSuccesNotification: @successColor;
 @borderWarningNotification: @warningColor;
 @borderInfoNotification: @infoColor;
@@ -152,7 +156,7 @@
 @sidebarBackground: @secondaryColor;
 @contentBackground:  @baseBackground  url("@{images-path}/ShareImages/Background/texture.png") repeat left top;
 @textMediumColor: @baseColorMedium;           // #808080
-@textLightColor: @baseColorLight;       // #707070
+@textLightColor: @baseColorLight;       // #6B6B6B
 
 @textTitleColorDefault: #20282C;
 @textTitleColor: ~"var(--appTextTitleColor, var(--allPagesBaseTextTitleColor, @{textTitleColorDefault}))";
@@ -173,7 +177,7 @@
 @textTitleBackgroundInsetLeft: ~"calc(-1 * var(--appTextTitleBackgroundPaddingLeft, var(--allPagesAppTextTitleBackgroundPaddingLeft, 0px)))";
 @textTitleBackgroundRadius: ~"var(--appTextTitleBackgroundRadius, var(--allPagesAppTextTitleBackgroundRadius, 0))";
 
-@textHeaderColorDefault: #707070;
+@textHeaderColorDefault: #6B6B6B;
 @textHeaderColor: ~"var(--appTextHeaderColor, var(--allPagesBaseTextHeaderColor, @{textHeaderColorDefault}))";
 @textHeaderFontSizeDefault: 18px;
 @textHeaderFontSize: ~"var(--appTextHeaderFontSize, var(--allPagesBaseTextHeaderFontSize, @{textHeaderFontSizeDefault}))";
@@ -211,7 +215,7 @@
 @textBackgroundInsetLeft: ~"calc(-1 * var(--appTextBackgroundPaddingLeft, 0px))";
 @textBackgroundRadius: ~"var(--appTextBackgroundRadius, 0)";
 
-@textSubtitleColorDefault: #707070;
+@textSubtitleColorDefault: #6B6B6B;
 @textSubtitleColor: ~"var(--appTextSubtitleColor, var(--allPagesBaseTextSubtitleColor, @{textSubtitleColorDefault}))";
 @textSubtitleFontSizeDefault: 12px;
 @textSubtitleFontSize: ~"var(--appTextSubtitleFontSize, var(--allPagesBaseTextSubtitleFontSize, @{textSubtitleFontSizeDefault}))";
@@ -241,8 +245,8 @@
 
 // Links
 // -------------------------
-@linkColor:             @primaryColor;      // Special title, text, hover, press, hyper-link or selected link
-@linkColorHover:        @primaryColor;
+@linkColor:             @primaryColorText;      // Special title, text, hover, press, hyper-link or selected link
+@linkColorHover:        @primaryColorText;
 
 @linkColorVisited:      #9B589B;
 @blueLinkColorDefault:  #006EDB;
@@ -662,7 +666,7 @@
 @toolbarLightEndBackground:       @baseBackground;
 @toolbarLightBorder:          @baseBackground;
 @toolbarLightLinkColor:         @primaryColor;
-@toolbarLightLinkHoverColor:      var(--allPagesToolbarLightLinkHoverColor, #707070);
+@toolbarLightLinkHoverColor:      var(--allPagesToolbarLightLinkHoverColor, #6B6B6B);
 @toolbarLightBackgroundHover:           @baseBackground;
 
 //UIBox
@@ -714,51 +718,26 @@
 
 // -------------------------Color  generation formula -------------------------//
 
-//Return true if base color is darker ( this is default skin)
-.setColor (@a) when (lightness(@a) < 50%) {
-  @baseColorDark:       var(--allPagesBaseColorDark, lighten(@baseColorDefault, 20%)); // #333333 Default color for all title, text, text input, label
-  @baseColorMedium:         var(--allPagesBaseColorMedium, lighten(@baseColorDefault, 50%)); // #808080 Navigation text color, special purpose in use
-  @baseColorLight:        var(--allPagesBaseColorLight, lighten(@baseColorDefault, 44%)); // #707070 Default @baseColorLight color for small text, sub title, text field explanation
-  @primaryBackgroundHover:  var(--allPagesPrimaryBackgroundHover, darken(@primaryBackgroundDefault, 4%));
-  @primaryBackgroundLight:  var(--allPagesPrimaryBackgroundLight, lighten(@primaryBackgroundDefault, 3%));
-  @primaryBackgroundLighter:  var(--allPagesPrimaryBackgroundLighter, lighten(@primaryBackgroundDefault, 13%));
-  @revealBackgroundHover:  var(--allPagesRevealBackgroundHover, lighten(@baseColorDefault, 98%));
-  @revealBackgroundSelected: var(--allPagesRevealBackgroundSelected, lighten(spin(@primaryColorDefault, -10%), 52%));
-  @primaryDarkerColor:    var(--allPagesPrimaryDarkerColor, darken(@primaryColorDefault, 10.5%));   //#224469
-  @primaryDarkColor:    var(--allPagesPrimaryDarkColor, darken(@primaryColorDefault, 15%));
-  @primaryColorLighterDefault: lighten(@primaryColorDefault, 18.5%);
-  @primaryColorLighter:   var(--allPagesPrimaryColorLighter, @primaryColorLighterDefault);
-  @primaryColorLighterGradientEnd: var(--allPagesPrimaryColorLighterGradientEnd, darken(@primaryColorLighterDefault, 15%));
-  // button primary
-  @btnBackground:            @baseBackground;
-  @btnBackgroundHighlight:  @primaryBackground;
+// The base shades: their light values, read through their properties; their dark values are in core/displayModes.less
+@baseColorDark:       var(--allPagesBaseColorDark, lighten(@baseColorDefault, 20%)); // #333333 Default color for all title, text, text input, label
+@baseColorMedium:         var(--allPagesBaseColorMedium, lighten(@baseColorDefault, 50%)); // #808080 Navigation text color, special purpose in use
+@baseColorLight:        var(--allPagesBaseColorLight, #6B6B6B); // Default @baseColorLight color for small text, sub title, text field explanation
+@primaryBackgroundHover:  var(--allPagesPrimaryBackgroundHover, darken(@primaryBackgroundDefault, 4%));
+@primaryBackgroundLight:  var(--allPagesPrimaryBackgroundLight, lighten(@primaryBackgroundDefault, 3%));
+@primaryBackgroundLighter:  var(--allPagesPrimaryBackgroundLighter, lighten(@primaryBackgroundDefault, 13%));
+@revealBackgroundHover:  var(--allPagesRevealBackgroundHover, lighten(@baseColorDefault, 98%));
+@revealBackgroundSelected: var(--allPagesRevealBackgroundSelected, lighten(spin(@primaryColorDefault, -10%), 52%));
+@primaryDarkerColor:    var(--allPagesPrimaryDarkerColor, darken(@primaryColorDefault, 10.5%));   //#224469
+@primaryDarkColor:    var(--allPagesPrimaryDarkColor, darken(@primaryColorDefault, 15%));
+@primaryColorLighterDefault: lighten(@primaryColorDefault, 18.5%);
+@primaryColorLighter:   var(--allPagesPrimaryColorLighter, @primaryColorLighterDefault);
+@primaryColorLighterGradientEnd: var(--allPagesPrimaryColorLighterGradientEnd, darken(@primaryColorLighterDefault, 15%));
+// button primary
+@btnBackground:            @baseBackground;
+@btnBackgroundHighlight:  @primaryBackground;
 
-  @dropdownArrowRight:  var(--allPagesDropdownArrowRight, darken(@baseBackgroundDefault, 20%));   // #aac5e3
-  @quotePrimaryBackground:        var(--allPagesQuotePrimaryBackground, lighten(@quotePrimaryBorderDefault, 18%));  // #aac5e3
-}
-
-//Return true if base color is lighter
-.setColor (@a) when (lightness(@a) >= 50%) {
-  @baseColorLight:        var(--allPagesBaseColorLight, darken(@baseColorDefault, 20%));
-  @baseColorMedium:         var(--allPagesBaseColorMedium, lighten(@baseColorDefault, 50%));
-  @baseColorDark:       var(--allPagesBaseColorDark, lighten(@baseColorDefault, 60%));
-  @primaryBackgroundLighter:  var(--allPagesPrimaryBackgroundLighter, lighten(@primaryBackgroundDefault, 14%));
-  @primaryBackgroundLight:  var(--allPagesPrimaryBackgroundLight, lighten(@primaryBackgroundDefault, 4%));
-  @primaryBackgroundHover : var(--allPagesPrimaryBackgroundHover , darken(@primaryBackgroundDefault, 3%));
-  @revealBackgroundHover:  var(--allPagesRevealBackgroundHover, darken(@baseColorDefault, 98%));
-  @revealBackgroundSelected: var(--allPagesRevealBackgroundSelected, darken(spin(@primaryColorDefault, -10%), 52%));
-  @primaryColorLighterDefault: lighten(@primaryColorDefault, 10.5%);
-  @primaryColorLighter:   var(--allPagesPrimaryColorLighter, @primaryColorLighterDefault);    //#224469
-  @primaryColorLighterGradientEnd: var(--allPagesPrimaryColorLighterGradientEnd, darken(@primaryColorLighterDefault, 15%));
-  @primaryDarkColor:    var(--allPagesPrimaryDarkColor, darken(@primaryColorDefault, 15%));
-  @primaryDarkerColor:   var(--allPagesPrimaryDarkerColor , darken(@primaryColorDefault, 18.5%));
-  // button primary
-  @btnBackground:           @primaryBackground;
-  @btnBackgroundHighlight: @baseBackground;
-  @dropdownArrowRight:  var(--allPagesDropdownArrowRight, lighten(@baseBackgroundDefault, 90%));
-  @quotePrimaryBackground:        var(--allPagesQuotePrimaryBackground, darken(@primaryColorDefault, 10%)); // #aac5e3
-}
-.setColor(@baseColorDefault);
+@dropdownArrowRight:  var(--allPagesDropdownArrowRight, darken(@baseBackgroundDefault, 20%));   // #aac5e3
+@quotePrimaryBackground:        var(--allPagesQuotePrimaryBackground, lighten(@quotePrimaryBorderDefault, 18%));  // #aac5e3
 
 /* default btn */
 @btnBackgroundColor: @baseBackground;
@@ -930,7 +909,12 @@
 // Other variables
 // Comment bubbles: portal's branding.less sets --allPagesCommentBackgroundColor only for a coloured application
 // background, and the .layout-drawer() mixin remaps it to the drawer variant inside drawers
-@commentDefaultBackgroundColor: #f2f5f8;
+// The default bubble, under a light or dark text: portal's branding stylesheet emits it per version, computed on the
+// default application background (--commentDefaultBackgroundColor) and on the default drawer background
+// (--commentDefaultDrawerBackgroundColor); the literal is its light value
+@commentDefaultBackgroundColorLight: #f2f5f8;
+@commentDefaultBackgroundColor: var(--commentDefaultBackgroundColor, @commentDefaultBackgroundColorLight);
+@commentDefaultDrawerBackgroundColor: var(--commentDefaultDrawerBackgroundColor, @commentDefaultBackgroundColorLight);
 @commentBackgroundColor: var(--allPagesCommentBackgroundColor, @commentDefaultBackgroundColor);
 // Chips and preview frames, which stand out from the surface they sit on: the comment bubble colour of the application
 // or of the Drawers & Popup background they sit in (--tintedSurfaceBackgroundColor, set by the application container,
@@ -988,7 +972,7 @@
 @toolbarLightIconHoverColor:      @primaryColor;
 @colorIconSecondaryHover:@primaryColor;
 @sizeSideBarIcon: var(--allPagesSizeSideBarIcon, 20px);
-@headingColor: var(--allPagesHeadingColor, #707070);
+@headingColor: var(--allPagesHeadingColor, #6B6B6B);
 @plfNavigationBgBorderLeft: @lightWhite;
 @badgePrimaryColor : var(--allPagesBadgePrimaryColor , #d32a2a);
 @paddingBadgeDefault-mini : var(--allPagesPaddingBadgeDefault-mini , 0);

@@ -79,7 +79,7 @@
     }
 
     a {
-      color: @primaryColor;
+      color: @primaryColorText;
       text-decoration: none;
     }
 
@@ -253,22 +253,23 @@
       border-color: @primaryColor !important;
     }
     .primary--text {
-      color: @primaryColor !important;
+      color: @primaryColorText !important;
       caret-color: @primaryColor !important;
     }
     .secondary {
       background-color: @secondaryColor !important;
       border-color: @secondaryColor !important;
     }
+    // The .tertiary--text class takes Secondary
     .tertiary--text {
-      color: @tertiaryColor!important;
+      color: @secondaryColorText !important;
     }
     .accent {
       background-color: @primaryColor !important;
       border-color: @primaryColor !important;
     }
     .accent--text {
-      color: @primaryColor !important;
+      color: @primaryColorText !important;
       caret-color: @primaryColor !important;
     }
     .btn, .v-btn.btn {
@@ -340,18 +341,18 @@
       color: @btnPrimaryColor !important;
     }
     .primary--text {
-      color: @primaryColor !important;
+      color: @primaryColorText !important;
     }
     .primary:not([disabled]) {
       background-color: @primaryColor !important;
       color: #fff !important;
     }
     .primary--text {
-      color: @primaryColor !important;
+      color: @primaryColorText !important;
       caret-color: @primaryColor !important;
     }
     .v-tab--active {
-      color: @secondaryColor !important;
+      color: @secondaryColorText !important;
     }
     .v-tabs-slider-wrapper {
       .v-tabs-slider.primary {

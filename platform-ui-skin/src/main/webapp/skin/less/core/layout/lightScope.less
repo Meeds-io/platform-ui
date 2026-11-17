@@ -1,0 +1,114 @@
+/**
+ * This file is part of the Meeds project (https://meeds.io/).
+ *
+ * Copyright (C) 2026 Meeds Association contact@meeds.io
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3 of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ */
+
+// Light scopes: an element carrying data-display-mode="light" inside a dark or auto page (an application that keeps its
+// light display, and what it opens). The branding stylesheet redefines every theme property on it; the skin's remaps
+// (mixins.less), resolved on an ancestor in the page's mode and inherited resolved, are declared again here so they
+// resolve on the scope's light values. :not(:root) keeps every rule off <html data-display-mode="light">: outside a
+// scope, nothing changes.
+//
+// For each remap context C, two forms, generated from the remap mixin the context itself applies:
+// - the self form, C[data-display-mode="light"]:not(:root), for a scope that is the context itself (a light drawer,
+//   a light menu): C's own specificity plus (0,2,0), so it outranks every descendant form;
+// - the descendant form, :where(C) [data-display-mode="light"]:not(:root), for a scope inside the context: a flat
+//   (0,2,0) whatever C is, so between two of them the source order decides. They are written from the outer contexts
+//   to the nested ones: a scope in a page opened in place in a drawer gets the application text, not the drawer's.
+// A scope outside every context reads the light theme properties directly.
+// A context added to the skin is added to this list with the mixin it applies.
+.light-scope-context(@context; @remaps) {
+  @{context}[data-display-mode="light"]:not(:root) {
+    @remaps();
+  }
+  :where(@{context}) [data-display-mode="light"]:not(:root) {
+    @remaps();
+  }
+}
+
+// :root's remap captures the theme's application tint: on a scope, it reads the light one. Written first
+[data-display-mode="light"]:not(:root) {
+  .layout-theme-tint();
+}
+
+@layoutApplicationText: { .layout-application-text(); };
+@layoutApplicationTint: { .layout-application-tint(); };
+@layoutTopBarText: { .layout-top-bar-text(); };
+@layoutSideBarText: { .layout-side-bar-text(); };
+@layoutDialogText: { .layout-dialog-text(); };
+@layoutDrawerText: { .layout-drawer-text(); };
+@layoutDrawerApplicationText: { .layout-drawer-application-text(); };
+
+// Page content (pagelayout.less)
+.light-scope-context(~".VuetifyApp .layout-sections-parent .layout-page-parent"; @layoutApplicationText);
+// The Topbar and the Sidebar (globalLayout.less), and a site's own banner (pagelayout.less)
+.light-scope-context(~".layout-top-bar"; @layoutTopBarText);
+.light-scope-context(~".layout-side-bar"; @layoutSideBarText);
+.light-scope-context(~".VuetifyApp .layout-sections-parent .layout-banner-top-section"; @layoutTopBarText);
+// The application containers (pagelayout.less)
+.light-scope-context(~".application-background-color"; @layoutApplicationTint);
+.light-scope-context(~".application-layout-style"; @layoutApplicationTint);
+.light-scope-context(~".PORTLET-FRAGMENT:not(.no-layout-style):not(.no-layout-background-color)"; @layoutApplicationTint);
+.light-scope-context(~".VuetifyApp .application-body .application-background-color"; @layoutApplicationTint);
+.light-scope-context(~".VuetifyApp .application-body .application-layout-style"; @layoutApplicationTint);
+// Detached dialogs (globalLayout.less)
+.light-scope-context(~"#vuetify-apps > .v-dialog__content"; @layoutDialogText);
+// Drawers, the Topbar sub-menus and the menus (globalLayout.less, pagelayout.less)
+.light-scope-context(~".layout-drawer"; @layoutDrawerText);
+.light-scope-context(~".topBar-navigation-drop-menu"; @layoutDrawerText);
+.light-scope-context(~":where(#vuetify-apps) > .v-menu__content.v-menu__content:not(:where(.white))"; @layoutDrawerText);
+.light-scope-context(~".application-body .v-menu__content:not(:where(.white))"; @layoutDrawerText);
+// A page opened in place in a drawer, and its menus (mixins.less, .layout-drawer())
+.light-scope-context(~".layout-drawer .layout-drawer-application"; @layoutDrawerApplicationText);
+.light-scope-context(~".topBar-navigation-drop-menu .layout-drawer-application"; @layoutDrawerApplicationText);
+.light-scope-context(~".layout-drawer .layout-drawer-application .v-menu__content"; @layoutDrawerText);
+.light-scope-context(~".topBar-navigation-drop-menu .layout-drawer-application .v-menu__content"; @layoutDrawerText);
+// A drawer inside a page opened in place in a drawer: its own drawer text again, after the page's application text.
+// Nesting is covered to this depth: a scope in a page opened in place in that inner drawer gets drawer text, not the
+// application text the page gives
+.light-scope-context(~".layout-drawer .layout-drawer-application .layout-drawer"; @layoutDrawerText);
+// Alerts take the Drawers & Popup text (vuetify-all.less, .layout-drawer())
+.light-scope-context(~".VuetifyApp .v-application .v-alert"; @layoutDrawerText);
+
+// The page-editor colours of the ancestors: written inline as --app* properties by a page, a section or a cell, they
+// are inherited by the blocks beneath, and in dark they carry dark values. The outermost scope unsets them, so a
+// light block uses its own values (written inline on the same element, which win) and the light theme otherwise.
+// Nothing is unset in light mode: inheritance stays as it is.
+.light-scope-app-colors-reset() {
+  [data-display-mode="light"]:not(:root):not([data-display-mode="light"] *) {
+    --appBackgroundColor: initial;
+    --appBorderColor: initial;
+    --appIconColor: initial;
+    --appTextColor: initial;
+    --appTextTitleColor: initial;
+    --appTextHeaderColor: initial;
+    --appTextSubtitleColor: initial;
+    --appTextBackgroundColor: initial;
+    --appTextTitleBackgroundColor: initial;
+    --appTextHeaderBackgroundColor: initial;
+    --appTextSubtitleBackgroundColor: initial;
+  }
+}
+:root[data-display-mode="dark"] {
+  .light-scope-app-colors-reset();
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-display-mode="auto"] {
+    .light-scope-app-colors-reset();
+  }
+}
