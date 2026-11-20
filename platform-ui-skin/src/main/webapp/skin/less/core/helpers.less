@@ -624,8 +624,10 @@
   pointer-events: none;
   cursor: default !important;
 }
+/* Takes the pointer back inside a .not-clickable-link element: auto, since `revert` falls back to the inherited none
+   (the browser's stylesheet sets no pointer-events) */
 .pointer-events-revert {
-  pointer-events: revert !important;
+  pointer-events: auto !important;
 }
 .not-allowed {
   cursor: not-allowed !important;
@@ -1405,6 +1407,43 @@
   overflow:hidden;
 }
 
+/* A screen-reader-only element that shows while it has the keyboard focus, laid over the page without moving it:
+   a skip link. Black on white whatever the branding, so that it stays readable over any background. */
+.screen-reader-only-focusable {
+  position: absolute;
+  top: 0;
+  inset-inline-start: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+
+  &:focus {
+    z-index: 1000;
+    width: auto;
+    height: auto;
+    margin: 8px;
+    padding: 8px 16px;
+    overflow: visible;
+    clip: auto;
+    background-color: @white;
+    color: @black;
+    font-size: @fontSizeLarge;
+    font-weight: bold;
+    line-height: 1.5;
+    text-decoration: underline;
+    box-shadow: 0 0 0 4px @white;
+  }
+  &:focus-visible {
+    outline: 2px dashed @black;
+    outline-offset: 2px;
+  }
+}
+
 @keyframes fadePulseScale {
   0%, 100% {
     opacity: 0.3;
@@ -1433,4 +1472,93 @@
     linear-gradient(-45deg, transparent 75%, #bbb 75%);
   background-size: 10px 10px;
   background-position: 0 0, 0 5px, 5px -5px, -5px 0;
+}
+
+/* Hover reveal: a .hover-reveal control of a .hover-reveal-parent stays in the tab order while hidden, and shows
+   on the parent's hover and while the keyboard focus is inside the parent or on the control, so the keyboard
+   reaches it as the mouse does */
+.hover-reveal-parent .hover-reveal {
+  opacity: 0;
+  pointer-events: none;
+}
+.hover-reveal-parent:hover .hover-reveal,
+.hover-reveal-parent:focus-within .hover-reveal,
+.hover-reveal:focus,
+.hover-reveal:focus-within {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Hover swap: in a .hover-swap-parent, the .hover-swap-alt content replaces the .hover-swap-default one on the
+   parent's hover and while the keyboard focus is inside it; hidden with opacity, the alternative content keeps
+   its place in the tab order. The default content is never hidden while it holds the focus itself, which
+   would drop the focus to the page: a focusable default stays shown beside the alternative content. A
+   .hover-swap-trigger ancestor, a whole widget for instance, makes its own hover swap the content too, while the
+   .hover-swap-parent stays the small container the alternative content is laid over */
+.hover-swap-parent {
+  position: relative;
+  .hover-swap-alt {
+    position: absolute;
+    top: 0;
+    inset-inline-end: 0;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+  }
+  &:hover,
+  &:focus-within,
+  .hover-swap-trigger:hover & {
+    .hover-swap-default:not(:focus-within) {
+      display: none;
+    }
+    .hover-swap-alt {
+      position: static;
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}
+
+/* Stretched link: a .stretched-link covers its nearest positioned ancestor (.position-relative), so the whole
+   card is clickable through one tab stop, and its focus ring is drawn around the card, with the link's own
+   corner radius (give the link the card's rounded class to match it); the card's other controls take
+   .stretched-link-above to stay reachable over it */
+.stretched-link {
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+  }
+  // above the common focus indicator of the Vuetify apps, which the card's ring replaces
+  .VuetifyApp .v-application &:focus-visible:focus-visible {
+    outline: none;
+  }
+  .VuetifyApp .v-application &:focus-visible::after {
+    outline: dashed 2px @primaryColor;
+    outline-offset: -2px;
+  }
+}
+.stretched-link-above {
+  position: relative;
+  z-index: 1;
+}
+
+/* A transparent button laid over a primary fill (a settings button over a primary button) takes the focus indicator in
+   the primary button's text colour, above the Vuetify apps' common indicator whatever the stylesheets' order */
+.focus-ring-on-primary {
+  .VuetifyApp .v-application &:focus-visible:focus-visible {
+    outline-color: @btnPrimaryColor;
+  }
+}
+
+/* Button reset: a <button> that looks like the text it holds, for a control that must be a button */
+.btn-reset {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  cursor: pointer;
 }
