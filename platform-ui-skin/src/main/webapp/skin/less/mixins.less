@@ -405,8 +405,8 @@
   background-size: @drawerBackgroundSize!important;
 }
 
-// Call .layout-drawer-style() from any file compiled into core.css: globalLayout.less declares a top-level
-// .layout-drawer ruleset, which LESS 1.7 also matches for a .layout-drawer() call, so the body would be emitted twice
+// Outside the .layout-drawer ruleset of globalLayout.less, call .layout-drawer-style() from core.css: LESS 1.7
+// matches a .layout-drawer() call against that top-level ruleset too, so the body would be emitted twice
 .layout-drawer() {
   .layout-drawer-style();
 }
