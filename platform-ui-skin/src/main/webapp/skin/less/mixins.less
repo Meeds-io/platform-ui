@@ -319,7 +319,7 @@
   --allPagesBaseIconColor: var(--allPagesAppIconColor);
 }
 
-.layout-drawer() {
+.layout-drawer-style() {
   .layout-drawer-text();
 
   .layout-drawer-surfaces();
@@ -403,6 +403,12 @@
   background-repeat: @drawerBackgroundRepeat !important;
   background-position: @drawerBackgroundPosition!important;
   background-size: @drawerBackgroundSize!important;
+}
+
+// Outside the .layout-drawer ruleset of globalLayout.less, call .layout-drawer-style() from core.css: LESS 1.7
+// matches a .layout-drawer() call against that top-level ruleset too, so the body would be emitted twice
+.layout-drawer() {
+  .layout-drawer-style();
 }
 
 // Shared background/shrink-wrap behaviour of the text helper classes.
