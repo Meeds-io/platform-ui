@@ -301,6 +301,10 @@
 @inputFocusColor:                 @inputColor;
 @inputFocusBorder:                var(--allPagesInputFocusBorder, lighten(@secondaryColorDefault, 30%));
 @inputFocusShadow:                var(--allPagesInputFocusShadow, lighten(@secondaryColorDefault, 40%));
+// The border a focused text field shows around itself, whatever gave it the focus: black, which contrasts with a
+// white field well above the 3:1 RGAA 10.7 / WCAG 1.4.11 asks, and with a Vuetify field's light grey border at
+// rest. A plain field's border at rest is already dark (@inputBorder): its focus shows as that border doubling to 2px
+@inputFocusRingColor:             #000000;
 
 @inputHeight:                     @baseLineHeight + 20px;
 
